@@ -1,36 +1,49 @@
 # MicrosoftGraphSdk
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/microsoft_graph_sdk`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'microsoft_graph_sdk'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install microsoft_graph_sdk
-
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'adal'
+require 'microsoft_graph'
+
+# authenticate using ADAL
+username      = 'admin@tenant.onmicrosoft.com'
+password      = 'xxxxxxxxxxxx'
+client_id     = 'xxxxx-xxxx-xxx-xxxxxx-xxxxxxx'
+client_secret = 'xxxXXXxxXXXxxxXXXxxXXXXXXXXxxxxxx='
+tenant        = 'tenant.onmicrosoft.com'
+user_cred     = ADAL::UserCredential.new(username, password)
+client_cred   = ADAL::ClientCredential.new(client_id, client_secret)
+context       = ADAL::AuthenticationContext.new(ADAL::Authority::WORLD_WIDE_AUTHORITY, tenant)
+tokens        = context.acquire_token_for_user(resource, client_cred, user_cred)
+
+# connect to the API and create the classes (most of this should be defaulted later)
+service = OData::Service.new(
+  base_url: "https://graph.microsoft.com/v1.0/",
+  namespace: "microsoft.graph",
+  metadata_file: File.join(MicrosoftGraph::CACHED_METADATA_DIRECTORY, "metadata_v1.0.xml"),
+  auth_token: tokens.access_token,
+)
+
+graph = MicrosoftGraph.new(service)
+
+me = graph.me # get the current user
+puts "Hello, I am #{me.display_name}."
+
+me.direct_reports.each do |person|
+  puts "How's it going, #{person.display_name}?"
+end
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+    gem install bundler
+    bundle install
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+### Running Tests
 
-## Contributing
+#### Unit Tests
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/microsoft_graph_sdk. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Run them like this:
 
+    bundle exec rspec

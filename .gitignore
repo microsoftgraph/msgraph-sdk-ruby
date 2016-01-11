@@ -7,3 +7,5 @@
 /pkg/
 /spec/reports/
 /tmp/
+.env
+.DS_Store
