@@ -47,3 +47,19 @@ end
 Run them like this:
 
     bundle exec rspec
+
+#### Integration Tests
+
+The integration tests make real changes in a live account, so don't run them against anything except a dedicated test account.
+
+If you are sure you want to run them you need to set up a `.env` file that looks something like this:
+
+    MS_GRAPH_USERNAME=usernamehere@xxxxx.onmicrosoft.com
+    MS_GRAPH_PASSWORD=xxxxxxxxxxxx
+    MS_GRAPH_CLIENT_ID=xxxxx-xxxx-xxx-xxxxxx-xxxxxxx
+    MS_GRAPH_CLIENT_SECRET="xxxXXXxxXXXxxxXXXxxXXXXXXXXxxxxxx="
+    MS_GRAPH_TENANT=xxxxx.onmicrosoft.com
+
+Once you have all the right credentials, you can run the integration tests like this:
+
+    bundle exec rspec integration_spec
