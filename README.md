@@ -3,7 +3,7 @@
 This client library is a release candidate and is still in preview status, please continue to provide [feedback](https://github.com/microsoftgraph/msgraph-sdk-ruby/issues/new) as we iterate towards a production supported library.
 
 ## Installation
-
+run ```gem install microsoft_graph``` or include ```gem microsoft_graph``` in your gemfile.
 ## Getting started
 
 ### Register your application
@@ -11,7 +11,7 @@ This client library is a release candidate and is still in preview status, pleas
 Register your application to use Microsoft Graph API using one of the following
 supported authentication portals:
 
-* [Microsoft Application Registration Portal](https://apps.dev.microsoft.com):
+* [Microsoft Application Registration Portal](https://apps.dev.microsoft.com) (**Recommended**):
   Register a new application that authenticates using the v2.0 authentication endpoint. This endpoint autthenticates both personal (Microsoft) and work or school (Azure Active Directory) accounts.
 * [Microsoft Azure Active Directory](https://manage.windowsazure.com): Register
   a new application in your tenant's Active Directory to support work or school
@@ -42,15 +42,13 @@ client_cred   = ADAL::ClientCredential.new(client_id, client_secret)
 context       = ADAL::AuthenticationContext.new(ADAL::Authority::WORLD_WIDE_AUTHORITY, tenant)
 tokens        = context.acquire_token_for_user(resource, client_cred, user_cred)
 
-# connect to the API and create the classes (most of this should be defaulted later)
-service = OData::Service.new(
-  base_url: "https://graph.microsoft.com/v1.0/",
-  namespace: "microsoft.graph",
-  metadata_file: File.join(MicrosoftGraph::CACHED_METADATA_DIRECTORY, "metadata_v1.0.xml"),
-  auth_token: tokens.access_token,
-)
+# add the access token to the request header
+callback = Proc.new { |r| r.headers["Authorization"] = "Bearer #{tokens.access_token}"
 
-graph = MicrosoftGraph.new(service)
+graph = MicrosoftGraph.new(
+                            base_url: "https://graph.microsoft.com/v1.0",
+                            &callback
+)
 
 me = graph.me # get the current user
 puts "Hello, I am #{me.display_name}."
@@ -61,9 +59,6 @@ end
 ```
 
 ## Development
-
-    gem install bundler
-    bundle install
 
 ### Running Tests
 
