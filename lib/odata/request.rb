@@ -10,7 +10,8 @@ module OData
       @uri     = URI(uri)
       @data    = data
       @headers = {
-        'Content-Type' => 'application/json'
+        'Content-Type' => 'application/json',
+        'SdkVersion' => 'Graph-ruby-0.1.0'
       }
     end
 
