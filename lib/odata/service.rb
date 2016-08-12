@@ -242,7 +242,6 @@ module OData
 
     def build_operation(operation_xml)
       binding_type = if operation_xml["IsBound"] == "true"
-        binding.pry if operation_xml.xpath("./Parameter[@Name='bindingParameter']|./Parameter[@Name='bindingparameter']").length == 0
         type_name = operation_xml.xpath("./Parameter[@Name='bindingParameter']|./Parameter[@Name='bindingparameter']").first["Type"]
         get_type_by_name(type_name)
       end
