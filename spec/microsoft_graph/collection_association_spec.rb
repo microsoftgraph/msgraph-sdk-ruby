@@ -183,7 +183,8 @@ describe MicrosoftGraph::CollectionAssociation do
         ]
       }
       stub_request(:get, "https://graph.microsoft.com/v1.0/users/USER123/calendars")
-        .to_return({ body: first_page_body.to_json }).times(1).then
+        .to_return({ body: first_page_body.to_json }).times(1)
+      stub_request(:get, "https://graph.microsoft.com/v1.0/users/USER123/calendars?$skip=1")
         .to_return({ body: second_page_body.to_json }).times(1)
     end
     Given(:me) { graph.me }

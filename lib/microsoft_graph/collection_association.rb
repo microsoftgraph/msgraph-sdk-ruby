@@ -159,7 +159,7 @@ class MicrosoftGraph
 
     def each(start = 0)
       return to_enum(:each, start) unless block_given?
-      @next_link = query_path
+      @next_link ||= query_path
       Array(@internal_values[start..-1]).each do |element|
         yield(element)
       end
@@ -207,6 +207,8 @@ class MicrosoftGraph
         end
       end
       @next_link = result[:attributes]['@odata.next_link']
+      @next_link.sub!(MicrosoftGraph::BASE_URL, "") if @next_link
+
       result[:attributes]['value'].each do |entity_hash|
         klass =
           if member_type = specified_member_type(entity_hash)
@@ -216,7 +218,7 @@ class MicrosoftGraph
           end
         @internal_values.push klass.new(attributes: entity_hash, parent: self, persisted: true)
       end
-      @loaded = result[:attributes]['@odata.next_link'].nil?
+      @loaded = @next_link.nil?
     end
 
     def default_member_class
