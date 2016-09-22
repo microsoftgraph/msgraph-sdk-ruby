@@ -6,7 +6,7 @@ Dir[
     'odata',
     '*.rb'
   )
-].each { |f| require f }
+].sort.each { |f| require f }
 
 module OData
 
