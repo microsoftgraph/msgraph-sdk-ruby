@@ -6,7 +6,7 @@ Dir[
     'microsoft_graph',
     '*'
   )
-].each { |f| require f }
+].sort.each { |f| require f }
 
 class MicrosoftGraph
   attr_reader :service
