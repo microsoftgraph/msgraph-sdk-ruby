@@ -40,10 +40,11 @@ tenant        = 'tenant.onmicrosoft.com'
 user_cred     = ADAL::UserCredential.new(username, password)
 client_cred   = ADAL::ClientCredential.new(client_id, client_secret)
 context       = ADAL::AuthenticationContext.new(ADAL::Authority::WORLD_WIDE_AUTHORITY, tenant)
+resource      = "https://graph.microsoft.com"
 tokens        = context.acquire_token_for_user(resource, client_cred, user_cred)
 
 # add the access token to the request header
-callback = Proc.new { |r| r.headers["Authorization"] = "Bearer #{tokens.access_token}"
+callback = Proc.new { |r| r.headers["Authorization"] = "Bearer #{tokens.access_token}" }
 
 graph = MicrosoftGraph.new(
                             base_url: "https://graph.microsoft.com/v1.0",
