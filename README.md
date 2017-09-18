@@ -12,7 +12,7 @@ Register your application to use Microsoft Graph API using one of the following
 supported authentication portals:
 
 * [Microsoft Application Registration Portal](https://apps.dev.microsoft.com) (**Recommended**):
-  Register a new application that authenticates using the v2.0 authentication endpoint. This endpoint autthenticates both personal (Microsoft) and work or school (Azure Active Directory) accounts.
+  Register a new application that authenticates using the v2.0 authentication endpoint. This endpoint authenticates both personal (Microsoft) and work or school (Azure Active Directory) accounts.
 * [Microsoft Azure Active Directory](https://manage.windowsazure.com): Register
   a new application in your tenant's Active Directory to support work or school
   users for your tenant, or multiple tenants.
