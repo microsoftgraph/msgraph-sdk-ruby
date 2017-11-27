@@ -14,9 +14,10 @@ class MicrosoftGraph
 
   def initialize(options = {}, &auth_callback)
     @service = OData::Service.new(
+      api_version: options[:api_version],
+      auth_callback: auth_callback,
       base_url: BASE_URL,
-      metadata_file: options[:cached_metadata_file],
-      auth_callback: auth_callback
+      metadata_file: options[:cached_metadata_file]
     )
     @association_collections = {}
     unless MicrosoftGraph::ClassBuilder.loaded?
