@@ -46,10 +46,10 @@ tokens        = context.acquire_token_for_user(resource, client_cred, user_cred)
 # add the access token to the request header
 callback = Proc.new { |r| r.headers["Authorization"] = "Bearer #{tokens.access_token}" }
 
-graph = MicrosoftGraph.new(
-                            base_url: "https://graph.microsoft.com/v1.0",
-                            cached_metadata_file: File.join(MicrosoftGraph::CACHED_METADATA_DIRECTORY, "metadata_v1.0.xml"),
-                            &callback
+graph = MicrosoftGraph.new(base_url: "https://graph.microsoft.com/v1.0",
+                           cached_metadata_file: File.join(MicrosoftGraph::CACHED_METADATA_DIRECTORY, "metadata_v1.0.xml"),
+                           api_version: '1.6', # Optional
+                           &callback
 )
 
 me = graph.me # get the current user

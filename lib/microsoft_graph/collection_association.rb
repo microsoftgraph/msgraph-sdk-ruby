@@ -191,21 +191,24 @@ class MicrosoftGraph
 
     def fetch_next_page
       @next_link ||= query_path
-      result = begin
-        @graph.service.get(@next_link)
-      rescue OData::ClientError => e
-        if matches = /Unsupported sort property '([^']*)'/.match(e.message)
-          raise MicrosoftGraph::TypeError.new("Cannot sort by #{matches[1]}")
-        elsif /OrderBy not supported/.match(e.message)
-          if @order_by.length == 1
-            raise MicrosoftGraph::TypeError.new("Cannot sort by #{@order_by.first}")
+
+      result =
+        begin
+          @graph.service.get(@next_link)
+        rescue OData::ClientError => e
+          if matches = /Unsupported sort property '([^']*)'/.match(e.message)
+            raise MicrosoftGraph::TypeError.new("Cannot sort by #{matches[1]}")
+          elsif /OrderBy not supported/.match(e.message)
+            if @order_by.length == 1
+              raise MicrosoftGraph::TypeError.new("Cannot sort by #{@order_by.first}")
+            else
+              raise MicrosoftGraph::TypeError.new("Cannot sort by at least one field requested")
+            end
           else
-            raise MicrosoftGraph::TypeError.new("Cannot sort by at least one field requested")
+            raise e
           end
-        else
-          raise e
         end
-      end
+
       @next_link = result[:attributes]['@odata.next_link']
       @next_link.sub!(MicrosoftGraph::BASE_URL, "") if @next_link
 

@@ -4,6 +4,9 @@ module OData
     attr_reader :metadata
 
     def initialize(options = {}, &block)
+      @api_version   = {
+        'api-version': options[:api_version]
+      } if options[:api_version]
       @auth_callback = options[:auth_callback] || block
       @base_url      = options[:base_url]
       @metadata_file = options[:metadata_file]
@@ -64,7 +67,17 @@ module OData
     end
 
     def request(options = {})
-      req = Request.new(options[:method], options[:uri], options[:data])
+      uri = options[:uri]
+
+      if @api_version then
+        parsed_uri = URI(uri)
+        params = URI.decode_www_form(parsed_uri.query || '')
+                    .concat(@api_version.to_a)
+        parsed_uri.query = URI.encode_www_form params
+        uri = parsed_uri.to_s
+      end
+
+      req = Request.new(options[:method], uri, options[:data])
       @auth_callback.call(req) if @auth_callback
       req.perform
     end
