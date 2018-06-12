@@ -5,7 +5,7 @@ module OData
     end
 
     def coerce(value)
-      raise RuntimeError
+      value
     end
 
     def name
