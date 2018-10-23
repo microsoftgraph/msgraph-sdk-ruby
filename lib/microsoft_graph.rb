@@ -10,13 +10,18 @@ Dir[
 
 class MicrosoftGraph
   attr_reader :service
-  BASE_URL = "https://graph.microsoft.com/v1.0/"
+  @@base_url
+  ROOT_URL = "https://graph.microsoft.com"
+
+  def self.base_url(api_version = "v1.0")
+    @@base_url ||= "#{ROOT_URL}/#{api_version}/"
+  end
 
   def initialize(options = {}, &auth_callback)
     @service = OData::Service.new(
       api_version: options[:api_version],
       auth_callback: auth_callback,
-      base_url: BASE_URL,
+      base_url: self.class.base_url,
       metadata_file: options[:cached_metadata_file]
     )
     @association_collections = {}
