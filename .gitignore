@@ -9,3 +9,5 @@
 /tmp/
 .env
 .DS_Store
+/.rbenv-gemsets
+/.ruby-version
