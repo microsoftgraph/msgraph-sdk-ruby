@@ -1,6 +1,6 @@
 # Getting started with the Microsoft Graph Client Library for Ruby
 
-This client library is a release candidate and is still in preview statu. As such, this library is **not production ready**. Please proceed at your own risk and continue to provide [feedback](https://github.com/microsoftgraph/msgraph-sdk-ruby/issues/new) as we iterate towards a production supported library.
+This client library is a release candidate and is still in preview status. As such, this library is **not production ready**. Please proceed at your own risk and continue to provide [feedback](https://github.com/microsoftgraph/msgraph-sdk-ruby/issues/new) as we iterate towards a production supported library.
 
 ## Installation
 run ```gem install microsoft_graph``` or include ```gem microsoft_graph``` in your gemfile.
