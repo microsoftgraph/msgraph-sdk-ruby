@@ -5,6 +5,10 @@ end
 
 require "rspec"
 require 'rspec/given'
+
+# NOTE: Please remove this line if https://github.com/AzureAD/azure-activedirectory-library-for-ruby/pull/50 is released.
+require "adal/request_parameters"
+
 require "adal"
 require "pry"
 
