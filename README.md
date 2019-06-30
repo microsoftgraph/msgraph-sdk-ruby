@@ -28,27 +28,36 @@ The recommended library for authenticating against AAD is [ADAL](https://github.
 ### Usage example
 
 ```ruby
-require 'adal'
+require 'httparty'
+require 'nokogiri'
 require 'microsoft_graph'
 
-# authenticate using ADAL
-username      = 'admin@tenant.onmicrosoft.com'
-password      = 'xxxxxxxxxxxx'
+MS_BASE_URL        = "https://login.microsoftonline.com".freeze
+TOKEN_REQUEST_PATH = "oauth2/v2.0/token".freeze
+
+# Your configuration
 client_id     = 'xxxxx-xxxx-xxx-xxxxxx-xxxxxxx'
 client_secret = 'xxxXXXxxXXXxxxXXXxxXXXXXXXXxxxxxx='
-tenant        = 'tenant.onmicrosoft.com'
-user_cred     = ADAL::UserCredential.new(username, password)
-client_cred   = ADAL::ClientCredential.new(client_id, client_secret)
-context       = ADAL::AuthenticationContext.new(ADAL::Authority::WORLD_WIDE_AUTHORITY, tenant)
-resource      = "https://graph.microsoft.com"
-tokens        = context.acquire_token_for_user(resource, client_cred, user_cred)
+tenant_id     = 'xxxxx-xxxx-xxx-xxxxxx-xxxxxxx'
+
+response = HTTParty.post(
+  "#{MS_BASE_URL}/#{tenant_id}/#{TOKEN_REQUEST_PATH}",
+  multipart: true,
+  body: {
+    client_id: client_id,
+    client_secret: client_secret,
+    scope: 'https://graph.microsoft.com/.default',
+    grant_type: 'client_credentials'
+  }
+)
+raise "#{response.message}" unless response.code == 200
+token = JSON.parse(response.body)['access_token']
 
 # add the access token to the request header
-callback = Proc.new { |r| r.headers["Authorization"] = "Bearer #{tokens.access_token}" }
+callback = Proc.new { |r| r.headers["Authorization"] = "Bearer #{token}" }
 
-graph = MicrosoftGraph.new(base_url: "https://graph.microsoft.com/v1.0",
+graph = MicrosoftGraph.new(base_url: MicrosoftGraph::BASE_URL,
                            cached_metadata_file: File.join(MicrosoftGraph::CACHED_METADATA_DIRECTORY, "metadata_v1.0.xml"),
-                           api_version: '1.6', # Optional
                            &callback
 )
 
