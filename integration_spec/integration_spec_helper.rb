@@ -1,18 +1,23 @@
 require "common_spec_helper"
 require "dotenv"
 Dotenv.load
-# ADAL::Logging.log_level = ADAL::Logger::VERBOSE
 
+BASE_URL      = ENV['MS_GRAPH_BASE_URL']
+TOKEN_PATH    = ENV['MS_GRAPH_TOKEN_PATH']
 TENANT        = ENV['MS_GRAPH_TENANT']
-USERNAME      = ENV['MS_GRAPH_USERNAME']
-PASSWORD      = ENV['MS_GRAPH_PASSWORD']
 CLIENT_ID     = ENV['MS_GRAPH_CLIENT_ID']
 CLIENT_SECRET = ENV['MS_GRAPH_CLIENT_SECRET']
-RESOURCE      = 'https://graph.microsoft.com'
 
-USER_CRED   = ADAL::UserCredential.new(USERNAME, PASSWORD)
-CLIENT_CRED = ADAL::ClientCredential.new(CLIENT_ID, CLIENT_SECRET)
-CONTEXT     = ADAL::AuthenticationContext.new(ADAL::Authority::WORLD_WIDE_AUTHORITY, TENANT)
-TOKENS      = CONTEXT.acquire_token_for_user(RESOURCE, CLIENT_CRED, USER_CRED)
+RESPONSE = HTTParty.post(
+  "#{BASE_URL}/#{TENANT}/#{TOKEN_PATH}",
+  multipart: true,
+  body: {
+    client_id: CLIENT_ID,
+    client_secret: CLIENT_SECRET,
+    scope: 'https://graph.microsoft.com/.default',
+    grant_type: 'client_credentials'
+  }
+)
+TOKEN = JSON.parse(RESPONSE.body)['access_token']
 
-create_classes(TOKENS)
+create_classes(TOKEN)
