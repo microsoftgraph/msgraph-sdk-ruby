@@ -7,7 +7,7 @@ require "rspec"
 require 'rspec/given'
 require "nokogiri"
 require "pry"
-require "httparty"
+require "httpclient"
 
 require "microsoft_graph"
 

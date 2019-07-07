@@ -8,14 +8,15 @@ TENANT        = ENV['MS_GRAPH_TENANT']
 CLIENT_ID     = ENV['MS_GRAPH_CLIENT_ID']
 CLIENT_SECRET = ENV['MS_GRAPH_CLIENT_SECRET']
 
-RESPONSE = HTTParty.post(
+client = HTTPClient.new
+RESPONSE = client.post(
   "#{BASE_URL}/#{TENANT}/#{TOKEN_PATH}",
   multipart: true,
   body: {
     client_id: CLIENT_ID,
     client_secret: CLIENT_SECRET,
     scope: 'https://graph.microsoft.com/.default',
-    grant_type: 'client_credentials'
+    grant_type: 'client_credentials',
   }
 )
 TOKEN = JSON.parse(RESPONSE.body)['access_token']
