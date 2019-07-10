@@ -1,6 +1,7 @@
 require "common_spec_helper"
 require "dotenv"
 Dotenv.load
+require 'net/http'
 
 BASE_URL      = ENV['MS_GRAPH_BASE_URL']
 TOKEN_PATH    = ENV['MS_GRAPH_TOKEN_PATH']
