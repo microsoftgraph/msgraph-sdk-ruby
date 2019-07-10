@@ -28,9 +28,11 @@ The recommended library for authenticating against AAD is [ADAL](https://github.
 ### Usage example
 
 ```ruby
-require 'httparty'
-require 'nokogiri'
+require 'httpclient'
 require 'microsoft_graph'
+require 'json'
+require 'nokogiri'
+require 'net/http'
 
 MS_BASE_URL        = "https://login.microsoftonline.com".freeze
 TOKEN_REQUEST_PATH = "oauth2/v2.0/token".freeze
@@ -40,15 +42,18 @@ client_id     = 'xxxxx-xxxx-xxx-xxxxxx-xxxxxxx'
 client_secret = 'xxxXXXxxXXXxxxXXXxxXXXXXXXXxxxxxx='
 tenant_id     = 'xxxxx-xxxx-xxx-xxxxxx-xxxxxxx'
 
-response = HTTParty.post(
+client = HTTPClient.new
+response = client.post(
   "#{MS_BASE_URL}/#{tenant_id}/#{TOKEN_REQUEST_PATH}",
-  multipart: true,
-  body: {
-    client_id: client_id,
-    client_secret: client_secret,
-    scope: 'https://graph.microsoft.com/.default',
-    grant_type: 'client_credentials'
-  }
+  {
+    body: { client_id: client_id,
+            client_secret: client_secret,
+            scope: 'https://graph.microsoft.com/.default',
+            grant_type: 'client_credentials',
+          },
+    'Content-Type' => 'application/json',
+    multipart: true,
+ }
 )
 raise "#{response.message}" unless response.code == 200
 token = JSON.parse(response.body)['access_token']
@@ -61,11 +66,9 @@ graph = MicrosoftGraph.new(base_url: MicrosoftGraph::BASE_URL,
                            &callback
 )
 
-me = graph.me # get the current user
-puts "Hello, I am #{me.display_name}."
-
-me.direct_reports.each do |person|
-  puts "How's it going, #{person.display_name}?"
+users = graph.users
+users.each do |user|
+  puts "Hello, I am #{user.display_name}"
 end
 ```
 
