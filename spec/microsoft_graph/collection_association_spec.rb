@@ -276,13 +276,6 @@ describe MicrosoftGraph::CollectionAssociation do
         Then { result.query_path == 'users/userID/messages?$orderby=from/emailAddress/address'}
       end
     end
-
-    describe "raises an error if called on a filtered collection" do
-      When(:filtered) { subject.filter(surname: 'Hayden') }
-      When(:result) { filtered.order_by(:given_name) }
-      Then { result == Failure(MicrosoftGraph::TypeError) }
-    end
-
   end
 
   describe "#filter" do
@@ -304,12 +297,6 @@ describe MicrosoftGraph::CollectionAssociation do
     describe "returns a new collection filtered by any number of fields" do
       When(:result) { subject.filter(surname: 'Puma', given_name: 'Pete') }
       Then { result.query_path == "users?$filter=givenName%20eq%20'Pete'%20and%20surname%20eq%20'Puma'" }
-    end
-
-    describe "raises an error if called on an ordered collection" do
-      When(:ordered) { subject.order_by(:surname) }
-      When(:result) { ordered.filter(given_name: 'Alice') }
-      Then { result == Failure(MicrosoftGraph::TypeError) }
     end
 
     describe "raises an error when passed an invalid field" do
