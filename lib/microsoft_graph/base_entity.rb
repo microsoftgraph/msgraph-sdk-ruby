@@ -87,6 +87,22 @@ class MicrosoftGraph
       true
     end
 
+    # update entity by specified hash
+    def update_attributes(raw:)
+      raise NoAssociationError unless parent
+      raise_no_graph_error! unless graph
+      if persisted?
+        graph.service.patch(path, raw.to_json)
+      else
+        initialize_serialized_properties(
+          graph.service.post(parent.path, to_json(convert_to_camel_case: true))
+        )
+        @persisted = true
+      end
+      mark_clean
+      true
+    end
+
     def save
       save!
     rescue OData::HTTPError
