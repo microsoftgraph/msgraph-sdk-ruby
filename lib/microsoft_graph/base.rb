@@ -72,6 +72,14 @@ class MicrosoftGraph
       }
     end
 
+    def set_dirty!(property_name)
+      self.dirty = true
+      self.dirty_properties[property_name] = true
+      if parent_property.present?
+        parent_property.set_dirty!(OData.convert_to_snake_case(self.name).to_sym)
+      end
+    end
+
     private
 
     def get(property_name)
@@ -93,12 +101,7 @@ class MicrosoftGraph
         raise TypeError unless property.type_match?(value)
         @cached_property_values[property_name] = property.coerce_to_type(value)
       end
-      self.dirty = true
-      self.dirty_properties[property_name] = true
-      if parent_property.present?
-        parent_property.dirty = true
-        parent_property.dirty_properties[OData.convert_to_snake_case(self.name).to_sym] = true
-      end
+      set_dirty!(property_name)
     end
 
     def initialize_serialized_properties(raw_attributes, from_server = false)
