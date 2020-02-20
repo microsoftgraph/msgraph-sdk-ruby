@@ -112,7 +112,7 @@ class MicrosoftGraph
         if attributes.keys.include?(property_key.to_s)
           value = attributes[property_key.to_s]
           @cached_property_values[property_key] =
-              if property.collection?
+            if property.collection?
               Collection.new(property.type, value)
             elsif klass = MicrosoftGraph::ClassBuilder.get_namespaced_class(property.type.name)
               klass.new(attributes: value)
