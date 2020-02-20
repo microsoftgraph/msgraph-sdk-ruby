@@ -1,7 +1,6 @@
 class MicrosoftGraph
   class Base
-    attr_accessor :dirty, :dirty_properties
-    attr_reader :parent_property, :name
+    attr_reader :dirty_properties
 
     def initialize(options = {})
       @cached_navigation_property_values = {}
@@ -73,10 +72,10 @@ class MicrosoftGraph
     end
 
     def set_dirty!(property_name)
-      self.dirty = true
-      self.dirty_properties[property_name] = true
-      if parent_property.present?
-        parent_property.set_dirty!(OData.convert_to_snake_case(self.name).to_sym)
+      @dirty = true
+      @dirty_properties[property_name] = true
+      if @parent_property.present?
+        @parent_property.set_dirty!(OData.convert_to_snake_case(@name).to_sym)
       end
     end
 
