@@ -1,7 +1,6 @@
 class MicrosoftGraph
   class Base
-    attr_accessor :dirty, :dirty_properties
-    attr_reader :parent_property, :name
+    attr_reader :dirty_properties
 
     def initialize(options = {})
       @cached_navigation_property_values = {}
@@ -13,15 +12,15 @@ class MicrosoftGraph
         initialize_serialized_properties(options[:attributes], options[:persisted])
       end
 
-      @dirty = !options[:persisted]
+      @dirty = ! options[:persisted]
       @dirty_properties = if @dirty
-                            @cached_property_values.keys.inject({}) do |result, key|
-                              result[key] = true
-                              result
-                            end
-                          else
-                            {}
-                          end
+        @cached_property_values.keys.inject({}) do |result, key|
+          result[key] = true
+          result
+        end
+      else
+        {}
+      end
     end
 
     def properties
@@ -34,12 +33,12 @@ class MicrosoftGraph
 
     def as_json(options = {})
       (if options[:only]
-         @cached_property_values.select { |key,v| options[:only].include? key }
-       elsif options[:except]
-         @cached_property_values.reject { |key,v| options[:except].include? key }
-       else
-         @cached_property_values
-       end).inject({}) do |result, (k,v)|
+        @cached_property_values.select { |key,v| options[:only].include? key }
+      elsif options[:except]
+        @cached_property_values.reject { |key,v| options[:except].include? key }
+      else
+        @cached_property_values
+      end).inject({}) do |result, (k,v)|
         k = OData.convert_to_camel_case(k) if options[:convert_to_camel_case]
         result[k.to_s] = if MicrosoftGraph::Base === v
                            new_options = options.clone
@@ -73,10 +72,10 @@ class MicrosoftGraph
     end
 
     def set_dirty!(property_name)
-      self.dirty = true
-      self.dirty_properties[property_name] = true
-      if parent_property.present?
-        parent_property.set_dirty!(OData.convert_to_snake_case(self.name).to_sym)
+      @dirty = true
+      @dirty_properties[property_name] = true
+      if @parent_property.present?
+        @parent_property.set_dirty!(OData.convert_to_snake_case(@name).to_sym)
       end
     end
 
@@ -114,16 +113,16 @@ class MicrosoftGraph
           value = attributes[property_key.to_s]
           @cached_property_values[property_key] =
               if property.collection?
-                Collection.new(property.type, value)
-              elsif klass = MicrosoftGraph::ClassBuilder.get_namespaced_class(property.type.name)
-                klass.new(attributes: value, parent_property: self, name: property_key)
+              Collection.new(property.type, value)
+            elsif klass = MicrosoftGraph::ClassBuilder.get_namespaced_class(property.type.name)
+              klass.new(attributes: value)
+            else
+              if from_server && ! property.type_match?(value) && OData::EnumType === property.type
+                value.to_s
               else
-                if from_server && ! property.type_match?(value) && OData::EnumType === property.type
-                  value.to_s
-                else
-                  property.coerce_to_type(value)
-                end
+                property.coerce_to_type(value)
               end
+            end
         end
       end
     end
