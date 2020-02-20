@@ -35,8 +35,15 @@ class MicrosoftGraph
         @cached_property_values
       end).inject({}) do |result, (k,v)|
         k = OData.convert_to_camel_case(k) if options[:convert_to_camel_case]
-        result[k.to_s] = v.respond_to?(:as_json) ? v.as_json(options) : v
-        result
+        result[k.to_s] = if MicrosoftGraph::Base === v
+                           new_options = options.clone
+                           new_options[:only] = v.instance_variable_get(:@dirty_properties).keys
+                           v.as_json(new_options)
+                         elsif v.respond_to?(:as_json)
+                           v.as_json(options)
+                         else
+                           v
+                         end
       end
     end
 
