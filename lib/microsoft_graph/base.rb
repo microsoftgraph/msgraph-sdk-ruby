@@ -115,7 +115,7 @@ class MicrosoftGraph
             if property.collection?
               Collection.new(property.type, value)
             elsif klass = MicrosoftGraph::ClassBuilder.get_namespaced_class(property.type.name)
-              klass.new(attributes: value)
+              klass.new(attributes: value, parent_property: self, name: property_key)
             else
               if from_server && ! property.type_match?(value) && OData::EnumType === property.type
                 value.to_s
