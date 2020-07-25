@@ -174,7 +174,8 @@ module OData
         singular, segments = segments_from_odata_context_field(context)
         first_entity_type = get_type_by_name("Collection(#{entity_set_by_name(segments.shift).member_type})")
         entity_type = segments.reduce(first_entity_type) do |last_entity_type, segment|
-          last_entity_type.member_type.navigation_property_by_name(segment).type
+          member_type = last_entity_type.respond_to?(:member_type) ? last_entity_type.member_type : last_entity_type
+          member_type.navigation_property_by_name(segment).type
         end
         singular && entity_type.respond_to?(:member_type) ? entity_type.member_type : entity_type
       end
