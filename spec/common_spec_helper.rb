@@ -5,21 +5,18 @@ end
 
 require "rspec"
 require 'rspec/given'
-
-# NOTE: Please remove this line if https://github.com/AzureAD/azure-activedirectory-library-for-ruby/pull/50 is released.
-require "adal/request_parameters"
-
-require "adal"
+require "nokogiri"
 require "pry"
+require "httpclient"
 
 require "microsoft_graph"
 
-def create_classes(tokens = nil)
+def create_classes(token = nil)
   service = OData::Service.new(
     base_url: "https://graph.microsoft.com/v1.0/",
     namespace: "microsoft.graph",
     metadata_file: File.join(MicrosoftGraph::CACHED_METADATA_DIRECTORY, "metadata_v1.0.xml"),
-    auth_token: tokens && tokens.access_token,
+    auth_token: token,
   )
   MicrosoftGraph::ClassBuilder.load!(service)
   service

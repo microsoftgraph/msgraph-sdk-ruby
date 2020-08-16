@@ -21,11 +21,11 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rspec-given", "~> 3.5.0"
-  spec.add_development_dependency "adal", "~> 1.0"
   spec.add_development_dependency "dotenv", "~> 2.0.2"
   spec.add_development_dependency "pry", "~> 0.10.3"
   spec.add_development_dependency "simplecov", "~> 0.11.1"
   spec.add_development_dependency "webmock", "~> 1.22.6"
+  spec.add_development_dependency "httpclient", "~> 2.8.3"
 
   spec.add_dependency "nokogiri", ">= 1.8.0"
 end

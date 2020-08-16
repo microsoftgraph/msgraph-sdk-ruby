@@ -2,7 +2,7 @@ require_relative "integration_spec_helper"
 
 describe MicrosoftGraph::User do
   Given(:auth_callback) {
-    Proc.new { |r| r.headers["Authorization"] = "Bearer #{TOKENS.access_token}" }
+    Proc.new { |r| r.headers["Authorization"] = "Bearer #{TOKEN}" }
   }
   Given(:test_run_id) { rand(2**128) }
   Given(:graph) { MicrosoftGraph.new(&auth_callback) }
