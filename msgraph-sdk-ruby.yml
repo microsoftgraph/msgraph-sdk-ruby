@@ -1,0 +1,14 @@
+page_type: sample
+products:
+  - office-365
+  - ms-graph
+languages:
+  - ruby
+extensions:
+  contentType: sdks
+  technologies:
+    - Microsoft Graph
+    - Microsoft identity platform
+  createdDate: '5/11/2016 10:11:20 AM'
+title: Microsoft Graph Client Library for Ruby
+description: Microsoft Graph SDK for Ruby.
