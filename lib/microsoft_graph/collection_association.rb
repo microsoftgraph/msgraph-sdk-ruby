@@ -14,7 +14,6 @@ class MicrosoftGraph
       @loaded          = false
       @internal_values = []
 
-      raise MicrosoftGraph::TypeError.new("A collection cannot be both ordered and filtered.") if @order_by && @filter
       @order_by && @order_by.each do |field|
         field_name, direction = field.to_s.split(' ')
         field_names = field_name.split("/")
