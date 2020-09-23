@@ -373,6 +373,7 @@
         <Property Name='receivedDateTime' Type='Edm.DateTimeOffset'/>
         <Property Name='sentDateTime' Type='Edm.DateTimeOffset'/>
         <Property Name='hasAttachments' Type='Edm.Boolean'/>
+        <Property Name='internetMessageId' Type='Edm.String' Unicode='false'/>
         <Property Name='subject' Type='Edm.String' Unicode='false'/>
         <Property Name='body' Type='microsoft.graph.itemBody'/>
         <Property Name='bodyPreview' Type='Edm.String' Unicode='false'/>
