@@ -34,7 +34,7 @@ class MicrosoftGraph
     end
 
     def find(id)
-      if response = graph.service.get("#{path}/#{URI.escape(id.to_s)}")
+      if response = graph.service.get("#{path}/#{URI::Parser.new.escape(id.to_s)}")
         klass = if member_type = specified_member_type(response)
           ClassBuilder.get_namespaced_class(response)
         else
@@ -62,11 +62,12 @@ class MicrosoftGraph
     def query_path
       if @order_by
         order_by_names = @order_by.map do |field|
-          URI.escape OData.convert_to_camel_case(field)
+          URI::Parser.new.escape OData.convert_to_camel_case(field)
         end
         "#{path}?$orderby=#{order_by_names.join(',')}"
       elsif @filter
-        escaped_filters = URI.escape(stringify_filters(@filter))
+        escaped_filters = URI::Parser.new.escape(stringify_filters(@filter))
+
         "#{path}?$filter=#{escaped_filters}"
       else
         path
@@ -157,7 +158,7 @@ class MicrosoftGraph
       self
     end
 
-    def each(start = 0)
+    def each(start = 0, &block)
       return to_enum(:each, start) unless block_given?
       @next_link ||= query_path
       Array(@internal_values[start..-1]).each do |element|
@@ -169,7 +170,7 @@ class MicrosoftGraph
 
         fetch_next_page
 
-        each(start, &Proc.new)
+        each(start, &block)
       end
     end
 
