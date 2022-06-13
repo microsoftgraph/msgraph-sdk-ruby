@@ -169,7 +169,7 @@ class MicrosoftGraph
 
         fetch_next_page
 
-        each(start, &Proc.new)
+        each(start, &Proc.new { yield })
       end
     end
 
