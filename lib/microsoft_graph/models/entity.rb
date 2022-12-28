@@ -1,46 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './call_records/call_record'
-require_relative './call_records/segment'
-require_relative './call_records/session'
-require_relative './external_connectors/connection_operation'
-require_relative './external_connectors/external_connection'
-require_relative './external_connectors/external_group'
-require_relative './external_connectors/external_item'
-require_relative './external_connectors/identity'
-require_relative './external_connectors/schema'
-require_relative './models'
-require_relative './security/alert'
-require_relative './security/case_escaped'
-require_relative './security/case_operation'
-require_relative './security/cases_root'
-require_relative './security/data_set'
-require_relative './security/data_source'
-require_relative './security/data_source_container'
-require_relative './security/ediscovery_add_to_review_set_operation'
-require_relative './security/ediscovery_case'
-require_relative './security/ediscovery_case_settings'
-require_relative './security/ediscovery_custodian'
-require_relative './security/ediscovery_estimate_operation'
-require_relative './security/ediscovery_hold_operation'
-require_relative './security/ediscovery_index_operation'
-require_relative './security/ediscovery_noncustodial_data_source'
-require_relative './security/ediscovery_purge_data_operation'
-require_relative './security/ediscovery_review_set'
-require_relative './security/ediscovery_review_set_query'
-require_relative './security/ediscovery_review_tag'
-require_relative './security/ediscovery_search'
-require_relative './security/ediscovery_tag_operation'
-require_relative './security/incident'
-require_relative './security/search'
-require_relative './security/site_source'
-require_relative './security/tag'
-require_relative './security/unified_group_source'
-require_relative './security/user_source'
-require_relative './term_store/group'
-require_relative './term_store/relation'
-require_relative './term_store/set'
-require_relative './term_store/store'
-require_relative './term_store/term'
 
 module MicrosoftGraph::Models
     class Entity
@@ -263,12 +221,6 @@ module MicrosoftGraph::Models
                         return CalendarSharingMessage.new
                     when "#microsoft.graph.call"
                         return Call.new
-                    when "#microsoft.graph.callRecords.callRecord"
-                        return CallRecord.new
-                    when "#microsoft.graph.callRecords.segment"
-                        return Segment.new
-                    when "#microsoft.graph.callRecords.session"
-                        return Session.new
                     when "#microsoft.graph.cancelMediaProcessingOperation"
                         return CancelMediaProcessingOperation.new
                     when "#microsoft.graph.certificateBasedAuthConfiguration"
@@ -509,18 +461,6 @@ module MicrosoftGraph::Models
                         return Extension.new
                     when "#microsoft.graph.extensionProperty"
                         return ExtensionProperty.new
-                    when "#microsoft.graph.externalConnectors.connectionOperation"
-                        return ConnectionOperation.new
-                    when "#microsoft.graph.externalConnectors.externalConnection"
-                        return ExternalConnection.new
-                    when "#microsoft.graph.externalConnectors.externalGroup"
-                        return ExternalGroup.new
-                    when "#microsoft.graph.externalConnectors.externalItem"
-                        return ExternalItem.new
-                    when "#microsoft.graph.externalConnectors.identity"
-                        return Identity.new
-                    when "#microsoft.graph.externalConnectors.schema"
-                        return Schema.new
                     when "#microsoft.graph.externalDomainName"
                         return ExternalDomainName.new
                     when "#microsoft.graph.featureRolloutPolicy"
@@ -947,60 +887,6 @@ module MicrosoftGraph::Models
                         return SecureScoreControlProfile.new
                     when "#microsoft.graph.security"
                         return Security.new
-                    when "#microsoft.graph.security.alert"
-                        return Alert.new
-                    when "#microsoft.graph.security.case"
-                        return Case_escaped.new
-                    when "#microsoft.graph.security.caseOperation"
-                        return CaseOperation.new
-                    when "#microsoft.graph.security.casesRoot"
-                        return CasesRoot.new
-                    when "#microsoft.graph.security.dataSet"
-                        return DataSet.new
-                    when "#microsoft.graph.security.dataSource"
-                        return DataSource.new
-                    when "#microsoft.graph.security.dataSourceContainer"
-                        return DataSourceContainer.new
-                    when "#microsoft.graph.security.ediscoveryAddToReviewSetOperation"
-                        return EdiscoveryAddToReviewSetOperation.new
-                    when "#microsoft.graph.security.ediscoveryCase"
-                        return EdiscoveryCase.new
-                    when "#microsoft.graph.security.ediscoveryCaseSettings"
-                        return EdiscoveryCaseSettings.new
-                    when "#microsoft.graph.security.ediscoveryCustodian"
-                        return EdiscoveryCustodian.new
-                    when "#microsoft.graph.security.ediscoveryEstimateOperation"
-                        return EdiscoveryEstimateOperation.new
-                    when "#microsoft.graph.security.ediscoveryHoldOperation"
-                        return EdiscoveryHoldOperation.new
-                    when "#microsoft.graph.security.ediscoveryIndexOperation"
-                        return EdiscoveryIndexOperation.new
-                    when "#microsoft.graph.security.ediscoveryNoncustodialDataSource"
-                        return EdiscoveryNoncustodialDataSource.new
-                    when "#microsoft.graph.security.ediscoveryPurgeDataOperation"
-                        return EdiscoveryPurgeDataOperation.new
-                    when "#microsoft.graph.security.ediscoveryReviewSet"
-                        return EdiscoveryReviewSet.new
-                    when "#microsoft.graph.security.ediscoveryReviewSetQuery"
-                        return EdiscoveryReviewSetQuery.new
-                    when "#microsoft.graph.security.ediscoveryReviewTag"
-                        return EdiscoveryReviewTag.new
-                    when "#microsoft.graph.security.ediscoverySearch"
-                        return EdiscoverySearch.new
-                    when "#microsoft.graph.security.ediscoveryTagOperation"
-                        return EdiscoveryTagOperation.new
-                    when "#microsoft.graph.security.incident"
-                        return Incident.new
-                    when "#microsoft.graph.security.search"
-                        return Search.new
-                    when "#microsoft.graph.security.siteSource"
-                        return SiteSource.new
-                    when "#microsoft.graph.security.tag"
-                        return Tag.new
-                    when "#microsoft.graph.security.unifiedGroupSource"
-                        return UnifiedGroupSource.new
-                    when "#microsoft.graph.security.userSource"
-                        return UserSource.new
                     when "#microsoft.graph.securityReportsRoot"
                         return SecurityReportsRoot.new
                     when "#microsoft.graph.serviceAnnouncement"
@@ -1119,16 +1005,6 @@ module MicrosoftGraph::Models
                         return TermsAndConditionsAssignment.new
                     when "#microsoft.graph.termsOfUseContainer"
                         return TermsOfUseContainer.new
-                    when "#microsoft.graph.termStore.group"
-                        return Group.new
-                    when "#microsoft.graph.termStore.relation"
-                        return Relation.new
-                    when "#microsoft.graph.termStore.set"
-                        return Set.new
-                    when "#microsoft.graph.termStore.store"
-                        return Store.new
-                    when "#microsoft.graph.termStore.term"
-                        return Term.new
                     when "#microsoft.graph.threatAssessmentRequest"
                         return ThreatAssessmentRequest.new
                     when "#microsoft.graph.threatAssessmentResult"
