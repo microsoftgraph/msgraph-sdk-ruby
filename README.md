@@ -1,105 +1,89 @@
-### Microsoft Graph Ruby client library is not actively supported
+# Microsoft Graph SDK for Ruby
 
-Please read this [post](https://github.com/microsoftgraph/msgraph-sdk-ruby/issues/69) for more information and to provide feedback.
+If you're using a version lower than 0.10.0 of this gem, please read this [post](https://github.com/microsoftgraph/msgraph-sdk-ruby/issues/69) for more information.
 
-# Getting started with the Microsoft Graph Client Library for Ruby
+Get started with the Microsoft Graph SDK for Ruby by integrating the [Microsoft Graph API](https://learn.microsoft.com/graph/overview) into your Ruby application!
 
-This client library is a release candidate and is still in preview status. As such, this library is **not production ready**. Please proceed at your own risk and continue to provide [feedback](https://github.com/microsoftgraph/msgraph-sdk-ruby/issues/new) as we iterate towards a production supported library.
+> **Note:** this SDK allows you to build applications using the [v1.0](https://learn.microsoft.com/graph/use-the-api#version) of Microsoft Graph. If you want to try the latest Microsoft Graph APIs under beta, use our [beta SDK](https://github.com/microsoftgraph/msgraph-beta-sdk-ruby) instead.
+>
+> **Note:** the Microsoft Graph Ruby SDK is currently in Community Preview. During this period we're expecting breaking changes to happen to the SDK based on community's feedback. Checkout the [known limitations](https://github.com/microsoftgraph/msgraph-sdk-ruby-core/issues/1).
 
-## Installation
-run ```gem install microsoft_graph``` or include ```gem microsoft_graph``` in your gemfile.
-## Getting started
+## 1. Installation
 
-### Register your application
+run `gem install microsoft_graph` or include `gem microsoft_graph` in your gemfile.
 
-Register your application to use Microsoft Graph API using one of the following
-supported authentication portals:
+## 2. Getting started
 
-* [Microsoft Application Registration Portal](https://apps.dev.microsoft.com) (**Recommended**):
-  Register a new application that authenticates using the v2.0 authentication endpoint. This endpoint authenticates both personal (Microsoft) and work or school (Azure Active Directory) accounts.
-* [Microsoft Azure Active Directory](https://manage.windowsazure.com): Register
-  a new application in your tenant's Active Directory to support work or school
-  users for your tenant, or multiple tenants.
+### 2.1 Register your application
 
-### Authenticate for the Microsoft Graph service
+Register your application by following the steps at [Register your app with the Microsoft Identity Platform](https://learn.microsoft.com/graph/auth-register-app-v2).
 
-The Microsoft Graph Client Library for Ruby does not include any default authentication implementations.
-Instead, the user will want to authenticate with the library of their choice, or against the OAuth
-endpoint directly.
+### 2.2 Create an AuthenticationProvider object
 
-The recommended library for authenticating against AAD is [ADAL](https://github.com/AzureAD/azure-activedirectory-library-for-ruby).
+An instance of the **GraphRequestAdapter** class handles building client. To create a new instance of this class, you need to provide an instance of **AuthenticationProvider**, which can authenticate requests to Microsoft Graph.
 
-### Usage example
+For an example of how to get an authentication provider, see [choose a Microsoft Graph authentication provider](https://learn.microsoft.com/graph/sdks/choose-authentication-providers?tabs=Ruby).
 
-```ruby
-require 'adal'
-require 'microsoft_graph'
+> Note: we are working to add the getting started information for Ruby to our public documentation, in the meantime the following sample should help you getting started.
 
-# authenticate using ADAL
-username      = 'admin@tenant.onmicrosoft.com'
-password      = 'xxxxxxxxxxxx'
-client_id     = 'xxxxx-xxxx-xxx-xxxxxx-xxxxxxx'
-client_secret = 'xxxXXXxxXXXxxxXXXxxXXXXXXXXxxxxxx='
-tenant        = 'tenant.onmicrosoft.com'
-user_cred     = ADAL::UserCredential.new(username, password)
-client_cred   = ADAL::ClientCredential.new(client_id, client_secret)
-context       = ADAL::AuthenticationContext.new(ADAL::Authority::WORLD_WIDE_AUTHORITY, tenant)
-resource      = "https://graph.microsoft.com"
-tokens        = context.acquire_token_for_user(resource, client_cred, user_cred)
+```Ruby
+require "microsoft_kiota_authentication_oauth"
 
-# add the access token to the request header
-callback = Proc.new { |r| r.headers["Authorization"] = "Bearer #{tokens.access_token}" }
+context = MicrosoftKiotaAuthenticationOauth::ClientCredentialContext.new("<the tenant id from your app registration>", "<the client id from your app registration>", "<the client secret from your app registration>")
 
-graph = MicrosoftGraph.new(base_url: "https://graph.microsoft.com/v1.0",
-                           cached_metadata_file: File.join(MicrosoftGraph::CACHED_METADATA_DIRECTORY, "metadata_v1.0.xml"),
-                           api_version: '1.6', # Optional
-                           &callback
-)
-
-me = graph.me # get the current user
-puts "Hello, I am #{me.display_name}."
-
-me.direct_reports.each do |person|
-  puts "How's it going, #{person.display_name}?"
-end
+authentication_provider = MicrosoftKiotaAuthenticationOauth::OAuthAuthenticationProvider.new(context, nil, ["Files.Read"])
 ```
 
-## Development
+### 2.3 Get a Graph Service Client and Adapter object
 
-### Running Tests
+You must get a **MicrosoftGraphServiceClient** object to make requests against the service.
 
-#### Unit Tests
+```ruby
+require "microsoft_graph"
 
-Run them like this:
+adapter = MicrosoftGraph::MicrosoftGraphRequestAdapter.new(authentication_provider)
+client = MicrosoftGraph::MicrosoftGraphServiceClient.new(adapter)
+```
 
-    bundle exec rspec
+## 3. Make requests against the service
 
-#### Integration Tests
+After you have a **MicrosoftGraphServiceClient** that is authenticated, you can begin making calls against the service. The requests against the service look like our [REST API](https://learn.microsoft.com/graph/api/overview?view=graph-rest-1.0).
 
-The integration tests make real changes in a live account, so don't run them against anything except a dedicated test account.
+### 3.1 Get the user's drive
 
-If you are sure you want to run them you need to set up a `.env` file that looks something like this:
+To retrieve the user's drive:
 
-    MS_GRAPH_USERNAME=usernamehere@xxxxx.onmicrosoft.com
-    MS_GRAPH_PASSWORD=xxxxxxxxxxxx
-    MS_GRAPH_CLIENT_ID=xxxxx-xxxx-xxx-xxxxxx-xxxxxxx
-    MS_GRAPH_CLIENT_SECRET="xxxXXXxxXXXxxxXXXxxXXXXXXXXxxxxxx="
-    MS_GRAPH_TENANT=xxxxx.onmicrosoft.com
+```ruby
+result = client.me.drive.get.resume
+puts "Found Drive : " + result.id
+```
 
-Once you have all the right credentials, you can run the integration tests like this:
+## 4. Getting results that span across multiple pages
 
-    bundle exec rspec integration_spec
+Automatic paging is currently not supported with the Ruby SDK, we're working to enable this feature.
 
-## Documentation and resources
+## 5. Documentation
 
-* [Microsoft Graph API](https://graph.microsoft.io)
+For more detailed documentation, see:
 
-## Issues
+* [Overview](https://learn.microsoft.com/graph/overview)
+* [Collections](https://learn.microsoft.com/graph/sdks/paging)
+* [Making requests](https://learn.microsoft.com/graph/sdks/create-requests)
+* [Known issues](https://github.com/MicrosoftGraph/msgraph-sdk-ruby/issues)
+* [Contributions](https://github.com/microsoftgraph/msgraph-sdk-ruby/blob/main/CONTRIBUTING.md)
 
-To view or log issues, see [issues](https://github.com/microsoftgraph/msgraph-sdk-ruby/issues).
+## 6. Issues
 
-## License
+For known issues, see [issues](https://github.com/MicrosoftGraph/msgraph-sdk-ruby/issues).
 
-Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT [license](LICENSE).
+## 7. Contributions
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+The Microsoft Graph SDK is open for contribution. To contribute to this project, see [Contributing](https://github.com/microsoftgraph/msgraph-sdk-ruby/blob/main/CONTRIBUTING.md).
+
+## 8. License
+
+Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the [MIT license](LICENSE).
+
+## 9. Third-party notices
+
+[Third-party notices](THIRD%20PARTY%20NOTICES)
