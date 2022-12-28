@@ -33,7 +33,7 @@ function Update-MinorVersionNumber([version]$currentVersion) {
 }
 
 function Update-MinorVersion() {
-	$telemetryFilePath = Join-Path -Path $PWD.ToString() -ChildPath "../lib/microsoft_graph/version.rb"
+	$telemetryFilePath = Join-Path -Path $PWD.ToString() -ChildPath "../lib/microsoft_graph/version_information.rb"
 	$currentVersion = Get-CurrentTelemetryVersion -telemetryFilePath $telemetryFilePath
 	$nextVersion = Update-MinorVersionNumber -currentVersion $currentVersion
 	Update-TelemetryVersion -version $nextVersion -telemetryFilePath $telemetryFilePath
