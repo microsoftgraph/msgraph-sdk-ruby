@@ -1,31 +1,37 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'microsoft_graph/version'
+require_relative 'lib/microsoft_kiota_abstractions/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "microsoft_graph"
   spec.version       = MicrosoftGraph::VERSION
-  spec.authors       = ["Katie Miller", "Neal Lindsay"]
-  spec.email         = ["katie@testdouble.com", "neal@testdouble.com"]
+  spec.authors       = 'Microsoft Corporation'
+  spec.email         = 'graphsdkpub+ruby@microsoft.com'
 
   spec.summary       = "Ruby SDK for Microsoft Graph"
-  spec.homepage      = "https://graph.microsoft.io"
+  spec.description   = "The Microsoft Graph Ruby SDK enables you to use Microsoft Graph v1.0 in your Ruby apps."
+  spec.homepage      = "https://graph.microsoft.com"
+  spec.license       = 'MIT'
+  spec.metadata      = {
+    'bug_tracker_uri' => 'https://github.com/microsoftgraph/msgraph-sdk-ruby/issues',
+    'changelog_uri'   => 'https://github.com/microsoftgraph/msgraph-sdk-ruby/blob/main/CHANGELOG.md',
+    'homepage_uri'    => spec.homepage,
+    'source_code_uri' => 'https://github.com/microsoftgraph/msgraph-sdk-ruby',
+    'github_repo'     => 'ssh://github.com/microsoftgraph/msgraph-sdk-ruby'
+  }
+  spec.required_ruby_version = '>= 2.7.0'
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  # Specify which files should be added to the gem when it is released.
+  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
+  spec.files = Dir.chdir(File.expand_path(__dir__)) do
+    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{\A(?:test|spec|features)/}) }
+  end
+  spec.bindir        = "bin"
+  spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.11"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_runtime_dependency 'microsoft_graph_core', '~> 0.1.0'
+  spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "rspec-given", "~> 3.5.0"
-  spec.add_development_dependency "adal", "~> 1.0"
-  spec.add_development_dependency "dotenv", "~> 2.0.2"
-  spec.add_development_dependency "pry", "~> 0.10.3"
-  spec.add_development_dependency "simplecov", "~> 0.11.1"
-  spec.add_development_dependency "webmock", "~> 1.22.6"
-
-  spec.add_dependency "nokogiri", ">= 1.8.0"
 end
