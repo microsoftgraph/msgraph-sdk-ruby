@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require_relative 'lib/microsoft_graph/version'
+require_relative 'lib/microsoft_graph/version_information'
 
 Gem::Specification.new do |spec|
   spec.name          = "microsoft_graph"
-  spec.version       = MicrosoftGraph::VERSION
+  spec.version       = MicrosoftGraph::VersionInformation::VERSION
   spec.authors       = 'Microsoft Corporation'
   spec.email         = 'graphsdkpub+ruby@microsoft.com'
 
