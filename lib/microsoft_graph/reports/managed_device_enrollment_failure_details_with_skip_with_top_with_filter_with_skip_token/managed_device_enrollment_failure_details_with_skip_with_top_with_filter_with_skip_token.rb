@@ -1,0 +1,3 @@
+module MicrosoftGraph::Reports::ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken
+
+end

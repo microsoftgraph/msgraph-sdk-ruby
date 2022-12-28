@@ -1,0 +1,3 @@
+module MicrosoftGraph::DirectoryRoleTemplates::GetAvailableExtensionProperties
+
+end

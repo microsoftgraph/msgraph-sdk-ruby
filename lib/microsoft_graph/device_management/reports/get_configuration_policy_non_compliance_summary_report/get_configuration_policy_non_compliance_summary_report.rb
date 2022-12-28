@@ -1,0 +1,3 @@
+module MicrosoftGraph::DeviceManagement::Reports::GetConfigurationPolicyNonComplianceSummaryReport
+
+end

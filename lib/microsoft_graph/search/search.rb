@@ -1,0 +1,3 @@
+module MicrosoftGraph::Search
+
+end

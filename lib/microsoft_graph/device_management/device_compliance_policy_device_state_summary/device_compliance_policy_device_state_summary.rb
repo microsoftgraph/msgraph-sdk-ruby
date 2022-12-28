@@ -1,0 +1,3 @@
+module MicrosoftGraph::DeviceManagement::DeviceCompliancePolicyDeviceStateSummary
+
+end

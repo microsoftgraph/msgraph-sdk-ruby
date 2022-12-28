@@ -1,0 +1,3 @@
+module MicrosoftGraph::Domains
+
+end

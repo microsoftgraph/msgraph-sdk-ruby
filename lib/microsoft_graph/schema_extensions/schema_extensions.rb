@@ -1,0 +1,3 @@
+module MicrosoftGraph::SchemaExtensions
+
+end

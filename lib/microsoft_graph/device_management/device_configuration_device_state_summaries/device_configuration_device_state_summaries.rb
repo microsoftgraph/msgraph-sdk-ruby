@@ -1,0 +1,3 @@
+module MicrosoftGraph::DeviceManagement::DeviceConfigurationDeviceStateSummaries
+
+end

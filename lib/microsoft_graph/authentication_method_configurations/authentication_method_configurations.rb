@@ -1,0 +1,3 @@
+module MicrosoftGraph::AuthenticationMethodConfigurations
+
+end

@@ -1,0 +1,3 @@
+module MicrosoftGraph::Reports::GetSkypeForBusinessActivityUserDetailWithPeriod
+
+end

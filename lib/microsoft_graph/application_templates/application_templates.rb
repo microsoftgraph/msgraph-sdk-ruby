@@ -1,0 +1,3 @@
+module MicrosoftGraph::ApplicationTemplates
+
+end
