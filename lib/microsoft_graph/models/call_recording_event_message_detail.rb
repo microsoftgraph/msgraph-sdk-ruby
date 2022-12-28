@@ -1,4 +1,3 @@
-require 'github.com/microsoft/kiota/abstractions/ruby/microsoft_kiota_abstractions/lib/microsoft_kiota_abstractions/serialization'
 require 'microsoft_kiota_abstractions'
 require_relative './event_message_detail'
 require_relative './models'

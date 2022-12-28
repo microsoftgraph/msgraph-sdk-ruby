@@ -1,5 +1,4 @@
 require 'date'
-require 'github.com/microsoft/kiota/abstractions/ruby/microsoft_kiota_abstractions/lib/microsoft_kiota_abstractions/serialization'
 require 'microsoft_kiota_abstractions'
 require_relative './models'
 
