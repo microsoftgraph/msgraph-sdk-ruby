@@ -1,0 +1,5 @@
+require_relative 'microsoft_graph_service_client'
+require_relative 'microsoft_graph_request_adapter'
+require_relative 'models'
+module MicrosoftGraph
+end
