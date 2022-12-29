@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './windows_information_protection'
 
 module MicrosoftGraph::Models
     class WindowsInformationProtectionPolicy < MicrosoftGraph::Models::WindowsInformationProtection

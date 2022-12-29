@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './directory_object'
 require_relative './models'
 
 module MicrosoftGraph::Models
@@ -345,7 +344,7 @@ module MicrosoftGraph::Models
             @claims_mapping_policies = value
         end
         ## 
-        ## Instantiates a new servicePrincipal and sets the default values.
+        ## Instantiates a new ServicePrincipal and sets the default values.
         ## @return a void
         ## 
         def initialize()

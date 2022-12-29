@@ -1,6 +1,5 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
-require_relative './mobile_app'
 require_relative './models'
 
 module MicrosoftGraph::Models

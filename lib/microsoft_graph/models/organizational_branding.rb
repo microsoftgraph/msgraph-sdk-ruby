@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './organizational_branding_properties'
 
 module MicrosoftGraph::Models
     class OrganizationalBranding < MicrosoftGraph::Models::OrganizationalBrandingProperties

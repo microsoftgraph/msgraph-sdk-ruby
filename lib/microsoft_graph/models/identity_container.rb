@@ -1,10 +1,7 @@
 require 'microsoft_kiota_abstractions'
-require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the identityContainer singleton.
     class IdentityContainer < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -68,7 +65,7 @@ module MicrosoftGraph::Models
             @conditional_access = value
         end
         ## 
-        ## Instantiates a new identityContainer and sets the default values.
+        ## Instantiates a new IdentityContainer and sets the default values.
         ## @return a void
         ## 
         def initialize()

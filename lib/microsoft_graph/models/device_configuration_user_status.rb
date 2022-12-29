@@ -1,11 +1,10 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
-require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of application entities.
+    # Provides operations to manage the deviceManagement singleton.
     class DeviceConfigurationUserStatus < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 

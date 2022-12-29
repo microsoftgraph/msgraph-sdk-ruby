@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './device_management_troubleshooting_event'
 require_relative './models'
 
 module MicrosoftGraph::Models

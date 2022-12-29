@@ -1,10 +1,9 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './risky_user'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the admin singleton.
+    # Provides operations to manage the auditLogRoot singleton.
     class RiskyUserHistoryItem < MicrosoftGraph::Models::RiskyUser
         include MicrosoftKiotaAbstractions::Parsable
         ## 

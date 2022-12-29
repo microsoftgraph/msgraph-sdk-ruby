@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of application entities.
+    # Provides operations to manage the deviceManagement singleton.
     DefenderMonitorFileActivity = {
         UserDefined: :UserDefined,
         Disable: :Disable,

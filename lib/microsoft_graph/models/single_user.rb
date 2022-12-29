@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './subject_set'
 
 module MicrosoftGraph::Models
     class SingleUser < MicrosoftGraph::Models::SubjectSet

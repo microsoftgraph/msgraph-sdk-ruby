@@ -1,7 +1,6 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../models'
-require_relative './case_escaped'
 require_relative './security'
 
 module MicrosoftGraph::Models::Security

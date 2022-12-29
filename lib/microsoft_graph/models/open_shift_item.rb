@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './shift_item'
 
 module MicrosoftGraph::Models
     class OpenShiftItem < MicrosoftGraph::Models::ShiftItem

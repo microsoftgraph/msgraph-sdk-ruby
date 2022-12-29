@@ -1,7 +1,6 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './oma_setting'
 
 module MicrosoftGraph::Models
     class OmaSettingDateTime < MicrosoftGraph::Models::OmaSetting

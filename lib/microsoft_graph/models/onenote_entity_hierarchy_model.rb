@@ -1,7 +1,6 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './onenote_entity_schema_object_model'
 
 module MicrosoftGraph::Models
     class OnenoteEntityHierarchyModel < MicrosoftGraph::Models::OnenoteEntitySchemaObjectModel

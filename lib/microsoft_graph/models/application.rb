@@ -1,6 +1,5 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
-require_relative './directory_object'
 require_relative './models'
 
 module MicrosoftGraph::Models
@@ -220,7 +219,7 @@ module MicrosoftGraph::Models
             @certification = value
         end
         ## 
-        ## Instantiates a new Application and sets the default values.
+        ## Instantiates a new application and sets the default values.
         ## @return a void
         ## 
         def initialize()

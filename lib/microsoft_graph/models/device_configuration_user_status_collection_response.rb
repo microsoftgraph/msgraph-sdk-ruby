@@ -1,8 +1,9 @@
 require 'microsoft_kiota_abstractions'
-require_relative './base_collection_pagination_count_response'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the userStatuses property of the microsoft.graph.deviceConfiguration entity.
     class DeviceConfigurationUserStatusCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

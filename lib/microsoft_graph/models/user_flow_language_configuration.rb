@@ -1,10 +1,9 @@
 require 'microsoft_kiota_abstractions'
-require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the identityContainer singleton.
+    # Provides operations to manage the auditLogRoot singleton.
     class UserFlowLanguageConfiguration < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 

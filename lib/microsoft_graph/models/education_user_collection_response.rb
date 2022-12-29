@@ -1,10 +1,7 @@
 require 'microsoft_kiota_abstractions'
-require_relative './base_collection_pagination_count_response'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the members property of the microsoft.graph.educationClass entity.
     class EducationUserCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

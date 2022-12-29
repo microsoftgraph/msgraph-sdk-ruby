@@ -1,10 +1,7 @@
 require 'microsoft_kiota_abstractions'
-require_relative './base_collection_pagination_count_response'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
     class AccessReviewHistoryDefinitionCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

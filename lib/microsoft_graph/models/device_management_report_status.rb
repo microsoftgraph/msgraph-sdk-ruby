@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the admin singleton.
+    # Provides operations to manage the deviceManagement singleton.
     DeviceManagementReportStatus = {
         Unknown: :Unknown,
         NotStarted: :NotStarted,

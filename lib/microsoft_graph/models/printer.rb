@@ -1,7 +1,6 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './printer_base'
 
 module MicrosoftGraph::Models
     class Printer < MicrosoftGraph::Models::PrinterBase

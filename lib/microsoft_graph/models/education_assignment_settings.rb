@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
@@ -9,7 +8,7 @@ module MicrosoftGraph::Models
         # Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
         @submission_animation_disabled
         ## 
-        ## Instantiates a new educationAssignmentSettings and sets the default values.
+        ## Instantiates a new EducationAssignmentSettings and sets the default values.
         ## @return a void
         ## 
         def initialize()

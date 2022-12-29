@@ -1,10 +1,7 @@
 require 'microsoft_kiota_abstractions'
-require_relative './base_collection_pagination_count_response'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
     class ConditionalAccessTemplateCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

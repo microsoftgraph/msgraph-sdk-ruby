@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require 'time'
-require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
@@ -49,7 +48,7 @@ module MicrosoftGraph::Models
             @add_to_calendar_action = value
         end
         ## 
-        ## Instantiates a new educationAssignmentDefaults and sets the default values.
+        ## Instantiates a new EducationAssignmentDefaults and sets the default values.
         ## @return a void
         ## 
         def initialize()

@@ -1,10 +1,9 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './risky_service_principal'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of application entities.
+    # Provides operations to manage the auditLogRoot singleton.
     class RiskyServicePrincipalHistoryItem < MicrosoftGraph::Models::RiskyServicePrincipal
         include MicrosoftKiotaAbstractions::Parsable
         ## 

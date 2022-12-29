@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative '../entity'
 require_relative '../models'
 require_relative './external_connectors'
 

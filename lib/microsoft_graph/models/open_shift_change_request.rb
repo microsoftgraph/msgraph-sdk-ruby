@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './schedule_change_request'
 
 module MicrosoftGraph::Models
     class OpenShiftChangeRequest < MicrosoftGraph::Models::ScheduleChangeRequest

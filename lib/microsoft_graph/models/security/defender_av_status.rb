@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models::Security
     ## 
-    # Provides operations to manage the admin singleton.
+    # Provides operations to manage the auditLogRoot singleton.
     DefenderAvStatus = {
         NotReporting: :NotReporting,
         Disabled: :Disabled,

@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './targeted_managed_app_protection'
 
 module MicrosoftGraph::Models
     class AndroidManagedAppProtection < MicrosoftGraph::Models::TargetedManagedAppProtection

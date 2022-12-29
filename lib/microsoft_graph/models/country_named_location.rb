@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './named_location'
 
 module MicrosoftGraph::Models
     class CountryNamedLocation < MicrosoftGraph::Models::NamedLocation

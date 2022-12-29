@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './agreement_file_properties'
 require_relative './models'
 
 module MicrosoftGraph::Models

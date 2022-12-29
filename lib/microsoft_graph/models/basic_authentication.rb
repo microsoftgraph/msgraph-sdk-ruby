@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './api_authentication_configuration_base'
 require_relative './models'
 
 module MicrosoftGraph::Models

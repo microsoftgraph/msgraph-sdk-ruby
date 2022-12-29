@@ -1,3 +1,3 @@
+require_relative 'get_attack_simulation_simulation_user_coverage_response'
 module MicrosoftGraph::Reports::Security::GetAttackSimulationSimulationUserCoverage
-
 end

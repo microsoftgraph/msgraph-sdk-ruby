@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of application entities.
+    # Provides operations to manage the deviceManagement singleton.
     BitLockerEncryptionMethod = {
         AesCbc128: :AesCbc128,
         AesCbc256: :AesCbc256,

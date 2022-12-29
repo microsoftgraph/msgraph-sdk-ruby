@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../models'
 require_relative './call_records'
-require_relative './user_agent'
 
 module MicrosoftGraph::Models::CallRecords
     class ServiceUserAgent < MicrosoftGraph::Models::CallRecords::UserAgent

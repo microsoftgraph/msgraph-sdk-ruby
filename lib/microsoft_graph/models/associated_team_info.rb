@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './team_info'
 
 module MicrosoftGraph::Models
     class AssociatedTeamInfo < MicrosoftGraph::Models::TeamInfo

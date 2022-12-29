@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './oma_setting'
 
 module MicrosoftGraph::Models
     class OmaSettingInteger < MicrosoftGraph::Models::OmaSetting

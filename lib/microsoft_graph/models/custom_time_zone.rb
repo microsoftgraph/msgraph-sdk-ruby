@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './time_zone_base'
 
 module MicrosoftGraph::Models
     class CustomTimeZone < MicrosoftGraph::Models::TimeZoneBase

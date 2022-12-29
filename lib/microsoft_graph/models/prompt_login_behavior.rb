@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the directory singleton.
+    # Provides operations to manage the collection of domain entities.
     PromptLoginBehavior = {
         TranslateToFreshPasswordAuthentication: :TranslateToFreshPasswordAuthentication,
         NativeSupport: :NativeSupport,

@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './request'
 
 module MicrosoftGraph::Models
     class UserConsentRequest < MicrosoftGraph::Models::Request

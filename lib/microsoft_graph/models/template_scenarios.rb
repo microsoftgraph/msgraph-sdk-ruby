@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the identityContainer singleton.
+    # Provides operations to manage the auditLogRoot singleton.
     TemplateScenarios = {
         New: :New,
         SecureFoundation: :SecureFoundation,

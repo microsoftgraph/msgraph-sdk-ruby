@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './unified_role_management_policy_rule'
 
 module MicrosoftGraph::Models
     class UnifiedRoleManagementPolicyExpirationRule < MicrosoftGraph::Models::UnifiedRoleManagementPolicyRule

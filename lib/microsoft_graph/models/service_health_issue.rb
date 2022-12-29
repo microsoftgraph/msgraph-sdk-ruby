@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './service_announcement_base'
 
 module MicrosoftGraph::Models
     class ServiceHealthIssue < MicrosoftGraph::Models::ServiceAnnouncementBase

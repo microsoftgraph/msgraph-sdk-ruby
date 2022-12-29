@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
@@ -12,7 +11,7 @@ module MicrosoftGraph::Models
         # Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.
         @type
         ## 
-        ## Instantiates a new appScope and sets the default values.
+        ## Instantiates a new AppScope and sets the default values.
         ## @return a void
         ## 
         def initialize()

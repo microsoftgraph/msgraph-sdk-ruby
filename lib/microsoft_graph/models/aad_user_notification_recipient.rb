@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './teamwork_notification_recipient'
 
 module MicrosoftGraph::Models
     class AadUserNotificationRecipient < MicrosoftGraph::Models::TeamworkNotificationRecipient

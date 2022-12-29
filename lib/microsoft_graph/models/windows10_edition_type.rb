@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of application entities.
+    # Provides operations to manage the deviceManagement singleton.
     Windows10EditionType = {
         Windows10Enterprise: :Windows10Enterprise,
         Windows10EnterpriseN: :Windows10EnterpriseN,

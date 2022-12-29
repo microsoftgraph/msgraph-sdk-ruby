@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './teamwork_hosted_content'
 
 module MicrosoftGraph::Models
     class ChatMessageHostedContent < MicrosoftGraph::Models::TeamworkHostedContent

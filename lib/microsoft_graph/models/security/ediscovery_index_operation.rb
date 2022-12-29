@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../models'
-require_relative './case_operation'
 require_relative './security'
 
 module MicrosoftGraph::Models::Security

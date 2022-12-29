@@ -1,10 +1,7 @@
 require 'microsoft_kiota_abstractions'
-require_relative './directory_object'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the directory singleton.
     class AdministrativeUnit < MicrosoftGraph::Models::DirectoryObject
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -26,7 +23,7 @@ module MicrosoftGraph::Models
         # Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership. If not set (value is null), the default behavior is public. When set to HiddenMembership, only members of the administrative unit can list other members of the administrative unit.
         @visibility
         ## 
-        ## Instantiates a new administrativeUnit and sets the default values.
+        ## Instantiates a new AdministrativeUnit and sets the default values.
         ## @return a void
         ## 
         def initialize()

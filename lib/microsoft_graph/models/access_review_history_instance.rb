@@ -1,11 +1,10 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
-require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the identityGovernance singleton.
+    # Provides operations to manage the collection of application entities.
     class AccessReviewHistoryInstance < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 

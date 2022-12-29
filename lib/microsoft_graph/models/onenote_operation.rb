@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './operation'
 
 module MicrosoftGraph::Models
     class OnenoteOperation < MicrosoftGraph::Models::Operation

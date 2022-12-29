@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './policy_base'
 
 module MicrosoftGraph::Models
     class CrossTenantAccessPolicy < MicrosoftGraph::Models::PolicyBase

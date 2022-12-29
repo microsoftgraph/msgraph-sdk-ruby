@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './change_tracked_entity'
 require_relative './models'
 
 module MicrosoftGraph::Models

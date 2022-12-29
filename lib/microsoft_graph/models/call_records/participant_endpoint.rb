@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../models'
 require_relative './call_records'
-require_relative './endpoint'
 
 module MicrosoftGraph::Models::CallRecords
     class ParticipantEndpoint < MicrosoftGraph::Models::CallRecords::Endpoint

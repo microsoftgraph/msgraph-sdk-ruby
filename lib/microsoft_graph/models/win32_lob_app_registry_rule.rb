@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './win32_lob_app_rule'
 
 module MicrosoftGraph::Models
     class Win32LobAppRegistryRule < MicrosoftGraph::Models::Win32LobAppRule

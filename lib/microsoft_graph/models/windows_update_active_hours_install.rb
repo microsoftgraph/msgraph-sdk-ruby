@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require 'time'
 require_relative './models'
-require_relative './windows_update_install_schedule_type'
 
 module MicrosoftGraph::Models
     class WindowsUpdateActiveHoursInstall < MicrosoftGraph::Models::WindowsUpdateInstallScheduleType

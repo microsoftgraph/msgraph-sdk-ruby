@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './saml_or_ws_fed_provider'
 
 module MicrosoftGraph::Models
     class InternalDomainFederation < MicrosoftGraph::Models::SamlOrWsFedProvider

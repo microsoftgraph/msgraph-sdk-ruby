@@ -1,10 +1,9 @@
 require 'microsoft_kiota_abstractions'
-require_relative './base_collection_pagination_count_response'
 require_relative './models'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the scopedRoleMembers property of the microsoft.graph.administrativeUnit entity.
+    # Provides operations to manage the scopedMembers property of the microsoft.graph.directoryRole entity.
     class ScopedRoleMembershipCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

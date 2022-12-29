@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './offer_shift_request'
 
 module MicrosoftGraph::Models
     class SwapShiftsChangeRequest < MicrosoftGraph::Models::OfferShiftRequest

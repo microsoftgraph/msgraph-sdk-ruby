@@ -1,8 +1,9 @@
 require 'microsoft_kiota_abstractions'
-require_relative './base_collection_pagination_count_response'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the managedDevices property of the microsoft.graph.detectedApp entity.
     class ManagedDeviceCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

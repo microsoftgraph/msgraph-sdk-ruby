@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './teleconference_device_media_quality'
 
 module MicrosoftGraph::Models
     class TeleconferenceDeviceVideoQuality < MicrosoftGraph::Models::TeleconferenceDeviceMediaQuality

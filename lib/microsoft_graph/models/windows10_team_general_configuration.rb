@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require 'time'
-require_relative './device_configuration'
 require_relative './models'
 
 module MicrosoftGraph::Models

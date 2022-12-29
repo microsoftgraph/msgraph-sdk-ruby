@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of application entities.
+    # Provides operations to manage the deviceManagement singleton.
     Enablement = {
         NotConfigured: :NotConfigured,
         Enabled: :Enabled,

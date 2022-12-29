@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './threat_assessment_request'
 
 module MicrosoftGraph::Models
     class UrlAssessmentRequest < MicrosoftGraph::Models::ThreatAssessmentRequest

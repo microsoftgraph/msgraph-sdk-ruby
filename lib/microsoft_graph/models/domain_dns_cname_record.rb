@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './domain_dns_record'
 require_relative './models'
 
 module MicrosoftGraph::Models

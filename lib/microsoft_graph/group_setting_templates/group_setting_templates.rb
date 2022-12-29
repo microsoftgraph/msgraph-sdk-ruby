@@ -1,3 +1,2 @@
 module MicrosoftGraph::GroupSettingTemplates
-
 end

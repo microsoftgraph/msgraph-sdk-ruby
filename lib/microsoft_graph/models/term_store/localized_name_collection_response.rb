@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative '../base_collection_pagination_count_response'
 require_relative '../models'
 require_relative './term_store'
 

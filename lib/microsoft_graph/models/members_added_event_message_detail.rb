@@ -1,6 +1,5 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
-require_relative './event_message_detail'
 require_relative './models'
 
 module MicrosoftGraph::Models

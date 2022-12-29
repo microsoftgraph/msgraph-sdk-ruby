@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to call the instantiate method.
+    # Provides operations to manage the auditLogRoot singleton.
     PermissionClassificationType = {
         Low: :Low,
         Medium: :Medium,

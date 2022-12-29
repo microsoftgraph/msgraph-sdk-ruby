@@ -1,12 +1,11 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
-require_relative '../entity'
 require_relative '../models'
 require_relative './security'
 
 module MicrosoftGraph::Models::Security
     ## 
-    # Provides operations to manage the admin singleton.
+    # Provides operations to manage the auditLogRoot singleton.
     class Incident < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 

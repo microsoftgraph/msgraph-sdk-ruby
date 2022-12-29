@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './entity'
 require_relative './models'
 require_relative './security/alert'
 require_relative './security/cases_root'
@@ -90,7 +89,7 @@ module MicrosoftGraph::Models
             @cases = value
         end
         ## 
-        ## Instantiates a new Security and sets the default values.
+        ## Instantiates a new SecurityModel and sets the default values.
         ## @return a void
         ## 
         def initialize()

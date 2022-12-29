@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './role_assignment'
 
 module MicrosoftGraph::Models
     class DeviceAndAppManagementRoleAssignment < MicrosoftGraph::Models::RoleAssignment

@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './sts_policy'
 
 module MicrosoftGraph::Models
     class ClaimsMappingPolicy < MicrosoftGraph::Models::StsPolicy

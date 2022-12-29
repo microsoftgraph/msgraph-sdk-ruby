@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './standard_time_zone_offset'
 
 module MicrosoftGraph::Models
     class DaylightTimeZoneOffset < MicrosoftGraph::Models::StandardTimeZoneOffset

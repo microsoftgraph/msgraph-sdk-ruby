@@ -1,7 +1,6 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './outlook_item'
 
 module MicrosoftGraph::Models
     class Contact < MicrosoftGraph::Models::OutlookItem

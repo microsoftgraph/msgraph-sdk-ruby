@@ -1,11 +1,8 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
-require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the collection of application entities.
     class EducationAssignment < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -237,7 +234,7 @@ module MicrosoftGraph::Models
             @close_date_time = value
         end
         ## 
-        ## Instantiates a new educationAssignment and sets the default values.
+        ## Instantiates a new EducationAssignment and sets the default values.
         ## @return a void
         ## 
         def initialize()

@@ -1,3 +1,20 @@
+require_relative 'term_collection_response'
+require_relative 'relation'
+require_relative 'localized_description_collection_response'
+require_relative 'set_collection_response'
+require_relative 'relation_collection_response'
+require_relative 'group'
+require_relative 'store'
+require_relative 'localized_name_collection_response'
+require_relative 'group_collection_response'
+require_relative 'store_collection_response'
+require_relative 'localized_label_collection_response'
+require_relative 'term'
+require_relative 'localized_description'
+require_relative 'localized_name'
+require_relative 'set'
+require_relative 'localized_label'
+require_relative 'term_group_scope'
+require_relative 'relation_type'
 module MicrosoftGraph::Models::TermStore
-
 end

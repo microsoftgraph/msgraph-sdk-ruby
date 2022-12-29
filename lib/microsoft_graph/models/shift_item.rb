@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './schedule_entity'
 
 module MicrosoftGraph::Models
     class ShiftItem < MicrosoftGraph::Models::ScheduleEntity

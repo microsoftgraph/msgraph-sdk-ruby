@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the admin singleton.
+    # Provides operations to manage the collection of application entities.
     ThreatAssessmentResultType = {
         CheckPolicy: :CheckPolicy,
         Rescan: :Rescan,

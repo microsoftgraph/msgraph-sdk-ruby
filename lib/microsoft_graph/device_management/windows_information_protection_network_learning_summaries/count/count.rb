@@ -1,3 +1,2 @@
 module MicrosoftGraph::DeviceManagement::WindowsInformationProtectionNetworkLearningSummaries::Count
-
 end

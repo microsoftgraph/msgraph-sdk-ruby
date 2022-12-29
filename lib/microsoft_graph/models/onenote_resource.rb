@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './onenote_entity_base_model'
 
 module MicrosoftGraph::Models
     class OnenoteResource < MicrosoftGraph::Models::OnenoteEntityBaseModel

@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './apple_device_features_configuration_base'
 require_relative './models'
 
 module MicrosoftGraph::Models

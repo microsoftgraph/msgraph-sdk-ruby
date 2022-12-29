@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './windows_device_account'
 
 module MicrosoftGraph::Models
     class WindowsDeviceADAccount < MicrosoftGraph::Models::WindowsDeviceAccount

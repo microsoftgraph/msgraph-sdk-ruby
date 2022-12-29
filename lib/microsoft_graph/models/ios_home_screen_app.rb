@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './ios_home_screen_item'
 require_relative './models'
 
 module MicrosoftGraph::Models

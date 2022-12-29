@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './access_review_instance_decision_item_resource'
 require_relative './models'
 
 module MicrosoftGraph::Models

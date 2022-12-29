@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './print_operation'
 
 module MicrosoftGraph::Models
     class PrinterCreateOperation < MicrosoftGraph::Models::PrintOperation

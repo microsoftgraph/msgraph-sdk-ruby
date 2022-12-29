@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './mobile_app_identifier'
 require_relative './models'
 
 module MicrosoftGraph::Models

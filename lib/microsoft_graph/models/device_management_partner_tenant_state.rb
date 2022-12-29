@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the admin singleton.
+    # Provides operations to manage the deviceManagement singleton.
     DeviceManagementPartnerTenantState = {
         Unknown: :Unknown,
         Unavailable: :Unavailable,

@@ -1,10 +1,9 @@
 require 'microsoft_kiota_abstractions'
-require_relative './directory_object'
 require_relative './models'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the admin singleton.
+    # Provides operations to call the instantiate method.
     class ExtensionProperty < MicrosoftGraph::Models::DirectoryObject
         include MicrosoftKiotaAbstractions::Parsable
         ## 

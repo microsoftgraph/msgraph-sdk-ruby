@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the deviceAppManagement singleton.
+    # Provides operations to manage the deviceManagement singleton.
     ComplianceStatus = {
         Unknown: :Unknown,
         NotApplicable: :NotApplicable,

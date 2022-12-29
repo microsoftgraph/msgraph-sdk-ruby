@@ -1,10 +1,7 @@
 require 'microsoft_kiota_abstractions'
-require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the identityContainer singleton.
     class IdentityUserFlow < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -14,7 +11,7 @@ module MicrosoftGraph::Models
         # The userFlowTypeVersion property
         @user_flow_type_version
         ## 
-        ## Instantiates a new identityUserFlow and sets the default values.
+        ## Instantiates a new IdentityUserFlow and sets the default values.
         ## @return a void
         ## 
         def initialize()

@@ -1,3 +1,2 @@
 module MicrosoftGraph::GroupSettings
-
 end

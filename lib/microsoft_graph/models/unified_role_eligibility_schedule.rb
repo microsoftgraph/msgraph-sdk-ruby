@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './unified_role_schedule_base'
 
 module MicrosoftGraph::Models
     class UnifiedRoleEligibilitySchedule < MicrosoftGraph::Models::UnifiedRoleScheduleBase

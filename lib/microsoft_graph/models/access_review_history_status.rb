@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the identityGovernance singleton.
+    # Provides operations to manage the collection of application entities.
     AccessReviewHistoryStatus = {
         Done: :Done,
         Inprogress: :Inprogress,

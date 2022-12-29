@@ -1,15 +1,16 @@
 require 'microsoft_kiota_abstractions'
-require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of application entities.
     class PrintService < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
         # Endpoints that can be used to access the service. Read-only. Nullable.
         @endpoints
         ## 
-        ## Instantiates a new PrintService and sets the default values.
+        ## Instantiates a new printService and sets the default values.
         ## @return a void
         ## 
         def initialize()

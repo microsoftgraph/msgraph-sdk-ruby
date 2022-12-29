@@ -1,3 +1,2 @@
 module MicrosoftGraph::AuthenticationMethodsPolicy::AuthenticationMethodConfigurations::Count
-
 end

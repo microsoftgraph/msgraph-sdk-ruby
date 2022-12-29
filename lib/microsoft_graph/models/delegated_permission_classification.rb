@@ -1,10 +1,9 @@
 require 'microsoft_kiota_abstractions'
-require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to call the instantiate method.
+    # Provides operations to manage the auditLogRoot singleton.
     class DelegatedPermissionClassification < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 

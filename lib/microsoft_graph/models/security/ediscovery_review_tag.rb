@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../models'
 require_relative './security'
-require_relative './tag'
 
 module MicrosoftGraph::Models::Security
     class EdiscoveryReviewTag < MicrosoftGraph::Models::Security::Tag

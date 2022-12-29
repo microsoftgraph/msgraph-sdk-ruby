@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './mail_folder'
 require_relative './models'
 
 module MicrosoftGraph::Models

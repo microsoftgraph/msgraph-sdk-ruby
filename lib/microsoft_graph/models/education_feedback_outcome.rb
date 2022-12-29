@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './education_outcome'
 require_relative './models'
 
 module MicrosoftGraph::Models

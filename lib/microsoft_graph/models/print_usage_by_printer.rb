@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './print_usage'
 
 module MicrosoftGraph::Models
     class PrintUsageByPrinter < MicrosoftGraph::Models::PrintUsage

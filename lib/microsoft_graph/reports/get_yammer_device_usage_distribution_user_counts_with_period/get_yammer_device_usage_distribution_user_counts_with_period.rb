@@ -1,3 +1,2 @@
 module MicrosoftGraph::Reports::GetYammerDeviceUsageDistributionUserCountsWithPeriod
-
 end

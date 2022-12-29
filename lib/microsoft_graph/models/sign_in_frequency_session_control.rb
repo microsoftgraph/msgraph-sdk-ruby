@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './conditional_access_session_control'
 require_relative './models'
 
 module MicrosoftGraph::Models

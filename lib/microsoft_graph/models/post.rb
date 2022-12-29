@@ -1,9 +1,10 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative './models'
-require_relative './outlook_item'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the auditLogRoot singleton.
     class Post < MicrosoftGraph::Models::OutlookItem
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -76,7 +77,7 @@ module MicrosoftGraph::Models
             @body = value
         end
         ## 
-        ## Instantiates a new Post and sets the default values.
+        ## Instantiates a new post and sets the default values.
         ## @return a void
         ## 
         def initialize()

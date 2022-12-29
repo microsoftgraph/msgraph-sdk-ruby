@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './ip_range'
 require_relative './models'
 
 module MicrosoftGraph::Models

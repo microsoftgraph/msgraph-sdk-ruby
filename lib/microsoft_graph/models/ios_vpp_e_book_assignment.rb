@@ -1,5 +1,4 @@
 require 'microsoft_kiota_abstractions'
-require_relative './managed_e_book_assignment'
 require_relative './models'
 
 module MicrosoftGraph::Models

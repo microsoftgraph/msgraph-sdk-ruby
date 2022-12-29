@@ -1,3 +1,2 @@
 module MicrosoftGraph::DeviceAppManagement::MdmWindowsInformationProtectionPolicies
-
 end
