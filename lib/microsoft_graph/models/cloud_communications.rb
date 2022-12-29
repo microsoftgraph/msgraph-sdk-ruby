@@ -4,6 +4,8 @@ require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the cloudCommunications singleton.
     class CloudCommunications < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -49,7 +51,7 @@ module MicrosoftGraph::Models
             @calls = value
         end
         ## 
-        ## Instantiates a new CloudCommunications and sets the default values.
+        ## Instantiates a new cloudCommunications and sets the default values.
         ## @return a void
         ## 
         def initialize()

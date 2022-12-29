@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreementAcceptance entities.
+    # Provides operations to manage the collection of application entities.
     Windows10EditionType = {
         Windows10Enterprise: :Windows10Enterprise,
         Windows10EnterpriseN: :Windows10EnterpriseN,

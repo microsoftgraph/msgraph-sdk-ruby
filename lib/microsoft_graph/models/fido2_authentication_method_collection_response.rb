@@ -3,6 +3,8 @@ require_relative './base_collection_pagination_count_response'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
     class Fido2AuthenticationMethodCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -3,6 +3,8 @@ require_relative './base_item'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of application entities.
     class ListItem < MicrosoftGraph::Models::BaseItem
         include MicrosoftKiotaAbstractions::Parsable
         ## 

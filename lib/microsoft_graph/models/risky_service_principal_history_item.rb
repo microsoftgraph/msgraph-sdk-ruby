@@ -4,7 +4,7 @@ require_relative './risky_service_principal'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the appCatalogs singleton.
+    # Provides operations to manage the collection of application entities.
     class RiskyServicePrincipalHistoryItem < MicrosoftGraph::Models::RiskyServicePrincipal
         include MicrosoftKiotaAbstractions::Parsable
         ## 

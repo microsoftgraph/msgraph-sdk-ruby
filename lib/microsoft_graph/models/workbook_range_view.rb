@@ -3,6 +3,8 @@ require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of application entities.
     class WorkbookRangeView < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -72,7 +74,7 @@ module MicrosoftGraph::Models
             @column_count = value
         end
         ## 
-        ## Instantiates a new WorkbookRangeView and sets the default values.
+        ## Instantiates a new workbookRangeView and sets the default values.
         ## @return a void
         ## 
         def initialize()

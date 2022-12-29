@@ -3,6 +3,8 @@ require_relative './directory_object'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of directoryRole entities.
     class DirectoryRole < MicrosoftGraph::Models::DirectoryObject
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -21,7 +23,7 @@ module MicrosoftGraph::Models
         # Members of this directory role that are scoped to administrative units. Read-only. Nullable.
         @scoped_members
         ## 
-        ## Instantiates a new DirectoryRole and sets the default values.
+        ## Instantiates a new directoryRole and sets the default values.
         ## @return a void
         ## 
         def initialize()

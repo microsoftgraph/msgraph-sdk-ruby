@@ -5,7 +5,7 @@ require_relative './onenote_entity_schema_object_model'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the appCatalogs singleton.
+    # Provides operations to manage the collection of application entities.
     class OnenotePage < MicrosoftGraph::Models::OnenoteEntitySchemaObjectModel
         include MicrosoftKiotaAbstractions::Parsable
         ## 

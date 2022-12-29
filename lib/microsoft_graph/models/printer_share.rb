@@ -5,7 +5,7 @@ require_relative './printer_base'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the appCatalogs singleton.
+    # Provides operations to manage the collection of application entities.
     class PrinterShare < MicrosoftGraph::Models::PrinterBase
         include MicrosoftKiotaAbstractions::Parsable
         ## 

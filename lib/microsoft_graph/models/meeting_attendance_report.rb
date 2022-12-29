@@ -5,7 +5,7 @@ require_relative './models'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreementAcceptance entities.
+    # Provides operations to manage the cloudCommunications singleton.
     class MeetingAttendanceReport < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 

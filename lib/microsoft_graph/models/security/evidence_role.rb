@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models::Security
     ## 
-    # Provides operations to manage the appCatalogs singleton.
+    # Provides operations to manage the admin singleton.
     EvidenceRole = {
         Unknown: :Unknown,
         Contextual: :Contextual,

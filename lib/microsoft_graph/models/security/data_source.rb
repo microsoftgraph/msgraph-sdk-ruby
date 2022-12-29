@@ -6,7 +6,7 @@ require_relative './security'
 
 module MicrosoftGraph::Models::Security
     ## 
-    # Provides operations to manage the collection of agreementAcceptance entities.
+    # Provides operations to manage the admin singleton.
     class DataSource < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 

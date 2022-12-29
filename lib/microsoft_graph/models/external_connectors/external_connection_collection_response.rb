@@ -4,6 +4,8 @@ require_relative '../models'
 require_relative './external_connectors'
 
 module MicrosoftGraph::Models::ExternalConnectors
+    ## 
+    # Provides operations to manage the collection of externalConnection entities.
     class ExternalConnectionCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

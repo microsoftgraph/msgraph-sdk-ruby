@@ -3,6 +3,8 @@ require_relative './base_collection_pagination_count_response'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the identityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.
     class IdentityProviderCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

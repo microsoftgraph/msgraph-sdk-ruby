@@ -42,7 +42,7 @@ module MicrosoftGraph::Models
             @agreements = value
         end
         ## 
-        ## Instantiates a new TermsOfUseContainer and sets the default values.
+        ## Instantiates a new termsOfUseContainer and sets the default values.
         ## @return a void
         ## 
         def initialize()

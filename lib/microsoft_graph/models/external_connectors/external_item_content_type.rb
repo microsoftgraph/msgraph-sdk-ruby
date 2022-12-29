@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models::ExternalConnectors
     ## 
-    # Provides operations to manage the appCatalogs singleton.
+    # Provides operations to manage the collection of externalConnection entities.
     ExternalItemContentType = {
         Text: :Text,
         Html: :Html,

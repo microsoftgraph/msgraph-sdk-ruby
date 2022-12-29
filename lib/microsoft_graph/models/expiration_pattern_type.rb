@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the appCatalogs singleton.
+    # Provides operations to manage the identityGovernance singleton.
     ExpirationPatternType = {
         NotSpecified: :NotSpecified,
         NoExpiration: :NoExpiration,

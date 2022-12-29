@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models::Security
     ## 
-    # Provides operations to manage the collection of agreementAcceptance entities.
+    # Provides operations to manage the admin singleton.
     SourceType = {
         Mailbox: :Mailbox,
         Site: :Site,

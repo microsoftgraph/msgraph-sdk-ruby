@@ -3,6 +3,8 @@ require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the identityContainer singleton.
     class IdentityApiConnector < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -30,7 +32,7 @@ module MicrosoftGraph::Models
             @authentication_configuration = value
         end
         ## 
-        ## Instantiates a new IdentityApiConnector and sets the default values.
+        ## Instantiates a new identityApiConnector and sets the default values.
         ## @return a void
         ## 
         def initialize()

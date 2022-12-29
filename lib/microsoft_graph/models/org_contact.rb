@@ -4,6 +4,8 @@ require_relative './directory_object'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of orgContact entities.
     class OrgContact < MicrosoftGraph::Models::DirectoryObject
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -91,7 +93,7 @@ module MicrosoftGraph::Models
             @company_name = value
         end
         ## 
-        ## Instantiates a new OrgContact and sets the default values.
+        ## Instantiates a new orgContact and sets the default values.
         ## @return a void
         ## 
         def initialize()

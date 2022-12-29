@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the appCatalogs singleton.
+    # Provides operations to manage the cloudCommunications singleton.
     RoutingType = {
         Forwarded: :Forwarded,
         Lookup: :Lookup,

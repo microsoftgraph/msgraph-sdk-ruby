@@ -3,6 +3,8 @@ require_relative './base_collection_pagination_count_response'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.
     class ThreatAssessmentResultCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

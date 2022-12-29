@@ -4,7 +4,7 @@ require_relative './models'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreementAcceptance entities.
+    # Provides operations to manage the directory singleton.
     class ExternalDomainName < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 

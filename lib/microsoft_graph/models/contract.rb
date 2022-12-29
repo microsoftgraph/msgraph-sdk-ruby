@@ -3,6 +3,8 @@ require_relative './directory_object'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of contract entities.
     class Contract < MicrosoftGraph::Models::DirectoryObject
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -18,7 +20,7 @@ module MicrosoftGraph::Models
         # A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
         @display_name
         ## 
-        ## Instantiates a new Contract and sets the default values.
+        ## Instantiates a new contract and sets the default values.
         ## @return a void
         ## 
         def initialize()

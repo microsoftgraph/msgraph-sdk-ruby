@@ -3,6 +3,8 @@ require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of application entities.
     class SubscribedSku < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -57,7 +59,7 @@ module MicrosoftGraph::Models
             @capability_status = value
         end
         ## 
-        ## Instantiates a new SubscribedSku and sets the default values.
+        ## Instantiates a new subscribedSku and sets the default values.
         ## @return a void
         ## 
         def initialize()

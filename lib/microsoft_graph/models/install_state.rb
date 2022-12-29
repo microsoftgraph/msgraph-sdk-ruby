@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the appCatalogs singleton.
+    # Provides operations to manage the deviceAppManagement singleton.
     InstallState = {
         NotApplicable: :NotApplicable,
         Installed: :Installed,

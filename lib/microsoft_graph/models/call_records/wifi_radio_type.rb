@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models::CallRecords
     ## 
-    # Provides operations to manage the collection of agreementAcceptance entities.
+    # Provides operations to manage the cloudCommunications singleton.
     WifiRadioType = {
         Unknown: :Unknown,
         Wifi80211a: :Wifi80211a,

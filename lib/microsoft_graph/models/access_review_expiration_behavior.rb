@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreementAcceptance entities.
+    # Provides operations to manage the identityGovernance singleton.
     AccessReviewExpirationBehavior = {
         KeepAccess: :KeepAccess,
         RemoveAccess: :RemoveAccess,

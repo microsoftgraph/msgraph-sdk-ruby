@@ -3,13 +3,15 @@ require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of authenticationMethodConfiguration entities.
     class AuthenticationMethodConfiguration < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
         # The state of the policy. Possible values are: enabled, disabled.
         @state
         ## 
-        ## Instantiates a new AuthenticationMethodConfiguration and sets the default values.
+        ## Instantiates a new authenticationMethodConfiguration and sets the default values.
         ## @return a void
         ## 
         def initialize()

@@ -4,7 +4,7 @@ require_relative './onenote_entity_hierarchy_model'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the appCatalogs singleton.
+    # Provides operations to manage the collection of application entities.
     class SectionGroup < MicrosoftGraph::Models::OnenoteEntityHierarchyModel
         include MicrosoftKiotaAbstractions::Parsable
         ## 

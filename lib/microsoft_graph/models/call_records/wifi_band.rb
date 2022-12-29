@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models::CallRecords
     ## 
-    # Provides operations to manage the collection of agreementAcceptance entities.
+    # Provides operations to manage the cloudCommunications singleton.
     WifiBand = {
         Unknown: :Unknown,
         Frequency24GHz: :Frequency24GHz,

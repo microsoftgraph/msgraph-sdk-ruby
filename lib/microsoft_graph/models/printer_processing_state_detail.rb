@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the appCatalogs singleton.
+    # Provides operations to manage the collection of application entities.
     PrinterProcessingStateDetail = {
         Paused: :Paused,
         MediaJam: :MediaJam,

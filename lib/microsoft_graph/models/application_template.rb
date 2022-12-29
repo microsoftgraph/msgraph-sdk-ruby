@@ -3,6 +3,8 @@ require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of applicationTemplate entities.
     class ApplicationTemplate < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -45,7 +47,7 @@ module MicrosoftGraph::Models
             @categories = value
         end
         ## 
-        ## Instantiates a new ApplicationTemplate and sets the default values.
+        ## Instantiates a new applicationTemplate and sets the default values.
         ## @return a void
         ## 
         def initialize()

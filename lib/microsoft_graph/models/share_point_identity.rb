@@ -9,7 +9,7 @@ module MicrosoftGraph::Models
         # The sign in name of the SharePoint identity.
         @login_name
         ## 
-        ## Instantiates a new SharePointIdentity and sets the default values.
+        ## Instantiates a new sharePointIdentity and sets the default values.
         ## @return a void
         ## 
         def initialize()

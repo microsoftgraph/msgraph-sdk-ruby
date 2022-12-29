@@ -4,6 +4,8 @@ require_relative '../models'
 require_relative './call_records'
 
 module MicrosoftGraph::Models::CallRecords
+    ## 
+    # Provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
     class CallRecordCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -6,7 +6,7 @@ require_relative './call_records'
 
 module MicrosoftGraph::Models::CallRecords
     ## 
-    # Provides operations to manage the collection of agreementAcceptance entities.
+    # Provides operations to manage the cloudCommunications singleton.
     class Segment < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 

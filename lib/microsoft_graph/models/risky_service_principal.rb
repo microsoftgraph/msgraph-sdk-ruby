@@ -4,6 +4,8 @@ require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of application entities.
     class RiskyServicePrincipal < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -52,7 +54,7 @@ module MicrosoftGraph::Models
             @app_id = value
         end
         ## 
-        ## Instantiates a new RiskyServicePrincipal and sets the default values.
+        ## Instantiates a new riskyServicePrincipal and sets the default values.
         ## @return a void
         ## 
         def initialize()

@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the appCatalogs singleton.
+    # Provides operations to call the instantiate method.
     PermissionClassificationType = {
         Low: :Low,
         Medium: :Medium,

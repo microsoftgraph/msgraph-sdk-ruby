@@ -4,7 +4,7 @@ require_relative './models'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
+    # Provides operations to manage the collection of agreementAcceptance entities.
     class AgreementAcceptanceCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

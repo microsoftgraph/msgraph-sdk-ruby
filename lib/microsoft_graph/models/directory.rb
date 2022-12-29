@@ -3,6 +3,8 @@ require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the directory singleton.
     class Directory < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -30,7 +32,7 @@ module MicrosoftGraph::Models
             @administrative_units = value
         end
         ## 
-        ## Instantiates a new Directory and sets the default values.
+        ## Instantiates a new directory and sets the default values.
         ## @return a void
         ## 
         def initialize()

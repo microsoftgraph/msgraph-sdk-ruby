@@ -6,7 +6,7 @@ require_relative './security/cases_root'
 require_relative './security/incident'
 
 module MicrosoftGraph::Models
-    class Security < MicrosoftGraph::Models::Entity
+    class SecurityModel < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
         # The alerts property
@@ -99,11 +99,11 @@ module MicrosoftGraph::Models
         ## 
         ## Creates a new instance of the appropriate class based on discriminator value
         ## @param parseNode The parse node to use to read the discriminator value and create the object
-        ## @return a security
+        ## @return a security_model
         ## 
         def self.create_from_discriminator_value(parse_node)
             raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-            return Security.new
+            return SecurityModel.new
         end
         ## 
         ## The deserialization information for the current model

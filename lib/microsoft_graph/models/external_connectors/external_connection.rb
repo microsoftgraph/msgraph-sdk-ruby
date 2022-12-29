@@ -4,6 +4,8 @@ require_relative '../models'
 require_relative './external_connectors'
 
 module MicrosoftGraph::Models::ExternalConnectors
+    ## 
+    # Provides operations to manage the collection of externalConnection entities.
     class ExternalConnection < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -46,7 +48,7 @@ module MicrosoftGraph::Models::ExternalConnectors
             @configuration = value
         end
         ## 
-        ## Instantiates a new ExternalConnection and sets the default values.
+        ## Instantiates a new externalConnection and sets the default values.
         ## @return a void
         ## 
         def initialize()

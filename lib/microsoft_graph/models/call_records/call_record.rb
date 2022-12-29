@@ -6,7 +6,7 @@ require_relative './call_records'
 
 module MicrosoftGraph::Models::CallRecords
     ## 
-    # Provides operations to manage the appCatalogs singleton.
+    # Provides operations to manage the cloudCommunications singleton.
     class CallRecord < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 

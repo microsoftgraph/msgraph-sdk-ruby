@@ -3,6 +3,8 @@ require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of domain entities.
     class Domain < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -87,7 +89,7 @@ module MicrosoftGraph::Models
             @availability_status = value
         end
         ## 
-        ## Instantiates a new Domain and sets the default values.
+        ## Instantiates a new domain and sets the default values.
         ## @return a void
         ## 
         def initialize()

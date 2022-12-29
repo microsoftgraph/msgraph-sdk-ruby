@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreementAcceptance entities.
+    # Provides operations to manage the collection of application entities.
     FirewallCertificateRevocationListCheckMethodType = {
         DeviceDefault: :DeviceDefault,
         None: :None,

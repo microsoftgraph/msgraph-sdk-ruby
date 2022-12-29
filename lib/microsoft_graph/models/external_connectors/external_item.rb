@@ -5,7 +5,7 @@ require_relative './external_connectors'
 
 module MicrosoftGraph::Models::ExternalConnectors
     ## 
-    # Provides operations to manage the appCatalogs singleton.
+    # Provides operations to manage the collection of externalConnection entities.
     class ExternalItem < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 

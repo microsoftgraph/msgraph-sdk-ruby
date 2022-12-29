@@ -4,6 +4,8 @@ require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Singleton entity that acts as a container for all device app management functionality.
     class DeviceAppManagement < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -76,7 +78,7 @@ module MicrosoftGraph::Models
             @android_managed_app_protections = value
         end
         ## 
-        ## Instantiates a new DeviceAppManagement and sets the default values.
+        ## Instantiates a new deviceAppManagement and sets the default values.
         ## @return a void
         ## 
         def initialize()

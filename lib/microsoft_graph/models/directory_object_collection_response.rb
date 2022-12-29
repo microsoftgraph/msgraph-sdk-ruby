@@ -4,7 +4,7 @@ require_relative './models'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the owners property of the microsoft.graph.application entity.
+    # Provides operations to manage the directReports property of the microsoft.graph.orgContact entity.
     class DirectoryObjectCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

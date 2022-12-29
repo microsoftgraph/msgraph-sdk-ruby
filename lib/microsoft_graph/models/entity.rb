@@ -1,4 +1,5 @@
 require 'microsoft_kiota_abstractions'
+require_relative './models'
 
 module MicrosoftGraph::Models
     class Entity
@@ -886,7 +887,7 @@ module MicrosoftGraph::Models
                     when "#microsoft.graph.secureScoreControlProfile"
                         return SecureScoreControlProfile.new
                     when "#microsoft.graph.security"
-                        return Security.new
+                        return SecurityModel.new
                     when "#microsoft.graph.securityReportsRoot"
                         return SecurityReportsRoot.new
                     when "#microsoft.graph.serviceAnnouncement"

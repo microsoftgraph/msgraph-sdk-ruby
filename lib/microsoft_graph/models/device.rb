@@ -4,6 +4,8 @@ require_relative './directory_object'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of device entities.
     class Device < MicrosoftGraph::Models::DirectoryObject
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -139,7 +141,7 @@ module MicrosoftGraph::Models
             @compliance_expiration_date_time = value
         end
         ## 
-        ## Instantiates a new Device and sets the default values.
+        ## Instantiates a new device and sets the default values.
         ## @return a void
         ## 
         def initialize()

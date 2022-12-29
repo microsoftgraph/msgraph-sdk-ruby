@@ -4,6 +4,8 @@ require_relative '../models'
 require_relative './call_records'
 
 module MicrosoftGraph::Models::CallRecords
+    ## 
+    # Provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
     class SessionCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

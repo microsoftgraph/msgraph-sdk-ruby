@@ -3,13 +3,15 @@ require_relative './entity'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the appCatalogs singleton.
     class AppCatalogs < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
         # The teamsApps property
         @teams_apps
         ## 
-        ## Instantiates a new AppCatalogs and sets the default values.
+        ## Instantiates a new appCatalogs and sets the default values.
         ## @return a void
         ## 
         def initialize()

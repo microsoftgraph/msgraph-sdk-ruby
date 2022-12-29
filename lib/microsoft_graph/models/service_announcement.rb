@@ -15,7 +15,7 @@ module MicrosoftGraph::Models
         # A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
         @messages
         ## 
-        ## Instantiates a new serviceAnnouncement and sets the default values.
+        ## Instantiates a new ServiceAnnouncement and sets the default values.
         ## @return a void
         ## 
         def initialize()
