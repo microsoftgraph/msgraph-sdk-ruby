@@ -1,4 +1,4 @@
-require_relative 'microsoft_graph_base_service_client'
+require_relative 'microsoft_graph/microsoft_graph_base_service_client'
 module MicrosoftGraph
 	class MicrosoftGraphServiceClient < MicrosoftGraphServiceClientBase
 		#TODO define sugar constructors acception the authentication provider
