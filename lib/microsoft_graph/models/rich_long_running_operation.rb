@@ -2,6 +2,8 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Casts the previous resource to group.
     class RichLongRunningOperation < MicrosoftGraph::Models::LongRunningOperation
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -17,7 +19,7 @@ module MicrosoftGraph::Models
         # The type of the operation.
         @type
         ## 
-        ## Instantiates a new RichLongRunningOperation and sets the default values.
+        ## Instantiates a new richLongRunningOperation and sets the default values.
         ## @return a void
         ## 
         def initialize()

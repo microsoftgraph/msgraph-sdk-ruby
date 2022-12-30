@@ -1,10 +1,11 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/security'
-require_relative './alerts_v2/alerts_v2_request_builder'
-require_relative './alerts_v2/item/alert_item_request_builder'
+require_relative '../models/security_model'
 require_relative './alerts/alerts_request_builder'
 require_relative './alerts/item/alert_item_request_builder'
+require_relative './alerts_v2/alerts_v2_request_builder'
+require_relative './alerts_v2/item/alert_item_request_builder'
 require_relative './attack_simulation/attack_simulation_request_builder'
 require_relative './cases/cases_request_builder'
 require_relative './incidents/incidents_request_builder'
@@ -147,7 +148,7 @@ module MicrosoftGraph::Security
         ## 
         ## Get security
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of security
+        ## @return a CompletableFuture of security_model
         ## 
         def get(request_configuration=nil)
             request_info = self.create_get_request_information(
@@ -156,7 +157,7 @@ module MicrosoftGraph::Security
             error_mapping = Hash.new
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security.create_from_discriminator_value(pn) }, error_mapping)
+            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityModel.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
         ## Provides operations to manage the incidents property of the microsoft.graph.security entity.
@@ -173,7 +174,7 @@ module MicrosoftGraph::Security
         ## Update security
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of security
+        ## @return a CompletableFuture of security_model
         ## 
         def patch(body, request_configuration=nil)
             raise StandardError, 'body cannot be null' if body.nil?
@@ -183,7 +184,7 @@ module MicrosoftGraph::Security
             error_mapping = Hash.new
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security.create_from_discriminator_value(pn) }, error_mapping)
+            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityModel.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
         ## Provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.

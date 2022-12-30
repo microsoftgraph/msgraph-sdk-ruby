@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the auditLogRoot singleton.
+    # Provides operations to manage the collection of application entities.
     ScheduleEntityTheme = {
         White: :White,
         Blue: :Blue,

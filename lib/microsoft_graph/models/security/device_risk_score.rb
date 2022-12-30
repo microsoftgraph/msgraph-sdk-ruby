@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models::Security
     ## 
-    # Provides operations to manage the auditLogRoot singleton.
+    # Provides operations to manage the collection of application entities.
     DeviceRiskScore = {
         None: :None,
         Informational: :Informational,

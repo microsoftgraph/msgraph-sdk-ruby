@@ -2,6 +2,8 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of directoryRoleTemplate entities.
     class DirectoryRoleTemplate < MicrosoftGraph::Models::DirectoryObject
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -11,7 +13,7 @@ module MicrosoftGraph::Models
         # The display name to set for the directory role. Read-only.
         @display_name
         ## 
-        ## Instantiates a new DirectoryRoleTemplate and sets the default values.
+        ## Instantiates a new directoryRoleTemplate and sets the default values.
         ## @return a void
         ## 
         def initialize()

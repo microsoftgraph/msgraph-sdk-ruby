@@ -3,8 +3,6 @@ require_relative '../models'
 require_relative './security'
 
 module MicrosoftGraph::Models::Security
-    ## 
-    # Provides operations to manage the collection of application entities.
     class EdiscoveryNoncustodialDataSource < MicrosoftGraph::Models::Security::DataSourceContainer
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -14,7 +12,7 @@ module MicrosoftGraph::Models::Security
         # Operation entity that represents the latest indexing for the non-custodial data source.
         @last_index_operation
         ## 
-        ## Instantiates a new ediscoveryNoncustodialDataSource and sets the default values.
+        ## Instantiates a new EdiscoveryNoncustodialDataSource and sets the default values.
         ## @return a void
         ## 
         def initialize()

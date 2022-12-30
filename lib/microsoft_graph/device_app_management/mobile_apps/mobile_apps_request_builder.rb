@@ -5,8 +5,8 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_app_management'
 require_relative './count/count_request_builder'
 require_relative './managed_mobile_lob_app/managed_mobile_lob_app_request_builder'
-require_relative './mobile_apps'
 require_relative './mobile_lob_app/mobile_lob_app_request_builder'
+require_relative './mobile_apps'
 
 module MicrosoftGraph::DeviceAppManagement::MobileApps
     ## 

@@ -4,7 +4,7 @@ require_relative './term_store'
 
 module MicrosoftGraph::Models::TermStore
     ## 
-    # Provides operations to manage the collection of application entities.
+    # Provides operations to manage the auditLogRoot singleton.
     class Relation < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 

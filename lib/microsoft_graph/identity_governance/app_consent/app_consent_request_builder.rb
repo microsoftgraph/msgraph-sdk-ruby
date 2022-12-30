@@ -2,9 +2,9 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../models/app_consent_approval_route'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../identity_governance'
-require_relative './app_consent'
 require_relative './app_consent_requests/app_consent_requests_request_builder'
 require_relative './app_consent_requests/item/app_consent_request_item_request_builder'
+require_relative './app_consent'
 
 module MicrosoftGraph::IdentityGovernance::AppConsent
     ## 

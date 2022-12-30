@@ -5,7 +5,7 @@ require_relative './security'
 
 module MicrosoftGraph::Models::Security
     ## 
-    # Provides operations to manage the auditLogRoot singleton.
+    # Provides operations to manage the collection of application entities.
     class Incident < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -11,7 +11,7 @@ module MicrosoftGraph::Models
         # The userPrincipalName attribute of the user.
         @user_principal_name
         ## 
-        ## Instantiates a new UserIdentity and sets the default values.
+        ## Instantiates a new userIdentity and sets the default values.
         ## @return a void
         ## 
         def initialize()

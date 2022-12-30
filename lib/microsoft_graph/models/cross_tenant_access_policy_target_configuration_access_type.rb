@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the auditLogRoot singleton.
+    # Provides operations to call the instantiate method.
     CrossTenantAccessPolicyTargetConfigurationAccessType = {
         Allowed: :Allowed,
         Blocked: :Blocked,

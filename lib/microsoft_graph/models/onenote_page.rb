@@ -4,7 +4,7 @@ require_relative './models'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of application entities.
+    # Casts the previous resource to group.
     class OnenotePage < MicrosoftGraph::Models::OnenoteEntitySchemaObjectModel
         include MicrosoftKiotaAbstractions::Parsable
         ## 

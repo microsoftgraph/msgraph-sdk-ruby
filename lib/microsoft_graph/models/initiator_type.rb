@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the auditLogRoot singleton.
+    # Provides operations to manage the appCatalogs singleton.
     InitiatorType = {
         User: :User,
         Application: :Application,

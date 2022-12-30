@@ -23,7 +23,7 @@ module MicrosoftGraph::Models
             @app_consent_requests = value
         end
         ## 
-        ## Instantiates a new appConsentApprovalRoute and sets the default values.
+        ## Instantiates a new AppConsentApprovalRoute and sets the default values.
         ## @return a void
         ## 
         def initialize()

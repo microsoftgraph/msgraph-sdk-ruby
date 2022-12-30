@@ -2,9 +2,9 @@ require 'microsoft_kiota_abstractions'
 require_relative '../../models/authentication_methods_policy'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../policies'
-require_relative './authentication_methods_policy'
 require_relative './authentication_method_configurations/authentication_method_configurations_request_builder'
 require_relative './authentication_method_configurations/item/authentication_method_configuration_item_request_builder'
+require_relative './authentication_methods_policy'
 
 module MicrosoftGraph::Policies::AuthenticationMethodsPolicy
     ## 

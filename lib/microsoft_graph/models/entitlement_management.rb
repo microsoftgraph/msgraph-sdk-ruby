@@ -134,7 +134,7 @@ module MicrosoftGraph::Models
             @connected_organizations = value
         end
         ## 
-        ## Instantiates a new entitlementManagement and sets the default values.
+        ## Instantiates a new EntitlementManagement and sets the default values.
         ## @return a void
         ## 
         def initialize()

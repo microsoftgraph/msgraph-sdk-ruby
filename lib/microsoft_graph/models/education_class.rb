@@ -2,6 +2,8 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of application entities.
     class EducationClass < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -140,7 +142,7 @@ module MicrosoftGraph::Models
             @class_code = value
         end
         ## 
-        ## Instantiates a new EducationClass and sets the default values.
+        ## Instantiates a new educationClass and sets the default values.
         ## @return a void
         ## 
         def initialize()

@@ -2,13 +2,15 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of application entities.
     class DomainDnsUnavailableRecord < MicrosoftGraph::Models::DomainDnsRecord
         include MicrosoftKiotaAbstractions::Parsable
         ## 
         # Provides the reason why the DomainDnsUnavailableRecord entity is returned.
         @description
         ## 
-        ## Instantiates a new DomainDnsUnavailableRecord and sets the default values.
+        ## Instantiates a new domainDnsUnavailableRecord and sets the default values.
         ## @return a void
         ## 
         def initialize()

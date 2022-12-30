@@ -2,6 +2,8 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Provides operations to manage the collection of application entities.
     class SharedWithChannelTeamInfo < MicrosoftGraph::Models::TeamInfo
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -26,7 +28,7 @@ module MicrosoftGraph::Models
             @allowed_members = value
         end
         ## 
-        ## Instantiates a new SharedWithChannelTeamInfo and sets the default values.
+        ## Instantiates a new sharedWithChannelTeamInfo and sets the default values.
         ## @return a void
         ## 
         def initialize()

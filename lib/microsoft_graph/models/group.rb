@@ -3,6 +3,8 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Casts the previous resource to group.
     class Group < MicrosoftGraph::Models::DirectoryObject
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -336,7 +338,7 @@ module MicrosoftGraph::Models
             @classification = value
         end
         ## 
-        ## Instantiates a new Group and sets the default values.
+        ## Instantiates a new group and sets the default values.
         ## @return a void
         ## 
         def initialize()

@@ -4,7 +4,7 @@ require_relative './term_store/store'
 
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of application entities.
+    # Casts the previous resource to group.
     class Site < MicrosoftGraph::Models::BaseItem
         include MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models::TermStore
     ## 
-    # Provides operations to manage the collection of application entities.
+    # Provides operations to manage the auditLogRoot singleton.
     RelationType = {
         Pin: :Pin,
         Reuse: :Reuse,

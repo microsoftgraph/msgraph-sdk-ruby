@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
             @bundles = value
         end
         ## 
-        ## Instantiates a new drive and sets the default values.
+        ## Instantiates a new Drive and sets the default values.
         ## @return a void
         ## 
         def initialize()
