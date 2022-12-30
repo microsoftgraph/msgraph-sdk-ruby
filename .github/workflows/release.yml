@@ -24,7 +24,6 @@ jobs:
     environment:
       name: production_feeds
     runs-on: ubuntu-latest
-    needs: [build]
     steps:
       - uses: actions/checkout@v3
       - uses: ruby/setup-ruby@v1
