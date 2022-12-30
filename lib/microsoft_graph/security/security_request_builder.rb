@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../models/o_data_errors/o_data_error'
-require_relative '../models/security'
 require_relative '../models/security_model'
 require_relative './alerts/alerts_request_builder'
 require_relative './alerts/item/alert_item_request_builder'
