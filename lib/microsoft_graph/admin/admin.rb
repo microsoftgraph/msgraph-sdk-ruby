@@ -1,0 +1,2 @@
+module MicrosoftGraph::Admin
+end

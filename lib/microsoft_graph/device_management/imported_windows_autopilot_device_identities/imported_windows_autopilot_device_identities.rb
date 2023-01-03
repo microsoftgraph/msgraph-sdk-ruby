@@ -1,0 +1,2 @@
+module MicrosoftGraph::DeviceManagement::ImportedWindowsAutopilotDeviceIdentities
+end

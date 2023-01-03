@@ -1,0 +1,3 @@
+require_relative 'get_compliance_setting_non_compliance_report_post_request_body'
+module MicrosoftGraph::DeviceManagement::Reports::GetComplianceSettingNonComplianceReport
+end
