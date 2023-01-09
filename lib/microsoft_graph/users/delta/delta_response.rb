@@ -5,8 +5,6 @@ require_relative '../users'
 require_relative './delta'
 
 module MicrosoftGraph::Users::Delta
-    ## 
-    # Provides operations to call the delta method.
     class DeltaResponse < MicrosoftGraph::Models::BaseDeltaFunctionResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

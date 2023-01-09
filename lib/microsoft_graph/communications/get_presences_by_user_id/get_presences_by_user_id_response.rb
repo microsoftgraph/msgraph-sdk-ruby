@@ -5,8 +5,6 @@ require_relative '../communications'
 require_relative './get_presences_by_user_id'
 
 module MicrosoftGraph::Communications::GetPresencesByUserId
-    ## 
-    # Provides operations to call the getPresencesByUserId method.
     class GetPresencesByUserIdResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

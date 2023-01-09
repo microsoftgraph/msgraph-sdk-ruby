@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Mobile device management authority.
     MdmAuthority = {
         Unknown: :Unknown,
         Intune: :Intune,

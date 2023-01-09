@@ -5,8 +5,6 @@ require_relative '../me'
 require_relative './get_managed_app_diagnostic_statuses'
 
 module MicrosoftGraph::Me::GetManagedAppDiagnosticStatuses
-    ## 
-    # Provides operations to call the getManagedAppDiagnosticStatuses method.
     class GetManagedAppDiagnosticStatusesResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

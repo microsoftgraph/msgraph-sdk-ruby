@@ -1,6 +1,4 @@
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the collection of agreement entities.
     CallState = {
         Incoming: :Incoming,
         Establishing: :Establishing,

@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './clear_presence'
 
 module MicrosoftGraph::Communications::Presences::Item::ClearPresence
-    ## 
-    # Provides operations to call the clearPresence method.
     class ClearPresencePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

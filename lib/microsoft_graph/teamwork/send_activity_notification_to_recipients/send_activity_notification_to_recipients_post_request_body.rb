@@ -7,8 +7,6 @@ require_relative '../teamwork'
 require_relative './send_activity_notification_to_recipients'
 
 module MicrosoftGraph::Teamwork::SendActivityNotificationToRecipients
-    ## 
-    # Provides operations to call the sendActivityNotificationToRecipients method.
     class SendActivityNotificationToRecipientsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

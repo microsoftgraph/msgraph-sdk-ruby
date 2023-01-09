@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible values to specify which cookies are allowed in Microsoft Edge.
     EdgeCookiePolicy = {
         UserDefined: :UserDefined,
         Allow: :Allow,

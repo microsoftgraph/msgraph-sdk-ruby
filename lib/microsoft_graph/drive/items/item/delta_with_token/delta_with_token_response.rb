@@ -7,8 +7,6 @@ require_relative '../item'
 require_relative './delta_with_token'
 
 module MicrosoftGraph::Drive::Items::Item::DeltaWithToken
-    ## 
-    # Provides operations to call the delta method.
     class DeltaWithTokenResponse < MicrosoftGraph::Models::BaseDeltaFunctionResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

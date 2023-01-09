@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './record_response'
 
 module MicrosoftGraph::Communications::Calls::Item::RecordResponse
-    ## 
-    # Provides operations to call the recordResponse method.
     class RecordResponsePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

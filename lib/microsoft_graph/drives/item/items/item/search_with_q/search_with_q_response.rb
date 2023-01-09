@@ -8,8 +8,6 @@ require_relative '../item'
 require_relative './search_with_q'
 
 module MicrosoftGraph::Drives::Item::Items::Item::SearchWithQ
-    ## 
-    # Provides operations to call the search method.
     class SearchWithQResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

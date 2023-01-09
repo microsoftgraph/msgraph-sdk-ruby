@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './move'
 
 module MicrosoftGraph::Me::MailFolders::Item::Move
-    ## 
-    # Provides operations to call the move method.
     class MovePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

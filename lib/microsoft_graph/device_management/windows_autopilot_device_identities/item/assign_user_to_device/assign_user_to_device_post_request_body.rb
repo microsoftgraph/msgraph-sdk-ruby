@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './assign_user_to_device'
 
 module MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::Item::AssignUserToDevice
-    ## 
-    # Provides operations to call the assignUserToDevice method.
     class AssignUserToDevicePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

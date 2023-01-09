@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './get_mail_tips'
 
 module MicrosoftGraph::Users::Item::GetMailTips
-    ## 
-    # Provides operations to call the getMailTips method.
     class GetMailTipsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

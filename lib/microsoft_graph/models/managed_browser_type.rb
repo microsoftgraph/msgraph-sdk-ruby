@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Type of managed browser
     ManagedBrowserType = {
         NotConfigured: :NotConfigured,
         MicrosoftEdge: :MicrosoftEdge,

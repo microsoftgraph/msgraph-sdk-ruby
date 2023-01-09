@@ -8,8 +8,6 @@ require_relative '../item'
 require_relative './answer'
 
 module MicrosoftGraph::Communications::Calls::Item::Answer
-    ## 
-    # Provides operations to call the answer method.
     class AnswerPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

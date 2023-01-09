@@ -4,8 +4,6 @@ require_relative '../reports'
 require_relative './get_cached_report'
 
 module MicrosoftGraph::DeviceManagement::Reports::GetCachedReport
-    ## 
-    # Provides operations to call the getCachedReport method.
     class GetCachedReportPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

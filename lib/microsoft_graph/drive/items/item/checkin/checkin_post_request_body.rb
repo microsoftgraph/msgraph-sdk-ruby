@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './checkin'
 
 module MicrosoftGraph::Drive::Items::Item::Checkin
-    ## 
-    # Provides operations to call the checkin method.
     class CheckinPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

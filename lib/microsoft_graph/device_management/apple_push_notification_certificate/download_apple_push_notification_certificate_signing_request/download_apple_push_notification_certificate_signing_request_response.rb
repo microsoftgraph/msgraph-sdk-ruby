@@ -4,8 +4,6 @@ require_relative '../apple_push_notification_certificate'
 require_relative './download_apple_push_notification_certificate_signing_request'
 
 module MicrosoftGraph::DeviceManagement::ApplePushNotificationCertificate::DownloadApplePushNotificationCertificateSigningRequest
-    ## 
-    # Provides operations to call the downloadApplePushNotificationCertificateSigningRequest method.
     class DownloadApplePushNotificationCertificateSigningRequestResponse
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

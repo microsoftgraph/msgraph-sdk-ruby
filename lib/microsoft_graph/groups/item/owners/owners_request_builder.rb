@@ -84,9 +84,23 @@ module MicrosoftGraph::Groups::Item::Owners
         ## 
         ## The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a Fiber of directory_object_collection_response
+        ## 
+        def get(request_configuration=nil)
+            request_info = self.to_get_request_information(
+                request_configuration
+            )
+            error_mapping = Hash.new
+            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObjectCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+        end
+        ## 
+        ## The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def create_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=nil)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -98,20 +112,6 @@ module MicrosoftGraph::Groups::Item::Owners
                 request_info.add_request_options(request_configuration.options)
             end
             return request_info
-        end
-        ## 
-        ## The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of directory_object_collection_response
-        ## 
-        def get(request_configuration=nil)
-            request_info = self.create_get_request_information(
-                request_configuration
-            )
-            error_mapping = Hash.new
-            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObjectCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
         end
 
         ## 

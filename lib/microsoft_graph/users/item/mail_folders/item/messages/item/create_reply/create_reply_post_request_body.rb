@@ -9,8 +9,6 @@ require_relative '../item'
 require_relative './create_reply'
 
 module MicrosoftGraph::Users::Item::MailFolders::Item::Messages::Item::CreateReply
-    ## 
-    # Provides operations to call the createReply method.
     class CreateReplyPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -9,8 +9,6 @@ require_relative '../contacts'
 require_relative './delta'
 
 module MicrosoftGraph::Users::Item::ContactFolders::Item::Contacts::Delta
-    ## 
-    # Provides operations to call the delta method.
     class DeltaResponse < MicrosoftGraph::Models::BaseDeltaFunctionResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

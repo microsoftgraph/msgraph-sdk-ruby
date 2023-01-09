@@ -4,8 +4,6 @@ require_relative '../presence'
 require_relative './clear_presence'
 
 module MicrosoftGraph::Me::Presence::ClearPresence
-    ## 
-    # Provides operations to call the clearPresence method.
     class ClearPresencePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

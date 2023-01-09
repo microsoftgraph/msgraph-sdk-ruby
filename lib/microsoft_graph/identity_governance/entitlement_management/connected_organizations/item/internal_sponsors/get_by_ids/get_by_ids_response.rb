@@ -9,8 +9,6 @@ require_relative '../internal_sponsors'
 require_relative './get_by_ids'
 
 module MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::InternalSponsors::GetByIds
-    ## 
-    # Provides operations to call the getByIds method.
     class GetByIdsResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

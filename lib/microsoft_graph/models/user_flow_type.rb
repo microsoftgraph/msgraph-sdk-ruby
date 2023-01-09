@@ -1,6 +1,4 @@
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the collection of agreement entities.
     UserFlowType = {
         SignUp: :SignUp,
         SignIn: :SignIn,

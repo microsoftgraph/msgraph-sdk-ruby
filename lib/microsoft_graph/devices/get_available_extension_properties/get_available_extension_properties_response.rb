@@ -5,8 +5,6 @@ require_relative '../devices'
 require_relative './get_available_extension_properties'
 
 module MicrosoftGraph::Devices::GetAvailableExtensionProperties
-    ## 
-    # Provides operations to call the getAvailableExtensionProperties method.
     class GetAvailableExtensionPropertiesResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -4,8 +4,6 @@ require_relative '../item'
 require_relative './instantiate'
 
 module MicrosoftGraph::ApplicationTemplates::Item::Instantiate
-    ## 
-    # Provides operations to call the instantiate method.
     class InstantiatePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

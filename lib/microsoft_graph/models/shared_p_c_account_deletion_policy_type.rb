@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible values for when accounts are deleted on a shared PC.
     SharedPCAccountDeletionPolicyType = {
         Immediate: :Immediate,
         DiskSpaceThreshold: :DiskSpaceThreshold,

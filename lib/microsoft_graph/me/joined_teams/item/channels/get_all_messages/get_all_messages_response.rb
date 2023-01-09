@@ -8,8 +8,6 @@ require_relative '../channels'
 require_relative './get_all_messages'
 
 module MicrosoftGraph::Me::JoinedTeams::Item::Channels::GetAllMessages
-    ## 
-    # Provides operations to call the getAllMessages method.
     class GetAllMessagesResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

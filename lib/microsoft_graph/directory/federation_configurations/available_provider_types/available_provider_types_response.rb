@@ -5,8 +5,6 @@ require_relative '../federation_configurations'
 require_relative './available_provider_types'
 
 module MicrosoftGraph::Directory::FederationConfigurations::AvailableProviderTypes
-    ## 
-    # Provides operations to call the availableProviderTypes method.
     class AvailableProviderTypesResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

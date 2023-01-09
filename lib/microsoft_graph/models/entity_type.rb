@@ -1,6 +1,4 @@
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to call the query method.
     EntityType = {
         Event: :Event,
         Message: :Message,

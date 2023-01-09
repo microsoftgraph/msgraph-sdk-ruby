@@ -9,8 +9,6 @@ require_relative '../tags'
 require_relative './as_hierarchy'
 
 module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags::AsHierarchy
-    ## 
-    # Provides operations to call the asHierarchy method.
     class AsHierarchyResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

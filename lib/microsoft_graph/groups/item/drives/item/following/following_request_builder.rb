@@ -44,9 +44,23 @@ module MicrosoftGraph::Groups::Item::Drives::Item::Following
         ## 
         ## List the items that have been followed by the signed in user.This collection includes items that are in the user's drive as well as items they have access to from other drives.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a Fiber of drive_item_collection_response
+        ## 
+        def get(request_configuration=nil)
+            request_info = self.to_get_request_information(
+                request_configuration
+            )
+            error_mapping = Hash.new
+            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DriveItemCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+        end
+        ## 
+        ## List the items that have been followed by the signed in user.This collection includes items that are in the user's drive as well as items they have access to from other drives.
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def create_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=nil)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -58,20 +72,6 @@ module MicrosoftGraph::Groups::Item::Drives::Item::Following
                 request_info.add_request_options(request_configuration.options)
             end
             return request_info
-        end
-        ## 
-        ## List the items that have been followed by the signed in user.This collection includes items that are in the user's drive as well as items they have access to from other drives.
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of drive_item_collection_response
-        ## 
-        def get(request_configuration=nil)
-            request_info = self.create_get_request_information(
-                request_configuration
-            )
-            error_mapping = Hash.new
-            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DriveItemCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
         end
 
         ## 

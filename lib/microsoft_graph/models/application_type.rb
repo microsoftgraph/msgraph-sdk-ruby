@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible types of Application
     ApplicationType = {
         Universal: :Universal,
         Desktop: :Desktop,

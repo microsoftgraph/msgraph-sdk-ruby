@@ -167,64 +167,10 @@ module MicrosoftGraph::Groups::Item::Team
         ## 
         ## Delete navigation property team for groups
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a request_information
-        ## 
-        def create_delete_request_information(request_configuration=nil)
-            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-            request_info.url_template = @url_template
-            request_info.path_parameters = @path_parameters
-            request_info.http_method = :DELETE
-            unless request_configuration.nil?
-                request_info.add_headers_from_raw_object(request_configuration.headers)
-                request_info.add_request_options(request_configuration.options)
-            end
-            return request_info
-        end
-        ## 
-        ## The team associated with this group.
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a request_information
-        ## 
-        def create_get_request_information(request_configuration=nil)
-            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-            request_info.url_template = @url_template
-            request_info.path_parameters = @path_parameters
-            request_info.http_method = :GET
-            request_info.headers.add('Accept', 'application/json')
-            unless request_configuration.nil?
-                request_info.add_headers_from_raw_object(request_configuration.headers)
-                request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
-                request_info.add_request_options(request_configuration.options)
-            end
-            return request_info
-        end
-        ## 
-        ## Create a new team under a group. In order to create a team, the group must have a least one owner. If the group was created less than 15 minutes ago, it's possible for the Create team call to fail with a 404 error code due to replication delays. The recommended pattern is to retry the Create team call three times, with a 10 second delay between calls.
-        ## @param body The request body
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a request_information
-        ## 
-        def create_patch_request_information(body, request_configuration=nil)
-            raise StandardError, 'body cannot be null' if body.nil?
-            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-            request_info.url_template = @url_template
-            request_info.path_parameters = @path_parameters
-            request_info.http_method = :PATCH
-            request_info.headers.add('Accept', 'application/json')
-            unless request_configuration.nil?
-                request_info.add_headers_from_raw_object(request_configuration.headers)
-                request_info.add_request_options(request_configuration.options)
-            end
-            request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
-            return request_info
-        end
-        ## 
-        ## Delete navigation property team for groups
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of void
+        ## @return a Fiber of void
         ## 
         def delete(request_configuration=nil)
-            request_info = self.create_delete_request_information(
+            request_info = self.to_delete_request_information(
                 request_configuration
             )
             error_mapping = Hash.new
@@ -235,10 +181,10 @@ module MicrosoftGraph::Groups::Item::Team
         ## 
         ## The team associated with this group.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of team
+        ## @return a Fiber of team
         ## 
         def get(request_configuration=nil)
-            request_info = self.create_get_request_information(
+            request_info = self.to_get_request_information(
                 request_configuration
             )
             error_mapping = Hash.new
@@ -294,11 +240,11 @@ module MicrosoftGraph::Groups::Item::Team
         ## Create a new team under a group. In order to create a team, the group must have a least one owner. If the group was created less than 15 minutes ago, it's possible for the Create team call to fail with a 404 error code due to replication delays. The recommended pattern is to retry the Create team call three times, with a 10 second delay between calls.
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of team
+        ## @return a Fiber of team
         ## 
         def patch(body, request_configuration=nil)
             raise StandardError, 'body cannot be null' if body.nil?
-            request_info = self.create_patch_request_information(
+            request_info = self.to_patch_request_information(
                 body, request_configuration
             )
             error_mapping = Hash.new
@@ -316,6 +262,60 @@ module MicrosoftGraph::Groups::Item::Team
             url_tpl_params = @path_parameters.clone
             url_tpl_params["teamworkTag%2Did"] = id
             return MicrosoftGraph::Groups::Item::Team::Tags::Item::TeamworkTagItemRequestBuilder.new(url_tpl_params, @request_adapter)
+        end
+        ## 
+        ## Delete navigation property team for groups
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a request_information
+        ## 
+        def to_delete_request_information(request_configuration=nil)
+            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+            request_info.url_template = @url_template
+            request_info.path_parameters = @path_parameters
+            request_info.http_method = :DELETE
+            unless request_configuration.nil?
+                request_info.add_headers_from_raw_object(request_configuration.headers)
+                request_info.add_request_options(request_configuration.options)
+            end
+            return request_info
+        end
+        ## 
+        ## The team associated with this group.
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a request_information
+        ## 
+        def to_get_request_information(request_configuration=nil)
+            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+            request_info.url_template = @url_template
+            request_info.path_parameters = @path_parameters
+            request_info.http_method = :GET
+            request_info.headers.add('Accept', 'application/json')
+            unless request_configuration.nil?
+                request_info.add_headers_from_raw_object(request_configuration.headers)
+                request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
+                request_info.add_request_options(request_configuration.options)
+            end
+            return request_info
+        end
+        ## 
+        ## Create a new team under a group. In order to create a team, the group must have a least one owner. If the group was created less than 15 minutes ago, it's possible for the Create team call to fail with a 404 error code due to replication delays. The recommended pattern is to retry the Create team call three times, with a 10 second delay between calls.
+        ## @param body The request body
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a request_information
+        ## 
+        def to_patch_request_information(body, request_configuration=nil)
+            raise StandardError, 'body cannot be null' if body.nil?
+            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+            request_info.url_template = @url_template
+            request_info.path_parameters = @path_parameters
+            request_info.http_method = :PATCH
+            request_info.headers.add('Accept', 'application/json')
+            unless request_configuration.nil?
+                request_info.add_headers_from_raw_object(request_configuration.headers)
+                request_info.add_request_options(request_configuration.options)
+            end
+            request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+            return request_info
         end
 
         ## 

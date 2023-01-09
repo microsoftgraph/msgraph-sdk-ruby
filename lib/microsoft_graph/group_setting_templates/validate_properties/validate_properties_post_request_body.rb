@@ -3,8 +3,6 @@ require_relative '../group_setting_templates'
 require_relative './validate_properties'
 
 module MicrosoftGraph::GroupSettingTemplates::ValidateProperties
-    ## 
-    # Provides operations to call the validateProperties method.
     class ValidatePropertiesPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

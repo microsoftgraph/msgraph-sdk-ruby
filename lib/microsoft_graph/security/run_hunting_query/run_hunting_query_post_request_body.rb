@@ -3,8 +3,6 @@ require_relative '../security'
 require_relative './run_hunting_query'
 
 module MicrosoftGraph::Security::RunHuntingQuery
-    ## 
-    # Provides operations to call the runHuntingQuery method.
     class RunHuntingQueryPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

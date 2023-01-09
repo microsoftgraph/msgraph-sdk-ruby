@@ -5,8 +5,6 @@ require_relative '../messages'
 require_relative './favorite'
 
 module MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Favorite
-    ## 
-    # Provides operations to call the favorite method.
     class FavoritePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

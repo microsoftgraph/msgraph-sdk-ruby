@@ -47,9 +47,39 @@ module MicrosoftGraph::Users::Item::Chats::Item::Messages::Item::HostedContents
         ## 
         ## Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a Fiber of chat_message_hosted_content_collection_response
+        ## 
+        def get(request_configuration=nil)
+            request_info = self.to_get_request_information(
+                request_configuration
+            )
+            error_mapping = Hash.new
+            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatMessageHostedContentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+        end
+        ## 
+        ## Create new navigation property to hostedContents for users
+        ## @param body The request body
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a Fiber of chat_message_hosted_content
+        ## 
+        def post(body, request_configuration=nil)
+            raise StandardError, 'body cannot be null' if body.nil?
+            request_info = self.to_post_request_information(
+                body, request_configuration
+            )
+            error_mapping = Hash.new
+            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatMessageHostedContent.create_from_discriminator_value(pn) }, error_mapping)
+        end
+        ## 
+        ## Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def create_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=nil)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -68,7 +98,7 @@ module MicrosoftGraph::Users::Item::Chats::Item::Messages::Item::HostedContents
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def create_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=nil)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
@@ -81,36 +111,6 @@ module MicrosoftGraph::Users::Item::Chats::Item::Messages::Item::HostedContents
             end
             request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
             return request_info
-        end
-        ## 
-        ## Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of chat_message_hosted_content_collection_response
-        ## 
-        def get(request_configuration=nil)
-            request_info = self.create_get_request_information(
-                request_configuration
-            )
-            error_mapping = Hash.new
-            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatMessageHostedContentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Create new navigation property to hostedContents for users
-        ## @param body The request body
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of chat_message_hosted_content
-        ## 
-        def post(body, request_configuration=nil)
-            raise StandardError, 'body cannot be null' if body.nil?
-            request_info = self.create_post_request_information(
-                body, request_configuration
-            )
-            error_mapping = Hash.new
-            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatMessageHostedContent.create_from_discriminator_value(pn) }, error_mapping)
         end
 
         ## 

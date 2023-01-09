@@ -3,8 +3,6 @@ require_relative '../me'
 require_relative './export_personal_data'
 
 module MicrosoftGraph::Me::ExportPersonalData
-    ## 
-    # Provides operations to call the exportPersonalData method.
     class ExportPersonalDataPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

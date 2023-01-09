@@ -4,8 +4,6 @@ require_relative '../item'
 require_relative './set_mobile_device_management_authority'
 
 module MicrosoftGraph::Organization::Item::SetMobileDeviceManagementAuthority
-    ## 
-    # Provides operations to call the setMobileDeviceManagementAuthority method.
     class SetMobileDeviceManagementAuthorityResponse
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

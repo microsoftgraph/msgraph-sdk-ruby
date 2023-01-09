@@ -3,8 +3,6 @@ require_relative '../me'
 require_relative './check_member_groups'
 
 module MicrosoftGraph::Me::CheckMemberGroups
-    ## 
-    # Provides operations to call the checkMemberGroups method.
     class CheckMemberGroupsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

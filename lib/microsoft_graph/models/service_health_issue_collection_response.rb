@@ -2,8 +2,6 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.
     class ServiceHealthIssueCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

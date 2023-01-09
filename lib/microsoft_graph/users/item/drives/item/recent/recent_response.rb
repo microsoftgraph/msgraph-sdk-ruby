@@ -8,8 +8,6 @@ require_relative '../item'
 require_relative './recent'
 
 module MicrosoftGraph::Users::Item::Drives::Item::Recent
-    ## 
-    # Provides operations to call the recent method.
     class RecentResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

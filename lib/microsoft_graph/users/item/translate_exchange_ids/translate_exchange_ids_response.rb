@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './translate_exchange_ids'
 
 module MicrosoftGraph::Users::Item::TranslateExchangeIds
-    ## 
-    # Provides operations to call the translateExchangeIds method.
     class TranslateExchangeIdsResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

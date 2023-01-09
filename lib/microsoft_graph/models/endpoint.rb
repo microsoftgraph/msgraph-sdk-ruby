@@ -2,8 +2,6 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to call the instantiate method.
     class Endpoint < MicrosoftGraph::Models::DirectoryObject
         include MicrosoftKiotaAbstractions::Parsable
         ## 

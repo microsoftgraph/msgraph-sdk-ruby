@@ -7,8 +7,6 @@ require_relative '../item'
 require_relative './get_staff_availability'
 
 module MicrosoftGraph::Solutions::BookingBusinesses::Item::GetStaffAvailability
-    ## 
-    # Provides operations to call the getStaffAvailability method.
     class GetStaffAvailabilityResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

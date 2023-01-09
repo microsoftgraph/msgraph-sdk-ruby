@@ -7,8 +7,6 @@ require_relative '../item'
 require_relative './copy'
 
 module MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Copy
-    ## 
-    # Provides operations to call the copy method.
     class CopyPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

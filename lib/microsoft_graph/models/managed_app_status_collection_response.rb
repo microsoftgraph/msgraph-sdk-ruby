@@ -2,8 +2,6 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the managedAppStatuses property of the microsoft.graph.deviceAppManagement entity.
     class ManagedAppStatusCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

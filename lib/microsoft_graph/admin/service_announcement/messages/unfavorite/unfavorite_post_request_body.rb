@@ -5,8 +5,6 @@ require_relative '../messages'
 require_relative './unfavorite'
 
 module MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Unfavorite
-    ## 
-    # Provides operations to call the unfavorite method.
     class UnfavoritePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

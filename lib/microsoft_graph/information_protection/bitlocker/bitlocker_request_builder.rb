@@ -42,28 +42,10 @@ module MicrosoftGraph::InformationProtection::Bitlocker
         ## 
         ## Get bitlocker from informationProtection
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a request_information
-        ## 
-        def create_get_request_information(request_configuration=nil)
-            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-            request_info.url_template = @url_template
-            request_info.path_parameters = @path_parameters
-            request_info.http_method = :GET
-            request_info.headers.add('Accept', 'application/json')
-            unless request_configuration.nil?
-                request_info.add_headers_from_raw_object(request_configuration.headers)
-                request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
-                request_info.add_request_options(request_configuration.options)
-            end
-            return request_info
-        end
-        ## 
-        ## Get bitlocker from informationProtection
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of bitlocker
+        ## @return a Fiber of bitlocker
         ## 
         def get(request_configuration=nil)
-            request_info = self.create_get_request_information(
+            request_info = self.to_get_request_information(
                 request_configuration
             )
             error_mapping = Hash.new
@@ -81,6 +63,24 @@ module MicrosoftGraph::InformationProtection::Bitlocker
             url_tpl_params = @path_parameters.clone
             url_tpl_params["bitlockerRecoveryKey%2Did"] = id
             return MicrosoftGraph::InformationProtection::Bitlocker::RecoveryKeys::Item::BitlockerRecoveryKeyItemRequestBuilder.new(url_tpl_params, @request_adapter)
+        end
+        ## 
+        ## Get bitlocker from informationProtection
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a request_information
+        ## 
+        def to_get_request_information(request_configuration=nil)
+            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+            request_info.url_template = @url_template
+            request_info.path_parameters = @path_parameters
+            request_info.http_method = :GET
+            request_info.headers.add('Accept', 'application/json')
+            unless request_configuration.nil?
+                request_info.add_headers_from_raw_object(request_configuration.headers)
+                request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
+                request_info.add_request_options(request_configuration.options)
+            end
+            return request_info
         end
 
         ## 

@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Available health states for the Device Health API
     ManagedDevicePartnerReportedHealthState = {
         Unknown: :Unknown,
         Activated: :Activated,

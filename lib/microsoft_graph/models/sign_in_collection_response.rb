@@ -2,8 +2,6 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
     class SignInCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

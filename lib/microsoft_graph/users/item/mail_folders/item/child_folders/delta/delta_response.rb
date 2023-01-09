@@ -9,8 +9,6 @@ require_relative '../child_folders'
 require_relative './delta'
 
 module MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Delta
-    ## 
-    # Provides operations to call the delta method.
     class DeltaResponse < MicrosoftGraph::Models::BaseDeltaFunctionResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

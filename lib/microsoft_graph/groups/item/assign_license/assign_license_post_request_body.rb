@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './assign_license'
 
 module MicrosoftGraph::Groups::Item::AssignLicense
-    ## 
-    # Provides operations to call the assignLicense method.
     class AssignLicensePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

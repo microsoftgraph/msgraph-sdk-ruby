@@ -7,8 +7,6 @@ require_relative '../external_sponsors'
 require_relative './validate_properties'
 
 module MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::ExternalSponsors::ValidateProperties
-    ## 
-    # Provides operations to call the validateProperties method.
     class ValidatePropertiesPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

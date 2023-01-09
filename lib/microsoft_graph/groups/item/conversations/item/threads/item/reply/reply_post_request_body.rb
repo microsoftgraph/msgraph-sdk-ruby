@@ -9,8 +9,6 @@ require_relative '../item'
 require_relative './reply'
 
 module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::Reply
-    ## 
-    # Provides operations to call the reply method.
     class ReplyPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -3,8 +3,6 @@ require_relative '../me'
 require_relative './wipe_managed_app_registrations_by_device_tag'
 
 module MicrosoftGraph::Me::WipeManagedAppRegistrationsByDeviceTag
-    ## 
-    # Provides operations to call the wipeManagedAppRegistrationsByDeviceTag method.
     class WipeManagedAppRegistrationsByDeviceTagPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

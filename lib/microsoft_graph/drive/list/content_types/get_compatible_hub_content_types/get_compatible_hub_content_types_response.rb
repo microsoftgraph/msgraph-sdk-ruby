@@ -7,8 +7,6 @@ require_relative '../content_types'
 require_relative './get_compatible_hub_content_types'
 
 module MicrosoftGraph::Drive::List::ContentTypes::GetCompatibleHubContentTypes
-    ## 
-    # Provides operations to call the getCompatibleHubContentTypes method.
     class GetCompatibleHubContentTypesResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

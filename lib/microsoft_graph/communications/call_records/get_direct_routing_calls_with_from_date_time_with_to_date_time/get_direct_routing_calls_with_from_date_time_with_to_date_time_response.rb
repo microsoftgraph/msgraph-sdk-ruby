@@ -6,8 +6,6 @@ require_relative '../call_records'
 require_relative './get_direct_routing_calls_with_from_date_time_with_to_date_time'
 
 module MicrosoftGraph::Communications::CallRecords::GetDirectRoutingCallsWithFromDateTimeWithToDateTime
-    ## 
-    # Provides operations to call the getDirectRoutingCalls method.
     class GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

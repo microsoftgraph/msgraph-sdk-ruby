@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible values for the file format of a report
     DeviceManagementReportFileFormat = {
         Csv: :Csv,
         Pdf: :Pdf,

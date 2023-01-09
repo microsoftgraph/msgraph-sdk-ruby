@@ -2,6 +2,8 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Singleton entity that acts as a container for all device management functionality.
     class DeviceManagement < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -173,7 +175,7 @@ module MicrosoftGraph::Models
             @conditional_access_settings = value
         end
         ## 
-        ## Instantiates a new DeviceManagement and sets the default values.
+        ## Instantiates a new deviceManagement and sets the default values.
         ## @return a void
         ## 
         def initialize()

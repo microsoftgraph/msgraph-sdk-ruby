@@ -10,8 +10,6 @@ require_relative '../item'
 require_relative './add_to_review_set'
 
 module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::AddToReviewSet
-    ## 
-    # Provides operations to call the addToReviewSet method.
     class AddToReviewSetPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

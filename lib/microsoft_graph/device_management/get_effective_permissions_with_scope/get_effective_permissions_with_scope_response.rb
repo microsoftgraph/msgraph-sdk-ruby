@@ -5,8 +5,6 @@ require_relative '../device_management'
 require_relative './get_effective_permissions_with_scope'
 
 module MicrosoftGraph::DeviceManagement::GetEffectivePermissionsWithScope
-    ## 
-    # Provides operations to call the getEffectivePermissions method.
     class GetEffectivePermissionsWithScopeResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

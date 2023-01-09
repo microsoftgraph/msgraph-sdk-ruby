@@ -7,8 +7,6 @@ require_relative '../device'
 require_relative './get_member_objects'
 
 module MicrosoftGraph::Me::Authentication::WindowsHelloForBusinessMethods::Item::Device::GetMemberObjects
-    ## 
-    # Provides operations to call the getMemberObjects method.
     class GetMemberObjectsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

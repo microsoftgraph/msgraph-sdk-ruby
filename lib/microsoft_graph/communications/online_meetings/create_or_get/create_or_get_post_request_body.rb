@@ -7,8 +7,6 @@ require_relative '../online_meetings'
 require_relative './create_or_get'
 
 module MicrosoftGraph::Communications::OnlineMeetings::CreateOrGet
-    ## 
-    # Provides operations to call the createOrGet method.
     class CreateOrGetPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

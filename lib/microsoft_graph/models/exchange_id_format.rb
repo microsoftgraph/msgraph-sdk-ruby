@@ -1,6 +1,4 @@
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to call the translateExchangeIds method.
     ExchangeIdFormat = {
         EntryId: :EntryId,
         EwsId: :EwsId,

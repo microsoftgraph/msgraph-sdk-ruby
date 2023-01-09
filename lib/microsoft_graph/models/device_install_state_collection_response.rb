@@ -2,8 +2,6 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the deviceStates property of the microsoft.graph.managedEBook entity.
     class DeviceInstallStateCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

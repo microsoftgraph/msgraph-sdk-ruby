@@ -7,8 +7,6 @@ require_relative '../chats'
 require_relative './get_all_messages'
 
 module MicrosoftGraph::Users::Item::Chats::GetAllMessages
-    ## 
-    # Provides operations to call the getAllMessages method.
     class GetAllMessagesResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

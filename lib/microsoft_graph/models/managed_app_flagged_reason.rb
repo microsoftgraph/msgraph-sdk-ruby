@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # The reason for which a user has been flagged
     ManagedAppFlaggedReason = {
         None: :None,
         RootedDevice: :RootedDevice,

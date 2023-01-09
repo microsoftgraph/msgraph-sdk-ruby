@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './get_applicable_content_types_for_list_with_list_id'
 
 module MicrosoftGraph::Sites::Item::GetApplicableContentTypesForListWithListId
-    ## 
-    # Provides operations to call the getApplicableContentTypesForList method.
     class GetApplicableContentTypesForListWithListIdResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

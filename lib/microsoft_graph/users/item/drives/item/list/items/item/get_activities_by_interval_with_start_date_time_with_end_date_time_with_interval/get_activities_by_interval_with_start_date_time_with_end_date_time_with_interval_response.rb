@@ -11,8 +11,6 @@ require_relative '../item'
 require_relative './get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval'
 
 module MicrosoftGraph::Users::Item::Drives::Item::List::Items::Item::GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval
-    ## 
-    # Provides operations to call the getActivitiesByInterval method.
     class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

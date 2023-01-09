@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # State of the action on the device
     ActionState = {
         None: :None,
         Pending: :Pending,

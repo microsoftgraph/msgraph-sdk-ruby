@@ -3,8 +3,6 @@ require_relative '../service_principals'
 require_relative './get_by_ids'
 
 module MicrosoftGraph::ServicePrincipals::GetByIds
-    ## 
-    # Provides operations to call the getByIds method.
     class GetByIdsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

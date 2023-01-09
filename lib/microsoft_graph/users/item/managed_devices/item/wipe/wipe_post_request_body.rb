@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './wipe'
 
 module MicrosoftGraph::Users::Item::ManagedDevices::Item::Wipe
-    ## 
-    # Provides operations to call the wipe method.
     class WipePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

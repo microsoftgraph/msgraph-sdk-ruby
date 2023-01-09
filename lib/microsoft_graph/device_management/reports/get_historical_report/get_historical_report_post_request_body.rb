@@ -4,8 +4,6 @@ require_relative '../reports'
 require_relative './get_historical_report'
 
 module MicrosoftGraph::DeviceManagement::Reports::GetHistoricalReport
-    ## 
-    # Provides operations to call the getHistoricalReport method.
     class GetHistoricalReportPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

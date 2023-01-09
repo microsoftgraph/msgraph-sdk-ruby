@@ -7,8 +7,6 @@ require_relative '../calendar_view'
 require_relative './delta'
 
 module MicrosoftGraph::Me::Calendar::CalendarView::Delta
-    ## 
-    # Provides operations to call the delta method.
     class DeltaResponse < MicrosoftGraph::Models::BaseDeltaFunctionResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

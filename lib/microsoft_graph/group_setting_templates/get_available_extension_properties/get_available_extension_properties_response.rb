@@ -5,8 +5,6 @@ require_relative '../group_setting_templates'
 require_relative './get_available_extension_properties'
 
 module MicrosoftGraph::GroupSettingTemplates::GetAvailableExtensionProperties
-    ## 
-    # Provides operations to call the getAvailableExtensionProperties method.
     class GetAvailableExtensionPropertiesResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

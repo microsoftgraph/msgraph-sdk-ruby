@@ -4,8 +4,6 @@ require_relative '../sites'
 require_relative './add'
 
 module MicrosoftGraph::Sites::Add
-    ## 
-    # Provides operations to call the add method.
     class AddPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

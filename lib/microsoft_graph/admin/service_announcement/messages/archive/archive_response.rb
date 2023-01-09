@@ -5,8 +5,6 @@ require_relative '../messages'
 require_relative './archive'
 
 module MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Archive
-    ## 
-    # Provides operations to call the archive method.
     class ArchiveResponse
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -4,8 +4,6 @@ require_relative '../item'
 require_relative './change_password'
 
 module MicrosoftGraph::Users::Item::ChangePassword
-    ## 
-    # Provides operations to call the changePassword method.
     class ChangePasswordPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

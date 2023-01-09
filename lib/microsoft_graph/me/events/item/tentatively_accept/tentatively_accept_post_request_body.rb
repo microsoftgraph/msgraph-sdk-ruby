@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './tentatively_accept'
 
 module MicrosoftGraph::Me::Events::Item::TentativelyAccept
-    ## 
-    # Provides operations to call the tentativelyAccept method.
     class TentativelyAcceptPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

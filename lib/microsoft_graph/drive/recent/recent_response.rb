@@ -5,8 +5,6 @@ require_relative '../drive'
 require_relative './recent'
 
 module MicrosoftGraph::Drive::Recent
-    ## 
-    # Provides operations to call the recent method.
     class RecentResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

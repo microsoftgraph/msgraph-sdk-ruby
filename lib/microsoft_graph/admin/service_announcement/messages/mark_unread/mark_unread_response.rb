@@ -5,8 +5,6 @@ require_relative '../messages'
 require_relative './mark_unread'
 
 module MicrosoftGraph::Admin::ServiceAnnouncement::Messages::MarkUnread
-    ## 
-    # Provides operations to call the markUnread method.
     class MarkUnreadResponse
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

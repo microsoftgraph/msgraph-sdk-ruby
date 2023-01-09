@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './check_granted_permissions_for_app'
 
 module MicrosoftGraph::Groups::Item::CheckGrantedPermissionsForApp
-    ## 
-    # Provides operations to call the checkGrantedPermissionsForApp method.
     class CheckGrantedPermissionsForAppResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

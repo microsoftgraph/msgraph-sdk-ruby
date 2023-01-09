@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './reset_password'
 
 module MicrosoftGraph::Me::Authentication::Methods::Item::ResetPassword
-    ## 
-    # Provides operations to call the resetPassword method.
     class ResetPasswordPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

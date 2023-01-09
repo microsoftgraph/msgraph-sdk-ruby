@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './update_recording_status'
 
 module MicrosoftGraph::Communications::Calls::Item::UpdateRecordingStatus
-    ## 
-    # Provides operations to call the updateRecordingStatus method.
     class UpdateRecordingStatusPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

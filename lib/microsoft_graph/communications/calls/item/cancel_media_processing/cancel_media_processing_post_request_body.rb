@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './cancel_media_processing'
 
 module MicrosoftGraph::Communications::Calls::Item::CancelMediaProcessing
-    ## 
-    # Provides operations to call the cancelMediaProcessing method.
     class CancelMediaProcessingPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

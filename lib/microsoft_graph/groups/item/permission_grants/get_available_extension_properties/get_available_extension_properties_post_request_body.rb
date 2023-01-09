@@ -5,8 +5,6 @@ require_relative '../permission_grants'
 require_relative './get_available_extension_properties'
 
 module MicrosoftGraph::Groups::Item::PermissionGrants::GetAvailableExtensionProperties
-    ## 
-    # Provides operations to call the getAvailableExtensionProperties method.
     class GetAvailableExtensionPropertiesPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

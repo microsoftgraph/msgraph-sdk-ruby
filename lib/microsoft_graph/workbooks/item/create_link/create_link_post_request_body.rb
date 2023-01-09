@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './create_link'
 
 module MicrosoftGraph::Workbooks::Item::CreateLink
-    ## 
-    # Provides operations to call the createLink method.
     class CreateLinkPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

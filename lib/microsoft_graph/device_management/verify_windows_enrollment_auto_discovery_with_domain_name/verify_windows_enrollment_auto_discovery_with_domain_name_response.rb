@@ -3,8 +3,6 @@ require_relative '../device_management'
 require_relative './verify_windows_enrollment_auto_discovery_with_domain_name'
 
 module MicrosoftGraph::DeviceManagement::VerifyWindowsEnrollmentAutoDiscoveryWithDomainName
-    ## 
-    # Provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
     class VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameResponse
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

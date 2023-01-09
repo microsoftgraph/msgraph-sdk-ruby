@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './set_priority'
 
 module MicrosoftGraph::DeviceManagement::DeviceEnrollmentConfigurations::Item::SetPriority
-    ## 
-    # Provides operations to call the setPriority method.
     class SetPriorityPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

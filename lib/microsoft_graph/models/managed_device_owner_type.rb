@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Owner type of device.
     ManagedDeviceOwnerType = {
         Unknown: :Unknown,
         Company: :Company,

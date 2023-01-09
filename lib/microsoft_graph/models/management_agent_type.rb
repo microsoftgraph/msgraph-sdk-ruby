@@ -1,6 +1,4 @@
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the collection of agreement entities.
     ManagementAgentType = {
         Eas: :Eas,
         Mdm: :Mdm,

@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './redirect'
 
 module MicrosoftGraph::Communications::Calls::Item::Redirect
-    ## 
-    # Provides operations to call the redirect method.
     class RedirectPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -4,8 +4,6 @@ require_relative '../reports'
 require_relative './get_configuration_setting_non_compliance_report'
 
 module MicrosoftGraph::DeviceManagement::Reports::GetConfigurationSettingNonComplianceReport
-    ## 
-    # Provides operations to call the getConfigurationSettingNonComplianceReport method.
     class GetConfigurationSettingNonComplianceReportPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

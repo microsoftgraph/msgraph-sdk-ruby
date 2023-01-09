@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './archive'
 
 module MicrosoftGraph::Me::JoinedTeams::Item::Archive
-    ## 
-    # Provides operations to call the archive method.
     class ArchivePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

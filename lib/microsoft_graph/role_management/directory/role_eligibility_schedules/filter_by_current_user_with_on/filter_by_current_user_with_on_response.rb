@@ -7,8 +7,6 @@ require_relative '../role_eligibility_schedules'
 require_relative './filter_by_current_user_with_on'
 
 module MicrosoftGraph::RoleManagement::Directory::RoleEligibilitySchedules::FilterByCurrentUserWithOn
-    ## 
-    # Provides operations to call the filterByCurrentUser method.
     class FilterByCurrentUserWithOnResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -6,8 +6,6 @@ require_relative '../notebooks'
 require_relative './get_notebook_from_web_url'
 
 module MicrosoftGraph::Users::Item::Onenote::Notebooks::GetNotebookFromWebUrl
-    ## 
-    # Provides operations to call the getNotebookFromWebUrl method.
     class GetNotebookFromWebUrlPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -4,8 +4,6 @@ require_relative '../item'
 require_relative './remove_group'
 
 module MicrosoftGraph::GroupLifecyclePolicies::Item::RemoveGroup
-    ## 
-    # Provides operations to call the removeGroup method.
     class RemoveGroupPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

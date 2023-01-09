@@ -4,8 +4,6 @@ require_relative '../item'
 require_relative './validate_permission'
 
 module MicrosoftGraph::Workbooks::Item::ValidatePermission
-    ## 
-    # Provides operations to call the validatePermission method.
     class ValidatePermissionPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

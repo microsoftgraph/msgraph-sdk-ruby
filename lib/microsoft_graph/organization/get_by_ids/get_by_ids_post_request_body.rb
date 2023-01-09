@@ -3,8 +3,6 @@ require_relative '../organization'
 require_relative './get_by_ids'
 
 module MicrosoftGraph::Organization::GetByIds
-    ## 
-    # Provides operations to call the getByIds method.
     class GetByIdsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

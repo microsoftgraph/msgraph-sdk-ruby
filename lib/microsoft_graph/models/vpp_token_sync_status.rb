@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible sync statuses associated with an Apple Volume Purchase Program token.
     VppTokenSyncStatus = {
         None: :None,
         InProgress: :InProgress,

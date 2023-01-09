@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Indicates the type of restart action.
     Win32LobAppRestartBehavior = {
         BasedOnReturnCode: :BasedOnReturnCode,
         Allow: :Allow,

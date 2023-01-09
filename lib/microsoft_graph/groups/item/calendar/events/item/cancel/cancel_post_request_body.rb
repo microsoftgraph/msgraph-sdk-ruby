@@ -7,8 +7,6 @@ require_relative '../item'
 require_relative './cancel'
 
 module MicrosoftGraph::Groups::Item::Calendar::Events::Item::Cancel
-    ## 
-    # Provides operations to call the cancel method.
     class CancelPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

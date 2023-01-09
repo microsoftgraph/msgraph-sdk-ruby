@@ -5,8 +5,6 @@ require_relative '../teams'
 require_relative './get_all_messages'
 
 module MicrosoftGraph::Teams::GetAllMessages
-    ## 
-    # Provides operations to call the getAllMessages method.
     class GetAllMessagesResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

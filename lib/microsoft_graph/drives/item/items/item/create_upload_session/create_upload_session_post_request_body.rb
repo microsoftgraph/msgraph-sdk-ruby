@@ -7,8 +7,6 @@ require_relative '../item'
 require_relative './create_upload_session'
 
 module MicrosoftGraph::Drives::Item::Items::Item::CreateUploadSession
-    ## 
-    # Provides operations to call the createUploadSession method.
     class CreateUploadSessionPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

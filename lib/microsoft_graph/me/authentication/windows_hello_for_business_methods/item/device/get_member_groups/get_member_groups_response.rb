@@ -8,8 +8,6 @@ require_relative '../device'
 require_relative './get_member_groups'
 
 module MicrosoftGraph::Me::Authentication::WindowsHelloForBusinessMethods::Item::Device::GetMemberGroups
-    ## 
-    # Provides operations to call the getMemberGroups method.
     class GetMemberGroupsResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

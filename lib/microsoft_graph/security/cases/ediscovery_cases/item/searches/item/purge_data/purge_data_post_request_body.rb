@@ -10,8 +10,6 @@ require_relative '../item'
 require_relative './purge_data'
 
 module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::PurgeData
-    ## 
-    # Provides operations to call the purgeData method.
     class PurgeDataPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

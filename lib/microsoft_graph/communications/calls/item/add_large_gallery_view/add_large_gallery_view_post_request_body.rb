@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './add_large_gallery_view'
 
 module MicrosoftGraph::Communications::Calls::Item::AddLargeGalleryView
-    ## 
-    # Provides operations to call the addLargeGalleryView method.
     class AddLargeGalleryViewPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

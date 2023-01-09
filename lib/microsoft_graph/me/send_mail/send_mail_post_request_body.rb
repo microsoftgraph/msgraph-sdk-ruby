@@ -4,8 +4,6 @@ require_relative '../me'
 require_relative './send_mail'
 
 module MicrosoftGraph::Me::SendMail
-    ## 
-    # Provides operations to call the sendMail method.
     class SendMailPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

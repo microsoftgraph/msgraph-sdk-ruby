@@ -7,8 +7,6 @@ require_relative '../device'
 require_relative './check_member_objects'
 
 module MicrosoftGraph::Me::Authentication::WindowsHelloForBusinessMethods::Item::Device::CheckMemberObjects
-    ## 
-    # Provides operations to call the checkMemberObjects method.
     class CheckMemberObjectsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

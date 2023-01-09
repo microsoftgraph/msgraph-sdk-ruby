@@ -12,8 +12,6 @@ require_relative '../in_reply_to'
 require_relative './reply'
 
 module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::Posts::Item::InReplyTo::Reply
-    ## 
-    # Provides operations to call the reply method.
     class ReplyPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

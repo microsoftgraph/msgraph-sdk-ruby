@@ -89,24 +89,6 @@ module MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::InReplyTo
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Read-only. Supports $expand.
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a request_information
-        ## 
-        def create_get_request_information(request_configuration=nil)
-            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-            request_info.url_template = @url_template
-            request_info.path_parameters = @path_parameters
-            request_info.http_method = :GET
-            request_info.headers.add('Accept', 'application/json')
-            unless request_configuration.nil?
-                request_info.add_headers_from_raw_object(request_configuration.headers)
-                request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
-                request_info.add_request_options(request_configuration.options)
-            end
-            return request_info
-        end
-        ## 
         ## Provides operations to manage the extensions property of the microsoft.graph.post entity.
         ## @param id Unique identifier of the item
         ## @return a extension_item_request_builder
@@ -120,10 +102,10 @@ module MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::InReplyTo
         ## 
         ## Read-only. Supports $expand.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of post
+        ## @return a Fiber of post
         ## 
         def get(request_configuration=nil)
-            request_info = self.create_get_request_information(
+            request_info = self.to_get_request_information(
                 request_configuration
             )
             error_mapping = Hash.new
@@ -152,6 +134,24 @@ module MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::InReplyTo
             url_tpl_params = @path_parameters.clone
             url_tpl_params["singleValueLegacyExtendedProperty%2Did"] = id
             return MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::InReplyTo::SingleValueExtendedProperties::Item::SingleValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
+        end
+        ## 
+        ## Read-only. Supports $expand.
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a request_information
+        ## 
+        def to_get_request_information(request_configuration=nil)
+            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+            request_info.url_template = @url_template
+            request_info.path_parameters = @path_parameters
+            request_info.http_method = :GET
+            request_info.headers.add('Accept', 'application/json')
+            unless request_configuration.nil?
+                request_info.add_headers_from_raw_object(request_configuration.headers)
+                request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
+                request_info.add_request_options(request_configuration.options)
+            end
+            return request_info
         end
 
         ## 

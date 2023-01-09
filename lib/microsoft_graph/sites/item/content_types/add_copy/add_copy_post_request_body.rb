@@ -5,8 +5,6 @@ require_relative '../content_types'
 require_relative './add_copy'
 
 module MicrosoftGraph::Sites::Item::ContentTypes::AddCopy
-    ## 
-    # Provides operations to call the addCopy method.
     class AddCopyPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

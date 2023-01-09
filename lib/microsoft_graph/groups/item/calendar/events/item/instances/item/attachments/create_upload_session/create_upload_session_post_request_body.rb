@@ -11,8 +11,6 @@ require_relative '../attachments'
 require_relative './create_upload_session'
 
 module MicrosoftGraph::Groups::Item::Calendar::Events::Item::Instances::Item::Attachments::CreateUploadSession
-    ## 
-    # Provides operations to call the createUploadSession method.
     class CreateUploadSessionPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

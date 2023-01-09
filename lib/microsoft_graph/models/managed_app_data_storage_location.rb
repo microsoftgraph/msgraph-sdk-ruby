@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Storage locations where managed apps can potentially store their data
     ManagedAppDataStorageLocation = {
         OneDriveForBusiness: :OneDriveForBusiness,
         SharePoint: :SharePoint,

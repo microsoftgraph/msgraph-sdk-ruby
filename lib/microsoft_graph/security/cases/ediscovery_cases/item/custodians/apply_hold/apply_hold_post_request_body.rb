@@ -7,8 +7,6 @@ require_relative '../custodians'
 require_relative './apply_hold'
 
 module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::ApplyHold
-    ## 
-    # Provides operations to call the applyHold method.
     class ApplyHoldPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

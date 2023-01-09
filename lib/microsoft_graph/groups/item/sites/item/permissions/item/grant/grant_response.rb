@@ -10,8 +10,6 @@ require_relative '../item'
 require_relative './grant'
 
 module MicrosoftGraph::Groups::Item::Sites::Item::Permissions::Item::Grant
-    ## 
-    # Provides operations to call the grant method.
     class GrantResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

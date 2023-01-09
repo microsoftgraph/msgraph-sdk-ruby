@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './add_password'
 
 module MicrosoftGraph::Applications::Item::AddPassword
-    ## 
-    # Provides operations to call the addPassword method.
     class AddPasswordPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

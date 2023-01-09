@@ -45,48 +45,10 @@ module MicrosoftGraph::Communications::CallRecords
         ## 
         ## Get callRecords from communications
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a request_information
-        ## 
-        def create_get_request_information(request_configuration=nil)
-            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-            request_info.url_template = @url_template
-            request_info.path_parameters = @path_parameters
-            request_info.http_method = :GET
-            request_info.headers.add('Accept', 'application/json')
-            unless request_configuration.nil?
-                request_info.add_headers_from_raw_object(request_configuration.headers)
-                request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
-                request_info.add_request_options(request_configuration.options)
-            end
-            return request_info
-        end
-        ## 
-        ## Create new navigation property to callRecords for communications
-        ## @param body The request body
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a request_information
-        ## 
-        def create_post_request_information(body, request_configuration=nil)
-            raise StandardError, 'body cannot be null' if body.nil?
-            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-            request_info.url_template = @url_template
-            request_info.path_parameters = @path_parameters
-            request_info.http_method = :POST
-            request_info.headers.add('Accept', 'application/json')
-            unless request_configuration.nil?
-                request_info.add_headers_from_raw_object(request_configuration.headers)
-                request_info.add_request_options(request_configuration.options)
-            end
-            request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
-            return request_info
-        end
-        ## 
-        ## Get callRecords from communications
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of call_record_collection_response
+        ## @return a Fiber of call_record_collection_response
         ## 
         def get(request_configuration=nil)
-            request_info = self.create_get_request_information(
+            request_info = self.to_get_request_information(
                 request_configuration
             )
             error_mapping = Hash.new
@@ -120,17 +82,55 @@ module MicrosoftGraph::Communications::CallRecords
         ## Create new navigation property to callRecords for communications
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of call_record
+        ## @return a Fiber of call_record
         ## 
         def post(body, request_configuration=nil)
             raise StandardError, 'body cannot be null' if body.nil?
-            request_info = self.create_post_request_information(
+            request_info = self.to_post_request_information(
                 body, request_configuration
             )
             error_mapping = Hash.new
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecords::CallRecord.create_from_discriminator_value(pn) }, error_mapping)
+        end
+        ## 
+        ## Get callRecords from communications
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a request_information
+        ## 
+        def to_get_request_information(request_configuration=nil)
+            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+            request_info.url_template = @url_template
+            request_info.path_parameters = @path_parameters
+            request_info.http_method = :GET
+            request_info.headers.add('Accept', 'application/json')
+            unless request_configuration.nil?
+                request_info.add_headers_from_raw_object(request_configuration.headers)
+                request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
+                request_info.add_request_options(request_configuration.options)
+            end
+            return request_info
+        end
+        ## 
+        ## Create new navigation property to callRecords for communications
+        ## @param body The request body
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a request_information
+        ## 
+        def to_post_request_information(body, request_configuration=nil)
+            raise StandardError, 'body cannot be null' if body.nil?
+            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+            request_info.url_template = @url_template
+            request_info.path_parameters = @path_parameters
+            request_info.http_method = :POST
+            request_info.headers.add('Accept', 'application/json')
+            unless request_configuration.nil?
+                request_info.add_headers_from_raw_object(request_configuration.headers)
+                request_info.add_request_options(request_configuration.options)
+            end
+            request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+            return request_info
         end
 
         ## 

@@ -4,8 +4,6 @@ require_relative '../item'
 require_relative './check_member_groups'
 
 module MicrosoftGraph::DirectoryRoles::Item::CheckMemberGroups
-    ## 
-    # Provides operations to call the checkMemberGroups method.
     class CheckMemberGroupsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

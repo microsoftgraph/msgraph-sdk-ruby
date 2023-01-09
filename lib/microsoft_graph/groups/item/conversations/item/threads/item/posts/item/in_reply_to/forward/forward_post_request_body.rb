@@ -12,8 +12,6 @@ require_relative '../in_reply_to'
 require_relative './forward'
 
 module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::Posts::Item::InReplyTo::Forward
-    ## 
-    # Provides operations to call the forward method.
     class ForwardPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

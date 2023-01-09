@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible values of AppLocker Application Control Types
     AppLockerApplicationControlType = {
         NotConfigured: :NotConfigured,
         EnforceComponentsAndStoreApps: :EnforceComponentsAndStoreApps,

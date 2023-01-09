@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible statuses associated with a generated report
     DeviceManagementReportStatus = {
         Unknown: :Unknown,
         NotStarted: :NotStarted,

@@ -11,8 +11,6 @@ require_relative '../item'
 require_relative './tentatively_accept'
 
 module MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::CalendarView::Item::TentativelyAccept
-    ## 
-    # Provides operations to call the tentativelyAccept method.
     class TentativelyAcceptPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

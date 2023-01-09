@@ -4,8 +4,6 @@ require_relative '../item'
 require_relative './promote'
 
 module MicrosoftGraph::Domains::Item::Promote
-    ## 
-    # Provides operations to call the promote method.
     class PromoteResponse
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

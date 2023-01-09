@@ -12,8 +12,6 @@ require_relative '../item'
 require_relative './onenote_patch_content'
 
 module MicrosoftGraph::Users::Item::Onenote::SectionGroups::Item::Sections::Item::Pages::Item::OnenotePatchContent
-    ## 
-    # Provides operations to call the onenotePatchContent method.
     class OnenotePatchContentPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

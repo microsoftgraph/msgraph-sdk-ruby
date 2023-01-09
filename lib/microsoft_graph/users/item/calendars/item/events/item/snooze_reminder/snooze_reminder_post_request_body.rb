@@ -9,8 +9,6 @@ require_relative '../item'
 require_relative './snooze_reminder'
 
 module MicrosoftGraph::Users::Item::Calendars::Item::Events::Item::SnoozeReminder
-    ## 
-    # Provides operations to call the snoozeReminder method.
     class SnoozeReminderPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -1,6 +1,4 @@
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to call the getMailTips method.
     MailTipsType = {
         AutomaticReplies: :AutomaticReplies,
         MailboxFullStatus: :MailboxFullStatus,

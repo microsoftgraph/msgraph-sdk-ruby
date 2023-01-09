@@ -4,8 +4,6 @@ require_relative '../item'
 require_relative './preview'
 
 module MicrosoftGraph::Workbooks::Item::Preview
-    ## 
-    # Provides operations to call the preview method.
     class PreviewPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

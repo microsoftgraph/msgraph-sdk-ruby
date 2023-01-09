@@ -4,8 +4,6 @@ require_relative '../me'
 require_relative './translate_exchange_ids'
 
 module MicrosoftGraph::Me::TranslateExchangeIds
-    ## 
-    # Provides operations to call the translateExchangeIds method.
     class TranslateExchangeIdsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

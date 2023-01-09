@@ -7,8 +7,6 @@ require_relative '../assignments'
 require_relative './additional_access_with_access_package_id_with_incompatible_access_package_id'
 
 module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Assignments::AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId
-    ## 
-    # Provides operations to call the additionalAccess method.
     class AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

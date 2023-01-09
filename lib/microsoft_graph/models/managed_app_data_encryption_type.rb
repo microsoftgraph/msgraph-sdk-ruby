@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Represents the level to which app data is encrypted for managed apps
     ManagedAppDataEncryptionType = {
         UseDeviceSettings: :UseDeviceSettings,
         AfterDeviceRestart: :AfterDeviceRestart,

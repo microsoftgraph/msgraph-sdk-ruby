@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Windows Hello for Business pin usage options
     WindowsHelloForBusinessPinUsage = {
         Allowed: :Allowed,
         Required: :Required,

@@ -4,8 +4,6 @@ require_relative '../reports'
 require_relative './get_device_management_intent_per_setting_contributing_profiles'
 
 module MicrosoftGraph::DeviceManagement::Reports::GetDeviceManagementIntentPerSettingContributingProfiles
-    ## 
-    # Provides operations to call the getDeviceManagementIntentPerSettingContributingProfiles method.
     class GetDeviceManagementIntentPerSettingContributingProfilesPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

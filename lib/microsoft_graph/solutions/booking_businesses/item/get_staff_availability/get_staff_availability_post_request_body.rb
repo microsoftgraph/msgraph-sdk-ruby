@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './get_staff_availability'
 
 module MicrosoftGraph::Solutions::BookingBusinesses::Item::GetStaffAvailability
-    ## 
-    # Provides operations to call the getStaffAvailability method.
     class GetStaffAvailabilityPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

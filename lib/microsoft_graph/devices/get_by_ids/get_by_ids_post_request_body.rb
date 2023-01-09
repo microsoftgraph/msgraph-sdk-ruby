@@ -3,8 +3,6 @@ require_relative '../devices'
 require_relative './get_by_ids'
 
 module MicrosoftGraph::Devices::GetByIds
-    ## 
-    # Provides operations to call the getByIds method.
     class GetByIdsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

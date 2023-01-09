@@ -11,8 +11,6 @@ require_relative '../item'
 require_relative './grant'
 
 module MicrosoftGraph::Groups::Item::Drives::Item::Items::Item::Permissions::Item::Grant
-    ## 
-    # Provides operations to call the grant method.
     class GrantPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -4,8 +4,6 @@ require_relative '../presence'
 require_relative './set_user_preferred_presence'
 
 module MicrosoftGraph::Me::Presence::SetUserPreferredPresence
-    ## 
-    # Provides operations to call the setUserPreferredPresence method.
     class SetUserPreferredPresencePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

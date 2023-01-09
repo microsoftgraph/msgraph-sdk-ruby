@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './unhide_for_user'
 
 module MicrosoftGraph::Me::Chats::Item::UnhideForUser
-    ## 
-    # Provides operations to call the unhideForUser method.
     class UnhideForUserPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

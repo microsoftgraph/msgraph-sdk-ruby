@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Delivery optimization mode for peer distribution
     WindowsDeliveryOptimizationMode = {
         UserDefined: :UserDefined,
         HttpOnly: :HttpOnly,

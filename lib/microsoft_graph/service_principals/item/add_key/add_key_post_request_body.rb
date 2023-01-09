@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './add_key'
 
 module MicrosoftGraph::ServicePrincipals::Item::AddKey
-    ## 
-    # Provides operations to call the addKey method.
     class AddKeyPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

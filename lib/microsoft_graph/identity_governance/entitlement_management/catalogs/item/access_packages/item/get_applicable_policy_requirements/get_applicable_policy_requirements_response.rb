@@ -10,8 +10,6 @@ require_relative '../item'
 require_relative './get_applicable_policy_requirements'
 
 module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::GetApplicablePolicyRequirements
-    ## 
-    # Provides operations to call the getApplicablePolicyRequirements method.
     class GetApplicablePolicyRequirementsResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

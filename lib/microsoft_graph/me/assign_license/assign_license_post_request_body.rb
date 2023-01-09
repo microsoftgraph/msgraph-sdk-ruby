@@ -4,8 +4,6 @@ require_relative '../me'
 require_relative './assign_license'
 
 module MicrosoftGraph::Me::AssignLicense
-    ## 
-    # Provides operations to call the assignLicense method.
     class AssignLicensePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

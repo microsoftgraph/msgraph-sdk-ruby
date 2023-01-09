@@ -9,8 +9,6 @@ require_relative '../root'
 require_relative './get_activities_by_interval'
 
 module MicrosoftGraph::Users::Item::Drives::Item::Root::GetActivitiesByInterval
-    ## 
-    # Provides operations to call the getActivitiesByInterval method.
     class GetActivitiesByIntervalResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

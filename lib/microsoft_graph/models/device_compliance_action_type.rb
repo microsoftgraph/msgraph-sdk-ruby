@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Scheduled Action Type Enum
     DeviceComplianceActionType = {
         NoAction: :NoAction,
         Notification: :Notification,

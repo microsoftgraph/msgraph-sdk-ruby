@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # The current TeamViewer connector status
     RemoteAssistanceOnboardingStatus = {
         NotOnboarded: :NotOnboarded,
         Onboarding: :Onboarding,

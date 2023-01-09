@@ -4,8 +4,6 @@ require_relative '../me'
 require_relative './get_mail_tips'
 
 module MicrosoftGraph::Me::GetMailTips
-    ## 
-    # Provides operations to call the getMailTips method.
     class GetMailTipsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

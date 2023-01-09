@@ -6,8 +6,6 @@ require_relative '../security'
 require_relative './get_attack_simulation_simulation_user_coverage'
 
 module MicrosoftGraph::Reports::Security::GetAttackSimulationSimulationUserCoverage
-    ## 
-    # Provides operations to call the getAttackSimulationSimulationUserCoverage method.
     class GetAttackSimulationSimulationUserCoverageResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

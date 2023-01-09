@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './subscribe_to_tone'
 
 module MicrosoftGraph::Communications::Calls::Item::SubscribeToTone
-    ## 
-    # Provides operations to call the subscribeToTone method.
     class SubscribeToTonePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -3,8 +3,6 @@ require_relative '../organization'
 require_relative './validate_properties'
 
 module MicrosoftGraph::Organization::ValidateProperties
-    ## 
-    # Provides operations to call the validateProperties method.
     class ValidatePropertiesPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

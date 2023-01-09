@@ -6,8 +6,6 @@ require_relative '../applies_to'
 require_relative './validate_properties'
 
 module MicrosoftGraph::Policies::FeatureRolloutPolicies::Item::AppliesTo::ValidateProperties
-    ## 
-    # Provides operations to call the validateProperties method.
     class ValidatePropertiesPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Android Work Profile default app permission policy type.
     AndroidWorkProfileDefaultAppPermissionPolicyType = {
         DeviceDefault: :DeviceDefault,
         Prompt: :Prompt,

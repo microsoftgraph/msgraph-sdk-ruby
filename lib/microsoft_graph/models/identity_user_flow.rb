@@ -11,7 +11,7 @@ module MicrosoftGraph::Models
         # The userFlowTypeVersion property
         @user_flow_type_version
         ## 
-        ## Instantiates a new IdentityUserFlow and sets the default values.
+        ## Instantiates a new identityUserFlow and sets the default values.
         ## @return a void
         ## 
         def initialize()

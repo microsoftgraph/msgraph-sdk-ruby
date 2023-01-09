@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible values of the compliance app list.
     AppListType = {
         None: :None,
         AppsInListCompliant: :AppsInListCompliant,

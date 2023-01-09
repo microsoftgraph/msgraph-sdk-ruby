@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Data can be transferred from/to these classes of apps
     ManagedAppDataTransferLevel = {
         AllApps: :AllApps,
         ManagedApps: :ManagedApps,

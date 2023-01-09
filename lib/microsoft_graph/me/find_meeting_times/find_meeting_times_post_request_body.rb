@@ -6,8 +6,6 @@ require_relative '../me'
 require_relative './find_meeting_times'
 
 module MicrosoftGraph::Me::FindMeetingTimes
-    ## 
-    # Provides operations to call the findMeetingTimes method.
     class FindMeetingTimesPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

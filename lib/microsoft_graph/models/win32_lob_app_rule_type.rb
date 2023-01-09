@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Contains rule types for Win32 LOB apps.
     Win32LobAppRuleType = {
         Detection: :Detection,
         Requirement: :Requirement,

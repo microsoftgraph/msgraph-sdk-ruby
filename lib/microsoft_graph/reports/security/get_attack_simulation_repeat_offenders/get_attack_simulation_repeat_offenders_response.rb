@@ -6,8 +6,6 @@ require_relative '../security'
 require_relative './get_attack_simulation_repeat_offenders'
 
 module MicrosoftGraph::Reports::Security::GetAttackSimulationRepeatOffenders
-    ## 
-    # Provides operations to call the getAttackSimulationRepeatOffenders method.
     class GetAttackSimulationRepeatOffendersResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

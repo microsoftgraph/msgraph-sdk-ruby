@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './mark_chat_read_for_user'
 
 module MicrosoftGraph::Chats::Item::MarkChatReadForUser
-    ## 
-    # Provides operations to call the markChatReadForUser method.
     class MarkChatReadForUserPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

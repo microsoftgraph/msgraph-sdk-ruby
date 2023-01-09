@@ -8,8 +8,6 @@ require_relative '../messages'
 require_relative './delta'
 
 module MicrosoftGraph::Teams::Item::PrimaryChannel::Messages::Delta
-    ## 
-    # Provides operations to call the delta method.
     class DeltaResponse < MicrosoftGraph::Models::BaseDeltaFunctionResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

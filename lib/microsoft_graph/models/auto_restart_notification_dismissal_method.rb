@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Auto restart required notification dismissal method
     AutoRestartNotificationDismissalMethod = {
         NotConfigured: :NotConfigured,
         Automatic: :Automatic,

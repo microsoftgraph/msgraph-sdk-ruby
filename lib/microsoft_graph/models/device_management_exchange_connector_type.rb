@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # The type of Exchange Connector.
     DeviceManagementExchangeConnectorType = {
         OnPremises: :OnPremises,
         Hosted: :Hosted,

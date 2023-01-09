@@ -3,6 +3,8 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # An abstract class containing the base properties for Intune mobile apps.
     class MobileApp < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -81,7 +83,7 @@ module MicrosoftGraph::Models
             @categories = value
         end
         ## 
-        ## Instantiates a new MobileApp and sets the default values.
+        ## Instantiates a new mobileApp and sets the default values.
         ## @return a void
         ## 
         def initialize()

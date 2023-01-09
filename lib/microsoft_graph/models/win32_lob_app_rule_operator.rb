@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Contains properties for detection operator.
     Win32LobAppRuleOperator = {
         NotConfigured: :NotConfigured,
         Equal: :Equal,

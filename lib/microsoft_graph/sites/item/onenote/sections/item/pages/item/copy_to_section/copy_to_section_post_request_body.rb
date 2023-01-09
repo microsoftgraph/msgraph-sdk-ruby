@@ -9,8 +9,6 @@ require_relative '../item'
 require_relative './copy_to_section'
 
 module MicrosoftGraph::Sites::Item::Onenote::Sections::Item::Pages::Item::CopyToSection
-    ## 
-    # Provides operations to call the copyToSection method.
     class CopyToSectionPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

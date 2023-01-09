@@ -3,8 +3,6 @@ require_relative '../models'
 require_relative './term_store'
 
 module MicrosoftGraph::Models::TermStore
-    ## 
-    # Provides operations to manage the collection of agreement entities.
     class Relation < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 

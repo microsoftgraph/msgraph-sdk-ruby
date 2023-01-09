@@ -5,8 +5,6 @@ require_relative '../root'
 require_relative './restore'
 
 module MicrosoftGraph::Drive::Root::Restore
-    ## 
-    # Provides operations to call the restore method.
     class RestorePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

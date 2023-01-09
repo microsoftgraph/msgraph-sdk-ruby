@@ -7,8 +7,6 @@ require_relative '../noncustodial_data_sources'
 require_relative './apply_hold'
 
 module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::ApplyHold
-    ## 
-    # Provides operations to call the applyHold method.
     class ApplyHoldPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './assign'
 
 module MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Item::Assign
-    ## 
-    # Provides operations to call the assign method.
     class AssignPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

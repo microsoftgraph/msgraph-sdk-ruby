@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Character set which is to be used for a user's app PIN
     ManagedAppPinCharacterSet = {
         Numeric: :Numeric,
         AlphanumericAndSymbol: :AlphanumericAndSymbol,

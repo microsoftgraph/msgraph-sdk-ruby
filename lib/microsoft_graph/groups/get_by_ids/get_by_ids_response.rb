@@ -5,8 +5,6 @@ require_relative '../groups'
 require_relative './get_by_ids'
 
 module MicrosoftGraph::Groups::GetByIds
-    ## 
-    # Provides operations to call the getByIds method.
     class GetByIdsResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

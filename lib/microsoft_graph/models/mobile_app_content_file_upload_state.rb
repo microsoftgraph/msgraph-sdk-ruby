@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Contains properties for upload request states.
     MobileAppContentFileUploadState = {
         Success: :Success,
         TransientError: :TransientError,

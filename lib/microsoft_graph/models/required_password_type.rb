@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible values of required passwords.
     RequiredPasswordType = {
         DeviceDefault: :DeviceDefault,
         Alphanumeric: :Alphanumeric,

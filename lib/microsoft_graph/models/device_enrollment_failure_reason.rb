@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Top level failure categories for enrollment.
     DeviceEnrollmentFailureReason = {
         Unknown: :Unknown,
         Authentication: :Authentication,

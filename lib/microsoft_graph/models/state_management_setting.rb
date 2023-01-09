@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # State Management Setting.
     StateManagementSetting = {
         NotConfigured: :NotConfigured,
         Blocked: :Blocked,

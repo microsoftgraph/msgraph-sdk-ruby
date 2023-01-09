@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './windows_defender_scan'
 
 module MicrosoftGraph::Users::Item::ManagedDevices::Item::WindowsDefenderScan
-    ## 
-    # Provides operations to call the windowsDefenderScan method.
     class WindowsDefenderScanPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

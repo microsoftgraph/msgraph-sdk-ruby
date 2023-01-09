@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to call the sync method.
+    # The type of Exchange Connector sync requested.
     DeviceManagementExchangeConnectorSyncType = {
         FullSync: :FullSync,
         DeltaSync: :DeltaSync,

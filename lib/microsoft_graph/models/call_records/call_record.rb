@@ -4,8 +4,6 @@ require_relative '../models'
 require_relative './call_records'
 
 module MicrosoftGraph::Models::CallRecords
-    ## 
-    # Provides operations to manage the collection of agreement entities.
     class CallRecord < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 

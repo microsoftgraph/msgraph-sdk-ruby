@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Scheduled the update installation on the weeks of the month
     WindowsUpdateForBusinessUpdateWeeks = {
         UserDefined: :UserDefined,
         FirstWeek: :FirstWeek,

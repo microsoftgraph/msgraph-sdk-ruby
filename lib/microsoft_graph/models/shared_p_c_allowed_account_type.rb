@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Type of accounts that are allowed to share the PC.
     SharedPCAllowedAccountType = {
         Guest: :Guest,
         Domain: :Domain,

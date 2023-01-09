@@ -11,8 +11,6 @@ require_relative '../item'
 require_relative './copy_to_notebook'
 
 module MicrosoftGraph::Groups::Item::Onenote::Notebooks::Item::SectionGroups::Item::Sections::Item::CopyToNotebook
-    ## 
-    # Provides operations to call the copyToNotebook method.
     class CopyToNotebookPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

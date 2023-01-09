@@ -4,8 +4,6 @@ require_relative '../reports'
 require_relative './get_compliance_policy_non_compliance_report'
 
 module MicrosoftGraph::DeviceManagement::Reports::GetCompliancePolicyNonComplianceReport
-    ## 
-    # Provides operations to call the getCompliancePolicyNonComplianceReport method.
     class GetCompliancePolicyNonComplianceReportPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

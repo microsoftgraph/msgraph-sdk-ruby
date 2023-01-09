@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './get_member_groups'
 
 module MicrosoftGraph::PermissionGrants::Item::GetMemberGroups
-    ## 
-    # Provides operations to call the getMemberGroups method.
     class GetMemberGroupsResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

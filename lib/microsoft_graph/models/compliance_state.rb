@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Compliance state.
     ComplianceState = {
         Unknown: :Unknown,
         Compliant: :Compliant,

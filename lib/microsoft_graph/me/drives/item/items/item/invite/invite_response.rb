@@ -9,8 +9,6 @@ require_relative '../item'
 require_relative './invite'
 
 module MicrosoftGraph::Me::Drives::Item::Items::Item::Invite
-    ## 
-    # Provides operations to call the invite method.
     class InviteResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

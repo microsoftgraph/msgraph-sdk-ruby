@@ -7,8 +7,6 @@ require_relative '../outlook'
 require_relative './supported_time_zones'
 
 module MicrosoftGraph::Users::Item::Outlook::SupportedTimeZones
-    ## 
-    # Provides operations to call the supportedTimeZones method.
     class SupportedTimeZonesResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

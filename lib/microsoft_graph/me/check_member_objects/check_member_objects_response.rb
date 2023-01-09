@@ -4,8 +4,6 @@ require_relative '../me'
 require_relative './check_member_objects'
 
 module MicrosoftGraph::Me::CheckMemberObjects
-    ## 
-    # Provides operations to call the checkMemberObjects method.
     class CheckMemberObjectsResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

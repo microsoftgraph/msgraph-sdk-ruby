@@ -7,8 +7,6 @@ require_relative '../sites'
 require_relative './add'
 
 module MicrosoftGraph::Groups::Item::Sites::Add
-    ## 
-    # Provides operations to call the add method.
     class AddResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

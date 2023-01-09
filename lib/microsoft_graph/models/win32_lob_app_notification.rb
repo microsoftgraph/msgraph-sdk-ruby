@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Contains value for notification status.
     Win32LobAppNotification = {
         ShowAll: :ShowAll,
         ShowReboot: :ShowReboot,

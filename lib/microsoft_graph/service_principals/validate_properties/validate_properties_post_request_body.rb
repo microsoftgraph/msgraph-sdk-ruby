@@ -3,8 +3,6 @@ require_relative '../service_principals'
 require_relative './validate_properties'
 
 module MicrosoftGraph::ServicePrincipals::ValidateProperties
-    ## 
-    # Provides operations to call the validateProperties method.
     class ValidatePropertiesPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

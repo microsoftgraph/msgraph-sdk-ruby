@@ -1,6 +1,4 @@
 module MicrosoftGraph::Models::ExternalConnectors
-    ## 
-    # Provides operations to manage the collection of externalConnection entities.
     Label = {
         Title: :Title,
         Url: :Url,

@@ -6,8 +6,6 @@ require_relative '../permission'
 require_relative './grant'
 
 module MicrosoftGraph::Shares::Item::Permission::Grant
-    ## 
-    # Provides operations to call the grant method.
     class GrantPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

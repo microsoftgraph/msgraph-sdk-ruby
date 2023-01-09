@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # App configuration key types.
     MdmAppConfigKeyType = {
         StringType: :StringType,
         IntegerType: :IntegerType,

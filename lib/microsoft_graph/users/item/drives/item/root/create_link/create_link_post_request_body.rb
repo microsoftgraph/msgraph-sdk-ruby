@@ -8,8 +8,6 @@ require_relative '../root'
 require_relative './create_link'
 
 module MicrosoftGraph::Users::Item::Drives::Item::Root::CreateLink
-    ## 
-    # Provides operations to call the createLink method.
     class CreateLinkPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -10,8 +10,6 @@ require_relative '../members'
 require_relative './add'
 
 module MicrosoftGraph::Users::Item::JoinedTeams::Item::PrimaryChannel::Members::Add
-    ## 
-    # Provides operations to call the add method.
     class AddResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

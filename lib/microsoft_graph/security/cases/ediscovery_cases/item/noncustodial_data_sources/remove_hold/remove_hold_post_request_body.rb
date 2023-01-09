@@ -7,8 +7,6 @@ require_relative '../noncustodial_data_sources'
 require_relative './remove_hold'
 
 module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::RemoveHold
-    ## 
-    # Provides operations to call the removeHold method.
     class RemoveHoldPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

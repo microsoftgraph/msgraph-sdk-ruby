@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Device Exchange Access State Reason.
     DeviceManagementExchangeAccessStateReason = {
         None: :None,
         Unknown: :Unknown,

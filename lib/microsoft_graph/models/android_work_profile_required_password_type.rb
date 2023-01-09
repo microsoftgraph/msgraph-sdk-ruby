@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Android Work Profile required password type.
     AndroidWorkProfileRequiredPasswordType = {
         DeviceDefault: :DeviceDefault,
         LowSecurityBiometric: :LowSecurityBiometric,

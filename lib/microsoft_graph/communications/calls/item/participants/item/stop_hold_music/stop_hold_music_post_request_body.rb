@@ -7,8 +7,6 @@ require_relative '../item'
 require_relative './stop_hold_music'
 
 module MicrosoftGraph::Communications::Calls::Item::Participants::Item::StopHoldMusic
-    ## 
-    # Provides operations to call the stopHoldMusic method.
     class StopHoldMusicPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -5,8 +5,6 @@ require_relative '../messages'
 require_relative './mark_read'
 
 module MicrosoftGraph::Admin::ServiceAnnouncement::Messages::MarkRead
-    ## 
-    # Provides operations to call the markRead method.
     class MarkReadPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

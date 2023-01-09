@@ -5,8 +5,6 @@ require_relative '../service_principals'
 require_relative './delta'
 
 module MicrosoftGraph::ServicePrincipals::Delta
-    ## 
-    # Provides operations to call the delta method.
     class DeltaResponse < MicrosoftGraph::Models::BaseDeltaFunctionResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

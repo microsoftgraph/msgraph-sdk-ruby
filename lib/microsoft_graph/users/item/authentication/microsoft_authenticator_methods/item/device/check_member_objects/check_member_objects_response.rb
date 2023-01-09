@@ -9,8 +9,6 @@ require_relative '../device'
 require_relative './check_member_objects'
 
 module MicrosoftGraph::Users::Item::Authentication::MicrosoftAuthenticatorMethods::Item::Device::CheckMemberObjects
-    ## 
-    # Provides operations to call the checkMemberObjects method.
     class CheckMemberObjectsResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

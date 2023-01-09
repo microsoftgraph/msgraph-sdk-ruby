@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Windows 10 Edition type.
     Windows10EditionType = {
         Windows10Enterprise: :Windows10Enterprise,
         Windows10EnterpriseN: :Windows10EnterpriseN,

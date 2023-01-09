@@ -4,8 +4,6 @@ require_relative '../item'
 require_relative './force_delete'
 
 module MicrosoftGraph::Domains::Item::ForceDelete
-    ## 
-    # Provides operations to call the forceDelete method.
     class ForceDeletePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

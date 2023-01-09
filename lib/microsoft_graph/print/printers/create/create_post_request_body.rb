@@ -5,8 +5,6 @@ require_relative '../printers'
 require_relative './create'
 
 module MicrosoftGraph::Print::Printers::Create
-    ## 
-    # Provides operations to call the create method.
     class CreatePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Represents the level to which the device's clipboard may be shared between apps
     ManagedAppClipboardSharingLevel = {
         AllApps: :AllApps,
         ManagedAppsWithPasteIn: :ManagedAppsWithPasteIn,

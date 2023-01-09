@@ -9,8 +9,6 @@ require_relative '../item'
 require_relative './associate_with_hub_sites'
 
 module MicrosoftGraph::Users::Item::Drives::Item::List::ContentTypes::Item::AssociateWithHubSites
-    ## 
-    # Provides operations to call the associateWithHubSites method.
     class AssociateWithHubSitesPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

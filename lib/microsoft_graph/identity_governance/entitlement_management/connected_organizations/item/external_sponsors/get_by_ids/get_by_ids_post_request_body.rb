@@ -7,8 +7,6 @@ require_relative '../external_sponsors'
 require_relative './get_by_ids'
 
 module MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::ExternalSponsors::GetByIds
-    ## 
-    # Provides operations to call the getByIds method.
     class GetByIdsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

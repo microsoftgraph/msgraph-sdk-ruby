@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Web Browser Cookie Settings.
     WebBrowserCookieSettings = {
         BrowserDefault: :BrowserDefault,
         BlockAlways: :BlockAlways,

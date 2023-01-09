@@ -50,64 +50,10 @@ module MicrosoftGraph::Users::Item::Planner
         ## 
         ## Delete navigation property planner for users
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a request_information
-        ## 
-        def create_delete_request_information(request_configuration=nil)
-            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-            request_info.url_template = @url_template
-            request_info.path_parameters = @path_parameters
-            request_info.http_method = :DELETE
-            unless request_configuration.nil?
-                request_info.add_headers_from_raw_object(request_configuration.headers)
-                request_info.add_request_options(request_configuration.options)
-            end
-            return request_info
-        end
-        ## 
-        ## Entry-point to the Planner resource that might exist for a user. Read-only.
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a request_information
-        ## 
-        def create_get_request_information(request_configuration=nil)
-            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-            request_info.url_template = @url_template
-            request_info.path_parameters = @path_parameters
-            request_info.http_method = :GET
-            request_info.headers.add('Accept', 'application/json')
-            unless request_configuration.nil?
-                request_info.add_headers_from_raw_object(request_configuration.headers)
-                request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
-                request_info.add_request_options(request_configuration.options)
-            end
-            return request_info
-        end
-        ## 
-        ## Update the navigation property planner in users
-        ## @param body The request body
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a request_information
-        ## 
-        def create_patch_request_information(body, request_configuration=nil)
-            raise StandardError, 'body cannot be null' if body.nil?
-            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-            request_info.url_template = @url_template
-            request_info.path_parameters = @path_parameters
-            request_info.http_method = :PATCH
-            request_info.headers.add('Accept', 'application/json')
-            unless request_configuration.nil?
-                request_info.add_headers_from_raw_object(request_configuration.headers)
-                request_info.add_request_options(request_configuration.options)
-            end
-            request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
-            return request_info
-        end
-        ## 
-        ## Delete navigation property planner for users
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of void
+        ## @return a Fiber of void
         ## 
         def delete(request_configuration=nil)
-            request_info = self.create_delete_request_information(
+            request_info = self.to_delete_request_information(
                 request_configuration
             )
             error_mapping = Hash.new
@@ -118,10 +64,10 @@ module MicrosoftGraph::Users::Item::Planner
         ## 
         ## Entry-point to the Planner resource that might exist for a user. Read-only.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of planner_user
+        ## @return a Fiber of planner_user
         ## 
         def get(request_configuration=nil)
-            request_info = self.create_get_request_information(
+            request_info = self.to_get_request_information(
                 request_configuration
             )
             error_mapping = Hash.new
@@ -133,11 +79,11 @@ module MicrosoftGraph::Users::Item::Planner
         ## Update the navigation property planner in users
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of planner_user
+        ## @return a Fiber of planner_user
         ## 
         def patch(body, request_configuration=nil)
             raise StandardError, 'body cannot be null' if body.nil?
-            request_info = self.create_patch_request_information(
+            request_info = self.to_patch_request_information(
                 body, request_configuration
             )
             error_mapping = Hash.new
@@ -166,6 +112,60 @@ module MicrosoftGraph::Users::Item::Planner
             url_tpl_params = @path_parameters.clone
             url_tpl_params["plannerTask%2Did"] = id
             return MicrosoftGraph::Users::Item::Planner::Tasks::Item::PlannerTaskItemRequestBuilder.new(url_tpl_params, @request_adapter)
+        end
+        ## 
+        ## Delete navigation property planner for users
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a request_information
+        ## 
+        def to_delete_request_information(request_configuration=nil)
+            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+            request_info.url_template = @url_template
+            request_info.path_parameters = @path_parameters
+            request_info.http_method = :DELETE
+            unless request_configuration.nil?
+                request_info.add_headers_from_raw_object(request_configuration.headers)
+                request_info.add_request_options(request_configuration.options)
+            end
+            return request_info
+        end
+        ## 
+        ## Entry-point to the Planner resource that might exist for a user. Read-only.
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a request_information
+        ## 
+        def to_get_request_information(request_configuration=nil)
+            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+            request_info.url_template = @url_template
+            request_info.path_parameters = @path_parameters
+            request_info.http_method = :GET
+            request_info.headers.add('Accept', 'application/json')
+            unless request_configuration.nil?
+                request_info.add_headers_from_raw_object(request_configuration.headers)
+                request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
+                request_info.add_request_options(request_configuration.options)
+            end
+            return request_info
+        end
+        ## 
+        ## Update the navigation property planner in users
+        ## @param body The request body
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a request_information
+        ## 
+        def to_patch_request_information(body, request_configuration=nil)
+            raise StandardError, 'body cannot be null' if body.nil?
+            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+            request_info.url_template = @url_template
+            request_info.path_parameters = @path_parameters
+            request_info.http_method = :PATCH
+            request_info.headers.add('Accept', 'application/json')
+            unless request_configuration.nil?
+                request_info.add_headers_from_raw_object(request_configuration.headers)
+                request_info.add_request_options(request_configuration.options)
+            end
+            request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+            return request_info
         end
 
         ## 

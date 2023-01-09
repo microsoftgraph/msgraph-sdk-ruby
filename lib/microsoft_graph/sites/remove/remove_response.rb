@@ -5,8 +5,6 @@ require_relative '../sites'
 require_relative './remove'
 
 module MicrosoftGraph::Sites::Remove
-    ## 
-    # Provides operations to call the remove method.
     class RemoveResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

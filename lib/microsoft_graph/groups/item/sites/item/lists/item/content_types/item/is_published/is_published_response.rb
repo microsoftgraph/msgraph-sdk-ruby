@@ -10,8 +10,6 @@ require_relative '../item'
 require_relative './is_published'
 
 module MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::ContentTypes::Item::IsPublished
-    ## 
-    # Provides operations to call the isPublished method.
     class IsPublishedResponse
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

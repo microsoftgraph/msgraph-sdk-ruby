@@ -4,8 +4,6 @@ require_relative '../item'
 require_relative './set_verified_publisher'
 
 module MicrosoftGraph::Applications::Item::SetVerifiedPublisher
-    ## 
-    # Provides operations to call the setVerifiedPublisher method.
     class SetVerifiedPublisherPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

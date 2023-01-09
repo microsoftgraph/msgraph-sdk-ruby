@@ -3,8 +3,6 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the collection of application entities.
     class Application < MicrosoftGraph::Models::DirectoryObject
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -221,7 +219,7 @@ module MicrosoftGraph::Models
             @certification = value
         end
         ## 
-        ## Instantiates a new application and sets the default values.
+        ## Instantiates a new Application and sets the default values.
         ## @return a void
         ## 
         def initialize()

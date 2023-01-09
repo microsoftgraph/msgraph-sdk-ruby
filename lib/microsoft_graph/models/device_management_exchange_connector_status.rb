@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # The current status of the Exchange Connector.
     DeviceManagementExchangeConnectorStatus = {
         None: :None,
         ConnectionPending: :ConnectionPending,

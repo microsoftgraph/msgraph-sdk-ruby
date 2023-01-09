@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible values for welcome screen meeting information.
     WelcomeScreenMeetingInformation = {
         UserDefined: :UserDefined,
         ShowOrganizerAndTimeOnly: :ShowOrganizerAndTimeOnly,

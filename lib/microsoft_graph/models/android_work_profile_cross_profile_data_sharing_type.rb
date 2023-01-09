@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Android Work Profile cross profile data sharing type.
     AndroidWorkProfileCrossProfileDataSharingType = {
         DeviceDefault: :DeviceDefault,
         PreventAny: :PreventAny,

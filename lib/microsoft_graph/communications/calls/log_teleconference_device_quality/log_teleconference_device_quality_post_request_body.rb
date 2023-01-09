@@ -5,8 +5,6 @@ require_relative '../calls'
 require_relative './log_teleconference_device_quality'
 
 module MicrosoftGraph::Communications::Calls::LogTeleconferenceDeviceQuality
-    ## 
-    # Provides operations to call the logTeleconferenceDeviceQuality method.
     class LogTeleconferenceDeviceQualityPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

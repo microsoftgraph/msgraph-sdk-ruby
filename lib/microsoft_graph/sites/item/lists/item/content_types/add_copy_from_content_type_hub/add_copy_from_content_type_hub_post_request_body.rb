@@ -7,8 +7,6 @@ require_relative '../content_types'
 require_relative './add_copy_from_content_type_hub'
 
 module MicrosoftGraph::Sites::Item::Lists::Item::ContentTypes::AddCopyFromContentTypeHub
-    ## 
-    # Provides operations to call the addCopyFromContentTypeHub method.
     class AddCopyFromContentTypeHubPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

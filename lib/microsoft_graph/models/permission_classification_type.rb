@@ -1,6 +1,4 @@
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to call the instantiate method.
     PermissionClassificationType = {
         Low: :Low,
         Medium: :Medium,

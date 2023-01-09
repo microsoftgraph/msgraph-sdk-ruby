@@ -11,8 +11,6 @@ require_relative '../item'
 require_relative './apply_tags'
 
 module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item::ApplyTags
-    ## 
-    # Provides operations to call the applyTags method.
     class ApplyTagsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

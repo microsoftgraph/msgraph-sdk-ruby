@@ -7,8 +7,6 @@ require_relative '../root'
 require_relative './preview'
 
 module MicrosoftGraph::Groups::Item::Drives::Item::Root::Preview
-    ## 
-    # Provides operations to call the preview method.
     class PreviewPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -8,8 +8,6 @@ require_relative '../item'
 require_relative './batch_record_decisions'
 
 module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::BatchRecordDecisions
-    ## 
-    # Provides operations to call the batchRecordDecisions method.
     class BatchRecordDecisionsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

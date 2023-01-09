@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Tenant mobile device management subscription state.
     DeviceManagementSubscriptionState = {
         Pending: :Pending,
         Active: :Active,

@@ -7,8 +7,6 @@ require_relative '../lists'
 require_relative './delta'
 
 module MicrosoftGraph::Me::Todo::Lists::Delta
-    ## 
-    # Provides operations to call the delta method.
     class DeltaResponse < MicrosoftGraph::Models::BaseDeltaFunctionResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

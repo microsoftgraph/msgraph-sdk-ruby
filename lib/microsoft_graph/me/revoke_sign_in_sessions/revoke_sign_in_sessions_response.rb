@@ -3,8 +3,6 @@ require_relative '../me'
 require_relative './revoke_sign_in_sessions'
 
 module MicrosoftGraph::Me::RevokeSignInSessions
-    ## 
-    # Provides operations to call the revokeSignInSessions method.
     class RevokeSignInSessionsResponse
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

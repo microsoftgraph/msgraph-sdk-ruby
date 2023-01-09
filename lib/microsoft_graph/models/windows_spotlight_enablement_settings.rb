@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Allows IT admind to set a predefined default search engine for MDM-Controlled devices
     WindowsSpotlightEnablementSettings = {
         NotConfigured: :NotConfigured,
         Disabled: :Disabled,

@@ -8,8 +8,6 @@ require_relative '../item'
 require_relative './allowed_calendar_sharing_roles_with_user'
 
 module MicrosoftGraph::Users::Item::Calendars::Item::AllowedCalendarSharingRolesWithUser
-    ## 
-    # Provides operations to call the allowedCalendarSharingRoles method.
     class AllowedCalendarSharingRolesWithUserResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

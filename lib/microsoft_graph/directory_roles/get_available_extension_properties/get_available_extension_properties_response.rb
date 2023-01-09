@@ -5,8 +5,6 @@ require_relative '../directory_roles'
 require_relative './get_available_extension_properties'
 
 module MicrosoftGraph::DirectoryRoles::GetAvailableExtensionProperties
-    ## 
-    # Provides operations to call the getAvailableExtensionProperties method.
     class GetAvailableExtensionPropertiesResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

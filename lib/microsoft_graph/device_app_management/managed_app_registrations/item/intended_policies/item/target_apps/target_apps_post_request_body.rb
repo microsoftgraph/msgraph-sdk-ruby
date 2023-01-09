@@ -8,8 +8,6 @@ require_relative '../item'
 require_relative './target_apps'
 
 module MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::Item::IntendedPolicies::Item::TargetApps
-    ## 
-    # Provides operations to call the targetApps method.
     class TargetAppsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

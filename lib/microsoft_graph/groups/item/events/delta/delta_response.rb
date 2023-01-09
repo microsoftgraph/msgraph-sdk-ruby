@@ -7,8 +7,6 @@ require_relative '../events'
 require_relative './delta'
 
 module MicrosoftGraph::Groups::Item::Events::Delta
-    ## 
-    # Provides operations to call the delta method.
     class DeltaResponse < MicrosoftGraph::Models::BaseDeltaFunctionResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

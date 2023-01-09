@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './update_windows_device_account'
 
 module MicrosoftGraph::Me::ManagedDevices::Item::UpdateWindowsDeviceAccount
-    ## 
-    # Provides operations to call the updateWindowsDeviceAccount method.
     class UpdateWindowsDeviceAccountPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

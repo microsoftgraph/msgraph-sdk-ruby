@@ -7,8 +7,6 @@ require_relative '../item'
 require_relative './restore'
 
 module MicrosoftGraph::Drives::Item::Items::Item::Restore
-    ## 
-    # Provides operations to call the restore method.
     class RestorePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

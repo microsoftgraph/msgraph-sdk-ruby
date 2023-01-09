@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './reply_all'
 
 module MicrosoftGraph::Me::Messages::Item::ReplyAll
-    ## 
-    # Provides operations to call the replyAll method.
     class ReplyAllPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

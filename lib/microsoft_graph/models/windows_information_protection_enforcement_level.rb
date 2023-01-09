@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible values for WIP Protection enforcement levels
     WindowsInformationProtectionEnforcementLevel = {
         NoProtection: :NoProtection,
         EncryptAndAuditOnly: :EncryptAndAuditOnly,

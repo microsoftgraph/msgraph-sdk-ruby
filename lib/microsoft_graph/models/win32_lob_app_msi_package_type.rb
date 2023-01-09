@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Indicates the package type of an MSI Win32LobApp.
     Win32LobAppMsiPackageType = {
         PerMachine: :PerMachine,
         PerUser: :PerUser,

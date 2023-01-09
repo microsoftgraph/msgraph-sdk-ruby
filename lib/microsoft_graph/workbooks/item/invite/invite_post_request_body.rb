@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './invite'
 
 module MicrosoftGraph::Workbooks::Item::Invite
-    ## 
-    # Provides operations to call the invite method.
     class InvitePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

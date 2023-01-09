@@ -4,8 +4,6 @@ require_relative '../risky_users'
 require_relative './confirm_compromised'
 
 module MicrosoftGraph::IdentityProtection::RiskyUsers::ConfirmCompromised
-    ## 
-    # Provides operations to call the confirmCompromised method.
     class ConfirmCompromisedPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

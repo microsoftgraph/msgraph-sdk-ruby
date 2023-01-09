@@ -2,8 +2,6 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the organizationalBranding singleton.
     class OrganizationalBrandingLocalization < MicrosoftGraph::Models::OrganizationalBrandingProperties
         include MicrosoftKiotaAbstractions::Parsable
         ## 

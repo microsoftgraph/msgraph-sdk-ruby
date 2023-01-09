@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './shared_with_me'
 
 module MicrosoftGraph::Drives::Item::SharedWithMe
-    ## 
-    # Provides operations to call the sharedWithMe method.
     class SharedWithMeResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

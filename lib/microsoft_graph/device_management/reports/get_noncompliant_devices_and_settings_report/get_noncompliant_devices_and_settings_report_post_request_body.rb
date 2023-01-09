@@ -4,8 +4,6 @@ require_relative '../reports'
 require_relative './get_noncompliant_devices_and_settings_report'
 
 module MicrosoftGraph::DeviceManagement::Reports::GetNoncompliantDevicesAndSettingsReport
-    ## 
-    # Provides operations to call the getNoncompliantDevicesAndSettingsReport method.
     class GetNoncompliantDevicesAndSettingsReportPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

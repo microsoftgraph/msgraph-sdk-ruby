@@ -1,6 +1,4 @@
 module MicrosoftGraph::Models::Security
-    ## 
-    # Provides operations to manage the collection of agreement entities.
     AlertDetermination = {
         Unknown: :Unknown,
         Apt: :Apt,

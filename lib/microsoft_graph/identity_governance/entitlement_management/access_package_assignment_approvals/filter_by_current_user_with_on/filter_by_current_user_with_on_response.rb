@@ -7,8 +7,6 @@ require_relative '../access_package_assignment_approvals'
 require_relative './filter_by_current_user_with_on'
 
 module MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackageAssignmentApprovals::FilterByCurrentUserWithOn
-    ## 
-    # Provides operations to call the filterByCurrentUser method.
     class FilterByCurrentUserWithOnResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

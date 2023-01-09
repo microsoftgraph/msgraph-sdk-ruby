@@ -13,8 +13,6 @@ require_relative '../decisions'
 require_relative './filter_by_current_user_with_on'
 
 module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Stages::Item::Decisions::FilterByCurrentUserWithOn
-    ## 
-    # Provides operations to call the filterByCurrentUser method.
     class FilterByCurrentUserWithOnResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

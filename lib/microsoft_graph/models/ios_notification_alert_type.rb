@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Notification Settings Alert Type.
     IosNotificationAlertType = {
         DeviceDefault: :DeviceDefault,
         Banner: :Banner,

@@ -5,8 +5,6 @@ require_relative '../service_principals'
 require_relative './get_available_extension_properties'
 
 module MicrosoftGraph::ServicePrincipals::GetAvailableExtensionProperties
-    ## 
-    # Provides operations to call the getAvailableExtensionProperties method.
     class GetAvailableExtensionPropertiesResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

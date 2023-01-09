@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './change_screen_sharing_role'
 
 module MicrosoftGraph::Communications::Calls::Item::ChangeScreenSharingRole
-    ## 
-    # Provides operations to call the changeScreenSharingRole method.
     class ChangeScreenSharingRolePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

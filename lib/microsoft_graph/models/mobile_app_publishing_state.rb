@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Indicates the publishing state of an app.
     MobileAppPublishingState = {
         NotPublished: :NotPublished,
         Processing: :Processing,

@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible values for system scan type.
     DefenderScanType = {
         UserDefined: :UserDefined,
         Disabled: :Disabled,

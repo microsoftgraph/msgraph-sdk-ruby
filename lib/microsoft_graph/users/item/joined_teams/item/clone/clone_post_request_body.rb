@@ -8,8 +8,6 @@ require_relative '../item'
 require_relative './clone'
 
 module MicrosoftGraph::Users::Item::JoinedTeams::Item::Clone
-    ## 
-    # Provides operations to call the clone method.
     class ClonePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

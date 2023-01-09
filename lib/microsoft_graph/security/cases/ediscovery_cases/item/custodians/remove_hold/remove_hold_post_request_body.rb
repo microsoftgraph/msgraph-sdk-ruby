@@ -7,8 +7,6 @@ require_relative '../custodians'
 require_relative './remove_hold'
 
 module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::RemoveHold
-    ## 
-    # Provides operations to call the removeHold method.
     class RemoveHoldPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

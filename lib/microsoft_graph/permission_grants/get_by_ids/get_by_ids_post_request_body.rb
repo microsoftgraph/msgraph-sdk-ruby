@@ -3,8 +3,6 @@ require_relative '../permission_grants'
 require_relative './get_by_ids'
 
 module MicrosoftGraph::PermissionGrants::GetByIds
-    ## 
-    # Provides operations to call the getByIds method.
     class GetByIdsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

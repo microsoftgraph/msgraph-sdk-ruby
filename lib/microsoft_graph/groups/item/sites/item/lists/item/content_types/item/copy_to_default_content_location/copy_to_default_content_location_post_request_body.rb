@@ -11,8 +11,6 @@ require_relative '../item'
 require_relative './copy_to_default_content_location'
 
 module MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::ContentTypes::Item::CopyToDefaultContentLocation
-    ## 
-    # Provides operations to call the copyToDefaultContentLocation method.
     class CopyToDefaultContentLocationPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -9,8 +9,6 @@ require_relative '../item'
 require_relative './forward'
 
 module MicrosoftGraph::Users::Item::Calendars::Item::Events::Item::Forward
-    ## 
-    # Provides operations to call the forward method.
     class ForwardPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

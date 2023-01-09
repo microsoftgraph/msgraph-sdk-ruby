@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './decline'
 
 module MicrosoftGraph::Me::Events::Item::Decline
-    ## 
-    # Provides operations to call the decline method.
     class DeclinePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Defender’s default action to take on detected Malware threats.
     DefenderThreatAction = {
         DeviceDefault: :DeviceDefault,
         Clean: :Clean,

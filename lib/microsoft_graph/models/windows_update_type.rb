@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Which branch devices will receive their updates from
     WindowsUpdateType = {
         UserDefined: :UserDefined,
         All: :All,

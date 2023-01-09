@@ -3,8 +3,6 @@ require_relative '../directory_role_templates'
 require_relative './validate_properties'
 
 module MicrosoftGraph::DirectoryRoleTemplates::ValidateProperties
-    ## 
-    # Provides operations to call the validateProperties method.
     class ValidatePropertiesPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

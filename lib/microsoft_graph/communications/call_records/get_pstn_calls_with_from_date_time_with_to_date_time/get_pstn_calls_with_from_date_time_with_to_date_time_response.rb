@@ -6,8 +6,6 @@ require_relative '../call_records'
 require_relative './get_pstn_calls_with_from_date_time_with_to_date_time'
 
 module MicrosoftGraph::Communications::CallRecords::GetPstnCallsWithFromDateTimeWithToDateTime
-    ## 
-    # Provides operations to call the getPstnCalls method.
     class GetPstnCallsWithFromDateTimeWithToDateTimeResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

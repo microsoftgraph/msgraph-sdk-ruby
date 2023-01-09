@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './mute'
 
 module MicrosoftGraph::Communications::Calls::Item::Mute
-    ## 
-    # Provides operations to call the mute method.
     class MutePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

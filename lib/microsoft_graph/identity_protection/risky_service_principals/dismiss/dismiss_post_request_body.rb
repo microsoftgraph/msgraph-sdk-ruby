@@ -4,8 +4,6 @@ require_relative '../risky_service_principals'
 require_relative './dismiss'
 
 module MicrosoftGraph::IdentityProtection::RiskyServicePrincipals::Dismiss
-    ## 
-    # Provides operations to call the dismiss method.
     class DismissPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

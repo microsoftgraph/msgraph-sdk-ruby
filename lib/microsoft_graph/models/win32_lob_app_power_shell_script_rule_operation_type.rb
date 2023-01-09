@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Contains all supported Powershell Script output detection type.
     Win32LobAppPowerShellScriptRuleOperationType = {
         NotConfigured: :NotConfigured,
         String: :String,

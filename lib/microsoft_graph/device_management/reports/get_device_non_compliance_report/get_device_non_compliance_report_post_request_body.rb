@@ -4,8 +4,6 @@ require_relative '../reports'
 require_relative './get_device_non_compliance_report'
 
 module MicrosoftGraph::DeviceManagement::Reports::GetDeviceNonComplianceReport
-    ## 
-    # Provides operations to call the getDeviceNonComplianceReport method.
     class GetDeviceNonComplianceReportPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

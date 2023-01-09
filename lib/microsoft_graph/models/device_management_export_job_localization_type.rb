@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Configures how the requested export job is localized
     DeviceManagementExportJobLocalizationType = {
         LocalizedValuesAsAdditionalColumn: :LocalizedValuesAsAdditionalColumn,
         ReplaceLocalizableValues: :ReplaceLocalizableValues,

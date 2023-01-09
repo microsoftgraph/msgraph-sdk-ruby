@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './unmute'
 
 module MicrosoftGraph::Communications::Calls::Item::Unmute
-    ## 
-    # Provides operations to call the unmute method.
     class UnmutePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

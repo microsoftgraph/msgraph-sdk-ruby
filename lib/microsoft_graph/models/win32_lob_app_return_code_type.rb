@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Indicates the type of return code.
     Win32LobAppReturnCodeType = {
         Failed: :Failed,
         Success: :Success,

@@ -8,8 +8,6 @@ require_relative '../assignment_categories'
 require_relative './delta'
 
 module MicrosoftGraph::Education::Classes::Item::AssignmentCategories::Delta
-    ## 
-    # Provides operations to call the delta method.
     class DeltaResponse < MicrosoftGraph::Models::BaseDeltaFunctionResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

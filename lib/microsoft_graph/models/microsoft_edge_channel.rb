@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # The enum to specify the channels for Microsoft Edge apps.
     MicrosoftEdgeChannel = {
         Dev: :Dev,
         Beta: :Beta,

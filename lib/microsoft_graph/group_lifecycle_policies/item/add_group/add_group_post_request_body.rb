@@ -4,8 +4,6 @@ require_relative '../item'
 require_relative './add_group'
 
 module MicrosoftGraph::GroupLifecyclePolicies::Item::AddGroup
-    ## 
-    # Provides operations to call the addGroup method.
     class AddGroupPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

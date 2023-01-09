@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Contains properties for Windows architecture.
     WindowsArchitecture = {
         None: :None,
         X86: :X86,

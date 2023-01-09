@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible ways of adding a mobile device to management.
     DeviceEnrollmentType = {
         Unknown: :Unknown,
         UserEnrollment: :UserEnrollment,

@@ -5,8 +5,6 @@ require_relative '../contacts'
 require_relative './get_available_extension_properties'
 
 module MicrosoftGraph::Contacts::GetAvailableExtensionProperties
-    ## 
-    # Provides operations to call the getAvailableExtensionProperties method.
     class GetAvailableExtensionPropertiesResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

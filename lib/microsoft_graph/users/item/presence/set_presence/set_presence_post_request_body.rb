@@ -5,8 +5,6 @@ require_relative '../presence'
 require_relative './set_presence'
 
 module MicrosoftGraph::Users::Item::Presence::SetPresence
-    ## 
-    # Provides operations to call the setPresence method.
     class SetPresencePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

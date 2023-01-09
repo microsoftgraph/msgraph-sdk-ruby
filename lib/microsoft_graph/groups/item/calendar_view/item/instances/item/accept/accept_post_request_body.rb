@@ -8,8 +8,6 @@ require_relative '../item'
 require_relative './accept'
 
 module MicrosoftGraph::Groups::Item::CalendarView::Item::Instances::Item::Accept
-    ## 
-    # Provides operations to call the accept method.
     class AcceptPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

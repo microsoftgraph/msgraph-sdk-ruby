@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Contains all supported registry data detection type.
     Win32LobAppRegistryRuleOperationType = {
         NotConfigured: :NotConfigured,
         Exists: :Exists,

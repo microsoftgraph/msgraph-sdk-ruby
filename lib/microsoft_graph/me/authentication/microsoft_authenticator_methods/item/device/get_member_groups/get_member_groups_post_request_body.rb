@@ -7,8 +7,6 @@ require_relative '../device'
 require_relative './get_member_groups'
 
 module MicrosoftGraph::Me::Authentication::MicrosoftAuthenticatorMethods::Item::Device::GetMemberGroups
-    ## 
-    # Provides operations to call the getMemberGroups method.
     class GetMemberGroupsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

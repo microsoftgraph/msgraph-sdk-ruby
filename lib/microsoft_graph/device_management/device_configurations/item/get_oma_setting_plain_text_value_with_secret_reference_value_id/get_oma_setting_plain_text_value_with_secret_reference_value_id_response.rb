@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './get_oma_setting_plain_text_value_with_secret_reference_value_id'
 
 module MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item::GetOmaSettingPlainTextValueWithSecretReferenceValueId
-    ## 
-    # Provides operations to call the getOmaSettingPlainTextValue method.
     class GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

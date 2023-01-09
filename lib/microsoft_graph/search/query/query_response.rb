@@ -5,8 +5,6 @@ require_relative '../search'
 require_relative './query'
 
 module MicrosoftGraph::Search::Query
-    ## 
-    # Provides operations to call the query method.
     class QueryResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

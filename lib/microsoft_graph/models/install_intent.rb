@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible values for the install intent chosen by the admin.
     InstallIntent = {
         Available: :Available,
         Required: :Required,

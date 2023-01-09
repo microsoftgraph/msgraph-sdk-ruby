@@ -5,8 +5,6 @@ require_relative '../managed_app_registrations'
 require_relative './get_user_ids_with_flagged_app_registration'
 
 module MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::GetUserIdsWithFlaggedAppRegistration
-    ## 
-    # Provides operations to call the getUserIdsWithFlaggedAppRegistration method.
     class GetUserIdsWithFlaggedAppRegistrationResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './add_token_signing_certificate'
 
 module MicrosoftGraph::ServicePrincipals::Item::AddTokenSigningCertificate
-    ## 
-    # Provides operations to call the addTokenSigningCertificate method.
     class AddTokenSigningCertificatePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

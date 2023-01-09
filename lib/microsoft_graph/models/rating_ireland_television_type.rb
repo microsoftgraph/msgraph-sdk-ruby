@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # TV content rating labels in Ireland
     RatingIrelandTelevisionType = {
         AllAllowed: :AllAllowed,
         AllBlocked: :AllBlocked,

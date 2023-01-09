@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './play_prompt'
 
 module MicrosoftGraph::Communications::Calls::Item::PlayPrompt
-    ## 
-    # Provides operations to call the playPrompt method.
     class PlayPromptPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

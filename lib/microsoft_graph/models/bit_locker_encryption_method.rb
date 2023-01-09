@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # BitLockerEncryptionMethod types
     BitLockerEncryptionMethod = {
         AesCbc128: :AesCbc128,
         AesCbc256: :AesCbc256,

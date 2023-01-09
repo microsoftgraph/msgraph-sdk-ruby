@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible values for pre-release features.
     PrereleaseFeatures = {
         UserDefined: :UserDefined,
         SettingsOnly: :SettingsOnly,

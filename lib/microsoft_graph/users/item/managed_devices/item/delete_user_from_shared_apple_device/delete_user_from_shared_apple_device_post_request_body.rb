@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './delete_user_from_shared_apple_device'
 
 module MicrosoftGraph::Users::Item::ManagedDevices::Item::DeleteUserFromSharedAppleDevice
-    ## 
-    # Provides operations to call the deleteUserFromSharedAppleDevice method.
     class DeleteUserFromSharedAppleDevicePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

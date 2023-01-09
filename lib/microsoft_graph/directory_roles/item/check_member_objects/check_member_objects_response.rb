@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './check_member_objects'
 
 module MicrosoftGraph::DirectoryRoles::Item::CheckMemberObjects
-    ## 
-    # Provides operations to call the checkMemberObjects method.
     class CheckMemberObjectsResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

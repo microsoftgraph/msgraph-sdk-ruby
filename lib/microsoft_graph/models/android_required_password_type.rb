@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Android required password type.
     AndroidRequiredPasswordType = {
         DeviceDefault: :DeviceDefault,
         Alphabetic: :Alphabetic,

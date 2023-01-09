@@ -4,8 +4,6 @@ require_relative '../deleted_items'
 require_relative './get_available_extension_properties'
 
 module MicrosoftGraph::Directory::DeletedItems::GetAvailableExtensionProperties
-    ## 
-    # Provides operations to call the getAvailableExtensionProperties method.
     class GetAvailableExtensionPropertiesPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

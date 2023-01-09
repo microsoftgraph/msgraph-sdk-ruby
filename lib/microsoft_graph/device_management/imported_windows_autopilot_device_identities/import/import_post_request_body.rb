@@ -5,8 +5,6 @@ require_relative '../imported_windows_autopilot_device_identities'
 require_relative './import'
 
 module MicrosoftGraph::DeviceManagement::ImportedWindowsAutopilotDeviceIdentities::Import
-    ## 
-    # Provides operations to call the import method.
     class ImportPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

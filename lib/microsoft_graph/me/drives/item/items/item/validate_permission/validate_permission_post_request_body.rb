@@ -7,8 +7,6 @@ require_relative '../item'
 require_relative './validate_permission'
 
 module MicrosoftGraph::Me::Drives::Item::Items::Item::ValidatePermission
-    ## 
-    # Provides operations to call the validatePermission method.
     class ValidatePermissionPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Device threat protection levels for the Device Threat Protection API.
     DeviceThreatProtectionLevel = {
         Unavailable: :Unavailable,
         Secured: :Secured,

@@ -7,8 +7,6 @@ require_relative '../user_attribute_assignments'
 require_relative './set_order'
 
 module MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments::SetOrder
-    ## 
-    # Provides operations to call the setOrder method.
     class SetOrderPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible states associated with an Apple Volume Purchase Program token.
     VppTokenState = {
         Unknown: :Unknown,
         Valid: :Valid,

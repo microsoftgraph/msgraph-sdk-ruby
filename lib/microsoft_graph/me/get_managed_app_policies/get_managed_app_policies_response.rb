@@ -5,8 +5,6 @@ require_relative '../me'
 require_relative './get_managed_app_policies'
 
 module MicrosoftGraph::Me::GetManagedAppPolicies
-    ## 
-    # Provides operations to call the getManagedAppPolicies method.
     class GetManagedAppPoliciesResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

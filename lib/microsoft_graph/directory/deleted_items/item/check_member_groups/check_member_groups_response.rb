@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './check_member_groups'
 
 module MicrosoftGraph::Directory::DeletedItems::Item::CheckMemberGroups
-    ## 
-    # Provides operations to call the checkMemberGroups method.
     class CheckMemberGroupsResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

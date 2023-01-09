@@ -1,6 +1,4 @@
 module MicrosoftGraph::Models::Security
-    ## 
-    # Provides operations to manage the collection of agreement entities.
     DefenderAvStatus = {
         NotReporting: :NotReporting,
         Disabled: :Disabled,

@@ -5,8 +5,6 @@ require_relative '../audit_events'
 require_relative './get_audit_activity_types_with_category'
 
 module MicrosoftGraph::DeviceManagement::AuditEvents::GetAuditActivityTypesWithCategory
-    ## 
-    # Provides operations to call the getAuditActivityTypes method.
     class GetAuditActivityTypesWithCategoryResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

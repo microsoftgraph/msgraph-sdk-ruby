@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './sync'
 
 module MicrosoftGraph::DeviceManagement::ExchangeConnectors::Item::Sync
-    ## 
-    # Provides operations to call the sync method.
     class SyncPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

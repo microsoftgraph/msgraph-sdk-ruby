@@ -5,8 +5,6 @@ require_relative '../directory_roles'
 require_relative './delta'
 
 module MicrosoftGraph::DirectoryRoles::Delta
-    ## 
-    # Provides operations to call the delta method.
     class DeltaResponse < MicrosoftGraph::Models::BaseDeltaFunctionResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

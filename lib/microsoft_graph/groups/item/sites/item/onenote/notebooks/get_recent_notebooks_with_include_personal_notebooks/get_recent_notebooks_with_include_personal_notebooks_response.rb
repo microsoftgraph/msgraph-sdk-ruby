@@ -10,8 +10,6 @@ require_relative '../notebooks'
 require_relative './get_recent_notebooks_with_include_personal_notebooks'
 
 module MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::GetRecentNotebooksWithIncludePersonalNotebooks
-    ## 
-    # Provides operations to call the getRecentNotebooks method.
     class GetRecentNotebooksWithIncludePersonalNotebooksResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

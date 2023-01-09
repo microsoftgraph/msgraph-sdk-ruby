@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Type of start menu app list visibility.
     WindowsStartMenuAppListVisibilityType = {
         UserDefined: :UserDefined,
         Collapse: :Collapse,

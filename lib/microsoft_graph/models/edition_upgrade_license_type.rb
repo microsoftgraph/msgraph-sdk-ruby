@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Edition Upgrade License type
     EditionUpgradeLicenseType = {
         ProductKey: :ProductKey,
         LicenseFile: :LicenseFile,

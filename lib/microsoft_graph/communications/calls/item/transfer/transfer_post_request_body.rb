@@ -7,8 +7,6 @@ require_relative '../item'
 require_relative './transfer'
 
 module MicrosoftGraph::Communications::Calls::Item::Transfer
-    ## 
-    # Provides operations to call the transfer method.
     class TransferPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

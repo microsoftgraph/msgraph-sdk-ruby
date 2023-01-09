@@ -8,8 +8,6 @@ require_relative '../root'
 require_relative './delta'
 
 module MicrosoftGraph::Me::Drives::Item::Root::Delta
-    ## 
-    # Provides operations to call the delta method.
     class DeltaResponse < MicrosoftGraph::Models::BaseDeltaFunctionResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

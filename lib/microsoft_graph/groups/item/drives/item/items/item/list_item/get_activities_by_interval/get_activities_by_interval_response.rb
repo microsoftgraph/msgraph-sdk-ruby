@@ -11,8 +11,6 @@ require_relative '../list_item'
 require_relative './get_activities_by_interval'
 
 module MicrosoftGraph::Groups::Item::Drives::Item::Items::Item::ListItem::GetActivitiesByInterval
-    ## 
-    # Provides operations to call the getActivitiesByInterval method.
     class GetActivitiesByIntervalResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

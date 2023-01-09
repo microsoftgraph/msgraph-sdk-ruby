@@ -7,8 +7,6 @@ require_relative '../item'
 require_relative './hide_for_user'
 
 module MicrosoftGraph::Users::Item::Chats::Item::HideForUser
-    ## 
-    # Provides operations to call the hideForUser method.
     class HideForUserPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './clean_windows_device'
 
 module MicrosoftGraph::Me::ManagedDevices::Item::CleanWindowsDevice
-    ## 
-    # Provides operations to call the cleanWindowsDevice method.
     class CleanWindowsDevicePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

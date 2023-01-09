@@ -3,8 +3,6 @@ require_relative '../users'
 require_relative './get_available_extension_properties'
 
 module MicrosoftGraph::Users::GetAvailableExtensionProperties
-    ## 
-    # Provides operations to call the getAvailableExtensionProperties method.
     class GetAvailableExtensionPropertiesPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

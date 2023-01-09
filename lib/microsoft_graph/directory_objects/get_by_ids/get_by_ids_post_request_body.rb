@@ -3,8 +3,6 @@ require_relative '../directory_objects'
 require_relative './get_by_ids'
 
 module MicrosoftGraph::DirectoryObjects::GetByIds
-    ## 
-    # Provides operations to call the getByIds method.
     class GetByIdsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

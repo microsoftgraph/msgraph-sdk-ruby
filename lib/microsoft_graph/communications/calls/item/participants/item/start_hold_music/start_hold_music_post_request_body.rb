@@ -8,8 +8,6 @@ require_relative '../item'
 require_relative './start_hold_music'
 
 module MicrosoftGraph::Communications::Calls::Item::Participants::Item::StartHoldMusic
-    ## 
-    # Provides operations to call the startHoldMusic method.
     class StartHoldMusicPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

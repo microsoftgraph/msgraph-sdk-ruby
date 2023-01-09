@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './check_member_objects'
 
 module MicrosoftGraph::Groups::Item::PermissionGrants::Item::CheckMemberObjects
-    ## 
-    # Provides operations to call the checkMemberObjects method.
     class CheckMemberObjectsPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

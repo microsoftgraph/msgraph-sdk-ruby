@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './update_device_properties'
 
 module MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::Item::UpdateDeviceProperties
-    ## 
-    # Provides operations to call the updateDeviceProperties method.
     class UpdateDevicePropertiesPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

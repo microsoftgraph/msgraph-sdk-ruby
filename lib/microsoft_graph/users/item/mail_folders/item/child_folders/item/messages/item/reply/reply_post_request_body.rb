@@ -11,8 +11,6 @@ require_relative '../item'
 require_relative './reply'
 
 module MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::Messages::Item::Reply
-    ## 
-    # Provides operations to call the reply method.
     class ReplyPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

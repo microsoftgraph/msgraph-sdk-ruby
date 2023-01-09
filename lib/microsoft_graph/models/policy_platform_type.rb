@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Supported platform types for policies.
     PolicyPlatformType = {
         Android: :Android,
         AndroidForWork: :AndroidForWork,

@@ -7,8 +7,6 @@ require_relative '../app_consent_requests'
 require_relative './filter_by_current_user_with_on'
 
 module MicrosoftGraph::IdentityGovernance::AppConsent::AppConsentRequests::FilterByCurrentUserWithOn
-    ## 
-    # Provides operations to call the filterByCurrentUser method.
     class FilterByCurrentUserWithOnResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

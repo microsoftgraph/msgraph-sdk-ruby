@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './schedule_actions_for_rules'
 
 module MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::ScheduleActionsForRules
-    ## 
-    # Provides operations to call the scheduleActionsForRules method.
     class ScheduleActionsForRulesPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

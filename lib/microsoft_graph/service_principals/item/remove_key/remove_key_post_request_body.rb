@@ -4,8 +4,6 @@ require_relative '../item'
 require_relative './remove_key'
 
 module MicrosoftGraph::ServicePrincipals::Item::RemoveKey
-    ## 
-    # Provides operations to call the removeKey method.
     class RemoveKeyPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

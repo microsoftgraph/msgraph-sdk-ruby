@@ -1,6 +1,4 @@
 module MicrosoftGraph::Models::CallRecords
-    ## 
-    # Provides operations to manage the collection of agreement entities.
     AudioCodec = {
         Unknown: :Unknown,
         Invalid: :Invalid,

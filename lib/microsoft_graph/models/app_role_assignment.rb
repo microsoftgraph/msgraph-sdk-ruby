@@ -3,8 +3,6 @@ require 'microsoft_kiota_abstractions'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the collection of agreement entities.
     class AppRoleAssignment < MicrosoftGraph::Models::DirectoryObject
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -44,7 +42,7 @@ module MicrosoftGraph::Models
             @app_role_id = value
         end
         ## 
-        ## Instantiates a new appRoleAssignment and sets the default values.
+        ## Instantiates a new AppRoleAssignment and sets the default values.
         ## @return a void
         ## 
         def initialize()

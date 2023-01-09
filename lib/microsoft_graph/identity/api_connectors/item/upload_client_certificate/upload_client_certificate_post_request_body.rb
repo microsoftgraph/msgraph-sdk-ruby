@@ -5,8 +5,6 @@ require_relative '../item'
 require_relative './upload_client_certificate'
 
 module MicrosoftGraph::Identity::ApiConnectors::Item::UploadClientCertificate
-    ## 
-    # Provides operations to call the uploadClientCertificate method.
     class UploadClientCertificatePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Apps rating as in media content
     RatingAppsType = {
         AllAllowed: :AllAllowed,
         AllBlocked: :AllBlocked,

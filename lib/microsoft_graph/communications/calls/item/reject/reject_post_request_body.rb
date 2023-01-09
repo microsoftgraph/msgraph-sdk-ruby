@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './reject'
 
 module MicrosoftGraph::Communications::Calls::Item::Reject
-    ## 
-    # Provides operations to call the reject method.
     class RejectPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

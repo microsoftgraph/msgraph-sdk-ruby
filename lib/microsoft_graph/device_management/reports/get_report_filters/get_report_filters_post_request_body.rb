@@ -4,8 +4,6 @@ require_relative '../reports'
 require_relative './get_report_filters'
 
 module MicrosoftGraph::DeviceManagement::Reports::GetReportFilters
-    ## 
-    # Provides operations to call the getReportFilters method.
     class GetReportFiltersPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

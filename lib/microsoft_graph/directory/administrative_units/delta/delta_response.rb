@@ -6,8 +6,6 @@ require_relative '../administrative_units'
 require_relative './delta'
 
 module MicrosoftGraph::Directory::AdministrativeUnits::Delta
-    ## 
-    # Provides operations to call the delta method.
     class DeltaResponse < MicrosoftGraph::Models::BaseDeltaFunctionResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

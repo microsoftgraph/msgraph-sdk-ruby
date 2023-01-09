@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Movies rating labels in Canada
     RatingCanadaMoviesType = {
         AllAllowed: :AllAllowed,
         AllBlocked: :AllBlocked,

@@ -4,8 +4,6 @@ require_relative '../root'
 require_relative './validate_permission'
 
 module MicrosoftGraph::Drive::Root::ValidatePermission
-    ## 
-    # Provides operations to call the validatePermission method.
     class ValidatePermissionPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -1,6 +1,4 @@
 module MicrosoftGraph::Models
-    ## 
-    # Provides operations to manage the collection of agreement entities.
     Tone = {
         Tone0: :Tone0,
         Tone1: :Tone1,

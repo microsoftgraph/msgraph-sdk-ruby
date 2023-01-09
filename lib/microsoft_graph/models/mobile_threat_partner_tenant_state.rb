@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Partner state of this tenant.
     MobileThreatPartnerTenantState = {
         Unavailable: :Unavailable,
         Available: :Available,

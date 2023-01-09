@@ -5,8 +5,6 @@ require_relative '../directory_role_templates'
 require_relative './get_by_ids'
 
 module MicrosoftGraph::DirectoryRoleTemplates::GetByIds
-    ## 
-    # Provides operations to call the getByIds method.
     class GetByIdsResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

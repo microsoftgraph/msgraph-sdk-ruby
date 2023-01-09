@@ -6,8 +6,6 @@ require_relative '../outlook'
 require_relative './supported_languages'
 
 module MicrosoftGraph::Me::Outlook::SupportedLanguages
-    ## 
-    # Provides operations to call the supportedLanguages method.
     class SupportedLanguagesResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

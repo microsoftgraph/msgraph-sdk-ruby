@@ -7,8 +7,6 @@ require_relative '../schedule'
 require_relative './share'
 
 module MicrosoftGraph::Me::JoinedTeams::Item::Schedule::Share
-    ## 
-    # Provides operations to call the share method.
     class SharePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

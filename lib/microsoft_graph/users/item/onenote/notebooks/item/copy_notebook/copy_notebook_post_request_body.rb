@@ -7,8 +7,6 @@ require_relative '../item'
 require_relative './copy_notebook'
 
 module MicrosoftGraph::Users::Item::Onenote::Notebooks::Item::CopyNotebook
-    ## 
-    # Provides operations to call the copyNotebook method.
     class CopyNotebookPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

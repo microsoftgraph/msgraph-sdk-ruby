@@ -8,8 +8,6 @@ require_relative '../item'
 require_relative './decline'
 
 module MicrosoftGraph::Users::Item::Calendar::CalendarView::Item::Decline
-    ## 
-    # Provides operations to call the decline method.
     class DeclinePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

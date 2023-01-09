@@ -5,8 +5,6 @@ require_relative '../reports'
 require_relative './get_user_archived_print_jobs_with_user_id_with_start_date_time_with_end_date_time'
 
 module MicrosoftGraph::Reports::GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime
-    ## 
-    # Provides operations to call the getUserArchivedPrintJobs method.
     class GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

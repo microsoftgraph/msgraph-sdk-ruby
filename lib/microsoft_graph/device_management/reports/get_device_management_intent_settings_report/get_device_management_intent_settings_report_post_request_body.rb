@@ -4,8 +4,6 @@ require_relative '../reports'
 require_relative './get_device_management_intent_settings_report'
 
 module MicrosoftGraph::DeviceManagement::Reports::GetDeviceManagementIntentSettingsReport
-    ## 
-    # Provides operations to call the getDeviceManagementIntentSettingsReport method.
     class GetDeviceManagementIntentSettingsReportPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './copy'
 
 module MicrosoftGraph::Drive::Items::Item::Copy
-    ## 
-    # Provides operations to call the copy method.
     class CopyPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

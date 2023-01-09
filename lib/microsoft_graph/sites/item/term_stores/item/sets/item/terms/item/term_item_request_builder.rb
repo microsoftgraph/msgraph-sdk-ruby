@@ -72,9 +72,64 @@ module MicrosoftGraph::Sites::Item::TermStores::Item::Sets::Item::Terms::Item
         ## 
         ## Delete navigation property terms for sites
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a Fiber of void
+        ## 
+        def delete(request_configuration=nil)
+            request_info = self.to_delete_request_information(
+                request_configuration
+            )
+            error_mapping = Hash.new
+            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            return @request_adapter.send_async(request_info, nil, error_mapping)
+        end
+        ## 
+        ## All the terms under the set.
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a Fiber of term
+        ## 
+        def get(request_configuration=nil)
+            request_info = self.to_get_request_information(
+                request_configuration
+            )
+            error_mapping = Hash.new
+            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Term.create_from_discriminator_value(pn) }, error_mapping)
+        end
+        ## 
+        ## Update the navigation property terms in sites
+        ## @param body The request body
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a Fiber of term
+        ## 
+        def patch(body, request_configuration=nil)
+            raise StandardError, 'body cannot be null' if body.nil?
+            request_info = self.to_patch_request_information(
+                body, request_configuration
+            )
+            error_mapping = Hash.new
+            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Term.create_from_discriminator_value(pn) }, error_mapping)
+        end
+        ## 
+        ## Provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
+        ## @param id Unique identifier of the item
+        ## @return a relation_item_request_builder
+        ## 
+        def relations_by_id(id)
+            raise StandardError, 'id cannot be null' if id.nil?
+            url_tpl_params = @path_parameters.clone
+            url_tpl_params["relation%2Did"] = id
+            return MicrosoftGraph::Sites::Item::TermStores::Item::Sets::Item::Terms::Item::Relations::Item::RelationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+        end
+        ## 
+        ## Delete navigation property terms for sites
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def create_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=nil)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -90,7 +145,7 @@ module MicrosoftGraph::Sites::Item::TermStores::Item::Sets::Item::Terms::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def create_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=nil)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -109,7 +164,7 @@ module MicrosoftGraph::Sites::Item::TermStores::Item::Sets::Item::Terms::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def create_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=nil)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
@@ -122,61 +177,6 @@ module MicrosoftGraph::Sites::Item::TermStores::Item::Sets::Item::Terms::Item
             end
             request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
             return request_info
-        end
-        ## 
-        ## Delete navigation property terms for sites
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of void
-        ## 
-        def delete(request_configuration=nil)
-            request_info = self.create_delete_request_information(
-                request_configuration
-            )
-            error_mapping = Hash.new
-            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            return @request_adapter.send_async(request_info, nil, error_mapping)
-        end
-        ## 
-        ## All the terms under the set.
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of term
-        ## 
-        def get(request_configuration=nil)
-            request_info = self.create_get_request_information(
-                request_configuration
-            )
-            error_mapping = Hash.new
-            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Term.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Update the navigation property terms in sites
-        ## @param body The request body
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a CompletableFuture of term
-        ## 
-        def patch(body, request_configuration=nil)
-            raise StandardError, 'body cannot be null' if body.nil?
-            request_info = self.create_patch_request_information(
-                body, request_configuration
-            )
-            error_mapping = Hash.new
-            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Term.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
-        ## @param id Unique identifier of the item
-        ## @return a relation_item_request_builder
-        ## 
-        def relations_by_id(id)
-            raise StandardError, 'id cannot be null' if id.nil?
-            url_tpl_params = @path_parameters.clone
-            url_tpl_params["relation%2Did"] = id
-            return MicrosoftGraph::Sites::Item::TermStores::Item::Sets::Item::Terms::Item::Relations::Item::RelationItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
 
         ## 

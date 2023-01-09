@@ -4,8 +4,6 @@ require_relative '../item'
 require_relative './remove_password'
 
 module MicrosoftGraph::Applications::Item::RemovePassword
-    ## 
-    # Provides operations to call the removePassword method.
     class RemovePasswordPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

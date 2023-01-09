@@ -8,8 +8,6 @@ require_relative '../applies_to'
 require_relative './get_available_extension_properties'
 
 module MicrosoftGraph::Policies::FeatureRolloutPolicies::Item::AppliesTo::GetAvailableExtensionProperties
-    ## 
-    # Provides operations to call the getAvailableExtensionProperties method.
     class GetAvailableExtensionPropertiesResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

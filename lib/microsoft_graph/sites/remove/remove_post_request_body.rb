@@ -4,8 +4,6 @@ require_relative '../sites'
 require_relative './remove'
 
 module MicrosoftGraph::Sites::Remove
-    ## 
-    # Provides operations to call the remove method.
     class RemovePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

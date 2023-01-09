@@ -6,8 +6,6 @@ require_relative '../item'
 require_relative './create_reply_all'
 
 module MicrosoftGraph::Me::Messages::Item::CreateReplyAll
-    ## 
-    # Provides operations to call the createReplyAll method.
     class CreateReplyAllPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

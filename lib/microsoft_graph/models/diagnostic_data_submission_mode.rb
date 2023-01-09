@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Allow the device to send diagnostic and usage telemetry data, such as Watson.
     DiagnosticDataSubmissionMode = {
         UserDefined: :UserDefined,
         None: :None,

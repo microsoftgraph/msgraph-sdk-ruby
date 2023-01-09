@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Contains value for delivery optimization priority.
     Win32LobAppDeliveryOptimizationPriority = {
         NotConfigured: :NotConfigured,
         Foreground: :Foreground,

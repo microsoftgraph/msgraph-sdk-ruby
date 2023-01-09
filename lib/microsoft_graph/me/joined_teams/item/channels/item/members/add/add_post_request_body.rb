@@ -9,8 +9,6 @@ require_relative '../members'
 require_relative './add'
 
 module MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Members::Add
-    ## 
-    # Provides operations to call the add method.
     class AddPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

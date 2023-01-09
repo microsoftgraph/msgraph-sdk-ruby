@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Specifies what level of safe search (filtering adult content) is required
     SafeSearchFilterType = {
         UserDefined: :UserDefined,
         Strict: :Strict,

@@ -9,8 +9,6 @@ require_relative '../team'
 require_relative './send_activity_notification'
 
 module MicrosoftGraph::Groups::Item::Team::SendActivityNotification
-    ## 
-    # Provides operations to call the sendActivityNotification method.
     class SendActivityNotificationPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

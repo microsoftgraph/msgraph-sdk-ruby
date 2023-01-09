@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Represents the type of pricing of a booking service.
     BookingPriceType = {
         Undefined: :Undefined,
         FixedPrice: :FixedPrice,

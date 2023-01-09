@@ -7,8 +7,6 @@ require_relative '../item'
 require_relative './create_forward'
 
 module MicrosoftGraph::Me::Messages::Item::CreateForward
-    ## 
-    # Provides operations to call the createForward method.
     class CreateForwardPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

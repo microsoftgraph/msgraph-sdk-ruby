@@ -5,8 +5,6 @@ require_relative '../root'
 require_relative './invite'
 
 module MicrosoftGraph::Drive::Root::Invite
-    ## 
-    # Provides operations to call the invite method.
     class InvitePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

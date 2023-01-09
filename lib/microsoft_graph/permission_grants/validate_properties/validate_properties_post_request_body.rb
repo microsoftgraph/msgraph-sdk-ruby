@@ -3,8 +3,6 @@ require_relative '../permission_grants'
 require_relative './validate_properties'
 
 module MicrosoftGraph::PermissionGrants::ValidateProperties
-    ## 
-    # Provides operations to call the validateProperties method.
     class ValidatePropertiesPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

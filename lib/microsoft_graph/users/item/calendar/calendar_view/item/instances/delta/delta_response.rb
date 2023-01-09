@@ -10,8 +10,6 @@ require_relative '../instances'
 require_relative './delta'
 
 module MicrosoftGraph::Users::Item::Calendar::CalendarView::Item::Instances::Delta
-    ## 
-    # Provides operations to call the delta method.
     class DeltaResponse < MicrosoftGraph::Models::BaseDeltaFunctionResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

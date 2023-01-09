@@ -5,8 +5,6 @@ require_relative '../root'
 require_relative './copy'
 
 module MicrosoftGraph::Drive::Root::Copy
-    ## 
-    # Provides operations to call the copy method.
     class CopyPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

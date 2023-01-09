@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Device registration status.
     DeviceRegistrationState = {
         NotRegistered: :NotRegistered,
         Registered: :Registered,

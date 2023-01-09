@@ -5,8 +5,6 @@ require_relative '../messages'
 require_relative './unarchive'
 
 module MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Unarchive
-    ## 
-    # Provides operations to call the unarchive method.
     class UnarchivePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

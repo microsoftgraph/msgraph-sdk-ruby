@@ -86,7 +86,7 @@ module MicrosoftGraph::Models
             @availability_status = value
         end
         ## 
-        ## Instantiates a new Domain and sets the default values.
+        ## Instantiates a new domain and sets the default values.
         ## @return a void
         ## 
         def initialize()

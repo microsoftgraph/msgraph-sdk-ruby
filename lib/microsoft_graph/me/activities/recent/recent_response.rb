@@ -6,8 +6,6 @@ require_relative '../activities'
 require_relative './recent'
 
 module MicrosoftGraph::Me::Activities::Recent
-    ## 
-    # Provides operations to call the recent method.
     class RecentResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

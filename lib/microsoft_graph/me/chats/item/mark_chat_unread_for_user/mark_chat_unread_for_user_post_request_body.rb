@@ -7,8 +7,6 @@ require_relative '../item'
 require_relative './mark_chat_unread_for_user'
 
 module MicrosoftGraph::Me::Chats::Item::MarkChatUnreadForUser
-    ## 
-    # Provides operations to call the markChatUnreadForUser method.
     class MarkChatUnreadForUserPostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

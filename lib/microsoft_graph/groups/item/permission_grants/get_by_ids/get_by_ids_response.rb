@@ -7,8 +7,6 @@ require_relative '../permission_grants'
 require_relative './get_by_ids'
 
 module MicrosoftGraph::Groups::Item::PermissionGrants::GetByIds
-    ## 
-    # Provides operations to call the getByIds method.
     class GetByIdsResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

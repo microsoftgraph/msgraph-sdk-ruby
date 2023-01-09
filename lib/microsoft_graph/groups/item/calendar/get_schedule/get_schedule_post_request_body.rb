@@ -6,8 +6,6 @@ require_relative '../calendar'
 require_relative './get_schedule'
 
 module MicrosoftGraph::Groups::Item::Calendar::GetSchedule
-    ## 
-    # Provides operations to call the getSchedule method.
     class GetSchedulePostRequestBody
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 

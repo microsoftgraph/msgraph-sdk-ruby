@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # A managed (MAM) application's availability.
     ManagedAppAvailability = {
         Global: :Global,
         LineOfBusiness: :LineOfBusiness,

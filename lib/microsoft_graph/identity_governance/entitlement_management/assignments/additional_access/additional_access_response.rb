@@ -7,8 +7,6 @@ require_relative '../assignments'
 require_relative './additional_access'
 
 module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Assignments::AdditionalAccess
-    ## 
-    # Provides operations to call the additionalAccess method.
     class AdditionalAccessResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
         ## 

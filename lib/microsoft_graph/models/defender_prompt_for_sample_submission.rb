@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Possible values for prompting user for samples submission.
     DefenderPromptForSampleSubmission = {
         UserDefined: :UserDefined,
         AlwaysPrompt: :AlwaysPrompt,

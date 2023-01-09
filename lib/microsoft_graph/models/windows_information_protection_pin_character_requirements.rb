@@ -1,6 +1,6 @@
 module MicrosoftGraph::Models
     ## 
-    # Provides operations to manage the collection of agreement entities.
+    # Pin Character Requirements
     WindowsInformationProtectionPinCharacterRequirements = {
         NotAllow: :NotAllow,
         RequireAtLeastOne: :RequireAtLeastOne,
