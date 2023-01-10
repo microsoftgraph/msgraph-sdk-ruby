@@ -1,0 +1,2 @@
+module MicrosoftGraph::Reports::GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod
+end

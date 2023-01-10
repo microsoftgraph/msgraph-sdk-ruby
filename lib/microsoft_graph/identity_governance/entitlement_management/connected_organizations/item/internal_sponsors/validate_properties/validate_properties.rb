@@ -1,0 +1,3 @@
+require_relative 'validate_properties_post_request_body'
+module MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::InternalSponsors::ValidateProperties
+end

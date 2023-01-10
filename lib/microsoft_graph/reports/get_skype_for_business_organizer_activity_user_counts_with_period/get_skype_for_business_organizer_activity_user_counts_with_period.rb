@@ -1,0 +1,2 @@
+module MicrosoftGraph::Reports::GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod
+end
