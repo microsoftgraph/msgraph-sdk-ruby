@@ -1,0 +1,3 @@
+require_relative 'schedule_actions_for_rules_post_request_body'
+module MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::ScheduleActionsForRules
+end

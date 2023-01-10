@@ -1,0 +1,3 @@
+require_relative 'get_user_ids_with_flagged_app_registration_response'
+module MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::GetUserIdsWithFlaggedAppRegistration
+end

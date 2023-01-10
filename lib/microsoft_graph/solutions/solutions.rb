@@ -1,0 +1,2 @@
+module MicrosoftGraph::Solutions
+end
