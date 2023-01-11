@@ -1,6 +1,4 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+# frozen_string_literal: true
 require_relative 'lib/version_information'
 
 Gem::Specification.new do |spec|
