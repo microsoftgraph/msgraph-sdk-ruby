@@ -43,7 +43,7 @@ module MicrosoftGraph::IdentityProtection::RiskyUsers::Item::History
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Get the riskyUserHistoryItems from the history navigation property.
+        ## Read the properties and relationships of a riskyUserHistoryItem object.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of risky_user_history_item_collection_response
         ## 
@@ -73,7 +73,7 @@ module MicrosoftGraph::IdentityProtection::RiskyUsers::Item::History
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RiskyUserHistoryItem.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Get the riskyUserHistoryItems from the history navigation property.
+        ## Read the properties and relationships of a riskyUserHistoryItem object.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph::IdentityProtection::RiskyUsers::Item::History
         end
 
         ## 
-        # Get the riskyUserHistoryItems from the history navigation property.
+        # Read the properties and relationships of a riskyUserHistoryItem object.
         class HistoryRequestBuilderGetQueryParameters
             
             ## 

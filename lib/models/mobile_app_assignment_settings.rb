@@ -58,6 +58,8 @@ module MicrosoftGraph::Models
                         return MicrosoftStoreForBusinessAppAssignmentSettings.new
                     when "#microsoft.graph.win32LobAppAssignmentSettings"
                         return Win32LobAppAssignmentSettings.new
+                    when "#microsoft.graph.windowsAppXAppAssignmentSettings"
+                        return WindowsAppXAppAssignmentSettings.new
                 end
             end
             return MobileAppAssignmentSettings.new

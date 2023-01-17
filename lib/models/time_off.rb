@@ -15,7 +15,7 @@ module MicrosoftGraph::Models
         # ID of the user assigned to the timeOff. Required.
         @user_id
         ## 
-        ## Instantiates a new timeOff and sets the default values.
+        ## Instantiates a new TimeOff and sets the default values.
         ## @return a void
         ## 
         def initialize()

@@ -66,7 +66,7 @@ module MicrosoftGraph::Users
             return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        ## Retrieve the properties and relationships of user object.
+        ## Retrieve a list of user objects.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of user_collection_response
         ## 
@@ -96,7 +96,7 @@ module MicrosoftGraph::Users
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::User.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Retrieve the properties and relationships of user object.
+        ## Retrieve a list of user objects.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -135,7 +135,7 @@ module MicrosoftGraph::Users
         end
 
         ## 
-        # Retrieve the properties and relationships of user object.
+        # Retrieve a list of user objects.
         class UsersRequestBuilderGetQueryParameters
             
             ## 

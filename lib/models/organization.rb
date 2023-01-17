@@ -49,6 +49,9 @@ module MicrosoftGraph::Models
         # true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
         @on_premises_sync_enabled
         ## 
+        # The partnerTenantType property
+        @partner_tenant_type
+        ## 
         # Postal code of the address for the organization.
         @postal_code
         ## 
@@ -268,6 +271,7 @@ module MicrosoftGraph::Models
                 "mobileDeviceManagementAuthority" => lambda {|n| @mobile_device_management_authority = n.get_enum_value(MicrosoftGraph::Models::MdmAuthority) },
                 "onPremisesLastSyncDateTime" => lambda {|n| @on_premises_last_sync_date_time = n.get_date_time_value() },
                 "onPremisesSyncEnabled" => lambda {|n| @on_premises_sync_enabled = n.get_boolean_value() },
+                "partnerTenantType" => lambda {|n| @partner_tenant_type = n.get_enum_value(MicrosoftGraph::Models::PartnerTenantType) },
                 "postalCode" => lambda {|n| @postal_code = n.get_string_value() },
                 "preferredLanguage" => lambda {|n| @preferred_language = n.get_string_value() },
                 "privacyProfile" => lambda {|n| @privacy_profile = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PrivacyProfile.create_from_discriminator_value(pn) }) },
@@ -340,6 +344,21 @@ module MicrosoftGraph::Models
         ## 
         def on_premises_sync_enabled=(value)
             @on_premises_sync_enabled = value
+        end
+        ## 
+        ## Gets the partnerTenantType property value. The partnerTenantType property
+        ## @return a partner_tenant_type
+        ## 
+        def partner_tenant_type
+            return @partner_tenant_type
+        end
+        ## 
+        ## Sets the partnerTenantType property value. The partnerTenantType property
+        ## @param value Value to set for the partnerTenantType property.
+        ## @return a void
+        ## 
+        def partner_tenant_type=(value)
+            @partner_tenant_type = value
         end
         ## 
         ## Gets the postalCode property value. Postal code of the address for the organization.
@@ -453,6 +472,7 @@ module MicrosoftGraph::Models
             writer.write_enum_value("mobileDeviceManagementAuthority", @mobile_device_management_authority)
             writer.write_date_time_value("onPremisesLastSyncDateTime", @on_premises_last_sync_date_time)
             writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled)
+            writer.write_enum_value("partnerTenantType", @partner_tenant_type)
             writer.write_string_value("postalCode", @postal_code)
             writer.write_string_value("preferredLanguage", @preferred_language)
             writer.write_object_value("privacyProfile", @privacy_profile)

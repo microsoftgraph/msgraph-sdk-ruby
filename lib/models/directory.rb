@@ -30,7 +30,7 @@ module MicrosoftGraph::Models
             @administrative_units = value
         end
         ## 
-        ## Instantiates a new directory and sets the default values.
+        ## Instantiates a new Directory and sets the default values.
         ## @return a void
         ## 
         def initialize()

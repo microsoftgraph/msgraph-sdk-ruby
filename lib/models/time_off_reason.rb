@@ -15,7 +15,7 @@ module MicrosoftGraph::Models
         # Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
         @is_active
         ## 
-        ## Instantiates a new timeOffReason and sets the default values.
+        ## Instantiates a new TimeOffReason and sets the default values.
         ## @return a void
         ## 
         def initialize()

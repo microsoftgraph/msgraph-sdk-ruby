@@ -55,6 +55,9 @@ module MicrosoftGraph::Models
         # The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
         @join_information
         ## 
+        # Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings cannot be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.
+        @join_meeting_id_settings
+        ## 
         # The join URL of the online meeting. Read-only.
         @join_web_url
         ## 
@@ -308,6 +311,7 @@ module MicrosoftGraph::Models
                 "isBroadcast" => lambda {|n| @is_broadcast = n.get_boolean_value() },
                 "isEntryExitAnnounced" => lambda {|n| @is_entry_exit_announced = n.get_boolean_value() },
                 "joinInformation" => lambda {|n| @join_information = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ItemBody.create_from_discriminator_value(pn) }) },
+                "joinMeetingIdSettings" => lambda {|n| @join_meeting_id_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::JoinMeetingIdSettings.create_from_discriminator_value(pn) }) },
                 "joinWebUrl" => lambda {|n| @join_web_url = n.get_string_value() },
                 "lobbyBypassSettings" => lambda {|n| @lobby_bypass_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::LobbyBypassSettings.create_from_discriminator_value(pn) }) },
                 "participants" => lambda {|n| @participants = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::MeetingParticipants.create_from_discriminator_value(pn) }) },
@@ -361,6 +365,21 @@ module MicrosoftGraph::Models
         ## 
         def join_information=(value)
             @join_information = value
+        end
+        ## 
+        ## Gets the joinMeetingIdSettings property value. Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings cannot be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.
+        ## @return a join_meeting_id_settings
+        ## 
+        def join_meeting_id_settings
+            return @join_meeting_id_settings
+        end
+        ## 
+        ## Sets the joinMeetingIdSettings property value. Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings cannot be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.
+        ## @param value Value to set for the joinMeetingIdSettings property.
+        ## @return a void
+        ## 
+        def join_meeting_id_settings=(value)
+            @join_meeting_id_settings = value
         end
         ## 
         ## Gets the joinWebUrl property value. The join URL of the online meeting. Read-only.
@@ -446,6 +465,7 @@ module MicrosoftGraph::Models
             writer.write_boolean_value("isBroadcast", @is_broadcast)
             writer.write_boolean_value("isEntryExitAnnounced", @is_entry_exit_announced)
             writer.write_object_value("joinInformation", @join_information)
+            writer.write_object_value("joinMeetingIdSettings", @join_meeting_id_settings)
             writer.write_string_value("joinWebUrl", @join_web_url)
             writer.write_object_value("lobbyBypassSettings", @lobby_bypass_settings)
             writer.write_object_value("participants", @participants)

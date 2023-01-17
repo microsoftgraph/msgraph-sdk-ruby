@@ -9,7 +9,7 @@ module MicrosoftGraph::Models
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
         ## 
-        # true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.
+        # true if the user must change her password on the next login; otherwise false.
         @force_change_password_next_sign_in
         ## 
         # If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
@@ -52,14 +52,14 @@ module MicrosoftGraph::Models
             return PasswordProfile.new
         end
         ## 
-        ## Gets the forceChangePasswordNextSignIn property value. true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.
+        ## Gets the forceChangePasswordNextSignIn property value. true if the user must change her password on the next login; otherwise false.
         ## @return a boolean
         ## 
         def force_change_password_next_sign_in
             return @force_change_password_next_sign_in
         end
         ## 
-        ## Sets the forceChangePasswordNextSignIn property value. true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.
+        ## Sets the forceChangePasswordNextSignIn property value. true if the user must change her password on the next login; otherwise false.
         ## @param value Value to set for the forceChangePasswordNextSignIn property.
         ## @return a void
         ## 

@@ -40,7 +40,7 @@ module MicrosoftGraph::Models
             @app_version = value
         end
         ## 
-        ## Instantiates a new PrintConnector and sets the default values.
+        ## Instantiates a new printConnector and sets the default values.
         ## @return a void
         ## 
         def initialize()

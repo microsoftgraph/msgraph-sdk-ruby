@@ -1091,7 +1091,7 @@ module MicrosoftGraph::Reports
         end
         ## 
         ## Update reports
-        ## @param body The request body
+        ## @param body The resource that represents an instance of Enrollment Failure Reports.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of report_root
         ## 
@@ -1125,7 +1125,7 @@ module MicrosoftGraph::Reports
         end
         ## 
         ## Update reports
-        ## @param body The request body
+        ## @param body The resource that represents an instance of Enrollment Failure Reports.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 

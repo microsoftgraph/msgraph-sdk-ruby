@@ -9,7 +9,7 @@ module MicrosoftGraph::Models
     class ManagedDevice < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
-        # Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
+        # The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.
         @activation_lock_bypass_code
         ## 
         # Android security patch level. This property is read-only.
@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         # Enrollment time of the device. This property is read-only.
         @enrolled_date_time
         ## 
-        # Ethernet MAC. This property is read-only.
+        # Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
         @ethernet_mac_address
         ## 
         # Device Exchange Access State.
@@ -180,14 +180,14 @@ module MicrosoftGraph::Models
         # Wi-Fi MAC. This property is read-only.
         @wi_fi_mac_address
         ## 
-        ## Gets the activationLockBypassCode property value. Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
+        ## Gets the activationLockBypassCode property value. The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.
         ## @return a string
         ## 
         def activation_lock_bypass_code
             return @activation_lock_bypass_code
         end
         ## 
-        ## Sets the activationLockBypassCode property value. Code that allows the Activation Lock on a device to be bypassed. This property is read-only.
+        ## Sets the activationLockBypassCode property value. The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.
         ## @param value Value to set for the activationLockBypassCode property.
         ## @return a void
         ## 
@@ -511,14 +511,14 @@ module MicrosoftGraph::Models
             @enrolled_date_time = value
         end
         ## 
-        ## Gets the ethernetMacAddress property value. Ethernet MAC. This property is read-only.
+        ## Gets the ethernetMacAddress property value. Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
         ## @return a string
         ## 
         def ethernet_mac_address
             return @ethernet_mac_address
         end
         ## 
-        ## Sets the ethernetMacAddress property value. Ethernet MAC. This property is read-only.
+        ## Sets the ethernetMacAddress property value. Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
         ## @param value Value to set for the ethernetMacAddress property.
         ## @return a void
         ## 

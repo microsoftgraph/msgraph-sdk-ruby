@@ -152,6 +152,8 @@ module MicrosoftGraph::Models
                         return WebApp.new
                     when "#microsoft.graph.win32LobApp"
                         return Win32LobApp.new
+                    when "#microsoft.graph.windowsMicrosoftEdgeApp"
+                        return WindowsMicrosoftEdgeApp.new
                     when "#microsoft.graph.windowsMobileMSI"
                         return WindowsMobileMSI.new
                     when "#microsoft.graph.windowsUniversalAppX"

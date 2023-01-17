@@ -44,6 +44,8 @@ module MicrosoftGraph::Models
             unless mapping_value_node.nil? then
                 mapping_value = mapping_value_node.get_string_value
                 case mapping_value
+                    when "#microsoft.graph.joinMeetingIdMeetingInfo"
+                        return JoinMeetingIdMeetingInfo.new
                     when "#microsoft.graph.organizerMeetingInfo"
                         return OrganizerMeetingInfo.new
                     when "#microsoft.graph.tokenMeetingInfo"

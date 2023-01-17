@@ -15,6 +15,7 @@ require_relative './get_configuration_setting_non_compliance_report/get_configur
 require_relative './get_device_management_intent_per_setting_contributing_profiles/get_device_management_intent_per_setting_contributing_profiles_request_builder'
 require_relative './get_device_management_intent_settings_report/get_device_management_intent_settings_report_request_builder'
 require_relative './get_device_non_compliance_report/get_device_non_compliance_report_request_builder'
+require_relative './get_devices_without_compliance_policy_report/get_devices_without_compliance_policy_report_request_builder'
 require_relative './get_historical_report/get_historical_report_request_builder'
 require_relative './get_noncompliant_devices_and_settings_report/get_noncompliant_devices_and_settings_report_request_builder'
 require_relative './get_policy_non_compliance_metadata/get_policy_non_compliance_metadata_request_builder'
@@ -83,6 +84,11 @@ module MicrosoftGraph::DeviceManagement::Reports
         # Provides operations to call the getDeviceNonComplianceReport method.
         def get_device_non_compliance_report()
             return MicrosoftGraph::DeviceManagement::Reports::GetDeviceNonComplianceReport::GetDeviceNonComplianceReportRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getDevicesWithoutCompliancePolicyReport method.
+        def get_devices_without_compliance_policy_report()
+            return MicrosoftGraph::DeviceManagement::Reports::GetDevicesWithoutCompliancePolicyReport::GetDevicesWithoutCompliancePolicyReportRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getHistoricalReport method.
