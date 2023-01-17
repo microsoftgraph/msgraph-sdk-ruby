@@ -3,6 +3,8 @@ require_relative '../microsoft_graph'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Represents a booked appointment of a service by a customer in a business.
     class BookingAppointment < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -108,7 +110,7 @@ module MicrosoftGraph::Models
             @anonymous_join_web_url = value
         end
         ## 
-        ## Instantiates a new BookingAppointment and sets the default values.
+        ## Instantiates a new bookingAppointment and sets the default values.
         ## @return a void
         ## 
         def initialize()

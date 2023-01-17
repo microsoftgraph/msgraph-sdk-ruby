@@ -43,7 +43,7 @@ module MicrosoftGraph::Users::Item::Authentication::Methods
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Retrieve a list of authenticationMethod objects. This API returns only authentication methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
+        ## Retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of authentication_method_collection_response
         ## 
@@ -73,7 +73,7 @@ module MicrosoftGraph::Users::Item::Authentication::Methods
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AuthenticationMethod.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Retrieve a list of authenticationMethod objects. This API returns only authentication methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
+        ## Retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph::Users::Item::Authentication::Methods
         end
 
         ## 
-        # Retrieve a list of authenticationMethod objects. This API returns only authentication methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
+        # Retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
         class MethodsRequestBuilderGetQueryParameters
             
             ## 

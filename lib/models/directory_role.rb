@@ -21,7 +21,7 @@ module MicrosoftGraph::Models
         # Members of this directory role that are scoped to administrative units. Read-only. Nullable.
         @scoped_members
         ## 
-        ## Instantiates a new directoryRole and sets the default values.
+        ## Instantiates a new DirectoryRole and sets the default values.
         ## @return a void
         ## 
         def initialize()

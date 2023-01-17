@@ -64,7 +64,7 @@ module MicrosoftGraph::Chats::Item::Messages
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatMessageCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Send a new chatMessage in the specified channel or a chat.
+        ## Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of chat_message
@@ -98,7 +98,7 @@ module MicrosoftGraph::Chats::Item::Messages
             return request_info
         end
         ## 
-        ## Send a new chatMessage in the specified channel or a chat.
+        ## Send a new chatMessage in the specified chat. This API can't create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

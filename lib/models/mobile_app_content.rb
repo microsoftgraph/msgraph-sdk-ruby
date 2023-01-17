@@ -8,6 +8,9 @@ module MicrosoftGraph::Models
     class MobileAppContent < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
+        # The collection of contained apps in a MobileLobApp acting as a package.
+        @contained_apps
+        ## 
         # The list of files for this app content version.
         @files
         ## 
@@ -16,6 +19,21 @@ module MicrosoftGraph::Models
         ## 
         def initialize()
             super
+        end
+        ## 
+        ## Gets the containedApps property value. The collection of contained apps in a MobileLobApp acting as a package.
+        ## @return a mobile_contained_app
+        ## 
+        def contained_apps
+            return @contained_apps
+        end
+        ## 
+        ## Sets the containedApps property value. The collection of contained apps in a MobileLobApp acting as a package.
+        ## @param value Value to set for the containedApps property.
+        ## @return a void
+        ## 
+        def contained_apps=(value)
+            @contained_apps = value
         end
         ## 
         ## Creates a new instance of the appropriate class based on discriminator value
@@ -47,6 +65,7 @@ module MicrosoftGraph::Models
         ## 
         def get_field_deserializers()
             return super.merge({
+                "containedApps" => lambda {|n| @contained_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::MobileContainedApp.create_from_discriminator_value(pn) }) },
                 "files" => lambda {|n| @files = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::MobileAppContentFile.create_from_discriminator_value(pn) }) },
             })
         end
@@ -58,6 +77,7 @@ module MicrosoftGraph::Models
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
             super
+            writer.write_collection_of_object_values("containedApps", @contained_apps)
             writer.write_collection_of_object_values("files", @files)
         end
     end

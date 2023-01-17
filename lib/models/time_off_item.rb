@@ -9,7 +9,7 @@ module MicrosoftGraph::Models
         # ID of the timeOffReason for this timeOffItem. Required.
         @time_off_reason_id
         ## 
-        ## Instantiates a new timeOffItem and sets the default values.
+        ## Instantiates a new TimeOffItem and sets the default values.
         ## @return a void
         ## 
         def initialize()

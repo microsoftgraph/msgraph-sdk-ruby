@@ -3,8 +3,13 @@ require_relative '../microsoft_graph'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    class ReportRoot < MicrosoftGraph::Models::Entity
-        include MicrosoftKiotaAbstractions::Parsable
+    ## 
+    # The resource that represents an instance of Enrollment Failure Reports.
+    class ReportRoot
+        include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
+        ## 
+        # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+        @additional_data
         ## 
         # The dailyPrintUsageByPrinter property
         @daily_print_usage_by_printer
@@ -18,14 +23,32 @@ module MicrosoftGraph::Models
         # The monthlyPrintUsageByUser property
         @monthly_print_usage_by_user
         ## 
+        # The OdataType property
+        @odata_type
+        ## 
         # The security property
         @security
+        ## 
+        ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+        ## @return a i_dictionary
+        ## 
+        def additional_data
+            return @additional_data
+        end
+        ## 
+        ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+        ## @param value Value to set for the AdditionalData property.
+        ## @return a void
+        ## 
+        def additional_data=(value)
+            @additional_data = value
+        end
         ## 
         ## Instantiates a new ReportRoot and sets the default values.
         ## @return a void
         ## 
         def initialize()
-            super
+            @additional_data = Hash.new
         end
         ## 
         ## Creates a new instance of the appropriate class based on discriminator value
@@ -71,13 +94,14 @@ module MicrosoftGraph::Models
         ## @return a i_dictionary
         ## 
         def get_field_deserializers()
-            return super.merge({
+            return {
                 "dailyPrintUsageByPrinter" => lambda {|n| @daily_print_usage_by_printer = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PrintUsageByPrinter.create_from_discriminator_value(pn) }) },
                 "dailyPrintUsageByUser" => lambda {|n| @daily_print_usage_by_user = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PrintUsageByUser.create_from_discriminator_value(pn) }) },
                 "monthlyPrintUsageByPrinter" => lambda {|n| @monthly_print_usage_by_printer = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PrintUsageByPrinter.create_from_discriminator_value(pn) }) },
                 "monthlyPrintUsageByUser" => lambda {|n| @monthly_print_usage_by_user = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PrintUsageByUser.create_from_discriminator_value(pn) }) },
+                "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 "security" => lambda {|n| @security = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SecurityReportsRoot.create_from_discriminator_value(pn) }) },
-            })
+            }
         end
         ## 
         ## Gets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
@@ -110,6 +134,21 @@ module MicrosoftGraph::Models
             @monthly_print_usage_by_user = value
         end
         ## 
+        ## Gets the @odata.type property value. The OdataType property
+        ## @return a string
+        ## 
+        def odata_type
+            return @odata_type
+        end
+        ## 
+        ## Sets the @odata.type property value. The OdataType property
+        ## @param value Value to set for the OdataType property.
+        ## @return a void
+        ## 
+        def odata_type=(value)
+            @odata_type = value
+        end
+        ## 
         ## Gets the security property value. The security property
         ## @return a security_reports_root
         ## 
@@ -131,12 +170,13 @@ module MicrosoftGraph::Models
         ## 
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
-            super
             writer.write_collection_of_object_values("dailyPrintUsageByPrinter", @daily_print_usage_by_printer)
             writer.write_collection_of_object_values("dailyPrintUsageByUser", @daily_print_usage_by_user)
             writer.write_collection_of_object_values("monthlyPrintUsageByPrinter", @monthly_print_usage_by_printer)
             writer.write_collection_of_object_values("monthlyPrintUsageByUser", @monthly_print_usage_by_user)
+            writer.write_string_value("@odata.type", @odata_type)
             writer.write_object_value("security", @security)
+            writer.write_additional_data(@additional_data)
         end
     end
 end

@@ -675,6 +675,8 @@ module MicrosoftGraph::Models
                         return MobileAppContent.new
                     when "#microsoft.graph.mobileAppContentFile"
                         return MobileAppContentFile.new
+                    when "#microsoft.graph.mobileContainedApp"
+                        return MobileContainedApp.new
                     when "#microsoft.graph.mobileLobApp"
                         return MobileLobApp.new
                     when "#microsoft.graph.mobileThreatDefenseConnector"
@@ -837,8 +839,6 @@ module MicrosoftGraph::Models
                         return ReferenceAttachment.new
                     when "#microsoft.graph.remoteAssistancePartner"
                         return RemoteAssistancePartner.new
-                    when "#microsoft.graph.reportRoot"
-                        return ReportRoot.new
                     when "#microsoft.graph.request"
                         return Request.new
                     when "#microsoft.graph.resourceOperation"
@@ -1137,6 +1137,8 @@ module MicrosoftGraph::Models
                         return WindowsInformationProtectionNetworkLearningSummary.new
                     when "#microsoft.graph.windowsInformationProtectionPolicy"
                         return WindowsInformationProtectionPolicy.new
+                    when "#microsoft.graph.windowsMicrosoftEdgeApp"
+                        return WindowsMicrosoftEdgeApp.new
                     when "#microsoft.graph.windowsMobileMSI"
                         return WindowsMobileMSI.new
                     when "#microsoft.graph.windowsPhone81CompliancePolicy"
@@ -1147,6 +1149,8 @@ module MicrosoftGraph::Models
                         return WindowsPhone81GeneralConfiguration.new
                     when "#microsoft.graph.windowsUniversalAppX"
                         return WindowsUniversalAppX.new
+                    when "#microsoft.graph.windowsUniversalAppXContainedApp"
+                        return WindowsUniversalAppXContainedApp.new
                     when "#microsoft.graph.windowsUpdateForBusinessConfiguration"
                         return WindowsUpdateForBusinessConfiguration.new
                     when "#microsoft.graph.workbook"

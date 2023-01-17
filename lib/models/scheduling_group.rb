@@ -15,7 +15,7 @@ module MicrosoftGraph::Models
         # The list of user IDs that are a member of the schedulingGroup. Required.
         @user_ids
         ## 
-        ## Instantiates a new schedulingGroup and sets the default values.
+        ## Instantiates a new SchedulingGroup and sets the default values.
         ## @return a void
         ## 
         def initialize()

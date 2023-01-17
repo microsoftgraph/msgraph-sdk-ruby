@@ -12,6 +12,9 @@ module MicrosoftGraph::Models
         # Contains properties for Windows device type.
         @applicable_device_types
         ## 
+        # The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+        @committed_contained_apps
+        ## 
         # The Identity Name.
         @identity_name
         ## 
@@ -60,6 +63,21 @@ module MicrosoftGraph::Models
             @applicable_device_types = value
         end
         ## 
+        ## Gets the committedContainedApps property value. The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+        ## @return a mobile_contained_app
+        ## 
+        def committed_contained_apps
+            return @committed_contained_apps
+        end
+        ## 
+        ## Sets the committedContainedApps property value. The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+        ## @param value Value to set for the committedContainedApps property.
+        ## @return a void
+        ## 
+        def committed_contained_apps=(value)
+            @committed_contained_apps = value
+        end
+        ## 
         ## Instantiates a new WindowsUniversalAppX and sets the default values.
         ## @return a void
         ## 
@@ -84,6 +102,7 @@ module MicrosoftGraph::Models
             return super.merge({
                 "applicableArchitectures" => lambda {|n| @applicable_architectures = n.get_enum_value(MicrosoftGraph::Models::WindowsArchitecture) },
                 "applicableDeviceTypes" => lambda {|n| @applicable_device_types = n.get_enum_value(MicrosoftGraph::Models::WindowsDeviceType) },
+                "committedContainedApps" => lambda {|n| @committed_contained_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::MobileContainedApp.create_from_discriminator_value(pn) }) },
                 "identityName" => lambda {|n| @identity_name = n.get_string_value() },
                 "identityPublisherHash" => lambda {|n| @identity_publisher_hash = n.get_string_value() },
                 "identityResourceIdentifier" => lambda {|n| @identity_resource_identifier = n.get_string_value() },
@@ -192,6 +211,7 @@ module MicrosoftGraph::Models
             super
             writer.write_enum_value("applicableArchitectures", @applicable_architectures)
             writer.write_enum_value("applicableDeviceTypes", @applicable_device_types)
+            writer.write_collection_of_object_values("committedContainedApps", @committed_contained_apps)
             writer.write_string_value("identityName", @identity_name)
             writer.write_string_value("identityPublisherHash", @identity_publisher_hash)
             writer.write_string_value("identityResourceIdentifier", @identity_resource_identifier)

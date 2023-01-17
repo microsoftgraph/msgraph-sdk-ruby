@@ -14,52 +14,52 @@ module MicrosoftGraph::Models
         # The OdataType property
         @odata_type
         ## 
-        # Version 10.0 or later.
+        # When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v10_0
         ## 
-        # Version 11.0 or later.
+        # When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v11_0
         ## 
-        # Version 4.0 or later.
+        # When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v4_0
         ## 
-        # Version 4.0.3 or later.
+        # When TRUE, only Version 4.0.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v4_0_3
         ## 
-        # Version 4.1 or later.
+        # When TRUE, only Version 4.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v4_1
         ## 
-        # Version 4.2 or later.
+        # When TRUE, only Version 4.2 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v4_2
         ## 
-        # Version 4.3 or later.
+        # When TRUE, only Version 4.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v4_3
         ## 
-        # Version 4.4 or later.
+        # When TRUE, only Version 4.4 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v4_4
         ## 
-        # Version 5.0 or later.
+        # When TRUE, only Version 5.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v5_0
         ## 
-        # Version 5.1 or later.
+        # When TRUE, only Version 5.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v5_1
         ## 
-        # Version 6.0 or later.
+        # When TRUE, only Version 6.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v6_0
         ## 
-        # Version 7.0 or later.
+        # When TRUE, only Version 7.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v7_0
         ## 
-        # Version 7.1 or later.
+        # When TRUE, only Version 7.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v7_1
         ## 
-        # Version 8.0 or later.
+        # When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v8_0
         ## 
-        # Version 8.1 or later.
+        # When TRUE, only Version 8.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v8_1
         ## 
-        # Version 9.0 or later.
+        # When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         @v9_0
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -159,14 +159,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the v10_0 property value. Version 10.0 or later.
+        ## Gets the v10_0 property value. When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v10_0
             return @v10_0
         end
         ## 
-        ## Sets the v10_0 property value. Version 10.0 or later.
+        ## Sets the v10_0 property value. When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v10_0 property.
         ## @return a void
         ## 
@@ -174,14 +174,14 @@ module MicrosoftGraph::Models
             @v10_0 = value
         end
         ## 
-        ## Gets the v11_0 property value. Version 11.0 or later.
+        ## Gets the v11_0 property value. When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v11_0
             return @v11_0
         end
         ## 
-        ## Sets the v11_0 property value. Version 11.0 or later.
+        ## Sets the v11_0 property value. When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v11_0 property.
         ## @return a void
         ## 
@@ -189,14 +189,14 @@ module MicrosoftGraph::Models
             @v11_0 = value
         end
         ## 
-        ## Gets the v4_0 property value. Version 4.0 or later.
+        ## Gets the v4_0 property value. When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v4_0
             return @v4_0
         end
         ## 
-        ## Sets the v4_0 property value. Version 4.0 or later.
+        ## Sets the v4_0 property value. When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v4_0 property.
         ## @return a void
         ## 
@@ -204,14 +204,14 @@ module MicrosoftGraph::Models
             @v4_0 = value
         end
         ## 
-        ## Gets the v4_0_3 property value. Version 4.0.3 or later.
+        ## Gets the v4_0_3 property value. When TRUE, only Version 4.0.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v4_0_3
             return @v4_0_3
         end
         ## 
-        ## Sets the v4_0_3 property value. Version 4.0.3 or later.
+        ## Sets the v4_0_3 property value. When TRUE, only Version 4.0.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v4_0_3 property.
         ## @return a void
         ## 
@@ -219,14 +219,14 @@ module MicrosoftGraph::Models
             @v4_0_3 = value
         end
         ## 
-        ## Gets the v4_1 property value. Version 4.1 or later.
+        ## Gets the v4_1 property value. When TRUE, only Version 4.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v4_1
             return @v4_1
         end
         ## 
-        ## Sets the v4_1 property value. Version 4.1 or later.
+        ## Sets the v4_1 property value. When TRUE, only Version 4.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v4_1 property.
         ## @return a void
         ## 
@@ -234,14 +234,14 @@ module MicrosoftGraph::Models
             @v4_1 = value
         end
         ## 
-        ## Gets the v4_2 property value. Version 4.2 or later.
+        ## Gets the v4_2 property value. When TRUE, only Version 4.2 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v4_2
             return @v4_2
         end
         ## 
-        ## Sets the v4_2 property value. Version 4.2 or later.
+        ## Sets the v4_2 property value. When TRUE, only Version 4.2 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v4_2 property.
         ## @return a void
         ## 
@@ -249,14 +249,14 @@ module MicrosoftGraph::Models
             @v4_2 = value
         end
         ## 
-        ## Gets the v4_3 property value. Version 4.3 or later.
+        ## Gets the v4_3 property value. When TRUE, only Version 4.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v4_3
             return @v4_3
         end
         ## 
-        ## Sets the v4_3 property value. Version 4.3 or later.
+        ## Sets the v4_3 property value. When TRUE, only Version 4.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v4_3 property.
         ## @return a void
         ## 
@@ -264,14 +264,14 @@ module MicrosoftGraph::Models
             @v4_3 = value
         end
         ## 
-        ## Gets the v4_4 property value. Version 4.4 or later.
+        ## Gets the v4_4 property value. When TRUE, only Version 4.4 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v4_4
             return @v4_4
         end
         ## 
-        ## Sets the v4_4 property value. Version 4.4 or later.
+        ## Sets the v4_4 property value. When TRUE, only Version 4.4 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v4_4 property.
         ## @return a void
         ## 
@@ -279,14 +279,14 @@ module MicrosoftGraph::Models
             @v4_4 = value
         end
         ## 
-        ## Gets the v5_0 property value. Version 5.0 or later.
+        ## Gets the v5_0 property value. When TRUE, only Version 5.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v5_0
             return @v5_0
         end
         ## 
-        ## Sets the v5_0 property value. Version 5.0 or later.
+        ## Sets the v5_0 property value. When TRUE, only Version 5.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v5_0 property.
         ## @return a void
         ## 
@@ -294,14 +294,14 @@ module MicrosoftGraph::Models
             @v5_0 = value
         end
         ## 
-        ## Gets the v5_1 property value. Version 5.1 or later.
+        ## Gets the v5_1 property value. When TRUE, only Version 5.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v5_1
             return @v5_1
         end
         ## 
-        ## Sets the v5_1 property value. Version 5.1 or later.
+        ## Sets the v5_1 property value. When TRUE, only Version 5.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v5_1 property.
         ## @return a void
         ## 
@@ -309,14 +309,14 @@ module MicrosoftGraph::Models
             @v5_1 = value
         end
         ## 
-        ## Gets the v6_0 property value. Version 6.0 or later.
+        ## Gets the v6_0 property value. When TRUE, only Version 6.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v6_0
             return @v6_0
         end
         ## 
-        ## Sets the v6_0 property value. Version 6.0 or later.
+        ## Sets the v6_0 property value. When TRUE, only Version 6.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v6_0 property.
         ## @return a void
         ## 
@@ -324,14 +324,14 @@ module MicrosoftGraph::Models
             @v6_0 = value
         end
         ## 
-        ## Gets the v7_0 property value. Version 7.0 or later.
+        ## Gets the v7_0 property value. When TRUE, only Version 7.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v7_0
             return @v7_0
         end
         ## 
-        ## Sets the v7_0 property value. Version 7.0 or later.
+        ## Sets the v7_0 property value. When TRUE, only Version 7.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v7_0 property.
         ## @return a void
         ## 
@@ -339,14 +339,14 @@ module MicrosoftGraph::Models
             @v7_0 = value
         end
         ## 
-        ## Gets the v7_1 property value. Version 7.1 or later.
+        ## Gets the v7_1 property value. When TRUE, only Version 7.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v7_1
             return @v7_1
         end
         ## 
-        ## Sets the v7_1 property value. Version 7.1 or later.
+        ## Sets the v7_1 property value. When TRUE, only Version 7.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v7_1 property.
         ## @return a void
         ## 
@@ -354,14 +354,14 @@ module MicrosoftGraph::Models
             @v7_1 = value
         end
         ## 
-        ## Gets the v8_0 property value. Version 8.0 or later.
+        ## Gets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v8_0
             return @v8_0
         end
         ## 
-        ## Sets the v8_0 property value. Version 8.0 or later.
+        ## Sets the v8_0 property value. When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v8_0 property.
         ## @return a void
         ## 
@@ -369,14 +369,14 @@ module MicrosoftGraph::Models
             @v8_0 = value
         end
         ## 
-        ## Gets the v8_1 property value. Version 8.1 or later.
+        ## Gets the v8_1 property value. When TRUE, only Version 8.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v8_1
             return @v8_1
         end
         ## 
-        ## Sets the v8_1 property value. Version 8.1 or later.
+        ## Sets the v8_1 property value. When TRUE, only Version 8.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v8_1 property.
         ## @return a void
         ## 
@@ -384,14 +384,14 @@ module MicrosoftGraph::Models
             @v8_1 = value
         end
         ## 
-        ## Gets the v9_0 property value. Version 9.0 or later.
+        ## Gets the v9_0 property value. When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @return a boolean
         ## 
         def v9_0
             return @v9_0
         end
         ## 
-        ## Sets the v9_0 property value. Version 9.0 or later.
+        ## Sets the v9_0 property value. When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         ## @param value Value to set for the v9_0 property.
         ## @return a void
         ## 

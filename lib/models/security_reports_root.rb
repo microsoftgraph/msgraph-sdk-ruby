@@ -6,7 +6,7 @@ module MicrosoftGraph::Models
     class SecurityReportsRoot < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
-        ## Instantiates a new securityReportsRoot and sets the default values.
+        ## Instantiates a new SecurityReportsRoot and sets the default values.
         ## @return a void
         ## 
         def initialize()

@@ -127,7 +127,7 @@ module MicrosoftGraph::Models
             @app_id = value
         end
         ## 
-        ## Instantiates a new servicePrincipalRiskDetection and sets the default values.
+        ## Instantiates a new ServicePrincipalRiskDetection and sets the default values.
         ## @return a void
         ## 
         def initialize()

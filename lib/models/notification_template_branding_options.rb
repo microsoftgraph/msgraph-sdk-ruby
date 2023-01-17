@@ -6,6 +6,7 @@ module MicrosoftGraph::Models
         IncludeCompanyLogo: :IncludeCompanyLogo,
         IncludeCompanyName: :IncludeCompanyName,
         IncludeContactInformation: :IncludeContactInformation,
+        IncludeCompanyPortalLink: :IncludeCompanyPortalLink,
         IncludeDeviceDetails: :IncludeDeviceDetails,
     }
 end
