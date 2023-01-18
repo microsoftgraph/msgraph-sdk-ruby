@@ -30,7 +30,7 @@ For an example of how to get an authentication provider, see [choose a Microsoft
 require "microsoft_kiota_authentication_oauth"
 require "microsoft_graph_core"
 
-context = MicrosoftKiotaAuthenticationOauth::ClientCredentialContext.new("<the tenant id from your app registration>", "<the client id from your app registration>", "<the client secret from your app registration>")
+context = MicrosoftKiotaAuthenticationOAuth::ClientCredentialContext.new("<the tenant id from your app registration>", "<the client id from your app registration>", "<the client secret from your app registration>")
 
 authentication_provider = MicrosoftGraphCore::Authentication::OAuthAuthenticationProvider.new(context, nil, ["Files.Read"])
 ```
