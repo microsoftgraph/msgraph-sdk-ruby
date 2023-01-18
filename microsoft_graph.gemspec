@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 require_relative 'lib/version_information'
-# require_relative 'lib/microsoft_graph_service_client'
-# require_relative 'lib/microsoft_graph_request_adapter'
 
 Gem::Specification.new do |spec|
   spec.name          = "microsoft_graph"
