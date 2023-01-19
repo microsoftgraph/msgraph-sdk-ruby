@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.12.1] - 2023-01-18
+
+### Changed
+
+- Fixed an issue where module would be impossible to import.
+- Fixed an issue where the authentication provider would fail to return the token.
+
 ## [0.12.0] - 2023-01-17
 
 ### Changed
