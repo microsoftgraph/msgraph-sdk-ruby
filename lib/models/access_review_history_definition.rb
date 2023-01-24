@@ -37,7 +37,7 @@ module MicrosoftGraph::Models
         # Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.
         @status
         ## 
-        ## Instantiates a new accessReviewHistoryDefinition and sets the default values.
+        ## Instantiates a new AccessReviewHistoryDefinition and sets the default values.
         ## @return a void
         ## 
         def initialize()

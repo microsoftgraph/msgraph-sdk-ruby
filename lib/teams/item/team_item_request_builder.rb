@@ -165,7 +165,7 @@ module MicrosoftGraph::Teams::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from teams
+        ## Delete entity from teams by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -264,7 +264,7 @@ module MicrosoftGraph::Teams::Item
             return MicrosoftGraph::Teams::Item::Tags::Item::TeamworkTagItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Delete entity from teams
+        ## Delete entity from teams by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 

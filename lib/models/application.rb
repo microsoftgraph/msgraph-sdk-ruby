@@ -220,7 +220,7 @@ module MicrosoftGraph::Models
             @certification = value
         end
         ## 
-        ## Instantiates a new application and sets the default values.
+        ## Instantiates a new Application and sets the default values.
         ## @return a void
         ## 
         def initialize()

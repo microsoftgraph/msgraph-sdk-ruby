@@ -359,7 +359,7 @@ module MicrosoftGraph::ServicePrincipals::Item
             return MicrosoftGraph::ServicePrincipals::Item::Owners::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Update entity in servicePrincipals
+        ## Update entity in servicePrincipals by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of service_principal
@@ -431,7 +431,7 @@ module MicrosoftGraph::ServicePrincipals::Item
             return MicrosoftGraph::ServicePrincipals::Item::TokenLifetimePolicies::Item::TokenLifetimePolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Update entity in servicePrincipals
+        ## Update entity in servicePrincipals by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

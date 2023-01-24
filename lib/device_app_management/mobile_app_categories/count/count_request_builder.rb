@@ -28,7 +28,7 @@ module MicrosoftGraph::DeviceAppManagement::MobileAppCategories::Count
         def initialize(path_parameters, request_adapter)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-            @url_template = "{+baseurl}/deviceAppManagement/mobileAppCategories/$count"
+            @url_template = "{+baseurl}/deviceAppManagement/mobileAppCategories/$count{?%24search,%24filter}"
             @request_adapter = request_adapter
             path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
             @path_parameters = path_parameters if path_parameters.is_a? Hash
@@ -60,9 +60,38 @@ module MicrosoftGraph::DeviceAppManagement::MobileAppCategories::Count
             request_info.headers.add('Accept', 'text/plain')
             unless request_configuration.nil?
                 request_info.add_headers_from_raw_object(request_configuration.headers)
+                request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                 request_info.add_request_options(request_configuration.options)
             end
             return request_info
+        end
+
+        ## 
+        # Get the number of the resource
+        class CountRequestBuilderGetQueryParameters
+            
+            ## 
+            # Filter items by property values
+            attr_accessor :filter
+            ## 
+            # Search items by search phrases
+            attr_accessor :search
+            ## 
+            ## Maps the query parameters names to their encoded names for the URI template parsing.
+            ## @param originalName The original query parameter name in the class.
+            ## @return a string
+            ## 
+            def get_query_parameter(original_name)
+                raise StandardError, 'original_name cannot be null' if original_name.nil?
+                case original_name
+                    when "filter"
+                        return "%24filter"
+                    when "search"
+                        return "%24search"
+                    else
+                        return original_name
+                end
+            end
         end
 
         ## 
@@ -75,6 +104,9 @@ module MicrosoftGraph::DeviceAppManagement::MobileAppCategories::Count
             ## 
             # Request options
             attr_accessor :options
+            ## 
+            # Request query parameters
+            attr_accessor :query_parameters
         end
     end
 end

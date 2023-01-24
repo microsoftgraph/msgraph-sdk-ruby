@@ -91,7 +91,7 @@ module MicrosoftGraph::Contacts::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from contacts
+        ## Delete entity from contacts by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -141,7 +141,7 @@ module MicrosoftGraph::Contacts::Item
             return MicrosoftGraph::Contacts::Item::MemberOf::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Update entity in contacts
+        ## Update entity in contacts by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of org_contact
@@ -157,7 +157,7 @@ module MicrosoftGraph::Contacts::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OrgContact.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from contacts
+        ## Delete entity from contacts by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -191,7 +191,7 @@ module MicrosoftGraph::Contacts::Item
             return request_info
         end
         ## 
-        ## Update entity in contacts
+        ## Update entity in contacts by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

@@ -36,7 +36,7 @@ module MicrosoftGraph::Groups::Item::Threads::Item::Reply
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation in the request, or, you can specify just the thread without the parent conversation.
+        ## Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
@@ -52,7 +52,7 @@ module MicrosoftGraph::Groups::Item::Threads::Item::Reply
             return @request_adapter.send_async(request_info, nil, error_mapping)
         end
         ## 
-        ## Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation in the request, or, you can specify just the thread without the parent conversation.
+        ## Add an attachment when creating a group post. This operation limits the size of the attachment you can add to under 3 MB. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

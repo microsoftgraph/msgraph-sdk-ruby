@@ -78,7 +78,7 @@ module MicrosoftGraph::DirectoryRoles::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from directoryRoles
+        ## Delete entity from directoryRoles by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -117,7 +117,7 @@ module MicrosoftGraph::DirectoryRoles::Item
             return MicrosoftGraph::DirectoryRoles::Item::Members::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Update entity in directoryRoles
+        ## Update entity in directoryRoles by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of directory_role
@@ -144,7 +144,7 @@ module MicrosoftGraph::DirectoryRoles::Item
             return MicrosoftGraph::DirectoryRoles::Item::ScopedMembers::Item::ScopedRoleMembershipItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Delete entity from directoryRoles
+        ## Delete entity from directoryRoles by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -178,7 +178,7 @@ module MicrosoftGraph::DirectoryRoles::Item
             return request_info
         end
         ## 
-        ## Update entity in directoryRoles
+        ## Update entity in directoryRoles by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

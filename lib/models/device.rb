@@ -139,7 +139,7 @@ module MicrosoftGraph::Models
             @compliance_expiration_date_time = value
         end
         ## 
-        ## Instantiates a new device and sets the default values.
+        ## Instantiates a new Device and sets the default values.
         ## @return a void
         ## 
         def initialize()

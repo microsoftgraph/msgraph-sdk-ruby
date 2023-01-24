@@ -92,7 +92,7 @@ module MicrosoftGraph::DirectoryObjects::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update entity in directoryObjects
+        ## Update entity in directoryObjects by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of directory_object
@@ -142,7 +142,7 @@ module MicrosoftGraph::DirectoryObjects::Item
             return request_info
         end
         ## 
-        ## Update entity in directoryObjects
+        ## Update entity in directoryObjects by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

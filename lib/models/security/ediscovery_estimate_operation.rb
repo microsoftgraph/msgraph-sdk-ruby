@@ -28,7 +28,7 @@ module MicrosoftGraph::Models::Security
         # The estimated size of unindexed items for the collection.
         @unindexed_items_size
         ## 
-        ## Instantiates a new EdiscoveryEstimateOperation and sets the default values.
+        ## Instantiates a new ediscoveryEstimateOperation and sets the default values.
         ## @return a void
         ## 
         def initialize()

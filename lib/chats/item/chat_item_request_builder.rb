@@ -105,7 +105,7 @@ module MicrosoftGraph::Chats::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from chats
+        ## Delete entity from chats by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -204,7 +204,7 @@ module MicrosoftGraph::Chats::Item
             return MicrosoftGraph::Chats::Item::Tabs::Item::TeamsTabItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Delete entity from chats
+        ## Delete entity from chats by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 

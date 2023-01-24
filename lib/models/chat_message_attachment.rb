@@ -27,6 +27,9 @@ module MicrosoftGraph::Models
         # The OdataType property
         @odata_type
         ## 
+        # The teamsAppId property
+        @teams_app_id
+        ## 
         # URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
         @thumbnail_url
         ## 
@@ -117,6 +120,7 @@ module MicrosoftGraph::Models
                 "id" => lambda {|n| @id = n.get_string_value() },
                 "name" => lambda {|n| @name = n.get_string_value() },
                 "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                "teamsAppId" => lambda {|n| @teams_app_id = n.get_string_value() },
                 "thumbnailUrl" => lambda {|n| @thumbnail_url = n.get_string_value() },
             }
         end
@@ -178,8 +182,24 @@ module MicrosoftGraph::Models
             writer.write_string_value("id", @id)
             writer.write_string_value("name", @name)
             writer.write_string_value("@odata.type", @odata_type)
+            writer.write_string_value("teamsAppId", @teams_app_id)
             writer.write_string_value("thumbnailUrl", @thumbnail_url)
             writer.write_additional_data(@additional_data)
+        end
+        ## 
+        ## Gets the teamsAppId property value. The teamsAppId property
+        ## @return a string
+        ## 
+        def teams_app_id
+            return @teams_app_id
+        end
+        ## 
+        ## Sets the teamsAppId property value. The teamsAppId property
+        ## @param value Value to set for the teamsAppId property.
+        ## @return a void
+        ## 
+        def teams_app_id=(value)
+            @teams_app_id = value
         end
         ## 
         ## Gets the thumbnailUrl property value. URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.

@@ -9,16 +9,16 @@ module MicrosoftGraph::Models
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
         ## 
-        # The guestsCount property
+        # Count of guests in a team.
         @guests_count
         ## 
-        # The membersCount property
+        # Count of members in a team.
         @members_count
         ## 
         # The OdataType property
         @odata_type
         ## 
-        # The ownersCount property
+        # Count of owners in a team.
         @owners_count
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -64,14 +64,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the guestsCount property value. The guestsCount property
+        ## Gets the guestsCount property value. Count of guests in a team.
         ## @return a integer
         ## 
         def guests_count
             return @guests_count
         end
         ## 
-        ## Sets the guestsCount property value. The guestsCount property
+        ## Sets the guestsCount property value. Count of guests in a team.
         ## @param value Value to set for the guestsCount property.
         ## @return a void
         ## 
@@ -79,14 +79,14 @@ module MicrosoftGraph::Models
             @guests_count = value
         end
         ## 
-        ## Gets the membersCount property value. The membersCount property
+        ## Gets the membersCount property value. Count of members in a team.
         ## @return a integer
         ## 
         def members_count
             return @members_count
         end
         ## 
-        ## Sets the membersCount property value. The membersCount property
+        ## Sets the membersCount property value. Count of members in a team.
         ## @param value Value to set for the membersCount property.
         ## @return a void
         ## 
@@ -109,14 +109,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the ownersCount property value. The ownersCount property
+        ## Gets the ownersCount property value. Count of owners in a team.
         ## @return a integer
         ## 
         def owners_count
             return @owners_count
         end
         ## 
-        ## Sets the ownersCount property value. The ownersCount property
+        ## Sets the ownersCount property value. Count of owners in a team.
         ## @param value Value to set for the ownersCount property.
         ## @return a void
         ## 

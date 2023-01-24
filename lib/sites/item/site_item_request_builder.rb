@@ -261,7 +261,7 @@ module MicrosoftGraph::Sites::Item
             return MicrosoftGraph::Sites::Item::Operations::Item::RichLongRunningOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Update entity in sites
+        ## Update entity in sites by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of site
@@ -328,7 +328,7 @@ module MicrosoftGraph::Sites::Item
             return request_info
         end
         ## 
-        ## Update entity in sites
+        ## Update entity in sites by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

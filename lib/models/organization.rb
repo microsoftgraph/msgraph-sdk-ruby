@@ -31,6 +31,9 @@ module MicrosoftGraph::Models
         # Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         @created_date_time
         ## 
+        # Two-letter ISO 3166 country code indicating the default service usage location of an organization.
+        @default_usage_location
+        ## 
         # The display name for the tenant.
         @display_name
         ## 
@@ -222,6 +225,21 @@ module MicrosoftGraph::Models
             return Organization.new
         end
         ## 
+        ## Gets the defaultUsageLocation property value. Two-letter ISO 3166 country code indicating the default service usage location of an organization.
+        ## @return a string
+        ## 
+        def default_usage_location
+            return @default_usage_location
+        end
+        ## 
+        ## Sets the defaultUsageLocation property value. Two-letter ISO 3166 country code indicating the default service usage location of an organization.
+        ## @param value Value to set for the defaultUsageLocation property.
+        ## @return a void
+        ## 
+        def default_usage_location=(value)
+            @default_usage_location = value
+        end
+        ## 
         ## Gets the displayName property value. The display name for the tenant.
         ## @return a string
         ## 
@@ -265,6 +283,7 @@ module MicrosoftGraph::Models
                 "country" => lambda {|n| @country = n.get_string_value() },
                 "countryLetterCode" => lambda {|n| @country_letter_code = n.get_string_value() },
                 "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
+                "defaultUsageLocation" => lambda {|n| @default_usage_location = n.get_string_value() },
                 "displayName" => lambda {|n| @display_name = n.get_string_value() },
                 "extensions" => lambda {|n| @extensions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Extension.create_from_discriminator_value(pn) }) },
                 "marketingNotificationEmails" => lambda {|n| @marketing_notification_emails = n.get_collection_of_primitive_values(String) },
@@ -466,6 +485,7 @@ module MicrosoftGraph::Models
             writer.write_string_value("country", @country)
             writer.write_string_value("countryLetterCode", @country_letter_code)
             writer.write_date_time_value("createdDateTime", @created_date_time)
+            writer.write_string_value("defaultUsageLocation", @default_usage_location)
             writer.write_string_value("displayName", @display_name)
             writer.write_collection_of_object_values("extensions", @extensions)
             writer.write_collection_of_primitive_values("marketingNotificationEmails", @marketing_notification_emails)
