@@ -34,7 +34,7 @@ module MicrosoftGraph::ScopedRoleMemberships::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from scopedRoleMemberships
+        ## Delete entity from scopedRoleMemberships by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -48,7 +48,7 @@ module MicrosoftGraph::ScopedRoleMemberships::Item
             return @request_adapter.send_async(request_info, nil, error_mapping)
         end
         ## 
-        ## Get entity from scopedRoleMemberships by key
+        ## Get entity from scopedRoleMemberships by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of scoped_role_membership
         ## 
@@ -62,7 +62,7 @@ module MicrosoftGraph::ScopedRoleMemberships::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ScopedRoleMembership.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update entity in scopedRoleMemberships
+        ## Update entity in scopedRoleMemberships by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of scoped_role_membership
@@ -78,7 +78,7 @@ module MicrosoftGraph::ScopedRoleMemberships::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ScopedRoleMembership.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from scopedRoleMemberships
+        ## Delete entity from scopedRoleMemberships by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -94,7 +94,7 @@ module MicrosoftGraph::ScopedRoleMemberships::Item
             return request_info
         end
         ## 
-        ## Get entity from scopedRoleMemberships by key
+        ## Get entity from scopedRoleMemberships by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph::ScopedRoleMemberships::Item
             return request_info
         end
         ## 
-        ## Update entity in scopedRoleMemberships
+        ## Update entity in scopedRoleMemberships by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
@@ -145,7 +145,7 @@ module MicrosoftGraph::ScopedRoleMemberships::Item
         end
 
         ## 
-        # Get entity from scopedRoleMemberships by key
+        # Get entity from scopedRoleMemberships by key (id)
         class ScopedRoleMembershipItemRequestBuilderGetQueryParameters
             
             ## 

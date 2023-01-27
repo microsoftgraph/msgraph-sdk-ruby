@@ -27,7 +27,7 @@ module MicrosoftGraph::Models
         # The collection of long-running operations on the list.
         @operations
         ## 
-        # The sharepointIds property
+        # Returns identifiers useful for SharePoint REST compatibility. Read-only.
         @sharepoint_ids
         ## 
         # The set of subscriptions on the list.
@@ -195,14 +195,14 @@ module MicrosoftGraph::Models
             writer.write_object_value("system", @system)
         end
         ## 
-        ## Gets the sharepointIds property value. The sharepointIds property
+        ## Gets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
         ## @return a sharepoint_ids
         ## 
         def sharepoint_ids
             return @sharepoint_ids
         end
         ## 
-        ## Sets the sharepointIds property value. The sharepointIds property
+        ## Sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
         ## @param value Value to set for the sharepointIds property.
         ## @return a void
         ## 

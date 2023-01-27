@@ -52,7 +52,7 @@ module MicrosoftGraph::Localizations::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from localizations
+        ## Delete entity from localizations by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -66,7 +66,7 @@ module MicrosoftGraph::Localizations::Item
             return @request_adapter.send_async(request_info, nil, error_mapping)
         end
         ## 
-        ## Get entity from localizations by key
+        ## Get entity from localizations by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of organizational_branding_localization
         ## 
@@ -80,7 +80,7 @@ module MicrosoftGraph::Localizations::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OrganizationalBrandingLocalization.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update entity in localizations
+        ## Update entity in localizations by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of organizational_branding_localization
@@ -96,7 +96,7 @@ module MicrosoftGraph::Localizations::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OrganizationalBrandingLocalization.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from localizations
+        ## Delete entity from localizations by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph::Localizations::Item
             return request_info
         end
         ## 
-        ## Get entity from localizations by key
+        ## Get entity from localizations by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -130,7 +130,7 @@ module MicrosoftGraph::Localizations::Item
             return request_info
         end
         ## 
-        ## Update entity in localizations
+        ## Update entity in localizations by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
@@ -163,7 +163,7 @@ module MicrosoftGraph::Localizations::Item
         end
 
         ## 
-        # Get entity from localizations by key
+        # Get entity from localizations by key (id)
         class OrganizationalBrandingLocalizationItemRequestBuilderGetQueryParameters
             
             ## 

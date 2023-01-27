@@ -10,7 +10,7 @@ module MicrosoftGraph::Models
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
         ## 
-        # Custom key identifier
+        # A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
         @custom_key_identifier
         ## 
         # Friendly name for the key. Optional.
@@ -68,14 +68,14 @@ module MicrosoftGraph::Models
             return KeyCredential.new
         end
         ## 
-        ## Gets the customKeyIdentifier property value. Custom key identifier
+        ## Gets the customKeyIdentifier property value. A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
         ## @return a binary
         ## 
         def custom_key_identifier
             return @custom_key_identifier
         end
         ## 
-        ## Sets the customKeyIdentifier property value. Custom key identifier
+        ## Sets the customKeyIdentifier property value. A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
         ## @param value Value to set for the customKeyIdentifier property.
         ## @return a void
         ## 

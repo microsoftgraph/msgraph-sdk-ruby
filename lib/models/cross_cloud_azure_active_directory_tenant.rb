@@ -6,23 +6,23 @@ module MicrosoftGraph::Models
     class CrossCloudAzureActiveDirectoryTenant < MicrosoftGraph::Models::IdentitySource
         include MicrosoftKiotaAbstractions::Parsable
         ## 
-        # The cloudInstance property
+        # The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read only.
         @cloud_instance
         ## 
-        # The displayName property
+        # The name of the Azure Active Directory tenant. Read only.
         @display_name
         ## 
-        # The tenantId property
+        # The ID of the Azure Active Directory tenant. Read only.
         @tenant_id
         ## 
-        ## Gets the cloudInstance property value. The cloudInstance property
+        ## Gets the cloudInstance property value. The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read only.
         ## @return a string
         ## 
         def cloud_instance
             return @cloud_instance
         end
         ## 
-        ## Sets the cloudInstance property value. The cloudInstance property
+        ## Sets the cloudInstance property value. The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read only.
         ## @param value Value to set for the cloudInstance property.
         ## @return a void
         ## 
@@ -47,14 +47,14 @@ module MicrosoftGraph::Models
             return CrossCloudAzureActiveDirectoryTenant.new
         end
         ## 
-        ## Gets the displayName property value. The displayName property
+        ## Gets the displayName property value. The name of the Azure Active Directory tenant. Read only.
         ## @return a string
         ## 
         def display_name
             return @display_name
         end
         ## 
-        ## Sets the displayName property value. The displayName property
+        ## Sets the displayName property value. The name of the Azure Active Directory tenant. Read only.
         ## @param value Value to set for the displayName property.
         ## @return a void
         ## 
@@ -85,14 +85,14 @@ module MicrosoftGraph::Models
             writer.write_string_value("tenantId", @tenant_id)
         end
         ## 
-        ## Gets the tenantId property value. The tenantId property
+        ## Gets the tenantId property value. The ID of the Azure Active Directory tenant. Read only.
         ## @return a string
         ## 
         def tenant_id
             return @tenant_id
         end
         ## 
-        ## Sets the tenantId property value. The tenantId property
+        ## Sets the tenantId property value. The ID of the Azure Active Directory tenant. Read only.
         ## @param value Value to set for the tenantId property.
         ## @return a void
         ## 

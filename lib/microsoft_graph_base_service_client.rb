@@ -107,8 +107,6 @@ require_relative './teams_templates/teams_templates_request_builder'
 require_relative './teamwork/teamwork_request_builder'
 require_relative './users/item/user_item_request_builder'
 require_relative './users/users_request_builder'
-require_relative './workbooks/item/drive_item_item_request_builder'
-require_relative './workbooks/workbooks_request_builder'
 
 module MicrosoftGraph
     ## 
@@ -458,11 +456,6 @@ module MicrosoftGraph
         # Provides operations to manage the collection of user entities.
         def users()
             return MicrosoftGraph::Users::UsersRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to manage the collection of driveItem entities.
-        def workbooks()
-            return MicrosoftGraph::Workbooks::WorkbooksRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Provides operations to manage the collection of agreementAcceptance entities.
@@ -909,17 +902,6 @@ module MicrosoftGraph
             url_tpl_params = @path_parameters.clone
             url_tpl_params["user%2Did"] = id
             return MicrosoftGraph::Users::Item::UserItemRequestBuilder.new(url_tpl_params, @request_adapter)
-        end
-        ## 
-        ## Provides operations to manage the collection of driveItem entities.
-        ## @param id Unique identifier of the item
-        ## @return a drive_item_item_request_builder
-        ## 
-        def workbooks_by_id(id)
-            raise StandardError, 'id cannot be null' if id.nil?
-            url_tpl_params = @path_parameters.clone
-            url_tpl_params["driveItem%2Did"] = id
-            return MicrosoftGraph::Workbooks::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
     end
 end

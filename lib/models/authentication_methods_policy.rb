@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
             @authentication_method_configurations = value
         end
         ## 
-        ## Instantiates a new authenticationMethodsPolicy and sets the default values.
+        ## Instantiates a new AuthenticationMethodsPolicy and sets the default values.
         ## @return a void
         ## 
         def initialize()

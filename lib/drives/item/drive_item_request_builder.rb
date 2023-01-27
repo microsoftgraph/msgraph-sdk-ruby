@@ -88,7 +88,7 @@ module MicrosoftGraph::Drives::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from drives
+        ## Delete entity from drives by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -138,7 +138,7 @@ module MicrosoftGraph::Drives::Item
             return MicrosoftGraph::Drives::Item::Items::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Update entity in drives
+        ## Update entity in drives by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of drive
@@ -188,7 +188,7 @@ module MicrosoftGraph::Drives::Item
             return MicrosoftGraph::Drives::Item::Special::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Delete entity from drives
+        ## Delete entity from drives by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -222,7 +222,7 @@ module MicrosoftGraph::Drives::Item
             return request_info
         end
         ## 
-        ## Update entity in drives
+        ## Update entity in drives by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

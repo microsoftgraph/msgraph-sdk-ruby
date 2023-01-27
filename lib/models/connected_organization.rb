@@ -19,7 +19,7 @@ module MicrosoftGraph::Models
         # The externalSponsors property
         @external_sponsors
         ## 
-        # The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
+        # The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
         @identity_sources
         ## 
         # The internalSponsors property
@@ -123,14 +123,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
+        ## Gets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
         ## @return a identity_source
         ## 
         def identity_sources
             return @identity_sources
         end
         ## 
-        ## Sets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Nullable.
+        ## Sets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
         ## @param value Value to set for the identitySources property.
         ## @return a void
         ## 

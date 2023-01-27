@@ -13,7 +13,7 @@ module MicrosoftGraph::Models
         # Unique GUID representing the app ID in the Azure Active Directory. Supports $filter (eq operator only).
         @app_id
         ## 
-        # The appliedConditionalAccessPolicies property
+        # Provides a list of conditional access policies that are triggered by the corresponding sign-in activity.
         @applied_conditional_access_policies
         ## 
         # Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).
@@ -106,14 +106,14 @@ module MicrosoftGraph::Models
             @app_id = value
         end
         ## 
-        ## Gets the appliedConditionalAccessPolicies property value. The appliedConditionalAccessPolicies property
+        ## Gets the appliedConditionalAccessPolicies property value. Provides a list of conditional access policies that are triggered by the corresponding sign-in activity.
         ## @return a applied_conditional_access_policy
         ## 
         def applied_conditional_access_policies
             return @applied_conditional_access_policies
         end
         ## 
-        ## Sets the appliedConditionalAccessPolicies property value. The appliedConditionalAccessPolicies property
+        ## Sets the appliedConditionalAccessPolicies property value. Provides a list of conditional access policies that are triggered by the corresponding sign-in activity.
         ## @param value Value to set for the appliedConditionalAccessPolicies property.
         ## @return a void
         ## 

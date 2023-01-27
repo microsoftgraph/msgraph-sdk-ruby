@@ -40,7 +40,7 @@ module MicrosoftGraph::ApplicationTemplates::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from applicationTemplates
+        ## Delete entity from applicationTemplates by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -68,7 +68,7 @@ module MicrosoftGraph::ApplicationTemplates::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ApplicationTemplate.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update entity in applicationTemplates
+        ## Update entity in applicationTemplates by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of application_template
@@ -84,7 +84,7 @@ module MicrosoftGraph::ApplicationTemplates::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ApplicationTemplate.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from applicationTemplates
+        ## Delete entity from applicationTemplates by key (id)
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -118,7 +118,7 @@ module MicrosoftGraph::ApplicationTemplates::Item
             return request_info
         end
         ## 
-        ## Update entity in applicationTemplates
+        ## Update entity in applicationTemplates by key (id)
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

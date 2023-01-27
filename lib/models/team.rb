@@ -70,7 +70,7 @@ module MicrosoftGraph::Models
         # Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.
         @specialization
         ## 
-        # The summary property
+        # Contains summary information about the team, including number of owners, members, and guests.
         @summary
         ## 
         # The tags associated with the team.
@@ -490,14 +490,14 @@ module MicrosoftGraph::Models
             @specialization = value
         end
         ## 
-        ## Gets the summary property value. The summary property
+        ## Gets the summary property value. Contains summary information about the team, including number of owners, members, and guests.
         ## @return a team_summary
         ## 
         def summary
             return @summary
         end
         ## 
-        ## Sets the summary property value. The summary property
+        ## Sets the summary property value. Contains summary information about the team, including number of owners, members, and guests.
         ## @param value Value to set for the summary property.
         ## @return a void
         ## 
