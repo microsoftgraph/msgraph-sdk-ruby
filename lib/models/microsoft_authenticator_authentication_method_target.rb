@@ -5,18 +5,16 @@ require_relative './models'
 module MicrosoftGraph::Models
     class MicrosoftAuthenticatorAuthenticationMethodTarget < MicrosoftGraph::Models::AuthenticationMethodTarget
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The authenticationMode property
         @authentication_mode
         ## 
-        ## Gets the authenticationMode property value. The authenticationMode property
+        ## Gets the authenticationMode property value. 
         ## @return a microsoft_authenticator_authentication_mode
         ## 
         def authentication_mode
             return @authentication_mode
         end
         ## 
-        ## Sets the authenticationMode property value. The authenticationMode property
+        ## Sets the authenticationMode property value. 
         ## @param value Value to set for the authenticationMode property.
         ## @return a void
         ## 

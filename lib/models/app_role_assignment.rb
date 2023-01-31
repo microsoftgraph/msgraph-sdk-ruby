@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
             @app_role_id = value
         end
         ## 
-        ## Instantiates a new appRoleAssignment and sets the default values.
+        ## Instantiates a new AppRoleAssignment and sets the default values.
         ## @return a void
         ## 
         def initialize()

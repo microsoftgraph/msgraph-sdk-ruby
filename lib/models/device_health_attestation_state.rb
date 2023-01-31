@@ -66,8 +66,6 @@ module MicrosoftGraph::Models
         ## 
         # The Timestamp of the last update.
         @last_update_date_time
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # When operatingSystemKernelDebugging is enabled, the device is used in development and testing
@@ -466,14 +464,14 @@ module MicrosoftGraph::Models
             @last_update_date_time = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

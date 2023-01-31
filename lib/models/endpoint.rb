@@ -5,30 +5,20 @@ require_relative './models'
 module MicrosoftGraph::Models
     class Endpoint < MicrosoftGraph::Models::DirectoryObject
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The capability property
         @capability
-        ## 
-        # The providerId property
         @provider_id
-        ## 
-        # The providerName property
         @provider_name
-        ## 
-        # The providerResourceId property
         @provider_resource_id
-        ## 
-        # The uri property
         @uri
         ## 
-        ## Gets the capability property value. The capability property
+        ## Gets the capability property value. 
         ## @return a string
         ## 
         def capability
             return @capability
         end
         ## 
-        ## Sets the capability property value. The capability property
+        ## Sets the capability property value. 
         ## @param value Value to set for the capability property.
         ## @return a void
         ## 
@@ -66,14 +56,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the providerId property value. The providerId property
+        ## Gets the providerId property value. 
         ## @return a string
         ## 
         def provider_id
             return @provider_id
         end
         ## 
-        ## Sets the providerId property value. The providerId property
+        ## Sets the providerId property value. 
         ## @param value Value to set for the providerId property.
         ## @return a void
         ## 
@@ -81,14 +71,14 @@ module MicrosoftGraph::Models
             @provider_id = value
         end
         ## 
-        ## Gets the providerName property value. The providerName property
+        ## Gets the providerName property value. 
         ## @return a string
         ## 
         def provider_name
             return @provider_name
         end
         ## 
-        ## Sets the providerName property value. The providerName property
+        ## Sets the providerName property value. 
         ## @param value Value to set for the providerName property.
         ## @return a void
         ## 
@@ -96,14 +86,14 @@ module MicrosoftGraph::Models
             @provider_name = value
         end
         ## 
-        ## Gets the providerResourceId property value. The providerResourceId property
+        ## Gets the providerResourceId property value. 
         ## @return a string
         ## 
         def provider_resource_id
             return @provider_resource_id
         end
         ## 
-        ## Sets the providerResourceId property value. The providerResourceId property
+        ## Sets the providerResourceId property value. 
         ## @param value Value to set for the providerResourceId property.
         ## @return a void
         ## 
@@ -125,14 +115,14 @@ module MicrosoftGraph::Models
             writer.write_string_value("uri", @uri)
         end
         ## 
-        ## Gets the uri property value. The uri property
+        ## Gets the uri property value. 
         ## @return a string
         ## 
         def uri
             return @uri
         end
         ## 
-        ## Sets the uri property value. The uri property
+        ## Sets the uri property value. 
         ## @param value Value to set for the uri property.
         ## @return a void
         ## 

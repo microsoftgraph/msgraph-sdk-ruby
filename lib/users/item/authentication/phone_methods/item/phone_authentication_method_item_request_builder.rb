@@ -6,9 +6,9 @@ require_relative '../../../../users'
 require_relative '../../../item'
 require_relative '../../authentication'
 require_relative '../phone_methods'
-require_relative './disable_sms_sign_in/disable_sms_sign_in_request_builder'
-require_relative './enable_sms_sign_in/enable_sms_sign_in_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_disable_sms_sign_in/disable_sms_sign_in_request_builder'
+require_relative './microsoft_graph_enable_sms_sign_in/enable_sms_sign_in_request_builder'
 
 module MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item
     ## 
@@ -17,13 +17,13 @@ module MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item
         
         ## 
         # Provides operations to call the disableSmsSignIn method.
-        def disable_sms_sign_in()
-            return MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item::DisableSmsSignIn::DisableSmsSignInRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_disable_sms_sign_in()
+            return MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item::MicrosoftGraphDisableSmsSignIn::DisableSmsSignInRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the enableSmsSignIn method.
-        def enable_sms_sign_in()
-            return MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item::EnableSmsSignIn::EnableSmsSignInRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_enable_sms_sign_in()
+            return MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item::MicrosoftGraphEnableSmsSignIn::EnableSmsSignInRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -37,10 +37,11 @@ module MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item
         ## 
         ## Instantiates a new PhoneAuthenticationMethodItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
+        ## @param phoneAuthenticationMethodId key: id of phoneAuthenticationMethod
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, phone_authentication_method_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/users/{user%2Did}/authentication/phoneMethods/{phoneAuthenticationMethod%2Did}{?%24select,%24expand}"
@@ -53,7 +54,7 @@ module MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -67,7 +68,7 @@ module MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of phone_authentication_method
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -78,11 +79,11 @@ module MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item
         end
         ## 
         ## Update the navigation property phoneMethods in users
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of phone_authentication_method
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -97,7 +98,7 @@ module MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -113,7 +114,7 @@ module MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -128,11 +129,11 @@ module MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item
         end
         ## 
         ## Update the navigation property phoneMethods in users
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

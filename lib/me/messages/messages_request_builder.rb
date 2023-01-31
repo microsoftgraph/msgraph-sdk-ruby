@@ -5,8 +5,8 @@ require_relative '../../models/message_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../me'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
 require_relative './messages'
+require_relative './microsoft_graph_delta/delta_request_builder'
 
 module MicrosoftGraph::Me::Messages
     ## 
@@ -17,6 +17,11 @@ module MicrosoftGraph::Me::Messages
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Me::Messages::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::Me::Messages::MicrosoftGraphDelta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -42,18 +47,11 @@ module MicrosoftGraph::Me::Messages
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of message_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -64,11 +62,11 @@ module MicrosoftGraph::Me::Messages
         end
         ## 
         ## Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of message
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -83,7 +81,7 @@ module MicrosoftGraph::Me::Messages
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -98,11 +96,11 @@ module MicrosoftGraph::Me::Messages
         end
         ## 
         ## Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

@@ -8,17 +8,11 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The language property
         @language
         ## 
         # The phone number.
         @number
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The region property
         @region
         ## 
         # The type of phone number. The possible values are: home, business, mobile, other, assistant, homeFax, businessFax, otherFax, pager, radio.
@@ -68,14 +62,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the language property value. The language property
+        ## Gets the language property value. 
         ## @return a string
         ## 
         def language
             return @language
         end
         ## 
-        ## Sets the language property value. The language property
+        ## Sets the language property value. 
         ## @param value Value to set for the language property.
         ## @return a void
         ## 
@@ -98,14 +92,14 @@ module MicrosoftGraph::Models
             @number = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -113,14 +107,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the region property value. The region property
+        ## Gets the region property value. 
         ## @return a string
         ## 
         def region
             return @region
         end
         ## 
-        ## Sets the region property value. The region property
+        ## Sets the region property value. 
         ## @param value Value to set for the region property.
         ## @return a void
         ## 

@@ -6,15 +6,15 @@ require_relative '../organization'
 require_relative './branding/branding_request_builder'
 require_relative './certificate_based_auth_configuration/certificate_based_auth_configuration_request_builder'
 require_relative './certificate_based_auth_configuration/item/certificate_based_auth_configuration_item_request_builder'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './extensions/extensions_request_builder'
 require_relative './extensions/item/extension_item_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
-require_relative './restore/restore_request_builder'
-require_relative './set_mobile_device_management_authority/set_mobile_device_management_authority_request_builder'
+require_relative './microsoft_graph_check_member_groups/check_member_groups_request_builder'
+require_relative './microsoft_graph_check_member_objects/check_member_objects_request_builder'
+require_relative './microsoft_graph_get_member_groups/get_member_groups_request_builder'
+require_relative './microsoft_graph_get_member_objects/get_member_objects_request_builder'
+require_relative './microsoft_graph_restore/restore_request_builder'
+require_relative './microsoft_graph_set_mobile_device_management_authority/set_mobile_device_management_authority_request_builder'
 
 module MicrosoftGraph::Organization::Item
     ## 
@@ -32,29 +32,39 @@ module MicrosoftGraph::Organization::Item
             return MicrosoftGraph::Organization::Item::CertificateBasedAuthConfiguration::CertificateBasedAuthConfigurationRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the checkMemberGroups method.
-        def check_member_groups()
-            return MicrosoftGraph::Organization::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the checkMemberObjects method.
-        def check_member_objects()
-            return MicrosoftGraph::Organization::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the extensions property of the microsoft.graph.organization entity.
         def extensions()
             return MicrosoftGraph::Organization::Item::Extensions::ExtensionsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the checkMemberGroups method.
+        def microsoft_graph_check_member_groups()
+            return MicrosoftGraph::Organization::Item::MicrosoftGraphCheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkMemberObjects method.
+        def microsoft_graph_check_member_objects()
+            return MicrosoftGraph::Organization::Item::MicrosoftGraphCheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the getMemberGroups method.
-        def get_member_groups()
-            return MicrosoftGraph::Organization::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_member_groups()
+            return MicrosoftGraph::Organization::Item::MicrosoftGraphGetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getMemberObjects method.
-        def get_member_objects()
-            return MicrosoftGraph::Organization::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_member_objects()
+            return MicrosoftGraph::Organization::Item::MicrosoftGraphGetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the restore method.
+        def microsoft_graph_restore()
+            return MicrosoftGraph::Organization::Item::MicrosoftGraphRestore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the setMobileDeviceManagementAuthority method.
+        def microsoft_graph_set_mobile_device_management_authority()
+            return MicrosoftGraph::Organization::Item::MicrosoftGraphSetMobileDeviceManagementAuthority::SetMobileDeviceManagementAuthorityRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -62,16 +72,6 @@ module MicrosoftGraph::Organization::Item
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the restore method.
-        def restore()
-            return MicrosoftGraph::Organization::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the setMobileDeviceManagementAuthority method.
-        def set_mobile_device_management_authority()
-            return MicrosoftGraph::Organization::Item::SetMobileDeviceManagementAuthority::SetMobileDeviceManagementAuthorityRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
@@ -88,11 +88,12 @@ module MicrosoftGraph::Organization::Item
         end
         ## 
         ## Instantiates a new OrganizationItemRequestBuilder and sets the default values.
+        ## @param organizationId key: id of organization
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, organization_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/organization/{organization%2Did}{?%24select,%24expand}"
@@ -101,11 +102,11 @@ module MicrosoftGraph::Organization::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from organization by key (id)
+        ## Delete entity from organization
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -130,7 +131,7 @@ module MicrosoftGraph::Organization::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of organization
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -141,11 +142,11 @@ module MicrosoftGraph::Organization::Item
         end
         ## 
         ## Update the properties of the currently authenticated organization. In this case, `organization` is defined as a collection of exactly one record, and so its **ID** must be specified in the request.  The **ID** is also known as the **tenantId** of the organization.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of organization
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -156,11 +157,11 @@ module MicrosoftGraph::Organization::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Organization.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from organization by key (id)
+        ## Delete entity from organization
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -176,7 +177,7 @@ module MicrosoftGraph::Organization::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -191,11 +192,11 @@ module MicrosoftGraph::Organization::Item
         end
         ## 
         ## Update the properties of the currently authenticated organization. In this case, `organization` is defined as a collection of exactly one record, and so its **ID** must be specified in the request.  The **ID** is also known as the **tenantId** of the organization.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

@@ -5,17 +5,11 @@ require_relative './models'
 module MicrosoftGraph::Models
     class PrintTask < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The definition property
         @definition
         ## 
         # The URL for the print entity that triggered this task. For example, https://graph.microsoft.com/v1.0/print/printers/{printerId}/jobs/{jobId}. Read-only.
         @parent_url
-        ## 
-        # The status property
         @status
-        ## 
-        # The trigger property
         @trigger
         ## 
         ## Instantiates a new printTask and sets the default values.
@@ -34,14 +28,14 @@ module MicrosoftGraph::Models
             return PrintTask.new
         end
         ## 
-        ## Gets the definition property value. The definition property
+        ## Gets the definition property value. 
         ## @return a print_task_definition
         ## 
         def definition
             return @definition
         end
         ## 
-        ## Sets the definition property value. The definition property
+        ## Sets the definition property value. 
         ## @param value Value to set for the definition property.
         ## @return a void
         ## 
@@ -89,14 +83,14 @@ module MicrosoftGraph::Models
             writer.write_object_value("trigger", @trigger)
         end
         ## 
-        ## Gets the status property value. The status property
+        ## Gets the status property value. 
         ## @return a print_task_status
         ## 
         def status
             return @status
         end
         ## 
-        ## Sets the status property value. The status property
+        ## Sets the status property value. 
         ## @param value Value to set for the status property.
         ## @return a void
         ## 
@@ -104,14 +98,14 @@ module MicrosoftGraph::Models
             @status = value
         end
         ## 
-        ## Gets the trigger property value. The trigger property
+        ## Gets the trigger property value. 
         ## @return a print_task_trigger
         ## 
         def trigger
             return @trigger
         end
         ## 
-        ## Sets the trigger property value. The trigger property
+        ## Sets the trigger property value. 
         ## @param value Value to set for the trigger property.
         ## @return a void
         ## 

@@ -4,11 +4,11 @@ require_relative '../models/directory_role'
 require_relative '../models/directory_role_collection_response'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
 require_relative './directory_roles'
-require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
-require_relative './get_by_ids/get_by_ids_request_builder'
-require_relative './validate_properties/validate_properties_request_builder'
+require_relative './microsoft_graph_delta/delta_request_builder'
+require_relative './microsoft_graph_get_available_extension_properties/get_available_extension_properties_request_builder'
+require_relative './microsoft_graph_get_by_ids/get_by_ids_request_builder'
+require_relative './microsoft_graph_validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph::DirectoryRoles
     ## 
@@ -21,14 +21,24 @@ module MicrosoftGraph::DirectoryRoles
             return MicrosoftGraph::DirectoryRoles::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::DirectoryRoles::MicrosoftGraphDelta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the getAvailableExtensionProperties method.
-        def get_available_extension_properties()
-            return MicrosoftGraph::DirectoryRoles::GetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_available_extension_properties()
+            return MicrosoftGraph::DirectoryRoles::MicrosoftGraphGetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getByIds method.
-        def get_by_ids()
-            return MicrosoftGraph::DirectoryRoles::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_by_ids()
+            return MicrosoftGraph::DirectoryRoles::MicrosoftGraphGetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the validateProperties method.
+        def microsoft_graph_validate_properties()
+            return MicrosoftGraph::DirectoryRoles::MicrosoftGraphValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -39,11 +49,6 @@ module MicrosoftGraph::DirectoryRoles
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        # Provides operations to call the validateProperties method.
-        def validate_properties()
-            return MicrosoftGraph::DirectoryRoles::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new DirectoryRolesRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
@@ -59,18 +64,11 @@ module MicrosoftGraph::DirectoryRoles
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## List the directory roles that are activated in the tenant. This operation only returns roles that have been activated. A role becomes activated when an admin activates the role using the Activate directoryRole API. Not all built-in roles are initially activated.  When assigning a role using the Azure portal, the role activation step is implicitly done on the admin's behalf. To get the full list of roles that are available in Azure AD, use List directoryRoleTemplates.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of directory_role_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -81,11 +79,11 @@ module MicrosoftGraph::DirectoryRoles
         end
         ## 
         ## Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (**User**, **Guest User**, and **Restricted Guest User** roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of directory_role
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -100,7 +98,7 @@ module MicrosoftGraph::DirectoryRoles
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -115,11 +113,11 @@ module MicrosoftGraph::DirectoryRoles
         end
         ## 
         ## Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (**User**, **Guest User**, and **Restricted Guest User** roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

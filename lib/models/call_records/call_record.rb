@@ -31,8 +31,6 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         # UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         @start_date_time
-        ## 
-        # The type property
         @type
         ## 
         # Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
@@ -211,14 +209,14 @@ module MicrosoftGraph::Models::CallRecords
             @start_date_time = value
         end
         ## 
-        ## Gets the type property value. The type property
+        ## Gets the type property value. 
         ## @return a call_type
         ## 
         def type
             return @type
         end
         ## 
-        ## Sets the type property value. The type property
+        ## Sets the type property value. 
         ## @param value Value to set for the type property.
         ## @return a void
         ## 

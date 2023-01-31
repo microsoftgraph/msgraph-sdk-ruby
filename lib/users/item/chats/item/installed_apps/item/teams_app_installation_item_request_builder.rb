@@ -8,15 +8,20 @@ require_relative '../../../chats'
 require_relative '../../item'
 require_relative '../installed_apps'
 require_relative './item'
+require_relative './microsoft_graph_upgrade/upgrade_request_builder'
 require_relative './teams_app/teams_app_request_builder'
 require_relative './teams_app_definition/teams_app_definition_request_builder'
-require_relative './upgrade/upgrade_request_builder'
 
 module MicrosoftGraph::Users::Item::Chats::Item::InstalledApps::Item
     ## 
     # Provides operations to manage the installedApps property of the microsoft.graph.chat entity.
     class TeamsAppInstallationItemRequestBuilder
         
+        ## 
+        # Provides operations to call the upgrade method.
+        def microsoft_graph_upgrade()
+            return MicrosoftGraph::Users::Item::Chats::Item::InstalledApps::Item::MicrosoftGraphUpgrade::UpgradeRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Path parameters for the request
         @path_parameters
@@ -34,20 +39,16 @@ module MicrosoftGraph::Users::Item::Chats::Item::InstalledApps::Item
             return MicrosoftGraph::Users::Item::Chats::Item::InstalledApps::Item::TeamsAppDefinition::TeamsAppDefinitionRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the upgrade method.
-        def upgrade()
-            return MicrosoftGraph::Users::Item::Chats::Item::InstalledApps::Item::Upgrade::UpgradeRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new TeamsAppInstallationItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param teamsAppInstallationId key: id of teamsAppInstallation
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, teams_app_installation_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}/installedApps/{teamsAppInstallation%2Did}{?%24select,%24expand}"
@@ -60,7 +61,7 @@ module MicrosoftGraph::Users::Item::Chats::Item::InstalledApps::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -74,7 +75,7 @@ module MicrosoftGraph::Users::Item::Chats::Item::InstalledApps::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of teams_app_installation
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -85,11 +86,11 @@ module MicrosoftGraph::Users::Item::Chats::Item::InstalledApps::Item
         end
         ## 
         ## Update the navigation property installedApps in users
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of teams_app_installation
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -104,7 +105,7 @@ module MicrosoftGraph::Users::Item::Chats::Item::InstalledApps::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -120,7 +121,7 @@ module MicrosoftGraph::Users::Item::Chats::Item::InstalledApps::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -135,11 +136,11 @@ module MicrosoftGraph::Users::Item::Chats::Item::InstalledApps::Item
         end
         ## 
         ## Update the navigation property installedApps in users
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

@@ -7,14 +7,14 @@ require_relative './domain_name_references/domain_name_references_request_builde
 require_relative './domain_name_references/item/directory_object_item_request_builder'
 require_relative './federation_configuration/federation_configuration_request_builder'
 require_relative './federation_configuration/item/internal_domain_federation_item_request_builder'
-require_relative './force_delete/force_delete_request_builder'
 require_relative './item'
-require_relative './promote/promote_request_builder'
+require_relative './microsoft_graph_force_delete/force_delete_request_builder'
+require_relative './microsoft_graph_promote/promote_request_builder'
+require_relative './microsoft_graph_verify/verify_request_builder'
 require_relative './service_configuration_records/item/domain_dns_record_item_request_builder'
 require_relative './service_configuration_records/service_configuration_records_request_builder'
 require_relative './verification_dns_records/item/domain_dns_record_item_request_builder'
 require_relative './verification_dns_records/verification_dns_records_request_builder'
-require_relative './verify/verify_request_builder'
 
 module MicrosoftGraph::Domains::Item
     ## 
@@ -33,17 +33,22 @@ module MicrosoftGraph::Domains::Item
         end
         ## 
         # Provides operations to call the forceDelete method.
-        def force_delete()
-            return MicrosoftGraph::Domains::Item::ForceDelete::ForceDeleteRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_force_delete()
+            return MicrosoftGraph::Domains::Item::MicrosoftGraphForceDelete::ForceDeleteRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the promote method.
+        def microsoft_graph_promote()
+            return MicrosoftGraph::Domains::Item::MicrosoftGraphPromote::PromoteRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the verify method.
+        def microsoft_graph_verify()
+            return MicrosoftGraph::Domains::Item::MicrosoftGraphVerify::VerifyRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
         @path_parameters
-        ## 
-        # Provides operations to call the promote method.
-        def promote()
-            return MicrosoftGraph::Domains::Item::Promote::PromoteRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
@@ -61,17 +66,13 @@ module MicrosoftGraph::Domains::Item
             return MicrosoftGraph::Domains::Item::VerificationDnsRecords::VerificationDnsRecordsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the verify method.
-        def verify()
-            return MicrosoftGraph::Domains::Item::Verify::VerifyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## Instantiates a new DomainItemRequestBuilder and sets the default values.
+        ## @param domainId key: id of domain
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, domain_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/domains/{domain%2Did}{?%24select,%24expand}"
@@ -84,7 +85,7 @@ module MicrosoftGraph::Domains::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -120,7 +121,7 @@ module MicrosoftGraph::Domains::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of domain
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -131,11 +132,11 @@ module MicrosoftGraph::Domains::Item
         end
         ## 
         ## Update the properties of domain object.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of domain
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -161,7 +162,7 @@ module MicrosoftGraph::Domains::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -177,7 +178,7 @@ module MicrosoftGraph::Domains::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -192,11 +193,11 @@ module MicrosoftGraph::Domains::Item
         end
         ## 
         ## Update the properties of domain object.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

@@ -5,33 +5,23 @@ require_relative './models'
 module MicrosoftGraph::Models
     class IdentityGovernance
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The accessReviews property
         @access_reviews
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The appConsent property
         @app_consent
-        ## 
-        # The entitlementManagement property
         @entitlement_management
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The termsOfUse property
         @terms_of_use
         ## 
-        ## Gets the accessReviews property value. The accessReviews property
+        ## Gets the accessReviews property value. 
         ## @return a access_review_set
         ## 
         def access_reviews
             return @access_reviews
         end
         ## 
-        ## Sets the accessReviews property value. The accessReviews property
+        ## Sets the accessReviews property value. 
         ## @param value Value to set for the accessReviews property.
         ## @return a void
         ## 
@@ -54,14 +44,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the appConsent property value. The appConsent property
+        ## Gets the appConsent property value. 
         ## @return a app_consent_approval_route
         ## 
         def app_consent
             return @app_consent
         end
         ## 
-        ## Sets the appConsent property value. The appConsent property
+        ## Sets the appConsent property value. 
         ## @param value Value to set for the appConsent property.
         ## @return a void
         ## 
@@ -85,14 +75,14 @@ module MicrosoftGraph::Models
             return IdentityGovernance.new
         end
         ## 
-        ## Gets the entitlementManagement property value. The entitlementManagement property
+        ## Gets the entitlementManagement property value. 
         ## @return a entitlement_management
         ## 
         def entitlement_management
             return @entitlement_management
         end
         ## 
-        ## Sets the entitlementManagement property value. The entitlementManagement property
+        ## Sets the entitlementManagement property value. 
         ## @param value Value to set for the entitlementManagement property.
         ## @return a void
         ## 
@@ -113,14 +103,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -142,14 +132,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the termsOfUse property value. The termsOfUse property
+        ## Gets the termsOfUse property value. 
         ## @return a terms_of_use_container
         ## 
         def terms_of_use
             return @terms_of_use
         end
         ## 
-        ## Sets the termsOfUse property value. The termsOfUse property
+        ## Sets the termsOfUse property value. 
         ## @param value Value to set for the termsOfUse property.
         ## @return a void
         ## 

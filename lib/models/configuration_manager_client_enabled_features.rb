@@ -22,8 +22,6 @@ module MicrosoftGraph::Models
         ## 
         # Whether modern application is managed by Intune
         @modern_apps
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Whether resource access is managed by Intune
@@ -138,14 +136,14 @@ module MicrosoftGraph::Models
             @modern_apps = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

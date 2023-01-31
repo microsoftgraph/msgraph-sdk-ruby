@@ -23,8 +23,6 @@ module MicrosoftGraph::Models
         ## 
         # The locale information for the user, including the preferred language and country/region.
         @language
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The time format for the user's mailbox.
@@ -32,8 +30,6 @@ module MicrosoftGraph::Models
         ## 
         # The default time zone for the user's mailbox.
         @time_zone
-        ## 
-        # The userPurpose property
         @user_purpose
         ## 
         # The days of the week and hours in a specific time zone that the user works.
@@ -163,14 +159,14 @@ module MicrosoftGraph::Models
             @language = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -227,14 +223,14 @@ module MicrosoftGraph::Models
             @time_zone = value
         end
         ## 
-        ## Gets the userPurpose property value. The userPurpose property
+        ## Gets the userPurpose property value. 
         ## @return a user_purpose
         ## 
         def user_purpose
             return @user_purpose
         end
         ## 
-        ## Sets the userPurpose property value. The userPurpose property
+        ## Sets the userPurpose property value. 
         ## @param value Value to set for the userPurpose property.
         ## @return a void
         ## 

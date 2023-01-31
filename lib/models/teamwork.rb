@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class Teamwork < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The workforceIntegrations property
         @workforce_integrations
         ## 
         ## Instantiates a new Teamwork and sets the default values.
@@ -44,14 +42,14 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("workforceIntegrations", @workforce_integrations)
         end
         ## 
-        ## Gets the workforceIntegrations property value. The workforceIntegrations property
+        ## Gets the workforceIntegrations property value. 
         ## @return a workforce_integration
         ## 
         def workforce_integrations
             return @workforce_integrations
         end
         ## 
-        ## Sets the workforceIntegrations property value. The workforceIntegrations property
+        ## Sets the workforceIntegrations property value. 
         ## @param value Value to set for the workforceIntegrations property.
         ## @return a void
         ## 

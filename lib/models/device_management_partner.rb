@@ -12,6 +12,9 @@ module MicrosoftGraph::Models
         # Partner display name
         @display_name
         ## 
+        # User groups that specifies whether enrollment is through partner.
+        @groups_requiring_partner_enrollment
+        ## 
         # Whether device management partner is configured or not
         @is_configured
         ## 
@@ -70,6 +73,7 @@ module MicrosoftGraph::Models
         def get_field_deserializers()
             return super.merge({
                 "displayName" => lambda {|n| @display_name = n.get_string_value() },
+                "groupsRequiringPartnerEnrollment" => lambda {|n| @groups_requiring_partner_enrollment = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeviceManagementPartnerAssignment.create_from_discriminator_value(pn) }) },
                 "isConfigured" => lambda {|n| @is_configured = n.get_boolean_value() },
                 "lastHeartbeatDateTime" => lambda {|n| @last_heartbeat_date_time = n.get_date_time_value() },
                 "partnerAppType" => lambda {|n| @partner_app_type = n.get_enum_value(MicrosoftGraph::Models::DeviceManagementPartnerAppType) },
@@ -78,6 +82,21 @@ module MicrosoftGraph::Models
                 "whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime" => lambda {|n| @when_partner_devices_will_be_marked_as_non_compliant_date_time = n.get_date_time_value() },
                 "whenPartnerDevicesWillBeRemovedDateTime" => lambda {|n| @when_partner_devices_will_be_removed_date_time = n.get_date_time_value() },
             })
+        end
+        ## 
+        ## Gets the groupsRequiringPartnerEnrollment property value. User groups that specifies whether enrollment is through partner.
+        ## @return a device_management_partner_assignment
+        ## 
+        def groups_requiring_partner_enrollment
+            return @groups_requiring_partner_enrollment
+        end
+        ## 
+        ## Sets the groupsRequiringPartnerEnrollment property value. User groups that specifies whether enrollment is through partner.
+        ## @param value Value to set for the groupsRequiringPartnerEnrollment property.
+        ## @return a void
+        ## 
+        def groups_requiring_partner_enrollment=(value)
+            @groups_requiring_partner_enrollment = value
         end
         ## 
         ## Gets the isConfigured property value. Whether device management partner is configured or not
@@ -148,6 +167,7 @@ module MicrosoftGraph::Models
             raise StandardError, 'writer cannot be null' if writer.nil?
             super
             writer.write_string_value("displayName", @display_name)
+            writer.write_collection_of_object_values("groupsRequiringPartnerEnrollment", @groups_requiring_partner_enrollment)
             writer.write_boolean_value("isConfigured", @is_configured)
             writer.write_date_time_value("lastHeartbeatDateTime", @last_heartbeat_date_time)
             writer.write_enum_value("partnerAppType", @partner_app_type)

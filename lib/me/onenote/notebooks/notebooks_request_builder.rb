@@ -6,8 +6,8 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../me'
 require_relative '../onenote'
 require_relative './count/count_request_builder'
-require_relative './get_notebook_from_web_url/get_notebook_from_web_url_request_builder'
-require_relative './get_recent_notebooks_with_include_personal_notebooks/get_recent_notebooks_with_include_personal_notebooks_request_builder'
+require_relative './microsoft_graph_get_notebook_from_web_url/get_notebook_from_web_url_request_builder'
+require_relative './microsoft_graph_get_recent_notebooks_with_include_personal_notebooks/get_recent_notebooks_with_include_personal_notebooks_request_builder'
 require_relative './notebooks'
 
 module MicrosoftGraph::Me::Onenote::Notebooks
@@ -22,8 +22,8 @@ module MicrosoftGraph::Me::Onenote::Notebooks
         end
         ## 
         # Provides operations to call the getNotebookFromWebUrl method.
-        def get_notebook_from_web_url()
-            return MicrosoftGraph::Me::Onenote::Notebooks::GetNotebookFromWebUrl::GetNotebookFromWebUrlRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_notebook_from_web_url()
+            return MicrosoftGraph::Me::Onenote::Notebooks::MicrosoftGraphGetNotebookFromWebUrl::GetNotebookFromWebUrlRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -53,7 +53,7 @@ module MicrosoftGraph::Me::Onenote::Notebooks
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of notebook_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -67,17 +67,17 @@ module MicrosoftGraph::Me::Onenote::Notebooks
         ## @param includePersonalNotebooks Usage: includePersonalNotebooks={includePersonalNotebooks}
         ## @return a get_recent_notebooks_with_include_personal_notebooks_request_builder
         ## 
-        def get_recent_notebooks_with_include_personal_notebooks(include_personal_notebooks)
+        def microsoft_graph_get_recent_notebooks_with_include_personal_notebooks(include_personal_notebooks)
             raise StandardError, 'include_personal_notebooks cannot be null' if include_personal_notebooks.nil?
             return GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder.new(@path_parameters, @request_adapter, includePersonalNotebooks)
         end
         ## 
         ## Create a new OneNote notebook.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of notebook
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -92,7 +92,7 @@ module MicrosoftGraph::Me::Onenote::Notebooks
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -107,11 +107,11 @@ module MicrosoftGraph::Me::Onenote::Notebooks
         end
         ## 
         ## Create a new OneNote notebook.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

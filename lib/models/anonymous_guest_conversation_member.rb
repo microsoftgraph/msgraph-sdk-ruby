@@ -5,18 +5,16 @@ require_relative './models'
 module MicrosoftGraph::Models
     class AnonymousGuestConversationMember < MicrosoftGraph::Models::ConversationMember
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The anonymousGuestId property
         @anonymous_guest_id
         ## 
-        ## Gets the anonymousGuestId property value. The anonymousGuestId property
+        ## Gets the anonymousGuestId property value. 
         ## @return a string
         ## 
         def anonymous_guest_id
             return @anonymous_guest_id
         end
         ## 
-        ## Sets the anonymousGuestId property value. The anonymousGuestId property
+        ## Sets the anonymousGuestId property value. 
         ## @param value Value to set for the anonymousGuestId property.
         ## @return a void
         ## 

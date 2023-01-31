@@ -8,17 +8,9 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The final property
         @final
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The original property
         @original
-        ## 
-        # The routingType property
         @routing_type
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -52,14 +44,14 @@ module MicrosoftGraph::Models
             return CallRoute.new
         end
         ## 
-        ## Gets the final property value. The final property
+        ## Gets the final property value. 
         ## @return a identity_set
         ## 
         def final
             return @final
         end
         ## 
-        ## Sets the final property value. The final property
+        ## Sets the final property value. 
         ## @param value Value to set for the final property.
         ## @return a void
         ## 
@@ -79,14 +71,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -94,14 +86,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the original property value. The original property
+        ## Gets the original property value. 
         ## @return a identity_set
         ## 
         def original
             return @original
         end
         ## 
-        ## Sets the original property value. The original property
+        ## Sets the original property value. 
         ## @param value Value to set for the original property.
         ## @return a void
         ## 
@@ -109,14 +101,14 @@ module MicrosoftGraph::Models
             @original = value
         end
         ## 
-        ## Gets the routingType property value. The routingType property
+        ## Gets the routingType property value. 
         ## @return a routing_type
         ## 
         def routing_type
             return @routing_type
         end
         ## 
-        ## Sets the routingType property value. The routingType property
+        ## Sets the routingType property value. 
         ## @param value Value to set for the routingType property.
         ## @return a void
         ## 

@@ -17,8 +17,6 @@ module MicrosoftGraph::Models
         ## 
         # The name of the optional claim.
         @name
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The source (directory object) of the claim. There are predefined claims and user-defined claims from extension properties. If the source value is null, the claim is a predefined optional claim. If the source value is user, the value in the name property is the extension property from the user object.
@@ -113,14 +111,14 @@ module MicrosoftGraph::Models
             @name = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

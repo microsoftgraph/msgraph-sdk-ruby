@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # The meeting ID to be used to join a meeting. Optional. Read-only.
         @join_meeting_id
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The passcode to join a meeting.  Optional. Read-only.
@@ -94,14 +92,14 @@ module MicrosoftGraph::Models
             @join_meeting_id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

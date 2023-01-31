@@ -6,8 +6,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class EducationSubmission < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The outcomes property
         @outcomes
         ## 
         # User who moved the status of this submission to reassigned.
@@ -18,8 +16,6 @@ module MicrosoftGraph::Models
         ## 
         # Who this submission is assigned to.
         @recipient
-        ## 
-        # The resources property
         @resources
         ## 
         # Folder where all file resources for this submission need to be stored.
@@ -39,8 +35,6 @@ module MicrosoftGraph::Models
         ## 
         # Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         @submitted_date_time
-        ## 
-        # The submittedResources property
         @submitted_resources
         ## 
         # User who moved the resource from submitted into the working state.
@@ -49,7 +43,7 @@ module MicrosoftGraph::Models
         # Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         @unsubmitted_date_time
         ## 
-        ## Instantiates a new educationSubmission and sets the default values.
+        ## Instantiates a new EducationSubmission and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -87,14 +81,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the outcomes property value. The outcomes property
+        ## Gets the outcomes property value. 
         ## @return a education_outcome
         ## 
         def outcomes
             return @outcomes
         end
         ## 
-        ## Sets the outcomes property value. The outcomes property
+        ## Sets the outcomes property value. 
         ## @param value Value to set for the outcomes property.
         ## @return a void
         ## 
@@ -147,14 +141,14 @@ module MicrosoftGraph::Models
             @recipient = value
         end
         ## 
-        ## Gets the resources property value. The resources property
+        ## Gets the resources property value. 
         ## @return a education_submission_resource
         ## 
         def resources
             return @resources
         end
         ## 
-        ## Sets the resources property value. The resources property
+        ## Sets the resources property value. 
         ## @param value Value to set for the resources property.
         ## @return a void
         ## 
@@ -265,14 +259,14 @@ module MicrosoftGraph::Models
             @submitted_date_time = value
         end
         ## 
-        ## Gets the submittedResources property value. The submittedResources property
+        ## Gets the submittedResources property value. 
         ## @return a education_submission_resource
         ## 
         def submitted_resources
             return @submitted_resources
         end
         ## 
-        ## Sets the submittedResources property value. The submittedResources property
+        ## Sets the submittedResources property value. 
         ## @param value Value to set for the submittedResources property.
         ## @return a void
         ## 

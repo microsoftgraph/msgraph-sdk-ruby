@@ -2,7 +2,7 @@ require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/search_entity'
-require_relative './query/query_request_builder'
+require_relative './microsoft_graph_query/query_request_builder'
 require_relative './search'
 
 module MicrosoftGraph::Search
@@ -11,13 +11,13 @@ module MicrosoftGraph::Search
     class SearchRequestBuilder
         
         ## 
+        # Provides operations to call the query method.
+        def microsoft_graph_query()
+            return MicrosoftGraph::Search::MicrosoftGraphQuery::QueryRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
-        ## 
-        # Provides operations to call the query method.
-        def query()
-            return MicrosoftGraph::Search::Query::QueryRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
@@ -43,7 +43,7 @@ module MicrosoftGraph::Search
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of search_entity
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -54,11 +54,11 @@ module MicrosoftGraph::Search
         end
         ## 
         ## Update search
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of search_entity
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -73,7 +73,7 @@ module MicrosoftGraph::Search
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -88,11 +88,11 @@ module MicrosoftGraph::Search
         end
         ## 
         ## Update search
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

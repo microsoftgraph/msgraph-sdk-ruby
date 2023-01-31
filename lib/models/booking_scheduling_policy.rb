@@ -19,8 +19,6 @@ module MicrosoftGraph::Models
         ## 
         # The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
         @minimum_lead_time
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
@@ -119,14 +117,14 @@ module MicrosoftGraph::Models
             @minimum_lead_time = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

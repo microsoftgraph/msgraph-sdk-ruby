@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class Participant < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The info property
         @info
         ## 
         # true if the participant is in lobby.
@@ -54,14 +52,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the info property value. The info property
+        ## Gets the info property value. 
         ## @return a participant_info
         ## 
         def info
             return @info
         end
         ## 
-        ## Sets the info property value. The info property
+        ## Sets the info property value. 
         ## @param value Value to set for the info property.
         ## @return a void
         ## 

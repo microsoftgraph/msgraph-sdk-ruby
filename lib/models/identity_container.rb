@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # the entry point for the Conditional Access (CA) object model.
         @conditional_access
-        ## 
-        # The identityProviders property
         @identity_providers
         ## 
         # Represents entry point for identity userflow attributes.
@@ -95,14 +93,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the identityProviders property value. The identityProviders property
+        ## Gets the identityProviders property value. 
         ## @return a identity_provider_base
         ## 
         def identity_providers
             return @identity_providers
         end
         ## 
-        ## Sets the identityProviders property value. The identityProviders property
+        ## Sets the identityProviders property value. 
         ## @param value Value to set for the identityProviders property.
         ## @return a void
         ## 

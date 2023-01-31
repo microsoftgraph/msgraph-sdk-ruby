@@ -8,44 +8,18 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The aggregationFilters property
         @aggregation_filters
-        ## 
-        # The aggregations property
         @aggregations
-        ## 
-        # The contentSources property
         @content_sources
-        ## 
-        # The enableTopResults property
         @enable_top_results
-        ## 
-        # The entityTypes property
         @entity_types
-        ## 
-        # The fields property
         @fields
-        ## 
-        # The from property
         @from
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The query property
         @query
-        ## 
-        # The queryAlterationOptions property
         @query_alteration_options
-        ## 
-        # The resultTemplateOptions property
         @result_template_options
-        ## 
-        # The size property
         @size
-        ## 
-        # The sortProperties property
         @sort_properties
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -63,14 +37,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the aggregationFilters property value. The aggregationFilters property
+        ## Gets the aggregationFilters property value. 
         ## @return a string
         ## 
         def aggregation_filters
             return @aggregation_filters
         end
         ## 
-        ## Sets the aggregationFilters property value. The aggregationFilters property
+        ## Sets the aggregationFilters property value. 
         ## @param value Value to set for the aggregationFilters property.
         ## @return a void
         ## 
@@ -78,14 +52,14 @@ module MicrosoftGraph::Models
             @aggregation_filters = value
         end
         ## 
-        ## Gets the aggregations property value. The aggregations property
+        ## Gets the aggregations property value. 
         ## @return a aggregation_option
         ## 
         def aggregations
             return @aggregations
         end
         ## 
-        ## Sets the aggregations property value. The aggregations property
+        ## Sets the aggregations property value. 
         ## @param value Value to set for the aggregations property.
         ## @return a void
         ## 
@@ -100,14 +74,14 @@ module MicrosoftGraph::Models
             @additional_data = Hash.new
         end
         ## 
-        ## Gets the contentSources property value. The contentSources property
+        ## Gets the contentSources property value. 
         ## @return a string
         ## 
         def content_sources
             return @content_sources
         end
         ## 
-        ## Sets the contentSources property value. The contentSources property
+        ## Sets the contentSources property value. 
         ## @param value Value to set for the contentSources property.
         ## @return a void
         ## 
@@ -124,14 +98,14 @@ module MicrosoftGraph::Models
             return SearchRequest.new
         end
         ## 
-        ## Gets the enableTopResults property value. The enableTopResults property
+        ## Gets the enableTopResults property value. 
         ## @return a boolean
         ## 
         def enable_top_results
             return @enable_top_results
         end
         ## 
-        ## Sets the enableTopResults property value. The enableTopResults property
+        ## Sets the enableTopResults property value. 
         ## @param value Value to set for the enableTopResults property.
         ## @return a void
         ## 
@@ -139,14 +113,14 @@ module MicrosoftGraph::Models
             @enable_top_results = value
         end
         ## 
-        ## Gets the entityTypes property value. The entityTypes property
+        ## Gets the entityTypes property value. 
         ## @return a entity_type
         ## 
         def entity_types
             return @entity_types
         end
         ## 
-        ## Sets the entityTypes property value. The entityTypes property
+        ## Sets the entityTypes property value. 
         ## @param value Value to set for the entityTypes property.
         ## @return a void
         ## 
@@ -154,14 +128,14 @@ module MicrosoftGraph::Models
             @entity_types = value
         end
         ## 
-        ## Gets the fields property value. The fields property
+        ## Gets the fields property value. 
         ## @return a string
         ## 
         def fields
             return @fields
         end
         ## 
-        ## Sets the fields property value. The fields property
+        ## Sets the fields property value. 
         ## @param value Value to set for the fields property.
         ## @return a void
         ## 
@@ -169,14 +143,14 @@ module MicrosoftGraph::Models
             @fields = value
         end
         ## 
-        ## Gets the from property value. The from property
+        ## Gets the from property value. 
         ## @return a integer
         ## 
         def from
             return @from
         end
         ## 
-        ## Sets the from property value. The from property
+        ## Sets the from property value. 
         ## @param value Value to set for the from property.
         ## @return a void
         ## 
@@ -205,14 +179,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -220,14 +194,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the query property value. The query property
+        ## Gets the query property value. 
         ## @return a search_query
         ## 
         def query
             return @query
         end
         ## 
-        ## Sets the query property value. The query property
+        ## Sets the query property value. 
         ## @param value Value to set for the query property.
         ## @return a void
         ## 
@@ -235,14 +209,14 @@ module MicrosoftGraph::Models
             @query = value
         end
         ## 
-        ## Gets the queryAlterationOptions property value. The queryAlterationOptions property
+        ## Gets the queryAlterationOptions property value. 
         ## @return a search_alteration_options
         ## 
         def query_alteration_options
             return @query_alteration_options
         end
         ## 
-        ## Sets the queryAlterationOptions property value. The queryAlterationOptions property
+        ## Sets the queryAlterationOptions property value. 
         ## @param value Value to set for the queryAlterationOptions property.
         ## @return a void
         ## 
@@ -250,14 +224,14 @@ module MicrosoftGraph::Models
             @query_alteration_options = value
         end
         ## 
-        ## Gets the resultTemplateOptions property value. The resultTemplateOptions property
+        ## Gets the resultTemplateOptions property value. 
         ## @return a result_template_option
         ## 
         def result_template_options
             return @result_template_options
         end
         ## 
-        ## Sets the resultTemplateOptions property value. The resultTemplateOptions property
+        ## Sets the resultTemplateOptions property value. 
         ## @param value Value to set for the resultTemplateOptions property.
         ## @return a void
         ## 
@@ -287,14 +261,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the size property value. The size property
+        ## Gets the size property value. 
         ## @return a integer
         ## 
         def size
             return @size
         end
         ## 
-        ## Sets the size property value. The size property
+        ## Sets the size property value. 
         ## @param value Value to set for the size property.
         ## @return a void
         ## 
@@ -302,14 +276,14 @@ module MicrosoftGraph::Models
             @size = value
         end
         ## 
-        ## Gets the sortProperties property value. The sortProperties property
+        ## Gets the sortProperties property value. 
         ## @return a sort_property
         ## 
         def sort_properties
             return @sort_properties
         end
         ## 
-        ## Sets the sortProperties property value. The sortProperties property
+        ## Sets the sortProperties property value. 
         ## @param value Value to set for the sortProperties property.
         ## @return a void
         ## 

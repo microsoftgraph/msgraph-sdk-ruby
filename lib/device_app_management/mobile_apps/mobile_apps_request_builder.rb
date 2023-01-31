@@ -5,8 +5,8 @@ require_relative '../../models/mobile_app_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_app_management'
 require_relative './count/count_request_builder'
-require_relative './managed_mobile_lob_app/managed_mobile_lob_app_request_builder'
-require_relative './mobile_lob_app/mobile_lob_app_request_builder'
+require_relative './microsoft_graph_managed_mobile_lob_app/managed_mobile_lob_app_request_builder'
+require_relative './microsoft_graph_mobile_lob_app/mobile_lob_app_request_builder'
 require_relative './mobile_apps'
 
 module MicrosoftGraph::DeviceAppManagement::MobileApps
@@ -21,13 +21,13 @@ module MicrosoftGraph::DeviceAppManagement::MobileApps
         end
         ## 
         # Casts the previous resource to managedMobileLobApp.
-        def managed_mobile_lob_app()
-            return MicrosoftGraph::DeviceAppManagement::MobileApps::ManagedMobileLobApp::ManagedMobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_managed_mobile_lob_app()
+            return MicrosoftGraph::DeviceAppManagement::MobileApps::MicrosoftGraphManagedMobileLobApp::ManagedMobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to mobileLobApp.
-        def mobile_lob_app()
-            return MicrosoftGraph::DeviceAppManagement::MobileApps::MobileLobApp::MobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_mobile_lob_app()
+            return MicrosoftGraph::DeviceAppManagement::MobileApps::MicrosoftGraphMobileLobApp::MobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -57,7 +57,7 @@ module MicrosoftGraph::DeviceAppManagement::MobileApps
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of mobile_app_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -68,11 +68,11 @@ module MicrosoftGraph::DeviceAppManagement::MobileApps
         end
         ## 
         ## Create new navigation property to mobileApps for deviceAppManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of mobile_app
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -87,7 +87,7 @@ module MicrosoftGraph::DeviceAppManagement::MobileApps
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -102,11 +102,11 @@ module MicrosoftGraph::DeviceAppManagement::MobileApps
         end
         ## 
         ## Create new navigation property to mobileApps for deviceAppManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

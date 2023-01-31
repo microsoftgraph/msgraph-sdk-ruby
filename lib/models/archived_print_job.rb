@@ -30,14 +30,10 @@ module MicrosoftGraph::Models
         ## 
         # The archived print job's GUID. Read-only.
         @id
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The printer ID that the job was queued for. Read-only.
         @printer_id
-        ## 
-        # The processingState property
         @processing_state
         ## 
         ## Gets the acquiredByPrinter property value. True if the job was acquired by a printer; false otherwise. Read-only.
@@ -194,14 +190,14 @@ module MicrosoftGraph::Models
             @id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -224,14 +220,14 @@ module MicrosoftGraph::Models
             @printer_id = value
         end
         ## 
-        ## Gets the processingState property value. The processingState property
+        ## Gets the processingState property value. 
         ## @return a print_job_processing_state
         ## 
         def processing_state
             return @processing_state
         end
         ## 
-        ## Sets the processingState property value. The processingState property
+        ## Sets the processingState property value. 
         ## @param value Value to set for the processingState property.
         ## @return a void
         ## 

@@ -12,8 +12,6 @@ module MicrosoftGraph::Models
         ## 
         # Timestamp for when the last activity occurred. The value is updated when an operation is scheduled, the asynchronous task starts, and when the operation completes.
         @last_action_date_time
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Type of asynchronous operation. The values can be ForceDelete or Verification
@@ -80,14 +78,14 @@ module MicrosoftGraph::Models
             @last_action_date_time = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

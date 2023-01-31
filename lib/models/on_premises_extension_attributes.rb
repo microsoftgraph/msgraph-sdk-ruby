@@ -53,8 +53,6 @@ module MicrosoftGraph::Models
         ## 
         # Ninth customizable extension attribute.
         @extension_attribute9
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -337,14 +335,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

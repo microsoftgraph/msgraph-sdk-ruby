@@ -31,8 +31,6 @@ module MicrosoftGraph::Models
         ## 
         # Logo image displayed in Company Portal apps which have a light background behind the logo.
         @light_background_logo
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Display name of the company/organization’s IT helpdesk site.
@@ -215,14 +213,14 @@ module MicrosoftGraph::Models
             @light_background_logo = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

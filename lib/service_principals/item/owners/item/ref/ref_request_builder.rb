@@ -40,7 +40,7 @@ module MicrosoftGraph::ServicePrincipals::Item::Owners::Item::Ref
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -54,7 +54,7 @@ module MicrosoftGraph::ServicePrincipals::Item::Owners::Item::Ref
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters

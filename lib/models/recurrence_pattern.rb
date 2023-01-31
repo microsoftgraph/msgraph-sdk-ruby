@@ -26,8 +26,6 @@ module MicrosoftGraph::Models
         ## 
         # The month in which the event occurs.  This is a number from 1 to 12.
         @month
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The recurrence pattern type: daily, weekly, absoluteMonthly, relativeMonthly, absoluteYearly, relativeYearly. Required. For more information, see values of type property.
@@ -170,14 +168,14 @@ module MicrosoftGraph::Models
             @month = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

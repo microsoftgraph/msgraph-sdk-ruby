@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # Name of the property serving as a detection trigger.
         @name
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Type of the property in the key:value pair for interpretation. For example, String, Boolean etc.
@@ -79,14 +77,14 @@ module MicrosoftGraph::Models
             @name = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

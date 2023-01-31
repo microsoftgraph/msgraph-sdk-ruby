@@ -8,11 +8,7 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The changeType property
         @change_type
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # URI of the resource that was changed.
@@ -33,14 +29,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the changeType property value. The changeType property
+        ## Gets the changeType property value. 
         ## @return a change_type
         ## 
         def change_type
             return @change_type
         end
         ## 
-        ## Sets the changeType property value. The changeType property
+        ## Sets the changeType property value. 
         ## @param value Value to set for the changeType property.
         ## @return a void
         ## 
@@ -75,14 +71,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

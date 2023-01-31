@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class Call < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The audioRoutingGroups property
         @audio_routing_groups
         ## 
         # The callback URL on which callbacks will be delivered. Must be https.
@@ -23,8 +21,6 @@ module MicrosoftGraph::Models
         ## 
         # The chat information. Required information for joining a meeting.
         @chat_info
-        ## 
-        # The contentSharingSessions property
         @content_sharing_sessions
         ## 
         # The direction of the call. The possible value are incoming or outgoing. Read-only.
@@ -41,14 +37,8 @@ module MicrosoftGraph::Models
         ## 
         # The meeting information. Required information for meeting scenarios.
         @meeting_info
-        ## 
-        # The myParticipantId property
         @my_participant_id
-        ## 
-        # The operations property
         @operations
-        ## 
-        # The participants property
         @participants
         ## 
         # The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
@@ -68,24 +58,20 @@ module MicrosoftGraph::Models
         ## 
         # The targets of the call. Required information for creating peer to peer call.
         @targets
-        ## 
-        # The tenantId property
         @tenant_id
-        ## 
-        # The toneInfo property
         @tone_info
         ## 
         # The transcription information for the call. Read-only.
         @transcription
         ## 
-        ## Gets the audioRoutingGroups property value. The audioRoutingGroups property
+        ## Gets the audioRoutingGroups property value. 
         ## @return a audio_routing_group
         ## 
         def audio_routing_groups
             return @audio_routing_groups
         end
         ## 
-        ## Sets the audioRoutingGroups property value. The audioRoutingGroups property
+        ## Sets the audioRoutingGroups property value. 
         ## @param value Value to set for the audioRoutingGroups property.
         ## @return a void
         ## 
@@ -175,14 +161,14 @@ module MicrosoftGraph::Models
             super
         end
         ## 
-        ## Gets the contentSharingSessions property value. The contentSharingSessions property
+        ## Gets the contentSharingSessions property value. 
         ## @return a content_sharing_session
         ## 
         def content_sharing_sessions
             return @content_sharing_sessions
         end
         ## 
-        ## Sets the contentSharingSessions property value. The contentSharingSessions property
+        ## Sets the contentSharingSessions property value. 
         ## @param value Value to set for the contentSharingSessions property.
         ## @return a void
         ## 
@@ -306,14 +292,14 @@ module MicrosoftGraph::Models
             @meeting_info = value
         end
         ## 
-        ## Gets the myParticipantId property value. The myParticipantId property
+        ## Gets the myParticipantId property value. 
         ## @return a string
         ## 
         def my_participant_id
             return @my_participant_id
         end
         ## 
-        ## Sets the myParticipantId property value. The myParticipantId property
+        ## Sets the myParticipantId property value. 
         ## @param value Value to set for the myParticipantId property.
         ## @return a void
         ## 
@@ -321,14 +307,14 @@ module MicrosoftGraph::Models
             @my_participant_id = value
         end
         ## 
-        ## Gets the operations property value. The operations property
+        ## Gets the operations property value. 
         ## @return a comms_operation
         ## 
         def operations
             return @operations
         end
         ## 
-        ## Sets the operations property value. The operations property
+        ## Sets the operations property value. 
         ## @param value Value to set for the operations property.
         ## @return a void
         ## 
@@ -336,14 +322,14 @@ module MicrosoftGraph::Models
             @operations = value
         end
         ## 
-        ## Gets the participants property value. The participants property
+        ## Gets the participants property value. 
         ## @return a participant
         ## 
         def participants
             return @participants
         end
         ## 
-        ## Sets the participants property value. The participants property
+        ## Sets the participants property value. 
         ## @param value Value to set for the participants property.
         ## @return a void
         ## 
@@ -474,14 +460,14 @@ module MicrosoftGraph::Models
             @targets = value
         end
         ## 
-        ## Gets the tenantId property value. The tenantId property
+        ## Gets the tenantId property value. 
         ## @return a string
         ## 
         def tenant_id
             return @tenant_id
         end
         ## 
-        ## Sets the tenantId property value. The tenantId property
+        ## Sets the tenantId property value. 
         ## @param value Value to set for the tenantId property.
         ## @return a void
         ## 
@@ -489,14 +475,14 @@ module MicrosoftGraph::Models
             @tenant_id = value
         end
         ## 
-        ## Gets the toneInfo property value. The toneInfo property
+        ## Gets the toneInfo property value. 
         ## @return a tone_info
         ## 
         def tone_info
             return @tone_info
         end
         ## 
-        ## Sets the toneInfo property value. The toneInfo property
+        ## Sets the toneInfo property value. 
         ## @param value Value to set for the toneInfo property.
         ## @return a void
         ## 

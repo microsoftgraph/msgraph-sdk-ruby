@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # Describes the error.
         @message
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The response code from querying for the availability of the user, distribution list, or resource.
@@ -75,14 +73,14 @@ module MicrosoftGraph::Models
             @message = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

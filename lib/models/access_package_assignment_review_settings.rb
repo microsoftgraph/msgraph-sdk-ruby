@@ -26,8 +26,6 @@ module MicrosoftGraph::Models
         ## 
         # Specifies whether the principals can review their own assignments.
         @is_self_review
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # This collection specifies the users or group of users who will review the access package assignments.
@@ -174,14 +172,14 @@ module MicrosoftGraph::Models
             @is_self_review = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

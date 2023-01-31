@@ -4,11 +4,11 @@ require_relative '../models/group'
 require_relative '../models/group_collection_response'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
-require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
-require_relative './get_by_ids/get_by_ids_request_builder'
 require_relative './groups'
-require_relative './validate_properties/validate_properties_request_builder'
+require_relative './microsoft_graph_delta/delta_request_builder'
+require_relative './microsoft_graph_get_available_extension_properties/get_available_extension_properties_request_builder'
+require_relative './microsoft_graph_get_by_ids/get_by_ids_request_builder'
+require_relative './microsoft_graph_validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph::Groups
     ## 
@@ -21,14 +21,24 @@ module MicrosoftGraph::Groups
             return MicrosoftGraph::Groups::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::Groups::MicrosoftGraphDelta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the getAvailableExtensionProperties method.
-        def get_available_extension_properties()
-            return MicrosoftGraph::Groups::GetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_available_extension_properties()
+            return MicrosoftGraph::Groups::MicrosoftGraphGetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getByIds method.
-        def get_by_ids()
-            return MicrosoftGraph::Groups::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_by_ids()
+            return MicrosoftGraph::Groups::MicrosoftGraphGetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the validateProperties method.
+        def microsoft_graph_validate_properties()
+            return MicrosoftGraph::Groups::MicrosoftGraphValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -39,11 +49,6 @@ module MicrosoftGraph::Groups
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        # Provides operations to call the validateProperties method.
-        def validate_properties()
-            return MicrosoftGraph::Groups::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new GroupsRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
@@ -59,18 +64,11 @@ module MicrosoftGraph::Groups
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## List all the groups available in an organization, excluding dynamic distribution groups. To retrieve dynamic distribution groups, use the Exchange admin center. This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the group and specify the properties in a `$select` OData query option. The **hasMembersWithLicenseErrors** and **isArchived** properties are an exception and are not returned in the `$select` query.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of group_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -81,11 +79,11 @@ module MicrosoftGraph::Groups
         end
         ## 
         ## Create a new group as specified in the request body. You can create the following types of groups: This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation and specify the properties in a `$select` OData query option.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of group
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -100,7 +98,7 @@ module MicrosoftGraph::Groups
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -115,11 +113,11 @@ module MicrosoftGraph::Groups
         end
         ## 
         ## Create a new group as specified in the request body. You can create the following types of groups: This operation returns by default only a subset of the properties for each group. These default properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation and specify the properties in a `$select` OData query option.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

@@ -4,15 +4,15 @@ require_relative '../../../models/calendar'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../me'
 require_relative '../calendars'
-require_relative './allowed_calendar_sharing_roles_with_user/allowed_calendar_sharing_roles_with_user_request_builder'
 require_relative './calendar_permissions/calendar_permissions_request_builder'
 require_relative './calendar_permissions/item/calendar_permission_item_request_builder'
 require_relative './calendar_view/calendar_view_request_builder'
 require_relative './calendar_view/item/event_item_request_builder'
 require_relative './events/events_request_builder'
 require_relative './events/item/event_item_request_builder'
-require_relative './get_schedule/get_schedule_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_allowed_calendar_sharing_roles_with_user/allowed_calendar_sharing_roles_with_user_request_builder'
+require_relative './microsoft_graph_get_schedule/get_schedule_request_builder'
 require_relative './multi_value_extended_properties/item/multi_value_legacy_extended_property_item_request_builder'
 require_relative './multi_value_extended_properties/multi_value_extended_properties_request_builder'
 require_relative './single_value_extended_properties/item/single_value_legacy_extended_property_item_request_builder'
@@ -40,8 +40,8 @@ module MicrosoftGraph::Me::Calendars::Item
         end
         ## 
         # Provides operations to call the getSchedule method.
-        def get_schedule()
-            return MicrosoftGraph::Me::Calendars::Item::GetSchedule::GetScheduleRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_schedule()
+            return MicrosoftGraph::Me::Calendars::Item::MicrosoftGraphGetSchedule::GetScheduleRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.calendar entity.
@@ -62,15 +62,6 @@ module MicrosoftGraph::Me::Calendars::Item
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        ## Provides operations to call the allowedCalendarSharingRoles method.
-        ## @param User Usage: User='{User}'
-        ## @return a allowed_calendar_sharing_roles_with_user_request_builder
-        ## 
-        def allowed_calendar_sharing_roles_with_user(user)
-            raise StandardError, 'user cannot be null' if user.nil?
-            return AllowedCalendarSharingRolesWithUserRequestBuilder.new(@path_parameters, @request_adapter, User)
-        end
         ## 
         ## Provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.
         ## @param id Unique identifier of the item
@@ -95,11 +86,12 @@ module MicrosoftGraph::Me::Calendars::Item
         end
         ## 
         ## Instantiates a new CalendarItemRequestBuilder and sets the default values.
+        ## @param calendarId key: id of calendar
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, calendar_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/me/calendars/{calendar%2Did}{?%24select}"
@@ -112,7 +104,7 @@ module MicrosoftGraph::Me::Calendars::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -137,7 +129,7 @@ module MicrosoftGraph::Me::Calendars::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of calendar
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -145,6 +137,15 @@ module MicrosoftGraph::Me::Calendars::Item
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Calendar.create_from_discriminator_value(pn) }, error_mapping)
+        end
+        ## 
+        ## Provides operations to call the allowedCalendarSharingRoles method.
+        ## @param User Usage: User='{User}'
+        ## @return a allowed_calendar_sharing_roles_with_user_request_builder
+        ## 
+        def microsoft_graph_allowed_calendar_sharing_roles_with_user(user)
+            raise StandardError, 'user cannot be null' if user.nil?
+            return AllowedCalendarSharingRolesWithUserRequestBuilder.new(@path_parameters, @request_adapter, User)
         end
         ## 
         ## Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.calendar entity.
@@ -159,11 +160,11 @@ module MicrosoftGraph::Me::Calendars::Item
         end
         ## 
         ## Update the navigation property calendars in me
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of calendar
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -189,7 +190,7 @@ module MicrosoftGraph::Me::Calendars::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -205,7 +206,7 @@ module MicrosoftGraph::Me::Calendars::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -220,11 +221,11 @@ module MicrosoftGraph::Me::Calendars::Item
         end
         ## 
         ## Update the navigation property calendars in me
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

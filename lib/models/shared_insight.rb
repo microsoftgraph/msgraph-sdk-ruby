@@ -8,8 +8,6 @@ module MicrosoftGraph::Models
         ## 
         # Details about the shared item. Read only.
         @last_shared
-        ## 
-        # The lastSharedMethod property
         @last_shared_method
         ## 
         # Used for navigating to the item that was shared. For file attachments, the type is fileAttachment. For linked attachments, the type is driveItem.
@@ -20,8 +18,6 @@ module MicrosoftGraph::Models
         ## 
         # Properties that you can use to visualize the document in your experience. Read-only
         @resource_visualization
-        ## 
-        # The sharingHistory property
         @sharing_history
         ## 
         ## Instantiates a new sharedInsight and sets the default values.
@@ -69,14 +65,14 @@ module MicrosoftGraph::Models
             @last_shared = value
         end
         ## 
-        ## Gets the lastSharedMethod property value. The lastSharedMethod property
+        ## Gets the lastSharedMethod property value. 
         ## @return a entity
         ## 
         def last_shared_method
             return @last_shared_method
         end
         ## 
-        ## Sets the lastSharedMethod property value. The lastSharedMethod property
+        ## Sets the lastSharedMethod property value. 
         ## @param value Value to set for the lastSharedMethod property.
         ## @return a void
         ## 
@@ -142,14 +138,14 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("sharingHistory", @sharing_history)
         end
         ## 
-        ## Gets the sharingHistory property value. The sharingHistory property
+        ## Gets the sharingHistory property value. 
         ## @return a sharing_detail
         ## 
         def sharing_history
             return @sharing_history
         end
         ## 
-        ## Sets the sharingHistory property value. The sharingHistory property
+        ## Sets the sharingHistory property value. 
         ## @param value Value to set for the sharingHistory property.
         ## @return a void
         ## 

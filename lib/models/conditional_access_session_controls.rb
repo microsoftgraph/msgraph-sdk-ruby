@@ -17,8 +17,6 @@ module MicrosoftGraph::Models
         ## 
         # Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
         @disable_resilience_defaults
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
@@ -117,14 +115,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

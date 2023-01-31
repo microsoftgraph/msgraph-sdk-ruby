@@ -5,10 +5,10 @@ require_relative '../../../../models/o_data_errors/o_data_error'
 require_relative '../../../users'
 require_relative '../../item'
 require_relative '../registered_devices'
-require_relative './app_role_assignment/app_role_assignment_request_builder'
-require_relative './device/device_request_builder'
-require_relative './endpoint/endpoint_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_app_role_assignment/app_role_assignment_request_builder'
+require_relative './microsoft_graph_device/device_request_builder'
+require_relative './microsoft_graph_endpoint/endpoint_request_builder'
 
 module MicrosoftGraph::Users::Item::RegisteredDevices::Item
     ## 
@@ -17,18 +17,18 @@ module MicrosoftGraph::Users::Item::RegisteredDevices::Item
         
         ## 
         # Casts the previous resource to appRoleAssignment.
-        def app_role_assignment()
-            return MicrosoftGraph::Users::Item::RegisteredDevices::Item::AppRoleAssignment::AppRoleAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_app_role_assignment()
+            return MicrosoftGraph::Users::Item::RegisteredDevices::Item::MicrosoftGraphAppRoleAssignment::AppRoleAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to device.
-        def device()
-            return MicrosoftGraph::Users::Item::RegisteredDevices::Item::Device::DeviceRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_device()
+            return MicrosoftGraph::Users::Item::RegisteredDevices::Item::MicrosoftGraphDevice::DeviceRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to endpoint.
-        def endpoint()
-            return MicrosoftGraph::Users::Item::RegisteredDevices::Item::Endpoint::EndpointRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_endpoint()
+            return MicrosoftGraph::Users::Item::RegisteredDevices::Item::MicrosoftGraphEndpoint::EndpointRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -41,11 +41,12 @@ module MicrosoftGraph::Users::Item::RegisteredDevices::Item
         @url_template
         ## 
         ## Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
+        ## @param directoryObjectId key: id of directoryObject
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, directory_object_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/users/{user%2Did}/registeredDevices/{directoryObject%2Did}{?%24select,%24expand}"
@@ -58,7 +59,7 @@ module MicrosoftGraph::Users::Item::RegisteredDevices::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of directory_object
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -72,7 +73,7 @@ module MicrosoftGraph::Users::Item::RegisteredDevices::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters

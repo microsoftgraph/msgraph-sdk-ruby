@@ -12,11 +12,7 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         # Immutable resource identifier of the Azure Communication Service associated with this endpoint based on Communication Services APIs.
         @communication_service_id
-        ## 
-        # The platform property
         @platform
-        ## 
-        # The productFamily property
         @product_family
         ## 
         ## Gets the azureADAppId property value. The unique identifier of the Azure AD application used by this endpoint.
@@ -78,14 +74,14 @@ module MicrosoftGraph::Models::CallRecords
             })
         end
         ## 
-        ## Gets the platform property value. The platform property
+        ## Gets the platform property value. 
         ## @return a client_platform
         ## 
         def platform
             return @platform
         end
         ## 
-        ## Sets the platform property value. The platform property
+        ## Sets the platform property value. 
         ## @param value Value to set for the platform property.
         ## @return a void
         ## 
@@ -93,14 +89,14 @@ module MicrosoftGraph::Models::CallRecords
             @platform = value
         end
         ## 
-        ## Gets the productFamily property value. The productFamily property
+        ## Gets the productFamily property value. 
         ## @return a product_family
         ## 
         def product_family
             return @product_family
         end
         ## 
-        ## Sets the productFamily property value. The productFamily property
+        ## Sets the productFamily property value. 
         ## @param value Value to set for the productFamily property.
         ## @return a void
         ## 

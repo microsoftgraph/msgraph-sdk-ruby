@@ -9,8 +9,6 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The changeType property
         @change_type
         ## 
         # Value of the clientState property sent in the subscription request (if any). The maximum length is 255 characters. The client can check whether the change notification came from the service by comparing the values of the clientState property. The value of the clientState property sent with the subscription is compared with the value of the clientState property received with each change notification. Optional.
@@ -24,8 +22,6 @@ module MicrosoftGraph::Models
         ## 
         # The type of lifecycle notification if the current notification is a lifecycle notification. Optional. Supported values are missed, subscriptionRemoved, reauthorizationRequired. Optional.
         @lifecycle_event
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The URI of the resource that emitted the change notification relative to https://graph.microsoft.com. Required.
@@ -58,14 +54,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the changeType property value. The changeType property
+        ## Gets the changeType property value. 
         ## @return a change_type
         ## 
         def change_type
             return @change_type
         end
         ## 
-        ## Sets the changeType property value. The changeType property
+        ## Sets the changeType property value. 
         ## @param value Value to set for the changeType property.
         ## @return a void
         ## 
@@ -168,14 +164,14 @@ module MicrosoftGraph::Models
             @lifecycle_event = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

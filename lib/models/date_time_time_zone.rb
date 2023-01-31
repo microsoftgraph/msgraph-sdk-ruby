@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
         @date_time
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
@@ -75,14 +73,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

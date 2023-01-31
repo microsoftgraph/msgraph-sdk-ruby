@@ -39,62 +39,28 @@ module MicrosoftGraph::Models
         ## 
         # Indicates whether the message has attachments. This property doesn't include inline attachments, so if a message contains only inline attachments, this property is false. To verify the existence of inline attachments, parse the body property to look for a src attribute, such as <IMG src='cid:image001.jpg@01D26CD8.6C05F070'>.
         @has_attachments
-        ## 
-        # The importance property
         @importance
-        ## 
-        # The inferenceClassification property
         @inference_classification
-        ## 
-        # The internetMessageHeaders property
         @internet_message_headers
-        ## 
-        # The internetMessageId property
         @internet_message_id
-        ## 
-        # The isDeliveryReceiptRequested property
         @is_delivery_receipt_requested
-        ## 
-        # The isDraft property
         @is_draft
-        ## 
-        # The isRead property
         @is_read
-        ## 
-        # The isReadReceiptRequested property
         @is_read_receipt_requested
         ## 
         # The collection of multi-value extended properties defined for the message. Nullable.
         @multi_value_extended_properties
-        ## 
-        # The parentFolderId property
         @parent_folder_id
-        ## 
-        # The receivedDateTime property
         @received_date_time
-        ## 
-        # The replyTo property
         @reply_to
-        ## 
-        # The sender property
         @sender
-        ## 
-        # The sentDateTime property
         @sent_date_time
         ## 
         # The collection of single-value extended properties defined for the message. Nullable.
         @single_value_extended_properties
-        ## 
-        # The subject property
         @subject
-        ## 
-        # The toRecipients property
         @to_recipients
-        ## 
-        # The uniqueBody property
         @unique_body
-        ## 
-        # The webLink property
         @web_link
         ## 
         ## Gets the attachments property value. The fileAttachment and itemAttachment attachments for the message.
@@ -331,14 +297,14 @@ module MicrosoftGraph::Models
             @has_attachments = value
         end
         ## 
-        ## Gets the importance property value. The importance property
+        ## Gets the importance property value. 
         ## @return a importance
         ## 
         def importance
             return @importance
         end
         ## 
-        ## Sets the importance property value. The importance property
+        ## Sets the importance property value. 
         ## @param value Value to set for the importance property.
         ## @return a void
         ## 
@@ -346,14 +312,14 @@ module MicrosoftGraph::Models
             @importance = value
         end
         ## 
-        ## Gets the inferenceClassification property value. The inferenceClassification property
+        ## Gets the inferenceClassification property value. 
         ## @return a inference_classification_type
         ## 
         def inference_classification
             return @inference_classification
         end
         ## 
-        ## Sets the inferenceClassification property value. The inferenceClassification property
+        ## Sets the inferenceClassification property value. 
         ## @param value Value to set for the inferenceClassification property.
         ## @return a void
         ## 
@@ -361,14 +327,14 @@ module MicrosoftGraph::Models
             @inference_classification = value
         end
         ## 
-        ## Gets the internetMessageHeaders property value. The internetMessageHeaders property
+        ## Gets the internetMessageHeaders property value. 
         ## @return a internet_message_header
         ## 
         def internet_message_headers
             return @internet_message_headers
         end
         ## 
-        ## Sets the internetMessageHeaders property value. The internetMessageHeaders property
+        ## Sets the internetMessageHeaders property value. 
         ## @param value Value to set for the internetMessageHeaders property.
         ## @return a void
         ## 
@@ -376,14 +342,14 @@ module MicrosoftGraph::Models
             @internet_message_headers = value
         end
         ## 
-        ## Gets the internetMessageId property value. The internetMessageId property
+        ## Gets the internetMessageId property value. 
         ## @return a string
         ## 
         def internet_message_id
             return @internet_message_id
         end
         ## 
-        ## Sets the internetMessageId property value. The internetMessageId property
+        ## Sets the internetMessageId property value. 
         ## @param value Value to set for the internetMessageId property.
         ## @return a void
         ## 
@@ -391,14 +357,14 @@ module MicrosoftGraph::Models
             @internet_message_id = value
         end
         ## 
-        ## Gets the isDeliveryReceiptRequested property value. The isDeliveryReceiptRequested property
+        ## Gets the isDeliveryReceiptRequested property value. 
         ## @return a boolean
         ## 
         def is_delivery_receipt_requested
             return @is_delivery_receipt_requested
         end
         ## 
-        ## Sets the isDeliveryReceiptRequested property value. The isDeliveryReceiptRequested property
+        ## Sets the isDeliveryReceiptRequested property value. 
         ## @param value Value to set for the isDeliveryReceiptRequested property.
         ## @return a void
         ## 
@@ -406,14 +372,14 @@ module MicrosoftGraph::Models
             @is_delivery_receipt_requested = value
         end
         ## 
-        ## Gets the isDraft property value. The isDraft property
+        ## Gets the isDraft property value. 
         ## @return a boolean
         ## 
         def is_draft
             return @is_draft
         end
         ## 
-        ## Sets the isDraft property value. The isDraft property
+        ## Sets the isDraft property value. 
         ## @param value Value to set for the isDraft property.
         ## @return a void
         ## 
@@ -421,14 +387,14 @@ module MicrosoftGraph::Models
             @is_draft = value
         end
         ## 
-        ## Gets the isRead property value. The isRead property
+        ## Gets the isRead property value. 
         ## @return a boolean
         ## 
         def is_read
             return @is_read
         end
         ## 
-        ## Sets the isRead property value. The isRead property
+        ## Sets the isRead property value. 
         ## @param value Value to set for the isRead property.
         ## @return a void
         ## 
@@ -436,14 +402,14 @@ module MicrosoftGraph::Models
             @is_read = value
         end
         ## 
-        ## Gets the isReadReceiptRequested property value. The isReadReceiptRequested property
+        ## Gets the isReadReceiptRequested property value. 
         ## @return a boolean
         ## 
         def is_read_receipt_requested
             return @is_read_receipt_requested
         end
         ## 
-        ## Sets the isReadReceiptRequested property value. The isReadReceiptRequested property
+        ## Sets the isReadReceiptRequested property value. 
         ## @param value Value to set for the isReadReceiptRequested property.
         ## @return a void
         ## 
@@ -466,14 +432,14 @@ module MicrosoftGraph::Models
             @multi_value_extended_properties = value
         end
         ## 
-        ## Gets the parentFolderId property value. The parentFolderId property
+        ## Gets the parentFolderId property value. 
         ## @return a string
         ## 
         def parent_folder_id
             return @parent_folder_id
         end
         ## 
-        ## Sets the parentFolderId property value. The parentFolderId property
+        ## Sets the parentFolderId property value. 
         ## @param value Value to set for the parentFolderId property.
         ## @return a void
         ## 
@@ -481,14 +447,14 @@ module MicrosoftGraph::Models
             @parent_folder_id = value
         end
         ## 
-        ## Gets the receivedDateTime property value. The receivedDateTime property
+        ## Gets the receivedDateTime property value. 
         ## @return a date_time
         ## 
         def received_date_time
             return @received_date_time
         end
         ## 
-        ## Sets the receivedDateTime property value. The receivedDateTime property
+        ## Sets the receivedDateTime property value. 
         ## @param value Value to set for the receivedDateTime property.
         ## @return a void
         ## 
@@ -496,14 +462,14 @@ module MicrosoftGraph::Models
             @received_date_time = value
         end
         ## 
-        ## Gets the replyTo property value. The replyTo property
+        ## Gets the replyTo property value. 
         ## @return a recipient
         ## 
         def reply_to
             return @reply_to
         end
         ## 
-        ## Sets the replyTo property value. The replyTo property
+        ## Sets the replyTo property value. 
         ## @param value Value to set for the replyTo property.
         ## @return a void
         ## 
@@ -511,14 +477,14 @@ module MicrosoftGraph::Models
             @reply_to = value
         end
         ## 
-        ## Gets the sender property value. The sender property
+        ## Gets the sender property value. 
         ## @return a recipient
         ## 
         def sender
             return @sender
         end
         ## 
-        ## Sets the sender property value. The sender property
+        ## Sets the sender property value. 
         ## @param value Value to set for the sender property.
         ## @return a void
         ## 
@@ -526,14 +492,14 @@ module MicrosoftGraph::Models
             @sender = value
         end
         ## 
-        ## Gets the sentDateTime property value. The sentDateTime property
+        ## Gets the sentDateTime property value. 
         ## @return a date_time
         ## 
         def sent_date_time
             return @sent_date_time
         end
         ## 
-        ## Sets the sentDateTime property value. The sentDateTime property
+        ## Sets the sentDateTime property value. 
         ## @param value Value to set for the sentDateTime property.
         ## @return a void
         ## 
@@ -595,14 +561,14 @@ module MicrosoftGraph::Models
             @single_value_extended_properties = value
         end
         ## 
-        ## Gets the subject property value. The subject property
+        ## Gets the subject property value. 
         ## @return a string
         ## 
         def subject
             return @subject
         end
         ## 
-        ## Sets the subject property value. The subject property
+        ## Sets the subject property value. 
         ## @param value Value to set for the subject property.
         ## @return a void
         ## 
@@ -610,14 +576,14 @@ module MicrosoftGraph::Models
             @subject = value
         end
         ## 
-        ## Gets the toRecipients property value. The toRecipients property
+        ## Gets the toRecipients property value. 
         ## @return a recipient
         ## 
         def to_recipients
             return @to_recipients
         end
         ## 
-        ## Sets the toRecipients property value. The toRecipients property
+        ## Sets the toRecipients property value. 
         ## @param value Value to set for the toRecipients property.
         ## @return a void
         ## 
@@ -625,14 +591,14 @@ module MicrosoftGraph::Models
             @to_recipients = value
         end
         ## 
-        ## Gets the uniqueBody property value. The uniqueBody property
+        ## Gets the uniqueBody property value. 
         ## @return a item_body
         ## 
         def unique_body
             return @unique_body
         end
         ## 
-        ## Sets the uniqueBody property value. The uniqueBody property
+        ## Sets the uniqueBody property value. 
         ## @param value Value to set for the uniqueBody property.
         ## @return a void
         ## 
@@ -640,14 +606,14 @@ module MicrosoftGraph::Models
             @unique_body = value
         end
         ## 
-        ## Gets the webLink property value. The webLink property
+        ## Gets the webLink property value. 
         ## @return a string
         ## 
         def web_link
             return @web_link
         end
         ## 
-        ## Sets the webLink property value. The webLink property
+        ## Sets the webLink property value. 
         ## @param value Value to set for the webLink property.
         ## @return a void
         ## 

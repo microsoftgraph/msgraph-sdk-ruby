@@ -17,8 +17,6 @@ module MicrosoftGraph::Models
         ## 
         # Determines if the configured key enforcement is enabled.
         @is_enforced
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         ## Gets the aaGuids property value. A collection of Authenticator Attestation GUIDs. AADGUIDs define key types and manufacturers.
@@ -109,14 +107,14 @@ module MicrosoftGraph::Models
             @is_enforced = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

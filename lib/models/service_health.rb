@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # The service name. Use the list healthOverviews operation to get exact string names for services subscribed by the tenant.
         @service
-        ## 
-        # The status property
         @status
         ## 
         ## Instantiates a new serviceHealth and sets the default values.
@@ -84,14 +82,14 @@ module MicrosoftGraph::Models
             @service = value
         end
         ## 
-        ## Gets the status property value. The status property
+        ## Gets the status property value. 
         ## @return a service_health_status
         ## 
         def status
             return @status
         end
         ## 
-        ## Sets the status property value. The status property
+        ## Sets the status property value. 
         ## @param value Value to set for the status property.
         ## @return a void
         ## 

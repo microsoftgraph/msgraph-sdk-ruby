@@ -6,8 +6,6 @@ require_relative './call_records'
 module MicrosoftGraph::Models::CallRecords
     class SessionCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The value property
         @value
         ## 
         ## Instantiates a new SessionCollectionResponse and sets the default values.
@@ -45,14 +43,14 @@ module MicrosoftGraph::Models::CallRecords
             writer.write_collection_of_object_values("value", @value)
         end
         ## 
-        ## Gets the value property value. The value property
+        ## Gets the value property value. 
         ## @return a session
         ## 
         def value
             return @value
         end
         ## 
-        ## Sets the value property value. The value property
+        ## Sets the value property value. 
         ## @param value Value to set for the value property.
         ## @return a void
         ## 

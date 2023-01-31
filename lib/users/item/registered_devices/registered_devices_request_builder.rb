@@ -4,10 +4,10 @@ require_relative '../../../models/directory_object_collection_response'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../users'
 require_relative '../item'
-require_relative './app_role_assignment/app_role_assignment_request_builder'
 require_relative './count/count_request_builder'
-require_relative './device/device_request_builder'
-require_relative './endpoint/endpoint_request_builder'
+require_relative './microsoft_graph_app_role_assignment/app_role_assignment_request_builder'
+require_relative './microsoft_graph_device/device_request_builder'
+require_relative './microsoft_graph_endpoint/endpoint_request_builder'
 require_relative './registered_devices'
 
 module MicrosoftGraph::Users::Item::RegisteredDevices
@@ -16,24 +16,24 @@ module MicrosoftGraph::Users::Item::RegisteredDevices
     class RegisteredDevicesRequestBuilder
         
         ## 
-        # Casts the previous resource to appRoleAssignment.
-        def app_role_assignment()
-            return MicrosoftGraph::Users::Item::RegisteredDevices::AppRoleAssignment::AppRoleAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Users::Item::RegisteredDevices::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Casts the previous resource to appRoleAssignment.
+        def microsoft_graph_app_role_assignment()
+            return MicrosoftGraph::Users::Item::RegisteredDevices::MicrosoftGraphAppRoleAssignment::AppRoleAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Casts the previous resource to device.
-        def device()
-            return MicrosoftGraph::Users::Item::RegisteredDevices::Device::DeviceRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_device()
+            return MicrosoftGraph::Users::Item::RegisteredDevices::MicrosoftGraphDevice::DeviceRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to endpoint.
-        def endpoint()
-            return MicrosoftGraph::Users::Item::RegisteredDevices::Endpoint::EndpointRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_endpoint()
+            return MicrosoftGraph::Users::Item::RegisteredDevices::MicrosoftGraphEndpoint::EndpointRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -63,7 +63,7 @@ module MicrosoftGraph::Users::Item::RegisteredDevices
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of directory_object_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -77,7 +77,7 @@ module MicrosoftGraph::Users::Item::RegisteredDevices
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters

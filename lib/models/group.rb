@@ -114,17 +114,11 @@ module MicrosoftGraph::Models
         ## 
         # A list of group members with license errors from this group-based license assignment. Read-only.
         @members_with_license_errors
-        ## 
-        # The onenote property
         @onenote
-        ## 
-        # The onPremisesDomainName property
         @on_premises_domain_name
         ## 
         # Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
         @on_premises_last_sync_date_time
-        ## 
-        # The onPremisesNetBiosName property
         @on_premises_net_bios_name
         ## 
         # Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).
@@ -832,14 +826,14 @@ module MicrosoftGraph::Models
             @members_with_license_errors = value
         end
         ## 
-        ## Gets the onenote property value. The onenote property
+        ## Gets the onenote property value. 
         ## @return a onenote
         ## 
         def onenote
             return @onenote
         end
         ## 
-        ## Sets the onenote property value. The onenote property
+        ## Sets the onenote property value. 
         ## @param value Value to set for the onenote property.
         ## @return a void
         ## 
@@ -847,14 +841,14 @@ module MicrosoftGraph::Models
             @onenote = value
         end
         ## 
-        ## Gets the onPremisesDomainName property value. The onPremisesDomainName property
+        ## Gets the onPremisesDomainName property value. 
         ## @return a string
         ## 
         def on_premises_domain_name
             return @on_premises_domain_name
         end
         ## 
-        ## Sets the onPremisesDomainName property value. The onPremisesDomainName property
+        ## Sets the onPremisesDomainName property value. 
         ## @param value Value to set for the onPremisesDomainName property.
         ## @return a void
         ## 
@@ -877,14 +871,14 @@ module MicrosoftGraph::Models
             @on_premises_last_sync_date_time = value
         end
         ## 
-        ## Gets the onPremisesNetBiosName property value. The onPremisesNetBiosName property
+        ## Gets the onPremisesNetBiosName property value. 
         ## @return a string
         ## 
         def on_premises_net_bios_name
             return @on_premises_net_bios_name
         end
         ## 
-        ## Sets the onPremisesNetBiosName property value. The onPremisesNetBiosName property
+        ## Sets the onPremisesNetBiosName property value. 
         ## @param value Value to set for the onPremisesNetBiosName property.
         ## @return a void
         ## 

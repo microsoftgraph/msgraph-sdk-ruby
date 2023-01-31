@@ -4,7 +4,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/subscription'
 require_relative '../subscriptions'
 require_relative './item'
-require_relative './reauthorize/reauthorize_request_builder'
+require_relative './microsoft_graph_reauthorize/reauthorize_request_builder'
 
 module MicrosoftGraph::Subscriptions::Item
     ## 
@@ -12,13 +12,13 @@ module MicrosoftGraph::Subscriptions::Item
     class SubscriptionItemRequestBuilder
         
         ## 
+        # Provides operations to call the reauthorize method.
+        def microsoft_graph_reauthorize()
+            return MicrosoftGraph::Subscriptions::Item::MicrosoftGraphReauthorize::ReauthorizeRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
-        ## 
-        # Provides operations to call the reauthorize method.
-        def reauthorize()
-            return MicrosoftGraph::Subscriptions::Item::Reauthorize::ReauthorizeRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
@@ -29,9 +29,10 @@ module MicrosoftGraph::Subscriptions::Item
         ## Instantiates a new SubscriptionItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param subscriptionId key: id of subscription
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, subscription_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/subscriptions/{subscription%2Did}{?%24select}"
@@ -44,7 +45,7 @@ module MicrosoftGraph::Subscriptions::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -58,7 +59,7 @@ module MicrosoftGraph::Subscriptions::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of subscription
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -69,11 +70,11 @@ module MicrosoftGraph::Subscriptions::Item
         end
         ## 
         ## Renew a subscription by extending its expiry time. The table in the Permissions section lists the resources that support subscribing to change notifications. Subscriptions expire after a length of time that varies by resource type. In order to avoid missing change notifications, an app should renew its subscriptions well in advance of their expiry date. See subscription for maximum length of a subscription for each resource type.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of subscription
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -88,7 +89,7 @@ module MicrosoftGraph::Subscriptions::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -104,7 +105,7 @@ module MicrosoftGraph::Subscriptions::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -119,11 +120,11 @@ module MicrosoftGraph::Subscriptions::Item
         end
         ## 
         ## Renew a subscription by extending its expiry time. The table in the Permissions section lists the resources that support subscribing to change notifications. Subscriptions expire after a length of time that varies by resource type. In order to avoid missing change notifications, an app should renew its subscriptions well in advance of their expiry date. See subscription for maximum length of a subscription for each resource type.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

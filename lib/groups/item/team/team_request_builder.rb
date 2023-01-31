@@ -6,11 +6,8 @@ require_relative '../../groups'
 require_relative '../item'
 require_relative './all_channels/all_channels_request_builder'
 require_relative './all_channels/item/channel_item_request_builder'
-require_relative './archive/archive_request_builder'
 require_relative './channels/channels_request_builder'
 require_relative './channels/item/channel_item_request_builder'
-require_relative './clone/clone_request_builder'
-require_relative './complete_migration/complete_migration_request_builder'
 require_relative './group/group_request_builder'
 require_relative './incoming_channels/incoming_channels_request_builder'
 require_relative './incoming_channels/item/channel_item_request_builder'
@@ -18,17 +15,20 @@ require_relative './installed_apps/installed_apps_request_builder'
 require_relative './installed_apps/item/teams_app_installation_item_request_builder'
 require_relative './members/item/conversation_member_item_request_builder'
 require_relative './members/members_request_builder'
+require_relative './microsoft_graph_archive/archive_request_builder'
+require_relative './microsoft_graph_clone/clone_request_builder'
+require_relative './microsoft_graph_complete_migration/complete_migration_request_builder'
+require_relative './microsoft_graph_send_activity_notification/send_activity_notification_request_builder'
+require_relative './microsoft_graph_unarchive/unarchive_request_builder'
 require_relative './operations/item/teams_async_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
 require_relative './photo/photo_request_builder'
 require_relative './primary_channel/primary_channel_request_builder'
 require_relative './schedule/schedule_request_builder'
-require_relative './send_activity_notification/send_activity_notification_request_builder'
 require_relative './tags/item/teamwork_tag_item_request_builder'
 require_relative './tags/tags_request_builder'
 require_relative './team'
 require_relative './template/template_request_builder'
-require_relative './unarchive/unarchive_request_builder'
 
 module MicrosoftGraph::Groups::Item::Team
     ## 
@@ -41,24 +41,9 @@ module MicrosoftGraph::Groups::Item::Team
             return MicrosoftGraph::Groups::Item::Team::AllChannels::AllChannelsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the archive method.
-        def archive()
-            return MicrosoftGraph::Groups::Item::Team::Archive::ArchiveRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the channels property of the microsoft.graph.team entity.
         def channels()
             return MicrosoftGraph::Groups::Item::Team::Channels::ChannelsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the clone method.
-        def clone()
-            return MicrosoftGraph::Groups::Item::Team::Clone::CloneRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the completeMigration method.
-        def complete_migration()
-            return MicrosoftGraph::Groups::Item::Team::CompleteMigration::CompleteMigrationRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the group property of the microsoft.graph.team entity.
@@ -79,6 +64,31 @@ module MicrosoftGraph::Groups::Item::Team
         # Provides operations to manage the members property of the microsoft.graph.team entity.
         def members()
             return MicrosoftGraph::Groups::Item::Team::Members::MembersRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the archive method.
+        def microsoft_graph_archive()
+            return MicrosoftGraph::Groups::Item::Team::MicrosoftGraphArchive::ArchiveRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the clone method.
+        def microsoft_graph_clone()
+            return MicrosoftGraph::Groups::Item::Team::MicrosoftGraphClone::CloneRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the completeMigration method.
+        def microsoft_graph_complete_migration()
+            return MicrosoftGraph::Groups::Item::Team::MicrosoftGraphCompleteMigration::CompleteMigrationRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the sendActivityNotification method.
+        def microsoft_graph_send_activity_notification()
+            return MicrosoftGraph::Groups::Item::Team::MicrosoftGraphSendActivityNotification::SendActivityNotificationRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the unarchive method.
+        def microsoft_graph_unarchive()
+            return MicrosoftGraph::Groups::Item::Team::MicrosoftGraphUnarchive::UnarchiveRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the operations property of the microsoft.graph.team entity.
@@ -107,11 +117,6 @@ module MicrosoftGraph::Groups::Item::Team
             return MicrosoftGraph::Groups::Item::Team::Schedule::ScheduleRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the sendActivityNotification method.
-        def send_activity_notification()
-            return MicrosoftGraph::Groups::Item::Team::SendActivityNotification::SendActivityNotificationRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the tags property of the microsoft.graph.team entity.
         def tags()
             return MicrosoftGraph::Groups::Item::Team::Tags::TagsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -120,11 +125,6 @@ module MicrosoftGraph::Groups::Item::Team
         # Provides operations to manage the template property of the microsoft.graph.team entity.
         def template()
             return MicrosoftGraph::Groups::Item::Team::Template::TemplateRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the unarchive method.
-        def unarchive()
-            return MicrosoftGraph::Groups::Item::Team::Unarchive::UnarchiveRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Url template to use to build the URL for the current request builder
@@ -170,7 +170,7 @@ module MicrosoftGraph::Groups::Item::Team
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -184,7 +184,7 @@ module MicrosoftGraph::Groups::Item::Team
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of team
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -239,11 +239,11 @@ module MicrosoftGraph::Groups::Item::Team
         end
         ## 
         ## Create a new team under a group. In order to create a team, the group must have a least one owner. If the group was created less than 15 minutes ago, it's possible for the Create team call to fail with a 404 error code due to replication delays. The recommended pattern is to retry the Create team call three times, with a 10 second delay between calls.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of team
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -269,7 +269,7 @@ module MicrosoftGraph::Groups::Item::Team
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -285,7 +285,7 @@ module MicrosoftGraph::Groups::Item::Team
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -300,11 +300,11 @@ module MicrosoftGraph::Groups::Item::Team
         end
         ## 
         ## Create a new team under a group. In order to create a team, the group must have a least one owner. If the group was created less than 15 minutes ago, it's possible for the Create team call to fail with a 404 error code due to replication delays. The recommended pattern is to retry the Create team call three times, with a 10 second delay between calls.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

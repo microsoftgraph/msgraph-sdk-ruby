@@ -13,8 +13,6 @@ module MicrosoftGraph::Models
         ## 
         # Indicates the type of restart action.
         @device_restart_behavior
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Indicates the type of execution context the app runs in.
@@ -77,14 +75,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

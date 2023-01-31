@@ -8,14 +8,8 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The postAttributeCollection property
         @post_attribute_collection
-        ## 
-        # The postFederationSignup property
         @post_federation_signup
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -60,14 +54,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -75,14 +69,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the postAttributeCollection property value. The postAttributeCollection property
+        ## Gets the postAttributeCollection property value. 
         ## @return a identity_api_connector
         ## 
         def post_attribute_collection
             return @post_attribute_collection
         end
         ## 
-        ## Sets the postAttributeCollection property value. The postAttributeCollection property
+        ## Sets the postAttributeCollection property value. 
         ## @param value Value to set for the postAttributeCollection property.
         ## @return a void
         ## 
@@ -90,14 +84,14 @@ module MicrosoftGraph::Models
             @post_attribute_collection = value
         end
         ## 
-        ## Gets the postFederationSignup property value. The postFederationSignup property
+        ## Gets the postFederationSignup property value. 
         ## @return a identity_api_connector
         ## 
         def post_federation_signup
             return @post_federation_signup
         end
         ## 
-        ## Sets the postFederationSignup property value. The postFederationSignup property
+        ## Sets the postFederationSignup property value. 
         ## @param value Value to set for the postFederationSignup property.
         ## @return a void
         ## 

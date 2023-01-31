@@ -9,11 +9,7 @@ module MicrosoftGraph::Models::Security
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The cloudProvider property
         @cloud_provider
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Unique identifier of the Azure resource.
@@ -40,14 +36,14 @@ module MicrosoftGraph::Models::Security
             @additional_data = value
         end
         ## 
-        ## Gets the cloudProvider property value. The cloudProvider property
+        ## Gets the cloudProvider property value. 
         ## @return a vm_cloud_provider
         ## 
         def cloud_provider
             return @cloud_provider
         end
         ## 
-        ## Sets the cloudProvider property value. The cloudProvider property
+        ## Sets the cloudProvider property value. 
         ## @param value Value to set for the cloudProvider property.
         ## @return a void
         ## 
@@ -84,14 +80,14 @@ module MicrosoftGraph::Models::Security
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

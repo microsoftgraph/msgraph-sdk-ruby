@@ -25,9 +25,10 @@ module MicrosoftGraph::ServicePrincipals::Item::TokenIssuancePolicies::Item
         ## Instantiates a new TokenIssuancePolicyItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param tokenIssuancePolicyId key: id of tokenIssuancePolicy
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, token_issuance_policy_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/tokenIssuancePolicies/{tokenIssuancePolicy%2Did}{?%24select,%24expand}"
@@ -40,7 +41,7 @@ module MicrosoftGraph::ServicePrincipals::Item::TokenIssuancePolicies::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of token_issuance_policy
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -54,7 +55,7 @@ module MicrosoftGraph::ServicePrincipals::Item::TokenIssuancePolicies::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters

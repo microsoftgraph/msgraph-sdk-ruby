@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
         @minimum_count
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
@@ -23,8 +21,6 @@ module MicrosoftGraph::Models
         ## 
         # Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.
         @ranges
-        ## 
-        # The sortBy property
         @sort_by
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -102,14 +98,14 @@ module MicrosoftGraph::Models
             @minimum_count = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -162,14 +158,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the sortBy property value. The sortBy property
+        ## Gets the sortBy property value. 
         ## @return a bucket_aggregation_sort_property
         ## 
         def sort_by
             return @sort_by
         end
         ## 
-        ## Sets the sortBy property value. The sortBy property
+        ## Sets the sortBy property value. 
         ## @param value Value to set for the sortBy property.
         ## @return a void
         ## 

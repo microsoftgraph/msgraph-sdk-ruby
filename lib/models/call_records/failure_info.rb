@@ -9,14 +9,10 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Classification of why a call or portion of a call failed.
         @reason
-        ## 
-        # The stage property
         @stage
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -61,14 +57,14 @@ module MicrosoftGraph::Models::CallRecords
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -103,14 +99,14 @@ module MicrosoftGraph::Models::CallRecords
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the stage property value. The stage property
+        ## Gets the stage property value. 
         ## @return a failure_stage
         ## 
         def stage
             return @stage
         end
         ## 
-        ## Sets the stage property value. The stage property
+        ## Sets the stage property value. 
         ## @param value Value to set for the stage property.
         ## @return a void
         ## 

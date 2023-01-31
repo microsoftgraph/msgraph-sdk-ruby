@@ -6,8 +6,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class Chat < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The chatType property
         @chat_type
         ## 
         # Date and time at which the chat was created. Read-only.
@@ -49,14 +47,14 @@ module MicrosoftGraph::Models
         # The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
         @web_url
         ## 
-        ## Gets the chatType property value. The chatType property
+        ## Gets the chatType property value. 
         ## @return a chat_type
         ## 
         def chat_type
             return @chat_type
         end
         ## 
-        ## Sets the chatType property value. The chatType property
+        ## Sets the chatType property value. 
         ## @param value Value to set for the chatType property.
         ## @return a void
         ## 

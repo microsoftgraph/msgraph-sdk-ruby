@@ -4,9 +4,9 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/site_collection_response'
 require_relative '../../groups'
 require_relative '../item'
-require_relative './add/add_request_builder'
 require_relative './count/count_request_builder'
-require_relative './remove/remove_request_builder'
+require_relative './microsoft_graph_add/add_request_builder'
+require_relative './microsoft_graph_remove/remove_request_builder'
 require_relative './sites'
 
 module MicrosoftGraph::Groups::Item::Sites
@@ -15,23 +15,23 @@ module MicrosoftGraph::Groups::Item::Sites
     class SitesRequestBuilder
         
         ## 
-        # Provides operations to call the add method.
-        def add()
-            return MicrosoftGraph::Groups::Item::Sites::Add::AddRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Groups::Item::Sites::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Path parameters for the request
-        @path_parameters
+        # Provides operations to call the add method.
+        def microsoft_graph_add()
+            return MicrosoftGraph::Groups::Item::Sites::MicrosoftGraphAdd::AddRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Provides operations to call the remove method.
-        def remove()
-            return MicrosoftGraph::Groups::Item::Sites::Remove::RemoveRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_remove()
+            return MicrosoftGraph::Groups::Item::Sites::MicrosoftGraphRemove::RemoveRequestBuilder.new(@path_parameters, @request_adapter)
         end
+        ## 
+        # Path parameters for the request
+        @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
@@ -57,7 +57,7 @@ module MicrosoftGraph::Groups::Item::Sites
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of site_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -71,7 +71,7 @@ module MicrosoftGraph::Groups::Item::Sites
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters

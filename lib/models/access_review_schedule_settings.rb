@@ -32,8 +32,6 @@ module MicrosoftGraph::Models
         ## 
         # Indicates whether emails are enabled or disabled. Default value is false.
         @mail_notifications_enabled
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
@@ -216,14 +214,14 @@ module MicrosoftGraph::Models
             @mail_notifications_enabled = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

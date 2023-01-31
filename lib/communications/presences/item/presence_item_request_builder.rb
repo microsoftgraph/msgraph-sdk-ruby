@@ -4,11 +4,11 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/presence'
 require_relative '../../communications'
 require_relative '../presences'
-require_relative './clear_presence/clear_presence_request_builder'
-require_relative './clear_user_preferred_presence/clear_user_preferred_presence_request_builder'
 require_relative './item'
-require_relative './set_presence/set_presence_request_builder'
-require_relative './set_user_preferred_presence/set_user_preferred_presence_request_builder'
+require_relative './microsoft_graph_clear_presence/clear_presence_request_builder'
+require_relative './microsoft_graph_clear_user_preferred_presence/clear_user_preferred_presence_request_builder'
+require_relative './microsoft_graph_set_presence/set_presence_request_builder'
+require_relative './microsoft_graph_set_user_preferred_presence/set_user_preferred_presence_request_builder'
 
 module MicrosoftGraph::Communications::Presences::Item
     ## 
@@ -17,13 +17,23 @@ module MicrosoftGraph::Communications::Presences::Item
         
         ## 
         # Provides operations to call the clearPresence method.
-        def clear_presence()
-            return MicrosoftGraph::Communications::Presences::Item::ClearPresence::ClearPresenceRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_clear_presence()
+            return MicrosoftGraph::Communications::Presences::Item::MicrosoftGraphClearPresence::ClearPresenceRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the clearUserPreferredPresence method.
-        def clear_user_preferred_presence()
-            return MicrosoftGraph::Communications::Presences::Item::ClearUserPreferredPresence::ClearUserPreferredPresenceRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_clear_user_preferred_presence()
+            return MicrosoftGraph::Communications::Presences::Item::MicrosoftGraphClearUserPreferredPresence::ClearUserPreferredPresenceRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the setPresence method.
+        def microsoft_graph_set_presence()
+            return MicrosoftGraph::Communications::Presences::Item::MicrosoftGraphSetPresence::SetPresenceRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the setUserPreferredPresence method.
+        def microsoft_graph_set_user_preferred_presence()
+            return MicrosoftGraph::Communications::Presences::Item::MicrosoftGraphSetUserPreferredPresence::SetUserPreferredPresenceRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -32,25 +42,16 @@ module MicrosoftGraph::Communications::Presences::Item
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the setPresence method.
-        def set_presence()
-            return MicrosoftGraph::Communications::Presences::Item::SetPresence::SetPresenceRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the setUserPreferredPresence method.
-        def set_user_preferred_presence()
-            return MicrosoftGraph::Communications::Presences::Item::SetUserPreferredPresence::SetUserPreferredPresenceRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new PresenceItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
+        ## @param presenceId key: id of presence
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, presence_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/communications/presences/{presence%2Did}{?%24select,%24expand}"
@@ -63,7 +64,7 @@ module MicrosoftGraph::Communications::Presences::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -77,7 +78,7 @@ module MicrosoftGraph::Communications::Presences::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of presence
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -88,11 +89,11 @@ module MicrosoftGraph::Communications::Presences::Item
         end
         ## 
         ## Update the navigation property presences in communications
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of presence
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -107,7 +108,7 @@ module MicrosoftGraph::Communications::Presences::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -123,7 +124,7 @@ module MicrosoftGraph::Communications::Presences::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -138,11 +139,11 @@ module MicrosoftGraph::Communications::Presences::Item
         end
         ## 
         ## Update the navigation property presences in communications
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

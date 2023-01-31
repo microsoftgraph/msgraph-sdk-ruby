@@ -4,7 +4,6 @@ require_relative '../../../models/device_compliance_policy'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_management'
 require_relative '../device_compliance_policies'
-require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
 require_relative './assignments/item/device_compliance_policy_assignment_item_request_builder'
 require_relative './device_setting_state_summaries/device_setting_state_summaries_request_builder'
@@ -13,7 +12,8 @@ require_relative './device_statuses/device_statuses_request_builder'
 require_relative './device_statuses/item/device_compliance_device_status_item_request_builder'
 require_relative './device_status_overview/device_status_overview_request_builder'
 require_relative './item'
-require_relative './schedule_actions_for_rules/schedule_actions_for_rules_request_builder'
+require_relative './microsoft_graph_assign/assign_request_builder'
+require_relative './microsoft_graph_schedule_actions_for_rules/schedule_actions_for_rules_request_builder'
 require_relative './scheduled_actions_for_rule/item/device_compliance_scheduled_action_for_rule_item_request_builder'
 require_relative './scheduled_actions_for_rule/scheduled_actions_for_rule_request_builder'
 require_relative './user_statuses/item/device_compliance_user_status_item_request_builder'
@@ -25,11 +25,6 @@ module MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item
     # Provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.
     class DeviceCompliancePolicyItemRequestBuilder
         
-        ## 
-        # Provides operations to call the assign method.
-        def assign()
-            return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::Assign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the assignments property of the microsoft.graph.deviceCompliancePolicy entity.
         def assignments()
@@ -51,16 +46,21 @@ module MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item
             return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::DeviceStatusOverview::DeviceStatusOverviewRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the assign method.
+        def microsoft_graph_assign()
+            return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::MicrosoftGraphAssign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the scheduleActionsForRules method.
+        def microsoft_graph_schedule_actions_for_rules()
+            return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::MicrosoftGraphScheduleActionsForRules::ScheduleActionsForRulesRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the scheduleActionsForRules method.
-        def schedule_actions_for_rules()
-            return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::ScheduleActionsForRules::ScheduleActionsForRulesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceCompliancePolicy entity.
         def scheduled_actions_for_rule()
@@ -92,11 +92,12 @@ module MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item
         end
         ## 
         ## Instantiates a new DeviceCompliancePolicyItemRequestBuilder and sets the default values.
+        ## @param deviceCompliancePolicyId key: id of deviceCompliancePolicy
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, device_compliance_policy_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy%2Did}{?%24select,%24expand}"
@@ -109,7 +110,7 @@ module MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -145,7 +146,7 @@ module MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of device_compliance_policy
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -156,11 +157,11 @@ module MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item
         end
         ## 
         ## Update the navigation property deviceCompliancePolicies in deviceManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of device_compliance_policy
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -186,7 +187,7 @@ module MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -202,7 +203,7 @@ module MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -217,11 +218,11 @@ module MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item
         end
         ## 
         ## Update the navigation property deviceCompliancePolicies in deviceManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

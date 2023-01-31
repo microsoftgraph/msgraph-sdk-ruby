@@ -12,8 +12,6 @@ module MicrosoftGraph::Models
         ## 
         # Collection of all Autopilot devices as a part of this upload.
         @device_identities
-        ## 
-        # The status property
         @status
         ## 
         ## Instantiates a new ImportedWindowsAutopilotDeviceIdentityUpload and sets the default values.
@@ -85,14 +83,14 @@ module MicrosoftGraph::Models
             writer.write_enum_value("status", @status)
         end
         ## 
-        ## Gets the status property value. The status property
+        ## Gets the status property value. 
         ## @return a imported_windows_autopilot_device_identity_upload_status
         ## 
         def status
             return @status
         end
         ## 
-        ## Sets the status property value. The status property
+        ## Sets the status property value. 
         ## @param value Value to set for the status property.
         ## @return a void
         ## 

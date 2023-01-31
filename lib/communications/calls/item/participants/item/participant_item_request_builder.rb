@@ -7,9 +7,9 @@ require_relative '../../../calls'
 require_relative '../../item'
 require_relative '../participants'
 require_relative './item'
-require_relative './mute/mute_request_builder'
-require_relative './start_hold_music/start_hold_music_request_builder'
-require_relative './stop_hold_music/stop_hold_music_request_builder'
+require_relative './microsoft_graph_mute/mute_request_builder'
+require_relative './microsoft_graph_start_hold_music/start_hold_music_request_builder'
+require_relative './microsoft_graph_stop_hold_music/stop_hold_music_request_builder'
 
 module MicrosoftGraph::Communications::Calls::Item::Participants::Item
     ## 
@@ -18,8 +18,18 @@ module MicrosoftGraph::Communications::Calls::Item::Participants::Item
         
         ## 
         # Provides operations to call the mute method.
-        def mute()
-            return MicrosoftGraph::Communications::Calls::Item::Participants::Item::Mute::MuteRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_mute()
+            return MicrosoftGraph::Communications::Calls::Item::Participants::Item::MicrosoftGraphMute::MuteRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the startHoldMusic method.
+        def microsoft_graph_start_hold_music()
+            return MicrosoftGraph::Communications::Calls::Item::Participants::Item::MicrosoftGraphStartHoldMusic::StartHoldMusicRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the stopHoldMusic method.
+        def microsoft_graph_stop_hold_music()
+            return MicrosoftGraph::Communications::Calls::Item::Participants::Item::MicrosoftGraphStopHoldMusic::StopHoldMusicRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -28,25 +38,16 @@ module MicrosoftGraph::Communications::Calls::Item::Participants::Item
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the startHoldMusic method.
-        def start_hold_music()
-            return MicrosoftGraph::Communications::Calls::Item::Participants::Item::StartHoldMusic::StartHoldMusicRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the stopHoldMusic method.
-        def stop_hold_music()
-            return MicrosoftGraph::Communications::Calls::Item::Participants::Item::StopHoldMusic::StopHoldMusicRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new ParticipantItemRequestBuilder and sets the default values.
+        ## @param participantId key: id of participant
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, participant_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/communications/calls/{call%2Did}/participants/{participant%2Did}{?%24select,%24expand}"
@@ -59,7 +60,7 @@ module MicrosoftGraph::Communications::Calls::Item::Participants::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -73,7 +74,7 @@ module MicrosoftGraph::Communications::Calls::Item::Participants::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of participant
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -84,11 +85,11 @@ module MicrosoftGraph::Communications::Calls::Item::Participants::Item
         end
         ## 
         ## Update the navigation property participants in communications
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of participant
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -103,7 +104,7 @@ module MicrosoftGraph::Communications::Calls::Item::Participants::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -119,7 +120,7 @@ module MicrosoftGraph::Communications::Calls::Item::Participants::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -134,11 +135,11 @@ module MicrosoftGraph::Communications::Calls::Item::Participants::Item
         end
         ## 
         ## Update the navigation property participants in communications
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

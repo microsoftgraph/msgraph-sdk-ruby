@@ -8,14 +8,8 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The buckets property
         @buckets
-        ## 
-        # The field property
         @field
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,14 +27,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the buckets property value. The buckets property
+        ## Gets the buckets property value. 
         ## @return a search_bucket
         ## 
         def buckets
             return @buckets
         end
         ## 
-        ## Sets the buckets property value. The buckets property
+        ## Sets the buckets property value. 
         ## @param value Value to set for the buckets property.
         ## @return a void
         ## 
@@ -64,14 +58,14 @@ module MicrosoftGraph::Models
             return SearchAggregation.new
         end
         ## 
-        ## Gets the field property value. The field property
+        ## Gets the field property value. 
         ## @return a string
         ## 
         def field
             return @field
         end
         ## 
-        ## Sets the field property value. The field property
+        ## Sets the field property value. 
         ## @param value Value to set for the field property.
         ## @return a void
         ## 
@@ -90,14 +84,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

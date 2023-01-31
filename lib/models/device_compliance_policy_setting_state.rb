@@ -22,8 +22,6 @@ module MicrosoftGraph::Models
         ## 
         # Name of setting instance that is being reported.
         @instance_display_name
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The setting that is being reported
@@ -34,8 +32,6 @@ module MicrosoftGraph::Models
         ## 
         # Contributing policies
         @sources
-        ## 
-        # The state property
         @state
         ## 
         # UserEmail
@@ -162,14 +158,14 @@ module MicrosoftGraph::Models
             @instance_display_name = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -244,14 +240,14 @@ module MicrosoftGraph::Models
             @sources = value
         end
         ## 
-        ## Gets the state property value. The state property
+        ## Gets the state property value. 
         ## @return a compliance_status
         ## 
         def state
             return @state
         end
         ## 
-        ## Sets the state property value. The state property
+        ## Sets the state property value. 
         ## @param value Value to set for the state property.
         ## @return a void
         ## 

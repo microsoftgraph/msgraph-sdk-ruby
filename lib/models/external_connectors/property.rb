@@ -30,11 +30,7 @@ module MicrosoftGraph::Models::ExternalConnectors
         ## 
         # The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &, ?, @, #, /, ~, ', ', <, >, `, ^.  Required.
         @name
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The type property
         @type
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -190,14 +186,14 @@ module MicrosoftGraph::Models::ExternalConnectors
             @name = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -223,14 +219,14 @@ module MicrosoftGraph::Models::ExternalConnectors
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the type property value. The type property
+        ## Gets the type property value. 
         ## @return a property_type
         ## 
         def type
             return @type
         end
         ## 
-        ## Sets the type property value. The type property
+        ## Sets the type property value. 
         ## @param value Value to set for the type property.
         ## @return a void
         ## 

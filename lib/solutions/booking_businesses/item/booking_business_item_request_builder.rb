@@ -12,14 +12,14 @@ require_relative './customers/customers_request_builder'
 require_relative './customers/item/booking_customer_base_item_request_builder'
 require_relative './custom_questions/custom_questions_request_builder'
 require_relative './custom_questions/item/booking_custom_question_item_request_builder'
-require_relative './get_staff_availability/get_staff_availability_request_builder'
 require_relative './item'
-require_relative './publish/publish_request_builder'
+require_relative './microsoft_graph_get_staff_availability/get_staff_availability_request_builder'
+require_relative './microsoft_graph_publish/publish_request_builder'
+require_relative './microsoft_graph_unpublish/unpublish_request_builder'
 require_relative './services/item/booking_service_item_request_builder'
 require_relative './services/services_request_builder'
 require_relative './staff_members/item/booking_staff_member_base_item_request_builder'
 require_relative './staff_members/staff_members_request_builder'
-require_relative './unpublish/unpublish_request_builder'
 
 module MicrosoftGraph::Solutions::BookingBusinesses::Item
     ## 
@@ -48,17 +48,22 @@ module MicrosoftGraph::Solutions::BookingBusinesses::Item
         end
         ## 
         # Provides operations to call the getStaffAvailability method.
-        def get_staff_availability()
-            return MicrosoftGraph::Solutions::BookingBusinesses::Item::GetStaffAvailability::GetStaffAvailabilityRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_staff_availability()
+            return MicrosoftGraph::Solutions::BookingBusinesses::Item::MicrosoftGraphGetStaffAvailability::GetStaffAvailabilityRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the publish method.
+        def microsoft_graph_publish()
+            return MicrosoftGraph::Solutions::BookingBusinesses::Item::MicrosoftGraphPublish::PublishRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the unpublish method.
+        def microsoft_graph_unpublish()
+            return MicrosoftGraph::Solutions::BookingBusinesses::Item::MicrosoftGraphUnpublish::UnpublishRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
         @path_parameters
-        ## 
-        # Provides operations to call the publish method.
-        def publish()
-            return MicrosoftGraph::Solutions::BookingBusinesses::Item::Publish::PublishRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
@@ -71,11 +76,6 @@ module MicrosoftGraph::Solutions::BookingBusinesses::Item
         # Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
         def staff_members()
             return MicrosoftGraph::Solutions::BookingBusinesses::Item::StaffMembers::StaffMembersRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the unpublish method.
-        def unpublish()
-            return MicrosoftGraph::Solutions::BookingBusinesses::Item::Unpublish::UnpublishRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Url template to use to build the URL for the current request builder
@@ -104,11 +104,12 @@ module MicrosoftGraph::Solutions::BookingBusinesses::Item
         end
         ## 
         ## Instantiates a new BookingBusinessItemRequestBuilder and sets the default values.
+        ## @param bookingBusinessId key: id of bookingBusiness
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, booking_business_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}{?%24select,%24expand}"
@@ -143,7 +144,7 @@ module MicrosoftGraph::Solutions::BookingBusinesses::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -157,7 +158,7 @@ module MicrosoftGraph::Solutions::BookingBusinesses::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of booking_business
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -168,11 +169,11 @@ module MicrosoftGraph::Solutions::BookingBusinesses::Item
         end
         ## 
         ## Update the navigation property bookingBusinesses in solutions
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of booking_business
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -209,7 +210,7 @@ module MicrosoftGraph::Solutions::BookingBusinesses::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -225,7 +226,7 @@ module MicrosoftGraph::Solutions::BookingBusinesses::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -240,11 +241,11 @@ module MicrosoftGraph::Solutions::BookingBusinesses::Item
         end
         ## 
         ## Update the navigation property bookingBusinesses in solutions
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

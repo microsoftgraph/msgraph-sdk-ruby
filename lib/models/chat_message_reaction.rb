@@ -12,14 +12,10 @@ module MicrosoftGraph::Models
         ## 
         # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         @created_date_time
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Supported values are like, angry, sad, laugh, heart, surprised.
         @reaction_type
-        ## 
-        # The user property
         @user
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -80,14 +76,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -123,14 +119,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the user property value. The user property
+        ## Gets the user property value. 
         ## @return a chat_message_reaction_identity_set
         ## 
         def user
             return @user
         end
         ## 
-        ## Sets the user property value. The user property
+        ## Sets the user property value. 
         ## @param value Value to set for the user property.
         ## @return a void
         ## 

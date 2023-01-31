@@ -40,11 +40,7 @@ module MicrosoftGraph::Models::Security
         ## 
         # Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
         @redirect_incident_id
-        ## 
-        # The severity property
         @severity
-        ## 
-        # The status property
         @status
         ## 
         # The Azure Active Directory tenant in which the alert was created.
@@ -276,14 +272,14 @@ module MicrosoftGraph::Models::Security
             writer.write_string_value("tenantId", @tenant_id)
         end
         ## 
-        ## Gets the severity property value. The severity property
+        ## Gets the severity property value. 
         ## @return a alert_severity
         ## 
         def severity
             return @severity
         end
         ## 
-        ## Sets the severity property value. The severity property
+        ## Sets the severity property value. 
         ## @param value Value to set for the severity property.
         ## @return a void
         ## 
@@ -291,14 +287,14 @@ module MicrosoftGraph::Models::Security
             @severity = value
         end
         ## 
-        ## Gets the status property value. The status property
+        ## Gets the status property value. 
         ## @return a incident_status
         ## 
         def status
             return @status
         end
         ## 
-        ## Sets the status property value. The status property
+        ## Sets the status property value. 
         ## @param value Value to set for the status property.
         ## @return a void
         ## 

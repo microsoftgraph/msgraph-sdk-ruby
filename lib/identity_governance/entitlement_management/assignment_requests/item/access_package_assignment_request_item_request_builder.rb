@@ -7,9 +7,9 @@ require_relative '../../entitlement_management'
 require_relative '../assignment_requests'
 require_relative './access_package/access_package_request_builder'
 require_relative './assignment/assignment_request_builder'
-require_relative './cancel/cancel_request_builder'
 require_relative './item'
-require_relative './reprocess/reprocess_request_builder'
+require_relative './microsoft_graph_cancel/cancel_request_builder'
+require_relative './microsoft_graph_reprocess/reprocess_request_builder'
 require_relative './requestor/requestor_request_builder'
 
 module MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequests::Item
@@ -29,17 +29,17 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequ
         end
         ## 
         # Provides operations to call the cancel method.
-        def cancel()
-            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequests::Item::Cancel::CancelRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_cancel()
+            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequests::Item::MicrosoftGraphCancel::CancelRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the reprocess method.
+        def microsoft_graph_reprocess()
+            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequests::Item::MicrosoftGraphReprocess::ReprocessRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
         @path_parameters
-        ## 
-        # Provides operations to call the reprocess method.
-        def reprocess()
-            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequests::Item::Reprocess::ReprocessRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
@@ -53,11 +53,12 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequ
         @url_template
         ## 
         ## Instantiates a new AccessPackageAssignmentRequestItemRequestBuilder and sets the default values.
+        ## @param accessPackageAssignmentRequestId key: id of accessPackageAssignmentRequest
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, access_package_assignment_request_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/identityGovernance/entitlementManagement/assignmentRequests/{accessPackageAssignmentRequest%2Did}{?%24select,%24expand}"
@@ -70,7 +71,7 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequ
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -84,7 +85,7 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequ
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of access_package_assignment_request
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -95,11 +96,11 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequ
         end
         ## 
         ## Update the navigation property assignmentRequests in identityGovernance
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of access_package_assignment_request
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -114,7 +115,7 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequ
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -130,7 +131,7 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequ
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -145,11 +146,11 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequ
         end
         ## 
         ## Update the navigation property assignmentRequests in identityGovernance
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

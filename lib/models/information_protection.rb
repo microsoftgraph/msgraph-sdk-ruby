@@ -8,14 +8,8 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The bitlocker property
         @bitlocker
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The threatAssessmentRequests property
         @threat_assessment_requests
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,14 +27,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the bitlocker property value. The bitlocker property
+        ## Gets the bitlocker property value. 
         ## @return a bitlocker
         ## 
         def bitlocker
             return @bitlocker
         end
         ## 
-        ## Sets the bitlocker property value. The bitlocker property
+        ## Sets the bitlocker property value. 
         ## @param value Value to set for the bitlocker property.
         ## @return a void
         ## 
@@ -75,14 +69,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -102,14 +96,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the threatAssessmentRequests property value. The threatAssessmentRequests property
+        ## Gets the threatAssessmentRequests property value. 
         ## @return a threat_assessment_request
         ## 
         def threat_assessment_requests
             return @threat_assessment_requests
         end
         ## 
-        ## Sets the threatAssessmentRequests property value. The threatAssessmentRequests property
+        ## Sets the threatAssessmentRequests property value. 
         ## @param value Value to set for the threatAssessmentRequests property.
         ## @return a void
         ## 

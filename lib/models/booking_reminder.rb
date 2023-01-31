@@ -13,14 +13,10 @@ module MicrosoftGraph::Models
         ## 
         # The message in the reminder.
         @message
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The amount of time before the start of an appointment that the reminder should be sent. It's denoted in ISO 8601 format.
         @offset
-        ## 
-        # The recipients property
         @recipients
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -81,14 +77,14 @@ module MicrosoftGraph::Models
             @message = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -111,14 +107,14 @@ module MicrosoftGraph::Models
             @offset = value
         end
         ## 
-        ## Gets the recipients property value. The recipients property
+        ## Gets the recipients property value. 
         ## @return a booking_reminder_recipients
         ## 
         def recipients
             return @recipients
         end
         ## 
-        ## Sets the recipients property value. The recipients property
+        ## Sets the recipients property value. 
         ## @param value Value to set for the recipients property.
         ## @return a void
         ## 

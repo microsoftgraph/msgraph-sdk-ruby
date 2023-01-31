@@ -9,53 +9,21 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The createdBy property
         @created_by
-        ## 
-        # The createdByIdentity property
         @created_by_identity
-        ## 
-        # The createdTime property
         @created_time
-        ## 
-        # The id property
         @id
-        ## 
-        # The isDefault property
         @is_default
-        ## 
-        # The isShared property
         @is_shared
-        ## 
-        # The lastModifiedBy property
         @last_modified_by
-        ## 
-        # The lastModifiedByIdentity property
         @last_modified_by_identity
-        ## 
-        # The lastModifiedTime property
         @last_modified_time
-        ## 
-        # The links property
         @links
-        ## 
-        # The name property
         @name
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The sectionGroupsUrl property
         @section_groups_url
-        ## 
-        # The sectionsUrl property
         @sections_url
-        ## 
-        # The self property
         @self_escaped
-        ## 
-        # The userRole property
         @user_role
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -80,14 +48,14 @@ module MicrosoftGraph::Models
             @additional_data = Hash.new
         end
         ## 
-        ## Gets the createdBy property value. The createdBy property
+        ## Gets the createdBy property value. 
         ## @return a string
         ## 
         def created_by
             return @created_by
         end
         ## 
-        ## Sets the createdBy property value. The createdBy property
+        ## Sets the createdBy property value. 
         ## @param value Value to set for the createdBy property.
         ## @return a void
         ## 
@@ -95,14 +63,14 @@ module MicrosoftGraph::Models
             @created_by = value
         end
         ## 
-        ## Gets the createdByIdentity property value. The createdByIdentity property
+        ## Gets the createdByIdentity property value. 
         ## @return a identity_set
         ## 
         def created_by_identity
             return @created_by_identity
         end
         ## 
-        ## Sets the createdByIdentity property value. The createdByIdentity property
+        ## Sets the createdByIdentity property value. 
         ## @param value Value to set for the createdByIdentity property.
         ## @return a void
         ## 
@@ -110,14 +78,14 @@ module MicrosoftGraph::Models
             @created_by_identity = value
         end
         ## 
-        ## Gets the createdTime property value. The createdTime property
+        ## Gets the createdTime property value. 
         ## @return a date_time
         ## 
         def created_time
             return @created_time
         end
         ## 
-        ## Sets the createdTime property value. The createdTime property
+        ## Sets the createdTime property value. 
         ## @param value Value to set for the createdTime property.
         ## @return a void
         ## 
@@ -158,14 +126,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the id property value. The id property
+        ## Gets the id property value. 
         ## @return a string
         ## 
         def id
             return @id
         end
         ## 
-        ## Sets the id property value. The id property
+        ## Sets the id property value. 
         ## @param value Value to set for the id property.
         ## @return a void
         ## 
@@ -173,14 +141,14 @@ module MicrosoftGraph::Models
             @id = value
         end
         ## 
-        ## Gets the isDefault property value. The isDefault property
+        ## Gets the isDefault property value. 
         ## @return a boolean
         ## 
         def is_default
             return @is_default
         end
         ## 
-        ## Sets the isDefault property value. The isDefault property
+        ## Sets the isDefault property value. 
         ## @param value Value to set for the isDefault property.
         ## @return a void
         ## 
@@ -188,14 +156,14 @@ module MicrosoftGraph::Models
             @is_default = value
         end
         ## 
-        ## Gets the isShared property value. The isShared property
+        ## Gets the isShared property value. 
         ## @return a boolean
         ## 
         def is_shared
             return @is_shared
         end
         ## 
-        ## Sets the isShared property value. The isShared property
+        ## Sets the isShared property value. 
         ## @param value Value to set for the isShared property.
         ## @return a void
         ## 
@@ -203,14 +171,14 @@ module MicrosoftGraph::Models
             @is_shared = value
         end
         ## 
-        ## Gets the lastModifiedBy property value. The lastModifiedBy property
+        ## Gets the lastModifiedBy property value. 
         ## @return a string
         ## 
         def last_modified_by
             return @last_modified_by
         end
         ## 
-        ## Sets the lastModifiedBy property value. The lastModifiedBy property
+        ## Sets the lastModifiedBy property value. 
         ## @param value Value to set for the lastModifiedBy property.
         ## @return a void
         ## 
@@ -218,14 +186,14 @@ module MicrosoftGraph::Models
             @last_modified_by = value
         end
         ## 
-        ## Gets the lastModifiedByIdentity property value. The lastModifiedByIdentity property
+        ## Gets the lastModifiedByIdentity property value. 
         ## @return a identity_set
         ## 
         def last_modified_by_identity
             return @last_modified_by_identity
         end
         ## 
-        ## Sets the lastModifiedByIdentity property value. The lastModifiedByIdentity property
+        ## Sets the lastModifiedByIdentity property value. 
         ## @param value Value to set for the lastModifiedByIdentity property.
         ## @return a void
         ## 
@@ -233,14 +201,14 @@ module MicrosoftGraph::Models
             @last_modified_by_identity = value
         end
         ## 
-        ## Gets the lastModifiedTime property value. The lastModifiedTime property
+        ## Gets the lastModifiedTime property value. 
         ## @return a date_time
         ## 
         def last_modified_time
             return @last_modified_time
         end
         ## 
-        ## Sets the lastModifiedTime property value. The lastModifiedTime property
+        ## Sets the lastModifiedTime property value. 
         ## @param value Value to set for the lastModifiedTime property.
         ## @return a void
         ## 
@@ -248,14 +216,14 @@ module MicrosoftGraph::Models
             @last_modified_time = value
         end
         ## 
-        ## Gets the links property value. The links property
+        ## Gets the links property value. 
         ## @return a notebook_links
         ## 
         def links
             return @links
         end
         ## 
-        ## Sets the links property value. The links property
+        ## Sets the links property value. 
         ## @param value Value to set for the links property.
         ## @return a void
         ## 
@@ -263,14 +231,14 @@ module MicrosoftGraph::Models
             @links = value
         end
         ## 
-        ## Gets the name property value. The name property
+        ## Gets the name property value. 
         ## @return a string
         ## 
         def name
             return @name
         end
         ## 
-        ## Sets the name property value. The name property
+        ## Sets the name property value. 
         ## @param value Value to set for the name property.
         ## @return a void
         ## 
@@ -278,14 +246,14 @@ module MicrosoftGraph::Models
             @name = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -293,14 +261,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the sectionGroupsUrl property value. The sectionGroupsUrl property
+        ## Gets the sectionGroupsUrl property value. 
         ## @return a string
         ## 
         def section_groups_url
             return @section_groups_url
         end
         ## 
-        ## Sets the sectionGroupsUrl property value. The sectionGroupsUrl property
+        ## Sets the sectionGroupsUrl property value. 
         ## @param value Value to set for the sectionGroupsUrl property.
         ## @return a void
         ## 
@@ -308,14 +276,14 @@ module MicrosoftGraph::Models
             @section_groups_url = value
         end
         ## 
-        ## Gets the sectionsUrl property value. The sectionsUrl property
+        ## Gets the sectionsUrl property value. 
         ## @return a string
         ## 
         def sections_url
             return @sections_url
         end
         ## 
-        ## Sets the sectionsUrl property value. The sectionsUrl property
+        ## Sets the sectionsUrl property value. 
         ## @param value Value to set for the sectionsUrl property.
         ## @return a void
         ## 
@@ -323,14 +291,14 @@ module MicrosoftGraph::Models
             @sections_url = value
         end
         ## 
-        ## Gets the self property value. The self property
+        ## Gets the self property value. 
         ## @return a string
         ## 
         def self_escaped
             return @self_escaped
         end
         ## 
-        ## Sets the self property value. The self property
+        ## Sets the self property value. 
         ## @param value Value to set for the self property.
         ## @return a void
         ## 
@@ -363,14 +331,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the userRole property value. The userRole property
+        ## Gets the userRole property value. 
         ## @return a onenote_user_role
         ## 
         def user_role
             return @user_role
         end
         ## 
-        ## Sets the userRole property value. The userRole property
+        ## Sets the userRole property value. 
         ## @param value Value to set for the userRole property.
         ## @return a void
         ## 

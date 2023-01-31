@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class PrintTaskDefinition < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The createdBy property
         @created_by
         ## 
         # The name of the printTaskDefinition.
@@ -22,14 +20,14 @@ module MicrosoftGraph::Models
             super
         end
         ## 
-        ## Gets the createdBy property value. The createdBy property
+        ## Gets the createdBy property value. 
         ## @return a app_identity
         ## 
         def created_by
             return @created_by
         end
         ## 
-        ## Sets the createdBy property value. The createdBy property
+        ## Sets the createdBy property value. 
         ## @param value Value to set for the createdBy property.
         ## @return a void
         ## 

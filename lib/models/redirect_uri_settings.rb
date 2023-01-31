@@ -8,14 +8,8 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The index property
         @index
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The uri property
         @uri
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -60,14 +54,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the index property value. The index property
+        ## Gets the index property value. 
         ## @return a integer
         ## 
         def index
             return @index
         end
         ## 
-        ## Sets the index property value. The index property
+        ## Sets the index property value. 
         ## @param value Value to set for the index property.
         ## @return a void
         ## 
@@ -75,14 +69,14 @@ module MicrosoftGraph::Models
             @index = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -102,14 +96,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the uri property value. The uri property
+        ## Gets the uri property value. 
         ## @return a string
         ## 
         def uri
             return @uri
         end
         ## 
-        ## Sets the uri property value. The uri property
+        ## Sets the uri property value. 
         ## @param value Value to set for the uri property.
         ## @return a void
         ## 

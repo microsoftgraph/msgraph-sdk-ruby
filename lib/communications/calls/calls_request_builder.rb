@@ -6,7 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../communications'
 require_relative './calls'
 require_relative './count/count_request_builder'
-require_relative './log_teleconference_device_quality/log_teleconference_device_quality_request_builder'
+require_relative './microsoft_graph_log_teleconference_device_quality/log_teleconference_device_quality_request_builder'
 
 module MicrosoftGraph::Communications::Calls
     ## 
@@ -20,8 +20,8 @@ module MicrosoftGraph::Communications::Calls
         end
         ## 
         # Provides operations to call the logTeleconferenceDeviceQuality method.
-        def log_teleconference_device_quality()
-            return MicrosoftGraph::Communications::Calls::LogTeleconferenceDeviceQuality::LogTeleconferenceDeviceQualityRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_log_teleconference_device_quality()
+            return MicrosoftGraph::Communications::Calls::MicrosoftGraphLogTeleconferenceDeviceQuality::LogTeleconferenceDeviceQualityRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -51,7 +51,7 @@ module MicrosoftGraph::Communications::Calls
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of call_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -62,11 +62,11 @@ module MicrosoftGraph::Communications::Calls
         end
         ## 
         ## Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of call
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -81,7 +81,7 @@ module MicrosoftGraph::Communications::Calls
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -96,11 +96,11 @@ module MicrosoftGraph::Communications::Calls
         end
         ## 
         ## Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

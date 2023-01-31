@@ -8,12 +8,12 @@ require_relative '../assignments'
 require_relative './categories/categories_request_builder'
 require_relative './categories/item/education_category_item_request_builder'
 require_relative './item'
-require_relative './publish/publish_request_builder'
+require_relative './microsoft_graph_publish/publish_request_builder'
+require_relative './microsoft_graph_set_up_feedback_resources_folder/set_up_feedback_resources_folder_request_builder'
+require_relative './microsoft_graph_set_up_resources_folder/set_up_resources_folder_request_builder'
 require_relative './resources/item/education_assignment_resource_item_request_builder'
 require_relative './resources/resources_request_builder'
 require_relative './rubric/rubric_request_builder'
-require_relative './set_up_feedback_resources_folder/set_up_feedback_resources_folder_request_builder'
-require_relative './set_up_resources_folder/set_up_resources_folder_request_builder'
 require_relative './submissions/item/education_submission_item_request_builder'
 require_relative './submissions/submissions_request_builder'
 
@@ -28,13 +28,23 @@ module MicrosoftGraph::Education::Me::Assignments::Item
             return MicrosoftGraph::Education::Me::Assignments::Item::Categories::CategoriesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the publish method.
+        def microsoft_graph_publish()
+            return MicrosoftGraph::Education::Me::Assignments::Item::MicrosoftGraphPublish::PublishRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the setUpFeedbackResourcesFolder method.
+        def microsoft_graph_set_up_feedback_resources_folder()
+            return MicrosoftGraph::Education::Me::Assignments::Item::MicrosoftGraphSetUpFeedbackResourcesFolder::SetUpFeedbackResourcesFolderRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the setUpResourcesFolder method.
+        def microsoft_graph_set_up_resources_folder()
+            return MicrosoftGraph::Education::Me::Assignments::Item::MicrosoftGraphSetUpResourcesFolder::SetUpResourcesFolderRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
-        ## 
-        # Provides operations to call the publish method.
-        def publish()
-            return MicrosoftGraph::Education::Me::Assignments::Item::Publish::PublishRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
@@ -47,16 +57,6 @@ module MicrosoftGraph::Education::Me::Assignments::Item
         # Provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.
         def rubric()
             return MicrosoftGraph::Education::Me::Assignments::Item::Rubric::RubricRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the setUpFeedbackResourcesFolder method.
-        def set_up_feedback_resources_folder()
-            return MicrosoftGraph::Education::Me::Assignments::Item::SetUpFeedbackResourcesFolder::SetUpFeedbackResourcesFolderRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the setUpResourcesFolder method.
-        def set_up_resources_folder()
-            return MicrosoftGraph::Education::Me::Assignments::Item::SetUpResourcesFolder::SetUpResourcesFolderRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
@@ -79,11 +79,12 @@ module MicrosoftGraph::Education::Me::Assignments::Item
         end
         ## 
         ## Instantiates a new EducationAssignmentItemRequestBuilder and sets the default values.
+        ## @param educationAssignmentId key: id of educationAssignment
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, education_assignment_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/education/me/assignments/{educationAssignment%2Did}{?%24select,%24expand}"
@@ -96,7 +97,7 @@ module MicrosoftGraph::Education::Me::Assignments::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -110,7 +111,7 @@ module MicrosoftGraph::Education::Me::Assignments::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of education_assignment
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -121,11 +122,11 @@ module MicrosoftGraph::Education::Me::Assignments::Item
         end
         ## 
         ## Update the navigation property assignments in education
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of education_assignment
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -162,7 +163,7 @@ module MicrosoftGraph::Education::Me::Assignments::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -178,7 +179,7 @@ module MicrosoftGraph::Education::Me::Assignments::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -193,11 +194,11 @@ module MicrosoftGraph::Education::Me::Assignments::Item
         end
         ## 
         ## Update the navigation property assignments in education
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

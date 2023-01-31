@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
         @marketing_url
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
@@ -102,14 +100,14 @@ module MicrosoftGraph::Models
             @marketing_url = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

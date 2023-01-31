@@ -14,14 +14,10 @@ module MicrosoftGraph::Models
         ## 
         # Optional; alt-text accessible content for the image
         @alternate_text
-        ## 
-        # The alternativeText property
         @alternative_text
         ## 
         # Optional; URI that points to an icon which represents the application used to generate the activity
         @icon_url
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         ## Gets the addImageQuery property value. Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image
@@ -69,14 +65,14 @@ module MicrosoftGraph::Models
             @alternate_text = value
         end
         ## 
-        ## Gets the alternativeText property value. The alternativeText property
+        ## Gets the alternativeText property value. 
         ## @return a string
         ## 
         def alternative_text
             return @alternative_text
         end
         ## 
-        ## Sets the alternativeText property value. The alternativeText property
+        ## Sets the alternativeText property value. 
         ## @param value Value to set for the alternativeText property.
         ## @return a void
         ## 
@@ -128,14 +124,14 @@ module MicrosoftGraph::Models
             @icon_url = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

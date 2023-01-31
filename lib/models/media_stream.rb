@@ -8,17 +8,11 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The direction property
         @direction
         ## 
         # The media stream label.
         @label
-        ## 
-        # The mediaType property
         @media_type
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # If the media is muted by the server.
@@ -58,14 +52,14 @@ module MicrosoftGraph::Models
             return MediaStream.new
         end
         ## 
-        ## Gets the direction property value. The direction property
+        ## Gets the direction property value. 
         ## @return a media_direction
         ## 
         def direction
             return @direction
         end
         ## 
-        ## Sets the direction property value. The direction property
+        ## Sets the direction property value. 
         ## @param value Value to set for the direction property.
         ## @return a void
         ## 
@@ -102,14 +96,14 @@ module MicrosoftGraph::Models
             @label = value
         end
         ## 
-        ## Gets the mediaType property value. The mediaType property
+        ## Gets the mediaType property value. 
         ## @return a modality
         ## 
         def media_type
             return @media_type
         end
         ## 
-        ## Sets the mediaType property value. The mediaType property
+        ## Sets the mediaType property value. 
         ## @param value Value to set for the mediaType property.
         ## @return a void
         ## 
@@ -117,14 +111,14 @@ module MicrosoftGraph::Models
             @media_type = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

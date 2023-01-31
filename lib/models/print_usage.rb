@@ -6,27 +6,19 @@ require_relative './models'
 module MicrosoftGraph::Models
     class PrintUsage < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The completedBlackAndWhiteJobCount property
         @completed_black_and_white_job_count
-        ## 
-        # The completedColorJobCount property
         @completed_color_job_count
-        ## 
-        # The incompleteJobCount property
         @incomplete_job_count
-        ## 
-        # The usageDate property
         @usage_date
         ## 
-        ## Gets the completedBlackAndWhiteJobCount property value. The completedBlackAndWhiteJobCount property
+        ## Gets the completedBlackAndWhiteJobCount property value. 
         ## @return a int64
         ## 
         def completed_black_and_white_job_count
             return @completed_black_and_white_job_count
         end
         ## 
-        ## Sets the completedBlackAndWhiteJobCount property value. The completedBlackAndWhiteJobCount property
+        ## Sets the completedBlackAndWhiteJobCount property value. 
         ## @param value Value to set for the completedBlackAndWhiteJobCount property.
         ## @return a void
         ## 
@@ -34,14 +26,14 @@ module MicrosoftGraph::Models
             @completed_black_and_white_job_count = value
         end
         ## 
-        ## Gets the completedColorJobCount property value. The completedColorJobCount property
+        ## Gets the completedColorJobCount property value. 
         ## @return a int64
         ## 
         def completed_color_job_count
             return @completed_color_job_count
         end
         ## 
-        ## Sets the completedColorJobCount property value. The completedColorJobCount property
+        ## Sets the completedColorJobCount property value. 
         ## @param value Value to set for the completedColorJobCount property.
         ## @return a void
         ## 
@@ -49,7 +41,7 @@ module MicrosoftGraph::Models
             @completed_color_job_count = value
         end
         ## 
-        ## Instantiates a new PrintUsage and sets the default values.
+        ## Instantiates a new printUsage and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -87,14 +79,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the incompleteJobCount property value. The incompleteJobCount property
+        ## Gets the incompleteJobCount property value. 
         ## @return a int64
         ## 
         def incomplete_job_count
             return @incomplete_job_count
         end
         ## 
-        ## Sets the incompleteJobCount property value. The incompleteJobCount property
+        ## Sets the incompleteJobCount property value. 
         ## @param value Value to set for the incompleteJobCount property.
         ## @return a void
         ## 
@@ -115,14 +107,14 @@ module MicrosoftGraph::Models
             writer.write_date_value("usageDate", @usage_date)
         end
         ## 
-        ## Gets the usageDate property value. The usageDate property
+        ## Gets the usageDate property value. 
         ## @return a date
         ## 
         def usage_date
             return @usage_date
         end
         ## 
-        ## Sets the usageDate property value. The usageDate property
+        ## Sets the usageDate property value. 
         ## @param value Value to set for the usageDate property.
         ## @return a void
         ## 

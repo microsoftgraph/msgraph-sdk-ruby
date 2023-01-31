@@ -6,8 +6,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class Trending < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The lastModifiedDateTime property
         @last_modified_date_time
         ## 
         # Used for navigating to the trending document.
@@ -51,14 +49,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+        ## Gets the lastModifiedDateTime property value. 
         ## @return a date_time
         ## 
         def last_modified_date_time
             return @last_modified_date_time
         end
         ## 
-        ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+        ## Sets the lastModifiedDateTime property value. 
         ## @param value Value to set for the lastModifiedDateTime property.
         ## @return a void
         ## 

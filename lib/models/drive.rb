@@ -29,8 +29,6 @@ module MicrosoftGraph::Models
         ## 
         # The root folder of the drive. Read-only.
         @root
-        ## 
-        # The sharePointIds property
         @share_point_ids
         ## 
         # Collection of common folders available in OneDrive. Read-only. Nullable.
@@ -215,14 +213,14 @@ module MicrosoftGraph::Models
             writer.write_object_value("system", @system)
         end
         ## 
-        ## Gets the sharePointIds property value. The sharePointIds property
+        ## Gets the sharePointIds property value. 
         ## @return a sharepoint_ids
         ## 
         def share_point_ids
             return @share_point_ids
         end
         ## 
-        ## Sets the sharePointIds property value. The sharePointIds property
+        ## Sets the sharePointIds property value. 
         ## @param value Value to set for the sharePointIds property.
         ## @return a void
         ## 

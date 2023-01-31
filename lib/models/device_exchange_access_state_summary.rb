@@ -16,8 +16,6 @@ module MicrosoftGraph::Models
         ## 
         # Total count of devices with Exchange Access State: Blocked.
         @blocked_device_count
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Total count of devices with Exchange Access State: Quarantined.
@@ -104,14 +102,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
         @destination_service_name
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
@@ -94,14 +92,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

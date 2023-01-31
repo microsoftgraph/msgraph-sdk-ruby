@@ -4,11 +4,11 @@ require_relative '../models/device'
 require_relative '../models/device_collection_response'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
 require_relative './devices'
-require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
-require_relative './get_by_ids/get_by_ids_request_builder'
-require_relative './validate_properties/validate_properties_request_builder'
+require_relative './microsoft_graph_delta/delta_request_builder'
+require_relative './microsoft_graph_get_available_extension_properties/get_available_extension_properties_request_builder'
+require_relative './microsoft_graph_get_by_ids/get_by_ids_request_builder'
+require_relative './microsoft_graph_validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph::Devices
     ## 
@@ -21,14 +21,24 @@ module MicrosoftGraph::Devices
             return MicrosoftGraph::Devices::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::Devices::MicrosoftGraphDelta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the getAvailableExtensionProperties method.
-        def get_available_extension_properties()
-            return MicrosoftGraph::Devices::GetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_available_extension_properties()
+            return MicrosoftGraph::Devices::MicrosoftGraphGetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getByIds method.
-        def get_by_ids()
-            return MicrosoftGraph::Devices::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_by_ids()
+            return MicrosoftGraph::Devices::MicrosoftGraphGetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the validateProperties method.
+        def microsoft_graph_validate_properties()
+            return MicrosoftGraph::Devices::MicrosoftGraphValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -39,11 +49,6 @@ module MicrosoftGraph::Devices
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        # Provides operations to call the validateProperties method.
-        def validate_properties()
-            return MicrosoftGraph::Devices::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new DevicesRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
@@ -59,18 +64,11 @@ module MicrosoftGraph::Devices
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## Retrieve a list of device objects registered in the organization.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of device_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -81,11 +79,11 @@ module MicrosoftGraph::Devices
         end
         ## 
         ## Create and register a new device in the organization.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of device
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -100,7 +98,7 @@ module MicrosoftGraph::Devices
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -115,11 +113,11 @@ module MicrosoftGraph::Devices
         end
         ## 
         ## Create and register a new device in the organization.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

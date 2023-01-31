@@ -7,8 +7,8 @@ require_relative '../../../identity'
 require_relative '../../b2x_user_flows'
 require_relative '../item'
 require_relative './count/count_request_builder'
-require_relative './get_order/get_order_request_builder'
-require_relative './set_order/set_order_request_builder'
+require_relative './microsoft_graph_get_order/get_order_request_builder'
+require_relative './microsoft_graph_set_order/set_order_request_builder'
 require_relative './user_attribute_assignments'
 
 module MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments
@@ -22,16 +22,21 @@ module MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments
             return MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the getOrder method.
+        def microsoft_graph_get_order()
+            return MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments::MicrosoftGraphGetOrder::GetOrderRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the setOrder method.
+        def microsoft_graph_set_order()
+            return MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments::MicrosoftGraphSetOrder::SetOrderRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the setOrder method.
-        def set_order()
-            return MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments::SetOrder::SetOrderRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
@@ -54,7 +59,7 @@ module MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of identity_user_flow_attribute_assignment_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -64,19 +69,12 @@ module MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityUserFlowAttributeAssignmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Provides operations to call the getOrder method.
-        ## @return a get_order_request_builder
-        ## 
-        def get_order()
-            return GetOrderRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## Create a new identityUserFlowAttributeAssignment object in a b2xIdentityUserFlow.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of identity_user_flow_attribute_assignment
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -91,7 +89,7 @@ module MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -106,11 +104,11 @@ module MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments
         end
         ## 
         ## Create a new identityUserFlowAttributeAssignment object in a b2xIdentityUserFlow.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

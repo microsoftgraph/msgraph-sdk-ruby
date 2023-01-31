@@ -4,7 +4,7 @@ require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/o_auth2_permission_grant'
 require_relative '../models/o_auth2_permission_grant_collection_response'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
+require_relative './microsoft_graph_delta/delta_request_builder'
 require_relative './oauth2_permission_grants'
 
 module MicrosoftGraph::Oauth2PermissionGrants
@@ -16,6 +16,11 @@ module MicrosoftGraph::Oauth2PermissionGrants
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Oauth2PermissionGrants::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::Oauth2PermissionGrants::MicrosoftGraphDelta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -41,18 +46,11 @@ module MicrosoftGraph::Oauth2PermissionGrants
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## Retrieve a list of oAuth2PermissionGrant objects, representing delegated permissions which have been granted for client applications to access APIs on behalf of signed-in users.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of o_auth2_permission_grant_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -63,11 +61,11 @@ module MicrosoftGraph::Oauth2PermissionGrants
         end
         ## 
         ## Create a delegated permission grant represented by an oAuth2PermissionGrant object. A delegated permission grant authorizes a client service principal (representing a client application) to access a resource service principal (representing an API), on behalf of a signed-in user, for the level of access limited by the delegated permissions which were granted.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of o_auth2_permission_grant
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -82,7 +80,7 @@ module MicrosoftGraph::Oauth2PermissionGrants
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -97,11 +95,11 @@ module MicrosoftGraph::Oauth2PermissionGrants
         end
         ## 
         ## Create a delegated permission grant represented by an oAuth2PermissionGrant object. A delegated permission grant authorizes a client service principal (representing a client application) to access a resource service principal (representing an API), on behalf of a signed-in user, for the level of access limited by the delegated permissions which were granted.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

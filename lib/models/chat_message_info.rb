@@ -21,8 +21,6 @@ module MicrosoftGraph::Models
         ## 
         # If set to true, the original message has been deleted.
         @is_deleted
-        ## 
-        # The messageType property
         @message_type
         ## 
         ## Gets the body property value. Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object does not return @mentions and attachments.
@@ -130,14 +128,14 @@ module MicrosoftGraph::Models
             @is_deleted = value
         end
         ## 
-        ## Gets the messageType property value. The messageType property
+        ## Gets the messageType property value. 
         ## @return a chat_message_type
         ## 
         def message_type
             return @message_type
         end
         ## 
-        ## Sets the messageType property value. The messageType property
+        ## Sets the messageType property value. 
         ## @param value Value to set for the messageType property.
         ## @return a void
         ## 

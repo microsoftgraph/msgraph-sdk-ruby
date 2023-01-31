@@ -15,8 +15,6 @@ module MicrosoftGraph::Models
         ## 
         # A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format 'start-end' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
         @next_expected_ranges
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The URL endpoint that accepts PUT requests for byte ranges of the file.
@@ -95,14 +93,14 @@ module MicrosoftGraph::Models
             @next_expected_ranges = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

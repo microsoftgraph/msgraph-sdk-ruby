@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # Constraint information for one or more locations that the client requests for the meeting.
         @locations
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The client requests the service to suggest one or more meeting locations.
@@ -94,14 +92,14 @@ module MicrosoftGraph::Models
             @locations = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -13,8 +13,6 @@ module MicrosoftGraph::Models
         ## 
         # Instruction on how to mitigate a failed validation
         @mitigation_instruction
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The state of the operation
@@ -81,14 +79,14 @@ module MicrosoftGraph::Models
             @mitigation_instruction = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

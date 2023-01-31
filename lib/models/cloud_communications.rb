@@ -6,27 +6,19 @@ require_relative './models'
 module MicrosoftGraph::Models
     class CloudCommunications < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The callRecords property
         @call_records
-        ## 
-        # The calls property
         @calls
-        ## 
-        # The onlineMeetings property
         @online_meetings
-        ## 
-        # The presences property
         @presences
         ## 
-        ## Gets the callRecords property value. The callRecords property
+        ## Gets the callRecords property value. 
         ## @return a call_record
         ## 
         def call_records
             return @call_records
         end
         ## 
-        ## Sets the callRecords property value. The callRecords property
+        ## Sets the callRecords property value. 
         ## @param value Value to set for the callRecords property.
         ## @return a void
         ## 
@@ -34,14 +26,14 @@ module MicrosoftGraph::Models
             @call_records = value
         end
         ## 
-        ## Gets the calls property value. The calls property
+        ## Gets the calls property value. 
         ## @return a call
         ## 
         def calls
             return @calls
         end
         ## 
-        ## Sets the calls property value. The calls property
+        ## Sets the calls property value. 
         ## @param value Value to set for the calls property.
         ## @return a void
         ## 
@@ -49,7 +41,7 @@ module MicrosoftGraph::Models
             @calls = value
         end
         ## 
-        ## Instantiates a new cloudCommunications and sets the default values.
+        ## Instantiates a new CloudCommunications and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -77,14 +69,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the onlineMeetings property value. The onlineMeetings property
+        ## Gets the onlineMeetings property value. 
         ## @return a online_meeting
         ## 
         def online_meetings
             return @online_meetings
         end
         ## 
-        ## Sets the onlineMeetings property value. The onlineMeetings property
+        ## Sets the onlineMeetings property value. 
         ## @param value Value to set for the onlineMeetings property.
         ## @return a void
         ## 
@@ -92,14 +84,14 @@ module MicrosoftGraph::Models
             @online_meetings = value
         end
         ## 
-        ## Gets the presences property value. The presences property
+        ## Gets the presences property value. 
         ## @return a presence
         ## 
         def presences
             return @presences
         end
         ## 
-        ## Sets the presences property value. The presences property
+        ## Sets the presences property value. 
         ## @param value Value to set for the presences property.
         ## @return a void
         ## 

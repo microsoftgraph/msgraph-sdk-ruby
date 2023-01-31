@@ -16,8 +16,6 @@ module MicrosoftGraph::Models::ODataErrors
         ## 
         # Date when the error occured.
         @date
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Request Id as tracked internally by the service
@@ -96,14 +94,14 @@ module MicrosoftGraph::Models::ODataErrors
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -17,8 +17,6 @@ module MicrosoftGraph::Models
         ## 
         # The certificate's issue time (not before). This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
         @not_before
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The certificate thumbprint.
@@ -113,14 +111,14 @@ module MicrosoftGraph::Models
             @not_before = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

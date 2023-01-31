@@ -8,20 +8,10 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The classes property
         @classes
-        ## 
-        # The me property
         @me
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The schools property
         @schools
-        ## 
-        # The users property
         @users
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -39,14 +29,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the classes property value. The classes property
+        ## Gets the classes property value. 
         ## @return a education_class
         ## 
         def classes
             return @classes
         end
         ## 
-        ## Sets the classes property value. The classes property
+        ## Sets the classes property value. 
         ## @param value Value to set for the classes property.
         ## @return a void
         ## 
@@ -83,14 +73,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the me property value. The me property
+        ## Gets the me property value. 
         ## @return a education_user
         ## 
         def me
             return @me
         end
         ## 
-        ## Sets the me property value. The me property
+        ## Sets the me property value. 
         ## @param value Value to set for the me property.
         ## @return a void
         ## 
@@ -98,14 +88,14 @@ module MicrosoftGraph::Models
             @me = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -113,14 +103,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the schools property value. The schools property
+        ## Gets the schools property value. 
         ## @return a education_school
         ## 
         def schools
             return @schools
         end
         ## 
-        ## Sets the schools property value. The schools property
+        ## Sets the schools property value. 
         ## @param value Value to set for the schools property.
         ## @return a void
         ## 
@@ -142,14 +132,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the users property value. The users property
+        ## Gets the users property value. 
         ## @return a education_user
         ## 
         def users
             return @users
         end
         ## 
-        ## Sets the users property value. The users property
+        ## Sets the users property value. 
         ## @param value Value to set for the users property.
         ## @return a void
         ## 

@@ -32,11 +32,7 @@ module MicrosoftGraph::Models
         ## 
         # true if the domain has completed domain ownership verification. Not nullable
         @is_verified
-        ## 
-        # The manufacturer property
         @manufacturer
-        ## 
-        # The model property
         @model
         ## 
         # Specifies the number of days before a user receives notification that their password will expire. If the property is not set, a default value of 14 days will be used.
@@ -233,14 +229,14 @@ module MicrosoftGraph::Models
             @is_verified = value
         end
         ## 
-        ## Gets the manufacturer property value. The manufacturer property
+        ## Gets the manufacturer property value. 
         ## @return a string
         ## 
         def manufacturer
             return @manufacturer
         end
         ## 
-        ## Sets the manufacturer property value. The manufacturer property
+        ## Sets the manufacturer property value. 
         ## @param value Value to set for the manufacturer property.
         ## @return a void
         ## 
@@ -248,14 +244,14 @@ module MicrosoftGraph::Models
             @manufacturer = value
         end
         ## 
-        ## Gets the model property value. The model property
+        ## Gets the model property value. 
         ## @return a string
         ## 
         def model
             return @model
         end
         ## 
-        ## Sets the model property value. The model property
+        ## Sets the model property value. 
         ## @param value Value to set for the model property.
         ## @return a void
         ## 

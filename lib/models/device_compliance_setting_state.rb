@@ -26,8 +26,6 @@ module MicrosoftGraph::Models
         ## 
         # The Setting Name that is being reported
         @setting_name
-        ## 
-        # The state property
         @state
         ## 
         # The User email address that is being reported
@@ -187,14 +185,14 @@ module MicrosoftGraph::Models
             @setting_name = value
         end
         ## 
-        ## Gets the state property value. The state property
+        ## Gets the state property value. 
         ## @return a compliance_status
         ## 
         def state
             return @state
         end
         ## 
-        ## Sets the state property value. The state property
+        ## Sets the state property value. 
         ## @param value Value to set for the state property.
         ## @return a void
         ## 

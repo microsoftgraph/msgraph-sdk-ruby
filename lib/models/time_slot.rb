@@ -8,14 +8,8 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The end property
         @end_escaped
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The start property
         @start
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -49,14 +43,14 @@ module MicrosoftGraph::Models
             return TimeSlot.new
         end
         ## 
-        ## Gets the end property value. The end property
+        ## Gets the end property value. 
         ## @return a date_time_time_zone
         ## 
         def end_escaped
             return @end_escaped
         end
         ## 
-        ## Sets the end property value. The end property
+        ## Sets the end property value. 
         ## @param value Value to set for the end property.
         ## @return a void
         ## 
@@ -75,14 +69,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -102,14 +96,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the start property value. The start property
+        ## Gets the start property value. 
         ## @return a date_time_time_zone
         ## 
         def start
             return @start
         end
         ## 
-        ## Sets the start property value. The start property
+        ## Sets the start property value. 
         ## @param value Value to set for the start property.
         ## @return a void
         ## 

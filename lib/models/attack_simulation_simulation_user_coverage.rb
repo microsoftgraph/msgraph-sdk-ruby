@@ -21,8 +21,6 @@ module MicrosoftGraph::Models
         ## 
         # Date and time of the latest attack simulation and training campaign that the user was included in.
         @latest_simulation_date_time
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Number of attack simulation and training campaigns that the user was included in.
@@ -133,14 +131,14 @@ module MicrosoftGraph::Models
             @latest_simulation_date_time = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

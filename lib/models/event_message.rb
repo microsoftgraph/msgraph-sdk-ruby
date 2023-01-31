@@ -5,35 +5,17 @@ require_relative './models'
 module MicrosoftGraph::Models
     class EventMessage < MicrosoftGraph::Models::Message
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The endDateTime property
         @end_date_time
         ## 
         # The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.
         @event
-        ## 
-        # The isAllDay property
         @is_all_day
-        ## 
-        # The isDelegated property
         @is_delegated
-        ## 
-        # The isOutOfDate property
         @is_out_of_date
-        ## 
-        # The location property
         @location
-        ## 
-        # The meetingMessageType property
         @meeting_message_type
-        ## 
-        # The recurrence property
         @recurrence
-        ## 
-        # The startDateTime property
         @start_date_time
-        ## 
-        # The type property
         @type
         ## 
         ## Instantiates a new EventMessage and sets the default values.
@@ -63,14 +45,14 @@ module MicrosoftGraph::Models
             return EventMessage.new
         end
         ## 
-        ## Gets the endDateTime property value. The endDateTime property
+        ## Gets the endDateTime property value. 
         ## @return a date_time_time_zone
         ## 
         def end_date_time
             return @end_date_time
         end
         ## 
-        ## Sets the endDateTime property value. The endDateTime property
+        ## Sets the endDateTime property value. 
         ## @param value Value to set for the endDateTime property.
         ## @return a void
         ## 
@@ -111,14 +93,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the isAllDay property value. The isAllDay property
+        ## Gets the isAllDay property value. 
         ## @return a boolean
         ## 
         def is_all_day
             return @is_all_day
         end
         ## 
-        ## Sets the isAllDay property value. The isAllDay property
+        ## Sets the isAllDay property value. 
         ## @param value Value to set for the isAllDay property.
         ## @return a void
         ## 
@@ -126,14 +108,14 @@ module MicrosoftGraph::Models
             @is_all_day = value
         end
         ## 
-        ## Gets the isDelegated property value. The isDelegated property
+        ## Gets the isDelegated property value. 
         ## @return a boolean
         ## 
         def is_delegated
             return @is_delegated
         end
         ## 
-        ## Sets the isDelegated property value. The isDelegated property
+        ## Sets the isDelegated property value. 
         ## @param value Value to set for the isDelegated property.
         ## @return a void
         ## 
@@ -141,14 +123,14 @@ module MicrosoftGraph::Models
             @is_delegated = value
         end
         ## 
-        ## Gets the isOutOfDate property value. The isOutOfDate property
+        ## Gets the isOutOfDate property value. 
         ## @return a boolean
         ## 
         def is_out_of_date
             return @is_out_of_date
         end
         ## 
-        ## Sets the isOutOfDate property value. The isOutOfDate property
+        ## Sets the isOutOfDate property value. 
         ## @param value Value to set for the isOutOfDate property.
         ## @return a void
         ## 
@@ -156,14 +138,14 @@ module MicrosoftGraph::Models
             @is_out_of_date = value
         end
         ## 
-        ## Gets the location property value. The location property
+        ## Gets the location property value. 
         ## @return a location
         ## 
         def location
             return @location
         end
         ## 
-        ## Sets the location property value. The location property
+        ## Sets the location property value. 
         ## @param value Value to set for the location property.
         ## @return a void
         ## 
@@ -171,14 +153,14 @@ module MicrosoftGraph::Models
             @location = value
         end
         ## 
-        ## Gets the meetingMessageType property value. The meetingMessageType property
+        ## Gets the meetingMessageType property value. 
         ## @return a meeting_message_type
         ## 
         def meeting_message_type
             return @meeting_message_type
         end
         ## 
-        ## Sets the meetingMessageType property value. The meetingMessageType property
+        ## Sets the meetingMessageType property value. 
         ## @param value Value to set for the meetingMessageType property.
         ## @return a void
         ## 
@@ -186,14 +168,14 @@ module MicrosoftGraph::Models
             @meeting_message_type = value
         end
         ## 
-        ## Gets the recurrence property value. The recurrence property
+        ## Gets the recurrence property value. 
         ## @return a patterned_recurrence
         ## 
         def recurrence
             return @recurrence
         end
         ## 
-        ## Sets the recurrence property value. The recurrence property
+        ## Sets the recurrence property value. 
         ## @param value Value to set for the recurrence property.
         ## @return a void
         ## 
@@ -220,14 +202,14 @@ module MicrosoftGraph::Models
             writer.write_enum_value("type", @type)
         end
         ## 
-        ## Gets the startDateTime property value. The startDateTime property
+        ## Gets the startDateTime property value. 
         ## @return a date_time_time_zone
         ## 
         def start_date_time
             return @start_date_time
         end
         ## 
-        ## Sets the startDateTime property value. The startDateTime property
+        ## Sets the startDateTime property value. 
         ## @param value Value to set for the startDateTime property.
         ## @return a void
         ## 
@@ -235,14 +217,14 @@ module MicrosoftGraph::Models
             @start_date_time = value
         end
         ## 
-        ## Gets the type property value. The type property
+        ## Gets the type property value. 
         ## @return a event_type
         ## 
         def type
             return @type
         end
         ## 
-        ## Sets the type property value. The type property
+        ## Sets the type property value. 
         ## @param value Value to set for the type property.
         ## @return a void
         ## 

@@ -35,8 +35,6 @@ module MicrosoftGraph::Models
         ## 
         # The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.
         @media_quality_list
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
@@ -227,14 +225,14 @@ module MicrosoftGraph::Models
             @media_quality_list = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -8,17 +8,9 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The id property
         @id
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The properties property
         @properties
-        ## 
-        # The type property
         @type
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -64,14 +56,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the id property value. The id property
+        ## Gets the id property value. 
         ## @return a guid
         ## 
         def id
             return @id
         end
         ## 
-        ## Sets the id property value. The id property
+        ## Sets the id property value. 
         ## @param value Value to set for the id property.
         ## @return a void
         ## 
@@ -79,14 +71,14 @@ module MicrosoftGraph::Models
             @id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -94,14 +86,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the properties property value. The properties property
+        ## Gets the properties property value. 
         ## @return a key_value
         ## 
         def properties
             return @properties
         end
         ## 
-        ## Sets the properties property value. The properties property
+        ## Sets the properties property value. 
         ## @param value Value to set for the properties property.
         ## @return a void
         ## 
@@ -122,14 +114,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the type property value. The type property
+        ## Gets the type property value. 
         ## @return a string
         ## 
         def type
             return @type
         end
         ## 
-        ## Sets the type property value. The type property
+        ## Sets the type property value. 
         ## @param value Value to set for the type property.
         ## @return a void
         ## 

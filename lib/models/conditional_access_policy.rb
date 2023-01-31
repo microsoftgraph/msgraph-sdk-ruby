@@ -6,14 +6,10 @@ require_relative './models'
 module MicrosoftGraph::Models
     class ConditionalAccessPolicy < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The conditions property
         @conditions
         ## 
         # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
         @created_date_time
-        ## 
-        # The description property
         @description
         ## 
         # Specifies a display name for the conditionalAccessPolicy object.
@@ -27,18 +23,16 @@ module MicrosoftGraph::Models
         ## 
         # Specifies the session controls that are enforced after sign-in.
         @session_controls
-        ## 
-        # The state property
         @state
         ## 
-        ## Gets the conditions property value. The conditions property
+        ## Gets the conditions property value. 
         ## @return a conditional_access_condition_set
         ## 
         def conditions
             return @conditions
         end
         ## 
-        ## Sets the conditions property value. The conditions property
+        ## Sets the conditions property value. 
         ## @param value Value to set for the conditions property.
         ## @return a void
         ## 
@@ -77,14 +71,14 @@ module MicrosoftGraph::Models
             return ConditionalAccessPolicy.new
         end
         ## 
-        ## Gets the description property value. The description property
+        ## Gets the description property value. 
         ## @return a string
         ## 
         def description
             return @description
         end
         ## 
-        ## Sets the description property value. The description property
+        ## Sets the description property value. 
         ## @param value Value to set for the description property.
         ## @return a void
         ## 
@@ -185,14 +179,14 @@ module MicrosoftGraph::Models
             @session_controls = value
         end
         ## 
-        ## Gets the state property value. The state property
+        ## Gets the state property value. 
         ## @return a conditional_access_policy_state
         ## 
         def state
             return @state
         end
         ## 
-        ## Sets the state property value. The state property
+        ## Sets the state property value. 
         ## @param value Value to set for the state property.
         ## @return a void
         ## 

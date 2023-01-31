@@ -9,11 +9,9 @@ module MicrosoftGraph::Models
         ## 
         # The DateTimeOffset when the operation was created. Read-only.
         @created_date_time
-        ## 
-        # The status property
         @status
         ## 
-        ## Instantiates a new PrintOperation and sets the default values.
+        ## Instantiates a new printOperation and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -73,14 +71,14 @@ module MicrosoftGraph::Models
             writer.write_object_value("status", @status)
         end
         ## 
-        ## Gets the status property value. The status property
+        ## Gets the status property value. 
         ## @return a print_operation_status
         ## 
         def status
             return @status
         end
         ## 
-        ## Sets the status property value. The status property
+        ## Sets the status property value. 
         ## @param value Value to set for the status property.
         ## @return a void
         ## 

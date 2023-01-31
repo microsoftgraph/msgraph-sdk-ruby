@@ -14,14 +14,10 @@ module MicrosoftGraph::Models
         ## 
         # The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
         @hit_id
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The rank or the order of the result.
         @rank
-        ## 
-        # The resource property
         @resource
         ## 
         # ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.
@@ -106,14 +102,14 @@ module MicrosoftGraph::Models
             @hit_id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -136,14 +132,14 @@ module MicrosoftGraph::Models
             @rank = value
         end
         ## 
-        ## Gets the resource property value. The resource property
+        ## Gets the resource property value. 
         ## @return a entity
         ## 
         def resource
             return @resource
         end
         ## 
-        ## Sets the resource property value. The resource property
+        ## Sets the resource property value. 
         ## @param value Value to set for the resource property.
         ## @return a void
         ## 

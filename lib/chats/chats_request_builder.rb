@@ -5,7 +5,7 @@ require_relative '../models/chat_collection_response'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './chats'
 require_relative './count/count_request_builder'
-require_relative './get_all_messages/get_all_messages_request_builder'
+require_relative './microsoft_graph_get_all_messages/get_all_messages_request_builder'
 
 module MicrosoftGraph::Chats
     ## 
@@ -16,6 +16,11 @@ module MicrosoftGraph::Chats
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Chats::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getAllMessages method.
+        def microsoft_graph_get_all_messages()
+            return MicrosoftGraph::Chats::MicrosoftGraphGetAllMessages::GetAllMessagesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -45,7 +50,7 @@ module MicrosoftGraph::Chats
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of chat_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -55,19 +60,12 @@ module MicrosoftGraph::Chats
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Provides operations to call the getAllMessages method.
-        ## @return a get_all_messages_request_builder
-        ## 
-        def get_all_messages()
-            return GetAllMessagesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## Create a new chat object.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of chat
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -82,7 +80,7 @@ module MicrosoftGraph::Chats
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -97,11 +95,11 @@ module MicrosoftGraph::Chats
         end
         ## 
         ## Create a new chat object.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

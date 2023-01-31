@@ -6,7 +6,7 @@ require_relative '../../users'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './created_objects'
-require_relative './service_principal/service_principal_request_builder'
+require_relative './microsoft_graph_service_principal/service_principal_request_builder'
 
 module MicrosoftGraph::Users::Item::CreatedObjects
     ## 
@@ -19,16 +19,16 @@ module MicrosoftGraph::Users::Item::CreatedObjects
             return MicrosoftGraph::Users::Item::CreatedObjects::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Casts the previous resource to servicePrincipal.
+        def microsoft_graph_service_principal()
+            return MicrosoftGraph::Users::Item::CreatedObjects::MicrosoftGraphServicePrincipal::ServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Casts the previous resource to servicePrincipal.
-        def service_principal()
-            return MicrosoftGraph::Users::Item::CreatedObjects::ServicePrincipal::ServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
@@ -51,7 +51,7 @@ module MicrosoftGraph::Users::Item::CreatedObjects
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of directory_object_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -65,7 +65,7 @@ module MicrosoftGraph::Users::Item::CreatedObjects
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters

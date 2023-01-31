@@ -14,9 +14,9 @@ require_relative './document_set_versions/document_set_versions_request_builder'
 require_relative './document_set_versions/item/document_set_version_item_request_builder'
 require_relative './drive_item/drive_item_request_builder'
 require_relative './fields/fields_request_builder'
-require_relative './get_activities_by_interval/get_activities_by_interval_request_builder'
-require_relative './get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval/dab1c2feb9ecf2d349721478e4ff8fe9c46b97a0c44110851b2b17a08d22383e'
 require_relative './item'
+require_relative './microsoft_graph_get_activities_by_interval/get_activities_by_interval_request_builder'
+require_relative './microsoft_graph_get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval/dab1c2feb9ecf2d349721478e4ff8fe9c46b97a0c44110851b2b17a08d22383e'
 require_relative './versions/item/list_item_version_item_request_builder'
 require_relative './versions/versions_request_builder'
 
@@ -46,6 +46,11 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item
             return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item::Fields::FieldsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the getActivitiesByInterval method.
+        def microsoft_graph_get_activities_by_interval()
+            return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item::MicrosoftGraphGetActivitiesByInterval::GetActivitiesByIntervalRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
@@ -61,11 +66,12 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item
         end
         ## 
         ## Instantiates a new ListItemItemRequestBuilder and sets the default values.
+        ## @param listItemId key: id of listItem
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, list_item_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}{?%24select,%24expand}"
@@ -78,7 +84,7 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -103,7 +109,7 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of list_item
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -114,19 +120,12 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item
         end
         ## 
         ## Provides operations to call the getActivitiesByInterval method.
-        ## @return a get_activities_by_interval_request_builder
-        ## 
-        def get_activities_by_interval()
-            return GetActivitiesByIntervalRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the getActivitiesByInterval method.
         ## @param endDateTime Usage: endDateTime='{endDateTime}'
         ## @param interval Usage: interval='{interval}'
         ## @param startDateTime Usage: startDateTime='{startDateTime}'
         ## @return a get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval_request_builder
         ## 
-        def get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval(end_date_time, interval, start_date_time)
+        def microsoft_graph_get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval(end_date_time, interval, start_date_time)
             raise StandardError, 'end_date_time cannot be null' if end_date_time.nil?
             raise StandardError, 'interval cannot be null' if interval.nil?
             raise StandardError, 'start_date_time cannot be null' if start_date_time.nil?
@@ -134,11 +133,11 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item
         end
         ## 
         ## Update the navigation property items in groups
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of list_item
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -153,7 +152,7 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -169,7 +168,7 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -184,11 +183,11 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item
         end
         ## 
         ## Update the navigation property items in groups
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class TaskFileAttachment < MicrosoftGraph::Models::AttachmentBase
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The contentBytes property
         @content_bytes
         ## 
         ## Instantiates a new TaskFileAttachment and sets the default values.
@@ -17,14 +15,14 @@ module MicrosoftGraph::Models
             @odata_type = "#microsoft.graph.taskFileAttachment"
         end
         ## 
-        ## Gets the contentBytes property value. The contentBytes property
+        ## Gets the contentBytes property value. 
         ## @return a binary
         ## 
         def content_bytes
             return @content_bytes
         end
         ## 
-        ## Sets the contentBytes property value. The contentBytes property
+        ## Sets the contentBytes property value. 
         ## @param value Value to set for the contentBytes property.
         ## @return a void
         ## 

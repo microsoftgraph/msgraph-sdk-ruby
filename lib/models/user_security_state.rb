@@ -39,8 +39,6 @@ module MicrosoftGraph::Models
         ## 
         # Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
         @logon_type
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Active Directory (on-premises) Security Identifier (SID) of the user.
@@ -259,14 +257,14 @@ module MicrosoftGraph::Models
             @logon_type = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

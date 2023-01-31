@@ -42,8 +42,6 @@ module MicrosoftGraph::Models
         ## 
         # The meeting end time in UTC.
         @end_date_time
-        ## 
-        # The externalId property
         @external_id
         ## 
         # Indicates if this is a Teams live event.
@@ -275,14 +273,14 @@ module MicrosoftGraph::Models
             @end_date_time = value
         end
         ## 
-        ## Gets the externalId property value. The externalId property
+        ## Gets the externalId property value. 
         ## @return a string
         ## 
         def external_id
             return @external_id
         end
         ## 
-        ## Sets the externalId property value. The externalId property
+        ## Sets the externalId property value. 
         ## @param value Value to set for the externalId property.
         ## @return a void
         ## 

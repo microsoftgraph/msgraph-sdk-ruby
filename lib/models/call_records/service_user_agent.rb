@@ -6,8 +6,6 @@ require_relative './call_records'
 module MicrosoftGraph::Models::CallRecords
     class ServiceUserAgent < MicrosoftGraph::Models::CallRecords::UserAgent
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The role property
         @role
         ## 
         ## Instantiates a new ServiceUserAgent and sets the default values.
@@ -36,14 +34,14 @@ module MicrosoftGraph::Models::CallRecords
             })
         end
         ## 
-        ## Gets the role property value. The role property
+        ## Gets the role property value. 
         ## @return a service_role
         ## 
         def role
             return @role
         end
         ## 
-        ## Sets the role property value. The role property
+        ## Sets the role property value. 
         ## @param value Value to set for the role property.
         ## @return a void
         ## 

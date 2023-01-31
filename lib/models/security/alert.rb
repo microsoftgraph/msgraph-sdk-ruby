@@ -70,14 +70,8 @@ module MicrosoftGraph::Models::Security
         ## 
         # Time when the alert was resolved.
         @resolved_date_time
-        ## 
-        # The serviceSource property
         @service_source
-        ## 
-        # The severity property
         @severity
-        ## 
-        # The status property
         @status
         ## 
         # The Azure Active Directory tenant the alert was created in.
@@ -496,14 +490,14 @@ module MicrosoftGraph::Models::Security
             writer.write_string_value("title", @title)
         end
         ## 
-        ## Gets the serviceSource property value. The serviceSource property
+        ## Gets the serviceSource property value. 
         ## @return a service_source
         ## 
         def service_source
             return @service_source
         end
         ## 
-        ## Sets the serviceSource property value. The serviceSource property
+        ## Sets the serviceSource property value. 
         ## @param value Value to set for the serviceSource property.
         ## @return a void
         ## 
@@ -511,14 +505,14 @@ module MicrosoftGraph::Models::Security
             @service_source = value
         end
         ## 
-        ## Gets the severity property value. The severity property
+        ## Gets the severity property value. 
         ## @return a alert_severity
         ## 
         def severity
             return @severity
         end
         ## 
-        ## Sets the severity property value. The severity property
+        ## Sets the severity property value. 
         ## @param value Value to set for the severity property.
         ## @return a void
         ## 
@@ -526,14 +520,14 @@ module MicrosoftGraph::Models::Security
             @severity = value
         end
         ## 
-        ## Gets the status property value. The status property
+        ## Gets the status property value. 
         ## @return a alert_status
         ## 
         def status
             return @status
         end
         ## 
-        ## Sets the status property value. The status property
+        ## Sets the status property value. 
         ## @param value Value to set for the status property.
         ## @return a void
         ## 

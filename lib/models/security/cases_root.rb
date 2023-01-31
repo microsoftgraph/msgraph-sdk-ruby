@@ -6,8 +6,6 @@ require_relative './security'
 module MicrosoftGraph::Models::Security
     class CasesRoot < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The ediscoveryCases property
         @ediscovery_cases
         ## 
         ## Instantiates a new casesRoot and sets the default values.
@@ -26,14 +24,14 @@ module MicrosoftGraph::Models::Security
             return CasesRoot.new
         end
         ## 
-        ## Gets the ediscoveryCases property value. The ediscoveryCases property
+        ## Gets the ediscoveryCases property value. 
         ## @return a ediscovery_case
         ## 
         def ediscovery_cases
             return @ediscovery_cases
         end
         ## 
-        ## Sets the ediscoveryCases property value. The ediscoveryCases property
+        ## Sets the ediscoveryCases property value. 
         ## @param value Value to set for the ediscoveryCases property.
         ## @return a void
         ## 

@@ -9,29 +9,13 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The appId property
         @app_id
-        ## 
-        # The assignedTo property
         @assigned_to
-        ## 
-        # The comments property
         @comments
-        ## 
-        # The feedback property
         @feedback
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The status property
         @status
-        ## 
-        # The updatedDateTime property
         @updated_date_time
-        ## 
-        # The user property
         @user
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -49,14 +33,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the appId property value. The appId property
+        ## Gets the appId property value. 
         ## @return a string
         ## 
         def app_id
             return @app_id
         end
         ## 
-        ## Sets the appId property value. The appId property
+        ## Sets the appId property value. 
         ## @param value Value to set for the appId property.
         ## @return a void
         ## 
@@ -64,14 +48,14 @@ module MicrosoftGraph::Models
             @app_id = value
         end
         ## 
-        ## Gets the assignedTo property value. The assignedTo property
+        ## Gets the assignedTo property value. 
         ## @return a string
         ## 
         def assigned_to
             return @assigned_to
         end
         ## 
-        ## Sets the assignedTo property value. The assignedTo property
+        ## Sets the assignedTo property value. 
         ## @param value Value to set for the assignedTo property.
         ## @return a void
         ## 
@@ -79,14 +63,14 @@ module MicrosoftGraph::Models
             @assigned_to = value
         end
         ## 
-        ## Gets the comments property value. The comments property
+        ## Gets the comments property value. 
         ## @return a string
         ## 
         def comments
             return @comments
         end
         ## 
-        ## Sets the comments property value. The comments property
+        ## Sets the comments property value. 
         ## @param value Value to set for the comments property.
         ## @return a void
         ## 
@@ -110,14 +94,14 @@ module MicrosoftGraph::Models
             return AlertHistoryState.new
         end
         ## 
-        ## Gets the feedback property value. The feedback property
+        ## Gets the feedback property value. 
         ## @return a alert_feedback
         ## 
         def feedback
             return @feedback
         end
         ## 
-        ## Sets the feedback property value. The feedback property
+        ## Sets the feedback property value. 
         ## @param value Value to set for the feedback property.
         ## @return a void
         ## 
@@ -141,14 +125,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -173,14 +157,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the status property value. The status property
+        ## Gets the status property value. 
         ## @return a alert_status
         ## 
         def status
             return @status
         end
         ## 
-        ## Sets the status property value. The status property
+        ## Sets the status property value. 
         ## @param value Value to set for the status property.
         ## @return a void
         ## 
@@ -188,14 +172,14 @@ module MicrosoftGraph::Models
             @status = value
         end
         ## 
-        ## Gets the updatedDateTime property value. The updatedDateTime property
+        ## Gets the updatedDateTime property value. 
         ## @return a date_time
         ## 
         def updated_date_time
             return @updated_date_time
         end
         ## 
-        ## Sets the updatedDateTime property value. The updatedDateTime property
+        ## Sets the updatedDateTime property value. 
         ## @param value Value to set for the updatedDateTime property.
         ## @return a void
         ## 
@@ -203,14 +187,14 @@ module MicrosoftGraph::Models
             @updated_date_time = value
         end
         ## 
-        ## Gets the user property value. The user property
+        ## Gets the user property value. 
         ## @return a string
         ## 
         def user
             return @user
         end
         ## 
-        ## Sets the user property value. The user property
+        ## Sets the user property value. 
         ## @param value Value to set for the user property.
         ## @return a void
         ## 

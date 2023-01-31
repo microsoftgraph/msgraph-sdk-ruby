@@ -11,17 +11,11 @@ module MicrosoftGraph::Models
         ## 
         # The email address.
         @address
-        ## 
-        # The itemId property
         @item_id
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.
         @relevance_score
-        ## 
-        # The selectionLikelihood property
         @selection_likelihood
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -83,14 +77,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the itemId property value. The itemId property
+        ## Gets the itemId property value. 
         ## @return a string
         ## 
         def item_id
             return @item_id
         end
         ## 
-        ## Sets the itemId property value. The itemId property
+        ## Sets the itemId property value. 
         ## @param value Value to set for the itemId property.
         ## @return a void
         ## 
@@ -98,14 +92,14 @@ module MicrosoftGraph::Models
             @item_id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -128,14 +122,14 @@ module MicrosoftGraph::Models
             @relevance_score = value
         end
         ## 
-        ## Gets the selectionLikelihood property value. The selectionLikelihood property
+        ## Gets the selectionLikelihood property value. 
         ## @return a selection_likelihood_info
         ## 
         def selection_likelihood
             return @selection_likelihood
         end
         ## 
-        ## Sets the selectionLikelihood property value. The selectionLikelihood property
+        ## Sets the selectionLikelihood property value. 
         ## @param value Value to set for the selectionLikelihood property.
         ## @return a void
         ## 

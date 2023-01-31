@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # Error information from attempting to get the availability of the user, distribution list, or resource.
         @error
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # An SMTP address of the user, distribution list, or resource, identifying an instance of scheduleInformation.
@@ -102,14 +100,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

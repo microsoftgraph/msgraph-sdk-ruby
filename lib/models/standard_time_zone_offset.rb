@@ -18,8 +18,6 @@ module MicrosoftGraph::Models
         ## 
         # Represents the month of the year when the transition from daylight saving time to standard time occurs.
         @month
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Represents the time of day when the transition from daylight saving time to standard time occurs.
@@ -126,14 +124,14 @@ module MicrosoftGraph::Models
             @month = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

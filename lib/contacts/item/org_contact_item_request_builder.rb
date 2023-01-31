@@ -3,17 +3,17 @@ require_relative '../../microsoft_graph'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/org_contact'
 require_relative '../contacts'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './direct_reports/direct_reports_request_builder'
 require_relative './direct_reports/item/directory_object_item_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
 require_relative './manager/manager_request_builder'
 require_relative './member_of/item/directory_object_item_request_builder'
 require_relative './member_of/member_of_request_builder'
-require_relative './restore/restore_request_builder'
+require_relative './microsoft_graph_check_member_groups/check_member_groups_request_builder'
+require_relative './microsoft_graph_check_member_objects/check_member_objects_request_builder'
+require_relative './microsoft_graph_get_member_groups/get_member_groups_request_builder'
+require_relative './microsoft_graph_get_member_objects/get_member_objects_request_builder'
+require_relative './microsoft_graph_restore/restore_request_builder'
 require_relative './transitive_member_of/item/directory_object_item_request_builder'
 require_relative './transitive_member_of/transitive_member_of_request_builder'
 
@@ -23,29 +23,9 @@ module MicrosoftGraph::Contacts::Item
     class OrgContactItemRequestBuilder
         
         ## 
-        # Provides operations to call the checkMemberGroups method.
-        def check_member_groups()
-            return MicrosoftGraph::Contacts::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the checkMemberObjects method.
-        def check_member_objects()
-            return MicrosoftGraph::Contacts::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the directReports property of the microsoft.graph.orgContact entity.
         def direct_reports()
             return MicrosoftGraph::Contacts::Item::DirectReports::DirectReportsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the getMemberGroups method.
-        def get_member_groups()
-            return MicrosoftGraph::Contacts::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the getMemberObjects method.
-        def get_member_objects()
-            return MicrosoftGraph::Contacts::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the manager property of the microsoft.graph.orgContact entity.
@@ -58,16 +38,36 @@ module MicrosoftGraph::Contacts::Item
             return MicrosoftGraph::Contacts::Item::MemberOf::MemberOfRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the checkMemberGroups method.
+        def microsoft_graph_check_member_groups()
+            return MicrosoftGraph::Contacts::Item::MicrosoftGraphCheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkMemberObjects method.
+        def microsoft_graph_check_member_objects()
+            return MicrosoftGraph::Contacts::Item::MicrosoftGraphCheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getMemberGroups method.
+        def microsoft_graph_get_member_groups()
+            return MicrosoftGraph::Contacts::Item::MicrosoftGraphGetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getMemberObjects method.
+        def microsoft_graph_get_member_objects()
+            return MicrosoftGraph::Contacts::Item::MicrosoftGraphGetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the restore method.
+        def microsoft_graph_restore()
+            return MicrosoftGraph::Contacts::Item::MicrosoftGraphRestore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the restore method.
-        def restore()
-            return MicrosoftGraph::Contacts::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.
         def transitive_member_of()
@@ -78,11 +78,12 @@ module MicrosoftGraph::Contacts::Item
         @url_template
         ## 
         ## Instantiates a new OrgContactItemRequestBuilder and sets the default values.
+        ## @param orgContactId key: id of orgContact
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, org_contact_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/contacts/{orgContact%2Did}{?%24select,%24expand}"
@@ -91,11 +92,11 @@ module MicrosoftGraph::Contacts::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from contacts by key (id)
+        ## Delete entity from contacts
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -120,7 +121,7 @@ module MicrosoftGraph::Contacts::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of org_contact
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -141,12 +142,12 @@ module MicrosoftGraph::Contacts::Item
             return MicrosoftGraph::Contacts::Item::MemberOf::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Update entity in contacts by key (id)
-        ## @param body The request body
+        ## Update entity in contacts
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of org_contact
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -157,11 +158,11 @@ module MicrosoftGraph::Contacts::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OrgContact.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from contacts by key (id)
+        ## Delete entity from contacts
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -177,7 +178,7 @@ module MicrosoftGraph::Contacts::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -191,12 +192,12 @@ module MicrosoftGraph::Contacts::Item
             return request_info
         end
         ## 
-        ## Update entity in contacts by key (id)
-        ## @param body The request body
+        ## Update entity in contacts
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

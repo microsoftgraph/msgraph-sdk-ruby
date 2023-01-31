@@ -10,11 +10,7 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The day property
         @day
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # A list of start/end times during a day.
@@ -51,14 +47,14 @@ module MicrosoftGraph::Models
             return BookingWorkHours.new
         end
         ## 
-        ## Gets the day property value. The day property
+        ## Gets the day property value. 
         ## @return a day_of_week
         ## 
         def day
             return @day
         end
         ## 
-        ## Sets the day property value. The day property
+        ## Sets the day property value. 
         ## @param value Value to set for the day property.
         ## @return a void
         ## 
@@ -77,14 +73,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

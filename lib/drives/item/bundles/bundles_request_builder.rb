@@ -41,11 +41,11 @@ module MicrosoftGraph::Drives::Item::Bundles
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Get a list of all the [bundles][bundle] in a user's drive.
+        ## Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of drive_item_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -55,11 +55,11 @@ module MicrosoftGraph::Drives::Item::Bundles
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DriveItemCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Get a list of all the [bundles][bundle] in a user's drive.
+        ## Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -74,7 +74,7 @@ module MicrosoftGraph::Drives::Item::Bundles
         end
 
         ## 
-        # Get a list of all the [bundles][bundle] in a user's drive.
+        # Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
         class BundlesRequestBuilderGetQueryParameters
             
             ## 

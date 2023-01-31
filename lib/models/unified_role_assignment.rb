@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # Identifier of the app-specific scope when the assignment scope is app-specific.  Either this property or directoryScopeId is required. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, in).
         @app_scope_id
-        ## 
-        # The condition property
         @condition
         ## 
         # The directory object that is the scope of the assignment. Read-only. Supports $expand.
@@ -63,14 +61,14 @@ module MicrosoftGraph::Models
             @app_scope_id = value
         end
         ## 
-        ## Gets the condition property value. The condition property
+        ## Gets the condition property value. 
         ## @return a string
         ## 
         def condition
             return @condition
         end
         ## 
-        ## Sets the condition property value. The condition property
+        ## Sets the condition property value. 
         ## @param value Value to set for the condition property.
         ## @return a void
         ## 

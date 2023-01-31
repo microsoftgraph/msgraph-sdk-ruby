@@ -15,8 +15,6 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         # The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
         @basic_service_set_identifier
-        ## 
-        # The connectionType property
         @connection_type
         ## 
         # Fraction of the call that the media endpoint detected the network delay was significant enough to impact the ability to have real-time two-way communication.
@@ -33,11 +31,7 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         # The media access control (MAC) address of the media endpoint's network device.
         @mac_address
-        ## 
-        # The networkTransportProtocol property
         @network_transport_protocol
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Network port number used by media endpoint.
@@ -63,8 +57,6 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         # List of network trace route hops collected for this media stream.*
         @trace_route_hops
-        ## 
-        # The wifiBand property
         @wifi_band
         ## 
         # Estimated remaining battery charge in percentage reported by the media endpoint.
@@ -78,8 +70,6 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         # Version of the Microsoft WiFi driver used by the media endpoint.
         @wifi_microsoft_driver_version
-        ## 
-        # The wifiRadioType property
         @wifi_radio_type
         ## 
         # WiFi signal strength in percentage reported by the media endpoint.
@@ -136,14 +126,14 @@ module MicrosoftGraph::Models::CallRecords
             @basic_service_set_identifier = value
         end
         ## 
-        ## Gets the connectionType property value. The connectionType property
+        ## Gets the connectionType property value. 
         ## @return a network_connection_type
         ## 
         def connection_type
             return @connection_type
         end
         ## 
-        ## Sets the connectionType property value. The connectionType property
+        ## Sets the connectionType property value. 
         ## @param value Value to set for the connectionType property.
         ## @return a void
         ## 
@@ -277,14 +267,14 @@ module MicrosoftGraph::Models::CallRecords
             @mac_address = value
         end
         ## 
-        ## Gets the networkTransportProtocol property value. The networkTransportProtocol property
+        ## Gets the networkTransportProtocol property value. 
         ## @return a network_transport_protocol
         ## 
         def network_transport_protocol
             return @network_transport_protocol
         end
         ## 
-        ## Sets the networkTransportProtocol property value. The networkTransportProtocol property
+        ## Sets the networkTransportProtocol property value. 
         ## @param value Value to set for the networkTransportProtocol property.
         ## @return a void
         ## 
@@ -292,14 +282,14 @@ module MicrosoftGraph::Models::CallRecords
             @network_transport_protocol = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -463,14 +453,14 @@ module MicrosoftGraph::Models::CallRecords
             @trace_route_hops = value
         end
         ## 
-        ## Gets the wifiBand property value. The wifiBand property
+        ## Gets the wifiBand property value. 
         ## @return a wifi_band
         ## 
         def wifi_band
             return @wifi_band
         end
         ## 
-        ## Sets the wifiBand property value. The wifiBand property
+        ## Sets the wifiBand property value. 
         ## @param value Value to set for the wifiBand property.
         ## @return a void
         ## 
@@ -538,14 +528,14 @@ module MicrosoftGraph::Models::CallRecords
             @wifi_microsoft_driver_version = value
         end
         ## 
-        ## Gets the wifiRadioType property value. The wifiRadioType property
+        ## Gets the wifiRadioType property value. 
         ## @return a wifi_radio_type
         ## 
         def wifi_radio_type
             return @wifi_radio_type
         end
         ## 
-        ## Sets the wifiRadioType property value. The wifiRadioType property
+        ## Sets the wifiRadioType property value. 
         ## @param value Value to set for the wifiRadioType property.
         ## @return a void
         ## 

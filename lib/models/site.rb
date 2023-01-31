@@ -24,11 +24,7 @@ module MicrosoftGraph::Models
         ## 
         # The collection of drives (document libraries) under this site.
         @drives
-        ## 
-        # The error property
         @error
-        ## 
-        # The externalColumns property
         @external_columns
         ## 
         # Used to address any item contained in this site. This collection can't be enumerated.
@@ -171,14 +167,14 @@ module MicrosoftGraph::Models
             @drives = value
         end
         ## 
-        ## Gets the error property value. The error property
+        ## Gets the error property value. 
         ## @return a public_error
         ## 
         def error
             return @error
         end
         ## 
-        ## Sets the error property value. The error property
+        ## Sets the error property value. 
         ## @param value Value to set for the error property.
         ## @return a void
         ## 
@@ -186,14 +182,14 @@ module MicrosoftGraph::Models
             @error = value
         end
         ## 
-        ## Gets the externalColumns property value. The externalColumns property
+        ## Gets the externalColumns property value. 
         ## @return a column_definition
         ## 
         def external_columns
             return @external_columns
         end
         ## 
-        ## Sets the externalColumns property value. The externalColumns property
+        ## Sets the externalColumns property value. 
         ## @param value Value to set for the externalColumns property.
         ## @return a void
         ## 

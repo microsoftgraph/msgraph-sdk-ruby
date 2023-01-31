@@ -9,8 +9,6 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The user who shared the document.
@@ -18,8 +16,6 @@ module MicrosoftGraph::Models
         ## 
         # The date and time the file was last shared. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         @shared_date_time
-        ## 
-        # The sharingReference property
         @sharing_reference
         ## 
         # The subject with which the document was shared.
@@ -73,14 +69,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -132,14 +128,14 @@ module MicrosoftGraph::Models
             @shared_date_time = value
         end
         ## 
-        ## Gets the sharingReference property value. The sharingReference property
+        ## Gets the sharingReference property value. 
         ## @return a resource_reference
         ## 
         def sharing_reference
             return @sharing_reference
         end
         ## 
-        ## Sets the sharingReference property value. The sharingReference property
+        ## Sets the sharingReference property value. 
         ## @param value Value to set for the sharingReference property.
         ## @return a void
         ## 

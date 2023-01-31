@@ -17,8 +17,6 @@ module MicrosoftGraph::Models
         ## 
         # True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.
         @is_email_notification_enabled
-        ## 
-        # The role property
         @role
         ## 
         # The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.
@@ -123,14 +121,14 @@ module MicrosoftGraph::Models
             @is_email_notification_enabled = value
         end
         ## 
-        ## Gets the role property value. The role property
+        ## Gets the role property value. 
         ## @return a booking_staff_role
         ## 
         def role
             return @role
         end
         ## 
-        ## Sets the role property value. The role property
+        ## Sets the role property value. 
         ## @param value Value to set for the role property.
         ## @return a void
         ## 

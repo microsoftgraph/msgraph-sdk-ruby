@@ -17,14 +17,10 @@ module MicrosoftGraph::Models
         ## 
         # Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.
         @logout_url
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
         @redirect_uris
-        ## 
-        # The redirectUriSettings property
         @redirect_uri_settings
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -117,14 +113,14 @@ module MicrosoftGraph::Models
             @logout_url = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -147,14 +143,14 @@ module MicrosoftGraph::Models
             @redirect_uris = value
         end
         ## 
-        ## Gets the redirectUriSettings property value. The redirectUriSettings property
+        ## Gets the redirectUriSettings property value. 
         ## @return a redirect_uri_settings
         ## 
         def redirect_uri_settings
             return @redirect_uri_settings
         end
         ## 
-        ## Sets the redirectUriSettings property value. The redirectUriSettings property
+        ## Sets the redirectUriSettings property value. 
         ## @param value Value to set for the redirectUriSettings property.
         ## @return a void
         ## 

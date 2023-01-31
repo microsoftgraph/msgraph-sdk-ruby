@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class OrganizerMeetingInfo < MicrosoftGraph::Models::MeetingInfo
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The organizer property
         @organizer
         ## 
         ## Instantiates a new OrganizerMeetingInfo and sets the default values.
@@ -35,14 +33,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the organizer property value. The organizer property
+        ## Gets the organizer property value. 
         ## @return a identity_set
         ## 
         def organizer
             return @organizer
         end
         ## 
-        ## Sets the organizer property value. The organizer property
+        ## Sets the organizer property value. 
         ## @param value Value to set for the organizer property.
         ## @return a void
         ## 

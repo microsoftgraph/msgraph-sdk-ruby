@@ -20,14 +20,10 @@ module MicrosoftGraph::Models
         ## 
         # The role assignment type that's the target of policy rule. Allowed values are: Eligibility, Assignment.
         @level
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.
         @operations
-        ## 
-        # The targetObjects property
         @target_objects
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -136,14 +132,14 @@ module MicrosoftGraph::Models
             @level = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -182,14 +178,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the targetObjects property value. The targetObjects property
+        ## Gets the targetObjects property value. 
         ## @return a directory_object
         ## 
         def target_objects
             return @target_objects
         end
         ## 
-        ## Sets the targetObjects property value. The targetObjects property
+        ## Sets the targetObjects property value. 
         ## @param value Value to set for the targetObjects property.
         ## @return a void
         ## 

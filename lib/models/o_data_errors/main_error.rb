@@ -9,20 +9,10 @@ module MicrosoftGraph::Models::ODataErrors
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The code property
         @code
-        ## 
-        # The details property
         @details
-        ## 
-        # The innererror property
         @innererror
-        ## 
-        # The message property
         @message
-        ## 
-        # The target property
         @target
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -40,14 +30,14 @@ module MicrosoftGraph::Models::ODataErrors
             @additional_data = value
         end
         ## 
-        ## Gets the code property value. The code property
+        ## Gets the code property value. 
         ## @return a string
         ## 
         def code
             return @code
         end
         ## 
-        ## Sets the code property value. The code property
+        ## Sets the code property value. 
         ## @param value Value to set for the code property.
         ## @return a void
         ## 
@@ -71,14 +61,14 @@ module MicrosoftGraph::Models::ODataErrors
             return MainError.new
         end
         ## 
-        ## Gets the details property value. The details property
+        ## Gets the details property value. 
         ## @return a error_details
         ## 
         def details
             return @details
         end
         ## 
-        ## Sets the details property value. The details property
+        ## Sets the details property value. 
         ## @param value Value to set for the details property.
         ## @return a void
         ## 
@@ -99,14 +89,14 @@ module MicrosoftGraph::Models::ODataErrors
             }
         end
         ## 
-        ## Gets the innererror property value. The innererror property
+        ## Gets the innererror property value. 
         ## @return a inner_error
         ## 
         def innererror
             return @innererror
         end
         ## 
-        ## Sets the innererror property value. The innererror property
+        ## Sets the innererror property value. 
         ## @param value Value to set for the innererror property.
         ## @return a void
         ## 
@@ -114,14 +104,14 @@ module MicrosoftGraph::Models::ODataErrors
             @innererror = value
         end
         ## 
-        ## Gets the message property value. The message property
+        ## Gets the message property value. 
         ## @return a string
         ## 
         def message
             return @message
         end
         ## 
-        ## Sets the message property value. The message property
+        ## Sets the message property value. 
         ## @param value Value to set for the message property.
         ## @return a void
         ## 
@@ -143,14 +133,14 @@ module MicrosoftGraph::Models::ODataErrors
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the target property value. The target property
+        ## Gets the target property value. 
         ## @return a string
         ## 
         def target
             return @target
         end
         ## 
-        ## Sets the target property value. The target property
+        ## Sets the target property value. 
         ## @param value Value to set for the target property.
         ## @return a void
         ## 

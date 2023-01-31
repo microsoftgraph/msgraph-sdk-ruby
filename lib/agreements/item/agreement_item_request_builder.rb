@@ -52,11 +52,12 @@ module MicrosoftGraph::Agreements::Item
         end
         ## 
         ## Instantiates a new AgreementItemRequestBuilder and sets the default values.
+        ## @param agreementId key: id of agreement
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, agreement_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/agreements/{agreement%2Did}{?%24select}"
@@ -65,11 +66,11 @@ module MicrosoftGraph::Agreements::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from agreements by key (id)
+        ## Delete entity from agreements
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -90,11 +91,11 @@ module MicrosoftGraph::Agreements::Item
             return MicrosoftGraph::Agreements::Item::Files::Item::AgreementFileLocalizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Get entity from agreements by key (id)
+        ## Get entity from agreements by key
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of agreement
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -104,12 +105,12 @@ module MicrosoftGraph::Agreements::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Agreement.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update entity in agreements by key (id)
-        ## @param body The request body
+        ## Update entity in agreements
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of agreement
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -120,11 +121,11 @@ module MicrosoftGraph::Agreements::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Agreement.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from agreements by key (id)
+        ## Delete entity from agreements
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -136,11 +137,11 @@ module MicrosoftGraph::Agreements::Item
             return request_info
         end
         ## 
-        ## Get entity from agreements by key (id)
+        ## Get entity from agreements by key
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -154,12 +155,12 @@ module MicrosoftGraph::Agreements::Item
             return request_info
         end
         ## 
-        ## Update entity in agreements by key (id)
-        ## @param body The request body
+        ## Update entity in agreements
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
@@ -187,7 +188,7 @@ module MicrosoftGraph::Agreements::Item
         end
 
         ## 
-        # Get entity from agreements by key (id)
+        # Get entity from agreements by key
         class AgreementItemRequestBuilderGetQueryParameters
             
             ## 

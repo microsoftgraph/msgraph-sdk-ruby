@@ -20,8 +20,6 @@ module MicrosoftGraph::Models
         ## 
         # The tasks in this task list. Read-only. Nullable.
         @tasks
-        ## 
-        # The wellknownListName property
         @wellknown_list_name
         ## 
         ## Instantiates a new todoTaskList and sets the default values.
@@ -144,14 +142,14 @@ module MicrosoftGraph::Models
             @tasks = value
         end
         ## 
-        ## Gets the wellknownListName property value. The wellknownListName property
+        ## Gets the wellknownListName property value. 
         ## @return a wellknown_list_name
         ## 
         def wellknown_list_name
             return @wellknown_list_name
         end
         ## 
-        ## Sets the wellknownListName property value. The wellknownListName property
+        ## Sets the wellknownListName property value. 
         ## @param value Value to set for the wellknownListName property.
         ## @return a void
         ## 

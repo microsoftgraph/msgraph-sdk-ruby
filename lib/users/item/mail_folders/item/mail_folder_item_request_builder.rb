@@ -7,13 +7,13 @@ require_relative '../../item'
 require_relative '../mail_folders'
 require_relative './child_folders/child_folders_request_builder'
 require_relative './child_folders/item/mail_folder_item_request_builder'
-require_relative './copy/copy_request_builder'
 require_relative './item'
 require_relative './message_rules/item/message_rule_item_request_builder'
 require_relative './message_rules/message_rules_request_builder'
 require_relative './messages/item/message_item_request_builder'
 require_relative './messages/messages_request_builder'
-require_relative './move/move_request_builder'
+require_relative './microsoft_graph_copy/copy_request_builder'
+require_relative './microsoft_graph_move/move_request_builder'
 require_relative './multi_value_extended_properties/item/multi_value_legacy_extended_property_item_request_builder'
 require_relative './multi_value_extended_properties/multi_value_extended_properties_request_builder'
 require_relative './single_value_extended_properties/item/single_value_legacy_extended_property_item_request_builder'
@@ -30,11 +30,6 @@ module MicrosoftGraph::Users::Item::MailFolders::Item
             return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::ChildFoldersRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the copy method.
-        def copy()
-            return MicrosoftGraph::Users::Item::MailFolders::Item::Copy::CopyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.
         def message_rules()
             return MicrosoftGraph::Users::Item::MailFolders::Item::MessageRules::MessageRulesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -45,9 +40,14 @@ module MicrosoftGraph::Users::Item::MailFolders::Item
             return MicrosoftGraph::Users::Item::MailFolders::Item::Messages::MessagesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the copy method.
+        def microsoft_graph_copy()
+            return MicrosoftGraph::Users::Item::MailFolders::Item::MicrosoftGraphCopy::CopyRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the move method.
-        def move()
-            return MicrosoftGraph::Users::Item::MailFolders::Item::Move::MoveRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_move()
+            return MicrosoftGraph::Users::Item::MailFolders::Item::MicrosoftGraphMove::MoveRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.mailFolder entity.
@@ -81,11 +81,12 @@ module MicrosoftGraph::Users::Item::MailFolders::Item
         end
         ## 
         ## Instantiates a new MailFolderItemRequestBuilder and sets the default values.
+        ## @param mailFolderId key: id of mailFolder
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, mail_folder_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}{?%24select}"
@@ -98,7 +99,7 @@ module MicrosoftGraph::Users::Item::MailFolders::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -112,7 +113,7 @@ module MicrosoftGraph::Users::Item::MailFolders::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of mail_folder
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -156,11 +157,11 @@ module MicrosoftGraph::Users::Item::MailFolders::Item
         end
         ## 
         ## Update the navigation property mailFolders in users
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of mail_folder
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -186,7 +187,7 @@ module MicrosoftGraph::Users::Item::MailFolders::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -202,7 +203,7 @@ module MicrosoftGraph::Users::Item::MailFolders::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -217,11 +218,11 @@ module MicrosoftGraph::Users::Item::MailFolders::Item
         end
         ## 
         ## Update the navigation property mailFolders in users
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

@@ -15,8 +15,6 @@ module MicrosoftGraph::Models
         ## 
         # The date and time at which the error occurred.
         @occurred_date_time
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
@@ -99,14 +97,14 @@ module MicrosoftGraph::Models
             @occurred_date_time = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

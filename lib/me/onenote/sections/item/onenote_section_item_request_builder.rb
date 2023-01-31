@@ -5,9 +5,9 @@ require_relative '../../../../models/onenote_section'
 require_relative '../../../me'
 require_relative '../../onenote'
 require_relative '../sections'
-require_relative './copy_to_notebook/copy_to_notebook_request_builder'
-require_relative './copy_to_section_group/copy_to_section_group_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_copy_to_notebook/copy_to_notebook_request_builder'
+require_relative './microsoft_graph_copy_to_section_group/copy_to_section_group_request_builder'
 require_relative './pages/item/onenote_page_item_request_builder'
 require_relative './pages/pages_request_builder'
 require_relative './parent_notebook/parent_notebook_request_builder'
@@ -20,13 +20,13 @@ module MicrosoftGraph::Me::Onenote::Sections::Item
         
         ## 
         # Provides operations to call the copyToNotebook method.
-        def copy_to_notebook()
-            return MicrosoftGraph::Me::Onenote::Sections::Item::CopyToNotebook::CopyToNotebookRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_copy_to_notebook()
+            return MicrosoftGraph::Me::Onenote::Sections::Item::MicrosoftGraphCopyToNotebook::CopyToNotebookRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the copyToSectionGroup method.
-        def copy_to_section_group()
-            return MicrosoftGraph::Me::Onenote::Sections::Item::CopyToSectionGroup::CopyToSectionGroupRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_copy_to_section_group()
+            return MicrosoftGraph::Me::Onenote::Sections::Item::MicrosoftGraphCopyToSectionGroup::CopyToSectionGroupRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.
@@ -54,11 +54,12 @@ module MicrosoftGraph::Me::Onenote::Sections::Item
         @url_template
         ## 
         ## Instantiates a new OnenoteSectionItemRequestBuilder and sets the default values.
+        ## @param onenoteSectionId key: id of onenoteSection
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, onenote_section_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/me/onenote/sections/{onenoteSection%2Did}{?%24select,%24expand}"
@@ -71,7 +72,7 @@ module MicrosoftGraph::Me::Onenote::Sections::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -85,7 +86,7 @@ module MicrosoftGraph::Me::Onenote::Sections::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of onenote_section
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -107,11 +108,11 @@ module MicrosoftGraph::Me::Onenote::Sections::Item
         end
         ## 
         ## Update the navigation property sections in me
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of onenote_section
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -126,7 +127,7 @@ module MicrosoftGraph::Me::Onenote::Sections::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -142,7 +143,7 @@ module MicrosoftGraph::Me::Onenote::Sections::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -157,11 +158,11 @@ module MicrosoftGraph::Me::Onenote::Sections::Item
         end
         ## 
         ## Update the navigation property sections in me
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

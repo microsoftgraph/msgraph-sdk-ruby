@@ -14,11 +14,7 @@ module MicrosoftGraph::Models
         ## 
         # The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.
         @mime_type
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The processingMetadata property
         @processing_metadata
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -94,14 +90,14 @@ module MicrosoftGraph::Models
             @mime_type = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -109,14 +105,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the processingMetadata property value. The processingMetadata property
+        ## Gets the processingMetadata property value. 
         ## @return a boolean
         ## 
         def processing_metadata
             return @processing_metadata
         end
         ## 
-        ## Sets the processingMetadata property value. The processingMetadata property
+        ## Sets the processingMetadata property value. 
         ## @param value Value to set for the processingMetadata property.
         ## @return a void
         ## 

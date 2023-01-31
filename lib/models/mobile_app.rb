@@ -120,6 +120,8 @@ module MicrosoftGraph::Models
                         return AndroidLobApp.new
                     when "#microsoft.graph.androidStoreApp"
                         return AndroidStoreApp.new
+                    when "#microsoft.graph.iosiPadOSWebClip"
+                        return IosiPadOSWebClip.new
                     when "#microsoft.graph.iosLobApp"
                         return IosLobApp.new
                     when "#microsoft.graph.iosStoreApp"
@@ -158,6 +160,8 @@ module MicrosoftGraph::Models
                         return WindowsMobileMSI.new
                     when "#microsoft.graph.windowsUniversalAppX"
                         return WindowsUniversalAppX.new
+                    when "#microsoft.graph.windowsWebApp"
+                        return WindowsWebApp.new
                 end
             end
             return MobileApp.new

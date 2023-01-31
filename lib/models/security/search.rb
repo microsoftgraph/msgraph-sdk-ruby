@@ -7,26 +7,12 @@ require_relative './security'
 module MicrosoftGraph::Models::Security
     class Search < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The contentQuery property
         @content_query
-        ## 
-        # The createdBy property
         @created_by
-        ## 
-        # The createdDateTime property
         @created_date_time
-        ## 
-        # The description property
         @description
-        ## 
-        # The displayName property
         @display_name
-        ## 
-        # The lastModifiedBy property
         @last_modified_by
-        ## 
-        # The lastModifiedDateTime property
         @last_modified_date_time
         ## 
         ## Instantiates a new search and sets the default values.
@@ -36,14 +22,14 @@ module MicrosoftGraph::Models::Security
             super
         end
         ## 
-        ## Gets the contentQuery property value. The contentQuery property
+        ## Gets the contentQuery property value. 
         ## @return a string
         ## 
         def content_query
             return @content_query
         end
         ## 
-        ## Sets the contentQuery property value. The contentQuery property
+        ## Sets the contentQuery property value. 
         ## @param value Value to set for the contentQuery property.
         ## @return a void
         ## 
@@ -51,14 +37,14 @@ module MicrosoftGraph::Models::Security
             @content_query = value
         end
         ## 
-        ## Gets the createdBy property value. The createdBy property
+        ## Gets the createdBy property value. 
         ## @return a identity_set
         ## 
         def created_by
             return @created_by
         end
         ## 
-        ## Sets the createdBy property value. The createdBy property
+        ## Sets the createdBy property value. 
         ## @param value Value to set for the createdBy property.
         ## @return a void
         ## 
@@ -66,14 +52,14 @@ module MicrosoftGraph::Models::Security
             @created_by = value
         end
         ## 
-        ## Gets the createdDateTime property value. The createdDateTime property
+        ## Gets the createdDateTime property value. 
         ## @return a date_time
         ## 
         def created_date_time
             return @created_date_time
         end
         ## 
-        ## Sets the createdDateTime property value. The createdDateTime property
+        ## Sets the createdDateTime property value. 
         ## @param value Value to set for the createdDateTime property.
         ## @return a void
         ## 
@@ -100,14 +86,14 @@ module MicrosoftGraph::Models::Security
             return Search.new
         end
         ## 
-        ## Gets the description property value. The description property
+        ## Gets the description property value. 
         ## @return a string
         ## 
         def description
             return @description
         end
         ## 
-        ## Sets the description property value. The description property
+        ## Sets the description property value. 
         ## @param value Value to set for the description property.
         ## @return a void
         ## 
@@ -115,14 +101,14 @@ module MicrosoftGraph::Models::Security
             @description = value
         end
         ## 
-        ## Gets the displayName property value. The displayName property
+        ## Gets the displayName property value. 
         ## @return a string
         ## 
         def display_name
             return @display_name
         end
         ## 
-        ## Sets the displayName property value. The displayName property
+        ## Sets the displayName property value. 
         ## @param value Value to set for the displayName property.
         ## @return a void
         ## 
@@ -145,14 +131,14 @@ module MicrosoftGraph::Models::Security
             })
         end
         ## 
-        ## Gets the lastModifiedBy property value. The lastModifiedBy property
+        ## Gets the lastModifiedBy property value. 
         ## @return a identity_set
         ## 
         def last_modified_by
             return @last_modified_by
         end
         ## 
-        ## Sets the lastModifiedBy property value. The lastModifiedBy property
+        ## Sets the lastModifiedBy property value. 
         ## @param value Value to set for the lastModifiedBy property.
         ## @return a void
         ## 
@@ -160,14 +146,14 @@ module MicrosoftGraph::Models::Security
             @last_modified_by = value
         end
         ## 
-        ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+        ## Gets the lastModifiedDateTime property value. 
         ## @return a date_time
         ## 
         def last_modified_date_time
             return @last_modified_date_time
         end
         ## 
-        ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+        ## Sets the lastModifiedDateTime property value. 
         ## @param value Value to set for the lastModifiedDateTime property.
         ## @return a void
         ## 

@@ -8,8 +8,8 @@ require_relative '../../../../sites'
 require_relative '../../../item'
 require_relative '../../onenote'
 require_relative '../notebooks'
-require_relative './copy_notebook/copy_notebook_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_copy_notebook/copy_notebook_request_builder'
 require_relative './section_groups/item/section_group_item_request_builder'
 require_relative './section_groups/section_groups_request_builder'
 require_relative './sections/item/onenote_section_item_request_builder'
@@ -22,8 +22,8 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::Item
         
         ## 
         # Provides operations to call the copyNotebook method.
-        def copy_notebook()
-            return MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::Item::CopyNotebook::CopyNotebookRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_copy_notebook()
+            return MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::Item::MicrosoftGraphCopyNotebook::CopyNotebookRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -46,11 +46,12 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::Item
         @url_template
         ## 
         ## Instantiates a new NotebookItemRequestBuilder and sets the default values.
+        ## @param notebookId key: id of notebook
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, notebook_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/notebooks/{notebook%2Did}{?%24select,%24expand}"
@@ -63,7 +64,7 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -77,7 +78,7 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of notebook
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -88,11 +89,11 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::Item
         end
         ## 
         ## Update the navigation property notebooks in groups
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of notebook
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -129,7 +130,7 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -145,7 +146,7 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -160,11 +161,11 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::Item
         end
         ## 
         ## Update the navigation property notebooks in groups
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

@@ -8,14 +8,10 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # An incremental identifier used for ordering DTMF events.
         @sequence_id
-        ## 
-        # The tone property
         @tone
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -60,14 +56,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -102,14 +98,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the tone property value. The tone property
+        ## Gets the tone property value. 
         ## @return a tone
         ## 
         def tone
             return @tone
         end
         ## 
-        ## Sets the tone property value. The tone property
+        ## Sets the tone property value. 
         ## @param value Value to set for the tone property.
         ## @return a void
         ## 

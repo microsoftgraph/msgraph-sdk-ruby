@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # A collection of the unique identifiers for plans that have been disabled.
         @disabled_plans
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The unique identifier for the SKU.
@@ -75,14 +73,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

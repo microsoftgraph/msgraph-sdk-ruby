@@ -14,11 +14,7 @@ module MicrosoftGraph::Models
         ## 
         # Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
         @invited_by
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The redeemedBy property
         @redeemed_by
         ## 
         # If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
@@ -98,14 +94,14 @@ module MicrosoftGraph::Models
             @invited_by = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -113,14 +109,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the redeemedBy property value. The redeemedBy property
+        ## Gets the redeemedBy property value. 
         ## @return a string
         ## 
         def redeemed_by
             return @redeemed_by
         end
         ## 
-        ## Sets the redeemedBy property value. The redeemedBy property
+        ## Sets the redeemedBy property value. 
         ## @param value Value to set for the redeemedBy property.
         ## @return a void
         ## 

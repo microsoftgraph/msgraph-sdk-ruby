@@ -3,9 +3,9 @@ require_relative '../../microsoft_graph'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/security_reports_root'
 require_relative '../reports'
-require_relative './get_attack_simulation_repeat_offenders/get_attack_simulation_repeat_offenders_request_builder'
-require_relative './get_attack_simulation_simulation_user_coverage/get_attack_simulation_simulation_user_coverage_request_builder'
-require_relative './get_attack_simulation_training_user_coverage/get_attack_simulation_training_user_coverage_request_builder'
+require_relative './microsoft_graph_get_attack_simulation_repeat_offenders/get_attack_simulation_repeat_offenders_request_builder'
+require_relative './microsoft_graph_get_attack_simulation_simulation_user_coverage/get_attack_simulation_simulation_user_coverage_request_builder'
+require_relative './microsoft_graph_get_attack_simulation_training_user_coverage/get_attack_simulation_training_user_coverage_request_builder'
 require_relative './security'
 
 module MicrosoftGraph::Reports::Security
@@ -13,6 +13,21 @@ module MicrosoftGraph::Reports::Security
     # Provides operations to manage the security property of the microsoft.graph.reportRoot entity.
     class SecurityRequestBuilder
         
+        ## 
+        # Provides operations to call the getAttackSimulationRepeatOffenders method.
+        def microsoft_graph_get_attack_simulation_repeat_offenders()
+            return MicrosoftGraph::Reports::Security::MicrosoftGraphGetAttackSimulationRepeatOffenders::GetAttackSimulationRepeatOffendersRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getAttackSimulationSimulationUserCoverage method.
+        def microsoft_graph_get_attack_simulation_simulation_user_coverage()
+            return MicrosoftGraph::Reports::Security::MicrosoftGraphGetAttackSimulationSimulationUserCoverage::GetAttackSimulationSimulationUserCoverageRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getAttackSimulationTrainingUserCoverage method.
+        def microsoft_graph_get_attack_simulation_training_user_coverage()
+            return MicrosoftGraph::Reports::Security::MicrosoftGraphGetAttackSimulationTrainingUserCoverage::GetAttackSimulationTrainingUserCoverageRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Path parameters for the request
         @path_parameters
@@ -41,7 +56,7 @@ module MicrosoftGraph::Reports::Security
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -55,7 +70,7 @@ module MicrosoftGraph::Reports::Security
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of security_reports_root
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -65,33 +80,12 @@ module MicrosoftGraph::Reports::Security
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityReportsRoot.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Provides operations to call the getAttackSimulationRepeatOffenders method.
-        ## @return a get_attack_simulation_repeat_offenders_request_builder
-        ## 
-        def get_attack_simulation_repeat_offenders()
-            return GetAttackSimulationRepeatOffendersRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the getAttackSimulationSimulationUserCoverage method.
-        ## @return a get_attack_simulation_simulation_user_coverage_request_builder
-        ## 
-        def get_attack_simulation_simulation_user_coverage()
-            return GetAttackSimulationSimulationUserCoverageRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the getAttackSimulationTrainingUserCoverage method.
-        ## @return a get_attack_simulation_training_user_coverage_request_builder
-        ## 
-        def get_attack_simulation_training_user_coverage()
-            return GetAttackSimulationTrainingUserCoverageRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## Update the navigation property security in reports
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of security_reports_root
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -106,7 +100,7 @@ module MicrosoftGraph::Reports::Security
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -122,7 +116,7 @@ module MicrosoftGraph::Reports::Security
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -137,11 +131,11 @@ module MicrosoftGraph::Reports::Security
         end
         ## 
         ## Update the navigation property security in reports
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

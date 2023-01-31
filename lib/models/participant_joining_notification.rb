@@ -5,18 +5,16 @@ require_relative './models'
 module MicrosoftGraph::Models
     class ParticipantJoiningNotification < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The call property
         @call
         ## 
-        ## Gets the call property value. The call property
+        ## Gets the call property value. 
         ## @return a call
         ## 
         def call
             return @call
         end
         ## 
-        ## Sets the call property value. The call property
+        ## Sets the call property value. 
         ## @param value Value to set for the call property.
         ## @return a void
         ## 

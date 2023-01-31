@@ -8,14 +8,10 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The bucketDefinition property
         @bucket_definition
         ## 
         # Computes aggregation on the field while the field exists in current entity type. Required.
         @field
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The number of searchBucket resources to be returned. This is not required when the range is provided manually in the search request. Optional.
@@ -36,14 +32,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the bucketDefinition property value. The bucketDefinition property
+        ## Gets the bucketDefinition property value. 
         ## @return a bucket_aggregation_definition
         ## 
         def bucket_definition
             return @bucket_definition
         end
         ## 
-        ## Sets the bucketDefinition property value. The bucketDefinition property
+        ## Sets the bucketDefinition property value. 
         ## @param value Value to set for the bucketDefinition property.
         ## @return a void
         ## 
@@ -94,14 +90,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

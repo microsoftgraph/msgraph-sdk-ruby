@@ -23,8 +23,6 @@ module MicrosoftGraph::Models
         ## 
         # ID of principal in syncing system.
         @external_principal_id
-        ## 
-        # The fax property
         @fax
         ## 
         # Highest grade taught.
@@ -155,14 +153,14 @@ module MicrosoftGraph::Models
             @external_principal_id = value
         end
         ## 
-        ## Gets the fax property value. The fax property
+        ## Gets the fax property value. 
         ## @return a string
         ## 
         def fax
             return @fax
         end
         ## 
-        ## Sets the fax property value. The fax property
+        ## Sets the fax property value. 
         ## @param value Value to set for the fax property.
         ## @return a void
         ## 

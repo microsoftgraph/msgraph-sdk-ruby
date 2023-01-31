@@ -21,8 +21,6 @@ module MicrosoftGraph::Models
         ## 
         # The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
         @extensions
-        ## 
-        # The from property
         @from
         ## 
         # Indicates whether the post has at least one attachment. This is a default property.
@@ -76,7 +74,7 @@ module MicrosoftGraph::Models
             @body = value
         end
         ## 
-        ## Instantiates a new Post and sets the default values.
+        ## Instantiates a new post and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -138,14 +136,14 @@ module MicrosoftGraph::Models
             @extensions = value
         end
         ## 
-        ## Gets the from property value. The from property
+        ## Gets the from property value. 
         ## @return a recipient
         ## 
         def from
             return @from
         end
         ## 
-        ## Sets the from property value. The from property
+        ## Sets the from property value. 
         ## @param value Value to set for the from property.
         ## @return a void
         ## 

@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # A single entity that is included in this feature.
         @include_target
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn't been explicitly set and uses the default behavior of Azure AD for the setting. The default value is disabled.
@@ -94,14 +92,14 @@ module MicrosoftGraph::Models
             @include_target = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -5,11 +5,7 @@ require_relative './models'
 module MicrosoftGraph::Models
     class WorkbookFunctionResult < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The error property
         @error
-        ## 
-        # The value property
         @value
         ## 
         ## Instantiates a new WorkbookFunctionResult and sets the default values.
@@ -28,14 +24,14 @@ module MicrosoftGraph::Models
             return WorkbookFunctionResult.new
         end
         ## 
-        ## Gets the error property value. The error property
+        ## Gets the error property value. 
         ## @return a string
         ## 
         def error
             return @error
         end
         ## 
-        ## Sets the error property value. The error property
+        ## Sets the error property value. 
         ## @param value Value to set for the error property.
         ## @return a void
         ## 
@@ -64,14 +60,14 @@ module MicrosoftGraph::Models
             writer.write_object_value("value", @value)
         end
         ## 
-        ## Gets the value property value. The value property
+        ## Gets the value property value. 
         ## @return a json
         ## 
         def value
             return @value
         end
         ## 
-        ## Sets the value property value. The value property
+        ## Sets the value property value. 
         ## @param value Value to set for the value property.
         ## @return a void
         ## 

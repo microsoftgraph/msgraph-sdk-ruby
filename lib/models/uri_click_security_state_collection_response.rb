@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class UriClickSecurityStateCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The value property
         @value
         ## 
         ## Instantiates a new UriClickSecurityStateCollectionResponse and sets the default values.
@@ -44,14 +42,14 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("value", @value)
         end
         ## 
-        ## Gets the value property value. The value property
+        ## Gets the value property value. 
         ## @return a uri_click_security_state
         ## 
         def value
             return @value
         end
         ## 
-        ## Sets the value property value. The value property
+        ## Sets the value property value. 
         ## @param value Value to set for the value property.
         ## @return a void
         ## 

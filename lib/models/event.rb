@@ -39,98 +39,42 @@ module MicrosoftGraph::Models
         ## 
         # A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
         @i_cal_u_id
-        ## 
-        # The importance property
         @importance
         ## 
         # The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
         @instances
-        ## 
-        # The isAllDay property
         @is_all_day
-        ## 
-        # The isCancelled property
         @is_cancelled
-        ## 
-        # The isDraft property
         @is_draft
-        ## 
-        # The isOnlineMeeting property
         @is_online_meeting
-        ## 
-        # The isOrganizer property
         @is_organizer
-        ## 
-        # The isReminderOn property
         @is_reminder_on
-        ## 
-        # The location property
         @location
-        ## 
-        # The locations property
         @locations
         ## 
         # The collection of multi-value extended properties defined for the event. Read-only. Nullable.
         @multi_value_extended_properties
-        ## 
-        # The onlineMeeting property
         @online_meeting
-        ## 
-        # The onlineMeetingProvider property
         @online_meeting_provider
-        ## 
-        # The onlineMeetingUrl property
         @online_meeting_url
-        ## 
-        # The organizer property
         @organizer
-        ## 
-        # The originalEndTimeZone property
         @original_end_time_zone
-        ## 
-        # The originalStart property
         @original_start
-        ## 
-        # The originalStartTimeZone property
         @original_start_time_zone
-        ## 
-        # The recurrence property
         @recurrence
-        ## 
-        # The reminderMinutesBeforeStart property
         @reminder_minutes_before_start
-        ## 
-        # The responseRequested property
         @response_requested
-        ## 
-        # The responseStatus property
         @response_status
-        ## 
-        # The sensitivity property
         @sensitivity
-        ## 
-        # The seriesMasterId property
         @series_master_id
-        ## 
-        # The showAs property
         @show_as
         ## 
         # The collection of single-value extended properties defined for the event. Read-only. Nullable.
         @single_value_extended_properties
-        ## 
-        # The start property
         @start
-        ## 
-        # The subject property
         @subject
-        ## 
-        # The transactionId property
         @transaction_id
-        ## 
-        # The type property
         @type
-        ## 
-        # The webLink property
         @web_link
         ## 
         ## Gets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
@@ -365,14 +309,14 @@ module MicrosoftGraph::Models
             @i_cal_u_id = value
         end
         ## 
-        ## Gets the importance property value. The importance property
+        ## Gets the importance property value. 
         ## @return a importance
         ## 
         def importance
             return @importance
         end
         ## 
-        ## Sets the importance property value. The importance property
+        ## Sets the importance property value. 
         ## @param value Value to set for the importance property.
         ## @return a void
         ## 
@@ -395,14 +339,14 @@ module MicrosoftGraph::Models
             @instances = value
         end
         ## 
-        ## Gets the isAllDay property value. The isAllDay property
+        ## Gets the isAllDay property value. 
         ## @return a boolean
         ## 
         def is_all_day
             return @is_all_day
         end
         ## 
-        ## Sets the isAllDay property value. The isAllDay property
+        ## Sets the isAllDay property value. 
         ## @param value Value to set for the isAllDay property.
         ## @return a void
         ## 
@@ -410,14 +354,14 @@ module MicrosoftGraph::Models
             @is_all_day = value
         end
         ## 
-        ## Gets the isCancelled property value. The isCancelled property
+        ## Gets the isCancelled property value. 
         ## @return a boolean
         ## 
         def is_cancelled
             return @is_cancelled
         end
         ## 
-        ## Sets the isCancelled property value. The isCancelled property
+        ## Sets the isCancelled property value. 
         ## @param value Value to set for the isCancelled property.
         ## @return a void
         ## 
@@ -425,14 +369,14 @@ module MicrosoftGraph::Models
             @is_cancelled = value
         end
         ## 
-        ## Gets the isDraft property value. The isDraft property
+        ## Gets the isDraft property value. 
         ## @return a boolean
         ## 
         def is_draft
             return @is_draft
         end
         ## 
-        ## Sets the isDraft property value. The isDraft property
+        ## Sets the isDraft property value. 
         ## @param value Value to set for the isDraft property.
         ## @return a void
         ## 
@@ -440,14 +384,14 @@ module MicrosoftGraph::Models
             @is_draft = value
         end
         ## 
-        ## Gets the isOnlineMeeting property value. The isOnlineMeeting property
+        ## Gets the isOnlineMeeting property value. 
         ## @return a boolean
         ## 
         def is_online_meeting
             return @is_online_meeting
         end
         ## 
-        ## Sets the isOnlineMeeting property value. The isOnlineMeeting property
+        ## Sets the isOnlineMeeting property value. 
         ## @param value Value to set for the isOnlineMeeting property.
         ## @return a void
         ## 
@@ -455,14 +399,14 @@ module MicrosoftGraph::Models
             @is_online_meeting = value
         end
         ## 
-        ## Gets the isOrganizer property value. The isOrganizer property
+        ## Gets the isOrganizer property value. 
         ## @return a boolean
         ## 
         def is_organizer
             return @is_organizer
         end
         ## 
-        ## Sets the isOrganizer property value. The isOrganizer property
+        ## Sets the isOrganizer property value. 
         ## @param value Value to set for the isOrganizer property.
         ## @return a void
         ## 
@@ -470,14 +414,14 @@ module MicrosoftGraph::Models
             @is_organizer = value
         end
         ## 
-        ## Gets the isReminderOn property value. The isReminderOn property
+        ## Gets the isReminderOn property value. 
         ## @return a boolean
         ## 
         def is_reminder_on
             return @is_reminder_on
         end
         ## 
-        ## Sets the isReminderOn property value. The isReminderOn property
+        ## Sets the isReminderOn property value. 
         ## @param value Value to set for the isReminderOn property.
         ## @return a void
         ## 
@@ -485,14 +429,14 @@ module MicrosoftGraph::Models
             @is_reminder_on = value
         end
         ## 
-        ## Gets the location property value. The location property
+        ## Gets the location property value. 
         ## @return a location
         ## 
         def location
             return @location
         end
         ## 
-        ## Sets the location property value. The location property
+        ## Sets the location property value. 
         ## @param value Value to set for the location property.
         ## @return a void
         ## 
@@ -500,14 +444,14 @@ module MicrosoftGraph::Models
             @location = value
         end
         ## 
-        ## Gets the locations property value. The locations property
+        ## Gets the locations property value. 
         ## @return a location
         ## 
         def locations
             return @locations
         end
         ## 
-        ## Sets the locations property value. The locations property
+        ## Sets the locations property value. 
         ## @param value Value to set for the locations property.
         ## @return a void
         ## 
@@ -530,14 +474,14 @@ module MicrosoftGraph::Models
             @multi_value_extended_properties = value
         end
         ## 
-        ## Gets the onlineMeeting property value. The onlineMeeting property
+        ## Gets the onlineMeeting property value. 
         ## @return a online_meeting_info
         ## 
         def online_meeting
             return @online_meeting
         end
         ## 
-        ## Sets the onlineMeeting property value. The onlineMeeting property
+        ## Sets the onlineMeeting property value. 
         ## @param value Value to set for the onlineMeeting property.
         ## @return a void
         ## 
@@ -545,14 +489,14 @@ module MicrosoftGraph::Models
             @online_meeting = value
         end
         ## 
-        ## Gets the onlineMeetingProvider property value. The onlineMeetingProvider property
+        ## Gets the onlineMeetingProvider property value. 
         ## @return a online_meeting_provider_type
         ## 
         def online_meeting_provider
             return @online_meeting_provider
         end
         ## 
-        ## Sets the onlineMeetingProvider property value. The onlineMeetingProvider property
+        ## Sets the onlineMeetingProvider property value. 
         ## @param value Value to set for the onlineMeetingProvider property.
         ## @return a void
         ## 
@@ -560,14 +504,14 @@ module MicrosoftGraph::Models
             @online_meeting_provider = value
         end
         ## 
-        ## Gets the onlineMeetingUrl property value. The onlineMeetingUrl property
+        ## Gets the onlineMeetingUrl property value. 
         ## @return a string
         ## 
         def online_meeting_url
             return @online_meeting_url
         end
         ## 
-        ## Sets the onlineMeetingUrl property value. The onlineMeetingUrl property
+        ## Sets the onlineMeetingUrl property value. 
         ## @param value Value to set for the onlineMeetingUrl property.
         ## @return a void
         ## 
@@ -575,14 +519,14 @@ module MicrosoftGraph::Models
             @online_meeting_url = value
         end
         ## 
-        ## Gets the organizer property value. The organizer property
+        ## Gets the organizer property value. 
         ## @return a recipient
         ## 
         def organizer
             return @organizer
         end
         ## 
-        ## Sets the organizer property value. The organizer property
+        ## Sets the organizer property value. 
         ## @param value Value to set for the organizer property.
         ## @return a void
         ## 
@@ -590,14 +534,14 @@ module MicrosoftGraph::Models
             @organizer = value
         end
         ## 
-        ## Gets the originalEndTimeZone property value. The originalEndTimeZone property
+        ## Gets the originalEndTimeZone property value. 
         ## @return a string
         ## 
         def original_end_time_zone
             return @original_end_time_zone
         end
         ## 
-        ## Sets the originalEndTimeZone property value. The originalEndTimeZone property
+        ## Sets the originalEndTimeZone property value. 
         ## @param value Value to set for the originalEndTimeZone property.
         ## @return a void
         ## 
@@ -605,14 +549,14 @@ module MicrosoftGraph::Models
             @original_end_time_zone = value
         end
         ## 
-        ## Gets the originalStart property value. The originalStart property
+        ## Gets the originalStart property value. 
         ## @return a date_time
         ## 
         def original_start
             return @original_start
         end
         ## 
-        ## Sets the originalStart property value. The originalStart property
+        ## Sets the originalStart property value. 
         ## @param value Value to set for the originalStart property.
         ## @return a void
         ## 
@@ -620,14 +564,14 @@ module MicrosoftGraph::Models
             @original_start = value
         end
         ## 
-        ## Gets the originalStartTimeZone property value. The originalStartTimeZone property
+        ## Gets the originalStartTimeZone property value. 
         ## @return a string
         ## 
         def original_start_time_zone
             return @original_start_time_zone
         end
         ## 
-        ## Sets the originalStartTimeZone property value. The originalStartTimeZone property
+        ## Sets the originalStartTimeZone property value. 
         ## @param value Value to set for the originalStartTimeZone property.
         ## @return a void
         ## 
@@ -635,14 +579,14 @@ module MicrosoftGraph::Models
             @original_start_time_zone = value
         end
         ## 
-        ## Gets the recurrence property value. The recurrence property
+        ## Gets the recurrence property value. 
         ## @return a patterned_recurrence
         ## 
         def recurrence
             return @recurrence
         end
         ## 
-        ## Sets the recurrence property value. The recurrence property
+        ## Sets the recurrence property value. 
         ## @param value Value to set for the recurrence property.
         ## @return a void
         ## 
@@ -650,14 +594,14 @@ module MicrosoftGraph::Models
             @recurrence = value
         end
         ## 
-        ## Gets the reminderMinutesBeforeStart property value. The reminderMinutesBeforeStart property
+        ## Gets the reminderMinutesBeforeStart property value. 
         ## @return a integer
         ## 
         def reminder_minutes_before_start
             return @reminder_minutes_before_start
         end
         ## 
-        ## Sets the reminderMinutesBeforeStart property value. The reminderMinutesBeforeStart property
+        ## Sets the reminderMinutesBeforeStart property value. 
         ## @param value Value to set for the reminderMinutesBeforeStart property.
         ## @return a void
         ## 
@@ -665,14 +609,14 @@ module MicrosoftGraph::Models
             @reminder_minutes_before_start = value
         end
         ## 
-        ## Gets the responseRequested property value. The responseRequested property
+        ## Gets the responseRequested property value. 
         ## @return a boolean
         ## 
         def response_requested
             return @response_requested
         end
         ## 
-        ## Sets the responseRequested property value. The responseRequested property
+        ## Sets the responseRequested property value. 
         ## @param value Value to set for the responseRequested property.
         ## @return a void
         ## 
@@ -680,14 +624,14 @@ module MicrosoftGraph::Models
             @response_requested = value
         end
         ## 
-        ## Gets the responseStatus property value. The responseStatus property
+        ## Gets the responseStatus property value. 
         ## @return a response_status
         ## 
         def response_status
             return @response_status
         end
         ## 
-        ## Sets the responseStatus property value. The responseStatus property
+        ## Sets the responseStatus property value. 
         ## @param value Value to set for the responseStatus property.
         ## @return a void
         ## 
@@ -695,14 +639,14 @@ module MicrosoftGraph::Models
             @response_status = value
         end
         ## 
-        ## Gets the sensitivity property value. The sensitivity property
+        ## Gets the sensitivity property value. 
         ## @return a sensitivity
         ## 
         def sensitivity
             return @sensitivity
         end
         ## 
-        ## Sets the sensitivity property value. The sensitivity property
+        ## Sets the sensitivity property value. 
         ## @param value Value to set for the sensitivity property.
         ## @return a void
         ## 
@@ -761,14 +705,14 @@ module MicrosoftGraph::Models
             writer.write_string_value("webLink", @web_link)
         end
         ## 
-        ## Gets the seriesMasterId property value. The seriesMasterId property
+        ## Gets the seriesMasterId property value. 
         ## @return a string
         ## 
         def series_master_id
             return @series_master_id
         end
         ## 
-        ## Sets the seriesMasterId property value. The seriesMasterId property
+        ## Sets the seriesMasterId property value. 
         ## @param value Value to set for the seriesMasterId property.
         ## @return a void
         ## 
@@ -776,14 +720,14 @@ module MicrosoftGraph::Models
             @series_master_id = value
         end
         ## 
-        ## Gets the showAs property value. The showAs property
+        ## Gets the showAs property value. 
         ## @return a free_busy_status
         ## 
         def show_as
             return @show_as
         end
         ## 
-        ## Sets the showAs property value. The showAs property
+        ## Sets the showAs property value. 
         ## @param value Value to set for the showAs property.
         ## @return a void
         ## 
@@ -806,14 +750,14 @@ module MicrosoftGraph::Models
             @single_value_extended_properties = value
         end
         ## 
-        ## Gets the start property value. The start property
+        ## Gets the start property value. 
         ## @return a date_time_time_zone
         ## 
         def start
             return @start
         end
         ## 
-        ## Sets the start property value. The start property
+        ## Sets the start property value. 
         ## @param value Value to set for the start property.
         ## @return a void
         ## 
@@ -821,14 +765,14 @@ module MicrosoftGraph::Models
             @start = value
         end
         ## 
-        ## Gets the subject property value. The subject property
+        ## Gets the subject property value. 
         ## @return a string
         ## 
         def subject
             return @subject
         end
         ## 
-        ## Sets the subject property value. The subject property
+        ## Sets the subject property value. 
         ## @param value Value to set for the subject property.
         ## @return a void
         ## 
@@ -836,14 +780,14 @@ module MicrosoftGraph::Models
             @subject = value
         end
         ## 
-        ## Gets the transactionId property value. The transactionId property
+        ## Gets the transactionId property value. 
         ## @return a string
         ## 
         def transaction_id
             return @transaction_id
         end
         ## 
-        ## Sets the transactionId property value. The transactionId property
+        ## Sets the transactionId property value. 
         ## @param value Value to set for the transactionId property.
         ## @return a void
         ## 
@@ -851,14 +795,14 @@ module MicrosoftGraph::Models
             @transaction_id = value
         end
         ## 
-        ## Gets the type property value. The type property
+        ## Gets the type property value. 
         ## @return a event_type
         ## 
         def type
             return @type
         end
         ## 
-        ## Sets the type property value. The type property
+        ## Sets the type property value. 
         ## @param value Value to set for the type property.
         ## @return a void
         ## 
@@ -866,14 +810,14 @@ module MicrosoftGraph::Models
             @type = value
         end
         ## 
-        ## Gets the webLink property value. The webLink property
+        ## Gets the webLink property value. 
         ## @return a string
         ## 
         def web_link
             return @web_link
         end
         ## 
-        ## Sets the webLink property value. The webLink property
+        ## Sets the webLink property value. 
         ## @param value Value to set for the webLink property.
         ## @return a void
         ## 

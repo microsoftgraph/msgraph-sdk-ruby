@@ -16,11 +16,7 @@ module MicrosoftGraph::Models
         ## 
         # Count of how many setting a policy holds
         @setting_count
-        ## 
-        # The settingStates property
         @setting_states
-        ## 
-        # The state property
         @state
         ## 
         # The version of the policy
@@ -116,14 +112,14 @@ module MicrosoftGraph::Models
             @setting_count = value
         end
         ## 
-        ## Gets the settingStates property value. The settingStates property
+        ## Gets the settingStates property value. 
         ## @return a device_configuration_setting_state
         ## 
         def setting_states
             return @setting_states
         end
         ## 
-        ## Sets the settingStates property value. The settingStates property
+        ## Sets the settingStates property value. 
         ## @param value Value to set for the settingStates property.
         ## @return a void
         ## 
@@ -131,14 +127,14 @@ module MicrosoftGraph::Models
             @setting_states = value
         end
         ## 
-        ## Gets the state property value. The state property
+        ## Gets the state property value. 
         ## @return a compliance_status
         ## 
         def state
             return @state
         end
         ## 
-        ## Sets the state property value. The state property
+        ## Sets the state property value. 
         ## @param value Value to set for the state property.
         ## @return a void
         ## 

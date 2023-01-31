@@ -4,8 +4,8 @@ require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/place'
 require_relative '../models/place_collection_response'
 require_relative './count/count_request_builder'
+require_relative './microsoft_graph_room/room_request_builder'
 require_relative './places'
-require_relative './room/room_request_builder'
 
 module MicrosoftGraph::Places
     ## 
@@ -18,16 +18,16 @@ module MicrosoftGraph::Places
             return MicrosoftGraph::Places::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Casts the previous resource to room.
+        def microsoft_graph_room()
+            return MicrosoftGraph::Places::MicrosoftGraphRoom::RoomRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Casts the previous resource to room.
-        def room()
-            return MicrosoftGraph::Places::Room::RoomRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
@@ -50,7 +50,7 @@ module MicrosoftGraph::Places
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of place_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -61,11 +61,11 @@ module MicrosoftGraph::Places
         end
         ## 
         ## Add new entity to places
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of place
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -80,7 +80,7 @@ module MicrosoftGraph::Places
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -95,11 +95,11 @@ module MicrosoftGraph::Places
         end
         ## 
         ## Add new entity to places
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

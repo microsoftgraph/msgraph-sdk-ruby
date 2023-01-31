@@ -19,8 +19,6 @@ module MicrosoftGraph::Models::TermStore
         ## 
         # Name of the set for each languageTag.
         @localized_names
-        ## 
-        # The parentGroup property
         @parent_group
         ## 
         # Custom properties for the set.
@@ -124,14 +122,14 @@ module MicrosoftGraph::Models::TermStore
             @localized_names = value
         end
         ## 
-        ## Gets the parentGroup property value. The parentGroup property
+        ## Gets the parentGroup property value. 
         ## @return a group
         ## 
         def parent_group
             return @parent_group
         end
         ## 
-        ## Sets the parentGroup property value. The parentGroup property
+        ## Sets the parentGroup property value. 
         ## @param value Value to set for the parentGroup property.
         ## @return a void
         ## 

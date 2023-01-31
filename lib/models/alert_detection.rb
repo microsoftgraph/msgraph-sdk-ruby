@@ -8,17 +8,9 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The detectionType property
         @detection_type
-        ## 
-        # The method property
         @method
-        ## 
-        # The name property
         @name
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -52,14 +44,14 @@ module MicrosoftGraph::Models
             return AlertDetection.new
         end
         ## 
-        ## Gets the detectionType property value. The detectionType property
+        ## Gets the detectionType property value. 
         ## @return a string
         ## 
         def detection_type
             return @detection_type
         end
         ## 
-        ## Sets the detectionType property value. The detectionType property
+        ## Sets the detectionType property value. 
         ## @param value Value to set for the detectionType property.
         ## @return a void
         ## 
@@ -79,14 +71,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the method property value. The method property
+        ## Gets the method property value. 
         ## @return a string
         ## 
         def method
             return @method
         end
         ## 
-        ## Sets the method property value. The method property
+        ## Sets the method property value. 
         ## @param value Value to set for the method property.
         ## @return a void
         ## 
@@ -94,14 +86,14 @@ module MicrosoftGraph::Models
             @method = value
         end
         ## 
-        ## Gets the name property value. The name property
+        ## Gets the name property value. 
         ## @return a string
         ## 
         def name
             return @name
         end
         ## 
-        ## Sets the name property value. The name property
+        ## Sets the name property value. 
         ## @param value Value to set for the name property.
         ## @return a void
         ## 
@@ -109,14 +101,14 @@ module MicrosoftGraph::Models
             @name = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

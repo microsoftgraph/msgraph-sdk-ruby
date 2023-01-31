@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # The ID of the participant that is under observation. Read-only.
         @observed_participant_id
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The identity that the call is happening on behalf of.
@@ -83,14 +81,14 @@ module MicrosoftGraph::Models
             @observed_participant_id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

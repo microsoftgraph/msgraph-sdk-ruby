@@ -20,8 +20,6 @@ module MicrosoftGraph::Models
         ## 
         # A time period suggested for the meeting.
         @meeting_time_slot
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.
@@ -140,14 +138,14 @@ module MicrosoftGraph::Models
             @meeting_time_slot = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

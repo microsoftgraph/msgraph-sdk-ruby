@@ -6,12 +6,12 @@ require_relative '../../device_app_management'
 require_relative '../targeted_managed_app_configurations'
 require_relative './apps/apps_request_builder'
 require_relative './apps/item/managed_mobile_app_item_request_builder'
-require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
 require_relative './assignments/item/targeted_managed_app_policy_assignment_item_request_builder'
 require_relative './deployment_summary/deployment_summary_request_builder'
 require_relative './item'
-require_relative './target_apps/target_apps_request_builder'
+require_relative './microsoft_graph_assign/assign_request_builder'
+require_relative './microsoft_graph_target_apps/target_apps_request_builder'
 
 module MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item
     ## 
@@ -24,11 +24,6 @@ module MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::It
             return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::Apps::AppsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the assign method.
-        def assign()
-            return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::Assign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.
         def assignments()
             return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::Assignments::AssignmentsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -39,16 +34,21 @@ module MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::It
             return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::DeploymentSummary::DeploymentSummaryRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the assign method.
+        def microsoft_graph_assign()
+            return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::MicrosoftGraphAssign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the targetApps method.
+        def microsoft_graph_target_apps()
+            return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::MicrosoftGraphTargetApps::TargetAppsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the targetApps method.
-        def target_apps()
-            return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::TargetApps::TargetAppsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
@@ -78,9 +78,10 @@ module MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::It
         ## Instantiates a new TargetedManagedAppConfigurationItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param targetedManagedAppConfigurationId key: id of targetedManagedAppConfiguration
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, targeted_managed_app_configuration_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceAppManagement/targetedManagedAppConfigurations/{targetedManagedAppConfiguration%2Did}{?%24select,%24expand}"
@@ -93,7 +94,7 @@ module MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::It
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -107,7 +108,7 @@ module MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::It
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of targeted_managed_app_configuration
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -118,11 +119,11 @@ module MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::It
         end
         ## 
         ## Update the navigation property targetedManagedAppConfigurations in deviceAppManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of targeted_managed_app_configuration
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -137,7 +138,7 @@ module MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::It
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -153,7 +154,7 @@ module MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::It
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -168,11 +169,11 @@ module MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::It
         end
         ## 
         ## Update the navigation property targetedManagedAppConfigurations in deviceAppManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

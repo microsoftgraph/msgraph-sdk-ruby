@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # The CRC32 value of the file in little endian (if available). Read-only.
         @crc32_hash
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
@@ -83,14 +81,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -27,8 +27,6 @@ module MicrosoftGraph::Models
         ## 
         # Settings to configure use of Giphy, memes, and stickers in the team.
         @fun_settings
-        ## 
-        # The group property
         @group
         ## 
         # Settings to configure whether guests can create, update, or delete channels in the team.
@@ -244,14 +242,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the group property value. The group property
+        ## Gets the group property value. 
         ## @return a group
         ## 
         def group
             return @group
         end
         ## 
-        ## Sets the group property value. The group property
+        ## Sets the group property value. 
         ## @param value Value to set for the group property.
         ## @return a void
         ## 

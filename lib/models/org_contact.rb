@@ -6,69 +6,33 @@ require_relative './models'
 module MicrosoftGraph::Models
     class OrgContact < MicrosoftGraph::Models::DirectoryObject
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The addresses property
         @addresses
-        ## 
-        # The companyName property
         @company_name
-        ## 
-        # The department property
         @department
-        ## 
-        # The directReports property
         @direct_reports
-        ## 
-        # The displayName property
         @display_name
-        ## 
-        # The givenName property
         @given_name
-        ## 
-        # The jobTitle property
         @job_title
-        ## 
-        # The mail property
         @mail
-        ## 
-        # The mailNickname property
         @mail_nickname
-        ## 
-        # The manager property
         @manager
-        ## 
-        # The memberOf property
         @member_of
-        ## 
-        # The onPremisesLastSyncDateTime property
         @on_premises_last_sync_date_time
-        ## 
-        # The onPremisesProvisioningErrors property
         @on_premises_provisioning_errors
-        ## 
-        # The onPremisesSyncEnabled property
         @on_premises_sync_enabled
-        ## 
-        # The phones property
         @phones
-        ## 
-        # The proxyAddresses property
         @proxy_addresses
-        ## 
-        # The surname property
         @surname
-        ## 
-        # The transitiveMemberOf property
         @transitive_member_of
         ## 
-        ## Gets the addresses property value. The addresses property
+        ## Gets the addresses property value. 
         ## @return a physical_office_address
         ## 
         def addresses
             return @addresses
         end
         ## 
-        ## Sets the addresses property value. The addresses property
+        ## Sets the addresses property value. 
         ## @param value Value to set for the addresses property.
         ## @return a void
         ## 
@@ -76,14 +40,14 @@ module MicrosoftGraph::Models
             @addresses = value
         end
         ## 
-        ## Gets the companyName property value. The companyName property
+        ## Gets the companyName property value. 
         ## @return a string
         ## 
         def company_name
             return @company_name
         end
         ## 
-        ## Sets the companyName property value. The companyName property
+        ## Sets the companyName property value. 
         ## @param value Value to set for the companyName property.
         ## @return a void
         ## 
@@ -108,14 +72,14 @@ module MicrosoftGraph::Models
             return OrgContact.new
         end
         ## 
-        ## Gets the department property value. The department property
+        ## Gets the department property value. 
         ## @return a string
         ## 
         def department
             return @department
         end
         ## 
-        ## Sets the department property value. The department property
+        ## Sets the department property value. 
         ## @param value Value to set for the department property.
         ## @return a void
         ## 
@@ -123,14 +87,14 @@ module MicrosoftGraph::Models
             @department = value
         end
         ## 
-        ## Gets the directReports property value. The directReports property
+        ## Gets the directReports property value. 
         ## @return a directory_object
         ## 
         def direct_reports
             return @direct_reports
         end
         ## 
-        ## Sets the directReports property value. The directReports property
+        ## Sets the directReports property value. 
         ## @param value Value to set for the directReports property.
         ## @return a void
         ## 
@@ -138,14 +102,14 @@ module MicrosoftGraph::Models
             @direct_reports = value
         end
         ## 
-        ## Gets the displayName property value. The displayName property
+        ## Gets the displayName property value. 
         ## @return a string
         ## 
         def display_name
             return @display_name
         end
         ## 
-        ## Sets the displayName property value. The displayName property
+        ## Sets the displayName property value. 
         ## @param value Value to set for the displayName property.
         ## @return a void
         ## 
@@ -179,14 +143,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the givenName property value. The givenName property
+        ## Gets the givenName property value. 
         ## @return a string
         ## 
         def given_name
             return @given_name
         end
         ## 
-        ## Sets the givenName property value. The givenName property
+        ## Sets the givenName property value. 
         ## @param value Value to set for the givenName property.
         ## @return a void
         ## 
@@ -194,14 +158,14 @@ module MicrosoftGraph::Models
             @given_name = value
         end
         ## 
-        ## Gets the jobTitle property value. The jobTitle property
+        ## Gets the jobTitle property value. 
         ## @return a string
         ## 
         def job_title
             return @job_title
         end
         ## 
-        ## Sets the jobTitle property value. The jobTitle property
+        ## Sets the jobTitle property value. 
         ## @param value Value to set for the jobTitle property.
         ## @return a void
         ## 
@@ -209,14 +173,14 @@ module MicrosoftGraph::Models
             @job_title = value
         end
         ## 
-        ## Gets the mail property value. The mail property
+        ## Gets the mail property value. 
         ## @return a string
         ## 
         def mail
             return @mail
         end
         ## 
-        ## Sets the mail property value. The mail property
+        ## Sets the mail property value. 
         ## @param value Value to set for the mail property.
         ## @return a void
         ## 
@@ -224,14 +188,14 @@ module MicrosoftGraph::Models
             @mail = value
         end
         ## 
-        ## Gets the mailNickname property value. The mailNickname property
+        ## Gets the mailNickname property value. 
         ## @return a string
         ## 
         def mail_nickname
             return @mail_nickname
         end
         ## 
-        ## Sets the mailNickname property value. The mailNickname property
+        ## Sets the mailNickname property value. 
         ## @param value Value to set for the mailNickname property.
         ## @return a void
         ## 
@@ -239,14 +203,14 @@ module MicrosoftGraph::Models
             @mail_nickname = value
         end
         ## 
-        ## Gets the manager property value. The manager property
+        ## Gets the manager property value. 
         ## @return a directory_object
         ## 
         def manager
             return @manager
         end
         ## 
-        ## Sets the manager property value. The manager property
+        ## Sets the manager property value. 
         ## @param value Value to set for the manager property.
         ## @return a void
         ## 
@@ -254,14 +218,14 @@ module MicrosoftGraph::Models
             @manager = value
         end
         ## 
-        ## Gets the memberOf property value. The memberOf property
+        ## Gets the memberOf property value. 
         ## @return a directory_object
         ## 
         def member_of
             return @member_of
         end
         ## 
-        ## Sets the memberOf property value. The memberOf property
+        ## Sets the memberOf property value. 
         ## @param value Value to set for the memberOf property.
         ## @return a void
         ## 
@@ -269,14 +233,14 @@ module MicrosoftGraph::Models
             @member_of = value
         end
         ## 
-        ## Gets the onPremisesLastSyncDateTime property value. The onPremisesLastSyncDateTime property
+        ## Gets the onPremisesLastSyncDateTime property value. 
         ## @return a date_time
         ## 
         def on_premises_last_sync_date_time
             return @on_premises_last_sync_date_time
         end
         ## 
-        ## Sets the onPremisesLastSyncDateTime property value. The onPremisesLastSyncDateTime property
+        ## Sets the onPremisesLastSyncDateTime property value. 
         ## @param value Value to set for the onPremisesLastSyncDateTime property.
         ## @return a void
         ## 
@@ -284,14 +248,14 @@ module MicrosoftGraph::Models
             @on_premises_last_sync_date_time = value
         end
         ## 
-        ## Gets the onPremisesProvisioningErrors property value. The onPremisesProvisioningErrors property
+        ## Gets the onPremisesProvisioningErrors property value. 
         ## @return a on_premises_provisioning_error
         ## 
         def on_premises_provisioning_errors
             return @on_premises_provisioning_errors
         end
         ## 
-        ## Sets the onPremisesProvisioningErrors property value. The onPremisesProvisioningErrors property
+        ## Sets the onPremisesProvisioningErrors property value. 
         ## @param value Value to set for the onPremisesProvisioningErrors property.
         ## @return a void
         ## 
@@ -299,14 +263,14 @@ module MicrosoftGraph::Models
             @on_premises_provisioning_errors = value
         end
         ## 
-        ## Gets the onPremisesSyncEnabled property value. The onPremisesSyncEnabled property
+        ## Gets the onPremisesSyncEnabled property value. 
         ## @return a boolean
         ## 
         def on_premises_sync_enabled
             return @on_premises_sync_enabled
         end
         ## 
-        ## Sets the onPremisesSyncEnabled property value. The onPremisesSyncEnabled property
+        ## Sets the onPremisesSyncEnabled property value. 
         ## @param value Value to set for the onPremisesSyncEnabled property.
         ## @return a void
         ## 
@@ -314,14 +278,14 @@ module MicrosoftGraph::Models
             @on_premises_sync_enabled = value
         end
         ## 
-        ## Gets the phones property value. The phones property
+        ## Gets the phones property value. 
         ## @return a phone
         ## 
         def phones
             return @phones
         end
         ## 
-        ## Sets the phones property value. The phones property
+        ## Sets the phones property value. 
         ## @param value Value to set for the phones property.
         ## @return a void
         ## 
@@ -329,14 +293,14 @@ module MicrosoftGraph::Models
             @phones = value
         end
         ## 
-        ## Gets the proxyAddresses property value. The proxyAddresses property
+        ## Gets the proxyAddresses property value. 
         ## @return a string
         ## 
         def proxy_addresses
             return @proxy_addresses
         end
         ## 
-        ## Sets the proxyAddresses property value. The proxyAddresses property
+        ## Sets the proxyAddresses property value. 
         ## @param value Value to set for the proxyAddresses property.
         ## @return a void
         ## 
@@ -371,14 +335,14 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("transitiveMemberOf", @transitive_member_of)
         end
         ## 
-        ## Gets the surname property value. The surname property
+        ## Gets the surname property value. 
         ## @return a string
         ## 
         def surname
             return @surname
         end
         ## 
-        ## Sets the surname property value. The surname property
+        ## Sets the surname property value. 
         ## @param value Value to set for the surname property.
         ## @return a void
         ## 
@@ -386,14 +350,14 @@ module MicrosoftGraph::Models
             @surname = value
         end
         ## 
-        ## Gets the transitiveMemberOf property value. The transitiveMemberOf property
+        ## Gets the transitiveMemberOf property value. 
         ## @return a directory_object
         ## 
         def transitive_member_of
             return @transitive_member_of
         end
         ## 
-        ## Sets the transitiveMemberOf property value. The transitiveMemberOf property
+        ## Sets the transitiveMemberOf property value. 
         ## @param value Value to set for the transitiveMemberOf property.
         ## @return a void
         ## 

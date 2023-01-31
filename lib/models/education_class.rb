@@ -20,8 +20,6 @@ module MicrosoftGraph::Models
         ## 
         # Class code used by the school to identify the class.
         @class_code
-        ## 
-        # The course property
         @course
         ## 
         # Entity who created the class
@@ -141,21 +139,21 @@ module MicrosoftGraph::Models
             @class_code = value
         end
         ## 
-        ## Instantiates a new EducationClass and sets the default values.
+        ## Instantiates a new educationClass and sets the default values.
         ## @return a void
         ## 
         def initialize()
             super
         end
         ## 
-        ## Gets the course property value. The course property
+        ## Gets the course property value. 
         ## @return a education_course
         ## 
         def course
             return @course
         end
         ## 
-        ## Sets the course property value. The course property
+        ## Sets the course property value. 
         ## @param value Value to set for the course property.
         ## @return a void
         ## 

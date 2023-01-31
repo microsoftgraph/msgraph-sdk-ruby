@@ -8,8 +8,6 @@ module MicrosoftGraph::Models
         ## 
         # The name of the team.
         @display_name
-        ## 
-        # The team property
         @team
         ## 
         # The ID of the Azure Active Directory tenant.
@@ -79,14 +77,14 @@ module MicrosoftGraph::Models
             writer.write_string_value("tenantId", @tenant_id)
         end
         ## 
-        ## Gets the team property value. The team property
+        ## Gets the team property value. 
         ## @return a team
         ## 
         def team
             return @team
         end
         ## 
-        ## Sets the team property value. The team property
+        ## Sets the team property value. 
         ## @param value Value to set for the team property.
         ## @return a void
         ## 

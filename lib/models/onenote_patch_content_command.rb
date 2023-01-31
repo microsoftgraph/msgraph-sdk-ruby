@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class OnenotePatchContentCommand
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The action property
         @action
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -14,8 +12,6 @@ module MicrosoftGraph::Models
         ## 
         # A string of well-formed HTML to add to the page, and any image or file binary data. If the content contains binary data, the request must be sent using the multipart/form-data content type with a 'Commands' part.
         @content
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The location to add the supplied content, relative to the target element. The possible values are: after (default) or before.
@@ -24,14 +20,14 @@ module MicrosoftGraph::Models
         # The element to update. Must be the #<data-id> or the generated <id> of the element, or the body or title keyword.
         @target
         ## 
-        ## Gets the action property value. The action property
+        ## Gets the action property value. 
         ## @return a onenote_patch_action_type
         ## 
         def action
             return @action
         end
         ## 
-        ## Sets the action property value. The action property
+        ## Sets the action property value. 
         ## @param value Value to set for the action property.
         ## @return a void
         ## 
@@ -98,14 +94,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

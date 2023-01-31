@@ -33,8 +33,6 @@ module MicrosoftGraph::Models
         ## 
         # The authentication methods that are supported for the user.
         @authentication
-        ## 
-        # The authorizationInfo property
         @authorization_info
         ## 
         # The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
@@ -54,8 +52,6 @@ module MicrosoftGraph::Models
         ## 
         # The calendar view for the calendar. Read-only. Nullable.
         @calendar_view
-        ## 
-        # The chats property
         @chats
         ## 
         # The city in which the user is located. Maximum length is 128 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
@@ -132,8 +128,6 @@ module MicrosoftGraph::Models
         ## 
         # The fax number of the user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
         @fax_number
-        ## 
-        # The followedSites property
         @followed_sites
         ## 
         # The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
@@ -150,8 +144,6 @@ module MicrosoftGraph::Models
         ## 
         # Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
         @inference_classification
-        ## 
-        # The insights property
         @insights
         ## 
         # A list for the user to describe their interests. Returned only on $select.
@@ -162,8 +154,6 @@ module MicrosoftGraph::Models
         ## 
         # The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
         @job_title
-        ## 
-        # The joinedTeams property
         @joined_teams
         ## 
         # The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
@@ -210,17 +200,11 @@ module MicrosoftGraph::Models
         ## 
         # The URL for the user's personal site. Returned only on $select.
         @my_site
-        ## 
-        # The oauth2PermissionGrants property
         @oauth2_permission_grants
         ## 
         # The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         @office_location
-        ## 
-        # The onenote property
         @onenote
-        ## 
-        # The onlineMeetings property
         @online_meetings
         ## 
         # Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
@@ -255,8 +239,6 @@ module MicrosoftGraph::Models
         ## 
         # A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
         @other_mails
-        ## 
-        # The outlook property
         @outlook
         ## 
         # Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
@@ -279,8 +261,6 @@ module MicrosoftGraph::Models
         ## 
         # The user's profile photo. Read-only.
         @photo
-        ## 
-        # The photos property
         @photos
         ## 
         # Entry-point to the Planner resource that might exist for a user. Read-only.
@@ -297,8 +277,6 @@ module MicrosoftGraph::Models
         ## 
         # The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
         @preferred_name
-        ## 
-        # The presence property
         @presence
         ## 
         # The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
@@ -315,14 +293,10 @@ module MicrosoftGraph::Models
         ## 
         # A list for the user to enumerate the schools they have attended. Returned only on $select.
         @schools
-        ## 
-        # The scopedRoleMemberOf property
         @scoped_role_member_of
         ## 
         # Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
         @security_identifier
-        ## 
-        # The settings property
         @settings
         ## 
         # Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
@@ -342,8 +316,6 @@ module MicrosoftGraph::Models
         ## 
         # The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         @surname
-        ## 
-        # The teamwork property
         @teamwork
         ## 
         # Represents the To Do services available to a user.
@@ -496,14 +468,14 @@ module MicrosoftGraph::Models
             @authentication = value
         end
         ## 
-        ## Gets the authorizationInfo property value. The authorizationInfo property
+        ## Gets the authorizationInfo property value. 
         ## @return a authorization_info
         ## 
         def authorization_info
             return @authorization_info
         end
         ## 
-        ## Sets the authorizationInfo property value. The authorizationInfo property
+        ## Sets the authorizationInfo property value. 
         ## @param value Value to set for the authorizationInfo property.
         ## @return a void
         ## 
@@ -601,14 +573,14 @@ module MicrosoftGraph::Models
             @calendar_view = value
         end
         ## 
-        ## Gets the chats property value. The chats property
+        ## Gets the chats property value. 
         ## @return a chat
         ## 
         def chats
             return @chats
         end
         ## 
-        ## Sets the chats property value. The chats property
+        ## Sets the chats property value. 
         ## @param value Value to set for the chats property.
         ## @return a void
         ## 
@@ -1008,14 +980,14 @@ module MicrosoftGraph::Models
             @fax_number = value
         end
         ## 
-        ## Gets the followedSites property value. The followedSites property
+        ## Gets the followedSites property value. 
         ## @return a site
         ## 
         def followed_sites
             return @followed_sites
         end
         ## 
-        ## Sets the followedSites property value. The followedSites property
+        ## Sets the followedSites property value. 
         ## @param value Value to set for the followedSites property.
         ## @return a void
         ## 
@@ -1224,14 +1196,14 @@ module MicrosoftGraph::Models
             @inference_classification = value
         end
         ## 
-        ## Gets the insights property value. The insights property
+        ## Gets the insights property value. 
         ## @return a office_graph_insights
         ## 
         def insights
             return @insights
         end
         ## 
-        ## Sets the insights property value. The insights property
+        ## Sets the insights property value. 
         ## @param value Value to set for the insights property.
         ## @return a void
         ## 
@@ -1284,14 +1256,14 @@ module MicrosoftGraph::Models
             @job_title = value
         end
         ## 
-        ## Gets the joinedTeams property value. The joinedTeams property
+        ## Gets the joinedTeams property value. 
         ## @return a team
         ## 
         def joined_teams
             return @joined_teams
         end
         ## 
-        ## Sets the joinedTeams property value. The joinedTeams property
+        ## Sets the joinedTeams property value. 
         ## @param value Value to set for the joinedTeams property.
         ## @return a void
         ## 
@@ -1524,14 +1496,14 @@ module MicrosoftGraph::Models
             @my_site = value
         end
         ## 
-        ## Gets the oauth2PermissionGrants property value. The oauth2PermissionGrants property
+        ## Gets the oauth2PermissionGrants property value. 
         ## @return a o_auth2_permission_grant
         ## 
         def oauth2_permission_grants
             return @oauth2_permission_grants
         end
         ## 
-        ## Sets the oauth2PermissionGrants property value. The oauth2PermissionGrants property
+        ## Sets the oauth2PermissionGrants property value. 
         ## @param value Value to set for the oauth2PermissionGrants property.
         ## @return a void
         ## 
@@ -1554,14 +1526,14 @@ module MicrosoftGraph::Models
             @office_location = value
         end
         ## 
-        ## Gets the onenote property value. The onenote property
+        ## Gets the onenote property value. 
         ## @return a onenote
         ## 
         def onenote
             return @onenote
         end
         ## 
-        ## Sets the onenote property value. The onenote property
+        ## Sets the onenote property value. 
         ## @param value Value to set for the onenote property.
         ## @return a void
         ## 
@@ -1569,14 +1541,14 @@ module MicrosoftGraph::Models
             @onenote = value
         end
         ## 
-        ## Gets the onlineMeetings property value. The onlineMeetings property
+        ## Gets the onlineMeetings property value. 
         ## @return a online_meeting
         ## 
         def online_meetings
             return @online_meetings
         end
         ## 
-        ## Sets the onlineMeetings property value. The onlineMeetings property
+        ## Sets the onlineMeetings property value. 
         ## @param value Value to set for the onlineMeetings property.
         ## @return a void
         ## 
@@ -1749,14 +1721,14 @@ module MicrosoftGraph::Models
             @other_mails = value
         end
         ## 
-        ## Gets the outlook property value. The outlook property
+        ## Gets the outlook property value. 
         ## @return a outlook_user
         ## 
         def outlook
             return @outlook
         end
         ## 
-        ## Sets the outlook property value. The outlook property
+        ## Sets the outlook property value. 
         ## @param value Value to set for the outlook property.
         ## @return a void
         ## 
@@ -1869,14 +1841,14 @@ module MicrosoftGraph::Models
             @photo = value
         end
         ## 
-        ## Gets the photos property value. The photos property
+        ## Gets the photos property value. 
         ## @return a profile_photo
         ## 
         def photos
             return @photos
         end
         ## 
-        ## Sets the photos property value. The photos property
+        ## Sets the photos property value. 
         ## @param value Value to set for the photos property.
         ## @return a void
         ## 
@@ -1959,14 +1931,14 @@ module MicrosoftGraph::Models
             @preferred_name = value
         end
         ## 
-        ## Gets the presence property value. The presence property
+        ## Gets the presence property value. 
         ## @return a presence
         ## 
         def presence
             return @presence
         end
         ## 
-        ## Sets the presence property value. The presence property
+        ## Sets the presence property value. 
         ## @param value Value to set for the presence property.
         ## @return a void
         ## 
@@ -2049,14 +2021,14 @@ module MicrosoftGraph::Models
             @schools = value
         end
         ## 
-        ## Gets the scopedRoleMemberOf property value. The scopedRoleMemberOf property
+        ## Gets the scopedRoleMemberOf property value. 
         ## @return a scoped_role_membership
         ## 
         def scoped_role_member_of
             return @scoped_role_member_of
         end
         ## 
-        ## Sets the scopedRoleMemberOf property value. The scopedRoleMemberOf property
+        ## Sets the scopedRoleMemberOf property value. 
         ## @param value Value to set for the scopedRoleMemberOf property.
         ## @return a void
         ## 
@@ -2206,14 +2178,14 @@ module MicrosoftGraph::Models
             writer.write_string_value("userType", @user_type)
         end
         ## 
-        ## Gets the settings property value. The settings property
+        ## Gets the settings property value. 
         ## @return a user_settings
         ## 
         def settings
             return @settings
         end
         ## 
-        ## Sets the settings property value. The settings property
+        ## Sets the settings property value. 
         ## @param value Value to set for the settings property.
         ## @return a void
         ## 
@@ -2311,14 +2283,14 @@ module MicrosoftGraph::Models
             @surname = value
         end
         ## 
-        ## Gets the teamwork property value. The teamwork property
+        ## Gets the teamwork property value. 
         ## @return a user_teamwork
         ## 
         def teamwork
             return @teamwork
         end
         ## 
-        ## Sets the teamwork property value. The teamwork property
+        ## Sets the teamwork property value. 
         ## @param value Value to set for the teamwork property.
         ## @return a void
         ## 

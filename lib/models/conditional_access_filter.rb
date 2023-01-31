@@ -8,11 +8,7 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The mode property
         @mode
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Rule syntax is similar to that used for membership rules for groups in Azure Active Directory (Azure AD). For details, see rules with multiple expressions
@@ -60,14 +56,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the mode property value. The mode property
+        ## Gets the mode property value. 
         ## @return a filter_mode
         ## 
         def mode
             return @mode
         end
         ## 
-        ## Sets the mode property value. The mode property
+        ## Sets the mode property value. 
         ## @param value Value to set for the mode property.
         ## @return a void
         ## 
@@ -75,14 +71,14 @@ module MicrosoftGraph::Models
             @mode = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

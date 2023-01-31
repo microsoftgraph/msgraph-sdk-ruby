@@ -11,11 +11,7 @@ module MicrosoftGraph::Models
         ## 
         # Optional. Whether to hide the participant from the roster.
         @hidden
-        ## 
-        # The identity property
         @identity
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Optional. The ID of the target participant.
@@ -87,14 +83,14 @@ module MicrosoftGraph::Models
             @hidden = value
         end
         ## 
-        ## Gets the identity property value. The identity property
+        ## Gets the identity property value. 
         ## @return a identity_set
         ## 
         def identity
             return @identity
         end
         ## 
-        ## Sets the identity property value. The identity property
+        ## Sets the identity property value. 
         ## @param value Value to set for the identity property.
         ## @return a void
         ## 
@@ -102,14 +98,14 @@ module MicrosoftGraph::Models
             @identity = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

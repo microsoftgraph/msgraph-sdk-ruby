@@ -5,21 +5,19 @@ require_relative './models'
 module MicrosoftGraph::Models
     class ParticipantLeftNotification < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The call property
         @call
         ## 
         # ID of the participant under the policy who has left the meeting.
         @participant_id
         ## 
-        ## Gets the call property value. The call property
+        ## Gets the call property value. 
         ## @return a call
         ## 
         def call
             return @call
         end
         ## 
-        ## Sets the call property value. The call property
+        ## Sets the call property value. 
         ## @param value Value to set for the call property.
         ## @return a void
         ## 

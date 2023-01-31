@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
         @error_details
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The identifier that was converted. This value is the original, un-converted identifier.
@@ -79,14 +77,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

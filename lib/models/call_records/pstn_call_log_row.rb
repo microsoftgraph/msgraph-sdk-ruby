@@ -58,8 +58,6 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         # The license used for the call.
         @license_capability
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The telecommunications operator which provided PSTN services for this call. This may be Microsoft, or it may be a third-party operator via the Operator Connect Program.
@@ -386,14 +384,14 @@ module MicrosoftGraph::Models::CallRecords
             @license_capability = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

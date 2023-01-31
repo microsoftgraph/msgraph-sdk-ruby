@@ -20,8 +20,6 @@ module MicrosoftGraph::Models
         ## 
         # The maximum number of characters for the value.
         @max_length
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The type of text being stored. Must be one of plain or richText
@@ -132,14 +130,14 @@ module MicrosoftGraph::Models
             @max_length = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

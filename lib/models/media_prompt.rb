@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class MediaPrompt < MicrosoftGraph::Models::Prompt
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The mediaInfo property
         @media_info
         ## 
         ## Instantiates a new MediaPrompt and sets the default values.
@@ -35,14 +33,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the mediaInfo property value. The mediaInfo property
+        ## Gets the mediaInfo property value. 
         ## @return a media_info
         ## 
         def media_info
             return @media_info
         end
         ## 
-        ## Sets the mediaInfo property value. The mediaInfo property
+        ## Sets the mediaInfo property value. 
         ## @param value Value to set for the mediaInfo property.
         ## @return a void
         ## 

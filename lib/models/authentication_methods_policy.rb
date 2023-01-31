@@ -21,8 +21,6 @@ module MicrosoftGraph::Models
         ## 
         # The version of the policy in use. Read-only.
         @policy_version
-        ## 
-        # The reconfirmationInDays property
         @reconfirmation_in_days
         ## 
         # Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
@@ -134,14 +132,14 @@ module MicrosoftGraph::Models
             @policy_version = value
         end
         ## 
-        ## Gets the reconfirmationInDays property value. The reconfirmationInDays property
+        ## Gets the reconfirmationInDays property value. 
         ## @return a integer
         ## 
         def reconfirmation_in_days
             return @reconfirmation_in_days
         end
         ## 
-        ## Sets the reconfirmationInDays property value. The reconfirmationInDays property
+        ## Sets the reconfirmationInDays property value. 
         ## @param value Value to set for the reconfirmationInDays property.
         ## @return a void
         ## 

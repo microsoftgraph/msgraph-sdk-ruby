@@ -3,58 +3,38 @@ require_relative '../../microsoft_graph'
 require_relative '../../models/application'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../applications'
-require_relative './add_key/add_key_request_builder'
-require_relative './add_password/add_password_request_builder'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './created_on_behalf_of/created_on_behalf_of_request_builder'
 require_relative './extension_properties/extension_properties_request_builder'
 require_relative './extension_properties/item/extension_property_item_request_builder'
 require_relative './federated_identity_credentials/federated_identity_credentials_request_builder'
 require_relative './federated_identity_credentials/item/federated_identity_credential_item_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './home_realm_discovery_policies/home_realm_discovery_policies_request_builder'
 require_relative './home_realm_discovery_policies/item/home_realm_discovery_policy_item_request_builder'
 require_relative './item'
 require_relative './logo/logo_request_builder'
+require_relative './microsoft_graph_add_key/add_key_request_builder'
+require_relative './microsoft_graph_add_password/add_password_request_builder'
+require_relative './microsoft_graph_check_member_groups/check_member_groups_request_builder'
+require_relative './microsoft_graph_check_member_objects/check_member_objects_request_builder'
+require_relative './microsoft_graph_get_member_groups/get_member_groups_request_builder'
+require_relative './microsoft_graph_get_member_objects/get_member_objects_request_builder'
+require_relative './microsoft_graph_remove_key/remove_key_request_builder'
+require_relative './microsoft_graph_remove_password/remove_password_request_builder'
+require_relative './microsoft_graph_restore/restore_request_builder'
+require_relative './microsoft_graph_set_verified_publisher/set_verified_publisher_request_builder'
+require_relative './microsoft_graph_unset_verified_publisher/unset_verified_publisher_request_builder'
 require_relative './owners/item/directory_object_item_request_builder'
 require_relative './owners/owners_request_builder'
-require_relative './remove_key/remove_key_request_builder'
-require_relative './remove_password/remove_password_request_builder'
-require_relative './restore/restore_request_builder'
-require_relative './set_verified_publisher/set_verified_publisher_request_builder'
 require_relative './token_issuance_policies/item/token_issuance_policy_item_request_builder'
 require_relative './token_issuance_policies/token_issuance_policies_request_builder'
 require_relative './token_lifetime_policies/item/token_lifetime_policy_item_request_builder'
 require_relative './token_lifetime_policies/token_lifetime_policies_request_builder'
-require_relative './unset_verified_publisher/unset_verified_publisher_request_builder'
 
 module MicrosoftGraph::Applications::Item
     ## 
     # Provides operations to manage the collection of application entities.
     class ApplicationItemRequestBuilder
         
-        ## 
-        # Provides operations to call the addKey method.
-        def add_key()
-            return MicrosoftGraph::Applications::Item::AddKey::AddKeyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the addPassword method.
-        def add_password()
-            return MicrosoftGraph::Applications::Item::AddPassword::AddPasswordRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the checkMemberGroups method.
-        def check_member_groups()
-            return MicrosoftGraph::Applications::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the checkMemberObjects method.
-        def check_member_objects()
-            return MicrosoftGraph::Applications::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the createdOnBehalfOf property of the microsoft.graph.application entity.
         def created_on_behalf_of()
@@ -71,16 +51,6 @@ module MicrosoftGraph::Applications::Item
             return MicrosoftGraph::Applications::Item::FederatedIdentityCredentials::FederatedIdentityCredentialsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the getMemberGroups method.
-        def get_member_groups()
-            return MicrosoftGraph::Applications::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the getMemberObjects method.
-        def get_member_objects()
-            return MicrosoftGraph::Applications::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.application entity.
         def home_realm_discovery_policies()
             return MicrosoftGraph::Applications::Item::HomeRealmDiscoveryPolicies::HomeRealmDiscoveryPoliciesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -91,6 +61,61 @@ module MicrosoftGraph::Applications::Item
             return MicrosoftGraph::Applications::Item::Logo::LogoRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the addKey method.
+        def microsoft_graph_add_key()
+            return MicrosoftGraph::Applications::Item::MicrosoftGraphAddKey::AddKeyRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the addPassword method.
+        def microsoft_graph_add_password()
+            return MicrosoftGraph::Applications::Item::MicrosoftGraphAddPassword::AddPasswordRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkMemberGroups method.
+        def microsoft_graph_check_member_groups()
+            return MicrosoftGraph::Applications::Item::MicrosoftGraphCheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkMemberObjects method.
+        def microsoft_graph_check_member_objects()
+            return MicrosoftGraph::Applications::Item::MicrosoftGraphCheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getMemberGroups method.
+        def microsoft_graph_get_member_groups()
+            return MicrosoftGraph::Applications::Item::MicrosoftGraphGetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getMemberObjects method.
+        def microsoft_graph_get_member_objects()
+            return MicrosoftGraph::Applications::Item::MicrosoftGraphGetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the removeKey method.
+        def microsoft_graph_remove_key()
+            return MicrosoftGraph::Applications::Item::MicrosoftGraphRemoveKey::RemoveKeyRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the removePassword method.
+        def microsoft_graph_remove_password()
+            return MicrosoftGraph::Applications::Item::MicrosoftGraphRemovePassword::RemovePasswordRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the restore method.
+        def microsoft_graph_restore()
+            return MicrosoftGraph::Applications::Item::MicrosoftGraphRestore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the setVerifiedPublisher method.
+        def microsoft_graph_set_verified_publisher()
+            return MicrosoftGraph::Applications::Item::MicrosoftGraphSetVerifiedPublisher::SetVerifiedPublisherRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the unsetVerifiedPublisher method.
+        def microsoft_graph_unset_verified_publisher()
+            return MicrosoftGraph::Applications::Item::MicrosoftGraphUnsetVerifiedPublisher::UnsetVerifiedPublisherRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to manage the owners property of the microsoft.graph.application entity.
         def owners()
             return MicrosoftGraph::Applications::Item::Owners::OwnersRequestBuilder.new(@path_parameters, @request_adapter)
@@ -99,28 +124,8 @@ module MicrosoftGraph::Applications::Item
         # Path parameters for the request
         @path_parameters
         ## 
-        # Provides operations to call the removeKey method.
-        def remove_key()
-            return MicrosoftGraph::Applications::Item::RemoveKey::RemoveKeyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the removePassword method.
-        def remove_password()
-            return MicrosoftGraph::Applications::Item::RemovePassword::RemovePasswordRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the restore method.
-        def restore()
-            return MicrosoftGraph::Applications::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the setVerifiedPublisher method.
-        def set_verified_publisher()
-            return MicrosoftGraph::Applications::Item::SetVerifiedPublisher::SetVerifiedPublisherRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.application entity.
         def token_issuance_policies()
@@ -132,20 +137,16 @@ module MicrosoftGraph::Applications::Item
             return MicrosoftGraph::Applications::Item::TokenLifetimePolicies::TokenLifetimePoliciesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the unsetVerifiedPublisher method.
-        def unset_verified_publisher()
-            return MicrosoftGraph::Applications::Item::UnsetVerifiedPublisher::UnsetVerifiedPublisherRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new ApplicationItemRequestBuilder and sets the default values.
+        ## @param applicationId key: id of application
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, application_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/applications/{application%2Did}{?%24select,%24expand}"
@@ -158,7 +159,7 @@ module MicrosoftGraph::Applications::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -194,7 +195,7 @@ module MicrosoftGraph::Applications::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of application
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -227,11 +228,11 @@ module MicrosoftGraph::Applications::Item
         end
         ## 
         ## Update the properties of an application object.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of application
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -246,7 +247,7 @@ module MicrosoftGraph::Applications::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -262,7 +263,7 @@ module MicrosoftGraph::Applications::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -299,11 +300,11 @@ module MicrosoftGraph::Applications::Item
         end
         ## 
         ## Update the properties of an application object.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

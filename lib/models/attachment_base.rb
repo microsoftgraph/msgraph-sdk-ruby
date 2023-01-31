@@ -6,17 +6,9 @@ require_relative './models'
 module MicrosoftGraph::Models
     class AttachmentBase < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The contentType property
         @content_type
-        ## 
-        # The lastModifiedDateTime property
         @last_modified_date_time
-        ## 
-        # The name property
         @name
-        ## 
-        # The size property
         @size
         ## 
         ## Instantiates a new attachmentBase and sets the default values.
@@ -26,14 +18,14 @@ module MicrosoftGraph::Models
             super
         end
         ## 
-        ## Gets the contentType property value. The contentType property
+        ## Gets the contentType property value. 
         ## @return a string
         ## 
         def content_type
             return @content_type
         end
         ## 
-        ## Sets the contentType property value. The contentType property
+        ## Sets the contentType property value. 
         ## @param value Value to set for the contentType property.
         ## @return a void
         ## 
@@ -70,14 +62,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+        ## Gets the lastModifiedDateTime property value. 
         ## @return a date_time
         ## 
         def last_modified_date_time
             return @last_modified_date_time
         end
         ## 
-        ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+        ## Sets the lastModifiedDateTime property value. 
         ## @param value Value to set for the lastModifiedDateTime property.
         ## @return a void
         ## 
@@ -85,14 +77,14 @@ module MicrosoftGraph::Models
             @last_modified_date_time = value
         end
         ## 
-        ## Gets the name property value. The name property
+        ## Gets the name property value. 
         ## @return a string
         ## 
         def name
             return @name
         end
         ## 
-        ## Sets the name property value. The name property
+        ## Sets the name property value. 
         ## @param value Value to set for the name property.
         ## @return a void
         ## 
@@ -113,14 +105,14 @@ module MicrosoftGraph::Models
             writer.write_number_value("size", @size)
         end
         ## 
-        ## Gets the size property value. The size property
+        ## Gets the size property value. 
         ## @return a integer
         ## 
         def size
             return @size
         end
         ## 
-        ## Sets the size property value. The size property
+        ## Sets the size property value. 
         ## @param value Value to set for the size property.
         ## @return a void
         ## 

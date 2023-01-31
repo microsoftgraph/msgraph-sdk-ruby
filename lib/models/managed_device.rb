@@ -110,8 +110,6 @@ module MicrosoftGraph::Models
         ## 
         # Owner type of device.
         @managed_device_owner_type
-        ## 
-        # The managementAgent property
         @management_agent
         ## 
         # Reports device management certificate expiration date. This property is read-only.
@@ -771,14 +769,14 @@ module MicrosoftGraph::Models
             @managed_device_owner_type = value
         end
         ## 
-        ## Gets the managementAgent property value. The managementAgent property
+        ## Gets the managementAgent property value. 
         ## @return a management_agent_type
         ## 
         def management_agent
             return @management_agent
         end
         ## 
-        ## Sets the managementAgent property value. The managementAgent property
+        ## Sets the managementAgent property value. 
         ## @param value Value to set for the managementAgent property.
         ## @return a void
         ## 

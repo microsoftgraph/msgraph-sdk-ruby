@@ -5,7 +5,7 @@ require_relative '../../models/printer'
 require_relative '../../models/printer_collection_response'
 require_relative '../print'
 require_relative './count/count_request_builder'
-require_relative './create/create_request_builder'
+require_relative './microsoft_graph_create/create_request_builder'
 require_relative './printers'
 
 module MicrosoftGraph::Print::Printers
@@ -20,8 +20,8 @@ module MicrosoftGraph::Print::Printers
         end
         ## 
         # Provides operations to call the create method.
-        def create()
-            return MicrosoftGraph::Print::Printers::Create::CreateRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_create()
+            return MicrosoftGraph::Print::Printers::MicrosoftGraphCreate::CreateRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -51,7 +51,7 @@ module MicrosoftGraph::Print::Printers
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of printer_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -62,11 +62,11 @@ module MicrosoftGraph::Print::Printers
         end
         ## 
         ## Create new navigation property to printers for print
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of printer
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -81,7 +81,7 @@ module MicrosoftGraph::Print::Printers
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -96,11 +96,11 @@ module MicrosoftGraph::Print::Printers
         end
         ## 
         ## Create new navigation property to printers for print
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

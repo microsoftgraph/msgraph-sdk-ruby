@@ -54,68 +54,32 @@ module MicrosoftGraph::Models
         ## 
         # The contact's home phone numbers.
         @home_phones
-        ## 
-        # The imAddresses property
         @im_addresses
-        ## 
-        # The initials property
         @initials
-        ## 
-        # The jobTitle property
         @job_title
-        ## 
-        # The manager property
         @manager
-        ## 
-        # The middleName property
         @middle_name
-        ## 
-        # The mobilePhone property
         @mobile_phone
         ## 
         # The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
         @multi_value_extended_properties
-        ## 
-        # The nickName property
         @nick_name
-        ## 
-        # The officeLocation property
         @office_location
-        ## 
-        # The otherAddress property
         @other_address
-        ## 
-        # The parentFolderId property
         @parent_folder_id
-        ## 
-        # The personalNotes property
         @personal_notes
         ## 
         # Optional contact picture. You can get or set a photo for a contact.
         @photo
-        ## 
-        # The profession property
         @profession
         ## 
         # The collection of single-value extended properties defined for the contact. Read-only. Nullable.
         @single_value_extended_properties
-        ## 
-        # The spouseName property
         @spouse_name
-        ## 
-        # The surname property
         @surname
-        ## 
-        # The title property
         @title
-        ## 
-        # The yomiCompanyName property
         @yomi_company_name
-        ## 
-        # The yomiGivenName property
         @yomi_given_name
-        ## 
-        # The yomiSurname property
         @yomi_surname
         ## 
         ## Gets the assistantName property value. The name of the contact's assistant.
@@ -420,14 +384,14 @@ module MicrosoftGraph::Models
             @home_phones = value
         end
         ## 
-        ## Gets the imAddresses property value. The imAddresses property
+        ## Gets the imAddresses property value. 
         ## @return a string
         ## 
         def im_addresses
             return @im_addresses
         end
         ## 
-        ## Sets the imAddresses property value. The imAddresses property
+        ## Sets the imAddresses property value. 
         ## @param value Value to set for the imAddresses property.
         ## @return a void
         ## 
@@ -435,14 +399,14 @@ module MicrosoftGraph::Models
             @im_addresses = value
         end
         ## 
-        ## Gets the initials property value. The initials property
+        ## Gets the initials property value. 
         ## @return a string
         ## 
         def initials
             return @initials
         end
         ## 
-        ## Sets the initials property value. The initials property
+        ## Sets the initials property value. 
         ## @param value Value to set for the initials property.
         ## @return a void
         ## 
@@ -450,14 +414,14 @@ module MicrosoftGraph::Models
             @initials = value
         end
         ## 
-        ## Gets the jobTitle property value. The jobTitle property
+        ## Gets the jobTitle property value. 
         ## @return a string
         ## 
         def job_title
             return @job_title
         end
         ## 
-        ## Sets the jobTitle property value. The jobTitle property
+        ## Sets the jobTitle property value. 
         ## @param value Value to set for the jobTitle property.
         ## @return a void
         ## 
@@ -465,14 +429,14 @@ module MicrosoftGraph::Models
             @job_title = value
         end
         ## 
-        ## Gets the manager property value. The manager property
+        ## Gets the manager property value. 
         ## @return a string
         ## 
         def manager
             return @manager
         end
         ## 
-        ## Sets the manager property value. The manager property
+        ## Sets the manager property value. 
         ## @param value Value to set for the manager property.
         ## @return a void
         ## 
@@ -480,14 +444,14 @@ module MicrosoftGraph::Models
             @manager = value
         end
         ## 
-        ## Gets the middleName property value. The middleName property
+        ## Gets the middleName property value. 
         ## @return a string
         ## 
         def middle_name
             return @middle_name
         end
         ## 
-        ## Sets the middleName property value. The middleName property
+        ## Sets the middleName property value. 
         ## @param value Value to set for the middleName property.
         ## @return a void
         ## 
@@ -495,14 +459,14 @@ module MicrosoftGraph::Models
             @middle_name = value
         end
         ## 
-        ## Gets the mobilePhone property value. The mobilePhone property
+        ## Gets the mobilePhone property value. 
         ## @return a string
         ## 
         def mobile_phone
             return @mobile_phone
         end
         ## 
-        ## Sets the mobilePhone property value. The mobilePhone property
+        ## Sets the mobilePhone property value. 
         ## @param value Value to set for the mobilePhone property.
         ## @return a void
         ## 
@@ -525,14 +489,14 @@ module MicrosoftGraph::Models
             @multi_value_extended_properties = value
         end
         ## 
-        ## Gets the nickName property value. The nickName property
+        ## Gets the nickName property value. 
         ## @return a string
         ## 
         def nick_name
             return @nick_name
         end
         ## 
-        ## Sets the nickName property value. The nickName property
+        ## Sets the nickName property value. 
         ## @param value Value to set for the nickName property.
         ## @return a void
         ## 
@@ -540,14 +504,14 @@ module MicrosoftGraph::Models
             @nick_name = value
         end
         ## 
-        ## Gets the officeLocation property value. The officeLocation property
+        ## Gets the officeLocation property value. 
         ## @return a string
         ## 
         def office_location
             return @office_location
         end
         ## 
-        ## Sets the officeLocation property value. The officeLocation property
+        ## Sets the officeLocation property value. 
         ## @param value Value to set for the officeLocation property.
         ## @return a void
         ## 
@@ -555,14 +519,14 @@ module MicrosoftGraph::Models
             @office_location = value
         end
         ## 
-        ## Gets the otherAddress property value. The otherAddress property
+        ## Gets the otherAddress property value. 
         ## @return a physical_address
         ## 
         def other_address
             return @other_address
         end
         ## 
-        ## Sets the otherAddress property value. The otherAddress property
+        ## Sets the otherAddress property value. 
         ## @param value Value to set for the otherAddress property.
         ## @return a void
         ## 
@@ -570,14 +534,14 @@ module MicrosoftGraph::Models
             @other_address = value
         end
         ## 
-        ## Gets the parentFolderId property value. The parentFolderId property
+        ## Gets the parentFolderId property value. 
         ## @return a string
         ## 
         def parent_folder_id
             return @parent_folder_id
         end
         ## 
-        ## Sets the parentFolderId property value. The parentFolderId property
+        ## Sets the parentFolderId property value. 
         ## @param value Value to set for the parentFolderId property.
         ## @return a void
         ## 
@@ -585,14 +549,14 @@ module MicrosoftGraph::Models
             @parent_folder_id = value
         end
         ## 
-        ## Gets the personalNotes property value. The personalNotes property
+        ## Gets the personalNotes property value. 
         ## @return a string
         ## 
         def personal_notes
             return @personal_notes
         end
         ## 
-        ## Sets the personalNotes property value. The personalNotes property
+        ## Sets the personalNotes property value. 
         ## @param value Value to set for the personalNotes property.
         ## @return a void
         ## 
@@ -615,14 +579,14 @@ module MicrosoftGraph::Models
             @photo = value
         end
         ## 
-        ## Gets the profession property value. The profession property
+        ## Gets the profession property value. 
         ## @return a string
         ## 
         def profession
             return @profession
         end
         ## 
-        ## Sets the profession property value. The profession property
+        ## Sets the profession property value. 
         ## @param value Value to set for the profession property.
         ## @return a void
         ## 
@@ -691,14 +655,14 @@ module MicrosoftGraph::Models
             @single_value_extended_properties = value
         end
         ## 
-        ## Gets the spouseName property value. The spouseName property
+        ## Gets the spouseName property value. 
         ## @return a string
         ## 
         def spouse_name
             return @spouse_name
         end
         ## 
-        ## Sets the spouseName property value. The spouseName property
+        ## Sets the spouseName property value. 
         ## @param value Value to set for the spouseName property.
         ## @return a void
         ## 
@@ -706,14 +670,14 @@ module MicrosoftGraph::Models
             @spouse_name = value
         end
         ## 
-        ## Gets the surname property value. The surname property
+        ## Gets the surname property value. 
         ## @return a string
         ## 
         def surname
             return @surname
         end
         ## 
-        ## Sets the surname property value. The surname property
+        ## Sets the surname property value. 
         ## @param value Value to set for the surname property.
         ## @return a void
         ## 
@@ -721,14 +685,14 @@ module MicrosoftGraph::Models
             @surname = value
         end
         ## 
-        ## Gets the title property value. The title property
+        ## Gets the title property value. 
         ## @return a string
         ## 
         def title
             return @title
         end
         ## 
-        ## Sets the title property value. The title property
+        ## Sets the title property value. 
         ## @param value Value to set for the title property.
         ## @return a void
         ## 
@@ -736,14 +700,14 @@ module MicrosoftGraph::Models
             @title = value
         end
         ## 
-        ## Gets the yomiCompanyName property value. The yomiCompanyName property
+        ## Gets the yomiCompanyName property value. 
         ## @return a string
         ## 
         def yomi_company_name
             return @yomi_company_name
         end
         ## 
-        ## Sets the yomiCompanyName property value. The yomiCompanyName property
+        ## Sets the yomiCompanyName property value. 
         ## @param value Value to set for the yomiCompanyName property.
         ## @return a void
         ## 
@@ -751,14 +715,14 @@ module MicrosoftGraph::Models
             @yomi_company_name = value
         end
         ## 
-        ## Gets the yomiGivenName property value. The yomiGivenName property
+        ## Gets the yomiGivenName property value. 
         ## @return a string
         ## 
         def yomi_given_name
             return @yomi_given_name
         end
         ## 
-        ## Sets the yomiGivenName property value. The yomiGivenName property
+        ## Sets the yomiGivenName property value. 
         ## @param value Value to set for the yomiGivenName property.
         ## @return a void
         ## 
@@ -766,14 +730,14 @@ module MicrosoftGraph::Models
             @yomi_given_name = value
         end
         ## 
-        ## Gets the yomiSurname property value. The yomiSurname property
+        ## Gets the yomiSurname property value. 
         ## @return a string
         ## 
         def yomi_surname
             return @yomi_surname
         end
         ## 
-        ## Sets the yomiSurname property value. The yomiSurname property
+        ## Sets the yomiSurname property value. 
         ## @param value Value to set for the yomiSurname property.
         ## @return a void
         ## 

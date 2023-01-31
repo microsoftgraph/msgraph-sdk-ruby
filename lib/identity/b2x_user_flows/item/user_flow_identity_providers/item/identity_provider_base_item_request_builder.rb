@@ -28,11 +28,12 @@ module MicrosoftGraph::Identity::B2xUserFlows::Item::UserFlowIdentityProviders::
         @url_template
         ## 
         ## Instantiates a new IdentityProviderBaseItemRequestBuilder and sets the default values.
+        ## @param identityProviderBaseId key: id of identityProviderBase
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, identity_provider_base_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userFlowIdentityProviders/{identityProviderBase%2Did}"

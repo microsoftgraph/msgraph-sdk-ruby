@@ -8,11 +8,7 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The OdataCount property
         @odata_count
-        ## 
-        # The OdataNextLink property
         @odata_next_link
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -56,14 +52,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.count property value. The OdataCount property
+        ## Gets the @odata.count property value. 
         ## @return a int64
         ## 
         def odata_count
             return @odata_count
         end
         ## 
-        ## Sets the @odata.count property value. The OdataCount property
+        ## Sets the @odata.count property value. 
         ## @param value Value to set for the OdataCount property.
         ## @return a void
         ## 
@@ -71,14 +67,14 @@ module MicrosoftGraph::Models
             @odata_count = value
         end
         ## 
-        ## Gets the @odata.nextLink property value. The OdataNextLink property
+        ## Gets the @odata.nextLink property value. 
         ## @return a string
         ## 
         def odata_next_link
             return @odata_next_link
         end
         ## 
-        ## Sets the @odata.nextLink property value. The OdataNextLink property
+        ## Sets the @odata.nextLink property value. 
         ## @param value Value to set for the OdataNextLink property.
         ## @return a void
         ## 

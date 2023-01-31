@@ -8,23 +8,48 @@ require_relative '../../../assignments'
 require_relative '../../item'
 require_relative '../submissions'
 require_relative './item'
+require_relative './microsoft_graph_reassign/reassign_request_builder'
+require_relative './microsoft_graph_return/return_request_builder'
+require_relative './microsoft_graph_set_up_resources_folder/set_up_resources_folder_request_builder'
+require_relative './microsoft_graph_submit/submit_request_builder'
+require_relative './microsoft_graph_unsubmit/unsubmit_request_builder'
 require_relative './outcomes/item/education_outcome_item_request_builder'
 require_relative './outcomes/outcomes_request_builder'
-require_relative './reassign/reassign_request_builder'
 require_relative './resources/item/education_submission_resource_item_request_builder'
 require_relative './resources/resources_request_builder'
-require_relative './return_escaped/return_request_builder'
-require_relative './set_up_resources_folder/set_up_resources_folder_request_builder'
-require_relative './submit/submit_request_builder'
 require_relative './submitted_resources/item/education_submission_resource_item_request_builder'
 require_relative './submitted_resources/submitted_resources_request_builder'
-require_relative './unsubmit/unsubmit_request_builder'
 
 module MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item
     ## 
     # Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
     class EducationSubmissionItemRequestBuilder
         
+        ## 
+        # Provides operations to call the reassign method.
+        def microsoft_graph_reassign()
+            return MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::MicrosoftGraphReassign::ReassignRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the return method.
+        def microsoft_graph_return()
+            return MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::MicrosoftGraphReturn::ReturnRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the setUpResourcesFolder method.
+        def microsoft_graph_set_up_resources_folder()
+            return MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::MicrosoftGraphSetUpResourcesFolder::SetUpResourcesFolderRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the submit method.
+        def microsoft_graph_submit()
+            return MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::MicrosoftGraphSubmit::SubmitRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the unsubmit method.
+        def microsoft_graph_unsubmit()
+            return MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::MicrosoftGraphUnsubmit::UnsubmitRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Provides operations to manage the outcomes property of the microsoft.graph.educationSubmission entity.
         def outcomes()
@@ -34,11 +59,6 @@ module MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item
         # Path parameters for the request
         @path_parameters
         ## 
-        # Provides operations to call the reassign method.
-        def reassign()
-            return MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::Reassign::ReassignRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
@@ -47,40 +67,21 @@ module MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item
             return MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::Resources::ResourcesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the return method.
-        def return_escaped()
-            return MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::Return_escaped::ReturnRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the setUpResourcesFolder method.
-        def set_up_resources_folder()
-            return MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::SetUpResourcesFolder::SetUpResourcesFolderRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the submit method.
-        def submit()
-            return MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::Submit::SubmitRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the submittedResources property of the microsoft.graph.educationSubmission entity.
         def submitted_resources()
             return MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::SubmittedResources::SubmittedResourcesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the unsubmit method.
-        def unsubmit()
-            return MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::Unsubmit::UnsubmitRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new EducationSubmissionItemRequestBuilder and sets the default values.
+        ## @param educationSubmissionId key: id of educationSubmission
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, education_submission_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}{?%24select,%24expand}"
@@ -93,7 +94,7 @@ module MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -107,7 +108,7 @@ module MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of education_submission
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -129,11 +130,11 @@ module MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item
         end
         ## 
         ## Update the navigation property submissions in education
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of education_submission
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -170,7 +171,7 @@ module MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -186,7 +187,7 @@ module MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -201,11 +202,11 @@ module MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item
         end
         ## 
         ## Update the navigation property submissions in education
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

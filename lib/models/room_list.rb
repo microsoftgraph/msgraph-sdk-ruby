@@ -8,8 +8,6 @@ module MicrosoftGraph::Models
         ## 
         # The email address of the room list.
         @email_address
-        ## 
-        # The rooms property
         @rooms
         ## 
         ## Instantiates a new RoomList and sets the default values.
@@ -54,14 +52,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the rooms property value. The rooms property
+        ## Gets the rooms property value. 
         ## @return a room
         ## 
         def rooms
             return @rooms
         end
         ## 
-        ## Sets the rooms property value. The rooms property
+        ## Sets the rooms property value. 
         ## @param value Value to set for the rooms property.
         ## @return a void
         ## 

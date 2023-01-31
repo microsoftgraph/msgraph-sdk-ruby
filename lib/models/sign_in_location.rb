@@ -17,8 +17,6 @@ module MicrosoftGraph::Models
         ## 
         # Provides the latitude, longitude and altitude where the sign-in originated.
         @geo_coordinates
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Provides the State where the sign-in originated. This is calculated using latitude/longitude information from the sign-in activity.
@@ -113,14 +111,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

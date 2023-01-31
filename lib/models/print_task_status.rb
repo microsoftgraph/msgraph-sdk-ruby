@@ -11,11 +11,7 @@ module MicrosoftGraph::Models
         ## 
         # A human-readable description of the current processing state of the printTask.
         @description
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The state property
         @state
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -75,14 +71,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -102,14 +98,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the state property value. The state property
+        ## Gets the state property value. 
         ## @return a print_task_processing_state
         ## 
         def state
             return @state
         end
         ## 
-        ## Sets the state property value. The state property
+        ## Sets the state property value. 
         ## @param value Value to set for the state property.
         ## @return a void
         ## 

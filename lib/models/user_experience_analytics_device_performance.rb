@@ -29,8 +29,6 @@ module MicrosoftGraph::Models
         ## 
         # The user experience analytics device name.
         @device_name
-        ## 
-        # The diskType property
         @disk_type
         ## 
         # The user experience analytics device group policy boot time in milliseconds.
@@ -38,8 +36,6 @@ module MicrosoftGraph::Models
         ## 
         # The user experience analytics device group policy login time in milliseconds.
         @group_policy_login_time_in_ms
-        ## 
-        # The healthStatus property
         @health_status
         ## 
         # The user experience analytics device login score.
@@ -202,14 +198,14 @@ module MicrosoftGraph::Models
             @device_name = value
         end
         ## 
-        ## Gets the diskType property value. The diskType property
+        ## Gets the diskType property value. 
         ## @return a disk_type
         ## 
         def disk_type
             return @disk_type
         end
         ## 
-        ## Sets the diskType property value. The diskType property
+        ## Sets the diskType property value. 
         ## @param value Value to set for the diskType property.
         ## @return a void
         ## 
@@ -275,14 +271,14 @@ module MicrosoftGraph::Models
             @group_policy_login_time_in_ms = value
         end
         ## 
-        ## Gets the healthStatus property value. The healthStatus property
+        ## Gets the healthStatus property value. 
         ## @return a user_experience_analytics_health_state
         ## 
         def health_status
             return @health_status
         end
         ## 
-        ## Sets the healthStatus property value. The healthStatus property
+        ## Sets the healthStatus property value. 
         ## @param value Value to set for the healthStatus property.
         ## @return a void
         ## 

@@ -8,8 +8,6 @@ module MicrosoftGraph::Models
         ## 
         # Determines if the user is enforced to register the authentication method.
         @is_registration_required
-        ## 
-        # The targetType property
         @target_type
         ## 
         ## Instantiates a new authenticationMethodTarget and sets the default values.
@@ -72,14 +70,14 @@ module MicrosoftGraph::Models
             writer.write_enum_value("targetType", @target_type)
         end
         ## 
-        ## Gets the targetType property value. The targetType property
+        ## Gets the targetType property value. 
         ## @return a authentication_method_target_type
         ## 
         def target_type
             return @target_type
         end
         ## 
-        ## Sets the targetType property value. The targetType property
+        ## Sets the targetType property value. 
         ## @param value Value to set for the targetType property.
         ## @return a void
         ## 

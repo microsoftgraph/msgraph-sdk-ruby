@@ -1,3 +1,0 @@
-require_relative 'set_user_preferred_presence_post_request_body'
-module MicrosoftGraph::Me::Presence::SetUserPreferredPresence
-end

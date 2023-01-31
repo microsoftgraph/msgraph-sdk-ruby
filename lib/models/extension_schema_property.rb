@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # The name of the strongly-typed property defined as part of a schema extension.
         @name
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The type of the property that is defined as part of a schema extension.  Allowed values are Binary, Boolean, DateTime, Integer or String. See the table below for more details.
@@ -75,14 +73,14 @@ module MicrosoftGraph::Models
             @name = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -21,8 +21,6 @@ module MicrosoftGraph::Models
         ## 
         # Read-only. Nullable. Additional details about the plan.
         @details
-        ## 
-        # The owner property
         @owner
         ## 
         # Read-only. Nullable. Collection of tasks in the plan.
@@ -138,14 +136,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the owner property value. The owner property
+        ## Gets the owner property value. 
         ## @return a string
         ## 
         def owner
             return @owner
         end
         ## 
-        ## Sets the owner property value. The owner property
+        ## Sets the owner property value. 
         ## @param value Value to set for the owner property.
         ## @return a void
         ## 

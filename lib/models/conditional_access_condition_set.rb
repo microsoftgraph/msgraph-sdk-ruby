@@ -23,8 +23,6 @@ module MicrosoftGraph::Models
         ## 
         # Locations included in and excluded from the policy.
         @locations
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Platforms included in and excluded from the policy.
@@ -167,14 +165,14 @@ module MicrosoftGraph::Models
             @locations = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -9,8 +9,6 @@ module MicrosoftGraph::Models
         ## 
         # References to attached objects like files, tabs, meetings etc.
         @attachments
-        ## 
-        # The body property
         @body
         ## 
         # If the message was sent in a channel, represents identity of the channel.
@@ -36,8 +34,6 @@ module MicrosoftGraph::Models
         ## 
         # Content in a message hosted by Microsoft Teams - for example, images or code snippets.
         @hosted_contents
-        ## 
-        # The importance property
         @importance
         ## 
         # Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
@@ -51,8 +47,6 @@ module MicrosoftGraph::Models
         ## 
         # List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
         @mentions
-        ## 
-        # The messageType property
         @message_type
         ## 
         # Defines the properties of a policy violation set by a data loss prevention (DLP) application.
@@ -91,14 +85,14 @@ module MicrosoftGraph::Models
             @attachments = value
         end
         ## 
-        ## Gets the body property value. The body property
+        ## Gets the body property value. 
         ## @return a item_body
         ## 
         def body
             return @body
         end
         ## 
-        ## Sets the body property value. The body property
+        ## Sets the body property value. 
         ## @param value Value to set for the body property.
         ## @return a void
         ## 
@@ -273,14 +267,14 @@ module MicrosoftGraph::Models
             @hosted_contents = value
         end
         ## 
-        ## Gets the importance property value. The importance property
+        ## Gets the importance property value. 
         ## @return a chat_message_importance
         ## 
         def importance
             return @importance
         end
         ## 
-        ## Sets the importance property value. The importance property
+        ## Sets the importance property value. 
         ## @param value Value to set for the importance property.
         ## @return a void
         ## 
@@ -348,14 +342,14 @@ module MicrosoftGraph::Models
             @mentions = value
         end
         ## 
-        ## Gets the messageType property value. The messageType property
+        ## Gets the messageType property value. 
         ## @return a chat_message_type
         ## 
         def message_type
             return @message_type
         end
         ## 
-        ## Sets the messageType property value. The messageType property
+        ## Sets the messageType property value. 
         ## @param value Value to set for the messageType property.
         ## @return a void
         ## 

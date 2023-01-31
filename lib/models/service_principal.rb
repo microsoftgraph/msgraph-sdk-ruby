@@ -47,8 +47,6 @@ module MicrosoftGraph::Models
         ## 
         # Directory objects created by this service principal. Read-only. Nullable.
         @created_objects
-        ## 
-        # The delegatedPermissionClassifications property
         @delegated_permission_classifications
         ## 
         # Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
@@ -59,8 +57,6 @@ module MicrosoftGraph::Models
         ## 
         # The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
         @display_name
-        ## 
-        # The endpoints property
         @endpoints
         ## 
         # Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).
@@ -143,8 +139,6 @@ module MicrosoftGraph::Models
         ## 
         # The tokenLifetimePolicies assigned to this service principal.
         @token_lifetime_policies
-        ## 
-        # The transitiveMemberOf property
         @transitive_member_of
         ## 
         # Specifies the verified publisher of the application which this service principal represents.
@@ -377,14 +371,14 @@ module MicrosoftGraph::Models
             return ServicePrincipal.new
         end
         ## 
-        ## Gets the delegatedPermissionClassifications property value. The delegatedPermissionClassifications property
+        ## Gets the delegatedPermissionClassifications property value. 
         ## @return a delegated_permission_classification
         ## 
         def delegated_permission_classifications
             return @delegated_permission_classifications
         end
         ## 
-        ## Sets the delegatedPermissionClassifications property value. The delegatedPermissionClassifications property
+        ## Sets the delegatedPermissionClassifications property value. 
         ## @param value Value to set for the delegatedPermissionClassifications property.
         ## @return a void
         ## 
@@ -437,14 +431,14 @@ module MicrosoftGraph::Models
             @display_name = value
         end
         ## 
-        ## Gets the endpoints property value. The endpoints property
+        ## Gets the endpoints property value. 
         ## @return a endpoint
         ## 
         def endpoints
             return @endpoints
         end
         ## 
-        ## Sets the endpoints property value. The endpoints property
+        ## Sets the endpoints property value. 
         ## @param value Value to set for the endpoints property.
         ## @return a void
         ## 
@@ -970,14 +964,14 @@ module MicrosoftGraph::Models
             @token_lifetime_policies = value
         end
         ## 
-        ## Gets the transitiveMemberOf property value. The transitiveMemberOf property
+        ## Gets the transitiveMemberOf property value. 
         ## @return a directory_object
         ## 
         def transitive_member_of
             return @transitive_member_of
         end
         ## 
-        ## Sets the transitiveMemberOf property value. The transitiveMemberOf property
+        ## Sets the transitiveMemberOf property value. 
         ## @param value Value to set for the transitiveMemberOf property.
         ## @return a void
         ## 

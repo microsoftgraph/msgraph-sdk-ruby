@@ -24,8 +24,6 @@ module MicrosoftGraph::Models
         ## 
         # Year the student is graduating from the school.
         @graduation_year
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Student Number.
@@ -152,14 +150,14 @@ module MicrosoftGraph::Models
             @graduation_year = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

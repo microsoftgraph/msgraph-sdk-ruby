@@ -14,14 +14,10 @@ module MicrosoftGraph::Models
         ## 
         # Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
         @include_applications
-        ## 
-        # The includeAuthenticationContextClassReferences property
         @include_authentication_context_class_references
         ## 
         # User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
         @include_user_actions
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -98,14 +94,14 @@ module MicrosoftGraph::Models
             @include_applications = value
         end
         ## 
-        ## Gets the includeAuthenticationContextClassReferences property value. The includeAuthenticationContextClassReferences property
+        ## Gets the includeAuthenticationContextClassReferences property value. 
         ## @return a string
         ## 
         def include_authentication_context_class_references
             return @include_authentication_context_class_references
         end
         ## 
-        ## Sets the includeAuthenticationContextClassReferences property value. The includeAuthenticationContextClassReferences property
+        ## Sets the includeAuthenticationContextClassReferences property value. 
         ## @param value Value to set for the includeAuthenticationContextClassReferences property.
         ## @return a void
         ## 
@@ -128,14 +124,14 @@ module MicrosoftGraph::Models
             @include_user_actions = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

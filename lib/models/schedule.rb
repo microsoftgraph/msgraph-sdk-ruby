@@ -8,17 +8,11 @@ module MicrosoftGraph::Models
         ## 
         # Indicates whether the schedule is enabled for the team. Required.
         @enabled
-        ## 
-        # The offerShiftRequests property
         @offer_shift_requests
         ## 
         # Indicates whether offer shift requests are enabled for the schedule.
         @offer_shift_requests_enabled
-        ## 
-        # The openShiftChangeRequests property
         @open_shift_change_requests
-        ## 
-        # The openShifts property
         @open_shifts
         ## 
         # Indicates whether open shifts are enabled for the schedule.
@@ -35,8 +29,6 @@ module MicrosoftGraph::Models
         ## 
         # The shifts in the schedule.
         @shifts
-        ## 
-        # The swapShiftsChangeRequests property
         @swap_shifts_change_requests
         ## 
         # Indicates whether swap shifts requests are enabled for the schedule.
@@ -47,8 +39,6 @@ module MicrosoftGraph::Models
         ## 
         # The set of reasons for a time off in the schedule.
         @time_off_reasons
-        ## 
-        # The timeOffRequests property
         @time_off_requests
         ## 
         # Indicates whether time off requests are enabled for the schedule.
@@ -59,8 +49,6 @@ module MicrosoftGraph::Models
         ## 
         # Indicates the time zone of the schedule team using tz database format. Required.
         @time_zone
-        ## 
-        # The workforceIntegrationIds property
         @workforce_integration_ids
         ## 
         ## Instantiates a new schedule and sets the default values.
@@ -121,14 +109,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the offerShiftRequests property value. The offerShiftRequests property
+        ## Gets the offerShiftRequests property value. 
         ## @return a offer_shift_request
         ## 
         def offer_shift_requests
             return @offer_shift_requests
         end
         ## 
-        ## Sets the offerShiftRequests property value. The offerShiftRequests property
+        ## Sets the offerShiftRequests property value. 
         ## @param value Value to set for the offerShiftRequests property.
         ## @return a void
         ## 
@@ -151,14 +139,14 @@ module MicrosoftGraph::Models
             @offer_shift_requests_enabled = value
         end
         ## 
-        ## Gets the openShiftChangeRequests property value. The openShiftChangeRequests property
+        ## Gets the openShiftChangeRequests property value. 
         ## @return a open_shift_change_request
         ## 
         def open_shift_change_requests
             return @open_shift_change_requests
         end
         ## 
-        ## Sets the openShiftChangeRequests property value. The openShiftChangeRequests property
+        ## Sets the openShiftChangeRequests property value. 
         ## @param value Value to set for the openShiftChangeRequests property.
         ## @return a void
         ## 
@@ -166,14 +154,14 @@ module MicrosoftGraph::Models
             @open_shift_change_requests = value
         end
         ## 
-        ## Gets the openShifts property value. The openShifts property
+        ## Gets the openShifts property value. 
         ## @return a open_shift
         ## 
         def open_shifts
             return @open_shifts
         end
         ## 
-        ## Sets the openShifts property value. The openShifts property
+        ## Sets the openShifts property value. 
         ## @param value Value to set for the openShifts property.
         ## @return a void
         ## 
@@ -282,14 +270,14 @@ module MicrosoftGraph::Models
             @shifts = value
         end
         ## 
-        ## Gets the swapShiftsChangeRequests property value. The swapShiftsChangeRequests property
+        ## Gets the swapShiftsChangeRequests property value. 
         ## @return a swap_shifts_change_request
         ## 
         def swap_shifts_change_requests
             return @swap_shifts_change_requests
         end
         ## 
-        ## Sets the swapShiftsChangeRequests property value. The swapShiftsChangeRequests property
+        ## Sets the swapShiftsChangeRequests property value. 
         ## @param value Value to set for the swapShiftsChangeRequests property.
         ## @return a void
         ## 
@@ -342,14 +330,14 @@ module MicrosoftGraph::Models
             @time_off_reasons = value
         end
         ## 
-        ## Gets the timeOffRequests property value. The timeOffRequests property
+        ## Gets the timeOffRequests property value. 
         ## @return a time_off_request
         ## 
         def time_off_requests
             return @time_off_requests
         end
         ## 
-        ## Sets the timeOffRequests property value. The timeOffRequests property
+        ## Sets the timeOffRequests property value. 
         ## @param value Value to set for the timeOffRequests property.
         ## @return a void
         ## 
@@ -402,14 +390,14 @@ module MicrosoftGraph::Models
             @time_zone = value
         end
         ## 
-        ## Gets the workforceIntegrationIds property value. The workforceIntegrationIds property
+        ## Gets the workforceIntegrationIds property value. 
         ## @return a string
         ## 
         def workforce_integration_ids
             return @workforce_integration_ids
         end
         ## 
-        ## Sets the workforceIntegrationIds property value. The workforceIntegrationIds property
+        ## Sets the workforceIntegrationIds property value. 
         ## @param value Value to set for the workforceIntegrationIds property.
         ## @return a void
         ## 

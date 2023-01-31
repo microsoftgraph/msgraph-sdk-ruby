@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # The ID of the entity that's targeted in the include or exclude rule, or all_users to target all users.
         @id
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The kind of entity that's targeted. The possible values are: group, administrativeUnit, role, unknownFutureValue.
@@ -75,14 +73,14 @@ module MicrosoftGraph::Models
             @id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

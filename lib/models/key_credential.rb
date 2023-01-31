@@ -24,8 +24,6 @@ module MicrosoftGraph::Models
         ## 
         # The unique identifier (GUID) for the key.
         @key_id
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The date and time at which the credential becomes valid.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
@@ -160,14 +158,14 @@ module MicrosoftGraph::Models
             @key_id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -15,14 +15,10 @@ module MicrosoftGraph::Models
         ## 
         # The display name of the connected organization. Supports $filter (eq).
         @display_name
-        ## 
-        # The externalSponsors property
         @external_sponsors
         ## 
         # The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
         @identity_sources
-        ## 
-        # The internalSponsors property
         @internal_sponsors
         ## 
         # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -92,14 +88,14 @@ module MicrosoftGraph::Models
             @display_name = value
         end
         ## 
-        ## Gets the externalSponsors property value. The externalSponsors property
+        ## Gets the externalSponsors property value. 
         ## @return a directory_object
         ## 
         def external_sponsors
             return @external_sponsors
         end
         ## 
-        ## Sets the externalSponsors property value. The externalSponsors property
+        ## Sets the externalSponsors property value. 
         ## @param value Value to set for the externalSponsors property.
         ## @return a void
         ## 
@@ -138,14 +134,14 @@ module MicrosoftGraph::Models
             @identity_sources = value
         end
         ## 
-        ## Gets the internalSponsors property value. The internalSponsors property
+        ## Gets the internalSponsors property value. 
         ## @return a directory_object
         ## 
         def internal_sponsors
             return @internal_sponsors
         end
         ## 
-        ## Sets the internalSponsors property value. The internalSponsors property
+        ## Sets the internalSponsors property value. 
         ## @param value Value to set for the internalSponsors property.
         ## @return a void
         ## 

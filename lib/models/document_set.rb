@@ -14,20 +14,14 @@ module MicrosoftGraph::Models
         ## 
         # Default contents of document set.
         @default_contents
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Specifies whether to push welcome page changes to inherited content types.
         @propagate_welcome_page_changes
-        ## 
-        # The sharedColumns property
         @shared_columns
         ## 
         # Indicates whether to add the name of the document set to each file name.
         @should_prefix_name_to_file
-        ## 
-        # The welcomePageColumns property
         @welcome_page_columns
         ## 
         # Welcome page absolute URL.
@@ -110,14 +104,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -157,14 +151,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the sharedColumns property value. The sharedColumns property
+        ## Gets the sharedColumns property value. 
         ## @return a column_definition
         ## 
         def shared_columns
             return @shared_columns
         end
         ## 
-        ## Sets the sharedColumns property value. The sharedColumns property
+        ## Sets the sharedColumns property value. 
         ## @param value Value to set for the sharedColumns property.
         ## @return a void
         ## 
@@ -187,14 +181,14 @@ module MicrosoftGraph::Models
             @should_prefix_name_to_file = value
         end
         ## 
-        ## Gets the welcomePageColumns property value. The welcomePageColumns property
+        ## Gets the welcomePageColumns property value. 
         ## @return a column_definition
         ## 
         def welcome_page_columns
             return @welcome_page_columns
         end
         ## 
-        ## Sets the welcomePageColumns property value. The welcomePageColumns property
+        ## Sets the welcomePageColumns property value. 
         ## @param value Value to set for the welcomePageColumns property.
         ## @return a void
         ## 

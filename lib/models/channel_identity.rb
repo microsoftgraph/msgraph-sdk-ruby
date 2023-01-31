@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # The identity of the channel in which the message was posted.
         @channel_id
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The identity of the team in which the message was posted.
@@ -75,14 +73,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

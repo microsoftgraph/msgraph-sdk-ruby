@@ -9,8 +9,6 @@ module MicrosoftGraph::Models
         ## 
         # Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.
         @active_duration_seconds
-        ## 
-        # The activity property
         @activity
         ## 
         # Set by the server. DateTime in UTC when the object was created on the server.
@@ -49,14 +47,14 @@ module MicrosoftGraph::Models
             @active_duration_seconds = value
         end
         ## 
-        ## Gets the activity property value. The activity property
+        ## Gets the activity property value. 
         ## @return a user_activity
         ## 
         def activity
             return @activity
         end
         ## 
-        ## Sets the activity property value. The activity property
+        ## Sets the activity property value. 
         ## @param value Value to set for the activity property.
         ## @return a void
         ## 

@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class CrossTenantAccessPolicy < MicrosoftGraph::Models::PolicyBase
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The allowedCloudEndpoints property
         @allowed_cloud_endpoints
         ## 
         # Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
@@ -15,14 +13,14 @@ module MicrosoftGraph::Models
         # Defines partner-specific configurations for external Azure Active Directory organizations.
         @partners
         ## 
-        ## Gets the allowedCloudEndpoints property value. The allowedCloudEndpoints property
+        ## Gets the allowedCloudEndpoints property value. 
         ## @return a string
         ## 
         def allowed_cloud_endpoints
             return @allowed_cloud_endpoints
         end
         ## 
-        ## Sets the allowedCloudEndpoints property value. The allowedCloudEndpoints property
+        ## Sets the allowedCloudEndpoints property value. 
         ## @param value Value to set for the allowedCloudEndpoints property.
         ## @return a void
         ## 

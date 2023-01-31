@@ -9,26 +9,12 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The clickAction property
         @click_action
-        ## 
-        # The clickDateTime property
         @click_date_time
-        ## 
-        # The id property
         @id
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The sourceId property
         @source_id
-        ## 
-        # The uriDomain property
         @uri_domain
-        ## 
-        # The verdict property
         @verdict
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -46,14 +32,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the clickAction property value. The clickAction property
+        ## Gets the clickAction property value. 
         ## @return a string
         ## 
         def click_action
             return @click_action
         end
         ## 
-        ## Sets the clickAction property value. The clickAction property
+        ## Sets the clickAction property value. 
         ## @param value Value to set for the clickAction property.
         ## @return a void
         ## 
@@ -61,14 +47,14 @@ module MicrosoftGraph::Models
             @click_action = value
         end
         ## 
-        ## Gets the clickDateTime property value. The clickDateTime property
+        ## Gets the clickDateTime property value. 
         ## @return a date_time
         ## 
         def click_date_time
             return @click_date_time
         end
         ## 
-        ## Sets the clickDateTime property value. The clickDateTime property
+        ## Sets the clickDateTime property value. 
         ## @param value Value to set for the clickDateTime property.
         ## @return a void
         ## 
@@ -107,14 +93,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the id property value. The id property
+        ## Gets the id property value. 
         ## @return a string
         ## 
         def id
             return @id
         end
         ## 
-        ## Sets the id property value. The id property
+        ## Sets the id property value. 
         ## @param value Value to set for the id property.
         ## @return a void
         ## 
@@ -122,14 +108,14 @@ module MicrosoftGraph::Models
             @id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -153,14 +139,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the sourceId property value. The sourceId property
+        ## Gets the sourceId property value. 
         ## @return a string
         ## 
         def source_id
             return @source_id
         end
         ## 
-        ## Sets the sourceId property value. The sourceId property
+        ## Sets the sourceId property value. 
         ## @param value Value to set for the sourceId property.
         ## @return a void
         ## 
@@ -168,14 +154,14 @@ module MicrosoftGraph::Models
             @source_id = value
         end
         ## 
-        ## Gets the uriDomain property value. The uriDomain property
+        ## Gets the uriDomain property value. 
         ## @return a string
         ## 
         def uri_domain
             return @uri_domain
         end
         ## 
-        ## Sets the uriDomain property value. The uriDomain property
+        ## Sets the uriDomain property value. 
         ## @param value Value to set for the uriDomain property.
         ## @return a void
         ## 
@@ -183,14 +169,14 @@ module MicrosoftGraph::Models
             @uri_domain = value
         end
         ## 
-        ## Gets the verdict property value. The verdict property
+        ## Gets the verdict property value. 
         ## @return a string
         ## 
         def verdict
             return @verdict
         end
         ## 
-        ## Sets the verdict property value. The verdict property
+        ## Sets the verdict property value. 
         ## @param value Value to set for the verdict property.
         ## @return a void
         ## 

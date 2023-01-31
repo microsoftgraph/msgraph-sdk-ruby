@@ -14,11 +14,7 @@ module MicrosoftGraph::Models
         ## 
         # Not yet documented
         @id
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The sourceType property
         @source_type
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -94,14 +90,14 @@ module MicrosoftGraph::Models
             @id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -122,14 +118,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the sourceType property value. The sourceType property
+        ## Gets the sourceType property value. 
         ## @return a setting_source_type
         ## 
         def source_type
             return @source_type
         end
         ## 
-        ## Sets the sourceType property value. The sourceType property
+        ## Sets the sourceType property value. 
         ## @param value Value to set for the sourceType property.
         ## @return a void
         ## 

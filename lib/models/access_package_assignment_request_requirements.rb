@@ -17,8 +17,6 @@ module MicrosoftGraph::Models
         ## 
         # Indicates whether a request to update must be approved by an approver.
         @is_approval_required_for_update
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The description of the policy that the user is trying to request access using.
@@ -125,14 +123,14 @@ module MicrosoftGraph::Models
             @is_approval_required_for_update = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -20,8 +20,6 @@ module MicrosoftGraph::Models
         ## 
         # The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
         @media_type
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # A URL leading to the preview image for the item.
@@ -144,14 +142,14 @@ module MicrosoftGraph::Models
             @media_type = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -17,8 +17,6 @@ module MicrosoftGraph::Models
         ## 
         # The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
         @internal_reply_message
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The date and time that automatic replies are set to end, if Status is set to Scheduled.
@@ -121,14 +119,14 @@ module MicrosoftGraph::Models
             @internal_reply_message = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

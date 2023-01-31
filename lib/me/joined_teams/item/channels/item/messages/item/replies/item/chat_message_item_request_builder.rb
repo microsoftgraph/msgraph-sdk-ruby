@@ -13,8 +13,8 @@ require_relative '../replies'
 require_relative './hosted_contents/hosted_contents_request_builder'
 require_relative './hosted_contents/item/chat_message_hosted_content_item_request_builder'
 require_relative './item'
-require_relative './soft_delete/soft_delete_request_builder'
-require_relative './undo_soft_delete/undo_soft_delete_request_builder'
+require_relative './microsoft_graph_soft_delete/soft_delete_request_builder'
+require_relative './microsoft_graph_undo_soft_delete/undo_soft_delete_request_builder'
 
 module MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Messages::Item::Replies::Item
     ## 
@@ -27,31 +27,32 @@ module MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Messages::Item::Re
             return MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Messages::Item::Replies::Item::HostedContents::HostedContentsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the softDelete method.
+        def microsoft_graph_soft_delete()
+            return MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Messages::Item::Replies::Item::MicrosoftGraphSoftDelete::SoftDeleteRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the undoSoftDelete method.
+        def microsoft_graph_undo_soft_delete()
+            return MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Messages::Item::Replies::Item::MicrosoftGraphUndoSoftDelete::UndoSoftDeleteRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the softDelete method.
-        def soft_delete()
-            return MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Messages::Item::Replies::Item::SoftDelete::SoftDeleteRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the undoSoftDelete method.
-        def undo_soft_delete()
-            return MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Messages::Item::Replies::Item::UndoSoftDelete::UndoSoftDeleteRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new ChatMessageItemRequestBuilder and sets the default values.
+        ## @param chatMessageId1 key: id of chatMessage
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, chat_message_id1=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/me/joinedTeams/{team%2Did}/channels/{channel%2Did}/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}{?%24select,%24expand}"
@@ -64,7 +65,7 @@ module MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Messages::Item::Re
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -78,7 +79,7 @@ module MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Messages::Item::Re
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of chat_message
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -100,11 +101,11 @@ module MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Messages::Item::Re
         end
         ## 
         ## Update the navigation property replies in me
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of chat_message
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -119,7 +120,7 @@ module MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Messages::Item::Re
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -135,7 +136,7 @@ module MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Messages::Item::Re
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -150,11 +151,11 @@ module MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Messages::Item::Re
         end
         ## 
         ## Update the navigation property replies in me
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

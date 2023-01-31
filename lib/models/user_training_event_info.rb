@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
         @latest_training_status
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Event details of the training when it was assigned to the user.
@@ -102,14 +100,14 @@ module MicrosoftGraph::Models
             @latest_training_status = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

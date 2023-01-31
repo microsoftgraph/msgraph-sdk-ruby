@@ -11,10 +11,10 @@ require_relative './item'
 require_relative './items/item/drive_item_item_request_builder'
 require_relative './items/items_request_builder'
 require_relative './list/list_request_builder'
-require_relative './recent/recent_request_builder'
+require_relative './microsoft_graph_recent/recent_request_builder'
+require_relative './microsoft_graph_search_with_q/search_with_q_request_builder'
+require_relative './microsoft_graph_shared_with_me/shared_with_me_request_builder'
 require_relative './root/root_request_builder'
-require_relative './search_with_q/search_with_q_request_builder'
-require_relative './shared_with_me/shared_with_me_request_builder'
 require_relative './special/item/drive_item_item_request_builder'
 require_relative './special/special_request_builder'
 
@@ -42,6 +42,16 @@ module MicrosoftGraph::Drives::Item
         # Provides operations to manage the list property of the microsoft.graph.drive entity.
         def list()
             return MicrosoftGraph::Drives::Item::List::ListRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the recent method.
+        def microsoft_graph_recent()
+            return MicrosoftGraph::Drives::Item::MicrosoftGraphRecent::RecentRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the sharedWithMe method.
+        def microsoft_graph_shared_with_me()
+            return MicrosoftGraph::Drives::Item::MicrosoftGraphSharedWithMe::SharedWithMeRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -75,11 +85,12 @@ module MicrosoftGraph::Drives::Item
         end
         ## 
         ## Instantiates a new DriveItemRequestBuilder and sets the default values.
+        ## @param driveId key: id of drive
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, drive_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/drives/{drive%2Did}{?%24select,%24expand}"
@@ -88,11 +99,11 @@ module MicrosoftGraph::Drives::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from drives by key (id)
+        ## Delete entity from drives
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -117,7 +128,7 @@ module MicrosoftGraph::Drives::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of drive
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -138,12 +149,21 @@ module MicrosoftGraph::Drives::Item
             return MicrosoftGraph::Drives::Item::Items::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Update entity in drives by key (id)
-        ## @param body The request body
+        ## Provides operations to call the search method.
+        ## @param q Usage: q='{q}'
+        ## @return a search_with_q_request_builder
+        ## 
+        def microsoft_graph_search_with_q(q)
+            raise StandardError, 'q cannot be null' if q.nil?
+            return SearchWithQRequestBuilder.new(@path_parameters, @request_adapter, q)
+        end
+        ## 
+        ## Update entity in drives
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of drive
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -152,29 +172,6 @@ module MicrosoftGraph::Drives::Item
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Drive.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Provides operations to call the recent method.
-        ## @return a recent_request_builder
-        ## 
-        def recent()
-            return RecentRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the search method.
-        ## @param q Usage: q='{q}'
-        ## @return a search_with_q_request_builder
-        ## 
-        def search_with_q(q)
-            raise StandardError, 'q cannot be null' if q.nil?
-            return SearchWithQRequestBuilder.new(@path_parameters, @request_adapter, q)
-        end
-        ## 
-        ## Provides operations to call the sharedWithMe method.
-        ## @return a shared_with_me_request_builder
-        ## 
-        def shared_with_me()
-            return SharedWithMeRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Provides operations to manage the special property of the microsoft.graph.drive entity.
@@ -188,11 +185,11 @@ module MicrosoftGraph::Drives::Item
             return MicrosoftGraph::Drives::Item::Special::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Delete entity from drives by key (id)
+        ## Delete entity from drives
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -208,7 +205,7 @@ module MicrosoftGraph::Drives::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -222,12 +219,12 @@ module MicrosoftGraph::Drives::Item
             return request_info
         end
         ## 
-        ## Update entity in drives by key (id)
-        ## @param body The request body
+        ## Update entity in drives
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

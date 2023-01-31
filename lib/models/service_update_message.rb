@@ -15,11 +15,7 @@ module MicrosoftGraph::Models
         ## 
         # The zip file that contains all attachments for a message.
         @attachments_archive
-        ## 
-        # The body property
         @body
-        ## 
-        # The category property
         @category
         ## 
         # Indicates whether the message has any attachment.
@@ -30,8 +26,6 @@ module MicrosoftGraph::Models
         ## 
         # The affected services by the service message.
         @services
-        ## 
-        # The severity property
         @severity
         ## 
         # A collection of tags for the service message. Tags are provided by the service team/support team who post the message to tell whether this message contains privacy data, or whether this message is for a service new feature update, and so on.
@@ -85,14 +79,14 @@ module MicrosoftGraph::Models
             @attachments_archive = value
         end
         ## 
-        ## Gets the body property value. The body property
+        ## Gets the body property value. 
         ## @return a item_body
         ## 
         def body
             return @body
         end
         ## 
-        ## Sets the body property value. The body property
+        ## Sets the body property value. 
         ## @param value Value to set for the body property.
         ## @return a void
         ## 
@@ -100,14 +94,14 @@ module MicrosoftGraph::Models
             @body = value
         end
         ## 
-        ## Gets the category property value. The category property
+        ## Gets the category property value. 
         ## @return a service_update_category
         ## 
         def category
             return @category
         end
         ## 
-        ## Sets the category property value. The category property
+        ## Sets the category property value. 
         ## @param value Value to set for the category property.
         ## @return a void
         ## 
@@ -216,14 +210,14 @@ module MicrosoftGraph::Models
             @services = value
         end
         ## 
-        ## Gets the severity property value. The severity property
+        ## Gets the severity property value. 
         ## @return a service_update_severity
         ## 
         def severity
             return @severity
         end
         ## 
-        ## Sets the severity property value. The severity property
+        ## Sets the severity property value. 
         ## @param value Value to set for the severity property.
         ## @return a void
         ## 

@@ -12,12 +12,12 @@ require_relative './access_packages_incompatible_with/item/access_package_item_r
 require_relative './assignment_policies/assignment_policies_request_builder'
 require_relative './assignment_policies/item/access_package_assignment_policy_item_request_builder'
 require_relative './catalog/catalog_request_builder'
-require_relative './get_applicable_policy_requirements/get_applicable_policy_requirements_request_builder'
 require_relative './incompatible_access_packages/incompatible_access_packages_request_builder'
 require_relative './incompatible_access_packages/item/access_package_item_request_builder'
 require_relative './incompatible_groups/incompatible_groups_request_builder'
 require_relative './incompatible_groups/item/group_item_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_get_applicable_policy_requirements/get_applicable_policy_requirements_request_builder'
 
 module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item
     ## 
@@ -40,11 +40,6 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item
             return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::Catalog::CatalogRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the getApplicablePolicyRequirements method.
-        def get_applicable_policy_requirements()
-            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::GetApplicablePolicyRequirements::GetApplicablePolicyRequirementsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the incompatibleAccessPackages property of the microsoft.graph.accessPackage entity.
         def incompatible_access_packages()
             return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::IncompatibleAccessPackages::IncompatibleAccessPackagesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -53,6 +48,11 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item
         # Provides operations to manage the incompatibleGroups property of the microsoft.graph.accessPackage entity.
         def incompatible_groups()
             return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::IncompatibleGroups::IncompatibleGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getApplicablePolicyRequirements method.
+        def microsoft_graph_get_applicable_policy_requirements()
+            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::MicrosoftGraphGetApplicablePolicyRequirements::GetApplicablePolicyRequirementsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -87,11 +87,12 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item
         end
         ## 
         ## Instantiates a new AccessPackageItemRequestBuilder and sets the default values.
+        ## @param accessPackageId key: id of accessPackage
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, access_package_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}/accessPackages/{accessPackage%2Did}{?%24select,%24expand}"
@@ -104,7 +105,7 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -118,7 +119,7 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of access_package
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -151,11 +152,11 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item
         end
         ## 
         ## Update the navigation property accessPackages in identityGovernance
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of access_package
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -170,7 +171,7 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -186,7 +187,7 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -201,11 +202,11 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item
         end
         ## 
         ## Update the navigation property accessPackages in identityGovernance
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

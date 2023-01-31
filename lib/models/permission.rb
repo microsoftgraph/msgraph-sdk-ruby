@@ -9,11 +9,7 @@ module MicrosoftGraph::Models
         ## 
         # A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
         @expiration_date_time
-        ## 
-        # The grantedTo property
         @granted_to
-        ## 
-        # The grantedToIdentities property
         @granted_to_identities
         ## 
         # For link type permissions, the details of the users to whom permission was granted. Read-only.
@@ -90,14 +86,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the grantedTo property value. The grantedTo property
+        ## Gets the grantedTo property value. 
         ## @return a identity_set
         ## 
         def granted_to
             return @granted_to
         end
         ## 
-        ## Sets the grantedTo property value. The grantedTo property
+        ## Sets the grantedTo property value. 
         ## @param value Value to set for the grantedTo property.
         ## @return a void
         ## 
@@ -105,14 +101,14 @@ module MicrosoftGraph::Models
             @granted_to = value
         end
         ## 
-        ## Gets the grantedToIdentities property value. The grantedToIdentities property
+        ## Gets the grantedToIdentities property value. 
         ## @return a identity_set
         ## 
         def granted_to_identities
             return @granted_to_identities
         end
         ## 
-        ## Sets the grantedToIdentities property value. The grantedToIdentities property
+        ## Sets the grantedToIdentities property value. 
         ## @param value Value to set for the grantedToIdentities property.
         ## @return a void
         ## 

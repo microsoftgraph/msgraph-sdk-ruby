@@ -1,3 +1,0 @@
-require_relative 'additional_access_with_access_package_id_with_incompatible_access_package_id_response'
-module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Assignments::AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId
-end

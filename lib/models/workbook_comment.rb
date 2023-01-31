@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # Indicates the type for the comment.
         @content_type
-        ## 
-        # The replies property
         @replies
         ## 
         ## Instantiates a new workbookComment and sets the default values.
@@ -72,14 +70,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the replies property value. The replies property
+        ## Gets the replies property value. 
         ## @return a workbook_comment_reply
         ## 
         def replies
             return @replies
         end
         ## 
-        ## Sets the replies property value. The replies property
+        ## Sets the replies property value. 
         ## @param value Value to set for the replies property.
         ## @return a void
         ## 

@@ -11,11 +11,7 @@ module MicrosoftGraph::Models
         ## 
         # Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
         @detail
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The riskEventTypes property
         @risk_event_types
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -75,14 +71,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -90,14 +86,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the riskEventTypes property value. The riskEventTypes property
+        ## Gets the riskEventTypes property value. 
         ## @return a string
         ## 
         def risk_event_types
             return @risk_event_types
         end
         ## 
-        ## Sets the riskEventTypes property value. The riskEventTypes property
+        ## Sets the riskEventTypes property value. 
         ## @param value Value to set for the riskEventTypes property.
         ## @return a void
         ## 

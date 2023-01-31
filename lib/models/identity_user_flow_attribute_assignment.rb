@@ -20,8 +20,6 @@ module MicrosoftGraph::Models
         ## 
         # The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
         @user_attribute_values
-        ## 
-        # The userInputType property
         @user_input_type
         ## 
         ## Instantiates a new identityUserFlowAttributeAssignment and sets the default values.
@@ -144,14 +142,14 @@ module MicrosoftGraph::Models
             @user_attribute_values = value
         end
         ## 
-        ## Gets the userInputType property value. The userInputType property
+        ## Gets the userInputType property value. 
         ## @return a identity_user_flow_attribute_input_type
         ## 
         def user_input_type
             return @user_input_type
         end
         ## 
-        ## Sets the userInputType property value. The userInputType property
+        ## Sets the userInputType property value. 
         ## @param value Value to set for the userInputType property.
         ## @return a void
         ## 

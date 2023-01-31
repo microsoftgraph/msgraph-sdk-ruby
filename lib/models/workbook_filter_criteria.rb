@@ -8,32 +8,14 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The color property
         @color
-        ## 
-        # The criterion1 property
         @criterion1
-        ## 
-        # The criterion2 property
         @criterion2
-        ## 
-        # The dynamicCriteria property
         @dynamic_criteria
-        ## 
-        # The filterOn property
         @filter_on
-        ## 
-        # The icon property
         @icon
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The operator property
         @operator
-        ## 
-        # The values property
         @values
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -51,14 +33,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the color property value. The color property
+        ## Gets the color property value. 
         ## @return a string
         ## 
         def color
             return @color
         end
         ## 
-        ## Sets the color property value. The color property
+        ## Sets the color property value. 
         ## @param value Value to set for the color property.
         ## @return a void
         ## 
@@ -82,14 +64,14 @@ module MicrosoftGraph::Models
             return WorkbookFilterCriteria.new
         end
         ## 
-        ## Gets the criterion1 property value. The criterion1 property
+        ## Gets the criterion1 property value. 
         ## @return a string
         ## 
         def criterion1
             return @criterion1
         end
         ## 
-        ## Sets the criterion1 property value. The criterion1 property
+        ## Sets the criterion1 property value. 
         ## @param value Value to set for the criterion1 property.
         ## @return a void
         ## 
@@ -97,14 +79,14 @@ module MicrosoftGraph::Models
             @criterion1 = value
         end
         ## 
-        ## Gets the criterion2 property value. The criterion2 property
+        ## Gets the criterion2 property value. 
         ## @return a string
         ## 
         def criterion2
             return @criterion2
         end
         ## 
-        ## Sets the criterion2 property value. The criterion2 property
+        ## Sets the criterion2 property value. 
         ## @param value Value to set for the criterion2 property.
         ## @return a void
         ## 
@@ -112,14 +94,14 @@ module MicrosoftGraph::Models
             @criterion2 = value
         end
         ## 
-        ## Gets the dynamicCriteria property value. The dynamicCriteria property
+        ## Gets the dynamicCriteria property value. 
         ## @return a string
         ## 
         def dynamic_criteria
             return @dynamic_criteria
         end
         ## 
-        ## Sets the dynamicCriteria property value. The dynamicCriteria property
+        ## Sets the dynamicCriteria property value. 
         ## @param value Value to set for the dynamicCriteria property.
         ## @return a void
         ## 
@@ -127,14 +109,14 @@ module MicrosoftGraph::Models
             @dynamic_criteria = value
         end
         ## 
-        ## Gets the filterOn property value. The filterOn property
+        ## Gets the filterOn property value. 
         ## @return a string
         ## 
         def filter_on
             return @filter_on
         end
         ## 
-        ## Sets the filterOn property value. The filterOn property
+        ## Sets the filterOn property value. 
         ## @param value Value to set for the filterOn property.
         ## @return a void
         ## 
@@ -159,14 +141,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the icon property value. The icon property
+        ## Gets the icon property value. 
         ## @return a workbook_icon
         ## 
         def icon
             return @icon
         end
         ## 
-        ## Sets the icon property value. The icon property
+        ## Sets the icon property value. 
         ## @param value Value to set for the icon property.
         ## @return a void
         ## 
@@ -174,14 +156,14 @@ module MicrosoftGraph::Models
             @icon = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -189,14 +171,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the operator property value. The operator property
+        ## Gets the operator property value. 
         ## @return a string
         ## 
         def operator
             return @operator
         end
         ## 
-        ## Sets the operator property value. The operator property
+        ## Sets the operator property value. 
         ## @param value Value to set for the operator property.
         ## @return a void
         ## 
@@ -222,14 +204,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the values property value. The values property
+        ## Gets the values property value. 
         ## @return a json
         ## 
         def values
             return @values
         end
         ## 
-        ## Sets the values property value. The values property
+        ## Sets the values property value. 
         ## @param value Value to set for the values property.
         ## @return a void
         ## 

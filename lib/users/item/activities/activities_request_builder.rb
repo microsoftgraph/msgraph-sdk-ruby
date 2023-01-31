@@ -7,7 +7,7 @@ require_relative '../../users'
 require_relative '../item'
 require_relative './activities'
 require_relative './count/count_request_builder'
-require_relative './recent/recent_request_builder'
+require_relative './microsoft_graph_recent/recent_request_builder'
 
 module MicrosoftGraph::Users::Item::Activities
     ## 
@@ -18,6 +18,11 @@ module MicrosoftGraph::Users::Item::Activities
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Users::Item::Activities::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the recent method.
+        def microsoft_graph_recent()
+            return MicrosoftGraph::Users::Item::Activities::MicrosoftGraphRecent::RecentRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -47,7 +52,7 @@ module MicrosoftGraph::Users::Item::Activities
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of user_activity_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -58,11 +63,11 @@ module MicrosoftGraph::Users::Item::Activities
         end
         ## 
         ## Create new navigation property to activities for users
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of user_activity
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -73,18 +78,11 @@ module MicrosoftGraph::Users::Item::Activities
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserActivity.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Provides operations to call the recent method.
-        ## @return a recent_request_builder
-        ## 
-        def recent()
-            return RecentRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## The user's activities across devices. Read-only. Nullable.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -99,11 +97,11 @@ module MicrosoftGraph::Users::Item::Activities
         end
         ## 
         ## Create new navigation property to activities for users
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # If false, then approval is not required for updates to requests in this policy.
         @is_approval_required_for_update
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # If approval is required, the one, two or three elements of this collection define each of the stages of approval. An empty array is present if no approval is required.
@@ -94,14 +92,14 @@ module MicrosoftGraph::Models
             @is_approval_required_for_update = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

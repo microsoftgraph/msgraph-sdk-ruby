@@ -6,7 +6,7 @@ module MicrosoftGraph::Models
     class OpenTypeExtension < MicrosoftGraph::Models::Extension
         include MicrosoftKiotaAbstractions::Parsable
         ## 
-        # A unique text identifier for an open type data extension. Required.
+        # A unique text identifier for an open type data extension. Optional.
         @extension_name
         ## 
         ## Instantiates a new OpenTypeExtension and sets the default values.
@@ -26,14 +26,14 @@ module MicrosoftGraph::Models
             return OpenTypeExtension.new
         end
         ## 
-        ## Gets the extensionName property value. A unique text identifier for an open type data extension. Required.
+        ## Gets the extensionName property value. A unique text identifier for an open type data extension. Optional.
         ## @return a string
         ## 
         def extension_name
             return @extension_name
         end
         ## 
-        ## Sets the extensionName property value. A unique text identifier for an open type data extension. Required.
+        ## Sets the extensionName property value. A unique text identifier for an open type data extension. Optional.
         ## @param value Value to set for the extensionName property.
         ## @return a void
         ## 

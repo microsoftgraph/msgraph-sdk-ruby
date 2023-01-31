@@ -3,10 +3,10 @@ require_relative '../microsoft_graph'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/resource_specific_permission_grant'
 require_relative '../models/resource_specific_permission_grant_collection_response'
-require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
-require_relative './get_by_ids/get_by_ids_request_builder'
+require_relative './microsoft_graph_get_available_extension_properties/get_available_extension_properties_request_builder'
+require_relative './microsoft_graph_get_by_ids/get_by_ids_request_builder'
+require_relative './microsoft_graph_validate_properties/validate_properties_request_builder'
 require_relative './permission_grants'
-require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph::PermissionGrants
     ## 
@@ -15,13 +15,18 @@ module MicrosoftGraph::PermissionGrants
         
         ## 
         # Provides operations to call the getAvailableExtensionProperties method.
-        def get_available_extension_properties()
-            return MicrosoftGraph::PermissionGrants::GetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_available_extension_properties()
+            return MicrosoftGraph::PermissionGrants::MicrosoftGraphGetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getByIds method.
-        def get_by_ids()
-            return MicrosoftGraph::PermissionGrants::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_by_ids()
+            return MicrosoftGraph::PermissionGrants::MicrosoftGraphGetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the validateProperties method.
+        def microsoft_graph_validate_properties()
+            return MicrosoftGraph::PermissionGrants::MicrosoftGraphValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -32,11 +37,6 @@ module MicrosoftGraph::PermissionGrants
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        # Provides operations to call the validateProperties method.
-        def validate_properties()
-            return MicrosoftGraph::PermissionGrants::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new PermissionGrantsRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
@@ -56,7 +56,7 @@ module MicrosoftGraph::PermissionGrants
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of resource_specific_permission_grant_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -67,11 +67,11 @@ module MicrosoftGraph::PermissionGrants
         end
         ## 
         ## Add new entity to permissionGrants
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of resource_specific_permission_grant
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -86,7 +86,7 @@ module MicrosoftGraph::PermissionGrants
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -101,11 +101,11 @@ module MicrosoftGraph::PermissionGrants
         end
         ## 
         ## Add new entity to permissionGrants
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

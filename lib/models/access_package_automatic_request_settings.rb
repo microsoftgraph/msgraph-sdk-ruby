@@ -8,14 +8,8 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The gracePeriodBeforeAccessRemoval property
         @grace_period_before_access_removal
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The removeAccessWhenTargetLeavesAllowedTargets property
         @remove_access_when_target_leaves_allowed_targets
         ## 
         # If set to true, automatic assignments will be created for targets in the allowed target scope.
@@ -64,14 +58,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the gracePeriodBeforeAccessRemoval property value. The gracePeriodBeforeAccessRemoval property
+        ## Gets the gracePeriodBeforeAccessRemoval property value. 
         ## @return a microsoft_kiota_abstractions::_i_s_o_duration
         ## 
         def grace_period_before_access_removal
             return @grace_period_before_access_removal
         end
         ## 
-        ## Sets the gracePeriodBeforeAccessRemoval property value. The gracePeriodBeforeAccessRemoval property
+        ## Sets the gracePeriodBeforeAccessRemoval property value. 
         ## @param value Value to set for the gracePeriodBeforeAccessRemoval property.
         ## @return a void
         ## 
@@ -79,14 +73,14 @@ module MicrosoftGraph::Models
             @grace_period_before_access_removal = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -94,14 +88,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the removeAccessWhenTargetLeavesAllowedTargets property value. The removeAccessWhenTargetLeavesAllowedTargets property
+        ## Gets the removeAccessWhenTargetLeavesAllowedTargets property value. 
         ## @return a boolean
         ## 
         def remove_access_when_target_leaves_allowed_targets
             return @remove_access_when_target_leaves_allowed_targets
         end
         ## 
-        ## Sets the removeAccessWhenTargetLeavesAllowedTargets property value. The removeAccessWhenTargetLeavesAllowedTargets property
+        ## Sets the removeAccessWhenTargetLeavesAllowedTargets property value. 
         ## @param value Value to set for the removeAccessWhenTargetLeavesAllowedTargets property.
         ## @return a void
         ## 

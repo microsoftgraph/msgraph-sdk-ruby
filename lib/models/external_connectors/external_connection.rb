@@ -12,20 +12,12 @@ module MicrosoftGraph::Models::ExternalConnectors
         ## 
         # Description of the connection displayed in the Microsoft 365 admin center. Optional.
         @description
-        ## 
-        # The groups property
         @groups
-        ## 
-        # The items property
         @items
         ## 
         # The display name of the connection to be displayed in the Microsoft 365 admin center. Maximum length of 128 characters. Required.
         @name
-        ## 
-        # The operations property
         @operations
-        ## 
-        # The schema property
         @schema
         ## 
         # Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
@@ -93,14 +85,14 @@ module MicrosoftGraph::Models::ExternalConnectors
             })
         end
         ## 
-        ## Gets the groups property value. The groups property
+        ## Gets the groups property value. 
         ## @return a external_group
         ## 
         def groups
             return @groups
         end
         ## 
-        ## Sets the groups property value. The groups property
+        ## Sets the groups property value. 
         ## @param value Value to set for the groups property.
         ## @return a void
         ## 
@@ -108,14 +100,14 @@ module MicrosoftGraph::Models::ExternalConnectors
             @groups = value
         end
         ## 
-        ## Gets the items property value. The items property
+        ## Gets the items property value. 
         ## @return a external_item
         ## 
         def items
             return @items
         end
         ## 
-        ## Sets the items property value. The items property
+        ## Sets the items property value. 
         ## @param value Value to set for the items property.
         ## @return a void
         ## 
@@ -138,14 +130,14 @@ module MicrosoftGraph::Models::ExternalConnectors
             @name = value
         end
         ## 
-        ## Gets the operations property value. The operations property
+        ## Gets the operations property value. 
         ## @return a connection_operation
         ## 
         def operations
             return @operations
         end
         ## 
-        ## Sets the operations property value. The operations property
+        ## Sets the operations property value. 
         ## @param value Value to set for the operations property.
         ## @return a void
         ## 
@@ -153,14 +145,14 @@ module MicrosoftGraph::Models::ExternalConnectors
             @operations = value
         end
         ## 
-        ## Gets the schema property value. The schema property
+        ## Gets the schema property value. 
         ## @return a schema
         ## 
         def schema
             return @schema
         end
         ## 
-        ## Sets the schema property value. The schema property
+        ## Sets the schema property value. 
         ## @param value Value to set for the schema property.
         ## @return a void
         ## 

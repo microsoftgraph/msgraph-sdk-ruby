@@ -14,11 +14,11 @@ require_relative './attachments/attachments_request_builder'
 require_relative './attachments/item/attachment_item_request_builder'
 require_relative './extensions/extensions_request_builder'
 require_relative './extensions/item/extension_item_request_builder'
-require_relative './forward/forward_request_builder'
 require_relative './in_reply_to'
+require_relative './microsoft_graph_forward/forward_request_builder'
+require_relative './microsoft_graph_reply/reply_request_builder'
 require_relative './multi_value_extended_properties/item/multi_value_legacy_extended_property_item_request_builder'
 require_relative './multi_value_extended_properties/multi_value_extended_properties_request_builder'
-require_relative './reply/reply_request_builder'
 require_relative './single_value_extended_properties/item/single_value_legacy_extended_property_item_request_builder'
 require_relative './single_value_extended_properties/single_value_extended_properties_request_builder'
 
@@ -39,8 +39,13 @@ module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::Posts::
         end
         ## 
         # Provides operations to call the forward method.
-        def forward()
-            return MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::Posts::Item::InReplyTo::Forward::ForwardRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_forward()
+            return MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::Posts::Item::InReplyTo::MicrosoftGraphForward::ForwardRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the reply method.
+        def microsoft_graph_reply()
+            return MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::Posts::Item::InReplyTo::MicrosoftGraphReply::ReplyRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.post entity.
@@ -50,11 +55,6 @@ module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::Posts::
         ## 
         # Path parameters for the request
         @path_parameters
-        ## 
-        # Provides operations to call the reply method.
-        def reply()
-            return MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::Posts::Item::InReplyTo::Reply::ReplyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
@@ -107,7 +107,7 @@ module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::Posts::
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of post
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -143,7 +143,7 @@ module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::Posts::
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters

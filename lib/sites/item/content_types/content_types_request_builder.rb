@@ -5,11 +5,11 @@ require_relative '../../../models/content_type_collection_response'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../sites'
 require_relative '../item'
-require_relative './add_copy/add_copy_request_builder'
-require_relative './add_copy_from_content_type_hub/add_copy_from_content_type_hub_request_builder'
 require_relative './content_types'
 require_relative './count/count_request_builder'
-require_relative './get_compatible_hub_content_types/get_compatible_hub_content_types_request_builder'
+require_relative './microsoft_graph_add_copy/add_copy_request_builder'
+require_relative './microsoft_graph_add_copy_from_content_type_hub/add_copy_from_content_type_hub_request_builder'
+require_relative './microsoft_graph_get_compatible_hub_content_types/get_compatible_hub_content_types_request_builder'
 
 module MicrosoftGraph::Sites::Item::ContentTypes
     ## 
@@ -17,19 +17,24 @@ module MicrosoftGraph::Sites::Item::ContentTypes
     class ContentTypesRequestBuilder
         
         ## 
-        # Provides operations to call the addCopy method.
-        def add_copy()
-            return MicrosoftGraph::Sites::Item::ContentTypes::AddCopy::AddCopyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the addCopyFromContentTypeHub method.
-        def add_copy_from_content_type_hub()
-            return MicrosoftGraph::Sites::Item::ContentTypes::AddCopyFromContentTypeHub::AddCopyFromContentTypeHubRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Sites::Item::ContentTypes::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the addCopy method.
+        def microsoft_graph_add_copy()
+            return MicrosoftGraph::Sites::Item::ContentTypes::MicrosoftGraphAddCopy::AddCopyRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the addCopyFromContentTypeHub method.
+        def microsoft_graph_add_copy_from_content_type_hub()
+            return MicrosoftGraph::Sites::Item::ContentTypes::MicrosoftGraphAddCopyFromContentTypeHub::AddCopyFromContentTypeHubRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getCompatibleHubContentTypes method.
+        def microsoft_graph_get_compatible_hub_content_types()
+            return MicrosoftGraph::Sites::Item::ContentTypes::MicrosoftGraphGetCompatibleHubContentTypes::GetCompatibleHubContentTypesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -59,7 +64,7 @@ module MicrosoftGraph::Sites::Item::ContentTypes
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of content_type_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -69,19 +74,12 @@ module MicrosoftGraph::Sites::Item::ContentTypes
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ContentTypeCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Provides operations to call the getCompatibleHubContentTypes method.
-        ## @return a get_compatible_hub_content_types_request_builder
-        ## 
-        def get_compatible_hub_content_types()
-            return GetCompatibleHubContentTypesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## Create a new [contentType][] in a [site][].
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of content_type
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -96,7 +94,7 @@ module MicrosoftGraph::Sites::Item::ContentTypes
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -111,11 +109,11 @@ module MicrosoftGraph::Sites::Item::ContentTypes
         end
         ## 
         ## Create a new [contentType][] in a [site][].
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

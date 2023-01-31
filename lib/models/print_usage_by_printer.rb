@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class PrintUsageByPrinter < MicrosoftGraph::Models::PrintUsage
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The printerId property
         @printer_id
         ## 
         ## Instantiates a new PrintUsageByPrinter and sets the default values.
@@ -35,14 +33,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the printerId property value. The printerId property
+        ## Gets the printerId property value. 
         ## @return a string
         ## 
         def printer_id
             return @printer_id
         end
         ## 
-        ## Sets the printerId property value. The printerId property
+        ## Sets the printerId property value. 
         ## @param value Value to set for the printerId property.
         ## @return a void
         ## 

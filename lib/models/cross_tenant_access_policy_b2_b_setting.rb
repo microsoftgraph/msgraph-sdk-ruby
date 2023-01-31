@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # The list of applications targeted with your cross-tenant access policy.
         @applications
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The list of users and groups targeted with your cross-tenant access policy.
@@ -75,14 +73,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

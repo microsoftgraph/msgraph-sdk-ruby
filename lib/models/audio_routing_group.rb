@@ -5,14 +5,8 @@ require_relative './models'
 module MicrosoftGraph::Models
     class AudioRoutingGroup < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The receivers property
         @receivers
-        ## 
-        # The routingMode property
         @routing_mode
-        ## 
-        # The sources property
         @sources
         ## 
         ## Instantiates a new audioRoutingGroup and sets the default values.
@@ -42,14 +36,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the receivers property value. The receivers property
+        ## Gets the receivers property value. 
         ## @return a string
         ## 
         def receivers
             return @receivers
         end
         ## 
-        ## Sets the receivers property value. The receivers property
+        ## Sets the receivers property value. 
         ## @param value Value to set for the receivers property.
         ## @return a void
         ## 
@@ -57,14 +51,14 @@ module MicrosoftGraph::Models
             @receivers = value
         end
         ## 
-        ## Gets the routingMode property value. The routingMode property
+        ## Gets the routingMode property value. 
         ## @return a routing_mode
         ## 
         def routing_mode
             return @routing_mode
         end
         ## 
-        ## Sets the routingMode property value. The routingMode property
+        ## Sets the routingMode property value. 
         ## @param value Value to set for the routingMode property.
         ## @return a void
         ## 
@@ -84,14 +78,14 @@ module MicrosoftGraph::Models
             writer.write_collection_of_primitive_values("sources", @sources)
         end
         ## 
-        ## Gets the sources property value. The sources property
+        ## Gets the sources property value. 
         ## @return a string
         ## 
         def sources
             return @sources
         end
         ## 
-        ## Sets the sources property value. The sources property
+        ## Sets the sources property value. 
         ## @param value Value to set for the sources property.
         ## @return a void
         ## 

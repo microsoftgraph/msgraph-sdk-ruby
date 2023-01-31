@@ -24,6 +24,9 @@ module MicrosoftGraph::Models
         # The list of localized messages for this Notification Message Template.
         @localized_notification_messages
         ## 
+        # List of Scope Tags for this Entity instance.
+        @role_scope_tag_ids
+        ## 
         ## Gets the brandingOptions property value. Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
         ## @return a notification_template_branding_options
         ## 
@@ -95,6 +98,7 @@ module MicrosoftGraph::Models
                 "displayName" => lambda {|n| @display_name = n.get_string_value() },
                 "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                 "localizedNotificationMessages" => lambda {|n| @localized_notification_messages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::LocalizedNotificationMessage.create_from_discriminator_value(pn) }) },
+                "roleScopeTagIds" => lambda {|n| @role_scope_tag_ids = n.get_collection_of_primitive_values(String) },
             })
         end
         ## 
@@ -128,6 +132,21 @@ module MicrosoftGraph::Models
             @localized_notification_messages = value
         end
         ## 
+        ## Gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+        ## @return a string
+        ## 
+        def role_scope_tag_ids
+            return @role_scope_tag_ids
+        end
+        ## 
+        ## Sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+        ## @param value Value to set for the roleScopeTagIds property.
+        ## @return a void
+        ## 
+        def role_scope_tag_ids=(value)
+            @role_scope_tag_ids = value
+        end
+        ## 
         ## Serializes information the current object
         ## @param writer Serialization writer to use to serialize this model
         ## @return a void
@@ -140,6 +159,7 @@ module MicrosoftGraph::Models
             writer.write_string_value("displayName", @display_name)
             writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
             writer.write_collection_of_object_values("localizedNotificationMessages", @localized_notification_messages)
+            writer.write_collection_of_primitive_values("roleScopeTagIds", @role_scope_tag_ids)
         end
     end
 end

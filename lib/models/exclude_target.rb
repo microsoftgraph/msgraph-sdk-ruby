@@ -11,11 +11,7 @@ module MicrosoftGraph::Models
         ## 
         # The object identifier of an Azure Active Directory user or group.
         @id
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The targetType property
         @target_type
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -75,14 +71,14 @@ module MicrosoftGraph::Models
             @id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -102,14 +98,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the targetType property value. The targetType property
+        ## Gets the targetType property value. 
         ## @return a authentication_method_target_type
         ## 
         def target_type
             return @target_type
         end
         ## 
-        ## Sets the targetType property value. The targetType property
+        ## Sets the targetType property value. 
         ## @param value Value to set for the targetType property.
         ## @return a void
         ## 

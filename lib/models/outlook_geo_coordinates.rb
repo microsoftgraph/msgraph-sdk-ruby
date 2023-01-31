@@ -23,8 +23,6 @@ module MicrosoftGraph::Models
         ## 
         # The longitude of the location.
         @longitude
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         ## Gets the accuracy property value. The accuracy of the latitude and longitude. As an example, the accuracy can be measured in meters, such as the latitude and longitude are accurate to within 50 meters.
@@ -147,14 +145,14 @@ module MicrosoftGraph::Models
             @longitude = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

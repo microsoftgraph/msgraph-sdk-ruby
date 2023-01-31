@@ -5,14 +5,8 @@ require_relative './models'
 module MicrosoftGraph::Models
     class AuditLogRoot < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The directoryAudits property
         @directory_audits
-        ## 
-        # The provisioning property
         @provisioning
-        ## 
-        # The signIns property
         @sign_ins
         ## 
         ## Instantiates a new AuditLogRoot and sets the default values.
@@ -31,14 +25,14 @@ module MicrosoftGraph::Models
             return AuditLogRoot.new
         end
         ## 
-        ## Gets the directoryAudits property value. The directoryAudits property
+        ## Gets the directoryAudits property value. 
         ## @return a directory_audit
         ## 
         def directory_audits
             return @directory_audits
         end
         ## 
-        ## Sets the directoryAudits property value. The directoryAudits property
+        ## Sets the directoryAudits property value. 
         ## @param value Value to set for the directoryAudits property.
         ## @return a void
         ## 
@@ -57,14 +51,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the provisioning property value. The provisioning property
+        ## Gets the provisioning property value. 
         ## @return a provisioning_object_summary
         ## 
         def provisioning
             return @provisioning
         end
         ## 
-        ## Sets the provisioning property value. The provisioning property
+        ## Sets the provisioning property value. 
         ## @param value Value to set for the provisioning property.
         ## @return a void
         ## 
@@ -84,14 +78,14 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("signIns", @sign_ins)
         end
         ## 
-        ## Gets the signIns property value. The signIns property
+        ## Gets the signIns property value. 
         ## @return a sign_in
         ## 
         def sign_ins
             return @sign_ins
         end
         ## 
-        ## Sets the signIns property value. The signIns property
+        ## Sets the signIns property value. 
         ## @param value Value to set for the signIns property.
         ## @return a void
         ## 

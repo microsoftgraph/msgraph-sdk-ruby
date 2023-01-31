@@ -21,8 +21,6 @@ module MicrosoftGraph::Models
         ## 
         # IP address from where the simulation event was initiated by a user in an attack simulation and training campaign.
         @ip_address
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.
@@ -133,14 +131,14 @@ module MicrosoftGraph::Models
             @ip_address = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

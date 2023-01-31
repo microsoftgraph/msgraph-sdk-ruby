@@ -3,14 +3,14 @@ require_relative '../../../../microsoft_graph'
 require_relative '../../../groups'
 require_relative '../../item'
 require_relative '../owners'
-require_relative './application/application_request_builder'
-require_relative './device/device_request_builder'
-require_relative './group/group_request_builder'
 require_relative './item'
-require_relative './org_contact/org_contact_request_builder'
+require_relative './microsoft_graph_application/application_request_builder'
+require_relative './microsoft_graph_device/device_request_builder'
+require_relative './microsoft_graph_group/group_request_builder'
+require_relative './microsoft_graph_org_contact/org_contact_request_builder'
+require_relative './microsoft_graph_service_principal/service_principal_request_builder'
+require_relative './microsoft_graph_user/user_request_builder'
 require_relative './ref/ref_request_builder'
-require_relative './service_principal/service_principal_request_builder'
-require_relative './user/user_request_builder'
 
 module MicrosoftGraph::Groups::Item::Owners::Item
     ## 
@@ -19,23 +19,33 @@ module MicrosoftGraph::Groups::Item::Owners::Item
         
         ## 
         # Casts the previous resource to application.
-        def application()
-            return MicrosoftGraph::Groups::Item::Owners::Item::Application::ApplicationRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_application()
+            return MicrosoftGraph::Groups::Item::Owners::Item::MicrosoftGraphApplication::ApplicationRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to device.
-        def device()
-            return MicrosoftGraph::Groups::Item::Owners::Item::Device::DeviceRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_device()
+            return MicrosoftGraph::Groups::Item::Owners::Item::MicrosoftGraphDevice::DeviceRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to group.
-        def group()
-            return MicrosoftGraph::Groups::Item::Owners::Item::Group::GroupRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_group()
+            return MicrosoftGraph::Groups::Item::Owners::Item::MicrosoftGraphGroup::GroupRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to orgContact.
-        def org_contact()
-            return MicrosoftGraph::Groups::Item::Owners::Item::OrgContact::OrgContactRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_org_contact()
+            return MicrosoftGraph::Groups::Item::Owners::Item::MicrosoftGraphOrgContact::OrgContactRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Casts the previous resource to servicePrincipal.
+        def microsoft_graph_service_principal()
+            return MicrosoftGraph::Groups::Item::Owners::Item::MicrosoftGraphServicePrincipal::ServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Casts the previous resource to user.
+        def microsoft_graph_user()
+            return MicrosoftGraph::Groups::Item::Owners::Item::MicrosoftGraphUser::UserRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -49,25 +59,16 @@ module MicrosoftGraph::Groups::Item::Owners::Item
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Casts the previous resource to servicePrincipal.
-        def service_principal()
-            return MicrosoftGraph::Groups::Item::Owners::Item::ServicePrincipal::ServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
-        # Casts the previous resource to user.
-        def user()
-            return MicrosoftGraph::Groups::Item::Owners::Item::User::UserRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
+        ## @param directoryObjectId key: id of directoryObject
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, directory_object_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/groups/{group%2Did}/owners/{directoryObject%2Did}"

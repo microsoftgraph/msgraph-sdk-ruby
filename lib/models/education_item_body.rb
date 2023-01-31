@@ -8,14 +8,8 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The content property
         @content
-        ## 
-        # The contentType property
         @content_type
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -40,14 +34,14 @@ module MicrosoftGraph::Models
             @additional_data = Hash.new
         end
         ## 
-        ## Gets the content property value. The content property
+        ## Gets the content property value. 
         ## @return a string
         ## 
         def content
             return @content
         end
         ## 
-        ## Sets the content property value. The content property
+        ## Sets the content property value. 
         ## @param value Value to set for the content property.
         ## @return a void
         ## 
@@ -55,14 +49,14 @@ module MicrosoftGraph::Models
             @content = value
         end
         ## 
-        ## Gets the contentType property value. The contentType property
+        ## Gets the contentType property value. 
         ## @return a body_type
         ## 
         def content_type
             return @content_type
         end
         ## 
-        ## Sets the contentType property value. The contentType property
+        ## Sets the contentType property value. 
         ## @param value Value to set for the contentType property.
         ## @return a void
         ## 
@@ -90,14 +84,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

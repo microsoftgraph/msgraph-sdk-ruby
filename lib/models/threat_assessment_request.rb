@@ -6,8 +6,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class ThreatAssessmentRequest < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The category property
         @category
         ## 
         # The content type of threat assessment. Possible values are: mail, url, file.
@@ -18,8 +16,6 @@ module MicrosoftGraph::Models
         ## 
         # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         @created_date_time
-        ## 
-        # The expectedAssessment property
         @expected_assessment
         ## 
         # The source of the threat assessment request. Possible values are: administrator.
@@ -31,14 +27,14 @@ module MicrosoftGraph::Models
         # The assessment process status. Possible values are: pending, completed.
         @status
         ## 
-        ## Gets the category property value. The category property
+        ## Gets the category property value. 
         ## @return a threat_category
         ## 
         def category
             return @category
         end
         ## 
-        ## Sets the category property value. The category property
+        ## Sets the category property value. 
         ## @param value Value to set for the category property.
         ## @return a void
         ## 
@@ -121,14 +117,14 @@ module MicrosoftGraph::Models
             return ThreatAssessmentRequest.new
         end
         ## 
-        ## Gets the expectedAssessment property value. The expectedAssessment property
+        ## Gets the expectedAssessment property value. 
         ## @return a threat_expected_assessment
         ## 
         def expected_assessment
             return @expected_assessment
         end
         ## 
-        ## Sets the expectedAssessment property value. The expectedAssessment property
+        ## Sets the expectedAssessment property value. 
         ## @param value Value to set for the expectedAssessment property.
         ## @return a void
         ## 

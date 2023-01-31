@@ -18,11 +18,7 @@ module MicrosoftGraph::Models
         ## 
         # Time when the async operation was last updated.
         @last_action_date_time
-        ## 
-        # The operationType property
         @operation_type
-        ## 
-        # The status property
         @status
         ## 
         # The ID of the object that's created or modified as result of this async operation, typically a team.
@@ -123,14 +119,14 @@ module MicrosoftGraph::Models
             @last_action_date_time = value
         end
         ## 
-        ## Gets the operationType property value. The operationType property
+        ## Gets the operationType property value. 
         ## @return a teams_async_operation_type
         ## 
         def operation_type
             return @operation_type
         end
         ## 
-        ## Sets the operationType property value. The operationType property
+        ## Sets the operationType property value. 
         ## @param value Value to set for the operationType property.
         ## @return a void
         ## 
@@ -155,14 +151,14 @@ module MicrosoftGraph::Models
             writer.write_string_value("targetResourceLocation", @target_resource_location)
         end
         ## 
-        ## Gets the status property value. The status property
+        ## Gets the status property value. 
         ## @return a teams_async_operation_status
         ## 
         def status
             return @status
         end
         ## 
-        ## Sets the status property value. The status property
+        ## Sets the status property value. 
         ## @param value Value to set for the status property.
         ## @return a void
         ## 

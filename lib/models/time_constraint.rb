@@ -11,11 +11,7 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The timeSlots property
         @time_slots
         ## 
         ## Gets the activityDomain property value. The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
@@ -75,14 +71,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -102,14 +98,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the timeSlots property value. The timeSlots property
+        ## Gets the timeSlots property value. 
         ## @return a time_slot
         ## 
         def time_slots
             return @time_slots
         end
         ## 
-        ## Sets the timeSlots property value. The timeSlots property
+        ## Sets the timeSlots property value. 
         ## @param value Value to set for the timeSlots property.
         ## @return a void
         ## 

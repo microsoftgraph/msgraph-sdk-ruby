@@ -7,14 +7,8 @@ require_relative './security'
 module MicrosoftGraph::Models::Security
     class DataSet < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The createdBy property
         @created_by
-        ## 
-        # The createdDateTime property
         @created_date_time
-        ## 
-        # The displayName property
         @display_name
         ## 
         ## Instantiates a new dataSet and sets the default values.
@@ -24,14 +18,14 @@ module MicrosoftGraph::Models::Security
             super
         end
         ## 
-        ## Gets the createdBy property value. The createdBy property
+        ## Gets the createdBy property value. 
         ## @return a identity_set
         ## 
         def created_by
             return @created_by
         end
         ## 
-        ## Sets the createdBy property value. The createdBy property
+        ## Sets the createdBy property value. 
         ## @param value Value to set for the createdBy property.
         ## @return a void
         ## 
@@ -39,14 +33,14 @@ module MicrosoftGraph::Models::Security
             @created_by = value
         end
         ## 
-        ## Gets the createdDateTime property value. The createdDateTime property
+        ## Gets the createdDateTime property value. 
         ## @return a date_time
         ## 
         def created_date_time
             return @created_date_time
         end
         ## 
-        ## Sets the createdDateTime property value. The createdDateTime property
+        ## Sets the createdDateTime property value. 
         ## @param value Value to set for the createdDateTime property.
         ## @return a void
         ## 
@@ -71,14 +65,14 @@ module MicrosoftGraph::Models::Security
             return DataSet.new
         end
         ## 
-        ## Gets the displayName property value. The displayName property
+        ## Gets the displayName property value. 
         ## @return a string
         ## 
         def display_name
             return @display_name
         end
         ## 
-        ## Sets the displayName property value. The displayName property
+        ## Sets the displayName property value. 
         ## @param value Value to set for the displayName property.
         ## @return a void
         ## 

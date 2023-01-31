@@ -5,11 +5,7 @@ require_relative './models'
 module MicrosoftGraph::Models
     class EventMessageResponse < MicrosoftGraph::Models::EventMessage
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The proposedNewTime property
         @proposed_new_time
-        ## 
-        # The responseType property
         @response_type
         ## 
         ## Instantiates a new EventMessageResponse and sets the default values.
@@ -39,14 +35,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the proposedNewTime property value. The proposedNewTime property
+        ## Gets the proposedNewTime property value. 
         ## @return a time_slot
         ## 
         def proposed_new_time
             return @proposed_new_time
         end
         ## 
-        ## Sets the proposedNewTime property value. The proposedNewTime property
+        ## Sets the proposedNewTime property value. 
         ## @param value Value to set for the proposedNewTime property.
         ## @return a void
         ## 
@@ -54,14 +50,14 @@ module MicrosoftGraph::Models
             @proposed_new_time = value
         end
         ## 
-        ## Gets the responseType property value. The responseType property
+        ## Gets the responseType property value. 
         ## @return a response_type
         ## 
         def response_type
             return @response_type
         end
         ## 
-        ## Sets the responseType property value. The responseType property
+        ## Sets the responseType property value. 
         ## @param value Value to set for the responseType property.
         ## @return a void
         ## 

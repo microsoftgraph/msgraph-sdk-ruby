@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class ServiceHealthIssue < MicrosoftGraph::Models::ServiceAnnouncementBase
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The classification property
         @classification
         ## 
         # The feature name of the service issue.
@@ -20,8 +18,6 @@ module MicrosoftGraph::Models
         ## 
         # Indicates whether the issue is resolved.
         @is_resolved
-        ## 
-        # The origin property
         @origin
         ## 
         # Collection of historical posts for the service issue.
@@ -29,18 +25,16 @@ module MicrosoftGraph::Models
         ## 
         # Indicates the service affected by the issue.
         @service
-        ## 
-        # The status property
         @status
         ## 
-        ## Gets the classification property value. The classification property
+        ## Gets the classification property value. 
         ## @return a service_health_classification_type
         ## 
         def classification
             return @classification
         end
         ## 
-        ## Sets the classification property value. The classification property
+        ## Sets the classification property value. 
         ## @param value Value to set for the classification property.
         ## @return a void
         ## 
@@ -142,14 +136,14 @@ module MicrosoftGraph::Models
             @is_resolved = value
         end
         ## 
-        ## Gets the origin property value. The origin property
+        ## Gets the origin property value. 
         ## @return a service_health_origin
         ## 
         def origin
             return @origin
         end
         ## 
-        ## Sets the origin property value. The origin property
+        ## Sets the origin property value. 
         ## @param value Value to set for the origin property.
         ## @return a void
         ## 
@@ -205,14 +199,14 @@ module MicrosoftGraph::Models
             @service = value
         end
         ## 
-        ## Gets the status property value. The status property
+        ## Gets the status property value. 
         ## @return a service_health_status
         ## 
         def status
             return @status
         end
         ## 
-        ## Sets the status property value. The status property
+        ## Sets the status property value. 
         ## @param value Value to set for the status property.
         ## @return a void
         ## 

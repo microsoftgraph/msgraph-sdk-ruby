@@ -5,14 +5,8 @@ require_relative './models'
 module MicrosoftGraph::Models
     class UserSettings < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The contributionToContentDiscoveryAsOrganizationDisabled property
         @contribution_to_content_discovery_as_organization_disabled
-        ## 
-        # The contributionToContentDiscoveryDisabled property
         @contribution_to_content_discovery_disabled
-        ## 
-        # The shiftPreferences property
         @shift_preferences
         ## 
         ## Instantiates a new userSettings and sets the default values.
@@ -22,14 +16,14 @@ module MicrosoftGraph::Models
             super
         end
         ## 
-        ## Gets the contributionToContentDiscoveryAsOrganizationDisabled property value. The contributionToContentDiscoveryAsOrganizationDisabled property
+        ## Gets the contributionToContentDiscoveryAsOrganizationDisabled property value. 
         ## @return a boolean
         ## 
         def contribution_to_content_discovery_as_organization_disabled
             return @contribution_to_content_discovery_as_organization_disabled
         end
         ## 
-        ## Sets the contributionToContentDiscoveryAsOrganizationDisabled property value. The contributionToContentDiscoveryAsOrganizationDisabled property
+        ## Sets the contributionToContentDiscoveryAsOrganizationDisabled property value. 
         ## @param value Value to set for the contributionToContentDiscoveryAsOrganizationDisabled property.
         ## @return a void
         ## 
@@ -37,14 +31,14 @@ module MicrosoftGraph::Models
             @contribution_to_content_discovery_as_organization_disabled = value
         end
         ## 
-        ## Gets the contributionToContentDiscoveryDisabled property value. The contributionToContentDiscoveryDisabled property
+        ## Gets the contributionToContentDiscoveryDisabled property value. 
         ## @return a boolean
         ## 
         def contribution_to_content_discovery_disabled
             return @contribution_to_content_discovery_disabled
         end
         ## 
-        ## Sets the contributionToContentDiscoveryDisabled property value. The contributionToContentDiscoveryDisabled property
+        ## Sets the contributionToContentDiscoveryDisabled property value. 
         ## @param value Value to set for the contributionToContentDiscoveryDisabled property.
         ## @return a void
         ## 
@@ -84,14 +78,14 @@ module MicrosoftGraph::Models
             writer.write_object_value("shiftPreferences", @shift_preferences)
         end
         ## 
-        ## Gets the shiftPreferences property value. The shiftPreferences property
+        ## Gets the shiftPreferences property value. 
         ## @return a shift_preferences
         ## 
         def shift_preferences
             return @shift_preferences
         end
         ## 
-        ## Sets the shiftPreferences property value. The shiftPreferences property
+        ## Sets the shiftPreferences property value. 
         ## @param value Value to set for the shiftPreferences property.
         ## @return a void
         ## 

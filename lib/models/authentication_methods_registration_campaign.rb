@@ -14,14 +14,10 @@ module MicrosoftGraph::Models
         ## 
         # Users and groups of users that are prompted to set up the authentication method.
         @include_targets
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Specifies the number of days that the user sees a prompt again if they select 'Not now' and snoozes the prompt. Minimum: 0 days. Maximum: 14 days. If the value is '0', the user is prompted during every MFA attempt.
         @snooze_duration_in_days
-        ## 
-        # The state property
         @state
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -98,14 +94,14 @@ module MicrosoftGraph::Models
             @include_targets = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -142,14 +138,14 @@ module MicrosoftGraph::Models
             @snooze_duration_in_days = value
         end
         ## 
-        ## Gets the state property value. The state property
+        ## Gets the state property value. 
         ## @return a advanced_config_state
         ## 
         def state
             return @state
         end
         ## 
-        ## Sets the state property value. The state property
+        ## Sets the state property value. 
         ## @param value Value to set for the state property.
         ## @return a void
         ## 

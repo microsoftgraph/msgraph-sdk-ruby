@@ -6,13 +6,32 @@ require_relative '../../../../drives'
 require_relative '../../../item'
 require_relative '../../items'
 require_relative '../item'
+require_relative './all_time/all_time_request_builder'
 require_relative './analytics'
+require_relative './item_activity_stats/item/item_activity_stat_item_request_builder'
+require_relative './item_activity_stats/item_activity_stats_request_builder'
+require_relative './last_seven_days/last_seven_days_request_builder'
 
 module MicrosoftGraph::Drives::Item::Items::Item::Analytics
     ## 
     # Provides operations to manage the analytics property of the microsoft.graph.driveItem entity.
     class AnalyticsRequestBuilder
         
+        ## 
+        # Provides operations to manage the allTime property of the microsoft.graph.itemAnalytics entity.
+        def all_time()
+            return MicrosoftGraph::Drives::Item::Items::Item::Analytics::AllTime::AllTimeRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to manage the itemActivityStats property of the microsoft.graph.itemAnalytics entity.
+        def item_activity_stats()
+            return MicrosoftGraph::Drives::Item::Items::Item::Analytics::ItemActivityStats::ItemActivityStatsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to manage the lastSevenDays property of the microsoft.graph.itemAnalytics entity.
+        def last_seven_days()
+            return MicrosoftGraph::Drives::Item::Items::Item::Analytics::LastSevenDays::LastSevenDaysRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Path parameters for the request
         @path_parameters
@@ -37,11 +56,25 @@ module MicrosoftGraph::Drives::Item::Items::Item::Analytics
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
+        ## Delete navigation property analytics for drives
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a Fiber of void
+        ## 
+        def delete(request_configuration=)
+            request_info = self.to_delete_request_information(
+                request_configuration
+            )
+            error_mapping = Hash.new
+            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            return @request_adapter.send_async(request_info, nil, error_mapping)
+        end
+        ## 
         ## Analytics about the view activities that took place on this item.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of item_analytics
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -51,11 +84,54 @@ module MicrosoftGraph::Drives::Item::Items::Item::Analytics
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ItemAnalytics.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
+        ## Provides operations to manage the itemActivityStats property of the microsoft.graph.itemAnalytics entity.
+        ## @param id Unique identifier of the item
+        ## @return a item_activity_stat_item_request_builder
+        ## 
+        def item_activity_stats_by_id(id)
+            raise StandardError, 'id cannot be null' if id.nil?
+            url_tpl_params = @path_parameters.clone
+            url_tpl_params["itemActivityStat%2Did"] = id
+            return MicrosoftGraph::Drives::Item::Items::Item::Analytics::ItemActivityStats::Item::ItemActivityStatItemRequestBuilder.new(url_tpl_params, @request_adapter)
+        end
+        ## 
+        ## Update the navigation property analytics in drives
+        ## @param body 
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a Fiber of item_analytics
+        ## 
+        def patch(body, request_configuration=)
+            raise StandardError, 'body cannot be null' if body.nil?
+            request_info = self.to_patch_request_information(
+                body, request_configuration
+            )
+            error_mapping = Hash.new
+            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ItemAnalytics.create_from_discriminator_value(pn) }, error_mapping)
+        end
+        ## 
+        ## Delete navigation property analytics for drives
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a request_information
+        ## 
+        def to_delete_request_information(request_configuration=)
+            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+            request_info.url_template = @url_template
+            request_info.path_parameters = @path_parameters
+            request_info.http_method = :DELETE
+            unless request_configuration.nil?
+                request_info.add_headers_from_raw_object(request_configuration.headers)
+                request_info.add_request_options(request_configuration.options)
+            end
+            return request_info
+        end
+        ## 
         ## Analytics about the view activities that took place on this item.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -67,6 +143,38 @@ module MicrosoftGraph::Drives::Item::Items::Item::Analytics
                 request_info.add_request_options(request_configuration.options)
             end
             return request_info
+        end
+        ## 
+        ## Update the navigation property analytics in drives
+        ## @param body 
+        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+        ## @return a request_information
+        ## 
+        def to_patch_request_information(body, request_configuration=)
+            raise StandardError, 'body cannot be null' if body.nil?
+            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+            request_info.url_template = @url_template
+            request_info.path_parameters = @path_parameters
+            request_info.http_method = :PATCH
+            request_info.headers.add('Accept', 'application/json')
+            unless request_configuration.nil?
+                request_info.add_headers_from_raw_object(request_configuration.headers)
+                request_info.add_request_options(request_configuration.options)
+            end
+            request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+            return request_info
+        end
+
+        ## 
+        # Configuration for the request such as headers, query parameters, and middleware options.
+        class AnalyticsRequestBuilderDeleteRequestConfiguration
+            
+            ## 
+            # Request headers
+            attr_accessor :headers
+            ## 
+            # Request options
+            attr_accessor :options
         end
 
         ## 
@@ -110,6 +218,18 @@ module MicrosoftGraph::Drives::Item::Items::Item::Analytics
             ## 
             # Request query parameters
             attr_accessor :query_parameters
+        end
+
+        ## 
+        # Configuration for the request such as headers, query parameters, and middleware options.
+        class AnalyticsRequestBuilderPatchRequestConfiguration
+            
+            ## 
+            # Request headers
+            attr_accessor :headers
+            ## 
+            # Request options
+            attr_accessor :options
         end
     end
 end

@@ -7,9 +7,9 @@ require_relative '../../directory'
 require_relative '../role_assignment_schedule_requests'
 require_relative './activated_using/activated_using_request_builder'
 require_relative './app_scope/app_scope_request_builder'
-require_relative './cancel/cancel_request_builder'
 require_relative './directory_scope/directory_scope_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_cancel/cancel_request_builder'
 require_relative './principal/principal_request_builder'
 require_relative './role_definition/role_definition_request_builder'
 require_relative './target_schedule/target_schedule_request_builder'
@@ -30,14 +30,14 @@ module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleRequests
             return MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleRequests::Item::AppScope::AppScopeRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the cancel method.
-        def cancel()
-            return MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleRequests::Item::Cancel::CancelRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
         def directory_scope()
             return MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleRequests::Item::DirectoryScope::DirectoryScopeRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the cancel method.
+        def microsoft_graph_cancel()
+            return MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleRequests::Item::MicrosoftGraphCancel::CancelRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -67,9 +67,10 @@ module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleRequests
         ## Instantiates a new UnifiedRoleAssignmentScheduleRequestItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param unifiedRoleAssignmentScheduleRequestId key: id of unifiedRoleAssignmentScheduleRequest
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, unified_role_assignment_schedule_request_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/roleManagement/directory/roleAssignmentScheduleRequests/{unifiedRoleAssignmentScheduleRequest%2Did}{?%24select,%24expand}"
@@ -82,7 +83,7 @@ module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleRequests
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -96,7 +97,7 @@ module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleRequests
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of unified_role_assignment_schedule_request
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -107,11 +108,11 @@ module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleRequests
         end
         ## 
         ## Update the navigation property roleAssignmentScheduleRequests in roleManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of unified_role_assignment_schedule_request
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -126,7 +127,7 @@ module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleRequests
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -142,7 +143,7 @@ module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleRequests
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -157,11 +158,11 @@ module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleRequests
         end
         ## 
         ## Update the navigation property roleAssignmentScheduleRequests in roleManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

@@ -9,11 +9,7 @@ module MicrosoftGraph::Models
         ## 
         # The access packages that are incompatible with this package. Read-only.
         @access_packages_incompatible_with
-        ## 
-        # The assignmentPolicies property
         @assignment_policies
-        ## 
-        # The catalog property
         @catalog
         ## 
         # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
@@ -52,14 +48,14 @@ module MicrosoftGraph::Models
             @access_packages_incompatible_with = value
         end
         ## 
-        ## Gets the assignmentPolicies property value. The assignmentPolicies property
+        ## Gets the assignmentPolicies property value. 
         ## @return a access_package_assignment_policy
         ## 
         def assignment_policies
             return @assignment_policies
         end
         ## 
-        ## Sets the assignmentPolicies property value. The assignmentPolicies property
+        ## Sets the assignmentPolicies property value. 
         ## @param value Value to set for the assignmentPolicies property.
         ## @return a void
         ## 
@@ -67,14 +63,14 @@ module MicrosoftGraph::Models
             @assignment_policies = value
         end
         ## 
-        ## Gets the catalog property value. The catalog property
+        ## Gets the catalog property value. 
         ## @return a access_package_catalog
         ## 
         def catalog
             return @catalog
         end
         ## 
-        ## Sets the catalog property value. The catalog property
+        ## Sets the catalog property value. 
         ## @param value Value to set for the catalog property.
         ## @return a void
         ## 

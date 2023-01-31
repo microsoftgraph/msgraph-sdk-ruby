@@ -68,8 +68,6 @@ module MicrosoftGraph::Models
         ## 
         # Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
         @not_sent_to_me
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
@@ -472,14 +470,14 @@ module MicrosoftGraph::Models
             @not_sent_to_me = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

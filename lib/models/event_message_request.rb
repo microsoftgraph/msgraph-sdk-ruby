@@ -8,8 +8,6 @@ module MicrosoftGraph::Models
         ## 
         # True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.
         @allow_new_time_proposals
-        ## 
-        # The meetingRequestType property
         @meeting_request_type
         ## 
         # If the meeting update changes the meeting end time, this property specifies the previous meeting end time.
@@ -70,14 +68,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the meetingRequestType property value. The meetingRequestType property
+        ## Gets the meetingRequestType property value. 
         ## @return a meeting_request_type
         ## 
         def meeting_request_type
             return @meeting_request_type
         end
         ## 
-        ## Sets the meetingRequestType property value. The meetingRequestType property
+        ## Sets the meetingRequestType property value. 
         ## @param value Value to set for the meetingRequestType property.
         ## @return a void
         ## 

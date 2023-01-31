@@ -14,14 +14,10 @@ module MicrosoftGraph::Models
         ## 
         # The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
         @endpoint_type
-        ## 
-        # The identity property
         @identity
         ## 
         # The language culture string. Read-only.
         @language_id
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The participant ID of the participant. Read-only.
@@ -106,14 +102,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the identity property value. The identity property
+        ## Gets the identity property value. 
         ## @return a identity_set
         ## 
         def identity
             return @identity
         end
         ## 
-        ## Sets the identity property value. The identity property
+        ## Sets the identity property value. 
         ## @param value Value to set for the identity property.
         ## @return a void
         ## 
@@ -136,14 +132,14 @@ module MicrosoftGraph::Models
             @language_id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

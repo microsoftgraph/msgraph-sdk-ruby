@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # The height of the thumbnail, in pixels.
         @height
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.
@@ -102,14 +100,14 @@ module MicrosoftGraph::Models
             @height = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

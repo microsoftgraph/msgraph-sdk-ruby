@@ -5,52 +5,37 @@ require_relative '../../../../models/o_data_errors/o_data_error'
 require_relative '../../../users'
 require_relative '../../item'
 require_relative '../managed_devices'
-require_relative './bypass_activation_lock/bypass_activation_lock_request_builder'
-require_relative './clean_windows_device/clean_windows_device_request_builder'
-require_relative './delete_user_from_shared_apple_device/delete_user_from_shared_apple_device_request_builder'
 require_relative './device_category/device_category_request_builder'
 require_relative './device_compliance_policy_states/device_compliance_policy_states_request_builder'
 require_relative './device_compliance_policy_states/item/device_compliance_policy_state_item_request_builder'
 require_relative './device_configuration_states/device_configuration_states_request_builder'
 require_relative './device_configuration_states/item/device_configuration_state_item_request_builder'
-require_relative './disable_lost_mode/disable_lost_mode_request_builder'
 require_relative './item'
-require_relative './locate_device/locate_device_request_builder'
-require_relative './logout_shared_apple_device_active_user/logout_shared_apple_device_active_user_request_builder'
-require_relative './reboot_now/reboot_now_request_builder'
-require_relative './recover_passcode/recover_passcode_request_builder'
-require_relative './remote_lock/remote_lock_request_builder'
-require_relative './request_remote_assistance/request_remote_assistance_request_builder'
-require_relative './reset_passcode/reset_passcode_request_builder'
-require_relative './retire/retire_request_builder'
-require_relative './shut_down/shut_down_request_builder'
-require_relative './sync_device/sync_device_request_builder'
-require_relative './update_windows_device_account/update_windows_device_account_request_builder'
+require_relative './microsoft_graph_bypass_activation_lock/bypass_activation_lock_request_builder'
+require_relative './microsoft_graph_clean_windows_device/clean_windows_device_request_builder'
+require_relative './microsoft_graph_delete_user_from_shared_apple_device/delete_user_from_shared_apple_device_request_builder'
+require_relative './microsoft_graph_disable_lost_mode/disable_lost_mode_request_builder'
+require_relative './microsoft_graph_locate_device/locate_device_request_builder'
+require_relative './microsoft_graph_logout_shared_apple_device_active_user/logout_shared_apple_device_active_user_request_builder'
+require_relative './microsoft_graph_reboot_now/reboot_now_request_builder'
+require_relative './microsoft_graph_recover_passcode/recover_passcode_request_builder'
+require_relative './microsoft_graph_remote_lock/remote_lock_request_builder'
+require_relative './microsoft_graph_request_remote_assistance/request_remote_assistance_request_builder'
+require_relative './microsoft_graph_reset_passcode/reset_passcode_request_builder'
+require_relative './microsoft_graph_retire/retire_request_builder'
+require_relative './microsoft_graph_shut_down/shut_down_request_builder'
+require_relative './microsoft_graph_sync_device/sync_device_request_builder'
+require_relative './microsoft_graph_update_windows_device_account/update_windows_device_account_request_builder'
+require_relative './microsoft_graph_windows_defender_scan/windows_defender_scan_request_builder'
+require_relative './microsoft_graph_windows_defender_update_signatures/windows_defender_update_signatures_request_builder'
+require_relative './microsoft_graph_wipe/wipe_request_builder'
 require_relative './users/users_request_builder'
-require_relative './windows_defender_scan/windows_defender_scan_request_builder'
-require_relative './windows_defender_update_signatures/windows_defender_update_signatures_request_builder'
-require_relative './wipe/wipe_request_builder'
 
 module MicrosoftGraph::Users::Item::ManagedDevices::Item
     ## 
     # Provides operations to manage the managedDevices property of the microsoft.graph.user entity.
     class ManagedDeviceItemRequestBuilder
         
-        ## 
-        # Provides operations to call the bypassActivationLock method.
-        def bypass_activation_lock()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::BypassActivationLock::BypassActivationLockRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the cleanWindowsDevice method.
-        def clean_windows_device()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::CleanWindowsDevice::CleanWindowsDeviceRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the deleteUserFromSharedAppleDevice method.
-        def delete_user_from_shared_apple_device()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::DeleteUserFromSharedAppleDevice::DeleteUserFromSharedAppleDeviceRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the deviceCategory property of the microsoft.graph.managedDevice entity.
         def device_category()
@@ -67,71 +52,101 @@ module MicrosoftGraph::Users::Item::ManagedDevices::Item
             return MicrosoftGraph::Users::Item::ManagedDevices::Item::DeviceConfigurationStates::DeviceConfigurationStatesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the bypassActivationLock method.
+        def microsoft_graph_bypass_activation_lock()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphBypassActivationLock::BypassActivationLockRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the cleanWindowsDevice method.
+        def microsoft_graph_clean_windows_device()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphCleanWindowsDevice::CleanWindowsDeviceRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the deleteUserFromSharedAppleDevice method.
+        def microsoft_graph_delete_user_from_shared_apple_device()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphDeleteUserFromSharedAppleDevice::DeleteUserFromSharedAppleDeviceRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the disableLostMode method.
-        def disable_lost_mode()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::DisableLostMode::DisableLostModeRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_disable_lost_mode()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphDisableLostMode::DisableLostModeRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the locateDevice method.
-        def locate_device()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::LocateDevice::LocateDeviceRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_locate_device()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphLocateDevice::LocateDeviceRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the logoutSharedAppleDeviceActiveUser method.
-        def logout_shared_apple_device_active_user()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::LogoutSharedAppleDeviceActiveUser::LogoutSharedAppleDeviceActiveUserRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_logout_shared_apple_device_active_user()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphLogoutSharedAppleDeviceActiveUser::LogoutSharedAppleDeviceActiveUserRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the rebootNow method.
+        def microsoft_graph_reboot_now()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphRebootNow::RebootNowRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the recoverPasscode method.
+        def microsoft_graph_recover_passcode()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphRecoverPasscode::RecoverPasscodeRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the remoteLock method.
+        def microsoft_graph_remote_lock()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphRemoteLock::RemoteLockRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the requestRemoteAssistance method.
+        def microsoft_graph_request_remote_assistance()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphRequestRemoteAssistance::RequestRemoteAssistanceRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the resetPasscode method.
+        def microsoft_graph_reset_passcode()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphResetPasscode::ResetPasscodeRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the retire method.
+        def microsoft_graph_retire()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphRetire::RetireRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the shutDown method.
+        def microsoft_graph_shut_down()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphShutDown::ShutDownRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the syncDevice method.
+        def microsoft_graph_sync_device()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphSyncDevice::SyncDeviceRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the updateWindowsDeviceAccount method.
+        def microsoft_graph_update_windows_device_account()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphUpdateWindowsDeviceAccount::UpdateWindowsDeviceAccountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the windowsDefenderScan method.
+        def microsoft_graph_windows_defender_scan()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphWindowsDefenderScan::WindowsDefenderScanRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the windowsDefenderUpdateSignatures method.
+        def microsoft_graph_windows_defender_update_signatures()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphWindowsDefenderUpdateSignatures::WindowsDefenderUpdateSignaturesRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the wipe method.
+        def microsoft_graph_wipe()
+            return MicrosoftGraph::Users::Item::ManagedDevices::Item::MicrosoftGraphWipe::WipeRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
         @path_parameters
         ## 
-        # Provides operations to call the rebootNow method.
-        def reboot_now()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::RebootNow::RebootNowRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the recoverPasscode method.
-        def recover_passcode()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::RecoverPasscode::RecoverPasscodeRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the remoteLock method.
-        def remote_lock()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::RemoteLock::RemoteLockRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the requestRemoteAssistance method.
-        def request_remote_assistance()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::RequestRemoteAssistance::RequestRemoteAssistanceRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the resetPasscode method.
-        def reset_passcode()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::ResetPasscode::ResetPasscodeRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the retire method.
-        def retire()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::Retire::RetireRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the shutDown method.
-        def shut_down()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::ShutDown::ShutDownRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the syncDevice method.
-        def sync_device()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::SyncDevice::SyncDeviceRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the updateWindowsDeviceAccount method.
-        def update_windows_device_account()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::UpdateWindowsDeviceAccount::UpdateWindowsDeviceAccountRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
@@ -141,27 +156,13 @@ module MicrosoftGraph::Users::Item::ManagedDevices::Item
             return MicrosoftGraph::Users::Item::ManagedDevices::Item::Users::UsersRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the windowsDefenderScan method.
-        def windows_defender_scan()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::WindowsDefenderScan::WindowsDefenderScanRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the windowsDefenderUpdateSignatures method.
-        def windows_defender_update_signatures()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::WindowsDefenderUpdateSignatures::WindowsDefenderUpdateSignaturesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the wipe method.
-        def wipe()
-            return MicrosoftGraph::Users::Item::ManagedDevices::Item::Wipe::WipeRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## Instantiates a new ManagedDeviceItemRequestBuilder and sets the default values.
+        ## @param managedDeviceId key: id of managedDevice
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, managed_device_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}{?%24select,%24expand}"
@@ -174,7 +175,7 @@ module MicrosoftGraph::Users::Item::ManagedDevices::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -210,7 +211,7 @@ module MicrosoftGraph::Users::Item::ManagedDevices::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of managed_device
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -221,11 +222,11 @@ module MicrosoftGraph::Users::Item::ManagedDevices::Item
         end
         ## 
         ## Update the navigation property managedDevices in users
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of managed_device
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -240,7 +241,7 @@ module MicrosoftGraph::Users::Item::ManagedDevices::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -256,7 +257,7 @@ module MicrosoftGraph::Users::Item::ManagedDevices::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -271,11 +272,11 @@ module MicrosoftGraph::Users::Item::ManagedDevices::Item
         end
         ## 
         ## Update the navigation property managedDevices in users
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

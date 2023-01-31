@@ -14,7 +14,7 @@ require_relative '../../instances'
 require_relative '../item'
 require_relative './attachments'
 require_relative './count/count_request_builder'
-require_relative './create_upload_session/create_upload_session_request_builder'
+require_relative './microsoft_graph_create_upload_session/create_upload_session_request_builder'
 
 module MicrosoftGraph::Me::CalendarGroups::Item::Calendars::Item::CalendarView::Item::Instances::Item::Attachments
     ## 
@@ -28,8 +28,8 @@ module MicrosoftGraph::Me::CalendarGroups::Item::Calendars::Item::CalendarView::
         end
         ## 
         # Provides operations to call the createUploadSession method.
-        def create_upload_session()
-            return MicrosoftGraph::Me::CalendarGroups::Item::Calendars::Item::CalendarView::Item::Instances::Item::Attachments::CreateUploadSession::CreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_create_upload_session()
+            return MicrosoftGraph::Me::CalendarGroups::Item::Calendars::Item::CalendarView::Item::Instances::Item::Attachments::MicrosoftGraphCreateUploadSession::CreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -59,7 +59,7 @@ module MicrosoftGraph::Me::CalendarGroups::Item::Calendars::Item::CalendarView::
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of attachment_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -70,11 +70,11 @@ module MicrosoftGraph::Me::CalendarGroups::Item::Calendars::Item::CalendarView::
         end
         ## 
         ## Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of attachment
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -89,7 +89,7 @@ module MicrosoftGraph::Me::CalendarGroups::Item::Calendars::Item::CalendarView::
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -104,11 +104,11 @@ module MicrosoftGraph::Me::CalendarGroups::Item::Calendars::Item::CalendarView::
         end
         ## 
         ## Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

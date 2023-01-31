@@ -36,8 +36,6 @@ module MicrosoftGraph::Models
         ## 
         # The title of the page.
         @title
-        ## 
-        # The userTags property
         @user_tags
         ## 
         ## Instantiates a new onenotePage and sets the default values.
@@ -246,14 +244,14 @@ module MicrosoftGraph::Models
             @title = value
         end
         ## 
-        ## Gets the userTags property value. The userTags property
+        ## Gets the userTags property value. 
         ## @return a string
         ## 
         def user_tags
             return @user_tags
         end
         ## 
-        ## Sets the userTags property value. The userTags property
+        ## Sets the userTags property value. 
         ## @param value Value to set for the userTags property.
         ## @return a void
         ## 

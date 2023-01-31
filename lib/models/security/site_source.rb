@@ -6,8 +6,6 @@ require_relative './security'
 module MicrosoftGraph::Models::Security
     class SiteSource < MicrosoftGraph::Models::Security::DataSource
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The site property
         @site
         ## 
         ## Instantiates a new SiteSource and sets the default values.
@@ -46,14 +44,14 @@ module MicrosoftGraph::Models::Security
             writer.write_object_value("site", @site)
         end
         ## 
-        ## Gets the site property value. The site property
+        ## Gets the site property value. 
         ## @return a site
         ## 
         def site
             return @site
         end
         ## 
-        ## Sets the site property value. The site property
+        ## Sets the site property value. 
         ## @param value Value to set for the site property.
         ## @return a void
         ## 

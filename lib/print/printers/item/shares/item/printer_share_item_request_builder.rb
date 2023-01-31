@@ -25,10 +25,11 @@ module MicrosoftGraph::Print::Printers::Item::Shares::Item
         ## 
         ## Instantiates a new PrinterShareItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
+        ## @param printerShareId key: id of printerShare
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, printer_share_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/print/printers/{printer%2Did}/shares/{printerShare%2Did}{?%24select,%24expand}"
@@ -41,7 +42,7 @@ module MicrosoftGraph::Print::Printers::Item::Shares::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of printer_share
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -55,7 +56,7 @@ module MicrosoftGraph::Print::Printers::Item::Shares::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters

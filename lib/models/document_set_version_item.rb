@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # The unique identifier for the item.
         @item_id
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The title of the item.
@@ -79,14 +77,14 @@ module MicrosoftGraph::Models
             @item_id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

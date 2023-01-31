@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # Number of children contained immediately within this container.
         @child_count
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # A collection of properties defining the recommended view for the folder.
@@ -75,14 +73,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

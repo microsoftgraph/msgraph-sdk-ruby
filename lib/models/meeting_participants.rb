@@ -8,14 +8,8 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The attendees property
         @attendees
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The organizer property
         @organizer
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,14 +27,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the attendees property value. The attendees property
+        ## Gets the attendees property value. 
         ## @return a meeting_participant_info
         ## 
         def attendees
             return @attendees
         end
         ## 
-        ## Sets the attendees property value. The attendees property
+        ## Sets the attendees property value. 
         ## @param value Value to set for the attendees property.
         ## @return a void
         ## 
@@ -75,14 +69,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -90,14 +84,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the organizer property value. The organizer property
+        ## Gets the organizer property value. 
         ## @return a meeting_participant_info
         ## 
         def organizer
             return @organizer
         end
         ## 
-        ## Sets the organizer property value. The organizer property
+        ## Sets the organizer property value. 
         ## @param value Value to set for the organizer property.
         ## @return a void
         ## 

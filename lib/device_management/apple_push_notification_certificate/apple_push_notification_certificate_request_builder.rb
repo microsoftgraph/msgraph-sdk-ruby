@@ -4,13 +4,18 @@ require_relative '../../models/apple_push_notification_certificate'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_management'
 require_relative './apple_push_notification_certificate'
-require_relative './download_apple_push_notification_certificate_signing_request/download_apple_push_notification_certificate_signing_request_request_builder'
+require_relative './microsoft_graph_download_apple_push_notification_certificate_signing_request/download_apple_push_notification_certificate_signing_request_request_builder'
 
 module MicrosoftGraph::DeviceManagement::ApplePushNotificationCertificate
     ## 
     # Provides operations to manage the applePushNotificationCertificate property of the microsoft.graph.deviceManagement entity.
     class ApplePushNotificationCertificateRequestBuilder
         
+        ## 
+        # Provides operations to call the downloadApplePushNotificationCertificateSigningRequest method.
+        def microsoft_graph_download_apple_push_notification_certificate_signing_request()
+            return MicrosoftGraph::DeviceManagement::ApplePushNotificationCertificate::MicrosoftGraphDownloadApplePushNotificationCertificateSigningRequest::DownloadApplePushNotificationCertificateSigningRequestRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Path parameters for the request
         @path_parameters
@@ -39,7 +44,7 @@ module MicrosoftGraph::DeviceManagement::ApplePushNotificationCertificate
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -49,18 +54,11 @@ module MicrosoftGraph::DeviceManagement::ApplePushNotificationCertificate
             return @request_adapter.send_async(request_info, nil, error_mapping)
         end
         ## 
-        ## Provides operations to call the downloadApplePushNotificationCertificateSigningRequest method.
-        ## @return a download_apple_push_notification_certificate_signing_request_request_builder
-        ## 
-        def download_apple_push_notification_certificate_signing_request()
-            return DownloadApplePushNotificationCertificateSigningRequestRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## Apple push notification certificate.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of apple_push_notification_certificate
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -71,11 +69,11 @@ module MicrosoftGraph::DeviceManagement::ApplePushNotificationCertificate
         end
         ## 
         ## Update the navigation property applePushNotificationCertificate in deviceManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of apple_push_notification_certificate
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -90,7 +88,7 @@ module MicrosoftGraph::DeviceManagement::ApplePushNotificationCertificate
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -106,7 +104,7 @@ module MicrosoftGraph::DeviceManagement::ApplePushNotificationCertificate
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -121,11 +119,11 @@ module MicrosoftGraph::DeviceManagement::ApplePushNotificationCertificate
         end
         ## 
         ## Update the navigation property applePushNotificationCertificate in deviceManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

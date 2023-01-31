@@ -4,7 +4,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/permission'
 require_relative '../../shares'
 require_relative '../item'
-require_relative './grant/grant_request_builder'
+require_relative './microsoft_graph_grant/grant_request_builder'
 require_relative './permission'
 
 module MicrosoftGraph::Shares::Item::Permission
@@ -14,8 +14,8 @@ module MicrosoftGraph::Shares::Item::Permission
         
         ## 
         # Provides operations to call the grant method.
-        def grant()
-            return MicrosoftGraph::Shares::Item::Permission::Grant::GrantRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_grant()
+            return MicrosoftGraph::Shares::Item::Permission::MicrosoftGraphGrant::GrantRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -45,7 +45,7 @@ module MicrosoftGraph::Shares::Item::Permission
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -59,7 +59,7 @@ module MicrosoftGraph::Shares::Item::Permission
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of permission
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -70,11 +70,11 @@ module MicrosoftGraph::Shares::Item::Permission
         end
         ## 
         ## Update the navigation property permission in shares
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of permission
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -89,7 +89,7 @@ module MicrosoftGraph::Shares::Item::Permission
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -105,7 +105,7 @@ module MicrosoftGraph::Shares::Item::Permission
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -120,11 +120,11 @@ module MicrosoftGraph::Shares::Item::Permission
         end
         ## 
         ## Update the navigation property permission in shares
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

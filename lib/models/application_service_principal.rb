@@ -8,14 +8,8 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The application property
         @application
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The servicePrincipal property
         @service_principal
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,14 +27,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the application property value. The application property
+        ## Gets the application property value. 
         ## @return a application
         ## 
         def application
             return @application
         end
         ## 
-        ## Sets the application property value. The application property
+        ## Sets the application property value. 
         ## @param value Value to set for the application property.
         ## @return a void
         ## 
@@ -75,14 +69,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -102,14 +96,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the servicePrincipal property value. The servicePrincipal property
+        ## Gets the servicePrincipal property value. 
         ## @return a service_principal
         ## 
         def service_principal
             return @service_principal
         end
         ## 
-        ## Sets the servicePrincipal property value. The servicePrincipal property
+        ## Sets the servicePrincipal property value. 
         ## @param value Value to set for the servicePrincipal property.
         ## @return a void
         ## 

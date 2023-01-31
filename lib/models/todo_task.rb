@@ -6,11 +6,7 @@ require_relative './models'
 module MicrosoftGraph::Models
     class TodoTask < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The attachments property
         @attachments
-        ## 
-        # The attachmentSessions property
         @attachment_sessions
         ## 
         # The task body that typically contains information about the task.
@@ -36,11 +32,7 @@ module MicrosoftGraph::Models
         ## 
         # The collection of open extensions defined for the task. Nullable.
         @extensions
-        ## 
-        # The hasAttachments property
         @has_attachments
-        ## 
-        # The importance property
         @importance
         ## 
         # Set to true if an alert is set to remind the user of the task.
@@ -57,24 +49,20 @@ module MicrosoftGraph::Models
         ## 
         # The date and time in the specified time zone for a reminder alert of the task to occur.
         @reminder_date_time
-        ## 
-        # The startDateTime property
         @start_date_time
-        ## 
-        # The status property
         @status
         ## 
         # A brief description of the task.
         @title
         ## 
-        ## Gets the attachments property value. The attachments property
+        ## Gets the attachments property value. 
         ## @return a attachment_base
         ## 
         def attachments
             return @attachments
         end
         ## 
-        ## Sets the attachments property value. The attachments property
+        ## Sets the attachments property value. 
         ## @param value Value to set for the attachments property.
         ## @return a void
         ## 
@@ -82,14 +70,14 @@ module MicrosoftGraph::Models
             @attachments = value
         end
         ## 
-        ## Gets the attachmentSessions property value. The attachmentSessions property
+        ## Gets the attachmentSessions property value. 
         ## @return a attachment_session
         ## 
         def attachment_sessions
             return @attachment_sessions
         end
         ## 
-        ## Sets the attachmentSessions property value. The attachmentSessions property
+        ## Sets the attachmentSessions property value. 
         ## @param value Value to set for the attachmentSessions property.
         ## @return a void
         ## 
@@ -261,14 +249,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the hasAttachments property value. The hasAttachments property
+        ## Gets the hasAttachments property value. 
         ## @return a boolean
         ## 
         def has_attachments
             return @has_attachments
         end
         ## 
-        ## Sets the hasAttachments property value. The hasAttachments property
+        ## Sets the hasAttachments property value. 
         ## @param value Value to set for the hasAttachments property.
         ## @return a void
         ## 
@@ -276,14 +264,14 @@ module MicrosoftGraph::Models
             @has_attachments = value
         end
         ## 
-        ## Gets the importance property value. The importance property
+        ## Gets the importance property value. 
         ## @return a importance
         ## 
         def importance
             return @importance
         end
         ## 
-        ## Sets the importance property value. The importance property
+        ## Sets the importance property value. 
         ## @param value Value to set for the importance property.
         ## @return a void
         ## 
@@ -395,14 +383,14 @@ module MicrosoftGraph::Models
             writer.write_string_value("title", @title)
         end
         ## 
-        ## Gets the startDateTime property value. The startDateTime property
+        ## Gets the startDateTime property value. 
         ## @return a date_time_time_zone
         ## 
         def start_date_time
             return @start_date_time
         end
         ## 
-        ## Sets the startDateTime property value. The startDateTime property
+        ## Sets the startDateTime property value. 
         ## @param value Value to set for the startDateTime property.
         ## @return a void
         ## 
@@ -410,14 +398,14 @@ module MicrosoftGraph::Models
             @start_date_time = value
         end
         ## 
-        ## Gets the status property value. The status property
+        ## Gets the status property value. 
         ## @return a task_status
         ## 
         def status
             return @status
         end
         ## 
-        ## Sets the status property value. The status property
+        ## Sets the status property value. 
         ## @param value Value to set for the status property.
         ## @return a void
         ## 

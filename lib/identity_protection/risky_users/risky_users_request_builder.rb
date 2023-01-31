@@ -4,9 +4,9 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/risky_user'
 require_relative '../../models/risky_user_collection_response'
 require_relative '../identity_protection'
-require_relative './confirm_compromised/confirm_compromised_request_builder'
 require_relative './count/count_request_builder'
-require_relative './dismiss/dismiss_request_builder'
+require_relative './microsoft_graph_confirm_compromised/confirm_compromised_request_builder'
+require_relative './microsoft_graph_dismiss/dismiss_request_builder'
 require_relative './risky_users'
 
 module MicrosoftGraph::IdentityProtection::RiskyUsers
@@ -15,19 +15,19 @@ module MicrosoftGraph::IdentityProtection::RiskyUsers
     class RiskyUsersRequestBuilder
         
         ## 
-        # Provides operations to call the confirmCompromised method.
-        def confirm_compromised()
-            return MicrosoftGraph::IdentityProtection::RiskyUsers::ConfirmCompromised::ConfirmCompromisedRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::IdentityProtection::RiskyUsers::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the confirmCompromised method.
+        def microsoft_graph_confirm_compromised()
+            return MicrosoftGraph::IdentityProtection::RiskyUsers::MicrosoftGraphConfirmCompromised::ConfirmCompromisedRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the dismiss method.
-        def dismiss()
-            return MicrosoftGraph::IdentityProtection::RiskyUsers::Dismiss::DismissRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_dismiss()
+            return MicrosoftGraph::IdentityProtection::RiskyUsers::MicrosoftGraphDismiss::DismissRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -57,7 +57,7 @@ module MicrosoftGraph::IdentityProtection::RiskyUsers
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of risky_user_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -68,11 +68,11 @@ module MicrosoftGraph::IdentityProtection::RiskyUsers
         end
         ## 
         ## Create new navigation property to riskyUsers for identityProtection
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of risky_user
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -87,7 +87,7 @@ module MicrosoftGraph::IdentityProtection::RiskyUsers
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -102,11 +102,11 @@ module MicrosoftGraph::IdentityProtection::RiskyUsers
         end
         ## 
         ## Create new navigation property to riskyUsers for identityProtection
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

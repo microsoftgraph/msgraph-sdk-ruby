@@ -12,8 +12,6 @@ module MicrosoftGraph::Models
         ## 
         # The service does not have source data before the specified time.
         @missing_data_before_date_time
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Some data was not recorded due to excessive activity.
@@ -76,14 +74,14 @@ module MicrosoftGraph::Models
             @missing_data_before_date_time = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

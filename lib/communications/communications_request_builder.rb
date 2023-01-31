@@ -7,7 +7,7 @@ require_relative './call_records/item/call_record_item_request_builder'
 require_relative './calls/calls_request_builder'
 require_relative './calls/item/call_item_request_builder'
 require_relative './communications'
-require_relative './get_presences_by_user_id/get_presences_by_user_id_request_builder'
+require_relative './microsoft_graph_get_presences_by_user_id/get_presences_by_user_id_request_builder'
 require_relative './online_meetings/item/online_meeting_item_request_builder'
 require_relative './online_meetings/online_meetings_request_builder'
 require_relative './presences/item/presence_item_request_builder'
@@ -30,8 +30,8 @@ module MicrosoftGraph::Communications
         end
         ## 
         # Provides operations to call the getPresencesByUserId method.
-        def get_presences_by_user_id()
-            return MicrosoftGraph::Communications::GetPresencesByUserId::GetPresencesByUserIdRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_presences_by_user_id()
+            return MicrosoftGraph::Communications::MicrosoftGraphGetPresencesByUserId::GetPresencesByUserIdRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
@@ -93,7 +93,7 @@ module MicrosoftGraph::Communications
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of cloud_communications
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -115,11 +115,11 @@ module MicrosoftGraph::Communications
         end
         ## 
         ## Update communications
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of cloud_communications
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -145,7 +145,7 @@ module MicrosoftGraph::Communications
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -160,11 +160,11 @@ module MicrosoftGraph::Communications
         end
         ## 
         ## Update communications
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

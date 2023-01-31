@@ -4,25 +4,20 @@ require_relative '../../../models/mobile_app'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_app_management'
 require_relative '../mobile_apps'
-require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
 require_relative './assignments/item/mobile_app_assignment_item_request_builder'
 require_relative './categories/categories_request_builder'
 require_relative './categories/item/mobile_app_category_item_request_builder'
 require_relative './item'
-require_relative './managed_mobile_lob_app/managed_mobile_lob_app_request_builder'
-require_relative './mobile_lob_app/mobile_lob_app_request_builder'
+require_relative './microsoft_graph_assign/assign_request_builder'
+require_relative './microsoft_graph_managed_mobile_lob_app/managed_mobile_lob_app_request_builder'
+require_relative './microsoft_graph_mobile_lob_app/mobile_lob_app_request_builder'
 
 module MicrosoftGraph::DeviceAppManagement::MobileApps::Item
     ## 
     # Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
     class MobileAppItemRequestBuilder
         
-        ## 
-        # Provides operations to call the assign method.
-        def assign()
-            return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::Assign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
         def assignments()
@@ -34,14 +29,19 @@ module MicrosoftGraph::DeviceAppManagement::MobileApps::Item
             return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::Categories::CategoriesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the assign method.
+        def microsoft_graph_assign()
+            return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::MicrosoftGraphAssign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Casts the previous resource to managedMobileLobApp.
-        def managed_mobile_lob_app()
-            return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::ManagedMobileLobApp::ManagedMobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_managed_mobile_lob_app()
+            return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::MicrosoftGraphManagedMobileLobApp::ManagedMobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to mobileLobApp.
-        def mobile_lob_app()
-            return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::MobileLobApp::MobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_mobile_lob_app()
+            return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::MicrosoftGraphMobileLobApp::MobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -76,11 +76,12 @@ module MicrosoftGraph::DeviceAppManagement::MobileApps::Item
         end
         ## 
         ## Instantiates a new MobileAppItemRequestBuilder and sets the default values.
+        ## @param mobileAppId key: id of mobileApp
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, mobile_app_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}{?%24select,%24expand}"
@@ -93,7 +94,7 @@ module MicrosoftGraph::DeviceAppManagement::MobileApps::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -107,7 +108,7 @@ module MicrosoftGraph::DeviceAppManagement::MobileApps::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of mobile_app
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -118,11 +119,11 @@ module MicrosoftGraph::DeviceAppManagement::MobileApps::Item
         end
         ## 
         ## Update the navigation property mobileApps in deviceAppManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of mobile_app
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -137,7 +138,7 @@ module MicrosoftGraph::DeviceAppManagement::MobileApps::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -153,7 +154,7 @@ module MicrosoftGraph::DeviceAppManagement::MobileApps::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -168,11 +169,11 @@ module MicrosoftGraph::DeviceAppManagement::MobileApps::Item
         end
         ## 
         ## Update the navigation property mobileApps in deviceAppManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

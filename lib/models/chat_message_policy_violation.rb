@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # Justification text provided by the sender of the message when overriding a policy violation.
         @justification_text
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Information to display to the message sender about why the message was flagged as a violation.
@@ -102,14 +100,14 @@ module MicrosoftGraph::Models
             @justification_text = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

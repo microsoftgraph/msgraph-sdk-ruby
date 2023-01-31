@@ -4,13 +4,13 @@ require_relative '../../../models/managed_e_book'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_app_management'
 require_relative '../managed_e_books'
-require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
 require_relative './assignments/item/managed_e_book_assignment_item_request_builder'
 require_relative './device_states/device_states_request_builder'
 require_relative './device_states/item/device_install_state_item_request_builder'
 require_relative './install_summary/install_summary_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_assign/assign_request_builder'
 require_relative './user_state_summary/item/user_install_state_summary_item_request_builder'
 require_relative './user_state_summary/user_state_summary_request_builder'
 
@@ -19,11 +19,6 @@ module MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item
     # Provides operations to manage the managedEBooks property of the microsoft.graph.deviceAppManagement entity.
     class ManagedEBookItemRequestBuilder
         
-        ## 
-        # Provides operations to call the assign method.
-        def assign()
-            return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::Assign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the assignments property of the microsoft.graph.managedEBook entity.
         def assignments()
@@ -38,6 +33,11 @@ module MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item
         # Provides operations to manage the installSummary property of the microsoft.graph.managedEBook entity.
         def install_summary()
             return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::InstallSummary::InstallSummaryRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the assign method.
+        def microsoft_graph_assign()
+            return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::MicrosoftGraphAssign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -66,11 +66,12 @@ module MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item
         end
         ## 
         ## Instantiates a new ManagedEBookItemRequestBuilder and sets the default values.
+        ## @param managedEBookId key: id of managedEBook
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, managed_e_book_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}{?%24select,%24expand}"
@@ -83,7 +84,7 @@ module MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -108,7 +109,7 @@ module MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of managed_e_book
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -119,11 +120,11 @@ module MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item
         end
         ## 
         ## Update the navigation property managedEBooks in deviceAppManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of managed_e_book
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -138,7 +139,7 @@ module MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -154,7 +155,7 @@ module MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -169,11 +170,11 @@ module MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item
         end
         ## 
         ## Update the navigation property managedEBooks in deviceAppManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

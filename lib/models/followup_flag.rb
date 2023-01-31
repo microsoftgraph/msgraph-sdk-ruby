@@ -17,8 +17,6 @@ module MicrosoftGraph::Models
         ## 
         # The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.
         @flag_status
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The date and time that the follow-up is to begin.
@@ -113,14 +111,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

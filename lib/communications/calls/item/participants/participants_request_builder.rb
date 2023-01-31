@@ -7,7 +7,7 @@ require_relative '../../../communications'
 require_relative '../../calls'
 require_relative '../item'
 require_relative './count/count_request_builder'
-require_relative './invite/invite_request_builder'
+require_relative './microsoft_graph_invite/invite_request_builder'
 require_relative './participants'
 
 module MicrosoftGraph::Communications::Calls::Item::Participants
@@ -22,8 +22,8 @@ module MicrosoftGraph::Communications::Calls::Item::Participants
         end
         ## 
         # Provides operations to call the invite method.
-        def invite()
-            return MicrosoftGraph::Communications::Calls::Item::Participants::Invite::InviteRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_invite()
+            return MicrosoftGraph::Communications::Calls::Item::Participants::MicrosoftGraphInvite::InviteRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -53,7 +53,7 @@ module MicrosoftGraph::Communications::Calls::Item::Participants
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of participant_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -64,11 +64,11 @@ module MicrosoftGraph::Communications::Calls::Item::Participants
         end
         ## 
         ## Create new navigation property to participants for communications
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of participant
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -83,7 +83,7 @@ module MicrosoftGraph::Communications::Calls::Item::Participants
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -98,11 +98,11 @@ module MicrosoftGraph::Communications::Calls::Item::Participants
         end
         ## 
         ## Create new navigation property to participants for communications
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

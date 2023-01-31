@@ -5,10 +5,10 @@ require_relative '../../models/outlook_user'
 require_relative '../me'
 require_relative './master_categories/item/outlook_category_item_request_builder'
 require_relative './master_categories/master_categories_request_builder'
+require_relative './microsoft_graph_supported_languages/supported_languages_request_builder'
+require_relative './microsoft_graph_supported_time_zones/supported_time_zones_request_builder'
+require_relative './microsoft_graph_supported_time_zones_with_time_zone_standard/supported_time_zones_with_time_zone_standard_request_builder'
 require_relative './outlook'
-require_relative './supported_languages/supported_languages_request_builder'
-require_relative './supported_time_zones/supported_time_zones_request_builder'
-require_relative './supported_time_zones_with_time_zone_standard/supported_time_zones_with_time_zone_standard_request_builder'
 
 module MicrosoftGraph::Me::Outlook
     ## 
@@ -19,6 +19,16 @@ module MicrosoftGraph::Me::Outlook
         # Provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
         def master_categories()
             return MicrosoftGraph::Me::Outlook::MasterCategories::MasterCategoriesRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the supportedLanguages method.
+        def microsoft_graph_supported_languages()
+            return MicrosoftGraph::Me::Outlook::MicrosoftGraphSupportedLanguages::SupportedLanguagesRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the supportedTimeZones method.
+        def microsoft_graph_supported_time_zones()
+            return MicrosoftGraph::Me::Outlook::MicrosoftGraphSupportedTimeZones::SupportedTimeZonesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -48,7 +58,7 @@ module MicrosoftGraph::Me::Outlook
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of outlook_user
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -69,25 +79,11 @@ module MicrosoftGraph::Me::Outlook
             return MicrosoftGraph::Me::Outlook::MasterCategories::Item::OutlookCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Provides operations to call the supportedLanguages method.
-        ## @return a supported_languages_request_builder
-        ## 
-        def supported_languages()
-            return SupportedLanguagesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the supportedTimeZones method.
-        ## @return a supported_time_zones_request_builder
-        ## 
-        def supported_time_zones()
-            return SupportedTimeZonesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## Provides operations to call the supportedTimeZones method.
         ## @param TimeZoneStandard Usage: TimeZoneStandard='{TimeZoneStandard}'
         ## @return a supported_time_zones_with_time_zone_standard_request_builder
         ## 
-        def supported_time_zones_with_time_zone_standard(time_zone_standard)
+        def microsoft_graph_supported_time_zones_with_time_zone_standard(time_zone_standard)
             raise StandardError, 'time_zone_standard cannot be null' if time_zone_standard.nil?
             return SupportedTimeZonesWithTimeZoneStandardRequestBuilder.new(@path_parameters, @request_adapter, TimeZoneStandard)
         end
@@ -96,7 +92,7 @@ module MicrosoftGraph::Me::Outlook
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters

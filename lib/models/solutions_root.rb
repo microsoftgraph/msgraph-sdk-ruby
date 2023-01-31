@@ -8,14 +8,8 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The bookingBusinesses property
         @booking_businesses
-        ## 
-        # The bookingCurrencies property
         @booking_currencies
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -33,14 +27,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the bookingBusinesses property value. The bookingBusinesses property
+        ## Gets the bookingBusinesses property value. 
         ## @return a booking_business
         ## 
         def booking_businesses
             return @booking_businesses
         end
         ## 
-        ## Sets the bookingBusinesses property value. The bookingBusinesses property
+        ## Sets the bookingBusinesses property value. 
         ## @param value Value to set for the bookingBusinesses property.
         ## @return a void
         ## 
@@ -48,14 +42,14 @@ module MicrosoftGraph::Models
             @booking_businesses = value
         end
         ## 
-        ## Gets the bookingCurrencies property value. The bookingCurrencies property
+        ## Gets the bookingCurrencies property value. 
         ## @return a booking_currency
         ## 
         def booking_currencies
             return @booking_currencies
         end
         ## 
-        ## Sets the bookingCurrencies property value. The bookingCurrencies property
+        ## Sets the bookingCurrencies property value. 
         ## @param value Value to set for the bookingCurrencies property.
         ## @return a void
         ## 
@@ -90,14 +84,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

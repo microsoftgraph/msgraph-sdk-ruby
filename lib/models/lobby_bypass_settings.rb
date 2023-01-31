@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
         @is_dial_in_bypass_enabled
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
@@ -75,14 +73,14 @@ module MicrosoftGraph::Models
             @is_dial_in_bypass_enabled = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

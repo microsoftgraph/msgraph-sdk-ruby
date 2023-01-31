@@ -18,8 +18,6 @@ module MicrosoftGraph::Models
         ## 
         # The device model that is being reported
         @device_model
-        ## 
-        # The installStatus property
         @install_status
         ## 
         # Last modified date time of the policy report.
@@ -27,8 +25,6 @@ module MicrosoftGraph::Models
         ## 
         # The device version that is being reported.
         @os_version
-        ## 
-        # The status property
         @status
         ## 
         # The User id that is being reported.
@@ -135,14 +131,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the installStatus property value. The installStatus property
+        ## Gets the installStatus property value. 
         ## @return a ios_updates_install_status
         ## 
         def install_status
             return @install_status
         end
         ## 
-        ## Sets the installStatus property value. The installStatus property
+        ## Sets the installStatus property value. 
         ## @param value Value to set for the installStatus property.
         ## @return a void
         ## 
@@ -200,14 +196,14 @@ module MicrosoftGraph::Models
             writer.write_string_value("userPrincipalName", @user_principal_name)
         end
         ## 
-        ## Gets the status property value. The status property
+        ## Gets the status property value. 
         ## @return a compliance_status
         ## 
         def status
             return @status
         end
         ## 
-        ## Sets the status property value. The status property
+        ## Sets the status property value. 
         ## @param value Value to set for the status property.
         ## @return a void
         ## 

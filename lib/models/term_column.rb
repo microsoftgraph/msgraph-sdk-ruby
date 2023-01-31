@@ -13,17 +13,11 @@ module MicrosoftGraph::Models
         ## 
         # Specifies whether the column will allow more than one value.
         @allow_multiple_values
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The parentTerm property
         @parent_term
         ## 
         # Specifies whether to display the entire term path or only the term label.
         @show_fully_qualified_name
-        ## 
-        # The termSet property
         @term_set
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -85,14 +79,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -100,14 +94,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the parentTerm property value. The parentTerm property
+        ## Gets the parentTerm property value. 
         ## @return a term
         ## 
         def parent_term
             return @parent_term
         end
         ## 
-        ## Sets the parentTerm property value. The parentTerm property
+        ## Sets the parentTerm property value. 
         ## @param value Value to set for the parentTerm property.
         ## @return a void
         ## 
@@ -144,14 +138,14 @@ module MicrosoftGraph::Models
             @show_fully_qualified_name = value
         end
         ## 
-        ## Gets the termSet property value. The termSet property
+        ## Gets the termSet property value. 
         ## @return a set
         ## 
         def term_set
             return @term_set
         end
         ## 
-        ## Sets the termSet property value. The termSet property
+        ## Sets the termSet property value. 
         ## @param value Value to set for the termSet property.
         ## @return a void
         ## 

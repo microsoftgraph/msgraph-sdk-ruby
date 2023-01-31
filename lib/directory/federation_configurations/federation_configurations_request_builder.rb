@@ -4,9 +4,9 @@ require_relative '../../models/identity_provider_base'
 require_relative '../../models/identity_provider_base_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../directory'
-require_relative './available_provider_types/available_provider_types_request_builder'
 require_relative './count/count_request_builder'
 require_relative './federation_configurations'
+require_relative './microsoft_graph_available_provider_types/available_provider_types_request_builder'
 
 module MicrosoftGraph::Directory::FederationConfigurations
     ## 
@@ -19,6 +19,11 @@ module MicrosoftGraph::Directory::FederationConfigurations
             return MicrosoftGraph::Directory::FederationConfigurations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the availableProviderTypes method.
+        def microsoft_graph_available_provider_types()
+            return MicrosoftGraph::Directory::FederationConfigurations::MicrosoftGraphAvailableProviderTypes::AvailableProviderTypesRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
@@ -27,13 +32,6 @@ module MicrosoftGraph::Directory::FederationConfigurations
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        ## Provides operations to call the availableProviderTypes method.
-        ## @return a available_provider_types_request_builder
-        ## 
-        def available_provider_types()
-            return AvailableProviderTypesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new FederationConfigurationsRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
@@ -53,7 +51,7 @@ module MicrosoftGraph::Directory::FederationConfigurations
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of identity_provider_base_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -64,11 +62,11 @@ module MicrosoftGraph::Directory::FederationConfigurations
         end
         ## 
         ## Create new navigation property to federationConfigurations for directory
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of identity_provider_base
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -83,7 +81,7 @@ module MicrosoftGraph::Directory::FederationConfigurations
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -98,11 +96,11 @@ module MicrosoftGraph::Directory::FederationConfigurations
         end
         ## 
         ## Create new navigation property to federationConfigurations for directory
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # The unique idenfier for an entity. Read-only.
         @id
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -287,6 +285,18 @@ module MicrosoftGraph::Models
                         return DataPolicyOperation.new
                     when "#microsoft.graph.defaultManagedAppProtection"
                         return DefaultManagedAppProtection.new
+                    when "#microsoft.graph.delegatedAdminAccessAssignment"
+                        return DelegatedAdminAccessAssignment.new
+                    when "#microsoft.graph.delegatedAdminCustomer"
+                        return DelegatedAdminCustomer.new
+                    when "#microsoft.graph.delegatedAdminRelationship"
+                        return DelegatedAdminRelationship.new
+                    when "#microsoft.graph.delegatedAdminRelationshipOperation"
+                        return DelegatedAdminRelationshipOperation.new
+                    when "#microsoft.graph.delegatedAdminRelationshipRequest"
+                        return DelegatedAdminRelationshipRequest.new
+                    when "#microsoft.graph.delegatedAdminServiceManagementDetail"
+                        return DelegatedAdminServiceManagementDetail.new
                     when "#microsoft.graph.delegatedPermissionClassification"
                         return DelegatedPermissionClassification.new
                     when "#microsoft.graph.detectedApp"
@@ -533,6 +543,8 @@ module MicrosoftGraph::Models
                         return IosDeviceFeaturesConfiguration.new
                     when "#microsoft.graph.iosGeneralDeviceConfiguration"
                         return IosGeneralDeviceConfiguration.new
+                    when "#microsoft.graph.iosiPadOSWebClip"
+                        return IosiPadOSWebClip.new
                     when "#microsoft.graph.iosLobApp"
                         return IosLobApp.new
                     when "#microsoft.graph.iosManagedAppProtection"
@@ -1153,6 +1165,8 @@ module MicrosoftGraph::Models
                         return WindowsUniversalAppXContainedApp.new
                     when "#microsoft.graph.windowsUpdateForBusinessConfiguration"
                         return WindowsUpdateForBusinessConfiguration.new
+                    when "#microsoft.graph.windowsWebApp"
+                        return WindowsWebApp.new
                     when "#microsoft.graph.workbook"
                         return Workbook.new
                     when "#microsoft.graph.workbookApplication"
@@ -1279,14 +1293,14 @@ module MicrosoftGraph::Models
             @id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -16,8 +16,6 @@ module MicrosoftGraph::Models
         ## 
         # The number of minutes to wait before restarting the device after an app installation.
         @grace_period_in_minutes
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The number of minutes to snooze the restart notification dialog when the snooze button is selected.
@@ -96,14 +94,14 @@ module MicrosoftGraph::Models
             @grace_period_in_minutes = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

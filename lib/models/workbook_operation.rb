@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # The resource URI for the result.
         @resource_location
-        ## 
-        # The status property
         @status
         ## 
         ## Instantiates a new workbookOperation and sets the default values.
@@ -84,14 +82,14 @@ module MicrosoftGraph::Models
             writer.write_enum_value("status", @status)
         end
         ## 
-        ## Gets the status property value. The status property
+        ## Gets the status property value. 
         ## @return a workbook_operation_status
         ## 
         def status
             return @status
         end
         ## 
-        ## Sets the status property value. The status property
+        ## Sets the status property value. 
         ## @param value Value to set for the status property.
         ## @return a void
         ## 

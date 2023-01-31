@@ -27,11 +27,12 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags::Item::Child
         @url_template
         ## 
         ## Instantiates a new EdiscoveryReviewTagItemRequestBuilder and sets the default values.
+        ## @param ediscoveryReviewTagId1 key: id of ediscoveryReviewTag
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, ediscovery_review_tag_id1=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/tags/{ediscoveryReviewTag%2Did}/childTags/{ediscoveryReviewTag%2Did1}{?%24select,%24expand}"
@@ -44,7 +45,7 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags::Item::Child
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of ediscovery_review_tag
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -58,7 +59,7 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags::Item::Child
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters

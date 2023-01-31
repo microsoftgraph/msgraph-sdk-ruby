@@ -5,24 +5,18 @@ require_relative './models'
 module MicrosoftGraph::Models
     class ItemAnalytics < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The allTime property
         @all_time
-        ## 
-        # The itemActivityStats property
         @item_activity_stats
-        ## 
-        # The lastSevenDays property
         @last_seven_days
         ## 
-        ## Gets the allTime property value. The allTime property
+        ## Gets the allTime property value. 
         ## @return a item_activity_stat
         ## 
         def all_time
             return @all_time
         end
         ## 
-        ## Sets the allTime property value. The allTime property
+        ## Sets the allTime property value. 
         ## @param value Value to set for the allTime property.
         ## @return a void
         ## 
@@ -57,14 +51,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the itemActivityStats property value. The itemActivityStats property
+        ## Gets the itemActivityStats property value. 
         ## @return a item_activity_stat
         ## 
         def item_activity_stats
             return @item_activity_stats
         end
         ## 
-        ## Sets the itemActivityStats property value. The itemActivityStats property
+        ## Sets the itemActivityStats property value. 
         ## @param value Value to set for the itemActivityStats property.
         ## @return a void
         ## 
@@ -72,14 +66,14 @@ module MicrosoftGraph::Models
             @item_activity_stats = value
         end
         ## 
-        ## Gets the lastSevenDays property value. The lastSevenDays property
+        ## Gets the lastSevenDays property value. 
         ## @return a item_activity_stat
         ## 
         def last_seven_days
             return @last_seven_days
         end
         ## 
-        ## Sets the lastSevenDays property value. The lastSevenDays property
+        ## Sets the lastSevenDays property value. 
         ## @param value Value to set for the lastSevenDays property.
         ## @return a void
         ## 

@@ -9,8 +9,6 @@ module MicrosoftGraph::Models::ODataErrors
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The error property
         @error
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -45,14 +43,14 @@ module MicrosoftGraph::Models::ODataErrors
             return ODataError.new
         end
         ## 
-        ## Gets the error property value. The error property
+        ## Gets the error property value. 
         ## @return a main_error
         ## 
         def error
             return @error
         end
         ## 
-        ## Sets the error property value. The error property
+        ## Sets the error property value. 
         ## @param value Value to set for the error property.
         ## @return a void
         ## 

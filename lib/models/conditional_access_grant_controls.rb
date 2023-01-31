@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # List of custom controls IDs required by the policy. For more information, see Custom controls.
         @custom_authentication_factors
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Defines the relationship of the grant controls. Possible values: AND, OR.
@@ -98,14 +96,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

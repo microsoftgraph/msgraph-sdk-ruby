@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # TenantId which the Azure AD user belongs to.
         @tenant_id
-        ## 
-        # The user property
         @user
         ## 
         # The guid of the user.
@@ -90,14 +88,14 @@ module MicrosoftGraph::Models
             @tenant_id = value
         end
         ## 
-        ## Gets the user property value. The user property
+        ## Gets the user property value. 
         ## @return a user
         ## 
         def user
             return @user
         end
         ## 
-        ## Sets the user property value. The user property
+        ## Sets the user property value. 
         ## @param value Value to set for the user property.
         ## @return a void
         ## 

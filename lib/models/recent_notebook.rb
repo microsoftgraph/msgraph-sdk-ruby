@@ -18,8 +18,6 @@ module MicrosoftGraph::Models
         ## 
         # Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote client, if it's installed. The oneNoteWebURL link opens the notebook in OneNote on the web.
         @links
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.
@@ -114,14 +112,14 @@ module MicrosoftGraph::Models
             @links = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

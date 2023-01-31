@@ -18,8 +18,6 @@ module MicrosoftGraph::Models::Security
         ## 
         # Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
         @min_words
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
@@ -114,14 +112,14 @@ module MicrosoftGraph::Models::Security
             @min_words = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

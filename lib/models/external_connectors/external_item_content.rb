@@ -9,11 +9,7 @@ module MicrosoftGraph::Models::ExternalConnectors
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The type property
         @type
         ## 
         # The content for the externalItem. Required.
@@ -61,14 +57,14 @@ module MicrosoftGraph::Models::ExternalConnectors
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -88,14 +84,14 @@ module MicrosoftGraph::Models::ExternalConnectors
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the type property value. The type property
+        ## Gets the type property value. 
         ## @return a external_item_content_type
         ## 
         def type
             return @type
         end
         ## 
-        ## Sets the type property value. The type property
+        ## Sets the type property value. 
         ## @param value Value to set for the type property.
         ## @return a void
         ## 

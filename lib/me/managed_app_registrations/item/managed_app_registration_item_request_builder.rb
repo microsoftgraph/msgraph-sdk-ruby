@@ -22,11 +22,12 @@ module MicrosoftGraph::Me::ManagedAppRegistrations::Item
         @url_template
         ## 
         ## Instantiates a new ManagedAppRegistrationItemRequestBuilder and sets the default values.
+        ## @param managedAppRegistrationId key: id of managedAppRegistration
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, managed_app_registration_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/me/managedAppRegistrations/{managedAppRegistration%2Did}{?%24select,%24expand}"
@@ -39,7 +40,7 @@ module MicrosoftGraph::Me::ManagedAppRegistrations::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of managed_app_registration
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -53,7 +54,7 @@ module MicrosoftGraph::Me::ManagedAppRegistrations::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters

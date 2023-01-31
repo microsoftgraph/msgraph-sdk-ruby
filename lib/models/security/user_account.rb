@@ -18,8 +18,6 @@ module MicrosoftGraph::Models::Security
         ## 
         # The name of the Active Directory domain of which the user is a member.
         @domain_name
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The user principal name of the account in Azure AD.
@@ -118,14 +116,14 @@ module MicrosoftGraph::Models::Security
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

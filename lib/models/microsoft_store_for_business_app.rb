@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class MicrosoftStoreForBusinessApp < MicrosoftGraph::Models::MobileApp
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The licenseType property
         @license_type
         ## 
         # The app package identifier
@@ -51,14 +49,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the licenseType property value. The licenseType property
+        ## Gets the licenseType property value. 
         ## @return a microsoft_store_for_business_license_type
         ## 
         def license_type
             return @license_type
         end
         ## 
-        ## Sets the licenseType property value. The licenseType property
+        ## Sets the licenseType property value. 
         ## @param value Value to set for the licenseType property.
         ## @return a void
         ## 

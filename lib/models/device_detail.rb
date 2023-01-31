@@ -23,8 +23,6 @@ module MicrosoftGraph::Models
         ## 
         # Indicates whether the device is managed.
         @is_managed
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Indicates the operating system name and version used for signing in.
@@ -155,14 +153,14 @@ module MicrosoftGraph::Models
             @is_managed = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

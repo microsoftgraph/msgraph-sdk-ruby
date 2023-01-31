@@ -29,8 +29,6 @@ module MicrosoftGraph::Models
         ## 
         # The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
         @fit_pdf_to_page
-        ## 
-        # The inputBin property
         @input_bin
         ## 
         # The default media (such as paper) color to print the document on.
@@ -44,8 +42,6 @@ module MicrosoftGraph::Models
         ## 
         # The default direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
         @multipage_layout
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The default orientation to use when printing the document. Valid values are described in the following table.
@@ -225,14 +221,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the inputBin property value. The inputBin property
+        ## Gets the inputBin property value. 
         ## @return a string
         ## 
         def input_bin
             return @input_bin
         end
         ## 
-        ## Sets the inputBin property value. The inputBin property
+        ## Sets the inputBin property value. 
         ## @param value Value to set for the inputBin property.
         ## @return a void
         ## 
@@ -300,14 +296,14 @@ module MicrosoftGraph::Models
             @multipage_layout = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -62,8 +62,6 @@ module MicrosoftGraph::Models
         ## 
         # The network link speed in bytes
         @network_link_speed_in_bytes
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The total number of the outbound packets.
@@ -418,14 +416,14 @@ module MicrosoftGraph::Models
             @network_link_speed_in_bytes = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

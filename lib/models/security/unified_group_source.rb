@@ -6,8 +6,6 @@ require_relative './security'
 module MicrosoftGraph::Models::Security
     class UnifiedGroupSource < MicrosoftGraph::Models::Security::DataSource
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The group property
         @group
         ## 
         # Specifies which sources are included in this group. Possible values are: mailbox, site.
@@ -40,14 +38,14 @@ module MicrosoftGraph::Models::Security
             })
         end
         ## 
-        ## Gets the group property value. The group property
+        ## Gets the group property value. 
         ## @return a group
         ## 
         def group
             return @group
         end
         ## 
-        ## Sets the group property value. The group property
+        ## Sets the group property value. 
         ## @param value Value to set for the group property.
         ## @return a void
         ## 

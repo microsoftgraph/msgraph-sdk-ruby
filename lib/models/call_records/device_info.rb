@@ -42,8 +42,6 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         # Glitches per 5 minute interval for the media endpoint's microphone.
         @mic_glitch_rate
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Average energy level of received audio for audio classified as mono noise or left channel of stereo noise by the media endpoint.
@@ -302,14 +300,14 @@ module MicrosoftGraph::Models::CallRecords
             @mic_glitch_rate = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

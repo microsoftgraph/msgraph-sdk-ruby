@@ -20,8 +20,6 @@ module MicrosoftGraph::Models
         ## 
         # Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
         @modified_properties
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.
@@ -136,14 +134,14 @@ module MicrosoftGraph::Models
             @modified_properties = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -11,14 +11,10 @@ module MicrosoftGraph::Models
         ## 
         # The error code.
         @code
-        ## 
-        # The innerError property
         @inner_error
         ## 
         # The error message.
         @message
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -79,14 +75,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the innerError property value. The innerError property
+        ## Gets the innerError property value. 
         ## @return a workbook_operation_error
         ## 
         def inner_error
             return @inner_error
         end
         ## 
-        ## Sets the innerError property value. The innerError property
+        ## Sets the innerError property value. 
         ## @param value Value to set for the innerError property.
         ## @return a void
         ## 
@@ -109,14 +105,14 @@ module MicrosoftGraph::Models
             @message = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

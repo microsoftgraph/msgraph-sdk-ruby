@@ -29,8 +29,6 @@ module MicrosoftGraph::Models
         ## 
         # If true, then one or more escalationApprovers are configured in this approval stage.
         @is_escalation_enabled
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors or externalSponsors.
@@ -189,14 +187,14 @@ module MicrosoftGraph::Models
             @is_escalation_enabled = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

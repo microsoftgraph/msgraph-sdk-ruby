@@ -29,8 +29,6 @@ module MicrosoftGraph::Models
         ## 
         # Finishing processes to use when printing.
         @finishings
-        ## 
-        # The fitPdfToPage property
         @fit_pdf_to_page
         ## 
         # The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
@@ -41,32 +39,14 @@ module MicrosoftGraph::Models
         ## 
         # The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
         @media_size
-        ## 
-        # The mediaType property
         @media_type
-        ## 
-        # The multipageLayout property
         @multipage_layout
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The orientation property
         @orientation
-        ## 
-        # The outputBin property
         @output_bin
-        ## 
-        # The pageRanges property
         @page_ranges
-        ## 
-        # The pagesPerSheet property
         @pages_per_sheet
-        ## 
-        # The quality property
         @quality
-        ## 
-        # The scaling property
         @scaling
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -205,14 +185,14 @@ module MicrosoftGraph::Models
             @finishings = value
         end
         ## 
-        ## Gets the fitPdfToPage property value. The fitPdfToPage property
+        ## Gets the fitPdfToPage property value. 
         ## @return a boolean
         ## 
         def fit_pdf_to_page
             return @fit_pdf_to_page
         end
         ## 
-        ## Sets the fitPdfToPage property value. The fitPdfToPage property
+        ## Sets the fitPdfToPage property value. 
         ## @param value Value to set for the fitPdfToPage property.
         ## @return a void
         ## 
@@ -293,14 +273,14 @@ module MicrosoftGraph::Models
             @media_size = value
         end
         ## 
-        ## Gets the mediaType property value. The mediaType property
+        ## Gets the mediaType property value. 
         ## @return a string
         ## 
         def media_type
             return @media_type
         end
         ## 
-        ## Sets the mediaType property value. The mediaType property
+        ## Sets the mediaType property value. 
         ## @param value Value to set for the mediaType property.
         ## @return a void
         ## 
@@ -308,14 +288,14 @@ module MicrosoftGraph::Models
             @media_type = value
         end
         ## 
-        ## Gets the multipageLayout property value. The multipageLayout property
+        ## Gets the multipageLayout property value. 
         ## @return a print_multipage_layout
         ## 
         def multipage_layout
             return @multipage_layout
         end
         ## 
-        ## Sets the multipageLayout property value. The multipageLayout property
+        ## Sets the multipageLayout property value. 
         ## @param value Value to set for the multipageLayout property.
         ## @return a void
         ## 
@@ -323,14 +303,14 @@ module MicrosoftGraph::Models
             @multipage_layout = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -338,14 +318,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the orientation property value. The orientation property
+        ## Gets the orientation property value. 
         ## @return a print_orientation
         ## 
         def orientation
             return @orientation
         end
         ## 
-        ## Sets the orientation property value. The orientation property
+        ## Sets the orientation property value. 
         ## @param value Value to set for the orientation property.
         ## @return a void
         ## 
@@ -353,14 +333,14 @@ module MicrosoftGraph::Models
             @orientation = value
         end
         ## 
-        ## Gets the outputBin property value. The outputBin property
+        ## Gets the outputBin property value. 
         ## @return a string
         ## 
         def output_bin
             return @output_bin
         end
         ## 
-        ## Sets the outputBin property value. The outputBin property
+        ## Sets the outputBin property value. 
         ## @param value Value to set for the outputBin property.
         ## @return a void
         ## 
@@ -368,14 +348,14 @@ module MicrosoftGraph::Models
             @output_bin = value
         end
         ## 
-        ## Gets the pageRanges property value. The pageRanges property
+        ## Gets the pageRanges property value. 
         ## @return a integer_range
         ## 
         def page_ranges
             return @page_ranges
         end
         ## 
-        ## Sets the pageRanges property value. The pageRanges property
+        ## Sets the pageRanges property value. 
         ## @param value Value to set for the pageRanges property.
         ## @return a void
         ## 
@@ -383,14 +363,14 @@ module MicrosoftGraph::Models
             @page_ranges = value
         end
         ## 
-        ## Gets the pagesPerSheet property value. The pagesPerSheet property
+        ## Gets the pagesPerSheet property value. 
         ## @return a integer
         ## 
         def pages_per_sheet
             return @pages_per_sheet
         end
         ## 
-        ## Sets the pagesPerSheet property value. The pagesPerSheet property
+        ## Sets the pagesPerSheet property value. 
         ## @param value Value to set for the pagesPerSheet property.
         ## @return a void
         ## 
@@ -398,14 +378,14 @@ module MicrosoftGraph::Models
             @pages_per_sheet = value
         end
         ## 
-        ## Gets the quality property value. The quality property
+        ## Gets the quality property value. 
         ## @return a print_quality
         ## 
         def quality
             return @quality
         end
         ## 
-        ## Sets the quality property value. The quality property
+        ## Sets the quality property value. 
         ## @param value Value to set for the quality property.
         ## @return a void
         ## 
@@ -413,14 +393,14 @@ module MicrosoftGraph::Models
             @quality = value
         end
         ## 
-        ## Gets the scaling property value. The scaling property
+        ## Gets the scaling property value. 
         ## @return a print_scaling
         ## 
         def scaling
             return @scaling
         end
         ## 
-        ## Sets the scaling property value. The scaling property
+        ## Sets the scaling property value. 
         ## @param value Value to set for the scaling property.
         ## @return a void
         ## 

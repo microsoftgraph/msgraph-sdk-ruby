@@ -12,7 +12,7 @@ require_relative '../stages'
 require_relative './decisions/decisions_request_builder'
 require_relative './decisions/item/access_review_instance_decision_item_item_request_builder'
 require_relative './item'
-require_relative './stop/stop_request_builder'
+require_relative './microsoft_graph_stop/stop_request_builder'
 
 module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Stages::Item
     ## 
@@ -25,26 +25,27 @@ module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Ins
             return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Stages::Item::Decisions::DecisionsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the stop method.
+        def microsoft_graph_stop()
+            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Stages::Item::MicrosoftGraphStop::StopRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the stop method.
-        def stop()
-            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Stages::Item::Stop::StopRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new AccessReviewStageItemRequestBuilder and sets the default values.
+        ## @param accessReviewStageId key: id of accessReviewStage
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, access_review_stage_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition%2Did}/instances/{accessReviewInstance%2Did}/stages/{accessReviewStage%2Did}{?%24select,%24expand}"
@@ -68,7 +69,7 @@ module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Ins
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -82,7 +83,7 @@ module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Ins
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of access_review_stage
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -93,11 +94,11 @@ module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Ins
         end
         ## 
         ## Update the navigation property stages in identityGovernance
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of access_review_stage
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -112,7 +113,7 @@ module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Ins
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -128,7 +129,7 @@ module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Ins
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -143,11 +144,11 @@ module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Ins
         end
         ## 
         ## Update the navigation property stages in identityGovernance
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

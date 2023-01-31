@@ -8,8 +8,6 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The aggregations property
         @aggregations
         ## 
         # A collection of the search results.
@@ -17,8 +15,6 @@ module MicrosoftGraph::Models
         ## 
         # Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
         @more_results_available
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The total number of results. Note this is not the number of results on the page, but the total number of results satisfying the query.
@@ -39,14 +35,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the aggregations property value. The aggregations property
+        ## Gets the aggregations property value. 
         ## @return a search_aggregation
         ## 
         def aggregations
             return @aggregations
         end
         ## 
-        ## Sets the aggregations property value. The aggregations property
+        ## Sets the aggregations property value. 
         ## @param value Value to set for the aggregations property.
         ## @return a void
         ## 
@@ -113,14 +109,14 @@ module MicrosoftGraph::Models
             @more_results_available = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

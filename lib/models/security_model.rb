@@ -8,36 +8,26 @@ require_relative './security/incident'
 module MicrosoftGraph::Models
     class SecurityModel < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The alerts property
         @alerts
         ## 
         # A collection of alerts in Microsoft 365 Defender.
         @alerts_v2
-        ## 
-        # The attackSimulation property
         @attack_simulation
-        ## 
-        # The cases property
         @cases
         ## 
         # A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.
         @incidents
-        ## 
-        # The secureScoreControlProfiles property
         @secure_score_control_profiles
-        ## 
-        # The secureScores property
         @secure_scores
         ## 
-        ## Gets the alerts property value. The alerts property
+        ## Gets the alerts property value. 
         ## @return a alert
         ## 
         def alerts
             return @alerts
         end
         ## 
-        ## Sets the alerts property value. The alerts property
+        ## Sets the alerts property value. 
         ## @param value Value to set for the alerts property.
         ## @return a void
         ## 
@@ -60,14 +50,14 @@ module MicrosoftGraph::Models
             @alerts_v2 = value
         end
         ## 
-        ## Gets the attackSimulation property value. The attackSimulation property
+        ## Gets the attackSimulation property value. 
         ## @return a attack_simulation_root
         ## 
         def attack_simulation
             return @attack_simulation
         end
         ## 
-        ## Sets the attackSimulation property value. The attackSimulation property
+        ## Sets the attackSimulation property value. 
         ## @param value Value to set for the attackSimulation property.
         ## @return a void
         ## 
@@ -75,14 +65,14 @@ module MicrosoftGraph::Models
             @attack_simulation = value
         end
         ## 
-        ## Gets the cases property value. The cases property
+        ## Gets the cases property value. 
         ## @return a cases_root
         ## 
         def cases
             return @cases
         end
         ## 
-        ## Sets the cases property value. The cases property
+        ## Sets the cases property value. 
         ## @param value Value to set for the cases property.
         ## @return a void
         ## 
@@ -136,14 +126,14 @@ module MicrosoftGraph::Models
             @incidents = value
         end
         ## 
-        ## Gets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
+        ## Gets the secureScoreControlProfiles property value. 
         ## @return a secure_score_control_profile
         ## 
         def secure_score_control_profiles
             return @secure_score_control_profiles
         end
         ## 
-        ## Sets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
+        ## Sets the secureScoreControlProfiles property value. 
         ## @param value Value to set for the secureScoreControlProfiles property.
         ## @return a void
         ## 
@@ -151,14 +141,14 @@ module MicrosoftGraph::Models
             @secure_score_control_profiles = value
         end
         ## 
-        ## Gets the secureScores property value. The secureScores property
+        ## Gets the secureScores property value. 
         ## @return a secure_score
         ## 
         def secure_scores
             return @secure_scores
         end
         ## 
-        ## Sets the secureScores property value. The secureScores property
+        ## Sets the secureScores property value. 
         ## @param value Value to set for the secureScores property.
         ## @return a void
         ## 

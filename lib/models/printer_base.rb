@@ -29,8 +29,6 @@ module MicrosoftGraph::Models
         ## 
         # The model name of the printer/printerShare.
         @model
-        ## 
-        # The status property
         @status
         ## 
         ## Gets the capabilities property value. The capabilities of the printer/printerShare.
@@ -214,14 +212,14 @@ module MicrosoftGraph::Models
             writer.write_object_value("status", @status)
         end
         ## 
-        ## Gets the status property value. The status property
+        ## Gets the status property value. 
         ## @return a printer_status
         ## 
         def status
             return @status
         end
         ## 
-        ## Sets the status property value. The status property
+        ## Sets the status property value. 
         ## @param value Value to set for the status property.
         ## @return a void
         ## 

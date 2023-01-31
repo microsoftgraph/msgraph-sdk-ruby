@@ -12,8 +12,6 @@ module MicrosoftGraph::Models
         ## 
         # The time of the day when work stops. For example, 17:00:00.0000000.
         @end_time
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The time of the day when work starts. For example, 08:00:00.0000000.
@@ -76,14 +74,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

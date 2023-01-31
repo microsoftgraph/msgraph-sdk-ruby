@@ -49,7 +49,7 @@ module MicrosoftGraph::Models
             @add_to_calendar_action = value
         end
         ## 
-        ## Instantiates a new EducationAssignmentDefaults and sets the default values.
+        ## Instantiates a new educationAssignmentDefaults and sets the default values.
         ## @return a void
         ## 
         def initialize()

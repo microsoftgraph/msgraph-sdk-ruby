@@ -13,11 +13,7 @@ module MicrosoftGraph::Models::Security
         ## 
         # The time the evidence was created and added to the alert.
         @created_date_time
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The remediationStatus property
         @remediation_status
         ## 
         # Details about the remediation status.
@@ -28,8 +24,6 @@ module MicrosoftGraph::Models::Security
         ## 
         # Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
         @tags
-        ## 
-        # The verdict property
         @verdict
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -127,14 +121,14 @@ module MicrosoftGraph::Models::Security
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -142,14 +136,14 @@ module MicrosoftGraph::Models::Security
             @odata_type = value
         end
         ## 
-        ## Gets the remediationStatus property value. The remediationStatus property
+        ## Gets the remediationStatus property value. 
         ## @return a evidence_remediation_status
         ## 
         def remediation_status
             return @remediation_status
         end
         ## 
-        ## Sets the remediationStatus property value. The remediationStatus property
+        ## Sets the remediationStatus property value. 
         ## @param value Value to set for the remediationStatus property.
         ## @return a void
         ## 
@@ -218,14 +212,14 @@ module MicrosoftGraph::Models::Security
             @tags = value
         end
         ## 
-        ## Gets the verdict property value. The verdict property
+        ## Gets the verdict property value. 
         ## @return a evidence_verdict
         ## 
         def verdict
             return @verdict
         end
         ## 
-        ## Sets the verdict property value. The verdict property
+        ## Sets the verdict property value. 
         ## @param value Value to set for the verdict property.
         ## @return a void
         ## 

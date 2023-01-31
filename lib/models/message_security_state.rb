@@ -9,35 +9,15 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The connectingIP property
         @connecting_i_p
-        ## 
-        # The deliveryAction property
         @delivery_action
-        ## 
-        # The deliveryLocation property
         @delivery_location
-        ## 
-        # The directionality property
         @directionality
-        ## 
-        # The internetMessageId property
         @internet_message_id
-        ## 
-        # The messageFingerprint property
         @message_fingerprint
-        ## 
-        # The messageReceivedDateTime property
         @message_received_date_time
-        ## 
-        # The messageSubject property
         @message_subject
-        ## 
-        # The networkMessageId property
         @network_message_id
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -55,14 +35,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the connectingIP property value. The connectingIP property
+        ## Gets the connectingIP property value. 
         ## @return a string
         ## 
         def connecting_i_p
             return @connecting_i_p
         end
         ## 
-        ## Sets the connectingIP property value. The connectingIP property
+        ## Sets the connectingIP property value. 
         ## @param value Value to set for the connectingIP property.
         ## @return a void
         ## 
@@ -86,14 +66,14 @@ module MicrosoftGraph::Models
             return MessageSecurityState.new
         end
         ## 
-        ## Gets the deliveryAction property value. The deliveryAction property
+        ## Gets the deliveryAction property value. 
         ## @return a string
         ## 
         def delivery_action
             return @delivery_action
         end
         ## 
-        ## Sets the deliveryAction property value. The deliveryAction property
+        ## Sets the deliveryAction property value. 
         ## @param value Value to set for the deliveryAction property.
         ## @return a void
         ## 
@@ -101,14 +81,14 @@ module MicrosoftGraph::Models
             @delivery_action = value
         end
         ## 
-        ## Gets the deliveryLocation property value. The deliveryLocation property
+        ## Gets the deliveryLocation property value. 
         ## @return a string
         ## 
         def delivery_location
             return @delivery_location
         end
         ## 
-        ## Sets the deliveryLocation property value. The deliveryLocation property
+        ## Sets the deliveryLocation property value. 
         ## @param value Value to set for the deliveryLocation property.
         ## @return a void
         ## 
@@ -116,14 +96,14 @@ module MicrosoftGraph::Models
             @delivery_location = value
         end
         ## 
-        ## Gets the directionality property value. The directionality property
+        ## Gets the directionality property value. 
         ## @return a string
         ## 
         def directionality
             return @directionality
         end
         ## 
-        ## Sets the directionality property value. The directionality property
+        ## Sets the directionality property value. 
         ## @param value Value to set for the directionality property.
         ## @return a void
         ## 
@@ -149,14 +129,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the internetMessageId property value. The internetMessageId property
+        ## Gets the internetMessageId property value. 
         ## @return a string
         ## 
         def internet_message_id
             return @internet_message_id
         end
         ## 
-        ## Sets the internetMessageId property value. The internetMessageId property
+        ## Sets the internetMessageId property value. 
         ## @param value Value to set for the internetMessageId property.
         ## @return a void
         ## 
@@ -164,14 +144,14 @@ module MicrosoftGraph::Models
             @internet_message_id = value
         end
         ## 
-        ## Gets the messageFingerprint property value. The messageFingerprint property
+        ## Gets the messageFingerprint property value. 
         ## @return a string
         ## 
         def message_fingerprint
             return @message_fingerprint
         end
         ## 
-        ## Sets the messageFingerprint property value. The messageFingerprint property
+        ## Sets the messageFingerprint property value. 
         ## @param value Value to set for the messageFingerprint property.
         ## @return a void
         ## 
@@ -179,14 +159,14 @@ module MicrosoftGraph::Models
             @message_fingerprint = value
         end
         ## 
-        ## Gets the messageReceivedDateTime property value. The messageReceivedDateTime property
+        ## Gets the messageReceivedDateTime property value. 
         ## @return a date_time
         ## 
         def message_received_date_time
             return @message_received_date_time
         end
         ## 
-        ## Sets the messageReceivedDateTime property value. The messageReceivedDateTime property
+        ## Sets the messageReceivedDateTime property value. 
         ## @param value Value to set for the messageReceivedDateTime property.
         ## @return a void
         ## 
@@ -194,14 +174,14 @@ module MicrosoftGraph::Models
             @message_received_date_time = value
         end
         ## 
-        ## Gets the messageSubject property value. The messageSubject property
+        ## Gets the messageSubject property value. 
         ## @return a string
         ## 
         def message_subject
             return @message_subject
         end
         ## 
-        ## Sets the messageSubject property value. The messageSubject property
+        ## Sets the messageSubject property value. 
         ## @param value Value to set for the messageSubject property.
         ## @return a void
         ## 
@@ -209,14 +189,14 @@ module MicrosoftGraph::Models
             @message_subject = value
         end
         ## 
-        ## Gets the networkMessageId property value. The networkMessageId property
+        ## Gets the networkMessageId property value. 
         ## @return a string
         ## 
         def network_message_id
             return @network_message_id
         end
         ## 
-        ## Sets the networkMessageId property value. The networkMessageId property
+        ## Sets the networkMessageId property value. 
         ## @param value Value to set for the networkMessageId property.
         ## @return a void
         ## 
@@ -224,14 +204,14 @@ module MicrosoftGraph::Models
             @network_message_id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

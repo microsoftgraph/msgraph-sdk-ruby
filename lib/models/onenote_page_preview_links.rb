@@ -8,11 +8,7 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The previewImageUrl property
         @preview_image_url
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -56,14 +52,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -71,14 +67,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the previewImageUrl property value. The previewImageUrl property
+        ## Gets the previewImageUrl property value. 
         ## @return a external_link
         ## 
         def preview_image_url
             return @preview_image_url
         end
         ## 
-        ## Sets the previewImageUrl property value. The previewImageUrl property
+        ## Sets the previewImageUrl property value. 
         ## @param value Value to set for the previewImageUrl property.
         ## @return a void
         ## 

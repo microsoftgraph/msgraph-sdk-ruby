@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
         @join_url
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # All of the phone numbers associated with this conference.
@@ -106,14 +104,14 @@ module MicrosoftGraph::Models
             @join_url = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -3,30 +3,16 @@ require_relative '../microsoft_graph'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # The resource that represents an instance of Enrollment Failure Reports.
     class ReportRoot
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The dailyPrintUsageByPrinter property
         @daily_print_usage_by_printer
-        ## 
-        # The dailyPrintUsageByUser property
         @daily_print_usage_by_user
-        ## 
-        # The monthlyPrintUsageByPrinter property
         @monthly_print_usage_by_printer
-        ## 
-        # The monthlyPrintUsageByUser property
         @monthly_print_usage_by_user
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The security property
         @security
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -60,14 +46,14 @@ module MicrosoftGraph::Models
             return ReportRoot.new
         end
         ## 
-        ## Gets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
+        ## Gets the dailyPrintUsageByPrinter property value. 
         ## @return a print_usage_by_printer
         ## 
         def daily_print_usage_by_printer
             return @daily_print_usage_by_printer
         end
         ## 
-        ## Sets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
+        ## Sets the dailyPrintUsageByPrinter property value. 
         ## @param value Value to set for the dailyPrintUsageByPrinter property.
         ## @return a void
         ## 
@@ -75,14 +61,14 @@ module MicrosoftGraph::Models
             @daily_print_usage_by_printer = value
         end
         ## 
-        ## Gets the dailyPrintUsageByUser property value. The dailyPrintUsageByUser property
+        ## Gets the dailyPrintUsageByUser property value. 
         ## @return a print_usage_by_user
         ## 
         def daily_print_usage_by_user
             return @daily_print_usage_by_user
         end
         ## 
-        ## Sets the dailyPrintUsageByUser property value. The dailyPrintUsageByUser property
+        ## Sets the dailyPrintUsageByUser property value. 
         ## @param value Value to set for the dailyPrintUsageByUser property.
         ## @return a void
         ## 
@@ -104,14 +90,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
+        ## Gets the monthlyPrintUsageByPrinter property value. 
         ## @return a print_usage_by_printer
         ## 
         def monthly_print_usage_by_printer
             return @monthly_print_usage_by_printer
         end
         ## 
-        ## Sets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
+        ## Sets the monthlyPrintUsageByPrinter property value. 
         ## @param value Value to set for the monthlyPrintUsageByPrinter property.
         ## @return a void
         ## 
@@ -119,14 +105,14 @@ module MicrosoftGraph::Models
             @monthly_print_usage_by_printer = value
         end
         ## 
-        ## Gets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
+        ## Gets the monthlyPrintUsageByUser property value. 
         ## @return a print_usage_by_user
         ## 
         def monthly_print_usage_by_user
             return @monthly_print_usage_by_user
         end
         ## 
-        ## Sets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
+        ## Sets the monthlyPrintUsageByUser property value. 
         ## @param value Value to set for the monthlyPrintUsageByUser property.
         ## @return a void
         ## 
@@ -134,14 +120,14 @@ module MicrosoftGraph::Models
             @monthly_print_usage_by_user = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -149,14 +135,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the security property value. The security property
+        ## Gets the security property value. 
         ## @return a security_reports_root
         ## 
         def security
             return @security
         end
         ## 
-        ## Sets the security property value. The security property
+        ## Sets the security property value. 
         ## @param value Value to set for the security property.
         ## @return a void
         ## 

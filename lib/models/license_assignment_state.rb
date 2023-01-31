@@ -9,26 +9,12 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The assignedByGroup property
         @assigned_by_group
-        ## 
-        # The disabledPlans property
         @disabled_plans
-        ## 
-        # The error property
         @error
-        ## 
-        # The lastUpdatedDateTime property
         @last_updated_date_time
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The skuId property
         @sku_id
-        ## 
-        # The state property
         @state
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -46,14 +32,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the assignedByGroup property value. The assignedByGroup property
+        ## Gets the assignedByGroup property value. 
         ## @return a string
         ## 
         def assigned_by_group
             return @assigned_by_group
         end
         ## 
-        ## Sets the assignedByGroup property value. The assignedByGroup property
+        ## Sets the assignedByGroup property value. 
         ## @param value Value to set for the assignedByGroup property.
         ## @return a void
         ## 
@@ -77,14 +63,14 @@ module MicrosoftGraph::Models
             return LicenseAssignmentState.new
         end
         ## 
-        ## Gets the disabledPlans property value. The disabledPlans property
+        ## Gets the disabledPlans property value. 
         ## @return a guid
         ## 
         def disabled_plans
             return @disabled_plans
         end
         ## 
-        ## Sets the disabledPlans property value. The disabledPlans property
+        ## Sets the disabledPlans property value. 
         ## @param value Value to set for the disabledPlans property.
         ## @return a void
         ## 
@@ -92,14 +78,14 @@ module MicrosoftGraph::Models
             @disabled_plans = value
         end
         ## 
-        ## Gets the error property value. The error property
+        ## Gets the error property value. 
         ## @return a string
         ## 
         def error
             return @error
         end
         ## 
-        ## Sets the error property value. The error property
+        ## Sets the error property value. 
         ## @param value Value to set for the error property.
         ## @return a void
         ## 
@@ -122,14 +108,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+        ## Gets the lastUpdatedDateTime property value. 
         ## @return a date_time
         ## 
         def last_updated_date_time
             return @last_updated_date_time
         end
         ## 
-        ## Sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
+        ## Sets the lastUpdatedDateTime property value. 
         ## @param value Value to set for the lastUpdatedDateTime property.
         ## @return a void
         ## 
@@ -137,14 +123,14 @@ module MicrosoftGraph::Models
             @last_updated_date_time = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -168,14 +154,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the skuId property value. The skuId property
+        ## Gets the skuId property value. 
         ## @return a guid
         ## 
         def sku_id
             return @sku_id
         end
         ## 
-        ## Sets the skuId property value. The skuId property
+        ## Sets the skuId property value. 
         ## @param value Value to set for the skuId property.
         ## @return a void
         ## 
@@ -183,14 +169,14 @@ module MicrosoftGraph::Models
             @sku_id = value
         end
         ## 
-        ## Gets the state property value. The state property
+        ## Gets the state property value. 
         ## @return a string
         ## 
         def state
             return @state
         end
         ## 
-        ## Sets the state property value. The state property
+        ## Sets the state property value. 
         ## @param value Value to set for the state property.
         ## @return a void
         ## 

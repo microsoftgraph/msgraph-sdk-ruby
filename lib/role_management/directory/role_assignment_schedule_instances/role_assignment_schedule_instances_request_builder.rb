@@ -6,7 +6,7 @@ require_relative '../../../models/unified_role_assignment_schedule_instance_coll
 require_relative '../../role_management'
 require_relative '../directory'
 require_relative './count/count_request_builder'
-require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './microsoft_graph_filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
 require_relative './role_assignment_schedule_instances'
 
 module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleInstances
@@ -43,20 +43,11 @@ module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleInstance
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Provides operations to call the filterByCurrentUser method.
-        ## @param on Usage: on='{on}'
-        ## @return a filter_by_current_user_with_on_request_builder
-        ## 
-        def filter_by_current_user_with_on(on)
-            raise StandardError, 'on cannot be null' if on.nil?
-            return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
-        end
-        ## 
         ## Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of unified_role_assignment_schedule_instance_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -66,12 +57,21 @@ module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleInstance
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignmentScheduleInstanceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
+        ## Provides operations to call the filterByCurrentUser method.
+        ## @param on Usage: on='{on}'
+        ## @return a filter_by_current_user_with_on_request_builder
+        ## 
+        def microsoft_graph_filter_by_current_user_with_on(on)
+            raise StandardError, 'on cannot be null' if on.nil?
+            return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
+        end
+        ## 
         ## Create new navigation property to roleAssignmentScheduleInstances for roleManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of unified_role_assignment_schedule_instance
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -86,7 +86,7 @@ module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleInstance
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -101,11 +101,11 @@ module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleInstance
         end
         ## 
         ## Create new navigation property to roleAssignmentScheduleInstances for roleManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

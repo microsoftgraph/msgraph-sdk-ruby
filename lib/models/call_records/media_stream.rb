@@ -70,8 +70,6 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         # Maximum network propagation round-trip time computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
         @max_round_trip_time
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Packet count for the stream.
@@ -82,8 +80,6 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         # UTC time when the stream started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         @start_date_time
-        ## 
-        # The streamDirection property
         @stream_direction
         ## 
         # Unique identifier for the stream.
@@ -462,14 +458,14 @@ module MicrosoftGraph::Models::CallRecords
             @max_round_trip_time = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -559,14 +555,14 @@ module MicrosoftGraph::Models::CallRecords
             @start_date_time = value
         end
         ## 
-        ## Gets the streamDirection property value. The streamDirection property
+        ## Gets the streamDirection property value. 
         ## @return a media_stream_direction
         ## 
         def stream_direction
             return @stream_direction
         end
         ## 
-        ## Sets the streamDirection property value. The streamDirection property
+        ## Sets the streamDirection property value. 
         ## @param value Value to set for the streamDirection property.
         ## @return a void
         ## 

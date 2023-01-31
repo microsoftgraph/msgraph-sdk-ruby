@@ -5,14 +5,8 @@ require_relative './models'
 module MicrosoftGraph::Models
     class Workbook < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The application property
         @application
-        ## 
-        # The comments property
         @comments
-        ## 
-        # The functions property
         @functions
         ## 
         # Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.
@@ -27,14 +21,14 @@ module MicrosoftGraph::Models
         # Represents a collection of worksheets associated with the workbook. Read-only.
         @worksheets
         ## 
-        ## Gets the application property value. The application property
+        ## Gets the application property value. 
         ## @return a workbook_application
         ## 
         def application
             return @application
         end
         ## 
-        ## Sets the application property value. The application property
+        ## Sets the application property value. 
         ## @param value Value to set for the application property.
         ## @return a void
         ## 
@@ -42,14 +36,14 @@ module MicrosoftGraph::Models
             @application = value
         end
         ## 
-        ## Gets the comments property value. The comments property
+        ## Gets the comments property value. 
         ## @return a workbook_comment
         ## 
         def comments
             return @comments
         end
         ## 
-        ## Sets the comments property value. The comments property
+        ## Sets the comments property value. 
         ## @param value Value to set for the comments property.
         ## @return a void
         ## 
@@ -73,14 +67,14 @@ module MicrosoftGraph::Models
             return Workbook.new
         end
         ## 
-        ## Gets the functions property value. The functions property
+        ## Gets the functions property value. 
         ## @return a workbook_functions
         ## 
         def functions
             return @functions
         end
         ## 
-        ## Sets the functions property value. The functions property
+        ## Sets the functions property value. 
         ## @param value Value to set for the functions property.
         ## @return a void
         ## 

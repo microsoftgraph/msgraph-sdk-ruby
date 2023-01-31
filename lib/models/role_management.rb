@@ -8,14 +8,10 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The directory property
         @directory
         ## 
         # Container for roles and assignments for entitlement management resources.
         @entitlement_management
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -49,14 +45,14 @@ module MicrosoftGraph::Models
             return RoleManagement.new
         end
         ## 
-        ## Gets the directory property value. The directory property
+        ## Gets the directory property value. 
         ## @return a rbac_application
         ## 
         def directory
             return @directory
         end
         ## 
-        ## Sets the directory property value. The directory property
+        ## Sets the directory property value. 
         ## @param value Value to set for the directory property.
         ## @return a void
         ## 
@@ -90,14 +86,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

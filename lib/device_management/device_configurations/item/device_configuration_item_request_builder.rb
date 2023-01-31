@@ -4,7 +4,6 @@ require_relative '../../../models/device_configuration'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_management'
 require_relative '../device_configurations'
-require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
 require_relative './assignments/item/device_configuration_assignment_item_request_builder'
 require_relative './device_setting_state_summaries/device_setting_state_summaries_request_builder'
@@ -12,8 +11,9 @@ require_relative './device_setting_state_summaries/item/setting_state_device_sum
 require_relative './device_statuses/device_statuses_request_builder'
 require_relative './device_statuses/item/device_configuration_device_status_item_request_builder'
 require_relative './device_status_overview/device_status_overview_request_builder'
-require_relative './get_oma_setting_plain_text_value_with_secret_reference_value_id/get_oma_setting_plain_text_value_with_secret_reference_value_id_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_assign/assign_request_builder'
+require_relative './microsoft_graph_get_oma_setting_plain_text_value_with_secret_reference_value_id/get_oma_setting_plain_text_value_with_secret_reference_value_id_request_builder'
 require_relative './user_statuses/item/device_configuration_user_status_item_request_builder'
 require_relative './user_statuses/user_statuses_request_builder'
 require_relative './user_status_overview/user_status_overview_request_builder'
@@ -23,11 +23,6 @@ module MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item
     # Provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.
     class DeviceConfigurationItemRequestBuilder
         
-        ## 
-        # Provides operations to call the assign method.
-        def assign()
-            return MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item::Assign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the assignments property of the microsoft.graph.deviceConfiguration entity.
         def assignments()
@@ -47,6 +42,11 @@ module MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item
         # Provides operations to manage the deviceStatusOverview property of the microsoft.graph.deviceConfiguration entity.
         def device_status_overview()
             return MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item::DeviceStatusOverview::DeviceStatusOverviewRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the assign method.
+        def microsoft_graph_assign()
+            return MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item::MicrosoftGraphAssign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -80,11 +80,12 @@ module MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item
         end
         ## 
         ## Instantiates a new DeviceConfigurationItemRequestBuilder and sets the default values.
+        ## @param deviceConfigurationId key: id of deviceConfiguration
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, device_configuration_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}{?%24select,%24expand}"
@@ -97,7 +98,7 @@ module MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -133,7 +134,7 @@ module MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of device_configuration
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -147,17 +148,17 @@ module MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item
         ## @param secretReferenceValueId Usage: secretReferenceValueId='{secretReferenceValueId}'
         ## @return a get_oma_setting_plain_text_value_with_secret_reference_value_id_request_builder
         ## 
-        def get_oma_setting_plain_text_value_with_secret_reference_value_id(secret_reference_value_id)
+        def microsoft_graph_get_oma_setting_plain_text_value_with_secret_reference_value_id(secret_reference_value_id)
             raise StandardError, 'secret_reference_value_id cannot be null' if secret_reference_value_id.nil?
             return GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder.new(@path_parameters, @request_adapter, secretReferenceValueId)
         end
         ## 
         ## Update the navigation property deviceConfigurations in deviceManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of device_configuration
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -172,7 +173,7 @@ module MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -188,7 +189,7 @@ module MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -203,11 +204,11 @@ module MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item
         end
         ## 
         ## Update the navigation property deviceConfigurations in deviceManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

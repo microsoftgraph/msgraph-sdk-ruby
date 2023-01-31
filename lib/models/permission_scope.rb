@@ -20,11 +20,7 @@ module MicrosoftGraph::Models
         ## 
         # When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
         @is_enabled
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The origin property
         @origin
         ## 
         # The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.
@@ -148,14 +144,14 @@ module MicrosoftGraph::Models
             @is_enabled = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -163,14 +159,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the origin property value. The origin property
+        ## Gets the origin property value. 
         ## @return a string
         ## 
         def origin
             return @origin
         end
         ## 
-        ## Sets the origin property value. The origin property
+        ## Sets the origin property value. 
         ## @param value Value to set for the origin property.
         ## @return a void
         ## 

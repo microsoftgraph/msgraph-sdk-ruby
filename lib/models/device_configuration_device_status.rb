@@ -18,8 +18,6 @@ module MicrosoftGraph::Models
         ## 
         # Last modified date time of the policy report.
         @last_reported_date_time
-        ## 
-        # The status property
         @status
         ## 
         # The User Name that is being reported
@@ -135,14 +133,14 @@ module MicrosoftGraph::Models
             writer.write_string_value("userPrincipalName", @user_principal_name)
         end
         ## 
-        ## Gets the status property value. The status property
+        ## Gets the status property value. 
         ## @return a compliance_status
         ## 
         def status
             return @status
         end
         ## 
-        ## Sets the status property value. The status property
+        ## Sets the status property value. 
         ## @param value Value to set for the status property.
         ## @return a void
         ## 

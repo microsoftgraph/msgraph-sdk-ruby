@@ -20,11 +20,7 @@ module MicrosoftGraph::Models
         ## 
         # Mobile phone number of the contact.
         @mobile_phone
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The relationship property
         @relationship
         ## 
         ## Gets the accessConsent property value. Indicates whether the user has been consented to access student data.
@@ -132,14 +128,14 @@ module MicrosoftGraph::Models
             @mobile_phone = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -147,14 +143,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the relationship property value. The relationship property
+        ## Gets the relationship property value. 
         ## @return a contact_relationship
         ## 
         def relationship
             return @relationship
         end
         ## 
-        ## Sets the relationship property value. The relationship property
+        ## Sets the relationship property value. 
         ## @param value Value to set for the relationship property.
         ## @return a void
         ## 

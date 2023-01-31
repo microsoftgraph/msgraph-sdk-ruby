@@ -6,17 +6,11 @@ require_relative './models'
 module MicrosoftGraph::Models
     class PrintJob < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The configuration property
         @configuration
-        ## 
-        # The createdBy property
         @created_by
         ## 
         # The DateTimeOffset when the job was created. Read-only.
         @created_date_time
-        ## 
-        # The documents property
         @documents
         ## 
         # If true, document can be fetched by printer.
@@ -27,21 +21,19 @@ module MicrosoftGraph::Models
         ## 
         # Contains the destination job URL, if the job has been redirected to another printer.
         @redirected_to
-        ## 
-        # The status property
         @status
         ## 
         # A list of printTasks that were triggered by this print job.
         @tasks
         ## 
-        ## Gets the configuration property value. The configuration property
+        ## Gets the configuration property value. 
         ## @return a print_job_configuration
         ## 
         def configuration
             return @configuration
         end
         ## 
-        ## Sets the configuration property value. The configuration property
+        ## Sets the configuration property value. 
         ## @param value Value to set for the configuration property.
         ## @return a void
         ## 
@@ -56,14 +48,14 @@ module MicrosoftGraph::Models
             super
         end
         ## 
-        ## Gets the createdBy property value. The createdBy property
+        ## Gets the createdBy property value. 
         ## @return a user_identity
         ## 
         def created_by
             return @created_by
         end
         ## 
-        ## Sets the createdBy property value. The createdBy property
+        ## Sets the createdBy property value. 
         ## @param value Value to set for the createdBy property.
         ## @return a void
         ## 
@@ -95,14 +87,14 @@ module MicrosoftGraph::Models
             return PrintJob.new
         end
         ## 
-        ## Gets the documents property value. The documents property
+        ## Gets the documents property value. 
         ## @return a print_document
         ## 
         def documents
             return @documents
         end
         ## 
-        ## Sets the documents property value. The documents property
+        ## Sets the documents property value. 
         ## @param value Value to set for the documents property.
         ## @return a void
         ## 
@@ -190,14 +182,14 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("tasks", @tasks)
         end
         ## 
-        ## Gets the status property value. The status property
+        ## Gets the status property value. 
         ## @return a print_job_status
         ## 
         def status
             return @status
         end
         ## 
-        ## Sets the status property value. The status property
+        ## Sets the status property value. 
         ## @param value Value to set for the status property.
         ## @return a void
         ## 

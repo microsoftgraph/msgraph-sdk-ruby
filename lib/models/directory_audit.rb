@@ -21,8 +21,6 @@ module MicrosoftGraph::Models
         ## 
         # Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
         @correlation_id
-        ## 
-        # The initiatedBy property
         @initiated_by
         ## 
         # Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
@@ -150,14 +148,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the initiatedBy property value. The initiatedBy property
+        ## Gets the initiatedBy property value. 
         ## @return a audit_activity_initiator
         ## 
         def initiated_by
             return @initiated_by
         end
         ## 
-        ## Sets the initiatedBy property value. The initiatedBy property
+        ## Sets the initiatedBy property value. 
         ## @param value Value to set for the initiatedBy property.
         ## @return a void
         ## 

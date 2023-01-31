@@ -8,20 +8,10 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The attachmentType property
         @attachment_type
-        ## 
-        # The contentType property
         @content_type
-        ## 
-        # The name property
         @name
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The size property
         @size
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -39,14 +29,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the attachmentType property value. The attachmentType property
+        ## Gets the attachmentType property value. 
         ## @return a attachment_type
         ## 
         def attachment_type
             return @attachment_type
         end
         ## 
-        ## Sets the attachmentType property value. The attachmentType property
+        ## Sets the attachmentType property value. 
         ## @param value Value to set for the attachmentType property.
         ## @return a void
         ## 
@@ -61,14 +51,14 @@ module MicrosoftGraph::Models
             @additional_data = Hash.new
         end
         ## 
-        ## Gets the contentType property value. The contentType property
+        ## Gets the contentType property value. 
         ## @return a string
         ## 
         def content_type
             return @content_type
         end
         ## 
-        ## Sets the contentType property value. The contentType property
+        ## Sets the contentType property value. 
         ## @param value Value to set for the contentType property.
         ## @return a void
         ## 
@@ -98,14 +88,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the name property value. The name property
+        ## Gets the name property value. 
         ## @return a string
         ## 
         def name
             return @name
         end
         ## 
-        ## Sets the name property value. The name property
+        ## Sets the name property value. 
         ## @param value Value to set for the name property.
         ## @return a void
         ## 
@@ -113,14 +103,14 @@ module MicrosoftGraph::Models
             @name = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -142,14 +132,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the size property value. The size property
+        ## Gets the size property value. 
         ## @return a int64
         ## 
         def size
             return @size
         end
         ## 
-        ## Sets the size property value. The size property
+        ## Sets the size property value. 
         ## @param value Value to set for the size property.
         ## @return a void
         ## 

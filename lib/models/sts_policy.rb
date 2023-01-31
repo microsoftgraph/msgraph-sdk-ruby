@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class StsPolicy < MicrosoftGraph::Models::PolicyBase
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The appliesTo property
         @applies_to
         ## 
         # A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.
@@ -15,14 +13,14 @@ module MicrosoftGraph::Models
         # If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
         @is_organization_default
         ## 
-        ## Gets the appliesTo property value. The appliesTo property
+        ## Gets the appliesTo property value. 
         ## @return a directory_object
         ## 
         def applies_to
             return @applies_to
         end
         ## 
-        ## Sets the appliesTo property value. The appliesTo property
+        ## Sets the appliesTo property value. 
         ## @param value Value to set for the appliesTo property.
         ## @return a void
         ## 

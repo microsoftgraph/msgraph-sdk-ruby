@@ -5,14 +5,14 @@ require_relative '../../../models/service_update_message'
 require_relative '../../../models/service_update_message_collection_response'
 require_relative '../../admin'
 require_relative '../service_announcement'
-require_relative './archive/archive_request_builder'
 require_relative './count/count_request_builder'
-require_relative './favorite/favorite_request_builder'
-require_relative './mark_read/mark_read_request_builder'
-require_relative './mark_unread/mark_unread_request_builder'
 require_relative './messages'
-require_relative './unarchive/unarchive_request_builder'
-require_relative './unfavorite/unfavorite_request_builder'
+require_relative './microsoft_graph_archive/archive_request_builder'
+require_relative './microsoft_graph_favorite/favorite_request_builder'
+require_relative './microsoft_graph_mark_read/mark_read_request_builder'
+require_relative './microsoft_graph_mark_unread/mark_unread_request_builder'
+require_relative './microsoft_graph_unarchive/unarchive_request_builder'
+require_relative './microsoft_graph_unfavorite/unfavorite_request_builder'
 
 module MicrosoftGraph::Admin::ServiceAnnouncement::Messages
     ## 
@@ -20,29 +20,39 @@ module MicrosoftGraph::Admin::ServiceAnnouncement::Messages
     class MessagesRequestBuilder
         
         ## 
-        # Provides operations to call the archive method.
-        def archive()
-            return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Archive::ArchiveRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the archive method.
+        def microsoft_graph_archive()
+            return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::MicrosoftGraphArchive::ArchiveRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the favorite method.
-        def favorite()
-            return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Favorite::FavoriteRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_favorite()
+            return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::MicrosoftGraphFavorite::FavoriteRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the markRead method.
-        def mark_read()
-            return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::MarkRead::MarkReadRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_mark_read()
+            return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::MicrosoftGraphMarkRead::MarkReadRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the markUnread method.
-        def mark_unread()
-            return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::MarkUnread::MarkUnreadRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_mark_unread()
+            return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::MicrosoftGraphMarkUnread::MarkUnreadRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the unarchive method.
+        def microsoft_graph_unarchive()
+            return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::MicrosoftGraphUnarchive::UnarchiveRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the unfavorite method.
+        def microsoft_graph_unfavorite()
+            return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::MicrosoftGraphUnfavorite::UnfavoriteRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -50,16 +60,6 @@ module MicrosoftGraph::Admin::ServiceAnnouncement::Messages
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the unarchive method.
-        def unarchive()
-            return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Unarchive::UnarchiveRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the unfavorite method.
-        def unfavorite()
-            return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Unfavorite::UnfavoriteRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
@@ -82,7 +82,7 @@ module MicrosoftGraph::Admin::ServiceAnnouncement::Messages
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of service_update_message_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -93,11 +93,11 @@ module MicrosoftGraph::Admin::ServiceAnnouncement::Messages
         end
         ## 
         ## Create new navigation property to messages for admin
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of service_update_message
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -112,7 +112,7 @@ module MicrosoftGraph::Admin::ServiceAnnouncement::Messages
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -127,11 +127,11 @@ module MicrosoftGraph::Admin::ServiceAnnouncement::Messages
         end
         ## 
         ## Create new navigation property to messages for admin
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

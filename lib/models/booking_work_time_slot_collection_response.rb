@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class BookingWorkTimeSlotCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The value property
         @value
         ## 
         ## Instantiates a new BookingWorkTimeSlotCollectionResponse and sets the default values.
@@ -44,14 +42,14 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("value", @value)
         end
         ## 
-        ## Gets the value property value. The value property
+        ## Gets the value property value. 
         ## @return a booking_work_time_slot
         ## 
         def value
             return @value
         end
         ## 
-        ## Sets the value property value. The value property
+        ## Sets the value property value. 
         ## @param value Value to set for the value property.
         ## @return a void
         ## 

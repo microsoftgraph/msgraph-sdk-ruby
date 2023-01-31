@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # The display name for this  feature rollout policy.
         @display_name
-        ## 
-        # The feature property
         @feature
         ## 
         # Indicates whether this feature rollout policy should be applied to the entire organization.
@@ -85,14 +83,14 @@ module MicrosoftGraph::Models
             @display_name = value
         end
         ## 
-        ## Gets the feature property value. The feature property
+        ## Gets the feature property value. 
         ## @return a staged_feature_name
         ## 
         def feature
             return @feature
         end
         ## 
-        ## Sets the feature property value. The feature property
+        ## Sets the feature property value. 
         ## @param value Value to set for the feature property.
         ## @return a void
         ## 

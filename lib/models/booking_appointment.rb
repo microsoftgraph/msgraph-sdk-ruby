@@ -20,8 +20,6 @@ module MicrosoftGraph::Models
         ## 
         # The length of the appointment, denoted in ISO8601 format.
         @duration
-        ## 
-        # The endDateTime property
         @end_date_time
         ## 
         # The current number of customers in the appointment
@@ -74,8 +72,6 @@ module MicrosoftGraph::Models
         ## 
         # The ID of each bookingStaffMember who is scheduled in this appointment.
         @staff_member_ids
-        ## 
-        # The startDateTime property
         @start_date_time
         ## 
         ## Gets the additionalInformation property value. Additional information that is sent to the customer when an appointment is confirmed.
@@ -169,14 +165,14 @@ module MicrosoftGraph::Models
             @duration = value
         end
         ## 
-        ## Gets the endDateTime property value. The endDateTime property
+        ## Gets the endDateTime property value. 
         ## @return a date_time_time_zone
         ## 
         def end_date_time
             return @end_date_time
         end
         ## 
-        ## Sets the endDateTime property value. The endDateTime property
+        ## Sets the endDateTime property value. 
         ## @param value Value to set for the endDateTime property.
         ## @return a void
         ## 
@@ -502,14 +498,14 @@ module MicrosoftGraph::Models
             @staff_member_ids = value
         end
         ## 
-        ## Gets the startDateTime property value. The startDateTime property
+        ## Gets the startDateTime property value. 
         ## @return a date_time_time_zone
         ## 
         def start_date_time
             return @start_date_time
         end
         ## 
-        ## Sets the startDateTime property value. The startDateTime property
+        ## Sets the startDateTime property value. 
         ## @param value Value to set for the startDateTime property.
         ## @return a void
         ## 

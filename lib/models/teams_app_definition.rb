@@ -9,8 +9,6 @@ module MicrosoftGraph::Models
         ## 
         # The details of the bot specified in the Teams app manifest.
         @bot
-        ## 
-        # The createdBy property
         @created_by
         ## 
         # Verbose description of the application.
@@ -18,8 +16,6 @@ module MicrosoftGraph::Models
         ## 
         # The name of the app provided by the app developer.
         @display_name
-        ## 
-        # The lastModifiedDateTime property
         @last_modified_date_time
         ## 
         # The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
@@ -56,14 +52,14 @@ module MicrosoftGraph::Models
             super
         end
         ## 
-        ## Gets the createdBy property value. The createdBy property
+        ## Gets the createdBy property value. 
         ## @return a identity_set
         ## 
         def created_by
             return @created_by
         end
         ## 
-        ## Sets the createdBy property value. The createdBy property
+        ## Sets the createdBy property value. 
         ## @param value Value to set for the createdBy property.
         ## @return a void
         ## 
@@ -127,14 +123,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+        ## Gets the lastModifiedDateTime property value. 
         ## @return a date_time
         ## 
         def last_modified_date_time
             return @last_modified_date_time
         end
         ## 
-        ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
+        ## Sets the lastModifiedDateTime property value. 
         ## @param value Value to set for the lastModifiedDateTime property.
         ## @return a void
         ## 

@@ -8,17 +8,9 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The getUrl property
         @get_url
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The postParameters property
         @post_parameters
-        ## 
-        # The postUrl property
         @post_url
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -64,14 +56,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the getUrl property value. The getUrl property
+        ## Gets the getUrl property value. 
         ## @return a string
         ## 
         def get_url
             return @get_url
         end
         ## 
-        ## Sets the getUrl property value. The getUrl property
+        ## Sets the getUrl property value. 
         ## @param value Value to set for the getUrl property.
         ## @return a void
         ## 
@@ -79,14 +71,14 @@ module MicrosoftGraph::Models
             @get_url = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -94,14 +86,14 @@ module MicrosoftGraph::Models
             @odata_type = value
         end
         ## 
-        ## Gets the postParameters property value. The postParameters property
+        ## Gets the postParameters property value. 
         ## @return a string
         ## 
         def post_parameters
             return @post_parameters
         end
         ## 
-        ## Sets the postParameters property value. The postParameters property
+        ## Sets the postParameters property value. 
         ## @param value Value to set for the postParameters property.
         ## @return a void
         ## 
@@ -109,14 +101,14 @@ module MicrosoftGraph::Models
             @post_parameters = value
         end
         ## 
-        ## Gets the postUrl property value. The postUrl property
+        ## Gets the postUrl property value. 
         ## @return a string
         ## 
         def post_url
             return @post_url
         end
         ## 
-        ## Sets the postUrl property value. The postUrl property
+        ## Sets the postUrl property value. 
         ## @param value Value to set for the postUrl property.
         ## @return a void
         ## 

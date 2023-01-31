@@ -7,8 +7,8 @@ require_relative '../../../../security'
 require_relative '../../../cases'
 require_relative '../../ediscovery_cases'
 require_relative '../item'
-require_relative './as_hierarchy/as_hierarchy_request_builder'
 require_relative './count/count_request_builder'
+require_relative './microsoft_graph_security_as_hierarchy/as_hierarchy_request_builder'
 require_relative './tags'
 
 module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags
@@ -22,6 +22,11 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags
             return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the asHierarchy method.
+        def microsoft_graph_security_as_hierarchy()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags::MicrosoftGraphSecurityAsHierarchy::AsHierarchyRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
@@ -30,13 +35,6 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        ## Provides operations to call the asHierarchy method.
-        ## @return a as_hierarchy_request_builder
-        ## 
-        def as_hierarchy()
-            return AsHierarchyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new TagsRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
@@ -56,7 +54,7 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of ediscovery_review_tag_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -67,11 +65,11 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags
         end
         ## 
         ## Create a new ediscoveryReviewTag object.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of ediscovery_review_tag
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -86,7 +84,7 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -101,11 +99,11 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags
         end
         ## 
         ## Create a new ediscoveryReviewTag object.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

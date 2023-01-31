@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class IdentityUserFlowAttribute < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The dataType property
         @data_type
         ## 
         # The description of the user flow attribute that's shown to the user at the time of sign-up.
@@ -14,8 +12,6 @@ module MicrosoftGraph::Models
         ## 
         # The display name of the user flow attribute.
         @display_name
-        ## 
-        # The userFlowAttributeType property
         @user_flow_attribute_type
         ## 
         ## Instantiates a new identityUserFlowAttribute and sets the default values.
@@ -44,14 +40,14 @@ module MicrosoftGraph::Models
             return IdentityUserFlowAttribute.new
         end
         ## 
-        ## Gets the dataType property value. The dataType property
+        ## Gets the dataType property value. 
         ## @return a identity_user_flow_attribute_data_type
         ## 
         def data_type
             return @data_type
         end
         ## 
-        ## Sets the dataType property value. The dataType property
+        ## Sets the dataType property value. 
         ## @param value Value to set for the dataType property.
         ## @return a void
         ## 
@@ -114,14 +110,14 @@ module MicrosoftGraph::Models
             writer.write_enum_value("userFlowAttributeType", @user_flow_attribute_type)
         end
         ## 
-        ## Gets the userFlowAttributeType property value. The userFlowAttributeType property
+        ## Gets the userFlowAttributeType property value. 
         ## @return a identity_user_flow_attribute_type
         ## 
         def user_flow_attribute_type
             return @user_flow_attribute_type
         end
         ## 
-        ## Sets the userFlowAttributeType property value. The userFlowAttributeType property
+        ## Sets the userFlowAttributeType property value. 
         ## @param value Value to set for the userFlowAttributeType property.
         ## @return a void
         ## 

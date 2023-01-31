@@ -8,14 +8,10 @@ module MicrosoftGraph::Models
         ## 
         # The user-friendly name of the template.
         @description
-        ## 
-        # The details property
         @details
         ## 
         # The user-friendly name of the template.
         @name
-        ## 
-        # The scenarios property
         @scenarios
         ## 
         ## Instantiates a new conditionalAccessTemplate and sets the default values.
@@ -49,14 +45,14 @@ module MicrosoftGraph::Models
             @description = value
         end
         ## 
-        ## Gets the details property value. The details property
+        ## Gets the details property value. 
         ## @return a conditional_access_policy_detail
         ## 
         def details
             return @details
         end
         ## 
-        ## Sets the details property value. The details property
+        ## Sets the details property value. 
         ## @param value Value to set for the details property.
         ## @return a void
         ## 
@@ -91,14 +87,14 @@ module MicrosoftGraph::Models
             @name = value
         end
         ## 
-        ## Gets the scenarios property value. The scenarios property
+        ## Gets the scenarios property value. 
         ## @return a template_scenarios
         ## 
         def scenarios
             return @scenarios
         end
         ## 
-        ## Sets the scenarios property value. The scenarios property
+        ## Sets the scenarios property value. 
         ## @param value Value to set for the scenarios property.
         ## @return a void
         ## 

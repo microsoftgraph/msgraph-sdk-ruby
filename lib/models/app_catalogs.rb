@@ -5,8 +5,6 @@ require_relative './models'
 module MicrosoftGraph::Models
     class AppCatalogs < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The teamsApps property
         @teams_apps
         ## 
         ## Instantiates a new AppCatalogs and sets the default values.
@@ -44,14 +42,14 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("teamsApps", @teams_apps)
         end
         ## 
-        ## Gets the teamsApps property value. The teamsApps property
+        ## Gets the teamsApps property value. 
         ## @return a teams_app
         ## 
         def teams_apps
             return @teams_apps
         end
         ## 
-        ## Sets the teamsApps property value. The teamsApps property
+        ## Sets the teamsApps property value. 
         ## @param value Value to set for the teamsApps property.
         ## @return a void
         ## 

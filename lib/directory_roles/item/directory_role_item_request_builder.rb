@@ -3,14 +3,14 @@ require_relative '../../microsoft_graph'
 require_relative '../../models/directory_role'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../directory_roles'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
 require_relative './members/item/directory_object_item_request_builder'
 require_relative './members/members_request_builder'
-require_relative './restore/restore_request_builder'
+require_relative './microsoft_graph_check_member_groups/check_member_groups_request_builder'
+require_relative './microsoft_graph_check_member_objects/check_member_objects_request_builder'
+require_relative './microsoft_graph_get_member_groups/get_member_groups_request_builder'
+require_relative './microsoft_graph_get_member_objects/get_member_objects_request_builder'
+require_relative './microsoft_graph_restore/restore_request_builder'
 require_relative './scoped_members/item/scoped_role_membership_item_request_builder'
 require_relative './scoped_members/scoped_members_request_builder'
 
@@ -20,29 +20,34 @@ module MicrosoftGraph::DirectoryRoles::Item
     class DirectoryRoleItemRequestBuilder
         
         ## 
-        # Provides operations to call the checkMemberGroups method.
-        def check_member_groups()
-            return MicrosoftGraph::DirectoryRoles::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the checkMemberObjects method.
-        def check_member_objects()
-            return MicrosoftGraph::DirectoryRoles::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the getMemberGroups method.
-        def get_member_groups()
-            return MicrosoftGraph::DirectoryRoles::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the getMemberObjects method.
-        def get_member_objects()
-            return MicrosoftGraph::DirectoryRoles::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the members property of the microsoft.graph.directoryRole entity.
         def members()
             return MicrosoftGraph::DirectoryRoles::Item::Members::MembersRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkMemberGroups method.
+        def microsoft_graph_check_member_groups()
+            return MicrosoftGraph::DirectoryRoles::Item::MicrosoftGraphCheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkMemberObjects method.
+        def microsoft_graph_check_member_objects()
+            return MicrosoftGraph::DirectoryRoles::Item::MicrosoftGraphCheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getMemberGroups method.
+        def microsoft_graph_get_member_groups()
+            return MicrosoftGraph::DirectoryRoles::Item::MicrosoftGraphGetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getMemberObjects method.
+        def microsoft_graph_get_member_objects()
+            return MicrosoftGraph::DirectoryRoles::Item::MicrosoftGraphGetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the restore method.
+        def microsoft_graph_restore()
+            return MicrosoftGraph::DirectoryRoles::Item::MicrosoftGraphRestore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -50,11 +55,6 @@ module MicrosoftGraph::DirectoryRoles::Item
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the restore method.
-        def restore()
-            return MicrosoftGraph::DirectoryRoles::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the scopedMembers property of the microsoft.graph.directoryRole entity.
         def scoped_members()
@@ -65,11 +65,12 @@ module MicrosoftGraph::DirectoryRoles::Item
         @url_template
         ## 
         ## Instantiates a new DirectoryRoleItemRequestBuilder and sets the default values.
+        ## @param directoryRoleId key: id of directoryRole
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, directory_role_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/directoryRoles/{directoryRole%2Did}{?%24select,%24expand}"
@@ -78,11 +79,11 @@ module MicrosoftGraph::DirectoryRoles::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from directoryRoles by key (id)
+        ## Delete entity from directoryRoles
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -96,7 +97,7 @@ module MicrosoftGraph::DirectoryRoles::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of directory_role
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -117,12 +118,12 @@ module MicrosoftGraph::DirectoryRoles::Item
             return MicrosoftGraph::DirectoryRoles::Item::Members::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Update entity in directoryRoles by key (id)
-        ## @param body The request body
+        ## Update entity in directoryRoles
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of directory_role
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -144,11 +145,11 @@ module MicrosoftGraph::DirectoryRoles::Item
             return MicrosoftGraph::DirectoryRoles::Item::ScopedMembers::Item::ScopedRoleMembershipItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Delete entity from directoryRoles by key (id)
+        ## Delete entity from directoryRoles
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -164,7 +165,7 @@ module MicrosoftGraph::DirectoryRoles::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -178,12 +179,12 @@ module MicrosoftGraph::DirectoryRoles::Item
             return request_info
         end
         ## 
-        ## Update entity in directoryRoles by key (id)
-        ## @param body The request body
+        ## Update entity in directoryRoles
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

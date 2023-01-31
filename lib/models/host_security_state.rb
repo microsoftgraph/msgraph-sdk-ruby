@@ -11,11 +11,7 @@ module MicrosoftGraph::Models
         ## 
         # Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).
         @fqdn
-        ## 
-        # The isAzureAdJoined property
         @is_azure_ad_joined
-        ## 
-        # The isAzureAdRegistered property
         @is_azure_ad_registered
         ## 
         # True if the host is domain joined to an on-premises Active Directory domain.
@@ -23,8 +19,6 @@ module MicrosoftGraph::Models
         ## 
         # The local host name, without the DNS domain name.
         @net_bios_name
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).
@@ -103,14 +97,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the isAzureAdJoined property value. The isAzureAdJoined property
+        ## Gets the isAzureAdJoined property value. 
         ## @return a boolean
         ## 
         def is_azure_ad_joined
             return @is_azure_ad_joined
         end
         ## 
-        ## Sets the isAzureAdJoined property value. The isAzureAdJoined property
+        ## Sets the isAzureAdJoined property value. 
         ## @param value Value to set for the isAzureAdJoined property.
         ## @return a void
         ## 
@@ -118,14 +112,14 @@ module MicrosoftGraph::Models
             @is_azure_ad_joined = value
         end
         ## 
-        ## Gets the isAzureAdRegistered property value. The isAzureAdRegistered property
+        ## Gets the isAzureAdRegistered property value. 
         ## @return a boolean
         ## 
         def is_azure_ad_registered
             return @is_azure_ad_registered
         end
         ## 
-        ## Sets the isAzureAdRegistered property value. The isAzureAdRegistered property
+        ## Sets the isAzureAdRegistered property value. 
         ## @param value Value to set for the isAzureAdRegistered property.
         ## @return a void
         ## 
@@ -163,14 +157,14 @@ module MicrosoftGraph::Models
             @net_bios_name = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -40,7 +40,7 @@ module MicrosoftGraph::Models
             @completed_date_time = value
         end
         ## 
-        ## Instantiates a new DataPolicyOperation and sets the default values.
+        ## Instantiates a new dataPolicyOperation and sets the default values.
         ## @return a void
         ## 
         def initialize()

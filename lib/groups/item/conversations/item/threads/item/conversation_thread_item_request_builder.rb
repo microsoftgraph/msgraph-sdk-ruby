@@ -8,15 +8,20 @@ require_relative '../../../conversations'
 require_relative '../../item'
 require_relative '../threads'
 require_relative './item'
+require_relative './microsoft_graph_reply/reply_request_builder'
 require_relative './posts/item/post_item_request_builder'
 require_relative './posts/posts_request_builder'
-require_relative './reply/reply_request_builder'
 
 module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item
     ## 
     # Provides operations to manage the threads property of the microsoft.graph.conversation entity.
     class ConversationThreadItemRequestBuilder
         
+        ## 
+        # Provides operations to call the reply method.
+        def microsoft_graph_reply()
+            return MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::MicrosoftGraphReply::ReplyRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Path parameters for the request
         @path_parameters
@@ -26,11 +31,6 @@ module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item
             return MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::Posts::PostsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the reply method.
-        def reply()
-            return MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::Reply::ReplyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
@@ -38,11 +38,12 @@ module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item
         @url_template
         ## 
         ## Instantiates a new ConversationThreadItemRequestBuilder and sets the default values.
+        ## @param conversationThreadId key: id of conversationThread
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, conversation_thread_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads/{conversationThread%2Did}{?%24select,%24expand}"
@@ -55,7 +56,7 @@ module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -69,7 +70,7 @@ module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of conversation_thread
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -80,11 +81,11 @@ module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item
         end
         ## 
         ## Update the navigation property threads in groups
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of conversation_thread
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -110,7 +111,7 @@ module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -126,7 +127,7 @@ module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -141,11 +142,11 @@ module MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item
         end
         ## 
         ## Update the navigation property threads in groups
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

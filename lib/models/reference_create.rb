@@ -8,8 +8,6 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The OdataId property
         @odata_id
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -52,14 +50,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.id property value. The OdataId property
+        ## Gets the @odata.id property value. 
         ## @return a string
         ## 
         def odata_id
             return @odata_id
         end
         ## 
-        ## Sets the @odata.id property value. The OdataId property
+        ## Sets the @odata.id property value. 
         ## @param value Value to set for the OdataId property.
         ## @return a void
         ## 

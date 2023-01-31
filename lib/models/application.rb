@@ -30,8 +30,6 @@ module MicrosoftGraph::Models
         ## 
         # Supports $filter (/$count eq 0, /$count ne 0). Read-only.
         @created_on_behalf_of
-        ## 
-        # The defaultRedirectUri property
         @default_redirect_uri
         ## 
         # Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.
@@ -51,8 +49,6 @@ module MicrosoftGraph::Models
         ## 
         # Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
         @group_membership_claims
-        ## 
-        # The homeRealmDiscoveryPolicies property
         @home_realm_discovery_policies
         ## 
         # Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
@@ -75,8 +71,6 @@ module MicrosoftGraph::Models
         ## 
         # Notes relevant for the management of the application.
         @notes
-        ## 
-        # The oauth2RequirePostResponse property
         @oauth2_require_post_response
         ## 
         # Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.
@@ -96,6 +90,7 @@ module MicrosoftGraph::Models
         ## 
         # The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
         @publisher_domain
+        @request_signature_verification
         ## 
         # Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
         @required_resource_access
@@ -117,11 +112,7 @@ module MicrosoftGraph::Models
         ## 
         # Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
         @token_encryption_key_id
-        ## 
-        # The tokenIssuancePolicies property
         @token_issuance_policies
-        ## 
-        # The tokenLifetimePolicies property
         @token_lifetime_policies
         ## 
         # Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.
@@ -267,14 +258,14 @@ module MicrosoftGraph::Models
             return Application.new
         end
         ## 
-        ## Gets the defaultRedirectUri property value. The defaultRedirectUri property
+        ## Gets the defaultRedirectUri property value. 
         ## @return a string
         ## 
         def default_redirect_uri
             return @default_redirect_uri
         end
         ## 
-        ## Sets the defaultRedirectUri property value. The defaultRedirectUri property
+        ## Sets the defaultRedirectUri property value. 
         ## @param value Value to set for the defaultRedirectUri property.
         ## @return a void
         ## 
@@ -392,6 +383,7 @@ module MicrosoftGraph::Models
                 "passwordCredentials" => lambda {|n| @password_credentials = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PasswordCredential.create_from_discriminator_value(pn) }) },
                 "publicClient" => lambda {|n| @public_client = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PublicClientApplication.create_from_discriminator_value(pn) }) },
                 "publisherDomain" => lambda {|n| @publisher_domain = n.get_string_value() },
+                "requestSignatureVerification" => lambda {|n| @request_signature_verification = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::RequestSignatureVerification.create_from_discriminator_value(pn) }) },
                 "requiredResourceAccess" => lambda {|n| @required_resource_access = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::RequiredResourceAccess.create_from_discriminator_value(pn) }) },
                 "samlMetadataUrl" => lambda {|n| @saml_metadata_url = n.get_string_value() },
                 "serviceManagementReference" => lambda {|n| @service_management_reference = n.get_string_value() },
@@ -421,14 +413,14 @@ module MicrosoftGraph::Models
             @group_membership_claims = value
         end
         ## 
-        ## Gets the homeRealmDiscoveryPolicies property value. The homeRealmDiscoveryPolicies property
+        ## Gets the homeRealmDiscoveryPolicies property value. 
         ## @return a home_realm_discovery_policy
         ## 
         def home_realm_discovery_policies
             return @home_realm_discovery_policies
         end
         ## 
-        ## Sets the homeRealmDiscoveryPolicies property value. The homeRealmDiscoveryPolicies property
+        ## Sets the homeRealmDiscoveryPolicies property value. 
         ## @param value Value to set for the homeRealmDiscoveryPolicies property.
         ## @return a void
         ## 
@@ -541,14 +533,14 @@ module MicrosoftGraph::Models
             @notes = value
         end
         ## 
-        ## Gets the oauth2RequirePostResponse property value. The oauth2RequirePostResponse property
+        ## Gets the oauth2RequirePostResponse property value. 
         ## @return a boolean
         ## 
         def oauth2_require_post_response
             return @oauth2_require_post_response
         end
         ## 
-        ## Sets the oauth2RequirePostResponse property value. The oauth2RequirePostResponse property
+        ## Sets the oauth2RequirePostResponse property value. 
         ## @param value Value to set for the oauth2RequirePostResponse property.
         ## @return a void
         ## 
@@ -646,6 +638,21 @@ module MicrosoftGraph::Models
             @publisher_domain = value
         end
         ## 
+        ## Gets the requestSignatureVerification property value. 
+        ## @return a request_signature_verification
+        ## 
+        def request_signature_verification
+            return @request_signature_verification
+        end
+        ## 
+        ## Sets the requestSignatureVerification property value. 
+        ## @param value Value to set for the requestSignatureVerification property.
+        ## @return a void
+        ## 
+        def request_signature_verification=(value)
+            @request_signature_verification = value
+        end
+        ## 
         ## Gets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
         ## @return a required_resource_access
         ## 
@@ -713,6 +720,7 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("passwordCredentials", @password_credentials)
             writer.write_object_value("publicClient", @public_client)
             writer.write_string_value("publisherDomain", @publisher_domain)
+            writer.write_object_value("requestSignatureVerification", @request_signature_verification)
             writer.write_collection_of_object_values("requiredResourceAccess", @required_resource_access)
             writer.write_string_value("samlMetadataUrl", @saml_metadata_url)
             writer.write_string_value("serviceManagementReference", @service_management_reference)
@@ -801,14 +809,14 @@ module MicrosoftGraph::Models
             @token_encryption_key_id = value
         end
         ## 
-        ## Gets the tokenIssuancePolicies property value. The tokenIssuancePolicies property
+        ## Gets the tokenIssuancePolicies property value. 
         ## @return a token_issuance_policy
         ## 
         def token_issuance_policies
             return @token_issuance_policies
         end
         ## 
-        ## Sets the tokenIssuancePolicies property value. The tokenIssuancePolicies property
+        ## Sets the tokenIssuancePolicies property value. 
         ## @param value Value to set for the tokenIssuancePolicies property.
         ## @return a void
         ## 
@@ -816,14 +824,14 @@ module MicrosoftGraph::Models
             @token_issuance_policies = value
         end
         ## 
-        ## Gets the tokenLifetimePolicies property value. The tokenLifetimePolicies property
+        ## Gets the tokenLifetimePolicies property value. 
         ## @return a token_lifetime_policy
         ## 
         def token_lifetime_policies
             return @token_lifetime_policies
         end
         ## 
-        ## Sets the tokenLifetimePolicies property value. The tokenLifetimePolicies property
+        ## Sets the tokenLifetimePolicies property value. 
         ## @param value Value to set for the tokenLifetimePolicies property.
         ## @return a void
         ## 

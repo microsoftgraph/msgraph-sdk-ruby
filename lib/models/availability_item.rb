@@ -8,17 +8,11 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The endDateTime property
         @end_date_time
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Indicates the service ID in case of 1:n appointments. If the appointment is of type 1:n, this field will be present, otherwise, null.
         @service_id
-        ## 
-        # The startDateTime property
         @start_date_time
         ## 
         # The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.
@@ -55,14 +49,14 @@ module MicrosoftGraph::Models
             return AvailabilityItem.new
         end
         ## 
-        ## Gets the endDateTime property value. The endDateTime property
+        ## Gets the endDateTime property value. 
         ## @return a date_time_time_zone
         ## 
         def end_date_time
             return @end_date_time
         end
         ## 
-        ## Sets the endDateTime property value. The endDateTime property
+        ## Sets the endDateTime property value. 
         ## @param value Value to set for the endDateTime property.
         ## @return a void
         ## 
@@ -83,14 +77,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -127,14 +121,14 @@ module MicrosoftGraph::Models
             @service_id = value
         end
         ## 
-        ## Gets the startDateTime property value. The startDateTime property
+        ## Gets the startDateTime property value. 
         ## @return a date_time_time_zone
         ## 
         def start_date_time
             return @start_date_time
         end
         ## 
-        ## Sets the startDateTime property value. The startDateTime property
+        ## Sets the startDateTime property value. 
         ## @param value Value to set for the startDateTime property.
         ## @return a void
         ## 

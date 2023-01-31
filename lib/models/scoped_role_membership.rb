@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # Unique identifier for the directory role that the member is in.
         @role_id
-        ## 
-        # The roleMemberInfo property
         @role_member_info
         ## 
         ## Gets the administrativeUnitId property value. Unique identifier for the administrative unit that the directory role is scoped to
@@ -72,14 +70,14 @@ module MicrosoftGraph::Models
             @role_id = value
         end
         ## 
-        ## Gets the roleMemberInfo property value. The roleMemberInfo property
+        ## Gets the roleMemberInfo property value. 
         ## @return a identity
         ## 
         def role_member_info
             return @role_member_info
         end
         ## 
-        ## Sets the roleMemberInfo property value. The roleMemberInfo property
+        ## Sets the roleMemberInfo property value. 
         ## @param value Value to set for the roleMemberInfo property.
         ## @return a void
         ## 

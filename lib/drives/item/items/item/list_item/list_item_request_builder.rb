@@ -6,42 +6,13 @@ require_relative '../../../../drives'
 require_relative '../../../item'
 require_relative '../../items'
 require_relative '../item'
-require_relative './analytics/analytics_request_builder'
-require_relative './document_set_versions/document_set_versions_request_builder'
-require_relative './document_set_versions/item/document_set_version_item_request_builder'
-require_relative './drive_item/drive_item_request_builder'
-require_relative './fields/fields_request_builder'
-require_relative './get_activities_by_interval/get_activities_by_interval_request_builder'
-require_relative './get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval/dab1c2feb9ecf2d349721478e4ff8fe9c46b97a0c44110851b2b17a08d22383e'
 require_relative './list_item'
-require_relative './versions/item/list_item_version_item_request_builder'
-require_relative './versions/versions_request_builder'
 
 module MicrosoftGraph::Drives::Item::Items::Item::ListItem
     ## 
     # Provides operations to manage the listItem property of the microsoft.graph.driveItem entity.
     class ListItemRequestBuilder
         
-        ## 
-        # Provides operations to manage the analytics property of the microsoft.graph.listItem entity.
-        def analytics()
-            return MicrosoftGraph::Drives::Item::Items::Item::ListItem::Analytics::AnalyticsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
-        def document_set_versions()
-            return MicrosoftGraph::Drives::Item::Items::Item::ListItem::DocumentSetVersions::DocumentSetVersionsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to manage the driveItem property of the microsoft.graph.listItem entity.
-        def drive_item()
-            return MicrosoftGraph::Drives::Item::Items::Item::ListItem::DriveItem::DriveItemRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to manage the fields property of the microsoft.graph.listItem entity.
-        def fields()
-            return MicrosoftGraph::Drives::Item::Items::Item::ListItem::Fields::FieldsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Path parameters for the request
         @path_parameters
@@ -51,11 +22,6 @@ module MicrosoftGraph::Drives::Item::Items::Item::ListItem
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        # Provides operations to manage the versions property of the microsoft.graph.listItem entity.
-        def versions()
-            return MicrosoftGraph::Drives::Item::Items::Item::ListItem::Versions::VersionsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new ListItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
@@ -71,36 +37,11 @@ module MicrosoftGraph::Drives::Item::Items::Item::ListItem
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete navigation property listItem for drives
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a Fiber of void
-        ## 
-        def delete(request_configuration=nil)
-            request_info = self.to_delete_request_information(
-                request_configuration
-            )
-            error_mapping = Hash.new
-            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            return @request_adapter.send_async(request_info, nil, error_mapping)
-        end
-        ## 
-        ## Provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
-        ## @param id Unique identifier of the item
-        ## @return a document_set_version_item_request_builder
-        ## 
-        def document_set_versions_by_id(id)
-            raise StandardError, 'id cannot be null' if id.nil?
-            url_tpl_params = @path_parameters.clone
-            url_tpl_params["documentSetVersion%2Did"] = id
-            return MicrosoftGraph::Drives::Item::Items::Item::ListItem::DocumentSetVersions::Item::DocumentSetVersionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-        end
-        ## 
         ## For drives in SharePoint, the associated document library list item. Read-only. Nullable.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of list_item
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -110,63 +51,11 @@ module MicrosoftGraph::Drives::Item::Items::Item::ListItem
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ListItem.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Provides operations to call the getActivitiesByInterval method.
-        ## @return a get_activities_by_interval_request_builder
-        ## 
-        def get_activities_by_interval()
-            return GetActivitiesByIntervalRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the getActivitiesByInterval method.
-        ## @param endDateTime Usage: endDateTime='{endDateTime}'
-        ## @param interval Usage: interval='{interval}'
-        ## @param startDateTime Usage: startDateTime='{startDateTime}'
-        ## @return a get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval_request_builder
-        ## 
-        def get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval(end_date_time, interval, start_date_time)
-            raise StandardError, 'end_date_time cannot be null' if end_date_time.nil?
-            raise StandardError, 'interval cannot be null' if interval.nil?
-            raise StandardError, 'start_date_time cannot be null' if start_date_time.nil?
-            return GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder.new(@path_parameters, @request_adapter, endDateTime, interval, startDateTime)
-        end
-        ## 
-        ## Update the navigation property listItem in drives
-        ## @param body The request body
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a Fiber of list_item
-        ## 
-        def patch(body, request_configuration=nil)
-            raise StandardError, 'body cannot be null' if body.nil?
-            request_info = self.to_patch_request_information(
-                body, request_configuration
-            )
-            error_mapping = Hash.new
-            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ListItem.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Delete navigation property listItem for drives
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a request_information
-        ## 
-        def to_delete_request_information(request_configuration=nil)
-            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-            request_info.url_template = @url_template
-            request_info.path_parameters = @path_parameters
-            request_info.http_method = :DELETE
-            unless request_configuration.nil?
-                request_info.add_headers_from_raw_object(request_configuration.headers)
-                request_info.add_request_options(request_configuration.options)
-            end
-            return request_info
-        end
-        ## 
         ## For drives in SharePoint, the associated document library list item. Read-only. Nullable.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -178,49 +67,6 @@ module MicrosoftGraph::Drives::Item::Items::Item::ListItem
                 request_info.add_request_options(request_configuration.options)
             end
             return request_info
-        end
-        ## 
-        ## Update the navigation property listItem in drives
-        ## @param body The request body
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a request_information
-        ## 
-        def to_patch_request_information(body, request_configuration=nil)
-            raise StandardError, 'body cannot be null' if body.nil?
-            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-            request_info.url_template = @url_template
-            request_info.path_parameters = @path_parameters
-            request_info.http_method = :PATCH
-            request_info.headers.add('Accept', 'application/json')
-            unless request_configuration.nil?
-                request_info.add_headers_from_raw_object(request_configuration.headers)
-                request_info.add_request_options(request_configuration.options)
-            end
-            request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
-            return request_info
-        end
-        ## 
-        ## Provides operations to manage the versions property of the microsoft.graph.listItem entity.
-        ## @param id Unique identifier of the item
-        ## @return a list_item_version_item_request_builder
-        ## 
-        def versions_by_id(id)
-            raise StandardError, 'id cannot be null' if id.nil?
-            url_tpl_params = @path_parameters.clone
-            url_tpl_params["listItemVersion%2Did"] = id
-            return MicrosoftGraph::Drives::Item::Items::Item::ListItem::Versions::Item::ListItemVersionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-        end
-
-        ## 
-        # Configuration for the request such as headers, query parameters, and middleware options.
-        class ListItemRequestBuilderDeleteRequestConfiguration
-            
-            ## 
-            # Request headers
-            attr_accessor :headers
-            ## 
-            # Request options
-            attr_accessor :options
         end
 
         ## 
@@ -264,18 +110,6 @@ module MicrosoftGraph::Drives::Item::Items::Item::ListItem
             ## 
             # Request query parameters
             attr_accessor :query_parameters
-        end
-
-        ## 
-        # Configuration for the request such as headers, query parameters, and middleware options.
-        class ListItemRequestBuilderPatchRequestConfiguration
-            
-            ## 
-            # Request headers
-            attr_accessor :headers
-            ## 
-            # Request options
-            attr_accessor :options
         end
     end
 end

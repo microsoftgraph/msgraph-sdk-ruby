@@ -9,35 +9,15 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The customKeyIdentifier property
         @custom_key_identifier
-        ## 
-        # The displayName property
         @display_name
-        ## 
-        # The endDateTime property
         @end_date_time
-        ## 
-        # The key property
         @key
-        ## 
-        # The keyId property
         @key_id
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The startDateTime property
         @start_date_time
-        ## 
-        # The thumbprint property
         @thumbprint
-        ## 
-        # The type property
         @type
-        ## 
-        # The usage property
         @usage
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -71,14 +51,14 @@ module MicrosoftGraph::Models
             return SelfSignedCertificate.new
         end
         ## 
-        ## Gets the customKeyIdentifier property value. The customKeyIdentifier property
+        ## Gets the customKeyIdentifier property value. 
         ## @return a binary
         ## 
         def custom_key_identifier
             return @custom_key_identifier
         end
         ## 
-        ## Sets the customKeyIdentifier property value. The customKeyIdentifier property
+        ## Sets the customKeyIdentifier property value. 
         ## @param value Value to set for the customKeyIdentifier property.
         ## @return a void
         ## 
@@ -86,14 +66,14 @@ module MicrosoftGraph::Models
             @custom_key_identifier = value
         end
         ## 
-        ## Gets the displayName property value. The displayName property
+        ## Gets the displayName property value. 
         ## @return a string
         ## 
         def display_name
             return @display_name
         end
         ## 
-        ## Sets the displayName property value. The displayName property
+        ## Sets the displayName property value. 
         ## @param value Value to set for the displayName property.
         ## @return a void
         ## 
@@ -101,14 +81,14 @@ module MicrosoftGraph::Models
             @display_name = value
         end
         ## 
-        ## Gets the endDateTime property value. The endDateTime property
+        ## Gets the endDateTime property value. 
         ## @return a date_time
         ## 
         def end_date_time
             return @end_date_time
         end
         ## 
-        ## Sets the endDateTime property value. The endDateTime property
+        ## Sets the endDateTime property value. 
         ## @param value Value to set for the endDateTime property.
         ## @return a void
         ## 
@@ -134,14 +114,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the key property value. The key property
+        ## Gets the key property value. 
         ## @return a binary
         ## 
         def key
             return @key
         end
         ## 
-        ## Sets the key property value. The key property
+        ## Sets the key property value. 
         ## @param value Value to set for the key property.
         ## @return a void
         ## 
@@ -149,14 +129,14 @@ module MicrosoftGraph::Models
             @key = value
         end
         ## 
-        ## Gets the keyId property value. The keyId property
+        ## Gets the keyId property value. 
         ## @return a guid
         ## 
         def key_id
             return @key_id
         end
         ## 
-        ## Sets the keyId property value. The keyId property
+        ## Sets the keyId property value. 
         ## @param value Value to set for the keyId property.
         ## @return a void
         ## 
@@ -164,14 +144,14 @@ module MicrosoftGraph::Models
             @key_id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -198,14 +178,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the startDateTime property value. The startDateTime property
+        ## Gets the startDateTime property value. 
         ## @return a date_time
         ## 
         def start_date_time
             return @start_date_time
         end
         ## 
-        ## Sets the startDateTime property value. The startDateTime property
+        ## Sets the startDateTime property value. 
         ## @param value Value to set for the startDateTime property.
         ## @return a void
         ## 
@@ -213,14 +193,14 @@ module MicrosoftGraph::Models
             @start_date_time = value
         end
         ## 
-        ## Gets the thumbprint property value. The thumbprint property
+        ## Gets the thumbprint property value. 
         ## @return a string
         ## 
         def thumbprint
             return @thumbprint
         end
         ## 
-        ## Sets the thumbprint property value. The thumbprint property
+        ## Sets the thumbprint property value. 
         ## @param value Value to set for the thumbprint property.
         ## @return a void
         ## 
@@ -228,14 +208,14 @@ module MicrosoftGraph::Models
             @thumbprint = value
         end
         ## 
-        ## Gets the type property value. The type property
+        ## Gets the type property value. 
         ## @return a string
         ## 
         def type
             return @type
         end
         ## 
-        ## Sets the type property value. The type property
+        ## Sets the type property value. 
         ## @param value Value to set for the type property.
         ## @return a void
         ## 
@@ -243,14 +223,14 @@ module MicrosoftGraph::Models
             @type = value
         end
         ## 
-        ## Gets the usage property value. The usage property
+        ## Gets the usage property value. 
         ## @return a string
         ## 
         def usage
             return @usage
         end
         ## 
-        ## Sets the usage property value. The usage property
+        ## Sets the usage property value. 
         ## @param value Value to set for the usage property.
         ## @return a void
         ## 

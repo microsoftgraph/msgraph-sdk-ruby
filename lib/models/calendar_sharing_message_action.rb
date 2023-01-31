@@ -5,30 +5,22 @@ require_relative './models'
 module MicrosoftGraph::Models
     class CalendarSharingMessageAction
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The action property
         @action
-        ## 
-        # The actionType property
         @action_type
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The importance property
         @importance
-        ## 
-        # The OdataType property
         @odata_type
         ## 
-        ## Gets the action property value. The action property
+        ## Gets the action property value. 
         ## @return a calendar_sharing_action
         ## 
         def action
             return @action
         end
         ## 
-        ## Sets the action property value. The action property
+        ## Sets the action property value. 
         ## @param value Value to set for the action property.
         ## @return a void
         ## 
@@ -36,14 +28,14 @@ module MicrosoftGraph::Models
             @action = value
         end
         ## 
-        ## Gets the actionType property value. The actionType property
+        ## Gets the actionType property value. 
         ## @return a calendar_sharing_action_type
         ## 
         def action_type
             return @action_type
         end
         ## 
-        ## Sets the actionType property value. The actionType property
+        ## Sets the actionType property value. 
         ## @param value Value to set for the actionType property.
         ## @return a void
         ## 
@@ -94,14 +86,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the importance property value. The importance property
+        ## Gets the importance property value. 
         ## @return a calendar_sharing_action_importance
         ## 
         def importance
             return @importance
         end
         ## 
-        ## Sets the importance property value. The importance property
+        ## Sets the importance property value. 
         ## @param value Value to set for the importance property.
         ## @return a void
         ## 
@@ -109,14 +101,14 @@ module MicrosoftGraph::Models
             @importance = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

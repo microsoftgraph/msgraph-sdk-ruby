@@ -3,6 +3,8 @@ require_relative '../microsoft_graph'
 require_relative './models'
 
 module MicrosoftGraph::Models
+    ## 
+    # Abstract class that contains properties and inherited properties for apps that you can manage with an Intune app protection policy.
     class ManagedApp < MicrosoftGraph::Models::MobileApp
         include MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -27,7 +29,7 @@ module MicrosoftGraph::Models
             @app_availability = value
         end
         ## 
-        ## Instantiates a new ManagedApp and sets the default values.
+        ## Instantiates a new managedApp and sets the default values.
         ## @return a void
         ## 
         def initialize()

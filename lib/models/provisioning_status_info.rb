@@ -8,11 +8,7 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The errorInformation property
         @error_information
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Possible values are: success, warning, failure, skipped, unknownFutureValue.
@@ -49,14 +45,14 @@ module MicrosoftGraph::Models
             return ProvisioningStatusInfo.new
         end
         ## 
-        ## Gets the errorInformation property value. The errorInformation property
+        ## Gets the errorInformation property value. 
         ## @return a provisioning_error_info
         ## 
         def error_information
             return @error_information
         end
         ## 
-        ## Sets the errorInformation property value. The errorInformation property
+        ## Sets the errorInformation property value. 
         ## @param value Value to set for the errorInformation property.
         ## @return a void
         ## 
@@ -75,14 +71,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

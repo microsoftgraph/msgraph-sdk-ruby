@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # User in an attack simulation and training campaign.
         @attack_simulation_user
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # List of assigned trainings and their statuses for the user.
@@ -75,14 +73,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

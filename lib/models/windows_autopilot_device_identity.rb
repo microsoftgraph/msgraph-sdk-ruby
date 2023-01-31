@@ -17,8 +17,6 @@ module MicrosoftGraph::Models
         ## 
         # Display Name
         @display_name
-        ## 
-        # The enrollmentState property
         @enrollment_state
         ## 
         # Group Tag of the Windows autopilot device.
@@ -118,14 +116,14 @@ module MicrosoftGraph::Models
             @display_name = value
         end
         ## 
-        ## Gets the enrollmentState property value. The enrollmentState property
+        ## Gets the enrollmentState property value. 
         ## @return a enrollment_state
         ## 
         def enrollment_state
             return @enrollment_state
         end
         ## 
-        ## Sets the enrollmentState property value. The enrollmentState property
+        ## Sets the enrollmentState property value. 
         ## @param value Value to set for the enrollmentState property.
         ## @return a void
         ## 

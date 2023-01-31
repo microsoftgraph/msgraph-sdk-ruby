@@ -5,11 +5,7 @@ require_relative './models'
 module MicrosoftGraph::Models
     class IdentityUserFlow < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The userFlowType property
         @user_flow_type
-        ## 
-        # The userFlowTypeVersion property
         @user_flow_type_version
         ## 
         ## Instantiates a new IdentityUserFlow and sets the default values.
@@ -57,14 +53,14 @@ module MicrosoftGraph::Models
             writer.write_float_value("userFlowTypeVersion", @user_flow_type_version)
         end
         ## 
-        ## Gets the userFlowType property value. The userFlowType property
+        ## Gets the userFlowType property value. 
         ## @return a user_flow_type
         ## 
         def user_flow_type
             return @user_flow_type
         end
         ## 
-        ## Sets the userFlowType property value. The userFlowType property
+        ## Sets the userFlowType property value. 
         ## @param value Value to set for the userFlowType property.
         ## @return a void
         ## 
@@ -72,14 +68,14 @@ module MicrosoftGraph::Models
             @user_flow_type = value
         end
         ## 
-        ## Gets the userFlowTypeVersion property value. The userFlowTypeVersion property
+        ## Gets the userFlowTypeVersion property value. 
         ## @return a float
         ## 
         def user_flow_type_version
             return @user_flow_type_version
         end
         ## 
-        ## Sets the userFlowTypeVersion property value. The userFlowTypeVersion property
+        ## Sets the userFlowTypeVersion property value. 
         ## @param value Value to set for the userFlowTypeVersion property.
         ## @return a void
         ## 

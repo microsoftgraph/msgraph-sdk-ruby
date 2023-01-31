@@ -14,8 +14,6 @@ module MicrosoftGraph::Models
         ## 
         # The language that the automatic reply message is in.
         @message_language
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The date and time that automatic replies are set to end.
@@ -98,14 +96,14 @@ module MicrosoftGraph::Models
             @message_language = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

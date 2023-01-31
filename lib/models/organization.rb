@@ -52,7 +52,7 @@ module MicrosoftGraph::Models
         # true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
         @on_premises_sync_enabled
         ## 
-        # The partnerTenantType property
+        # The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
         @partner_tenant_type
         ## 
         # Postal code of the address for the organization.
@@ -66,11 +66,7 @@ module MicrosoftGraph::Models
         ## 
         # Not nullable.
         @provisioned_plans
-        ## 
-        # The securityComplianceNotificationMails property
         @security_compliance_notification_mails
-        ## 
-        # The securityComplianceNotificationPhones property
         @security_compliance_notification_phones
         ## 
         # State name of the address for the organization.
@@ -82,7 +78,7 @@ module MicrosoftGraph::Models
         # Not nullable.
         @technical_notification_mails
         ## 
-        # The tenantType property
+        # Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
         @tenant_type
         ## 
         # The collection of domains associated with this tenant. Not nullable.
@@ -365,14 +361,14 @@ module MicrosoftGraph::Models
             @on_premises_sync_enabled = value
         end
         ## 
-        ## Gets the partnerTenantType property value. The partnerTenantType property
+        ## Gets the partnerTenantType property value. The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
         ## @return a partner_tenant_type
         ## 
         def partner_tenant_type
             return @partner_tenant_type
         end
         ## 
-        ## Sets the partnerTenantType property value. The partnerTenantType property
+        ## Sets the partnerTenantType property value. The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
         ## @param value Value to set for the partnerTenantType property.
         ## @return a void
         ## 
@@ -440,14 +436,14 @@ module MicrosoftGraph::Models
             @provisioned_plans = value
         end
         ## 
-        ## Gets the securityComplianceNotificationMails property value. The securityComplianceNotificationMails property
+        ## Gets the securityComplianceNotificationMails property value. 
         ## @return a string
         ## 
         def security_compliance_notification_mails
             return @security_compliance_notification_mails
         end
         ## 
-        ## Sets the securityComplianceNotificationMails property value. The securityComplianceNotificationMails property
+        ## Sets the securityComplianceNotificationMails property value. 
         ## @param value Value to set for the securityComplianceNotificationMails property.
         ## @return a void
         ## 
@@ -455,14 +451,14 @@ module MicrosoftGraph::Models
             @security_compliance_notification_mails = value
         end
         ## 
-        ## Gets the securityComplianceNotificationPhones property value. The securityComplianceNotificationPhones property
+        ## Gets the securityComplianceNotificationPhones property value. 
         ## @return a string
         ## 
         def security_compliance_notification_phones
             return @security_compliance_notification_phones
         end
         ## 
-        ## Sets the securityComplianceNotificationPhones property value. The securityComplianceNotificationPhones property
+        ## Sets the securityComplianceNotificationPhones property value. 
         ## @param value Value to set for the securityComplianceNotificationPhones property.
         ## @return a void
         ## 
@@ -551,14 +547,14 @@ module MicrosoftGraph::Models
             @technical_notification_mails = value
         end
         ## 
-        ## Gets the tenantType property value. The tenantType property
+        ## Gets the tenantType property value. Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
         ## @return a string
         ## 
         def tenant_type
             return @tenant_type
         end
         ## 
-        ## Sets the tenantType property value. The tenantType property
+        ## Sets the tenantType property value. Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
         ## @param value Value to set for the tenantType property.
         ## @return a void
         ## 

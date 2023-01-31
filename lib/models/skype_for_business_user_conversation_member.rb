@@ -5,11 +5,7 @@ require_relative './models'
 module MicrosoftGraph::Models
     class SkypeForBusinessUserConversationMember < MicrosoftGraph::Models::ConversationMember
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The tenantId property
         @tenant_id
-        ## 
-        # The userId property
         @user_id
         ## 
         ## Instantiates a new SkypeForBusinessUserConversationMember and sets the default values.
@@ -50,14 +46,14 @@ module MicrosoftGraph::Models
             writer.write_string_value("userId", @user_id)
         end
         ## 
-        ## Gets the tenantId property value. The tenantId property
+        ## Gets the tenantId property value. 
         ## @return a string
         ## 
         def tenant_id
             return @tenant_id
         end
         ## 
-        ## Sets the tenantId property value. The tenantId property
+        ## Sets the tenantId property value. 
         ## @param value Value to set for the tenantId property.
         ## @return a void
         ## 
@@ -65,14 +61,14 @@ module MicrosoftGraph::Models
             @tenant_id = value
         end
         ## 
-        ## Gets the userId property value. The userId property
+        ## Gets the userId property value. 
         ## @return a string
         ## 
         def user_id
             return @user_id
         end
         ## 
-        ## Sets the userId property value. The userId property
+        ## Sets the userId property value. 
         ## @param value Value to set for the userId property.
         ## @return a void
         ## 

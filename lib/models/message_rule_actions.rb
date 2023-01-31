@@ -32,8 +32,6 @@ module MicrosoftGraph::Models
         ## 
         # The ID of the folder that a message will be moved to.
         @move_to_folder
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
@@ -216,14 +214,14 @@ module MicrosoftGraph::Models
             @move_to_folder = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

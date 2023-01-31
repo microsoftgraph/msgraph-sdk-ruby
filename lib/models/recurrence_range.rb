@@ -15,8 +15,6 @@ module MicrosoftGraph::Models
         ## 
         # The number of times to repeat the event. Required and must be positive if type is numbered.
         @number_of_occurrences
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.
@@ -103,14 +101,14 @@ module MicrosoftGraph::Models
             @number_of_occurrences = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -29,8 +29,6 @@ module MicrosoftGraph::Models
         ## 
         # If true, allows requestors to create a request to update their access.
         @enable_targets_to_self_update_access
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The principals who can request on-behalf-of others.
@@ -189,14 +187,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

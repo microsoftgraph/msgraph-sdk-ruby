@@ -57,8 +57,6 @@ module MicrosoftGraph::Models
         ## 
         # The primary cellular telephone number for the user.
         @mobile_phone
-        ## 
-        # The officeLocation property
         @office_location
         ## 
         # Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
@@ -72,14 +70,10 @@ module MicrosoftGraph::Models
         ## 
         # The preferred language for the user that should follow the ISO 639-1 code, for example, en-US.
         @preferred_language
-        ## 
-        # The primaryRole property
         @primary_role
         ## 
         # The plans that are provisioned for the user. Read-only. Not nullable.
         @provisioned_plans
-        ## 
-        # The refreshTokensValidFromDateTime property
         @refresh_tokens_valid_from_date_time
         ## 
         # Related records associated with the user. Read-only.
@@ -438,14 +432,14 @@ module MicrosoftGraph::Models
             @mobile_phone = value
         end
         ## 
-        ## Gets the officeLocation property value. The officeLocation property
+        ## Gets the officeLocation property value. 
         ## @return a string
         ## 
         def office_location
             return @office_location
         end
         ## 
-        ## Sets the officeLocation property value. The officeLocation property
+        ## Sets the officeLocation property value. 
         ## @param value Value to set for the officeLocation property.
         ## @return a void
         ## 
@@ -513,14 +507,14 @@ module MicrosoftGraph::Models
             @preferred_language = value
         end
         ## 
-        ## Gets the primaryRole property value. The primaryRole property
+        ## Gets the primaryRole property value. 
         ## @return a education_user_role
         ## 
         def primary_role
             return @primary_role
         end
         ## 
-        ## Sets the primaryRole property value. The primaryRole property
+        ## Sets the primaryRole property value. 
         ## @param value Value to set for the primaryRole property.
         ## @return a void
         ## 
@@ -543,14 +537,14 @@ module MicrosoftGraph::Models
             @provisioned_plans = value
         end
         ## 
-        ## Gets the refreshTokensValidFromDateTime property value. The refreshTokensValidFromDateTime property
+        ## Gets the refreshTokensValidFromDateTime property value. 
         ## @return a date_time
         ## 
         def refresh_tokens_valid_from_date_time
             return @refresh_tokens_valid_from_date_time
         end
         ## 
-        ## Sets the refreshTokensValidFromDateTime property value. The refreshTokensValidFromDateTime property
+        ## Sets the refreshTokensValidFromDateTime property value. 
         ## @param value Value to set for the refreshTokensValidFromDateTime property.
         ## @return a void
         ## 

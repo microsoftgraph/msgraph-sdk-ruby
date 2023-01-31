@@ -5,27 +5,19 @@ require_relative './models'
 module MicrosoftGraph::Models
     class CalendarSharingMessage < MicrosoftGraph::Models::Message
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The canAccept property
         @can_accept
-        ## 
-        # The sharingMessageAction property
         @sharing_message_action
-        ## 
-        # The sharingMessageActions property
         @sharing_message_actions
-        ## 
-        # The suggestedCalendarName property
         @suggested_calendar_name
         ## 
-        ## Gets the canAccept property value. The canAccept property
+        ## Gets the canAccept property value. 
         ## @return a boolean
         ## 
         def can_accept
             return @can_accept
         end
         ## 
-        ## Sets the canAccept property value. The canAccept property
+        ## Sets the canAccept property value. 
         ## @param value Value to set for the canAccept property.
         ## @return a void
         ## 
@@ -75,14 +67,14 @@ module MicrosoftGraph::Models
             writer.write_string_value("suggestedCalendarName", @suggested_calendar_name)
         end
         ## 
-        ## Gets the sharingMessageAction property value. The sharingMessageAction property
+        ## Gets the sharingMessageAction property value. 
         ## @return a calendar_sharing_message_action
         ## 
         def sharing_message_action
             return @sharing_message_action
         end
         ## 
-        ## Sets the sharingMessageAction property value. The sharingMessageAction property
+        ## Sets the sharingMessageAction property value. 
         ## @param value Value to set for the sharingMessageAction property.
         ## @return a void
         ## 
@@ -90,14 +82,14 @@ module MicrosoftGraph::Models
             @sharing_message_action = value
         end
         ## 
-        ## Gets the sharingMessageActions property value. The sharingMessageActions property
+        ## Gets the sharingMessageActions property value. 
         ## @return a calendar_sharing_message_action
         ## 
         def sharing_message_actions
             return @sharing_message_actions
         end
         ## 
-        ## Sets the sharingMessageActions property value. The sharingMessageActions property
+        ## Sets the sharingMessageActions property value. 
         ## @param value Value to set for the sharingMessageActions property.
         ## @return a void
         ## 
@@ -105,14 +97,14 @@ module MicrosoftGraph::Models
             @sharing_message_actions = value
         end
         ## 
-        ## Gets the suggestedCalendarName property value. The suggestedCalendarName property
+        ## Gets the suggestedCalendarName property value. 
         ## @return a string
         ## 
         def suggested_calendar_name
             return @suggested_calendar_name
         end
         ## 
-        ## Sets the suggestedCalendarName property value. The suggestedCalendarName property
+        ## Sets the suggestedCalendarName property value. 
         ## @param value Value to set for the suggestedCalendarName property.
         ## @return a void
         ## 

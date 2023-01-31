@@ -5,11 +5,7 @@ require_relative './models'
 module MicrosoftGraph::Models
     class PrintTaskTrigger < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The definition property
         @definition
-        ## 
-        # The event property
         @event
         ## 
         ## Instantiates a new printTaskTrigger and sets the default values.
@@ -28,14 +24,14 @@ module MicrosoftGraph::Models
             return PrintTaskTrigger.new
         end
         ## 
-        ## Gets the definition property value. The definition property
+        ## Gets the definition property value. 
         ## @return a print_task_definition
         ## 
         def definition
             return @definition
         end
         ## 
-        ## Sets the definition property value. The definition property
+        ## Sets the definition property value. 
         ## @param value Value to set for the definition property.
         ## @return a void
         ## 
@@ -43,14 +39,14 @@ module MicrosoftGraph::Models
             @definition = value
         end
         ## 
-        ## Gets the event property value. The event property
+        ## Gets the event property value. 
         ## @return a print_event
         ## 
         def event
             return @event
         end
         ## 
-        ## Sets the event property value. The event property
+        ## Sets the event property value. 
         ## @param value Value to set for the event property.
         ## @return a void
         ## 

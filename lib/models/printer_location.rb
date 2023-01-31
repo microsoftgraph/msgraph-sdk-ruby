@@ -32,8 +32,6 @@ module MicrosoftGraph::Models
         ## 
         # The longitude that the printer is located at.
         @longitude
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.
@@ -59,8 +57,6 @@ module MicrosoftGraph::Models
         ## 
         # The subdivision that the printer is located in. The elements should be in hierarchical order.
         @subdivision
-        ## 
-        # The subunit property
         @subunit
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -240,14 +236,14 @@ module MicrosoftGraph::Models
             @longitude = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -402,14 +398,14 @@ module MicrosoftGraph::Models
             @subdivision = value
         end
         ## 
-        ## Gets the subunit property value. The subunit property
+        ## Gets the subunit property value. 
         ## @return a string
         ## 
         def subunit
             return @subunit
         end
         ## 
-        ## Sets the subunit property value. The subunit property
+        ## Sets the subunit property value. 
         ## @param value Value to set for the subunit property.
         ## @return a void
         ## 

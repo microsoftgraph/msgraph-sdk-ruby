@@ -20,8 +20,6 @@ module MicrosoftGraph::Models
         ## 
         # Count of item that need review.
         @item_need_review
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
@@ -140,14 +138,14 @@ module MicrosoftGraph::Models
             @item_need_review = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

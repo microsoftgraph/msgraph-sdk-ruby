@@ -5,9 +5,9 @@ require_relative '../../../../models/o_data_errors/o_data_error'
 require_relative '../../../groups'
 require_relative '../../item'
 require_relative '../group_lifecycle_policies'
-require_relative './add_group/add_group_request_builder'
 require_relative './item'
-require_relative './remove_group/remove_group_request_builder'
+require_relative './microsoft_graph_add_group/add_group_request_builder'
+require_relative './microsoft_graph_remove_group/remove_group_request_builder'
 
 module MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item
     ## 
@@ -16,17 +16,17 @@ module MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item
         
         ## 
         # Provides operations to call the addGroup method.
-        def add_group()
-            return MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item::AddGroup::AddGroupRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_add_group()
+            return MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item::MicrosoftGraphAddGroup::AddGroupRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the removeGroup method.
+        def microsoft_graph_remove_group()
+            return MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item::MicrosoftGraphRemoveGroup::RemoveGroupRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
         @path_parameters
-        ## 
-        # Provides operations to call the removeGroup method.
-        def remove_group()
-            return MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item::RemoveGroup::RemoveGroupRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
@@ -35,11 +35,12 @@ module MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item
         @url_template
         ## 
         ## Instantiates a new GroupLifecyclePolicyItemRequestBuilder and sets the default values.
+        ## @param groupLifecyclePolicyId key: id of groupLifecyclePolicy
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, group_lifecycle_policy_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/groups/{group%2Did}/groupLifecyclePolicies/{groupLifecyclePolicy%2Did}{?%24select,%24expand}"
@@ -52,7 +53,7 @@ module MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -66,7 +67,7 @@ module MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of group_lifecycle_policy
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -77,11 +78,11 @@ module MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item
         end
         ## 
         ## Update the navigation property groupLifecyclePolicies in groups
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of group_lifecycle_policy
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -96,7 +97,7 @@ module MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -112,7 +113,7 @@ module MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -127,11 +128,11 @@ module MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item
         end
         ## 
         ## Update the navigation property groupLifecyclePolicies in groups
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

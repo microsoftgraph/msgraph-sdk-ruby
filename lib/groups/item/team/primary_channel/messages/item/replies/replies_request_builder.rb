@@ -10,7 +10,7 @@ require_relative '../../../primary_channel'
 require_relative '../../messages'
 require_relative '../item'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
+require_relative './microsoft_graph_delta/delta_request_builder'
 require_relative './replies'
 
 module MicrosoftGraph::Groups::Item::Team::PrimaryChannel::Messages::Item::Replies
@@ -22,6 +22,11 @@ module MicrosoftGraph::Groups::Item::Team::PrimaryChannel::Messages::Item::Repli
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::Messages::Item::Replies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::Messages::Item::Replies::MicrosoftGraphDelta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -47,18 +52,11 @@ module MicrosoftGraph::Groups::Item::Team::PrimaryChannel::Messages::Item::Repli
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of chat_message_collection_response
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -69,11 +67,11 @@ module MicrosoftGraph::Groups::Item::Team::PrimaryChannel::Messages::Item::Repli
         end
         ## 
         ## Create a new reply to a chatMessage in a specified channel.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of chat_message
         ## 
-        def post(body, request_configuration=nil)
+        def post(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_post_request_information(
                 body, request_configuration
@@ -88,7 +86,7 @@ module MicrosoftGraph::Groups::Item::Team::PrimaryChannel::Messages::Item::Repli
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -103,11 +101,11 @@ module MicrosoftGraph::Groups::Item::Team::PrimaryChannel::Messages::Item::Repli
         end
         ## 
         ## Create a new reply to a chatMessage in a specified channel.
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_post_request_information(body, request_configuration=nil)
+        def to_post_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

@@ -6,39 +6,23 @@ require_relative './models'
 module MicrosoftGraph::Models
     class ScheduleChangeRequest < MicrosoftGraph::Models::ChangeTrackedEntity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The assignedTo property
         @assigned_to
-        ## 
-        # The managerActionDateTime property
         @manager_action_date_time
-        ## 
-        # The managerActionMessage property
         @manager_action_message
-        ## 
-        # The managerUserId property
         @manager_user_id
-        ## 
-        # The senderDateTime property
         @sender_date_time
-        ## 
-        # The senderMessage property
         @sender_message
-        ## 
-        # The senderUserId property
         @sender_user_id
-        ## 
-        # The state property
         @state
         ## 
-        ## Gets the assignedTo property value. The assignedTo property
+        ## Gets the assignedTo property value. 
         ## @return a schedule_change_request_actor
         ## 
         def assigned_to
             return @assigned_to
         end
         ## 
-        ## Sets the assignedTo property value. The assignedTo property
+        ## Sets the assignedTo property value. 
         ## @param value Value to set for the assignedTo property.
         ## @return a void
         ## 
@@ -93,14 +77,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the managerActionDateTime property value. The managerActionDateTime property
+        ## Gets the managerActionDateTime property value. 
         ## @return a date_time
         ## 
         def manager_action_date_time
             return @manager_action_date_time
         end
         ## 
-        ## Sets the managerActionDateTime property value. The managerActionDateTime property
+        ## Sets the managerActionDateTime property value. 
         ## @param value Value to set for the managerActionDateTime property.
         ## @return a void
         ## 
@@ -108,14 +92,14 @@ module MicrosoftGraph::Models
             @manager_action_date_time = value
         end
         ## 
-        ## Gets the managerActionMessage property value. The managerActionMessage property
+        ## Gets the managerActionMessage property value. 
         ## @return a string
         ## 
         def manager_action_message
             return @manager_action_message
         end
         ## 
-        ## Sets the managerActionMessage property value. The managerActionMessage property
+        ## Sets the managerActionMessage property value. 
         ## @param value Value to set for the managerActionMessage property.
         ## @return a void
         ## 
@@ -123,14 +107,14 @@ module MicrosoftGraph::Models
             @manager_action_message = value
         end
         ## 
-        ## Gets the managerUserId property value. The managerUserId property
+        ## Gets the managerUserId property value. 
         ## @return a string
         ## 
         def manager_user_id
             return @manager_user_id
         end
         ## 
-        ## Sets the managerUserId property value. The managerUserId property
+        ## Sets the managerUserId property value. 
         ## @param value Value to set for the managerUserId property.
         ## @return a void
         ## 
@@ -138,14 +122,14 @@ module MicrosoftGraph::Models
             @manager_user_id = value
         end
         ## 
-        ## Gets the senderDateTime property value. The senderDateTime property
+        ## Gets the senderDateTime property value. 
         ## @return a date_time
         ## 
         def sender_date_time
             return @sender_date_time
         end
         ## 
-        ## Sets the senderDateTime property value. The senderDateTime property
+        ## Sets the senderDateTime property value. 
         ## @param value Value to set for the senderDateTime property.
         ## @return a void
         ## 
@@ -153,14 +137,14 @@ module MicrosoftGraph::Models
             @sender_date_time = value
         end
         ## 
-        ## Gets the senderMessage property value. The senderMessage property
+        ## Gets the senderMessage property value. 
         ## @return a string
         ## 
         def sender_message
             return @sender_message
         end
         ## 
-        ## Sets the senderMessage property value. The senderMessage property
+        ## Sets the senderMessage property value. 
         ## @param value Value to set for the senderMessage property.
         ## @return a void
         ## 
@@ -168,14 +152,14 @@ module MicrosoftGraph::Models
             @sender_message = value
         end
         ## 
-        ## Gets the senderUserId property value. The senderUserId property
+        ## Gets the senderUserId property value. 
         ## @return a string
         ## 
         def sender_user_id
             return @sender_user_id
         end
         ## 
-        ## Sets the senderUserId property value. The senderUserId property
+        ## Sets the senderUserId property value. 
         ## @param value Value to set for the senderUserId property.
         ## @return a void
         ## 
@@ -196,14 +180,14 @@ module MicrosoftGraph::Models
             writer.write_enum_value("state", @state)
         end
         ## 
-        ## Gets the state property value. The state property
+        ## Gets the state property value. 
         ## @return a schedule_change_state
         ## 
         def state
             return @state
         end
         ## 
-        ## Sets the state property value. The state property
+        ## Sets the state property value. 
         ## @param value Value to set for the state property.
         ## @return a void
         ## 

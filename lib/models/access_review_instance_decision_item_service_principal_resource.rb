@@ -5,18 +5,16 @@ require_relative './models'
 module MicrosoftGraph::Models
     class AccessReviewInstanceDecisionItemServicePrincipalResource < MicrosoftGraph::Models::AccessReviewInstanceDecisionItemResource
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The appId property
         @app_id
         ## 
-        ## Gets the appId property value. The appId property
+        ## Gets the appId property value. 
         ## @return a string
         ## 
         def app_id
             return @app_id
         end
         ## 
-        ## Sets the appId property value. The appId property
+        ## Sets the appId property value. 
         ## @param value Value to set for the appId property.
         ## @return a void
         ## 

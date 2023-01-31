@@ -6,14 +6,8 @@ require_relative './models'
 module MicrosoftGraph::Models
     class AttachmentSession < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
-        ## 
-        # The content property
         @content
-        ## 
-        # The expirationDateTime property
         @expiration_date_time
-        ## 
-        # The nextExpectedRanges property
         @next_expected_ranges
         ## 
         ## Instantiates a new attachmentSession and sets the default values.
@@ -23,14 +17,14 @@ module MicrosoftGraph::Models
             super
         end
         ## 
-        ## Gets the content property value. The content property
+        ## Gets the content property value. 
         ## @return a binary
         ## 
         def content
             return @content
         end
         ## 
-        ## Sets the content property value. The content property
+        ## Sets the content property value. 
         ## @param value Value to set for the content property.
         ## @return a void
         ## 
@@ -47,14 +41,14 @@ module MicrosoftGraph::Models
             return AttachmentSession.new
         end
         ## 
-        ## Gets the expirationDateTime property value. The expirationDateTime property
+        ## Gets the expirationDateTime property value. 
         ## @return a date_time
         ## 
         def expiration_date_time
             return @expiration_date_time
         end
         ## 
-        ## Sets the expirationDateTime property value. The expirationDateTime property
+        ## Sets the expirationDateTime property value. 
         ## @param value Value to set for the expirationDateTime property.
         ## @return a void
         ## 
@@ -73,14 +67,14 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the nextExpectedRanges property value. The nextExpectedRanges property
+        ## Gets the nextExpectedRanges property value. 
         ## @return a string
         ## 
         def next_expected_ranges
             return @next_expected_ranges
         end
         ## 
-        ## Sets the nextExpectedRanges property value. The nextExpectedRanges property
+        ## Sets the nextExpectedRanges property value. 
         ## @param value Value to set for the nextExpectedRanges property.
         ## @return a void
         ## 

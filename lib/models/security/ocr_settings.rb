@@ -15,8 +15,6 @@ module MicrosoftGraph::Models::Security
         ## 
         # Maximum image size that will be processed in KB).
         @max_image_size
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The timeout duration for the OCR engine. A longer timeout might increase success of OCR, but might add to the total processing time.
@@ -95,14 +93,14 @@ module MicrosoftGraph::Models::Security
             @max_image_size = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

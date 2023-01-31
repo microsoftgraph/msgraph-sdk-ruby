@@ -8,14 +8,10 @@ module MicrosoftGraph::Models
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The conditions property
         @conditions
         ## 
         # Represents grant controls that must be fulfilled for the policy.
         @grant_controls
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # Represents a complex type of session controls that is enforced after sign-in.
@@ -36,14 +32,14 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the conditions property value. The conditions property
+        ## Gets the conditions property value. 
         ## @return a conditional_access_condition_set
         ## 
         def conditions
             return @conditions
         end
         ## 
-        ## Sets the conditions property value. The conditions property
+        ## Sets the conditions property value. 
         ## @param value Value to set for the conditions property.
         ## @return a void
         ## 
@@ -94,14 +90,14 @@ module MicrosoftGraph::Models
             @grant_controls = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

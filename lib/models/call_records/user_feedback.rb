@@ -9,11 +9,7 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
-        ## 
-        # The OdataType property
         @odata_type
-        ## 
-        # The rating property
         @rating
         ## 
         # The feedback text provided by the user of this endpoint for the session.
@@ -65,14 +61,14 @@ module MicrosoftGraph::Models::CallRecords
             }
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
@@ -80,14 +76,14 @@ module MicrosoftGraph::Models::CallRecords
             @odata_type = value
         end
         ## 
-        ## Gets the rating property value. The rating property
+        ## Gets the rating property value. 
         ## @return a user_feedback_rating
         ## 
         def rating
             return @rating
         end
         ## 
-        ## Sets the rating property value. The rating property
+        ## Sets the rating property value. 
         ## @param value Value to set for the rating property.
         ## @return a void
         ## 

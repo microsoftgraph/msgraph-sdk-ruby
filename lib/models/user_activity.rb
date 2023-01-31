@@ -45,8 +45,6 @@ module MicrosoftGraph::Models
         ## 
         # Optional. The timezone in which the user's device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.
         @user_timezone
-        ## 
-        # The visualElements property
         @visual_elements
         ## 
         ## Gets the activationUrl property value. Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.
@@ -305,14 +303,14 @@ module MicrosoftGraph::Models
             @user_timezone = value
         end
         ## 
-        ## Gets the visualElements property value. The visualElements property
+        ## Gets the visualElements property value. 
         ## @return a visual_info
         ## 
         def visual_elements
             return @visual_elements
         end
         ## 
-        ## Sets the visualElements property value. The visualElements property
+        ## Sets the visualElements property value. 
         ## @param value Value to set for the visualElements property.
         ## @return a void
         ## 

@@ -15,8 +15,6 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         # IP address used for this hop in the network trace.
         @ip_address
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in [ISO 8601][] format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.
@@ -95,14 +93,14 @@ module MicrosoftGraph::Models::CallRecords
             @ip_address = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

@@ -7,7 +7,7 @@ require_relative '../notification_message_templates'
 require_relative './item'
 require_relative './localized_notification_messages/item/localized_notification_message_item_request_builder'
 require_relative './localized_notification_messages/localized_notification_messages_request_builder'
-require_relative './send_test_message/send_test_message_request_builder'
+require_relative './microsoft_graph_send_test_message/send_test_message_request_builder'
 
 module MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item
     ## 
@@ -20,26 +20,27 @@ module MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item
             return MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item::LocalizedNotificationMessages::LocalizedNotificationMessagesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the sendTestMessage method.
+        def microsoft_graph_send_test_message()
+            return MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item::MicrosoftGraphSendTestMessage::SendTestMessageRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the sendTestMessage method.
-        def send_test_message()
-            return MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item::SendTestMessage::SendTestMessageRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new NotificationMessageTemplateItemRequestBuilder and sets the default values.
+        ## @param notificationMessageTemplateId key: id of notificationMessageTemplate
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, notification_message_template_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate%2Did}{?%24select,%24expand}"
@@ -52,7 +53,7 @@ module MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -66,7 +67,7 @@ module MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of notification_message_template
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -88,11 +89,11 @@ module MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item
         end
         ## 
         ## Update the navigation property notificationMessageTemplates in deviceManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of notification_message_template
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -107,7 +108,7 @@ module MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -123,7 +124,7 @@ module MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -138,11 +139,11 @@ module MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item
         end
         ## 
         ## Update the navigation property notificationMessageTemplates in deviceManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

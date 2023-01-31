@@ -11,8 +11,6 @@ module MicrosoftGraph::Models
         ## 
         # The item's unique identifier.
         @id
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # A string value that can be used to classify the item, such as 'microsoft.graph.driveItem'
@@ -79,14 +77,14 @@ module MicrosoftGraph::Models
             @id = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

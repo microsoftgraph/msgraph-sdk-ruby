@@ -52,8 +52,6 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         # The datacenter used for media path in non-bypass call.
         @media_path_location
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The datacenter used for signaling for both bypass and non-bypass calls.
@@ -348,14 +346,14 @@ module MicrosoftGraph::Models::CallRecords
             @media_path_location = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 

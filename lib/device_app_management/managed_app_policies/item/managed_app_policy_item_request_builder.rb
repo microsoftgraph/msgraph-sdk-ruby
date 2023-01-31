@@ -5,7 +5,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_app_management'
 require_relative '../managed_app_policies'
 require_relative './item'
-require_relative './target_apps/target_apps_request_builder'
+require_relative './microsoft_graph_target_apps/target_apps_request_builder'
 
 module MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item
     ## 
@@ -13,26 +13,27 @@ module MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item
     class ManagedAppPolicyItemRequestBuilder
         
         ## 
+        # Provides operations to call the targetApps method.
+        def microsoft_graph_target_apps()
+            return MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item::MicrosoftGraphTargetApps::TargetAppsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the targetApps method.
-        def target_apps()
-            return MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item::TargetApps::TargetAppsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new ManagedAppPolicyItemRequestBuilder and sets the default values.
+        ## @param managedAppPolicyId key: id of managedAppPolicy
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, managed_app_policy_id=)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceAppManagement/managedAppPolicies/{managedAppPolicy%2Did}{?%24select,%24expand}"
@@ -45,7 +46,7 @@ module MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
-        def delete(request_configuration=nil)
+        def delete(request_configuration=)
             request_info = self.to_delete_request_information(
                 request_configuration
             )
@@ -59,7 +60,7 @@ module MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of managed_app_policy
         ## 
-        def get(request_configuration=nil)
+        def get(request_configuration=)
             request_info = self.to_get_request_information(
                 request_configuration
             )
@@ -70,11 +71,11 @@ module MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item
         end
         ## 
         ## Update the navigation property managedAppPolicies in deviceAppManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of managed_app_policy
         ## 
-        def patch(body, request_configuration=nil)
+        def patch(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = self.to_patch_request_information(
                 body, request_configuration
@@ -89,7 +90,7 @@ module MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_delete_request_information(request_configuration=nil)
+        def to_delete_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -105,7 +106,7 @@ module MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_get_request_information(request_configuration=nil)
+        def to_get_request_information(request_configuration=)
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template
             request_info.path_parameters = @path_parameters
@@ -120,11 +121,11 @@ module MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item
         end
         ## 
         ## Update the navigation property managedAppPolicies in deviceAppManagement
-        ## @param body The request body
+        ## @param body 
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
-        def to_patch_request_information(body, request_configuration=nil)
+        def to_patch_request_information(body, request_configuration=)
             raise StandardError, 'body cannot be null' if body.nil?
             request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
             request_info.url_template = @url_template

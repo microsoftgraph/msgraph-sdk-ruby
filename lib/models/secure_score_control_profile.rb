@@ -51,17 +51,9 @@ module MicrosoftGraph::Models
         ## 
         # List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
         @threats
-        ## 
-        # The tier property
         @tier
-        ## 
-        # The title property
         @title
-        ## 
-        # The userImpact property
         @user_impact
-        ## 
-        # The vendorInformation property
         @vendor_information
         ## 
         ## Gets the actionType property value. Control action type (Config, Review, Behavior).
@@ -360,14 +352,14 @@ module MicrosoftGraph::Models
             @threats = value
         end
         ## 
-        ## Gets the tier property value. The tier property
+        ## Gets the tier property value. 
         ## @return a string
         ## 
         def tier
             return @tier
         end
         ## 
-        ## Sets the tier property value. The tier property
+        ## Sets the tier property value. 
         ## @param value Value to set for the tier property.
         ## @return a void
         ## 
@@ -375,14 +367,14 @@ module MicrosoftGraph::Models
             @tier = value
         end
         ## 
-        ## Gets the title property value. The title property
+        ## Gets the title property value. 
         ## @return a string
         ## 
         def title
             return @title
         end
         ## 
-        ## Sets the title property value. The title property
+        ## Sets the title property value. 
         ## @param value Value to set for the title property.
         ## @return a void
         ## 
@@ -390,14 +382,14 @@ module MicrosoftGraph::Models
             @title = value
         end
         ## 
-        ## Gets the userImpact property value. The userImpact property
+        ## Gets the userImpact property value. 
         ## @return a string
         ## 
         def user_impact
             return @user_impact
         end
         ## 
-        ## Sets the userImpact property value. The userImpact property
+        ## Sets the userImpact property value. 
         ## @param value Value to set for the userImpact property.
         ## @return a void
         ## 
@@ -405,14 +397,14 @@ module MicrosoftGraph::Models
             @user_impact = value
         end
         ## 
-        ## Gets the vendorInformation property value. The vendorInformation property
+        ## Gets the vendorInformation property value. 
         ## @return a security_vendor_information
         ## 
         def vendor_information
             return @vendor_information
         end
         ## 
-        ## Sets the vendorInformation property value. The vendorInformation property
+        ## Sets the vendorInformation property value. 
         ## @param value Value to set for the vendorInformation property.
         ## @return a void
         ## 

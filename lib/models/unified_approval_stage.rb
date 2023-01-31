@@ -23,8 +23,6 @@ module MicrosoftGraph::Models
         ## 
         # Indicates whether escalation if enabled.
         @is_escalation_enabled
-        ## 
-        # The OdataType property
         @odata_type
         ## 
         # The primary approvers of this stage.
@@ -151,14 +149,14 @@ module MicrosoftGraph::Models
             @is_escalation_enabled = value
         end
         ## 
-        ## Gets the @odata.type property value. The OdataType property
+        ## Gets the @odata.type property value. 
         ## @return a string
         ## 
         def odata_type
             return @odata_type
         end
         ## 
-        ## Sets the @odata.type property value. The OdataType property
+        ## Sets the @odata.type property value. 
         ## @param value Value to set for the OdataType property.
         ## @return a void
         ## 
