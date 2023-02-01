@@ -42,7 +42,7 @@ module MicrosoftGraph::Models
             @availability = value
         end
         ## 
-        ## Instantiates a new presence and sets the default values.
+        ## Instantiates a new Presence and sets the default values.
         ## @return a void
         ## 
         def initialize()

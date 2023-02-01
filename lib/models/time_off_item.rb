@@ -52,7 +52,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the timeOffReasonId property value. ID of the timeOffReason for this timeOffItem. Required.
-        ## @param value Value to set for the timeOffReasonId property.
+        ## @param value Value to set for the time_off_reason_id property.
         ## @return a void
         ## 
         def time_off_reason_id=(value)

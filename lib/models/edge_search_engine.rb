@@ -34,7 +34,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the edgeSearchEngineType property value. Allows IT admind to set a predefined default search engine for MDM-Controlled devices
-        ## @param value Value to set for the edgeSearchEngineType property.
+        ## @param value Value to set for the edge_search_engine_type property.
         ## @return a void
         ## 
         def edge_search_engine_type=(value)

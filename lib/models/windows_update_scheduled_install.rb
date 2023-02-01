@@ -48,7 +48,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the scheduledInstallDay property value. Possible values for a weekly schedule.
-        ## @param value Value to set for the scheduledInstallDay property.
+        ## @param value Value to set for the scheduled_install_day property.
         ## @return a void
         ## 
         def scheduled_install_day=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the scheduledInstallTime property value. Scheduled Install Time during day
-        ## @param value Value to set for the scheduledInstallTime property.
+        ## @param value Value to set for the scheduled_install_time property.
         ## @return a void
         ## 
         def scheduled_install_time=(value)

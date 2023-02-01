@@ -27,11 +27,12 @@ module MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::Attachments::It
         @url_template
         ## 
         ## Instantiates a new AttachmentItemRequestBuilder and sets the default values.
+        ## @param attachmentId key: id of attachment
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, attachment_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/attachments/{attachment%2Did}{?%24select,%24expand}"

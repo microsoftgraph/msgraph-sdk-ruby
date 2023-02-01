@@ -47,7 +47,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appliesTo property value. The object the service plan can be assigned to. The possible values are:User - service plan can be assigned to individual users.Company - service plan can be assigned to the entire tenant.
-        ## @param value Value to set for the appliesTo property.
+        ## @param value Value to set for the applies_to property.
         ## @return a void
         ## 
         def applies_to=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the provisioningStatus property value. The provisioning status of the service plan. The possible values are:Success - Service is fully provisioned.Disabled - Service has been disabled.ErrorStatus - The service plan has not been provisioned and is in an error state.PendingInput - Service is not yet provisioned; awaiting service confirmation.PendingActivation - Service is provisioned but requires explicit activation by administrator (for example, Intune_O365 service plan)PendingProvisioning - Microsoft has added a new service to the product SKU and it has not been activated in the tenant, yet.
-        ## @param value Value to set for the provisioningStatus property.
+        ## @param value Value to set for the provisioning_status property.
         ## @return a void
         ## 
         def provisioning_status=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the servicePlanId property value. The unique identifier of the service plan.
-        ## @param value Value to set for the servicePlanId property.
+        ## @param value Value to set for the service_plan_id property.
         ## @return a void
         ## 
         def service_plan_id=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the servicePlanName property value. The name of the service plan.
-        ## @param value Value to set for the servicePlanName property.
+        ## @param value Value to set for the service_plan_name property.
         ## @return a void
         ## 
         def service_plan_name=(value)

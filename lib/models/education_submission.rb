@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the reassignedBy property value. User who moved the status of this submission to reassigned.
-        ## @param value Value to set for the reassignedBy property.
+        ## @param value Value to set for the reassigned_by property.
         ## @return a void
         ## 
         def reassigned_by=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the reassignedDateTime property value. Moment in time when the submission was reassigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the reassignedDateTime property.
+        ## @param value Value to set for the reassigned_date_time property.
         ## @return a void
         ## 
         def reassigned_date_time=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourcesFolderUrl property value. Folder where all file resources for this submission need to be stored.
-        ## @param value Value to set for the resourcesFolderUrl property.
+        ## @param value Value to set for the resources_folder_url property.
         ## @return a void
         ## 
         def resources_folder_url=(value)
@@ -185,7 +185,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the returnedBy property value. User who moved the status of this submission to returned.
-        ## @param value Value to set for the returnedBy property.
+        ## @param value Value to set for the returned_by property.
         ## @return a void
         ## 
         def returned_by=(value)
@@ -200,7 +200,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the returnedDateTime property value. Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the returnedDateTime property.
+        ## @param value Value to set for the returned_date_time property.
         ## @return a void
         ## 
         def returned_date_time=(value)
@@ -243,7 +243,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the submittedBy property value. User who moved the resource into the submitted state.
-        ## @param value Value to set for the submittedBy property.
+        ## @param value Value to set for the submitted_by property.
         ## @return a void
         ## 
         def submitted_by=(value)
@@ -258,7 +258,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the submittedDateTime property value. Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the submittedDateTime property.
+        ## @param value Value to set for the submitted_date_time property.
         ## @return a void
         ## 
         def submitted_date_time=(value)
@@ -273,7 +273,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the submittedResources property value. The submittedResources property
-        ## @param value Value to set for the submittedResources property.
+        ## @param value Value to set for the submitted_resources property.
         ## @return a void
         ## 
         def submitted_resources=(value)
@@ -288,7 +288,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the unsubmittedBy property value. User who moved the resource from submitted into the working state.
-        ## @param value Value to set for the unsubmittedBy property.
+        ## @param value Value to set for the unsubmitted_by property.
         ## @return a void
         ## 
         def unsubmitted_by=(value)
@@ -303,7 +303,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the unsubmittedDateTime property value. Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the unsubmittedDateTime property.
+        ## @param value Value to set for the unsubmitted_date_time property.
         ## @return a void
         ## 
         def unsubmitted_date_time=(value)

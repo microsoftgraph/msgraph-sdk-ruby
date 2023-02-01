@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userFlowType property value. The userFlowType property
-        ## @param value Value to set for the userFlowType property.
+        ## @param value Value to set for the user_flow_type property.
         ## @return a void
         ## 
         def user_flow_type=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userFlowTypeVersion property value. The userFlowTypeVersion property
-        ## @param value Value to set for the userFlowTypeVersion property.
+        ## @param value Value to set for the user_flow_type_version property.
         ## @return a void
         ## 
         def user_flow_type_version=(value)

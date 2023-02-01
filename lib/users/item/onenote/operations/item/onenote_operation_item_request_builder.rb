@@ -24,11 +24,12 @@ module MicrosoftGraph::Users::Item::Onenote::Operations::Item
         @url_template
         ## 
         ## Instantiates a new OnenoteOperationItemRequestBuilder and sets the default values.
+        ## @param onenoteOperationId key: id of onenoteOperation
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, onenote_operation_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/users/{user%2Did}/onenote/operations/{onenoteOperation%2Did}{?%24select,%24expand}"

@@ -20,7 +20,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the agreementAcceptances property value. Represents the current status of a user's response to a company's customizable terms of use agreement.
-        ## @param value Value to set for the agreementAcceptances property.
+        ## @param value Value to set for the agreement_acceptances property.
         ## @return a void
         ## 
         def agreement_acceptances=(value)

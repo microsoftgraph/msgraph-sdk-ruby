@@ -74,7 +74,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the averageBlueScreens property value. Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999
-        ## @param value Value to set for the averageBlueScreens property.
+        ## @param value Value to set for the average_blue_screens property.
         ## @return a void
         ## 
         def average_blue_screens=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the averageRestarts property value. Average (mean) number of Restarts per device in the last 30 days. Valid values 0 to 9999999
-        ## @param value Value to set for the averageRestarts property.
+        ## @param value Value to set for the average_restarts property.
         ## @return a void
         ## 
         def average_restarts=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the blueScreenCount property value. Number of Blue Screens in the last 30 days. Valid values 0 to 9999999
-        ## @param value Value to set for the blueScreenCount property.
+        ## @param value Value to set for the blue_screen_count property.
         ## @return a void
         ## 
         def blue_screen_count=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bootScore property value. The user experience analytics device boot score.
-        ## @param value Value to set for the bootScore property.
+        ## @param value Value to set for the boot_score property.
         ## @return a void
         ## 
         def boot_score=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the coreBootTimeInMs property value. The user experience analytics device core boot time in milliseconds.
-        ## @param value Value to set for the coreBootTimeInMs property.
+        ## @param value Value to set for the core_boot_time_in_ms property.
         ## @return a void
         ## 
         def core_boot_time_in_ms=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the coreLoginTimeInMs property value. The user experience analytics device core login time in milliseconds.
-        ## @param value Value to set for the coreLoginTimeInMs property.
+        ## @param value Value to set for the core_login_time_in_ms property.
         ## @return a void
         ## 
         def core_login_time_in_ms=(value)
@@ -180,7 +180,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceCount property value. User experience analytics summarized device count.
-        ## @param value Value to set for the deviceCount property.
+        ## @param value Value to set for the device_count property.
         ## @return a void
         ## 
         def device_count=(value)
@@ -195,7 +195,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceName property value. The user experience analytics device name.
-        ## @param value Value to set for the deviceName property.
+        ## @param value Value to set for the device_name property.
         ## @return a void
         ## 
         def device_name=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the diskType property value. The diskType property
-        ## @param value Value to set for the diskType property.
+        ## @param value Value to set for the disk_type property.
         ## @return a void
         ## 
         def disk_type=(value)
@@ -253,7 +253,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the groupPolicyBootTimeInMs property value. The user experience analytics device group policy boot time in milliseconds.
-        ## @param value Value to set for the groupPolicyBootTimeInMs property.
+        ## @param value Value to set for the group_policy_boot_time_in_ms property.
         ## @return a void
         ## 
         def group_policy_boot_time_in_ms=(value)
@@ -268,7 +268,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the groupPolicyLoginTimeInMs property value. The user experience analytics device group policy login time in milliseconds.
-        ## @param value Value to set for the groupPolicyLoginTimeInMs property.
+        ## @param value Value to set for the group_policy_login_time_in_ms property.
         ## @return a void
         ## 
         def group_policy_login_time_in_ms=(value)
@@ -283,7 +283,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the healthStatus property value. The healthStatus property
-        ## @param value Value to set for the healthStatus property.
+        ## @param value Value to set for the health_status property.
         ## @return a void
         ## 
         def health_status=(value)
@@ -298,7 +298,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the loginScore property value. The user experience analytics device login score.
-        ## @param value Value to set for the loginScore property.
+        ## @param value Value to set for the login_score property.
         ## @return a void
         ## 
         def login_score=(value)
@@ -343,7 +343,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the modelStartupPerformanceScore property value. The user experience analytics model level startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-        ## @param value Value to set for the modelStartupPerformanceScore property.
+        ## @param value Value to set for the model_startup_performance_score property.
         ## @return a void
         ## 
         def model_startup_performance_score=(value)
@@ -358,7 +358,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the operatingSystemVersion property value. The user experience analytics device Operating System version.
-        ## @param value Value to set for the operatingSystemVersion property.
+        ## @param value Value to set for the operating_system_version property.
         ## @return a void
         ## 
         def operating_system_version=(value)
@@ -373,7 +373,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the responsiveDesktopTimeInMs property value. The user experience analytics responsive desktop time in milliseconds.
-        ## @param value Value to set for the responsiveDesktopTimeInMs property.
+        ## @param value Value to set for the responsive_desktop_time_in_ms property.
         ## @return a void
         ## 
         def responsive_desktop_time_in_ms=(value)
@@ -388,7 +388,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the restartCount property value. Number of Restarts in the last 30 days. Valid values 0 to 9999999
-        ## @param value Value to set for the restartCount property.
+        ## @param value Value to set for the restart_count property.
         ## @return a void
         ## 
         def restart_count=(value)
@@ -432,7 +432,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the startupPerformanceScore property value. The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
-        ## @param value Value to set for the startupPerformanceScore property.
+        ## @param value Value to set for the startup_performance_score property.
         ## @return a void
         ## 
         def startup_performance_score=(value)

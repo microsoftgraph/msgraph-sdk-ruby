@@ -25,11 +25,12 @@ module MicrosoftGraph::Users::Item::ManagedDevices::Item::DeviceCompliancePolicy
         @url_template
         ## 
         ## Instantiates a new DeviceCompliancePolicyStateItemRequestBuilder and sets the default values.
+        ## @param deviceCompliancePolicyStateId key: id of deviceCompliancePolicyState
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, device_compliance_policy_state_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/users/{user%2Did}/managedDevices/{managedDevice%2Did}/deviceCompliancePolicyStates/{deviceCompliancePolicyState%2Did}{?%24select,%24expand}"

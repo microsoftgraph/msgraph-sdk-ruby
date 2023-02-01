@@ -1,3 +1,0 @@
-require_relative 'add_token_signing_certificate_post_request_body'
-module MicrosoftGraph::ServicePrincipals::Item::AddTokenSigningCertificate
-end

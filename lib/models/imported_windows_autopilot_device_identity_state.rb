@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceErrorCode property value. Device error code reported by Device Directory Service(DDS).
-        ## @param value Value to set for the deviceErrorCode property.
+        ## @param value Value to set for the device_error_code property.
         ## @return a void
         ## 
         def device_error_code=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceErrorName property value. Device error name reported by Device Directory Service(DDS).
-        ## @param value Value to set for the deviceErrorName property.
+        ## @param value Value to set for the device_error_name property.
         ## @return a void
         ## 
         def device_error_name=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceImportStatus property value. The deviceImportStatus property
-        ## @param value Value to set for the deviceImportStatus property.
+        ## @param value Value to set for the device_import_status property.
         ## @return a void
         ## 
         def device_import_status=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceRegistrationId property value. Device Registration ID for successfully added device reported by Device Directory Service(DDS).
-        ## @param value Value to set for the deviceRegistrationId property.
+        ## @param value Value to set for the device_registration_id property.
         ## @return a void
         ## 
         def device_registration_id=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

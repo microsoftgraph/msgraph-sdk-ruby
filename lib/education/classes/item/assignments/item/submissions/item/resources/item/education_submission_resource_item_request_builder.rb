@@ -28,11 +28,12 @@ module MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions:
         @url_template
         ## 
         ## Instantiates a new EducationSubmissionResourceItemRequestBuilder and sets the default values.
+        ## @param educationSubmissionResourceId key: id of educationSubmissionResource
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, education_submission_resource_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/resources/{educationSubmissionResource%2Did}{?%24select,%24expand}"

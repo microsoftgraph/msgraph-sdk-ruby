@@ -22,11 +22,12 @@ module MicrosoftGraph::AuthenticationMethodsPolicy::AuthenticationMethodConfigur
         @url_template
         ## 
         ## Instantiates a new AuthenticationMethodConfigurationItemRequestBuilder and sets the default values.
+        ## @param authenticationMethodConfigurationId key: id of authenticationMethodConfiguration
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, authentication_method_configuration_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/authenticationMethodsPolicy/authenticationMethodConfigurations/{authenticationMethodConfiguration%2Did}{?%24select,%24expand}"

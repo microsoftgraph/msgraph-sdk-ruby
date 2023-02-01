@@ -11,17 +11,17 @@ module MicrosoftGraph::Models::CallRecords
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
         ## 
-        # Number of the user or bot who received the call. E.164 format, but may include additional data.
-        @callee_number
-        ## 
         # In addition to the SIP codes, Microsoft has own subcodes that indicate the specific issue.
         @call_end_sub_reason
         ## 
-        # Number of the user or bot who made the call. E.164 format, but may include additional data.
-        @caller_number
-        ## 
         # Call type and direction.
         @call_type
+        ## 
+        # Number of the user or bot who received the call. E.164 format, but may include additional data.
+        @callee_number
+        ## 
+        # Number of the user or bot who made the call. E.164 format, but may include additional data.
+        @caller_number
         ## 
         # Identifier for the call that you can use when calling Microsoft Support. GUID.
         @correlation_id
@@ -92,21 +92,6 @@ module MicrosoftGraph::Models::CallRecords
             @additional_data = value
         end
         ## 
-        ## Gets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include additional data.
-        ## @return a string
-        ## 
-        def callee_number
-            return @callee_number
-        end
-        ## 
-        ## Sets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include additional data.
-        ## @param value Value to set for the calleeNumber property.
-        ## @return a void
-        ## 
-        def callee_number=(value)
-            @callee_number = value
-        end
-        ## 
         ## Gets the callEndSubReason property value. In addition to the SIP codes, Microsoft has own subcodes that indicate the specific issue.
         ## @return a integer
         ## 
@@ -115,26 +100,11 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the callEndSubReason property value. In addition to the SIP codes, Microsoft has own subcodes that indicate the specific issue.
-        ## @param value Value to set for the callEndSubReason property.
+        ## @param value Value to set for the call_end_sub_reason property.
         ## @return a void
         ## 
         def call_end_sub_reason=(value)
             @call_end_sub_reason = value
-        end
-        ## 
-        ## Gets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include additional data.
-        ## @return a string
-        ## 
-        def caller_number
-            return @caller_number
-        end
-        ## 
-        ## Sets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include additional data.
-        ## @param value Value to set for the callerNumber property.
-        ## @return a void
-        ## 
-        def caller_number=(value)
-            @caller_number = value
         end
         ## 
         ## Gets the callType property value. Call type and direction.
@@ -145,11 +115,41 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the callType property value. Call type and direction.
-        ## @param value Value to set for the callType property.
+        ## @param value Value to set for the call_type property.
         ## @return a void
         ## 
         def call_type=(value)
             @call_type = value
+        end
+        ## 
+        ## Gets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include additional data.
+        ## @return a string
+        ## 
+        def callee_number
+            return @callee_number
+        end
+        ## 
+        ## Sets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include additional data.
+        ## @param value Value to set for the callee_number property.
+        ## @return a void
+        ## 
+        def callee_number=(value)
+            @callee_number = value
+        end
+        ## 
+        ## Gets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include additional data.
+        ## @return a string
+        ## 
+        def caller_number
+            return @caller_number
+        end
+        ## 
+        ## Sets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include additional data.
+        ## @param value Value to set for the caller_number property.
+        ## @return a void
+        ## 
+        def caller_number=(value)
+            @caller_number = value
         end
         ## 
         ## Instantiates a new directRoutingLogRow and sets the default values.
@@ -167,7 +167,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the correlationId property value. Identifier for the call that you can use when calling Microsoft Support. GUID.
-        ## @param value Value to set for the correlationId property.
+        ## @param value Value to set for the correlation_id property.
         ## @return a void
         ## 
         def correlation_id=(value)
@@ -206,7 +206,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the endDateTime property value. Only exists for successful (fully established) calls. Time when call ended.
-        ## @param value Value to set for the endDateTime property.
+        ## @param value Value to set for the end_date_time property.
         ## @return a void
         ## 
         def end_date_time=(value)
@@ -221,7 +221,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the failureDateTime property value. Only exists for failed (not fully established) calls.
-        ## @param value Value to set for the failureDateTime property.
+        ## @param value Value to set for the failure_date_time property.
         ## @return a void
         ## 
         def failure_date_time=(value)
@@ -236,7 +236,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the finalSipCode property value. The code with which the call ended, RFC 3261.
-        ## @param value Value to set for the finalSipCode property.
+        ## @param value Value to set for the final_sip_code property.
         ## @return a void
         ## 
         def final_sip_code=(value)
@@ -251,7 +251,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the finalSipCodePhrase property value. Description of the SIP code and Microsoft subcode.
-        ## @param value Value to set for the finalSipCodePhrase property.
+        ## @param value Value to set for the final_sip_code_phrase property.
         ## @return a void
         ## 
         def final_sip_code_phrase=(value)
@@ -263,10 +263,10 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         def get_field_deserializers()
             return {
-                "calleeNumber" => lambda {|n| @callee_number = n.get_string_value() },
                 "callEndSubReason" => lambda {|n| @call_end_sub_reason = n.get_number_value() },
-                "callerNumber" => lambda {|n| @caller_number = n.get_string_value() },
                 "callType" => lambda {|n| @call_type = n.get_string_value() },
+                "calleeNumber" => lambda {|n| @callee_number = n.get_string_value() },
+                "callerNumber" => lambda {|n| @caller_number = n.get_string_value() },
                 "correlationId" => lambda {|n| @correlation_id = n.get_string_value() },
                 "duration" => lambda {|n| @duration = n.get_number_value() },
                 "endDateTime" => lambda {|n| @end_date_time = n.get_date_time_value() },
@@ -311,7 +311,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the inviteDateTime property value. When the initial invite was sent.
-        ## @param value Value to set for the inviteDateTime property.
+        ## @param value Value to set for the invite_date_time property.
         ## @return a void
         ## 
         def invite_date_time=(value)
@@ -326,7 +326,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the mediaBypassEnabled property value. Indicates if the trunk was enabled for media bypass or not.
-        ## @param value Value to set for the mediaBypassEnabled property.
+        ## @param value Value to set for the media_bypass_enabled property.
         ## @return a void
         ## 
         def media_bypass_enabled=(value)
@@ -341,7 +341,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the mediaPathLocation property value. The datacenter used for media path in non-bypass call.
-        ## @param value Value to set for the mediaPathLocation property.
+        ## @param value Value to set for the media_path_location property.
         ## @return a void
         ## 
         def media_path_location=(value)
@@ -356,7 +356,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -369,10 +369,10 @@ module MicrosoftGraph::Models::CallRecords
         ## 
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
-            writer.write_string_value("calleeNumber", @callee_number)
             writer.write_number_value("callEndSubReason", @call_end_sub_reason)
-            writer.write_string_value("callerNumber", @caller_number)
             writer.write_string_value("callType", @call_type)
+            writer.write_string_value("calleeNumber", @callee_number)
+            writer.write_string_value("callerNumber", @caller_number)
             writer.write_string_value("correlationId", @correlation_id)
             writer.write_number_value("duration", @duration)
             writer.write_date_time_value("endDateTime", @end_date_time)
@@ -402,7 +402,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the signalingLocation property value. The datacenter used for signaling for both bypass and non-bypass calls.
-        ## @param value Value to set for the signalingLocation property.
+        ## @param value Value to set for the signaling_location property.
         ## @return a void
         ## 
         def signaling_location=(value)
@@ -417,7 +417,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the startDateTime property value. Call start time.For failed and unanswered calls, this can be equal to invite or failure time.
-        ## @param value Value to set for the startDateTime property.
+        ## @param value Value to set for the start_date_time property.
         ## @return a void
         ## 
         def start_date_time=(value)
@@ -432,7 +432,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the successfulCall property value. Success or attempt.
-        ## @param value Value to set for the successfulCall property.
+        ## @param value Value to set for the successful_call property.
         ## @return a void
         ## 
         def successful_call=(value)
@@ -447,7 +447,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the trunkFullyQualifiedDomainName property value. Fully qualified domain name of the session border controller.
-        ## @param value Value to set for the trunkFullyQualifiedDomainName property.
+        ## @param value Value to set for the trunk_fully_qualified_domain_name property.
         ## @return a void
         ## 
         def trunk_fully_qualified_domain_name=(value)
@@ -462,7 +462,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the userDisplayName property value. Display name of the user.
-        ## @param value Value to set for the userDisplayName property.
+        ## @param value Value to set for the user_display_name property.
         ## @return a void
         ## 
         def user_display_name=(value)
@@ -477,7 +477,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the userId property value. Calling user's ID in Graph. This and other user info will be null/empty for bot call types. GUID.
-        ## @param value Value to set for the userId property.
+        ## @param value Value to set for the user_id property.
         ## @return a void
         ## 
         def user_id=(value)
@@ -492,7 +492,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the userPrincipalName property value. UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
-        ## @param value Value to set for the userPrincipalName property.
+        ## @param value Value to set for the user_principal_name property.
         ## @return a void
         ## 
         def user_principal_name=(value)

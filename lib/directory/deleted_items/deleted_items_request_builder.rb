@@ -4,14 +4,14 @@ require_relative '../../models/directory_object'
 require_relative '../../models/directory_object_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../directory'
-require_relative './application/application_request_builder'
 require_relative './count/count_request_builder'
 require_relative './deleted_items'
-require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
-require_relative './get_by_ids/get_by_ids_request_builder'
-require_relative './group/group_request_builder'
-require_relative './user/user_request_builder'
-require_relative './validate_properties/validate_properties_request_builder'
+require_relative './microsoft_graph_application/application_request_builder'
+require_relative './microsoft_graph_get_available_extension_properties/get_available_extension_properties_request_builder'
+require_relative './microsoft_graph_get_by_ids/get_by_ids_request_builder'
+require_relative './microsoft_graph_group/group_request_builder'
+require_relative './microsoft_graph_user/user_request_builder'
+require_relative './microsoft_graph_validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph::Directory::DeletedItems
     ## 
@@ -19,29 +19,39 @@ module MicrosoftGraph::Directory::DeletedItems
     class DeletedItemsRequestBuilder
         
         ## 
-        # Casts the previous resource to application.
-        def application()
-            return MicrosoftGraph::Directory::DeletedItems::Application::ApplicationRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Directory::DeletedItems::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Casts the previous resource to application.
+        def microsoft_graph_application()
+            return MicrosoftGraph::Directory::DeletedItems::MicrosoftGraphApplication::ApplicationRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the getAvailableExtensionProperties method.
-        def get_available_extension_properties()
-            return MicrosoftGraph::Directory::DeletedItems::GetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_available_extension_properties()
+            return MicrosoftGraph::Directory::DeletedItems::MicrosoftGraphGetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getByIds method.
-        def get_by_ids()
-            return MicrosoftGraph::Directory::DeletedItems::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_by_ids()
+            return MicrosoftGraph::Directory::DeletedItems::MicrosoftGraphGetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to group.
-        def group()
-            return MicrosoftGraph::Directory::DeletedItems::Group::GroupRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_group()
+            return MicrosoftGraph::Directory::DeletedItems::MicrosoftGraphGroup::GroupRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Casts the previous resource to user.
+        def microsoft_graph_user()
+            return MicrosoftGraph::Directory::DeletedItems::MicrosoftGraphUser::UserRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the validateProperties method.
+        def microsoft_graph_validate_properties()
+            return MicrosoftGraph::Directory::DeletedItems::MicrosoftGraphValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -52,16 +62,6 @@ module MicrosoftGraph::Directory::DeletedItems
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        # Casts the previous resource to user.
-        def user()
-            return MicrosoftGraph::Directory::DeletedItems::User::UserRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the validateProperties method.
-        def validate_properties()
-            return MicrosoftGraph::Directory::DeletedItems::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new DeletedItemsRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request

@@ -37,10 +37,11 @@ module MicrosoftGraph::Print::TaskDefinitions::Item::Tasks::Item
         ## 
         ## Instantiates a new PrintTaskItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
+        ## @param printTaskId key: id of printTask
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, print_task_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/print/taskDefinitions/{printTaskDefinition%2Did}/tasks/{printTask%2Did}{?%24select,%24expand}"

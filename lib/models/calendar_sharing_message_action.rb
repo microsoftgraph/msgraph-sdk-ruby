@@ -44,7 +44,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the actionType property value. The actionType property
-        ## @param value Value to set for the actionType property.
+        ## @param value Value to set for the action_type property.
         ## @return a void
         ## 
         def action_type=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

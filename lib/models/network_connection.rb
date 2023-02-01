@@ -96,7 +96,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applicationName property value. Name of the application managing the network connection (for example, Facebook or SMTP).
-        ## @param value Value to set for the applicationName property.
+        ## @param value Value to set for the application_name property.
         ## @return a void
         ## 
         def application_name=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the destinationAddress property value. Destination IP address (of the network connection).
-        ## @param value Value to set for the destinationAddress property.
+        ## @param value Value to set for the destination_address property.
         ## @return a void
         ## 
         def destination_address=(value)
@@ -142,7 +142,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the destinationDomain property value. Destination domain portion of the destination URL. (for example 'www.contoso.com').
-        ## @param value Value to set for the destinationDomain property.
+        ## @param value Value to set for the destination_domain property.
         ## @return a void
         ## 
         def destination_domain=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the destinationLocation property value. Location (by IP address mapping) associated with the destination of a network connection.
-        ## @param value Value to set for the destinationLocation property.
+        ## @param value Value to set for the destination_location property.
         ## @return a void
         ## 
         def destination_location=(value)
@@ -172,7 +172,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the destinationPort property value. Destination port (of the network connection).
-        ## @param value Value to set for the destinationPort property.
+        ## @param value Value to set for the destination_port property.
         ## @return a void
         ## 
         def destination_port=(value)
@@ -187,7 +187,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the destinationUrl property value. Network connection URL/URI string - excluding parameters. (for example 'www.contoso.com/products/default.html')
-        ## @param value Value to set for the destinationUrl property.
+        ## @param value Value to set for the destination_url property.
         ## @return a void
         ## 
         def destination_url=(value)
@@ -217,7 +217,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the domainRegisteredDateTime property value. Date when the destination domain was registered. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the domainRegisteredDateTime property.
+        ## @param value Value to set for the domain_registered_date_time property.
         ## @return a void
         ## 
         def domain_registered_date_time=(value)
@@ -261,7 +261,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the localDnsName property value. The local DNS name resolution as it appears in the host's local DNS cache (for example, in case the 'hosts' file was tampered with).
-        ## @param value Value to set for the localDnsName property.
+        ## @param value Value to set for the local_dns_name property.
         ## @return a void
         ## 
         def local_dns_name=(value)
@@ -276,7 +276,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the natDestinationAddress property value. Network Address Translation destination IP address.
-        ## @param value Value to set for the natDestinationAddress property.
+        ## @param value Value to set for the nat_destination_address property.
         ## @return a void
         ## 
         def nat_destination_address=(value)
@@ -291,7 +291,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the natDestinationPort property value. Network Address Translation destination port.
-        ## @param value Value to set for the natDestinationPort property.
+        ## @param value Value to set for the nat_destination_port property.
         ## @return a void
         ## 
         def nat_destination_port=(value)
@@ -306,7 +306,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the natSourceAddress property value. Network Address Translation source IP address.
-        ## @param value Value to set for the natSourceAddress property.
+        ## @param value Value to set for the nat_source_address property.
         ## @return a void
         ## 
         def nat_source_address=(value)
@@ -321,7 +321,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the natSourcePort property value. Network Address Translation source port.
-        ## @param value Value to set for the natSourcePort property.
+        ## @param value Value to set for the nat_source_port property.
         ## @return a void
         ## 
         def nat_source_port=(value)
@@ -336,7 +336,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -366,7 +366,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskScore property value. Provider generated/calculated risk score of the network connection. Recommended value range of 0-1, which equates to a percentage.
-        ## @param value Value to set for the riskScore property.
+        ## @param value Value to set for the risk_score property.
         ## @return a void
         ## 
         def risk_score=(value)
@@ -411,7 +411,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sourceAddress property value. Source (i.e. origin) IP address (of the network connection).
-        ## @param value Value to set for the sourceAddress property.
+        ## @param value Value to set for the source_address property.
         ## @return a void
         ## 
         def source_address=(value)
@@ -426,7 +426,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sourceLocation property value. Location (by IP address mapping) associated with the source of a network connection.
-        ## @param value Value to set for the sourceLocation property.
+        ## @param value Value to set for the source_location property.
         ## @return a void
         ## 
         def source_location=(value)
@@ -441,7 +441,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sourcePort property value. Source (i.e. origin) IP port (of the network connection).
-        ## @param value Value to set for the sourcePort property.
+        ## @param value Value to set for the source_port property.
         ## @return a void
         ## 
         def source_port=(value)
@@ -471,7 +471,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the urlParameters property value. Parameters (suffix) of the destination URL.
-        ## @param value Value to set for the urlParameters property.
+        ## @param value Value to set for the url_parameters property.
         ## @return a void
         ## 
         def url_parameters=(value)

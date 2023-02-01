@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Indicates the visible name defined for the resource. Typically specified when the resource is created.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the groupType property value. When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue
-        ## @param value Value to set for the groupType property.
+        ## @param value Value to set for the group_type property.
         ## @return a void
         ## 
         def group_type=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the modifiedProperties property value. Indicates name, old value and new value of each attribute that changed. Property values depend on the operation type.
-        ## @param value Value to set for the modifiedProperties property.
+        ## @param value Value to set for the modified_properties property.
         ## @return a void
         ## 
         def modified_properties=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -190,7 +190,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userPrincipalName property value. When type is set to User, this includes the user name that initiated the action; null for other types.
-        ## @param value Value to set for the userPrincipalName property.
+        ## @param value Value to set for the user_principal_name property.
         ## @return a void
         ## 
         def user_principal_name=(value)

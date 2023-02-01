@@ -55,7 +55,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
-        ## @param value Value to set for the minimumSupportedOperatingSystem property.
+        ## @param value Value to set for the minimum_supported_operating_system property.
         ## @return a void
         ## 
         def minimum_supported_operating_system=(value)
@@ -70,7 +70,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the packageId property value. The package identifier.
-        ## @param value Value to set for the packageId property.
+        ## @param value Value to set for the package_id property.
         ## @return a void
         ## 
         def package_id=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the versionCode property value. The version code of Android Line of Business (LoB) app.
-        ## @param value Value to set for the versionCode property.
+        ## @param value Value to set for the version_code property.
         ## @return a void
         ## 
         def version_code=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the versionName property value. The version name of Android Line of Business (LoB) app.
-        ## @param value Value to set for the versionName property.
+        ## @param value Value to set for the version_name property.
         ## @return a void
         ## 
         def version_name=(value)

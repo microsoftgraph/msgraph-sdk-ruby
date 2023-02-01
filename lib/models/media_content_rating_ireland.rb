@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the movieRating property value. Movies rating labels in Ireland
-        ## @param value Value to set for the movieRating property.
+        ## @param value Value to set for the movie_rating property.
         ## @return a void
         ## 
         def movie_rating=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tvRating property value. TV content rating labels in Ireland
-        ## @param value Value to set for the tvRating property.
+        ## @param value Value to set for the tv_rating property.
         ## @return a void
         ## 
         def tv_rating=(value)

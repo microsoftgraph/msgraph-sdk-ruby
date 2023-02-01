@@ -24,11 +24,12 @@ module MicrosoftGraph::DeviceAppManagement::MobileApps::Item::Assignments::Item
         @url_template
         ## 
         ## Instantiates a new MobileAppAssignmentItemRequestBuilder and sets the default values.
+        ## @param mobileAppAssignmentId key: id of mobileAppAssignment
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, mobile_app_assignment_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/assignments/{mobileAppAssignment%2Did}{?%24select,%24expand}"

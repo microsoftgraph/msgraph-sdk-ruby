@@ -120,7 +120,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dynamicCriteria property value. The dynamicCriteria property
-        ## @param value Value to set for the dynamicCriteria property.
+        ## @param value Value to set for the dynamic_criteria property.
         ## @return a void
         ## 
         def dynamic_criteria=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the filterOn property value. The filterOn property
-        ## @param value Value to set for the filterOn property.
+        ## @param value Value to set for the filter_on property.
         ## @return a void
         ## 
         def filter_on=(value)
@@ -182,7 +182,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

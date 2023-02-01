@@ -29,7 +29,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the containedApps property value. The collection of contained apps in a MobileLobApp acting as a package.
-        ## @param value Value to set for the containedApps property.
+        ## @param value Value to set for the contained_apps property.
         ## @return a void
         ## 
         def contained_apps=(value)

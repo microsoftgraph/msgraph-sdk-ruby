@@ -23,11 +23,12 @@ module MicrosoftGraph::Policies::CrossTenantAccessPolicy::Partners::Item
         @url_template
         ## 
         ## Instantiates a new CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder and sets the default values.
+        ## @param crossTenantAccessPolicyConfigurationPartnerTenantId key: tenantId of crossTenantAccessPolicyConfigurationPartner
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, cross_tenant_access_policy_configuration_partner_tenant_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner%2DtenantId}{?%24select,%24expand}"

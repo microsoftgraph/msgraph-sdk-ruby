@@ -26,7 +26,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the committedContentVersion property value. The internal committed content version.
-        ## @param value Value to set for the committedContentVersion property.
+        ## @param value Value to set for the committed_content_version property.
         ## @return a void
         ## 
         def committed_content_version=(value)
@@ -49,7 +49,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentVersions property value. The list of content versions for this app.
-        ## @param value Value to set for the contentVersions property.
+        ## @param value Value to set for the content_versions property.
         ## @return a void
         ## 
         def content_versions=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fileName property value. The name of the main Lob application file.
-        ## @param value Value to set for the fileName property.
+        ## @param value Value to set for the file_name property.
         ## @return a void
         ## 
         def file_name=(value)

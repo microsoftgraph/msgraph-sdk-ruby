@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the openShiftId property value. ID for the open shift.
-        ## @param value Value to set for the openShiftId property.
+        ## @param value Value to set for the open_shift_id property.
         ## @return a void
         ## 
         def open_shift_id=(value)

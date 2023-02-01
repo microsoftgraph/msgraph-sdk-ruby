@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it is automatically denied.
-        ## @param value Value to set for the approvalStageTimeOutInDays property.
+        ## @param value Value to set for the approval_stage_time_out_in_days property.
         ## @return a void
         ## 
         def approval_stage_time_out_in_days=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the escalationApprovers property value. The escalation approvers for this stage when the primary approvers don't respond.
-        ## @param value Value to set for the escalationApprovers property.
+        ## @param value Value to set for the escalation_approvers property.
         ## @return a void
         ## 
         def escalation_approvers=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the escalationTimeInMinutes property value. The time a request can be pending a response from a primary approver before it can be escalated to the escalation approvers.
-        ## @param value Value to set for the escalationTimeInMinutes property.
+        ## @param value Value to set for the escalation_time_in_minutes property.
         ## @return a void
         ## 
         def escalation_time_in_minutes=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isApproverJustificationRequired property value. Indicates whether the approver must provide justification for their reponse.
-        ## @param value Value to set for the isApproverJustificationRequired property.
+        ## @param value Value to set for the is_approver_justification_required property.
         ## @return a void
         ## 
         def is_approver_justification_required=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isEscalationEnabled property value. Indicates whether escalation if enabled.
-        ## @param value Value to set for the isEscalationEnabled property.
+        ## @param value Value to set for the is_escalation_enabled property.
         ## @return a void
         ## 
         def is_escalation_enabled=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -174,7 +174,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the primaryApprovers property value. The primary approvers of this stage.
-        ## @param value Value to set for the primaryApprovers property.
+        ## @param value Value to set for the primary_approvers property.
         ## @return a void
         ## 
         def primary_approvers=(value)

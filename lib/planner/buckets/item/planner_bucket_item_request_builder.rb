@@ -30,10 +30,11 @@ module MicrosoftGraph::Planner::Buckets::Item
         ## 
         ## Instantiates a new PlannerBucketItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
+        ## @param plannerBucketId key: id of plannerBucket
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, planner_bucket_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/planner/buckets/{plannerBucket%2Did}{?%24select,%24expand}"

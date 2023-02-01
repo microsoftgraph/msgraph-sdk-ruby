@@ -48,7 +48,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignedDateTime property value. Date and time of assignment of the training to the user.
-        ## @param value Value to set for the assignedDateTime property.
+        ## @param value Value to set for the assigned_date_time property.
         ## @return a void
         ## 
         def assigned_date_time=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the completionDateTime property value. Date and time of completion of the training by the user.
-        ## @param value Value to set for the completionDateTime property.
+        ## @param value Value to set for the completion_date_time property.
         ## @return a void
         ## 
         def completion_date_time=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Display name of the assigned training.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the trainingStatus property value. The status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
-        ## @param value Value to set for the trainingStatus property.
+        ## @param value Value to set for the training_status property.
         ## @return a void
         ## 
         def training_status=(value)

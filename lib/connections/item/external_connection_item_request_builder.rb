@@ -48,11 +48,12 @@ module MicrosoftGraph::Connections::Item
         @url_template
         ## 
         ## Instantiates a new ExternalConnectionItemRequestBuilder and sets the default values.
+        ## @param externalConnectionId key: id of externalConnection
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, external_connection_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/connections/{externalConnection%2Did}{?%24select,%24expand}"
@@ -61,7 +62,7 @@ module MicrosoftGraph::Connections::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from connections by key (id)
+        ## Delete entity from connections
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -75,7 +76,7 @@ module MicrosoftGraph::Connections::Item
             return @request_adapter.send_async(request_info, nil, error_mapping)
         end
         ## 
-        ## Get entity from connections by key (id)
+        ## Get entity from connections by key
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of external_connection
         ## 
@@ -122,7 +123,7 @@ module MicrosoftGraph::Connections::Item
             return MicrosoftGraph::Connections::Item::Operations::Item::ConnectionOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Update entity in connections by key (id)
+        ## Update entity in connections
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of external_connection
@@ -138,7 +139,7 @@ module MicrosoftGraph::Connections::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ExternalConnection.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from connections by key (id)
+        ## Delete entity from connections
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -154,7 +155,7 @@ module MicrosoftGraph::Connections::Item
             return request_info
         end
         ## 
-        ## Get entity from connections by key (id)
+        ## Get entity from connections by key
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -172,7 +173,7 @@ module MicrosoftGraph::Connections::Item
             return request_info
         end
         ## 
-        ## Update entity in connections by key (id)
+        ## Update entity in connections
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
@@ -205,7 +206,7 @@ module MicrosoftGraph::Connections::Item
         end
 
         ## 
-        # Get entity from connections by key (id)
+        # Get entity from connections by key
         class ExternalConnectionItemRequestBuilderGetQueryParameters
             
             ## 

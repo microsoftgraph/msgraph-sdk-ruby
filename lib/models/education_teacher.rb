@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalId property value. ID of the teacher in the source system.
-        ## @param value Value to set for the externalId property.
+        ## @param value Value to set for the external_id property.
         ## @return a void
         ## 
         def external_id=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the teacherNumber property value. Teacher number.
-        ## @param value Value to set for the teacherNumber property.
+        ## @param value Value to set for the teacher_number property.
         ## @return a void
         ## 
         def teacher_number=(value)

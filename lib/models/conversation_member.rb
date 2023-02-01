@@ -56,7 +56,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name of the user.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the visibleHistoryStartDateTime property value. The timestamp denoting how far back a conversation's history is shared with the conversation member. This property is settable only for members of a chat.
-        ## @param value Value to set for the visibleHistoryStartDateTime property.
+        ## @param value Value to set for the visible_history_start_date_time property.
         ## @return a void
         ## 
         def visible_history_start_date_time=(value)

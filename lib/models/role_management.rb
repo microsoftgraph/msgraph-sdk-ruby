@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the entitlementManagement property value. Container for roles and assignments for entitlement management resources.
-        ## @param value Value to set for the entitlementManagement property.
+        ## @param value Value to set for the entitlement_management property.
         ## @return a void
         ## 
         def entitlement_management=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

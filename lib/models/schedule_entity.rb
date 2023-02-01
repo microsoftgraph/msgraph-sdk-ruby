@@ -73,7 +73,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the endDateTime property value. The endDateTime property
-        ## @param value Value to set for the endDateTime property.
+        ## @param value Value to set for the end_date_time property.
         ## @return a void
         ## 
         def end_date_time=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the startDateTime property value. The startDateTime property
-        ## @param value Value to set for the startDateTime property.
+        ## @param value Value to set for the start_date_time property.
         ## @return a void
         ## 
         def start_date_time=(value)

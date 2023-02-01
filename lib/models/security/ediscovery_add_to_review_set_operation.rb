@@ -47,7 +47,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the reviewSet property value. eDiscovery review set to which items matching source collection query gets added.
-        ## @param value Value to set for the reviewSet property.
+        ## @param value Value to set for the review_set property.
         ## @return a void
         ## 
         def review_set=(value)

@@ -7,11 +7,11 @@ require_relative '../../../../groups'
 require_relative '../../../item'
 require_relative '../../sites'
 require_relative '../item'
-require_relative './add_copy/add_copy_request_builder'
-require_relative './add_copy_from_content_type_hub/add_copy_from_content_type_hub_request_builder'
 require_relative './content_types'
 require_relative './count/count_request_builder'
-require_relative './get_compatible_hub_content_types/get_compatible_hub_content_types_request_builder'
+require_relative './microsoft_graph_add_copy/add_copy_request_builder'
+require_relative './microsoft_graph_add_copy_from_content_type_hub/add_copy_from_content_type_hub_request_builder'
+require_relative './microsoft_graph_get_compatible_hub_content_types/get_compatible_hub_content_types_request_builder'
 
 module MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes
     ## 
@@ -19,19 +19,24 @@ module MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes
     class ContentTypesRequestBuilder
         
         ## 
-        # Provides operations to call the addCopy method.
-        def add_copy()
-            return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::AddCopy::AddCopyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the addCopyFromContentTypeHub method.
-        def add_copy_from_content_type_hub()
-            return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::AddCopyFromContentTypeHub::AddCopyFromContentTypeHubRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the addCopy method.
+        def microsoft_graph_add_copy()
+            return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::MicrosoftGraphAddCopy::AddCopyRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the addCopyFromContentTypeHub method.
+        def microsoft_graph_add_copy_from_content_type_hub()
+            return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::MicrosoftGraphAddCopyFromContentTypeHub::AddCopyFromContentTypeHubRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getCompatibleHubContentTypes method.
+        def microsoft_graph_get_compatible_hub_content_types()
+            return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::MicrosoftGraphGetCompatibleHubContentTypes::GetCompatibleHubContentTypesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -69,13 +74,6 @@ module MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ContentTypeCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Provides operations to call the getCompatibleHubContentTypes method.
-        ## @return a get_compatible_hub_content_types_request_builder
-        ## 
-        def get_compatible_hub_content_types()
-            return GetCompatibleHubContentTypesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Create a new [contentType][] in a [site][].

@@ -49,7 +49,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the auditResourceType property value. Audit resource's type.
-        ## @param value Value to set for the auditResourceType property.
+        ## @param value Value to set for the audit_resource_type property.
         ## @return a void
         ## 
         def audit_resource_type=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Display name.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the modifiedProperties property value. List of modified properties.
-        ## @param value Value to set for the modifiedProperties property.
+        ## @param value Value to set for the modified_properties property.
         ## @return a void
         ## 
         def modified_properties=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceId property value. Audit resource's Id.
-        ## @param value Value to set for the resourceId property.
+        ## @param value Value to set for the resource_id property.
         ## @return a void
         ## 
         def resource_id=(value)

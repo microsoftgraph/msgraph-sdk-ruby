@@ -46,7 +46,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the buildNumber property value. The build number of the app.
-        ## @param value Value to set for the buildNumber property.
+        ## @param value Value to set for the build_number property.
         ## @return a void
         ## 
         def build_number=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bundleId property value. The bundleId of the app.
-        ## @param value Value to set for the bundleId property.
+        ## @param value Value to set for the bundle_id property.
         ## @return a void
         ## 
         def bundle_id=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the versionNumber property value. The version number of the app.
-        ## @param value Value to set for the versionNumber property.
+        ## @param value Value to set for the version_number property.
         ## @return a void
         ## 
         def version_number=(value)

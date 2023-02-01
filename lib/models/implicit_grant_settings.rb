@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enableAccessTokenIssuance property value. Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.
-        ## @param value Value to set for the enableAccessTokenIssuance property.
+        ## @param value Value to set for the enable_access_token_issuance property.
         ## @return a void
         ## 
         def enable_access_token_issuance=(value)
@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enableIdTokenIssuance property value. Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
-        ## @param value Value to set for the enableIdTokenIssuance property.
+        ## @param value Value to set for the enable_id_token_issuance property.
         ## @return a void
         ## 
         def enable_id_token_issuance=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

@@ -92,7 +92,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the conversationId property value. Unique ID of the conversation. Read-only.
-        ## @param value Value to set for the conversationId property.
+        ## @param value Value to set for the conversation_id property.
         ## @return a void
         ## 
         def conversation_id=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the conversationThreadId property value. Unique ID of the conversation thread. Read-only.
-        ## @param value Value to set for the conversationThreadId property.
+        ## @param value Value to set for the conversation_thread_id property.
         ## @return a void
         ## 
         def conversation_thread_id=(value)
@@ -182,7 +182,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hasAttachments property value. Indicates whether the post has at least one attachment. This is a default property.
-        ## @param value Value to set for the hasAttachments property.
+        ## @param value Value to set for the has_attachments property.
         ## @return a void
         ## 
         def has_attachments=(value)
@@ -197,7 +197,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the inReplyTo property value. Read-only. Supports $expand.
-        ## @param value Value to set for the inReplyTo property.
+        ## @param value Value to set for the in_reply_to property.
         ## @return a void
         ## 
         def in_reply_to=(value)
@@ -212,7 +212,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the post. Read-only. Nullable.
-        ## @param value Value to set for the multiValueExtendedProperties property.
+        ## @param value Value to set for the multi_value_extended_properties property.
         ## @return a void
         ## 
         def multi_value_extended_properties=(value)
@@ -227,7 +227,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the newParticipants property value. Conversation participants that were added to the thread as part of this post.
-        ## @param value Value to set for the newParticipants property.
+        ## @param value Value to set for the new_participants property.
         ## @return a void
         ## 
         def new_participants=(value)
@@ -242,7 +242,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the receivedDateTime property value. Specifies when the post was received. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the receivedDateTime property.
+        ## @param value Value to set for the received_date_time property.
         ## @return a void
         ## 
         def received_date_time=(value)
@@ -294,7 +294,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the post. Read-only. Nullable.
-        ## @param value Value to set for the singleValueExtendedProperties property.
+        ## @param value Value to set for the single_value_extended_properties property.
         ## @return a void
         ## 
         def single_value_extended_properties=(value)

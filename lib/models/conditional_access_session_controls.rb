@@ -50,7 +50,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applicationEnforcedRestrictions property value. Session control to enforce application restrictions. Only Exchange Online and Sharepoint Online support this session control.
-        ## @param value Value to set for the applicationEnforcedRestrictions property.
+        ## @param value Value to set for the application_enforced_restrictions property.
         ## @return a void
         ## 
         def application_enforced_restrictions=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cloudAppSecurity property value. Session control to apply cloud app security.
-        ## @param value Value to set for the cloudAppSecurity property.
+        ## @param value Value to set for the cloud_app_security property.
         ## @return a void
         ## 
         def cloud_app_security=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the disableResilienceDefaults property value. Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.
-        ## @param value Value to set for the disableResilienceDefaults property.
+        ## @param value Value to set for the disable_resilience_defaults property.
         ## @return a void
         ## 
         def disable_resilience_defaults=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the persistentBrowser property value. Session control to define whether to persist cookies or not. All apps should be selected for this session control to work correctly.
-        ## @param value Value to set for the persistentBrowser property.
+        ## @param value Value to set for the persistent_browser property.
         ## @return a void
         ## 
         def persistent_browser=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the signInFrequency property value. Session control to enforce signin frequency.
-        ## @param value Value to set for the signInFrequency property.
+        ## @param value Value to set for the sign_in_frequency property.
         ## @return a void
         ## 
         def sign_in_frequency=(value)

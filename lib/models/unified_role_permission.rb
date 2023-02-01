@@ -44,7 +44,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowedResourceActions property value. Set of tasks that can be performed on a resource. Required.
-        ## @param value Value to set for the allowedResourceActions property.
+        ## @param value Value to set for the allowed_resource_actions property.
         ## @return a void
         ## 
         def allowed_resource_actions=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the excludedResourceActions property value. Set of tasks that may not be performed on a resource. Not yet supported.
-        ## @param value Value to set for the excludedResourceActions property.
+        ## @param value Value to set for the excluded_resource_actions property.
         ## @return a void
         ## 
         def excluded_resource_actions=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

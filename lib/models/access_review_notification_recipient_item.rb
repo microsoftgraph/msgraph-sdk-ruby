@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notificationRecipientScope property value. Determines the recipient of the notification email.
-        ## @param value Value to set for the notificationRecipientScope property.
+        ## @param value Value to set for the notification_recipient_scope property.
         ## @return a void
         ## 
         def notification_recipient_scope=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notificationTemplateType property value. Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.
-        ## @param value Value to set for the notificationTemplateType property.
+        ## @param value Value to set for the notification_template_type property.
         ## @return a void
         ## 
         def notification_template_type=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

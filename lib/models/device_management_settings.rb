@@ -60,7 +60,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceComplianceCheckinThresholdDays property value. The number of days a device is allowed to go without checking in to remain compliant.
-        ## @param value Value to set for the deviceComplianceCheckinThresholdDays property.
+        ## @param value Value to set for the device_compliance_checkin_threshold_days property.
         ## @return a void
         ## 
         def device_compliance_checkin_threshold_days=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isScheduledActionEnabled property value. Is feature enabled or not for scheduled action for rule.
-        ## @param value Value to set for the isScheduledActionEnabled property.
+        ## @param value Value to set for the is_scheduled_action_enabled property.
         ## @return a void
         ## 
         def is_scheduled_action_enabled=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
-        ## @param value Value to set for the secureByDefault property.
+        ## @param value Value to set for the secure_by_default property.
         ## @return a void
         ## 
         def secure_by_default=(value)

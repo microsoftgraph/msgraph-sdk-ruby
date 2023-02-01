@@ -47,7 +47,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowCustomMemes property value. If set to true, enables users to include custom memes.
-        ## @param value Value to set for the allowCustomMemes property.
+        ## @param value Value to set for the allow_custom_memes property.
         ## @return a void
         ## 
         def allow_custom_memes=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowGiphy property value. If set to true, enables Giphy use.
-        ## @param value Value to set for the allowGiphy property.
+        ## @param value Value to set for the allow_giphy property.
         ## @return a void
         ## 
         def allow_giphy=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowStickersAndMemes property value. If set to true, enables users to include stickers and memes.
-        ## @param value Value to set for the allowStickersAndMemes property.
+        ## @param value Value to set for the allow_stickers_and_memes property.
         ## @return a void
         ## 
         def allow_stickers_and_memes=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the giphyContentRating property value. Giphy content rating. Possible values are: moderate, strict.
-        ## @param value Value to set for the giphyContentRating property.
+        ## @param value Value to set for the giphy_content_rating property.
         ## @return a void
         ## 
         def giphy_content_rating=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

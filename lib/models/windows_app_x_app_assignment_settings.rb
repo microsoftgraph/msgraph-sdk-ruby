@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the useDeviceContext property value. Whether or not to use device execution context for Windows AppX mobile app.
-        ## @param value Value to set for the useDeviceContext property.
+        ## @param value Value to set for the use_device_context property.
         ## @return a void
         ## 
         def use_device_context=(value)

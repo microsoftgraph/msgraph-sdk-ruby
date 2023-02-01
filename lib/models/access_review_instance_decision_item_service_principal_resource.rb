@@ -17,7 +17,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appId property value. The appId property
-        ## @param value Value to set for the appId property.
+        ## @param value Value to set for the app_id property.
         ## @return a void
         ## 
         def app_id=(value)

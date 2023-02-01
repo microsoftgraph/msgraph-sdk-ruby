@@ -72,9 +72,6 @@ module MicrosoftGraph::Models
         # Number of days before the work profile password expires. Valid values 1 to 365
         @work_profile_password_expiration_days
         ## 
-        # Minimum length of work profile password. Valid values 4 to 16
-        @work_profile_password_minimum_length
-        ## 
         # Minimum # of letter characters required in work profile password. Valid values 1 to 10
         @work_profile_password_min_letter_characters
         ## 
@@ -92,6 +89,9 @@ module MicrosoftGraph::Models
         ## 
         # Minimum # of upper-case characters required in work profile password. Valid values 1 to 10
         @work_profile_password_min_upper_case_characters
+        ## 
+        # Minimum length of work profile password. Valid values 4 to 16
+        @work_profile_password_minimum_length
         ## 
         # Minutes of inactivity before the screen times out.
         @work_profile_password_minutes_of_inactivity_before_screen_timeout
@@ -152,13 +152,13 @@ module MicrosoftGraph::Models
                 "workProfilePasswordBlockFingerprintUnlock" => lambda {|n| @work_profile_password_block_fingerprint_unlock = n.get_boolean_value() },
                 "workProfilePasswordBlockTrustAgents" => lambda {|n| @work_profile_password_block_trust_agents = n.get_boolean_value() },
                 "workProfilePasswordExpirationDays" => lambda {|n| @work_profile_password_expiration_days = n.get_number_value() },
-                "workProfilePasswordMinimumLength" => lambda {|n| @work_profile_password_minimum_length = n.get_number_value() },
                 "workProfilePasswordMinLetterCharacters" => lambda {|n| @work_profile_password_min_letter_characters = n.get_number_value() },
                 "workProfilePasswordMinLowerCaseCharacters" => lambda {|n| @work_profile_password_min_lower_case_characters = n.get_number_value() },
                 "workProfilePasswordMinNonLetterCharacters" => lambda {|n| @work_profile_password_min_non_letter_characters = n.get_number_value() },
                 "workProfilePasswordMinNumericCharacters" => lambda {|n| @work_profile_password_min_numeric_characters = n.get_number_value() },
                 "workProfilePasswordMinSymbolCharacters" => lambda {|n| @work_profile_password_min_symbol_characters = n.get_number_value() },
                 "workProfilePasswordMinUpperCaseCharacters" => lambda {|n| @work_profile_password_min_upper_case_characters = n.get_number_value() },
+                "workProfilePasswordMinimumLength" => lambda {|n| @work_profile_password_minimum_length = n.get_number_value() },
                 "workProfilePasswordMinutesOfInactivityBeforeScreenTimeout" => lambda {|n| @work_profile_password_minutes_of_inactivity_before_screen_timeout = n.get_number_value() },
                 "workProfilePasswordPreviousPasswordBlockCount" => lambda {|n| @work_profile_password_previous_password_block_count = n.get_number_value() },
                 "workProfilePasswordRequiredType" => lambda {|n| @work_profile_password_required_type = n.get_enum_value(MicrosoftGraph::Models::AndroidWorkProfileRequiredPasswordType) },
@@ -175,7 +175,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
-        ## @param value Value to set for the passwordBlockFingerprintUnlock property.
+        ## @param value Value to set for the password_block_fingerprint_unlock property.
         ## @return a void
         ## 
         def password_block_fingerprint_unlock=(value)
@@ -190,7 +190,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents.
-        ## @param value Value to set for the passwordBlockTrustAgents property.
+        ## @param value Value to set for the password_block_trust_agents property.
         ## @return a void
         ## 
         def password_block_trust_agents=(value)
@@ -205,7 +205,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
-        ## @param value Value to set for the passwordExpirationDays property.
+        ## @param value Value to set for the password_expiration_days property.
         ## @return a void
         ## 
         def password_expiration_days=(value)
@@ -220,7 +220,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinimumLength property value. Minimum length of passwords. Valid values 4 to 16
-        ## @param value Value to set for the passwordMinimumLength property.
+        ## @param value Value to set for the password_minimum_length property.
         ## @return a void
         ## 
         def password_minimum_length=(value)
@@ -235,7 +235,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
-        ## @param value Value to set for the passwordMinutesOfInactivityBeforeScreenTimeout property.
+        ## @param value Value to set for the password_minutes_of_inactivity_before_screen_timeout property.
         ## @return a void
         ## 
         def password_minutes_of_inactivity_before_screen_timeout=(value)
@@ -250,7 +250,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
-        ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
+        ## @param value Value to set for the password_previous_password_block_count property.
         ## @return a void
         ## 
         def password_previous_password_block_count=(value)
@@ -265,7 +265,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequiredType property value. Android Work Profile required password type.
-        ## @param value Value to set for the passwordRequiredType property.
+        ## @param value Value to set for the password_required_type property.
         ## @return a void
         ## 
         def password_required_type=(value)
@@ -280,7 +280,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset. Valid values 1 to 16
-        ## @param value Value to set for the passwordSignInFailureCountBeforeFactoryReset property.
+        ## @param value Value to set for the password_sign_in_failure_count_before_factory_reset property.
         ## @return a void
         ## 
         def password_sign_in_failure_count_before_factory_reset=(value)
@@ -295,7 +295,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
-        ## @param value Value to set for the securityRequireVerifyApps property.
+        ## @param value Value to set for the security_require_verify_apps property.
         ## @return a void
         ## 
         def security_require_verify_apps=(value)
@@ -331,13 +331,13 @@ module MicrosoftGraph::Models
             writer.write_boolean_value("workProfilePasswordBlockFingerprintUnlock", @work_profile_password_block_fingerprint_unlock)
             writer.write_boolean_value("workProfilePasswordBlockTrustAgents", @work_profile_password_block_trust_agents)
             writer.write_number_value("workProfilePasswordExpirationDays", @work_profile_password_expiration_days)
-            writer.write_number_value("workProfilePasswordMinimumLength", @work_profile_password_minimum_length)
             writer.write_number_value("workProfilePasswordMinLetterCharacters", @work_profile_password_min_letter_characters)
             writer.write_number_value("workProfilePasswordMinLowerCaseCharacters", @work_profile_password_min_lower_case_characters)
             writer.write_number_value("workProfilePasswordMinNonLetterCharacters", @work_profile_password_min_non_letter_characters)
             writer.write_number_value("workProfilePasswordMinNumericCharacters", @work_profile_password_min_numeric_characters)
             writer.write_number_value("workProfilePasswordMinSymbolCharacters", @work_profile_password_min_symbol_characters)
             writer.write_number_value("workProfilePasswordMinUpperCaseCharacters", @work_profile_password_min_upper_case_characters)
+            writer.write_number_value("workProfilePasswordMinimumLength", @work_profile_password_minimum_length)
             writer.write_number_value("workProfilePasswordMinutesOfInactivityBeforeScreenTimeout", @work_profile_password_minutes_of_inactivity_before_screen_timeout)
             writer.write_number_value("workProfilePasswordPreviousPasswordBlockCount", @work_profile_password_previous_password_block_count)
             writer.write_enum_value("workProfilePasswordRequiredType", @work_profile_password_required_type)
@@ -353,7 +353,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfileBlockAddingAccounts property value. Block users from adding/removing accounts in work profile.
-        ## @param value Value to set for the workProfileBlockAddingAccounts property.
+        ## @param value Value to set for the work_profile_block_adding_accounts property.
         ## @return a void
         ## 
         def work_profile_block_adding_accounts=(value)
@@ -368,7 +368,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfileBlockCamera property value. Block work profile camera.
-        ## @param value Value to set for the workProfileBlockCamera property.
+        ## @param value Value to set for the work_profile_block_camera property.
         ## @return a void
         ## 
         def work_profile_block_camera=(value)
@@ -383,7 +383,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfileBlockCrossProfileCallerId property value. Block display work profile caller ID in personal profile.
-        ## @param value Value to set for the workProfileBlockCrossProfileCallerId property.
+        ## @param value Value to set for the work_profile_block_cross_profile_caller_id property.
         ## @return a void
         ## 
         def work_profile_block_cross_profile_caller_id=(value)
@@ -398,7 +398,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfileBlockCrossProfileContactsSearch property value. Block work profile contacts availability in personal profile.
-        ## @param value Value to set for the workProfileBlockCrossProfileContactsSearch property.
+        ## @param value Value to set for the work_profile_block_cross_profile_contacts_search property.
         ## @return a void
         ## 
         def work_profile_block_cross_profile_contacts_search=(value)
@@ -413,7 +413,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfileBlockCrossProfileCopyPaste property value. Boolean that indicates if the setting disallow cross profile copy/paste is enabled.
-        ## @param value Value to set for the workProfileBlockCrossProfileCopyPaste property.
+        ## @param value Value to set for the work_profile_block_cross_profile_copy_paste property.
         ## @return a void
         ## 
         def work_profile_block_cross_profile_copy_paste=(value)
@@ -428,7 +428,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfileBlockNotificationsWhileDeviceLocked property value. Indicates whether or not to block notifications while device locked.
-        ## @param value Value to set for the workProfileBlockNotificationsWhileDeviceLocked property.
+        ## @param value Value to set for the work_profile_block_notifications_while_device_locked property.
         ## @return a void
         ## 
         def work_profile_block_notifications_while_device_locked=(value)
@@ -443,7 +443,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfileBlockScreenCapture property value. Block screen capture in work profile.
-        ## @param value Value to set for the workProfileBlockScreenCapture property.
+        ## @param value Value to set for the work_profile_block_screen_capture property.
         ## @return a void
         ## 
         def work_profile_block_screen_capture=(value)
@@ -458,7 +458,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfileBluetoothEnableContactSharing property value. Allow bluetooth devices to access enterprise contacts.
-        ## @param value Value to set for the workProfileBluetoothEnableContactSharing property.
+        ## @param value Value to set for the work_profile_bluetooth_enable_contact_sharing property.
         ## @return a void
         ## 
         def work_profile_bluetooth_enable_contact_sharing=(value)
@@ -473,7 +473,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfileDataSharingType property value. Android Work Profile cross profile data sharing type.
-        ## @param value Value to set for the workProfileDataSharingType property.
+        ## @param value Value to set for the work_profile_data_sharing_type property.
         ## @return a void
         ## 
         def work_profile_data_sharing_type=(value)
@@ -488,7 +488,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfileDefaultAppPermissionPolicy property value. Android Work Profile default app permission policy type.
-        ## @param value Value to set for the workProfileDefaultAppPermissionPolicy property.
+        ## @param value Value to set for the work_profile_default_app_permission_policy property.
         ## @return a void
         ## 
         def work_profile_default_app_permission_policy=(value)
@@ -503,7 +503,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfilePasswordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock for work profile.
-        ## @param value Value to set for the workProfilePasswordBlockFingerprintUnlock property.
+        ## @param value Value to set for the work_profile_password_block_fingerprint_unlock property.
         ## @return a void
         ## 
         def work_profile_password_block_fingerprint_unlock=(value)
@@ -518,7 +518,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfilePasswordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents for work profile.
-        ## @param value Value to set for the workProfilePasswordBlockTrustAgents property.
+        ## @param value Value to set for the work_profile_password_block_trust_agents property.
         ## @return a void
         ## 
         def work_profile_password_block_trust_agents=(value)
@@ -533,26 +533,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfilePasswordExpirationDays property value. Number of days before the work profile password expires. Valid values 1 to 365
-        ## @param value Value to set for the workProfilePasswordExpirationDays property.
+        ## @param value Value to set for the work_profile_password_expiration_days property.
         ## @return a void
         ## 
         def work_profile_password_expiration_days=(value)
             @work_profile_password_expiration_days = value
-        end
-        ## 
-        ## Gets the workProfilePasswordMinimumLength property value. Minimum length of work profile password. Valid values 4 to 16
-        ## @return a integer
-        ## 
-        def work_profile_password_minimum_length
-            return @work_profile_password_minimum_length
-        end
-        ## 
-        ## Sets the workProfilePasswordMinimumLength property value. Minimum length of work profile password. Valid values 4 to 16
-        ## @param value Value to set for the workProfilePasswordMinimumLength property.
-        ## @return a void
-        ## 
-        def work_profile_password_minimum_length=(value)
-            @work_profile_password_minimum_length = value
         end
         ## 
         ## Gets the workProfilePasswordMinLetterCharacters property value. Minimum # of letter characters required in work profile password. Valid values 1 to 10
@@ -563,7 +548,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfilePasswordMinLetterCharacters property value. Minimum # of letter characters required in work profile password. Valid values 1 to 10
-        ## @param value Value to set for the workProfilePasswordMinLetterCharacters property.
+        ## @param value Value to set for the work_profile_password_min_letter_characters property.
         ## @return a void
         ## 
         def work_profile_password_min_letter_characters=(value)
@@ -578,7 +563,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfilePasswordMinLowerCaseCharacters property value. Minimum # of lower-case characters required in work profile password. Valid values 1 to 10
-        ## @param value Value to set for the workProfilePasswordMinLowerCaseCharacters property.
+        ## @param value Value to set for the work_profile_password_min_lower_case_characters property.
         ## @return a void
         ## 
         def work_profile_password_min_lower_case_characters=(value)
@@ -593,7 +578,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfilePasswordMinNonLetterCharacters property value. Minimum # of non-letter characters required in work profile password. Valid values 1 to 10
-        ## @param value Value to set for the workProfilePasswordMinNonLetterCharacters property.
+        ## @param value Value to set for the work_profile_password_min_non_letter_characters property.
         ## @return a void
         ## 
         def work_profile_password_min_non_letter_characters=(value)
@@ -608,7 +593,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfilePasswordMinNumericCharacters property value. Minimum # of numeric characters required in work profile password. Valid values 1 to 10
-        ## @param value Value to set for the workProfilePasswordMinNumericCharacters property.
+        ## @param value Value to set for the work_profile_password_min_numeric_characters property.
         ## @return a void
         ## 
         def work_profile_password_min_numeric_characters=(value)
@@ -623,7 +608,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfilePasswordMinSymbolCharacters property value. Minimum # of symbols required in work profile password. Valid values 1 to 10
-        ## @param value Value to set for the workProfilePasswordMinSymbolCharacters property.
+        ## @param value Value to set for the work_profile_password_min_symbol_characters property.
         ## @return a void
         ## 
         def work_profile_password_min_symbol_characters=(value)
@@ -638,11 +623,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfilePasswordMinUpperCaseCharacters property value. Minimum # of upper-case characters required in work profile password. Valid values 1 to 10
-        ## @param value Value to set for the workProfilePasswordMinUpperCaseCharacters property.
+        ## @param value Value to set for the work_profile_password_min_upper_case_characters property.
         ## @return a void
         ## 
         def work_profile_password_min_upper_case_characters=(value)
             @work_profile_password_min_upper_case_characters = value
+        end
+        ## 
+        ## Gets the workProfilePasswordMinimumLength property value. Minimum length of work profile password. Valid values 4 to 16
+        ## @return a integer
+        ## 
+        def work_profile_password_minimum_length
+            return @work_profile_password_minimum_length
+        end
+        ## 
+        ## Sets the workProfilePasswordMinimumLength property value. Minimum length of work profile password. Valid values 4 to 16
+        ## @param value Value to set for the work_profile_password_minimum_length property.
+        ## @return a void
+        ## 
+        def work_profile_password_minimum_length=(value)
+            @work_profile_password_minimum_length = value
         end
         ## 
         ## Gets the workProfilePasswordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
@@ -653,7 +653,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfilePasswordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
-        ## @param value Value to set for the workProfilePasswordMinutesOfInactivityBeforeScreenTimeout property.
+        ## @param value Value to set for the work_profile_password_minutes_of_inactivity_before_screen_timeout property.
         ## @return a void
         ## 
         def work_profile_password_minutes_of_inactivity_before_screen_timeout=(value)
@@ -668,7 +668,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfilePasswordPreviousPasswordBlockCount property value. Number of previous work profile passwords to block. Valid values 0 to 24
-        ## @param value Value to set for the workProfilePasswordPreviousPasswordBlockCount property.
+        ## @param value Value to set for the work_profile_password_previous_password_block_count property.
         ## @return a void
         ## 
         def work_profile_password_previous_password_block_count=(value)
@@ -683,7 +683,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfilePasswordRequiredType property value. Android Work Profile required password type.
-        ## @param value Value to set for the workProfilePasswordRequiredType property.
+        ## @param value Value to set for the work_profile_password_required_type property.
         ## @return a void
         ## 
         def work_profile_password_required_type=(value)
@@ -698,7 +698,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfilePasswordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before work profile is removed and all corporate data deleted. Valid values 1 to 16
-        ## @param value Value to set for the workProfilePasswordSignInFailureCountBeforeFactoryReset property.
+        ## @param value Value to set for the work_profile_password_sign_in_failure_count_before_factory_reset property.
         ## @return a void
         ## 
         def work_profile_password_sign_in_failure_count_before_factory_reset=(value)
@@ -713,7 +713,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workProfileRequirePassword property value. Password is required or not for work profile
-        ## @param value Value to set for the workProfileRequirePassword property.
+        ## @param value Value to set for the work_profile_require_password property.
         ## @return a void
         ## 
         def work_profile_require_password=(value)

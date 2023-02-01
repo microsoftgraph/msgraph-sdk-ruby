@@ -31,7 +31,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentBytes property value. The base64-encoded contents of the file.
-        ## @param value Value to set for the contentBytes property.
+        ## @param value Value to set for the content_bytes property.
         ## @return a void
         ## 
         def content_bytes=(value)
@@ -46,7 +46,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentId property value. The ID of the attachment in the Exchange store.
-        ## @param value Value to set for the contentId property.
+        ## @param value Value to set for the content_id property.
         ## @return a void
         ## 
         def content_id=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentLocation property value. Do not use this property as it is not supported.
-        ## @param value Value to set for the contentLocation property.
+        ## @param value Value to set for the content_location property.
         ## @return a void
         ## 
         def content_location=(value)

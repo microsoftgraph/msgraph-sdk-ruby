@@ -25,11 +25,12 @@ module MicrosoftGraph::Groups::Item::Team::Schedule::OpenShiftChangeRequests::It
         @url_template
         ## 
         ## Instantiates a new OpenShiftChangeRequestItemRequestBuilder and sets the default values.
+        ## @param openShiftChangeRequestId key: id of openShiftChangeRequest
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, open_shift_change_request_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/groups/{group%2Did}/team/schedule/openShiftChangeRequests/{openShiftChangeRequest%2Did}{?%24select,%24expand}"

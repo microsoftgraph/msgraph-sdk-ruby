@@ -29,7 +29,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
-        ## @param value Value to set for the apiConnectorConfiguration property.
+        ## @param value Value to set for the api_connector_configuration property.
         ## @return a void
         ## 
         def api_connector_configuration=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the identityProviders property value. The identity providers included in the user flow.
-        ## @param value Value to set for the identityProviders property.
+        ## @param value Value to set for the identity_providers property.
         ## @return a void
         ## 
         def identity_providers=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userAttributeAssignments property value. The user attribute assignments included in the user flow.
-        ## @param value Value to set for the userAttributeAssignments property.
+        ## @param value Value to set for the user_attribute_assignments property.
         ## @return a void
         ## 
         def user_attribute_assignments=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userFlowIdentityProviders property value. The userFlowIdentityProviders property
-        ## @param value Value to set for the userFlowIdentityProviders property.
+        ## @param value Value to set for the user_flow_identity_providers property.
         ## @return a void
         ## 
         def user_flow_identity_providers=(value)

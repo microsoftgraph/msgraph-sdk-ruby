@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webUrl property value. Location of the resource. Required
-        ## @param value Value to set for the webUrl property.
+        ## @param value Value to set for the web_url property.
         ## @return a void
         ## 
         def web_url=(value)

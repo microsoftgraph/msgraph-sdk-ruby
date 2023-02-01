@@ -28,11 +28,12 @@ module MicrosoftGraph::IdentityGovernance::TermsOfUse::Agreements::Item::File::L
         @url_template
         ## 
         ## Instantiates a new AgreementFileVersionItemRequestBuilder and sets the default values.
+        ## @param agreementFileVersionId key: id of agreementFileVersion
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, agreement_file_version_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/identityGovernance/termsOfUse/agreements/{agreement%2Did}/file/localizations/{agreementFileLocalization%2Did}/versions/{agreementFileVersion%2Did}{?%24select,%24expand}"

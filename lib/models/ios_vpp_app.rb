@@ -7,11 +7,11 @@ module MicrosoftGraph::Models
     class IosVppApp < MicrosoftGraph::Models::MobileApp
         include MicrosoftKiotaAbstractions::Parsable
         ## 
-        # The applicable iOS Device Type.
-        @applicable_device_type
-        ## 
         # The store URL.
         @app_store_url
+        ## 
+        # The applicable iOS Device Type.
+        @applicable_device_type
         ## 
         # The Identity Name.
         @bundle_id
@@ -37,21 +37,6 @@ module MicrosoftGraph::Models
         # The organization associated with the Apple Volume Purchase Program Token
         @vpp_token_organization_name
         ## 
-        ## Gets the applicableDeviceType property value. The applicable iOS Device Type.
-        ## @return a ios_device_type
-        ## 
-        def applicable_device_type
-            return @applicable_device_type
-        end
-        ## 
-        ## Sets the applicableDeviceType property value. The applicable iOS Device Type.
-        ## @param value Value to set for the applicableDeviceType property.
-        ## @return a void
-        ## 
-        def applicable_device_type=(value)
-            @applicable_device_type = value
-        end
-        ## 
         ## Gets the appStoreUrl property value. The store URL.
         ## @return a string
         ## 
@@ -60,11 +45,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appStoreUrl property value. The store URL.
-        ## @param value Value to set for the appStoreUrl property.
+        ## @param value Value to set for the app_store_url property.
         ## @return a void
         ## 
         def app_store_url=(value)
             @app_store_url = value
+        end
+        ## 
+        ## Gets the applicableDeviceType property value. The applicable iOS Device Type.
+        ## @return a ios_device_type
+        ## 
+        def applicable_device_type
+            return @applicable_device_type
+        end
+        ## 
+        ## Sets the applicableDeviceType property value. The applicable iOS Device Type.
+        ## @param value Value to set for the applicable_device_type property.
+        ## @return a void
+        ## 
+        def applicable_device_type=(value)
+            @applicable_device_type = value
         end
         ## 
         ## Gets the bundleId property value. The Identity Name.
@@ -75,7 +75,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bundleId property value. The Identity Name.
-        ## @param value Value to set for the bundleId property.
+        ## @param value Value to set for the bundle_id property.
         ## @return a void
         ## 
         def bundle_id=(value)
@@ -104,8 +104,8 @@ module MicrosoftGraph::Models
         ## 
         def get_field_deserializers()
             return super.merge({
-                "applicableDeviceType" => lambda {|n| @applicable_device_type = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IosDeviceType.create_from_discriminator_value(pn) }) },
                 "appStoreUrl" => lambda {|n| @app_store_url = n.get_string_value() },
+                "applicableDeviceType" => lambda {|n| @applicable_device_type = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IosDeviceType.create_from_discriminator_value(pn) }) },
                 "bundleId" => lambda {|n| @bundle_id = n.get_string_value() },
                 "licensingType" => lambda {|n| @licensing_type = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::VppLicensingType.create_from_discriminator_value(pn) }) },
                 "releaseDateTime" => lambda {|n| @release_date_time = n.get_date_time_value() },
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the licensingType property value. The supported License Type.
-        ## @param value Value to set for the licensingType property.
+        ## @param value Value to set for the licensing_type property.
         ## @return a void
         ## 
         def licensing_type=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the releaseDateTime property value. The VPP application release date and time.
-        ## @param value Value to set for the releaseDateTime property.
+        ## @param value Value to set for the release_date_time property.
         ## @return a void
         ## 
         def release_date_time=(value)
@@ -154,8 +154,8 @@ module MicrosoftGraph::Models
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
             super
-            writer.write_object_value("applicableDeviceType", @applicable_device_type)
             writer.write_string_value("appStoreUrl", @app_store_url)
+            writer.write_object_value("applicableDeviceType", @applicable_device_type)
             writer.write_string_value("bundleId", @bundle_id)
             writer.write_object_value("licensingType", @licensing_type)
             writer.write_date_time_value("releaseDateTime", @release_date_time)
@@ -174,7 +174,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the totalLicenseCount property value. The total number of VPP licenses.
-        ## @param value Value to set for the totalLicenseCount property.
+        ## @param value Value to set for the total_license_count property.
         ## @return a void
         ## 
         def total_license_count=(value)
@@ -189,7 +189,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the usedLicenseCount property value. The number of VPP licenses in use.
-        ## @param value Value to set for the usedLicenseCount property.
+        ## @param value Value to set for the used_license_count property.
         ## @return a void
         ## 
         def used_license_count=(value)
@@ -204,7 +204,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the vppTokenAccountType property value. Possible types of an Apple Volume Purchase Program token.
-        ## @param value Value to set for the vppTokenAccountType property.
+        ## @param value Value to set for the vpp_token_account_type property.
         ## @return a void
         ## 
         def vpp_token_account_type=(value)
@@ -219,7 +219,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the vppTokenAppleId property value. The Apple Id associated with the given Apple Volume Purchase Program Token.
-        ## @param value Value to set for the vppTokenAppleId property.
+        ## @param value Value to set for the vpp_token_apple_id property.
         ## @return a void
         ## 
         def vpp_token_apple_id=(value)
@@ -234,7 +234,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the vppTokenOrganizationName property value. The organization associated with the Apple Volume Purchase Program Token
-        ## @param value Value to set for the vppTokenOrganizationName property.
+        ## @param value Value to set for the vpp_token_organization_name property.
         ## @return a void
         ## 
         def vpp_token_organization_name=(value)

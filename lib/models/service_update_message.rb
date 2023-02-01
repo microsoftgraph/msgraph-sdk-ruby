@@ -48,7 +48,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the actionRequiredByDateTime property value. The expected deadline of the action for the message.
-        ## @param value Value to set for the actionRequiredByDateTime property.
+        ## @param value Value to set for the action_required_by_date_time property.
         ## @return a void
         ## 
         def action_required_by_date_time=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the attachmentsArchive property value. The zip file that contains all attachments for a message.
-        ## @param value Value to set for the attachmentsArchive property.
+        ## @param value Value to set for the attachments_archive property.
         ## @return a void
         ## 
         def attachments_archive=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hasAttachments property value. Indicates whether the message has any attachment.
-        ## @param value Value to set for the hasAttachments property.
+        ## @param value Value to set for the has_attachments property.
         ## @return a void
         ## 
         def has_attachments=(value)
@@ -174,7 +174,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isMajorChange property value. Indicates whether the message describes a major update for the service.
-        ## @param value Value to set for the isMajorChange property.
+        ## @param value Value to set for the is_major_change property.
         ## @return a void
         ## 
         def is_major_change=(value)
@@ -254,7 +254,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the viewPoint property value. Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
-        ## @param value Value to set for the viewPoint property.
+        ## @param value Value to set for the view_point property.
         ## @return a void
         ## 
         def view_point=(value)

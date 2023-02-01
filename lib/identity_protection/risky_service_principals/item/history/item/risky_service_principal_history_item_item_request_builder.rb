@@ -26,9 +26,10 @@ module MicrosoftGraph::IdentityProtection::RiskyServicePrincipals::Item::History
         ## Instantiates a new RiskyServicePrincipalHistoryItemItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param riskyServicePrincipalHistoryItemId key: id of riskyServicePrincipalHistoryItem
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, risky_service_principal_history_item_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/identityProtection/riskyServicePrincipals/{riskyServicePrincipal%2Did}/history/{riskyServicePrincipalHistoryItem%2Did}{?%24select,%24expand}"

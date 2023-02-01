@@ -71,7 +71,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the endDateTime property value. The endDateTime property
-        ## @param value Value to set for the endDateTime property.
+        ## @param value Value to set for the end_date_time property.
         ## @return a void
         ## 
         def end_date_time=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isAllDay property value. The isAllDay property
-        ## @param value Value to set for the isAllDay property.
+        ## @param value Value to set for the is_all_day property.
         ## @return a void
         ## 
         def is_all_day=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isDelegated property value. The isDelegated property
-        ## @param value Value to set for the isDelegated property.
+        ## @param value Value to set for the is_delegated property.
         ## @return a void
         ## 
         def is_delegated=(value)
@@ -149,7 +149,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isOutOfDate property value. The isOutOfDate property
-        ## @param value Value to set for the isOutOfDate property.
+        ## @param value Value to set for the is_out_of_date property.
         ## @return a void
         ## 
         def is_out_of_date=(value)
@@ -179,7 +179,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the meetingMessageType property value. The meetingMessageType property
-        ## @param value Value to set for the meetingMessageType property.
+        ## @param value Value to set for the meeting_message_type property.
         ## @return a void
         ## 
         def meeting_message_type=(value)
@@ -228,7 +228,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the startDateTime property value. The startDateTime property
-        ## @param value Value to set for the startDateTime property.
+        ## @param value Value to set for the start_date_time property.
         ## @return a void
         ## 
         def start_date_time=(value)

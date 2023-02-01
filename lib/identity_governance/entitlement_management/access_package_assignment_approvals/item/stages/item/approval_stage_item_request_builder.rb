@@ -25,11 +25,12 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackageA
         @url_template
         ## 
         ## Instantiates a new ApprovalStageItemRequestBuilder and sets the default values.
+        ## @param approvalStageId key: id of approvalStage
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, approval_stage_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{approval%2Did}/stages/{approvalStage%2Did}{?%24select,%24expand}"

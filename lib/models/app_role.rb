@@ -56,7 +56,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowedMemberTypes property value. Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
-        ## @param value Value to set for the allowedMemberTypes property.
+        ## @param value Value to set for the allowed_member_types property.
         ## @return a void
         ## 
         def allowed_member_types=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Display name for the permission that appears in the app role assignment and consent experiences.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -148,7 +148,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isEnabled property value. When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
-        ## @param value Value to set for the isEnabled property.
+        ## @param value Value to set for the is_enabled property.
         ## @return a void
         ## 
         def is_enabled=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

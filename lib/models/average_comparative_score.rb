@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the averageScore property value. Average score within specified basis.
-        ## @param value Value to set for the averageScore property.
+        ## @param value Value to set for the average_score property.
         ## @return a void
         ## 
         def average_score=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

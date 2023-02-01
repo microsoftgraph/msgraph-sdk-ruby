@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the percentageComplete property value. A value between 0 and 100 that indicates the progress of the operation.
-        ## @param value Value to set for the percentageComplete property.
+        ## @param value Value to set for the percentage_complete property.
         ## @return a void
         ## 
         def percentage_complete=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceId property value. The unique identifier for the result.
-        ## @param value Value to set for the resourceId property.
+        ## @param value Value to set for the resource_id property.
         ## @return a void
         ## 
         def resource_id=(value)

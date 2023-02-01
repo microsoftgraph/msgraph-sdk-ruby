@@ -31,10 +31,11 @@ module MicrosoftGraph::Me::Chats::Item::PinnedMessages::Item
         ## 
         ## Instantiates a new PinnedChatMessageInfoItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
+        ## @param pinnedChatMessageInfoId key: id of pinnedChatMessageInfo
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, pinned_chat_message_info_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/me/chats/{chat%2Did}/pinnedMessages/{pinnedChatMessageInfo%2Did}{?%24select,%24expand}"

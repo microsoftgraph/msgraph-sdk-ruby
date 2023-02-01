@@ -6,11 +6,11 @@ module MicrosoftGraph::Models
     class ProvisioningErrorInfo
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 
-        # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-        @additional_data
-        ## 
         # Additional details in case of error.
         @additional_details
+        ## 
+        # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+        @additional_data
         ## 
         # Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue
         @error_category
@@ -50,7 +50,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the additionalDetails property value. Additional details in case of error.
-        ## @param value Value to set for the additionalDetails property.
+        ## @param value Value to set for the additional_details property.
         ## @return a void
         ## 
         def additional_details=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the errorCategory property value. Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue
-        ## @param value Value to set for the errorCategory property.
+        ## @param value Value to set for the error_category property.
         ## @return a void
         ## 
         def error_category=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the errorCode property value. Unique error code if any occurred. Learn more
-        ## @param value Value to set for the errorCode property.
+        ## @param value Value to set for the error_code property.
         ## @return a void
         ## 
         def error_code=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the recommendedAction property value. Provides the resolution for the corresponding error.
-        ## @param value Value to set for the recommendedAction property.
+        ## @param value Value to set for the recommended_action property.
         ## @return a void
         ## 
         def recommended_action=(value)

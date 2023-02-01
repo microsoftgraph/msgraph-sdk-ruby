@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the notebook.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastAccessedTime property value. The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        ## @param value Value to set for the lastAccessedTime property.
+        ## @param value Value to set for the last_accessed_time property.
         ## @return a void
         ## 
         def last_accessed_time=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sourceService property value. The backend store where the Notebook resides, either OneDriveForBusiness or OneDrive.
-        ## @param value Value to set for the sourceService property.
+        ## @param value Value to set for the source_service property.
         ## @return a void
         ## 
         def source_service=(value)

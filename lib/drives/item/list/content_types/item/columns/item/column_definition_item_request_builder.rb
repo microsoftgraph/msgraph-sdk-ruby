@@ -32,11 +32,12 @@ module MicrosoftGraph::Drives::Item::List::ContentTypes::Item::Columns::Item
         @url_template
         ## 
         ## Instantiates a new ColumnDefinitionItemRequestBuilder and sets the default values.
+        ## @param columnDefinitionId key: id of columnDefinition
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, column_definition_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/drives/{drive%2Did}/list/contentTypes/{contentType%2Did}/columns/{columnDefinition%2Did}{?%24select,%24expand}"

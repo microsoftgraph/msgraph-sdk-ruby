@@ -23,11 +23,12 @@ module MicrosoftGraph::Me::Authentication::Fido2Methods::Item
         @url_template
         ## 
         ## Instantiates a new Fido2AuthenticationMethodItemRequestBuilder and sets the default values.
+        ## @param fido2AuthenticationMethodId key: id of fido2AuthenticationMethod
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, fido2_authentication_method_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/me/authentication/fido2Methods/{fido2AuthenticationMethod%2Did}{?%24select,%24expand}"

@@ -50,7 +50,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appDataEncryptionType property value. Represents the level to which app data is encrypted for managed apps
-        ## @param value Value to set for the appDataEncryptionType property.
+        ## @param value Value to set for the app_data_encryption_type property.
         ## @return a void
         ## 
         def app_data_encryption_type=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the customSettings property value. A set of string key and string value pairs to be sent to the affected users, unalterned by this service
-        ## @param value Value to set for the customSettings property.
+        ## @param value Value to set for the custom_settings property.
         ## @return a void
         ## 
         def custom_settings=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
-        ## @param value Value to set for the deployedAppCount property.
+        ## @param value Value to set for the deployed_app_count property.
         ## @return a void
         ## 
         def deployed_app_count=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-        ## @param value Value to set for the deploymentSummary property.
+        ## @param value Value to set for the deployment_summary property.
         ## @return a void
         ## 
         def deployment_summary=(value)
@@ -142,7 +142,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the disableAppEncryptionIfDeviceEncryptionIsEnabled property value. When this setting is enabled, app level encryption is disabled if device level encryption is enabled. (Android only)
-        ## @param value Value to set for the disableAppEncryptionIfDeviceEncryptionIsEnabled property.
+        ## @param value Value to set for the disable_app_encryption_if_device_encryption_is_enabled property.
         ## @return a void
         ## 
         def disable_app_encryption_if_device_encryption_is_enabled=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the encryptAppData property value. Indicates whether managed-app data should be encrypted. (Android only)
-        ## @param value Value to set for the encryptAppData property.
+        ## @param value Value to set for the encrypt_app_data property.
         ## @return a void
         ## 
         def encrypt_app_data=(value)
@@ -172,7 +172,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True. (iOS Only)
-        ## @param value Value to set for the faceIdBlocked property.
+        ## @param value Value to set for the face_id_blocked property.
         ## @return a void
         ## 
         def face_id_blocked=(value)
@@ -207,7 +207,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app. (Android only)
-        ## @param value Value to set for the minimumRequiredPatchVersion property.
+        ## @param value Value to set for the minimum_required_patch_version property.
         ## @return a void
         ## 
         def minimum_required_patch_version=(value)
@@ -222,7 +222,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data. (iOS Only)
-        ## @param value Value to set for the minimumRequiredSdkVersion property.
+        ## @param value Value to set for the minimum_required_sdk_version property.
         ## @return a void
         ## 
         def minimum_required_sdk_version=(value)
@@ -237,7 +237,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app. (Android only)
-        ## @param value Value to set for the minimumWarningPatchVersion property.
+        ## @param value Value to set for the minimum_warning_patch_version property.
         ## @return a void
         ## 
         def minimum_warning_patch_version=(value)
@@ -252,7 +252,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the screenCaptureBlocked property value. Indicates whether screen capture is blocked. (Android only)
-        ## @param value Value to set for the screenCaptureBlocked property.
+        ## @param value Value to set for the screen_capture_blocked property.
         ## @return a void
         ## 
         def screen_capture_blocked=(value)

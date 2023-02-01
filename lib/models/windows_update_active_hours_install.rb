@@ -21,7 +21,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activeHoursEnd property value. Active Hours End
-        ## @param value Value to set for the activeHoursEnd property.
+        ## @param value Value to set for the active_hours_end property.
         ## @return a void
         ## 
         def active_hours_end=(value)
@@ -36,7 +36,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activeHoursStart property value. Active Hours Start
-        ## @param value Value to set for the activeHoursStart property.
+        ## @param value Value to set for the active_hours_start property.
         ## @return a void
         ## 
         def active_hours_start=(value)

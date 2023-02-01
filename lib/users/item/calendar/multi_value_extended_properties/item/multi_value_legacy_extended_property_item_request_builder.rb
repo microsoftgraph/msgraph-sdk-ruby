@@ -24,11 +24,12 @@ module MicrosoftGraph::Users::Item::Calendar::MultiValueExtendedProperties::Item
         @url_template
         ## 
         ## Instantiates a new MultiValueLegacyExtendedPropertyItemRequestBuilder and sets the default values.
+        ## @param multiValueLegacyExtendedPropertyId key: id of multiValueLegacyExtendedProperty
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, multi_value_legacy_extended_property_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/users/{user%2Did}/calendar/multiValueExtendedProperties/{multiValueLegacyExtendedProperty%2Did}{?%24select,%24expand}"

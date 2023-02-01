@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the upgradeAvailable property value. Indicates whether there are higher storage quota plans available. Read-only.
-        ## @param value Value to set for the upgradeAvailable property.
+        ## @param value Value to set for the upgrade_available property.
         ## @return a void
         ## 
         def upgrade_available=(value)

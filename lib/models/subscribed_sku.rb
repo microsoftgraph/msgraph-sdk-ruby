@@ -35,7 +35,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appliesTo property value. For example, 'User' or 'Company'.
-        ## @param value Value to set for the appliesTo property.
+        ## @param value Value to set for the applies_to property.
         ## @return a void
         ## 
         def applies_to=(value)
@@ -50,7 +50,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the capabilityStatus property value. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
-        ## @param value Value to set for the capabilityStatus property.
+        ## @param value Value to set for the capability_status property.
         ## @return a void
         ## 
         def capability_status=(value)
@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the consumedUnits property value. The number of licenses that have been assigned.
-        ## @param value Value to set for the consumedUnits property.
+        ## @param value Value to set for the consumed_units property.
         ## @return a void
         ## 
         def consumed_units=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the prepaidUnits property value. Information about the number and status of prepaid licenses.
-        ## @param value Value to set for the prepaidUnits property.
+        ## @param value Value to set for the prepaid_units property.
         ## @return a void
         ## 
         def prepaid_units=(value)
@@ -142,7 +142,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the servicePlans property value. Information about the service plans that are available with the SKU. Not nullable
-        ## @param value Value to set for the servicePlans property.
+        ## @param value Value to set for the service_plans property.
         ## @return a void
         ## 
         def service_plans=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the skuId property value. The unique identifier (GUID) for the service SKU.
-        ## @param value Value to set for the skuId property.
+        ## @param value Value to set for the sku_id property.
         ## @return a void
         ## 
         def sku_id=(value)
@@ -172,7 +172,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the skuPartNumber property value. The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
-        ## @param value Value to set for the skuPartNumber property.
+        ## @param value Value to set for the sku_part_number property.
         ## @return a void
         ## 
         def sku_part_number=(value)

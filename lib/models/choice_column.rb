@@ -44,7 +44,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowTextEntry property value. If true, allows custom values that aren't in the configured choices.
-        ## @param value Value to set for the allowTextEntry property.
+        ## @param value Value to set for the allow_text_entry property.
         ## @return a void
         ## 
         def allow_text_entry=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayAs property value. How the choices are to be presented in the UX. Must be one of checkBoxes, dropDownMenu, or radioButtons
-        ## @param value Value to set for the displayAs property.
+        ## @param value Value to set for the display_as property.
         ## @return a void
         ## 
         def display_as=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

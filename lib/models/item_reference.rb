@@ -75,7 +75,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the driveId property value. Unique identifier of the drive instance that contains the item. Read-only.
-        ## @param value Value to set for the driveId property.
+        ## @param value Value to set for the drive_id property.
         ## @return a void
         ## 
         def drive_id=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the driveType property value. Identifies the type of drive. See [drive][] resource for values.
-        ## @param value Value to set for the driveType property.
+        ## @param value Value to set for the drive_type property.
         ## @return a void
         ## 
         def drive_type=(value)
@@ -152,7 +152,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -200,7 +200,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the shareId property value. A unique identifier for a shared resource that can be accessed via the [Shares][] API.
-        ## @param value Value to set for the shareId property.
+        ## @param value Value to set for the share_id property.
         ## @return a void
         ## 
         def share_id=(value)
@@ -215,7 +215,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
-        ## @param value Value to set for the sharepointIds property.
+        ## @param value Value to set for the sharepoint_ids property.
         ## @return a void
         ## 
         def sharepoint_ids=(value)
@@ -230,7 +230,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
-        ## @param value Value to set for the siteId property.
+        ## @param value Value to set for the site_id property.
         ## @return a void
         ## 
         def site_id=(value)

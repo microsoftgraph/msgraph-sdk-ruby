@@ -79,7 +79,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the customKeyIdentifier property value. The customKeyIdentifier property
-        ## @param value Value to set for the customKeyIdentifier property.
+        ## @param value Value to set for the custom_key_identifier property.
         ## @return a void
         ## 
         def custom_key_identifier=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The displayName property
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the endDateTime property value. The endDateTime property
-        ## @param value Value to set for the endDateTime property.
+        ## @param value Value to set for the end_date_time property.
         ## @return a void
         ## 
         def end_date_time=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the keyId property value. The keyId property
-        ## @param value Value to set for the keyId property.
+        ## @param value Value to set for the key_id property.
         ## @return a void
         ## 
         def key_id=(value)
@@ -172,7 +172,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -206,7 +206,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the startDateTime property value. The startDateTime property
-        ## @param value Value to set for the startDateTime property.
+        ## @param value Value to set for the start_date_time property.
         ## @return a void
         ## 
         def start_date_time=(value)

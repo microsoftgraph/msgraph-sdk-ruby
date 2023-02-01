@@ -52,7 +52,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dataType property value. The dataType property
-        ## @param value Value to set for the dataType property.
+        ## @param value Value to set for the data_type property.
         ## @return a void
         ## 
         def data_type=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name of the user flow attribute.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userFlowAttributeType property value. The userFlowAttributeType property
-        ## @param value Value to set for the userFlowAttributeType property.
+        ## @param value Value to set for the user_flow_attribute_type property.
         ## @return a void
         ## 
         def user_flow_attribute_type=(value)

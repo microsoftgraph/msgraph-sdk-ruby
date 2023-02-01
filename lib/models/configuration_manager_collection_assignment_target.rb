@@ -17,7 +17,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the collectionId property value. The collection Id that is the target of the assignment.
-        ## @param value Value to set for the collectionId property.
+        ## @param value Value to set for the collection_id property.
         ## @return a void
         ## 
         def collection_id=(value)

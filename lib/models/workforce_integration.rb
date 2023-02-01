@@ -32,7 +32,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the apiVersion property value. API version for the call back URL. Start with 1.
-        ## @param value Value to set for the apiVersion property.
+        ## @param value Value to set for the api_version property.
         ## @return a void
         ## 
         def api_version=(value)
@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Name of the workforce integration.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isActive property value. Indicates whether this workforce integration is currently active and available.
-        ## @param value Value to set for the isActive property.
+        ## @param value Value to set for the is_active property.
         ## @return a void
         ## 
         def is_active=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the supportedEntities property value. The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openshift, openShiftRequest, offerShiftRequest, unknownFutureValue.
-        ## @param value Value to set for the supportedEntities property.
+        ## @param value Value to set for the supported_entities property.
         ## @return a void
         ## 
         def supported_entities=(value)

@@ -6,35 +6,36 @@ require_relative '../../../drives'
 require_relative '../../item'
 require_relative '../items'
 require_relative './analytics/analytics_request_builder'
-require_relative './checkin/checkin_request_builder'
-require_relative './checkout/checkout_request_builder'
 require_relative './children/children_request_builder'
 require_relative './children/item/drive_item_item_request_builder'
 require_relative './content/content_request_builder'
-require_relative './copy/copy_request_builder'
-require_relative './create_link/create_link_request_builder'
-require_relative './create_upload_session/create_upload_session_request_builder'
-require_relative './delta/delta_request_builder'
-require_relative './delta_with_token/delta_with_token_request_builder'
-require_relative './follow/follow_request_builder'
-require_relative './get_activities_by_interval/get_activities_by_interval_request_builder'
-require_relative './get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval/dab1c2feb9ecf2d349721478e4ff8fe9c46b97a0c44110851b2b17a08d22383e'
-require_relative './invite/invite_request_builder'
 require_relative './item'
 require_relative './list_item/list_item_request_builder'
+require_relative './microsoft_graph_checkin/checkin_request_builder'
+require_relative './microsoft_graph_checkout/checkout_request_builder'
+require_relative './microsoft_graph_copy/copy_request_builder'
+require_relative './microsoft_graph_create_link/create_link_request_builder'
+require_relative './microsoft_graph_create_upload_session/create_upload_session_request_builder'
+require_relative './microsoft_graph_delta/delta_request_builder'
+require_relative './microsoft_graph_delta_with_token/delta_with_token_request_builder'
+require_relative './microsoft_graph_follow/follow_request_builder'
+require_relative './microsoft_graph_get_activities_by_interval/get_activities_by_interval_request_builder'
+require_relative './microsoft_graph_get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval/dab1c2feb9ecf2d349721478e4ff8fe9c46b97a0c44110851b2b17a08d22383e'
+require_relative './microsoft_graph_invite/invite_request_builder'
+require_relative './microsoft_graph_preview/preview_request_builder'
+require_relative './microsoft_graph_restore/restore_request_builder'
+require_relative './microsoft_graph_search_with_q/search_with_q_request_builder'
+require_relative './microsoft_graph_unfollow/unfollow_request_builder'
+require_relative './microsoft_graph_validate_permission/validate_permission_request_builder'
 require_relative './permissions/item/permission_item_request_builder'
 require_relative './permissions/permissions_request_builder'
-require_relative './preview/preview_request_builder'
-require_relative './restore/restore_request_builder'
-require_relative './search_with_q/search_with_q_request_builder'
 require_relative './subscriptions/item/subscription_item_request_builder'
 require_relative './subscriptions/subscriptions_request_builder'
 require_relative './thumbnails/item/thumbnail_set_item_request_builder'
 require_relative './thumbnails/thumbnails_request_builder'
-require_relative './unfollow/unfollow_request_builder'
-require_relative './validate_permission/validate_permission_request_builder'
 require_relative './versions/item/drive_item_version_item_request_builder'
 require_relative './versions/versions_request_builder'
+require_relative './workbook/workbook_request_builder'
 
 module MicrosoftGraph::Drives::Item::Items::Item
     ## 
@@ -47,16 +48,6 @@ module MicrosoftGraph::Drives::Item::Items::Item
             return MicrosoftGraph::Drives::Item::Items::Item::Analytics::AnalyticsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the checkin method.
-        def checkin()
-            return MicrosoftGraph::Drives::Item::Items::Item::Checkin::CheckinRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the checkout method.
-        def checkout()
-            return MicrosoftGraph::Drives::Item::Items::Item::Checkout::CheckoutRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the children property of the microsoft.graph.driveItem entity.
         def children()
             return MicrosoftGraph::Drives::Item::Items::Item::Children::ChildrenRequestBuilder.new(@path_parameters, @request_adapter)
@@ -67,34 +58,74 @@ module MicrosoftGraph::Drives::Item::Items::Item
             return MicrosoftGraph::Drives::Item::Items::Item::Content::ContentRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the copy method.
-        def copy()
-            return MicrosoftGraph::Drives::Item::Items::Item::Copy::CopyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the createLink method.
-        def create_link()
-            return MicrosoftGraph::Drives::Item::Items::Item::CreateLink::CreateLinkRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the createUploadSession method.
-        def create_upload_session()
-            return MicrosoftGraph::Drives::Item::Items::Item::CreateUploadSession::CreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the follow method.
-        def follow()
-            return MicrosoftGraph::Drives::Item::Items::Item::Follow::FollowRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the invite method.
-        def invite()
-            return MicrosoftGraph::Drives::Item::Items::Item::Invite::InviteRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the listItem property of the microsoft.graph.driveItem entity.
         def list_item()
             return MicrosoftGraph::Drives::Item::Items::Item::ListItem::ListItemRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkin method.
+        def microsoft_graph_checkin()
+            return MicrosoftGraph::Drives::Item::Items::Item::MicrosoftGraphCheckin::CheckinRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkout method.
+        def microsoft_graph_checkout()
+            return MicrosoftGraph::Drives::Item::Items::Item::MicrosoftGraphCheckout::CheckoutRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the copy method.
+        def microsoft_graph_copy()
+            return MicrosoftGraph::Drives::Item::Items::Item::MicrosoftGraphCopy::CopyRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the createLink method.
+        def microsoft_graph_create_link()
+            return MicrosoftGraph::Drives::Item::Items::Item::MicrosoftGraphCreateLink::CreateLinkRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the createUploadSession method.
+        def microsoft_graph_create_upload_session()
+            return MicrosoftGraph::Drives::Item::Items::Item::MicrosoftGraphCreateUploadSession::CreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::Drives::Item::Items::Item::MicrosoftGraphDelta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the follow method.
+        def microsoft_graph_follow()
+            return MicrosoftGraph::Drives::Item::Items::Item::MicrosoftGraphFollow::FollowRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getActivitiesByInterval method.
+        def microsoft_graph_get_activities_by_interval()
+            return MicrosoftGraph::Drives::Item::Items::Item::MicrosoftGraphGetActivitiesByInterval::GetActivitiesByIntervalRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the invite method.
+        def microsoft_graph_invite()
+            return MicrosoftGraph::Drives::Item::Items::Item::MicrosoftGraphInvite::InviteRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the preview method.
+        def microsoft_graph_preview()
+            return MicrosoftGraph::Drives::Item::Items::Item::MicrosoftGraphPreview::PreviewRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the restore method.
+        def microsoft_graph_restore()
+            return MicrosoftGraph::Drives::Item::Items::Item::MicrosoftGraphRestore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the unfollow method.
+        def microsoft_graph_unfollow()
+            return MicrosoftGraph::Drives::Item::Items::Item::MicrosoftGraphUnfollow::UnfollowRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the validatePermission method.
+        def microsoft_graph_validate_permission()
+            return MicrosoftGraph::Drives::Item::Items::Item::MicrosoftGraphValidatePermission::ValidatePermissionRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -105,18 +136,8 @@ module MicrosoftGraph::Drives::Item::Items::Item
             return MicrosoftGraph::Drives::Item::Items::Item::Permissions::PermissionsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the preview method.
-        def preview()
-            return MicrosoftGraph::Drives::Item::Items::Item::Preview::PreviewRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the restore method.
-        def restore()
-            return MicrosoftGraph::Drives::Item::Items::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.
         def subscriptions()
@@ -128,22 +149,17 @@ module MicrosoftGraph::Drives::Item::Items::Item
             return MicrosoftGraph::Drives::Item::Items::Item::Thumbnails::ThumbnailsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the unfollow method.
-        def unfollow()
-            return MicrosoftGraph::Drives::Item::Items::Item::Unfollow::UnfollowRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        # Provides operations to call the validatePermission method.
-        def validate_permission()
-            return MicrosoftGraph::Drives::Item::Items::Item::ValidatePermission::ValidatePermissionRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the versions property of the microsoft.graph.driveItem entity.
         def versions()
             return MicrosoftGraph::Drives::Item::Items::Item::Versions::VersionsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to manage the workbook property of the microsoft.graph.driveItem entity.
+        def workbook()
+            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::WorkbookRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Provides operations to manage the children property of the microsoft.graph.driveItem entity.
@@ -158,11 +174,12 @@ module MicrosoftGraph::Drives::Item::Items::Item
         end
         ## 
         ## Instantiates a new DriveItemItemRequestBuilder and sets the default values.
+        ## @param driveItemId key: id of driveItem
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, drive_item_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}{?%24select,%24expand}"
@@ -185,22 +202,6 @@ module MicrosoftGraph::Drives::Item::Items::Item
             return @request_adapter.send_async(request_info, nil, error_mapping)
         end
         ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the delta method.
-        ## @param token Usage: token='{token}'
-        ## @return a delta_with_token_request_builder
-        ## 
-        def delta_with_token(token)
-            raise StandardError, 'token cannot be null' if token.nil?
-            return DeltaWithTokenRequestBuilder.new(@path_parameters, @request_adapter, token)
-        end
-        ## 
         ## All items contained in the drive. Read-only. Nullable.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of drive_item
@@ -215,11 +216,13 @@ module MicrosoftGraph::Drives::Item::Items::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DriveItem.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Provides operations to call the getActivitiesByInterval method.
-        ## @return a get_activities_by_interval_request_builder
+        ## Provides operations to call the delta method.
+        ## @param token Usage: token='{token}'
+        ## @return a delta_with_token_request_builder
         ## 
-        def get_activities_by_interval()
-            return GetActivitiesByIntervalRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_delta_with_token(token)
+            raise StandardError, 'token cannot be null' if token.nil?
+            return DeltaWithTokenRequestBuilder.new(@path_parameters, @request_adapter, token)
         end
         ## 
         ## Provides operations to call the getActivitiesByInterval method.
@@ -228,11 +231,20 @@ module MicrosoftGraph::Drives::Item::Items::Item
         ## @param startDateTime Usage: startDateTime='{startDateTime}'
         ## @return a get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval_request_builder
         ## 
-        def get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval(end_date_time, interval, start_date_time)
+        def microsoft_graph_get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval(end_date_time, interval, start_date_time)
             raise StandardError, 'end_date_time cannot be null' if end_date_time.nil?
             raise StandardError, 'interval cannot be null' if interval.nil?
             raise StandardError, 'start_date_time cannot be null' if start_date_time.nil?
             return GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder.new(@path_parameters, @request_adapter, endDateTime, interval, startDateTime)
+        end
+        ## 
+        ## Provides operations to call the search method.
+        ## @param q Usage: q='{q}'
+        ## @return a search_with_q_request_builder
+        ## 
+        def microsoft_graph_search_with_q(q)
+            raise StandardError, 'q cannot be null' if q.nil?
+            return SearchWithQRequestBuilder.new(@path_parameters, @request_adapter, q)
         end
         ## 
         ## Update the navigation property items in drives
@@ -260,15 +272,6 @@ module MicrosoftGraph::Drives::Item::Items::Item
             url_tpl_params = @path_parameters.clone
             url_tpl_params["permission%2Did"] = id
             return MicrosoftGraph::Drives::Item::Items::Item::Permissions::Item::PermissionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the search method.
-        ## @param q Usage: q='{q}'
-        ## @return a search_with_q_request_builder
-        ## 
-        def search_with_q(q)
-            raise StandardError, 'q cannot be null' if q.nil?
-            return SearchWithQRequestBuilder.new(@path_parameters, @request_adapter, q)
         end
         ## 
         ## Provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.

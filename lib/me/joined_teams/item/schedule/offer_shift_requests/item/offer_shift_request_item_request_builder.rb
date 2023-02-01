@@ -25,11 +25,12 @@ module MicrosoftGraph::Me::JoinedTeams::Item::Schedule::OfferShiftRequests::Item
         @url_template
         ## 
         ## Instantiates a new OfferShiftRequestItemRequestBuilder and sets the default values.
+        ## @param offerShiftRequestId key: id of offerShiftRequest
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, offer_shift_request_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/me/joinedTeams/{team%2Did}/schedule/offerShiftRequests/{offerShiftRequest%2Did}{?%24select,%24expand}"

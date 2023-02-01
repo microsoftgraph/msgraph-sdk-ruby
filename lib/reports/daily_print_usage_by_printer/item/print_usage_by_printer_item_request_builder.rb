@@ -23,10 +23,11 @@ module MicrosoftGraph::Reports::DailyPrintUsageByPrinter::Item
         ## 
         ## Instantiates a new PrintUsageByPrinterItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
+        ## @param printUsageByPrinterId key: id of printUsageByPrinter
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, print_usage_by_printer_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/reports/dailyPrintUsageByPrinter/{printUsageByPrinter%2Did}{?%24select,%24expand}"

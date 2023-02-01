@@ -7,16 +7,16 @@ require_relative '../../../../item'
 require_relative '../../../joined_teams'
 require_relative '../../item'
 require_relative '../channels'
-require_relative './complete_migration/complete_migration_request_builder'
-require_relative './does_user_have_accessuser_id_user_id_tenant_id_tenant_id_user_principal_name_user_principal_name/732db1068832007d49ec9b451d8ca1cfd0136d0663ec94246815c75150bfdfa9'
 require_relative './files_folder/files_folder_request_builder'
 require_relative './item'
 require_relative './members/item/conversation_member_item_request_builder'
 require_relative './members/members_request_builder'
 require_relative './messages/item/chat_message_item_request_builder'
 require_relative './messages/messages_request_builder'
-require_relative './provision_email/provision_email_request_builder'
-require_relative './remove_email/remove_email_request_builder'
+require_relative './microsoft_graph_complete_migration/complete_migration_request_builder'
+require_relative './microsoft_graph_does_user_have_accessuser_id_user_id_tenant_id_tenant_id_user_principal_name_user_principal_name/732db1068832007d49ec9b451d8ca1cfd0136d0663ec94246815c75150bfdfa9'
+require_relative './microsoft_graph_provision_email/provision_email_request_builder'
+require_relative './microsoft_graph_remove_email/remove_email_request_builder'
 require_relative './shared_with_teams/item/shared_with_channel_team_info_item_request_builder'
 require_relative './shared_with_teams/shared_with_teams_request_builder'
 require_relative './tabs/item/teams_tab_item_request_builder'
@@ -27,11 +27,6 @@ module MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item
     # Provides operations to manage the channels property of the microsoft.graph.team entity.
     class ChannelItemRequestBuilder
         
-        ## 
-        # Provides operations to call the completeMigration method.
-        def complete_migration()
-            return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item::CompleteMigration::CompleteMigrationRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
         def files_folder()
@@ -48,18 +43,28 @@ module MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item
             return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item::Messages::MessagesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Path parameters for the request
-        @path_parameters
+        # Provides operations to call the completeMigration method.
+        def microsoft_graph_complete_migration()
+            return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item::MicrosoftGraphCompleteMigration::CompleteMigrationRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the doesUserHaveAccess method.
+        def microsoft_graph_does_user_have_accessuser_id_user_id_tenant_id_tenant_id_user_principal_name_user_principal_name()
+            return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item::MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName::DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Provides operations to call the provisionEmail method.
-        def provision_email()
-            return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item::ProvisionEmail::ProvisionEmailRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_provision_email()
+            return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item::MicrosoftGraphProvisionEmail::ProvisionEmailRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the removeEmail method.
-        def remove_email()
-            return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item::RemoveEmail::RemoveEmailRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_remove_email()
+            return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item::MicrosoftGraphRemoveEmail::RemoveEmailRequestBuilder.new(@path_parameters, @request_adapter)
         end
+        ## 
+        # Path parameters for the request
+        @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
@@ -78,11 +83,12 @@ module MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item
         @url_template
         ## 
         ## Instantiates a new ChannelItemRequestBuilder and sets the default values.
+        ## @param channelId key: id of channel
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, channel_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/channels/{channel%2Did}{?%24select,%24expand}"
@@ -103,13 +109,6 @@ module MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, nil, error_mapping)
-        end
-        ## 
-        ## Provides operations to call the doesUserHaveAccess method.
-        ## @return a does_user_have_accessuser_id_user_id_tenant_id_tenant_id_user_principal_name_user_principal_name_request_builder
-        ## 
-        def does_user_have_accessuser_id_user_id_tenant_id_tenant_id_user_principal_name_user_principal_name()
-            return DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## The collection of channels and messages associated with the team.

@@ -17,7 +17,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the canonicalName property value. The canonical name of the CNAME record. Used to configure the CNAME record at the DNS host.
-        ## @param value Value to set for the canonicalName property.
+        ## @param value Value to set for the canonical_name property.
         ## @return a void
         ## 
         def canonical_name=(value)

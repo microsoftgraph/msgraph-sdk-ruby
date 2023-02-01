@@ -76,7 +76,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
-        ## @param value Value to set for the deployedAppCount property.
+        ## @param value Value to set for the deployed_app_count property.
         ## @return a void
         ## 
         def deployed_app_count=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-        ## @param value Value to set for the deploymentSummary property.
+        ## @param value Value to set for the deployment_summary property.
         ## @return a void
         ## 
         def deployment_summary=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
-        ## @param value Value to set for the isAssigned property.
+        ## @param value Value to set for the is_assigned property.
         ## @return a void
         ## 
         def is_assigned=(value)

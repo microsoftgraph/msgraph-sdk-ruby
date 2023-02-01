@@ -27,9 +27,10 @@ module MicrosoftGraph::Users::Item::Contacts::Item::SingleValueExtendedPropertie
         ## Instantiates a new SingleValueLegacyExtendedPropertyItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param singleValueLegacyExtendedPropertyId key: id of singleValueLegacyExtendedProperty
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, single_value_legacy_extended_property_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}/singleValueExtendedProperties/{singleValueLegacyExtendedProperty%2Did}{?%24select,%24expand}"

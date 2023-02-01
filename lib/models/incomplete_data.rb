@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the missingDataBeforeDateTime property value. The service does not have source data before the specified time.
-        ## @param value Value to set for the missingDataBeforeDateTime property.
+        ## @param value Value to set for the missing_data_before_date_time property.
         ## @return a void
         ## 
         def missing_data_before_date_time=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the wasThrottled property value. Some data was not recorded due to excessive activity.
-        ## @param value Value to set for the wasThrottled property.
+        ## @param value Value to set for the was_throttled property.
         ## @return a void
         ## 
         def was_throttled=(value)

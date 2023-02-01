@@ -40,7 +40,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the identity source, typically also the domain name. Read only.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -55,7 +55,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the domainName property value. The domain name. Read only.
-        ## @param value Value to set for the domainName property.
+        ## @param value Value to set for the domain_name property.
         ## @return a void
         ## 
         def domain_name=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the issuerUri property value. The issuerURI of the incoming federation. Read only.
-        ## @param value Value to set for the issuerUri property.
+        ## @param value Value to set for the issuer_uri property.
         ## @return a void
         ## 
         def issuer_uri=(value)

@@ -23,10 +23,11 @@ module MicrosoftGraph::AuditLogs::Provisioning::Item
         ## 
         ## Instantiates a new ProvisioningObjectSummaryItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
+        ## @param provisioningObjectSummaryId key: id of provisioningObjectSummary
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, provisioning_object_summary_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/auditLogs/provisioning/{provisioningObjectSummary%2Did}{?%24select,%24expand}"

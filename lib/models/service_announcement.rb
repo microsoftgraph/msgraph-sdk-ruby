@@ -15,7 +15,7 @@ module MicrosoftGraph::Models
         # A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
         @messages
         ## 
-        ## Instantiates a new serviceAnnouncement and sets the default values.
+        ## Instantiates a new ServiceAnnouncement and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -50,7 +50,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
-        ## @param value Value to set for the healthOverviews property.
+        ## @param value Value to set for the health_overviews property.
         ## @return a void
         ## 
         def health_overviews=(value)

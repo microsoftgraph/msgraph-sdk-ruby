@@ -24,7 +24,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
-        ## @param value Value to set for the childSelectability property.
+        ## @param value Value to set for the child_selectability property.
         ## @return a void
         ## 
         def child_selectability=(value)
@@ -39,7 +39,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the childTags property value. Returns the tags that are a child of a tag.
-        ## @param value Value to set for the childTags property.
+        ## @param value Value to set for the child_tags property.
         ## @return a void
         ## 
         def child_tags=(value)

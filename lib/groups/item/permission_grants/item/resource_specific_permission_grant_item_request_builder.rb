@@ -5,12 +5,12 @@ require_relative '../../../../models/resource_specific_permission_grant'
 require_relative '../../../groups'
 require_relative '../../item'
 require_relative '../permission_grants'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
-require_relative './restore/restore_request_builder'
+require_relative './microsoft_graph_check_member_groups/check_member_groups_request_builder'
+require_relative './microsoft_graph_check_member_objects/check_member_objects_request_builder'
+require_relative './microsoft_graph_get_member_groups/get_member_groups_request_builder'
+require_relative './microsoft_graph_get_member_objects/get_member_objects_request_builder'
+require_relative './microsoft_graph_restore/restore_request_builder'
 
 module MicrosoftGraph::Groups::Item::PermissionGrants::Item
     ## 
@@ -19,23 +19,28 @@ module MicrosoftGraph::Groups::Item::PermissionGrants::Item
         
         ## 
         # Provides operations to call the checkMemberGroups method.
-        def check_member_groups()
-            return MicrosoftGraph::Groups::Item::PermissionGrants::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_check_member_groups()
+            return MicrosoftGraph::Groups::Item::PermissionGrants::Item::MicrosoftGraphCheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the checkMemberObjects method.
-        def check_member_objects()
-            return MicrosoftGraph::Groups::Item::PermissionGrants::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_check_member_objects()
+            return MicrosoftGraph::Groups::Item::PermissionGrants::Item::MicrosoftGraphCheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getMemberGroups method.
-        def get_member_groups()
-            return MicrosoftGraph::Groups::Item::PermissionGrants::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_member_groups()
+            return MicrosoftGraph::Groups::Item::PermissionGrants::Item::MicrosoftGraphGetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getMemberObjects method.
-        def get_member_objects()
-            return MicrosoftGraph::Groups::Item::PermissionGrants::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_member_objects()
+            return MicrosoftGraph::Groups::Item::PermissionGrants::Item::MicrosoftGraphGetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the restore method.
+        def microsoft_graph_restore()
+            return MicrosoftGraph::Groups::Item::PermissionGrants::Item::MicrosoftGraphRestore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -44,20 +49,16 @@ module MicrosoftGraph::Groups::Item::PermissionGrants::Item
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the restore method.
-        def restore()
-            return MicrosoftGraph::Groups::Item::PermissionGrants::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new ResourceSpecificPermissionGrantItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param resourceSpecificPermissionGrantId key: id of resourceSpecificPermissionGrant
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, resource_specific_permission_grant_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/groups/{group%2Did}/permissionGrants/{resourceSpecificPermissionGrant%2Did}{?%24select,%24expand}"

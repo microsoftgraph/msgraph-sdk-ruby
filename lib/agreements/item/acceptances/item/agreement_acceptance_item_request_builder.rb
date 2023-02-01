@@ -23,11 +23,12 @@ module MicrosoftGraph::Agreements::Item::Acceptances::Item
         @url_template
         ## 
         ## Instantiates a new AgreementAcceptanceItemRequestBuilder and sets the default values.
+        ## @param agreementAcceptanceId key: id of agreementAcceptance
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, agreement_acceptance_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/agreements/{agreement%2Did}/acceptances/{agreementAcceptance%2Did}{?%24select,%24expand}"

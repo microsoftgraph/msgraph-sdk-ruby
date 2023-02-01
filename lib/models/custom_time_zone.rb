@@ -55,7 +55,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the daylightOffset property value. Specifies when the time zone switches from standard time to daylight saving time.
-        ## @param value Value to set for the daylightOffset property.
+        ## @param value Value to set for the daylight_offset property.
         ## @return a void
         ## 
         def daylight_offset=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the standardOffset property value. Specifies when the time zone switches from daylight saving time to standard time.
-        ## @param value Value to set for the standardOffset property.
+        ## @param value Value to set for the standard_offset property.
         ## @return a void
         ## 
         def standard_offset=(value)

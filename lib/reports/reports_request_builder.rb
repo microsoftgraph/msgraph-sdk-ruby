@@ -7,102 +7,102 @@ require_relative './daily_print_usage_by_printer/daily_print_usage_by_printer_re
 require_relative './daily_print_usage_by_printer/item/print_usage_by_printer_item_request_builder'
 require_relative './daily_print_usage_by_user/daily_print_usage_by_user_request_builder'
 require_relative './daily_print_usage_by_user/item/print_usage_by_user_item_request_builder'
-require_relative './device_configuration_device_activity/device_configuration_device_activity_request_builder'
-require_relative './device_configuration_user_activity/device_configuration_user_activity_request_builder'
-require_relative './get_email_activity_counts_with_period/get_email_activity_counts_with_period_request_builder'
-require_relative './get_email_activity_user_counts_with_period/get_email_activity_user_counts_with_period_request_builder'
-require_relative './get_email_activity_user_detail_with_date/get_email_activity_user_detail_with_date_request_builder'
-require_relative './get_email_activity_user_detail_with_period/get_email_activity_user_detail_with_period_request_builder'
-require_relative './get_email_app_usage_apps_user_counts_with_period/get_email_app_usage_apps_user_counts_with_period_request_builder'
-require_relative './get_email_app_usage_user_counts_with_period/get_email_app_usage_user_counts_with_period_request_builder'
-require_relative './get_email_app_usage_user_detail_with_date/get_email_app_usage_user_detail_with_date_request_builder'
-require_relative './get_email_app_usage_user_detail_with_period/get_email_app_usage_user_detail_with_period_request_builder'
-require_relative './get_email_app_usage_versions_user_counts_with_period/get_email_app_usage_versions_user_counts_with_period_request_builder'
-require_relative './get_group_archived_print_jobs_with_group_id_with_start_date_time_with_end_date_time/76c9ca2dae85297e117160f659453977b81ab078406b5fbb965a1e6fa5420c9e'
-require_relative './get_m365_app_platform_user_counts_with_period/get_m365_app_platform_user_counts_with_period_request_builder'
-require_relative './get_m365_app_user_counts_with_period/get_m365_app_user_counts_with_period_request_builder'
-require_relative './get_m365_app_user_detail_with_date/get_m365_app_user_detail_with_date_request_builder'
-require_relative './get_m365_app_user_detail_with_period/get_m365_app_user_detail_with_period_request_builder'
-require_relative './get_mailbox_usage_detail_with_period/get_mailbox_usage_detail_with_period_request_builder'
-require_relative './get_mailbox_usage_mailbox_counts_with_period/get_mailbox_usage_mailbox_counts_with_period_request_builder'
-require_relative './get_mailbox_usage_quota_status_mailbox_counts_with_period/get_mailbox_usage_quota_status_mailbox_counts_with_period_request_builder'
-require_relative './get_mailbox_usage_storage_with_period/get_mailbox_usage_storage_with_period_request_builder'
-require_relative './get_office365_activation_counts/get_office365_activation_counts_request_builder'
-require_relative './get_office365_activations_user_counts/get_office365_activations_user_counts_request_builder'
-require_relative './get_office365_activations_user_detail/get_office365_activations_user_detail_request_builder'
-require_relative './get_office365_active_user_counts_with_period/get_office365_active_user_counts_with_period_request_builder'
-require_relative './get_office365_active_user_detail_with_date/get_office365_active_user_detail_with_date_request_builder'
-require_relative './get_office365_active_user_detail_with_period/get_office365_active_user_detail_with_period_request_builder'
-require_relative './get_office365_groups_activity_counts_with_period/get_office365_groups_activity_counts_with_period_request_builder'
-require_relative './get_office365_groups_activity_detail_with_date/get_office365_groups_activity_detail_with_date_request_builder'
-require_relative './get_office365_groups_activity_detail_with_period/get_office365_groups_activity_detail_with_period_request_builder'
-require_relative './get_office365_groups_activity_file_counts_with_period/get_office365_groups_activity_file_counts_with_period_request_builder'
-require_relative './get_office365_groups_activity_group_counts_with_period/get_office365_groups_activity_group_counts_with_period_request_builder'
-require_relative './get_office365_groups_activity_storage_with_period/get_office365_groups_activity_storage_with_period_request_builder'
-require_relative './get_office365_services_user_counts_with_period/get_office365_services_user_counts_with_period_request_builder'
-require_relative './get_one_drive_activity_file_counts_with_period/get_one_drive_activity_file_counts_with_period_request_builder'
-require_relative './get_one_drive_activity_user_counts_with_period/get_one_drive_activity_user_counts_with_period_request_builder'
-require_relative './get_one_drive_activity_user_detail_with_date/get_one_drive_activity_user_detail_with_date_request_builder'
-require_relative './get_one_drive_activity_user_detail_with_period/get_one_drive_activity_user_detail_with_period_request_builder'
-require_relative './get_one_drive_usage_account_counts_with_period/get_one_drive_usage_account_counts_with_period_request_builder'
-require_relative './get_one_drive_usage_account_detail_with_date/get_one_drive_usage_account_detail_with_date_request_builder'
-require_relative './get_one_drive_usage_account_detail_with_period/get_one_drive_usage_account_detail_with_period_request_builder'
-require_relative './get_one_drive_usage_file_counts_with_period/get_one_drive_usage_file_counts_with_period_request_builder'
-require_relative './get_one_drive_usage_storage_with_period/get_one_drive_usage_storage_with_period_request_builder'
-require_relative './get_printer_archived_print_jobs_with_printer_id_with_start_date_time_with_end_date_time/6d9539f5873fb3fdd65d5d7371db08ed4d7ab3072dd5edea9896d64da7c61b1f'
-require_relative './get_share_point_activity_file_counts_with_period/get_share_point_activity_file_counts_with_period_request_builder'
-require_relative './get_share_point_activity_pages_with_period/get_share_point_activity_pages_with_period_request_builder'
-require_relative './get_share_point_activity_user_counts_with_period/get_share_point_activity_user_counts_with_period_request_builder'
-require_relative './get_share_point_activity_user_detail_with_date/get_share_point_activity_user_detail_with_date_request_builder'
-require_relative './get_share_point_activity_user_detail_with_period/get_share_point_activity_user_detail_with_period_request_builder'
-require_relative './get_share_point_site_usage_detail_with_date/get_share_point_site_usage_detail_with_date_request_builder'
-require_relative './get_share_point_site_usage_detail_with_period/get_share_point_site_usage_detail_with_period_request_builder'
-require_relative './get_share_point_site_usage_file_counts_with_period/get_share_point_site_usage_file_counts_with_period_request_builder'
-require_relative './get_share_point_site_usage_pages_with_period/get_share_point_site_usage_pages_with_period_request_builder'
-require_relative './get_share_point_site_usage_site_counts_with_period/get_share_point_site_usage_site_counts_with_period_request_builder'
-require_relative './get_share_point_site_usage_storage_with_period/get_share_point_site_usage_storage_with_period_request_builder'
-require_relative './get_skype_for_business_activity_counts_with_period/get_skype_for_business_activity_counts_with_period_request_builder'
-require_relative './get_skype_for_business_activity_user_counts_with_period/get_skype_for_business_activity_user_counts_with_period_request_builder'
-require_relative './get_skype_for_business_activity_user_detail_with_date/get_skype_for_business_activity_user_detail_with_date_request_builder'
-require_relative './get_skype_for_business_activity_user_detail_with_period/get_skype_for_business_activity_user_detail_with_period_request_builder'
-require_relative './get_skype_for_business_device_usage_distribution_user_counts_with_period/get_skype_for_business_device_usage_distribution_user_counts_with_period_request_builder'
-require_relative './get_skype_for_business_device_usage_user_counts_with_period/get_skype_for_business_device_usage_user_counts_with_period_request_builder'
-require_relative './get_skype_for_business_device_usage_user_detail_with_date/get_skype_for_business_device_usage_user_detail_with_date_request_builder'
-require_relative './get_skype_for_business_device_usage_user_detail_with_period/get_skype_for_business_device_usage_user_detail_with_period_request_builder'
-require_relative './get_skype_for_business_organizer_activity_counts_with_period/get_skype_for_business_organizer_activity_counts_with_period_request_builder'
-require_relative './get_skype_for_business_organizer_activity_minute_counts_with_period/get_skype_for_business_organizer_activity_minute_counts_with_period_request_builder'
-require_relative './get_skype_for_business_organizer_activity_user_counts_with_period/get_skype_for_business_organizer_activity_user_counts_with_period_request_builder'
-require_relative './get_skype_for_business_participant_activity_counts_with_period/get_skype_for_business_participant_activity_counts_with_period_request_builder'
-require_relative './get_skype_for_business_participant_activity_minute_counts_with_period/get_skype_for_business_participant_activity_minute_counts_with_period_request_builder'
-require_relative './get_skype_for_business_participant_activity_user_counts_with_period/get_skype_for_business_participant_activity_user_counts_with_period_request_builder'
-require_relative './get_skype_for_business_peer_to_peer_activity_counts_with_period/get_skype_for_business_peer_to_peer_activity_counts_with_period_request_builder'
-require_relative './get_skype_for_business_peer_to_peer_activity_minute_counts_with_period/get_skype_for_business_peer_to_peer_activity_minute_counts_with_period_request_builder'
-require_relative './get_skype_for_business_peer_to_peer_activity_user_counts_with_period/get_skype_for_business_peer_to_peer_activity_user_counts_with_period_request_builder'
-require_relative './get_teams_device_usage_distribution_user_counts_with_period/get_teams_device_usage_distribution_user_counts_with_period_request_builder'
-require_relative './get_teams_device_usage_user_counts_with_period/get_teams_device_usage_user_counts_with_period_request_builder'
-require_relative './get_teams_device_usage_user_detail_with_date/get_teams_device_usage_user_detail_with_date_request_builder'
-require_relative './get_teams_device_usage_user_detail_with_period/get_teams_device_usage_user_detail_with_period_request_builder'
-require_relative './get_teams_user_activity_counts_with_period/get_teams_user_activity_counts_with_period_request_builder'
-require_relative './get_teams_user_activity_user_counts_with_period/get_teams_user_activity_user_counts_with_period_request_builder'
-require_relative './get_teams_user_activity_user_detail_with_date/get_teams_user_activity_user_detail_with_date_request_builder'
-require_relative './get_teams_user_activity_user_detail_with_period/get_teams_user_activity_user_detail_with_period_request_builder'
-require_relative './get_user_archived_print_jobs_with_user_id_with_start_date_time_with_end_date_time/get_user_archived_print_jobs_with_user_id_with_start_date_time_with_end_date_time_request_builder'
-require_relative './get_yammer_activity_counts_with_period/get_yammer_activity_counts_with_period_request_builder'
-require_relative './get_yammer_activity_user_counts_with_period/get_yammer_activity_user_counts_with_period_request_builder'
-require_relative './get_yammer_activity_user_detail_with_date/get_yammer_activity_user_detail_with_date_request_builder'
-require_relative './get_yammer_activity_user_detail_with_period/get_yammer_activity_user_detail_with_period_request_builder'
-require_relative './get_yammer_device_usage_distribution_user_counts_with_period/get_yammer_device_usage_distribution_user_counts_with_period_request_builder'
-require_relative './get_yammer_device_usage_user_counts_with_period/get_yammer_device_usage_user_counts_with_period_request_builder'
-require_relative './get_yammer_device_usage_user_detail_with_date/get_yammer_device_usage_user_detail_with_date_request_builder'
-require_relative './get_yammer_device_usage_user_detail_with_period/get_yammer_device_usage_user_detail_with_period_request_builder'
-require_relative './get_yammer_groups_activity_counts_with_period/get_yammer_groups_activity_counts_with_period_request_builder'
-require_relative './get_yammer_groups_activity_detail_with_date/get_yammer_groups_activity_detail_with_date_request_builder'
-require_relative './get_yammer_groups_activity_detail_with_period/get_yammer_groups_activity_detail_with_period_request_builder'
-require_relative './get_yammer_groups_activity_group_counts_with_period/get_yammer_groups_activity_group_counts_with_period_request_builder'
-require_relative './managed_device_enrollment_failure_details/managed_device_enrollment_failure_details_request_builder'
-require_relative './managed_device_enrollment_failure_details_with_skip_with_top_with_filter_with_skip_token/54eee1926ea81dba1a95277923eee079ffc56a067bd10f19cfc481c67bf020bd'
-require_relative './managed_device_enrollment_top_failures/managed_device_enrollment_top_failures_request_builder'
-require_relative './managed_device_enrollment_top_failures_with_period/managed_device_enrollment_top_failures_with_period_request_builder'
+require_relative './microsoft_graph_device_configuration_device_activity/device_configuration_device_activity_request_builder'
+require_relative './microsoft_graph_device_configuration_user_activity/device_configuration_user_activity_request_builder'
+require_relative './microsoft_graph_get_email_activity_counts_with_period/get_email_activity_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_email_activity_user_counts_with_period/get_email_activity_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_email_activity_user_detail_with_date/get_email_activity_user_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_email_activity_user_detail_with_period/get_email_activity_user_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_email_app_usage_apps_user_counts_with_period/get_email_app_usage_apps_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_email_app_usage_user_counts_with_period/get_email_app_usage_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_email_app_usage_user_detail_with_date/get_email_app_usage_user_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_email_app_usage_user_detail_with_period/get_email_app_usage_user_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_email_app_usage_versions_user_counts_with_period/get_email_app_usage_versions_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_group_archived_print_jobs_with_group_id_with_start_date_time_with_end_date_time/76c9ca2dae85297e117160f659453977b81ab078406b5fbb965a1e6fa5420c9e'
+require_relative './microsoft_graph_get_m365_app_platform_user_counts_with_period/get_m365_app_platform_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_m365_app_user_counts_with_period/get_m365_app_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_m365_app_user_detail_with_date/get_m365_app_user_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_m365_app_user_detail_with_period/get_m365_app_user_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_mailbox_usage_detail_with_period/get_mailbox_usage_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_mailbox_usage_mailbox_counts_with_period/get_mailbox_usage_mailbox_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_mailbox_usage_quota_status_mailbox_counts_with_period/get_mailbox_usage_quota_status_mailbox_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_mailbox_usage_storage_with_period/get_mailbox_usage_storage_with_period_request_builder'
+require_relative './microsoft_graph_get_office365_activation_counts/get_office365_activation_counts_request_builder'
+require_relative './microsoft_graph_get_office365_activations_user_counts/get_office365_activations_user_counts_request_builder'
+require_relative './microsoft_graph_get_office365_activations_user_detail/get_office365_activations_user_detail_request_builder'
+require_relative './microsoft_graph_get_office365_active_user_counts_with_period/get_office365_active_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_office365_active_user_detail_with_date/get_office365_active_user_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_office365_active_user_detail_with_period/get_office365_active_user_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_office365_groups_activity_counts_with_period/get_office365_groups_activity_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_office365_groups_activity_detail_with_date/get_office365_groups_activity_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_office365_groups_activity_detail_with_period/get_office365_groups_activity_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_office365_groups_activity_file_counts_with_period/get_office365_groups_activity_file_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_office365_groups_activity_group_counts_with_period/get_office365_groups_activity_group_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_office365_groups_activity_storage_with_period/get_office365_groups_activity_storage_with_period_request_builder'
+require_relative './microsoft_graph_get_office365_services_user_counts_with_period/get_office365_services_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_one_drive_activity_file_counts_with_period/get_one_drive_activity_file_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_one_drive_activity_user_counts_with_period/get_one_drive_activity_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_one_drive_activity_user_detail_with_date/get_one_drive_activity_user_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_one_drive_activity_user_detail_with_period/get_one_drive_activity_user_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_one_drive_usage_account_counts_with_period/get_one_drive_usage_account_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_one_drive_usage_account_detail_with_date/get_one_drive_usage_account_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_one_drive_usage_account_detail_with_period/get_one_drive_usage_account_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_one_drive_usage_file_counts_with_period/get_one_drive_usage_file_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_one_drive_usage_storage_with_period/get_one_drive_usage_storage_with_period_request_builder'
+require_relative './microsoft_graph_get_printer_archived_print_jobs_with_printer_id_with_start_date_time_with_end_date_time/6d9539f5873fb3fdd65d5d7371db08ed4d7ab3072dd5edea9896d64da7c61b1f'
+require_relative './microsoft_graph_get_share_point_activity_file_counts_with_period/get_share_point_activity_file_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_share_point_activity_pages_with_period/get_share_point_activity_pages_with_period_request_builder'
+require_relative './microsoft_graph_get_share_point_activity_user_counts_with_period/get_share_point_activity_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_share_point_activity_user_detail_with_date/get_share_point_activity_user_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_share_point_activity_user_detail_with_period/get_share_point_activity_user_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_share_point_site_usage_detail_with_date/get_share_point_site_usage_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_share_point_site_usage_detail_with_period/get_share_point_site_usage_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_share_point_site_usage_file_counts_with_period/get_share_point_site_usage_file_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_share_point_site_usage_pages_with_period/get_share_point_site_usage_pages_with_period_request_builder'
+require_relative './microsoft_graph_get_share_point_site_usage_site_counts_with_period/get_share_point_site_usage_site_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_share_point_site_usage_storage_with_period/get_share_point_site_usage_storage_with_period_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_activity_counts_with_period/get_skype_for_business_activity_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_activity_user_counts_with_period/get_skype_for_business_activity_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_activity_user_detail_with_date/get_skype_for_business_activity_user_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_activity_user_detail_with_period/get_skype_for_business_activity_user_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_device_usage_distribution_user_counts_with_period/get_skype_for_business_device_usage_distribution_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_device_usage_user_counts_with_period/get_skype_for_business_device_usage_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_device_usage_user_detail_with_date/get_skype_for_business_device_usage_user_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_device_usage_user_detail_with_period/get_skype_for_business_device_usage_user_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_organizer_activity_counts_with_period/get_skype_for_business_organizer_activity_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_organizer_activity_minute_counts_with_period/get_skype_for_business_organizer_activity_minute_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_organizer_activity_user_counts_with_period/get_skype_for_business_organizer_activity_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_participant_activity_counts_with_period/get_skype_for_business_participant_activity_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_participant_activity_minute_counts_with_period/get_skype_for_business_participant_activity_minute_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_participant_activity_user_counts_with_period/get_skype_for_business_participant_activity_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_peer_to_peer_activity_counts_with_period/get_skype_for_business_peer_to_peer_activity_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_peer_to_peer_activity_minute_counts_with_period/get_skype_for_business_peer_to_peer_activity_minute_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_skype_for_business_peer_to_peer_activity_user_counts_with_period/get_skype_for_business_peer_to_peer_activity_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_teams_device_usage_distribution_user_counts_with_period/get_teams_device_usage_distribution_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_teams_device_usage_user_counts_with_period/get_teams_device_usage_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_teams_device_usage_user_detail_with_date/get_teams_device_usage_user_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_teams_device_usage_user_detail_with_period/get_teams_device_usage_user_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_teams_user_activity_counts_with_period/get_teams_user_activity_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_teams_user_activity_user_counts_with_period/get_teams_user_activity_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_teams_user_activity_user_detail_with_date/get_teams_user_activity_user_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_teams_user_activity_user_detail_with_period/get_teams_user_activity_user_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_user_archived_print_jobs_with_user_id_with_start_date_time_with_end_date_time/fbf8a282fe830f14e7972423fd124d185c6ebbe6fd09eaa00e7f4171e057a398'
+require_relative './microsoft_graph_get_yammer_activity_counts_with_period/get_yammer_activity_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_yammer_activity_user_counts_with_period/get_yammer_activity_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_yammer_activity_user_detail_with_date/get_yammer_activity_user_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_yammer_activity_user_detail_with_period/get_yammer_activity_user_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_yammer_device_usage_distribution_user_counts_with_period/get_yammer_device_usage_distribution_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_yammer_device_usage_user_counts_with_period/get_yammer_device_usage_user_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_yammer_device_usage_user_detail_with_date/get_yammer_device_usage_user_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_yammer_device_usage_user_detail_with_period/get_yammer_device_usage_user_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_yammer_groups_activity_counts_with_period/get_yammer_groups_activity_counts_with_period_request_builder'
+require_relative './microsoft_graph_get_yammer_groups_activity_detail_with_date/get_yammer_groups_activity_detail_with_date_request_builder'
+require_relative './microsoft_graph_get_yammer_groups_activity_detail_with_period/get_yammer_groups_activity_detail_with_period_request_builder'
+require_relative './microsoft_graph_get_yammer_groups_activity_group_counts_with_period/get_yammer_groups_activity_group_counts_with_period_request_builder'
+require_relative './microsoft_graph_managed_device_enrollment_failure_details/managed_device_enrollment_failure_details_request_builder'
+require_relative './microsoft_graph_managed_device_enrollment_failure_details_with_skip_with_top_with_filter_with_skip_token/54eee1926ea81dba1a95277923eee079ffc56a067bd10f19cfc481c67bf020bd'
+require_relative './microsoft_graph_managed_device_enrollment_top_failures/managed_device_enrollment_top_failures_request_builder'
+require_relative './microsoft_graph_managed_device_enrollment_top_failures_with_period/managed_device_enrollment_top_failures_with_period_request_builder'
 require_relative './monthly_print_usage_by_printer/item/print_usage_by_printer_item_request_builder'
 require_relative './monthly_print_usage_by_printer/monthly_print_usage_by_printer_request_builder'
 require_relative './monthly_print_usage_by_user/item/print_usage_by_user_item_request_builder'
@@ -124,6 +124,41 @@ module MicrosoftGraph::Reports
         # Provides operations to manage the dailyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
         def daily_print_usage_by_user()
             return MicrosoftGraph::Reports::DailyPrintUsageByUser::DailyPrintUsageByUserRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the deviceConfigurationDeviceActivity method.
+        def microsoft_graph_device_configuration_device_activity()
+            return MicrosoftGraph::Reports::MicrosoftGraphDeviceConfigurationDeviceActivity::DeviceConfigurationDeviceActivityRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the deviceConfigurationUserActivity method.
+        def microsoft_graph_device_configuration_user_activity()
+            return MicrosoftGraph::Reports::MicrosoftGraphDeviceConfigurationUserActivity::DeviceConfigurationUserActivityRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getOffice365ActivationCounts method.
+        def microsoft_graph_get_office365_activation_counts()
+            return MicrosoftGraph::Reports::MicrosoftGraphGetOffice365ActivationCounts::GetOffice365ActivationCountsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getOffice365ActivationsUserCounts method.
+        def microsoft_graph_get_office365_activations_user_counts()
+            return MicrosoftGraph::Reports::MicrosoftGraphGetOffice365ActivationsUserCounts::GetOffice365ActivationsUserCountsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getOffice365ActivationsUserDetail method.
+        def microsoft_graph_get_office365_activations_user_detail()
+            return MicrosoftGraph::Reports::MicrosoftGraphGetOffice365ActivationsUserDetail::GetOffice365ActivationsUserDetailRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the managedDeviceEnrollmentFailureDetails method.
+        def microsoft_graph_managed_device_enrollment_failure_details()
+            return MicrosoftGraph::Reports::MicrosoftGraphManagedDeviceEnrollmentFailureDetails::ManagedDeviceEnrollmentFailureDetailsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the managedDeviceEnrollmentTopFailures method.
+        def microsoft_graph_managed_device_enrollment_top_failures()
+            return MicrosoftGraph::Reports::MicrosoftGraphManagedDeviceEnrollmentTopFailures::ManagedDeviceEnrollmentTopFailuresRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
@@ -186,20 +221,6 @@ module MicrosoftGraph::Reports
             return MicrosoftGraph::Reports::DailyPrintUsageByUser::Item::PrintUsageByUserItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Provides operations to call the deviceConfigurationDeviceActivity method.
-        ## @return a device_configuration_device_activity_request_builder
-        ## 
-        def device_configuration_device_activity()
-            return DeviceConfigurationDeviceActivityRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the deviceConfigurationUserActivity method.
-        ## @return a device_configuration_user_activity_request_builder
-        ## 
-        def device_configuration_user_activity()
-            return DeviceConfigurationUserActivityRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## Get reports
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of report_root
@@ -218,7 +239,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_email_activity_counts_with_period_request_builder
         ## 
-        def get_email_activity_counts_with_period(period)
+        def microsoft_graph_get_email_activity_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetEmailActivityCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -227,7 +248,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_email_activity_user_counts_with_period_request_builder
         ## 
-        def get_email_activity_user_counts_with_period(period)
+        def microsoft_graph_get_email_activity_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetEmailActivityUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -236,7 +257,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_email_activity_user_detail_with_date_request_builder
         ## 
-        def get_email_activity_user_detail_with_date(date)
+        def microsoft_graph_get_email_activity_user_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetEmailActivityUserDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -245,7 +266,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_email_activity_user_detail_with_period_request_builder
         ## 
-        def get_email_activity_user_detail_with_period(period)
+        def microsoft_graph_get_email_activity_user_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetEmailActivityUserDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -254,7 +275,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_email_app_usage_apps_user_counts_with_period_request_builder
         ## 
-        def get_email_app_usage_apps_user_counts_with_period(period)
+        def microsoft_graph_get_email_app_usage_apps_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -263,7 +284,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_email_app_usage_user_counts_with_period_request_builder
         ## 
-        def get_email_app_usage_user_counts_with_period(period)
+        def microsoft_graph_get_email_app_usage_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetEmailAppUsageUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -272,7 +293,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_email_app_usage_user_detail_with_date_request_builder
         ## 
-        def get_email_app_usage_user_detail_with_date(date)
+        def microsoft_graph_get_email_app_usage_user_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetEmailAppUsageUserDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -281,7 +302,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_email_app_usage_user_detail_with_period_request_builder
         ## 
-        def get_email_app_usage_user_detail_with_period(period)
+        def microsoft_graph_get_email_app_usage_user_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetEmailAppUsageUserDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -290,7 +311,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_email_app_usage_versions_user_counts_with_period_request_builder
         ## 
-        def get_email_app_usage_versions_user_counts_with_period(period)
+        def microsoft_graph_get_email_app_usage_versions_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetEmailAppUsageVersionsUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -301,7 +322,7 @@ module MicrosoftGraph::Reports
         ## @param startDateTime Usage: startDateTime={startDateTime}
         ## @return a get_group_archived_print_jobs_with_group_id_with_start_date_time_with_end_date_time_request_builder
         ## 
-        def get_group_archived_print_jobs_with_group_id_with_start_date_time_with_end_date_time(end_date_time, group_id, start_date_time)
+        def microsoft_graph_get_group_archived_print_jobs_with_group_id_with_start_date_time_with_end_date_time(end_date_time, group_id, start_date_time)
             raise StandardError, 'end_date_time cannot be null' if end_date_time.nil?
             raise StandardError, 'group_id cannot be null' if group_id.nil?
             raise StandardError, 'start_date_time cannot be null' if start_date_time.nil?
@@ -312,7 +333,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_m365_app_platform_user_counts_with_period_request_builder
         ## 
-        def get_m365_app_platform_user_counts_with_period(period)
+        def microsoft_graph_get_m365_app_platform_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetM365AppPlatformUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -321,7 +342,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_m365_app_user_counts_with_period_request_builder
         ## 
-        def get_m365_app_user_counts_with_period(period)
+        def microsoft_graph_get_m365_app_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetM365AppUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -330,7 +351,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_m365_app_user_detail_with_date_request_builder
         ## 
-        def get_m365_app_user_detail_with_date(date)
+        def microsoft_graph_get_m365_app_user_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetM365AppUserDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -339,7 +360,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_m365_app_user_detail_with_period_request_builder
         ## 
-        def get_m365_app_user_detail_with_period(period)
+        def microsoft_graph_get_m365_app_user_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetM365AppUserDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -348,7 +369,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_mailbox_usage_detail_with_period_request_builder
         ## 
-        def get_mailbox_usage_detail_with_period(period)
+        def microsoft_graph_get_mailbox_usage_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetMailboxUsageDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -357,7 +378,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_mailbox_usage_mailbox_counts_with_period_request_builder
         ## 
-        def get_mailbox_usage_mailbox_counts_with_period(period)
+        def microsoft_graph_get_mailbox_usage_mailbox_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetMailboxUsageMailboxCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -366,7 +387,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_mailbox_usage_quota_status_mailbox_counts_with_period_request_builder
         ## 
-        def get_mailbox_usage_quota_status_mailbox_counts_with_period(period)
+        def microsoft_graph_get_mailbox_usage_quota_status_mailbox_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -375,37 +396,16 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_mailbox_usage_storage_with_period_request_builder
         ## 
-        def get_mailbox_usage_storage_with_period(period)
+        def microsoft_graph_get_mailbox_usage_storage_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetMailboxUsageStorageWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
-        end
-        ## 
-        ## Provides operations to call the getOffice365ActivationCounts method.
-        ## @return a get_office365_activation_counts_request_builder
-        ## 
-        def get_office365_activation_counts()
-            return GetOffice365ActivationCountsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the getOffice365ActivationsUserCounts method.
-        ## @return a get_office365_activations_user_counts_request_builder
-        ## 
-        def get_office365_activations_user_counts()
-            return GetOffice365ActivationsUserCountsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the getOffice365ActivationsUserDetail method.
-        ## @return a get_office365_activations_user_detail_request_builder
-        ## 
-        def get_office365_activations_user_detail()
-            return GetOffice365ActivationsUserDetailRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Provides operations to call the getOffice365ActiveUserCounts method.
         ## @param period Usage: period='{period}'
         ## @return a get_office365_active_user_counts_with_period_request_builder
         ## 
-        def get_office365_active_user_counts_with_period(period)
+        def microsoft_graph_get_office365_active_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetOffice365ActiveUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -414,7 +414,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_office365_active_user_detail_with_date_request_builder
         ## 
-        def get_office365_active_user_detail_with_date(date)
+        def microsoft_graph_get_office365_active_user_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetOffice365ActiveUserDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -423,7 +423,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_office365_active_user_detail_with_period_request_builder
         ## 
-        def get_office365_active_user_detail_with_period(period)
+        def microsoft_graph_get_office365_active_user_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetOffice365ActiveUserDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -432,7 +432,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_office365_groups_activity_counts_with_period_request_builder
         ## 
-        def get_office365_groups_activity_counts_with_period(period)
+        def microsoft_graph_get_office365_groups_activity_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetOffice365GroupsActivityCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -441,7 +441,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_office365_groups_activity_detail_with_date_request_builder
         ## 
-        def get_office365_groups_activity_detail_with_date(date)
+        def microsoft_graph_get_office365_groups_activity_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetOffice365GroupsActivityDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -450,7 +450,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_office365_groups_activity_detail_with_period_request_builder
         ## 
-        def get_office365_groups_activity_detail_with_period(period)
+        def microsoft_graph_get_office365_groups_activity_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetOffice365GroupsActivityDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -459,7 +459,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_office365_groups_activity_file_counts_with_period_request_builder
         ## 
-        def get_office365_groups_activity_file_counts_with_period(period)
+        def microsoft_graph_get_office365_groups_activity_file_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -468,7 +468,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_office365_groups_activity_group_counts_with_period_request_builder
         ## 
-        def get_office365_groups_activity_group_counts_with_period(period)
+        def microsoft_graph_get_office365_groups_activity_group_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -477,7 +477,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_office365_groups_activity_storage_with_period_request_builder
         ## 
-        def get_office365_groups_activity_storage_with_period(period)
+        def microsoft_graph_get_office365_groups_activity_storage_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetOffice365GroupsActivityStorageWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -486,7 +486,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_office365_services_user_counts_with_period_request_builder
         ## 
-        def get_office365_services_user_counts_with_period(period)
+        def microsoft_graph_get_office365_services_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetOffice365ServicesUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -495,7 +495,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_one_drive_activity_file_counts_with_period_request_builder
         ## 
-        def get_one_drive_activity_file_counts_with_period(period)
+        def microsoft_graph_get_one_drive_activity_file_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetOneDriveActivityFileCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -504,7 +504,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_one_drive_activity_user_counts_with_period_request_builder
         ## 
-        def get_one_drive_activity_user_counts_with_period(period)
+        def microsoft_graph_get_one_drive_activity_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetOneDriveActivityUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -513,7 +513,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_one_drive_activity_user_detail_with_date_request_builder
         ## 
-        def get_one_drive_activity_user_detail_with_date(date)
+        def microsoft_graph_get_one_drive_activity_user_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetOneDriveActivityUserDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -522,7 +522,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_one_drive_activity_user_detail_with_period_request_builder
         ## 
-        def get_one_drive_activity_user_detail_with_period(period)
+        def microsoft_graph_get_one_drive_activity_user_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetOneDriveActivityUserDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -531,7 +531,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_one_drive_usage_account_counts_with_period_request_builder
         ## 
-        def get_one_drive_usage_account_counts_with_period(period)
+        def microsoft_graph_get_one_drive_usage_account_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetOneDriveUsageAccountCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -540,7 +540,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_one_drive_usage_account_detail_with_date_request_builder
         ## 
-        def get_one_drive_usage_account_detail_with_date(date)
+        def microsoft_graph_get_one_drive_usage_account_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetOneDriveUsageAccountDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -549,7 +549,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_one_drive_usage_account_detail_with_period_request_builder
         ## 
-        def get_one_drive_usage_account_detail_with_period(period)
+        def microsoft_graph_get_one_drive_usage_account_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetOneDriveUsageAccountDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -558,7 +558,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_one_drive_usage_file_counts_with_period_request_builder
         ## 
-        def get_one_drive_usage_file_counts_with_period(period)
+        def microsoft_graph_get_one_drive_usage_file_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetOneDriveUsageFileCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -567,7 +567,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_one_drive_usage_storage_with_period_request_builder
         ## 
-        def get_one_drive_usage_storage_with_period(period)
+        def microsoft_graph_get_one_drive_usage_storage_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetOneDriveUsageStorageWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -578,7 +578,7 @@ module MicrosoftGraph::Reports
         ## @param startDateTime Usage: startDateTime={startDateTime}
         ## @return a get_printer_archived_print_jobs_with_printer_id_with_start_date_time_with_end_date_time_request_builder
         ## 
-        def get_printer_archived_print_jobs_with_printer_id_with_start_date_time_with_end_date_time(end_date_time, printer_id, start_date_time)
+        def microsoft_graph_get_printer_archived_print_jobs_with_printer_id_with_start_date_time_with_end_date_time(end_date_time, printer_id, start_date_time)
             raise StandardError, 'end_date_time cannot be null' if end_date_time.nil?
             raise StandardError, 'printer_id cannot be null' if printer_id.nil?
             raise StandardError, 'start_date_time cannot be null' if start_date_time.nil?
@@ -589,7 +589,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_share_point_activity_file_counts_with_period_request_builder
         ## 
-        def get_share_point_activity_file_counts_with_period(period)
+        def microsoft_graph_get_share_point_activity_file_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSharePointActivityFileCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -598,7 +598,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_share_point_activity_pages_with_period_request_builder
         ## 
-        def get_share_point_activity_pages_with_period(period)
+        def microsoft_graph_get_share_point_activity_pages_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSharePointActivityPagesWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -607,7 +607,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_share_point_activity_user_counts_with_period_request_builder
         ## 
-        def get_share_point_activity_user_counts_with_period(period)
+        def microsoft_graph_get_share_point_activity_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSharePointActivityUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -616,7 +616,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_share_point_activity_user_detail_with_date_request_builder
         ## 
-        def get_share_point_activity_user_detail_with_date(date)
+        def microsoft_graph_get_share_point_activity_user_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetSharePointActivityUserDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -625,7 +625,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_share_point_activity_user_detail_with_period_request_builder
         ## 
-        def get_share_point_activity_user_detail_with_period(period)
+        def microsoft_graph_get_share_point_activity_user_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSharePointActivityUserDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -634,7 +634,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_share_point_site_usage_detail_with_date_request_builder
         ## 
-        def get_share_point_site_usage_detail_with_date(date)
+        def microsoft_graph_get_share_point_site_usage_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetSharePointSiteUsageDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -643,7 +643,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_share_point_site_usage_detail_with_period_request_builder
         ## 
-        def get_share_point_site_usage_detail_with_period(period)
+        def microsoft_graph_get_share_point_site_usage_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSharePointSiteUsageDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -652,7 +652,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_share_point_site_usage_file_counts_with_period_request_builder
         ## 
-        def get_share_point_site_usage_file_counts_with_period(period)
+        def microsoft_graph_get_share_point_site_usage_file_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -661,7 +661,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_share_point_site_usage_pages_with_period_request_builder
         ## 
-        def get_share_point_site_usage_pages_with_period(period)
+        def microsoft_graph_get_share_point_site_usage_pages_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSharePointSiteUsagePagesWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -670,7 +670,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_share_point_site_usage_site_counts_with_period_request_builder
         ## 
-        def get_share_point_site_usage_site_counts_with_period(period)
+        def microsoft_graph_get_share_point_site_usage_site_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSharePointSiteUsageSiteCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -679,7 +679,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_share_point_site_usage_storage_with_period_request_builder
         ## 
-        def get_share_point_site_usage_storage_with_period(period)
+        def microsoft_graph_get_share_point_site_usage_storage_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSharePointSiteUsageStorageWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -688,7 +688,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_skype_for_business_activity_counts_with_period_request_builder
         ## 
-        def get_skype_for_business_activity_counts_with_period(period)
+        def microsoft_graph_get_skype_for_business_activity_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSkypeForBusinessActivityCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -697,7 +697,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_skype_for_business_activity_user_counts_with_period_request_builder
         ## 
-        def get_skype_for_business_activity_user_counts_with_period(period)
+        def microsoft_graph_get_skype_for_business_activity_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -706,7 +706,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_skype_for_business_activity_user_detail_with_date_request_builder
         ## 
-        def get_skype_for_business_activity_user_detail_with_date(date)
+        def microsoft_graph_get_skype_for_business_activity_user_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -715,7 +715,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_skype_for_business_activity_user_detail_with_period_request_builder
         ## 
-        def get_skype_for_business_activity_user_detail_with_period(period)
+        def microsoft_graph_get_skype_for_business_activity_user_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -724,7 +724,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_skype_for_business_device_usage_distribution_user_counts_with_period_request_builder
         ## 
-        def get_skype_for_business_device_usage_distribution_user_counts_with_period(period)
+        def microsoft_graph_get_skype_for_business_device_usage_distribution_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -733,7 +733,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_skype_for_business_device_usage_user_counts_with_period_request_builder
         ## 
-        def get_skype_for_business_device_usage_user_counts_with_period(period)
+        def microsoft_graph_get_skype_for_business_device_usage_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -742,7 +742,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_skype_for_business_device_usage_user_detail_with_date_request_builder
         ## 
-        def get_skype_for_business_device_usage_user_detail_with_date(date)
+        def microsoft_graph_get_skype_for_business_device_usage_user_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -751,7 +751,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_skype_for_business_device_usage_user_detail_with_period_request_builder
         ## 
-        def get_skype_for_business_device_usage_user_detail_with_period(period)
+        def microsoft_graph_get_skype_for_business_device_usage_user_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSkypeForBusinessDeviceUsageUserDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -760,7 +760,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_skype_for_business_organizer_activity_counts_with_period_request_builder
         ## 
-        def get_skype_for_business_organizer_activity_counts_with_period(period)
+        def microsoft_graph_get_skype_for_business_organizer_activity_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSkypeForBusinessOrganizerActivityCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -769,7 +769,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_skype_for_business_organizer_activity_minute_counts_with_period_request_builder
         ## 
-        def get_skype_for_business_organizer_activity_minute_counts_with_period(period)
+        def microsoft_graph_get_skype_for_business_organizer_activity_minute_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -778,7 +778,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_skype_for_business_organizer_activity_user_counts_with_period_request_builder
         ## 
-        def get_skype_for_business_organizer_activity_user_counts_with_period(period)
+        def microsoft_graph_get_skype_for_business_organizer_activity_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -787,7 +787,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_skype_for_business_participant_activity_counts_with_period_request_builder
         ## 
-        def get_skype_for_business_participant_activity_counts_with_period(period)
+        def microsoft_graph_get_skype_for_business_participant_activity_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -796,7 +796,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_skype_for_business_participant_activity_minute_counts_with_period_request_builder
         ## 
-        def get_skype_for_business_participant_activity_minute_counts_with_period(period)
+        def microsoft_graph_get_skype_for_business_participant_activity_minute_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -805,7 +805,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_skype_for_business_participant_activity_user_counts_with_period_request_builder
         ## 
-        def get_skype_for_business_participant_activity_user_counts_with_period(period)
+        def microsoft_graph_get_skype_for_business_participant_activity_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSkypeForBusinessParticipantActivityUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -814,7 +814,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_skype_for_business_peer_to_peer_activity_counts_with_period_request_builder
         ## 
-        def get_skype_for_business_peer_to_peer_activity_counts_with_period(period)
+        def microsoft_graph_get_skype_for_business_peer_to_peer_activity_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSkypeForBusinessPeerToPeerActivityCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -823,7 +823,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_skype_for_business_peer_to_peer_activity_minute_counts_with_period_request_builder
         ## 
-        def get_skype_for_business_peer_to_peer_activity_minute_counts_with_period(period)
+        def microsoft_graph_get_skype_for_business_peer_to_peer_activity_minute_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -832,7 +832,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_skype_for_business_peer_to_peer_activity_user_counts_with_period_request_builder
         ## 
-        def get_skype_for_business_peer_to_peer_activity_user_counts_with_period(period)
+        def microsoft_graph_get_skype_for_business_peer_to_peer_activity_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -841,7 +841,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_teams_device_usage_distribution_user_counts_with_period_request_builder
         ## 
-        def get_teams_device_usage_distribution_user_counts_with_period(period)
+        def microsoft_graph_get_teams_device_usage_distribution_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetTeamsDeviceUsageDistributionUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -850,7 +850,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_teams_device_usage_user_counts_with_period_request_builder
         ## 
-        def get_teams_device_usage_user_counts_with_period(period)
+        def microsoft_graph_get_teams_device_usage_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -859,7 +859,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_teams_device_usage_user_detail_with_date_request_builder
         ## 
-        def get_teams_device_usage_user_detail_with_date(date)
+        def microsoft_graph_get_teams_device_usage_user_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetTeamsDeviceUsageUserDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -868,7 +868,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_teams_device_usage_user_detail_with_period_request_builder
         ## 
-        def get_teams_device_usage_user_detail_with_period(period)
+        def microsoft_graph_get_teams_device_usage_user_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetTeamsDeviceUsageUserDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -877,7 +877,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_teams_user_activity_counts_with_period_request_builder
         ## 
-        def get_teams_user_activity_counts_with_period(period)
+        def microsoft_graph_get_teams_user_activity_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetTeamsUserActivityCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -886,7 +886,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_teams_user_activity_user_counts_with_period_request_builder
         ## 
-        def get_teams_user_activity_user_counts_with_period(period)
+        def microsoft_graph_get_teams_user_activity_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetTeamsUserActivityUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -895,7 +895,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_teams_user_activity_user_detail_with_date_request_builder
         ## 
-        def get_teams_user_activity_user_detail_with_date(date)
+        def microsoft_graph_get_teams_user_activity_user_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetTeamsUserActivityUserDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -904,7 +904,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_teams_user_activity_user_detail_with_period_request_builder
         ## 
-        def get_teams_user_activity_user_detail_with_period(period)
+        def microsoft_graph_get_teams_user_activity_user_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetTeamsUserActivityUserDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -915,7 +915,7 @@ module MicrosoftGraph::Reports
         ## @param userId Usage: userId='{userId}'
         ## @return a get_user_archived_print_jobs_with_user_id_with_start_date_time_with_end_date_time_request_builder
         ## 
-        def get_user_archived_print_jobs_with_user_id_with_start_date_time_with_end_date_time(end_date_time, start_date_time, user_id)
+        def microsoft_graph_get_user_archived_print_jobs_with_user_id_with_start_date_time_with_end_date_time(end_date_time, start_date_time, user_id)
             raise StandardError, 'end_date_time cannot be null' if end_date_time.nil?
             raise StandardError, 'start_date_time cannot be null' if start_date_time.nil?
             raise StandardError, 'user_id cannot be null' if user_id.nil?
@@ -926,7 +926,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_yammer_activity_counts_with_period_request_builder
         ## 
-        def get_yammer_activity_counts_with_period(period)
+        def microsoft_graph_get_yammer_activity_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetYammerActivityCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -935,7 +935,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_yammer_activity_user_counts_with_period_request_builder
         ## 
-        def get_yammer_activity_user_counts_with_period(period)
+        def microsoft_graph_get_yammer_activity_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetYammerActivityUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -944,7 +944,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_yammer_activity_user_detail_with_date_request_builder
         ## 
-        def get_yammer_activity_user_detail_with_date(date)
+        def microsoft_graph_get_yammer_activity_user_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetYammerActivityUserDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -953,7 +953,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_yammer_activity_user_detail_with_period_request_builder
         ## 
-        def get_yammer_activity_user_detail_with_period(period)
+        def microsoft_graph_get_yammer_activity_user_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetYammerActivityUserDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -962,7 +962,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_yammer_device_usage_distribution_user_counts_with_period_request_builder
         ## 
-        def get_yammer_device_usage_distribution_user_counts_with_period(period)
+        def microsoft_graph_get_yammer_device_usage_distribution_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetYammerDeviceUsageDistributionUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -971,7 +971,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_yammer_device_usage_user_counts_with_period_request_builder
         ## 
-        def get_yammer_device_usage_user_counts_with_period(period)
+        def microsoft_graph_get_yammer_device_usage_user_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetYammerDeviceUsageUserCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -980,7 +980,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_yammer_device_usage_user_detail_with_date_request_builder
         ## 
-        def get_yammer_device_usage_user_detail_with_date(date)
+        def microsoft_graph_get_yammer_device_usage_user_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetYammerDeviceUsageUserDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -989,7 +989,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_yammer_device_usage_user_detail_with_period_request_builder
         ## 
-        def get_yammer_device_usage_user_detail_with_period(period)
+        def microsoft_graph_get_yammer_device_usage_user_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetYammerDeviceUsageUserDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -998,7 +998,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_yammer_groups_activity_counts_with_period_request_builder
         ## 
-        def get_yammer_groups_activity_counts_with_period(period)
+        def microsoft_graph_get_yammer_groups_activity_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetYammerGroupsActivityCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -1007,7 +1007,7 @@ module MicrosoftGraph::Reports
         ## @param date Usage: date={date}
         ## @return a get_yammer_groups_activity_detail_with_date_request_builder
         ## 
-        def get_yammer_groups_activity_detail_with_date(date)
+        def microsoft_graph_get_yammer_groups_activity_detail_with_date(date)
             raise StandardError, 'date cannot be null' if date.nil?
             return GetYammerGroupsActivityDetailWithDateRequestBuilder.new(@path_parameters, @request_adapter, date)
         end
@@ -1016,7 +1016,7 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_yammer_groups_activity_detail_with_period_request_builder
         ## 
-        def get_yammer_groups_activity_detail_with_period(period)
+        def microsoft_graph_get_yammer_groups_activity_detail_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetYammerGroupsActivityDetailWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -1025,16 +1025,9 @@ module MicrosoftGraph::Reports
         ## @param period Usage: period='{period}'
         ## @return a get_yammer_groups_activity_group_counts_with_period_request_builder
         ## 
-        def get_yammer_groups_activity_group_counts_with_period(period)
+        def microsoft_graph_get_yammer_groups_activity_group_counts_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
-        end
-        ## 
-        ## Provides operations to call the managedDeviceEnrollmentFailureDetails method.
-        ## @return a managed_device_enrollment_failure_details_request_builder
-        ## 
-        def managed_device_enrollment_failure_details()
-            return ManagedDeviceEnrollmentFailureDetailsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Provides operations to call the managedDeviceEnrollmentFailureDetails method.
@@ -1044,7 +1037,7 @@ module MicrosoftGraph::Reports
         ## @param top Usage: top={top}
         ## @return a managed_device_enrollment_failure_details_with_skip_with_top_with_filter_with_skip_token_request_builder
         ## 
-        def managed_device_enrollment_failure_details_with_skip_with_top_with_filter_with_skip_token(filter, skip, skip_token, top)
+        def microsoft_graph_managed_device_enrollment_failure_details_with_skip_with_top_with_filter_with_skip_token(filter, skip, skip_token, top)
             raise StandardError, 'filter cannot be null' if filter.nil?
             raise StandardError, 'skip cannot be null' if skip.nil?
             raise StandardError, 'skip_token cannot be null' if skip_token.nil?
@@ -1053,17 +1046,10 @@ module MicrosoftGraph::Reports
         end
         ## 
         ## Provides operations to call the managedDeviceEnrollmentTopFailures method.
-        ## @return a managed_device_enrollment_top_failures_request_builder
-        ## 
-        def managed_device_enrollment_top_failures()
-            return ManagedDeviceEnrollmentTopFailuresRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the managedDeviceEnrollmentTopFailures method.
         ## @param period Usage: period='{period}'
         ## @return a managed_device_enrollment_top_failures_with_period_request_builder
         ## 
-        def managed_device_enrollment_top_failures_with_period(period)
+        def microsoft_graph_managed_device_enrollment_top_failures_with_period(period)
             raise StandardError, 'period cannot be null' if period.nil?
             return ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
         end
@@ -1091,7 +1077,7 @@ module MicrosoftGraph::Reports
         end
         ## 
         ## Update reports
-        ## @param body The resource that represents an instance of Enrollment Failure Reports.
+        ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of report_root
         ## 
@@ -1125,7 +1111,7 @@ module MicrosoftGraph::Reports
         end
         ## 
         ## Update reports
-        ## @param body The resource that represents an instance of Enrollment Failure Reports.
+        ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 

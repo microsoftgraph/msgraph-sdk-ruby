@@ -94,7 +94,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceThreatProtectionEnabled property value. Require that devices have enabled device threat protection.
-        ## @param value Value to set for the deviceThreatProtectionEnabled property.
+        ## @param value Value to set for the device_threat_protection_enabled property.
         ## @return a void
         ## 
         def device_threat_protection_enabled=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
-        ## @param value Value to set for the deviceThreatProtectionRequiredSecurityLevel property.
+        ## @param value Value to set for the device_threat_protection_required_security_level property.
         ## @return a void
         ## 
         def device_threat_protection_required_security_level=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minAndroidSecurityPatchLevel property value. Minimum Android security patch level.
-        ## @param value Value to set for the minAndroidSecurityPatchLevel property.
+        ## @param value Value to set for the min_android_security_patch_level property.
         ## @return a void
         ## 
         def min_android_security_patch_level=(value)
@@ -168,7 +168,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osMaximumVersion property value. Maximum Android version.
-        ## @param value Value to set for the osMaximumVersion property.
+        ## @param value Value to set for the os_maximum_version property.
         ## @return a void
         ## 
         def os_maximum_version=(value)
@@ -183,7 +183,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osMinimumVersion property value. Minimum Android version.
-        ## @param value Value to set for the osMinimumVersion property.
+        ## @param value Value to set for the os_minimum_version property.
         ## @return a void
         ## 
         def os_minimum_version=(value)
@@ -198,7 +198,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
-        ## @param value Value to set for the passwordExpirationDays property.
+        ## @param value Value to set for the password_expiration_days property.
         ## @return a void
         ## 
         def password_expiration_days=(value)
@@ -213,7 +213,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinimumLength property value. Minimum password length. Valid values 4 to 16
-        ## @param value Value to set for the passwordMinimumLength property.
+        ## @param value Value to set for the password_minimum_length property.
         ## @return a void
         ## 
         def password_minimum_length=(value)
@@ -228,7 +228,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
-        ## @param value Value to set for the passwordMinutesOfInactivityBeforeLock property.
+        ## @param value Value to set for the password_minutes_of_inactivity_before_lock property.
         ## @return a void
         ## 
         def password_minutes_of_inactivity_before_lock=(value)
@@ -243,7 +243,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 1 to 24
-        ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
+        ## @param value Value to set for the password_previous_password_block_count property.
         ## @return a void
         ## 
         def password_previous_password_block_count=(value)
@@ -258,7 +258,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequired property value. Require a password to unlock device.
-        ## @param value Value to set for the passwordRequired property.
+        ## @param value Value to set for the password_required property.
         ## @return a void
         ## 
         def password_required=(value)
@@ -273,7 +273,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequiredType property value. Android required password type.
-        ## @param value Value to set for the passwordRequiredType property.
+        ## @param value Value to set for the password_required_type property.
         ## @return a void
         ## 
         def password_required_type=(value)
@@ -288,7 +288,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
-        ## @param value Value to set for the securityBlockJailbrokenDevices property.
+        ## @param value Value to set for the security_block_jailbroken_devices property.
         ## @return a void
         ## 
         def security_block_jailbroken_devices=(value)
@@ -303,7 +303,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityDisableUsbDebugging property value. Disable USB debugging on Android devices.
-        ## @param value Value to set for the securityDisableUsbDebugging property.
+        ## @param value Value to set for the security_disable_usb_debugging property.
         ## @return a void
         ## 
         def security_disable_usb_debugging=(value)
@@ -318,7 +318,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityPreventInstallAppsFromUnknownSources property value. Require that devices disallow installation of apps from unknown sources.
-        ## @param value Value to set for the securityPreventInstallAppsFromUnknownSources property.
+        ## @param value Value to set for the security_prevent_install_apps_from_unknown_sources property.
         ## @return a void
         ## 
         def security_prevent_install_apps_from_unknown_sources=(value)
@@ -333,7 +333,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityRequireCompanyPortalAppIntegrity property value. Require the device to pass the Company Portal client app runtime integrity check.
-        ## @param value Value to set for the securityRequireCompanyPortalAppIntegrity property.
+        ## @param value Value to set for the security_require_company_portal_app_integrity property.
         ## @return a void
         ## 
         def security_require_company_portal_app_integrity=(value)
@@ -348,7 +348,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityRequireGooglePlayServices property value. Require Google Play Services to be installed and enabled on the device.
-        ## @param value Value to set for the securityRequireGooglePlayServices property.
+        ## @param value Value to set for the security_require_google_play_services property.
         ## @return a void
         ## 
         def security_require_google_play_services=(value)
@@ -363,7 +363,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityRequireSafetyNetAttestationBasicIntegrity property value. Require the device to pass the SafetyNet basic integrity check.
-        ## @param value Value to set for the securityRequireSafetyNetAttestationBasicIntegrity property.
+        ## @param value Value to set for the security_require_safety_net_attestation_basic_integrity property.
         ## @return a void
         ## 
         def security_require_safety_net_attestation_basic_integrity=(value)
@@ -378,7 +378,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityRequireSafetyNetAttestationCertifiedDevice property value. Require the device to pass the SafetyNet certified device check.
-        ## @param value Value to set for the securityRequireSafetyNetAttestationCertifiedDevice property.
+        ## @param value Value to set for the security_require_safety_net_attestation_certified_device property.
         ## @return a void
         ## 
         def security_require_safety_net_attestation_certified_device=(value)
@@ -393,7 +393,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityRequireUpToDateSecurityProviders property value. Require the device to have up to date security providers. The device will require Google Play Services to be enabled and up to date.
-        ## @param value Value to set for the securityRequireUpToDateSecurityProviders property.
+        ## @param value Value to set for the security_require_up_to_date_security_providers property.
         ## @return a void
         ## 
         def security_require_up_to_date_security_providers=(value)
@@ -408,7 +408,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
-        ## @param value Value to set for the securityRequireVerifyApps property.
+        ## @param value Value to set for the security_require_verify_apps property.
         ## @return a void
         ## 
         def security_require_verify_apps=(value)
@@ -453,7 +453,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the storageRequireEncryption property value. Require encryption on Android devices.
-        ## @param value Value to set for the storageRequireEncryption property.
+        ## @param value Value to set for the storage_require_encryption property.
         ## @return a void
         ## 
         def storage_require_encryption=(value)

@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the changeType property value. The changeType property
-        ## @param value Value to set for the changeType property.
+        ## @param value Value to set for the change_type property.
         ## @return a void
         ## 
         def change_type=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceUrl property value. URI of the resource that was changed.
-        ## @param value Value to set for the resourceUrl property.
+        ## @param value Value to set for the resource_url property.
         ## @return a void
         ## 
         def resource_url=(value)

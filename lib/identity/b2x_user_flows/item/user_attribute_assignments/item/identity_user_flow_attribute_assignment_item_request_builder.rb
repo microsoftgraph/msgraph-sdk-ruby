@@ -30,11 +30,12 @@ module MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments::I
         end
         ## 
         ## Instantiates a new IdentityUserFlowAttributeAssignmentItemRequestBuilder and sets the default values.
+        ## @param identityUserFlowAttributeAssignmentId key: id of identityUserFlowAttributeAssignment
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, identity_user_flow_attribute_assignment_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userAttributeAssignments/{identityUserFlowAttributeAssignment%2Did}{?%24select,%24expand}"

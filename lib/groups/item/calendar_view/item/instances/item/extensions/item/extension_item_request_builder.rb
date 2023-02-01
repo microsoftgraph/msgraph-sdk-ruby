@@ -27,11 +27,12 @@ module MicrosoftGraph::Groups::Item::CalendarView::Item::Instances::Item::Extens
         @url_template
         ## 
         ## Instantiates a new ExtensionItemRequestBuilder and sets the default values.
+        ## @param extensionId key: id of extension
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, extension_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/groups/{group%2Did}/calendarView/{event%2Did}/instances/{event%2Did1}/extensions/{extension%2Did}{?%24select,%24expand}"

@@ -27,11 +27,12 @@ module MicrosoftGraph::Users::Item::OnlineMeetings::Item::AttendanceReports::Ite
         @url_template
         ## 
         ## Instantiates a new AttendanceRecordItemRequestBuilder and sets the default values.
+        ## @param attendanceRecordId key: id of attendanceRecord
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, attendance_record_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}/attendanceReports/{meetingAttendanceReport%2Did}/attendanceRecords/{attendanceRecord%2Did}{?%24select,%24expand}"

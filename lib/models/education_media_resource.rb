@@ -34,7 +34,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fileUrl property value. Location of the file on shared point folder. Required
-        ## @param value Value to set for the fileUrl property.
+        ## @param value Value to set for the file_url property.
         ## @return a void
         ## 
         def file_url=(value)

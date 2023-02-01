@@ -27,11 +27,12 @@ module MicrosoftGraph::Chats::Item::Messages::Item::Replies::Item::HostedContent
         @url_template
         ## 
         ## Instantiates a new ChatMessageHostedContentItemRequestBuilder and sets the default values.
+        ## @param chatMessageHostedContentId key: id of chatMessageHostedContent
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, chat_message_hosted_content_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/chats/{chat%2Did}/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}/hostedContents/{chatMessageHostedContent%2Did}{?%24select,%24expand}"

@@ -24,6 +24,9 @@ module MicrosoftGraph::Models
         # The list of localized messages for this Notification Message Template.
         @localized_notification_messages
         ## 
+        # List of Scope Tags for this Entity instance.
+        @role_scope_tag_ids
+        ## 
         ## Gets the brandingOptions property value. Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
         ## @return a notification_template_branding_options
         ## 
@@ -32,7 +35,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the brandingOptions property value. Branding Options for the Message Template. Branding is defined in the Intune Admin Console.
-        ## @param value Value to set for the brandingOptions property.
+        ## @param value Value to set for the branding_options property.
         ## @return a void
         ## 
         def branding_options=(value)
@@ -63,7 +66,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the defaultLocale property value. The default locale to fallback onto when the requested locale is not available.
-        ## @param value Value to set for the defaultLocale property.
+        ## @param value Value to set for the default_locale property.
         ## @return a void
         ## 
         def default_locale=(value)
@@ -78,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Display name for the Notification Message Template.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -95,6 +98,7 @@ module MicrosoftGraph::Models
                 "displayName" => lambda {|n| @display_name = n.get_string_value() },
                 "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                 "localizedNotificationMessages" => lambda {|n| @localized_notification_messages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::LocalizedNotificationMessage.create_from_discriminator_value(pn) }) },
+                "roleScopeTagIds" => lambda {|n| @role_scope_tag_ids = n.get_collection_of_primitive_values(String) },
             })
         end
         ## 
@@ -106,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. DateTime the object was last modified.
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -121,11 +125,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the localizedNotificationMessages property value. The list of localized messages for this Notification Message Template.
-        ## @param value Value to set for the localizedNotificationMessages property.
+        ## @param value Value to set for the localized_notification_messages property.
         ## @return a void
         ## 
         def localized_notification_messages=(value)
             @localized_notification_messages = value
+        end
+        ## 
+        ## Gets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+        ## @return a string
+        ## 
+        def role_scope_tag_ids
+            return @role_scope_tag_ids
+        end
+        ## 
+        ## Sets the roleScopeTagIds property value. List of Scope Tags for this Entity instance.
+        ## @param value Value to set for the role_scope_tag_ids property.
+        ## @return a void
+        ## 
+        def role_scope_tag_ids=(value)
+            @role_scope_tag_ids = value
         end
         ## 
         ## Serializes information the current object
@@ -140,6 +159,7 @@ module MicrosoftGraph::Models
             writer.write_string_value("displayName", @display_name)
             writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
             writer.write_collection_of_object_values("localizedNotificationMessages", @localized_notification_messages)
+            writer.write_collection_of_primitive_values("roleScopeTagIds", @role_scope_tag_ids)
         end
     end
 end

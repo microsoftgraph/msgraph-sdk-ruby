@@ -42,7 +42,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the masterCategories property value. A list of categories defined for the user.
-        ## @param value Value to set for the masterCategories property.
+        ## @param value Value to set for the master_categories property.
         ## @return a void
         ## 
         def master_categories=(value)

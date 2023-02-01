@@ -4,34 +4,29 @@ require_relative '../../../models/chat'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../me'
 require_relative '../chats'
-require_relative './hide_for_user/hide_for_user_request_builder'
 require_relative './installed_apps/installed_apps_request_builder'
 require_relative './installed_apps/item/teams_app_installation_item_request_builder'
 require_relative './item'
 require_relative './last_message_preview/last_message_preview_request_builder'
-require_relative './mark_chat_read_for_user/mark_chat_read_for_user_request_builder'
-require_relative './mark_chat_unread_for_user/mark_chat_unread_for_user_request_builder'
 require_relative './members/item/conversation_member_item_request_builder'
 require_relative './members/members_request_builder'
 require_relative './messages/item/chat_message_item_request_builder'
 require_relative './messages/messages_request_builder'
+require_relative './microsoft_graph_hide_for_user/hide_for_user_request_builder'
+require_relative './microsoft_graph_mark_chat_read_for_user/mark_chat_read_for_user_request_builder'
+require_relative './microsoft_graph_mark_chat_unread_for_user/mark_chat_unread_for_user_request_builder'
+require_relative './microsoft_graph_send_activity_notification/send_activity_notification_request_builder'
+require_relative './microsoft_graph_unhide_for_user/unhide_for_user_request_builder'
 require_relative './pinned_messages/item/pinned_chat_message_info_item_request_builder'
 require_relative './pinned_messages/pinned_messages_request_builder'
-require_relative './send_activity_notification/send_activity_notification_request_builder'
 require_relative './tabs/item/teams_tab_item_request_builder'
 require_relative './tabs/tabs_request_builder'
-require_relative './unhide_for_user/unhide_for_user_request_builder'
 
 module MicrosoftGraph::Me::Chats::Item
     ## 
     # Provides operations to manage the chats property of the microsoft.graph.user entity.
     class ChatItemRequestBuilder
         
-        ## 
-        # Provides operations to call the hideForUser method.
-        def hide_for_user()
-            return MicrosoftGraph::Me::Chats::Item::HideForUser::HideForUserRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the installedApps property of the microsoft.graph.chat entity.
         def installed_apps()
@@ -43,16 +38,6 @@ module MicrosoftGraph::Me::Chats::Item
             return MicrosoftGraph::Me::Chats::Item::LastMessagePreview::LastMessagePreviewRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the markChatReadForUser method.
-        def mark_chat_read_for_user()
-            return MicrosoftGraph::Me::Chats::Item::MarkChatReadForUser::MarkChatReadForUserRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the markChatUnreadForUser method.
-        def mark_chat_unread_for_user()
-            return MicrosoftGraph::Me::Chats::Item::MarkChatUnreadForUser::MarkChatUnreadForUserRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the members property of the microsoft.graph.chat entity.
         def members()
             return MicrosoftGraph::Me::Chats::Item::Members::MembersRequestBuilder.new(@path_parameters, @request_adapter)
@@ -61,6 +46,31 @@ module MicrosoftGraph::Me::Chats::Item
         # Provides operations to manage the messages property of the microsoft.graph.chat entity.
         def messages()
             return MicrosoftGraph::Me::Chats::Item::Messages::MessagesRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the hideForUser method.
+        def microsoft_graph_hide_for_user()
+            return MicrosoftGraph::Me::Chats::Item::MicrosoftGraphHideForUser::HideForUserRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the markChatReadForUser method.
+        def microsoft_graph_mark_chat_read_for_user()
+            return MicrosoftGraph::Me::Chats::Item::MicrosoftGraphMarkChatReadForUser::MarkChatReadForUserRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the markChatUnreadForUser method.
+        def microsoft_graph_mark_chat_unread_for_user()
+            return MicrosoftGraph::Me::Chats::Item::MicrosoftGraphMarkChatUnreadForUser::MarkChatUnreadForUserRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the sendActivityNotification method.
+        def microsoft_graph_send_activity_notification()
+            return MicrosoftGraph::Me::Chats::Item::MicrosoftGraphSendActivityNotification::SendActivityNotificationRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the unhideForUser method.
+        def microsoft_graph_unhide_for_user()
+            return MicrosoftGraph::Me::Chats::Item::MicrosoftGraphUnhideForUser::UnhideForUserRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -74,30 +84,21 @@ module MicrosoftGraph::Me::Chats::Item
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the sendActivityNotification method.
-        def send_activity_notification()
-            return MicrosoftGraph::Me::Chats::Item::SendActivityNotification::SendActivityNotificationRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the tabs property of the microsoft.graph.chat entity.
         def tabs()
             return MicrosoftGraph::Me::Chats::Item::Tabs::TabsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the unhideForUser method.
-        def unhide_for_user()
-            return MicrosoftGraph::Me::Chats::Item::UnhideForUser::UnhideForUserRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new ChatItemRequestBuilder and sets the default values.
+        ## @param chatId key: id of chat
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, chat_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/me/chats/{chat%2Did}{?%24select,%24expand}"

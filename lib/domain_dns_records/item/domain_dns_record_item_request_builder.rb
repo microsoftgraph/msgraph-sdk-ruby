@@ -21,11 +21,12 @@ module MicrosoftGraph::DomainDnsRecords::Item
         @url_template
         ## 
         ## Instantiates a new DomainDnsRecordItemRequestBuilder and sets the default values.
+        ## @param domainDnsRecordId key: id of domainDnsRecord
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, domain_dns_record_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/domainDnsRecords/{domainDnsRecord%2Did}{?%24select,%24expand}"
@@ -34,7 +35,7 @@ module MicrosoftGraph::DomainDnsRecords::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from domainDnsRecords by key (id)
+        ## Delete entity from domainDnsRecords
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -48,7 +49,7 @@ module MicrosoftGraph::DomainDnsRecords::Item
             return @request_adapter.send_async(request_info, nil, error_mapping)
         end
         ## 
-        ## Get entity from domainDnsRecords by key (id)
+        ## Get entity from domainDnsRecords by key
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of domain_dns_record
         ## 
@@ -62,7 +63,7 @@ module MicrosoftGraph::DomainDnsRecords::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DomainDnsRecord.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update entity in domainDnsRecords by key (id)
+        ## Update entity in domainDnsRecords
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of domain_dns_record
@@ -78,7 +79,7 @@ module MicrosoftGraph::DomainDnsRecords::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DomainDnsRecord.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from domainDnsRecords by key (id)
+        ## Delete entity from domainDnsRecords
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -94,7 +95,7 @@ module MicrosoftGraph::DomainDnsRecords::Item
             return request_info
         end
         ## 
-        ## Get entity from domainDnsRecords by key (id)
+        ## Get entity from domainDnsRecords by key
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -112,7 +113,7 @@ module MicrosoftGraph::DomainDnsRecords::Item
             return request_info
         end
         ## 
-        ## Update entity in domainDnsRecords by key (id)
+        ## Update entity in domainDnsRecords
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
@@ -145,7 +146,7 @@ module MicrosoftGraph::DomainDnsRecords::Item
         end
 
         ## 
-        # Get entity from domainDnsRecords by key (id)
+        # Get entity from domainDnsRecords by key
         class DomainDnsRecordItemRequestBuilderGetQueryParameters
             
             ## 

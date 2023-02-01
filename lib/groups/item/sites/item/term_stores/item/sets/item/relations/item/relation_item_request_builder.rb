@@ -48,10 +48,11 @@ module MicrosoftGraph::Groups::Item::Sites::Item::TermStores::Item::Sets::Item::
         ## 
         ## Instantiates a new RelationItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
+        ## @param relationId key: id of relation
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, relation_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStores/{store%2Did}/sets/{set%2Did}/relations/{relation%2Did}{?%24select,%24expand}"

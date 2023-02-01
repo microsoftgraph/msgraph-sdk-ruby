@@ -58,7 +58,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Name of directory object being returned, like group or application. Read-only.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalPartnerTenantId property value. The tenant identifier for the partner tenant. Read-only.
-        ## @param value Value to set for the externalPartnerTenantId property.
+        ## @param value Value to set for the external_partner_tenant_id property.
         ## @return a void
         ## 
         def external_partner_tenant_id=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the objectType property value. The type of the referenced object in the partner tenant. Read-only.
-        ## @param value Value to set for the objectType property.
+        ## @param value Value to set for the object_type property.
         ## @return a void
         ## 
         def object_type=(value)

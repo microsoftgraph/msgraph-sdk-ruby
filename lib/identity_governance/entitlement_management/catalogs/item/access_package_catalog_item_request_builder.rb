@@ -41,11 +41,12 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item
         end
         ## 
         ## Instantiates a new AccessPackageCatalogItemRequestBuilder and sets the default values.
+        ## @param accessPackageCatalogId key: id of accessPackageCatalog
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, access_package_catalog_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}{?%24select,%24expand}"

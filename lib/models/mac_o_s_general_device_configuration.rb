@@ -50,7 +50,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the compliantAppListType property value. Possible values of the compliance app list.
-        ## @param value Value to set for the compliantAppListType property.
+        ## @param value Value to set for the compliant_app_list_type property.
         ## @return a void
         ## 
         def compliant_app_list_type=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
-        ## @param value Value to set for the compliantAppsList property.
+        ## @param value Value to set for the compliant_apps_list property.
         ## @return a void
         ## 
         def compliant_apps_list=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the emailInDomainSuffixes property value. An email address lacking a suffix that matches any of these strings will be considered out-of-domain.
-        ## @param value Value to set for the emailInDomainSuffixes property.
+        ## @param value Value to set for the email_in_domain_suffixes property.
         ## @return a void
         ## 
         def email_in_domain_suffixes=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordBlockSimple property value. Block simple passwords.
-        ## @param value Value to set for the passwordBlockSimple property.
+        ## @param value Value to set for the password_block_simple property.
         ## @return a void
         ## 
         def password_block_simple=(value)
@@ -147,7 +147,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordExpirationDays property value. Number of days before the password expires.
-        ## @param value Value to set for the passwordExpirationDays property.
+        ## @param value Value to set for the password_expiration_days property.
         ## @return a void
         ## 
         def password_expiration_days=(value)
@@ -162,7 +162,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinimumCharacterSetCount property value. Number of character sets a password must contain. Valid values 0 to 4
-        ## @param value Value to set for the passwordMinimumCharacterSetCount property.
+        ## @param value Value to set for the password_minimum_character_set_count property.
         ## @return a void
         ## 
         def password_minimum_character_set_count=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinimumLength property value. Minimum length of passwords.
-        ## @param value Value to set for the passwordMinimumLength property.
+        ## @param value Value to set for the password_minimum_length property.
         ## @return a void
         ## 
         def password_minimum_length=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity required before a password is required.
-        ## @param value Value to set for the passwordMinutesOfInactivityBeforeLock property.
+        ## @param value Value to set for the password_minutes_of_inactivity_before_lock property.
         ## @return a void
         ## 
         def password_minutes_of_inactivity_before_lock=(value)
@@ -207,7 +207,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity required before the screen times out.
-        ## @param value Value to set for the passwordMinutesOfInactivityBeforeScreenTimeout property.
+        ## @param value Value to set for the password_minutes_of_inactivity_before_screen_timeout property.
         ## @return a void
         ## 
         def password_minutes_of_inactivity_before_screen_timeout=(value)
@@ -222,7 +222,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block.
-        ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
+        ## @param value Value to set for the password_previous_password_block_count property.
         ## @return a void
         ## 
         def password_previous_password_block_count=(value)
@@ -237,7 +237,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequired property value. Whether or not to require a password.
-        ## @param value Value to set for the passwordRequired property.
+        ## @param value Value to set for the password_required property.
         ## @return a void
         ## 
         def password_required=(value)
@@ -252,7 +252,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequiredType property value. Possible values of required passwords.
-        ## @param value Value to set for the passwordRequiredType property.
+        ## @param value Value to set for the password_required_type property.
         ## @return a void
         ## 
         def password_required_type=(value)

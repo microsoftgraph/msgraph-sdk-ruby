@@ -24,11 +24,12 @@ module MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Item::Assig
         @url_template
         ## 
         ## Instantiates a new ManagedDeviceMobileAppConfigurationAssignmentItemRequestBuilder and sets the default values.
+        ## @param managedDeviceMobileAppConfigurationAssignmentId key: id of managedDeviceMobileAppConfigurationAssignment
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, managed_device_mobile_app_configuration_assignment_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration%2Did}/assignments/{managedDeviceMobileAppConfigurationAssignment%2Did}{?%24select,%24expand}"

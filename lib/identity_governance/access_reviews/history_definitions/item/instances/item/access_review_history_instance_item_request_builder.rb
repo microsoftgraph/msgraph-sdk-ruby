@@ -7,8 +7,8 @@ require_relative '../../../../access_reviews'
 require_relative '../../../history_definitions'
 require_relative '../../item'
 require_relative '../instances'
-require_relative './generate_download_uri/generate_download_uri_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_generate_download_uri/generate_download_uri_request_builder'
 
 module MicrosoftGraph::IdentityGovernance::AccessReviews::HistoryDefinitions::Item::Instances::Item
     ## 
@@ -17,8 +17,8 @@ module MicrosoftGraph::IdentityGovernance::AccessReviews::HistoryDefinitions::It
         
         ## 
         # Provides operations to call the generateDownloadUri method.
-        def generate_download_uri()
-            return MicrosoftGraph::IdentityGovernance::AccessReviews::HistoryDefinitions::Item::Instances::Item::GenerateDownloadUri::GenerateDownloadUriRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_generate_download_uri()
+            return MicrosoftGraph::IdentityGovernance::AccessReviews::HistoryDefinitions::Item::Instances::Item::MicrosoftGraphGenerateDownloadUri::GenerateDownloadUriRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -31,11 +31,12 @@ module MicrosoftGraph::IdentityGovernance::AccessReviews::HistoryDefinitions::It
         @url_template
         ## 
         ## Instantiates a new AccessReviewHistoryInstanceItemRequestBuilder and sets the default values.
+        ## @param accessReviewHistoryInstanceId key: id of accessReviewHistoryInstance
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, access_review_history_instance_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/identityGovernance/accessReviews/historyDefinitions/{accessReviewHistoryDefinition%2Did}/instances/{accessReviewHistoryInstance%2Did}{?%24select,%24expand}"

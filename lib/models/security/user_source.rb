@@ -67,7 +67,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
-        ## @param value Value to set for the includedSources property.
+        ## @param value Value to set for the included_sources property.
         ## @return a void
         ## 
         def included_sources=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the siteWebUrl property value. The URL of the user's OneDrive for Business site. Read-only.
-        ## @param value Value to set for the siteWebUrl property.
+        ## @param value Value to set for the site_web_url property.
         ## @return a void
         ## 
         def site_web_url=(value)

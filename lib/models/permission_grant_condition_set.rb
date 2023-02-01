@@ -12,20 +12,20 @@ module MicrosoftGraph::Models
         # A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.
         @client_application_publisher_ids
         ## 
-        # Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
-        @client_applications_from_verified_publisher_only
-        ## 
         # A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
         @client_application_tenant_ids
+        ## 
+        # Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
+        @client_applications_from_verified_publisher_only
         ## 
         # The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
         @permission_classification
         ## 
-        # The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
-        @permissions
-        ## 
         # The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
         @permission_type
+        ## 
+        # The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
+        @permissions
         ## 
         # The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
         @resource_application
@@ -38,7 +38,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the clientApplicationIds property value. A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
-        ## @param value Value to set for the clientApplicationIds property.
+        ## @param value Value to set for the client_application_ids property.
         ## @return a void
         ## 
         def client_application_ids=(value)
@@ -53,26 +53,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the clientApplicationPublisherIds property value. A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.
-        ## @param value Value to set for the clientApplicationPublisherIds property.
+        ## @param value Value to set for the client_application_publisher_ids property.
         ## @return a void
         ## 
         def client_application_publisher_ids=(value)
             @client_application_publisher_ids = value
-        end
-        ## 
-        ## Gets the clientApplicationsFromVerifiedPublisherOnly property value. Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
-        ## @return a boolean
-        ## 
-        def client_applications_from_verified_publisher_only
-            return @client_applications_from_verified_publisher_only
-        end
-        ## 
-        ## Sets the clientApplicationsFromVerifiedPublisherOnly property value. Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
-        ## @param value Value to set for the clientApplicationsFromVerifiedPublisherOnly property.
-        ## @return a void
-        ## 
-        def client_applications_from_verified_publisher_only=(value)
-            @client_applications_from_verified_publisher_only = value
         end
         ## 
         ## Gets the clientApplicationTenantIds property value. A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
@@ -83,11 +68,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the clientApplicationTenantIds property value. A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
-        ## @param value Value to set for the clientApplicationTenantIds property.
+        ## @param value Value to set for the client_application_tenant_ids property.
         ## @return a void
         ## 
         def client_application_tenant_ids=(value)
             @client_application_tenant_ids = value
+        end
+        ## 
+        ## Gets the clientApplicationsFromVerifiedPublisherOnly property value. Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
+        ## @return a boolean
+        ## 
+        def client_applications_from_verified_publisher_only
+            return @client_applications_from_verified_publisher_only
+        end
+        ## 
+        ## Sets the clientApplicationsFromVerifiedPublisherOnly property value. Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
+        ## @param value Value to set for the client_applications_from_verified_publisher_only property.
+        ## @return a void
+        ## 
+        def client_applications_from_verified_publisher_only=(value)
+            @client_applications_from_verified_publisher_only = value
         end
         ## 
         ## Instantiates a new permissionGrantConditionSet and sets the default values.
@@ -113,11 +113,11 @@ module MicrosoftGraph::Models
             return super.merge({
                 "clientApplicationIds" => lambda {|n| @client_application_ids = n.get_collection_of_primitive_values(String) },
                 "clientApplicationPublisherIds" => lambda {|n| @client_application_publisher_ids = n.get_collection_of_primitive_values(String) },
-                "clientApplicationsFromVerifiedPublisherOnly" => lambda {|n| @client_applications_from_verified_publisher_only = n.get_boolean_value() },
                 "clientApplicationTenantIds" => lambda {|n| @client_application_tenant_ids = n.get_collection_of_primitive_values(String) },
+                "clientApplicationsFromVerifiedPublisherOnly" => lambda {|n| @client_applications_from_verified_publisher_only = n.get_boolean_value() },
                 "permissionClassification" => lambda {|n| @permission_classification = n.get_string_value() },
-                "permissions" => lambda {|n| @permissions = n.get_collection_of_primitive_values(String) },
                 "permissionType" => lambda {|n| @permission_type = n.get_enum_value(MicrosoftGraph::Models::PermissionType) },
+                "permissions" => lambda {|n| @permissions = n.get_collection_of_primitive_values(String) },
                 "resourceApplication" => lambda {|n| @resource_application = n.get_string_value() },
             })
         end
@@ -130,11 +130,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the permissionClassification property value. The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
-        ## @param value Value to set for the permissionClassification property.
+        ## @param value Value to set for the permission_classification property.
         ## @return a void
         ## 
         def permission_classification=(value)
             @permission_classification = value
+        end
+        ## 
+        ## Gets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
+        ## @return a permission_type
+        ## 
+        def permission_type
+            return @permission_type
+        end
+        ## 
+        ## Sets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
+        ## @param value Value to set for the permission_type property.
+        ## @return a void
+        ## 
+        def permission_type=(value)
+            @permission_type = value
         end
         ## 
         ## Gets the permissions property value. The list of id values for the specific permissions to match with, or a list with the single value all to match with any permission. The id of delegated permissions can be found in the oauth2PermissionScopes property of the API's **servicePrincipal** object. The id of application permissions can be found in the appRoles property of the API's **servicePrincipal** object. The id of resource-specific application permissions can be found in the resourceSpecificApplicationPermissions property of the API's **servicePrincipal** object. Default is the single value all.
@@ -152,21 +167,6 @@ module MicrosoftGraph::Models
             @permissions = value
         end
         ## 
-        ## Gets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
-        ## @return a permission_type
-        ## 
-        def permission_type
-            return @permission_type
-        end
-        ## 
-        ## Sets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
-        ## @param value Value to set for the permissionType property.
-        ## @return a void
-        ## 
-        def permission_type=(value)
-            @permission_type = value
-        end
-        ## 
         ## Gets the resourceApplication property value. The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
         ## @return a string
         ## 
@@ -175,7 +175,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceApplication property value. The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
-        ## @param value Value to set for the resourceApplication property.
+        ## @param value Value to set for the resource_application property.
         ## @return a void
         ## 
         def resource_application=(value)
@@ -191,11 +191,11 @@ module MicrosoftGraph::Models
             super
             writer.write_collection_of_primitive_values("clientApplicationIds", @client_application_ids)
             writer.write_collection_of_primitive_values("clientApplicationPublisherIds", @client_application_publisher_ids)
-            writer.write_boolean_value("clientApplicationsFromVerifiedPublisherOnly", @client_applications_from_verified_publisher_only)
             writer.write_collection_of_primitive_values("clientApplicationTenantIds", @client_application_tenant_ids)
+            writer.write_boolean_value("clientApplicationsFromVerifiedPublisherOnly", @client_applications_from_verified_publisher_only)
             writer.write_string_value("permissionClassification", @permission_classification)
-            writer.write_collection_of_primitive_values("permissions", @permissions)
             writer.write_enum_value("permissionType", @permission_type)
+            writer.write_collection_of_primitive_values("permissions", @permissions)
             writer.write_string_value("resourceApplication", @resource_application)
         end
     end

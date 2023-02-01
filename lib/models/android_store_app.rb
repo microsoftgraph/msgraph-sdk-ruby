@@ -23,7 +23,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appStoreUrl property value. The Android app store URL.
-        ## @param value Value to set for the appStoreUrl property.
+        ## @param value Value to set for the app_store_url property.
         ## @return a void
         ## 
         def app_store_url=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
-        ## @param value Value to set for the minimumSupportedOperatingSystem property.
+        ## @param value Value to set for the minimum_supported_operating_system property.
         ## @return a void
         ## 
         def minimum_supported_operating_system=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the packageId property value. The package identifier.
-        ## @param value Value to set for the packageId property.
+        ## @param value Value to set for the package_id property.
         ## @return a void
         ## 
         def package_id=(value)

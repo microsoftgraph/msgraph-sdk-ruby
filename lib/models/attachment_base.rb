@@ -7,16 +7,16 @@ module MicrosoftGraph::Models
     class AttachmentBase < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
-        # The contentType property
+        # The MIME type.
         @content_type
         ## 
-        # The lastModifiedDateTime property
+        # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         @last_modified_date_time
         ## 
-        # The name property
+        # The display name of the attachment. This does not need to be the actual file name.
         @name
         ## 
-        # The size property
+        # The length of the attachment in bytes.
         @size
         ## 
         ## Instantiates a new attachmentBase and sets the default values.
@@ -26,15 +26,15 @@ module MicrosoftGraph::Models
             super
         end
         ## 
-        ## Gets the contentType property value. The contentType property
+        ## Gets the contentType property value. The MIME type.
         ## @return a string
         ## 
         def content_type
             return @content_type
         end
         ## 
-        ## Sets the contentType property value. The contentType property
-        ## @param value Value to set for the contentType property.
+        ## Sets the contentType property value. The MIME type.
+        ## @param value Value to set for the content_type property.
         ## @return a void
         ## 
         def content_type=(value)
@@ -70,29 +70,29 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the lastModifiedDateTime property value. The lastModifiedDateTime property
+        ## Gets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         ## @return a date_time
         ## 
         def last_modified_date_time
             return @last_modified_date_time
         end
         ## 
-        ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## Sets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
             @last_modified_date_time = value
         end
         ## 
-        ## Gets the name property value. The name property
+        ## Gets the name property value. The display name of the attachment. This does not need to be the actual file name.
         ## @return a string
         ## 
         def name
             return @name
         end
         ## 
-        ## Sets the name property value. The name property
+        ## Sets the name property value. The display name of the attachment. This does not need to be the actual file name.
         ## @param value Value to set for the name property.
         ## @return a void
         ## 
@@ -113,14 +113,14 @@ module MicrosoftGraph::Models
             writer.write_number_value("size", @size)
         end
         ## 
-        ## Gets the size property value. The size property
+        ## Gets the size property value. The length of the attachment in bytes.
         ## @return a integer
         ## 
         def size
             return @size
         end
         ## 
-        ## Sets the size property value. The size property
+        ## Sets the size property value. The length of the attachment in bytes.
         ## @param value Value to set for the size property.
         ## @return a void
         ## 

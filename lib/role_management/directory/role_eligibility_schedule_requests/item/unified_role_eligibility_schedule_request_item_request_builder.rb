@@ -6,9 +6,9 @@ require_relative '../../../role_management'
 require_relative '../../directory'
 require_relative '../role_eligibility_schedule_requests'
 require_relative './app_scope/app_scope_request_builder'
-require_relative './cancel/cancel_request_builder'
 require_relative './directory_scope/directory_scope_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_cancel/cancel_request_builder'
 require_relative './principal/principal_request_builder'
 require_relative './role_definition/role_definition_request_builder'
 require_relative './target_schedule/target_schedule_request_builder'
@@ -24,14 +24,14 @@ module MicrosoftGraph::RoleManagement::Directory::RoleEligibilityScheduleRequest
             return MicrosoftGraph::RoleManagement::Directory::RoleEligibilityScheduleRequests::Item::AppScope::AppScopeRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the cancel method.
-        def cancel()
-            return MicrosoftGraph::RoleManagement::Directory::RoleEligibilityScheduleRequests::Item::Cancel::CancelRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleEligibilityScheduleRequest entity.
         def directory_scope()
             return MicrosoftGraph::RoleManagement::Directory::RoleEligibilityScheduleRequests::Item::DirectoryScope::DirectoryScopeRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the cancel method.
+        def microsoft_graph_cancel()
+            return MicrosoftGraph::RoleManagement::Directory::RoleEligibilityScheduleRequests::Item::MicrosoftGraphCancel::CancelRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -61,9 +61,10 @@ module MicrosoftGraph::RoleManagement::Directory::RoleEligibilityScheduleRequest
         ## Instantiates a new UnifiedRoleEligibilityScheduleRequestItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param unifiedRoleEligibilityScheduleRequestId key: id of unifiedRoleEligibilityScheduleRequest
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, unified_role_eligibility_schedule_request_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/roleManagement/directory/roleEligibilityScheduleRequests/{unifiedRoleEligibilityScheduleRequest%2Did}{?%24select,%24expand}"

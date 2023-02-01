@@ -27,11 +27,12 @@ module MicrosoftGraph::ServicePrincipals::Item::HomeRealmDiscoveryPolicies::Item
         @url_template
         ## 
         ## Instantiates a new HomeRealmDiscoveryPolicyItemRequestBuilder and sets the default values.
+        ## @param homeRealmDiscoveryPolicyId key: id of homeRealmDiscoveryPolicy
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, home_realm_discovery_policy_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/homeRealmDiscoveryPolicies/{homeRealmDiscoveryPolicy%2Did}"

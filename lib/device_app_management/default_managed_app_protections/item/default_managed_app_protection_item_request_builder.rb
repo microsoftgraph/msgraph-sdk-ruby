@@ -46,11 +46,12 @@ module MicrosoftGraph::DeviceAppManagement::DefaultManagedAppProtections::Item
         end
         ## 
         ## Instantiates a new DefaultManagedAppProtectionItemRequestBuilder and sets the default values.
+        ## @param defaultManagedAppProtectionId key: id of defaultManagedAppProtection
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, default_managed_app_protection_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceAppManagement/defaultManagedAppProtections/{defaultManagedAppProtection%2Did}{?%24select,%24expand}"

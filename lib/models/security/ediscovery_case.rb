@@ -46,7 +46,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the closedBy property value. The user who closed the case.
-        ## @param value Value to set for the closedBy property.
+        ## @param value Value to set for the closed_by property.
         ## @return a void
         ## 
         def closed_by=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the closedDateTime property value. The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the closedDateTime property.
+        ## @param value Value to set for the closed_date_time property.
         ## @return a void
         ## 
         def closed_date_time=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the externalId property value. The external case number for customer reference.
-        ## @param value Value to set for the externalId property.
+        ## @param value Value to set for the external_id property.
         ## @return a void
         ## 
         def external_id=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the noncustodialDataSources property value. Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
-        ## @param value Value to set for the noncustodialDataSources property.
+        ## @param value Value to set for the noncustodial_data_sources property.
         ## @return a void
         ## 
         def noncustodial_data_sources=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the reviewSets property value. Returns a list of eDiscoveryReviewSet objects in the case.
-        ## @param value Value to set for the reviewSets property.
+        ## @param value Value to set for the review_sets property.
         ## @return a void
         ## 
         def review_sets=(value)

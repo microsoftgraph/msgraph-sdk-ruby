@@ -29,11 +29,12 @@ module MicrosoftGraph::Communications::CallRecords::Item
         @url_template
         ## 
         ## Instantiates a new CallRecordItemRequestBuilder and sets the default values.
+        ## @param callRecordId key: id of callRecord
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, call_record_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/communications/callRecords/{callRecord%2Did}{?%24select,%24expand}"

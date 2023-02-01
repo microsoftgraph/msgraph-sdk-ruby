@@ -51,7 +51,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the containerId property value. The identifier of the resource that contains the plan. Optional.
-        ## @param value Value to set for the containerId property.
+        ## @param value Value to set for the container_id property.
         ## @return a void
         ## 
         def container_id=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isDefault property value. Indicates whether this is the user's default section. Read-only.
-        ## @param value Value to set for the isDefault property.
+        ## @param value Value to set for the is_default property.
         ## @return a void
         ## 
         def is_default=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pagesUrl property value. The pages endpoint where you can get details for all the pages in the section. Read-only.
-        ## @param value Value to set for the pagesUrl property.
+        ## @param value Value to set for the pages_url property.
         ## @return a void
         ## 
         def pages_url=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the parentNotebook property value. The notebook that contains the section.  Read-only.
-        ## @param value Value to set for the parentNotebook property.
+        ## @param value Value to set for the parent_notebook property.
         ## @return a void
         ## 
         def parent_notebook=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the parentSectionGroup property value. The section group that contains the section.  Read-only.
-        ## @param value Value to set for the parentSectionGroup property.
+        ## @param value Value to set for the parent_section_group property.
         ## @return a void
         ## 
         def parent_section_group=(value)

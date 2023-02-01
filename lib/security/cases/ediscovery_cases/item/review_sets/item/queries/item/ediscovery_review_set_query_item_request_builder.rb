@@ -9,8 +9,8 @@ require_relative '../../../../item'
 require_relative '../../../review_sets'
 require_relative '../../item'
 require_relative '../queries'
-require_relative './apply_tags/apply_tags_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_security_apply_tags/apply_tags_request_builder'
 
 module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item
     ## 
@@ -19,8 +19,8 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item:
         
         ## 
         # Provides operations to call the applyTags method.
-        def apply_tags()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item::ApplyTags::ApplyTagsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_security_apply_tags()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item::MicrosoftGraphSecurityApplyTags::ApplyTagsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -33,11 +33,12 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item:
         @url_template
         ## 
         ## Instantiates a new EdiscoveryReviewSetQueryItemRequestBuilder and sets the default values.
+        ## @param ediscoveryReviewSetQueryId key: id of ediscoveryReviewSetQuery
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, ediscovery_review_set_query_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/queries/{ediscoveryReviewSetQuery%2Did}{?%24select,%24expand}"

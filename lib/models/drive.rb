@@ -79,7 +79,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the driveType property value. Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.
-        ## @param value Value to set for the driveType property.
+        ## @param value Value to set for the drive_type property.
         ## @return a void
         ## 
         def drive_type=(value)
@@ -223,7 +223,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharePointIds property value. The sharePointIds property
-        ## @param value Value to set for the sharePointIds property.
+        ## @param value Value to set for the share_point_ids property.
         ## @return a void
         ## 
         def share_point_ids=(value)

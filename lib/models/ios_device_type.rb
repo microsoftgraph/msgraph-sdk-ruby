@@ -70,7 +70,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the iPad property value. Whether the app should run on iPads.
-        ## @param value Value to set for the iPad property.
+        ## @param value Value to set for the i_pad property.
         ## @return a void
         ## 
         def i_pad=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the iPhoneAndIPod property value. Whether the app should run on iPhones and iPods.
-        ## @param value Value to set for the iPhoneAndIPod property.
+        ## @param value Value to set for the i_phone_and_i_pod property.
         ## @return a void
         ## 
         def i_phone_and_i_pod=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

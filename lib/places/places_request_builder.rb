@@ -4,8 +4,8 @@ require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/place'
 require_relative '../models/place_collection_response'
 require_relative './count/count_request_builder'
+require_relative './microsoft_graph_room/room_request_builder'
 require_relative './places'
-require_relative './room/room_request_builder'
 
 module MicrosoftGraph::Places
     ## 
@@ -18,16 +18,16 @@ module MicrosoftGraph::Places
             return MicrosoftGraph::Places::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Casts the previous resource to room.
+        def microsoft_graph_room()
+            return MicrosoftGraph::Places::MicrosoftGraphRoom::RoomRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Casts the previous resource to room.
-        def room()
-            return MicrosoftGraph::Places::Room::RoomRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template

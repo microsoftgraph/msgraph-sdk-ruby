@@ -23,11 +23,12 @@ module MicrosoftGraph::Education::Me::Rubrics::Item
         @url_template
         ## 
         ## Instantiates a new EducationRubricItemRequestBuilder and sets the default values.
+        ## @param educationRubricId key: id of educationRubric
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, education_rubric_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/education/me/rubrics/{educationRubric%2Did}{?%24select,%24expand}"

@@ -33,7 +33,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
-        ## @param value Value to set for the applicableDeviceType property.
+        ## @param value Value to set for the applicable_device_type property.
         ## @return a void
         ## 
         def applicable_device_type=(value)
@@ -48,7 +48,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the buildNumber property value. The build number of iOS Line of Business (LoB) app.
-        ## @param value Value to set for the buildNumber property.
+        ## @param value Value to set for the build_number property.
         ## @return a void
         ## 
         def build_number=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bundleId property value. The Identity Name.
-        ## @param value Value to set for the bundleId property.
+        ## @param value Value to set for the bundle_id property.
         ## @return a void
         ## 
         def bundle_id=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the expirationDateTime property value. The expiration time.
-        ## @param value Value to set for the expirationDateTime property.
+        ## @param value Value to set for the expiration_date_time property.
         ## @return a void
         ## 
         def expiration_date_time=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
-        ## @param value Value to set for the minimumSupportedOperatingSystem property.
+        ## @param value Value to set for the minimum_supported_operating_system property.
         ## @return a void
         ## 
         def minimum_supported_operating_system=(value)
@@ -154,7 +154,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the versionNumber property value. The version number of iOS Line of Business (LoB) app.
-        ## @param value Value to set for the versionNumber property.
+        ## @param value Value to set for the version_number property.
         ## @return a void
         ## 
         def version_number=(value)

@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the feedbackBy property value. User who created the feedback.
-        ## @param value Value to set for the feedbackBy property.
+        ## @param value Value to set for the feedback_by property.
         ## @return a void
         ## 
         def feedback_by=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the feedbackDateTime property value. Moment in time when the feedback was given. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the feedbackDateTime property.
+        ## @param value Value to set for the feedback_date_time property.
         ## @return a void
         ## 
         def feedback_date_time=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

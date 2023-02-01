@@ -36,7 +36,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appRoleId property value. The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application's service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.
-        ## @param value Value to set for the appRoleId property.
+        ## @param value Value to set for the app_role_id property.
         ## @return a void
         ## 
         def app_role_id=(value)
@@ -59,7 +59,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The time when the app role assignment was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the principalDisplayName property value. The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).
-        ## @param value Value to set for the principalDisplayName property.
+        ## @param value Value to set for the principal_display_name property.
         ## @return a void
         ## 
         def principal_display_name=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the principalId property value. The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.
-        ## @param value Value to set for the principalId property.
+        ## @param value Value to set for the principal_id property.
         ## @return a void
         ## 
         def principal_id=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the principalType property value. The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.
-        ## @param value Value to set for the principalType property.
+        ## @param value Value to set for the principal_type property.
         ## @return a void
         ## 
         def principal_type=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceDisplayName property value. The display name of the resource app's service principal to which the assignment is made.
-        ## @param value Value to set for the resourceDisplayName property.
+        ## @param value Value to set for the resource_display_name property.
         ## @return a void
         ## 
         def resource_display_name=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceId property value. The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).
-        ## @param value Value to set for the resourceId property.
+        ## @param value Value to set for the resource_id property.
         ## @return a void
         ## 
         def resource_id=(value)

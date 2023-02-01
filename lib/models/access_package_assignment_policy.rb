@@ -54,7 +54,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accessPackage property value. Access package containing this policy. Read-only.
-        ## @param value Value to set for the accessPackage property.
+        ## @param value Value to set for the access_package property.
         ## @return a void
         ## 
         def access_package=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowedTargetScope property value. Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.
-        ## @param value Value to set for the allowedTargetScope property.
+        ## @param value Value to set for the allowed_target_scope property.
         ## @return a void
         ## 
         def allowed_target_scope=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the automaticRequestSettings property value. This property is only present for an auto assignment policy; if absent, this is a request-based policy.
-        ## @param value Value to set for the automaticRequestSettings property.
+        ## @param value Value to set for the automatic_request_settings property.
         ## @return a void
         ## 
         def automatic_request_settings=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name of the policy.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -211,7 +211,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        ## @param value Value to set for the modifiedDateTime property.
+        ## @param value Value to set for the modified_date_time property.
         ## @return a void
         ## 
         def modified_date_time=(value)
@@ -226,7 +226,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the requestApprovalSettings property value. Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.
-        ## @param value Value to set for the requestApprovalSettings property.
+        ## @param value Value to set for the request_approval_settings property.
         ## @return a void
         ## 
         def request_approval_settings=(value)
@@ -241,7 +241,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the requestorSettings property value. Provides additional settings to select who can create a request for an access package assignment through this policy, and what they can include in their request.
-        ## @param value Value to set for the requestorSettings property.
+        ## @param value Value to set for the requestor_settings property.
         ## @return a void
         ## 
         def requestor_settings=(value)
@@ -256,7 +256,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the reviewSettings property value. Settings for access reviews of assignments through this policy.
-        ## @param value Value to set for the reviewSettings property.
+        ## @param value Value to set for the review_settings property.
         ## @return a void
         ## 
         def review_settings=(value)
@@ -293,7 +293,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the specificAllowedTargets property value. The principals that can be assigned access from an access package through this policy.
-        ## @param value Value to set for the specificAllowedTargets property.
+        ## @param value Value to set for the specific_allowed_targets property.
         ## @return a void
         ## 
         def specific_allowed_targets=(value)

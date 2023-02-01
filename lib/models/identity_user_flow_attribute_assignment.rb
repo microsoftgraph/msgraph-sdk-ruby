@@ -48,7 +48,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name of the identityUserFlowAttribute within a user flow.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isOptional property value. Determines whether the identityUserFlowAttribute is optional. true means the user doesn't have to provide a value. false means the user cannot complete sign-up without providing a value.
-        ## @param value Value to set for the isOptional property.
+        ## @param value Value to set for the is_optional property.
         ## @return a void
         ## 
         def is_optional=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the requiresVerification property value. Determines whether the identityUserFlowAttribute requires verification. This is only used for verifying the user's phone number or email address.
-        ## @param value Value to set for the requiresVerification property.
+        ## @param value Value to set for the requires_verification property.
         ## @return a void
         ## 
         def requires_verification=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userAttribute property value. The user attribute that you want to add to your user flow.
-        ## @param value Value to set for the userAttribute property.
+        ## @param value Value to set for the user_attribute property.
         ## @return a void
         ## 
         def user_attribute=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userAttributeValues property value. The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.
-        ## @param value Value to set for the userAttributeValues property.
+        ## @param value Value to set for the user_attribute_values property.
         ## @return a void
         ## 
         def user_attribute_values=(value)
@@ -152,7 +152,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userInputType property value. The userInputType property
-        ## @param value Value to set for the userInputType property.
+        ## @param value Value to set for the user_input_type property.
         ## @return a void
         ## 
         def user_input_type=(value)

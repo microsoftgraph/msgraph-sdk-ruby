@@ -4,15 +4,15 @@ require_relative '../../../models/directory_object'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../directory'
 require_relative '../deleted_items'
-require_relative './application/application_request_builder'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
-require_relative './group/group_request_builder'
 require_relative './item'
-require_relative './restore/restore_request_builder'
-require_relative './user/user_request_builder'
+require_relative './microsoft_graph_application/application_request_builder'
+require_relative './microsoft_graph_check_member_groups/check_member_groups_request_builder'
+require_relative './microsoft_graph_check_member_objects/check_member_objects_request_builder'
+require_relative './microsoft_graph_get_member_groups/get_member_groups_request_builder'
+require_relative './microsoft_graph_get_member_objects/get_member_objects_request_builder'
+require_relative './microsoft_graph_group/group_request_builder'
+require_relative './microsoft_graph_restore/restore_request_builder'
+require_relative './microsoft_graph_user/user_request_builder'
 
 module MicrosoftGraph::Directory::DeletedItems::Item
     ## 
@@ -21,33 +21,43 @@ module MicrosoftGraph::Directory::DeletedItems::Item
         
         ## 
         # Casts the previous resource to application.
-        def application()
-            return MicrosoftGraph::Directory::DeletedItems::Item::Application::ApplicationRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_application()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphApplication::ApplicationRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the checkMemberGroups method.
-        def check_member_groups()
-            return MicrosoftGraph::Directory::DeletedItems::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_check_member_groups()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphCheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the checkMemberObjects method.
-        def check_member_objects()
-            return MicrosoftGraph::Directory::DeletedItems::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_check_member_objects()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphCheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getMemberGroups method.
-        def get_member_groups()
-            return MicrosoftGraph::Directory::DeletedItems::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_member_groups()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphGetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getMemberObjects method.
-        def get_member_objects()
-            return MicrosoftGraph::Directory::DeletedItems::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_member_objects()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphGetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to group.
-        def group()
-            return MicrosoftGraph::Directory::DeletedItems::Item::Group::GroupRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_group()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphGroup::GroupRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the restore method.
+        def microsoft_graph_restore()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphRestore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Casts the previous resource to user.
+        def microsoft_graph_user()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphUser::UserRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -56,25 +66,16 @@ module MicrosoftGraph::Directory::DeletedItems::Item
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the restore method.
-        def restore()
-            return MicrosoftGraph::Directory::DeletedItems::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
-        # Casts the previous resource to user.
-        def user()
-            return MicrosoftGraph::Directory::DeletedItems::Item::User::UserRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
+        ## @param directoryObjectId key: id of directoryObject
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, directory_object_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/directory/deletedItems/{directoryObject%2Did}{?%24select,%24expand}"

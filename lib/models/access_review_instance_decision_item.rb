@@ -54,7 +54,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accessReviewId property value. The identifier of the accessReviewInstance parent. Supports $select. Read-only.
-        ## @param value Value to set for the accessReviewId property.
+        ## @param value Value to set for the access_review_id property.
         ## @return a void
         ## 
         def access_review_id=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appliedBy property value. The identifier of the user who applied the decision. Read-only.
-        ## @param value Value to set for the appliedBy property.
+        ## @param value Value to set for the applied_by property.
         ## @return a void
         ## 
         def applied_by=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appliedDateTime property value. The timestamp when the approval decision was applied.00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't applied the decision or it was automatically applied. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $select. Read-only.
-        ## @param value Value to set for the appliedDateTime property.
+        ## @param value Value to set for the applied_date_time property.
         ## @return a void
         ## 
         def applied_date_time=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applyResult property value. The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.
-        ## @param value Value to set for the applyResult property.
+        ## @param value Value to set for the apply_result property.
         ## @return a void
         ## 
         def apply_result=(value)
@@ -196,7 +196,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the principalLink property value. A link to the principal object. For example, https://graph.microsoft.com/v1.0/users/a6c7aecb-cbfd-4763-87ef-e91b4bd509d9. Read-only.
-        ## @param value Value to set for the principalLink property.
+        ## @param value Value to set for the principal_link property.
         ## @return a void
         ## 
         def principal_link=(value)
@@ -241,7 +241,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceLink property value. A link to the resource. For example, https://graph.microsoft.com/v1.0/servicePrincipals/c86300f3-8695-4320-9f6e-32a2555f5ff8. Supports $select. Read-only.
-        ## @param value Value to set for the resourceLink property.
+        ## @param value Value to set for the resource_link property.
         ## @return a void
         ## 
         def resource_link=(value)
@@ -256,7 +256,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the reviewedBy property value. The identifier of the reviewer.00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't reviewed. Supports $select. Read-only.
-        ## @param value Value to set for the reviewedBy property.
+        ## @param value Value to set for the reviewed_by property.
         ## @return a void
         ## 
         def reviewed_by=(value)
@@ -271,7 +271,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the reviewedDateTime property value. The timestamp when the review decision occurred. Supports $select. Read-only.
-        ## @param value Value to set for the reviewedDateTime property.
+        ## @param value Value to set for the reviewed_date_time property.
         ## @return a void
         ## 
         def reviewed_date_time=(value)

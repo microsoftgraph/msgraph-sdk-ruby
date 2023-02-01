@@ -6,7 +6,7 @@ require_relative '../../../service_principals'
 require_relative '../../item'
 require_relative '../created_objects'
 require_relative './item'
-require_relative './service_principal/service_principal_request_builder'
+require_relative './microsoft_graph_service_principal/service_principal_request_builder'
 
 module MicrosoftGraph::ServicePrincipals::Item::CreatedObjects::Item
     ## 
@@ -14,26 +14,27 @@ module MicrosoftGraph::ServicePrincipals::Item::CreatedObjects::Item
     class DirectoryObjectItemRequestBuilder
         
         ## 
+        # Casts the previous resource to servicePrincipal.
+        def microsoft_graph_service_principal()
+            return MicrosoftGraph::ServicePrincipals::Item::CreatedObjects::Item::MicrosoftGraphServicePrincipal::ServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Casts the previous resource to servicePrincipal.
-        def service_principal()
-            return MicrosoftGraph::ServicePrincipals::Item::CreatedObjects::Item::ServicePrincipal::ServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
+        ## @param directoryObjectId key: id of directoryObject
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, directory_object_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/createdObjects/{directoryObject%2Did}{?%24select,%24expand}"

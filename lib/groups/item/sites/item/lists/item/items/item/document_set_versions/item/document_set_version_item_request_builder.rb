@@ -12,7 +12,7 @@ require_relative '../../../items'
 require_relative '../../item'
 require_relative '../document_set_versions'
 require_relative './item'
-require_relative './restore/restore_request_builder'
+require_relative './microsoft_graph_restore/restore_request_builder'
 
 module MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item::DocumentSetVersions::Item
     ## 
@@ -20,26 +20,27 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item::Docu
     class DocumentSetVersionItemRequestBuilder
         
         ## 
+        # Provides operations to call the restore method.
+        def microsoft_graph_restore()
+            return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item::DocumentSetVersions::Item::MicrosoftGraphRestore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the restore method.
-        def restore()
-            return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item::DocumentSetVersions::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new DocumentSetVersionItemRequestBuilder and sets the default values.
+        ## @param documentSetVersionId key: id of documentSetVersion
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, document_set_version_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/items/{listItem%2Did}/documentSetVersions/{documentSetVersion%2Did}{?%24select,%24expand}"

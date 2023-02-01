@@ -20,7 +20,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the categoryDescriptions property value. An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan.
-        ## @param value Value to set for the categoryDescriptions property.
+        ## @param value Value to set for the category_descriptions property.
         ## @return a void
         ## 
         def category_descriptions=(value)
@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharedWith property value. Set of user IDs that this plan is shared with. If you are leveraging Microsoft 365 groups, use the Groups API to manage group membership to share the group's plan. You can also add existing members of the group to this collection, although it is not required for them to access the plan owned by the group.
-        ## @param value Value to set for the sharedWith property.
+        ## @param value Value to set for the shared_with property.
         ## @return a void
         ## 
         def shared_with=(value)

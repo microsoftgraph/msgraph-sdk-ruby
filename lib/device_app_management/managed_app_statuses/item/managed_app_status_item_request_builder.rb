@@ -22,11 +22,12 @@ module MicrosoftGraph::DeviceAppManagement::ManagedAppStatuses::Item
         @url_template
         ## 
         ## Instantiates a new ManagedAppStatusItemRequestBuilder and sets the default values.
+        ## @param managedAppStatusId key: id of managedAppStatus
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, managed_app_status_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceAppManagement/managedAppStatuses/{managedAppStatus%2Did}{?%24select,%24expand}"

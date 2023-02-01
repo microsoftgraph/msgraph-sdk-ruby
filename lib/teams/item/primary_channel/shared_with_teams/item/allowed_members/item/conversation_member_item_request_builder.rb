@@ -26,11 +26,12 @@ module MicrosoftGraph::Teams::Item::PrimaryChannel::SharedWithTeams::Item::Allow
         @url_template
         ## 
         ## Instantiates a new ConversationMemberItemRequestBuilder and sets the default values.
+        ## @param conversationMemberId key: id of conversationMember
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, conversation_member_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/teams/{team%2Did}/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo%2Did}/allowedMembers/{conversationMember%2Did}{?%24select,%24expand}"

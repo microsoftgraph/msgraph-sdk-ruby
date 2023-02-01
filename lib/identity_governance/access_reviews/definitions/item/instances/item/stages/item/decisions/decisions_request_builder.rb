@@ -13,7 +13,7 @@ require_relative '../../stages'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './decisions'
-require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './microsoft_graph_filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
 
 module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Stages::Item::Decisions
     ## 
@@ -49,15 +49,6 @@ module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Ins
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Provides operations to call the filterByCurrentUser method.
-        ## @param on Usage: on='{on}'
-        ## @return a filter_by_current_user_with_on_request_builder
-        ## 
-        def filter_by_current_user_with_on(on)
-            raise StandardError, 'on cannot be null' if on.nil?
-            return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
-        end
-        ## 
         ## Get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of access_review_instance_decision_item_collection_response
@@ -70,6 +61,15 @@ module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Ins
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewInstanceDecisionItemCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+        end
+        ## 
+        ## Provides operations to call the filterByCurrentUser method.
+        ## @param on Usage: on='{on}'
+        ## @return a filter_by_current_user_with_on_request_builder
+        ## 
+        def microsoft_graph_filter_by_current_user_with_on(on)
+            raise StandardError, 'on cannot be null' if on.nil?
+            return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
         end
         ## 
         ## Create new navigation property to decisions for identityGovernance

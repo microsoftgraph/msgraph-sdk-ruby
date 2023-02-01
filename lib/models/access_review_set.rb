@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the historyDefinitions property value. Represents a collection of access review history data and the scopes used to collect that data.
-        ## @param value Value to set for the historyDefinitions property.
+        ## @param value Value to set for the history_definitions property.
         ## @return a void
         ## 
         def history_definitions=(value)

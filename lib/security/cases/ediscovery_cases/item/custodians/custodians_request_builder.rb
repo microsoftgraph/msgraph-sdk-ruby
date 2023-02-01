@@ -7,10 +7,10 @@ require_relative '../../../../security'
 require_relative '../../../cases'
 require_relative '../../ediscovery_cases'
 require_relative '../item'
-require_relative './apply_hold/apply_hold_request_builder'
 require_relative './count/count_request_builder'
 require_relative './custodians'
-require_relative './remove_hold/remove_hold_request_builder'
+require_relative './microsoft_graph_security_apply_hold/apply_hold_request_builder'
+require_relative './microsoft_graph_security_remove_hold/remove_hold_request_builder'
 
 module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians
     ## 
@@ -18,23 +18,23 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians
     class CustodiansRequestBuilder
         
         ## 
-        # Provides operations to call the applyHold method.
-        def apply_hold()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::ApplyHold::ApplyHoldRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Path parameters for the request
-        @path_parameters
+        # Provides operations to call the applyHold method.
+        def microsoft_graph_security_apply_hold()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::MicrosoftGraphSecurityApplyHold::ApplyHoldRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Provides operations to call the removeHold method.
-        def remove_hold()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::RemoveHold::RemoveHoldRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_security_remove_hold()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::MicrosoftGraphSecurityRemoveHold::RemoveHoldRequestBuilder.new(@path_parameters, @request_adapter)
         end
+        ## 
+        # Path parameters for the request
+        @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter

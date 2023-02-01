@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. Read only. Timestamp at which the channel was created.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the filesFolder property value. Metadata for the location where the channel's files are stored.
-        ## @param value Value to set for the filesFolder property.
+        ## @param value Value to set for the files_folder property.
         ## @return a void
         ## 
         def files_folder=(value)
@@ -166,7 +166,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isFavoriteByDefault property value. Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
-        ## @param value Value to set for the isFavoriteByDefault property.
+        ## @param value Value to set for the is_favorite_by_default property.
         ## @return a void
         ## 
         def is_favorite_by_default=(value)
@@ -196,7 +196,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the membershipType property value. The type of the channel. Can be set during creation and can't be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.
-        ## @param value Value to set for the membershipType property.
+        ## @param value Value to set for the membership_type property.
         ## @return a void
         ## 
         def membership_type=(value)
@@ -248,7 +248,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharedWithTeams property value. A collection of teams with which a channel is shared.
-        ## @param value Value to set for the sharedWithTeams property.
+        ## @param value Value to set for the shared_with_teams property.
         ## @return a void
         ## 
         def shared_with_teams=(value)
@@ -278,7 +278,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tenantId property value. The ID of the Azure Active Directory tenant.
-        ## @param value Value to set for the tenantId property.
+        ## @param value Value to set for the tenant_id property.
         ## @return a void
         ## 
         def tenant_id=(value)
@@ -293,7 +293,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webUrl property value. A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.
-        ## @param value Value to set for the webUrl property.
+        ## @param value Value to set for the web_url property.
         ## @return a void
         ## 
         def web_url=(value)

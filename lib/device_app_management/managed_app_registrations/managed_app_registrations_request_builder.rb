@@ -5,8 +5,8 @@ require_relative '../../models/managed_app_registration_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_app_management'
 require_relative './count/count_request_builder'
-require_relative './get_user_ids_with_flagged_app_registration/get_user_ids_with_flagged_app_registration_request_builder'
 require_relative './managed_app_registrations'
+require_relative './microsoft_graph_get_user_ids_with_flagged_app_registration/get_user_ids_with_flagged_app_registration_request_builder'
 
 module MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations
     ## 
@@ -17,6 +17,11 @@ module MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getUserIdsWithFlaggedAppRegistration method.
+        def microsoft_graph_get_user_ids_with_flagged_app_registration()
+            return MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::MicrosoftGraphGetUserIdsWithFlaggedAppRegistration::GetUserIdsWithFlaggedAppRegistrationRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -54,13 +59,6 @@ module MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedAppRegistrationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Provides operations to call the getUserIdsWithFlaggedAppRegistration method.
-        ## @return a get_user_ids_with_flagged_app_registration_request_builder
-        ## 
-        def get_user_ids_with_flagged_app_registration()
-            return GetUserIdsWithFlaggedAppRegistrationRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Create new navigation property to managedAppRegistrations for deviceAppManagement

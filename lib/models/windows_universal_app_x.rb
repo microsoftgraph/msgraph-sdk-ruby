@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applicableArchitectures property value. Contains properties for Windows architecture.
-        ## @param value Value to set for the applicableArchitectures property.
+        ## @param value Value to set for the applicable_architectures property.
         ## @return a void
         ## 
         def applicable_architectures=(value)
@@ -56,7 +56,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applicableDeviceTypes property value. Contains properties for Windows device type.
-        ## @param value Value to set for the applicableDeviceTypes property.
+        ## @param value Value to set for the applicable_device_types property.
         ## @return a void
         ## 
         def applicable_device_types=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the committedContainedApps property value. The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
-        ## @param value Value to set for the committedContainedApps property.
+        ## @param value Value to set for the committed_contained_apps property.
         ## @return a void
         ## 
         def committed_contained_apps=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the identityName property value. The Identity Name.
-        ## @param value Value to set for the identityName property.
+        ## @param value Value to set for the identity_name property.
         ## @return a void
         ## 
         def identity_name=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the identityPublisherHash property value. The Identity Publisher Hash.
-        ## @param value Value to set for the identityPublisherHash property.
+        ## @param value Value to set for the identity_publisher_hash property.
         ## @return a void
         ## 
         def identity_publisher_hash=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the identityResourceIdentifier property value. The Identity Resource Identifier.
-        ## @param value Value to set for the identityResourceIdentifier property.
+        ## @param value Value to set for the identity_resource_identifier property.
         ## @return a void
         ## 
         def identity_resource_identifier=(value)
@@ -165,7 +165,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the identityVersion property value. The identity version.
-        ## @param value Value to set for the identityVersion property.
+        ## @param value Value to set for the identity_version property.
         ## @return a void
         ## 
         def identity_version=(value)
@@ -180,7 +180,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isBundle property value. Whether or not the app is a bundle.
-        ## @param value Value to set for the isBundle property.
+        ## @param value Value to set for the is_bundle property.
         ## @return a void
         ## 
         def is_bundle=(value)
@@ -195,7 +195,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minimumSupportedOperatingSystem property value. The minimum operating system required for a Windows mobile app.
-        ## @param value Value to set for the minimumSupportedOperatingSystem property.
+        ## @param value Value to set for the minimum_supported_operating_system property.
         ## @return a void
         ## 
         def minimum_supported_operating_system=(value)

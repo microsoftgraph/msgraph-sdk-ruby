@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the routingMode property value. The routingMode property
-        ## @param value Value to set for the routingMode property.
+        ## @param value Value to set for the routing_mode property.
         ## @return a void
         ## 
         def routing_mode=(value)

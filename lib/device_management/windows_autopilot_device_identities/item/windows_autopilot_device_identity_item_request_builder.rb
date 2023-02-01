@@ -4,10 +4,10 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/windows_autopilot_device_identity'
 require_relative '../../device_management'
 require_relative '../windows_autopilot_device_identities'
-require_relative './assign_user_to_device/assign_user_to_device_request_builder'
 require_relative './item'
-require_relative './unassign_user_from_device/unassign_user_from_device_request_builder'
-require_relative './update_device_properties/update_device_properties_request_builder'
+require_relative './microsoft_graph_assign_user_to_device/assign_user_to_device_request_builder'
+require_relative './microsoft_graph_unassign_user_from_device/unassign_user_from_device_request_builder'
+require_relative './microsoft_graph_update_device_properties/update_device_properties_request_builder'
 
 module MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::Item
     ## 
@@ -16,8 +16,18 @@ module MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::Item
         
         ## 
         # Provides operations to call the assignUserToDevice method.
-        def assign_user_to_device()
-            return MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::Item::AssignUserToDevice::AssignUserToDeviceRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_assign_user_to_device()
+            return MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::Item::MicrosoftGraphAssignUserToDevice::AssignUserToDeviceRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the unassignUserFromDevice method.
+        def microsoft_graph_unassign_user_from_device()
+            return MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::Item::MicrosoftGraphUnassignUserFromDevice::UnassignUserFromDeviceRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the updateDeviceProperties method.
+        def microsoft_graph_update_device_properties()
+            return MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::Item::MicrosoftGraphUpdateDeviceProperties::UpdateDevicePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -26,25 +36,16 @@ module MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::Item
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the unassignUserFromDevice method.
-        def unassign_user_from_device()
-            return MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::Item::UnassignUserFromDevice::UnassignUserFromDeviceRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the updateDeviceProperties method.
-        def update_device_properties()
-            return MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::Item::UpdateDeviceProperties::UpdateDevicePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new WindowsAutopilotDeviceIdentityItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param windowsAutopilotDeviceIdentityId key: id of windowsAutopilotDeviceIdentity
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, windows_autopilot_device_identity_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity%2Did}{?%24select,%24expand}"

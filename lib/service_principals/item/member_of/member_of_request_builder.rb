@@ -4,14 +4,14 @@ require_relative '../../../models/directory_object_collection_response'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../service_principals'
 require_relative '../item'
-require_relative './application/application_request_builder'
 require_relative './count/count_request_builder'
-require_relative './device/device_request_builder'
-require_relative './group/group_request_builder'
 require_relative './member_of'
-require_relative './org_contact/org_contact_request_builder'
-require_relative './service_principal/service_principal_request_builder'
-require_relative './user/user_request_builder'
+require_relative './microsoft_graph_application/application_request_builder'
+require_relative './microsoft_graph_device/device_request_builder'
+require_relative './microsoft_graph_group/group_request_builder'
+require_relative './microsoft_graph_org_contact/org_contact_request_builder'
+require_relative './microsoft_graph_service_principal/service_principal_request_builder'
+require_relative './microsoft_graph_user/user_request_builder'
 
 module MicrosoftGraph::ServicePrincipals::Item::MemberOf
     ## 
@@ -19,29 +19,39 @@ module MicrosoftGraph::ServicePrincipals::Item::MemberOf
     class MemberOfRequestBuilder
         
         ## 
-        # Casts the previous resource to application.
-        def application()
-            return MicrosoftGraph::ServicePrincipals::Item::MemberOf::Application::ApplicationRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::ServicePrincipals::Item::MemberOf::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Casts the previous resource to application.
+        def microsoft_graph_application()
+            return MicrosoftGraph::ServicePrincipals::Item::MemberOf::MicrosoftGraphApplication::ApplicationRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Casts the previous resource to device.
-        def device()
-            return MicrosoftGraph::ServicePrincipals::Item::MemberOf::Device::DeviceRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_device()
+            return MicrosoftGraph::ServicePrincipals::Item::MemberOf::MicrosoftGraphDevice::DeviceRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to group.
-        def group()
-            return MicrosoftGraph::ServicePrincipals::Item::MemberOf::Group::GroupRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_group()
+            return MicrosoftGraph::ServicePrincipals::Item::MemberOf::MicrosoftGraphGroup::GroupRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to orgContact.
-        def org_contact()
-            return MicrosoftGraph::ServicePrincipals::Item::MemberOf::OrgContact::OrgContactRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_org_contact()
+            return MicrosoftGraph::ServicePrincipals::Item::MemberOf::MicrosoftGraphOrgContact::OrgContactRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Casts the previous resource to servicePrincipal.
+        def microsoft_graph_service_principal()
+            return MicrosoftGraph::ServicePrincipals::Item::MemberOf::MicrosoftGraphServicePrincipal::ServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Casts the previous resource to user.
+        def microsoft_graph_user()
+            return MicrosoftGraph::ServicePrincipals::Item::MemberOf::MicrosoftGraphUser::UserRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -50,18 +60,8 @@ module MicrosoftGraph::ServicePrincipals::Item::MemberOf
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Casts the previous resource to servicePrincipal.
-        def service_principal()
-            return MicrosoftGraph::ServicePrincipals::Item::MemberOf::ServicePrincipal::ServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        # Casts the previous resource to user.
-        def user()
-            return MicrosoftGraph::ServicePrincipals::Item::MemberOf::User::UserRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new MemberOfRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request

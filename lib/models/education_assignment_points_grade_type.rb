@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maxPoints property value. Max points possible for this assignment.
-        ## @param value Value to set for the maxPoints property.
+        ## @param value Value to set for the max_points property.
         ## @return a void
         ## 
         def max_points=(value)

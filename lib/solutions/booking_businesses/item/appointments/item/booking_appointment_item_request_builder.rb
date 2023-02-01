@@ -6,8 +6,8 @@ require_relative '../../../../solutions'
 require_relative '../../../booking_businesses'
 require_relative '../../item'
 require_relative '../appointments'
-require_relative './cancel/cancel_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_cancel/cancel_request_builder'
 
 module MicrosoftGraph::Solutions::BookingBusinesses::Item::Appointments::Item
     ## 
@@ -16,8 +16,8 @@ module MicrosoftGraph::Solutions::BookingBusinesses::Item::Appointments::Item
         
         ## 
         # Provides operations to call the cancel method.
-        def cancel()
-            return MicrosoftGraph::Solutions::BookingBusinesses::Item::Appointments::Item::Cancel::CancelRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_cancel()
+            return MicrosoftGraph::Solutions::BookingBusinesses::Item::Appointments::Item::MicrosoftGraphCancel::CancelRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -30,11 +30,12 @@ module MicrosoftGraph::Solutions::BookingBusinesses::Item::Appointments::Item
         @url_template
         ## 
         ## Instantiates a new BookingAppointmentItemRequestBuilder and sets the default values.
+        ## @param bookingAppointmentId key: id of bookingAppointment
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, booking_appointment_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/appointments/{bookingAppointment%2Did}{?%24select,%24expand}"

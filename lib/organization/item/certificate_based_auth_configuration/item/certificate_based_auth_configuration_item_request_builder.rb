@@ -23,11 +23,12 @@ module MicrosoftGraph::Organization::Item::CertificateBasedAuthConfiguration::It
         @url_template
         ## 
         ## Instantiates a new CertificateBasedAuthConfigurationItemRequestBuilder and sets the default values.
+        ## @param certificateBasedAuthConfigurationId key: id of certificateBasedAuthConfiguration
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, certificate_based_auth_configuration_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/organization/{organization%2Did}/certificateBasedAuthConfiguration/{certificateBasedAuthConfiguration%2Did}{?%24select,%24expand}"

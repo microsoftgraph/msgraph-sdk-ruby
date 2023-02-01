@@ -3,12 +3,12 @@ require_relative '../../microsoft_graph'
 require_relative '../../models/contract'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../contracts'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
-require_relative './restore/restore_request_builder'
+require_relative './microsoft_graph_check_member_groups/check_member_groups_request_builder'
+require_relative './microsoft_graph_check_member_objects/check_member_objects_request_builder'
+require_relative './microsoft_graph_get_member_groups/get_member_groups_request_builder'
+require_relative './microsoft_graph_get_member_objects/get_member_objects_request_builder'
+require_relative './microsoft_graph_restore/restore_request_builder'
 
 module MicrosoftGraph::Contracts::Item
     ## 
@@ -17,23 +17,28 @@ module MicrosoftGraph::Contracts::Item
         
         ## 
         # Provides operations to call the checkMemberGroups method.
-        def check_member_groups()
-            return MicrosoftGraph::Contracts::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_check_member_groups()
+            return MicrosoftGraph::Contracts::Item::MicrosoftGraphCheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the checkMemberObjects method.
-        def check_member_objects()
-            return MicrosoftGraph::Contracts::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_check_member_objects()
+            return MicrosoftGraph::Contracts::Item::MicrosoftGraphCheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getMemberGroups method.
-        def get_member_groups()
-            return MicrosoftGraph::Contracts::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_member_groups()
+            return MicrosoftGraph::Contracts::Item::MicrosoftGraphGetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getMemberObjects method.
-        def get_member_objects()
-            return MicrosoftGraph::Contracts::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_member_objects()
+            return MicrosoftGraph::Contracts::Item::MicrosoftGraphGetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the restore method.
+        def microsoft_graph_restore()
+            return MicrosoftGraph::Contracts::Item::MicrosoftGraphRestore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -42,20 +47,16 @@ module MicrosoftGraph::Contracts::Item
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the restore method.
-        def restore()
-            return MicrosoftGraph::Contracts::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new ContractItemRequestBuilder and sets the default values.
+        ## @param contractId key: id of contract
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, contract_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/contracts/{contract%2Did}{?%24select,%24expand}"
@@ -64,7 +65,7 @@ module MicrosoftGraph::Contracts::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from contracts by key (id)
+        ## Delete entity from contracts
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -92,7 +93,7 @@ module MicrosoftGraph::Contracts::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Contract.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update entity in contracts by key (id)
+        ## Update entity in contracts
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of contract
@@ -108,7 +109,7 @@ module MicrosoftGraph::Contracts::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Contract.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from contracts by key (id)
+        ## Delete entity from contracts
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -142,7 +143,7 @@ module MicrosoftGraph::Contracts::Item
             return request_info
         end
         ## 
-        ## Update entity in contracts by key (id)
+        ## Update entity in contracts
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

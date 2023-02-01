@@ -5,8 +5,8 @@ require_relative '../../models/mobile_app_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_app_management'
 require_relative './count/count_request_builder'
-require_relative './managed_mobile_lob_app/managed_mobile_lob_app_request_builder'
-require_relative './mobile_lob_app/mobile_lob_app_request_builder'
+require_relative './microsoft_graph_managed_mobile_lob_app/managed_mobile_lob_app_request_builder'
+require_relative './microsoft_graph_mobile_lob_app/mobile_lob_app_request_builder'
 require_relative './mobile_apps'
 
 module MicrosoftGraph::DeviceAppManagement::MobileApps
@@ -21,13 +21,13 @@ module MicrosoftGraph::DeviceAppManagement::MobileApps
         end
         ## 
         # Casts the previous resource to managedMobileLobApp.
-        def managed_mobile_lob_app()
-            return MicrosoftGraph::DeviceAppManagement::MobileApps::ManagedMobileLobApp::ManagedMobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_managed_mobile_lob_app()
+            return MicrosoftGraph::DeviceAppManagement::MobileApps::MicrosoftGraphManagedMobileLobApp::ManagedMobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to mobileLobApp.
-        def mobile_lob_app()
-            return MicrosoftGraph::DeviceAppManagement::MobileApps::MobileLobApp::MobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_mobile_lob_app()
+            return MicrosoftGraph::DeviceAppManagement::MobileApps::MicrosoftGraphMobileLobApp::MobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

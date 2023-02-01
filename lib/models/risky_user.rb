@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isDeleted property value. Indicates whether the user is deleted. Possible values are: true, false.
-        ## @param value Value to set for the isDeleted property.
+        ## @param value Value to set for the is_deleted property.
         ## @return a void
         ## 
         def is_deleted=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isProcessing property value. Indicates whether a user's risky state is being processed by the backend.
-        ## @param value Value to set for the isProcessing property.
+        ## @param value Value to set for the is_processing property.
         ## @return a void
         ## 
         def is_processing=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskDetail property value. Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.
-        ## @param value Value to set for the riskDetail property.
+        ## @param value Value to set for the risk_detail property.
         ## @return a void
         ## 
         def risk_detail=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskLastUpdatedDateTime property value. The date and time that the risky user was last updated.  The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        ## @param value Value to set for the riskLastUpdatedDateTime property.
+        ## @param value Value to set for the risk_last_updated_date_time property.
         ## @return a void
         ## 
         def risk_last_updated_date_time=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskLevel property value. Level of the detected risky user. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
-        ## @param value Value to set for the riskLevel property.
+        ## @param value Value to set for the risk_level property.
         ## @return a void
         ## 
         def risk_level=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskState property value. State of the user's risk. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-        ## @param value Value to set for the riskState property.
+        ## @param value Value to set for the risk_state property.
         ## @return a void
         ## 
         def risk_state=(value)
@@ -206,7 +206,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userDisplayName property value. Risky user display name.
-        ## @param value Value to set for the userDisplayName property.
+        ## @param value Value to set for the user_display_name property.
         ## @return a void
         ## 
         def user_display_name=(value)
@@ -221,7 +221,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userPrincipalName property value. Risky user principal name.
-        ## @param value Value to set for the userPrincipalName property.
+        ## @param value Value to set for the user_principal_name property.
         ## @return a void
         ## 
         def user_principal_name=(value)

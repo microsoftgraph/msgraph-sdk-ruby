@@ -28,9 +28,10 @@ module MicrosoftGraph::Groups::Item::Team::Tags::Item::Members::Item
         ## Instantiates a new TeamworkTagMemberItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param teamworkTagMemberId key: id of teamworkTagMember
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, teamwork_tag_member_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/groups/{group%2Did}/team/tags/{teamworkTag%2Did}/members/{teamworkTagMember%2Did}{?%24select,%24expand}"

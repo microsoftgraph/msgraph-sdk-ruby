@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentType property value. The type of the content. Possible values are text and html.
-        ## @param value Value to set for the contentType property.
+        ## @param value Value to set for the content_type property.
         ## @return a void
         ## 
         def content_type=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

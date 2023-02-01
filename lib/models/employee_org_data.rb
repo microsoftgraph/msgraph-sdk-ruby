@@ -48,7 +48,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the costCenter property value. The cost center associated with the user. Returned only on $select. Supports $filter.
-        ## @param value Value to set for the costCenter property.
+        ## @param value Value to set for the cost_center property.
         ## @return a void
         ## 
         def cost_center=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

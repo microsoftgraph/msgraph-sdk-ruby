@@ -4,9 +4,9 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/subject_rights_request'
 require_relative '../../privacy'
 require_relative '../subject_rights_requests'
-require_relative './get_final_attachment/get_final_attachment_request_builder'
-require_relative './get_final_report/get_final_report_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_get_final_attachment/get_final_attachment_request_builder'
+require_relative './microsoft_graph_get_final_report/get_final_report_request_builder'
 require_relative './notes/item/authored_note_item_request_builder'
 require_relative './notes/notes_request_builder'
 require_relative './team/team_request_builder'
@@ -16,6 +16,16 @@ module MicrosoftGraph::Privacy::SubjectRightsRequests::Item
     # Provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
     class SubjectRightsRequestItemRequestBuilder
         
+        ## 
+        # Provides operations to call the getFinalAttachment method.
+        def microsoft_graph_get_final_attachment()
+            return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::MicrosoftGraphGetFinalAttachment::GetFinalAttachmentRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getFinalReport method.
+        def microsoft_graph_get_final_report()
+            return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::MicrosoftGraphGetFinalReport::GetFinalReportRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
         def notes()
@@ -39,9 +49,10 @@ module MicrosoftGraph::Privacy::SubjectRightsRequests::Item
         ## Instantiates a new SubjectRightsRequestItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param subjectRightsRequestId key: id of subjectRightsRequest
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, subject_rights_request_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/privacy/subjectRightsRequests/{subjectRightsRequest%2Did}{?%24select,%24expand}"
@@ -76,20 +87,6 @@ module MicrosoftGraph::Privacy::SubjectRightsRequests::Item
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SubjectRightsRequest.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Provides operations to call the getFinalAttachment method.
-        ## @return a get_final_attachment_request_builder
-        ## 
-        def get_final_attachment()
-            return GetFinalAttachmentRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the getFinalReport method.
-        ## @return a get_final_report_request_builder
-        ## 
-        def get_final_report()
-            return GetFinalReportRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.

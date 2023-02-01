@@ -8,7 +8,7 @@ require_relative '../../../items'
 require_relative '../../item'
 require_relative '../subscriptions'
 require_relative './item'
-require_relative './reauthorize/reauthorize_request_builder'
+require_relative './microsoft_graph_reauthorize/reauthorize_request_builder'
 
 module MicrosoftGraph::Drives::Item::Items::Item::Subscriptions::Item
     ## 
@@ -16,13 +16,13 @@ module MicrosoftGraph::Drives::Item::Items::Item::Subscriptions::Item
     class SubscriptionItemRequestBuilder
         
         ## 
+        # Provides operations to call the reauthorize method.
+        def microsoft_graph_reauthorize()
+            return MicrosoftGraph::Drives::Item::Items::Item::Subscriptions::Item::MicrosoftGraphReauthorize::ReauthorizeRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
-        ## 
-        # Provides operations to call the reauthorize method.
-        def reauthorize()
-            return MicrosoftGraph::Drives::Item::Items::Item::Subscriptions::Item::Reauthorize::ReauthorizeRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
@@ -33,9 +33,10 @@ module MicrosoftGraph::Drives::Item::Items::Item::Subscriptions::Item
         ## Instantiates a new SubscriptionItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param subscriptionId key: id of subscription
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, subscription_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/subscriptions/{subscription%2Did}{?%24select,%24expand}"

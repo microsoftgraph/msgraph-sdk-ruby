@@ -4,9 +4,9 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/remote_assistance_partner'
 require_relative '../../device_management'
 require_relative '../remote_assistance_partners'
-require_relative './begin_onboarding/begin_onboarding_request_builder'
-require_relative './disconnect/disconnect_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_begin_onboarding/begin_onboarding_request_builder'
+require_relative './microsoft_graph_disconnect/disconnect_request_builder'
 
 module MicrosoftGraph::DeviceManagement::RemoteAssistancePartners::Item
     ## 
@@ -15,13 +15,13 @@ module MicrosoftGraph::DeviceManagement::RemoteAssistancePartners::Item
         
         ## 
         # Provides operations to call the beginOnboarding method.
-        def begin_onboarding()
-            return MicrosoftGraph::DeviceManagement::RemoteAssistancePartners::Item::BeginOnboarding::BeginOnboardingRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_begin_onboarding()
+            return MicrosoftGraph::DeviceManagement::RemoteAssistancePartners::Item::MicrosoftGraphBeginOnboarding::BeginOnboardingRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the disconnect method.
-        def disconnect()
-            return MicrosoftGraph::DeviceManagement::RemoteAssistancePartners::Item::Disconnect::DisconnectRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_disconnect()
+            return MicrosoftGraph::DeviceManagement::RemoteAssistancePartners::Item::MicrosoftGraphDisconnect::DisconnectRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -35,10 +35,11 @@ module MicrosoftGraph::DeviceManagement::RemoteAssistancePartners::Item
         ## 
         ## Instantiates a new RemoteAssistancePartnerItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
+        ## @param remoteAssistancePartnerId key: id of remoteAssistancePartner
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, remote_assistance_partner_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceManagement/remoteAssistancePartners/{remoteAssistancePartner%2Did}{?%24select,%24expand}"

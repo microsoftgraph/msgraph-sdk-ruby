@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the teamDescription property value. Description for the team.
-        ## @param value Value to set for the teamDescription property.
+        ## @param value Value to set for the team_description property.
         ## @return a void
         ## 
         def team_description=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the teamDisplayName property value. Display name of the team.
-        ## @param value Value to set for the teamDisplayName property.
+        ## @param value Value to set for the team_display_name property.
         ## @return a void
         ## 
         def team_display_name=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the teamId property value. Unique identifier of the team.
-        ## @param value Value to set for the teamId property.
+        ## @param value Value to set for the team_id property.
         ## @return a void
         ## 
         def team_id=(value)

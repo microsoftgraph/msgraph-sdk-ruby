@@ -41,7 +41,7 @@ module MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::AttachmentSe
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Get content for the navigation property attachmentSessions from users
+        ## The content streams that are uploaded.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of binary
         ## 
@@ -55,7 +55,7 @@ module MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::AttachmentSe
             return @request_adapter.send_async(request_info, Binary, error_mapping)
         end
         ## 
-        ## Update content for the navigation property attachmentSessions in users
+        ## The content streams that are uploaded.
         ## @param body Binary request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
@@ -71,7 +71,7 @@ module MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::AttachmentSe
             return @request_adapter.send_async(request_info, nil, error_mapping)
         end
         ## 
-        ## Get content for the navigation property attachmentSessions from users
+        ## The content streams that are uploaded.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -87,7 +87,7 @@ module MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::AttachmentSe
             return request_info
         end
         ## 
-        ## Update content for the navigation property attachmentSessions in users
+        ## The content streams that are uploaded.
         ## @param body Binary request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

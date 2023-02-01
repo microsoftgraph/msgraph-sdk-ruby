@@ -27,11 +27,12 @@ module MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::Outc
         @url_template
         ## 
         ## Instantiates a new EducationOutcomeItemRequestBuilder and sets the default values.
+        ## @param educationOutcomeId key: id of educationOutcome
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, education_outcome_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/outcomes/{educationOutcome%2Did}{?%24select,%24expand}"

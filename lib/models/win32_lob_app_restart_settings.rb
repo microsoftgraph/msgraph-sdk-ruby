@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the countdownDisplayBeforeRestartInMinutes property value. The number of minutes before the restart time to display the countdown dialog for pending restarts.
-        ## @param value Value to set for the countdownDisplayBeforeRestartInMinutes property.
+        ## @param value Value to set for the countdown_display_before_restart_in_minutes property.
         ## @return a void
         ## 
         def countdown_display_before_restart_in_minutes=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the gracePeriodInMinutes property value. The number of minutes to wait before restarting the device after an app installation.
-        ## @param value Value to set for the gracePeriodInMinutes property.
+        ## @param value Value to set for the grace_period_in_minutes property.
         ## @return a void
         ## 
         def grace_period_in_minutes=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the restartNotificationSnoozeDurationInMinutes property value. The number of minutes to snooze the restart notification dialog when the snooze button is selected.
-        ## @param value Value to set for the restartNotificationSnoozeDurationInMinutes property.
+        ## @param value Value to set for the restart_notification_snooze_duration_in_minutes property.
         ## @return a void
         ## 
         def restart_notification_snooze_duration_in_minutes=(value)

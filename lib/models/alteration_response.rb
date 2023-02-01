@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the originalQueryString property value. Defines the original user query string.
-        ## @param value Value to set for the originalQueryString property.
+        ## @param value Value to set for the original_query_string property.
         ## @return a void
         ## 
         def original_query_string=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the queryAlteration property value. Defines the details of the alteration information for the spelling correction.
-        ## @param value Value to set for the queryAlteration property.
+        ## @param value Value to set for the query_alteration property.
         ## @return a void
         ## 
         def query_alteration=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are: suggestion, modification.
-        ## @param value Value to set for the queryAlterationType property.
+        ## @param value Value to set for the query_alteration_type property.
         ## @return a void
         ## 
         def query_alteration_type=(value)

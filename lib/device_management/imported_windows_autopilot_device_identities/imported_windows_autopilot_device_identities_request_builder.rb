@@ -5,8 +5,8 @@ require_relative '../../models/imported_windows_autopilot_device_identity_collec
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
-require_relative './import/import_request_builder'
 require_relative './imported_windows_autopilot_device_identities'
+require_relative './microsoft_graph_import/import_request_builder'
 
 module MicrosoftGraph::DeviceManagement::ImportedWindowsAutopilotDeviceIdentities
     ## 
@@ -20,8 +20,8 @@ module MicrosoftGraph::DeviceManagement::ImportedWindowsAutopilotDeviceIdentitie
         end
         ## 
         # Provides operations to call the import method.
-        def import()
-            return MicrosoftGraph::DeviceManagement::ImportedWindowsAutopilotDeviceIdentities::Import::ImportRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_import()
+            return MicrosoftGraph::DeviceManagement::ImportedWindowsAutopilotDeviceIdentities::MicrosoftGraphImport::ImportRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

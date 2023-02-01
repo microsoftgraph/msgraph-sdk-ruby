@@ -6,5 +6,6 @@ module MicrosoftGraph::Models
         Hosted: :Hosted,
         ServiceToService: :ServiceToService,
         Dedicated: :Dedicated,
+        UnknownFutureValue: :UnknownFutureValue,
     }
 end

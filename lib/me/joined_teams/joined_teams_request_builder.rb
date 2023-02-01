@@ -5,8 +5,8 @@ require_relative '../../models/team'
 require_relative '../../models/team_collection_response'
 require_relative '../me'
 require_relative './count/count_request_builder'
-require_relative './get_all_messages/get_all_messages_request_builder'
 require_relative './joined_teams'
+require_relative './microsoft_graph_get_all_messages/get_all_messages_request_builder'
 
 module MicrosoftGraph::Me::JoinedTeams
     ## 
@@ -17,6 +17,11 @@ module MicrosoftGraph::Me::JoinedTeams
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Me::JoinedTeams::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getAllMessages method.
+        def microsoft_graph_get_all_messages()
+            return MicrosoftGraph::Me::JoinedTeams::MicrosoftGraphGetAllMessages::GetAllMessagesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -54,13 +59,6 @@ module MicrosoftGraph::Me::JoinedTeams
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Provides operations to call the getAllMessages method.
-        ## @return a get_all_messages_request_builder
-        ## 
-        def get_all_messages()
-            return GetAllMessagesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Create new navigation property to joinedTeams for me

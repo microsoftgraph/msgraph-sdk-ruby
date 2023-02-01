@@ -122,7 +122,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applePushNotificationCertificate property value. Apple push notification certificate.
-        ## @param value Value to set for the applePushNotificationCertificate property.
+        ## @param value Value to set for the apple_push_notification_certificate property.
         ## @return a void
         ## 
         def apple_push_notification_certificate=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the auditEvents property value. The Audit Events
-        ## @param value Value to set for the auditEvents property.
+        ## @param value Value to set for the audit_events property.
         ## @return a void
         ## 
         def audit_events=(value)
@@ -152,7 +152,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the complianceManagementPartners property value. The list of Compliance Management Partners configured by the tenant.
-        ## @param value Value to set for the complianceManagementPartners property.
+        ## @param value Value to set for the compliance_management_partners property.
         ## @return a void
         ## 
         def compliance_management_partners=(value)
@@ -167,7 +167,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the conditionalAccessSettings property value. The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
-        ## @param value Value to set for the conditionalAccessSettings property.
+        ## @param value Value to set for the conditional_access_settings property.
         ## @return a void
         ## 
         def conditional_access_settings=(value)
@@ -198,7 +198,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the detectedApps property value. The list of detected apps associated with a device.
-        ## @param value Value to set for the detectedApps property.
+        ## @param value Value to set for the detected_apps property.
         ## @return a void
         ## 
         def detected_apps=(value)
@@ -213,7 +213,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceCategories property value. The list of device categories with the tenant.
-        ## @param value Value to set for the deviceCategories property.
+        ## @param value Value to set for the device_categories property.
         ## @return a void
         ## 
         def device_categories=(value)
@@ -228,7 +228,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceCompliancePolicies property value. The device compliance policies.
-        ## @param value Value to set for the deviceCompliancePolicies property.
+        ## @param value Value to set for the device_compliance_policies property.
         ## @return a void
         ## 
         def device_compliance_policies=(value)
@@ -243,7 +243,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceCompliancePolicyDeviceStateSummary property value. The device compliance state summary for this account.
-        ## @param value Value to set for the deviceCompliancePolicyDeviceStateSummary property.
+        ## @param value Value to set for the device_compliance_policy_device_state_summary property.
         ## @return a void
         ## 
         def device_compliance_policy_device_state_summary=(value)
@@ -258,7 +258,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceCompliancePolicySettingStateSummaries property value. The summary states of compliance policy settings for this account.
-        ## @param value Value to set for the deviceCompliancePolicySettingStateSummaries property.
+        ## @param value Value to set for the device_compliance_policy_setting_state_summaries property.
         ## @return a void
         ## 
         def device_compliance_policy_setting_state_summaries=(value)
@@ -273,7 +273,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceConfigurationDeviceStateSummaries property value. The device configuration device state summary for this account.
-        ## @param value Value to set for the deviceConfigurationDeviceStateSummaries property.
+        ## @param value Value to set for the device_configuration_device_state_summaries property.
         ## @return a void
         ## 
         def device_configuration_device_state_summaries=(value)
@@ -288,7 +288,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceConfigurations property value. The device configurations.
-        ## @param value Value to set for the deviceConfigurations property.
+        ## @param value Value to set for the device_configurations property.
         ## @return a void
         ## 
         def device_configurations=(value)
@@ -303,7 +303,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceEnrollmentConfigurations property value. The list of device enrollment configurations
-        ## @param value Value to set for the deviceEnrollmentConfigurations property.
+        ## @param value Value to set for the device_enrollment_configurations property.
         ## @return a void
         ## 
         def device_enrollment_configurations=(value)
@@ -318,7 +318,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceManagementPartners property value. The list of Device Management Partners configured by the tenant.
-        ## @param value Value to set for the deviceManagementPartners property.
+        ## @param value Value to set for the device_management_partners property.
         ## @return a void
         ## 
         def device_management_partners=(value)
@@ -333,7 +333,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the exchangeConnectors property value. The list of Exchange Connectors configured by the tenant.
-        ## @param value Value to set for the exchangeConnectors property.
+        ## @param value Value to set for the exchange_connectors property.
         ## @return a void
         ## 
         def exchange_connectors=(value)
@@ -392,7 +392,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the importedWindowsAutopilotDeviceIdentities property value. Collection of imported Windows autopilot devices.
-        ## @param value Value to set for the importedWindowsAutopilotDeviceIdentities property.
+        ## @param value Value to set for the imported_windows_autopilot_device_identities property.
         ## @return a void
         ## 
         def imported_windows_autopilot_device_identities=(value)
@@ -407,7 +407,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the intuneAccountId property value. Intune Account Id for given tenant
-        ## @param value Value to set for the intuneAccountId property.
+        ## @param value Value to set for the intune_account_id property.
         ## @return a void
         ## 
         def intune_account_id=(value)
@@ -422,7 +422,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the intuneBrand property value. intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
-        ## @param value Value to set for the intuneBrand property.
+        ## @param value Value to set for the intune_brand property.
         ## @return a void
         ## 
         def intune_brand=(value)
@@ -437,7 +437,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the iosUpdateStatuses property value. The IOS software update installation statuses for this account.
-        ## @param value Value to set for the iosUpdateStatuses property.
+        ## @param value Value to set for the ios_update_statuses property.
         ## @return a void
         ## 
         def ios_update_statuses=(value)
@@ -452,7 +452,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managedDeviceOverview property value. Device overview
-        ## @param value Value to set for the managedDeviceOverview property.
+        ## @param value Value to set for the managed_device_overview property.
         ## @return a void
         ## 
         def managed_device_overview=(value)
@@ -467,7 +467,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managedDevices property value. The list of managed devices.
-        ## @param value Value to set for the managedDevices property.
+        ## @param value Value to set for the managed_devices property.
         ## @return a void
         ## 
         def managed_devices=(value)
@@ -482,7 +482,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mobileThreatDefenseConnectors property value. The list of Mobile threat Defense connectors configured by the tenant.
-        ## @param value Value to set for the mobileThreatDefenseConnectors property.
+        ## @param value Value to set for the mobile_threat_defense_connectors property.
         ## @return a void
         ## 
         def mobile_threat_defense_connectors=(value)
@@ -497,7 +497,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notificationMessageTemplates property value. The Notification Message Templates.
-        ## @param value Value to set for the notificationMessageTemplates property.
+        ## @param value Value to set for the notification_message_templates property.
         ## @return a void
         ## 
         def notification_message_templates=(value)
@@ -512,7 +512,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the remoteAssistancePartners property value. The remote assist partners.
-        ## @param value Value to set for the remoteAssistancePartners property.
+        ## @param value Value to set for the remote_assistance_partners property.
         ## @return a void
         ## 
         def remote_assistance_partners=(value)
@@ -542,7 +542,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceOperations property value. The Resource Operations.
-        ## @param value Value to set for the resourceOperations property.
+        ## @param value Value to set for the resource_operations property.
         ## @return a void
         ## 
         def resource_operations=(value)
@@ -557,7 +557,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleAssignments property value. The Role Assignments.
-        ## @param value Value to set for the roleAssignments property.
+        ## @param value Value to set for the role_assignments property.
         ## @return a void
         ## 
         def role_assignments=(value)
@@ -572,7 +572,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleDefinitions property value. The Role Definitions.
-        ## @param value Value to set for the roleDefinitions property.
+        ## @param value Value to set for the role_definitions property.
         ## @return a void
         ## 
         def role_definitions=(value)
@@ -647,7 +647,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the softwareUpdateStatusSummary property value. The software update status summary.
-        ## @param value Value to set for the softwareUpdateStatusSummary property.
+        ## @param value Value to set for the software_update_status_summary property.
         ## @return a void
         ## 
         def software_update_status_summary=(value)
@@ -662,7 +662,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the subscriptionState property value. Tenant mobile device management subscription state.
-        ## @param value Value to set for the subscriptionState property.
+        ## @param value Value to set for the subscription_state property.
         ## @return a void
         ## 
         def subscription_state=(value)
@@ -677,7 +677,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the telecomExpenseManagementPartners property value. The telecom expense management partners.
-        ## @param value Value to set for the telecomExpenseManagementPartners property.
+        ## @param value Value to set for the telecom_expense_management_partners property.
         ## @return a void
         ## 
         def telecom_expense_management_partners=(value)
@@ -692,7 +692,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the termsAndConditions property value. The terms and conditions associated with device management of the company.
-        ## @param value Value to set for the termsAndConditions property.
+        ## @param value Value to set for the terms_and_conditions property.
         ## @return a void
         ## 
         def terms_and_conditions=(value)
@@ -707,7 +707,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the troubleshootingEvents property value. The list of troubleshooting events for the tenant.
-        ## @param value Value to set for the troubleshootingEvents property.
+        ## @param value Value to set for the troubleshooting_events property.
         ## @return a void
         ## 
         def troubleshooting_events=(value)
@@ -722,7 +722,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the windowsAutopilotDeviceIdentities property value. The Windows autopilot device identities contained collection.
-        ## @param value Value to set for the windowsAutopilotDeviceIdentities property.
+        ## @param value Value to set for the windows_autopilot_device_identities property.
         ## @return a void
         ## 
         def windows_autopilot_device_identities=(value)
@@ -737,7 +737,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the windowsInformationProtectionAppLearningSummaries property value. The windows information protection app learning summaries.
-        ## @param value Value to set for the windowsInformationProtectionAppLearningSummaries property.
+        ## @param value Value to set for the windows_information_protection_app_learning_summaries property.
         ## @return a void
         ## 
         def windows_information_protection_app_learning_summaries=(value)
@@ -752,7 +752,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the windowsInformationProtectionNetworkLearningSummaries property value. The windows information protection network learning summaries.
-        ## @param value Value to set for the windowsInformationProtectionNetworkLearningSummaries property.
+        ## @param value Value to set for the windows_information_protection_network_learning_summaries property.
         ## @return a void
         ## 
         def windows_information_protection_network_learning_summaries=(value)

@@ -13,14 +13,14 @@ module MicrosoftGraph::Models
         # Indicates whether attendees can turn on their microphone.
         @allow_attendee_to_enable_mic
         ## 
-        # Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
-        @allowed_presenters
-        ## 
         # Specifies the mode of meeting chat.
         @allow_meeting_chat
         ## 
         # Indicates whether Teams reactions are enabled for the meeting.
         @allow_teamwork_reactions
+        ## 
+        # Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
+        @allowed_presenters
         ## 
         # The attendance reports of an online meeting. Read-only.
         @attendance_reports
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowAttendeeToEnableCamera property value. Indicates whether attendees can turn on their camera.
-        ## @param value Value to set for the allowAttendeeToEnableCamera property.
+        ## @param value Value to set for the allow_attendee_to_enable_camera property.
         ## @return a void
         ## 
         def allow_attendee_to_enable_camera=(value)
@@ -102,26 +102,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowAttendeeToEnableMic property value. Indicates whether attendees can turn on their microphone.
-        ## @param value Value to set for the allowAttendeeToEnableMic property.
+        ## @param value Value to set for the allow_attendee_to_enable_mic property.
         ## @return a void
         ## 
         def allow_attendee_to_enable_mic=(value)
             @allow_attendee_to_enable_mic = value
-        end
-        ## 
-        ## Gets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
-        ## @return a online_meeting_presenters
-        ## 
-        def allowed_presenters
-            return @allowed_presenters
-        end
-        ## 
-        ## Sets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
-        ## @param value Value to set for the allowedPresenters property.
-        ## @return a void
-        ## 
-        def allowed_presenters=(value)
-            @allowed_presenters = value
         end
         ## 
         ## Gets the allowMeetingChat property value. Specifies the mode of meeting chat.
@@ -132,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowMeetingChat property value. Specifies the mode of meeting chat.
-        ## @param value Value to set for the allowMeetingChat property.
+        ## @param value Value to set for the allow_meeting_chat property.
         ## @return a void
         ## 
         def allow_meeting_chat=(value)
@@ -147,11 +132,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowTeamworkReactions property value. Indicates whether Teams reactions are enabled for the meeting.
-        ## @param value Value to set for the allowTeamworkReactions property.
+        ## @param value Value to set for the allow_teamwork_reactions property.
         ## @return a void
         ## 
         def allow_teamwork_reactions=(value)
             @allow_teamwork_reactions = value
+        end
+        ## 
+        ## Gets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
+        ## @return a online_meeting_presenters
+        ## 
+        def allowed_presenters
+            return @allowed_presenters
+        end
+        ## 
+        ## Sets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
+        ## @param value Value to set for the allowed_presenters property.
+        ## @return a void
+        ## 
+        def allowed_presenters=(value)
+            @allowed_presenters = value
         end
         ## 
         ## Gets the attendanceReports property value. The attendance reports of an online meeting. Read-only.
@@ -162,7 +162,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the attendanceReports property value. The attendance reports of an online meeting. Read-only.
-        ## @param value Value to set for the attendanceReports property.
+        ## @param value Value to set for the attendance_reports property.
         ## @return a void
         ## 
         def attendance_reports=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
-        ## @param value Value to set for the attendeeReport property.
+        ## @param value Value to set for the attendee_report property.
         ## @return a void
         ## 
         def attendee_report=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the audioConferencing property value. The phone access (dial-in) information for an online meeting. Read-only.
-        ## @param value Value to set for the audioConferencing property.
+        ## @param value Value to set for the audio_conferencing property.
         ## @return a void
         ## 
         def audio_conferencing=(value)
@@ -207,7 +207,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the broadcastSettings property value. Settings related to a live event.
-        ## @param value Value to set for the broadcastSettings property.
+        ## @param value Value to set for the broadcast_settings property.
         ## @return a void
         ## 
         def broadcast_settings=(value)
@@ -222,7 +222,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the chatInfo property value. The chat information associated with this online meeting.
-        ## @param value Value to set for the chatInfo property.
+        ## @param value Value to set for the chat_info property.
         ## @return a void
         ## 
         def chat_info=(value)
@@ -253,7 +253,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the creationDateTime property value. The meeting creation time in UTC. Read-only.
-        ## @param value Value to set for the creationDateTime property.
+        ## @param value Value to set for the creation_date_time property.
         ## @return a void
         ## 
         def creation_date_time=(value)
@@ -268,7 +268,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the endDateTime property value. The meeting end time in UTC.
-        ## @param value Value to set for the endDateTime property.
+        ## @param value Value to set for the end_date_time property.
         ## @return a void
         ## 
         def end_date_time=(value)
@@ -283,7 +283,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalId property value. The externalId property
-        ## @param value Value to set for the externalId property.
+        ## @param value Value to set for the external_id property.
         ## @return a void
         ## 
         def external_id=(value)
@@ -297,9 +297,9 @@ module MicrosoftGraph::Models
             return super.merge({
                 "allowAttendeeToEnableCamera" => lambda {|n| @allow_attendee_to_enable_camera = n.get_boolean_value() },
                 "allowAttendeeToEnableMic" => lambda {|n| @allow_attendee_to_enable_mic = n.get_boolean_value() },
-                "allowedPresenters" => lambda {|n| @allowed_presenters = n.get_enum_value(MicrosoftGraph::Models::OnlineMeetingPresenters) },
                 "allowMeetingChat" => lambda {|n| @allow_meeting_chat = n.get_enum_value(MicrosoftGraph::Models::MeetingChatMode) },
                 "allowTeamworkReactions" => lambda {|n| @allow_teamwork_reactions = n.get_boolean_value() },
+                "allowedPresenters" => lambda {|n| @allowed_presenters = n.get_enum_value(MicrosoftGraph::Models::OnlineMeetingPresenters) },
                 "attendanceReports" => lambda {|n| @attendance_reports = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::MeetingAttendanceReport.create_from_discriminator_value(pn) }) },
                 "attendeeReport" => lambda {|n| @attendee_report = n.get_string_value() },
                 "audioConferencing" => lambda {|n| @audio_conferencing = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AudioConferencing.create_from_discriminator_value(pn) }) },
@@ -330,7 +330,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isBroadcast property value. Indicates if this is a Teams live event.
-        ## @param value Value to set for the isBroadcast property.
+        ## @param value Value to set for the is_broadcast property.
         ## @return a void
         ## 
         def is_broadcast=(value)
@@ -345,7 +345,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isEntryExitAnnounced property value. Indicates whether to announce when callers join or leave.
-        ## @param value Value to set for the isEntryExitAnnounced property.
+        ## @param value Value to set for the is_entry_exit_announced property.
         ## @return a void
         ## 
         def is_entry_exit_announced=(value)
@@ -360,7 +360,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the joinInformation property value. The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
-        ## @param value Value to set for the joinInformation property.
+        ## @param value Value to set for the join_information property.
         ## @return a void
         ## 
         def join_information=(value)
@@ -375,7 +375,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the joinMeetingIdSettings property value. Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings cannot be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.
-        ## @param value Value to set for the joinMeetingIdSettings property.
+        ## @param value Value to set for the join_meeting_id_settings property.
         ## @return a void
         ## 
         def join_meeting_id_settings=(value)
@@ -390,7 +390,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the joinWebUrl property value. The join URL of the online meeting. Read-only.
-        ## @param value Value to set for the joinWebUrl property.
+        ## @param value Value to set for the join_web_url property.
         ## @return a void
         ## 
         def join_web_url=(value)
@@ -405,7 +405,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lobbyBypassSettings property value. Specifies which participants can bypass the meeting   lobby.
-        ## @param value Value to set for the lobbyBypassSettings property.
+        ## @param value Value to set for the lobby_bypass_settings property.
         ## @return a void
         ## 
         def lobby_bypass_settings=(value)
@@ -435,7 +435,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the recordAutomatically property value. Indicates whether to record the meeting automatically.
-        ## @param value Value to set for the recordAutomatically property.
+        ## @param value Value to set for the record_automatically property.
         ## @return a void
         ## 
         def record_automatically=(value)
@@ -451,9 +451,9 @@ module MicrosoftGraph::Models
             super
             writer.write_boolean_value("allowAttendeeToEnableCamera", @allow_attendee_to_enable_camera)
             writer.write_boolean_value("allowAttendeeToEnableMic", @allow_attendee_to_enable_mic)
-            writer.write_enum_value("allowedPresenters", @allowed_presenters)
             writer.write_enum_value("allowMeetingChat", @allow_meeting_chat)
             writer.write_boolean_value("allowTeamworkReactions", @allow_teamwork_reactions)
+            writer.write_enum_value("allowedPresenters", @allowed_presenters)
             writer.write_collection_of_object_values("attendanceReports", @attendance_reports)
             writer.write_object_value("attendeeReport", @attendee_report)
             writer.write_object_value("audioConferencing", @audio_conferencing)
@@ -483,7 +483,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the startDateTime property value. The meeting start time in UTC.
-        ## @param value Value to set for the startDateTime property.
+        ## @param value Value to set for the start_date_time property.
         ## @return a void
         ## 
         def start_date_time=(value)
@@ -513,7 +513,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the videoTeleconferenceId property value. The video teleconferencing ID. Read-only.
-        ## @param value Value to set for the videoTeleconferenceId property.
+        ## @param value Value to set for the video_teleconference_id property.
         ## @return a void
         ## 
         def video_teleconference_id=(value)

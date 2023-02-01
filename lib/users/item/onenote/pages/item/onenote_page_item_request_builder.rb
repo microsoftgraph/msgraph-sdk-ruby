@@ -7,12 +7,12 @@ require_relative '../../../item'
 require_relative '../../onenote'
 require_relative '../pages'
 require_relative './content/content_request_builder'
-require_relative './copy_to_section/copy_to_section_request_builder'
 require_relative './item'
-require_relative './onenote_patch_content/onenote_patch_content_request_builder'
+require_relative './microsoft_graph_copy_to_section/copy_to_section_request_builder'
+require_relative './microsoft_graph_onenote_patch_content/onenote_patch_content_request_builder'
+require_relative './microsoft_graph_preview/preview_request_builder'
 require_relative './parent_notebook/parent_notebook_request_builder'
 require_relative './parent_section/parent_section_request_builder'
-require_relative './preview/preview_request_builder'
 
 module MicrosoftGraph::Users::Item::Onenote::Pages::Item
     ## 
@@ -26,13 +26,18 @@ module MicrosoftGraph::Users::Item::Onenote::Pages::Item
         end
         ## 
         # Provides operations to call the copyToSection method.
-        def copy_to_section()
-            return MicrosoftGraph::Users::Item::Onenote::Pages::Item::CopyToSection::CopyToSectionRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_copy_to_section()
+            return MicrosoftGraph::Users::Item::Onenote::Pages::Item::MicrosoftGraphCopyToSection::CopyToSectionRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the onenotePatchContent method.
-        def onenote_patch_content()
-            return MicrosoftGraph::Users::Item::Onenote::Pages::Item::OnenotePatchContent::OnenotePatchContentRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_onenote_patch_content()
+            return MicrosoftGraph::Users::Item::Onenote::Pages::Item::MicrosoftGraphOnenotePatchContent::OnenotePatchContentRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the preview method.
+        def microsoft_graph_preview()
+            return MicrosoftGraph::Users::Item::Onenote::Pages::Item::MicrosoftGraphPreview::PreviewRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the parentNotebook property of the microsoft.graph.onenotePage entity.
@@ -55,11 +60,12 @@ module MicrosoftGraph::Users::Item::Onenote::Pages::Item
         @url_template
         ## 
         ## Instantiates a new OnenotePageItemRequestBuilder and sets the default values.
+        ## @param onenotePageId key: id of onenotePage
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, onenote_page_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/users/{user%2Did}/onenote/pages/{onenotePage%2Did}{?%24select,%24expand}"
@@ -110,13 +116,6 @@ module MicrosoftGraph::Users::Item::Onenote::Pages::Item
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnenotePage.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Provides operations to call the preview method.
-        ## @return a preview_request_builder
-        ## 
-        def preview()
-            return PreviewRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Delete navigation property pages for users

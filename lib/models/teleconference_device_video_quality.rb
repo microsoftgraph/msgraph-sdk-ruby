@@ -26,7 +26,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the averageInboundBitRate property value. The average inbound stream video bit rate per second.
-        ## @param value Value to set for the averageInboundBitRate property.
+        ## @param value Value to set for the average_inbound_bit_rate property.
         ## @return a void
         ## 
         def average_inbound_bit_rate=(value)
@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the averageInboundFrameRate property value. The average inbound stream video frame rate per second.
-        ## @param value Value to set for the averageInboundFrameRate property.
+        ## @param value Value to set for the average_inbound_frame_rate property.
         ## @return a void
         ## 
         def average_inbound_frame_rate=(value)
@@ -56,7 +56,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the averageOutboundBitRate property value. The average outbound stream video bit rate per second.
-        ## @param value Value to set for the averageOutboundBitRate property.
+        ## @param value Value to set for the average_outbound_bit_rate property.
         ## @return a void
         ## 
         def average_outbound_bit_rate=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the averageOutboundFrameRate property value. The average outbound stream video frame rate per second.
-        ## @param value Value to set for the averageOutboundFrameRate property.
+        ## @param value Value to set for the average_outbound_frame_rate property.
         ## @return a void
         ## 
         def average_outbound_frame_rate=(value)

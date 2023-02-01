@@ -22,11 +22,12 @@ module MicrosoftGraph::DeviceManagement::RoleAssignments::Item
         @url_template
         ## 
         ## Instantiates a new DeviceAndAppManagementRoleAssignmentItemRequestBuilder and sets the default values.
+        ## @param deviceAndAppManagementRoleAssignmentId key: id of deviceAndAppManagementRoleAssignment
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, device_and_app_management_role_assignment_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment%2Did}{?%24select,%24expand}"

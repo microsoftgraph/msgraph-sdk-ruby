@@ -5,8 +5,8 @@ require_relative '../../models/event_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../me'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
 require_relative './events'
+require_relative './microsoft_graph_delta/delta_request_builder'
 
 module MicrosoftGraph::Me::Events
     ## 
@@ -17,6 +17,11 @@ module MicrosoftGraph::Me::Events
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Me::Events::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::Me::Events::MicrosoftGraphDelta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -40,13 +45,6 @@ module MicrosoftGraph::Me::Events
             @request_adapter = request_adapter
             path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
             @path_parameters = path_parameters if path_parameters.is_a? Hash
-        end
-        ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Get a list of event objects in the user's mailbox. The list contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or get the instances of an event. Currently, this operation returns event bodies in only HTML format. There are two scenarios where an app can get events in another user's calendar:

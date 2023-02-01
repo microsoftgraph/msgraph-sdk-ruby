@@ -7,14 +7,19 @@ require_relative '../../../../service_announcement'
 require_relative '../../../health_overviews'
 require_relative '../../item'
 require_relative '../issues'
-require_relative './incident_report/incident_report_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_incident_report/incident_report_request_builder'
 
 module MicrosoftGraph::Admin::ServiceAnnouncement::HealthOverviews::Item::Issues::Item
     ## 
     # Provides operations to manage the issues property of the microsoft.graph.serviceHealth entity.
     class ServiceHealthIssueItemRequestBuilder
         
+        ## 
+        # Provides operations to call the incidentReport method.
+        def microsoft_graph_incident_report()
+            return MicrosoftGraph::Admin::ServiceAnnouncement::HealthOverviews::Item::Issues::Item::MicrosoftGraphIncidentReport::IncidentReportRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Path parameters for the request
         @path_parameters
@@ -28,9 +33,10 @@ module MicrosoftGraph::Admin::ServiceAnnouncement::HealthOverviews::Item::Issues
         ## Instantiates a new ServiceHealthIssueItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param serviceHealthIssueId key: id of serviceHealthIssue
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, service_health_issue_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/admin/serviceAnnouncement/healthOverviews/{serviceHealth%2Did}/issues/{serviceHealthIssue%2Did}{?%24select,%24expand}"
@@ -65,13 +71,6 @@ module MicrosoftGraph::Admin::ServiceAnnouncement::HealthOverviews::Item::Issues
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ServiceHealthIssue.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Provides operations to call the incidentReport method.
-        ## @return a incident_report_request_builder
-        ## 
-        def incident_report()
-            return IncidentReportRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Update the navigation property issues in admin

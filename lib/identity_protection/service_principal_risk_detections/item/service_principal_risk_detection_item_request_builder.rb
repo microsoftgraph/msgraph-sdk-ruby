@@ -24,9 +24,10 @@ module MicrosoftGraph::IdentityProtection::ServicePrincipalRiskDetections::Item
         ## Instantiates a new ServicePrincipalRiskDetectionItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param servicePrincipalRiskDetectionId key: id of servicePrincipalRiskDetection
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, service_principal_risk_detection_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/identityProtection/servicePrincipalRiskDetections/{servicePrincipalRiskDetection%2Did}{?%24select,%24expand}"

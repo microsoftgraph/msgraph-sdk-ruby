@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userProperty property value. Defines the Azure AD user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, certificateUserIds. Required.
-        ## @param value Value to set for the userProperty property.
+        ## @param value Value to set for the user_property property.
         ## @return a void
         ## 
         def user_property=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the x509CertificateField property value. The field on the X.509 certificate to use for the binding. The possible values are: PrincipalName, RFC822Name, SubjectKeyIdentifier, SHA1PublicKey.
-        ## @param value Value to set for the x509CertificateField property.
+        ## @param value Value to set for the x509_certificate_field property.
         ## @return a void
         ## 
         def x509_certificate_field=(value)

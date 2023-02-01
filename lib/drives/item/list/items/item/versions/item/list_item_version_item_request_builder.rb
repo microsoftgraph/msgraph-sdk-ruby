@@ -10,7 +10,7 @@ require_relative '../../item'
 require_relative '../versions'
 require_relative './fields/fields_request_builder'
 require_relative './item'
-require_relative './restore_version/restore_version_request_builder'
+require_relative './microsoft_graph_restore_version/restore_version_request_builder'
 
 module MicrosoftGraph::Drives::Item::List::Items::Item::Versions::Item
     ## 
@@ -23,26 +23,27 @@ module MicrosoftGraph::Drives::Item::List::Items::Item::Versions::Item
             return MicrosoftGraph::Drives::Item::List::Items::Item::Versions::Item::Fields::FieldsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the restoreVersion method.
+        def microsoft_graph_restore_version()
+            return MicrosoftGraph::Drives::Item::List::Items::Item::Versions::Item::MicrosoftGraphRestoreVersion::RestoreVersionRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the restoreVersion method.
-        def restore_version()
-            return MicrosoftGraph::Drives::Item::List::Items::Item::Versions::Item::RestoreVersion::RestoreVersionRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new ListItemVersionItemRequestBuilder and sets the default values.
+        ## @param listItemVersionId key: id of listItemVersion
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, list_item_version_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/drives/{drive%2Did}/list/items/{listItem%2Did}/versions/{listItemVersion%2Did}{?%24select,%24expand}"

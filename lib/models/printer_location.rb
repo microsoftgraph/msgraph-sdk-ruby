@@ -86,7 +86,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the altitudeInMeters property value. The altitude, in meters, that the printer is located at.
-        ## @param value Value to set for the altitudeInMeters property.
+        ## @param value Value to set for the altitude_in_meters property.
         ## @return a void
         ## 
         def altitude_in_meters=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the countryOrRegion property value. The country or region that the printer is located in.
-        ## @param value Value to set for the countryOrRegion property.
+        ## @param value Value to set for the country_or_region property.
         ## @return a void
         ## 
         def country_or_region=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the floorDescription property value. The description of the floor that the printer is located on.
-        ## @param value Value to set for the floorDescription property.
+        ## @param value Value to set for the floor_description property.
         ## @return a void
         ## 
         def floor_description=(value)
@@ -248,7 +248,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -278,7 +278,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the postalCode property value. The postal code that the printer is located in.
-        ## @param value Value to set for the postalCode property.
+        ## @param value Value to set for the postal_code property.
         ## @return a void
         ## 
         def postal_code=(value)
@@ -293,7 +293,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roomDescription property value. The description of the room that the printer is located in.
-        ## @param value Value to set for the roomDescription property.
+        ## @param value Value to set for the room_description property.
         ## @return a void
         ## 
         def room_description=(value)
@@ -308,7 +308,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roomName property value. The room that the printer is located in. Only numerical values are supported right now.
-        ## @param value Value to set for the roomName property.
+        ## @param value Value to set for the room_name property.
         ## @return a void
         ## 
         def room_name=(value)
@@ -365,7 +365,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the stateOrProvince property value. The state or province that the printer is located in.
-        ## @param value Value to set for the stateOrProvince property.
+        ## @param value Value to set for the state_or_province property.
         ## @return a void
         ## 
         def state_or_province=(value)
@@ -380,7 +380,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the streetAddress property value. The street address where the printer is located.
-        ## @param value Value to set for the streetAddress property.
+        ## @param value Value to set for the street_address property.
         ## @return a void
         ## 
         def street_address=(value)

@@ -23,11 +23,12 @@ module MicrosoftGraph::ServicePrincipals::Item::FederatedIdentityCredentials::It
         @url_template
         ## 
         ## Instantiates a new FederatedIdentityCredentialItemRequestBuilder and sets the default values.
+        ## @param federatedIdentityCredentialId key: id of federatedIdentityCredential
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, federated_identity_credential_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/federatedIdentityCredentials/{federatedIdentityCredential%2Did}{?%24select,%24expand}"

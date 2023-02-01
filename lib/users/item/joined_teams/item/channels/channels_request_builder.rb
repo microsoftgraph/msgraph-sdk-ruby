@@ -9,7 +9,7 @@ require_relative '../../joined_teams'
 require_relative '../item'
 require_relative './channels'
 require_relative './count/count_request_builder'
-require_relative './get_all_messages/get_all_messages_request_builder'
+require_relative './microsoft_graph_get_all_messages/get_all_messages_request_builder'
 
 module MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels
     ## 
@@ -20,6 +20,11 @@ module MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getAllMessages method.
+        def microsoft_graph_get_all_messages()
+            return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::MicrosoftGraphGetAllMessages::GetAllMessagesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -57,13 +62,6 @@ module MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChannelCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Provides operations to call the getAllMessages method.
-        ## @return a get_all_messages_request_builder
-        ## 
-        def get_all_messages()
-            return GetAllMessagesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Create a new channel in a team, as specified in the request body.  When you create a channel, the maximum length of the channel's `displayName` is 50 characters. This is the name that appears to the user in Microsoft Teams. If you're creating a private channel, you can add a maximum of 200 members.

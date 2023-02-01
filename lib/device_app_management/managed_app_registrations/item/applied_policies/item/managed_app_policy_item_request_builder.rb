@@ -7,7 +7,7 @@ require_relative '../../../managed_app_registrations'
 require_relative '../../item'
 require_relative '../applied_policies'
 require_relative './item'
-require_relative './target_apps/target_apps_request_builder'
+require_relative './microsoft_graph_target_apps/target_apps_request_builder'
 
 module MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::Item::AppliedPolicies::Item
     ## 
@@ -15,26 +15,27 @@ module MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::Item::Appli
     class ManagedAppPolicyItemRequestBuilder
         
         ## 
+        # Provides operations to call the targetApps method.
+        def microsoft_graph_target_apps()
+            return MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::Item::AppliedPolicies::Item::MicrosoftGraphTargetApps::TargetAppsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the targetApps method.
-        def target_apps()
-            return MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::Item::AppliedPolicies::Item::TargetApps::TargetAppsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new ManagedAppPolicyItemRequestBuilder and sets the default values.
+        ## @param managedAppPolicyId key: id of managedAppPolicy
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, managed_app_policy_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceAppManagement/managedAppRegistrations/{managedAppRegistration%2Did}/appliedPolicies/{managedAppPolicy%2Did}{?%24select,%24expand}"

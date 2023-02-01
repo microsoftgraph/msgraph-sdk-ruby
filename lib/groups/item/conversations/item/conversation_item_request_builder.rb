@@ -30,11 +30,12 @@ module MicrosoftGraph::Groups::Item::Conversations::Item
         @url_template
         ## 
         ## Instantiates a new ConversationItemRequestBuilder and sets the default values.
+        ## @param conversationId key: id of conversation
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, conversation_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}{?%24select}"

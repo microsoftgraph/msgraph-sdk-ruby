@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.deltaLink property value. The OdataDeltaLink property
-        ## @param value Value to set for the OdataDeltaLink property.
+        ## @param value Value to set for the odata_delta_link property.
         ## @return a void
         ## 
         def odata_delta_link=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.nextLink property value. The OdataNextLink property
-        ## @param value Value to set for the OdataNextLink property.
+        ## @param value Value to set for the odata_next_link property.
         ## @return a void
         ## 
         def odata_next_link=(value)

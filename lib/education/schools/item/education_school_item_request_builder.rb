@@ -53,11 +53,12 @@ module MicrosoftGraph::Education::Schools::Item
         end
         ## 
         ## Instantiates a new EducationSchoolItemRequestBuilder and sets the default values.
+        ## @param educationSchoolId key: id of educationSchool
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, education_school_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/education/schools/{educationSchool%2Did}{?%24select,%24expand}"

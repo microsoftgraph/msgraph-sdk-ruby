@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceCount property value. The number of devices that have installed this application
-        ## @param value Value to set for the deviceCount property.
+        ## @param value Value to set for the device_count property.
         ## @return a void
         ## 
         def device_count=(value)
@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Name of the discovered application. Read-only
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managedDevices property value. The devices that have the discovered application installed
-        ## @param value Value to set for the managedDevices property.
+        ## @param value Value to set for the managed_devices property.
         ## @return a void
         ## 
         def managed_devices=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sizeInByte property value. Discovered application size in bytes. Read-only
-        ## @param value Value to set for the sizeInByte property.
+        ## @param value Value to set for the size_in_byte property.
         ## @return a void
         ## 
         def size_in_byte=(value)

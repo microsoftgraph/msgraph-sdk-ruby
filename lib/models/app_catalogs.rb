@@ -9,7 +9,7 @@ module MicrosoftGraph::Models
         # The teamsApps property
         @teams_apps
         ## 
-        ## Instantiates a new AppCatalogs and sets the default values.
+        ## Instantiates a new appCatalogs and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -52,7 +52,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the teamsApps property value. The teamsApps property
-        ## @param value Value to set for the teamsApps property.
+        ## @param value Value to set for the teams_apps property.
         ## @return a void
         ## 
         def teams_apps=(value)

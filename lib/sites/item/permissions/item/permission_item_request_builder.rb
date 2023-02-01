@@ -5,8 +5,8 @@ require_relative '../../../../models/permission'
 require_relative '../../../sites'
 require_relative '../../item'
 require_relative '../permissions'
-require_relative './grant/grant_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_grant/grant_request_builder'
 
 module MicrosoftGraph::Sites::Item::Permissions::Item
     ## 
@@ -15,8 +15,8 @@ module MicrosoftGraph::Sites::Item::Permissions::Item
         
         ## 
         # Provides operations to call the grant method.
-        def grant()
-            return MicrosoftGraph::Sites::Item::Permissions::Item::Grant::GrantRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_grant()
+            return MicrosoftGraph::Sites::Item::Permissions::Item::MicrosoftGraphGrant::GrantRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -30,10 +30,11 @@ module MicrosoftGraph::Sites::Item::Permissions::Item
         ## 
         ## Instantiates a new PermissionItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
+        ## @param permissionId key: id of permission
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, permission_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/sites/{site%2Did}/permissions/{permission%2Did}{?%24select,%24expand}"

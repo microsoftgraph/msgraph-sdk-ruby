@@ -5,7 +5,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_management'
 require_relative '../exchange_connectors'
 require_relative './item'
-require_relative './sync/sync_request_builder'
+require_relative './microsoft_graph_sync/sync_request_builder'
 
 module MicrosoftGraph::DeviceManagement::ExchangeConnectors::Item
     ## 
@@ -13,26 +13,27 @@ module MicrosoftGraph::DeviceManagement::ExchangeConnectors::Item
     class DeviceManagementExchangeConnectorItemRequestBuilder
         
         ## 
+        # Provides operations to call the sync method.
+        def microsoft_graph_sync()
+            return MicrosoftGraph::DeviceManagement::ExchangeConnectors::Item::MicrosoftGraphSync::SyncRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the sync method.
-        def sync()
-            return MicrosoftGraph::DeviceManagement::ExchangeConnectors::Item::Sync::SyncRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
         ## 
         ## Instantiates a new DeviceManagementExchangeConnectorItemRequestBuilder and sets the default values.
+        ## @param deviceManagementExchangeConnectorId key: id of deviceManagementExchangeConnector
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, device_management_exchange_connector_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceManagement/exchangeConnectors/{deviceManagementExchangeConnector%2Did}{?%24select,%24expand}"

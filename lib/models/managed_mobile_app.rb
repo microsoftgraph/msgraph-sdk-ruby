@@ -48,7 +48,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mobileAppIdentifier property value. The identifier for an app with it's operating system type.
-        ## @param value Value to set for the mobileAppIdentifier property.
+        ## @param value Value to set for the mobile_app_identifier property.
         ## @return a void
         ## 
         def mobile_app_identifier=(value)

@@ -17,7 +17,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the authenticationMode property value. The authenticationMode property
-        ## @param value Value to set for the authenticationMode property.
+        ## @param value Value to set for the authentication_mode property.
         ## @return a void
         ## 
         def authentication_mode=(value)

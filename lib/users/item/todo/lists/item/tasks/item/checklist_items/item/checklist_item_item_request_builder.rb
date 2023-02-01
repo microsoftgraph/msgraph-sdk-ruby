@@ -28,11 +28,12 @@ module MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::ChecklistIte
         @url_template
         ## 
         ## Instantiates a new ChecklistItemItemRequestBuilder and sets the default values.
+        ## @param checklistItemId key: id of checklistItem
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, checklist_item_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/checklistItems/{checklistItem%2Did}{?%24select,%24expand}"

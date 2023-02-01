@@ -24,11 +24,12 @@ module MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item::Loc
         @url_template
         ## 
         ## Instantiates a new LocalizedNotificationMessageItemRequestBuilder and sets the default values.
+        ## @param localizedNotificationMessageId key: id of localizedNotificationMessage
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, localized_notification_message_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate%2Did}/localizedNotificationMessages/{localizedNotificationMessage%2Did}{?%24select,%24expand}"

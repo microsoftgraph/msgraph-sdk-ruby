@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the certificateRevocationListUrl property value. The URL of the certificate revocation list.
-        ## @param value Value to set for the certificateRevocationListUrl property.
+        ## @param value Value to set for the certificate_revocation_list_url property.
         ## @return a void
         ## 
         def certificate_revocation_list_url=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deltaCertificateRevocationListUrl property value. The URL contains the list of all revoked certificates since the last time a full certificate revocaton list was created.
-        ## @param value Value to set for the deltaCertificateRevocationListUrl property.
+        ## @param value Value to set for the delta_certificate_revocation_list_url property.
         ## @return a void
         ## 
         def delta_certificate_revocation_list_url=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isRootAuthority property value. Required. true if the trusted certificate is a root authority, false if the trusted certificate is an intermediate authority.
-        ## @param value Value to set for the isRootAuthority property.
+        ## @param value Value to set for the is_root_authority property.
         ## @return a void
         ## 
         def is_root_authority=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the issuerSki property value. The subject key identifier of the certificate, calculated from the certificate value. Read-only.
-        ## @param value Value to set for the issuerSki property.
+        ## @param value Value to set for the issuer_ski property.
         ## @return a void
         ## 
         def issuer_ski=(value)
@@ -174,7 +174,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

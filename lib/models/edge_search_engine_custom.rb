@@ -34,7 +34,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the edgeSearchEngineOpenSearchXmlUrl property value. Points to a https link containing the OpenSearch xml file that contains, at minimum, the short name and the URL to the search Engine.
-        ## @param value Value to set for the edgeSearchEngineOpenSearchXmlUrl property.
+        ## @param value Value to set for the edge_search_engine_open_search_xml_url property.
         ## @return a void
         ## 
         def edge_search_engine_open_search_xml_url=(value)

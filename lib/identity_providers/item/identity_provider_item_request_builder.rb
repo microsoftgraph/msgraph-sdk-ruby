@@ -21,11 +21,12 @@ module MicrosoftGraph::IdentityProviders::Item
         @url_template
         ## 
         ## Instantiates a new IdentityProviderItemRequestBuilder and sets the default values.
+        ## @param identityProviderId key: id of identityProvider
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, identity_provider_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/identityProviders/{identityProvider%2Did}{?%24select,%24expand}"

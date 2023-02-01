@@ -23,11 +23,12 @@ module MicrosoftGraph::Identity::ConditionalAccess::AuthenticationContextClassRe
         @url_template
         ## 
         ## Instantiates a new AuthenticationContextClassReferenceItemRequestBuilder and sets the default values.
+        ## @param authenticationContextClassReferenceId key: id of authenticationContextClassReference
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, authentication_context_class_reference_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/identity/conditionalAccess/authenticationContextClassReferences/{authenticationContextClassReference%2Did}{?%24select,%24expand}"

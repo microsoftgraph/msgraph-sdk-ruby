@@ -37,7 +37,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the encodedSettingXml property value. mdm app configuration Base64 binary.
-        ## @param value Value to set for the encodedSettingXml property.
+        ## @param value Value to set for the encoded_setting_xml property.
         ## @return a void
         ## 
         def encoded_setting_xml=(value)

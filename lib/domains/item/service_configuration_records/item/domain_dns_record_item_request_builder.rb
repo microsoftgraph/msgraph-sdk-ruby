@@ -23,11 +23,12 @@ module MicrosoftGraph::Domains::Item::ServiceConfigurationRecords::Item
         @url_template
         ## 
         ## Instantiates a new DomainDnsRecordItemRequestBuilder and sets the default values.
+        ## @param domainDnsRecordId key: id of domainDnsRecord
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, domain_dns_record_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/domains/{domain%2Did}/serviceConfigurationRecords/{domainDnsRecord%2Did}{?%24select,%24expand}"

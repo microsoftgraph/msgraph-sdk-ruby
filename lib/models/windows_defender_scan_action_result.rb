@@ -42,7 +42,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the scanType property value. Scan type either full scan or quick scan
-        ## @param value Value to set for the scanType property.
+        ## @param value Value to set for the scan_type property.
         ## @return a void
         ## 
         def scan_type=(value)

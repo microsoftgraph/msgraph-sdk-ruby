@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowAutoFilter property value. Represents the worksheet protection option of allowing using auto filter feature.
-        ## @param value Value to set for the allowAutoFilter property.
+        ## @param value Value to set for the allow_auto_filter property.
         ## @return a void
         ## 
         def allow_auto_filter=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowDeleteColumns property value. Represents the worksheet protection option of allowing deleting columns.
-        ## @param value Value to set for the allowDeleteColumns property.
+        ## @param value Value to set for the allow_delete_columns property.
         ## @return a void
         ## 
         def allow_delete_columns=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowDeleteRows property value. Represents the worksheet protection option of allowing deleting rows.
-        ## @param value Value to set for the allowDeleteRows property.
+        ## @param value Value to set for the allow_delete_rows property.
         ## @return a void
         ## 
         def allow_delete_rows=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowFormatCells property value. Represents the worksheet protection option of allowing formatting cells.
-        ## @param value Value to set for the allowFormatCells property.
+        ## @param value Value to set for the allow_format_cells property.
         ## @return a void
         ## 
         def allow_format_cells=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowFormatColumns property value. Represents the worksheet protection option of allowing formatting columns.
-        ## @param value Value to set for the allowFormatColumns property.
+        ## @param value Value to set for the allow_format_columns property.
         ## @return a void
         ## 
         def allow_format_columns=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowFormatRows property value. Represents the worksheet protection option of allowing formatting rows.
-        ## @param value Value to set for the allowFormatRows property.
+        ## @param value Value to set for the allow_format_rows property.
         ## @return a void
         ## 
         def allow_format_rows=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowInsertColumns property value. Represents the worksheet protection option of allowing inserting columns.
-        ## @param value Value to set for the allowInsertColumns property.
+        ## @param value Value to set for the allow_insert_columns property.
         ## @return a void
         ## 
         def allow_insert_columns=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowInsertHyperlinks property value. Represents the worksheet protection option of allowing inserting hyperlinks.
-        ## @param value Value to set for the allowInsertHyperlinks property.
+        ## @param value Value to set for the allow_insert_hyperlinks property.
         ## @return a void
         ## 
         def allow_insert_hyperlinks=(value)
@@ -188,7 +188,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowInsertRows property value. Represents the worksheet protection option of allowing inserting rows.
-        ## @param value Value to set for the allowInsertRows property.
+        ## @param value Value to set for the allow_insert_rows property.
         ## @return a void
         ## 
         def allow_insert_rows=(value)
@@ -203,7 +203,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowPivotTables property value. Represents the worksheet protection option of allowing using pivot table feature.
-        ## @param value Value to set for the allowPivotTables property.
+        ## @param value Value to set for the allow_pivot_tables property.
         ## @return a void
         ## 
         def allow_pivot_tables=(value)
@@ -218,7 +218,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowSort property value. Represents the worksheet protection option of allowing using sort feature.
-        ## @param value Value to set for the allowSort property.
+        ## @param value Value to set for the allow_sort property.
         ## @return a void
         ## 
         def allow_sort=(value)
@@ -269,7 +269,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

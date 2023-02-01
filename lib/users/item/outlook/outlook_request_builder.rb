@@ -6,10 +6,10 @@ require_relative '../../users'
 require_relative '../item'
 require_relative './master_categories/item/outlook_category_item_request_builder'
 require_relative './master_categories/master_categories_request_builder'
+require_relative './microsoft_graph_supported_languages/supported_languages_request_builder'
+require_relative './microsoft_graph_supported_time_zones/supported_time_zones_request_builder'
+require_relative './microsoft_graph_supported_time_zones_with_time_zone_standard/supported_time_zones_with_time_zone_standard_request_builder'
 require_relative './outlook'
-require_relative './supported_languages/supported_languages_request_builder'
-require_relative './supported_time_zones/supported_time_zones_request_builder'
-require_relative './supported_time_zones_with_time_zone_standard/supported_time_zones_with_time_zone_standard_request_builder'
 
 module MicrosoftGraph::Users::Item::Outlook
     ## 
@@ -20,6 +20,16 @@ module MicrosoftGraph::Users::Item::Outlook
         # Provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
         def master_categories()
             return MicrosoftGraph::Users::Item::Outlook::MasterCategories::MasterCategoriesRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the supportedLanguages method.
+        def microsoft_graph_supported_languages()
+            return MicrosoftGraph::Users::Item::Outlook::MicrosoftGraphSupportedLanguages::SupportedLanguagesRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the supportedTimeZones method.
+        def microsoft_graph_supported_time_zones()
+            return MicrosoftGraph::Users::Item::Outlook::MicrosoftGraphSupportedTimeZones::SupportedTimeZonesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -70,25 +80,11 @@ module MicrosoftGraph::Users::Item::Outlook
             return MicrosoftGraph::Users::Item::Outlook::MasterCategories::Item::OutlookCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Provides operations to call the supportedLanguages method.
-        ## @return a supported_languages_request_builder
-        ## 
-        def supported_languages()
-            return SupportedLanguagesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the supportedTimeZones method.
-        ## @return a supported_time_zones_request_builder
-        ## 
-        def supported_time_zones()
-            return SupportedTimeZonesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## Provides operations to call the supportedTimeZones method.
         ## @param TimeZoneStandard Usage: TimeZoneStandard='{TimeZoneStandard}'
         ## @return a supported_time_zones_with_time_zone_standard_request_builder
         ## 
-        def supported_time_zones_with_time_zone_standard(time_zone_standard)
+        def microsoft_graph_supported_time_zones_with_time_zone_standard(time_zone_standard)
             raise StandardError, 'time_zone_standard cannot be null' if time_zone_standard.nil?
             return SupportedTimeZonesWithTimeZoneStandardRequestBuilder.new(@path_parameters, @request_adapter, TimeZoneStandard)
         end

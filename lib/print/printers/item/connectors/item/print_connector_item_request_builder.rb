@@ -25,10 +25,11 @@ module MicrosoftGraph::Print::Printers::Item::Connectors::Item
         ## 
         ## Instantiates a new PrintConnectorItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
+        ## @param printConnectorId key: id of printConnector
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, print_connector_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/print/printers/{printer%2Did}/connectors/{printConnector%2Did}{?%24select,%24expand}"

@@ -32,7 +32,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the check32BitOn64System property value. A value indicating whether to search the 32-bit registry on 64-bit systems.
-        ## @param value Value to set for the check32BitOn64System property.
+        ## @param value Value to set for the check32_bit_on64_system property.
         ## @return a void
         ## 
         def check32_bit_on64_system=(value)
@@ -47,7 +47,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the comparisonValue property value. The registry comparison value.
-        ## @param value Value to set for the comparisonValue property.
+        ## @param value Value to set for the comparison_value property.
         ## @return a void
         ## 
         def comparison_value=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the keyPath property value. The full path of the registry entry containing the value to detect.
-        ## @param value Value to set for the keyPath property.
+        ## @param value Value to set for the key_path property.
         ## @return a void
         ## 
         def key_path=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the operationType property value. Contains all supported registry data detection type.
-        ## @param value Value to set for the operationType property.
+        ## @param value Value to set for the operation_type property.
         ## @return a void
         ## 
         def operation_type=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the valueName property value. The name of the registry value to detect.
-        ## @param value Value to set for the valueName property.
+        ## @param value Value to set for the value_name property.
         ## @return a void
         ## 
         def value_name=(value)

@@ -60,7 +60,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the forceChangePasswordNextSignIn property value. true if the user must change her password on the next login; otherwise false.
-        ## @param value Value to set for the forceChangePasswordNextSignIn property.
+        ## @param value Value to set for the force_change_password_next_sign_in property.
         ## @return a void
         ## 
         def force_change_password_next_sign_in=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the forceChangePasswordNextSignInWithMfa property value. If true, at next sign-in, the user must perform a multi-factor authentication (MFA) before being forced to change their password. The behavior is identical to forceChangePasswordNextSignIn except that the user is required to first perform a multi-factor authentication before password change. After a password change, this property will be automatically reset to false. If not set, default is false.
-        ## @param value Value to set for the forceChangePasswordNextSignInWithMfa property.
+        ## @param value Value to set for the force_change_password_next_sign_in_with_mfa property.
         ## @return a void
         ## 
         def force_change_password_next_sign_in_with_mfa=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

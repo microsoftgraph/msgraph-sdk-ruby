@@ -82,7 +82,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the eventDateTime property value. Date and time of the simulation event by a user in an attack simulation and training campaign.
-        ## @param value Value to set for the eventDateTime property.
+        ## @param value Value to set for the event_date_time property.
         ## @return a void
         ## 
         def event_date_time=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the eventName property value. Name of the simulation event by a user in an attack simulation and training campaign.
-        ## @param value Value to set for the eventName property.
+        ## @param value Value to set for the event_name property.
         ## @return a void
         ## 
         def event_name=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the ipAddress property value. IP address from where the simulation event was initiated by a user in an attack simulation and training campaign.
-        ## @param value Value to set for the ipAddress property.
+        ## @param value Value to set for the ip_address property.
         ## @return a void
         ## 
         def ip_address=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osPlatformDeviceDetails property value. The operating system, platform, and device details from where the simulation event was initiated by a user in an attack simulation and training campaign.
-        ## @param value Value to set for the osPlatformDeviceDetails property.
+        ## @param value Value to set for the os_platform_device_details property.
         ## @return a void
         ## 
         def os_platform_device_details=(value)

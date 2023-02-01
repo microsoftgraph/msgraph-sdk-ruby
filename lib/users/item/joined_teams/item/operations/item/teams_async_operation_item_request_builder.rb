@@ -27,9 +27,10 @@ module MicrosoftGraph::Users::Item::JoinedTeams::Item::Operations::Item
         ## Instantiates a new TeamsAsyncOperationItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param teamsAsyncOperationId key: id of teamsAsyncOperation
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, teams_async_operation_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/operations/{teamsAsyncOperation%2Did}{?%24select,%24expand}"

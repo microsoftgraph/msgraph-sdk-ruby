@@ -5,11 +5,8 @@ require_relative '../../models/team'
 require_relative '../teams'
 require_relative './all_channels/all_channels_request_builder'
 require_relative './all_channels/item/channel_item_request_builder'
-require_relative './archive/archive_request_builder'
 require_relative './channels/channels_request_builder'
 require_relative './channels/item/channel_item_request_builder'
-require_relative './clone/clone_request_builder'
-require_relative './complete_migration/complete_migration_request_builder'
 require_relative './group/group_request_builder'
 require_relative './incoming_channels/incoming_channels_request_builder'
 require_relative './incoming_channels/item/channel_item_request_builder'
@@ -18,16 +15,19 @@ require_relative './installed_apps/item/teams_app_installation_item_request_buil
 require_relative './item'
 require_relative './members/item/conversation_member_item_request_builder'
 require_relative './members/members_request_builder'
+require_relative './microsoft_graph_archive/archive_request_builder'
+require_relative './microsoft_graph_clone/clone_request_builder'
+require_relative './microsoft_graph_complete_migration/complete_migration_request_builder'
+require_relative './microsoft_graph_send_activity_notification/send_activity_notification_request_builder'
+require_relative './microsoft_graph_unarchive/unarchive_request_builder'
 require_relative './operations/item/teams_async_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
 require_relative './photo/photo_request_builder'
 require_relative './primary_channel/primary_channel_request_builder'
 require_relative './schedule/schedule_request_builder'
-require_relative './send_activity_notification/send_activity_notification_request_builder'
 require_relative './tags/item/teamwork_tag_item_request_builder'
 require_relative './tags/tags_request_builder'
 require_relative './template/template_request_builder'
-require_relative './unarchive/unarchive_request_builder'
 
 module MicrosoftGraph::Teams::Item
     ## 
@@ -40,24 +40,9 @@ module MicrosoftGraph::Teams::Item
             return MicrosoftGraph::Teams::Item::AllChannels::AllChannelsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the archive method.
-        def archive()
-            return MicrosoftGraph::Teams::Item::Archive::ArchiveRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the channels property of the microsoft.graph.team entity.
         def channels()
             return MicrosoftGraph::Teams::Item::Channels::ChannelsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the clone method.
-        def clone()
-            return MicrosoftGraph::Teams::Item::Clone::CloneRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the completeMigration method.
-        def complete_migration()
-            return MicrosoftGraph::Teams::Item::CompleteMigration::CompleteMigrationRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the group property of the microsoft.graph.team entity.
@@ -78,6 +63,31 @@ module MicrosoftGraph::Teams::Item
         # Provides operations to manage the members property of the microsoft.graph.team entity.
         def members()
             return MicrosoftGraph::Teams::Item::Members::MembersRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the archive method.
+        def microsoft_graph_archive()
+            return MicrosoftGraph::Teams::Item::MicrosoftGraphArchive::ArchiveRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the clone method.
+        def microsoft_graph_clone()
+            return MicrosoftGraph::Teams::Item::MicrosoftGraphClone::CloneRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the completeMigration method.
+        def microsoft_graph_complete_migration()
+            return MicrosoftGraph::Teams::Item::MicrosoftGraphCompleteMigration::CompleteMigrationRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the sendActivityNotification method.
+        def microsoft_graph_send_activity_notification()
+            return MicrosoftGraph::Teams::Item::MicrosoftGraphSendActivityNotification::SendActivityNotificationRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the unarchive method.
+        def microsoft_graph_unarchive()
+            return MicrosoftGraph::Teams::Item::MicrosoftGraphUnarchive::UnarchiveRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the operations property of the microsoft.graph.team entity.
@@ -106,11 +116,6 @@ module MicrosoftGraph::Teams::Item
             return MicrosoftGraph::Teams::Item::Schedule::ScheduleRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the sendActivityNotification method.
-        def send_activity_notification()
-            return MicrosoftGraph::Teams::Item::SendActivityNotification::SendActivityNotificationRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the tags property of the microsoft.graph.team entity.
         def tags()
             return MicrosoftGraph::Teams::Item::Tags::TagsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -119,11 +124,6 @@ module MicrosoftGraph::Teams::Item
         # Provides operations to manage the template property of the microsoft.graph.team entity.
         def template()
             return MicrosoftGraph::Teams::Item::Template::TemplateRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the unarchive method.
-        def unarchive()
-            return MicrosoftGraph::Teams::Item::Unarchive::UnarchiveRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Url template to use to build the URL for the current request builder
@@ -154,9 +154,10 @@ module MicrosoftGraph::Teams::Item
         ## Instantiates a new TeamItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param teamId key: id of team
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, team_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/teams/{team%2Did}{?%24select,%24expand}"
@@ -165,7 +166,7 @@ module MicrosoftGraph::Teams::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from teams by key (id)
+        ## Delete entity from teams
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -264,7 +265,7 @@ module MicrosoftGraph::Teams::Item
             return MicrosoftGraph::Teams::Item::Tags::Item::TeamworkTagItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Delete entity from teams by key (id)
+        ## Delete entity from teams
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 

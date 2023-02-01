@@ -35,7 +35,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the actionName property value. Action name
-        ## @param value Value to set for the actionName property.
+        ## @param value Value to set for the action_name property.
         ## @return a void
         ## 
         def action_name=(value)
@@ -50,7 +50,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the actionState property value. State of the action on the device
-        ## @param value Value to set for the actionState property.
+        ## @param value Value to set for the action_state property.
         ## @return a void
         ## 
         def action_state=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastUpdatedDateTime property value. Time the action state was last updated
-        ## @param value Value to set for the lastUpdatedDateTime property.
+        ## @param value Value to set for the last_updated_date_time property.
         ## @return a void
         ## 
         def last_updated_date_time=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -169,7 +169,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the startDateTime property value. Time the action was initiated
-        ## @param value Value to set for the startDateTime property.
+        ## @param value Value to set for the start_date_time property.
         ## @return a void
         ## 
         def start_date_time=(value)

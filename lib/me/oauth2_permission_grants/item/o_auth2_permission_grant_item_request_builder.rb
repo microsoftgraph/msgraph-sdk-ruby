@@ -22,11 +22,12 @@ module MicrosoftGraph::Me::Oauth2PermissionGrants::Item
         @url_template
         ## 
         ## Instantiates a new OAuth2PermissionGrantItemRequestBuilder and sets the default values.
+        ## @param oAuth2PermissionGrantId key: id of oAuth2PermissionGrant
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, o_auth2_permission_grant_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/me/oauth2PermissionGrants/{oAuth2PermissionGrant%2Did}{?%24select,%24expand}"

@@ -33,7 +33,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the completedDateTime property value. Represents when the request for this data policy operation was completed, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Null until the operation completes.
-        ## @param value Value to set for the completedDateTime property.
+        ## @param value Value to set for the completed_date_time property.
         ## @return a void
         ## 
         def completed_date_time=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the storageLocation property value. The URL location to where data is being exported for export requests.
-        ## @param value Value to set for the storageLocation property.
+        ## @param value Value to set for the storage_location property.
         ## @return a void
         ## 
         def storage_location=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the submittedDateTime property value. Represents when the request for this data operation was submitted, in UTC time, using the ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the submittedDateTime property.
+        ## @param value Value to set for the submitted_date_time property.
         ## @return a void
         ## 
         def submitted_date_time=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userId property value. The id for the user on whom the operation is performed.
-        ## @param value Value to set for the userId property.
+        ## @param value Value to set for the user_id property.
         ## @return a void
         ## 
         def user_id=(value)

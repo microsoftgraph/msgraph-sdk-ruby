@@ -51,7 +51,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isRemovable property value. When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
-        ## @param value Value to set for the isRemovable property.
+        ## @param value Value to set for the is_removable property.
         ## @return a void
         ## 
         def is_removable=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune. By default, property is set to null which internally is treated as TRUE.
-        ## @param value Value to set for the uninstallOnDeviceRemoval property.
+        ## @param value Value to set for the uninstall_on_device_removal property.
         ## @return a void
         ## 
         def uninstall_on_device_removal=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the vpnConfigurationId property value. This is the unique identifier (Id) of the VPN Configuration to apply to the app.
-        ## @param value Value to set for the vpnConfigurationId property.
+        ## @param value Value to set for the vpn_configuration_id property.
         ## @return a void
         ## 
         def vpn_configuration_id=(value)

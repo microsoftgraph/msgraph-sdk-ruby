@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the preventsDownload property value. If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.
-        ## @param value Value to set for the preventsDownload property.
+        ## @param value Value to set for the prevents_download property.
         ## @return a void
         ## 
         def prevents_download=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webHtml property value. For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.
-        ## @param value Value to set for the webHtml property.
+        ## @param value Value to set for the web_html property.
         ## @return a void
         ## 
         def web_html=(value)
@@ -190,7 +190,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webUrl property value. A URL that opens the item in the browser on the OneDrive website.
-        ## @param value Value to set for the webUrl property.
+        ## @param value Value to set for the web_url property.
         ## @return a void
         ## 
         def web_url=(value)

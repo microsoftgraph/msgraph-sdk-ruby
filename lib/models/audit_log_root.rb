@@ -39,7 +39,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the directoryAudits property value. The directoryAudits property
-        ## @param value Value to set for the directoryAudits property.
+        ## @param value Value to set for the directory_audits property.
         ## @return a void
         ## 
         def directory_audits=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the signIns property value. The signIns property
-        ## @param value Value to set for the signIns property.
+        ## @param value Value to set for the sign_ins property.
         ## @return a void
         ## 
         def sign_ins=(value)

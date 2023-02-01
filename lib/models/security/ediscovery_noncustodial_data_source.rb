@@ -13,7 +13,7 @@ module MicrosoftGraph::Models::Security
         # Operation entity that represents the latest indexing for the non-custodial data source.
         @last_index_operation
         ## 
-        ## Instantiates a new ediscoveryNoncustodialDataSource and sets the default values.
+        ## Instantiates a new EdiscoveryNoncustodialDataSource and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -38,7 +38,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the dataSource property value. User source or SharePoint site data source as non-custodial data source.
-        ## @param value Value to set for the dataSource property.
+        ## @param value Value to set for the data_source property.
         ## @return a void
         ## 
         def data_source=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the lastIndexOperation property value. Operation entity that represents the latest indexing for the non-custodial data source.
-        ## @param value Value to set for the lastIndexOperation property.
+        ## @param value Value to set for the last_index_operation property.
         ## @return a void
         ## 
         def last_index_operation=(value)

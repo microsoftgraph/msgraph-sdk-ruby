@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the columnId property value. ID of the selected level for this quality.
-        ## @param value Value to set for the columnId property.
+        ## @param value Value to set for the column_id property.
         ## @return a void
         ## 
         def column_id=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the qualityId property value. ID of the associated quality.
-        ## @param value Value to set for the qualityId property.
+        ## @param value Value to set for the quality_id property.
         ## @return a void
         ## 
         def quality_id=(value)

@@ -106,17 +106,14 @@ module MicrosoftGraph::Models
         # The members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=members($select=id,userPrincipalName,displayName).
         @members
         ## 
+        # A list of group members with license errors from this group-based license assignment. Read-only.
+        @members_with_license_errors
+        ## 
         # The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
         @membership_rule
         ## 
         # Indicates whether the dynamic membership processing is on or paused. Possible values are On or Paused. Returned by default. Supports $filter (eq, ne, not, in).
         @membership_rule_processing_state
-        ## 
-        # A list of group members with license errors from this group-based license assignment. Read-only.
-        @members_with_license_errors
-        ## 
-        # The onenote property
-        @onenote
         ## 
         # The onPremisesDomainName property
         @on_premises_domain_name
@@ -138,6 +135,9 @@ module MicrosoftGraph::Models
         ## 
         # true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
         @on_premises_sync_enabled
+        ## 
+        # The onenote property
+        @onenote
         ## 
         # The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
         @owners
@@ -210,7 +210,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the acceptedSenders property value. The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
-        ## @param value Value to set for the acceptedSenders property.
+        ## @param value Value to set for the accepted_senders property.
         ## @return a void
         ## 
         def accepted_senders=(value)
@@ -225,7 +225,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowExternalSenders property value. Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-        ## @param value Value to set for the allowExternalSenders property.
+        ## @param value Value to set for the allow_external_senders property.
         ## @return a void
         ## 
         def allow_external_senders=(value)
@@ -240,7 +240,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appRoleAssignments property value. Represents the app roles a group has been granted for an application. Supports $expand.
-        ## @param value Value to set for the appRoleAssignments property.
+        ## @param value Value to set for the app_role_assignments property.
         ## @return a void
         ## 
         def app_role_assignments=(value)
@@ -255,7 +255,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
-        ## @param value Value to set for the assignedLabels property.
+        ## @param value Value to set for the assigned_labels property.
         ## @return a void
         ## 
         def assigned_labels=(value)
@@ -270,7 +270,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignedLicenses property value. The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
-        ## @param value Value to set for the assignedLicenses property.
+        ## @param value Value to set for the assigned_licenses property.
         ## @return a void
         ## 
         def assigned_licenses=(value)
@@ -285,7 +285,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the autoSubscribeNewMembers property value. Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-        ## @param value Value to set for the autoSubscribeNewMembers property.
+        ## @param value Value to set for the auto_subscribe_new_members property.
         ## @return a void
         ## 
         def auto_subscribe_new_members=(value)
@@ -315,7 +315,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the calendarView property value. The calendar view for the calendar. Read-only.
-        ## @param value Value to set for the calendarView property.
+        ## @param value Value to set for the calendar_view property.
         ## @return a void
         ## 
         def calendar_view=(value)
@@ -368,7 +368,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -383,7 +383,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdOnBehalfOf property value. The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
-        ## @param value Value to set for the createdOnBehalfOf property.
+        ## @param value Value to set for the created_on_behalf_of property.
         ## @return a void
         ## 
         def created_on_behalf_of=(value)
@@ -422,7 +422,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -482,7 +482,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the expirationDateTime property value. Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
-        ## @param value Value to set for the expirationDateTime property.
+        ## @param value Value to set for the expiration_date_time property.
         ## @return a void
         ## 
         def expiration_date_time=(value)
@@ -542,10 +542,9 @@ module MicrosoftGraph::Models
                 "mailNickname" => lambda {|n| @mail_nickname = n.get_string_value() },
                 "memberOf" => lambda {|n| @member_of = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
                 "members" => lambda {|n| @members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
+                "membersWithLicenseErrors" => lambda {|n| @members_with_license_errors = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
                 "membershipRule" => lambda {|n| @membership_rule = n.get_string_value() },
                 "membershipRuleProcessingState" => lambda {|n| @membership_rule_processing_state = n.get_string_value() },
-                "membersWithLicenseErrors" => lambda {|n| @members_with_license_errors = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
-                "onenote" => lambda {|n| @onenote = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Onenote.create_from_discriminator_value(pn) }) },
                 "onPremisesDomainName" => lambda {|n| @on_premises_domain_name = n.get_string_value() },
                 "onPremisesLastSyncDateTime" => lambda {|n| @on_premises_last_sync_date_time = n.get_date_time_value() },
                 "onPremisesNetBiosName" => lambda {|n| @on_premises_net_bios_name = n.get_string_value() },
@@ -553,6 +552,7 @@ module MicrosoftGraph::Models
                 "onPremisesSamAccountName" => lambda {|n| @on_premises_sam_account_name = n.get_string_value() },
                 "onPremisesSecurityIdentifier" => lambda {|n| @on_premises_security_identifier = n.get_string_value() },
                 "onPremisesSyncEnabled" => lambda {|n| @on_premises_sync_enabled = n.get_boolean_value() },
+                "onenote" => lambda {|n| @onenote = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Onenote.create_from_discriminator_value(pn) }) },
                 "owners" => lambda {|n| @owners = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
                 "permissionGrants" => lambda {|n| @permission_grants = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ResourceSpecificPermissionGrant.create_from_discriminator_value(pn) }) },
                 "photo" => lambda {|n| @photo = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ProfilePhoto.create_from_discriminator_value(pn) }) },
@@ -585,7 +585,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the groupLifecyclePolicies property value. The collection of lifecycle policies for this group. Read-only. Nullable.
-        ## @param value Value to set for the groupLifecyclePolicies property.
+        ## @param value Value to set for the group_lifecycle_policies property.
         ## @return a void
         ## 
         def group_lifecycle_policies=(value)
@@ -600,7 +600,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the groupTypes property value. Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it's either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).
-        ## @param value Value to set for the groupTypes property.
+        ## @param value Value to set for the group_types property.
         ## @return a void
         ## 
         def group_types=(value)
@@ -615,7 +615,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hasMembersWithLicenseErrors property value. Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example. Supports $filter (eq).
-        ## @param value Value to set for the hasMembersWithLicenseErrors property.
+        ## @param value Value to set for the has_members_with_license_errors property.
         ## @return a void
         ## 
         def has_members_with_license_errors=(value)
@@ -630,7 +630,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hideFromAddressLists property value. True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-        ## @param value Value to set for the hideFromAddressLists property.
+        ## @param value Value to set for the hide_from_address_lists property.
         ## @return a void
         ## 
         def hide_from_address_lists=(value)
@@ -645,7 +645,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hideFromOutlookClients property value. True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-        ## @param value Value to set for the hideFromOutlookClients property.
+        ## @param value Value to set for the hide_from_outlook_clients property.
         ## @return a void
         ## 
         def hide_from_outlook_clients=(value)
@@ -660,7 +660,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isArchived property value. When a group is associated with a team this property determines whether the team is in read-only mode.To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.
-        ## @param value Value to set for the isArchived property.
+        ## @param value Value to set for the is_archived property.
         ## @return a void
         ## 
         def is_archived=(value)
@@ -675,7 +675,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isAssignableToRole property value. Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).
-        ## @param value Value to set for the isAssignableToRole property.
+        ## @param value Value to set for the is_assignable_to_role property.
         ## @return a void
         ## 
         def is_assignable_to_role=(value)
@@ -690,7 +690,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isSubscribedByMail property value. Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-        ## @param value Value to set for the isSubscribedByMail property.
+        ## @param value Value to set for the is_subscribed_by_mail property.
         ## @return a void
         ## 
         def is_subscribed_by_mail=(value)
@@ -705,7 +705,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the licenseProcessingState property value. Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.
-        ## @param value Value to set for the licenseProcessingState property.
+        ## @param value Value to set for the license_processing_state property.
         ## @return a void
         ## 
         def license_processing_state=(value)
@@ -735,7 +735,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mailEnabled property value. Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not).
-        ## @param value Value to set for the mailEnabled property.
+        ## @param value Value to set for the mail_enabled property.
         ## @return a void
         ## 
         def mail_enabled=(value)
@@ -750,7 +750,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mailNickname property value. The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        ## @param value Value to set for the mailNickname property.
+        ## @param value Value to set for the mail_nickname property.
         ## @return a void
         ## 
         def mail_nickname=(value)
@@ -765,7 +765,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the memberOf property value. Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
-        ## @param value Value to set for the memberOf property.
+        ## @param value Value to set for the member_of property.
         ## @return a void
         ## 
         def member_of=(value)
@@ -787,6 +787,21 @@ module MicrosoftGraph::Models
             @members = value
         end
         ## 
+        ## Gets the membersWithLicenseErrors property value. A list of group members with license errors from this group-based license assignment. Read-only.
+        ## @return a directory_object
+        ## 
+        def members_with_license_errors
+            return @members_with_license_errors
+        end
+        ## 
+        ## Sets the membersWithLicenseErrors property value. A list of group members with license errors from this group-based license assignment. Read-only.
+        ## @param value Value to set for the members_with_license_errors property.
+        ## @return a void
+        ## 
+        def members_with_license_errors=(value)
+            @members_with_license_errors = value
+        end
+        ## 
         ## Gets the membershipRule property value. The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
         ## @return a string
         ## 
@@ -795,7 +810,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the membershipRule property value. The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
-        ## @param value Value to set for the membershipRule property.
+        ## @param value Value to set for the membership_rule property.
         ## @return a void
         ## 
         def membership_rule=(value)
@@ -810,26 +825,116 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the membershipRuleProcessingState property value. Indicates whether the dynamic membership processing is on or paused. Possible values are On or Paused. Returned by default. Supports $filter (eq, ne, not, in).
-        ## @param value Value to set for the membershipRuleProcessingState property.
+        ## @param value Value to set for the membership_rule_processing_state property.
         ## @return a void
         ## 
         def membership_rule_processing_state=(value)
             @membership_rule_processing_state = value
         end
         ## 
-        ## Gets the membersWithLicenseErrors property value. A list of group members with license errors from this group-based license assignment. Read-only.
-        ## @return a directory_object
+        ## Gets the onPremisesDomainName property value. The onPremisesDomainName property
+        ## @return a string
         ## 
-        def members_with_license_errors
-            return @members_with_license_errors
+        def on_premises_domain_name
+            return @on_premises_domain_name
         end
         ## 
-        ## Sets the membersWithLicenseErrors property value. A list of group members with license errors from this group-based license assignment. Read-only.
-        ## @param value Value to set for the membersWithLicenseErrors property.
+        ## Sets the onPremisesDomainName property value. The onPremisesDomainName property
+        ## @param value Value to set for the on_premises_domain_name property.
         ## @return a void
         ## 
-        def members_with_license_errors=(value)
-            @members_with_license_errors = value
+        def on_premises_domain_name=(value)
+            @on_premises_domain_name = value
+        end
+        ## 
+        ## Gets the onPremisesLastSyncDateTime property value. Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+        ## @return a date_time
+        ## 
+        def on_premises_last_sync_date_time
+            return @on_premises_last_sync_date_time
+        end
+        ## 
+        ## Sets the onPremisesLastSyncDateTime property value. Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
+        ## @param value Value to set for the on_premises_last_sync_date_time property.
+        ## @return a void
+        ## 
+        def on_premises_last_sync_date_time=(value)
+            @on_premises_last_sync_date_time = value
+        end
+        ## 
+        ## Gets the onPremisesNetBiosName property value. The onPremisesNetBiosName property
+        ## @return a string
+        ## 
+        def on_premises_net_bios_name
+            return @on_premises_net_bios_name
+        end
+        ## 
+        ## Sets the onPremisesNetBiosName property value. The onPremisesNetBiosName property
+        ## @param value Value to set for the on_premises_net_bios_name property.
+        ## @return a void
+        ## 
+        def on_premises_net_bios_name=(value)
+            @on_premises_net_bios_name = value
+        end
+        ## 
+        ## Gets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).
+        ## @return a on_premises_provisioning_error
+        ## 
+        def on_premises_provisioning_errors
+            return @on_premises_provisioning_errors
+        end
+        ## 
+        ## Sets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).
+        ## @param value Value to set for the on_premises_provisioning_errors property.
+        ## @return a void
+        ## 
+        def on_premises_provisioning_errors=(value)
+            @on_premises_provisioning_errors = value
+        end
+        ## 
+        ## Gets the onPremisesSamAccountName property value. Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
+        ## @return a string
+        ## 
+        def on_premises_sam_account_name
+            return @on_premises_sam_account_name
+        end
+        ## 
+        ## Sets the onPremisesSamAccountName property value. Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
+        ## @param value Value to set for the on_premises_sam_account_name property.
+        ## @return a void
+        ## 
+        def on_premises_sam_account_name=(value)
+            @on_premises_sam_account_name = value
+        end
+        ## 
+        ## Gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+        ## @return a string
+        ## 
+        def on_premises_security_identifier
+            return @on_premises_security_identifier
+        end
+        ## 
+        ## Sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
+        ## @param value Value to set for the on_premises_security_identifier property.
+        ## @return a void
+        ## 
+        def on_premises_security_identifier=(value)
+            @on_premises_security_identifier = value
+        end
+        ## 
+        ## Gets the onPremisesSyncEnabled property value. true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+        ## @return a boolean
+        ## 
+        def on_premises_sync_enabled
+            return @on_premises_sync_enabled
+        end
+        ## 
+        ## Sets the onPremisesSyncEnabled property value. true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
+        ## @param value Value to set for the on_premises_sync_enabled property.
+        ## @return a void
+        ## 
+        def on_premises_sync_enabled=(value)
+            @on_premises_sync_enabled = value
         end
         ## 
         ## Gets the onenote property value. The onenote property
@@ -845,111 +950,6 @@ module MicrosoftGraph::Models
         ## 
         def onenote=(value)
             @onenote = value
-        end
-        ## 
-        ## Gets the onPremisesDomainName property value. The onPremisesDomainName property
-        ## @return a string
-        ## 
-        def on_premises_domain_name
-            return @on_premises_domain_name
-        end
-        ## 
-        ## Sets the onPremisesDomainName property value. The onPremisesDomainName property
-        ## @param value Value to set for the onPremisesDomainName property.
-        ## @return a void
-        ## 
-        def on_premises_domain_name=(value)
-            @on_premises_domain_name = value
-        end
-        ## 
-        ## Gets the onPremisesLastSyncDateTime property value. Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
-        ## @return a date_time
-        ## 
-        def on_premises_last_sync_date_time
-            return @on_premises_last_sync_date_time
-        end
-        ## 
-        ## Sets the onPremisesLastSyncDateTime property value. Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
-        ## @param value Value to set for the onPremisesLastSyncDateTime property.
-        ## @return a void
-        ## 
-        def on_premises_last_sync_date_time=(value)
-            @on_premises_last_sync_date_time = value
-        end
-        ## 
-        ## Gets the onPremisesNetBiosName property value. The onPremisesNetBiosName property
-        ## @return a string
-        ## 
-        def on_premises_net_bios_name
-            return @on_premises_net_bios_name
-        end
-        ## 
-        ## Sets the onPremisesNetBiosName property value. The onPremisesNetBiosName property
-        ## @param value Value to set for the onPremisesNetBiosName property.
-        ## @return a void
-        ## 
-        def on_premises_net_bios_name=(value)
-            @on_premises_net_bios_name = value
-        end
-        ## 
-        ## Gets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).
-        ## @return a on_premises_provisioning_error
-        ## 
-        def on_premises_provisioning_errors
-            return @on_premises_provisioning_errors
-        end
-        ## 
-        ## Sets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).
-        ## @param value Value to set for the onPremisesProvisioningErrors property.
-        ## @return a void
-        ## 
-        def on_premises_provisioning_errors=(value)
-            @on_premises_provisioning_errors = value
-        end
-        ## 
-        ## Gets the onPremisesSamAccountName property value. Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
-        ## @return a string
-        ## 
-        def on_premises_sam_account_name
-            return @on_premises_sam_account_name
-        end
-        ## 
-        ## Sets the onPremisesSamAccountName property value. Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
-        ## @param value Value to set for the onPremisesSamAccountName property.
-        ## @return a void
-        ## 
-        def on_premises_sam_account_name=(value)
-            @on_premises_sam_account_name = value
-        end
-        ## 
-        ## Gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
-        ## @return a string
-        ## 
-        def on_premises_security_identifier
-            return @on_premises_security_identifier
-        end
-        ## 
-        ## Sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
-        ## @param value Value to set for the onPremisesSecurityIdentifier property.
-        ## @return a void
-        ## 
-        def on_premises_security_identifier=(value)
-            @on_premises_security_identifier = value
-        end
-        ## 
-        ## Gets the onPremisesSyncEnabled property value. true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
-        ## @return a boolean
-        ## 
-        def on_premises_sync_enabled
-            return @on_premises_sync_enabled
-        end
-        ## 
-        ## Sets the onPremisesSyncEnabled property value. true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
-        ## @param value Value to set for the onPremisesSyncEnabled property.
-        ## @return a void
-        ## 
-        def on_premises_sync_enabled=(value)
-            @on_premises_sync_enabled = value
         end
         ## 
         ## Gets the owners property value. The owners of the group. Limited to 100 owners. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,'Role')&$select=id,displayName&$expand=owners($select=id,userPrincipalName,displayName).
@@ -975,7 +975,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the permissionGrants property value. The permission that has been granted for a group to a specific application. Supports $expand.
-        ## @param value Value to set for the permissionGrants property.
+        ## @param value Value to set for the permission_grants property.
         ## @return a void
         ## 
         def permission_grants=(value)
@@ -1035,7 +1035,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the preferredDataLocation property value. The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
-        ## @param value Value to set for the preferredDataLocation property.
+        ## @param value Value to set for the preferred_data_location property.
         ## @return a void
         ## 
         def preferred_data_location=(value)
@@ -1050,7 +1050,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the preferredLanguage property value. The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        ## @param value Value to set for the preferredLanguage property.
+        ## @param value Value to set for the preferred_language property.
         ## @return a void
         ## 
         def preferred_language=(value)
@@ -1065,7 +1065,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the proxyAddresses property value. Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
-        ## @param value Value to set for the proxyAddresses property.
+        ## @param value Value to set for the proxy_addresses property.
         ## @return a void
         ## 
         def proxy_addresses=(value)
@@ -1080,7 +1080,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the rejectedSenders property value. The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-        ## @param value Value to set for the rejectedSenders property.
+        ## @param value Value to set for the rejected_senders property.
         ## @return a void
         ## 
         def rejected_senders=(value)
@@ -1095,7 +1095,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the renewedDateTime property value. Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
-        ## @param value Value to set for the renewedDateTime property.
+        ## @param value Value to set for the renewed_date_time property.
         ## @return a void
         ## 
         def renewed_date_time=(value)
@@ -1110,7 +1110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityEnabled property value. Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in).
-        ## @param value Value to set for the securityEnabled property.
+        ## @param value Value to set for the security_enabled property.
         ## @return a void
         ## 
         def security_enabled=(value)
@@ -1125,7 +1125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityIdentifier property value. Security identifier of the group, used in Windows scenarios. Returned by default.
-        ## @param value Value to set for the securityIdentifier property.
+        ## @param value Value to set for the security_identifier property.
         ## @return a void
         ## 
         def security_identifier=(value)
@@ -1172,10 +1172,9 @@ module MicrosoftGraph::Models
             writer.write_string_value("mailNickname", @mail_nickname)
             writer.write_collection_of_object_values("memberOf", @member_of)
             writer.write_collection_of_object_values("members", @members)
+            writer.write_collection_of_object_values("membersWithLicenseErrors", @members_with_license_errors)
             writer.write_string_value("membershipRule", @membership_rule)
             writer.write_string_value("membershipRuleProcessingState", @membership_rule_processing_state)
-            writer.write_collection_of_object_values("membersWithLicenseErrors", @members_with_license_errors)
-            writer.write_object_value("onenote", @onenote)
             writer.write_string_value("onPremisesDomainName", @on_premises_domain_name)
             writer.write_date_time_value("onPremisesLastSyncDateTime", @on_premises_last_sync_date_time)
             writer.write_string_value("onPremisesNetBiosName", @on_premises_net_bios_name)
@@ -1183,6 +1182,7 @@ module MicrosoftGraph::Models
             writer.write_string_value("onPremisesSamAccountName", @on_premises_sam_account_name)
             writer.write_string_value("onPremisesSecurityIdentifier", @on_premises_security_identifier)
             writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled)
+            writer.write_object_value("onenote", @onenote)
             writer.write_collection_of_object_values("owners", @owners)
             writer.write_collection_of_object_values("permissionGrants", @permission_grants)
             writer.write_object_value("photo", @photo)
@@ -1289,7 +1289,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the transitiveMemberOf property value. The groups that a group is a member of, either directly and through nested membership. Nullable.
-        ## @param value Value to set for the transitiveMemberOf property.
+        ## @param value Value to set for the transitive_member_of property.
         ## @return a void
         ## 
         def transitive_member_of=(value)
@@ -1304,7 +1304,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the transitiveMembers property value. The direct and transitive members of a group. Nullable.
-        ## @param value Value to set for the transitiveMembers property.
+        ## @param value Value to set for the transitive_members property.
         ## @return a void
         ## 
         def transitive_members=(value)
@@ -1319,7 +1319,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the unseenCount property value. Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-        ## @param value Value to set for the unseenCount property.
+        ## @param value Value to set for the unseen_count property.
         ## @return a void
         ## 
         def unseen_count=(value)

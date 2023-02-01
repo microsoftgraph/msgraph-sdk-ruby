@@ -73,7 +73,7 @@ module MicrosoftGraph::Models::TermStore
         end
         ## 
         ## Sets the isDefault property value. Indicates whether the label is the default label.
-        ## @param value Value to set for the isDefault property.
+        ## @param value Value to set for the is_default property.
         ## @return a void
         ## 
         def is_default=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph::Models::TermStore
         end
         ## 
         ## Sets the languageTag property value. The language tag for the label.
-        ## @param value Value to set for the languageTag property.
+        ## @param value Value to set for the language_tag property.
         ## @return a void
         ## 
         def language_tag=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph::Models::TermStore
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

@@ -32,7 +32,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the b2bCollaborationInbound property value. Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
-        ## @param value Value to set for the b2bCollaborationInbound property.
+        ## @param value Value to set for the b2b_collaboration_inbound property.
         ## @return a void
         ## 
         def b2b_collaboration_inbound=(value)
@@ -47,7 +47,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the b2bCollaborationOutbound property value. Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
-        ## @param value Value to set for the b2bCollaborationOutbound property.
+        ## @param value Value to set for the b2b_collaboration_outbound property.
         ## @return a void
         ## 
         def b2b_collaboration_outbound=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the b2bDirectConnectInbound property value. Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B direct connect.
-        ## @param value Value to set for the b2bDirectConnectInbound property.
+        ## @param value Value to set for the b2b_direct_connect_inbound property.
         ## @return a void
         ## 
         def b2b_direct_connect_inbound=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the b2bDirectConnectOutbound property value. Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
-        ## @param value Value to set for the b2bDirectConnectOutbound property.
+        ## @param value Value to set for the b2b_direct_connect_outbound property.
         ## @return a void
         ## 
         def b2b_direct_connect_outbound=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the inboundTrust property value. Determines the default configuration for trusting other Conditional Access claims from external Azure AD organizations.
-        ## @param value Value to set for the inboundTrust property.
+        ## @param value Value to set for the inbound_trust property.
         ## @return a void
         ## 
         def inbound_trust=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isServiceDefault property value. If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
-        ## @param value Value to set for the isServiceDefault property.
+        ## @param value Value to set for the is_service_default property.
         ## @return a void
         ## 
         def is_service_default=(value)

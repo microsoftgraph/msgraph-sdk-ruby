@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isCaptionEnabled property value. Indicates whether captions are enabled for this Teams live event.
-        ## @param value Value to set for the isCaptionEnabled property.
+        ## @param value Value to set for the is_caption_enabled property.
         ## @return a void
         ## 
         def is_caption_enabled=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the spokenLanguage property value. The spoken language.
-        ## @param value Value to set for the spokenLanguage property.
+        ## @param value Value to set for the spoken_language property.
         ## @return a void
         ## 
         def spoken_language=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the translationLanguages property value. The translation languages (choose up to 6).
-        ## @param value Value to set for the translationLanguages property.
+        ## @param value Value to set for the translation_languages property.
         ## @return a void
         ## 
         def translation_languages=(value)

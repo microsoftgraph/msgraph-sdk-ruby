@@ -44,7 +44,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the ccRecipients property value. Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.
-        ## @param value Value to set for the ccRecipients property.
+        ## @param value Value to set for the cc_recipients property.
         ## @return a void
         ## 
         def cc_recipients=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the customizedMessageBody property value. Customized message body you want to send if you don't want the default message.
-        ## @param value Value to set for the customizedMessageBody property.
+        ## @param value Value to set for the customized_message_body property.
         ## @return a void
         ## 
         def customized_message_body=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the messageLanguage property value. The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.
-        ## @param value Value to set for the messageLanguage property.
+        ## @param value Value to set for the message_language property.
         ## @return a void
         ## 
         def message_language=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

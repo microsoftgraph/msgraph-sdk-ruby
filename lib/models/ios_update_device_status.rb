@@ -48,7 +48,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
-        ## @param value Value to set for the complianceGracePeriodExpirationDateTime property.
+        ## @param value Value to set for the compliance_grace_period_expiration_date_time property.
         ## @return a void
         ## 
         def compliance_grace_period_expiration_date_time=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceDisplayName property value. Device name of the DevicePolicyStatus.
-        ## @param value Value to set for the deviceDisplayName property.
+        ## @param value Value to set for the device_display_name property.
         ## @return a void
         ## 
         def device_display_name=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceId property value. The device id that is being reported.
-        ## @param value Value to set for the deviceId property.
+        ## @param value Value to set for the device_id property.
         ## @return a void
         ## 
         def device_id=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceModel property value. The device model that is being reported
-        ## @param value Value to set for the deviceModel property.
+        ## @param value Value to set for the device_model property.
         ## @return a void
         ## 
         def device_model=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the installStatus property value. The installStatus property
-        ## @param value Value to set for the installStatus property.
+        ## @param value Value to set for the install_status property.
         ## @return a void
         ## 
         def install_status=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastReportedDateTime property value. Last modified date time of the policy report.
-        ## @param value Value to set for the lastReportedDateTime property.
+        ## @param value Value to set for the last_reported_date_time property.
         ## @return a void
         ## 
         def last_reported_date_time=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osVersion property value. The device version that is being reported.
-        ## @param value Value to set for the osVersion property.
+        ## @param value Value to set for the os_version property.
         ## @return a void
         ## 
         def os_version=(value)
@@ -223,7 +223,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userId property value. The User id that is being reported.
-        ## @param value Value to set for the userId property.
+        ## @param value Value to set for the user_id property.
         ## @return a void
         ## 
         def user_id=(value)
@@ -238,7 +238,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userName property value. The User Name that is being reported
-        ## @param value Value to set for the userName property.
+        ## @param value Value to set for the user_name property.
         ## @return a void
         ## 
         def user_name=(value)
@@ -253,7 +253,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userPrincipalName property value. UserPrincipalName.
-        ## @param value Value to set for the userPrincipalName property.
+        ## @param value Value to set for the user_principal_name property.
         ## @return a void
         ## 
         def user_principal_name=(value)

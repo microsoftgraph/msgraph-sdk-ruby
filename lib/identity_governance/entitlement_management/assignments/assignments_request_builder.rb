@@ -5,11 +5,11 @@ require_relative '../../../models/access_package_assignment_collection_response'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../identity_governance'
 require_relative '../entitlement_management'
-require_relative './additional_access/additional_access_request_builder'
-require_relative './additional_access_with_access_package_id_with_incompatible_access_package_id/additional_access_with_access_package_id_with_incompatible_access_package_id_request_builder'
 require_relative './assignments'
 require_relative './count/count_request_builder'
-require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './microsoft_graph_additional_access/additional_access_request_builder'
+require_relative './microsoft_graph_additional_access_with_access_package_id_with_incompatible_access_package_id/e4d78736967fafda69ce028c5663ac12e24ed1892b963fb9ca97b04774c9fe26'
+require_relative './microsoft_graph_filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
 
 module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Assignments
     ## 
@@ -22,6 +22,11 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Assignments
             return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Assignments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the additionalAccess method.
+        def microsoft_graph_additional_access()
+            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Assignments::MicrosoftGraphAdditionalAccess::AdditionalAccessRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
@@ -30,24 +35,6 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Assignments
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        ## Provides operations to call the additionalAccess method.
-        ## @return a additional_access_request_builder
-        ## 
-        def additional_access()
-            return AdditionalAccessRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the additionalAccess method.
-        ## @param accessPackageId Usage: accessPackageId='{accessPackageId}'
-        ## @param incompatibleAccessPackageId Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
-        ## @return a additional_access_with_access_package_id_with_incompatible_access_package_id_request_builder
-        ## 
-        def additional_access_with_access_package_id_with_incompatible_access_package_id(access_package_id, incompatible_access_package_id)
-            raise StandardError, 'access_package_id cannot be null' if access_package_id.nil?
-            raise StandardError, 'incompatible_access_package_id cannot be null' if incompatible_access_package_id.nil?
-            return AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder.new(@path_parameters, @request_adapter, accessPackageId, incompatibleAccessPackageId)
-        end
         ## 
         ## Instantiates a new AssignmentsRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
@@ -63,15 +50,6 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Assignments
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Provides operations to call the filterByCurrentUser method.
-        ## @param on Usage: on='{on}'
-        ## @return a filter_by_current_user_with_on_request_builder
-        ## 
-        def filter_by_current_user_with_on(on)
-            raise StandardError, 'on cannot be null' if on.nil?
-            return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
-        end
-        ## 
         ## In Azure AD entitlement management, retrieve a list of accessPackageAssignment objects. For directory-wide administrators, the resulting list includes all the assignments, current and well as expired, that the caller has access to read, across all catalogs and access packages.  If the caller is on behalf of a delegated user who is assigned only to catalog-specific delegated administrative roles, the request must supply a filter to indicate a specific access package, such as: `$filter=accessPackage/id eq 'a914b616-e04e-476b-aa37-91038f0b165b'`.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of access_package_assignment_collection_response
@@ -84,6 +62,26 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::Assignments
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageAssignmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+        end
+        ## 
+        ## Provides operations to call the additionalAccess method.
+        ## @param accessPackageId Usage: accessPackageId='{accessPackageId}'
+        ## @param incompatibleAccessPackageId Usage: incompatibleAccessPackageId='{incompatibleAccessPackageId}'
+        ## @return a additional_access_with_access_package_id_with_incompatible_access_package_id_request_builder
+        ## 
+        def microsoft_graph_additional_access_with_access_package_id_with_incompatible_access_package_id(access_package_id, incompatible_access_package_id)
+            raise StandardError, 'access_package_id cannot be null' if access_package_id.nil?
+            raise StandardError, 'incompatible_access_package_id cannot be null' if incompatible_access_package_id.nil?
+            return AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder.new(@path_parameters, @request_adapter, accessPackageId, incompatibleAccessPackageId)
+        end
+        ## 
+        ## Provides operations to call the filterByCurrentUser method.
+        ## @param on Usage: on='{on}'
+        ## @return a filter_by_current_user_with_on_request_builder
+        ## 
+        def microsoft_graph_filter_by_current_user_with_on(on)
+            raise StandardError, 'on cannot be null' if on.nil?
+            return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
         end
         ## 
         ## Create new navigation property to assignments for identityGovernance

@@ -22,11 +22,12 @@ module MicrosoftGraph::DeviceManagement::DeviceCategories::Item
         @url_template
         ## 
         ## Instantiates a new DeviceCategoryItemRequestBuilder and sets the default values.
+        ## @param deviceCategoryId key: id of deviceCategory
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, device_category_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceManagement/deviceCategories/{deviceCategory%2Did}{?%24select,%24expand}"

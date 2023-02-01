@@ -27,11 +27,12 @@ module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Ins
         @url_template
         ## 
         ## Instantiates a new AccessReviewReviewerItemRequestBuilder and sets the default values.
+        ## @param accessReviewReviewerId key: id of accessReviewReviewer
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, access_review_reviewer_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition%2Did}/instances/{accessReviewInstance%2Did}/contactedReviewers/{accessReviewReviewer%2Did}{?%24select,%24expand}"

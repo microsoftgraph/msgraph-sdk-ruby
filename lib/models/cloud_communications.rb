@@ -27,7 +27,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callRecords property value. The callRecords property
-        ## @param value Value to set for the callRecords property.
+        ## @param value Value to set for the call_records property.
         ## @return a void
         ## 
         def call_records=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the onlineMeetings property value. The onlineMeetings property
-        ## @param value Value to set for the onlineMeetings property.
+        ## @param value Value to set for the online_meetings property.
         ## @return a void
         ## 
         def online_meetings=(value)

@@ -91,7 +91,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the invitedBy property value. Provides information about who sent the invitation that created this permission, if that information is available. Read-only.
-        ## @param value Value to set for the invitedBy property.
+        ## @param value Value to set for the invited_by property.
         ## @return a void
         ## 
         def invited_by=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the redeemedBy property value. The redeemedBy property
-        ## @param value Value to set for the redeemedBy property.
+        ## @param value Value to set for the redeemed_by property.
         ## @return a void
         ## 
         def redeemed_by=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the signInRequired property value. If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.
-        ## @param value Value to set for the signInRequired property.
+        ## @param value Value to set for the sign_in_required property.
         ## @return a void
         ## 
         def sign_in_required=(value)

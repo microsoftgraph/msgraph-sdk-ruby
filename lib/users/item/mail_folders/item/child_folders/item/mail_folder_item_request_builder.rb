@@ -7,13 +7,13 @@ require_relative '../../../../item'
 require_relative '../../../mail_folders'
 require_relative '../../item'
 require_relative '../child_folders'
-require_relative './copy/copy_request_builder'
 require_relative './item'
 require_relative './message_rules/item/message_rule_item_request_builder'
 require_relative './message_rules/message_rules_request_builder'
 require_relative './messages/item/message_item_request_builder'
 require_relative './messages/messages_request_builder'
-require_relative './move/move_request_builder'
+require_relative './microsoft_graph_copy/copy_request_builder'
+require_relative './microsoft_graph_move/move_request_builder'
 require_relative './multi_value_extended_properties/item/multi_value_legacy_extended_property_item_request_builder'
 require_relative './multi_value_extended_properties/multi_value_extended_properties_request_builder'
 require_relative './single_value_extended_properties/item/single_value_legacy_extended_property_item_request_builder'
@@ -25,11 +25,6 @@ module MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item
     class MailFolderItemRequestBuilder
         
         ## 
-        # Provides operations to call the copy method.
-        def copy()
-            return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::Copy::CopyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.
         def message_rules()
             return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::MessageRules::MessageRulesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -40,9 +35,14 @@ module MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item
             return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::Messages::MessagesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the copy method.
+        def microsoft_graph_copy()
+            return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::MicrosoftGraphCopy::CopyRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the move method.
-        def move()
-            return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::Move::MoveRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_move()
+            return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::MicrosoftGraphMove::MoveRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.mailFolder entity.
@@ -65,11 +65,12 @@ module MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item
         @url_template
         ## 
         ## Instantiates a new MailFolderItemRequestBuilder and sets the default values.
+        ## @param mailFolderId1 key: id of mailFolder
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, mail_folder_id1=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}{?%24select,%24expand}"

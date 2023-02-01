@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isDescending property value. True if the sort order is descending. Default is false, with the sort order as ascending. Optional.
-        ## @param value Value to set for the isDescending property.
+        ## @param value Value to set for the is_descending property.
         ## @return a void
         ## 
         def is_descending=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

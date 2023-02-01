@@ -67,7 +67,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enhancedBiometricsState property value. Possible values of a property
-        ## @param value Value to set for the enhancedBiometricsState property.
+        ## @param value Value to set for the enhanced_biometrics_state property.
         ## @return a void
         ## 
         def enhanced_biometrics_state=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pinExpirationInDays property value. Controls the period of time (in days) that a PIN can be used before the system requires the user to change it. This must be set between 0 and 730, inclusive. If set to 0, the user's PIN will never expire
-        ## @param value Value to set for the pinExpirationInDays property.
+        ## @param value Value to set for the pin_expiration_in_days property.
         ## @return a void
         ## 
         def pin_expiration_in_days=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pinLowercaseCharactersUsage property value. Windows Hello for Business pin usage options
-        ## @param value Value to set for the pinLowercaseCharactersUsage property.
+        ## @param value Value to set for the pin_lowercase_characters_usage property.
         ## @return a void
         ## 
         def pin_lowercase_characters_usage=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pinMaximumLength property value. Controls the maximum number of characters allowed for the Windows Hello for Business PIN. This value must be between 4 and 127, inclusive. This value must be greater than or equal to the value set for the minimum PIN.
-        ## @param value Value to set for the pinMaximumLength property.
+        ## @param value Value to set for the pin_maximum_length property.
         ## @return a void
         ## 
         def pin_maximum_length=(value)
@@ -147,7 +147,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pinMinimumLength property value. Controls the minimum number of characters required for the Windows Hello for Business PIN.  This value must be between 4 and 127, inclusive, and less than or equal to the value set for the maximum PIN.
-        ## @param value Value to set for the pinMinimumLength property.
+        ## @param value Value to set for the pin_minimum_length property.
         ## @return a void
         ## 
         def pin_minimum_length=(value)
@@ -162,7 +162,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pinPreviousBlockCount property value. Controls the ability to prevent users from using past PINs. This must be set between 0 and 50, inclusive, and the current PIN of the user is included in that count. If set to 0, previous PINs are not stored. PIN history is not preserved through a PIN reset.
-        ## @param value Value to set for the pinPreviousBlockCount property.
+        ## @param value Value to set for the pin_previous_block_count property.
         ## @return a void
         ## 
         def pin_previous_block_count=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pinSpecialCharactersUsage property value. Windows Hello for Business pin usage options
-        ## @param value Value to set for the pinSpecialCharactersUsage property.
+        ## @param value Value to set for the pin_special_characters_usage property.
         ## @return a void
         ## 
         def pin_special_characters_usage=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pinUppercaseCharactersUsage property value. Windows Hello for Business pin usage options
-        ## @param value Value to set for the pinUppercaseCharactersUsage property.
+        ## @param value Value to set for the pin_uppercase_characters_usage property.
         ## @return a void
         ## 
         def pin_uppercase_characters_usage=(value)
@@ -207,7 +207,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the remotePassportEnabled property value. Controls the use of Remote Windows Hello for Business. Remote Windows Hello for Business provides the ability for a portable, registered device to be usable as a companion for desktop authentication. The desktop must be Azure AD joined and the companion device must have a Windows Hello for Business PIN.
-        ## @param value Value to set for the remotePassportEnabled property.
+        ## @param value Value to set for the remote_passport_enabled property.
         ## @return a void
         ## 
         def remote_passport_enabled=(value)
@@ -222,7 +222,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityDeviceRequired property value. Controls whether to require a Trusted Platform Module (TPM) for provisioning Windows Hello for Business. A TPM provides an additional security benefit in that data stored on it cannot be used on other devices. If set to False, all devices can provision Windows Hello for Business even if there is not a usable TPM.
-        ## @param value Value to set for the securityDeviceRequired property.
+        ## @param value Value to set for the security_device_required property.
         ## @return a void
         ## 
         def security_device_required=(value)
@@ -273,7 +273,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the unlockWithBiometricsEnabled property value. Controls the use of biometric gestures, such as face and fingerprint, as an alternative to the Windows Hello for Business PIN.  If set to False, biometric gestures are not allowed. Users must still configure a PIN as a backup in case of failures.
-        ## @param value Value to set for the unlockWithBiometricsEnabled property.
+        ## @param value Value to set for the unlock_with_biometrics_enabled property.
         ## @return a void
         ## 
         def unlock_with_biometrics_enabled=(value)

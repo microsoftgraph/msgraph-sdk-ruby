@@ -22,11 +22,12 @@ module MicrosoftGraph::DeviceManagement::ComplianceManagementPartners::Item
         @url_template
         ## 
         ## Instantiates a new ComplianceManagementPartnerItemRequestBuilder and sets the default values.
+        ## @param complianceManagementPartnerId key: id of complianceManagementPartner
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, compliance_management_partner_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceManagement/complianceManagementPartners/{complianceManagementPartner%2Did}{?%24select,%24expand}"

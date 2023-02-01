@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.
-        ## @param value Value to set for the userIdentityType property.
+        ## @param value Value to set for the user_identity_type property.
         ## @return a void
         ## 
         def user_identity_type=(value)

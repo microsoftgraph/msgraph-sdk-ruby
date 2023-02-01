@@ -24,11 +24,12 @@ module MicrosoftGraph::Groups::Item::Calendar::CalendarPermissions::Item
         @url_template
         ## 
         ## Instantiates a new CalendarPermissionItemRequestBuilder and sets the default values.
+        ## @param calendarPermissionId key: id of calendarPermission
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, calendar_permission_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/groups/{group%2Did}/calendar/calendarPermissions/{calendarPermission%2Did}{?%24select}"

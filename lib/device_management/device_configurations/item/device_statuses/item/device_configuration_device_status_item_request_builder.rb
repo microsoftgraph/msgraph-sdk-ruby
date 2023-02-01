@@ -24,11 +24,12 @@ module MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item::DeviceStatu
         @url_template
         ## 
         ## Instantiates a new DeviceConfigurationDeviceStatusItemRequestBuilder and sets the default values.
+        ## @param deviceConfigurationDeviceStatusId key: id of deviceConfigurationDeviceStatus
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, device_configuration_device_status_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}/deviceStatuses/{deviceConfigurationDeviceStatus%2Did}{?%24select,%24expand}"

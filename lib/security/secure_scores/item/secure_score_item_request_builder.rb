@@ -24,9 +24,10 @@ module MicrosoftGraph::Security::SecureScores::Item
         ## Instantiates a new SecureScoreItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param secureScoreId key: id of secureScore
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, secure_score_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/security/secureScores/{secureScore%2Did}{?%24select,%24expand}"

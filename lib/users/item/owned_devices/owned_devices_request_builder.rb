@@ -4,10 +4,10 @@ require_relative '../../../models/directory_object_collection_response'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../users'
 require_relative '../item'
-require_relative './app_role_assignment/app_role_assignment_request_builder'
 require_relative './count/count_request_builder'
-require_relative './device/device_request_builder'
-require_relative './endpoint/endpoint_request_builder'
+require_relative './microsoft_graph_app_role_assignment/app_role_assignment_request_builder'
+require_relative './microsoft_graph_device/device_request_builder'
+require_relative './microsoft_graph_endpoint/endpoint_request_builder'
 require_relative './owned_devices'
 
 module MicrosoftGraph::Users::Item::OwnedDevices
@@ -16,24 +16,24 @@ module MicrosoftGraph::Users::Item::OwnedDevices
     class OwnedDevicesRequestBuilder
         
         ## 
-        # Casts the previous resource to appRoleAssignment.
-        def app_role_assignment()
-            return MicrosoftGraph::Users::Item::OwnedDevices::AppRoleAssignment::AppRoleAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Users::Item::OwnedDevices::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Casts the previous resource to appRoleAssignment.
+        def microsoft_graph_app_role_assignment()
+            return MicrosoftGraph::Users::Item::OwnedDevices::MicrosoftGraphAppRoleAssignment::AppRoleAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Casts the previous resource to device.
-        def device()
-            return MicrosoftGraph::Users::Item::OwnedDevices::Device::DeviceRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_device()
+            return MicrosoftGraph::Users::Item::OwnedDevices::MicrosoftGraphDevice::DeviceRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to endpoint.
-        def endpoint()
-            return MicrosoftGraph::Users::Item::OwnedDevices::Endpoint::EndpointRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_endpoint()
+            return MicrosoftGraph::Users::Item::OwnedDevices::MicrosoftGraphEndpoint::EndpointRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

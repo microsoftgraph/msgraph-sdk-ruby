@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the vpnConfigurationId property value. The VPN Configuration Id to apply for this app.
-        ## @param value Value to set for the vpnConfigurationId property.
+        ## @param value Value to set for the vpn_configuration_id property.
         ## @return a void
         ## 
         def vpn_configuration_id=(value)

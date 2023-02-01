@@ -39,11 +39,12 @@ module MicrosoftGraph::Localizations::Item
         @url_template
         ## 
         ## Instantiates a new OrganizationalBrandingLocalizationItemRequestBuilder and sets the default values.
+        ## @param organizationalBrandingLocalizationId key: id of organizationalBrandingLocalization
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, organizational_branding_localization_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/localizations/{organizationalBrandingLocalization%2Did}{?%24select,%24expand}"
@@ -52,7 +53,7 @@ module MicrosoftGraph::Localizations::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from localizations by key (id)
+        ## Delete entity from localizations
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -66,7 +67,7 @@ module MicrosoftGraph::Localizations::Item
             return @request_adapter.send_async(request_info, nil, error_mapping)
         end
         ## 
-        ## Get entity from localizations by key (id)
+        ## Get entity from localizations by key
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of organizational_branding_localization
         ## 
@@ -80,7 +81,7 @@ module MicrosoftGraph::Localizations::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OrganizationalBrandingLocalization.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update entity in localizations by key (id)
+        ## Update entity in localizations
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of organizational_branding_localization
@@ -96,7 +97,7 @@ module MicrosoftGraph::Localizations::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OrganizationalBrandingLocalization.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from localizations by key (id)
+        ## Delete entity from localizations
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -112,7 +113,7 @@ module MicrosoftGraph::Localizations::Item
             return request_info
         end
         ## 
-        ## Get entity from localizations by key (id)
+        ## Get entity from localizations by key
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -130,7 +131,7 @@ module MicrosoftGraph::Localizations::Item
             return request_info
         end
         ## 
-        ## Update entity in localizations by key (id)
+        ## Update entity in localizations
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
@@ -163,7 +164,7 @@ module MicrosoftGraph::Localizations::Item
         end
 
         ## 
-        # Get entity from localizations by key (id)
+        # Get entity from localizations by key
         class OrganizationalBrandingLocalizationItemRequestBuilderGetQueryParameters
             
             ## 

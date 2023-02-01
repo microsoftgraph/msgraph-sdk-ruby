@@ -24,11 +24,12 @@ module MicrosoftGraph::Solutions::BookingBusinesses::Item::CustomQuestions::Item
         @url_template
         ## 
         ## Instantiates a new BookingCustomQuestionItemRequestBuilder and sets the default values.
+        ## @param bookingCustomQuestionId key: id of bookingCustomQuestion
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, booking_custom_question_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/customQuestions/{bookingCustomQuestion%2Did}{?%24select,%24expand}"

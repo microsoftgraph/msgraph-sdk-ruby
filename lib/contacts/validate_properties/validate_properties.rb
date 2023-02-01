@@ -1,3 +1,0 @@
-require_relative 'validate_properties_post_request_body'
-module MicrosoftGraph::Contacts::ValidateProperties
-end

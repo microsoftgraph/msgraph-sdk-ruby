@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the itemId property value. The unique identifier for the item.
-        ## @param value Value to set for the itemId property.
+        ## @param value Value to set for the item_id property.
         ## @return a void
         ## 
         def item_id=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the versionId property value. The version ID of the item.
-        ## @param value Value to set for the versionId property.
+        ## @param value Value to set for the version_id property.
         ## @return a void
         ## 
         def version_id=(value)

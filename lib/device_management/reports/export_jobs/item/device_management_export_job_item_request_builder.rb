@@ -23,11 +23,12 @@ module MicrosoftGraph::DeviceManagement::Reports::ExportJobs::Item
         @url_template
         ## 
         ## Instantiates a new DeviceManagementExportJobItemRequestBuilder and sets the default values.
+        ## @param deviceManagementExportJobId key: id of deviceManagementExportJob
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, device_management_export_job_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceManagement/reports/exportJobs/{deviceManagementExportJob%2Did}{?%24select,%24expand}"

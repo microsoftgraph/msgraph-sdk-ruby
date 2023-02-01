@@ -97,7 +97,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the printer/printerShare.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isAcceptingJobs property value. Whether the printer/printerShare is currently accepting new print jobs.
-        ## @param value Value to set for the isAcceptingJobs property.
+        ## @param value Value to set for the is_accepting_jobs property.
         ## @return a void
         ## 
         def is_accepting_jobs=(value)

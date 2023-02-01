@@ -40,7 +40,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
-        ## @param value Value to set for the destinationRoutingReason property.
+        ## @param value Value to set for the destination_routing_reason property.
         ## @return a void
         ## 
         def destination_routing_reason=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the messageUri property value. The resource URI of the mail message for assessment.
-        ## @param value Value to set for the messageUri property.
+        ## @param value Value to set for the message_uri property.
         ## @return a void
         ## 
         def message_uri=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the recipientEmail property value. The mail recipient whose policies are used to assess the mail.
-        ## @param value Value to set for the recipientEmail property.
+        ## @param value Value to set for the recipient_email property.
         ## @return a void
         ## 
         def recipient_email=(value)

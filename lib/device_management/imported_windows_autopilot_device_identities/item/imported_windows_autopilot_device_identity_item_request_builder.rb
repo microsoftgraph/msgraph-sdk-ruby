@@ -22,11 +22,12 @@ module MicrosoftGraph::DeviceManagement::ImportedWindowsAutopilotDeviceIdentitie
         @url_template
         ## 
         ## Instantiates a new ImportedWindowsAutopilotDeviceIdentityItemRequestBuilder and sets the default values.
+        ## @param importedWindowsAutopilotDeviceIdentityId key: id of importedWindowsAutopilotDeviceIdentity
         ## @param pathParameters Path parameters for the request
         ## @param requestAdapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
-        def initialize(path_parameters, request_adapter)
+        def initialize(path_parameters, request_adapter, imported_windows_autopilot_device_identity_id=nil)
             raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
             raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
             @url_template = "{+baseurl}/deviceManagement/importedWindowsAutopilotDeviceIdentities/{importedWindowsAutopilotDeviceIdentity%2Did}{?%24select,%24expand}"

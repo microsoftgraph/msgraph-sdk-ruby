@@ -6,11 +6,11 @@ module MicrosoftGraph::Models
     class BookingCustomerInformation < MicrosoftGraph::Models::BookingCustomerInformationBase
         include MicrosoftKiotaAbstractions::Parsable
         ## 
-        # The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
-        @customer_id
-        ## 
         # It consists of the list of custom questions and answers given by the customer as part of the appointment
         @custom_question_answers
+        ## 
+        # The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
+        @customer_id
         ## 
         # The SMTP address of the bookingCustomer who is booking the appointment
         @email_address
@@ -47,21 +47,6 @@ module MicrosoftGraph::Models
             return BookingCustomerInformation.new
         end
         ## 
-        ## Gets the customerId property value. The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
-        ## @return a string
-        ## 
-        def customer_id
-            return @customer_id
-        end
-        ## 
-        ## Sets the customerId property value. The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
-        ## @param value Value to set for the customerId property.
-        ## @return a void
-        ## 
-        def customer_id=(value)
-            @customer_id = value
-        end
-        ## 
         ## Gets the customQuestionAnswers property value. It consists of the list of custom questions and answers given by the customer as part of the appointment
         ## @return a booking_question_answer
         ## 
@@ -70,11 +55,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the customQuestionAnswers property value. It consists of the list of custom questions and answers given by the customer as part of the appointment
-        ## @param value Value to set for the customQuestionAnswers property.
+        ## @param value Value to set for the custom_question_answers property.
         ## @return a void
         ## 
         def custom_question_answers=(value)
             @custom_question_answers = value
+        end
+        ## 
+        ## Gets the customerId property value. The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
+        ## @return a string
+        ## 
+        def customer_id
+            return @customer_id
+        end
+        ## 
+        ## Sets the customerId property value. The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
+        ## @param value Value to set for the customer_id property.
+        ## @return a void
+        ## 
+        def customer_id=(value)
+            @customer_id = value
         end
         ## 
         ## Gets the emailAddress property value. The SMTP address of the bookingCustomer who is booking the appointment
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the emailAddress property value. The SMTP address of the bookingCustomer who is booking the appointment
-        ## @param value Value to set for the emailAddress property.
+        ## @param value Value to set for the email_address property.
         ## @return a void
         ## 
         def email_address=(value)
@@ -97,8 +97,8 @@ module MicrosoftGraph::Models
         ## 
         def get_field_deserializers()
             return super.merge({
-                "customerId" => lambda {|n| @customer_id = n.get_string_value() },
                 "customQuestionAnswers" => lambda {|n| @custom_question_answers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingQuestionAnswer.create_from_discriminator_value(pn) }) },
+                "customerId" => lambda {|n| @customer_id = n.get_string_value() },
                 "emailAddress" => lambda {|n| @email_address = n.get_string_value() },
                 "location" => lambda {|n| @location = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Location.create_from_discriminator_value(pn) }) },
                 "name" => lambda {|n| @name = n.get_string_value() },
@@ -175,8 +175,8 @@ module MicrosoftGraph::Models
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
             super
-            writer.write_string_value("customerId", @customer_id)
             writer.write_collection_of_object_values("customQuestionAnswers", @custom_question_answers)
+            writer.write_string_value("customerId", @customer_id)
             writer.write_string_value("emailAddress", @email_address)
             writer.write_object_value("location", @location)
             writer.write_string_value("name", @name)
@@ -193,7 +193,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the timeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
-        ## @param value Value to set for the timeZone property.
+        ## @param value Value to set for the time_zone property.
         ## @return a void
         ## 
         def time_zone=(value)

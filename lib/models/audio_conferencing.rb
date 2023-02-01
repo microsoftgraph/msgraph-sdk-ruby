@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the conferenceId property value. The conference id of the online meeting.
-        ## @param value Value to set for the conferenceId property.
+        ## @param value Value to set for the conference_id property.
         ## @return a void
         ## 
         def conference_id=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dialinUrl property value. A URL to the externally-accessible web page that contains dial-in information.
-        ## @param value Value to set for the dialinUrl property.
+        ## @param value Value to set for the dialin_url property.
         ## @return a void
         ## 
         def dialin_url=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tollFreeNumber property value. The tollFreeNumber property
-        ## @param value Value to set for the tollFreeNumber property.
+        ## @param value Value to set for the toll_free_number property.
         ## @return a void
         ## 
         def toll_free_number=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tollFreeNumbers property value. List of toll-free numbers that are displayed in the meeting invite.
-        ## @param value Value to set for the tollFreeNumbers property.
+        ## @param value Value to set for the toll_free_numbers property.
         ## @return a void
         ## 
         def toll_free_numbers=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tollNumber property value. The tollNumber property
-        ## @param value Value to set for the tollNumber property.
+        ## @param value Value to set for the toll_number property.
         ## @return a void
         ## 
         def toll_number=(value)
@@ -190,7 +190,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tollNumbers property value. List of toll numbers that are displayed in the meeting invite.
-        ## @param value Value to set for the tollNumbers property.
+        ## @param value Value to set for the toll_numbers property.
         ## @return a void
         ## 
         def toll_numbers=(value)

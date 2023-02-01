@@ -71,7 +71,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the answerInputType property value. The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
-        ## @param value Value to set for the answerInputType property.
+        ## @param value Value to set for the answer_input_type property.
         ## @return a void
         ## 
         def answer_input_type=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the answerOptions property value. In case the answerInputType is radioButton, this will consists of a list of possible answer values.
-        ## @param value Value to set for the answerOptions property.
+        ## @param value Value to set for the answer_options property.
         ## @return a void
         ## 
         def answer_options=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isRequired property value. Indicates whether it is mandatory to answer the custom question.
-        ## @param value Value to set for the isRequired property.
+        ## @param value Value to set for the is_required property.
         ## @return a void
         ## 
         def is_required=(value)
@@ -148,7 +148,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -178,7 +178,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the questionId property value. The ID of the custom question.
-        ## @param value Value to set for the questionId property.
+        ## @param value Value to set for the question_id property.
         ## @return a void
         ## 
         def question_id=(value)
@@ -193,7 +193,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the selectedOptions property value. The answers selected by the user.
-        ## @param value Value to set for the selectedOptions property.
+        ## @param value Value to set for the selected_options property.
         ## @return a void
         ## 
         def selected_options=(value)

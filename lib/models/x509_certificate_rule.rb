@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the x509CertificateAuthenticationMode property value. The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.
-        ## @param value Value to set for the x509CertificateAuthenticationMode property.
+        ## @param value Value to set for the x509_certificate_authentication_mode property.
         ## @return a void
         ## 
         def x509_certificate_authentication_mode=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the x509CertificateRuleType property value. The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue. Required.
-        ## @param value Value to set for the x509CertificateRuleType property.
+        ## @param value Value to set for the x509_certificate_rule_type property.
         ## @return a void
         ## 
         def x509_certificate_rule_type=(value)

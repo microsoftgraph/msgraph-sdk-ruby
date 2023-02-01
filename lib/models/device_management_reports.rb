@@ -33,7 +33,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the exportJobs property value. Entity representing a job to export a report
-        ## @param value Value to set for the exportJobs property.
+        ## @param value Value to set for the export_jobs property.
         ## @return a void
         ## 
         def export_jobs=(value)
