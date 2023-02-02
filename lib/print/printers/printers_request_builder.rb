@@ -5,7 +5,7 @@ require_relative '../../models/printer'
 require_relative '../../models/printer_collection_response'
 require_relative '../print'
 require_relative './count/count_request_builder'
-require_relative './create/create_request_builder'
+require_relative './microsoft_graph_create/create_request_builder'
 require_relative './printers'
 
 module MicrosoftGraph::Print::Printers
@@ -20,8 +20,8 @@ module MicrosoftGraph::Print::Printers
         end
         ## 
         # Provides operations to call the create method.
-        def create()
-            return MicrosoftGraph::Print::Printers::Create::CreateRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_create()
+            return MicrosoftGraph::Print::Printers::MicrosoftGraphCreate::CreateRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

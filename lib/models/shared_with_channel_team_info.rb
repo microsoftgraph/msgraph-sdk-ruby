@@ -20,7 +20,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowedMembers property value. A collection of team members who have access to the shared channel.
-        ## @param value Value to set for the allowedMembers property.
+        ## @param value Value to set for the allowed_members property.
         ## @return a void
         ## 
         def allowed_members=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isHostTeam property value. Indicates whether the team is the host of the channel.
-        ## @param value Value to set for the isHostTeam property.
+        ## @param value Value to set for the is_host_team property.
         ## @return a void
         ## 
         def is_host_team=(value)

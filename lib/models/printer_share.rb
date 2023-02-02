@@ -30,7 +30,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowAllUsers property value. If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
-        ## @param value Value to set for the allowAllUsers property.
+        ## @param value Value to set for the allow_all_users property.
         ## @return a void
         ## 
         def allow_all_users=(value)
@@ -45,7 +45,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowedGroups property value. The groups whose users have access to print using the printer.
-        ## @param value Value to set for the allowedGroups property.
+        ## @param value Value to set for the allowed_groups property.
         ## @return a void
         ## 
         def allowed_groups=(value)
@@ -60,7 +60,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowedUsers property value. The users who have access to print using the printer.
-        ## @param value Value to set for the allowedUsers property.
+        ## @param value Value to set for the allowed_users property.
         ## @return a void
         ## 
         def allowed_users=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The DateTimeOffset when the printer share was created. Read-only.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)

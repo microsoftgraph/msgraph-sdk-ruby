@@ -36,7 +36,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the configurationVersion property value. Version of the policy for that overview
-        ## @param value Value to set for the configurationVersion property.
+        ## @param value Value to set for the configuration_version property.
         ## @return a void
         ## 
         def configuration_version=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the errorCount property value. Number of error devices
-        ## @param value Value to set for the errorCount property.
+        ## @param value Value to set for the error_count property.
         ## @return a void
         ## 
         def error_count=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the failedCount property value. Number of failed devices
-        ## @param value Value to set for the failedCount property.
+        ## @param value Value to set for the failed_count property.
         ## @return a void
         ## 
         def failed_count=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastUpdateDateTime property value. Last update time
-        ## @param value Value to set for the lastUpdateDateTime property.
+        ## @param value Value to set for the last_update_date_time property.
         ## @return a void
         ## 
         def last_update_date_time=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notApplicableCount property value. Number of not applicable devices
-        ## @param value Value to set for the notApplicableCount property.
+        ## @param value Value to set for the not_applicable_count property.
         ## @return a void
         ## 
         def not_applicable_count=(value)
@@ -142,7 +142,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pendingCount property value. Number of pending devices
-        ## @param value Value to set for the pendingCount property.
+        ## @param value Value to set for the pending_count property.
         ## @return a void
         ## 
         def pending_count=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the successCount property value. Number of succeeded devices
-        ## @param value Value to set for the successCount property.
+        ## @param value Value to set for the success_count property.
         ## @return a void
         ## 
         def success_count=(value)

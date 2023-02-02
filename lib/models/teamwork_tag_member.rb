@@ -39,7 +39,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The member's display name.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tenantId property value. The ID of the tenant that the tag member is a part of.
-        ## @param value Value to set for the tenantId property.
+        ## @param value Value to set for the tenant_id property.
         ## @return a void
         ## 
         def tenant_id=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userId property value. The user ID of the member.
-        ## @param value Value to set for the userId property.
+        ## @param value Value to set for the user_id property.
         ## @return a void
         ## 
         def user_id=(value)

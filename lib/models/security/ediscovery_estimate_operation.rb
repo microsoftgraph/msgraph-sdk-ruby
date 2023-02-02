@@ -67,7 +67,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the indexedItemCount property value. The estimated count of items for the search that matched the content query.
-        ## @param value Value to set for the indexedItemCount property.
+        ## @param value Value to set for the indexed_item_count property.
         ## @return a void
         ## 
         def indexed_item_count=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the indexedItemsSize property value. The estimated size of items for the search that matched the content query.
-        ## @param value Value to set for the indexedItemsSize property.
+        ## @param value Value to set for the indexed_items_size property.
         ## @return a void
         ## 
         def indexed_items_size=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the mailboxCount property value. The number of mailboxes that had search hits.
-        ## @param value Value to set for the mailboxCount property.
+        ## @param value Value to set for the mailbox_count property.
         ## @return a void
         ## 
         def mailbox_count=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the siteCount property value. The number of mailboxes that had search hits.
-        ## @param value Value to set for the siteCount property.
+        ## @param value Value to set for the site_count property.
         ## @return a void
         ## 
         def site_count=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the unindexedItemCount property value. The estimated count of unindexed items for the collection.
-        ## @param value Value to set for the unindexedItemCount property.
+        ## @param value Value to set for the unindexed_item_count property.
         ## @return a void
         ## 
         def unindexed_item_count=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the unindexedItemsSize property value. The estimated size of unindexed items for the collection.
-        ## @param value Value to set for the unindexedItemsSize property.
+        ## @param value Value to set for the unindexed_items_size property.
         ## @return a void
         ## 
         def unindexed_items_size=(value)

@@ -60,7 +60,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Indicates the property name of the target attribute that was changed.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the newValue property value. Indicates the updated value for the propery.
-        ## @param value Value to set for the newValue property.
+        ## @param value Value to set for the new_value property.
         ## @return a void
         ## 
         def new_value=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the oldValue property value. Indicates the previous value (before the update) for the property.
-        ## @param value Value to set for the oldValue property.
+        ## @param value Value to set for the old_value property.
         ## @return a void
         ## 
         def old_value=(value)

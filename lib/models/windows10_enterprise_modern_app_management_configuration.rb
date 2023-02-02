@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the uninstallBuiltInApps property value. Indicates whether or not to uninstall a fixed list of built-in Windows apps.
-        ## @param value Value to set for the uninstallBuiltInApps property.
+        ## @param value Value to set for the uninstall_built_in_apps property.
         ## @return a void
         ## 
         def uninstall_built_in_apps=(value)

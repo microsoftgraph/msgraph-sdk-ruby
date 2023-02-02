@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the inactiveDuration property value. Defines the duration of inactivity. Inactivity is based on the last sign in date of the user compared to the access review instance's start date. If this property is not specified, it's assigned the default value PT0S.
-        ## @param value Value to set for the inactiveDuration property.
+        ## @param value Value to set for the inactive_duration property.
         ## @return a void
         ## 
         def inactive_duration=(value)

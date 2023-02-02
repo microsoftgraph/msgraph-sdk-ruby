@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the attackSimulationUser property value. The user in an attack simulation and training campaign.
-        ## @param value Value to set for the attackSimulationUser property.
+        ## @param value Value to set for the attack_simulation_user property.
         ## @return a void
         ## 
         def attack_simulation_user=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the repeatOffenceCount property value. Number of repeat offences of the user in attack simulation and training campaigns.
-        ## @param value Value to set for the repeatOffenceCount property.
+        ## @param value Value to set for the repeat_offence_count property.
         ## @return a void
         ## 
         def repeat_offence_count=(value)

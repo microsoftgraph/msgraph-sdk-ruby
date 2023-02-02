@@ -7,9 +7,9 @@ require_relative '../../../calls'
 require_relative '../../item'
 require_relative '../participants'
 require_relative './item'
-require_relative './mute/mute_request_builder'
-require_relative './start_hold_music/start_hold_music_request_builder'
-require_relative './stop_hold_music/stop_hold_music_request_builder'
+require_relative './microsoft_graph_mute/mute_request_builder'
+require_relative './microsoft_graph_start_hold_music/start_hold_music_request_builder'
+require_relative './microsoft_graph_stop_hold_music/stop_hold_music_request_builder'
 
 module MicrosoftGraph::Communications::Calls::Item::Participants::Item
     ## 
@@ -18,8 +18,18 @@ module MicrosoftGraph::Communications::Calls::Item::Participants::Item
         
         ## 
         # Provides operations to call the mute method.
-        def mute()
-            return MicrosoftGraph::Communications::Calls::Item::Participants::Item::Mute::MuteRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_mute()
+            return MicrosoftGraph::Communications::Calls::Item::Participants::Item::MicrosoftGraphMute::MuteRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the startHoldMusic method.
+        def microsoft_graph_start_hold_music()
+            return MicrosoftGraph::Communications::Calls::Item::Participants::Item::MicrosoftGraphStartHoldMusic::StartHoldMusicRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the stopHoldMusic method.
+        def microsoft_graph_stop_hold_music()
+            return MicrosoftGraph::Communications::Calls::Item::Participants::Item::MicrosoftGraphStopHoldMusic::StopHoldMusicRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -27,16 +37,6 @@ module MicrosoftGraph::Communications::Calls::Item::Participants::Item
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the startHoldMusic method.
-        def start_hold_music()
-            return MicrosoftGraph::Communications::Calls::Item::Participants::Item::StartHoldMusic::StartHoldMusicRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the stopHoldMusic method.
-        def stop_hold_music()
-            return MicrosoftGraph::Communications::Calls::Item::Participants::Item::StopHoldMusic::StopHoldMusicRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template

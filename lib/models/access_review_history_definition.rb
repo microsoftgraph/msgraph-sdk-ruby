@@ -52,7 +52,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdBy property value. The createdBy property
-        ## @param value Value to set for the createdBy property.
+        ## @param value Value to set for the created_by property.
         ## @return a void
         ## 
         def created_by=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. Timestamp when the access review definition was created.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Name for the access review history data collection. Required.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -154,7 +154,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the reviewHistoryPeriodEndDateTime property value. A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
-        ## @param value Value to set for the reviewHistoryPeriodEndDateTime property.
+        ## @param value Value to set for the review_history_period_end_date_time property.
         ## @return a void
         ## 
         def review_history_period_end_date_time=(value)
@@ -169,7 +169,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the reviewHistoryPeriodStartDateTime property value. A timestamp. Reviews starting on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.
-        ## @param value Value to set for the reviewHistoryPeriodStartDateTime property.
+        ## @param value Value to set for the review_history_period_start_date_time property.
         ## @return a void
         ## 
         def review_history_period_start_date_time=(value)
@@ -184,7 +184,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the scheduleSettings property value. The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined. Not supported yet.
-        ## @param value Value to set for the scheduleSettings property.
+        ## @param value Value to set for the schedule_settings property.
         ## @return a void
         ## 
         def schedule_settings=(value)

@@ -15,15 +15,15 @@ require_relative './drives/drives_request_builder'
 require_relative './drives/item/drive_item_request_builder'
 require_relative './external_columns/external_columns_request_builder'
 require_relative './external_columns/item/column_definition_item_request_builder'
-require_relative './get_activities_by_interval/get_activities_by_interval_request_builder'
-require_relative './get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval/dab1c2feb9ecf2d349721478e4ff8fe9c46b97a0c44110851b2b17a08d22383e'
-require_relative './get_applicable_content_types_for_list_with_list_id/get_applicable_content_types_for_list_with_list_id_request_builder'
-require_relative './get_by_path_with_path/get_by_path_with_path_request_builder'
 require_relative './item'
 require_relative './items/item/base_item_item_request_builder'
 require_relative './items/items_request_builder'
 require_relative './lists/item/list_item_request_builder'
 require_relative './lists/lists_request_builder'
+require_relative './microsoft_graph_get_activities_by_interval/get_activities_by_interval_request_builder'
+require_relative './microsoft_graph_get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval/dab1c2feb9ecf2d349721478e4ff8fe9c46b97a0c44110851b2b17a08d22383e'
+require_relative './microsoft_graph_get_applicable_content_types_for_list_with_list_id/get_applicable_content_types_for_list_with_list_id_request_builder'
+require_relative './microsoft_graph_get_by_path_with_path/get_by_path_with_path_request_builder'
 require_relative './onenote/onenote_request_builder'
 require_relative './operations/item/rich_long_running_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
@@ -79,6 +79,11 @@ module MicrosoftGraph::Groups::Item::Sites::Item
         # Provides operations to manage the lists property of the microsoft.graph.site entity.
         def lists()
             return MicrosoftGraph::Groups::Item::Sites::Item::Lists::ListsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getActivitiesByInterval method.
+        def microsoft_graph_get_activities_by_interval()
+            return MicrosoftGraph::Groups::Item::Sites::Item::MicrosoftGraphGetActivitiesByInterval::GetActivitiesByIntervalRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the onenote property of the microsoft.graph.site entity.
@@ -192,44 +197,6 @@ module MicrosoftGraph::Groups::Item::Sites::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Site.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Provides operations to call the getActivitiesByInterval method.
-        ## @return a get_activities_by_interval_request_builder
-        ## 
-        def get_activities_by_interval()
-            return GetActivitiesByIntervalRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the getActivitiesByInterval method.
-        ## @param endDateTime Usage: endDateTime='{endDateTime}'
-        ## @param interval Usage: interval='{interval}'
-        ## @param startDateTime Usage: startDateTime='{startDateTime}'
-        ## @return a get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval_request_builder
-        ## 
-        def get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval(end_date_time, interval, start_date_time)
-            raise StandardError, 'end_date_time cannot be null' if end_date_time.nil?
-            raise StandardError, 'interval cannot be null' if interval.nil?
-            raise StandardError, 'start_date_time cannot be null' if start_date_time.nil?
-            return GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder.new(@path_parameters, @request_adapter, endDateTime, interval, startDateTime)
-        end
-        ## 
-        ## Provides operations to call the getApplicableContentTypesForList method.
-        ## @param listId Usage: listId='{listId}'
-        ## @return a get_applicable_content_types_for_list_with_list_id_request_builder
-        ## 
-        def get_applicable_content_types_for_list_with_list_id(list_id)
-            raise StandardError, 'list_id cannot be null' if list_id.nil?
-            return GetApplicableContentTypesForListWithListIdRequestBuilder.new(@path_parameters, @request_adapter, listId)
-        end
-        ## 
-        ## Provides operations to call the getByPath method.
-        ## @param path Usage: path='{path}'
-        ## @return a get_by_path_with_path_request_builder
-        ## 
-        def get_by_path_with_path(path)
-            raise StandardError, 'path cannot be null' if path.nil?
-            return GetByPathWithPathRequestBuilder.new(@path_parameters, @request_adapter, path)
-        end
-        ## 
         ## Provides operations to manage the items property of the microsoft.graph.site entity.
         ## @param id Unique identifier of the item
         ## @return a base_item_item_request_builder
@@ -250,6 +217,37 @@ module MicrosoftGraph::Groups::Item::Sites::Item
             url_tpl_params = @path_parameters.clone
             url_tpl_params["list%2Did"] = id
             return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::ListItemRequestBuilder.new(url_tpl_params, @request_adapter)
+        end
+        ## 
+        ## Provides operations to call the getActivitiesByInterval method.
+        ## @param endDateTime Usage: endDateTime='{endDateTime}'
+        ## @param interval Usage: interval='{interval}'
+        ## @param startDateTime Usage: startDateTime='{startDateTime}'
+        ## @return a get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval_request_builder
+        ## 
+        def microsoft_graph_get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval(end_date_time, interval, start_date_time)
+            raise StandardError, 'end_date_time cannot be null' if end_date_time.nil?
+            raise StandardError, 'interval cannot be null' if interval.nil?
+            raise StandardError, 'start_date_time cannot be null' if start_date_time.nil?
+            return GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder.new(@path_parameters, @request_adapter, endDateTime, interval, startDateTime)
+        end
+        ## 
+        ## Provides operations to call the getApplicableContentTypesForList method.
+        ## @param listId Usage: listId='{listId}'
+        ## @return a get_applicable_content_types_for_list_with_list_id_request_builder
+        ## 
+        def microsoft_graph_get_applicable_content_types_for_list_with_list_id(list_id)
+            raise StandardError, 'list_id cannot be null' if list_id.nil?
+            return GetApplicableContentTypesForListWithListIdRequestBuilder.new(@path_parameters, @request_adapter, listId)
+        end
+        ## 
+        ## Provides operations to call the getByPath method.
+        ## @param path Usage: path='{path}'
+        ## @return a get_by_path_with_path_request_builder
+        ## 
+        def microsoft_graph_get_by_path_with_path(path)
+            raise StandardError, 'path cannot be null' if path.nil?
+            return GetByPathWithPathRequestBuilder.new(@path_parameters, @request_adapter, path)
         end
         ## 
         ## Provides operations to manage the operations property of the microsoft.graph.site entity.

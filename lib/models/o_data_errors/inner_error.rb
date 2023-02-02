@@ -46,7 +46,7 @@ module MicrosoftGraph::Models::ODataErrors
         end
         ## 
         ## Sets the client-request-id property value. Client request Id as sent by the client application.
-        ## @param value Value to set for the clientRequestId property.
+        ## @param value Value to set for the client_request_id property.
         ## @return a void
         ## 
         def client_request_id=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph::Models::ODataErrors
         end
         ## 
         ## Sets the date property value. Date when the error occured.
-        ## @param value Value to set for the Date property.
+        ## @param value Value to set for the date property.
         ## @return a void
         ## 
         def date=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph::Models::ODataErrors
         def get_field_deserializers()
             return {
                 "client-request-id" => lambda {|n| @client_request_id = n.get_string_value() },
-                "date" => lambda {|n| @date = n.get_date_time_value() },
+                "Date" => lambda {|n| @date = n.get_date_time_value() },
                 "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 "request-id" => lambda {|n| @request_id = n.get_string_value() },
             }
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models::ODataErrors
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models::ODataErrors
         end
         ## 
         ## Sets the request-id property value. Request Id as tracked internally by the service
-        ## @param value Value to set for the requestId property.
+        ## @param value Value to set for the request_id property.
         ## @return a void
         ## 
         def request_id=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph::Models::ODataErrors
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
             writer.write_string_value("client-request-id", @client_request_id)
-            writer.write_date_time_value("date", @date)
+            writer.write_date_time_value("Date", @date)
             writer.write_string_value("@odata.type", @odata_type)
             writer.write_string_value("request-id", @request_id)
             writer.write_additional_data(@additional_data)

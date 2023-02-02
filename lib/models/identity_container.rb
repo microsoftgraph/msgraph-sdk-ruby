@@ -29,7 +29,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the apiConnectors property value. Represents entry point for API connectors.
-        ## @param value Value to set for the apiConnectors property.
+        ## @param value Value to set for the api_connectors property.
         ## @return a void
         ## 
         def api_connectors=(value)
@@ -44,7 +44,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the b2xUserFlows property value. Represents entry point for B2X/self-service sign-up identity userflows.
-        ## @param value Value to set for the b2xUserFlows property.
+        ## @param value Value to set for the b2x_user_flows property.
         ## @return a void
         ## 
         def b2x_user_flows=(value)
@@ -59,7 +59,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the conditionalAccess property value. the entry point for the Conditional Access (CA) object model.
-        ## @param value Value to set for the conditionalAccess property.
+        ## @param value Value to set for the conditional_access property.
         ## @return a void
         ## 
         def conditional_access=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the identityProviders property value. The identityProviders property
-        ## @param value Value to set for the identityProviders property.
+        ## @param value Value to set for the identity_providers property.
         ## @return a void
         ## 
         def identity_providers=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
-        ## @param value Value to set for the userFlowAttributes property.
+        ## @param value Value to set for the user_flow_attributes property.
         ## @return a void
         ## 
         def user_flow_attributes=(value)

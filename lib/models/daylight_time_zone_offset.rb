@@ -34,7 +34,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the daylightBias property value. The time offset from Coordinated Universal Time (UTC) for daylight saving time. This value is in minutes.
-        ## @param value Value to set for the daylightBias property.
+        ## @param value Value to set for the daylight_bias property.
         ## @return a void
         ## 
         def daylight_bias=(value)

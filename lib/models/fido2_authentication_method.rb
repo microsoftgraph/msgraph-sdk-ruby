@@ -33,7 +33,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the aaGuid property value. Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.
-        ## @param value Value to set for the aaGuid property.
+        ## @param value Value to set for the aa_guid property.
         ## @return a void
         ## 
         def aa_guid=(value)
@@ -48,7 +48,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the attestationCertificates property value. The attestation certificate(s) attached to this security key.
-        ## @param value Value to set for the attestationCertificates property.
+        ## @param value Value to set for the attestation_certificates property.
         ## @return a void
         ## 
         def attestation_certificates=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the attestationLevel property value. The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.
-        ## @param value Value to set for the attestationLevel property.
+        ## @param value Value to set for the attestation_level property.
         ## @return a void
         ## 
         def attestation_level=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The timestamp when this key was registered to the user.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name of the key as given by the user.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)

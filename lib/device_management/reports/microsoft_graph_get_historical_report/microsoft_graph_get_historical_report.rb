@@ -1,0 +1,3 @@
+require_relative 'get_historical_report_post_request_body'
+module MicrosoftGraph::DeviceManagement::Reports::MicrosoftGraphGetHistoricalReport
+end

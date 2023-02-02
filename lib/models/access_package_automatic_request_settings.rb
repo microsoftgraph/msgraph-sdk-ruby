@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the gracePeriodBeforeAccessRemoval property value. The gracePeriodBeforeAccessRemoval property
-        ## @param value Value to set for the gracePeriodBeforeAccessRemoval property.
+        ## @param value Value to set for the grace_period_before_access_removal property.
         ## @return a void
         ## 
         def grace_period_before_access_removal=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the removeAccessWhenTargetLeavesAllowedTargets property value. The removeAccessWhenTargetLeavesAllowedTargets property
-        ## @param value Value to set for the removeAccessWhenTargetLeavesAllowedTargets property.
+        ## @param value Value to set for the remove_access_when_target_leaves_allowed_targets property.
         ## @return a void
         ## 
         def remove_access_when_target_leaves_allowed_targets=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the requestAccessForAllowedTargets property value. If set to true, automatic assignments will be created for targets in the allowed target scope.
-        ## @param value Value to set for the requestAccessForAllowedTargets property.
+        ## @param value Value to set for the request_access_for_allowed_targets property.
         ## @return a void
         ## 
         def request_access_for_allowed_targets=(value)

@@ -56,7 +56,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
-        ## @param value Value to set for the b2bCollaborationInbound property.
+        ## @param value Value to set for the b2b_collaboration_inbound property.
         ## @return a void
         ## 
         def b2b_collaboration_inbound=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the b2bCollaborationOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
-        ## @param value Value to set for the b2bCollaborationOutbound property.
+        ## @param value Value to set for the b2b_collaboration_outbound property.
         ## @return a void
         ## 
         def b2b_collaboration_outbound=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the b2bDirectConnectInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure B2B direct connect.
-        ## @param value Value to set for the b2bDirectConnectInbound property.
+        ## @param value Value to set for the b2b_direct_connect_inbound property.
         ## @return a void
         ## 
         def b2b_direct_connect_inbound=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the b2bDirectConnectOutbound property value. Defines your partner-specific configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
-        ## @param value Value to set for the b2bDirectConnectOutbound property.
+        ## @param value Value to set for the b2b_direct_connect_outbound property.
         ## @return a void
         ## 
         def b2b_direct_connect_outbound=(value)
@@ -148,7 +148,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the inboundTrust property value. Determines the partner-specific configuration for trusting other Conditional Access claims from external Azure AD organizations.
-        ## @param value Value to set for the inboundTrust property.
+        ## @param value Value to set for the inbound_trust property.
         ## @return a void
         ## 
         def inbound_trust=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isServiceProvider property value. Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
-        ## @param value Value to set for the isServiceProvider property.
+        ## @param value Value to set for the is_service_provider property.
         ## @return a void
         ## 
         def is_service_provider=(value)
@@ -178,7 +178,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tenantId property value. The tenant identifier for the partner Azure AD organization. Read-only. Key.
-        ## @param value Value to set for the tenantId property.
+        ## @param value Value to set for the tenant_id property.
         ## @return a void
         ## 
         def tenant_id=(value)

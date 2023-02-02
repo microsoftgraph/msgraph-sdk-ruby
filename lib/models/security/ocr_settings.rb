@@ -73,7 +73,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the isEnabled property value. Indicates whether or not OCR is enabled for the case.
-        ## @param value Value to set for the isEnabled property.
+        ## @param value Value to set for the is_enabled property.
         ## @return a void
         ## 
         def is_enabled=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the maxImageSize property value. Maximum image size that will be processed in KB).
-        ## @param value Value to set for the maxImageSize property.
+        ## @param value Value to set for the max_image_size property.
         ## @return a void
         ## 
         def max_image_size=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

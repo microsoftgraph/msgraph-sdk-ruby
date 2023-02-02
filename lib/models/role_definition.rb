@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Display Name of the Role definition.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isBuiltIn property value. Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.
-        ## @param value Value to set for the isBuiltIn property.
+        ## @param value Value to set for the is_built_in property.
         ## @return a void
         ## 
         def is_built_in=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleAssignments property value. List of Role assignments for this role definition.
-        ## @param value Value to set for the roleAssignments property.
+        ## @param value Value to set for the role_assignments property.
         ## @return a void
         ## 
         def role_assignments=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the rolePermissions property value. List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.
-        ## @param value Value to set for the rolePermissions property.
+        ## @param value Value to set for the role_permissions property.
         ## @return a void
         ## 
         def role_permissions=(value)

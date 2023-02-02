@@ -45,7 +45,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the coverImageItemId property value. Unique identifier of the [driveItem][] that is the cover of the album.
-        ## @param value Value to set for the coverImageItemId property.
+        ## @param value Value to set for the cover_image_item_id property.
         ## @return a void
         ## 
         def cover_image_item_id=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

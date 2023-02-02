@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceId property value. Optional. Used to uniquely identity the resource. If passed in, the prompt uri will be cached against this resourceId as a key.
-        ## @param value Value to set for the resourceId property.
+        ## @param value Value to set for the resource_id property.
         ## @return a void
         ## 
         def resource_id=(value)

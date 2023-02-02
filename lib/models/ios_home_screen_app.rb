@@ -17,7 +17,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bundleID property value. BundleID of the app if isWebClip is false or the URL of a web clip if isWebClip is true.
-        ## @param value Value to set for the bundleID property.
+        ## @param value Value to set for the bundle_i_d property.
         ## @return a void
         ## 
         def bundle_i_d=(value)

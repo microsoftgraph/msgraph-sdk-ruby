@@ -44,7 +44,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the alteredHighlightedQueryString property value. Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is: /ue000, /ue001.
-        ## @param value Value to set for the alteredHighlightedQueryString property.
+        ## @param value Value to set for the altered_highlighted_query_string property.
         ## @return a void
         ## 
         def altered_highlighted_query_string=(value)
@@ -59,7 +59,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the alteredQueryString property value. Defines the altered query string with spelling correction.
-        ## @param value Value to set for the alteredQueryString property.
+        ## @param value Value to set for the altered_query_string property.
         ## @return a void
         ## 
         def altered_query_string=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the alteredQueryTokens property value. Represents changed segments related to an original user query.
-        ## @param value Value to set for the alteredQueryTokens property.
+        ## @param value Value to set for the altered_query_tokens property.
         ## @return a void
         ## 
         def altered_query_tokens=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

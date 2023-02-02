@@ -3,8 +3,8 @@ require_relative '../../microsoft_graph'
 require_relative '../../models/application_template'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../application_templates'
-require_relative './instantiate/instantiate_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_instantiate/instantiate_request_builder'
 
 module MicrosoftGraph::ApplicationTemplates::Item
     ## 
@@ -13,8 +13,8 @@ module MicrosoftGraph::ApplicationTemplates::Item
         
         ## 
         # Provides operations to call the instantiate method.
-        def instantiate()
-            return MicrosoftGraph::ApplicationTemplates::Item::Instantiate::InstantiateRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_instantiate()
+            return MicrosoftGraph::ApplicationTemplates::Item::MicrosoftGraphInstantiate::InstantiateRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -40,7 +40,7 @@ module MicrosoftGraph::ApplicationTemplates::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from applicationTemplates by key (id)
+        ## Delete entity from applicationTemplates
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -68,7 +68,7 @@ module MicrosoftGraph::ApplicationTemplates::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ApplicationTemplate.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update entity in applicationTemplates by key (id)
+        ## Update entity in applicationTemplates
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of application_template
@@ -84,7 +84,7 @@ module MicrosoftGraph::ApplicationTemplates::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ApplicationTemplate.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from applicationTemplates by key (id)
+        ## Delete entity from applicationTemplates
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -118,7 +118,7 @@ module MicrosoftGraph::ApplicationTemplates::Item
             return request_info
         end
         ## 
-        ## Update entity in applicationTemplates by key (id)
+        ## Update entity in applicationTemplates
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

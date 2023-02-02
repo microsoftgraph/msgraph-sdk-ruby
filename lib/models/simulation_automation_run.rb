@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the endDateTime property value. Date and time when the run ends in an attack simulation automation.
-        ## @param value Value to set for the endDateTime property.
+        ## @param value Value to set for the end_date_time property.
         ## @return a void
         ## 
         def end_date_time=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the simulationId property value. Unique identifier for the attack simulation campaign initiated in the attack simulation automation run.
-        ## @param value Value to set for the simulationId property.
+        ## @param value Value to set for the simulation_id property.
         ## @return a void
         ## 
         def simulation_id=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the startDateTime property value. Date and time when the run starts in an attack simulation automation.
-        ## @param value Value to set for the startDateTime property.
+        ## @param value Value to set for the start_date_time property.
         ## @return a void
         ## 
         def start_date_time=(value)

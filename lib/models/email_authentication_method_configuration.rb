@@ -20,7 +20,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowExternalIdToUseEmailOtp property value. Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who did not use public preview will automatically have email OTP enabled beginning in October 2021.
-        ## @param value Value to set for the allowExternalIdToUseEmailOtp property.
+        ## @param value Value to set for the allow_external_id_to_use_email_otp property.
         ## @return a void
         ## 
         def allow_external_id_to_use_email_otp=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
-        ## @param value Value to set for the includeTargets property.
+        ## @param value Value to set for the include_targets property.
         ## @return a void
         ## 
         def include_targets=(value)

@@ -47,7 +47,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lowerAddress property value. Lower address.
-        ## @param value Value to set for the lowerAddress property.
+        ## @param value Value to set for the lower_address property.
         ## @return a void
         ## 
         def lower_address=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the upperAddress property value. Upper address.
-        ## @param value Value to set for the upperAddress property.
+        ## @param value Value to set for the upper_address property.
         ## @return a void
         ## 
         def upper_address=(value)

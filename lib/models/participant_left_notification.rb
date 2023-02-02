@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the participantId property value. ID of the participant under the policy who has left the meeting.
-        ## @param value Value to set for the participantId property.
+        ## @param value Value to set for the participant_id property.
         ## @return a void
         ## 
         def participant_id=(value)

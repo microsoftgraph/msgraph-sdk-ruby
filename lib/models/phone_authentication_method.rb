@@ -51,7 +51,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the phoneNumber property value. The phone number to text or call for authentication. Phone numbers use the format +{country code} {number}x{extension}, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating or updating if they do not match the required format.
-        ## @param value Value to set for the phoneNumber property.
+        ## @param value Value to set for the phone_number property.
         ## @return a void
         ## 
         def phone_number=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the phoneType property value. The type of this phone. Possible values are: mobile, alternateMobile, or office.
-        ## @param value Value to set for the phoneType property.
+        ## @param value Value to set for the phone_type property.
         ## @return a void
         ## 
         def phone_type=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the smsSignInState property value. Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.
-        ## @param value Value to set for the smsSignInState property.
+        ## @param value Value to set for the sms_sign_in_state property.
         ## @return a void
         ## 
         def sms_sign_in_state=(value)

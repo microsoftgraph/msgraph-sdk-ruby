@@ -49,7 +49,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appId property value. The application or bundle identifier of the application
-        ## @param value Value to set for the appId property.
+        ## @param value Value to set for the app_id property.
         ## @return a void
         ## 
         def app_id=(value)
@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appStoreUrl property value. The Store URL of the application
-        ## @param value Value to set for the appStoreUrl property.
+        ## @param value Value to set for the app_store_url property.
         ## @return a void
         ## 
         def app_store_url=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

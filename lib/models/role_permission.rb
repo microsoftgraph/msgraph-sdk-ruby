@@ -66,7 +66,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceActions property value. Resource Actions each containing a set of allowed and not allowed permissions.
-        ## @param value Value to set for the resourceActions property.
+        ## @param value Value to set for the resource_actions property.
         ## @return a void
         ## 
         def resource_actions=(value)

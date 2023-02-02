@@ -3,17 +3,17 @@ require_relative '../../microsoft_graph'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/org_contact'
 require_relative '../contacts'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './direct_reports/direct_reports_request_builder'
 require_relative './direct_reports/item/directory_object_item_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
 require_relative './manager/manager_request_builder'
 require_relative './member_of/item/directory_object_item_request_builder'
 require_relative './member_of/member_of_request_builder'
-require_relative './restore/restore_request_builder'
+require_relative './microsoft_graph_check_member_groups/check_member_groups_request_builder'
+require_relative './microsoft_graph_check_member_objects/check_member_objects_request_builder'
+require_relative './microsoft_graph_get_member_groups/get_member_groups_request_builder'
+require_relative './microsoft_graph_get_member_objects/get_member_objects_request_builder'
+require_relative './microsoft_graph_restore/restore_request_builder'
 require_relative './transitive_member_of/item/directory_object_item_request_builder'
 require_relative './transitive_member_of/transitive_member_of_request_builder'
 
@@ -23,29 +23,9 @@ module MicrosoftGraph::Contacts::Item
     class OrgContactItemRequestBuilder
         
         ## 
-        # Provides operations to call the checkMemberGroups method.
-        def check_member_groups()
-            return MicrosoftGraph::Contacts::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the checkMemberObjects method.
-        def check_member_objects()
-            return MicrosoftGraph::Contacts::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the directReports property of the microsoft.graph.orgContact entity.
         def direct_reports()
             return MicrosoftGraph::Contacts::Item::DirectReports::DirectReportsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the getMemberGroups method.
-        def get_member_groups()
-            return MicrosoftGraph::Contacts::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the getMemberObjects method.
-        def get_member_objects()
-            return MicrosoftGraph::Contacts::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the manager property of the microsoft.graph.orgContact entity.
@@ -58,16 +38,36 @@ module MicrosoftGraph::Contacts::Item
             return MicrosoftGraph::Contacts::Item::MemberOf::MemberOfRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the checkMemberGroups method.
+        def microsoft_graph_check_member_groups()
+            return MicrosoftGraph::Contacts::Item::MicrosoftGraphCheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkMemberObjects method.
+        def microsoft_graph_check_member_objects()
+            return MicrosoftGraph::Contacts::Item::MicrosoftGraphCheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getMemberGroups method.
+        def microsoft_graph_get_member_groups()
+            return MicrosoftGraph::Contacts::Item::MicrosoftGraphGetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getMemberObjects method.
+        def microsoft_graph_get_member_objects()
+            return MicrosoftGraph::Contacts::Item::MicrosoftGraphGetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the restore method.
+        def microsoft_graph_restore()
+            return MicrosoftGraph::Contacts::Item::MicrosoftGraphRestore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the restore method.
-        def restore()
-            return MicrosoftGraph::Contacts::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.
         def transitive_member_of()
@@ -91,7 +91,7 @@ module MicrosoftGraph::Contacts::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from contacts by key (id)
+        ## Delete entity from contacts
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -141,7 +141,7 @@ module MicrosoftGraph::Contacts::Item
             return MicrosoftGraph::Contacts::Item::MemberOf::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Update entity in contacts by key (id)
+        ## Update entity in contacts
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of org_contact
@@ -157,7 +157,7 @@ module MicrosoftGraph::Contacts::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OrgContact.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from contacts by key (id)
+        ## Delete entity from contacts
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -191,7 +191,7 @@ module MicrosoftGraph::Contacts::Item
             return request_info
         end
         ## 
-        ## Update entity in contacts by key (id)
+        ## Update entity in contacts
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

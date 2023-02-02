@@ -155,7 +155,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the columnGroup property value. For site columns, the name of the group this column belongs to. Helps organize related columns.
-        ## @param value Value to set for the columnGroup property.
+        ## @param value Value to set for the column_group property.
         ## @return a void
         ## 
         def column_group=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentApprovalStatus property value. This column stores content approval status.
-        ## @param value Value to set for the contentApprovalStatus property.
+        ## @param value Value to set for the content_approval_status property.
         ## @return a void
         ## 
         def content_approval_status=(value)
@@ -216,7 +216,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dateTime property value. This column stores DateTime values.
-        ## @param value Value to set for the dateTime property.
+        ## @param value Value to set for the date_time property.
         ## @return a void
         ## 
         def date_time=(value)
@@ -231,7 +231,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the defaultValue property value. The default value for this column.
-        ## @param value Value to set for the defaultValue property.
+        ## @param value Value to set for the default_value property.
         ## @return a void
         ## 
         def default_value=(value)
@@ -261,7 +261,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The user-facing name of the column.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -276,7 +276,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enforceUniqueValues property value. If true, no two list items may have the same value for this column.
-        ## @param value Value to set for the enforceUniqueValues property.
+        ## @param value Value to set for the enforce_unique_values property.
         ## @return a void
         ## 
         def enforce_unique_values=(value)
@@ -361,7 +361,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hyperlinkOrPicture property value. This column stores hyperlink or picture values.
-        ## @param value Value to set for the hyperlinkOrPicture property.
+        ## @param value Value to set for the hyperlink_or_picture property.
         ## @return a void
         ## 
         def hyperlink_or_picture=(value)
@@ -391,7 +391,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isDeletable property value. Indicates whether this column can be deleted.
-        ## @param value Value to set for the isDeletable property.
+        ## @param value Value to set for the is_deletable property.
         ## @return a void
         ## 
         def is_deletable=(value)
@@ -406,7 +406,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isReorderable property value. Indicates whether values in the column can be reordered. Read-only.
-        ## @param value Value to set for the isReorderable property.
+        ## @param value Value to set for the is_reorderable property.
         ## @return a void
         ## 
         def is_reorderable=(value)
@@ -421,7 +421,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isSealed property value. Specifies whether the column can be changed.
-        ## @param value Value to set for the isSealed property.
+        ## @param value Value to set for the is_sealed property.
         ## @return a void
         ## 
         def is_sealed=(value)
@@ -481,7 +481,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the personOrGroup property value. This column stores Person or Group values.
-        ## @param value Value to set for the personOrGroup property.
+        ## @param value Value to set for the person_or_group property.
         ## @return a void
         ## 
         def person_or_group=(value)
@@ -496,7 +496,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the propagateChanges property value. If 'true', changes to this column will be propagated to lists that implement the column.
-        ## @param value Value to set for the propagateChanges property.
+        ## @param value Value to set for the propagate_changes property.
         ## @return a void
         ## 
         def propagate_changes=(value)
@@ -511,7 +511,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the readOnly property value. Specifies whether the column values can be modified.
-        ## @param value Value to set for the readOnly property.
+        ## @param value Value to set for the read_only property.
         ## @return a void
         ## 
         def read_only=(value)
@@ -582,7 +582,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sourceColumn property value. The source column for the content type column.
-        ## @param value Value to set for the sourceColumn property.
+        ## @param value Value to set for the source_column property.
         ## @return a void
         ## 
         def source_column=(value)
@@ -597,7 +597,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sourceContentType property value. ContentType from which this column is inherited from. Present only in contentTypes columns response. Read-only.
-        ## @param value Value to set for the sourceContentType property.
+        ## @param value Value to set for the source_content_type property.
         ## @return a void
         ## 
         def source_content_type=(value)

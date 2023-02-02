@@ -7,11 +7,8 @@ require_relative '../../item'
 require_relative '../joined_teams'
 require_relative './all_channels/all_channels_request_builder'
 require_relative './all_channels/item/channel_item_request_builder'
-require_relative './archive/archive_request_builder'
 require_relative './channels/channels_request_builder'
 require_relative './channels/item/channel_item_request_builder'
-require_relative './clone/clone_request_builder'
-require_relative './complete_migration/complete_migration_request_builder'
 require_relative './group/group_request_builder'
 require_relative './incoming_channels/incoming_channels_request_builder'
 require_relative './incoming_channels/item/channel_item_request_builder'
@@ -20,16 +17,19 @@ require_relative './installed_apps/item/teams_app_installation_item_request_buil
 require_relative './item'
 require_relative './members/item/conversation_member_item_request_builder'
 require_relative './members/members_request_builder'
+require_relative './microsoft_graph_archive/archive_request_builder'
+require_relative './microsoft_graph_clone/clone_request_builder'
+require_relative './microsoft_graph_complete_migration/complete_migration_request_builder'
+require_relative './microsoft_graph_send_activity_notification/send_activity_notification_request_builder'
+require_relative './microsoft_graph_unarchive/unarchive_request_builder'
 require_relative './operations/item/teams_async_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
 require_relative './photo/photo_request_builder'
 require_relative './primary_channel/primary_channel_request_builder'
 require_relative './schedule/schedule_request_builder'
-require_relative './send_activity_notification/send_activity_notification_request_builder'
 require_relative './tags/item/teamwork_tag_item_request_builder'
 require_relative './tags/tags_request_builder'
 require_relative './template/template_request_builder'
-require_relative './unarchive/unarchive_request_builder'
 
 module MicrosoftGraph::Users::Item::JoinedTeams::Item
     ## 
@@ -42,24 +42,9 @@ module MicrosoftGraph::Users::Item::JoinedTeams::Item
             return MicrosoftGraph::Users::Item::JoinedTeams::Item::AllChannels::AllChannelsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the archive method.
-        def archive()
-            return MicrosoftGraph::Users::Item::JoinedTeams::Item::Archive::ArchiveRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the channels property of the microsoft.graph.team entity.
         def channels()
             return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::ChannelsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the clone method.
-        def clone()
-            return MicrosoftGraph::Users::Item::JoinedTeams::Item::Clone::CloneRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the completeMigration method.
-        def complete_migration()
-            return MicrosoftGraph::Users::Item::JoinedTeams::Item::CompleteMigration::CompleteMigrationRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the group property of the microsoft.graph.team entity.
@@ -80,6 +65,31 @@ module MicrosoftGraph::Users::Item::JoinedTeams::Item
         # Provides operations to manage the members property of the microsoft.graph.team entity.
         def members()
             return MicrosoftGraph::Users::Item::JoinedTeams::Item::Members::MembersRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the archive method.
+        def microsoft_graph_archive()
+            return MicrosoftGraph::Users::Item::JoinedTeams::Item::MicrosoftGraphArchive::ArchiveRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the clone method.
+        def microsoft_graph_clone()
+            return MicrosoftGraph::Users::Item::JoinedTeams::Item::MicrosoftGraphClone::CloneRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the completeMigration method.
+        def microsoft_graph_complete_migration()
+            return MicrosoftGraph::Users::Item::JoinedTeams::Item::MicrosoftGraphCompleteMigration::CompleteMigrationRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the sendActivityNotification method.
+        def microsoft_graph_send_activity_notification()
+            return MicrosoftGraph::Users::Item::JoinedTeams::Item::MicrosoftGraphSendActivityNotification::SendActivityNotificationRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the unarchive method.
+        def microsoft_graph_unarchive()
+            return MicrosoftGraph::Users::Item::JoinedTeams::Item::MicrosoftGraphUnarchive::UnarchiveRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the operations property of the microsoft.graph.team entity.
@@ -108,11 +118,6 @@ module MicrosoftGraph::Users::Item::JoinedTeams::Item
             return MicrosoftGraph::Users::Item::JoinedTeams::Item::Schedule::ScheduleRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the sendActivityNotification method.
-        def send_activity_notification()
-            return MicrosoftGraph::Users::Item::JoinedTeams::Item::SendActivityNotification::SendActivityNotificationRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the tags property of the microsoft.graph.team entity.
         def tags()
             return MicrosoftGraph::Users::Item::JoinedTeams::Item::Tags::TagsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -121,11 +126,6 @@ module MicrosoftGraph::Users::Item::JoinedTeams::Item
         # Provides operations to manage the template property of the microsoft.graph.team entity.
         def template()
             return MicrosoftGraph::Users::Item::JoinedTeams::Item::Template::TemplateRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the unarchive method.
-        def unarchive()
-            return MicrosoftGraph::Users::Item::JoinedTeams::Item::Unarchive::UnarchiveRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Url template to use to build the URL for the current request builder

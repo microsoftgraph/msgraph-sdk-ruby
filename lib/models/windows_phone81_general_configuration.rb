@@ -84,11 +84,11 @@ module MicrosoftGraph::Models
         # Indicates whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
         @wifi_block_automatic_connect_hotspots
         ## 
-        # Indicates whether or not to block Wi-Fi.
-        @wifi_blocked
-        ## 
         # Indicates whether or not to block Wi-Fi hotspot reporting. Has no impact if Wi-Fi is blocked.
         @wifi_block_hotspot_reporting
+        ## 
+        # Indicates whether or not to block Wi-Fi.
+        @wifi_blocked
         ## 
         # Indicates whether or not to block the Windows Store.
         @windows_store_blocked
@@ -101,7 +101,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applyOnlyToWindowsPhone81 property value. Value indicating whether this policy only applies to Windows Phone 8.1. This property is read-only.
-        ## @param value Value to set for the applyOnlyToWindowsPhone81 property.
+        ## @param value Value to set for the apply_only_to_windows_phone81 property.
         ## @return a void
         ## 
         def apply_only_to_windows_phone81=(value)
@@ -116,7 +116,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appsBlockCopyPaste property value. Indicates whether or not to block copy paste.
-        ## @param value Value to set for the appsBlockCopyPaste property.
+        ## @param value Value to set for the apps_block_copy_paste property.
         ## @return a void
         ## 
         def apps_block_copy_paste=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bluetoothBlocked property value. Indicates whether or not to block bluetooth.
-        ## @param value Value to set for the bluetoothBlocked property.
+        ## @param value Value to set for the bluetooth_blocked property.
         ## @return a void
         ## 
         def bluetooth_blocked=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cameraBlocked property value. Indicates whether or not to block camera.
-        ## @param value Value to set for the cameraBlocked property.
+        ## @param value Value to set for the camera_blocked property.
         ## @return a void
         ## 
         def camera_blocked=(value)
@@ -161,7 +161,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cellularBlockWifiTethering property value. Indicates whether or not to block Wi-Fi tethering. Has no impact if Wi-Fi is blocked.
-        ## @param value Value to set for the cellularBlockWifiTethering property.
+        ## @param value Value to set for the cellular_block_wifi_tethering property.
         ## @return a void
         ## 
         def cellular_block_wifi_tethering=(value)
@@ -176,7 +176,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the compliantAppListType property value. Possible values of the compliance app list.
-        ## @param value Value to set for the compliantAppListType property.
+        ## @param value Value to set for the compliant_app_list_type property.
         ## @return a void
         ## 
         def compliant_app_list_type=(value)
@@ -191,7 +191,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
-        ## @param value Value to set for the compliantAppsList property.
+        ## @param value Value to set for the compliant_apps_list property.
         ## @return a void
         ## 
         def compliant_apps_list=(value)
@@ -223,7 +223,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the diagnosticDataBlockSubmission property value. Indicates whether or not to block diagnostic data submission.
-        ## @param value Value to set for the diagnosticDataBlockSubmission property.
+        ## @param value Value to set for the diagnostic_data_block_submission property.
         ## @return a void
         ## 
         def diagnostic_data_block_submission=(value)
@@ -238,7 +238,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the emailBlockAddingAccounts property value. Indicates whether or not to block custom email accounts.
-        ## @param value Value to set for the emailBlockAddingAccounts property.
+        ## @param value Value to set for the email_block_adding_accounts property.
         ## @return a void
         ## 
         def email_block_adding_accounts=(value)
@@ -276,8 +276,8 @@ module MicrosoftGraph::Models
                 "storageRequireEncryption" => lambda {|n| @storage_require_encryption = n.get_boolean_value() },
                 "webBrowserBlocked" => lambda {|n| @web_browser_blocked = n.get_boolean_value() },
                 "wifiBlockAutomaticConnectHotspots" => lambda {|n| @wifi_block_automatic_connect_hotspots = n.get_boolean_value() },
-                "wifiBlocked" => lambda {|n| @wifi_blocked = n.get_boolean_value() },
                 "wifiBlockHotspotReporting" => lambda {|n| @wifi_block_hotspot_reporting = n.get_boolean_value() },
+                "wifiBlocked" => lambda {|n| @wifi_blocked = n.get_boolean_value() },
                 "windowsStoreBlocked" => lambda {|n| @windows_store_blocked = n.get_boolean_value() },
             })
         end
@@ -290,7 +290,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the locationServicesBlocked property value. Indicates whether or not to block location services.
-        ## @param value Value to set for the locationServicesBlocked property.
+        ## @param value Value to set for the location_services_blocked property.
         ## @return a void
         ## 
         def location_services_blocked=(value)
@@ -305,7 +305,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the microsoftAccountBlocked property value. Indicates whether or not to block using a Microsoft Account.
-        ## @param value Value to set for the microsoftAccountBlocked property.
+        ## @param value Value to set for the microsoft_account_blocked property.
         ## @return a void
         ## 
         def microsoft_account_blocked=(value)
@@ -320,7 +320,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the nfcBlocked property value. Indicates whether or not to block Near-Field Communication.
-        ## @param value Value to set for the nfcBlocked property.
+        ## @param value Value to set for the nfc_blocked property.
         ## @return a void
         ## 
         def nfc_blocked=(value)
@@ -335,7 +335,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordBlockSimple property value. Indicates whether or not to block syncing the calendar.
-        ## @param value Value to set for the passwordBlockSimple property.
+        ## @param value Value to set for the password_block_simple property.
         ## @return a void
         ## 
         def password_block_simple=(value)
@@ -350,7 +350,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordExpirationDays property value. Number of days before the password expires.
-        ## @param value Value to set for the passwordExpirationDays property.
+        ## @param value Value to set for the password_expiration_days property.
         ## @return a void
         ## 
         def password_expiration_days=(value)
@@ -365,7 +365,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinimumCharacterSetCount property value. Number of character sets a password must contain.
-        ## @param value Value to set for the passwordMinimumCharacterSetCount property.
+        ## @param value Value to set for the password_minimum_character_set_count property.
         ## @return a void
         ## 
         def password_minimum_character_set_count=(value)
@@ -380,7 +380,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinimumLength property value. Minimum length of passwords.
-        ## @param value Value to set for the passwordMinimumLength property.
+        ## @param value Value to set for the password_minimum_length property.
         ## @return a void
         ## 
         def password_minimum_length=(value)
@@ -395,7 +395,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before screen timeout.
-        ## @param value Value to set for the passwordMinutesOfInactivityBeforeScreenTimeout property.
+        ## @param value Value to set for the password_minutes_of_inactivity_before_screen_timeout property.
         ## @return a void
         ## 
         def password_minutes_of_inactivity_before_screen_timeout=(value)
@@ -410,7 +410,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
-        ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
+        ## @param value Value to set for the password_previous_password_block_count property.
         ## @return a void
         ## 
         def password_previous_password_block_count=(value)
@@ -425,7 +425,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequired property value. Indicates whether or not to require a password.
-        ## @param value Value to set for the passwordRequired property.
+        ## @param value Value to set for the password_required property.
         ## @return a void
         ## 
         def password_required=(value)
@@ -440,7 +440,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequiredType property value. Possible values of required passwords.
-        ## @param value Value to set for the passwordRequiredType property.
+        ## @param value Value to set for the password_required_type property.
         ## @return a void
         ## 
         def password_required_type=(value)
@@ -455,7 +455,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset.
-        ## @param value Value to set for the passwordSignInFailureCountBeforeFactoryReset property.
+        ## @param value Value to set for the password_sign_in_failure_count_before_factory_reset property.
         ## @return a void
         ## 
         def password_sign_in_failure_count_before_factory_reset=(value)
@@ -470,7 +470,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the screenCaptureBlocked property value. Indicates whether or not to block screenshots.
-        ## @param value Value to set for the screenCaptureBlocked property.
+        ## @param value Value to set for the screen_capture_blocked property.
         ## @return a void
         ## 
         def screen_capture_blocked=(value)
@@ -509,8 +509,8 @@ module MicrosoftGraph::Models
             writer.write_boolean_value("storageRequireEncryption", @storage_require_encryption)
             writer.write_boolean_value("webBrowserBlocked", @web_browser_blocked)
             writer.write_boolean_value("wifiBlockAutomaticConnectHotspots", @wifi_block_automatic_connect_hotspots)
-            writer.write_boolean_value("wifiBlocked", @wifi_blocked)
             writer.write_boolean_value("wifiBlockHotspotReporting", @wifi_block_hotspot_reporting)
+            writer.write_boolean_value("wifiBlocked", @wifi_blocked)
             writer.write_boolean_value("windowsStoreBlocked", @windows_store_blocked)
         end
         ## 
@@ -522,7 +522,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the storageBlockRemovableStorage property value. Indicates whether or not to block removable storage.
-        ## @param value Value to set for the storageBlockRemovableStorage property.
+        ## @param value Value to set for the storage_block_removable_storage property.
         ## @return a void
         ## 
         def storage_block_removable_storage=(value)
@@ -537,7 +537,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the storageRequireEncryption property value. Indicates whether or not to require encryption.
-        ## @param value Value to set for the storageRequireEncryption property.
+        ## @param value Value to set for the storage_require_encryption property.
         ## @return a void
         ## 
         def storage_require_encryption=(value)
@@ -552,7 +552,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webBrowserBlocked property value. Indicates whether or not to block the web browser.
-        ## @param value Value to set for the webBrowserBlocked property.
+        ## @param value Value to set for the web_browser_blocked property.
         ## @return a void
         ## 
         def web_browser_blocked=(value)
@@ -567,26 +567,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the wifiBlockAutomaticConnectHotspots property value. Indicates whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
-        ## @param value Value to set for the wifiBlockAutomaticConnectHotspots property.
+        ## @param value Value to set for the wifi_block_automatic_connect_hotspots property.
         ## @return a void
         ## 
         def wifi_block_automatic_connect_hotspots=(value)
             @wifi_block_automatic_connect_hotspots = value
-        end
-        ## 
-        ## Gets the wifiBlocked property value. Indicates whether or not to block Wi-Fi.
-        ## @return a boolean
-        ## 
-        def wifi_blocked
-            return @wifi_blocked
-        end
-        ## 
-        ## Sets the wifiBlocked property value. Indicates whether or not to block Wi-Fi.
-        ## @param value Value to set for the wifiBlocked property.
-        ## @return a void
-        ## 
-        def wifi_blocked=(value)
-            @wifi_blocked = value
         end
         ## 
         ## Gets the wifiBlockHotspotReporting property value. Indicates whether or not to block Wi-Fi hotspot reporting. Has no impact if Wi-Fi is blocked.
@@ -597,11 +582,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the wifiBlockHotspotReporting property value. Indicates whether or not to block Wi-Fi hotspot reporting. Has no impact if Wi-Fi is blocked.
-        ## @param value Value to set for the wifiBlockHotspotReporting property.
+        ## @param value Value to set for the wifi_block_hotspot_reporting property.
         ## @return a void
         ## 
         def wifi_block_hotspot_reporting=(value)
             @wifi_block_hotspot_reporting = value
+        end
+        ## 
+        ## Gets the wifiBlocked property value. Indicates whether or not to block Wi-Fi.
+        ## @return a boolean
+        ## 
+        def wifi_blocked
+            return @wifi_blocked
+        end
+        ## 
+        ## Sets the wifiBlocked property value. Indicates whether or not to block Wi-Fi.
+        ## @param value Value to set for the wifi_blocked property.
+        ## @return a void
+        ## 
+        def wifi_blocked=(value)
+            @wifi_blocked = value
         end
         ## 
         ## Gets the windowsStoreBlocked property value. Indicates whether or not to block the Windows Store.
@@ -612,7 +612,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the windowsStoreBlocked property value. Indicates whether or not to block the Windows Store.
-        ## @param value Value to set for the windowsStoreBlocked property.
+        ## @param value Value to set for the windows_store_blocked property.
         ## @return a void
         ## 
         def windows_store_blocked=(value)

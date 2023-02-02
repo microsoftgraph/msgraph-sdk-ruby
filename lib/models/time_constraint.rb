@@ -26,7 +26,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activityDomain property value. The nature of the activity, optional. The possible values are: work, personal, unrestricted, or unknown.
-        ## @param value Value to set for the activityDomain property.
+        ## @param value Value to set for the activity_domain property.
         ## @return a void
         ## 
         def activity_domain=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the timeSlots property value. The timeSlots property
-        ## @param value Value to set for the timeSlots property.
+        ## @param value Value to set for the time_slots property.
         ## @return a void
         ## 
         def time_slots=(value)

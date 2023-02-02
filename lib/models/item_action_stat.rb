@@ -26,7 +26,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the actionCount property value. The number of times the action took place. Read-only.
-        ## @param value Value to set for the actionCount property.
+        ## @param value Value to set for the action_count property.
         ## @return a void
         ## 
         def action_count=(value)
@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the actorCount property value. The number of distinct actors that performed the action. Read-only.
-        ## @param value Value to set for the actorCount property.
+        ## @param value Value to set for the actor_count property.
         ## @return a void
         ## 
         def actor_count=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

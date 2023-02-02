@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdBy property value. User who captured the version.
-        ## @param value Value to set for the createdBy property.
+        ## @param value Value to set for the created_by property.
         ## @return a void
         ## 
         def created_by=(value)
@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. Date and time when this version was created.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the shouldCaptureMinorVersion property value. If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.
-        ## @param value Value to set for the shouldCaptureMinorVersion property.
+        ## @param value Value to set for the should_capture_minor_version property.
         ## @return a void
         ## 
         def should_capture_minor_version=(value)

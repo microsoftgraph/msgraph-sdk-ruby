@@ -60,7 +60,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentSource property value. The name of the content source that the externalItem is part of.
-        ## @param value Value to set for the contentSource property.
+        ## @param value Value to set for the content_source property.
         ## @return a void
         ## 
         def content_source=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hitId property value. The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
-        ## @param value Value to set for the hitId property.
+        ## @param value Value to set for the hit_id property.
         ## @return a void
         ## 
         def hit_id=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resultTemplateId property value. ID of the result template used to render the search result. This ID must map to a display layout in the resultTemplates dictionary that is also included in the searchResponse.
-        ## @param value Value to set for the resultTemplateId property.
+        ## @param value Value to set for the result_template_id property.
         ## @return a void
         ## 
         def result_template_id=(value)

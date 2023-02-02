@@ -33,14 +33,14 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appVersion property value. The connector's version.
-        ## @param value Value to set for the appVersion property.
+        ## @param value Value to set for the app_version property.
         ## @return a void
         ## 
         def app_version=(value)
             @app_version = value
         end
         ## 
-        ## Instantiates a new printConnector and sets the default values.
+        ## Instantiates a new PrintConnector and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the connector.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fullyQualifiedDomainName property value. The connector machine's hostname.
-        ## @param value Value to set for the fullyQualifiedDomainName property.
+        ## @param value Value to set for the fully_qualified_domain_name property.
         ## @return a void
         ## 
         def fully_qualified_domain_name=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the operatingSystem property value. The connector machine's operating system version.
-        ## @param value Value to set for the operatingSystem property.
+        ## @param value Value to set for the operating_system property.
         ## @return a void
         ## 
         def operating_system=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the registeredDateTime property value. The DateTimeOffset when the connector was registered.
-        ## @param value Value to set for the registeredDateTime property.
+        ## @param value Value to set for the registered_date_time property.
         ## @return a void
         ## 
         def registered_date_time=(value)

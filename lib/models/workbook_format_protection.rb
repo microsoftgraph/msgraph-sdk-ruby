@@ -36,7 +36,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the formulaHidden property value. Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
-        ## @param value Value to set for the formulaHidden property.
+        ## @param value Value to set for the formula_hidden property.
         ## @return a void
         ## 
         def formula_hidden=(value)

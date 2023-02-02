@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the printerId property value. The printerId property
-        ## @param value Value to set for the printerId property.
+        ## @param value Value to set for the printer_id property.
         ## @return a void
         ## 
         def printer_id=(value)

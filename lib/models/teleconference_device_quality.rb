@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callChainId property value. A unique identifier for all  the participant calls in a conference or a unique identifier for two participant calls in P2P call. This needs to be copied over from Microsoft.Graph.Call.CallChainId.
-        ## @param value Value to set for the callChainId property.
+        ## @param value Value to set for the call_chain_id property.
         ## @return a void
         ## 
         def call_chain_id=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cloudServiceDeploymentEnvironment property value. A geo-region where the service is deployed, such as ProdNoam.
-        ## @param value Value to set for the cloudServiceDeploymentEnvironment property.
+        ## @param value Value to set for the cloud_service_deployment_environment property.
         ## @return a void
         ## 
         def cloud_service_deployment_environment=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cloudServiceDeploymentId property value. A unique deployment identifier assigned by Azure.
-        ## @param value Value to set for the cloudServiceDeploymentId property.
+        ## @param value Value to set for the cloud_service_deployment_id property.
         ## @return a void
         ## 
         def cloud_service_deployment_id=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cloudServiceInstanceName property value. The Azure deployed cloud service instance name, such as FrontEnd_IN_3.
-        ## @param value Value to set for the cloudServiceInstanceName property.
+        ## @param value Value to set for the cloud_service_instance_name property.
         ## @return a void
         ## 
         def cloud_service_instance_name=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cloudServiceName property value. The Azure deployed cloud service name, such as contoso.cloudapp.net.
-        ## @param value Value to set for the cloudServiceName property.
+        ## @param value Value to set for the cloud_service_name property.
         ## @return a void
         ## 
         def cloud_service_name=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceDescription property value. Any additional description, such as VTC Bldg 30/21.
-        ## @param value Value to set for the deviceDescription property.
+        ## @param value Value to set for the device_description property.
         ## @return a void
         ## 
         def device_description=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceName property value. The user media agent name, such as Cisco SX80.
-        ## @param value Value to set for the deviceName property.
+        ## @param value Value to set for the device_name property.
         ## @return a void
         ## 
         def device_name=(value)
@@ -205,7 +205,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mediaLegId property value. A unique identifier for a specific media leg of a participant in a conference.  One participant can have multiple media leg identifiers if retargeting happens. CVI partner assigns this value.
-        ## @param value Value to set for the mediaLegId property.
+        ## @param value Value to set for the media_leg_id property.
         ## @return a void
         ## 
         def media_leg_id=(value)
@@ -220,7 +220,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mediaQualityList property value. The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.
-        ## @param value Value to set for the mediaQualityList property.
+        ## @param value Value to set for the media_quality_list property.
         ## @return a void
         ## 
         def media_quality_list=(value)
@@ -235,7 +235,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -250,7 +250,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the participantId property value. A unique identifier for a specific participant in a conference. The CVI partner needs to copy over Call.MyParticipantId to this property.
-        ## @param value Value to set for the participantId property.
+        ## @param value Value to set for the participant_id property.
         ## @return a void
         ## 
         def participant_id=(value)

@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hideBotAfterEscalation property value. Indicates whether to hide the app after the call is escalated.
-        ## @param value Value to set for the hideBotAfterEscalation property.
+        ## @param value Value to set for the hide_bot_after_escalation property.
         ## @return a void
         ## 
         def hide_bot_after_escalation=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isContentSharingNotificationEnabled property value. Indicates whether content sharing notifications should be enabled for the call.
-        ## @param value Value to set for the isContentSharingNotificationEnabled property.
+        ## @param value Value to set for the is_content_sharing_notification_enabled property.
         ## @return a void
         ## 
         def is_content_sharing_notification_enabled=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

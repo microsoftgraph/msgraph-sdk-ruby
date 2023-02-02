@@ -31,7 +31,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedBy property value. Identity of the person who last modified the entity.
-        ## @param value Value to set for the lastModifiedBy property.
+        ## @param value Value to set for the last_modified_by property.
         ## @return a void
         ## 
         def last_modified_by=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)

@@ -21,11 +21,11 @@ module MicrosoftGraph::Models
         # Device Configuration Setting State Device Summary
         @device_setting_state_summaries
         ## 
-        # Device configuration installation status by device.
-        @device_statuses
-        ## 
         # Device Configuration devices status overview
         @device_status_overview
+        ## 
+        # Device configuration installation status by device.
+        @device_statuses
         ## 
         # Admin provided name of the device configuration.
         @display_name
@@ -33,11 +33,11 @@ module MicrosoftGraph::Models
         # DateTime the object was last modified.
         @last_modified_date_time
         ## 
-        # Device configuration installation status by user.
-        @user_statuses
-        ## 
         # Device Configuration users status overview
         @user_status_overview
+        ## 
+        # Device configuration installation status by user.
+        @user_statuses
         ## 
         # Version of the device configuration.
         @version
@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. DateTime the object was created.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -169,26 +169,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
-        ## @param value Value to set for the deviceSettingStateSummaries property.
+        ## @param value Value to set for the device_setting_state_summaries property.
         ## @return a void
         ## 
         def device_setting_state_summaries=(value)
             @device_setting_state_summaries = value
-        end
-        ## 
-        ## Gets the deviceStatuses property value. Device configuration installation status by device.
-        ## @return a device_configuration_device_status
-        ## 
-        def device_statuses
-            return @device_statuses
-        end
-        ## 
-        ## Sets the deviceStatuses property value. Device configuration installation status by device.
-        ## @param value Value to set for the deviceStatuses property.
-        ## @return a void
-        ## 
-        def device_statuses=(value)
-            @device_statuses = value
         end
         ## 
         ## Gets the deviceStatusOverview property value. Device Configuration devices status overview
@@ -199,11 +184,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceStatusOverview property value. Device Configuration devices status overview
-        ## @param value Value to set for the deviceStatusOverview property.
+        ## @param value Value to set for the device_status_overview property.
         ## @return a void
         ## 
         def device_status_overview=(value)
             @device_status_overview = value
+        end
+        ## 
+        ## Gets the deviceStatuses property value. Device configuration installation status by device.
+        ## @return a device_configuration_device_status
+        ## 
+        def device_statuses
+            return @device_statuses
+        end
+        ## 
+        ## Sets the deviceStatuses property value. Device configuration installation status by device.
+        ## @param value Value to set for the device_statuses property.
+        ## @return a void
+        ## 
+        def device_statuses=(value)
+            @device_statuses = value
         end
         ## 
         ## Gets the displayName property value. Admin provided name of the device configuration.
@@ -214,7 +214,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Admin provided name of the device configuration.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -230,12 +230,12 @@ module MicrosoftGraph::Models
                 "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                 "description" => lambda {|n| @description = n.get_string_value() },
                 "deviceSettingStateSummaries" => lambda {|n| @device_setting_state_summaries = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SettingStateDeviceSummary.create_from_discriminator_value(pn) }) },
-                "deviceStatuses" => lambda {|n| @device_statuses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeviceConfigurationDeviceStatus.create_from_discriminator_value(pn) }) },
                 "deviceStatusOverview" => lambda {|n| @device_status_overview = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DeviceConfigurationDeviceOverview.create_from_discriminator_value(pn) }) },
+                "deviceStatuses" => lambda {|n| @device_statuses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeviceConfigurationDeviceStatus.create_from_discriminator_value(pn) }) },
                 "displayName" => lambda {|n| @display_name = n.get_string_value() },
                 "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
-                "userStatuses" => lambda {|n| @user_statuses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeviceConfigurationUserStatus.create_from_discriminator_value(pn) }) },
                 "userStatusOverview" => lambda {|n| @user_status_overview = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DeviceConfigurationUserOverview.create_from_discriminator_value(pn) }) },
+                "userStatuses" => lambda {|n| @user_statuses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeviceConfigurationUserStatus.create_from_discriminator_value(pn) }) },
                 "version" => lambda {|n| @version = n.get_number_value() },
             })
         end
@@ -248,7 +248,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. DateTime the object was last modified.
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -266,28 +266,13 @@ module MicrosoftGraph::Models
             writer.write_date_time_value("createdDateTime", @created_date_time)
             writer.write_string_value("description", @description)
             writer.write_collection_of_object_values("deviceSettingStateSummaries", @device_setting_state_summaries)
-            writer.write_collection_of_object_values("deviceStatuses", @device_statuses)
             writer.write_object_value("deviceStatusOverview", @device_status_overview)
+            writer.write_collection_of_object_values("deviceStatuses", @device_statuses)
             writer.write_string_value("displayName", @display_name)
             writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
-            writer.write_collection_of_object_values("userStatuses", @user_statuses)
             writer.write_object_value("userStatusOverview", @user_status_overview)
+            writer.write_collection_of_object_values("userStatuses", @user_statuses)
             writer.write_number_value("version", @version)
-        end
-        ## 
-        ## Gets the userStatuses property value. Device configuration installation status by user.
-        ## @return a device_configuration_user_status
-        ## 
-        def user_statuses
-            return @user_statuses
-        end
-        ## 
-        ## Sets the userStatuses property value. Device configuration installation status by user.
-        ## @param value Value to set for the userStatuses property.
-        ## @return a void
-        ## 
-        def user_statuses=(value)
-            @user_statuses = value
         end
         ## 
         ## Gets the userStatusOverview property value. Device Configuration users status overview
@@ -298,11 +283,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userStatusOverview property value. Device Configuration users status overview
-        ## @param value Value to set for the userStatusOverview property.
+        ## @param value Value to set for the user_status_overview property.
         ## @return a void
         ## 
         def user_status_overview=(value)
             @user_status_overview = value
+        end
+        ## 
+        ## Gets the userStatuses property value. Device configuration installation status by user.
+        ## @return a device_configuration_user_status
+        ## 
+        def user_statuses
+            return @user_statuses
+        end
+        ## 
+        ## Sets the userStatuses property value. Device configuration installation status by user.
+        ## @param value Value to set for the user_statuses property.
+        ## @return a void
+        ## 
+        def user_statuses=(value)
+            @user_statuses = value
         end
         ## 
         ## Gets the version property value. Version of the device configuration.

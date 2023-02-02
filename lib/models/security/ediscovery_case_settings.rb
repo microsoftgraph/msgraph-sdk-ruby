@@ -66,7 +66,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the redundancyDetection property value. The redundancy (near duplicate and email threading) detection settings for the case.
-        ## @param value Value to set for the redundancyDetection property.
+        ## @param value Value to set for the redundancy_detection property.
         ## @return a void
         ## 
         def redundancy_detection=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the topicModeling property value. The Topic Modeling (Themes) settings for the case.
-        ## @param value Value to set for the topicModeling property.
+        ## @param value Value to set for the topic_modeling property.
         ## @return a void
         ## 
         def topic_modeling=(value)

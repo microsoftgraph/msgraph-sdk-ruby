@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the recordingStatus property value. The recordingStatus property
-        ## @param value Value to set for the recordingStatus property.
+        ## @param value Value to set for the recording_status property.
         ## @return a void
         ## 
         def recording_status=(value)

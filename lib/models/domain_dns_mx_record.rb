@@ -46,7 +46,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mailExchange property value. Value used when configuring the answer/destination/value of the MX record at the DNS host.
-        ## @param value Value to set for the mailExchange property.
+        ## @param value Value to set for the mail_exchange property.
         ## @return a void
         ## 
         def mail_exchange=(value)

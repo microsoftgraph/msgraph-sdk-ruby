@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the firstName property value. First name of the data subject.
-        ## @param value Value to set for the firstName property.
+        ## @param value Value to set for the first_name property.
         ## @return a void
         ## 
         def first_name=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastName property value. Last Name of the data subject.
-        ## @param value Value to set for the lastName property.
+        ## @param value Value to set for the last_name property.
         ## @return a void
         ## 
         def last_name=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

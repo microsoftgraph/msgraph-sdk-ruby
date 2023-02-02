@@ -60,7 +60,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.id property value. The OdataId property
-        ## @param value Value to set for the OdataId property.
+        ## @param value Value to set for the odata_id property.
         ## @return a void
         ## 
         def odata_id=(value)

@@ -5,16 +5,11 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../groups'
 require_relative './accepted_senders/accepted_senders_request_builder'
 require_relative './accepted_senders/item/directory_object_item_request_builder'
-require_relative './add_favorite/add_favorite_request_builder'
 require_relative './app_role_assignments/app_role_assignments_request_builder'
 require_relative './app_role_assignments/item/app_role_assignment_item_request_builder'
-require_relative './assign_license/assign_license_request_builder'
 require_relative './calendar/calendar_request_builder'
 require_relative './calendar_view/calendar_view_request_builder'
 require_relative './calendar_view/item/event_item_request_builder'
-require_relative './check_granted_permissions_for_app/check_granted_permissions_for_app_request_builder'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './conversations/conversations_request_builder'
 require_relative './conversations/item/conversation_item_request_builder'
 require_relative './created_on_behalf_of/created_on_behalf_of_request_builder'
@@ -25,8 +20,6 @@ require_relative './events/events_request_builder'
 require_relative './events/item/event_item_request_builder'
 require_relative './extensions/extensions_request_builder'
 require_relative './extensions/item/extension_item_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './group_lifecycle_policies/group_lifecycle_policies_request_builder'
 require_relative './group_lifecycle_policies/item/group_lifecycle_policy_item_request_builder'
 require_relative './item'
@@ -36,6 +29,20 @@ require_relative './members/item/directory_object_item_request_builder'
 require_relative './members/members_request_builder'
 require_relative './members_with_license_errors/item/directory_object_item_request_builder'
 require_relative './members_with_license_errors/members_with_license_errors_request_builder'
+require_relative './microsoft_graph_add_favorite/add_favorite_request_builder'
+require_relative './microsoft_graph_assign_license/assign_license_request_builder'
+require_relative './microsoft_graph_check_granted_permissions_for_app/check_granted_permissions_for_app_request_builder'
+require_relative './microsoft_graph_check_member_groups/check_member_groups_request_builder'
+require_relative './microsoft_graph_check_member_objects/check_member_objects_request_builder'
+require_relative './microsoft_graph_get_member_groups/get_member_groups_request_builder'
+require_relative './microsoft_graph_get_member_objects/get_member_objects_request_builder'
+require_relative './microsoft_graph_remove_favorite/remove_favorite_request_builder'
+require_relative './microsoft_graph_renew/renew_request_builder'
+require_relative './microsoft_graph_reset_unseen_count/reset_unseen_count_request_builder'
+require_relative './microsoft_graph_restore/restore_request_builder'
+require_relative './microsoft_graph_subscribe_by_mail/subscribe_by_mail_request_builder'
+require_relative './microsoft_graph_unsubscribe_by_mail/unsubscribe_by_mail_request_builder'
+require_relative './microsoft_graph_validate_properties/validate_properties_request_builder'
 require_relative './onenote/onenote_request_builder'
 require_relative './owners/item/directory_object_item_request_builder'
 require_relative './owners/owners_request_builder'
@@ -47,15 +54,10 @@ require_relative './photos/photos_request_builder'
 require_relative './planner/planner_request_builder'
 require_relative './rejected_senders/item/directory_object_item_request_builder'
 require_relative './rejected_senders/rejected_senders_request_builder'
-require_relative './remove_favorite/remove_favorite_request_builder'
-require_relative './renew/renew_request_builder'
-require_relative './reset_unseen_count/reset_unseen_count_request_builder'
-require_relative './restore/restore_request_builder'
 require_relative './settings/item/group_setting_item_request_builder'
 require_relative './settings/settings_request_builder'
 require_relative './sites/item/site_item_request_builder'
 require_relative './sites/sites_request_builder'
-require_relative './subscribe_by_mail/subscribe_by_mail_request_builder'
 require_relative './team/team_request_builder'
 require_relative './threads/item/conversation_thread_item_request_builder'
 require_relative './threads/threads_request_builder'
@@ -63,8 +65,6 @@ require_relative './transitive_member_of/item/directory_object_item_request_buil
 require_relative './transitive_member_of/transitive_member_of_request_builder'
 require_relative './transitive_members/item/directory_object_item_request_builder'
 require_relative './transitive_members/transitive_members_request_builder'
-require_relative './unsubscribe_by_mail/unsubscribe_by_mail_request_builder'
-require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph::Groups::Item
     ## 
@@ -77,19 +77,9 @@ module MicrosoftGraph::Groups::Item
             return MicrosoftGraph::Groups::Item::AcceptedSenders::AcceptedSendersRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the addFavorite method.
-        def add_favorite()
-            return MicrosoftGraph::Groups::Item::AddFavorite::AddFavoriteRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the appRoleAssignments property of the microsoft.graph.group entity.
         def app_role_assignments()
             return MicrosoftGraph::Groups::Item::AppRoleAssignments::AppRoleAssignmentsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the assignLicense method.
-        def assign_license()
-            return MicrosoftGraph::Groups::Item::AssignLicense::AssignLicenseRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the calendar property of the microsoft.graph.group entity.
@@ -100,21 +90,6 @@ module MicrosoftGraph::Groups::Item
         # Provides operations to manage the calendarView property of the microsoft.graph.group entity.
         def calendar_view()
             return MicrosoftGraph::Groups::Item::CalendarView::CalendarViewRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the checkGrantedPermissionsForApp method.
-        def check_granted_permissions_for_app()
-            return MicrosoftGraph::Groups::Item::CheckGrantedPermissionsForApp::CheckGrantedPermissionsForAppRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the checkMemberGroups method.
-        def check_member_groups()
-            return MicrosoftGraph::Groups::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the checkMemberObjects method.
-        def check_member_objects()
-            return MicrosoftGraph::Groups::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the conversations property of the microsoft.graph.group entity.
@@ -147,16 +122,6 @@ module MicrosoftGraph::Groups::Item
             return MicrosoftGraph::Groups::Item::Extensions::ExtensionsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the getMemberGroups method.
-        def get_member_groups()
-            return MicrosoftGraph::Groups::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the getMemberObjects method.
-        def get_member_objects()
-            return MicrosoftGraph::Groups::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.
         def group_lifecycle_policies()
             return MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::GroupLifecyclePoliciesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -175,6 +140,76 @@ module MicrosoftGraph::Groups::Item
         # Provides operations to manage the membersWithLicenseErrors property of the microsoft.graph.group entity.
         def members_with_license_errors()
             return MicrosoftGraph::Groups::Item::MembersWithLicenseErrors::MembersWithLicenseErrorsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the addFavorite method.
+        def microsoft_graph_add_favorite()
+            return MicrosoftGraph::Groups::Item::MicrosoftGraphAddFavorite::AddFavoriteRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the assignLicense method.
+        def microsoft_graph_assign_license()
+            return MicrosoftGraph::Groups::Item::MicrosoftGraphAssignLicense::AssignLicenseRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkGrantedPermissionsForApp method.
+        def microsoft_graph_check_granted_permissions_for_app()
+            return MicrosoftGraph::Groups::Item::MicrosoftGraphCheckGrantedPermissionsForApp::CheckGrantedPermissionsForAppRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkMemberGroups method.
+        def microsoft_graph_check_member_groups()
+            return MicrosoftGraph::Groups::Item::MicrosoftGraphCheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkMemberObjects method.
+        def microsoft_graph_check_member_objects()
+            return MicrosoftGraph::Groups::Item::MicrosoftGraphCheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getMemberGroups method.
+        def microsoft_graph_get_member_groups()
+            return MicrosoftGraph::Groups::Item::MicrosoftGraphGetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getMemberObjects method.
+        def microsoft_graph_get_member_objects()
+            return MicrosoftGraph::Groups::Item::MicrosoftGraphGetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the removeFavorite method.
+        def microsoft_graph_remove_favorite()
+            return MicrosoftGraph::Groups::Item::MicrosoftGraphRemoveFavorite::RemoveFavoriteRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the renew method.
+        def microsoft_graph_renew()
+            return MicrosoftGraph::Groups::Item::MicrosoftGraphRenew::RenewRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the resetUnseenCount method.
+        def microsoft_graph_reset_unseen_count()
+            return MicrosoftGraph::Groups::Item::MicrosoftGraphResetUnseenCount::ResetUnseenCountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the restore method.
+        def microsoft_graph_restore()
+            return MicrosoftGraph::Groups::Item::MicrosoftGraphRestore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the subscribeByMail method.
+        def microsoft_graph_subscribe_by_mail()
+            return MicrosoftGraph::Groups::Item::MicrosoftGraphSubscribeByMail::SubscribeByMailRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the unsubscribeByMail method.
+        def microsoft_graph_unsubscribe_by_mail()
+            return MicrosoftGraph::Groups::Item::MicrosoftGraphUnsubscribeByMail::UnsubscribeByMailRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the validateProperties method.
+        def microsoft_graph_validate_properties()
+            return MicrosoftGraph::Groups::Item::MicrosoftGraphValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the onenote property of the microsoft.graph.group entity.
@@ -215,28 +250,8 @@ module MicrosoftGraph::Groups::Item
             return MicrosoftGraph::Groups::Item::RejectedSenders::RejectedSendersRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the removeFavorite method.
-        def remove_favorite()
-            return MicrosoftGraph::Groups::Item::RemoveFavorite::RemoveFavoriteRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the renew method.
-        def renew()
-            return MicrosoftGraph::Groups::Item::Renew::RenewRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the resetUnseenCount method.
-        def reset_unseen_count()
-            return MicrosoftGraph::Groups::Item::ResetUnseenCount::ResetUnseenCountRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the restore method.
-        def restore()
-            return MicrosoftGraph::Groups::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the settings property of the microsoft.graph.group entity.
         def settings()
@@ -246,11 +261,6 @@ module MicrosoftGraph::Groups::Item
         # Provides operations to manage the sites property of the microsoft.graph.group entity.
         def sites()
             return MicrosoftGraph::Groups::Item::Sites::SitesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the subscribeByMail method.
-        def subscribe_by_mail()
-            return MicrosoftGraph::Groups::Item::SubscribeByMail::SubscribeByMailRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the team property of the microsoft.graph.group entity.
@@ -273,18 +283,8 @@ module MicrosoftGraph::Groups::Item
             return MicrosoftGraph::Groups::Item::TransitiveMembers::TransitiveMembersRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the unsubscribeByMail method.
-        def unsubscribe_by_mail()
-            return MicrosoftGraph::Groups::Item::UnsubscribeByMail::UnsubscribeByMailRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        # Provides operations to call the validateProperties method.
-        def validate_properties()
-            return MicrosoftGraph::Groups::Item::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Gets an item from the MicrosoftGraph.groups.item.acceptedSenders.item collection
         ## @param id Unique identifier of the item

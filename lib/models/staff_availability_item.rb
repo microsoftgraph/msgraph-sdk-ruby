@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the availabilityItems property value. Each item in this collection indicates a slot and the status of the staff member.
-        ## @param value Value to set for the availabilityItems property.
+        ## @param value Value to set for the availability_items property.
         ## @return a void
         ## 
         def availability_items=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the staffId property value. The ID of the staff member.
-        ## @param value Value to set for the staffId property.
+        ## @param value Value to set for the staff_id property.
         ## @return a void
         ## 
         def staff_id=(value)

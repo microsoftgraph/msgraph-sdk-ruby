@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentUrl property value. The URL for downloading the content
-        ## @param value Value to set for the contentUrl property.
+        ## @param value Value to set for the content_url property.
         ## @return a void
         ## 
         def content_url=(value)

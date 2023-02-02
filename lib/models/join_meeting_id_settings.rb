@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isPasscodeRequired property value. Indicates whether a passcode is required to join a meeting when using joinMeetingId. Optional.
-        ## @param value Value to set for the isPasscodeRequired property.
+        ## @param value Value to set for the is_passcode_required property.
         ## @return a void
         ## 
         def is_passcode_required=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the joinMeetingId property value. The meeting ID to be used to join a meeting. Optional. Read-only.
-        ## @param value Value to set for the joinMeetingId property.
+        ## @param value Value to set for the join_meeting_id property.
         ## @return a void
         ## 
         def join_meeting_id=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

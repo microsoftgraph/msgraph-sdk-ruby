@@ -10,7 +10,7 @@ require_relative './attack_simulation/attack_simulation_request_builder'
 require_relative './cases/cases_request_builder'
 require_relative './incidents/incidents_request_builder'
 require_relative './incidents/item/incident_item_request_builder'
-require_relative './run_hunting_query/run_hunting_query_request_builder'
+require_relative './microsoft_graph_security_run_hunting_query/run_hunting_query_request_builder'
 require_relative './secure_score_control_profiles/item/secure_score_control_profile_item_request_builder'
 require_relative './secure_score_control_profiles/secure_score_control_profiles_request_builder'
 require_relative './secure_scores/item/secure_score_item_request_builder'
@@ -48,16 +48,16 @@ module MicrosoftGraph::Security
             return MicrosoftGraph::Security::Incidents::IncidentsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the runHuntingQuery method.
+        def microsoft_graph_security_run_hunting_query()
+            return MicrosoftGraph::Security::MicrosoftGraphSecurityRunHuntingQuery::RunHuntingQueryRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the runHuntingQuery method.
-        def run_hunting_query()
-            return MicrosoftGraph::Security::RunHuntingQuery::RunHuntingQueryRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
         def secure_score_control_profiles()

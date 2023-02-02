@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isArchived property value. Indicates whether the user archived the message.
-        ## @param value Value to set for the isArchived property.
+        ## @param value Value to set for the is_archived property.
         ## @return a void
         ## 
         def is_archived=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isFavorited property value. Indicates whether the user marked the message as favorite.
-        ## @param value Value to set for the isFavorited property.
+        ## @param value Value to set for the is_favorited property.
         ## @return a void
         ## 
         def is_favorited=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isRead property value. Indicates whether the user read the message.
-        ## @param value Value to set for the isRead property.
+        ## @param value Value to set for the is_read property.
         ## @return a void
         ## 
         def is_read=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

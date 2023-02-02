@@ -20,7 +20,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the associatedTeams property value. The list of associatedTeamInfo objects that a user is associated with.
-        ## @param value Value to set for the associatedTeams property.
+        ## @param value Value to set for the associated_teams property.
         ## @return a void
         ## 
         def associated_teams=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the installedApps property value. The apps installed in the personal scope of this user.
-        ## @param value Value to set for the installedApps property.
+        ## @param value Value to set for the installed_apps property.
         ## @return a void
         ## 
         def installed_apps=(value)

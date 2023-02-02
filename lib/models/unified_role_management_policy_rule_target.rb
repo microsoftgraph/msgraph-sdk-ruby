@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enforcedSettings property value. The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.
-        ## @param value Value to set for the enforcedSettings property.
+        ## @param value Value to set for the enforced_settings property.
         ## @return a void
         ## 
         def enforced_settings=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the inheritableSettings property value. The list of role settings that can be inherited by child scopes. Use All for all settings.
-        ## @param value Value to set for the inheritableSettings property.
+        ## @param value Value to set for the inheritable_settings property.
         ## @return a void
         ## 
         def inheritable_settings=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -190,7 +190,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the targetObjects property value. The targetObjects property
-        ## @param value Value to set for the targetObjects property.
+        ## @param value Value to set for the target_objects property.
         ## @return a void
         ## 
         def target_objects=(value)

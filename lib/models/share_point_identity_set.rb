@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the siteGroup property value. The SharePoint group associated with this action. Optional.
-        ## @param value Value to set for the siteGroup property.
+        ## @param value Value to set for the site_group property.
         ## @return a void
         ## 
         def site_group=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the siteUser property value. The SharePoint user associated with this action. Optional.
-        ## @param value Value to set for the siteUser property.
+        ## @param value Value to set for the site_user property.
         ## @return a void
         ## 
         def site_user=(value)

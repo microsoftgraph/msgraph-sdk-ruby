@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the responseCode property value. The response code from querying for the availability of the user, distribution list, or resource.
-        ## @param value Value to set for the responseCode property.
+        ## @param value Value to set for the response_code property.
         ## @return a void
         ## 
         def response_code=(value)

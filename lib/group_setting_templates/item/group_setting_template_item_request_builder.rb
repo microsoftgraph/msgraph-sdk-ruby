@@ -3,12 +3,12 @@ require_relative '../../microsoft_graph'
 require_relative '../../models/group_setting_template'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../group_setting_templates'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
-require_relative './restore/restore_request_builder'
+require_relative './microsoft_graph_check_member_groups/check_member_groups_request_builder'
+require_relative './microsoft_graph_check_member_objects/check_member_objects_request_builder'
+require_relative './microsoft_graph_get_member_groups/get_member_groups_request_builder'
+require_relative './microsoft_graph_get_member_objects/get_member_objects_request_builder'
+require_relative './microsoft_graph_restore/restore_request_builder'
 
 module MicrosoftGraph::GroupSettingTemplates::Item
     ## 
@@ -17,23 +17,28 @@ module MicrosoftGraph::GroupSettingTemplates::Item
         
         ## 
         # Provides operations to call the checkMemberGroups method.
-        def check_member_groups()
-            return MicrosoftGraph::GroupSettingTemplates::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_check_member_groups()
+            return MicrosoftGraph::GroupSettingTemplates::Item::MicrosoftGraphCheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the checkMemberObjects method.
-        def check_member_objects()
-            return MicrosoftGraph::GroupSettingTemplates::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_check_member_objects()
+            return MicrosoftGraph::GroupSettingTemplates::Item::MicrosoftGraphCheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getMemberGroups method.
-        def get_member_groups()
-            return MicrosoftGraph::GroupSettingTemplates::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_member_groups()
+            return MicrosoftGraph::GroupSettingTemplates::Item::MicrosoftGraphGetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getMemberObjects method.
-        def get_member_objects()
-            return MicrosoftGraph::GroupSettingTemplates::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_member_objects()
+            return MicrosoftGraph::GroupSettingTemplates::Item::MicrosoftGraphGetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the restore method.
+        def microsoft_graph_restore()
+            return MicrosoftGraph::GroupSettingTemplates::Item::MicrosoftGraphRestore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -41,11 +46,6 @@ module MicrosoftGraph::GroupSettingTemplates::Item
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the restore method.
-        def restore()
-            return MicrosoftGraph::GroupSettingTemplates::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
@@ -64,7 +64,7 @@ module MicrosoftGraph::GroupSettingTemplates::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from groupSettingTemplates by key (id)
+        ## Delete entity from groupSettingTemplates
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -92,7 +92,7 @@ module MicrosoftGraph::GroupSettingTemplates::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::GroupSettingTemplate.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update entity in groupSettingTemplates by key (id)
+        ## Update entity in groupSettingTemplates
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of group_setting_template
@@ -108,7 +108,7 @@ module MicrosoftGraph::GroupSettingTemplates::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::GroupSettingTemplate.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from groupSettingTemplates by key (id)
+        ## Delete entity from groupSettingTemplates
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -142,7 +142,7 @@ module MicrosoftGraph::GroupSettingTemplates::Item
             return request_info
         end
         ## 
-        ## Update entity in groupSettingTemplates by key (id)
+        ## Update entity in groupSettingTemplates
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

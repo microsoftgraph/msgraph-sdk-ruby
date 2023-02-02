@@ -38,7 +38,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceTag property value. Tags containing app metadata.
-        ## @param value Value to set for the deviceTag property.
+        ## @param value Value to set for the device_tag property.
         ## @return a void
         ## 
         def device_tag=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the device on which this app is registered.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the phoneAppVersion property value. Numerical version of this instance of the Authenticator app.
-        ## @param value Value to set for the phoneAppVersion property.
+        ## @param value Value to set for the phone_app_version property.
         ## @return a void
         ## 
         def phone_app_version=(value)

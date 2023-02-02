@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the majorGridlines property value. Returns a gridlines object that represents the major gridlines for the specified axis. Read-only.
-        ## @param value Value to set for the majorGridlines property.
+        ## @param value Value to set for the major_gridlines property.
         ## @return a void
         ## 
         def major_gridlines=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the majorUnit property value. Represents the interval between two major tick marks. Can be set to a numeric value or an empty string.  The returned value is always a number.
-        ## @param value Value to set for the majorUnit property.
+        ## @param value Value to set for the major_unit property.
         ## @return a void
         ## 
         def major_unit=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minorGridlines property value. Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
-        ## @param value Value to set for the minorGridlines property.
+        ## @param value Value to set for the minor_gridlines property.
         ## @return a void
         ## 
         def minor_gridlines=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minorUnit property value. Represents the interval between two minor tick marks. 'Can be set to a numeric value or an empty string (for automatic axis values). The returned value is always a number.
-        ## @param value Value to set for the minorUnit property.
+        ## @param value Value to set for the minor_unit property.
         ## @return a void
         ## 
         def minor_unit=(value)

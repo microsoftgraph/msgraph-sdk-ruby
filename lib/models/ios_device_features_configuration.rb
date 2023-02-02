@@ -29,7 +29,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assetTagTemplate property value. Asset tag information for the device, displayed on the login window and lock screen.
-        ## @param value Value to set for the assetTagTemplate property.
+        ## @param value Value to set for the asset_tag_template property.
         ## @return a void
         ## 
         def asset_tag_template=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the homeScreenDockIcons property value. A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.
-        ## @param value Value to set for the homeScreenDockIcons property.
+        ## @param value Value to set for the home_screen_dock_icons property.
         ## @return a void
         ## 
         def home_screen_dock_icons=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the homeScreenPages property value. A list of pages on the Home Screen. This collection can contain a maximum of 500 elements.
-        ## @param value Value to set for the homeScreenPages property.
+        ## @param value Value to set for the home_screen_pages property.
         ## @return a void
         ## 
         def home_screen_pages=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lockScreenFootnote property value. A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.
-        ## @param value Value to set for the lockScreenFootnote property.
+        ## @param value Value to set for the lock_screen_footnote property.
         ## @return a void
         ## 
         def lock_screen_footnote=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notificationSettings property value. Notification settings for each bundle id. Applicable to devices in supervised mode only (iOS 9.3 and later). This collection can contain a maximum of 500 elements.
-        ## @param value Value to set for the notificationSettings property.
+        ## @param value Value to set for the notification_settings property.
         ## @return a void
         ## 
         def notification_settings=(value)

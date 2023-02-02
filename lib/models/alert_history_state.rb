@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appId property value. The appId property
-        ## @param value Value to set for the appId property.
+        ## @param value Value to set for the app_id property.
         ## @return a void
         ## 
         def app_id=(value)
@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignedTo property value. The assignedTo property
-        ## @param value Value to set for the assignedTo property.
+        ## @param value Value to set for the assigned_to property.
         ## @return a void
         ## 
         def assigned_to=(value)
@@ -149,7 +149,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -196,7 +196,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the updatedDateTime property value. The updatedDateTime property
-        ## @param value Value to set for the updatedDateTime property.
+        ## @param value Value to set for the updated_date_time property.
         ## @return a void
         ## 
         def updated_date_time=(value)

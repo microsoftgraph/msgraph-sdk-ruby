@@ -9,7 +9,7 @@ module MicrosoftGraph::Models
         # Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.
         @conversation_identity_type
         ## 
-        ## Instantiates a new TeamworkConversationIdentity and sets the default values.
+        ## Instantiates a new teamworkConversationIdentity and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -25,7 +25,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the conversationIdentityType property value. Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.
-        ## @param value Value to set for the conversationIdentityType property.
+        ## @param value Value to set for the conversation_identity_type property.
         ## @return a void
         ## 
         def conversation_identity_type=(value)

@@ -40,7 +40,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the displayName property value. The name associated with the mailbox.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the primaryAddress property value. The primary email address of the mailbox.
-        ## @param value Value to set for the primaryAddress property.
+        ## @param value Value to set for the primary_address property.
         ## @return a void
         ## 
         def primary_address=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the userAccount property value. The user account of the mailbox.
-        ## @param value Value to set for the userAccount property.
+        ## @param value Value to set for the user_account property.
         ## @return a void
         ## 
         def user_account=(value)

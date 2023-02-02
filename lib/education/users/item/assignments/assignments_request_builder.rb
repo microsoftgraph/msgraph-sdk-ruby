@@ -8,7 +8,7 @@ require_relative '../../users'
 require_relative '../item'
 require_relative './assignments'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
+require_relative './microsoft_graph_delta/delta_request_builder'
 
 module MicrosoftGraph::Education::Users::Item::Assignments
     ## 
@@ -19,6 +19,11 @@ module MicrosoftGraph::Education::Users::Item::Assignments
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Education::Users::Item::Assignments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::Education::Users::Item::Assignments::MicrosoftGraphDelta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -42,13 +47,6 @@ module MicrosoftGraph::Education::Users::Item::Assignments
             @request_adapter = request_adapter
             path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
             @path_parameters = path_parameters if path_parameters.is_a? Hash
-        end
-        ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Returns a list of educationAssignment assigned to a educationUser for all classes. Only teachers, students, and applications with application permissions can perform this operation. This method allows a caller to find all the **assignments** belonging to a student or a teacher in a single call rather than having to request **assignments** from each **class**. The **assignment** list contains what is needed to get the detailed information for the **assignment** from within the **class** namespace. Use the methods defined for the **assignment** for all other operations.

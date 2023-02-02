@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isAcquiredByPrinter property value. True if the job was acknowledged by a printer; false otherwise. Read-only.
-        ## @param value Value to set for the isAcquiredByPrinter property.
+        ## @param value Value to set for the is_acquired_by_printer property.
         ## @return a void
         ## 
         def is_acquired_by_printer=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

@@ -18,11 +18,11 @@ module MicrosoftGraph::Models
         # Admin provided description of the Device Configuration.
         @description
         ## 
-        # List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-        @device_statuses
-        ## 
         # App configuration device status summary.
         @device_status_summary
+        ## 
+        # List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+        @device_statuses
         ## 
         # Admin provided name of the device configuration.
         @display_name
@@ -33,11 +33,11 @@ module MicrosoftGraph::Models
         # the associated app.
         @targeted_mobile_apps
         ## 
-        # List of ManagedDeviceMobileAppConfigurationUserStatus.
-        @user_statuses
-        ## 
         # App configuration user status summary.
         @user_status_summary
+        ## 
+        # List of ManagedDeviceMobileAppConfigurationUserStatus.
+        @user_statuses
         ## 
         # Version of the device configuration.
         @version
@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. DateTime the object was created.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -111,21 +111,6 @@ module MicrosoftGraph::Models
             @description = value
         end
         ## 
-        ## Gets the deviceStatuses property value. List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-        ## @return a managed_device_mobile_app_configuration_device_status
-        ## 
-        def device_statuses
-            return @device_statuses
-        end
-        ## 
-        ## Sets the deviceStatuses property value. List of ManagedDeviceMobileAppConfigurationDeviceStatus.
-        ## @param value Value to set for the deviceStatuses property.
-        ## @return a void
-        ## 
-        def device_statuses=(value)
-            @device_statuses = value
-        end
-        ## 
         ## Gets the deviceStatusSummary property value. App configuration device status summary.
         ## @return a managed_device_mobile_app_configuration_device_summary
         ## 
@@ -134,11 +119,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceStatusSummary property value. App configuration device status summary.
-        ## @param value Value to set for the deviceStatusSummary property.
+        ## @param value Value to set for the device_status_summary property.
         ## @return a void
         ## 
         def device_status_summary=(value)
             @device_status_summary = value
+        end
+        ## 
+        ## Gets the deviceStatuses property value. List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+        ## @return a managed_device_mobile_app_configuration_device_status
+        ## 
+        def device_statuses
+            return @device_statuses
+        end
+        ## 
+        ## Sets the deviceStatuses property value. List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+        ## @param value Value to set for the device_statuses property.
+        ## @return a void
+        ## 
+        def device_statuses=(value)
+            @device_statuses = value
         end
         ## 
         ## Gets the displayName property value. Admin provided name of the device configuration.
@@ -149,7 +149,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Admin provided name of the device configuration.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -164,13 +164,13 @@ module MicrosoftGraph::Models
                 "assignments" => lambda {|n| @assignments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ManagedDeviceMobileAppConfigurationAssignment.create_from_discriminator_value(pn) }) },
                 "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                 "description" => lambda {|n| @description = n.get_string_value() },
-                "deviceStatuses" => lambda {|n| @device_statuses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ManagedDeviceMobileAppConfigurationDeviceStatus.create_from_discriminator_value(pn) }) },
                 "deviceStatusSummary" => lambda {|n| @device_status_summary = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ManagedDeviceMobileAppConfigurationDeviceSummary.create_from_discriminator_value(pn) }) },
+                "deviceStatuses" => lambda {|n| @device_statuses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ManagedDeviceMobileAppConfigurationDeviceStatus.create_from_discriminator_value(pn) }) },
                 "displayName" => lambda {|n| @display_name = n.get_string_value() },
                 "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                 "targetedMobileApps" => lambda {|n| @targeted_mobile_apps = n.get_collection_of_primitive_values(String) },
-                "userStatuses" => lambda {|n| @user_statuses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ManagedDeviceMobileAppConfigurationUserStatus.create_from_discriminator_value(pn) }) },
                 "userStatusSummary" => lambda {|n| @user_status_summary = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ManagedDeviceMobileAppConfigurationUserSummary.create_from_discriminator_value(pn) }) },
+                "userStatuses" => lambda {|n| @user_statuses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ManagedDeviceMobileAppConfigurationUserStatus.create_from_discriminator_value(pn) }) },
                 "version" => lambda {|n| @version = n.get_number_value() },
             })
         end
@@ -183,7 +183,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. DateTime the object was last modified.
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -200,13 +200,13 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("assignments", @assignments)
             writer.write_date_time_value("createdDateTime", @created_date_time)
             writer.write_string_value("description", @description)
-            writer.write_collection_of_object_values("deviceStatuses", @device_statuses)
             writer.write_object_value("deviceStatusSummary", @device_status_summary)
+            writer.write_collection_of_object_values("deviceStatuses", @device_statuses)
             writer.write_string_value("displayName", @display_name)
             writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
             writer.write_collection_of_primitive_values("targetedMobileApps", @targeted_mobile_apps)
-            writer.write_collection_of_object_values("userStatuses", @user_statuses)
             writer.write_object_value("userStatusSummary", @user_status_summary)
+            writer.write_collection_of_object_values("userStatuses", @user_statuses)
             writer.write_number_value("version", @version)
         end
         ## 
@@ -218,26 +218,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the targetedMobileApps property value. the associated app.
-        ## @param value Value to set for the targetedMobileApps property.
+        ## @param value Value to set for the targeted_mobile_apps property.
         ## @return a void
         ## 
         def targeted_mobile_apps=(value)
             @targeted_mobile_apps = value
-        end
-        ## 
-        ## Gets the userStatuses property value. List of ManagedDeviceMobileAppConfigurationUserStatus.
-        ## @return a managed_device_mobile_app_configuration_user_status
-        ## 
-        def user_statuses
-            return @user_statuses
-        end
-        ## 
-        ## Sets the userStatuses property value. List of ManagedDeviceMobileAppConfigurationUserStatus.
-        ## @param value Value to set for the userStatuses property.
-        ## @return a void
-        ## 
-        def user_statuses=(value)
-            @user_statuses = value
         end
         ## 
         ## Gets the userStatusSummary property value. App configuration user status summary.
@@ -248,11 +233,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userStatusSummary property value. App configuration user status summary.
-        ## @param value Value to set for the userStatusSummary property.
+        ## @param value Value to set for the user_status_summary property.
         ## @return a void
         ## 
         def user_status_summary=(value)
             @user_status_summary = value
+        end
+        ## 
+        ## Gets the userStatuses property value. List of ManagedDeviceMobileAppConfigurationUserStatus.
+        ## @return a managed_device_mobile_app_configuration_user_status
+        ## 
+        def user_statuses
+            return @user_statuses
+        end
+        ## 
+        ## Sets the userStatuses property value. List of ManagedDeviceMobileAppConfigurationUserStatus.
+        ## @param value Value to set for the user_statuses property.
+        ## @return a void
+        ## 
+        def user_statuses=(value)
+            @user_statuses = value
         end
         ## 
         ## Gets the version property value. Version of the device configuration.

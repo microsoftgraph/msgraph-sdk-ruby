@@ -73,7 +73,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceThreatProtectionEnabled property value. Require that devices have enabled device threat protection .
-        ## @param value Value to set for the deviceThreatProtectionEnabled property.
+        ## @param value Value to set for the device_threat_protection_enabled property.
         ## @return a void
         ## 
         def device_threat_protection_enabled=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
-        ## @param value Value to set for the deviceThreatProtectionRequiredSecurityLevel property.
+        ## @param value Value to set for the device_threat_protection_required_security_level property.
         ## @return a void
         ## 
         def device_threat_protection_required_security_level=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managedEmailProfileRequired property value. Indicates whether or not to require a managed email profile.
-        ## @param value Value to set for the managedEmailProfileRequired property.
+        ## @param value Value to set for the managed_email_profile_required property.
         ## @return a void
         ## 
         def managed_email_profile_required=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osMaximumVersion property value. Maximum IOS version.
-        ## @param value Value to set for the osMaximumVersion property.
+        ## @param value Value to set for the os_maximum_version property.
         ## @return a void
         ## 
         def os_maximum_version=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osMinimumVersion property value. Minimum IOS version.
-        ## @param value Value to set for the osMinimumVersion property.
+        ## @param value Value to set for the os_minimum_version property.
         ## @return a void
         ## 
         def os_minimum_version=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passcodeBlockSimple property value. Indicates whether or not to block simple passcodes.
-        ## @param value Value to set for the passcodeBlockSimple property.
+        ## @param value Value to set for the passcode_block_simple property.
         ## @return a void
         ## 
         def passcode_block_simple=(value)
@@ -185,7 +185,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passcodeExpirationDays property value. Number of days before the passcode expires. Valid values 1 to 65535
-        ## @param value Value to set for the passcodeExpirationDays property.
+        ## @param value Value to set for the passcode_expiration_days property.
         ## @return a void
         ## 
         def passcode_expiration_days=(value)
@@ -200,7 +200,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passcodeMinimumCharacterSetCount property value. The number of character sets required in the password.
-        ## @param value Value to set for the passcodeMinimumCharacterSetCount property.
+        ## @param value Value to set for the passcode_minimum_character_set_count property.
         ## @return a void
         ## 
         def passcode_minimum_character_set_count=(value)
@@ -215,7 +215,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passcodeMinimumLength property value. Minimum length of passcode. Valid values 4 to 14
-        ## @param value Value to set for the passcodeMinimumLength property.
+        ## @param value Value to set for the passcode_minimum_length property.
         ## @return a void
         ## 
         def passcode_minimum_length=(value)
@@ -230,7 +230,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passcodeMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a passcode is required.
-        ## @param value Value to set for the passcodeMinutesOfInactivityBeforeLock property.
+        ## @param value Value to set for the passcode_minutes_of_inactivity_before_lock property.
         ## @return a void
         ## 
         def passcode_minutes_of_inactivity_before_lock=(value)
@@ -245,7 +245,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passcodePreviousPasscodeBlockCount property value. Number of previous passcodes to block. Valid values 1 to 24
-        ## @param value Value to set for the passcodePreviousPasscodeBlockCount property.
+        ## @param value Value to set for the passcode_previous_passcode_block_count property.
         ## @return a void
         ## 
         def passcode_previous_passcode_block_count=(value)
@@ -260,7 +260,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passcodeRequired property value. Indicates whether or not to require a passcode.
-        ## @param value Value to set for the passcodeRequired property.
+        ## @param value Value to set for the passcode_required property.
         ## @return a void
         ## 
         def passcode_required=(value)
@@ -275,7 +275,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passcodeRequiredType property value. Possible values of required passwords.
-        ## @param value Value to set for the passcodeRequiredType property.
+        ## @param value Value to set for the passcode_required_type property.
         ## @return a void
         ## 
         def passcode_required_type=(value)
@@ -290,7 +290,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityBlockJailbrokenDevices property value. Devices must not be jailbroken or rooted.
-        ## @param value Value to set for the securityBlockJailbrokenDevices property.
+        ## @param value Value to set for the security_block_jailbroken_devices property.
         ## @return a void
         ## 
         def security_block_jailbroken_devices=(value)

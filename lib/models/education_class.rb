@@ -12,11 +12,11 @@ module MicrosoftGraph::Models
         # Specifies class-level defaults respected by new assignments created in the class.
         @assignment_defaults
         ## 
-        # All assignments associated with this class. Nullable.
-        @assignments
-        ## 
         # Specifies class-level assignments settings.
         @assignment_settings
+        ## 
+        # All assignments associated with this class. Nullable.
+        @assignments
         ## 
         # Class code used by the school to identify the class.
         @class_code
@@ -74,7 +74,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignmentCategories property value. All categories associated with this class. Nullable.
-        ## @param value Value to set for the assignmentCategories property.
+        ## @param value Value to set for the assignment_categories property.
         ## @return a void
         ## 
         def assignment_categories=(value)
@@ -89,11 +89,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignmentDefaults property value. Specifies class-level defaults respected by new assignments created in the class.
-        ## @param value Value to set for the assignmentDefaults property.
+        ## @param value Value to set for the assignment_defaults property.
         ## @return a void
         ## 
         def assignment_defaults=(value)
             @assignment_defaults = value
+        end
+        ## 
+        ## Gets the assignmentSettings property value. Specifies class-level assignments settings.
+        ## @return a education_assignment_settings
+        ## 
+        def assignment_settings
+            return @assignment_settings
+        end
+        ## 
+        ## Sets the assignmentSettings property value. Specifies class-level assignments settings.
+        ## @param value Value to set for the assignment_settings property.
+        ## @return a void
+        ## 
+        def assignment_settings=(value)
+            @assignment_settings = value
         end
         ## 
         ## Gets the assignments property value. All assignments associated with this class. Nullable.
@@ -111,21 +126,6 @@ module MicrosoftGraph::Models
             @assignments = value
         end
         ## 
-        ## Gets the assignmentSettings property value. Specifies class-level assignments settings.
-        ## @return a education_assignment_settings
-        ## 
-        def assignment_settings
-            return @assignment_settings
-        end
-        ## 
-        ## Sets the assignmentSettings property value. Specifies class-level assignments settings.
-        ## @param value Value to set for the assignmentSettings property.
-        ## @return a void
-        ## 
-        def assignment_settings=(value)
-            @assignment_settings = value
-        end
-        ## 
         ## Gets the classCode property value. Class code used by the school to identify the class.
         ## @return a string
         ## 
@@ -134,14 +134,14 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the classCode property value. Class code used by the school to identify the class.
-        ## @param value Value to set for the classCode property.
+        ## @param value Value to set for the class_code property.
         ## @return a void
         ## 
         def class_code=(value)
             @class_code = value
         end
         ## 
-        ## Instantiates a new EducationClass and sets the default values.
+        ## Instantiates a new educationClass and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -171,7 +171,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdBy property value. Entity who created the class
-        ## @param value Value to set for the createdBy property.
+        ## @param value Value to set for the created_by property.
         ## @return a void
         ## 
         def created_by=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Name of the class.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -225,7 +225,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalId property value. ID of the class from the syncing system.
-        ## @param value Value to set for the externalId property.
+        ## @param value Value to set for the external_id property.
         ## @return a void
         ## 
         def external_id=(value)
@@ -240,7 +240,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalName property value. Name of the class in the syncing system.
-        ## @param value Value to set for the externalName property.
+        ## @param value Value to set for the external_name property.
         ## @return a void
         ## 
         def external_name=(value)
@@ -255,7 +255,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalSource property value. How this class was created. Possible values are: sis, manual.
-        ## @param value Value to set for the externalSource property.
+        ## @param value Value to set for the external_source property.
         ## @return a void
         ## 
         def external_source=(value)
@@ -270,7 +270,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalSourceDetail property value. The name of the external source this resources was generated from.
-        ## @param value Value to set for the externalSourceDetail property.
+        ## @param value Value to set for the external_source_detail property.
         ## @return a void
         ## 
         def external_source_detail=(value)
@@ -284,8 +284,8 @@ module MicrosoftGraph::Models
             return super.merge({
                 "assignmentCategories" => lambda {|n| @assignment_categories = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::EducationCategory.create_from_discriminator_value(pn) }) },
                 "assignmentDefaults" => lambda {|n| @assignment_defaults = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EducationAssignmentDefaults.create_from_discriminator_value(pn) }) },
-                "assignments" => lambda {|n| @assignments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::EducationAssignment.create_from_discriminator_value(pn) }) },
                 "assignmentSettings" => lambda {|n| @assignment_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EducationAssignmentSettings.create_from_discriminator_value(pn) }) },
+                "assignments" => lambda {|n| @assignments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::EducationAssignment.create_from_discriminator_value(pn) }) },
                 "classCode" => lambda {|n| @class_code = n.get_string_value() },
                 "course" => lambda {|n| @course = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EducationCourse.create_from_discriminator_value(pn) }) },
                 "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
@@ -343,7 +343,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mailNickname property value. Mail name for sending email to all members, if this is enabled.
-        ## @param value Value to set for the mailNickname property.
+        ## @param value Value to set for the mail_nickname property.
         ## @return a void
         ## 
         def mail_nickname=(value)
@@ -389,8 +389,8 @@ module MicrosoftGraph::Models
             super
             writer.write_collection_of_object_values("assignmentCategories", @assignment_categories)
             writer.write_object_value("assignmentDefaults", @assignment_defaults)
-            writer.write_collection_of_object_values("assignments", @assignments)
             writer.write_object_value("assignmentSettings", @assignment_settings)
+            writer.write_collection_of_object_values("assignments", @assignments)
             writer.write_string_value("classCode", @class_code)
             writer.write_object_value("course", @course)
             writer.write_object_value("createdBy", @created_by)

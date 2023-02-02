@@ -44,7 +44,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the androidEnrollmentAssignments property value. User groups which enroll Android devices through partner.
-        ## @param value Value to set for the androidEnrollmentAssignments property.
+        ## @param value Value to set for the android_enrollment_assignments property.
         ## @return a void
         ## 
         def android_enrollment_assignments=(value)
@@ -59,7 +59,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the androidOnboarded property value. Partner onboarded for Android devices.
-        ## @param value Value to set for the androidOnboarded property.
+        ## @param value Value to set for the android_onboarded property.
         ## @return a void
         ## 
         def android_onboarded=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Partner display name
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the iosEnrollmentAssignments property value. User groups which enroll ios devices through partner.
-        ## @param value Value to set for the iosEnrollmentAssignments property.
+        ## @param value Value to set for the ios_enrollment_assignments property.
         ## @return a void
         ## 
         def ios_enrollment_assignments=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the iosOnboarded property value. Partner onboarded for ios devices.
-        ## @param value Value to set for the iosOnboarded property.
+        ## @param value Value to set for the ios_onboarded property.
         ## @return a void
         ## 
         def ios_onboarded=(value)
@@ -152,7 +152,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin onboarded to the compliance management partner
-        ## @param value Value to set for the lastHeartbeatDateTime property.
+        ## @param value Value to set for the last_heartbeat_date_time property.
         ## @return a void
         ## 
         def last_heartbeat_date_time=(value)
@@ -167,7 +167,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the macOsEnrollmentAssignments property value. User groups which enroll Mac devices through partner.
-        ## @param value Value to set for the macOsEnrollmentAssignments property.
+        ## @param value Value to set for the mac_os_enrollment_assignments property.
         ## @return a void
         ## 
         def mac_os_enrollment_assignments=(value)
@@ -182,7 +182,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the macOsOnboarded property value. Partner onboarded for Mac devices.
-        ## @param value Value to set for the macOsOnboarded property.
+        ## @param value Value to set for the mac_os_onboarded property.
         ## @return a void
         ## 
         def mac_os_onboarded=(value)
@@ -197,7 +197,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the partnerState property value. Partner state of this tenant.
-        ## @param value Value to set for the partnerState property.
+        ## @param value Value to set for the partner_state property.
         ## @return a void
         ## 
         def partner_state=(value)

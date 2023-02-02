@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Localized display name of the policy file of an agreement. The localized display name is shown to end users who view the agreement.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fileData property value. Data that represents the terms of use PDF document. Read-only.
-        ## @param value Value to set for the fileData property.
+        ## @param value Value to set for the file_data property.
         ## @return a void
         ## 
         def file_data=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fileName property value. Name of the agreement file (for example, TOU.pdf). Read-only.
-        ## @param value Value to set for the fileName property.
+        ## @param value Value to set for the file_name property.
         ## @return a void
         ## 
         def file_name=(value)
@@ -139,7 +139,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isDefault property value. If none of the languages matches the client preference, indicates whether this is the default agreement file . If none of the files are marked as default, the first one is treated as the default. Read-only.
-        ## @param value Value to set for the isDefault property.
+        ## @param value Value to set for the is_default property.
         ## @return a void
         ## 
         def is_default=(value)
@@ -154,7 +154,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isMajorVersion property value. Indicates whether the agreement file is a major version update. Major version updates invalidate the agreement's acceptances on the corresponding language.
-        ## @param value Value to set for the isMajorVersion property.
+        ## @param value Value to set for the is_major_version property.
         ## @return a void
         ## 
         def is_major_version=(value)

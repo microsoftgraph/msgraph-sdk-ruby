@@ -7,11 +7,11 @@ module MicrosoftGraph::Models
     class EducationAssignment < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
-        # Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
-        @added_student_action
-        ## 
         # Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
         @add_to_calendar_action
+        ## 
+        # Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
+        @added_student_action
         ## 
         # Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
         @allow_late_submissions
@@ -22,11 +22,11 @@ module MicrosoftGraph::Models
         # The date when the assignment should become active.  If in the future, the assignment isn't shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         @assign_date_time
         ## 
-        # The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        @assigned_date_time
-        ## 
         # Which users, or whole class should receive a submission object once the assignment is published.
         @assign_to
+        ## 
+        # The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        @assigned_date_time
         ## 
         # When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
         @categories
@@ -85,21 +85,6 @@ module MicrosoftGraph::Models
         # The deep link URL for the given assignment.
         @web_url
         ## 
-        ## Gets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
-        ## @return a education_added_student_action
-        ## 
-        def added_student_action
-            return @added_student_action
-        end
-        ## 
-        ## Sets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
-        ## @param value Value to set for the addedStudentAction property.
-        ## @return a void
-        ## 
-        def added_student_action=(value)
-            @added_student_action = value
-        end
-        ## 
         ## Gets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
         ## @return a education_add_to_calendar_options
         ## 
@@ -108,11 +93,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
-        ## @param value Value to set for the addToCalendarAction property.
+        ## @param value Value to set for the add_to_calendar_action property.
         ## @return a void
         ## 
         def add_to_calendar_action=(value)
             @add_to_calendar_action = value
+        end
+        ## 
+        ## Gets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
+        ## @return a education_added_student_action
+        ## 
+        def added_student_action
+            return @added_student_action
+        end
+        ## 
+        ## Sets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
+        ## @param value Value to set for the added_student_action property.
+        ## @return a void
+        ## 
+        def added_student_action=(value)
+            @added_student_action = value
         end
         ## 
         ## Gets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
@@ -123,7 +123,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
-        ## @param value Value to set for the allowLateSubmissions property.
+        ## @param value Value to set for the allow_late_submissions property.
         ## @return a void
         ## 
         def allow_late_submissions=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowStudentsToAddResourcesToSubmission property value. Identifies whether students can add their own resources to a submission or if they can only modify resources added by the teacher.
-        ## @param value Value to set for the allowStudentsToAddResourcesToSubmission property.
+        ## @param value Value to set for the allow_students_to_add_resources_to_submission property.
         ## @return a void
         ## 
         def allow_students_to_add_resources_to_submission=(value)
@@ -153,26 +153,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignDateTime property value. The date when the assignment should become active.  If in the future, the assignment isn't shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the assignDateTime property.
+        ## @param value Value to set for the assign_date_time property.
         ## @return a void
         ## 
         def assign_date_time=(value)
             @assign_date_time = value
-        end
-        ## 
-        ## Gets the assignedDateTime property value. The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @return a date_time
-        ## 
-        def assigned_date_time
-            return @assigned_date_time
-        end
-        ## 
-        ## Sets the assignedDateTime property value. The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the assignedDateTime property.
-        ## @return a void
-        ## 
-        def assigned_date_time=(value)
-            @assigned_date_time = value
         end
         ## 
         ## Gets the assignTo property value. Which users, or whole class should receive a submission object once the assignment is published.
@@ -183,11 +168,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignTo property value. Which users, or whole class should receive a submission object once the assignment is published.
-        ## @param value Value to set for the assignTo property.
+        ## @param value Value to set for the assign_to property.
         ## @return a void
         ## 
         def assign_to=(value)
             @assign_to = value
+        end
+        ## 
+        ## Gets the assignedDateTime property value. The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        ## @return a date_time
+        ## 
+        def assigned_date_time
+            return @assigned_date_time
+        end
+        ## 
+        ## Sets the assignedDateTime property value. The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        ## @param value Value to set for the assigned_date_time property.
+        ## @return a void
+        ## 
+        def assigned_date_time=(value)
+            @assigned_date_time = value
         end
         ## 
         ## Gets the categories property value. When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
@@ -213,7 +213,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the classId property value. Class which this assignment belongs.
-        ## @param value Value to set for the classId property.
+        ## @param value Value to set for the class_id property.
         ## @return a void
         ## 
         def class_id=(value)
@@ -228,14 +228,14 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the closeDateTime property value. Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the closeDateTime property.
+        ## @param value Value to set for the close_date_time property.
         ## @return a void
         ## 
         def close_date_time=(value)
             @close_date_time = value
         end
         ## 
-        ## Instantiates a new EducationAssignment and sets the default values.
+        ## Instantiates a new educationAssignment and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -250,7 +250,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdBy property value. Who created the assignment.
-        ## @param value Value to set for the createdBy property.
+        ## @param value Value to set for the created_by property.
         ## @return a void
         ## 
         def created_by=(value)
@@ -265,7 +265,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. Moment when the assignment was created.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -289,7 +289,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Name of the assignment.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -304,7 +304,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dueDateTime property value. Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the dueDateTime property.
+        ## @param value Value to set for the due_date_time property.
         ## @return a void
         ## 
         def due_date_time=(value)
@@ -319,7 +319,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the feedbackResourcesFolderUrl property value. Folder URL where all the feedback file resources for this assignment are stored.
-        ## @param value Value to set for the feedbackResourcesFolderUrl property.
+        ## @param value Value to set for the feedback_resources_folder_url property.
         ## @return a void
         ## 
         def feedback_resources_folder_url=(value)
@@ -331,13 +331,13 @@ module MicrosoftGraph::Models
         ## 
         def get_field_deserializers()
             return super.merge({
-                "addedStudentAction" => lambda {|n| @added_student_action = n.get_enum_value(MicrosoftGraph::Models::EducationAddedStudentAction) },
                 "addToCalendarAction" => lambda {|n| @add_to_calendar_action = n.get_enum_value(MicrosoftGraph::Models::EducationAddToCalendarOptions) },
+                "addedStudentAction" => lambda {|n| @added_student_action = n.get_enum_value(MicrosoftGraph::Models::EducationAddedStudentAction) },
                 "allowLateSubmissions" => lambda {|n| @allow_late_submissions = n.get_boolean_value() },
                 "allowStudentsToAddResourcesToSubmission" => lambda {|n| @allow_students_to_add_resources_to_submission = n.get_boolean_value() },
                 "assignDateTime" => lambda {|n| @assign_date_time = n.get_date_time_value() },
-                "assignedDateTime" => lambda {|n| @assigned_date_time = n.get_date_time_value() },
                 "assignTo" => lambda {|n| @assign_to = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EducationAssignmentRecipient.create_from_discriminator_value(pn) }) },
+                "assignedDateTime" => lambda {|n| @assigned_date_time = n.get_date_time_value() },
                 "categories" => lambda {|n| @categories = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::EducationCategory.create_from_discriminator_value(pn) }) },
                 "classId" => lambda {|n| @class_id = n.get_string_value() },
                 "closeDateTime" => lambda {|n| @close_date_time = n.get_date_time_value() },
@@ -398,7 +398,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedBy property value. Who last modified the assignment.
-        ## @param value Value to set for the lastModifiedBy property.
+        ## @param value Value to set for the last_modified_by property.
         ## @return a void
         ## 
         def last_modified_by=(value)
@@ -413,7 +413,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -428,7 +428,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
-        ## @param value Value to set for the notificationChannelUrl property.
+        ## @param value Value to set for the notification_channel_url property.
         ## @return a void
         ## 
         def notification_channel_url=(value)
@@ -458,7 +458,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourcesFolderUrl property value. Folder URL where all the file resources for this assignment are stored.
-        ## @param value Value to set for the resourcesFolderUrl property.
+        ## @param value Value to set for the resources_folder_url property.
         ## @return a void
         ## 
         def resources_folder_url=(value)
@@ -487,8 +487,8 @@ module MicrosoftGraph::Models
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
             super
-            writer.write_enum_value("addedStudentAction", @added_student_action)
             writer.write_enum_value("addToCalendarAction", @add_to_calendar_action)
+            writer.write_enum_value("addedStudentAction", @added_student_action)
             writer.write_boolean_value("allowLateSubmissions", @allow_late_submissions)
             writer.write_boolean_value("allowStudentsToAddResourcesToSubmission", @allow_students_to_add_resources_to_submission)
             writer.write_object_value("assignTo", @assign_to)
@@ -543,7 +543,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webUrl property value. The deep link URL for the given assignment.
-        ## @param value Value to set for the webUrl property.
+        ## @param value Value to set for the web_url property.
         ## @return a void
         ## 
         def web_url=(value)

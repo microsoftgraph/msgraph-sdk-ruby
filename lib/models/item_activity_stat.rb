@@ -136,7 +136,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the endDateTime property value. When the interval ends. Read-only.
-        ## @param value Value to set for the endDateTime property.
+        ## @param value Value to set for the end_date_time property.
         ## @return a void
         ## 
         def end_date_time=(value)
@@ -169,7 +169,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the incompleteData property value. Indicates that the statistics in this interval are based on incomplete data. Read-only.
-        ## @param value Value to set for the incompleteData property.
+        ## @param value Value to set for the incomplete_data property.
         ## @return a void
         ## 
         def incomplete_data=(value)
@@ -184,7 +184,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isTrending property value. Indicates whether the item is 'trending.' Read-only.
-        ## @param value Value to set for the isTrending property.
+        ## @param value Value to set for the is_trending property.
         ## @return a void
         ## 
         def is_trending=(value)
@@ -233,7 +233,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the startDateTime property value. When the interval starts. Read-only.
-        ## @param value Value to set for the startDateTime property.
+        ## @param value Value to set for the start_date_time property.
         ## @return a void
         ## 
         def start_date_time=(value)

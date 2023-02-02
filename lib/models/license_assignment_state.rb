@@ -54,7 +54,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignedByGroup property value. The assignedByGroup property
-        ## @param value Value to set for the assignedByGroup property.
+        ## @param value Value to set for the assigned_by_group property.
         ## @return a void
         ## 
         def assigned_by_group=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the disabledPlans property value. The disabledPlans property
-        ## @param value Value to set for the disabledPlans property.
+        ## @param value Value to set for the disabled_plans property.
         ## @return a void
         ## 
         def disabled_plans=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
-        ## @param value Value to set for the lastUpdatedDateTime property.
+        ## @param value Value to set for the last_updated_date_time property.
         ## @return a void
         ## 
         def last_updated_date_time=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -176,7 +176,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the skuId property value. The skuId property
-        ## @param value Value to set for the skuId property.
+        ## @param value Value to set for the sku_id property.
         ## @return a void
         ## 
         def sku_id=(value)

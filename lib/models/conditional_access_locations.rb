@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the excludeLocations property value. Location IDs excluded from scope of policy.
-        ## @param value Value to set for the excludeLocations property.
+        ## @param value Value to set for the exclude_locations property.
         ## @return a void
         ## 
         def exclude_locations=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeLocations property value. Location IDs in scope of policy unless explicitly excluded, All, or AllTrusted.
-        ## @param value Value to set for the includeLocations property.
+        ## @param value Value to set for the include_locations property.
         ## @return a void
         ## 
         def include_locations=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

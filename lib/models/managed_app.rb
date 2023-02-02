@@ -20,7 +20,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appAvailability property value. A managed (MAM) application's availability.
-        ## @param value Value to set for the appAvailability property.
+        ## @param value Value to set for the app_availability property.
         ## @return a void
         ## 
         def app_availability=(value)

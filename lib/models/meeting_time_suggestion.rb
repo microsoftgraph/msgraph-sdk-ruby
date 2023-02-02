@@ -56,7 +56,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the attendeeAvailability property value. An array that shows the availability status of each attendee for this meeting suggestion.
-        ## @param value Value to set for the attendeeAvailability property.
+        ## @param value Value to set for the attendee_availability property.
         ## @return a void
         ## 
         def attendee_availability=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the meetingTimeSlot property value. A time period suggested for the meeting.
-        ## @param value Value to set for the meetingTimeSlot property.
+        ## @param value Value to set for the meeting_time_slot property.
         ## @return a void
         ## 
         def meeting_time_slot=(value)
@@ -148,7 +148,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -178,7 +178,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the organizerAvailability property value. Availability of the meeting organizer for this meeting suggestion. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.
-        ## @param value Value to set for the organizerAvailability property.
+        ## @param value Value to set for the organizer_availability property.
         ## @return a void
         ## 
         def organizer_availability=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the suggestionReason property value. Reason for suggesting the meeting time.
-        ## @param value Value to set for the suggestionReason property.
+        ## @param value Value to set for the suggestion_reason property.
         ## @return a void
         ## 
         def suggestion_reason=(value)

@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the queryString property value. The search query containing the search terms. Required.
-        ## @param value Value to set for the queryString property.
+        ## @param value Value to set for the query_string property.
         ## @return a void
         ## 
         def query_string=(value)

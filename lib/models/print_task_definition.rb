@@ -30,7 +30,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdBy property value. The createdBy property
-        ## @param value Value to set for the createdBy property.
+        ## @param value Value to set for the created_by property.
         ## @return a void
         ## 
         def created_by=(value)
@@ -54,7 +54,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the printTaskDefinition.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)

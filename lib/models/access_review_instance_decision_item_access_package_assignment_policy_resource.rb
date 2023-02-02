@@ -20,7 +20,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accessPackageDisplayName property value. Display name of the access package to which access has been granted.
-        ## @param value Value to set for the accessPackageDisplayName property.
+        ## @param value Value to set for the access_package_display_name property.
         ## @return a void
         ## 
         def access_package_display_name=(value)
@@ -35,7 +35,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accessPackageId property value. Identifier of the access package to which access has been granted.
-        ## @param value Value to set for the accessPackageId property.
+        ## @param value Value to set for the access_package_id property.
         ## @return a void
         ## 
         def access_package_id=(value)

@@ -6,7 +6,7 @@ require_relative '../../models/user_activity_collection_response'
 require_relative '../me'
 require_relative './activities'
 require_relative './count/count_request_builder'
-require_relative './recent/recent_request_builder'
+require_relative './microsoft_graph_recent/recent_request_builder'
 
 module MicrosoftGraph::Me::Activities
     ## 
@@ -17,6 +17,11 @@ module MicrosoftGraph::Me::Activities
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Me::Activities::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the recent method.
+        def microsoft_graph_recent()
+            return MicrosoftGraph::Me::Activities::MicrosoftGraphRecent::RecentRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -70,13 +75,6 @@ module MicrosoftGraph::Me::Activities
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserActivity.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Provides operations to call the recent method.
-        ## @return a recent_request_builder
-        ## 
-        def recent()
-            return RecentRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## The user's activities across devices. Read-only. Nullable.

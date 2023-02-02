@@ -61,7 +61,7 @@ module MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::Attachments:
             return @request_adapter.send_async(request_info, nil, error_mapping)
         end
         ## 
-        ## Get attachments from users
+        ## A collection of file attachments for the task.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of attachment_base
         ## 
@@ -91,7 +91,7 @@ module MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::Attachments:
             return request_info
         end
         ## 
-        ## Get attachments from users
+        ## A collection of file attachments for the task.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -122,7 +122,7 @@ module MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::Attachments:
         end
 
         ## 
-        # Get attachments from users
+        # A collection of file attachments for the task.
         class AttachmentBaseItemRequestBuilderGetQueryParameters
             
             ## 

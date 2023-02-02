@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the moreResultsAvailable property value. Provides information if more results are available. Based on this information, you can adjust the from and size properties of the searchRequest accordingly.
-        ## @param value Value to set for the moreResultsAvailable property.
+        ## @param value Value to set for the more_results_available property.
         ## @return a void
         ## 
         def more_results_available=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

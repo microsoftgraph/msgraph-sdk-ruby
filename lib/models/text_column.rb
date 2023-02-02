@@ -50,7 +50,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowMultipleLines property value. Whether to allow multiple lines of text.
-        ## @param value Value to set for the allowMultipleLines property.
+        ## @param value Value to set for the allow_multiple_lines property.
         ## @return a void
         ## 
         def allow_multiple_lines=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appendChangesToExistingText property value. Whether updates to this column should replace existing text, or append to it.
-        ## @param value Value to set for the appendChangesToExistingText property.
+        ## @param value Value to set for the append_changes_to_existing_text property.
         ## @return a void
         ## 
         def append_changes_to_existing_text=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the linesForEditing property value. The size of the text box.
-        ## @param value Value to set for the linesForEditing property.
+        ## @param value Value to set for the lines_for_editing property.
         ## @return a void
         ## 
         def lines_for_editing=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maxLength property value. The maximum number of characters for the value.
-        ## @param value Value to set for the maxLength property.
+        ## @param value Value to set for the max_length property.
         ## @return a void
         ## 
         def max_length=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the textType property value. The type of text being stored. Must be one of plain or richText
-        ## @param value Value to set for the textType property.
+        ## @param value Value to set for the text_type property.
         ## @return a void
         ## 
         def text_type=(value)

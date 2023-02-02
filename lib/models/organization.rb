@@ -52,7 +52,7 @@ module MicrosoftGraph::Models
         # true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
         @on_premises_sync_enabled
         ## 
-        # The partnerTenantType property
+        # The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
         @partner_tenant_type
         ## 
         # Postal code of the address for the organization.
@@ -82,7 +82,7 @@ module MicrosoftGraph::Models
         # Not nullable.
         @technical_notification_mails
         ## 
-        # The tenantType property
+        # Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
         @tenant_type
         ## 
         # The collection of domains associated with this tenant. Not nullable.
@@ -96,7 +96,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignedPlans property value. The collection of service plans associated with the tenant. Not nullable.
-        ## @param value Value to set for the assignedPlans property.
+        ## @param value Value to set for the assigned_plans property.
         ## @return a void
         ## 
         def assigned_plans=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the businessPhones property value. Telephone number for the organization. Although this is a string collection, only one number can be set for this property.
-        ## @param value Value to set for the businessPhones property.
+        ## @param value Value to set for the business_phones property.
         ## @return a void
         ## 
         def business_phones=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the certificateBasedAuthConfiguration property value. Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
-        ## @param value Value to set for the certificateBasedAuthConfiguration property.
+        ## @param value Value to set for the certificate_based_auth_configuration property.
         ## @return a void
         ## 
         def certificate_based_auth_configuration=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph::Models
             @city = value
         end
         ## 
-        ## Instantiates a new Organization and sets the default values.
+        ## Instantiates a new organization and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -194,7 +194,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the countryLetterCode property value. Country or region abbreviation for the organization in ISO 3166-2 format.
-        ## @param value Value to set for the countryLetterCode property.
+        ## @param value Value to set for the country_letter_code property.
         ## @return a void
         ## 
         def country_letter_code=(value)
@@ -209,7 +209,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. Timestamp of when the organization was created. The value cannot be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -233,7 +233,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the defaultUsageLocation property value. Two-letter ISO 3166 country code indicating the default service usage location of an organization.
-        ## @param value Value to set for the defaultUsageLocation property.
+        ## @param value Value to set for the default_usage_location property.
         ## @return a void
         ## 
         def default_usage_location=(value)
@@ -248,7 +248,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name for the tenant.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -313,7 +313,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the marketingNotificationEmails property value. Not nullable.
-        ## @param value Value to set for the marketingNotificationEmails property.
+        ## @param value Value to set for the marketing_notification_emails property.
         ## @return a void
         ## 
         def marketing_notification_emails=(value)
@@ -328,7 +328,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mobileDeviceManagementAuthority property value. Mobile device management authority.
-        ## @param value Value to set for the mobileDeviceManagementAuthority property.
+        ## @param value Value to set for the mobile_device_management_authority property.
         ## @return a void
         ## 
         def mobile_device_management_authority=(value)
@@ -343,7 +343,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the onPremisesLastSyncDateTime property value. The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        ## @param value Value to set for the onPremisesLastSyncDateTime property.
+        ## @param value Value to set for the on_premises_last_sync_date_time property.
         ## @return a void
         ## 
         def on_premises_last_sync_date_time=(value)
@@ -358,22 +358,22 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced. Nullable. null if this object has never been synced from an on-premises directory (default).
-        ## @param value Value to set for the onPremisesSyncEnabled property.
+        ## @param value Value to set for the on_premises_sync_enabled property.
         ## @return a void
         ## 
         def on_premises_sync_enabled=(value)
             @on_premises_sync_enabled = value
         end
         ## 
-        ## Gets the partnerTenantType property value. The partnerTenantType property
+        ## Gets the partnerTenantType property value. The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
         ## @return a partner_tenant_type
         ## 
         def partner_tenant_type
             return @partner_tenant_type
         end
         ## 
-        ## Sets the partnerTenantType property value. The partnerTenantType property
-        ## @param value Value to set for the partnerTenantType property.
+        ## Sets the partnerTenantType property value. The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.
+        ## @param value Value to set for the partner_tenant_type property.
         ## @return a void
         ## 
         def partner_tenant_type=(value)
@@ -388,7 +388,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the postalCode property value. Postal code of the address for the organization.
-        ## @param value Value to set for the postalCode property.
+        ## @param value Value to set for the postal_code property.
         ## @return a void
         ## 
         def postal_code=(value)
@@ -403,7 +403,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the preferredLanguage property value. The preferred language for the organization. Should follow ISO 639-1 Code; for example, en.
-        ## @param value Value to set for the preferredLanguage property.
+        ## @param value Value to set for the preferred_language property.
         ## @return a void
         ## 
         def preferred_language=(value)
@@ -418,7 +418,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the privacyProfile property value. The privacy profile of an organization.
-        ## @param value Value to set for the privacyProfile property.
+        ## @param value Value to set for the privacy_profile property.
         ## @return a void
         ## 
         def privacy_profile=(value)
@@ -433,7 +433,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the provisionedPlans property value. Not nullable.
-        ## @param value Value to set for the provisionedPlans property.
+        ## @param value Value to set for the provisioned_plans property.
         ## @return a void
         ## 
         def provisioned_plans=(value)
@@ -448,7 +448,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityComplianceNotificationMails property value. The securityComplianceNotificationMails property
-        ## @param value Value to set for the securityComplianceNotificationMails property.
+        ## @param value Value to set for the security_compliance_notification_mails property.
         ## @return a void
         ## 
         def security_compliance_notification_mails=(value)
@@ -463,7 +463,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityComplianceNotificationPhones property value. The securityComplianceNotificationPhones property
-        ## @param value Value to set for the securityComplianceNotificationPhones property.
+        ## @param value Value to set for the security_compliance_notification_phones property.
         ## @return a void
         ## 
         def security_compliance_notification_phones=(value)
@@ -544,22 +544,22 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the technicalNotificationMails property value. Not nullable.
-        ## @param value Value to set for the technicalNotificationMails property.
+        ## @param value Value to set for the technical_notification_mails property.
         ## @return a void
         ## 
         def technical_notification_mails=(value)
             @technical_notification_mails = value
         end
         ## 
-        ## Gets the tenantType property value. The tenantType property
+        ## Gets the tenantType property value. Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
         ## @return a string
         ## 
         def tenant_type
             return @tenant_type
         end
         ## 
-        ## Sets the tenantType property value. The tenantType property
-        ## @param value Value to set for the tenantType property.
+        ## Sets the tenantType property value. Not nullable. The tenant type option that was selected when the tenant was created. The possible values are:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C A customer identity access management (CIAM) service that serves business-to-consumer (B2C) scenarios.
+        ## @param value Value to set for the tenant_type property.
         ## @return a void
         ## 
         def tenant_type=(value)
@@ -574,7 +574,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the verifiedDomains property value. The collection of domains associated with this tenant. Not nullable.
-        ## @param value Value to set for the verifiedDomains property.
+        ## @param value Value to set for the verified_domains property.
         ## @return a void
         ## 
         def verified_domains=(value)

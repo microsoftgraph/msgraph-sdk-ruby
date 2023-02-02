@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayAs property value. How the value should be presented in the UX. Must be one of default, friendly, or standard. See below for more details. If unspecified, treated as default.
-        ## @param value Value to set for the displayAs property.
+        ## @param value Value to set for the display_as property.
         ## @return a void
         ## 
         def display_as=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

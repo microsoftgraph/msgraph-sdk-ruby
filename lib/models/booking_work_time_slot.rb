@@ -58,7 +58,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the endTime property value. The time of the day when work stops. For example, 17:00:00.0000000.
-        ## @param value Value to set for the endTime property.
+        ## @param value Value to set for the end_time property.
         ## @return a void
         ## 
         def end_time=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the startTime property value. The time of the day when work starts. For example, 08:00:00.0000000.
-        ## @param value Value to set for the startTime property.
+        ## @param value Value to set for the start_time property.
         ## @return a void
         ## 
         def start_time=(value)

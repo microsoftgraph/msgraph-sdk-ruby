@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the preFetchMedia property value. The list of media to pre-fetch.
-        ## @param value Value to set for the preFetchMedia property.
+        ## @param value Value to set for the pre_fetch_media property.
         ## @return a void
         ## 
         def pre_fetch_media=(value)

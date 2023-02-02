@@ -46,7 +46,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appConfigKey property value. app configuration key.
-        ## @param value Value to set for the appConfigKey property.
+        ## @param value Value to set for the app_config_key property.
         ## @return a void
         ## 
         def app_config_key=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appConfigKeyType property value. App configuration key types.
-        ## @param value Value to set for the appConfigKeyType property.
+        ## @param value Value to set for the app_config_key_type property.
         ## @return a void
         ## 
         def app_config_key_type=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appConfigKeyValue property value. app configuration key value.
-        ## @param value Value to set for the appConfigKeyValue property.
+        ## @param value Value to set for the app_config_key_value property.
         ## @return a void
         ## 
         def app_config_key_value=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

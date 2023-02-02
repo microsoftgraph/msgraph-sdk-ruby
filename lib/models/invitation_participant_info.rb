@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the participantId property value. Optional. The ID of the target participant.
-        ## @param value Value to set for the participantId property.
+        ## @param value Value to set for the participant_id property.
         ## @return a void
         ## 
         def participant_id=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the removeFromDefaultAudioRoutingGroup property value. Optional. Whether to remove them from the main mixer.
-        ## @param value Value to set for the removeFromDefaultAudioRoutingGroup property.
+        ## @param value Value to set for the remove_from_default_audio_routing_group property.
         ## @return a void
         ## 
         def remove_from_default_audio_routing_group=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the replacesCallId property value. Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.
-        ## @param value Value to set for the replacesCallId property.
+        ## @param value Value to set for the replaces_call_id property.
         ## @return a void
         ## 
         def replaces_call_id=(value)

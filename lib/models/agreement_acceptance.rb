@@ -54,7 +54,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the agreementFileId property value. The identifier of the agreement file accepted by the user.
-        ## @param value Value to set for the agreementFileId property.
+        ## @param value Value to set for the agreement_file_id property.
         ## @return a void
         ## 
         def agreement_file_id=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the agreementId property value. The identifier of the agreement.
-        ## @param value Value to set for the agreementId property.
+        ## @param value Value to set for the agreement_id property.
         ## @return a void
         ## 
         def agreement_id=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceDisplayName property value. The display name of the device used for accepting the agreement.
-        ## @param value Value to set for the deviceDisplayName property.
+        ## @param value Value to set for the device_display_name property.
         ## @return a void
         ## 
         def device_display_name=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceId property value. The unique identifier of the device used for accepting the agreement. Supports $filter (eq) and eq for null values.
-        ## @param value Value to set for the deviceId property.
+        ## @param value Value to set for the device_id property.
         ## @return a void
         ## 
         def device_id=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceOSType property value. The operating system used to accept the agreement.
-        ## @param value Value to set for the deviceOSType property.
+        ## @param value Value to set for the device_o_s_type property.
         ## @return a void
         ## 
         def device_o_s_type=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceOSVersion property value. The operating system version of the device used to accept the agreement.
-        ## @param value Value to set for the deviceOSVersion property.
+        ## @param value Value to set for the device_o_s_version property.
         ## @return a void
         ## 
         def device_o_s_version=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the expirationDateTime property value. The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and eq for null values.
-        ## @param value Value to set for the expirationDateTime property.
+        ## @param value Value to set for the expiration_date_time property.
         ## @return a void
         ## 
         def expiration_date_time=(value)
@@ -196,7 +196,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the recordedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        ## @param value Value to set for the recordedDateTime property.
+        ## @param value Value to set for the recorded_date_time property.
         ## @return a void
         ## 
         def recorded_date_time=(value)
@@ -248,7 +248,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userDisplayName property value. Display name of the user when the acceptance was recorded.
-        ## @param value Value to set for the userDisplayName property.
+        ## @param value Value to set for the user_display_name property.
         ## @return a void
         ## 
         def user_display_name=(value)
@@ -263,7 +263,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userEmail property value. Email of the user when the acceptance was recorded.
-        ## @param value Value to set for the userEmail property.
+        ## @param value Value to set for the user_email property.
         ## @return a void
         ## 
         def user_email=(value)
@@ -278,7 +278,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userId property value. The identifier of the user who accepted the agreement. Supports $filter (eq).
-        ## @param value Value to set for the userId property.
+        ## @param value Value to set for the user_id property.
         ## @return a void
         ## 
         def user_id=(value)
@@ -293,7 +293,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userPrincipalName property value. UPN of the user when the acceptance was recorded.
-        ## @param value Value to set for the userPrincipalName property.
+        ## @param value Value to set for the user_principal_name property.
         ## @return a void
         ## 
         def user_principal_name=(value)

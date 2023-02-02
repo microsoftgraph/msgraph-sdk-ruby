@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceId property value. Refers to the UniqueID of the device used for signing in.
-        ## @param value Value to set for the deviceId property.
+        ## @param value Value to set for the device_id property.
         ## @return a void
         ## 
         def device_id=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Refers to the name of the device used for signing in.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isCompliant property value. Indicates whether the device is compliant.
-        ## @param value Value to set for the isCompliant property.
+        ## @param value Value to set for the is_compliant property.
         ## @return a void
         ## 
         def is_compliant=(value)
@@ -148,7 +148,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isManaged property value. Indicates whether the device is managed.
-        ## @param value Value to set for the isManaged property.
+        ## @param value Value to set for the is_managed property.
         ## @return a void
         ## 
         def is_managed=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -178,7 +178,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the operatingSystem property value. Indicates the operating system name and version used for signing in.
-        ## @param value Value to set for the operatingSystem property.
+        ## @param value Value to set for the operating_system property.
         ## @return a void
         ## 
         def operating_system=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the trustType property value. Provides information about whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.
-        ## @param value Value to set for the trustType property.
+        ## @param value Value to set for the trust_type property.
         ## @return a void
         ## 
         def trust_type=(value)

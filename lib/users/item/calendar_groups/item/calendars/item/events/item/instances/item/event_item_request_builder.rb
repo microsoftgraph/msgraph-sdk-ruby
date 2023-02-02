@@ -11,34 +11,29 @@ require_relative '../../../../item'
 require_relative '../../../events'
 require_relative '../../item'
 require_relative '../instances'
-require_relative './accept/accept_request_builder'
 require_relative './attachments/attachments_request_builder'
 require_relative './attachments/item/attachment_item_request_builder'
 require_relative './calendar/calendar_request_builder'
-require_relative './cancel/cancel_request_builder'
-require_relative './decline/decline_request_builder'
-require_relative './dismiss_reminder/dismiss_reminder_request_builder'
 require_relative './extensions/extensions_request_builder'
 require_relative './extensions/item/extension_item_request_builder'
-require_relative './forward/forward_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_accept/accept_request_builder'
+require_relative './microsoft_graph_cancel/cancel_request_builder'
+require_relative './microsoft_graph_decline/decline_request_builder'
+require_relative './microsoft_graph_dismiss_reminder/dismiss_reminder_request_builder'
+require_relative './microsoft_graph_forward/forward_request_builder'
+require_relative './microsoft_graph_snooze_reminder/snooze_reminder_request_builder'
+require_relative './microsoft_graph_tentatively_accept/tentatively_accept_request_builder'
 require_relative './multi_value_extended_properties/item/multi_value_legacy_extended_property_item_request_builder'
 require_relative './multi_value_extended_properties/multi_value_extended_properties_request_builder'
 require_relative './single_value_extended_properties/item/single_value_legacy_extended_property_item_request_builder'
 require_relative './single_value_extended_properties/single_value_extended_properties_request_builder'
-require_relative './snooze_reminder/snooze_reminder_request_builder'
-require_relative './tentatively_accept/tentatively_accept_request_builder'
 
 module MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item
     ## 
     # Provides operations to manage the instances property of the microsoft.graph.event entity.
     class EventItemRequestBuilder
         
-        ## 
-        # Provides operations to call the accept method.
-        def accept()
-            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::Accept::AcceptRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the attachments property of the microsoft.graph.event entity.
         def attachments()
@@ -50,29 +45,44 @@ module MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Event
             return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::Calendar::CalendarRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the cancel method.
-        def cancel()
-            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::Cancel::CancelRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the decline method.
-        def decline()
-            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::Decline::DeclineRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the dismissReminder method.
-        def dismiss_reminder()
-            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::DismissReminder::DismissReminderRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the extensions property of the microsoft.graph.event entity.
         def extensions()
             return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::Extensions::ExtensionsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the accept method.
+        def microsoft_graph_accept()
+            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::MicrosoftGraphAccept::AcceptRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the cancel method.
+        def microsoft_graph_cancel()
+            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::MicrosoftGraphCancel::CancelRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the decline method.
+        def microsoft_graph_decline()
+            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::MicrosoftGraphDecline::DeclineRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the dismissReminder method.
+        def microsoft_graph_dismiss_reminder()
+            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::MicrosoftGraphDismissReminder::DismissReminderRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the forward method.
-        def forward()
-            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::Forward::ForwardRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_forward()
+            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::MicrosoftGraphForward::ForwardRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the snoozeReminder method.
+        def microsoft_graph_snooze_reminder()
+            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::MicrosoftGraphSnoozeReminder::SnoozeReminderRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the tentativelyAccept method.
+        def microsoft_graph_tentatively_accept()
+            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::MicrosoftGraphTentativelyAccept::TentativelyAcceptRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
@@ -89,16 +99,6 @@ module MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Event
         # Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
         def single_value_extended_properties()
             return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::SingleValueExtendedProperties::SingleValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the snoozeReminder method.
-        def snooze_reminder()
-            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::SnoozeReminder::SnoozeReminderRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the tentativelyAccept method.
-        def tentatively_accept()
-            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Item::Instances::Item::TentativelyAccept::TentativelyAcceptRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Url template to use to build the URL for the current request builder

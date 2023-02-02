@@ -29,7 +29,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the actionWebUrl property value. Web URL to the recommended action.
-        ## @param value Value to set for the actionWebUrl property.
+        ## @param value Value to set for the action_web_url property.
         ## @return a void
         ## 
         def action_web_url=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the potentialScoreImpact property value. Potential improvement in the tenant security score from the recommended action.
-        ## @param value Value to set for the potentialScoreImpact property.
+        ## @param value Value to set for the potential_score_impact property.
         ## @return a void
         ## 
         def potential_score_impact=(value)

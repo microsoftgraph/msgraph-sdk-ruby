@@ -40,7 +40,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the draftTimeOff property value. The draft version of this timeOff that is viewable by managers. Required.
-        ## @param value Value to set for the draftTimeOff property.
+        ## @param value Value to set for the draft_time_off property.
         ## @return a void
         ## 
         def draft_time_off=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.
-        ## @param value Value to set for the sharedTimeOff property.
+        ## @param value Value to set for the shared_time_off property.
         ## @return a void
         ## 
         def shared_time_off=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userId property value. ID of the user assigned to the timeOff. Required.
-        ## @param value Value to set for the userId property.
+        ## @param value Value to set for the user_id property.
         ## @return a void
         ## 
         def user_id=(value)

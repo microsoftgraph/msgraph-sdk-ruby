@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the storagePlanInformation property value. Information about the drive's storage quota plans. Only in Personal OneDrive.
-        ## @param value Value to set for the storagePlanInformation property.
+        ## @param value Value to set for the storage_plan_information property.
         ## @return a void
         ## 
         def storage_plan_information=(value)

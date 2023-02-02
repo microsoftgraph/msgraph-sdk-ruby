@@ -9,23 +9,48 @@ require_relative '../../../assignments'
 require_relative '../../item'
 require_relative '../submissions'
 require_relative './item'
+require_relative './microsoft_graph_reassign/reassign_request_builder'
+require_relative './microsoft_graph_return/return_request_builder'
+require_relative './microsoft_graph_set_up_resources_folder/set_up_resources_folder_request_builder'
+require_relative './microsoft_graph_submit/submit_request_builder'
+require_relative './microsoft_graph_unsubmit/unsubmit_request_builder'
 require_relative './outcomes/item/education_outcome_item_request_builder'
 require_relative './outcomes/outcomes_request_builder'
-require_relative './reassign/reassign_request_builder'
 require_relative './resources/item/education_submission_resource_item_request_builder'
 require_relative './resources/resources_request_builder'
-require_relative './return_escaped/return_request_builder'
-require_relative './set_up_resources_folder/set_up_resources_folder_request_builder'
-require_relative './submit/submit_request_builder'
 require_relative './submitted_resources/item/education_submission_resource_item_request_builder'
 require_relative './submitted_resources/submitted_resources_request_builder'
-require_relative './unsubmit/unsubmit_request_builder'
 
 module MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item
     ## 
     # Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
     class EducationSubmissionItemRequestBuilder
         
+        ## 
+        # Provides operations to call the reassign method.
+        def microsoft_graph_reassign()
+            return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::MicrosoftGraphReassign::ReassignRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the return method.
+        def microsoft_graph_return()
+            return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::MicrosoftGraphReturn::ReturnRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the setUpResourcesFolder method.
+        def microsoft_graph_set_up_resources_folder()
+            return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::MicrosoftGraphSetUpResourcesFolder::SetUpResourcesFolderRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the submit method.
+        def microsoft_graph_submit()
+            return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::MicrosoftGraphSubmit::SubmitRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the unsubmit method.
+        def microsoft_graph_unsubmit()
+            return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::MicrosoftGraphUnsubmit::UnsubmitRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Provides operations to manage the outcomes property of the microsoft.graph.educationSubmission entity.
         def outcomes()
@@ -35,11 +60,6 @@ module MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions:
         # Path parameters for the request
         @path_parameters
         ## 
-        # Provides operations to call the reassign method.
-        def reassign()
-            return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::Reassign::ReassignRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
@@ -48,29 +68,9 @@ module MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions:
             return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::Resources::ResourcesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the return method.
-        def return_escaped()
-            return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::Return_escaped::ReturnRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the setUpResourcesFolder method.
-        def set_up_resources_folder()
-            return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::SetUpResourcesFolder::SetUpResourcesFolderRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the submit method.
-        def submit()
-            return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::Submit::SubmitRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the submittedResources property of the microsoft.graph.educationSubmission entity.
         def submitted_resources()
             return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::SubmittedResources::SubmittedResourcesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the unsubmit method.
-        def unsubmit()
-            return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::Unsubmit::UnsubmitRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Url template to use to build the URL for the current request builder

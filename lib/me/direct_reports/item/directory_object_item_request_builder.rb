@@ -5,8 +5,8 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../me'
 require_relative '../direct_reports'
 require_relative './item'
-require_relative './org_contact/org_contact_request_builder'
-require_relative './user/user_request_builder'
+require_relative './microsoft_graph_org_contact/org_contact_request_builder'
+require_relative './microsoft_graph_user/user_request_builder'
 
 module MicrosoftGraph::Me::DirectReports::Item
     ## 
@@ -15,8 +15,13 @@ module MicrosoftGraph::Me::DirectReports::Item
         
         ## 
         # Casts the previous resource to orgContact.
-        def org_contact()
-            return MicrosoftGraph::Me::DirectReports::Item::OrgContact::OrgContactRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_org_contact()
+            return MicrosoftGraph::Me::DirectReports::Item::MicrosoftGraphOrgContact::OrgContactRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Casts the previous resource to user.
+        def microsoft_graph_user()
+            return MicrosoftGraph::Me::DirectReports::Item::MicrosoftGraphUser::UserRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -27,11 +32,6 @@ module MicrosoftGraph::Me::DirectReports::Item
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        # Casts the previous resource to user.
-        def user()
-            return MicrosoftGraph::Me::DirectReports::Item::User::UserRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request

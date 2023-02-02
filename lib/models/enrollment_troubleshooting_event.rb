@@ -54,7 +54,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceId property value. Azure AD device identifier.
-        ## @param value Value to set for the deviceId property.
+        ## @param value Value to set for the device_id property.
         ## @return a void
         ## 
         def device_id=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enrollmentType property value. Possible ways of adding a mobile device to management.
-        ## @param value Value to set for the enrollmentType property.
+        ## @param value Value to set for the enrollment_type property.
         ## @return a void
         ## 
         def enrollment_type=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the failureCategory property value. Top level failure categories for enrollment.
-        ## @param value Value to set for the failureCategory property.
+        ## @param value Value to set for the failure_category property.
         ## @return a void
         ## 
         def failure_category=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the failureReason property value. Detailed failure reason.
-        ## @param value Value to set for the failureReason property.
+        ## @param value Value to set for the failure_reason property.
         ## @return a void
         ## 
         def failure_reason=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managedDeviceIdentifier property value. Device identifier created or collected by Intune.
-        ## @param value Value to set for the managedDeviceIdentifier property.
+        ## @param value Value to set for the managed_device_identifier property.
         ## @return a void
         ## 
         def managed_device_identifier=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the operatingSystem property value. Operating System.
-        ## @param value Value to set for the operatingSystem property.
+        ## @param value Value to set for the operating_system property.
         ## @return a void
         ## 
         def operating_system=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osVersion property value. OS Version.
-        ## @param value Value to set for the osVersion property.
+        ## @param value Value to set for the os_version property.
         ## @return a void
         ## 
         def os_version=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userId property value. Identifier for the user that tried to enroll the device.
-        ## @param value Value to set for the userId property.
+        ## @param value Value to set for the user_id property.
         ## @return a void
         ## 
         def user_id=(value)

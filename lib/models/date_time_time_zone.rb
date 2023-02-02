@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dateTime property value. A single point of time in a combined date and time representation ({date}T{time}; for example, 2017-08-29T04:00:00.0000000).
-        ## @param value Value to set for the dateTime property.
+        ## @param value Value to set for the date_time property.
         ## @return a void
         ## 
         def date_time=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the timeZone property value. Represents a time zone, for example, 'Pacific Standard Time'. See below for more possible values.
-        ## @param value Value to set for the timeZone property.
+        ## @param value Value to set for the time_zone property.
         ## @return a void
         ## 
         def time_zone=(value)

@@ -7,13 +7,13 @@ module MicrosoftGraph::Models
     class AttachmentSession < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
-        # The content property
+        # The content streams that are uploaded.
         @content
         ## 
-        # The expirationDateTime property
+        # The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
         @expiration_date_time
         ## 
-        # The nextExpectedRanges property
+        # Indicates a single value {start} that represents the location in the file where the next upload should begin.
         @next_expected_ranges
         ## 
         ## Instantiates a new attachmentSession and sets the default values.
@@ -23,14 +23,14 @@ module MicrosoftGraph::Models
             super
         end
         ## 
-        ## Gets the content property value. The content property
+        ## Gets the content property value. The content streams that are uploaded.
         ## @return a binary
         ## 
         def content
             return @content
         end
         ## 
-        ## Sets the content property value. The content property
+        ## Sets the content property value. The content streams that are uploaded.
         ## @param value Value to set for the content property.
         ## @return a void
         ## 
@@ -47,15 +47,15 @@ module MicrosoftGraph::Models
             return AttachmentSession.new
         end
         ## 
-        ## Gets the expirationDateTime property value. The expirationDateTime property
+        ## Gets the expirationDateTime property value. The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
         ## @return a date_time
         ## 
         def expiration_date_time
             return @expiration_date_time
         end
         ## 
-        ## Sets the expirationDateTime property value. The expirationDateTime property
-        ## @param value Value to set for the expirationDateTime property.
+        ## Sets the expirationDateTime property value. The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
+        ## @param value Value to set for the expiration_date_time property.
         ## @return a void
         ## 
         def expiration_date_time=(value)
@@ -73,15 +73,15 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the nextExpectedRanges property value. The nextExpectedRanges property
+        ## Gets the nextExpectedRanges property value. Indicates a single value {start} that represents the location in the file where the next upload should begin.
         ## @return a string
         ## 
         def next_expected_ranges
             return @next_expected_ranges
         end
         ## 
-        ## Sets the nextExpectedRanges property value. The nextExpectedRanges property
-        ## @param value Value to set for the nextExpectedRanges property.
+        ## Sets the nextExpectedRanges property value. Indicates a single value {start} that represents the location in the file where the next upload should begin.
+        ## @param value Value to set for the next_expected_ranges property.
         ## @return a void
         ## 
         def next_expected_ranges=(value)

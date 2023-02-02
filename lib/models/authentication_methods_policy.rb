@@ -36,7 +36,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the authenticationMethodConfigurations property value. Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
-        ## @param value Value to set for the authenticationMethodConfigurations property.
+        ## @param value Value to set for the authentication_method_configurations property.
         ## @return a void
         ## 
         def authentication_method_configurations=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the policy. Read-only.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. The date and time of the last update to the policy. Read-only.
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the policyVersion property value. The version of the policy in use. Read-only.
-        ## @param value Value to set for the policyVersion property.
+        ## @param value Value to set for the policy_version property.
         ## @return a void
         ## 
         def policy_version=(value)
@@ -142,7 +142,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the reconfirmationInDays property value. The reconfirmationInDays property
-        ## @param value Value to set for the reconfirmationInDays property.
+        ## @param value Value to set for the reconfirmation_in_days property.
         ## @return a void
         ## 
         def reconfirmation_in_days=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the registrationEnforcement property value. Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
-        ## @param value Value to set for the registrationEnforcement property.
+        ## @param value Value to set for the registration_enforcement property.
         ## @return a void
         ## 
         def registration_enforcement=(value)

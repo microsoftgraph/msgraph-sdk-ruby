@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isDefault property value. Determines whether the value is set as the default.
-        ## @param value Value to set for the isDefault property.
+        ## @param value Value to set for the is_default property.
         ## @return a void
         ## 
         def is_default=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

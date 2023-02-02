@@ -5,7 +5,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../me'
 require_relative './calendar_view'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
+require_relative './microsoft_graph_delta/delta_request_builder'
 
 module MicrosoftGraph::Me::CalendarView
     ## 
@@ -16,6 +16,11 @@ module MicrosoftGraph::Me::CalendarView
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Me::CalendarView::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::Me::CalendarView::MicrosoftGraphDelta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -39,13 +44,6 @@ module MicrosoftGraph::Me::CalendarView
             @request_adapter = request_adapter
             path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
             @path_parameters = path_parameters if path_parameters.is_a? Hash
-        end
-        ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## The calendar view for the calendar. Read-only. Nullable.

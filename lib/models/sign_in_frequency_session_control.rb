@@ -26,7 +26,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the authenticationType property value. The possible values are primaryAndSecondaryAuthentication, secondaryAuthentication, unknownFutureValue.
-        ## @param value Value to set for the authenticationType property.
+        ## @param value Value to set for the authentication_type property.
         ## @return a void
         ## 
         def authentication_type=(value)
@@ -58,7 +58,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the frequencyInterval property value. The possible values are timeBased, everyTime, unknownFutureValue.
-        ## @param value Value to set for the frequencyInterval property.
+        ## @param value Value to set for the frequency_interval property.
         ## @return a void
         ## 
         def frequency_interval=(value)

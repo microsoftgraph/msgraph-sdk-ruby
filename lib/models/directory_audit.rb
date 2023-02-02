@@ -48,7 +48,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activityDateTime property value. Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        ## @param value Value to set for the activityDateTime property.
+        ## @param value Value to set for the activity_date_time property.
         ## @return a void
         ## 
         def activity_date_time=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
-        ## @param value Value to set for the activityDisplayName property.
+        ## @param value Value to set for the activity_display_name property.
         ## @return a void
         ## 
         def activity_display_name=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the additionalDetails property value. Indicates additional details on the activity.
-        ## @param value Value to set for the additionalDetails property.
+        ## @param value Value to set for the additional_details property.
         ## @return a void
         ## 
         def additional_details=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the correlationId property value. Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
-        ## @param value Value to set for the correlationId property.
+        ## @param value Value to set for the correlation_id property.
         ## @return a void
         ## 
         def correlation_id=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the initiatedBy property value. The initiatedBy property
-        ## @param value Value to set for the initiatedBy property.
+        ## @param value Value to set for the initiated_by property.
         ## @return a void
         ## 
         def initiated_by=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the loggedByService property value. Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
-        ## @param value Value to set for the loggedByService property.
+        ## @param value Value to set for the logged_by_service property.
         ## @return a void
         ## 
         def logged_by_service=(value)
@@ -188,7 +188,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the operationType property value. Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.
-        ## @param value Value to set for the operationType property.
+        ## @param value Value to set for the operation_type property.
         ## @return a void
         ## 
         def operation_type=(value)
@@ -218,7 +218,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resultReason property value. Indicates the reason for failure if the result is failure or timeout.
-        ## @param value Value to set for the resultReason property.
+        ## @param value Value to set for the result_reason property.
         ## @return a void
         ## 
         def result_reason=(value)
@@ -253,7 +253,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the targetResources property value. Indicates information on which resource was changed due to the activity. Target Resource Type can be User, Device, Directory, App, Role, Group, Policy or Other.
-        ## @param value Value to set for the targetResources property.
+        ## @param value Value to set for the target_resources property.
         ## @return a void
         ## 
         def target_resources=(value)

@@ -27,7 +27,6 @@ require_relative './device_management_partners/item/device_management_partner_it
 require_relative './device_management'
 require_relative './exchange_connectors/exchange_connectors_request_builder'
 require_relative './exchange_connectors/item/device_management_exchange_connector_item_request_builder'
-require_relative './get_effective_permissions_with_scope/get_effective_permissions_with_scope_request_builder'
 require_relative './imported_windows_autopilot_device_identities/imported_windows_autopilot_device_identities_request_builder'
 require_relative './imported_windows_autopilot_device_identities/item/imported_windows_autopilot_device_identity_item_request_builder'
 require_relative './ios_update_statuses/ios_update_statuses_request_builder'
@@ -35,6 +34,8 @@ require_relative './ios_update_statuses/item/ios_update_device_status_item_reque
 require_relative './managed_device_overview/managed_device_overview_request_builder'
 require_relative './managed_devices/item/managed_device_item_request_builder'
 require_relative './managed_devices/managed_devices_request_builder'
+require_relative './microsoft_graph_get_effective_permissions_with_scope/get_effective_permissions_with_scope_request_builder'
+require_relative './microsoft_graph_verify_windows_enrollment_auto_discovery_with_domain_name/verify_windows_enrollment_auto_discovery_with_domain_name_request_builder'
 require_relative './mobile_threat_defense_connectors/item/mobile_threat_defense_connector_item_request_builder'
 require_relative './mobile_threat_defense_connectors/mobile_threat_defense_connectors_request_builder'
 require_relative './notification_message_templates/item/notification_message_template_item_request_builder'
@@ -55,7 +56,6 @@ require_relative './terms_and_conditions/item/terms_and_conditions_item_request_
 require_relative './terms_and_conditions/terms_and_conditions_request_builder'
 require_relative './troubleshooting_events/item/device_management_troubleshooting_event_item_request_builder'
 require_relative './troubleshooting_events/troubleshooting_events_request_builder'
-require_relative './verify_windows_enrollment_auto_discovery_with_domain_name/verify_windows_enrollment_auto_discovery_with_domain_name_request_builder'
 require_relative './windows_autopilot_device_identities/item/windows_autopilot_device_identity_item_request_builder'
 require_relative './windows_autopilot_device_identities/windows_autopilot_device_identities_request_builder'
 require_relative './windows_information_protection_app_learning_summaries/item/windows_information_protection_app_learning_summary_item_request_builder'
@@ -376,15 +376,6 @@ module MicrosoftGraph::DeviceManagement
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceManagement.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Provides operations to call the getEffectivePermissions method.
-        ## @param scope Usage: scope='{scope}'
-        ## @return a get_effective_permissions_with_scope_request_builder
-        ## 
-        def get_effective_permissions_with_scope(scope)
-            raise StandardError, 'scope cannot be null' if scope.nil?
-            return GetEffectivePermissionsWithScopeRequestBuilder.new(@path_parameters, @request_adapter, scope)
-        end
-        ## 
         ## Provides operations to manage the importedWindowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
         ## @param id Unique identifier of the item
         ## @return a imported_windows_autopilot_device_identity_item_request_builder
@@ -416,6 +407,24 @@ module MicrosoftGraph::DeviceManagement
             url_tpl_params = @path_parameters.clone
             url_tpl_params["managedDevice%2Did"] = id
             return MicrosoftGraph::DeviceManagement::ManagedDevices::Item::ManagedDeviceItemRequestBuilder.new(url_tpl_params, @request_adapter)
+        end
+        ## 
+        ## Provides operations to call the getEffectivePermissions method.
+        ## @param scope Usage: scope='{scope}'
+        ## @return a get_effective_permissions_with_scope_request_builder
+        ## 
+        def microsoft_graph_get_effective_permissions_with_scope(scope)
+            raise StandardError, 'scope cannot be null' if scope.nil?
+            return GetEffectivePermissionsWithScopeRequestBuilder.new(@path_parameters, @request_adapter, scope)
+        end
+        ## 
+        ## Provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
+        ## @param domainName Usage: domainName='{domainName}'
+        ## @return a verify_windows_enrollment_auto_discovery_with_domain_name_request_builder
+        ## 
+        def microsoft_graph_verify_windows_enrollment_auto_discovery_with_domain_name(domain_name)
+            raise StandardError, 'domain_name cannot be null' if domain_name.nil?
+            return VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder.new(@path_parameters, @request_adapter, domainName)
         end
         ## 
         ## Provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.
@@ -569,15 +578,6 @@ module MicrosoftGraph::DeviceManagement
             url_tpl_params = @path_parameters.clone
             url_tpl_params["deviceManagementTroubleshootingEvent%2Did"] = id
             return MicrosoftGraph::DeviceManagement::TroubleshootingEvents::Item::DeviceManagementTroubleshootingEventItemRequestBuilder.new(url_tpl_params, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
-        ## @param domainName Usage: domainName='{domainName}'
-        ## @return a verify_windows_enrollment_auto_discovery_with_domain_name_request_builder
-        ## 
-        def verify_windows_enrollment_auto_discovery_with_domain_name(domain_name)
-            raise StandardError, 'domain_name cannot be null' if domain_name.nil?
-            return VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder.new(@path_parameters, @request_adapter, domainName)
         end
         ## 
         ## Provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.

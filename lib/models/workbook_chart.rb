@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dataLabels property value. Represents the datalabels on the chart. Read-only.
-        ## @param value Value to set for the dataLabels property.
+        ## @param value Value to set for the data_labels property.
         ## @return a void
         ## 
         def data_labels=(value)

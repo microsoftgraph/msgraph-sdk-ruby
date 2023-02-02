@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the configurationAppliedUserCount property value. Number of users the policy is applied.
-        ## @param value Value to set for the configurationAppliedUserCount property.
+        ## @param value Value to set for the configuration_applied_user_count property.
         ## @return a void
         ## 
         def configuration_applied_user_count=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mobileAppIdentifier property value. Deployment of an app.
-        ## @param value Value to set for the mobileAppIdentifier property.
+        ## @param value Value to set for the mobile_app_identifier property.
         ## @return a void
         ## 
         def mobile_app_identifier=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isDialInBypassEnabled property value. Specifies whether or not to always let dial-in callers bypass the lobby. Optional.
-        ## @param value Value to set for the isDialInBypassEnabled property.
+        ## @param value Value to set for the is_dial_in_bypass_enabled property.
         ## @return a void
         ## 
         def is_dial_in_bypass_enabled=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

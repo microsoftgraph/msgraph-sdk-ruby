@@ -3,8 +3,6 @@ require_relative '../microsoft_graph'
 require_relative './models'
 
 module MicrosoftGraph::Models
-    ## 
-    # The resource that represents an instance of Enrollment Failure Reports.
     class ReportRoot
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 
@@ -68,7 +66,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dailyPrintUsageByPrinter property value. The dailyPrintUsageByPrinter property
-        ## @param value Value to set for the dailyPrintUsageByPrinter property.
+        ## @param value Value to set for the daily_print_usage_by_printer property.
         ## @return a void
         ## 
         def daily_print_usage_by_printer=(value)
@@ -83,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dailyPrintUsageByUser property value. The dailyPrintUsageByUser property
-        ## @param value Value to set for the dailyPrintUsageByUser property.
+        ## @param value Value to set for the daily_print_usage_by_user property.
         ## @return a void
         ## 
         def daily_print_usage_by_user=(value)
@@ -112,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the monthlyPrintUsageByPrinter property value. The monthlyPrintUsageByPrinter property
-        ## @param value Value to set for the monthlyPrintUsageByPrinter property.
+        ## @param value Value to set for the monthly_print_usage_by_printer property.
         ## @return a void
         ## 
         def monthly_print_usage_by_printer=(value)
@@ -127,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the monthlyPrintUsageByUser property value. The monthlyPrintUsageByUser property
-        ## @param value Value to set for the monthlyPrintUsageByUser property.
+        ## @param value Value to set for the monthly_print_usage_by_user property.
         ## @return a void
         ## 
         def monthly_print_usage_by_user=(value)
@@ -142,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

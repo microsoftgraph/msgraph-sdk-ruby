@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isDescending property value. True to specify the sort order as descending. The default is false, with the sort order as ascending. Optional.
-        ## @param value Value to set for the isDescending property.
+        ## @param value Value to set for the is_descending property.
         ## @return a void
         ## 
         def is_descending=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minimumCount property value. The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
-        ## @param value Value to set for the minimumCount property.
+        ## @param value Value to set for the minimum_count property.
         ## @return a void
         ## 
         def minimum_count=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the prefixFilter property value. A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
-        ## @param value Value to set for the prefixFilter property.
+        ## @param value Value to set for the prefix_filter property.
         ## @return a void
         ## 
         def prefix_filter=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sortBy property value. The sortBy property
-        ## @param value Value to set for the sortBy property.
+        ## @param value Value to set for the sort_by property.
         ## @return a void
         ## 
         def sort_by=(value)

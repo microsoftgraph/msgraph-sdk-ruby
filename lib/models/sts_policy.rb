@@ -23,7 +23,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appliesTo property value. The appliesTo property
-        ## @param value Value to set for the appliesTo property.
+        ## @param value Value to set for the applies_to property.
         ## @return a void
         ## 
         def applies_to=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isOrganizationDefault property value. If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
-        ## @param value Value to set for the isOrganizationDefault property.
+        ## @param value Value to set for the is_organization_default property.
         ## @return a void
         ## 
         def is_organization_default=(value)

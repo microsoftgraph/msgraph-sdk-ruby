@@ -37,7 +37,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignedUserPrincipalName property value. UPN of the user the device will be assigned
-        ## @param value Value to set for the assignedUserPrincipalName property.
+        ## @param value Value to set for the assigned_user_principal_name property.
         ## @return a void
         ## 
         def assigned_user_principal_name=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the groupTag property value. Group Tag of the Windows autopilot device.
-        ## @param value Value to set for the groupTag property.
+        ## @param value Value to set for the group_tag property.
         ## @return a void
         ## 
         def group_tag=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hardwareIdentifier property value. Hardware Blob of the Windows autopilot device.
-        ## @param value Value to set for the hardwareIdentifier property.
+        ## @param value Value to set for the hardware_identifier property.
         ## @return a void
         ## 
         def hardware_identifier=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the importId property value. The Import Id of the Windows autopilot device.
-        ## @param value Value to set for the importId property.
+        ## @param value Value to set for the import_id property.
         ## @return a void
         ## 
         def import_id=(value)
@@ -128,11 +128,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the productKey property value. Product Key of the Windows autopilot device.
-        ## @param value Value to set for the productKey property.
+        ## @param value Value to set for the product_key property.
         ## @return a void
         ## 
         def product_key=(value)
             @product_key = value
+        end
+        ## 
+        ## Gets the serialNumber property value. Serial number of the Windows autopilot device.
+        ## @return a string
+        ## 
+        def serial_number
+            return @serial_number
+        end
+        ## 
+        ## Sets the serialNumber property value. Serial number of the Windows autopilot device.
+        ## @param value Value to set for the serial_number property.
+        ## @return a void
+        ## 
+        def serial_number=(value)
+            @serial_number = value
         end
         ## 
         ## Serializes information the current object
@@ -149,21 +164,6 @@ module MicrosoftGraph::Models
             writer.write_string_value("productKey", @product_key)
             writer.write_string_value("serialNumber", @serial_number)
             writer.write_object_value("state", @state)
-        end
-        ## 
-        ## Gets the serialNumber property value. Serial number of the Windows autopilot device.
-        ## @return a string
-        ## 
-        def serial_number
-            return @serial_number
-        end
-        ## 
-        ## Sets the serialNumber property value. Serial number of the Windows autopilot device.
-        ## @param value Value to set for the serialNumber property.
-        ## @return a void
-        ## 
-        def serial_number=(value)
-            @serial_number = value
         end
         ## 
         ## Gets the state property value. Current state of the imported device.

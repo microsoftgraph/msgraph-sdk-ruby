@@ -42,7 +42,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activityDateTime property value. Details about when the activity took place. Read-only.
-        ## @param value Value to set for the activityDateTime property.
+        ## @param value Value to set for the activity_date_time property.
         ## @return a void
         ## 
         def activity_date_time=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the driveItem property value. Exposes the driveItem that was the target of this activity.
-        ## @param value Value to set for the driveItem property.
+        ## @param value Value to set for the drive_item property.
         ## @return a void
         ## 
         def drive_item=(value)

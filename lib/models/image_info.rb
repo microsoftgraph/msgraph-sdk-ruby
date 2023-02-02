@@ -32,7 +32,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the addImageQuery property value. Optional; parameter used to indicate the server is able to render image dynamically in response to parameterization. For example – a high contrast image
-        ## @param value Value to set for the addImageQuery property.
+        ## @param value Value to set for the add_image_query property.
         ## @return a void
         ## 
         def add_image_query=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the alternateText property value. Optional; alt-text accessible content for the image
-        ## @param value Value to set for the alternateText property.
+        ## @param value Value to set for the alternate_text property.
         ## @return a void
         ## 
         def alternate_text=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the alternativeText property value. The alternativeText property
-        ## @param value Value to set for the alternativeText property.
+        ## @param value Value to set for the alternative_text property.
         ## @return a void
         ## 
         def alternative_text=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the iconUrl property value. Optional; URI that points to an icon which represents the application used to generate the activity
-        ## @param value Value to set for the iconUrl property.
+        ## @param value Value to set for the icon_url property.
         ## @return a void
         ## 
         def icon_url=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

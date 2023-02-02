@@ -73,7 +73,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the servicePrincipalId property value. ID of the servicePrincipal.
-        ## @param value Value to set for the servicePrincipalId property.
+        ## @param value Value to set for the service_principal_id property.
         ## @return a void
         ## 
         def service_principal_id=(value)

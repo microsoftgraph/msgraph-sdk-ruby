@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activityDateTime property value. Date and time that the risky activity occurred. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
-        ## @param value Value to set for the activityDateTime property.
+        ## @param value Value to set for the activity_date_time property.
         ## @return a void
         ## 
         def activity_date_time=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the additionalInfo property value. Additional information associated with the risk detection in JSON format. For example, '[{/'Key/':/'userAgent/',/'Value/':/'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36/'}]'. Possible keys in the additionalInfo JSON string are: userAgent, alertUrl, relatedEventTimeInUtc, relatedUserAgent, deviceInformation, relatedLocation, requestId, correlationId, lastActivityTimeInUtc, malwareName, clientLocation, clientIp, riskReasons. For more information about riskReasons and possible values, see riskReasons values.
-        ## @param value Value to set for the additionalInfo property.
+        ## @param value Value to set for the additional_info property.
         ## @return a void
         ## 
         def additional_info=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the correlationId property value. Correlation ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
-        ## @param value Value to set for the correlationId property.
+        ## @param value Value to set for the correlation_id property.
         ## @return a void
         ## 
         def correlation_id=(value)
@@ -148,7 +148,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the detectedDateTime property value. Date and time that the risk was detected. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: 2014-01-01T00:00:00Z
-        ## @param value Value to set for the detectedDateTime property.
+        ## @param value Value to set for the detected_date_time property.
         ## @return a void
         ## 
         def detected_date_time=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the detectionTimingType property value. Timing of the detected risk (real-time/offline). Possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.
-        ## @param value Value to set for the detectionTimingType property.
+        ## @param value Value to set for the detection_timing_type property.
         ## @return a void
         ## 
         def detection_timing_type=(value)
@@ -205,7 +205,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the ipAddress property value. Provides the IP address of the client from where the risk occurred.
-        ## @param value Value to set for the ipAddress property.
+        ## @param value Value to set for the ip_address property.
         ## @return a void
         ## 
         def ip_address=(value)
@@ -220,7 +220,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastUpdatedDateTime property value. Date and time that the risk detection was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is look like this: 2014-01-01T00:00:00Z
-        ## @param value Value to set for the lastUpdatedDateTime property.
+        ## @param value Value to set for the last_updated_date_time property.
         ## @return a void
         ## 
         def last_updated_date_time=(value)
@@ -250,7 +250,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the requestId property value. Request ID of the sign-in associated with the risk detection. This property is null if the risk detection is not associated with a sign-in.
-        ## @param value Value to set for the requestId property.
+        ## @param value Value to set for the request_id property.
         ## @return a void
         ## 
         def request_id=(value)
@@ -265,7 +265,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskDetail property value. Details of the detected risk. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue, m365DAdminDismissedDetection. Note that you must use the Prefer: include - unknown -enum-members request header to get the following value(s) in this evolvable enum: m365DAdminDismissedDetection.
-        ## @param value Value to set for the riskDetail property.
+        ## @param value Value to set for the risk_detail property.
         ## @return a void
         ## 
         def risk_detail=(value)
@@ -280,7 +280,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskEventType property value. The type of risk event detected. The possible values are unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence, generic,adminConfirmedUserCompromised, passwordSpray, impossibleTravel, newCountry, anomalousToken, tokenIssuerAnomaly,suspiciousBrowser, riskyIPAddress, mcasSuspiciousInboxManipulationRules, suspiciousInboxForwarding, and anomalousUserActivity. If the risk detection is a premium detection, will show generic. For more information about each value, see riskEventType values.
-        ## @param value Value to set for the riskEventType property.
+        ## @param value Value to set for the risk_event_type property.
         ## @return a void
         ## 
         def risk_event_type=(value)
@@ -295,7 +295,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskLevel property value. Level of the detected risk. Possible values are: low, medium, high, hidden, none, unknownFutureValue.
-        ## @param value Value to set for the riskLevel property.
+        ## @param value Value to set for the risk_level property.
         ## @return a void
         ## 
         def risk_level=(value)
@@ -310,7 +310,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskState property value. The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
-        ## @param value Value to set for the riskState property.
+        ## @param value Value to set for the risk_state property.
         ## @return a void
         ## 
         def risk_state=(value)
@@ -368,7 +368,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tokenIssuerType property value. Indicates the type of token issuer for the detected sign-in risk. Possible values are: AzureAD, ADFederationServices, UnknownFutureValue.
-        ## @param value Value to set for the tokenIssuerType property.
+        ## @param value Value to set for the token_issuer_type property.
         ## @return a void
         ## 
         def token_issuer_type=(value)
@@ -383,7 +383,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userDisplayName property value. The user principal name (UPN) of the user.
-        ## @param value Value to set for the userDisplayName property.
+        ## @param value Value to set for the user_display_name property.
         ## @return a void
         ## 
         def user_display_name=(value)
@@ -398,7 +398,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userId property value. Unique ID of the user.
-        ## @param value Value to set for the userId property.
+        ## @param value Value to set for the user_id property.
         ## @return a void
         ## 
         def user_id=(value)
@@ -413,7 +413,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userPrincipalName property value. The user principal name (UPN) of the user.
-        ## @param value Value to set for the userPrincipalName property.
+        ## @param value Value to set for the user_principal_name property.
         ## @return a void
         ## 
         def user_principal_name=(value)

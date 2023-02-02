@@ -9,12 +9,12 @@ require_relative '../assignments'
 require_relative './categories/categories_request_builder'
 require_relative './categories/item/education_category_item_request_builder'
 require_relative './item'
-require_relative './publish/publish_request_builder'
+require_relative './microsoft_graph_publish/publish_request_builder'
+require_relative './microsoft_graph_set_up_feedback_resources_folder/set_up_feedback_resources_folder_request_builder'
+require_relative './microsoft_graph_set_up_resources_folder/set_up_resources_folder_request_builder'
 require_relative './resources/item/education_assignment_resource_item_request_builder'
 require_relative './resources/resources_request_builder'
 require_relative './rubric/rubric_request_builder'
-require_relative './set_up_feedback_resources_folder/set_up_feedback_resources_folder_request_builder'
-require_relative './set_up_resources_folder/set_up_resources_folder_request_builder'
 require_relative './submissions/item/education_submission_item_request_builder'
 require_relative './submissions/submissions_request_builder'
 
@@ -29,13 +29,23 @@ module MicrosoftGraph::Education::Users::Item::Assignments::Item
             return MicrosoftGraph::Education::Users::Item::Assignments::Item::Categories::CategoriesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the publish method.
+        def microsoft_graph_publish()
+            return MicrosoftGraph::Education::Users::Item::Assignments::Item::MicrosoftGraphPublish::PublishRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the setUpFeedbackResourcesFolder method.
+        def microsoft_graph_set_up_feedback_resources_folder()
+            return MicrosoftGraph::Education::Users::Item::Assignments::Item::MicrosoftGraphSetUpFeedbackResourcesFolder::SetUpFeedbackResourcesFolderRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the setUpResourcesFolder method.
+        def microsoft_graph_set_up_resources_folder()
+            return MicrosoftGraph::Education::Users::Item::Assignments::Item::MicrosoftGraphSetUpResourcesFolder::SetUpResourcesFolderRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
-        ## 
-        # Provides operations to call the publish method.
-        def publish()
-            return MicrosoftGraph::Education::Users::Item::Assignments::Item::Publish::PublishRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
@@ -48,16 +58,6 @@ module MicrosoftGraph::Education::Users::Item::Assignments::Item
         # Provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.
         def rubric()
             return MicrosoftGraph::Education::Users::Item::Assignments::Item::Rubric::RubricRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the setUpFeedbackResourcesFolder method.
-        def set_up_feedback_resources_folder()
-            return MicrosoftGraph::Education::Users::Item::Assignments::Item::SetUpFeedbackResourcesFolder::SetUpFeedbackResourcesFolderRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the setUpResourcesFolder method.
-        def set_up_resources_folder()
-            return MicrosoftGraph::Education::Users::Item::Assignments::Item::SetUpResourcesFolder::SetUpResourcesFolderRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.

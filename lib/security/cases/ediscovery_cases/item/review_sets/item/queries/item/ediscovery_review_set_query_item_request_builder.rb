@@ -9,8 +9,8 @@ require_relative '../../../../item'
 require_relative '../../../review_sets'
 require_relative '../../item'
 require_relative '../queries'
-require_relative './apply_tags/apply_tags_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_security_apply_tags/apply_tags_request_builder'
 
 module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item
     ## 
@@ -19,8 +19,8 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item:
         
         ## 
         # Provides operations to call the applyTags method.
-        def apply_tags()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item::ApplyTags::ApplyTagsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_security_apply_tags()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item::MicrosoftGraphSecurityApplyTags::ApplyTagsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

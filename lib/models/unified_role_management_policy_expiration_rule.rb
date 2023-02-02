@@ -47,7 +47,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isExpirationRequired property value. Indicates whether expiration is required or if it's a permanently active assignment or eligibility.
-        ## @param value Value to set for the isExpirationRequired property.
+        ## @param value Value to set for the is_expiration_required property.
         ## @return a void
         ## 
         def is_expiration_required=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maximumDuration property value. The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.
-        ## @param value Value to set for the maximumDuration property.
+        ## @param value Value to set for the maximum_duration property.
         ## @return a void
         ## 
         def maximum_duration=(value)

@@ -45,7 +45,7 @@ module MicrosoftGraph::Models
             @categories = value
         end
         ## 
-        ## Instantiates a new applicationTemplate and sets the default values.
+        ## Instantiates a new ApplicationTemplate and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the application.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the homePageUrl property value. The home page URL of the application.
-        ## @param value Value to set for the homePageUrl property.
+        ## @param value Value to set for the home_page_url property.
         ## @return a void
         ## 
         def home_page_url=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the logoUrl property value. The URL to get the logo for this application.
-        ## @param value Value to set for the logoUrl property.
+        ## @param value Value to set for the logo_url property.
         ## @return a void
         ## 
         def logo_url=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the supportedProvisioningTypes property value. The list of provisioning modes supported by this application. The only valid value is sync.
-        ## @param value Value to set for the supportedProvisioningTypes property.
+        ## @param value Value to set for the supported_provisioning_types property.
         ## @return a void
         ## 
         def supported_provisioning_types=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the supportedSingleSignOnModes property value. The list of single sign-on modes supported by this application. The supported values are oidc, password, saml, and notSupported.
-        ## @param value Value to set for the supportedSingleSignOnModes property.
+        ## @param value Value to set for the supported_single_sign_on_modes property.
         ## @return a void
         ## 
         def supported_single_sign_on_modes=(value)

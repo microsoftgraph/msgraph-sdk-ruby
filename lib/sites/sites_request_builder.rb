@@ -2,9 +2,9 @@ require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/site_collection_response'
-require_relative './add/add_request_builder'
 require_relative './count/count_request_builder'
-require_relative './remove/remove_request_builder'
+require_relative './microsoft_graph_add/add_request_builder'
+require_relative './microsoft_graph_remove/remove_request_builder'
 require_relative './sites'
 
 module MicrosoftGraph::Sites
@@ -13,23 +13,23 @@ module MicrosoftGraph::Sites
     class SitesRequestBuilder
         
         ## 
-        # Provides operations to call the add method.
-        def add()
-            return MicrosoftGraph::Sites::Add::AddRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Sites::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Path parameters for the request
-        @path_parameters
+        # Provides operations to call the add method.
+        def microsoft_graph_add()
+            return MicrosoftGraph::Sites::MicrosoftGraphAdd::AddRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Provides operations to call the remove method.
-        def remove()
-            return MicrosoftGraph::Sites::Remove::RemoveRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_remove()
+            return MicrosoftGraph::Sites::MicrosoftGraphRemove::RemoveRequestBuilder.new(@path_parameters, @request_adapter)
         end
+        ## 
+        # Path parameters for the request
+        @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter

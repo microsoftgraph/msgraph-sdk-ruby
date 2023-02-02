@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webUrl property value. The link the user clicks when they select the notification. Optional when source is entityUrl; required when source is text.
-        ## @param value Value to set for the webUrl property.
+        ## @param value Value to set for the web_url property.
         ## @return a void
         ## 
         def web_url=(value)

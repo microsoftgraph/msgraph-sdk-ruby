@@ -55,7 +55,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the driveItem property value. Used to access the underlying driveItem
-        ## @param value Value to set for the driveItem property.
+        ## @param value Value to set for the drive_item property.
         ## @return a void
         ## 
         def drive_item=(value)
@@ -116,7 +116,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the listItem property value. Used to access the underlying listItem
-        ## @param value Value to set for the listItem property.
+        ## @param value Value to set for the list_item property.
         ## @return a void
         ## 
         def list_item=(value)

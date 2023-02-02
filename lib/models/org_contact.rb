@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the companyName property value. The companyName property
-        ## @param value Value to set for the companyName property.
+        ## @param value Value to set for the company_name property.
         ## @return a void
         ## 
         def company_name=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the directReports property value. The directReports property
-        ## @param value Value to set for the directReports property.
+        ## @param value Value to set for the direct_reports property.
         ## @return a void
         ## 
         def direct_reports=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The displayName property
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -187,7 +187,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the givenName property value. The givenName property
-        ## @param value Value to set for the givenName property.
+        ## @param value Value to set for the given_name property.
         ## @return a void
         ## 
         def given_name=(value)
@@ -202,7 +202,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the jobTitle property value. The jobTitle property
-        ## @param value Value to set for the jobTitle property.
+        ## @param value Value to set for the job_title property.
         ## @return a void
         ## 
         def job_title=(value)
@@ -232,7 +232,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mailNickname property value. The mailNickname property
-        ## @param value Value to set for the mailNickname property.
+        ## @param value Value to set for the mail_nickname property.
         ## @return a void
         ## 
         def mail_nickname=(value)
@@ -262,7 +262,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the memberOf property value. The memberOf property
-        ## @param value Value to set for the memberOf property.
+        ## @param value Value to set for the member_of property.
         ## @return a void
         ## 
         def member_of=(value)
@@ -277,7 +277,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the onPremisesLastSyncDateTime property value. The onPremisesLastSyncDateTime property
-        ## @param value Value to set for the onPremisesLastSyncDateTime property.
+        ## @param value Value to set for the on_premises_last_sync_date_time property.
         ## @return a void
         ## 
         def on_premises_last_sync_date_time=(value)
@@ -292,7 +292,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the onPremisesProvisioningErrors property value. The onPremisesProvisioningErrors property
-        ## @param value Value to set for the onPremisesProvisioningErrors property.
+        ## @param value Value to set for the on_premises_provisioning_errors property.
         ## @return a void
         ## 
         def on_premises_provisioning_errors=(value)
@@ -307,7 +307,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the onPremisesSyncEnabled property value. The onPremisesSyncEnabled property
-        ## @param value Value to set for the onPremisesSyncEnabled property.
+        ## @param value Value to set for the on_premises_sync_enabled property.
         ## @return a void
         ## 
         def on_premises_sync_enabled=(value)
@@ -337,7 +337,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the proxyAddresses property value. The proxyAddresses property
-        ## @param value Value to set for the proxyAddresses property.
+        ## @param value Value to set for the proxy_addresses property.
         ## @return a void
         ## 
         def proxy_addresses=(value)
@@ -394,7 +394,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the transitiveMemberOf property value. The transitiveMemberOf property
-        ## @param value Value to set for the transitiveMemberOf property.
+        ## @param value Value to set for the transitive_member_of property.
         ## @return a void
         ## 
         def transitive_member_of=(value)

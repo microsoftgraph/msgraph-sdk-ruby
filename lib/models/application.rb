@@ -16,11 +16,11 @@ module MicrosoftGraph::Models
         # The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Supports $filter (eq).
         @app_id
         ## 
-        # Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne).
-        @application_template_id
-        ## 
         # The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
         @app_roles
+        ## 
+        # Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne).
+        @application_template_id
         ## 
         # Specifies the certification status of the application.
         @certification
@@ -97,6 +97,9 @@ module MicrosoftGraph::Models
         # The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
         @publisher_domain
         ## 
+        # The requestSignatureVerification property
+        @request_signature_verification
+        ## 
         # Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
         @required_resource_access
         ## 
@@ -138,7 +141,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the addIns property value. Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.
-        ## @param value Value to set for the addIns property.
+        ## @param value Value to set for the add_ins property.
         ## @return a void
         ## 
         def add_ins=(value)
@@ -168,26 +171,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appId property value. The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Supports $filter (eq).
-        ## @param value Value to set for the appId property.
+        ## @param value Value to set for the app_id property.
         ## @return a void
         ## 
         def app_id=(value)
             @app_id = value
-        end
-        ## 
-        ## Gets the applicationTemplateId property value. Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne).
-        ## @return a string
-        ## 
-        def application_template_id
-            return @application_template_id
-        end
-        ## 
-        ## Sets the applicationTemplateId property value. Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne).
-        ## @param value Value to set for the applicationTemplateId property.
-        ## @return a void
-        ## 
-        def application_template_id=(value)
-            @application_template_id = value
         end
         ## 
         ## Gets the appRoles property value. The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
@@ -198,11 +186,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appRoles property value. The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
-        ## @param value Value to set for the appRoles property.
+        ## @param value Value to set for the app_roles property.
         ## @return a void
         ## 
         def app_roles=(value)
             @app_roles = value
+        end
+        ## 
+        ## Gets the applicationTemplateId property value. Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne).
+        ## @return a string
+        ## 
+        def application_template_id
+            return @application_template_id
+        end
+        ## 
+        ## Sets the applicationTemplateId property value. Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne).
+        ## @param value Value to set for the application_template_id property.
+        ## @return a void
+        ## 
+        def application_template_id=(value)
+            @application_template_id = value
         end
         ## 
         ## Gets the certification property value. Specifies the certification status of the application.
@@ -220,7 +223,7 @@ module MicrosoftGraph::Models
             @certification = value
         end
         ## 
-        ## Instantiates a new Application and sets the default values.
+        ## Instantiates a new application and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -236,7 +239,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderBy.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -251,7 +254,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdOnBehalfOf property value. Supports $filter (/$count eq 0, /$count ne 0). Read-only.
-        ## @param value Value to set for the createdOnBehalfOf property.
+        ## @param value Value to set for the created_on_behalf_of property.
         ## @return a void
         ## 
         def created_on_behalf_of=(value)
@@ -275,7 +278,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the defaultRedirectUri property value. The defaultRedirectUri property
-        ## @param value Value to set for the defaultRedirectUri property.
+        ## @param value Value to set for the default_redirect_uri property.
         ## @return a void
         ## 
         def default_redirect_uri=(value)
@@ -305,7 +308,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
-        ## @param value Value to set for the disabledByMicrosoftStatus property.
+        ## @param value Value to set for the disabled_by_microsoft_status property.
         ## @return a void
         ## 
         def disabled_by_microsoft_status=(value)
@@ -320,7 +323,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name for the application. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -335,7 +338,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the extensionProperties property value. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
-        ## @param value Value to set for the extensionProperties property.
+        ## @param value Value to set for the extension_properties property.
         ## @return a void
         ## 
         def extension_properties=(value)
@@ -350,7 +353,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the federatedIdentityCredentials property value. Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
-        ## @param value Value to set for the federatedIdentityCredentials property.
+        ## @param value Value to set for the federated_identity_credentials property.
         ## @return a void
         ## 
         def federated_identity_credentials=(value)
@@ -365,8 +368,8 @@ module MicrosoftGraph::Models
                 "addIns" => lambda {|n| @add_ins = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AddIn.create_from_discriminator_value(pn) }) },
                 "api" => lambda {|n| @api = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ApiApplication.create_from_discriminator_value(pn) }) },
                 "appId" => lambda {|n| @app_id = n.get_string_value() },
-                "applicationTemplateId" => lambda {|n| @application_template_id = n.get_string_value() },
                 "appRoles" => lambda {|n| @app_roles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AppRole.create_from_discriminator_value(pn) }) },
+                "applicationTemplateId" => lambda {|n| @application_template_id = n.get_string_value() },
                 "certification" => lambda {|n| @certification = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Certification.create_from_discriminator_value(pn) }) },
                 "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                 "createdOnBehalfOf" => lambda {|n| @created_on_behalf_of = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
@@ -392,6 +395,7 @@ module MicrosoftGraph::Models
                 "passwordCredentials" => lambda {|n| @password_credentials = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PasswordCredential.create_from_discriminator_value(pn) }) },
                 "publicClient" => lambda {|n| @public_client = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PublicClientApplication.create_from_discriminator_value(pn) }) },
                 "publisherDomain" => lambda {|n| @publisher_domain = n.get_string_value() },
+                "requestSignatureVerification" => lambda {|n| @request_signature_verification = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::RequestSignatureVerification.create_from_discriminator_value(pn) }) },
                 "requiredResourceAccess" => lambda {|n| @required_resource_access = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::RequiredResourceAccess.create_from_discriminator_value(pn) }) },
                 "samlMetadataUrl" => lambda {|n| @saml_metadata_url = n.get_string_value() },
                 "serviceManagementReference" => lambda {|n| @service_management_reference = n.get_string_value() },
@@ -414,7 +418,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the groupMembershipClaims property value. Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values: None, SecurityGroup (for security groups and Azure AD roles), All (this gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of).
-        ## @param value Value to set for the groupMembershipClaims property.
+        ## @param value Value to set for the group_membership_claims property.
         ## @return a void
         ## 
         def group_membership_claims=(value)
@@ -429,7 +433,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the homeRealmDiscoveryPolicies property value. The homeRealmDiscoveryPolicies property
-        ## @param value Value to set for the homeRealmDiscoveryPolicies property.
+        ## @param value Value to set for the home_realm_discovery_policies property.
         ## @return a void
         ## 
         def home_realm_discovery_policies=(value)
@@ -444,7 +448,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the identifierUris property value. Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you'll reference in your API's code, and it must be globally unique. You can use the default value provided, which is in the form api://<application-client-id>, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Azure AD application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).
-        ## @param value Value to set for the identifierUris property.
+        ## @param value Value to set for the identifier_uris property.
         ## @return a void
         ## 
         def identifier_uris=(value)
@@ -474,7 +478,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isDeviceOnlyAuthSupported property value. Specifies whether this application supports device authentication without a user. The default is false.
-        ## @param value Value to set for the isDeviceOnlyAuthSupported property.
+        ## @param value Value to set for the is_device_only_auth_supported property.
         ## @return a void
         ## 
         def is_device_only_auth_supported=(value)
@@ -489,7 +493,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isFallbackPublicClient property value. Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
-        ## @param value Value to set for the isFallbackPublicClient property.
+        ## @param value Value to set for the is_fallback_public_client property.
         ## @return a void
         ## 
         def is_fallback_public_client=(value)
@@ -504,7 +508,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the keyCredentials property value. The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).
-        ## @param value Value to set for the keyCredentials property.
+        ## @param value Value to set for the key_credentials property.
         ## @return a void
         ## 
         def key_credentials=(value)
@@ -549,7 +553,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the oauth2RequirePostResponse property value. The oauth2RequirePostResponse property
-        ## @param value Value to set for the oauth2RequirePostResponse property.
+        ## @param value Value to set for the oauth2_require_post_response property.
         ## @return a void
         ## 
         def oauth2_require_post_response=(value)
@@ -564,7 +568,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the optionalClaims property value. Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.
-        ## @param value Value to set for the optionalClaims property.
+        ## @param value Value to set for the optional_claims property.
         ## @return a void
         ## 
         def optional_claims=(value)
@@ -594,7 +598,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the parentalControlSettings property value. Specifies parental control settings for an application.
-        ## @param value Value to set for the parentalControlSettings property.
+        ## @param value Value to set for the parental_control_settings property.
         ## @return a void
         ## 
         def parental_control_settings=(value)
@@ -609,7 +613,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordCredentials property value. The collection of password credentials associated with the application. Not nullable.
-        ## @param value Value to set for the passwordCredentials property.
+        ## @param value Value to set for the password_credentials property.
         ## @return a void
         ## 
         def password_credentials=(value)
@@ -624,7 +628,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the publicClient property value. Specifies settings for installed clients such as desktop or mobile devices.
-        ## @param value Value to set for the publicClient property.
+        ## @param value Value to set for the public_client property.
         ## @return a void
         ## 
         def public_client=(value)
@@ -639,11 +643,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the publisherDomain property value. The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
-        ## @param value Value to set for the publisherDomain property.
+        ## @param value Value to set for the publisher_domain property.
         ## @return a void
         ## 
         def publisher_domain=(value)
             @publisher_domain = value
+        end
+        ## 
+        ## Gets the requestSignatureVerification property value. The requestSignatureVerification property
+        ## @return a request_signature_verification
+        ## 
+        def request_signature_verification
+            return @request_signature_verification
+        end
+        ## 
+        ## Sets the requestSignatureVerification property value. The requestSignatureVerification property
+        ## @param value Value to set for the request_signature_verification property.
+        ## @return a void
+        ## 
+        def request_signature_verification=(value)
+            @request_signature_verification = value
         end
         ## 
         ## Gets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
@@ -654,7 +673,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the requiredResourceAccess property value. Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
-        ## @param value Value to set for the requiredResourceAccess property.
+        ## @param value Value to set for the required_resource_access property.
         ## @return a void
         ## 
         def required_resource_access=(value)
@@ -669,7 +688,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the samlMetadataUrl property value. The URL where the service exposes SAML metadata for federation. This property is valid only for single-tenant applications. Nullable.
-        ## @param value Value to set for the samlMetadataUrl property.
+        ## @param value Value to set for the saml_metadata_url property.
         ## @return a void
         ## 
         def saml_metadata_url=(value)
@@ -686,8 +705,8 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("addIns", @add_ins)
             writer.write_object_value("api", @api)
             writer.write_string_value("appId", @app_id)
-            writer.write_string_value("applicationTemplateId", @application_template_id)
             writer.write_collection_of_object_values("appRoles", @app_roles)
+            writer.write_string_value("applicationTemplateId", @application_template_id)
             writer.write_object_value("certification", @certification)
             writer.write_date_time_value("createdDateTime", @created_date_time)
             writer.write_object_value("createdOnBehalfOf", @created_on_behalf_of)
@@ -713,6 +732,7 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("passwordCredentials", @password_credentials)
             writer.write_object_value("publicClient", @public_client)
             writer.write_string_value("publisherDomain", @publisher_domain)
+            writer.write_object_value("requestSignatureVerification", @request_signature_verification)
             writer.write_collection_of_object_values("requiredResourceAccess", @required_resource_access)
             writer.write_string_value("samlMetadataUrl", @saml_metadata_url)
             writer.write_string_value("serviceManagementReference", @service_management_reference)
@@ -734,7 +754,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the serviceManagementReference property value. References application or service contact information from a Service or Asset Management database. Nullable.
-        ## @param value Value to set for the serviceManagementReference property.
+        ## @param value Value to set for the service_management_reference property.
         ## @return a void
         ## 
         def service_management_reference=(value)
@@ -749,7 +769,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).
-        ## @param value Value to set for the signInAudience property.
+        ## @param value Value to set for the sign_in_audience property.
         ## @return a void
         ## 
         def sign_in_audience=(value)
@@ -794,7 +814,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
-        ## @param value Value to set for the tokenEncryptionKeyId property.
+        ## @param value Value to set for the token_encryption_key_id property.
         ## @return a void
         ## 
         def token_encryption_key_id=(value)
@@ -809,7 +829,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tokenIssuancePolicies property value. The tokenIssuancePolicies property
-        ## @param value Value to set for the tokenIssuancePolicies property.
+        ## @param value Value to set for the token_issuance_policies property.
         ## @return a void
         ## 
         def token_issuance_policies=(value)
@@ -824,7 +844,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tokenLifetimePolicies property value. The tokenLifetimePolicies property
-        ## @param value Value to set for the tokenLifetimePolicies property.
+        ## @param value Value to set for the token_lifetime_policies property.
         ## @return a void
         ## 
         def token_lifetime_policies=(value)
@@ -839,7 +859,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the verifiedPublisher property value. Specifies the verified publisher of the application. For more information about how publisher verification helps support application security, trustworthiness, and compliance, see Publisher verification.
-        ## @param value Value to set for the verifiedPublisher property.
+        ## @param value Value to set for the verified_publisher property.
         ## @return a void
         ## 
         def verified_publisher=(value)

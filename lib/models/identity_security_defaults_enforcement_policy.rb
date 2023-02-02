@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isEnabled property value. If set to true, Azure Active Directory security defaults is enabled for the tenant.
-        ## @param value Value to set for the isEnabled property.
+        ## @param value Value to set for the is_enabled property.
         ## @return a void
         ## 
         def is_enabled=(value)

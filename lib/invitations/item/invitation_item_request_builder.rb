@@ -40,7 +40,7 @@ module MicrosoftGraph::Invitations::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from invitations by key (id)
+        ## Delete entity from invitations
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -54,7 +54,7 @@ module MicrosoftGraph::Invitations::Item
             return @request_adapter.send_async(request_info, nil, error_mapping)
         end
         ## 
-        ## Get entity from invitations by key (id)
+        ## Get entity from invitations by key
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of invitation
         ## 
@@ -68,7 +68,7 @@ module MicrosoftGraph::Invitations::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Invitation.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update entity in invitations by key (id)
+        ## Update entity in invitations
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of invitation
@@ -84,7 +84,7 @@ module MicrosoftGraph::Invitations::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Invitation.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from invitations by key (id)
+        ## Delete entity from invitations
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -100,7 +100,7 @@ module MicrosoftGraph::Invitations::Item
             return request_info
         end
         ## 
-        ## Get entity from invitations by key (id)
+        ## Get entity from invitations by key
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -118,7 +118,7 @@ module MicrosoftGraph::Invitations::Item
             return request_info
         end
         ## 
-        ## Update entity in invitations by key (id)
+        ## Update entity in invitations
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
@@ -151,7 +151,7 @@ module MicrosoftGraph::Invitations::Item
         end
 
         ## 
-        # Get entity from invitations by key (id)
+        # Get entity from invitations by key
         class InvitationItemRequestBuilderGetQueryParameters
             
             ## 

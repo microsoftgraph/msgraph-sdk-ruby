@@ -7,17 +7,17 @@ require_relative '../../../../cases'
 require_relative '../../../ediscovery_cases'
 require_relative '../../item'
 require_relative '../custodians'
-require_relative './activate/activate_request_builder'
-require_relative './apply_hold/apply_hold_request_builder'
 require_relative './item'
 require_relative './last_index_operation/last_index_operation_request_builder'
-require_relative './release/release_request_builder'
-require_relative './remove_hold/remove_hold_request_builder'
+require_relative './microsoft_graph_security_activate/activate_request_builder'
+require_relative './microsoft_graph_security_apply_hold/apply_hold_request_builder'
+require_relative './microsoft_graph_security_release/release_request_builder'
+require_relative './microsoft_graph_security_remove_hold/remove_hold_request_builder'
+require_relative './microsoft_graph_security_update_index/update_index_request_builder'
 require_relative './site_sources/item/site_source_item_request_builder'
 require_relative './site_sources/site_sources_request_builder'
 require_relative './unified_group_sources/item/unified_group_source_item_request_builder'
 require_relative './unified_group_sources/unified_group_sources_request_builder'
-require_relative './update_index/update_index_request_builder'
 require_relative './user_sources/item/user_source_item_request_builder'
 require_relative './user_sources/user_sources_request_builder'
 
@@ -27,33 +27,38 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item
     class EdiscoveryCustodianItemRequestBuilder
         
         ## 
-        # Provides operations to call the activate method.
-        def activate()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::Activate::ActivateRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the applyHold method.
-        def apply_hold()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::ApplyHold::ApplyHoldRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the lastIndexOperation property of the microsoft.graph.security.ediscoveryCustodian entity.
         def last_index_operation()
             return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::LastIndexOperation::LastIndexOperationRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Path parameters for the request
-        @path_parameters
+        # Provides operations to call the activate method.
+        def microsoft_graph_security_activate()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::MicrosoftGraphSecurityActivate::ActivateRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the applyHold method.
+        def microsoft_graph_security_apply_hold()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::MicrosoftGraphSecurityApplyHold::ApplyHoldRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Provides operations to call the release method.
-        def release()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::Release::ReleaseRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_security_release()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::MicrosoftGraphSecurityRelease::ReleaseRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the removeHold method.
-        def remove_hold()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::RemoveHold::RemoveHoldRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_security_remove_hold()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::MicrosoftGraphSecurityRemoveHold::RemoveHoldRequestBuilder.new(@path_parameters, @request_adapter)
         end
+        ## 
+        # Provides operations to call the updateIndex method.
+        def microsoft_graph_security_update_index()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::MicrosoftGraphSecurityUpdateIndex::UpdateIndexRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Path parameters for the request
+        @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
@@ -66,11 +71,6 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item
         # Provides operations to manage the unifiedGroupSources property of the microsoft.graph.security.ediscoveryCustodian entity.
         def unified_group_sources()
             return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::UnifiedGroupSources::UnifiedGroupSourcesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the updateIndex method.
-        def update_index()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::UpdateIndex::UpdateIndexRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Url template to use to build the URL for the current request builder

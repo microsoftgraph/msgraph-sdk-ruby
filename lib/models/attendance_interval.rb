@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the durationInSeconds property value. Duration of the meeting interval in seconds; that is, the difference between joinDateTime and leaveDateTime.
-        ## @param value Value to set for the durationInSeconds property.
+        ## @param value Value to set for the duration_in_seconds property.
         ## @return a void
         ## 
         def duration_in_seconds=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the joinDateTime property value. The time the attendee joined in UTC.
-        ## @param value Value to set for the joinDateTime property.
+        ## @param value Value to set for the join_date_time property.
         ## @return a void
         ## 
         def join_date_time=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the leaveDateTime property value. The time the attendee left in UTC.
-        ## @param value Value to set for the leaveDateTime property.
+        ## @param value Value to set for the leave_date_time property.
         ## @return a void
         ## 
         def leave_date_time=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

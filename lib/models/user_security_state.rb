@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the aadUserId property value. AAD User object identifier (GUID) - represents the physical/multi-account user entity.
-        ## @param value Value to set for the aadUserId property.
+        ## @param value Value to set for the aad_user_id property.
         ## @return a void
         ## 
         def aad_user_id=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accountName property value. Account name of user account (without Active Directory domain or DNS domain) - (also called mailNickName).
-        ## @param value Value to set for the accountName property.
+        ## @param value Value to set for the account_name property.
         ## @return a void
         ## 
         def account_name=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the domainName property value. NetBIOS/Active Directory domain of user account (that is, domain/account format).
-        ## @param value Value to set for the domainName property.
+        ## @param value Value to set for the domain_name property.
         ## @return a void
         ## 
         def domain_name=(value)
@@ -139,7 +139,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the emailRole property value. For email-related alerts - user account's email 'role'. Possible values are: unknown, sender, recipient.
-        ## @param value Value to set for the emailRole property.
+        ## @param value Value to set for the email_role property.
         ## @return a void
         ## 
         def email_role=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isVpn property value. Indicates whether the user logged on through a VPN.
-        ## @param value Value to set for the isVpn property.
+        ## @param value Value to set for the is_vpn property.
         ## @return a void
         ## 
         def is_vpn=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the logonDateTime property value. Time at which the sign-in occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        ## @param value Value to set for the logonDateTime property.
+        ## @param value Value to set for the logon_date_time property.
         ## @return a void
         ## 
         def logon_date_time=(value)
@@ -207,7 +207,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the logonId property value. User sign-in ID.
-        ## @param value Value to set for the logonId property.
+        ## @param value Value to set for the logon_id property.
         ## @return a void
         ## 
         def logon_id=(value)
@@ -222,7 +222,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the logonIp property value. IP Address the sign-in request originated from.
-        ## @param value Value to set for the logonIp property.
+        ## @param value Value to set for the logon_ip property.
         ## @return a void
         ## 
         def logon_ip=(value)
@@ -237,7 +237,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the logonLocation property value. Location (by IP address mapping) associated with a user sign-in event by this user.
-        ## @param value Value to set for the logonLocation property.
+        ## @param value Value to set for the logon_location property.
         ## @return a void
         ## 
         def logon_location=(value)
@@ -252,7 +252,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the logonType property value. Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.
-        ## @param value Value to set for the logonType property.
+        ## @param value Value to set for the logon_type property.
         ## @return a void
         ## 
         def logon_type=(value)
@@ -267,7 +267,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -282,7 +282,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the onPremisesSecurityIdentifier property value. Active Directory (on-premises) Security Identifier (SID) of the user.
-        ## @param value Value to set for the onPremisesSecurityIdentifier property.
+        ## @param value Value to set for the on_premises_security_identifier property.
         ## @return a void
         ## 
         def on_premises_security_identifier=(value)
@@ -297,7 +297,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskScore property value. Provider-generated/calculated risk score of the user account. Recommended value range of 0-1, which equates to a percentage.
-        ## @param value Value to set for the riskScore property.
+        ## @param value Value to set for the risk_score property.
         ## @return a void
         ## 
         def risk_score=(value)
@@ -336,7 +336,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userAccountType property value. User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.
-        ## @param value Value to set for the userAccountType property.
+        ## @param value Value to set for the user_account_type property.
         ## @return a void
         ## 
         def user_account_type=(value)
@@ -351,7 +351,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userPrincipalName property value. User sign-in name - internet format: (user account name)@(user account DNS domain name).
-        ## @param value Value to set for the userPrincipalName property.
+        ## @param value Value to set for the user_principal_name property.
         ## @return a void
         ## 
         def user_principal_name=(value)

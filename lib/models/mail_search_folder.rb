@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the filterQuery property value. The OData query to filter the messages.
-        ## @param value Value to set for the filterQuery property.
+        ## @param value Value to set for the filter_query property.
         ## @return a void
         ## 
         def filter_query=(value)
@@ -70,7 +70,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeNestedFolders property value. Indicates how the mailbox folder hierarchy should be traversed in the search. true means that a deep search should be done to include child folders in the hierarchy of each folder explicitly specified in sourceFolderIds. false means a shallow search of only each of the folders explicitly specified in sourceFolderIds.
-        ## @param value Value to set for the includeNestedFolders property.
+        ## @param value Value to set for the include_nested_folders property.
         ## @return a void
         ## 
         def include_nested_folders=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isSupported property value. Indicates whether a search folder is editable using REST APIs.
-        ## @param value Value to set for the isSupported property.
+        ## @param value Value to set for the is_supported property.
         ## @return a void
         ## 
         def is_supported=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sourceFolderIds property value. The mailbox folders that should be mined.
-        ## @param value Value to set for the sourceFolderIds property.
+        ## @param value Value to set for the source_folder_ids property.
         ## @return a void
         ## 
         def source_folder_ids=(value)

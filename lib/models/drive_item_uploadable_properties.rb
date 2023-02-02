@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fileSize property value. Provides an expected file size to perform a quota check prior to upload. Only on OneDrive Personal.
-        ## @param value Value to set for the fileSize property.
+        ## @param value Value to set for the file_size property.
         ## @return a void
         ## 
         def file_size=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fileSystemInfo property value. File system information on client. Read-write.
-        ## @param value Value to set for the fileSystemInfo property.
+        ## @param value Value to set for the file_system_info property.
         ## @return a void
         ## 
         def file_system_info=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

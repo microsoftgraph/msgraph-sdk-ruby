@@ -73,7 +73,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the teamId property value. Unique identifier of the team.
-        ## @param value Value to set for the teamId property.
+        ## @param value Value to set for the team_id property.
         ## @return a void
         ## 
         def team_id=(value)

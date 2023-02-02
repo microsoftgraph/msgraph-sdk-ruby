@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isPicture property value. Specifies whether the display format used for URL columns is an image or a hyperlink.
-        ## @param value Value to set for the isPicture property.
+        ## @param value Value to set for the is_picture property.
         ## @return a void
         ## 
         def is_picture=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

@@ -9,7 +9,7 @@ require_relative '../../contact_folders'
 require_relative '../item'
 require_relative './contacts'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
+require_relative './microsoft_graph_delta/delta_request_builder'
 
 module MicrosoftGraph::Users::Item::ContactFolders::Item::Contacts
     ## 
@@ -20,6 +20,11 @@ module MicrosoftGraph::Users::Item::ContactFolders::Item::Contacts
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Users::Item::ContactFolders::Item::Contacts::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::Users::Item::ContactFolders::Item::Contacts::MicrosoftGraphDelta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -43,13 +48,6 @@ module MicrosoftGraph::Users::Item::ContactFolders::Item::Contacts
             @request_adapter = request_adapter
             path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
             @path_parameters = path_parameters if path_parameters.is_a? Hash
-        end
-        ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Get a contact collection from the default Contacts folder of the signed-in user (`.../me/contacts`), or from the specified contact folder.

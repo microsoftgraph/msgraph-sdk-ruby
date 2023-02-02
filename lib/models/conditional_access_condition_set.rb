@@ -12,11 +12,11 @@ module MicrosoftGraph::Models
         # Applications and user actions included in and excluded from the policy. Required.
         @applications
         ## 
-        # Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
-        @client_applications
-        ## 
         # Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
         @client_app_types
+        ## 
+        # Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
+        @client_applications
         ## 
         # Devices in the policy.
         @devices
@@ -72,21 +72,6 @@ module MicrosoftGraph::Models
             @applications = value
         end
         ## 
-        ## Gets the clientApplications property value. Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
-        ## @return a conditional_access_client_applications
-        ## 
-        def client_applications
-            return @client_applications
-        end
-        ## 
-        ## Sets the clientApplications property value. Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
-        ## @param value Value to set for the clientApplications property.
-        ## @return a void
-        ## 
-        def client_applications=(value)
-            @client_applications = value
-        end
-        ## 
         ## Gets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
         ## @return a conditional_access_client_app
         ## 
@@ -95,11 +80,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
-        ## @param value Value to set for the clientAppTypes property.
+        ## @param value Value to set for the client_app_types property.
         ## @return a void
         ## 
         def client_app_types=(value)
             @client_app_types = value
+        end
+        ## 
+        ## Gets the clientApplications property value. Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
+        ## @return a conditional_access_client_applications
+        ## 
+        def client_applications
+            return @client_applications
+        end
+        ## 
+        ## Sets the clientApplications property value. Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
+        ## @param value Value to set for the client_applications property.
+        ## @return a void
+        ## 
+        def client_applications=(value)
+            @client_applications = value
         end
         ## 
         ## Instantiates a new conditionalAccessConditionSet and sets the default values.
@@ -139,8 +139,8 @@ module MicrosoftGraph::Models
         def get_field_deserializers()
             return {
                 "applications" => lambda {|n| @applications = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessApplications.create_from_discriminator_value(pn) }) },
-                "clientApplications" => lambda {|n| @client_applications = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessClientApplications.create_from_discriminator_value(pn) }) },
                 "clientAppTypes" => lambda {|n| @client_app_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessClientApp.create_from_discriminator_value(pn) }) },
+                "clientApplications" => lambda {|n| @client_applications = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessClientApplications.create_from_discriminator_value(pn) }) },
                 "devices" => lambda {|n| @devices = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessDevices.create_from_discriminator_value(pn) }) },
                 "locations" => lambda {|n| @locations = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessLocations.create_from_discriminator_value(pn) }) },
                 "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
@@ -175,7 +175,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -204,8 +204,8 @@ module MicrosoftGraph::Models
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
             writer.write_object_value("applications", @applications)
-            writer.write_object_value("clientApplications", @client_applications)
             writer.write_collection_of_object_values("clientAppTypes", @client_app_types)
+            writer.write_object_value("clientApplications", @client_applications)
             writer.write_object_value("devices", @devices)
             writer.write_object_value("locations", @locations)
             writer.write_string_value("@odata.type", @odata_type)
@@ -225,7 +225,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the servicePrincipalRiskLevels property value. Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
-        ## @param value Value to set for the servicePrincipalRiskLevels property.
+        ## @param value Value to set for the service_principal_risk_levels property.
         ## @return a void
         ## 
         def service_principal_risk_levels=(value)
@@ -240,7 +240,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the signInRiskLevels property value. Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-        ## @param value Value to set for the signInRiskLevels property.
+        ## @param value Value to set for the sign_in_risk_levels property.
         ## @return a void
         ## 
         def sign_in_risk_levels=(value)
@@ -255,7 +255,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userRiskLevels property value. User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-        ## @param value Value to set for the userRiskLevels property.
+        ## @param value Value to set for the user_risk_levels property.
         ## @return a void
         ## 
         def user_risk_levels=(value)

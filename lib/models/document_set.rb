@@ -56,7 +56,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowedContentTypes property value. Content types allowed in document set.
-        ## @param value Value to set for the allowedContentTypes property.
+        ## @param value Value to set for the allowed_content_types property.
         ## @return a void
         ## 
         def allowed_content_types=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the defaultContents property value. Default contents of document set.
-        ## @param value Value to set for the defaultContents property.
+        ## @param value Value to set for the default_contents property.
         ## @return a void
         ## 
         def default_contents=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the propagateWelcomePageChanges property value. Specifies whether to push welcome page changes to inherited content types.
-        ## @param value Value to set for the propagateWelcomePageChanges property.
+        ## @param value Value to set for the propagate_welcome_page_changes property.
         ## @return a void
         ## 
         def propagate_welcome_page_changes=(value)
@@ -165,7 +165,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharedColumns property value. The sharedColumns property
-        ## @param value Value to set for the sharedColumns property.
+        ## @param value Value to set for the shared_columns property.
         ## @return a void
         ## 
         def shared_columns=(value)
@@ -180,7 +180,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the shouldPrefixNameToFile property value. Indicates whether to add the name of the document set to each file name.
-        ## @param value Value to set for the shouldPrefixNameToFile property.
+        ## @param value Value to set for the should_prefix_name_to_file property.
         ## @return a void
         ## 
         def should_prefix_name_to_file=(value)
@@ -195,7 +195,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the welcomePageColumns property value. The welcomePageColumns property
-        ## @param value Value to set for the welcomePageColumns property.
+        ## @param value Value to set for the welcome_page_columns property.
         ## @return a void
         ## 
         def welcome_page_columns=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the welcomePageUrl property value. Welcome page absolute URL.
-        ## @param value Value to set for the welcomePageUrl property.
+        ## @param value Value to set for the welcome_page_url property.
         ## @return a void
         ## 
         def welcome_page_url=(value)

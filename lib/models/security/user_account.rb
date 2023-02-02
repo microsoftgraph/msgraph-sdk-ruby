@@ -36,7 +36,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the accountName property value. The user account's displayed name.
-        ## @param value Value to set for the accountName property.
+        ## @param value Value to set for the account_name property.
         ## @return a void
         ## 
         def account_name=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the azureAdUserId property value. The user object identifier in Azure AD.
-        ## @param value Value to set for the azureAdUserId property.
+        ## @param value Value to set for the azure_ad_user_id property.
         ## @return a void
         ## 
         def azure_ad_user_id=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the domainName property value. The name of the Active Directory domain of which the user is a member.
-        ## @param value Value to set for the domainName property.
+        ## @param value Value to set for the domain_name property.
         ## @return a void
         ## 
         def domain_name=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the userPrincipalName property value. The user principal name of the account in Azure AD.
-        ## @param value Value to set for the userPrincipalName property.
+        ## @param value Value to set for the user_principal_name property.
         ## @return a void
         ## 
         def user_principal_name=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the userSid property value. The local security identifier of the user account.
-        ## @param value Value to set for the userSid property.
+        ## @param value Value to set for the user_sid property.
         ## @return a void
         ## 
         def user_sid=(value)

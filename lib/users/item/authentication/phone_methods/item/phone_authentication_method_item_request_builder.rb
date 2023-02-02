@@ -6,9 +6,9 @@ require_relative '../../../../users'
 require_relative '../../../item'
 require_relative '../../authentication'
 require_relative '../phone_methods'
-require_relative './disable_sms_sign_in/disable_sms_sign_in_request_builder'
-require_relative './enable_sms_sign_in/enable_sms_sign_in_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_disable_sms_sign_in/disable_sms_sign_in_request_builder'
+require_relative './microsoft_graph_enable_sms_sign_in/enable_sms_sign_in_request_builder'
 
 module MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item
     ## 
@@ -17,13 +17,13 @@ module MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item
         
         ## 
         # Provides operations to call the disableSmsSignIn method.
-        def disable_sms_sign_in()
-            return MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item::DisableSmsSignIn::DisableSmsSignInRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_disable_sms_sign_in()
+            return MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item::MicrosoftGraphDisableSmsSignIn::DisableSmsSignInRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the enableSmsSignIn method.
-        def enable_sms_sign_in()
-            return MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item::EnableSmsSignIn::EnableSmsSignInRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_enable_sms_sign_in()
+            return MicrosoftGraph::Users::Item::Authentication::PhoneMethods::Item::MicrosoftGraphEnableSmsSignIn::EnableSmsSignInRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

@@ -6,7 +6,7 @@ require_relative '../../../models/unified_role_eligibility_schedule_instance_col
 require_relative '../../role_management'
 require_relative '../directory'
 require_relative './count/count_request_builder'
-require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './microsoft_graph_filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
 require_relative './role_eligibility_schedule_instances'
 
 module MicrosoftGraph::RoleManagement::Directory::RoleEligibilityScheduleInstances
@@ -43,15 +43,6 @@ module MicrosoftGraph::RoleManagement::Directory::RoleEligibilityScheduleInstanc
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Provides operations to call the filterByCurrentUser method.
-        ## @param on Usage: on='{on}'
-        ## @return a filter_by_current_user_with_on_request_builder
-        ## 
-        def filter_by_current_user_with_on(on)
-            raise StandardError, 'on cannot be null' if on.nil?
-            return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
-        end
-        ## 
         ## Get the instances of role eligibilities.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of unified_role_eligibility_schedule_instance_collection_response
@@ -64,6 +55,15 @@ module MicrosoftGraph::RoleManagement::Directory::RoleEligibilityScheduleInstanc
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleEligibilityScheduleInstanceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+        end
+        ## 
+        ## Provides operations to call the filterByCurrentUser method.
+        ## @param on Usage: on='{on}'
+        ## @return a filter_by_current_user_with_on_request_builder
+        ## 
+        def microsoft_graph_filter_by_current_user_with_on(on)
+            raise StandardError, 'on cannot be null' if on.nil?
+            return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
         end
         ## 
         ## Create new navigation property to roleEligibilityScheduleInstances for roleManagement

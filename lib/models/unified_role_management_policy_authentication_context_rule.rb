@@ -20,7 +20,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the claimValue property value. The value of the authentication context claim.
-        ## @param value Value to set for the claimValue property.
+        ## @param value Value to set for the claim_value property.
         ## @return a void
         ## 
         def claim_value=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isEnabled property value. Whether this rule is enabled.
-        ## @param value Value to set for the isEnabled property.
+        ## @param value Value to set for the is_enabled property.
         ## @return a void
         ## 
         def is_enabled=(value)

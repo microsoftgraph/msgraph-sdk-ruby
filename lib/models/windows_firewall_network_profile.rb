@@ -73,7 +73,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the authorizedApplicationRulesFromGroupPolicyMerged property value. Configures the firewall to merge authorized application rules from group policy with those from local store instead of ignoring the local store rules. When AuthorizedApplicationRulesFromGroupPolicyNotMerged and AuthorizedApplicationRulesFromGroupPolicyMerged are both true, AuthorizedApplicationRulesFromGroupPolicyMerged takes priority.
-        ## @param value Value to set for the authorizedApplicationRulesFromGroupPolicyMerged property.
+        ## @param value Value to set for the authorized_application_rules_from_group_policy_merged property.
         ## @return a void
         ## 
         def authorized_application_rules_from_group_policy_merged=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the connectionSecurityRulesFromGroupPolicyMerged property value. Configures the firewall to merge connection security rules from group policy with those from local store instead of ignoring the local store rules. When ConnectionSecurityRulesFromGroupPolicyNotMerged and ConnectionSecurityRulesFromGroupPolicyMerged are both true, ConnectionSecurityRulesFromGroupPolicyMerged takes priority.
-        ## @param value Value to set for the connectionSecurityRulesFromGroupPolicyMerged property.
+        ## @param value Value to set for the connection_security_rules_from_group_policy_merged property.
         ## @return a void
         ## 
         def connection_security_rules_from_group_policy_merged=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the firewallEnabled property value. State Management Setting.
-        ## @param value Value to set for the firewallEnabled property.
+        ## @param value Value to set for the firewall_enabled property.
         ## @return a void
         ## 
         def firewall_enabled=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the globalPortRulesFromGroupPolicyMerged property value. Configures the firewall to merge global port rules from group policy with those from local store instead of ignoring the local store rules. When GlobalPortRulesFromGroupPolicyNotMerged and GlobalPortRulesFromGroupPolicyMerged are both true, GlobalPortRulesFromGroupPolicyMerged takes priority.
-        ## @param value Value to set for the globalPortRulesFromGroupPolicyMerged property.
+        ## @param value Value to set for the global_port_rules_from_group_policy_merged property.
         ## @return a void
         ## 
         def global_port_rules_from_group_policy_merged=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the inboundConnectionsBlocked property value. Configures the firewall to block all incoming connections by default. When InboundConnectionsRequired and InboundConnectionsBlocked are both true, InboundConnectionsBlocked takes priority.
-        ## @param value Value to set for the inboundConnectionsBlocked property.
+        ## @param value Value to set for the inbound_connections_blocked property.
         ## @return a void
         ## 
         def inbound_connections_blocked=(value)
@@ -185,7 +185,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the inboundNotificationsBlocked property value. Prevents the firewall from displaying notifications when an application is blocked from listening on a port. When InboundNotificationsRequired and InboundNotificationsBlocked are both true, InboundNotificationsBlocked takes priority.
-        ## @param value Value to set for the inboundNotificationsBlocked property.
+        ## @param value Value to set for the inbound_notifications_blocked property.
         ## @return a void
         ## 
         def inbound_notifications_blocked=(value)
@@ -200,7 +200,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the incomingTrafficBlocked property value. Configures the firewall to block all incoming traffic regardless of other policy settings. When IncomingTrafficRequired and IncomingTrafficBlocked are both true, IncomingTrafficBlocked takes priority.
-        ## @param value Value to set for the incomingTrafficBlocked property.
+        ## @param value Value to set for the incoming_traffic_blocked property.
         ## @return a void
         ## 
         def incoming_traffic_blocked=(value)
@@ -215,7 +215,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -230,7 +230,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the outboundConnectionsBlocked property value. Configures the firewall to block all outgoing connections by default. When OutboundConnectionsRequired and OutboundConnectionsBlocked are both true, OutboundConnectionsBlocked takes priority. This setting will get applied to Windows releases version 1809 and above.
-        ## @param value Value to set for the outboundConnectionsBlocked property.
+        ## @param value Value to set for the outbound_connections_blocked property.
         ## @return a void
         ## 
         def outbound_connections_blocked=(value)
@@ -245,7 +245,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the policyRulesFromGroupPolicyMerged property value. Configures the firewall to merge Firewall Rule policies from group policy with those from local store instead of ignoring the local store rules. When PolicyRulesFromGroupPolicyNotMerged and PolicyRulesFromGroupPolicyMerged are both true, PolicyRulesFromGroupPolicyMerged takes priority.
-        ## @param value Value to set for the policyRulesFromGroupPolicyMerged property.
+        ## @param value Value to set for the policy_rules_from_group_policy_merged property.
         ## @return a void
         ## 
         def policy_rules_from_group_policy_merged=(value)
@@ -260,7 +260,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securedPacketExemptionAllowed property value. Configures the firewall to allow the host computer to respond to unsolicited network traffic of that traffic is secured by IPSec even when stealthModeBlocked is set to true. When SecuredPacketExemptionBlocked and SecuredPacketExemptionAllowed are both true, SecuredPacketExemptionAllowed takes priority.
-        ## @param value Value to set for the securedPacketExemptionAllowed property.
+        ## @param value Value to set for the secured_packet_exemption_allowed property.
         ## @return a void
         ## 
         def secured_packet_exemption_allowed=(value)
@@ -297,7 +297,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the stealthModeBlocked property value. Prevent the server from operating in stealth mode. When StealthModeRequired and StealthModeBlocked are both true, StealthModeBlocked takes priority.
-        ## @param value Value to set for the stealthModeBlocked property.
+        ## @param value Value to set for the stealth_mode_blocked property.
         ## @return a void
         ## 
         def stealth_mode_blocked=(value)
@@ -312,7 +312,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the unicastResponsesToMulticastBroadcastsBlocked property value. Configures the firewall to block unicast responses to multicast broadcast traffic. When UnicastResponsesToMulticastBroadcastsRequired and UnicastResponsesToMulticastBroadcastsBlocked are both true, UnicastResponsesToMulticastBroadcastsBlocked takes priority.
-        ## @param value Value to set for the unicastResponsesToMulticastBroadcastsBlocked property.
+        ## @param value Value to set for the unicast_responses_to_multicast_broadcasts_blocked property.
         ## @return a void
         ## 
         def unicast_responses_to_multicast_broadcasts_blocked=(value)

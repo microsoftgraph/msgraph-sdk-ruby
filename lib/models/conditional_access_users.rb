@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the excludeGroups property value. Group IDs excluded from scope of policy.
-        ## @param value Value to set for the excludeGroups property.
+        ## @param value Value to set for the exclude_groups property.
         ## @return a void
         ## 
         def exclude_groups=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the excludeRoles property value. Role IDs excluded from scope of policy.
-        ## @param value Value to set for the excludeRoles property.
+        ## @param value Value to set for the exclude_roles property.
         ## @return a void
         ## 
         def exclude_roles=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the excludeUsers property value. User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
-        ## @param value Value to set for the excludeUsers property.
+        ## @param value Value to set for the exclude_users property.
         ## @return a void
         ## 
         def exclude_users=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeGroups property value. Group IDs in scope of policy unless explicitly excluded, or All.
-        ## @param value Value to set for the includeGroups property.
+        ## @param value Value to set for the include_groups property.
         ## @return a void
         ## 
         def include_groups=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeRoles property value. Role IDs in scope of policy unless explicitly excluded, or All.
-        ## @param value Value to set for the includeRoles property.
+        ## @param value Value to set for the include_roles property.
         ## @return a void
         ## 
         def include_roles=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeUsers property value. User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
-        ## @param value Value to set for the includeUsers property.
+        ## @param value Value to set for the include_users property.
         ## @return a void
         ## 
         def include_users=(value)
@@ -174,7 +174,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

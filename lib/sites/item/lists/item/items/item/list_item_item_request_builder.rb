@@ -12,9 +12,9 @@ require_relative './document_set_versions/document_set_versions_request_builder'
 require_relative './document_set_versions/item/document_set_version_item_request_builder'
 require_relative './drive_item/drive_item_request_builder'
 require_relative './fields/fields_request_builder'
-require_relative './get_activities_by_interval/get_activities_by_interval_request_builder'
-require_relative './get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval/dab1c2feb9ecf2d349721478e4ff8fe9c46b97a0c44110851b2b17a08d22383e'
 require_relative './item'
+require_relative './microsoft_graph_get_activities_by_interval/get_activities_by_interval_request_builder'
+require_relative './microsoft_graph_get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval/dab1c2feb9ecf2d349721478e4ff8fe9c46b97a0c44110851b2b17a08d22383e'
 require_relative './versions/item/list_item_version_item_request_builder'
 require_relative './versions/versions_request_builder'
 
@@ -42,6 +42,11 @@ module MicrosoftGraph::Sites::Item::Lists::Item::Items::Item
         # Provides operations to manage the fields property of the microsoft.graph.listItem entity.
         def fields()
             return MicrosoftGraph::Sites::Item::Lists::Item::Items::Item::Fields::FieldsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getActivitiesByInterval method.
+        def microsoft_graph_get_activities_by_interval()
+            return MicrosoftGraph::Sites::Item::Lists::Item::Items::Item::MicrosoftGraphGetActivitiesByInterval::GetActivitiesByIntervalRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -112,19 +117,12 @@ module MicrosoftGraph::Sites::Item::Lists::Item::Items::Item
         end
         ## 
         ## Provides operations to call the getActivitiesByInterval method.
-        ## @return a get_activities_by_interval_request_builder
-        ## 
-        def get_activities_by_interval()
-            return GetActivitiesByIntervalRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Provides operations to call the getActivitiesByInterval method.
         ## @param endDateTime Usage: endDateTime='{endDateTime}'
         ## @param interval Usage: interval='{interval}'
         ## @param startDateTime Usage: startDateTime='{startDateTime}'
         ## @return a get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval_request_builder
         ## 
-        def get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval(end_date_time, interval, start_date_time)
+        def microsoft_graph_get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval(end_date_time, interval, start_date_time)
             raise StandardError, 'end_date_time cannot be null' if end_date_time.nil?
             raise StandardError, 'interval cannot be null' if interval.nil?
             raise StandardError, 'start_date_time cannot be null' if start_date_time.nil?

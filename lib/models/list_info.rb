@@ -51,7 +51,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentTypesEnabled property value. If true, indicates that content types are enabled for this list.
-        ## @param value Value to set for the contentTypesEnabled property.
+        ## @param value Value to set for the content_types_enabled property.
         ## @return a void
         ## 
         def content_types_enabled=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

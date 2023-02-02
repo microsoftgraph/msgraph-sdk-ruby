@@ -30,7 +30,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentType property value. The document's content (MIME) type. Read-only.
-        ## @param value Value to set for the contentType property.
+        ## @param value Value to set for the content_type property.
         ## @return a void
         ## 
         def content_type=(value)
@@ -54,7 +54,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The document's name. Read-only.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)

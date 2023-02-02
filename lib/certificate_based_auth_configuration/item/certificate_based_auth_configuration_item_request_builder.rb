@@ -34,7 +34,7 @@ module MicrosoftGraph::CertificateBasedAuthConfiguration::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from certificateBasedAuthConfiguration by key (id)
+        ## Delete entity from certificateBasedAuthConfiguration
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -48,7 +48,7 @@ module MicrosoftGraph::CertificateBasedAuthConfiguration::Item
             return @request_adapter.send_async(request_info, nil, error_mapping)
         end
         ## 
-        ## Get entity from certificateBasedAuthConfiguration by key (id)
+        ## Get entity from certificateBasedAuthConfiguration by key
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of certificate_based_auth_configuration
         ## 
@@ -62,7 +62,7 @@ module MicrosoftGraph::CertificateBasedAuthConfiguration::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CertificateBasedAuthConfiguration.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update entity in certificateBasedAuthConfiguration by key (id)
+        ## Update entity in certificateBasedAuthConfiguration
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of certificate_based_auth_configuration
@@ -78,7 +78,7 @@ module MicrosoftGraph::CertificateBasedAuthConfiguration::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CertificateBasedAuthConfiguration.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from certificateBasedAuthConfiguration by key (id)
+        ## Delete entity from certificateBasedAuthConfiguration
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -94,7 +94,7 @@ module MicrosoftGraph::CertificateBasedAuthConfiguration::Item
             return request_info
         end
         ## 
-        ## Get entity from certificateBasedAuthConfiguration by key (id)
+        ## Get entity from certificateBasedAuthConfiguration by key
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph::CertificateBasedAuthConfiguration::Item
             return request_info
         end
         ## 
-        ## Update entity in certificateBasedAuthConfiguration by key (id)
+        ## Update entity in certificateBasedAuthConfiguration
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
@@ -145,7 +145,7 @@ module MicrosoftGraph::CertificateBasedAuthConfiguration::Item
         end
 
         ## 
-        # Get entity from certificateBasedAuthConfiguration by key (id)
+        # Get entity from certificateBasedAuthConfiguration by key
         class CertificateBasedAuthConfigurationItemRequestBuilderGetQueryParameters
             
             ## 

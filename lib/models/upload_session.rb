@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the expirationDateTime property value. The date and time in UTC that the upload session will expire. The complete file must be uploaded before this expiration time is reached.
-        ## @param value Value to set for the expirationDateTime property.
+        ## @param value Value to set for the expiration_date_time property.
         ## @return a void
         ## 
         def expiration_date_time=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the nextExpectedRanges property value. A collection of byte ranges that the server is missing for the file. These ranges are zero indexed and of the format 'start-end' (e.g. '0-26' to indicate the first 27 bytes of the file). When uploading files as Outlook attachments, instead of a collection of ranges, this property always indicates a single value '{start}', the location in the file where the next upload should begin.
-        ## @param value Value to set for the nextExpectedRanges property.
+        ## @param value Value to set for the next_expected_ranges property.
         ## @return a void
         ## 
         def next_expected_ranges=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the uploadUrl property value. The URL endpoint that accepts PUT requests for byte ranges of the file.
-        ## @param value Value to set for the uploadUrl property.
+        ## @param value Value to set for the upload_url property.
         ## @return a void
         ## 
         def upload_url=(value)

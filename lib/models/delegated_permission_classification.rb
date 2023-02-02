@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the permissionId property value. The unique identifier (id) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.
-        ## @param value Value to set for the permissionId property.
+        ## @param value Value to set for the permission_id property.
         ## @return a void
         ## 
         def permission_id=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the permissionName property value. The claim value (value) for the delegated permission listed in the oauth2PermissionScopes collection of the servicePrincipal. Does not support $filter.
-        ## @param value Value to set for the permissionName property.
+        ## @param value Value to set for the permission_name property.
         ## @return a void
         ## 
         def permission_name=(value)

@@ -6,8 +6,8 @@ require_relative '../../../../solutions'
 require_relative '../../../booking_businesses'
 require_relative '../../item'
 require_relative '../appointments'
-require_relative './cancel/cancel_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_cancel/cancel_request_builder'
 
 module MicrosoftGraph::Solutions::BookingBusinesses::Item::Appointments::Item
     ## 
@@ -16,8 +16,8 @@ module MicrosoftGraph::Solutions::BookingBusinesses::Item::Appointments::Item
         
         ## 
         # Provides operations to call the cancel method.
-        def cancel()
-            return MicrosoftGraph::Solutions::BookingBusinesses::Item::Appointments::Item::Cancel::CancelRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_cancel()
+            return MicrosoftGraph::Solutions::BookingBusinesses::Item::Appointments::Item::MicrosoftGraphCancel::CancelRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

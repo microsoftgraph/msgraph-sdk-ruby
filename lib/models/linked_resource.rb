@@ -26,7 +26,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applicationName property value. Field indicating the app name of the source that is sending the linkedResource.
-        ## @param value Value to set for the applicationName property.
+        ## @param value Value to set for the application_name property.
         ## @return a void
         ## 
         def application_name=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Field indicating the title of the linkedResource.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalId property value. Id of the object that is associated with this task on the third-party/partner system.
-        ## @param value Value to set for the externalId property.
+        ## @param value Value to set for the external_id property.
         ## @return a void
         ## 
         def external_id=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webUrl property value. Deep link to the linkedResource.
-        ## @param value Value to set for the webUrl property.
+        ## @param value Value to set for the web_url property.
         ## @return a void
         ## 
         def web_url=(value)

@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mediaType property value. The mediaType property
-        ## @param value Value to set for the mediaType property.
+        ## @param value Value to set for the media_type property.
         ## @return a void
         ## 
         def media_type=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the serverMuted property value. If the media is muted by the server.
-        ## @param value Value to set for the serverMuted property.
+        ## @param value Value to set for the server_muted property.
         ## @return a void
         ## 
         def server_muted=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sourceId property value. The source ID.
-        ## @param value Value to set for the sourceId property.
+        ## @param value Value to set for the source_id property.
         ## @return a void
         ## 
         def source_id=(value)

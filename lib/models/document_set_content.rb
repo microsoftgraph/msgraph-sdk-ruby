@@ -51,7 +51,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentType property value. Content type information of the file.
-        ## @param value Value to set for the contentType property.
+        ## @param value Value to set for the content_type property.
         ## @return a void
         ## 
         def content_type=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fileName property value. Name of the file in resource folder that should be added as a default content or a template in the document set.
-        ## @param value Value to set for the fileName property.
+        ## @param value Value to set for the file_name property.
         ## @return a void
         ## 
         def file_name=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the folderName property value. Folder name in which the file will be placed when a new document set is created in the library.
-        ## @param value Value to set for the folderName property.
+        ## @param value Value to set for the folder_name property.
         ## @return a void
         ## 
         def folder_name=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the guestsCount property value. Count of guests in a team.
-        ## @param value Value to set for the guestsCount property.
+        ## @param value Value to set for the guests_count property.
         ## @return a void
         ## 
         def guests_count=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the membersCount property value. Count of members in a team.
-        ## @param value Value to set for the membersCount property.
+        ## @param value Value to set for the members_count property.
         ## @return a void
         ## 
         def members_count=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the ownersCount property value. Count of owners in a team.
-        ## @param value Value to set for the ownersCount property.
+        ## @param value Value to set for the owners_count property.
         ## @return a void
         ## 
         def owners_count=(value)

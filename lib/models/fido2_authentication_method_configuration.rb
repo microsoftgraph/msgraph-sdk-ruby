@@ -55,7 +55,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
-        ## @param value Value to set for the includeTargets property.
+        ## @param value Value to set for the include_targets property.
         ## @return a void
         ## 
         def include_targets=(value)
@@ -70,7 +70,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isAttestationEnforced property value. Determines whether attestation must be enforced for FIDO2 security key registration.
-        ## @param value Value to set for the isAttestationEnforced property.
+        ## @param value Value to set for the is_attestation_enforced property.
         ## @return a void
         ## 
         def is_attestation_enforced=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isSelfServiceRegistrationAllowed property value. Determines if users can register new FIDO2 security keys.
-        ## @param value Value to set for the isSelfServiceRegistrationAllowed property.
+        ## @param value Value to set for the is_self_service_registration_allowed property.
         ## @return a void
         ## 
         def is_self_service_registration_allowed=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the keyRestrictions property value. Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (e.g. make and model) of the authenticator.
-        ## @param value Value to set for the keyRestrictions property.
+        ## @param value Value to set for the key_restrictions property.
         ## @return a void
         ## 
         def key_restrictions=(value)

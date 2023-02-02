@@ -40,7 +40,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the detectionStatus property value. The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
-        ## @param value Value to set for the detectionStatus property.
+        ## @param value Value to set for the detection_status property.
         ## @return a void
         ## 
         def detection_status=(value)
@@ -55,7 +55,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the fileDetails property value. The file details.
-        ## @param value Value to set for the fileDetails property.
+        ## @param value Value to set for the file_details property.
         ## @return a void
         ## 
         def file_details=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
-        ## @param value Value to set for the mdeDeviceId property.
+        ## @param value Value to set for the mde_device_id property.
         ## @return a void
         ## 
         def mde_device_id=(value)

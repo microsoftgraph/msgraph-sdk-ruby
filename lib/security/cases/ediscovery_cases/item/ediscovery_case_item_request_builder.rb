@@ -5,15 +5,15 @@ require_relative '../../../../models/security/ediscovery_case'
 require_relative '../../../security'
 require_relative '../../cases'
 require_relative '../ediscovery_cases'
-require_relative './close/close_request_builder'
 require_relative './custodians/custodians_request_builder'
 require_relative './custodians/item/ediscovery_custodian_item_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_security_close/close_request_builder'
+require_relative './microsoft_graph_security_reopen/reopen_request_builder'
 require_relative './noncustodial_data_sources/item/ediscovery_noncustodial_data_source_item_request_builder'
 require_relative './noncustodial_data_sources/noncustodial_data_sources_request_builder'
 require_relative './operations/item/case_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
-require_relative './reopen/reopen_request_builder'
 require_relative './review_sets/item/ediscovery_review_set_item_request_builder'
 require_relative './review_sets/review_sets_request_builder'
 require_relative './searches/item/ediscovery_search_item_request_builder'
@@ -28,14 +28,19 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item
     class EdiscoveryCaseItemRequestBuilder
         
         ## 
-        # Provides operations to call the close method.
-        def close()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Close::CloseRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.
         def custodians()
             return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::CustodiansRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the close method.
+        def microsoft_graph_security_close()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::MicrosoftGraphSecurityClose::CloseRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the reopen method.
+        def microsoft_graph_security_reopen()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::MicrosoftGraphSecurityReopen::ReopenRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the noncustodialDataSources property of the microsoft.graph.security.ediscoveryCase entity.
@@ -50,11 +55,6 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item
         ## 
         # Path parameters for the request
         @path_parameters
-        ## 
-        # Provides operations to call the reopen method.
-        def reopen()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Reopen::ReopenRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter

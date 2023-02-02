@@ -21,11 +21,11 @@ module MicrosoftGraph::Models
         # Contains properties for detection operator.
         @operator
         ## 
-        # A value indicating whether the script should run as 32-bit.
-        @run_as32_bit
-        ## 
         # The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.
         @run_as_account
+        ## 
+        # A value indicating whether the script should run as 32-bit.
+        @run_as32_bit
         ## 
         # The base64-encoded script content.
         @script_content
@@ -38,7 +38,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the comparisonValue property value. The script output comparison value. Do not specify a value if the rule is used for detection.
-        ## @param value Value to set for the comparisonValue property.
+        ## @param value Value to set for the comparison_value property.
         ## @return a void
         ## 
         def comparison_value=(value)
@@ -70,7 +70,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name for the rule. Do not specify this value if the rule is used for detection.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enforceSignatureCheck property value. A value indicating whether a signature check is enforced.
-        ## @param value Value to set for the enforceSignatureCheck property.
+        ## @param value Value to set for the enforce_signature_check property.
         ## @return a void
         ## 
         def enforce_signature_check=(value)
@@ -102,8 +102,8 @@ module MicrosoftGraph::Models
                 "enforceSignatureCheck" => lambda {|n| @enforce_signature_check = n.get_boolean_value() },
                 "operationType" => lambda {|n| @operation_type = n.get_enum_value(MicrosoftGraph::Models::Win32LobAppPowerShellScriptRuleOperationType) },
                 "operator" => lambda {|n| @operator = n.get_enum_value(MicrosoftGraph::Models::Win32LobAppRuleOperator) },
-                "runAs32Bit" => lambda {|n| @run_as32_bit = n.get_boolean_value() },
                 "runAsAccount" => lambda {|n| @run_as_account = n.get_enum_value(MicrosoftGraph::Models::RunAsAccountType) },
+                "runAs32Bit" => lambda {|n| @run_as32_bit = n.get_boolean_value() },
                 "scriptContent" => lambda {|n| @script_content = n.get_string_value() },
             })
         end
@@ -116,7 +116,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the operationType property value. Contains all supported Powershell Script output detection type.
-        ## @param value Value to set for the operationType property.
+        ## @param value Value to set for the operation_type property.
         ## @return a void
         ## 
         def operation_type=(value)
@@ -138,21 +138,6 @@ module MicrosoftGraph::Models
             @operator = value
         end
         ## 
-        ## Gets the runAs32Bit property value. A value indicating whether the script should run as 32-bit.
-        ## @return a boolean
-        ## 
-        def run_as32_bit
-            return @run_as32_bit
-        end
-        ## 
-        ## Sets the runAs32Bit property value. A value indicating whether the script should run as 32-bit.
-        ## @param value Value to set for the runAs32Bit property.
-        ## @return a void
-        ## 
-        def run_as32_bit=(value)
-            @run_as32_bit = value
-        end
-        ## 
         ## Gets the runAsAccount property value. The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.
         ## @return a run_as_account_type
         ## 
@@ -161,11 +146,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the runAsAccount property value. The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.
-        ## @param value Value to set for the runAsAccount property.
+        ## @param value Value to set for the run_as_account property.
         ## @return a void
         ## 
         def run_as_account=(value)
             @run_as_account = value
+        end
+        ## 
+        ## Gets the runAs32Bit property value. A value indicating whether the script should run as 32-bit.
+        ## @return a boolean
+        ## 
+        def run_as32_bit
+            return @run_as32_bit
+        end
+        ## 
+        ## Sets the runAs32Bit property value. A value indicating whether the script should run as 32-bit.
+        ## @param value Value to set for the run_as32_bit property.
+        ## @return a void
+        ## 
+        def run_as32_bit=(value)
+            @run_as32_bit = value
         end
         ## 
         ## Gets the scriptContent property value. The base64-encoded script content.
@@ -176,7 +176,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the scriptContent property value. The base64-encoded script content.
-        ## @param value Value to set for the scriptContent property.
+        ## @param value Value to set for the script_content property.
         ## @return a void
         ## 
         def script_content=(value)
@@ -195,8 +195,8 @@ module MicrosoftGraph::Models
             writer.write_boolean_value("enforceSignatureCheck", @enforce_signature_check)
             writer.write_enum_value("operationType", @operation_type)
             writer.write_enum_value("operator", @operator)
-            writer.write_boolean_value("runAs32Bit", @run_as32_bit)
             writer.write_enum_value("runAsAccount", @run_as_account)
+            writer.write_boolean_value("runAs32Bit", @run_as32_bit)
             writer.write_string_value("scriptContent", @script_content)
         end
     end

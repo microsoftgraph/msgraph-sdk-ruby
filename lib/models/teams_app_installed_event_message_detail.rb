@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the teamsAppDisplayName property value. Display name of the teamsApp.
-        ## @param value Value to set for the teamsAppDisplayName property.
+        ## @param value Value to set for the teams_app_display_name property.
         ## @return a void
         ## 
         def teams_app_display_name=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the teamsAppId property value. Unique identifier of the teamsApp.
-        ## @param value Value to set for the teamsAppId property.
+        ## @param value Value to set for the teams_app_id property.
         ## @return a void
         ## 
         def teams_app_id=(value)

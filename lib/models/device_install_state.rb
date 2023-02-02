@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceId property value. Device Id.
-        ## @param value Value to set for the deviceId property.
+        ## @param value Value to set for the device_id property.
         ## @return a void
         ## 
         def device_id=(value)
@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceName property value. Device name.
-        ## @param value Value to set for the deviceName property.
+        ## @param value Value to set for the device_name property.
         ## @return a void
         ## 
         def device_name=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the errorCode property value. The error code for install failures.
-        ## @param value Value to set for the errorCode property.
+        ## @param value Value to set for the error_code property.
         ## @return a void
         ## 
         def error_code=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the installState property value. Possible values for install state.
-        ## @param value Value to set for the installState property.
+        ## @param value Value to set for the install_state property.
         ## @return a void
         ## 
         def install_state=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastSyncDateTime property value. Last sync date and time.
-        ## @param value Value to set for the lastSyncDateTime property.
+        ## @param value Value to set for the last_sync_date_time property.
         ## @return a void
         ## 
         def last_sync_date_time=(value)
@@ -148,7 +148,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osDescription property value. OS Description.
-        ## @param value Value to set for the osDescription property.
+        ## @param value Value to set for the os_description property.
         ## @return a void
         ## 
         def os_description=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osVersion property value. OS Version.
-        ## @param value Value to set for the osVersion property.
+        ## @param value Value to set for the os_version property.
         ## @return a void
         ## 
         def os_version=(value)
@@ -195,7 +195,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userName property value. Device User Name.
-        ## @param value Value to set for the userName property.
+        ## @param value Value to set for the user_name property.
         ## @return a void
         ## 
         def user_name=(value)

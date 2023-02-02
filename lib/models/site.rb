@@ -94,7 +94,7 @@ module MicrosoftGraph::Models
             @columns = value
         end
         ## 
-        ## Instantiates a new site and sets the default values.
+        ## Instantiates a new Site and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentTypes property value. The collection of content types defined for this site.
-        ## @param value Value to set for the contentTypes property.
+        ## @param value Value to set for the content_types property.
         ## @return a void
         ## 
         def content_types=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The full title for the site. Read-only.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -194,7 +194,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalColumns property value. The externalColumns property
-        ## @param value Value to set for the externalColumns property.
+        ## @param value Value to set for the external_columns property.
         ## @return a void
         ## 
         def external_columns=(value)
@@ -354,7 +354,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
-        ## @param value Value to set for the sharepointIds property.
+        ## @param value Value to set for the sharepoint_ids property.
         ## @return a void
         ## 
         def sharepoint_ids=(value)
@@ -369,7 +369,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the siteCollection property value. Provides details about the site's site collection. Available only on the root site. Read-only.
-        ## @param value Value to set for the siteCollection property.
+        ## @param value Value to set for the site_collection property.
         ## @return a void
         ## 
         def site_collection=(value)
@@ -399,7 +399,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the termStore property value. The default termStore under this site.
-        ## @param value Value to set for the termStore property.
+        ## @param value Value to set for the term_store property.
         ## @return a void
         ## 
         def term_store=(value)
@@ -414,7 +414,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the termStores property value. The collection of termStores under this site.
-        ## @param value Value to set for the termStores property.
+        ## @param value Value to set for the term_stores property.
         ## @return a void
         ## 
         def term_stores=(value)

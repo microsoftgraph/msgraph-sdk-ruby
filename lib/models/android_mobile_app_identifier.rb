@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the packageId property value. The identifier for an app, as specified in the play store.
-        ## @param value Value to set for the packageId property.
+        ## @param value Value to set for the package_id property.
         ## @return a void
         ## 
         def package_id=(value)

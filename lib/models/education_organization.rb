@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Organization display name.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalSource property value. Source where this organization was created from. Possible values are: sis, manual.
-        ## @param value Value to set for the externalSource property.
+        ## @param value Value to set for the external_source property.
         ## @return a void
         ## 
         def external_source=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalSourceDetail property value. The name of the external source this resources was generated from.
-        ## @param value Value to set for the externalSourceDetail property.
+        ## @param value Value to set for the external_source_detail property.
         ## @return a void
         ## 
         def external_source_detail=(value)

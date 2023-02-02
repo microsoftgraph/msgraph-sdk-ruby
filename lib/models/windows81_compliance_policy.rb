@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osMaximumVersion property value. Maximum Windows 8.1 version.
-        ## @param value Value to set for the osMaximumVersion property.
+        ## @param value Value to set for the os_maximum_version property.
         ## @return a void
         ## 
         def os_maximum_version=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osMinimumVersion property value. Minimum Windows 8.1 version.
-        ## @param value Value to set for the osMinimumVersion property.
+        ## @param value Value to set for the os_minimum_version property.
         ## @return a void
         ## 
         def os_minimum_version=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordBlockSimple property value. Indicates whether or not to block simple password.
-        ## @param value Value to set for the passwordBlockSimple property.
+        ## @param value Value to set for the password_block_simple property.
         ## @return a void
         ## 
         def password_block_simple=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordExpirationDays property value. Password expiration in days.
-        ## @param value Value to set for the passwordExpirationDays property.
+        ## @param value Value to set for the password_expiration_days property.
         ## @return a void
         ## 
         def password_expiration_days=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
-        ## @param value Value to set for the passwordMinimumCharacterSetCount property.
+        ## @param value Value to set for the password_minimum_character_set_count property.
         ## @return a void
         ## 
         def password_minimum_character_set_count=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinimumLength property value. The minimum password length.
-        ## @param value Value to set for the passwordMinimumLength property.
+        ## @param value Value to set for the password_minimum_length property.
         ## @return a void
         ## 
         def password_minimum_length=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
-        ## @param value Value to set for the passwordMinutesOfInactivityBeforeLock property.
+        ## @param value Value to set for the password_minutes_of_inactivity_before_lock property.
         ## @return a void
         ## 
         def password_minutes_of_inactivity_before_lock=(value)
@@ -188,7 +188,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordPreviousPasswordBlockCount property value. The number of previous passwords to prevent re-use of. Valid values 0 to 24
-        ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
+        ## @param value Value to set for the password_previous_password_block_count property.
         ## @return a void
         ## 
         def password_previous_password_block_count=(value)
@@ -203,7 +203,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequired property value. Require a password to unlock Windows device.
-        ## @param value Value to set for the passwordRequired property.
+        ## @param value Value to set for the password_required property.
         ## @return a void
         ## 
         def password_required=(value)
@@ -218,7 +218,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequiredType property value. Possible values of required passwords.
-        ## @param value Value to set for the passwordRequiredType property.
+        ## @param value Value to set for the password_required_type property.
         ## @return a void
         ## 
         def password_required_type=(value)
@@ -253,7 +253,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the storageRequireEncryption property value. Indicates whether or not to require encryption on a windows 8.1 device.
-        ## @param value Value to set for the storageRequireEncryption property.
+        ## @param value Value to set for the storage_require_encryption property.
         ## @return a void
         ## 
         def storage_require_encryption=(value)

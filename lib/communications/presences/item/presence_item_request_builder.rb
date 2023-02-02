@@ -4,11 +4,11 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/presence'
 require_relative '../../communications'
 require_relative '../presences'
-require_relative './clear_presence/clear_presence_request_builder'
-require_relative './clear_user_preferred_presence/clear_user_preferred_presence_request_builder'
 require_relative './item'
-require_relative './set_presence/set_presence_request_builder'
-require_relative './set_user_preferred_presence/set_user_preferred_presence_request_builder'
+require_relative './microsoft_graph_clear_presence/clear_presence_request_builder'
+require_relative './microsoft_graph_clear_user_preferred_presence/clear_user_preferred_presence_request_builder'
+require_relative './microsoft_graph_set_presence/set_presence_request_builder'
+require_relative './microsoft_graph_set_user_preferred_presence/set_user_preferred_presence_request_builder'
 
 module MicrosoftGraph::Communications::Presences::Item
     ## 
@@ -17,13 +17,23 @@ module MicrosoftGraph::Communications::Presences::Item
         
         ## 
         # Provides operations to call the clearPresence method.
-        def clear_presence()
-            return MicrosoftGraph::Communications::Presences::Item::ClearPresence::ClearPresenceRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_clear_presence()
+            return MicrosoftGraph::Communications::Presences::Item::MicrosoftGraphClearPresence::ClearPresenceRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the clearUserPreferredPresence method.
-        def clear_user_preferred_presence()
-            return MicrosoftGraph::Communications::Presences::Item::ClearUserPreferredPresence::ClearUserPreferredPresenceRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_clear_user_preferred_presence()
+            return MicrosoftGraph::Communications::Presences::Item::MicrosoftGraphClearUserPreferredPresence::ClearUserPreferredPresenceRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the setPresence method.
+        def microsoft_graph_set_presence()
+            return MicrosoftGraph::Communications::Presences::Item::MicrosoftGraphSetPresence::SetPresenceRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the setUserPreferredPresence method.
+        def microsoft_graph_set_user_preferred_presence()
+            return MicrosoftGraph::Communications::Presences::Item::MicrosoftGraphSetUserPreferredPresence::SetUserPreferredPresenceRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -31,16 +41,6 @@ module MicrosoftGraph::Communications::Presences::Item
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the setPresence method.
-        def set_presence()
-            return MicrosoftGraph::Communications::Presences::Item::SetPresence::SetPresenceRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the setUserPreferredPresence method.
-        def set_user_preferred_presence()
-            return MicrosoftGraph::Communications::Presences::Item::SetUserPreferredPresence::SetUserPreferredPresenceRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template

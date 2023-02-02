@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the daysOfWeek property value. The days of the week on which the user works.
-        ## @param value Value to set for the daysOfWeek property.
+        ## @param value Value to set for the days_of_week property.
         ## @return a void
         ## 
         def days_of_week=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the endTime property value. The time of the day that the user stops working.
-        ## @param value Value to set for the endTime property.
+        ## @param value Value to set for the end_time property.
         ## @return a void
         ## 
         def end_time=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the startTime property value. The time of the day that the user starts working.
-        ## @param value Value to set for the startTime property.
+        ## @param value Value to set for the start_time property.
         ## @return a void
         ## 
         def start_time=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the timeZone property value. The time zone to which the working hours apply.
-        ## @param value Value to set for the timeZone property.
+        ## @param value Value to set for the time_zone property.
         ## @return a void
         ## 
         def time_zone=(value)

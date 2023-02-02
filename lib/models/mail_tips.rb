@@ -71,7 +71,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the automaticReplies property value. Mail tips for automatic reply if it has been set up by the recipient.
-        ## @param value Value to set for the automaticReplies property.
+        ## @param value Value to set for the automatic_replies property.
         ## @return a void
         ## 
         def automatic_replies=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the customMailTip property value. A custom mail tip that can be set on the recipient's mailbox.
-        ## @param value Value to set for the customMailTip property.
+        ## @param value Value to set for the custom_mail_tip property.
         ## @return a void
         ## 
         def custom_mail_tip=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deliveryRestricted property value. Whether the recipient's mailbox is restricted, for example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.
-        ## @param value Value to set for the deliveryRestricted property.
+        ## @param value Value to set for the delivery_restricted property.
         ## @return a void
         ## 
         def delivery_restricted=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the emailAddress property value. The email address of the recipient to get mailtips for.
-        ## @param value Value to set for the emailAddress property.
+        ## @param value Value to set for the email_address property.
         ## @return a void
         ## 
         def email_address=(value)
@@ -162,7 +162,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalMemberCount property value. The number of external members if the recipient is a distribution list.
-        ## @param value Value to set for the externalMemberCount property.
+        ## @param value Value to set for the external_member_count property.
         ## @return a void
         ## 
         def external_member_count=(value)
@@ -198,7 +198,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isModerated property value. Whether sending messages to the recipient requires approval. For example, if the recipient is a large distribution list and a moderator has been set up to approve messages sent to that distribution list, or if sending messages to a recipient requires approval of the recipient's manager.
-        ## @param value Value to set for the isModerated property.
+        ## @param value Value to set for the is_moderated property.
         ## @return a void
         ## 
         def is_moderated=(value)
@@ -213,7 +213,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mailboxFull property value. The mailbox full status of the recipient.
-        ## @param value Value to set for the mailboxFull property.
+        ## @param value Value to set for the mailbox_full property.
         ## @return a void
         ## 
         def mailbox_full=(value)
@@ -228,7 +228,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maxMessageSize property value. The maximum message size that has been configured for the recipient's organization or mailbox.
-        ## @param value Value to set for the maxMessageSize property.
+        ## @param value Value to set for the max_message_size property.
         ## @return a void
         ## 
         def max_message_size=(value)
@@ -243,7 +243,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -258,7 +258,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the recipientScope property value. The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its 'partner'. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It's also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.
-        ## @param value Value to set for the recipientScope property.
+        ## @param value Value to set for the recipient_scope property.
         ## @return a void
         ## 
         def recipient_scope=(value)
@@ -273,7 +273,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the recipientSuggestions property value. Recipients suggested based on previous contexts where they appear in the same message.
-        ## @param value Value to set for the recipientSuggestions property.
+        ## @param value Value to set for the recipient_suggestions property.
         ## @return a void
         ## 
         def recipient_suggestions=(value)
@@ -310,7 +310,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the totalMemberCount property value. The number of members if the recipient is a distribution list.
-        ## @param value Value to set for the totalMemberCount property.
+        ## @param value Value to set for the total_member_count property.
         ## @return a void
         ## 
         def total_member_count=(value)

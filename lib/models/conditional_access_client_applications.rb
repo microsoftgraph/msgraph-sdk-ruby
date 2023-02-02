@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the excludeServicePrincipals property value. Service principal IDs excluded from the policy scope.
-        ## @param value Value to set for the excludeServicePrincipals property.
+        ## @param value Value to set for the exclude_service_principals property.
         ## @return a void
         ## 
         def exclude_service_principals=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeServicePrincipals property value. Service principal IDs included in the policy scope, or ServicePrincipalsInMyTenant.
-        ## @param value Value to set for the includeServicePrincipals property.
+        ## @param value Value to set for the include_service_principals property.
         ## @return a void
         ## 
         def include_service_principals=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

@@ -30,7 +30,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the correlationId property value. Id used for tracing the failure in the service.
-        ## @param value Value to set for the correlationId property.
+        ## @param value Value to set for the correlation_id property.
         ## @return a void
         ## 
         def correlation_id=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the eventDateTime property value. Time when the event occurred .
-        ## @param value Value to set for the eventDateTime property.
+        ## @param value Value to set for the event_date_time property.
         ## @return a void
         ## 
         def event_date_time=(value)

@@ -38,7 +38,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accessPackageAssignmentApprovals property value. Approval stages for decisions associated with access package assignment requests.
-        ## @param value Value to set for the accessPackageAssignmentApprovals property.
+        ## @param value Value to set for the access_package_assignment_approvals property.
         ## @return a void
         ## 
         def access_package_assignment_approvals=(value)
@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accessPackages property value. Access packages define the collection of resource roles and the policies for which subjects can request or be assigned access to those resources.
-        ## @param value Value to set for the accessPackages property.
+        ## @param value Value to set for the access_packages property.
         ## @return a void
         ## 
         def access_packages=(value)
@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignmentPolicies property value. Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
-        ## @param value Value to set for the assignmentPolicies property.
+        ## @param value Value to set for the assignment_policies property.
         ## @return a void
         ## 
         def assignment_policies=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignmentRequests property value. Access package assignment requests created by or on behalf of a subject.
-        ## @param value Value to set for the assignmentRequests property.
+        ## @param value Value to set for the assignment_requests property.
         ## @return a void
         ## 
         def assignment_requests=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the connectedOrganizations property value. References to a directory or domain of another organization whose users can request access.
-        ## @param value Value to set for the connectedOrganizations property.
+        ## @param value Value to set for the connected_organizations property.
         ## @return a void
         ## 
         def connected_organizations=(value)

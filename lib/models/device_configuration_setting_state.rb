@@ -89,7 +89,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the currentValue property value. Current value of setting on device
-        ## @param value Value to set for the currentValue property.
+        ## @param value Value to set for the current_value property.
         ## @return a void
         ## 
         def current_value=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the errorCode property value. Error code for the setting
-        ## @param value Value to set for the errorCode property.
+        ## @param value Value to set for the error_code property.
         ## @return a void
         ## 
         def error_code=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the errorDescription property value. Error description
-        ## @param value Value to set for the errorDescription property.
+        ## @param value Value to set for the error_description property.
         ## @return a void
         ## 
         def error_description=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the instanceDisplayName property value. Name of setting instance that is being reported.
-        ## @param value Value to set for the instanceDisplayName property.
+        ## @param value Value to set for the instance_display_name property.
         ## @return a void
         ## 
         def instance_display_name=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -222,7 +222,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the settingName property value. Localized/user friendly setting name that is being reported
-        ## @param value Value to set for the settingName property.
+        ## @param value Value to set for the setting_name property.
         ## @return a void
         ## 
         def setting_name=(value)
@@ -267,7 +267,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userEmail property value. UserEmail
-        ## @param value Value to set for the userEmail property.
+        ## @param value Value to set for the user_email property.
         ## @return a void
         ## 
         def user_email=(value)
@@ -282,7 +282,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userId property value. UserId
-        ## @param value Value to set for the userId property.
+        ## @param value Value to set for the user_id property.
         ## @return a void
         ## 
         def user_id=(value)
@@ -297,7 +297,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userName property value. UserName
-        ## @param value Value to set for the userName property.
+        ## @param value Value to set for the user_name property.
         ## @return a void
         ## 
         def user_name=(value)
@@ -312,7 +312,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userPrincipalName property value. UserPrincipalName.
-        ## @param value Value to set for the userPrincipalName property.
+        ## @param value Value to set for the user_principal_name property.
         ## @return a void
         ## 
         def user_principal_name=(value)

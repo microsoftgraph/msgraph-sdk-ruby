@@ -28,7 +28,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
-        ## @param value Value to set for the countryLetterCode property.
+        ## @param value Value to set for the country_letter_code property.
         ## @return a void
         ## 
         def country_letter_code=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the ipAddress property value. The value of the IP Address, can be either in V4 address or V6 address format.
-        ## @param value Value to set for the ipAddress property.
+        ## @param value Value to set for the ip_address property.
         ## @return a void
         ## 
         def ip_address=(value)

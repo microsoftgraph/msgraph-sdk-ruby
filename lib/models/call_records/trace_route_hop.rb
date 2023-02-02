@@ -73,7 +73,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the hopCount property value. The network path count of this hop that was used to compute the RTT.
-        ## @param value Value to set for the hopCount property.
+        ## @param value Value to set for the hop_count property.
         ## @return a void
         ## 
         def hop_count=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the ipAddress property value. IP address used for this hop in the network trace.
-        ## @param value Value to set for the ipAddress property.
+        ## @param value Value to set for the ip_address property.
         ## @return a void
         ## 
         def ip_address=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the roundTripTime property value. The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in [ISO 8601][] format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.
-        ## @param value Value to set for the roundTripTime property.
+        ## @param value Value to set for the round_trip_time property.
         ## @return a void
         ## 
         def round_trip_time=(value)

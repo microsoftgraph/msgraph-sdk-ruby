@@ -115,7 +115,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pivotTables property value. Collection of PivotTables that are part of the worksheet.
-        ## @param value Value to set for the pivotTables property.
+        ## @param value Value to set for the pivot_tables property.
         ## @return a void
         ## 
         def pivot_tables=(value)

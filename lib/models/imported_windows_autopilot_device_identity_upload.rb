@@ -31,7 +31,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTimeUtc property value. DateTime when the entity is created.
-        ## @param value Value to set for the createdDateTimeUtc property.
+        ## @param value Value to set for the created_date_time_utc property.
         ## @return a void
         ## 
         def created_date_time_utc=(value)
@@ -55,7 +55,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceIdentities property value. Collection of all Autopilot devices as a part of this upload.
-        ## @param value Value to set for the deviceIdentities property.
+        ## @param value Value to set for the device_identities property.
         ## @return a void
         ## 
         def device_identities=(value)

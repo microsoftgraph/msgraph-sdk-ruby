@@ -70,7 +70,7 @@ module MicrosoftGraph::Users::Item::Planner::Plans::Item::Buckets::Item::Tasks::
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PlannerBucketTaskBoardTaskFormat.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+        ## Update the navigation property bucketTaskBoardFormat in users
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of planner_bucket_task_board_task_format
@@ -120,7 +120,7 @@ module MicrosoftGraph::Users::Item::Planner::Plans::Item::Buckets::Item::Tasks::
             return request_info
         end
         ## 
-        ## Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+        ## Update the navigation property bucketTaskBoardFormat in users
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

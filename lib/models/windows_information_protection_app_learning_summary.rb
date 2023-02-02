@@ -25,7 +25,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applicationName property value. Application Name
-        ## @param value Value to set for the applicationName property.
+        ## @param value Value to set for the application_name property.
         ## @return a void
         ## 
         def application_name=(value)
@@ -40,7 +40,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applicationType property value. Possible types of Application
-        ## @param value Value to set for the applicationType property.
+        ## @param value Value to set for the application_type property.
         ## @return a void
         ## 
         def application_type=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceCount property value. Device Count
-        ## @param value Value to set for the deviceCount property.
+        ## @param value Value to set for the device_count property.
         ## @return a void
         ## 
         def device_count=(value)

@@ -54,7 +54,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the calleeDevice property value. Device information associated with the callee endpoint of this media.
-        ## @param value Value to set for the calleeDevice property.
+        ## @param value Value to set for the callee_device property.
         ## @return a void
         ## 
         def callee_device=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the calleeNetwork property value. Network information associated with the callee endpoint of this media.
-        ## @param value Value to set for the calleeNetwork property.
+        ## @param value Value to set for the callee_network property.
         ## @return a void
         ## 
         def callee_network=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the callerDevice property value. Device information associated with the caller endpoint of this media.
-        ## @param value Value to set for the callerDevice property.
+        ## @param value Value to set for the caller_device property.
         ## @return a void
         ## 
         def caller_device=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the callerNetwork property value. Network information associated with the caller endpoint of this media.
-        ## @param value Value to set for the callerNetwork property.
+        ## @param value Value to set for the caller_network property.
         ## @return a void
         ## 
         def caller_network=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

@@ -7,8 +7,8 @@ require_relative '../../../../item'
 require_relative '../../../sites'
 require_relative '../../item'
 require_relative '../permissions'
-require_relative './grant/grant_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_grant/grant_request_builder'
 
 module MicrosoftGraph::Groups::Item::Sites::Item::Permissions::Item
     ## 
@@ -17,8 +17,8 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Permissions::Item
         
         ## 
         # Provides operations to call the grant method.
-        def grant()
-            return MicrosoftGraph::Groups::Item::Sites::Item::Permissions::Item::Grant::GrantRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_grant()
+            return MicrosoftGraph::Groups::Item::Sites::Item::Permissions::Item::MicrosoftGraphGrant::GrantRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

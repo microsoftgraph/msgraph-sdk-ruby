@@ -8,7 +8,7 @@ require_relative '../definitions'
 require_relative './instances/instances_request_builder'
 require_relative './instances/item/access_review_instance_item_request_builder'
 require_relative './item'
-require_relative './stop/stop_request_builder'
+require_relative './microsoft_graph_stop/stop_request_builder'
 
 module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item
     ## 
@@ -21,16 +21,16 @@ module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item
             return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::InstancesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the stop method.
+        def microsoft_graph_stop()
+            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::MicrosoftGraphStop::StopRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the stop method.
-        def stop()
-            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Stop::StopRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template

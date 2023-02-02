@@ -3,9 +3,9 @@ require_relative '../../microsoft_graph'
 require_relative '../../models/group_lifecycle_policy'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../group_lifecycle_policies'
-require_relative './add_group/add_group_request_builder'
 require_relative './item'
-require_relative './remove_group/remove_group_request_builder'
+require_relative './microsoft_graph_add_group/add_group_request_builder'
+require_relative './microsoft_graph_remove_group/remove_group_request_builder'
 
 module MicrosoftGraph::GroupLifecyclePolicies::Item
     ## 
@@ -14,17 +14,17 @@ module MicrosoftGraph::GroupLifecyclePolicies::Item
         
         ## 
         # Provides operations to call the addGroup method.
-        def add_group()
-            return MicrosoftGraph::GroupLifecyclePolicies::Item::AddGroup::AddGroupRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_add_group()
+            return MicrosoftGraph::GroupLifecyclePolicies::Item::MicrosoftGraphAddGroup::AddGroupRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the removeGroup method.
+        def microsoft_graph_remove_group()
+            return MicrosoftGraph::GroupLifecyclePolicies::Item::MicrosoftGraphRemoveGroup::RemoveGroupRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
         @path_parameters
-        ## 
-        # Provides operations to call the removeGroup method.
-        def remove_group()
-            return MicrosoftGraph::GroupLifecyclePolicies::Item::RemoveGroup::RemoveGroupRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter

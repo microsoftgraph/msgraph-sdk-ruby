@@ -63,7 +63,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
-        ## @param value Value to set for the includedSources property.
+        ## @param value Value to set for the included_sources property.
         ## @return a void
         ## 
         def included_sources=(value)

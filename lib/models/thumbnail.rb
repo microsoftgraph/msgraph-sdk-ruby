@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sourceItemId property value. The unique identifier of the item that provided the thumbnail. This is only available when a folder thumbnail is requested.
-        ## @param value Value to set for the sourceItemId property.
+        ## @param value Value to set for the source_item_id property.
         ## @return a void
         ## 
         def source_item_id=(value)

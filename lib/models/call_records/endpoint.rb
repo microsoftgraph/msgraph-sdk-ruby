@@ -75,7 +75,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the userAgent property value. User-agent reported by this endpoint.
-        ## @param value Value to set for the userAgent property.
+        ## @param value Value to set for the user_agent property.
         ## @return a void
         ## 
         def user_agent=(value)

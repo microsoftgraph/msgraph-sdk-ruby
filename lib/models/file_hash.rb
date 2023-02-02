@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hashType property value. File hash type. Possible values are: unknown, sha1, sha256, md5, authenticodeHash256, lsHash, ctph, peSha1, peSha256.
-        ## @param value Value to set for the hashType property.
+        ## @param value Value to set for the hash_type property.
         ## @return a void
         ## 
         def hash_type=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hashValue property value. Value of the file hash.
-        ## @param value Value to set for the hashValue property.
+        ## @param value Value to set for the hash_value property.
         ## @return a void
         ## 
         def hash_value=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

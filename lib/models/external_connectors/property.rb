@@ -108,7 +108,7 @@ module MicrosoftGraph::Models::ExternalConnectors
         end
         ## 
         ## Sets the isQueryable property value. Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
-        ## @param value Value to set for the isQueryable property.
+        ## @param value Value to set for the is_queryable property.
         ## @return a void
         ## 
         def is_queryable=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph::Models::ExternalConnectors
         end
         ## 
         ## Sets the isRefinable property value. Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.
-        ## @param value Value to set for the isRefinable property.
+        ## @param value Value to set for the is_refinable property.
         ## @return a void
         ## 
         def is_refinable=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph::Models::ExternalConnectors
         end
         ## 
         ## Sets the isRetrievable property value. Specifies if the property is retrievable. Retrievable properties are returned in the result set when items are returned by the search API. Retrievable properties are also available to add to the display template used to render search results. Optional.
-        ## @param value Value to set for the isRetrievable property.
+        ## @param value Value to set for the is_retrievable property.
         ## @return a void
         ## 
         def is_retrievable=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph::Models::ExternalConnectors
         end
         ## 
         ## Sets the isSearchable property value. Specifies if the property is searchable. Only properties of type String or StringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
-        ## @param value Value to set for the isSearchable property.
+        ## @param value Value to set for the is_searchable property.
         ## @return a void
         ## 
         def is_searchable=(value)
@@ -198,7 +198,7 @@ module MicrosoftGraph::Models::ExternalConnectors
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

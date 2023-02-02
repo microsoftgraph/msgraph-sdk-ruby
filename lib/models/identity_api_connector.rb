@@ -23,14 +23,14 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the authenticationConfiguration property value. The object which describes the authentication configuration details for calling the API. Basic and PKCS 12 client certificate are supported.
-        ## @param value Value to set for the authenticationConfiguration property.
+        ## @param value Value to set for the authentication_configuration property.
         ## @return a void
         ## 
         def authentication_configuration=(value)
             @authentication_configuration = value
         end
         ## 
-        ## Instantiates a new IdentityApiConnector and sets the default values.
+        ## Instantiates a new identityApiConnector and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -54,7 +54,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the API connector.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the targetUrl property value. The URL of the API endpoint to call.
-        ## @param value Value to set for the targetUrl property.
+        ## @param value Value to set for the target_url property.
         ## @return a void
         ## 
         def target_url=(value)

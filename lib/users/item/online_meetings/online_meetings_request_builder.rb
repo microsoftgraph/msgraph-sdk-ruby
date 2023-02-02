@@ -6,7 +6,7 @@ require_relative '../../../models/online_meeting_collection_response'
 require_relative '../../users'
 require_relative '../item'
 require_relative './count/count_request_builder'
-require_relative './create_or_get/create_or_get_request_builder'
+require_relative './microsoft_graph_create_or_get/create_or_get_request_builder'
 require_relative './online_meetings'
 
 module MicrosoftGraph::Users::Item::OnlineMeetings
@@ -21,8 +21,8 @@ module MicrosoftGraph::Users::Item::OnlineMeetings
         end
         ## 
         # Provides operations to call the createOrGet method.
-        def create_or_get()
-            return MicrosoftGraph::Users::Item::OnlineMeetings::CreateOrGet::CreateOrGetRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_create_or_get()
+            return MicrosoftGraph::Users::Item::OnlineMeetings::MicrosoftGraphCreateOrGet::CreateOrGetRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

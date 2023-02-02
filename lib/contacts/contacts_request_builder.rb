@@ -5,10 +5,10 @@ require_relative '../models/org_contact'
 require_relative '../models/org_contact_collection_response'
 require_relative './contacts'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
-require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
-require_relative './get_by_ids/get_by_ids_request_builder'
-require_relative './validate_properties/validate_properties_request_builder'
+require_relative './microsoft_graph_delta/delta_request_builder'
+require_relative './microsoft_graph_get_available_extension_properties/get_available_extension_properties_request_builder'
+require_relative './microsoft_graph_get_by_ids/get_by_ids_request_builder'
+require_relative './microsoft_graph_validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph::Contacts
     ## 
@@ -21,14 +21,24 @@ module MicrosoftGraph::Contacts
             return MicrosoftGraph::Contacts::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::Contacts::MicrosoftGraphDelta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the getAvailableExtensionProperties method.
-        def get_available_extension_properties()
-            return MicrosoftGraph::Contacts::GetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_available_extension_properties()
+            return MicrosoftGraph::Contacts::MicrosoftGraphGetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getByIds method.
-        def get_by_ids()
-            return MicrosoftGraph::Contacts::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_by_ids()
+            return MicrosoftGraph::Contacts::MicrosoftGraphGetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the validateProperties method.
+        def microsoft_graph_validate_properties()
+            return MicrosoftGraph::Contacts::MicrosoftGraphValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -39,11 +49,6 @@ module MicrosoftGraph::Contacts
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        # Provides operations to call the validateProperties method.
-        def validate_properties()
-            return MicrosoftGraph::Contacts::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new ContactsRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
@@ -57,13 +62,6 @@ module MicrosoftGraph::Contacts
             @request_adapter = request_adapter
             path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
             @path_parameters = path_parameters if path_parameters.is_a? Hash
-        end
-        ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Get the list of organizational contacts for this organization.

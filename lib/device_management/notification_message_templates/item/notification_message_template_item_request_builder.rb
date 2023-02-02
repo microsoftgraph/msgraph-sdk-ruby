@@ -7,7 +7,7 @@ require_relative '../notification_message_templates'
 require_relative './item'
 require_relative './localized_notification_messages/item/localized_notification_message_item_request_builder'
 require_relative './localized_notification_messages/localized_notification_messages_request_builder'
-require_relative './send_test_message/send_test_message_request_builder'
+require_relative './microsoft_graph_send_test_message/send_test_message_request_builder'
 
 module MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item
     ## 
@@ -20,16 +20,16 @@ module MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item
             return MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item::LocalizedNotificationMessages::LocalizedNotificationMessagesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the sendTestMessage method.
+        def microsoft_graph_send_test_message()
+            return MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item::MicrosoftGraphSendTestMessage::SendTestMessageRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the sendTestMessage method.
-        def send_test_message()
-            return MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item::SendTestMessage::SendTestMessageRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template

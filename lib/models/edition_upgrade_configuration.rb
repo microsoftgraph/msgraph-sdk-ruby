@@ -70,7 +70,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the licenseType property value. Edition Upgrade License type
-        ## @param value Value to set for the licenseType property.
+        ## @param value Value to set for the license_type property.
         ## @return a void
         ## 
         def license_type=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the productKey property value. Edition Upgrade Product Key.
-        ## @param value Value to set for the productKey property.
+        ## @param value Value to set for the product_key property.
         ## @return a void
         ## 
         def product_key=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the targetEdition property value. Windows 10 Edition type.
-        ## @param value Value to set for the targetEdition property.
+        ## @param value Value to set for the target_edition property.
         ## @return a void
         ## 
         def target_edition=(value)

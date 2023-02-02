@@ -47,7 +47,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the registryHive property value. Registry hive of the key that the recorded action was applied to.
-        ## @param value Value to set for the registryHive property.
+        ## @param value Value to set for the registry_hive property.
         ## @return a void
         ## 
         def registry_hive=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the registryKey property value. Registry key that the recorded action was applied to.
-        ## @param value Value to set for the registryKey property.
+        ## @param value Value to set for the registry_key property.
         ## @return a void
         ## 
         def registry_key=(value)

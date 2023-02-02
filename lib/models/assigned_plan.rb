@@ -48,7 +48,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignedDateTime property value. The date and time at which the plan was assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        ## @param value Value to set for the assignedDateTime property.
+        ## @param value Value to set for the assigned_date_time property.
         ## @return a void
         ## 
         def assigned_date_time=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the capabilityStatus property value. Condition of the capability assignment. The possible values are Enabled, Warning, Suspended, Deleted, LockedOut. See a detailed description of each value.
-        ## @param value Value to set for the capabilityStatus property.
+        ## @param value Value to set for the capability_status property.
         ## @return a void
         ## 
         def capability_status=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the servicePlanId property value. A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.
-        ## @param value Value to set for the servicePlanId property.
+        ## @param value Value to set for the service_plan_id property.
         ## @return a void
         ## 
         def service_plan_id=(value)

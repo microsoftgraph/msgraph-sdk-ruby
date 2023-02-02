@@ -5,16 +5,16 @@ require_relative '../../../../models/o_data_errors/o_data_error'
 require_relative '../../../groups'
 require_relative '../../item'
 require_relative '../team'
-require_relative './complete_migration/complete_migration_request_builder'
-require_relative './does_user_have_accessuser_id_user_id_tenant_id_tenant_id_user_principal_name_user_principal_name/732db1068832007d49ec9b451d8ca1cfd0136d0663ec94246815c75150bfdfa9'
 require_relative './files_folder/files_folder_request_builder'
 require_relative './members/item/conversation_member_item_request_builder'
 require_relative './members/members_request_builder'
 require_relative './messages/item/chat_message_item_request_builder'
 require_relative './messages/messages_request_builder'
+require_relative './microsoft_graph_complete_migration/complete_migration_request_builder'
+require_relative './microsoft_graph_does_user_have_accessuser_id_user_id_tenant_id_tenant_id_user_principal_name_user_principal_name/732db1068832007d49ec9b451d8ca1cfd0136d0663ec94246815c75150bfdfa9'
+require_relative './microsoft_graph_provision_email/provision_email_request_builder'
+require_relative './microsoft_graph_remove_email/remove_email_request_builder'
 require_relative './primary_channel'
-require_relative './provision_email/provision_email_request_builder'
-require_relative './remove_email/remove_email_request_builder'
 require_relative './shared_with_teams/item/shared_with_channel_team_info_item_request_builder'
 require_relative './shared_with_teams/shared_with_teams_request_builder'
 require_relative './tabs/item/teams_tab_item_request_builder'
@@ -25,11 +25,6 @@ module MicrosoftGraph::Groups::Item::Team::PrimaryChannel
     # Provides operations to manage the primaryChannel property of the microsoft.graph.team entity.
     class PrimaryChannelRequestBuilder
         
-        ## 
-        # Provides operations to call the completeMigration method.
-        def complete_migration()
-            return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::CompleteMigration::CompleteMigrationRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.
         def files_folder()
@@ -46,18 +41,28 @@ module MicrosoftGraph::Groups::Item::Team::PrimaryChannel
             return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::Messages::MessagesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Path parameters for the request
-        @path_parameters
+        # Provides operations to call the completeMigration method.
+        def microsoft_graph_complete_migration()
+            return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::MicrosoftGraphCompleteMigration::CompleteMigrationRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the doesUserHaveAccess method.
+        def microsoft_graph_does_user_have_accessuser_id_user_id_tenant_id_tenant_id_user_principal_name_user_principal_name()
+            return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName::DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Provides operations to call the provisionEmail method.
-        def provision_email()
-            return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::ProvisionEmail::ProvisionEmailRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_provision_email()
+            return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::MicrosoftGraphProvisionEmail::ProvisionEmailRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the removeEmail method.
-        def remove_email()
-            return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::RemoveEmail::RemoveEmailRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_remove_email()
+            return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::MicrosoftGraphRemoveEmail::RemoveEmailRequestBuilder.new(@path_parameters, @request_adapter)
         end
+        ## 
+        # Path parameters for the request
+        @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
@@ -101,13 +106,6 @@ module MicrosoftGraph::Groups::Item::Team::PrimaryChannel
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, nil, error_mapping)
-        end
-        ## 
-        ## Provides operations to call the doesUserHaveAccess method.
-        ## @return a does_user_have_accessuser_id_user_id_tenant_id_tenant_id_user_principal_name_user_principal_name_request_builder
-        ## 
-        def does_user_have_accessuser_id_user_id_tenant_id_tenant_id_user_principal_name_user_principal_name()
-            return DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Get the default channel, **General**, of a team.

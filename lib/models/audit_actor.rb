@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applicationDisplayName property value. Name of the Application.
-        ## @param value Value to set for the applicationDisplayName property.
+        ## @param value Value to set for the application_display_name property.
         ## @return a void
         ## 
         def application_display_name=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applicationId property value. AAD Application Id.
-        ## @param value Value to set for the applicationId property.
+        ## @param value Value to set for the application_id property.
         ## @return a void
         ## 
         def application_id=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the auditActorType property value. Actor Type.
-        ## @param value Value to set for the auditActorType property.
+        ## @param value Value to set for the audit_actor_type property.
         ## @return a void
         ## 
         def audit_actor_type=(value)
@@ -139,7 +139,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the ipAddress property value. IPAddress.
-        ## @param value Value to set for the ipAddress property.
+        ## @param value Value to set for the ip_address property.
         ## @return a void
         ## 
         def ip_address=(value)
@@ -154,7 +154,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -187,7 +187,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the servicePrincipalName property value. Service Principal Name (SPN).
-        ## @param value Value to set for the servicePrincipalName property.
+        ## @param value Value to set for the service_principal_name property.
         ## @return a void
         ## 
         def service_principal_name=(value)
@@ -202,7 +202,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userId property value. User Id.
-        ## @param value Value to set for the userId property.
+        ## @param value Value to set for the user_id property.
         ## @return a void
         ## 
         def user_id=(value)
@@ -217,7 +217,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userPermissions property value. List of user permissions when the audit was performed.
-        ## @param value Value to set for the userPermissions property.
+        ## @param value Value to set for the user_permissions property.
         ## @return a void
         ## 
         def user_permissions=(value)
@@ -232,7 +232,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userPrincipalName property value. User Principal Name (UPN).
-        ## @param value Value to set for the userPrincipalName property.
+        ## @param value Value to set for the user_principal_name property.
         ## @return a void
         ## 
         def user_principal_name=(value)

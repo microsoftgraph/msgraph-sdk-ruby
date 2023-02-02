@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalAudience property value. The set of audience external to the signed-in user's organization who will receive the ExternalReplyMessage, if Status is AlwaysEnabled or Scheduled. The possible values are: none, contactsOnly, all.
-        ## @param value Value to set for the externalAudience property.
+        ## @param value Value to set for the external_audience property.
         ## @return a void
         ## 
         def external_audience=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalReplyMessage property value. The automatic reply to send to the specified external audience, if Status is AlwaysEnabled or Scheduled.
-        ## @param value Value to set for the externalReplyMessage property.
+        ## @param value Value to set for the external_reply_message property.
         ## @return a void
         ## 
         def external_reply_message=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the internalReplyMessage property value. The automatic reply to send to the audience internal to the signed-in user's organization, if Status is AlwaysEnabled or Scheduled.
-        ## @param value Value to set for the internalReplyMessage property.
+        ## @param value Value to set for the internal_reply_message property.
         ## @return a void
         ## 
         def internal_reply_message=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the scheduledEndDateTime property value. The date and time that automatic replies are set to end, if Status is set to Scheduled.
-        ## @param value Value to set for the scheduledEndDateTime property.
+        ## @param value Value to set for the scheduled_end_date_time property.
         ## @return a void
         ## 
         def scheduled_end_date_time=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the scheduledStartDateTime property value. The date and time that automatic replies are set to begin, if Status is set to Scheduled.
-        ## @param value Value to set for the scheduledStartDateTime property.
+        ## @param value Value to set for the scheduled_start_date_time property.
         ## @return a void
         ## 
         def scheduled_start_date_time=(value)

@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the serviceAnnouncement property value. A container for service communications resources. Read-only.
-        ## @param value Value to set for the serviceAnnouncement property.
+        ## @param value Value to set for the service_announcement property.
         ## @return a void
         ## 
         def service_announcement=(value)

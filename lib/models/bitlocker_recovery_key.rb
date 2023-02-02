@@ -34,7 +34,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The date and time when the key was originally backed up to Azure Active Directory. Not nullable.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -58,7 +58,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceId property value. Identifier of the device the BitLocker key is originally backed up from. Supports $filter (eq).
-        ## @param value Value to set for the deviceId property.
+        ## @param value Value to set for the device_id property.
         ## @return a void
         ## 
         def device_id=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the volumeType property value. Indicates the type of volume the BitLocker key is associated with. The possible values are: 1 (for operatingSystemVolume), 2 (for fixedDataVolume), 3 (for removableDataVolume), and 4 (for unknownFutureValue).
-        ## @param value Value to set for the volumeType property.
+        ## @param value Value to set for the volume_type property.
         ## @return a void
         ## 
         def volume_type=(value)

@@ -20,7 +20,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appUrl property value. The web app URL. This property cannot be PATCHed.
-        ## @param value Value to set for the appUrl property.
+        ## @param value Value to set for the app_url property.
         ## @return a void
         ## 
         def app_url=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the useManagedBrowser property value. Whether or not to use managed browser. This property is only applicable for Android and IOS.
-        ## @param value Value to set for the useManagedBrowser property.
+        ## @param value Value to set for the use_managed_browser property.
         ## @return a void
         ## 
         def use_managed_browser=(value)

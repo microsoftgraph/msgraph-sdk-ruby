@@ -44,7 +44,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the contentQuery property value. The contentQuery property
-        ## @param value Value to set for the contentQuery property.
+        ## @param value Value to set for the content_query property.
         ## @return a void
         ## 
         def content_query=(value)
@@ -59,7 +59,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the createdBy property value. The createdBy property
-        ## @param value Value to set for the createdBy property.
+        ## @param value Value to set for the created_by property.
         ## @return a void
         ## 
         def created_by=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the createdDateTime property value. The createdDateTime property
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the displayName property value. The displayName property
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the lastModifiedBy property value. The lastModifiedBy property
-        ## @param value Value to set for the lastModifiedBy property.
+        ## @param value Value to set for the last_modified_by property.
         ## @return a void
         ## 
         def last_modified_by=(value)
@@ -168,7 +168,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)

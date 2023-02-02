@@ -75,7 +75,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dayOccurrence property value. Represents the nth occurrence of the day of week that the transition from daylight saving time to standard time occurs.
-        ## @param value Value to set for the dayOccurrence property.
+        ## @param value Value to set for the day_occurrence property.
         ## @return a void
         ## 
         def day_occurrence=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dayOfWeek property value. Represents the day of the week when the transition from daylight saving time to standard time.
-        ## @param value Value to set for the dayOfWeek property.
+        ## @param value Value to set for the day_of_week property.
         ## @return a void
         ## 
         def day_of_week=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

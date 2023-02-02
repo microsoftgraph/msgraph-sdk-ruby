@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayAppInformationRequiredState property value. Determines whether the user's Authenticator app will show them the client app they are signing into.
-        ## @param value Value to set for the displayAppInformationRequiredState property.
+        ## @param value Value to set for the display_app_information_required_state property.
         ## @return a void
         ## 
         def display_app_information_required_state=(value)
@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayLocationInformationRequiredState property value. Determines whether the user's Authenticator app will show them the geographic location of where the authentication request originated from.
-        ## @param value Value to set for the displayLocationInformationRequiredState property.
+        ## @param value Value to set for the display_location_information_required_state property.
         ## @return a void
         ## 
         def display_location_information_required_state=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

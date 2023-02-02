@@ -49,7 +49,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contactedReviewers property value. Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
-        ## @param value Value to set for the contactedReviewers property.
+        ## @param value Value to set for the contacted_reviewers property.
         ## @return a void
         ## 
         def contacted_reviewers=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the endDateTime property value. DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
-        ## @param value Value to set for the endDateTime property.
+        ## @param value Value to set for the end_date_time property.
         ## @return a void
         ## 
         def end_date_time=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist. Supports $select.
-        ## @param value Value to set for the fallbackReviewers property.
+        ## @param value Value to set for the fallback_reviewers property.
         ## @return a void
         ## 
         def fallback_reviewers=(value)
@@ -198,7 +198,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the startDateTime property value. DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.
-        ## @param value Value to set for the startDateTime property.
+        ## @param value Value to set for the start_date_time property.
         ## @return a void
         ## 
         def start_date_time=(value)

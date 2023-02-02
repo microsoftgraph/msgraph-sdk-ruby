@@ -6,7 +6,7 @@ require_relative '../../../models/unified_role_assignment_schedule_instance_coll
 require_relative '../../role_management'
 require_relative '../directory'
 require_relative './count/count_request_builder'
-require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './microsoft_graph_filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
 require_relative './role_assignment_schedule_instances'
 
 module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleInstances
@@ -43,15 +43,6 @@ module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleInstance
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Provides operations to call the filterByCurrentUser method.
-        ## @param on Usage: on='{on}'
-        ## @return a filter_by_current_user_with_on_request_builder
-        ## 
-        def filter_by_current_user_with_on(on)
-            raise StandardError, 'on cannot be null' if on.nil?
-            return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
-        end
-        ## 
         ## Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of unified_role_assignment_schedule_instance_collection_response
@@ -64,6 +55,15 @@ module MicrosoftGraph::RoleManagement::Directory::RoleAssignmentScheduleInstance
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignmentScheduleInstanceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+        end
+        ## 
+        ## Provides operations to call the filterByCurrentUser method.
+        ## @param on Usage: on='{on}'
+        ## @return a filter_by_current_user_with_on_request_builder
+        ## 
+        def microsoft_graph_filter_by_current_user_with_on(on)
+            raise StandardError, 'on cannot be null' if on.nil?
+            return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
         end
         ## 
         ## Create new navigation property to roleAssignmentScheduleInstances for roleManagement

@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the threatAssessmentRequests property value. The threatAssessmentRequests property
-        ## @param value Value to set for the threatAssessmentRequests property.
+        ## @param value Value to set for the threat_assessment_requests property.
         ## @return a void
         ## 
         def threat_assessment_requests=(value)

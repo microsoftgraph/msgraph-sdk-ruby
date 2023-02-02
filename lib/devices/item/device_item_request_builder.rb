@@ -3,20 +3,20 @@ require_relative '../../microsoft_graph'
 require_relative '../../models/device'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../devices'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './extensions/extensions_request_builder'
 require_relative './extensions/item/extension_item_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
 require_relative './member_of/item/directory_object_item_request_builder'
 require_relative './member_of/member_of_request_builder'
+require_relative './microsoft_graph_check_member_groups/check_member_groups_request_builder'
+require_relative './microsoft_graph_check_member_objects/check_member_objects_request_builder'
+require_relative './microsoft_graph_get_member_groups/get_member_groups_request_builder'
+require_relative './microsoft_graph_get_member_objects/get_member_objects_request_builder'
+require_relative './microsoft_graph_restore/restore_request_builder'
 require_relative './registered_owners/item/directory_object_item_request_builder'
 require_relative './registered_owners/registered_owners_request_builder'
 require_relative './registered_users/item/directory_object_item_request_builder'
 require_relative './registered_users/registered_users_request_builder'
-require_relative './restore/restore_request_builder'
 require_relative './transitive_member_of/item/directory_object_item_request_builder'
 require_relative './transitive_member_of/transitive_member_of_request_builder'
 
@@ -26,34 +26,39 @@ module MicrosoftGraph::Devices::Item
     class DeviceItemRequestBuilder
         
         ## 
-        # Provides operations to call the checkMemberGroups method.
-        def check_member_groups()
-            return MicrosoftGraph::Devices::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the checkMemberObjects method.
-        def check_member_objects()
-            return MicrosoftGraph::Devices::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the extensions property of the microsoft.graph.device entity.
         def extensions()
             return MicrosoftGraph::Devices::Item::Extensions::ExtensionsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the getMemberGroups method.
-        def get_member_groups()
-            return MicrosoftGraph::Devices::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the getMemberObjects method.
-        def get_member_objects()
-            return MicrosoftGraph::Devices::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the memberOf property of the microsoft.graph.device entity.
         def member_of()
             return MicrosoftGraph::Devices::Item::MemberOf::MemberOfRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkMemberGroups method.
+        def microsoft_graph_check_member_groups()
+            return MicrosoftGraph::Devices::Item::MicrosoftGraphCheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkMemberObjects method.
+        def microsoft_graph_check_member_objects()
+            return MicrosoftGraph::Devices::Item::MicrosoftGraphCheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getMemberGroups method.
+        def microsoft_graph_get_member_groups()
+            return MicrosoftGraph::Devices::Item::MicrosoftGraphGetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getMemberObjects method.
+        def microsoft_graph_get_member_objects()
+            return MicrosoftGraph::Devices::Item::MicrosoftGraphGetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the restore method.
+        def microsoft_graph_restore()
+            return MicrosoftGraph::Devices::Item::MicrosoftGraphRestore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -71,11 +76,6 @@ module MicrosoftGraph::Devices::Item
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the restore method.
-        def restore()
-            return MicrosoftGraph::Devices::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
         def transitive_member_of()
