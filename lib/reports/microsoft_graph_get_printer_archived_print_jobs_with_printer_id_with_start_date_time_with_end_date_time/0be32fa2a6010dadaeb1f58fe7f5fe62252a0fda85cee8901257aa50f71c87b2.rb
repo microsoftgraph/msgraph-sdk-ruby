@@ -1,3 +1,0 @@
-require_relative '94d85a736072fd7f97dab524f30d6521e824bd19df0ed7e7d93a2ce0fd46bd94'
-module MicrosoftGraph::Reports::MicrosoftGraphGetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime
-end

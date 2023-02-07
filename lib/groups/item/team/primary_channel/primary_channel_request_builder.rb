@@ -6,12 +6,12 @@ require_relative '../../../groups'
 require_relative '../../item'
 require_relative '../team'
 require_relative './files_folder/files_folder_request_builder'
+require_relative './i36f5b8477c6e0b8381f1fe57d51b36baa914f57f3b0c51db1cfca75bc34f6227/c1194251461b5b3c90c8db38ef36aff175d061ca4996b8ebe6fa684c673ff88b'
 require_relative './members/item/conversation_member_item_request_builder'
 require_relative './members/members_request_builder'
 require_relative './messages/item/chat_message_item_request_builder'
 require_relative './messages/messages_request_builder'
 require_relative './microsoft_graph_complete_migration/microsoft_graph_complete_migration_request_builder'
-require_relative './microsoft_graph_does_user_have_accessuser_id_user_id_tenant_id_tenant_id_user_principal_name_user_principal_name/c1194251461b5b3c90c8db38ef36aff175d061ca4996b8ebe6fa684c673ff88b'
 require_relative './microsoft_graph_provision_email/microsoft_graph_provision_email_request_builder'
 require_relative './microsoft_graph_remove_email/microsoft_graph_remove_email_request_builder'
 require_relative './primary_channel'
@@ -48,7 +48,7 @@ module MicrosoftGraph::Groups::Item::Team::PrimaryChannel
         ## 
         # Provides operations to call the doesUserHaveAccess method.
         def microsoft_graph_does_user_have_accessuser_id_user_id_tenant_id_tenant_id_user_principal_name_user_principal_name()
-            return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName::MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder.new(@path_parameters, @request_adapter)
+            return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::I36f5b8477c6e0b8381f1fe57d51b36baa914f57f3b0c51db1cfca75bc34f6227::MicrosoftGraphDoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the provisionEmail method.

@@ -13,7 +13,7 @@ module MicrosoftGraph::Models::ExternalConnectors
         # Indicates the status of the asynchronous operation. Possible values are: unspecified, inprogress, completed, failed, unknownFutureValue.
         @status
         ## 
-        ## Instantiates a new connectionOperation and sets the default values.
+        ## Instantiates a new ConnectionOperation and sets the default values.
         ## @return a void
         ## 
         def initialize()
