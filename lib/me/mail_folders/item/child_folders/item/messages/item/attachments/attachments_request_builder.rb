@@ -53,7 +53,7 @@ module MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Retrieve a list of attachment objects attached to a message.
+        ## Retrieve a list of attachment objects.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of attachment_collection_response
         ## 
@@ -67,7 +67,7 @@ module MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AttachmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
+        ## Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.  You can add an attachment to an existing message by posting to its attachments collection, or you can add an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB.
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of attachment
@@ -83,7 +83,7 @@ module MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Attachment.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Retrieve a list of attachment objects attached to a message.
+        ## Retrieve a list of attachment objects.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -101,7 +101,7 @@ module MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item
             return request_info
         end
         ## 
-        ## Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
+        ## Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.  You can add an attachment to an existing message by posting to its attachments collection, or you can add an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB.
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
@@ -122,7 +122,7 @@ module MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item
         end
 
         ## 
-        # Retrieve a list of attachment objects attached to a message.
+        # Retrieve a list of attachment objects.
         class AttachmentsRequestBuilderGetQueryParameters
             
             ## 

@@ -13,7 +13,7 @@ module MicrosoftGraph::Models
         # The status property
         @status
         ## 
-        ## Instantiates a new PrintOperation and sets the default values.
+        ## Instantiates a new printOperation and sets the default values.
         ## @return a void
         ## 
         def initialize()
