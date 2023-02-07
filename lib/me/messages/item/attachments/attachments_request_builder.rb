@@ -8,7 +8,7 @@ require_relative '../../messages'
 require_relative '../item'
 require_relative './attachments'
 require_relative './count/count_request_builder'
-require_relative './create_upload_session/create_upload_session_request_builder'
+require_relative './microsoft_graph_create_upload_session/microsoft_graph_create_upload_session_request_builder'
 
 module MicrosoftGraph::Me::Messages::Item::Attachments
     ## 
@@ -22,8 +22,8 @@ module MicrosoftGraph::Me::Messages::Item::Attachments
         end
         ## 
         # Provides operations to call the createUploadSession method.
-        def create_upload_session()
-            return MicrosoftGraph::Me::Messages::Item::Attachments::CreateUploadSession::CreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_create_upload_session()
+            return MicrosoftGraph::Me::Messages::Item::Attachments::MicrosoftGraphCreateUploadSession::MicrosoftGraphCreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -49,7 +49,7 @@ module MicrosoftGraph::Me::Messages::Item::Attachments
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Retrieve a list of attachment objects.
+        ## Retrieve a list of attachment objects attached to a message.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of attachment_collection_response
         ## 
@@ -79,7 +79,7 @@ module MicrosoftGraph::Me::Messages::Item::Attachments
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Attachment.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Retrieve a list of attachment objects.
+        ## Retrieve a list of attachment objects attached to a message.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -118,7 +118,7 @@ module MicrosoftGraph::Me::Messages::Item::Attachments
         end
 
         ## 
-        # Retrieve a list of attachment objects.
+        # Retrieve a list of attachment objects attached to a message.
         class AttachmentsRequestBuilderGetQueryParameters
             
             ## 

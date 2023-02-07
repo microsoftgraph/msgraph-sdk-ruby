@@ -60,7 +60,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the destinationServiceIp property value. Destination IP Address of the connection to the cloud application/service.
-        ## @param value Value to set for the destinationServiceIp property.
+        ## @param value Value to set for the destination_service_ip property.
         ## @return a void
         ## 
         def destination_service_ip=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the destinationServiceName property value. Cloud application/service name (for example 'Salesforce', 'DropBox', etc.).
-        ## @param value Value to set for the destinationServiceName property.
+        ## @param value Value to set for the destination_service_name property.
         ## @return a void
         ## 
         def destination_service_name=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskScore property value. Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.
-        ## @param value Value to set for the riskScore property.
+        ## @param value Value to set for the risk_score property.
         ## @return a void
         ## 
         def risk_score=(value)

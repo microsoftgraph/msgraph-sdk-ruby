@@ -77,7 +77,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isInLobby property value. true if the participant is in lobby.
-        ## @param value Value to set for the isInLobby property.
+        ## @param value Value to set for the is_in_lobby property.
         ## @return a void
         ## 
         def is_in_lobby=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isMuted property value. true if the participant is muted (client or server muted).
-        ## @param value Value to set for the isMuted property.
+        ## @param value Value to set for the is_muted property.
         ## @return a void
         ## 
         def is_muted=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mediaStreams property value. The list of media streams.
-        ## @param value Value to set for the mediaStreams property.
+        ## @param value Value to set for the media_streams property.
         ## @return a void
         ## 
         def media_streams=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the recordingInfo property value. Information about whether the participant has recording capability.
-        ## @param value Value to set for the recordingInfo property.
+        ## @param value Value to set for the recording_info property.
         ## @return a void
         ## 
         def recording_info=(value)

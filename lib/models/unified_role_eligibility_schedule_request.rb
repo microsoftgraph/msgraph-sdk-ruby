@@ -74,7 +74,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appScope property value. Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.
-        ## @param value Value to set for the appScope property.
+        ## @param value Value to set for the app_scope property.
         ## @return a void
         ## 
         def app_scope=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appScopeId property value. Identifier of the app-specific scope when the role eligibility is scoped to an app. The scope of a role eligibility determines the set of resources for which the principal is eligible to access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, ne, and on null values).
-        ## @param value Value to set for the appScopeId property.
+        ## @param value Value to set for the app_scope_id property.
         ## @return a void
         ## 
         def app_scope_id=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the directoryScope property value. The directory object that is the scope of the role eligibility. Read-only. Supports $expand.
-        ## @param value Value to set for the directoryScope property.
+        ## @param value Value to set for the directory_scope property.
         ## @return a void
         ## 
         def directory_scope=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the directoryScopeId property value. Identifier of the directory object representing the scope of the role eligibility. The scope of a role eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, ne, and on null values).
-        ## @param value Value to set for the directoryScopeId property.
+        ## @param value Value to set for the directory_scope_id property.
         ## @return a void
         ## 
         def directory_scope_id=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isValidationOnly property value. Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.
-        ## @param value Value to set for the isValidationOnly property.
+        ## @param value Value to set for the is_validation_only property.
         ## @return a void
         ## 
         def is_validation_only=(value)
@@ -218,7 +218,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the principalId property value. Identifier of the principal that has been granted the role eligibility. Can be a user or a role-assignable group. You can grant only active assignments service principals.Supports $filter (eq, ne).
-        ## @param value Value to set for the principalId property.
+        ## @param value Value to set for the principal_id property.
         ## @return a void
         ## 
         def principal_id=(value)
@@ -233,7 +233,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleDefinition property value. Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.
-        ## @param value Value to set for the roleDefinition property.
+        ## @param value Value to set for the role_definition property.
         ## @return a void
         ## 
         def role_definition=(value)
@@ -248,7 +248,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition object that is being assigned to the principal. Supports $filter (eq, ne).
-        ## @param value Value to set for the roleDefinitionId property.
+        ## @param value Value to set for the role_definition_id property.
         ## @return a void
         ## 
         def role_definition_id=(value)
@@ -263,7 +263,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the scheduleInfo property value. The period of the role eligibility. Recurring schedules are currently unsupported.
-        ## @param value Value to set for the scheduleInfo property.
+        ## @param value Value to set for the schedule_info property.
         ## @return a void
         ## 
         def schedule_info=(value)
@@ -302,7 +302,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the targetSchedule property value. The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.
-        ## @param value Value to set for the targetSchedule property.
+        ## @param value Value to set for the target_schedule property.
         ## @return a void
         ## 
         def target_schedule=(value)
@@ -317,7 +317,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the targetScheduleId property value. Identifier of the schedule object that's linked to the eligibility request. Supports $filter (eq, ne).
-        ## @param value Value to set for the targetScheduleId property.
+        ## @param value Value to set for the target_schedule_id property.
         ## @return a void
         ## 
         def target_schedule_id=(value)
@@ -332,7 +332,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the ticketInfo property value. Ticket details linked to the role eligibility request including details of the ticket number and ticket system. Optional.
-        ## @param value Value to set for the ticketInfo property.
+        ## @param value Value to set for the ticket_info property.
         ## @return a void
         ## 
         def ticket_info=(value)

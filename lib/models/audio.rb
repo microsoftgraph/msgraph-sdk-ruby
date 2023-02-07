@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the albumArtist property value. The artist named on the album for the audio file.
-        ## @param value Value to set for the albumArtist property.
+        ## @param value Value to set for the album_artist property.
         ## @return a void
         ## 
         def album_artist=(value)
@@ -204,7 +204,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the discCount property value. The total number of discs in this album.
-        ## @param value Value to set for the discCount property.
+        ## @param value Value to set for the disc_count property.
         ## @return a void
         ## 
         def disc_count=(value)
@@ -274,7 +274,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hasDrm property value. Indicates if the file is protected with digital rights management.
-        ## @param value Value to set for the hasDrm property.
+        ## @param value Value to set for the has_drm property.
         ## @return a void
         ## 
         def has_drm=(value)
@@ -289,7 +289,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isVariableBitrate property value. Indicates if the file is encoded with a variable bitrate.
-        ## @param value Value to set for the isVariableBitrate property.
+        ## @param value Value to set for the is_variable_bitrate property.
         ## @return a void
         ## 
         def is_variable_bitrate=(value)
@@ -304,7 +304,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -375,7 +375,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the trackCount property value. The total number of tracks on the original disc for this audio file.
-        ## @param value Value to set for the trackCount property.
+        ## @param value Value to set for the track_count property.
         ## @return a void
         ## 
         def track_count=(value)

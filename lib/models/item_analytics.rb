@@ -23,7 +23,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allTime property value. The allTime property
-        ## @param value Value to set for the allTime property.
+        ## @param value Value to set for the all_time property.
         ## @return a void
         ## 
         def all_time=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the itemActivityStats property value. The itemActivityStats property
-        ## @param value Value to set for the itemActivityStats property.
+        ## @param value Value to set for the item_activity_stats property.
         ## @return a void
         ## 
         def item_activity_stats=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastSevenDays property value. The lastSevenDays property
-        ## @param value Value to set for the lastSevenDays property.
+        ## @param value Value to set for the last_seven_days property.
         ## @return a void
         ## 
         def last_seven_days=(value)

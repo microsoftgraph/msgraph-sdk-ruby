@@ -20,7 +20,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the channelId property value. Unique identifier of the channel.
-        ## @param value Value to set for the channelId property.
+        ## @param value Value to set for the channel_id property.
         ## @return a void
         ## 
         def channel_id=(value)

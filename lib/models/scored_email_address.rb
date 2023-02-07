@@ -91,7 +91,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the itemId property value. The itemId property
-        ## @param value Value to set for the itemId property.
+        ## @param value Value to set for the item_id property.
         ## @return a void
         ## 
         def item_id=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the relevanceScore property value. The relevance score of the email address. A relevance score is used as a sort key, in relation to the other returned results. A higher relevance score value corresponds to a more relevant result. Relevance is determined by the user’s communication and collaboration patterns and business relationships.
-        ## @param value Value to set for the relevanceScore property.
+        ## @param value Value to set for the relevance_score property.
         ## @return a void
         ## 
         def relevance_score=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the selectionLikelihood property value. The selectionLikelihood property
-        ## @param value Value to set for the selectionLikelihood property.
+        ## @param value Value to set for the selection_likelihood property.
         ## @return a void
         ## 
         def selection_likelihood=(value)

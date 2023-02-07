@@ -38,7 +38,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appleId property value. The Apple ID associated with Vpp token.
-        ## @param value Value to set for the appleId property.
+        ## @param value Value to set for the apple_id property.
         ## @return a void
         ## 
         def apple_id=(value)
@@ -148,7 +148,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the totalLicenseCount property value. Total license count.
-        ## @param value Value to set for the totalLicenseCount property.
+        ## @param value Value to set for the total_license_count property.
         ## @return a void
         ## 
         def total_license_count=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the usedLicenseCount property value. Used license count.
-        ## @param value Value to set for the usedLicenseCount property.
+        ## @param value Value to set for the used_license_count property.
         ## @return a void
         ## 
         def used_license_count=(value)
@@ -178,7 +178,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the vppOrganizationName property value. The Vpp token's organization name.
-        ## @param value Value to set for the vppOrganizationName property.
+        ## @param value Value to set for the vpp_organization_name property.
         ## @return a void
         ## 
         def vpp_organization_name=(value)
@@ -193,7 +193,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the vppTokenId property value. The Vpp token ID.
-        ## @param value Value to set for the vppTokenId property.
+        ## @param value Value to set for the vpp_token_id property.
         ## @return a void
         ## 
         def vpp_token_id=(value)

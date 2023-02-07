@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the excludeApplications property value. Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
-        ## @param value Value to set for the excludeApplications property.
+        ## @param value Value to set for the exclude_applications property.
         ## @return a void
         ## 
         def exclude_applications=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeApplications property value. Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
-        ## @param value Value to set for the includeApplications property.
+        ## @param value Value to set for the include_applications property.
         ## @return a void
         ## 
         def include_applications=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeAuthenticationContextClassReferences property value. The includeAuthenticationContextClassReferences property
-        ## @param value Value to set for the includeAuthenticationContextClassReferences property.
+        ## @param value Value to set for the include_authentication_context_class_references property.
         ## @return a void
         ## 
         def include_authentication_context_class_references=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeUserActions property value. User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
-        ## @param value Value to set for the includeUserActions property.
+        ## @param value Value to set for the include_user_actions property.
         ## @return a void
         ## 
         def include_user_actions=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

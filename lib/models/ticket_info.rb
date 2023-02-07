@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the ticketNumber property value. The ticket number.
-        ## @param value Value to set for the ticketNumber property.
+        ## @param value Value to set for the ticket_number property.
         ## @return a void
         ## 
         def ticket_number=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the ticketSystem property value. The description of the ticket system.
-        ## @param value Value to set for the ticketSystem property.
+        ## @param value Value to set for the ticket_system property.
         ## @return a void
         ## 
         def ticket_system=(value)

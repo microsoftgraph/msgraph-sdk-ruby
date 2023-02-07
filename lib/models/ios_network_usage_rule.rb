@@ -11,11 +11,11 @@ module MicrosoftGraph::Models
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
         ## 
-        # If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
-        @cellular_data_blocked
-        ## 
         # If set to true, corresponding managed apps will not be allowed to use cellular data when roaming.
         @cellular_data_block_when_roaming
+        ## 
+        # If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
+        @cellular_data_blocked
         ## 
         # Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.
         @managed_apps
@@ -38,21 +38,6 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the cellularDataBlocked property value. If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
-        ## @return a boolean
-        ## 
-        def cellular_data_blocked
-            return @cellular_data_blocked
-        end
-        ## 
-        ## Sets the cellularDataBlocked property value. If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
-        ## @param value Value to set for the cellularDataBlocked property.
-        ## @return a void
-        ## 
-        def cellular_data_blocked=(value)
-            @cellular_data_blocked = value
-        end
-        ## 
         ## Gets the cellularDataBlockWhenRoaming property value. If set to true, corresponding managed apps will not be allowed to use cellular data when roaming.
         ## @return a boolean
         ## 
@@ -61,11 +46,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cellularDataBlockWhenRoaming property value. If set to true, corresponding managed apps will not be allowed to use cellular data when roaming.
-        ## @param value Value to set for the cellularDataBlockWhenRoaming property.
+        ## @param value Value to set for the cellular_data_block_when_roaming property.
         ## @return a void
         ## 
         def cellular_data_block_when_roaming=(value)
             @cellular_data_block_when_roaming = value
+        end
+        ## 
+        ## Gets the cellularDataBlocked property value. If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
+        ## @return a boolean
+        ## 
+        def cellular_data_blocked
+            return @cellular_data_blocked
+        end
+        ## 
+        ## Sets the cellularDataBlocked property value. If set to true, corresponding managed apps will not be allowed to use cellular data at any time.
+        ## @param value Value to set for the cellular_data_blocked property.
+        ## @return a void
+        ## 
+        def cellular_data_blocked=(value)
+            @cellular_data_blocked = value
         end
         ## 
         ## Instantiates a new iosNetworkUsageRule and sets the default values.
@@ -89,8 +89,8 @@ module MicrosoftGraph::Models
         ## 
         def get_field_deserializers()
             return {
-                "cellularDataBlocked" => lambda {|n| @cellular_data_blocked = n.get_boolean_value() },
                 "cellularDataBlockWhenRoaming" => lambda {|n| @cellular_data_block_when_roaming = n.get_boolean_value() },
+                "cellularDataBlocked" => lambda {|n| @cellular_data_blocked = n.get_boolean_value() },
                 "managedApps" => lambda {|n| @managed_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AppListItem.create_from_discriminator_value(pn) }) },
                 "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
             }
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managedApps property value. Information about the managed apps that this rule is going to apply to. This collection can contain a maximum of 500 elements.
-        ## @param value Value to set for the managedApps property.
+        ## @param value Value to set for the managed_apps property.
         ## @return a void
         ## 
         def managed_apps=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -132,8 +132,8 @@ module MicrosoftGraph::Models
         ## 
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
-            writer.write_boolean_value("cellularDataBlocked", @cellular_data_blocked)
             writer.write_boolean_value("cellularDataBlockWhenRoaming", @cellular_data_block_when_roaming)
+            writer.write_boolean_value("cellularDataBlocked", @cellular_data_blocked)
             writer.write_collection_of_object_values("managedApps", @managed_apps)
             writer.write_string_value("@odata.type", @odata_type)
             writer.write_additional_data(@additional_data)

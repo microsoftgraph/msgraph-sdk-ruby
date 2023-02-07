@@ -38,7 +38,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceCount property value. Device Count
-        ## @param value Value to set for the deviceCount property.
+        ## @param value Value to set for the device_count property.
         ## @return a void
         ## 
         def device_count=(value)

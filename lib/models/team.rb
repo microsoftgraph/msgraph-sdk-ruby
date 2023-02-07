@@ -46,11 +46,11 @@ module MicrosoftGraph::Models
         # Whether this team is in read-only mode.
         @is_archived
         ## 
-        # Members and owners of the team.
-        @members
-        ## 
         # Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
         @member_settings
+        ## 
+        # Members and owners of the team.
+        @members
         ## 
         # Settings to configure messaging and mentions in the team.
         @messaging_settings
@@ -96,7 +96,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allChannels property value. List of channels either hosted in or shared with the team (incoming channels).
-        ## @param value Value to set for the allChannels property.
+        ## @param value Value to set for the all_channels property.
         ## @return a void
         ## 
         def all_channels=(value)
@@ -148,7 +148,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. Timestamp at which the team was created.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -187,7 +187,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the team.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -202,7 +202,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the funSettings property value. Settings to configure use of Giphy, memes, and stickers in the team.
-        ## @param value Value to set for the funSettings property.
+        ## @param value Value to set for the fun_settings property.
         ## @return a void
         ## 
         def fun_settings=(value)
@@ -227,8 +227,8 @@ module MicrosoftGraph::Models
                 "installedApps" => lambda {|n| @installed_apps = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TeamsAppInstallation.create_from_discriminator_value(pn) }) },
                 "internalId" => lambda {|n| @internal_id = n.get_string_value() },
                 "isArchived" => lambda {|n| @is_archived = n.get_boolean_value() },
-                "members" => lambda {|n| @members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ConversationMember.create_from_discriminator_value(pn) }) },
                 "memberSettings" => lambda {|n| @member_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamMemberSettings.create_from_discriminator_value(pn) }) },
+                "members" => lambda {|n| @members = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ConversationMember.create_from_discriminator_value(pn) }) },
                 "messagingSettings" => lambda {|n| @messaging_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamMessagingSettings.create_from_discriminator_value(pn) }) },
                 "operations" => lambda {|n| @operations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TeamsAsyncOperation.create_from_discriminator_value(pn) }) },
                 "photo" => lambda {|n| @photo = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ProfilePhoto.create_from_discriminator_value(pn) }) },
@@ -267,7 +267,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the guestSettings property value. Settings to configure whether guests can create, update, or delete channels in the team.
-        ## @param value Value to set for the guestSettings property.
+        ## @param value Value to set for the guest_settings property.
         ## @return a void
         ## 
         def guest_settings=(value)
@@ -282,7 +282,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the incomingChannels property value. List of channels shared with the team.
-        ## @param value Value to set for the incomingChannels property.
+        ## @param value Value to set for the incoming_channels property.
         ## @return a void
         ## 
         def incoming_channels=(value)
@@ -297,7 +297,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the installedApps property value. The apps installed in this team.
-        ## @param value Value to set for the installedApps property.
+        ## @param value Value to set for the installed_apps property.
         ## @return a void
         ## 
         def installed_apps=(value)
@@ -312,7 +312,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the internalId property value. A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
-        ## @param value Value to set for the internalId property.
+        ## @param value Value to set for the internal_id property.
         ## @return a void
         ## 
         def internal_id=(value)
@@ -327,11 +327,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isArchived property value. Whether this team is in read-only mode.
-        ## @param value Value to set for the isArchived property.
+        ## @param value Value to set for the is_archived property.
         ## @return a void
         ## 
         def is_archived=(value)
             @is_archived = value
+        end
+        ## 
+        ## Gets the memberSettings property value. Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
+        ## @return a team_member_settings
+        ## 
+        def member_settings
+            return @member_settings
+        end
+        ## 
+        ## Sets the memberSettings property value. Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
+        ## @param value Value to set for the member_settings property.
+        ## @return a void
+        ## 
+        def member_settings=(value)
+            @member_settings = value
         end
         ## 
         ## Gets the members property value. Members and owners of the team.
@@ -349,21 +364,6 @@ module MicrosoftGraph::Models
             @members = value
         end
         ## 
-        ## Gets the memberSettings property value. Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
-        ## @return a team_member_settings
-        ## 
-        def member_settings
-            return @member_settings
-        end
-        ## 
-        ## Sets the memberSettings property value. Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
-        ## @param value Value to set for the memberSettings property.
-        ## @return a void
-        ## 
-        def member_settings=(value)
-            @member_settings = value
-        end
-        ## 
         ## Gets the messagingSettings property value. Settings to configure messaging and mentions in the team.
         ## @return a team_messaging_settings
         ## 
@@ -372,7 +372,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the messagingSettings property value. Settings to configure messaging and mentions in the team.
-        ## @param value Value to set for the messagingSettings property.
+        ## @param value Value to set for the messaging_settings property.
         ## @return a void
         ## 
         def messaging_settings=(value)
@@ -417,7 +417,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the primaryChannel property value. The general channel for the team.
-        ## @param value Value to set for the primaryChannel property.
+        ## @param value Value to set for the primary_channel property.
         ## @return a void
         ## 
         def primary_channel=(value)
@@ -459,8 +459,8 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("installedApps", @installed_apps)
             writer.write_string_value("internalId", @internal_id)
             writer.write_boolean_value("isArchived", @is_archived)
-            writer.write_collection_of_object_values("members", @members)
             writer.write_object_value("memberSettings", @member_settings)
+            writer.write_collection_of_object_values("members", @members)
             writer.write_object_value("messagingSettings", @messaging_settings)
             writer.write_collection_of_object_values("operations", @operations)
             writer.write_object_value("photo", @photo)
@@ -543,7 +543,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tenantId property value. The ID of the Azure Active Directory tenant.
-        ## @param value Value to set for the tenantId property.
+        ## @param value Value to set for the tenant_id property.
         ## @return a void
         ## 
         def tenant_id=(value)
@@ -573,7 +573,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webUrl property value. A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
-        ## @param value Value to set for the webUrl property.
+        ## @param value Value to set for the web_url property.
         ## @return a void
         ## 
         def web_url=(value)

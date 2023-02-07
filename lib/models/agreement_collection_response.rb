@@ -4,16 +4,35 @@ require_relative './models'
 
 module MicrosoftGraph::Models
     class AgreementCollectionResponse < MicrosoftGraph::Models::BaseCollectionPaginationCountResponse
-        include MicrosoftKiotaAbstractions::Parsable
+        include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
+        ## 
+        # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+        @additional_data
         ## 
         # The value property
         @value
+        ## 
+        ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+        ## @return a i_dictionary
+        ## 
+        def additional_data
+            return @additional_data
+        end
+        ## 
+        ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+        ## @param value Value to set for the AdditionalData property.
+        ## @return a void
+        ## 
+        def additional_data=(value)
+            @additional_data = value
+        end
         ## 
         ## Instantiates a new AgreementCollectionResponse and sets the default values.
         ## @return a void
         ## 
         def initialize()
             super
+            @additional_data = Hash.new
         end
         ## 
         ## Creates a new instance of the appropriate class based on discriminator value
@@ -42,6 +61,7 @@ module MicrosoftGraph::Models
             raise StandardError, 'writer cannot be null' if writer.nil?
             super
             writer.write_collection_of_object_values("value", @value)
+            writer.write_additional_data(@additional_data)
         end
         ## 
         ## Gets the value property value. The value property

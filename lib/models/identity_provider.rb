@@ -26,7 +26,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the clientId property value. The client ID for the application. This is the client ID obtained when registering the application with the identity provider. Required. Not nullable.
-        ## @param value Value to set for the clientId property.
+        ## @param value Value to set for the client_id property.
         ## @return a void
         ## 
         def client_id=(value)
@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the clientSecret property value. The client secret for the application. This is the client secret obtained when registering the application with the identity provider. This is write-only. A read operation will return ****.  Required. Not nullable.
-        ## @param value Value to set for the clientSecret property.
+        ## @param value Value to set for the client_secret property.
         ## @return a void
         ## 
         def client_secret=(value)

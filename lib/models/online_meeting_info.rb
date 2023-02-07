@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the conferenceId property value. The ID of the conference.
-        ## @param value Value to set for the conferenceId property.
+        ## @param value Value to set for the conference_id property.
         ## @return a void
         ## 
         def conference_id=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the joinUrl property value. The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.
-        ## @param value Value to set for the joinUrl property.
+        ## @param value Value to set for the join_url property.
         ## @return a void
         ## 
         def join_url=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the quickDial property value. The pre-formatted quickdial for this call.
-        ## @param value Value to set for the quickDial property.
+        ## @param value Value to set for the quick_dial property.
         ## @return a void
         ## 
         def quick_dial=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tollFreeNumbers property value. The toll free numbers that can be used to join the conference.
-        ## @param value Value to set for the tollFreeNumbers property.
+        ## @param value Value to set for the toll_free_numbers property.
         ## @return a void
         ## 
         def toll_free_numbers=(value)
@@ -190,7 +190,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tollNumber property value. The toll number that can be used to join the conference.
-        ## @param value Value to set for the tollNumber property.
+        ## @param value Value to set for the toll_number property.
         ## @return a void
         ## 
         def toll_number=(value)

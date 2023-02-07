@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mimeType property value. The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. Read-only.
-        ## @param value Value to set for the mimeType property.
+        ## @param value Value to set for the mime_type property.
         ## @return a void
         ## 
         def mime_type=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the processingMetadata property value. The processingMetadata property
-        ## @param value Value to set for the processingMetadata property.
+        ## @param value Value to set for the processing_metadata property.
         ## @return a void
         ## 
         def processing_metadata=(value)

@@ -4,13 +4,13 @@ require_relative '../../../models/managed_e_book'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_app_management'
 require_relative '../managed_e_books'
-require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
 require_relative './assignments/item/managed_e_book_assignment_item_request_builder'
 require_relative './device_states/device_states_request_builder'
 require_relative './device_states/item/device_install_state_item_request_builder'
 require_relative './install_summary/install_summary_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_assign/microsoft_graph_assign_request_builder'
 require_relative './user_state_summary/item/user_install_state_summary_item_request_builder'
 require_relative './user_state_summary/user_state_summary_request_builder'
 
@@ -19,11 +19,6 @@ module MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item
     # Provides operations to manage the managedEBooks property of the microsoft.graph.deviceAppManagement entity.
     class ManagedEBookItemRequestBuilder
         
-        ## 
-        # Provides operations to call the assign method.
-        def assign()
-            return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::Assign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the assignments property of the microsoft.graph.managedEBook entity.
         def assignments()
@@ -38,6 +33,11 @@ module MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item
         # Provides operations to manage the installSummary property of the microsoft.graph.managedEBook entity.
         def install_summary()
             return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::InstallSummary::InstallSummaryRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the assign method.
+        def microsoft_graph_assign()
+            return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::MicrosoftGraphAssign::MicrosoftGraphAssignRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

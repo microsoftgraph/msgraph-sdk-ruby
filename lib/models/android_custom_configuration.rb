@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the omaSettings property value. OMA settings. This collection can contain a maximum of 1000 elements.
-        ## @param value Value to set for the omaSettings property.
+        ## @param value Value to set for the oma_settings property.
         ## @return a void
         ## 
         def oma_settings=(value)

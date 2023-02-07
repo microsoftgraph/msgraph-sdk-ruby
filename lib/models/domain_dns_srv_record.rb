@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the nameTarget property value. Value to use when configuring the Target property of the SRV record at the DNS host.
-        ## @param value Value to set for the nameTarget property.
+        ## @param value Value to set for the name_target property.
         ## @return a void
         ## 
         def name_target=(value)

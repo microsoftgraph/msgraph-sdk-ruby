@@ -35,7 +35,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accessConsent property value. Indicates whether the user has been consented to access student data.
-        ## @param value Value to set for the accessConsent property.
+        ## @param value Value to set for the access_consent property.
         ## @return a void
         ## 
         def access_consent=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Name of the contact. Required.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the emailAddress property value. Primary email address of the contact. Required.
-        ## @param value Value to set for the emailAddress property.
+        ## @param value Value to set for the email_address property.
         ## @return a void
         ## 
         def email_address=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mobilePhone property value. Mobile phone number of the contact.
-        ## @param value Value to set for the mobilePhone property.
+        ## @param value Value to set for the mobile_phone property.
         ## @return a void
         ## 
         def mobile_phone=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

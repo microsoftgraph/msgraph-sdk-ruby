@@ -50,7 +50,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the availabilityView property value. Represents a merged view of availability of all the items in scheduleItems. The view consists of time slots. Availability during each time slot is indicated with: 0= free, 1= tentative, 2= busy, 3= out of office, 4= working elsewhere.
-        ## @param value Value to set for the availabilityView property.
+        ## @param value Value to set for the availability_view property.
         ## @return a void
         ## 
         def availability_view=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the scheduleId property value. An SMTP address of the user, distribution list, or resource, identifying an instance of scheduleInformation.
-        ## @param value Value to set for the scheduleId property.
+        ## @param value Value to set for the schedule_id property.
         ## @return a void
         ## 
         def schedule_id=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the scheduleItems property value. Contains the items that describe the availability of the user or resource.
-        ## @param value Value to set for the scheduleItems property.
+        ## @param value Value to set for the schedule_items property.
         ## @return a void
         ## 
         def schedule_items=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workingHours property value. The days of the week and hours in a specific time zone that the user works. These are set as part of the user's mailboxSettings.
-        ## @param value Value to set for the workingHours property.
+        ## @param value Value to set for the working_hours property.
         ## @return a void
         ## 
         def working_hours=(value)

@@ -39,7 +39,7 @@ module MicrosoftGraph::Models::ExternalConnectors
         end
         ## 
         ## Sets the authorizedAppIds property value. A collection of application IDs for registered Azure Active Directory apps that are allowed to manage the externalConnection and to index content in the externalConnection.
-        ## @param value Value to set for the authorizedAppIds property.
+        ## @param value Value to set for the authorized_app_ids property.
         ## @return a void
         ## 
         def authorized_app_ids=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models::ExternalConnectors
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

@@ -61,7 +61,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the displayName property value. The name of the sender.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the domainName property value. Sender domain.
-        ## @param value Value to set for the domainName property.
+        ## @param value Value to set for the domain_name property.
         ## @return a void
         ## 
         def domain_name=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the emailAddress property value. Sender email address.
-        ## @param value Value to set for the emailAddress property.
+        ## @param value Value to set for the email_address property.
         ## @return a void
         ## 
         def email_address=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

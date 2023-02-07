@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the secretKey property value. The secret key of the method. Always returns null.
-        ## @param value Value to set for the secretKey property.
+        ## @param value Value to set for the secret_key property.
         ## @return a void
         ## 
         def secret_key=(value)

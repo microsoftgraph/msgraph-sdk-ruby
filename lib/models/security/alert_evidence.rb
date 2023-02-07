@@ -62,7 +62,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the createdDateTime property value. The time the evidence was created and added to the alert.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the remediationStatus property value. The remediationStatus property
-        ## @param value Value to set for the remediationStatus property.
+        ## @param value Value to set for the remediation_status property.
         ## @return a void
         ## 
         def remediation_status=(value)
@@ -165,7 +165,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the remediationStatusDetails property value. Details about the remediation status.
-        ## @param value Value to set for the remediationStatusDetails property.
+        ## @param value Value to set for the remediation_status_details property.
         ## @return a void
         ## 
         def remediation_status_details=(value)

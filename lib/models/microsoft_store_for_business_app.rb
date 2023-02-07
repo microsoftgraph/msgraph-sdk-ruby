@@ -59,7 +59,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the licenseType property value. The licenseType property
-        ## @param value Value to set for the licenseType property.
+        ## @param value Value to set for the license_type property.
         ## @return a void
         ## 
         def license_type=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the packageIdentityName property value. The app package identifier
-        ## @param value Value to set for the packageIdentityName property.
+        ## @param value Value to set for the package_identity_name property.
         ## @return a void
         ## 
         def package_identity_name=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the productKey property value. The app product key
-        ## @param value Value to set for the productKey property.
+        ## @param value Value to set for the product_key property.
         ## @return a void
         ## 
         def product_key=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the totalLicenseCount property value. The total number of Microsoft Store for Business licenses.
-        ## @param value Value to set for the totalLicenseCount property.
+        ## @param value Value to set for the total_license_count property.
         ## @return a void
         ## 
         def total_license_count=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the usedLicenseCount property value. The number of Microsoft Store for Business licenses in use.
-        ## @param value Value to set for the usedLicenseCount property.
+        ## @param value Value to set for the used_license_count property.
         ## @return a void
         ## 
         def used_license_count=(value)

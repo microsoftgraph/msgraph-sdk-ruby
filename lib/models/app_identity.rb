@@ -47,7 +47,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appId property value. Refers to the Unique GUID representing Application Id in the Azure Active Directory.
-        ## @param value Value to set for the appId property.
+        ## @param value Value to set for the app_id property.
         ## @return a void
         ## 
         def app_id=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Refers to the Application Name displayed in the Azure Portal.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the servicePrincipalId property value. Refers to the Unique GUID indicating Service Principal Id in Azure Active Directory for the corresponding App.
-        ## @param value Value to set for the servicePrincipalId property.
+        ## @param value Value to set for the service_principal_id property.
         ## @return a void
         ## 
         def service_principal_id=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the servicePrincipalName property value. Refers to the Service Principal Name is the Application name in the tenant.
-        ## @param value Value to set for the servicePrincipalName property.
+        ## @param value Value to set for the service_principal_name property.
         ## @return a void
         ## 
         def service_principal_name=(value)

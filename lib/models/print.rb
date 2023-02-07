@@ -103,7 +103,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the taskDefinitions property value. List of abstract definition for a task that can be triggered when various events occur within Universal Print.
-        ## @param value Value to set for the taskDefinitions property.
+        ## @param value Value to set for the task_definitions property.
         ## @return a void
         ## 
         def task_definitions=(value)

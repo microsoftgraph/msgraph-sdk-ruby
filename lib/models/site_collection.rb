@@ -60,7 +60,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dataLocationCode property value. The geographic region code for where this site collection resides. Read-only.
-        ## @param value Value to set for the dataLocationCode property.
+        ## @param value Value to set for the data_location_code property.
         ## @return a void
         ## 
         def data_location_code=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

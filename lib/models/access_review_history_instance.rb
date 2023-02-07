@@ -52,7 +52,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the downloadUri property value. Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.
-        ## @param value Value to set for the downloadUri property.
+        ## @param value Value to set for the download_uri property.
         ## @return a void
         ## 
         def download_uri=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the expirationDateTime property value. Timestamp when this instance and associated data expires and the history is deleted. Required.
-        ## @param value Value to set for the expirationDateTime property.
+        ## @param value Value to set for the expiration_date_time property.
         ## @return a void
         ## 
         def expiration_date_time=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fulfilledDateTime property value. Timestamp when all of the available data for this instance was collected. This will be set after this instance's status is set to done. Required.
-        ## @param value Value to set for the fulfilledDateTime property.
+        ## @param value Value to set for the fulfilled_date_time property.
         ## @return a void
         ## 
         def fulfilled_date_time=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the reviewHistoryPeriodEndDateTime property value. Timestamp, reviews ending on or before this date will be included in the fetched history data.
-        ## @param value Value to set for the reviewHistoryPeriodEndDateTime property.
+        ## @param value Value to set for the review_history_period_end_date_time property.
         ## @return a void
         ## 
         def review_history_period_end_date_time=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the reviewHistoryPeriodStartDateTime property value. Timestamp, reviews starting on or after this date will be included in the fetched history data.
-        ## @param value Value to set for the reviewHistoryPeriodStartDateTime property.
+        ## @param value Value to set for the review_history_period_start_date_time property.
         ## @return a void
         ## 
         def review_history_period_start_date_time=(value)
@@ -142,7 +142,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the runDateTime property value. Timestamp when the instance's history data is scheduled to be generated.
-        ## @param value Value to set for the runDateTime property.
+        ## @param value Value to set for the run_date_time property.
         ## @return a void
         ## 
         def run_date_time=(value)

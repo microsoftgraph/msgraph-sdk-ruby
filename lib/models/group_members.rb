@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the groupId property value. The ID of the group in Azure AD.
-        ## @param value Value to set for the groupId property.
+        ## @param value Value to set for the group_id property.
         ## @return a void
         ## 
         def group_id=(value)

@@ -29,7 +29,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callDuration property value. Duration of the call.
-        ## @param value Value to set for the callDuration property.
+        ## @param value Value to set for the call_duration property.
         ## @return a void
         ## 
         def call_duration=(value)
@@ -44,7 +44,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callEventType property value. Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.
-        ## @param value Value to set for the callEventType property.
+        ## @param value Value to set for the call_event_type property.
         ## @return a void
         ## 
         def call_event_type=(value)
@@ -59,7 +59,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callId property value. Unique identifier of the call.
-        ## @param value Value to set for the callId property.
+        ## @param value Value to set for the call_id property.
         ## @return a void
         ## 
         def call_id=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callParticipants property value. List of call participants.
-        ## @param value Value to set for the callParticipants property.
+        ## @param value Value to set for the call_participants property.
         ## @return a void
         ## 
         def call_participants=(value)

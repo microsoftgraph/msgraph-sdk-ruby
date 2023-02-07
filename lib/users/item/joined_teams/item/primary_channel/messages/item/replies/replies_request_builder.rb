@@ -11,7 +11,7 @@ require_relative '../../../primary_channel'
 require_relative '../../messages'
 require_relative '../item'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
+require_relative './microsoft_graph_delta/microsoft_graph_delta_request_builder'
 require_relative './replies'
 
 module MicrosoftGraph::Users::Item::JoinedTeams::Item::PrimaryChannel::Messages::Item::Replies
@@ -23,6 +23,11 @@ module MicrosoftGraph::Users::Item::JoinedTeams::Item::PrimaryChannel::Messages:
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Users::Item::JoinedTeams::Item::PrimaryChannel::Messages::Item::Replies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::Users::Item::JoinedTeams::Item::PrimaryChannel::Messages::Item::Replies::MicrosoftGraphDelta::MicrosoftGraphDeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -48,13 +53,6 @@ module MicrosoftGraph::Users::Item::JoinedTeams::Item::PrimaryChannel::Messages:
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         ## List all the replies to a message in a channel of a team. This method lists only the replies of the specified message, if any. To get the message itself, simply call get channel message.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of chat_message_collection_response
@@ -69,7 +67,7 @@ module MicrosoftGraph::Users::Item::JoinedTeams::Item::PrimaryChannel::Messages:
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatMessageCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Create a new reply to a chatMessage in a specified channel.
+        ## Send a new reply to a chatMessage in a specified channel.
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of chat_message
@@ -103,7 +101,7 @@ module MicrosoftGraph::Users::Item::JoinedTeams::Item::PrimaryChannel::Messages:
             return request_info
         end
         ## 
-        ## Create a new reply to a chatMessage in a specified channel.
+        ## Send a new reply to a chatMessage in a specified channel.
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

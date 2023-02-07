@@ -23,7 +23,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the clientId property value. The identifier for the client application obtained when registering the application with the identity provider. Required.
-        ## @param value Value to set for the clientId property.
+        ## @param value Value to set for the client_id property.
         ## @return a void
         ## 
         def client_id=(value)
@@ -38,7 +38,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the clientSecret property value. The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns ****. Required.
-        ## @param value Value to set for the clientSecret property.
+        ## @param value Value to set for the client_secret property.
         ## @return a void
         ## 
         def client_secret=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the identityProviderType property value. For a B2B scenario, possible values: Google, Facebook. For a B2C scenario, possible values: Microsoft, Google, Amazon, LinkedIn, Facebook, GitHub, Twitter, Weibo, QQ, WeChat. Required.
-        ## @param value Value to set for the identityProviderType property.
+        ## @param value Value to set for the identity_provider_type property.
         ## @return a void
         ## 
         def identity_provider_type=(value)

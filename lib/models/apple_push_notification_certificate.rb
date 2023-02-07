@@ -39,7 +39,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appleIdentifier property value. Apple Id of the account used to create the MDM push certificate.
-        ## @param value Value to set for the appleIdentifier property.
+        ## @param value Value to set for the apple_identifier property.
         ## @return a void
         ## 
         def apple_identifier=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the certificateSerialNumber property value. Certificate serial number. This property is read-only.
-        ## @param value Value to set for the certificateSerialNumber property.
+        ## @param value Value to set for the certificate_serial_number property.
         ## @return a void
         ## 
         def certificate_serial_number=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the certificateUploadFailureReason property value. The reason the certificate upload failed.
-        ## @param value Value to set for the certificateUploadFailureReason property.
+        ## @param value Value to set for the certificate_upload_failure_reason property.
         ## @return a void
         ## 
         def certificate_upload_failure_reason=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the certificateUploadStatus property value. The certificate upload status.
-        ## @param value Value to set for the certificateUploadStatus property.
+        ## @param value Value to set for the certificate_upload_status property.
         ## @return a void
         ## 
         def certificate_upload_status=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the expirationDateTime property value. The expiration date and time for Apple push notification certificate.
-        ## @param value Value to set for the expirationDateTime property.
+        ## @param value Value to set for the expiration_date_time property.
         ## @return a void
         ## 
         def expiration_date_time=(value)
@@ -161,7 +161,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. Last modified date and time for Apple push notification certificate.
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the topicIdentifier property value. Topic Id.
-        ## @param value Value to set for the topicIdentifier property.
+        ## @param value Value to set for the topic_identifier property.
         ## @return a void
         ## 
         def topic_identifier=(value)

@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the timeSlots property value. A list of start/end times during a day.
-        ## @param value Value to set for the timeSlots property.
+        ## @param value Value to set for the time_slots property.
         ## @return a void
         ## 
         def time_slots=(value)

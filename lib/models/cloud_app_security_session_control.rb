@@ -17,7 +17,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cloudAppSecurityType property value. Possible values are: mcasConfigured, monitorOnly, blockDownloads, unknownFutureValue. For more information, see Deploy Conditional Access App Control for featured apps.
-        ## @param value Value to set for the cloudAppSecurityType property.
+        ## @param value Value to set for the cloud_app_security_type property.
         ## @return a void
         ## 
         def cloud_app_security_type=(value)

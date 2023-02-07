@@ -37,7 +37,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the feedbackResource property value. The actual feedback resource.
-        ## @param value Value to set for the feedbackResource property.
+        ## @param value Value to set for the feedback_resource property.
         ## @return a void
         ## 
         def feedback_resource=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceStatus property value. The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, unknownFutureValue.
-        ## @param value Value to set for the resourceStatus property.
+        ## @param value Value to set for the resource_status property.
         ## @return a void
         ## 
         def resource_status=(value)

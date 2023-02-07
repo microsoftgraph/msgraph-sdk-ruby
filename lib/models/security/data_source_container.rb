@@ -41,7 +41,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the createdDateTime property value. Created date and time of the dataSourceContainer entity.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the displayName property value. Display name of the dataSourceContainer entity.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the holdStatus property value. The hold status of the dataSourceContainer. The possible values are: notApplied, applied, applying, removing, partial
-        ## @param value Value to set for the holdStatus property.
+        ## @param value Value to set for the hold_status property.
         ## @return a void
         ## 
         def hold_status=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the lastModifiedDateTime property value. Last modified date and time of the dataSourceContainer.
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the releasedDateTime property value. Date and time that the dataSourceContainer was released from the case.
-        ## @param value Value to set for the releasedDateTime property.
+        ## @param value Value to set for the released_date_time property.
         ## @return a void
         ## 
         def released_date_time=(value)

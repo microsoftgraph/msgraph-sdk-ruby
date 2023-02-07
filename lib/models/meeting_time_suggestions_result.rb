@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the emptySuggestionsReason property value. A reason for not returning any meeting suggestions. The possible values are: attendeesUnavailable, attendeesUnavailableOrUnknown, locationsUnavailable, organizerUnavailable, or unknown. This property is an empty string if the meetingTimeSuggestions property does include any meeting suggestions.
-        ## @param value Value to set for the emptySuggestionsReason property.
+        ## @param value Value to set for the empty_suggestions_reason property.
         ## @return a void
         ## 
         def empty_suggestions_reason=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the meetingTimeSuggestions property value. An array of meeting suggestions.
-        ## @param value Value to set for the meetingTimeSuggestions property.
+        ## @param value Value to set for the meeting_time_suggestions property.
         ## @return a void
         ## 
         def meeting_time_suggestions=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

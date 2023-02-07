@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the objectId property value. The unique identifier for the recipient in the directory.
-        ## @param value Value to set for the objectId property.
+        ## @param value Value to set for the object_id property.
         ## @return a void
         ## 
         def object_id=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

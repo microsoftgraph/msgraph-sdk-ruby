@@ -34,7 +34,7 @@ module MicrosoftGraph::AuthenticationMethodConfigurations::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from authenticationMethodConfigurations by key (id)
+        ## Delete entity from authenticationMethodConfigurations
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -48,7 +48,7 @@ module MicrosoftGraph::AuthenticationMethodConfigurations::Item
             return @request_adapter.send_async(request_info, nil, error_mapping)
         end
         ## 
-        ## Get entity from authenticationMethodConfigurations by key (id)
+        ## Get entity from authenticationMethodConfigurations by key
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of authentication_method_configuration
         ## 
@@ -62,7 +62,7 @@ module MicrosoftGraph::AuthenticationMethodConfigurations::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AuthenticationMethodConfiguration.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update entity in authenticationMethodConfigurations by key (id)
+        ## Update entity in authenticationMethodConfigurations
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of authentication_method_configuration
@@ -78,7 +78,7 @@ module MicrosoftGraph::AuthenticationMethodConfigurations::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AuthenticationMethodConfiguration.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from authenticationMethodConfigurations by key (id)
+        ## Delete entity from authenticationMethodConfigurations
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -94,7 +94,7 @@ module MicrosoftGraph::AuthenticationMethodConfigurations::Item
             return request_info
         end
         ## 
-        ## Get entity from authenticationMethodConfigurations by key (id)
+        ## Get entity from authenticationMethodConfigurations by key
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph::AuthenticationMethodConfigurations::Item
             return request_info
         end
         ## 
-        ## Update entity in authenticationMethodConfigurations by key (id)
+        ## Update entity in authenticationMethodConfigurations
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
@@ -145,7 +145,7 @@ module MicrosoftGraph::AuthenticationMethodConfigurations::Item
         end
 
         ## 
-        # Get entity from authenticationMethodConfigurations by key (id)
+        # Get entity from authenticationMethodConfigurations by key
         class AuthenticationMethodConfigurationItemRequestBuilderGetQueryParameters
             
             ## 

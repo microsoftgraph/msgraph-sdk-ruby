@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the teamsApp property value. The app that is installed.
-        ## @param value Value to set for the teamsApp property.
+        ## @param value Value to set for the teams_app property.
         ## @return a void
         ## 
         def teams_app=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the teamsAppDefinition property value. The details of this version of the app.
-        ## @param value Value to set for the teamsAppDefinition property.
+        ## @param value Value to set for the teams_app_definition property.
         ## @return a void
         ## 
         def teams_app_definition=(value)

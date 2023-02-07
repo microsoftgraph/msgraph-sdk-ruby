@@ -26,7 +26,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appDefinitions property value. The details for each version of the app.
-        ## @param value Value to set for the appDefinitions property.
+        ## @param value Value to set for the app_definitions property.
         ## @return a void
         ## 
         def app_definitions=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the catalog app provided by the app developer in the Microsoft Teams zip app package.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the distributionMethod property value. The method of distribution for the app. Read-only.
-        ## @param value Value to set for the distributionMethod property.
+        ## @param value Value to set for the distribution_method property.
         ## @return a void
         ## 
         def distribution_method=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalId property value. The ID of the catalog provided by the app developer in the Microsoft Teams zip app package.
-        ## @param value Value to set for the externalId property.
+        ## @param value Value to set for the external_id property.
         ## @return a void
         ## 
         def external_id=(value)

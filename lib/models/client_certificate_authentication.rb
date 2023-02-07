@@ -17,7 +17,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the certificateList property value. The list of certificates uploaded for this API connector.
-        ## @param value Value to set for the certificateList property.
+        ## @param value Value to set for the certificate_list property.
         ## @return a void
         ## 
         def certificate_list=(value)

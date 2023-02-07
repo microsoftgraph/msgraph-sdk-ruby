@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentType property value. The content type of threat assessment. Possible values are: mail, url, file.
-        ## @param value Value to set for the contentType property.
+        ## @param value Value to set for the content_type property.
         ## @return a void
         ## 
         def content_type=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdBy property value. The threat assessment request creator.
-        ## @param value Value to set for the createdBy property.
+        ## @param value Value to set for the created_by property.
         ## @return a void
         ## 
         def created_by=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the expectedAssessment property value. The expectedAssessment property
-        ## @param value Value to set for the expectedAssessment property.
+        ## @param value Value to set for the expected_assessment property.
         ## @return a void
         ## 
         def expected_assessment=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the requestSource property value. The source of the threat assessment request. Possible values are: administrator.
-        ## @param value Value to set for the requestSource property.
+        ## @param value Value to set for the request_source property.
         ## @return a void
         ## 
         def request_source=(value)

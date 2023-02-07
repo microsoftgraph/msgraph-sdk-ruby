@@ -44,7 +44,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the calendarEventId property value. The identifier of the calendar event associated with the meeting.
-        ## @param value Value to set for the calendarEventId property.
+        ## @param value Value to set for the calendar_event_id property.
         ## @return a void
         ## 
         def calendar_event_id=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the joinWebUrl property value. The URL that users click to join or uniquely identify the meeting.
-        ## @param value Value to set for the joinWebUrl property.
+        ## @param value Value to set for the join_web_url property.
         ## @return a void
         ## 
         def join_web_url=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

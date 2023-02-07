@@ -47,7 +47,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
-        ## @param value Value to set for the builtInControls property.
+        ## @param value Value to set for the built_in_controls property.
         ## @return a void
         ## 
         def built_in_controls=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. For more information, see Custom controls.
-        ## @param value Value to set for the customAuthenticationFactors property.
+        ## @param value Value to set for the custom_authentication_factors property.
         ## @return a void
         ## 
         def custom_authentication_factors=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the termsOfUse property value. List of terms of use IDs required by the policy.
-        ## @param value Value to set for the termsOfUse property.
+        ## @param value Value to set for the terms_of_use property.
         ## @return a void
         ## 
         def terms_of_use=(value)

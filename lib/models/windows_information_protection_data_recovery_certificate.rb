@@ -96,7 +96,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the expirationDateTime property value. Data recovery Certificate expiration datetime
-        ## @param value Value to set for the expirationDateTime property.
+        ## @param value Value to set for the expiration_date_time property.
         ## @return a void
         ## 
         def expiration_date_time=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the subjectName property value. Data recovery Certificate subject name
-        ## @param value Value to set for the subjectName property.
+        ## @param value Value to set for the subject_name property.
         ## @return a void
         ## 
         def subject_name=(value)

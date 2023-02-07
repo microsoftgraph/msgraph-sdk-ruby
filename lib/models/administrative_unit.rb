@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the scopedRoleMembers property value. Scoped-role members of this administrative unit.
-        ## @param value Value to set for the scopedRoleMembers property.
+        ## @param value Value to set for the scoped_role_members property.
         ## @return a void
         ## 
         def scoped_role_members=(value)

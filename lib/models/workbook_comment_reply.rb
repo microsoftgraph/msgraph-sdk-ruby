@@ -42,7 +42,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentType property value. Indicates the type for the comment reply.
-        ## @param value Value to set for the contentType property.
+        ## @param value Value to set for the content_type property.
         ## @return a void
         ## 
         def content_type=(value)

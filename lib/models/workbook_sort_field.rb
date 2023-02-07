@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dataOption property value. Represents additional sorting options for this field. The possible values are: Normal, TextAsNumber.
-        ## @param value Value to set for the dataOption property.
+        ## @param value Value to set for the data_option property.
         ## @return a void
         ## 
         def data_option=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -190,7 +190,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sortOn property value. Represents the type of sorting of this condition. The possible values are: Value, CellColor, FontColor, Icon.
-        ## @param value Value to set for the sortOn property.
+        ## @param value Value to set for the sort_on property.
         ## @return a void
         ## 
         def sort_on=(value)

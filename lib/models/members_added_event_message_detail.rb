@@ -94,7 +94,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the visibleHistoryStartDateTime property value. The timestamp that denotes how far back a conversation's history is shared with the conversation members.
-        ## @param value Value to set for the visibleHistoryStartDateTime property.
+        ## @param value Value to set for the visible_history_start_date_time property.
         ## @return a void
         ## 
         def visible_history_start_date_time=(value)

@@ -54,11 +54,11 @@ module MicrosoftGraph::Models
         # Indicates whether time off requests are enabled for the schedule.
         @time_off_requests_enabled
         ## 
-        # The instances of times off in the schedule.
-        @times_off
-        ## 
         # Indicates the time zone of the schedule team using tz database format. Required.
         @time_zone
+        ## 
+        # The instances of times off in the schedule.
+        @times_off
         ## 
         # The workforceIntegrationIds property
         @workforce_integration_ids
@@ -115,8 +115,8 @@ module MicrosoftGraph::Models
                 "timeOffReasons" => lambda {|n| @time_off_reasons = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TimeOffReason.create_from_discriminator_value(pn) }) },
                 "timeOffRequests" => lambda {|n| @time_off_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TimeOffRequest.create_from_discriminator_value(pn) }) },
                 "timeOffRequestsEnabled" => lambda {|n| @time_off_requests_enabled = n.get_boolean_value() },
-                "timesOff" => lambda {|n| @times_off = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TimeOff.create_from_discriminator_value(pn) }) },
                 "timeZone" => lambda {|n| @time_zone = n.get_string_value() },
+                "timesOff" => lambda {|n| @times_off = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TimeOff.create_from_discriminator_value(pn) }) },
                 "workforceIntegrationIds" => lambda {|n| @workforce_integration_ids = n.get_collection_of_primitive_values(String) },
             })
         end
@@ -129,7 +129,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the offerShiftRequests property value. The offerShiftRequests property
-        ## @param value Value to set for the offerShiftRequests property.
+        ## @param value Value to set for the offer_shift_requests property.
         ## @return a void
         ## 
         def offer_shift_requests=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the offerShiftRequestsEnabled property value. Indicates whether offer shift requests are enabled for the schedule.
-        ## @param value Value to set for the offerShiftRequestsEnabled property.
+        ## @param value Value to set for the offer_shift_requests_enabled property.
         ## @return a void
         ## 
         def offer_shift_requests_enabled=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the openShiftChangeRequests property value. The openShiftChangeRequests property
-        ## @param value Value to set for the openShiftChangeRequests property.
+        ## @param value Value to set for the open_shift_change_requests property.
         ## @return a void
         ## 
         def open_shift_change_requests=(value)
@@ -174,7 +174,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the openShifts property value. The openShifts property
-        ## @param value Value to set for the openShifts property.
+        ## @param value Value to set for the open_shifts property.
         ## @return a void
         ## 
         def open_shifts=(value)
@@ -189,7 +189,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the openShiftsEnabled property value. Indicates whether open shifts are enabled for the schedule.
-        ## @param value Value to set for the openShiftsEnabled property.
+        ## @param value Value to set for the open_shifts_enabled property.
         ## @return a void
         ## 
         def open_shifts_enabled=(value)
@@ -204,7 +204,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the provisionStatus property value. The status of the schedule provisioning. The possible values are notStarted, running, completed, failed.
-        ## @param value Value to set for the provisionStatus property.
+        ## @param value Value to set for the provision_status property.
         ## @return a void
         ## 
         def provision_status=(value)
@@ -219,7 +219,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the provisionStatusCode property value. Additional information about why schedule provisioning failed.
-        ## @param value Value to set for the provisionStatusCode property.
+        ## @param value Value to set for the provision_status_code property.
         ## @return a void
         ## 
         def provision_status_code=(value)
@@ -234,7 +234,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the schedulingGroups property value. The logical grouping of users in the schedule (usually by role).
-        ## @param value Value to set for the schedulingGroups property.
+        ## @param value Value to set for the scheduling_groups property.
         ## @return a void
         ## 
         def scheduling_groups=(value)
@@ -262,8 +262,8 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("timeOffReasons", @time_off_reasons)
             writer.write_collection_of_object_values("timeOffRequests", @time_off_requests)
             writer.write_boolean_value("timeOffRequestsEnabled", @time_off_requests_enabled)
-            writer.write_collection_of_object_values("timesOff", @times_off)
             writer.write_string_value("timeZone", @time_zone)
+            writer.write_collection_of_object_values("timesOff", @times_off)
             writer.write_collection_of_primitive_values("workforceIntegrationIds", @workforce_integration_ids)
         end
         ## 
@@ -290,7 +290,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the swapShiftsChangeRequests property value. The swapShiftsChangeRequests property
-        ## @param value Value to set for the swapShiftsChangeRequests property.
+        ## @param value Value to set for the swap_shifts_change_requests property.
         ## @return a void
         ## 
         def swap_shifts_change_requests=(value)
@@ -305,7 +305,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the swapShiftsRequestsEnabled property value. Indicates whether swap shifts requests are enabled for the schedule.
-        ## @param value Value to set for the swapShiftsRequestsEnabled property.
+        ## @param value Value to set for the swap_shifts_requests_enabled property.
         ## @return a void
         ## 
         def swap_shifts_requests_enabled=(value)
@@ -320,7 +320,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the timeClockEnabled property value. Indicates whether time clock is enabled for the schedule.
-        ## @param value Value to set for the timeClockEnabled property.
+        ## @param value Value to set for the time_clock_enabled property.
         ## @return a void
         ## 
         def time_clock_enabled=(value)
@@ -335,7 +335,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the timeOffReasons property value. The set of reasons for a time off in the schedule.
-        ## @param value Value to set for the timeOffReasons property.
+        ## @param value Value to set for the time_off_reasons property.
         ## @return a void
         ## 
         def time_off_reasons=(value)
@@ -350,7 +350,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the timeOffRequests property value. The timeOffRequests property
-        ## @param value Value to set for the timeOffRequests property.
+        ## @param value Value to set for the time_off_requests property.
         ## @return a void
         ## 
         def time_off_requests=(value)
@@ -365,26 +365,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the timeOffRequestsEnabled property value. Indicates whether time off requests are enabled for the schedule.
-        ## @param value Value to set for the timeOffRequestsEnabled property.
+        ## @param value Value to set for the time_off_requests_enabled property.
         ## @return a void
         ## 
         def time_off_requests_enabled=(value)
             @time_off_requests_enabled = value
-        end
-        ## 
-        ## Gets the timesOff property value. The instances of times off in the schedule.
-        ## @return a time_off
-        ## 
-        def times_off
-            return @times_off
-        end
-        ## 
-        ## Sets the timesOff property value. The instances of times off in the schedule.
-        ## @param value Value to set for the timesOff property.
-        ## @return a void
-        ## 
-        def times_off=(value)
-            @times_off = value
         end
         ## 
         ## Gets the timeZone property value. Indicates the time zone of the schedule team using tz database format. Required.
@@ -395,11 +380,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the timeZone property value. Indicates the time zone of the schedule team using tz database format. Required.
-        ## @param value Value to set for the timeZone property.
+        ## @param value Value to set for the time_zone property.
         ## @return a void
         ## 
         def time_zone=(value)
             @time_zone = value
+        end
+        ## 
+        ## Gets the timesOff property value. The instances of times off in the schedule.
+        ## @return a time_off
+        ## 
+        def times_off
+            return @times_off
+        end
+        ## 
+        ## Sets the timesOff property value. The instances of times off in the schedule.
+        ## @param value Value to set for the times_off property.
+        ## @return a void
+        ## 
+        def times_off=(value)
+            @times_off = value
         end
         ## 
         ## Gets the workforceIntegrationIds property value. The workforceIntegrationIds property
@@ -410,7 +410,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workforceIntegrationIds property value. The workforceIntegrationIds property
-        ## @param value Value to set for the workforceIntegrationIds property.
+        ## @param value Value to set for the workforce_integration_ids property.
         ## @return a void
         ## 
         def workforce_integration_ids=(value)

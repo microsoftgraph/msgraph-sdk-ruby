@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the initiatorType property value. Type of initiator. Possible values are: user, application, system, unknownFutureValue.
-        ## @param value Value to set for the initiatorType property.
+        ## @param value Value to set for the initiator_type property.
         ## @return a void
         ## 
         def initiator_type=(value)

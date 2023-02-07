@@ -50,7 +50,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the policy for this policyBase
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the platformType property value. Supported platform types for policies.
-        ## @param value Value to set for the platformType property.
+        ## @param value Value to set for the platform_type property.
         ## @return a void
         ## 
         def platform_type=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the settingCount property value. Count of how many setting a policy holds
-        ## @param value Value to set for the settingCount property.
+        ## @param value Value to set for the setting_count property.
         ## @return a void
         ## 
         def setting_count=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the settingStates property value. The settingStates property
-        ## @param value Value to set for the settingStates property.
+        ## @param value Value to set for the setting_states property.
         ## @return a void
         ## 
         def setting_states=(value)

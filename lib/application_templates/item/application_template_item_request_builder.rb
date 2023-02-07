@@ -3,8 +3,8 @@ require_relative '../../microsoft_graph'
 require_relative '../../models/application_template'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../application_templates'
-require_relative './instantiate/instantiate_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_instantiate/microsoft_graph_instantiate_request_builder'
 
 module MicrosoftGraph::ApplicationTemplates::Item
     ## 
@@ -13,8 +13,8 @@ module MicrosoftGraph::ApplicationTemplates::Item
         
         ## 
         # Provides operations to call the instantiate method.
-        def instantiate()
-            return MicrosoftGraph::ApplicationTemplates::Item::Instantiate::InstantiateRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_instantiate()
+            return MicrosoftGraph::ApplicationTemplates::Item::MicrosoftGraphInstantiate::MicrosoftGraphInstantiateRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -40,20 +40,6 @@ module MicrosoftGraph::ApplicationTemplates::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from applicationTemplates by key (id)
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a Fiber of void
-        ## 
-        def delete(request_configuration=nil)
-            request_info = self.to_delete_request_information(
-                request_configuration
-            )
-            error_mapping = Hash.new
-            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            return @request_adapter.send_async(request_info, nil, error_mapping)
-        end
-        ## 
         ## Retrieve the properties of an applicationTemplate object.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of application_template
@@ -66,38 +52,6 @@ module MicrosoftGraph::ApplicationTemplates::Item
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ApplicationTemplate.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Update entity in applicationTemplates by key (id)
-        ## @param body The request body
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a Fiber of application_template
-        ## 
-        def patch(body, request_configuration=nil)
-            raise StandardError, 'body cannot be null' if body.nil?
-            request_info = self.to_patch_request_information(
-                body, request_configuration
-            )
-            error_mapping = Hash.new
-            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ApplicationTemplate.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Delete entity from applicationTemplates by key (id)
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a request_information
-        ## 
-        def to_delete_request_information(request_configuration=nil)
-            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-            request_info.url_template = @url_template
-            request_info.path_parameters = @path_parameters
-            request_info.http_method = :DELETE
-            unless request_configuration.nil?
-                request_info.add_headers_from_raw_object(request_configuration.headers)
-                request_info.add_request_options(request_configuration.options)
-            end
-            return request_info
         end
         ## 
         ## Retrieve the properties of an applicationTemplate object.
@@ -116,38 +70,6 @@ module MicrosoftGraph::ApplicationTemplates::Item
                 request_info.add_request_options(request_configuration.options)
             end
             return request_info
-        end
-        ## 
-        ## Update entity in applicationTemplates by key (id)
-        ## @param body The request body
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a request_information
-        ## 
-        def to_patch_request_information(body, request_configuration=nil)
-            raise StandardError, 'body cannot be null' if body.nil?
-            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-            request_info.url_template = @url_template
-            request_info.path_parameters = @path_parameters
-            request_info.http_method = :PATCH
-            request_info.headers.add('Accept', 'application/json')
-            unless request_configuration.nil?
-                request_info.add_headers_from_raw_object(request_configuration.headers)
-                request_info.add_request_options(request_configuration.options)
-            end
-            request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
-            return request_info
-        end
-
-        ## 
-        # Configuration for the request such as headers, query parameters, and middleware options.
-        class ApplicationTemplateItemRequestBuilderDeleteRequestConfiguration
-            
-            ## 
-            # Request headers
-            attr_accessor :headers
-            ## 
-            # Request options
-            attr_accessor :options
         end
 
         ## 
@@ -191,18 +113,6 @@ module MicrosoftGraph::ApplicationTemplates::Item
             ## 
             # Request query parameters
             attr_accessor :query_parameters
-        end
-
-        ## 
-        # Configuration for the request such as headers, query parameters, and middleware options.
-        class ApplicationTemplateItemRequestBuilderPatchRequestConfiguration
-            
-            ## 
-            # Request headers
-            attr_accessor :headers
-            ## 
-            # Request options
-            attr_accessor :options
         end
     end
 end

@@ -65,7 +65,7 @@ module MicrosoftGraph::Me::Planner::Plans::Item::Details
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PlannerPlanDetails.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update the properties of **plannerplandetails** object.
+        ## Update the navigation property details in me
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of planner_plan_details
@@ -115,7 +115,7 @@ module MicrosoftGraph::Me::Planner::Plans::Item::Details
             return request_info
         end
         ## 
-        ## Update the properties of **plannerplandetails** object.
+        ## Update the navigation property details in me
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

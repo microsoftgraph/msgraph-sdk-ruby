@@ -15,11 +15,11 @@ module MicrosoftGraph::Models
         # The OdataType property
         @odata_type
         ## 
-        # The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
-        @targeted_authentication_method
-        ## 
         # The targetType property
         @target_type
+        ## 
+        # The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
+        @targeted_authentication_method
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         ## @return a i_dictionary
@@ -59,8 +59,8 @@ module MicrosoftGraph::Models
             return {
                 "id" => lambda {|n| @id = n.get_string_value() },
                 "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
-                "targetedAuthenticationMethod" => lambda {|n| @targeted_authentication_method = n.get_string_value() },
                 "targetType" => lambda {|n| @target_type = n.get_enum_value(MicrosoftGraph::Models::AuthenticationMethodTargetType) },
+                "targetedAuthenticationMethod" => lambda {|n| @targeted_authentication_method = n.get_string_value() },
             }
         end
         ## 
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -102,24 +102,9 @@ module MicrosoftGraph::Models
             raise StandardError, 'writer cannot be null' if writer.nil?
             writer.write_string_value("id", @id)
             writer.write_string_value("@odata.type", @odata_type)
-            writer.write_string_value("targetedAuthenticationMethod", @targeted_authentication_method)
             writer.write_enum_value("targetType", @target_type)
+            writer.write_string_value("targetedAuthenticationMethod", @targeted_authentication_method)
             writer.write_additional_data(@additional_data)
-        end
-        ## 
-        ## Gets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
-        ## @return a string
-        ## 
-        def targeted_authentication_method
-            return @targeted_authentication_method
-        end
-        ## 
-        ## Sets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
-        ## @param value Value to set for the targetedAuthenticationMethod property.
-        ## @return a void
-        ## 
-        def targeted_authentication_method=(value)
-            @targeted_authentication_method = value
         end
         ## 
         ## Gets the targetType property value. The targetType property
@@ -130,11 +115,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the targetType property value. The targetType property
-        ## @param value Value to set for the targetType property.
+        ## @param value Value to set for the target_type property.
         ## @return a void
         ## 
         def target_type=(value)
             @target_type = value
+        end
+        ## 
+        ## Gets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
+        ## @return a string
+        ## 
+        def targeted_authentication_method
+            return @targeted_authentication_method
+        end
+        ## 
+        ## Sets the targetedAuthenticationMethod property value. The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.
+        ## @param value Value to set for the targeted_authentication_method property.
+        ## @return a void
+        ## 
+        def targeted_authentication_method=(value)
+            @targeted_authentication_method = value
         end
     end
 end

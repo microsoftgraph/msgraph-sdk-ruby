@@ -15,14 +15,14 @@ module MicrosoftGraph::Models
         # Bundle metadata, if the item is a bundle. Read-only.
         @bundle
         ## 
+        # An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+        @c_tag
+        ## 
         # Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
         @children
         ## 
         # The content stream, if the item represents a file.
         @content
-        ## 
-        # An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
-        @c_tag
         ## 
         # Information about the deleted state of the item. Read-only.
         @deleted
@@ -147,6 +147,21 @@ module MicrosoftGraph::Models
             @bundle = value
         end
         ## 
+        ## Gets the cTag property value. An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+        ## @return a string
+        ## 
+        def c_tag
+            return @c_tag
+        end
+        ## 
+        ## Sets the cTag property value. An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
+        ## @param value Value to set for the c_tag property.
+        ## @return a void
+        ## 
+        def c_tag=(value)
+            @c_tag = value
+        end
+        ## 
         ## Gets the children property value. Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
         ## @return a drive_item
         ## 
@@ -194,21 +209,6 @@ module MicrosoftGraph::Models
             return DriveItem.new
         end
         ## 
-        ## Gets the cTag property value. An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
-        ## @return a string
-        ## 
-        def c_tag
-            return @c_tag
-        end
-        ## 
-        ## Sets the cTag property value. An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.
-        ## @param value Value to set for the cTag property.
-        ## @return a void
-        ## 
-        def c_tag=(value)
-            @c_tag = value
-        end
-        ## 
         ## Gets the deleted property value. Information about the deleted state of the item. Read-only.
         ## @return a deleted
         ## 
@@ -247,7 +247,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fileSystemInfo property value. File system information on client. Read-write.
-        ## @param value Value to set for the fileSystemInfo property.
+        ## @param value Value to set for the file_system_info property.
         ## @return a void
         ## 
         def file_system_info=(value)
@@ -277,9 +277,9 @@ module MicrosoftGraph::Models
                 "analytics" => lambda {|n| @analytics = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ItemAnalytics.create_from_discriminator_value(pn) }) },
                 "audio" => lambda {|n| @audio = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Audio.create_from_discriminator_value(pn) }) },
                 "bundle" => lambda {|n| @bundle = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Bundle.create_from_discriminator_value(pn) }) },
+                "cTag" => lambda {|n| @c_tag = n.get_string_value() },
                 "children" => lambda {|n| @children = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DriveItem.create_from_discriminator_value(pn) }) },
                 "content" => lambda {|n| @content = n.get_string_value() },
-                "cTag" => lambda {|n| @c_tag = n.get_string_value() },
                 "deleted" => lambda {|n| @deleted = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Deleted.create_from_discriminator_value(pn) }) },
                 "file" => lambda {|n| @file = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::File.create_from_discriminator_value(pn) }) },
                 "fileSystemInfo" => lambda {|n| @file_system_info = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::FileSystemInfo.create_from_discriminator_value(pn) }) },
@@ -332,7 +332,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the listItem property value. For drives in SharePoint, the associated document library list item. Read-only. Nullable.
-        ## @param value Value to set for the listItem property.
+        ## @param value Value to set for the list_item property.
         ## @return a void
         ## 
         def list_item=(value)
@@ -392,7 +392,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pendingOperations property value. If present, indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.
-        ## @param value Value to set for the pendingOperations property.
+        ## @param value Value to set for the pending_operations property.
         ## @return a void
         ## 
         def pending_operations=(value)
@@ -452,7 +452,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the remoteItem property value. Remote item data, if the item is shared from a drive other than the one being accessed. Read-only.
-        ## @param value Value to set for the remoteItem property.
+        ## @param value Value to set for the remote_item property.
         ## @return a void
         ## 
         def remote_item=(value)
@@ -482,7 +482,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the searchResult property value. Search metadata, if the item is from a search result. Read-only.
-        ## @param value Value to set for the searchResult property.
+        ## @param value Value to set for the search_result property.
         ## @return a void
         ## 
         def search_result=(value)
@@ -499,9 +499,9 @@ module MicrosoftGraph::Models
             writer.write_object_value("analytics", @analytics)
             writer.write_object_value("audio", @audio)
             writer.write_object_value("bundle", @bundle)
+            writer.write_string_value("cTag", @c_tag)
             writer.write_collection_of_object_values("children", @children)
             writer.write_object_value("content", @content)
-            writer.write_string_value("cTag", @c_tag)
             writer.write_object_value("deleted", @deleted)
             writer.write_object_value("file", @file)
             writer.write_object_value("fileSystemInfo", @file_system_info)
@@ -553,7 +553,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
-        ## @param value Value to set for the sharepointIds property.
+        ## @param value Value to set for the sharepoint_ids property.
         ## @return a void
         ## 
         def sharepoint_ids=(value)
@@ -583,7 +583,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the specialFolder property value. If the current item is also available as a special folder, this facet is returned. Read-only.
-        ## @param value Value to set for the specialFolder property.
+        ## @param value Value to set for the special_folder property.
         ## @return a void
         ## 
         def special_folder=(value)
@@ -658,7 +658,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webDavUrl property value. WebDAV compatible URL for the item.
-        ## @param value Value to set for the webDavUrl property.
+        ## @param value Value to set for the web_dav_url property.
         ## @return a void
         ## 
         def web_dav_url=(value)

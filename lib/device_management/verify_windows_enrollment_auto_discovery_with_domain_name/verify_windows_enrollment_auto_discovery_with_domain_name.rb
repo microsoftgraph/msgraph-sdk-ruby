@@ -1,3 +1,0 @@
-require_relative 'verify_windows_enrollment_auto_discovery_with_domain_name_response'
-module MicrosoftGraph::DeviceManagement::VerifyWindowsEnrollmentAutoDiscoveryWithDomainName
-end

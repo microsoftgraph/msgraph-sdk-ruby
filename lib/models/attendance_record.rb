@@ -29,7 +29,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the attendanceIntervals property value. List of time periods between joining and leaving a meeting.
-        ## @param value Value to set for the attendanceIntervals property.
+        ## @param value Value to set for the attendance_intervals property.
         ## @return a void
         ## 
         def attendance_intervals=(value)
@@ -60,7 +60,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the emailAddress property value. Email address of the user associated with this atttendance record.
-        ## @param value Value to set for the emailAddress property.
+        ## @param value Value to set for the email_address property.
         ## @return a void
         ## 
         def email_address=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the totalAttendanceInSeconds property value. Total duration of the attendances in seconds.
-        ## @param value Value to set for the totalAttendanceInSeconds property.
+        ## @param value Value to set for the total_attendance_in_seconds property.
         ## @return a void
         ## 
         def total_attendance_in_seconds=(value)

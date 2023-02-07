@@ -52,7 +52,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workforceIntegrations property value. The workforceIntegrations property
-        ## @param value Value to set for the workforceIntegrations property.
+        ## @param value Value to set for the workforce_integrations property.
         ## @return a void
         ## 
         def workforce_integrations=(value)

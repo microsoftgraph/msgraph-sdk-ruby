@@ -15,11 +15,11 @@ module MicrosoftGraph::Models
         # Corresponds to the 'Block all incoming connections' option.
         @firewall_block_all_incoming
         ## 
-        # Whether the firewall should be enabled or not.
-        @firewall_enabled
-        ## 
         # Corresponds to 'Enable stealth mode.'
         @firewall_enable_stealth_mode
+        ## 
+        # Whether the firewall should be enabled or not.
+        @firewall_enabled
         ## 
         # Maximum MacOS version.
         @os_maximum_version
@@ -82,7 +82,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceThreatProtectionEnabled property value. Require that devices have enabled device threat protection.
-        ## @param value Value to set for the deviceThreatProtectionEnabled property.
+        ## @param value Value to set for the device_threat_protection_enabled property.
         ## @return a void
         ## 
         def device_threat_protection_enabled=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
-        ## @param value Value to set for the deviceThreatProtectionRequiredSecurityLevel property.
+        ## @param value Value to set for the device_threat_protection_required_security_level property.
         ## @return a void
         ## 
         def device_threat_protection_required_security_level=(value)
@@ -112,26 +112,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the firewallBlockAllIncoming property value. Corresponds to the 'Block all incoming connections' option.
-        ## @param value Value to set for the firewallBlockAllIncoming property.
+        ## @param value Value to set for the firewall_block_all_incoming property.
         ## @return a void
         ## 
         def firewall_block_all_incoming=(value)
             @firewall_block_all_incoming = value
-        end
-        ## 
-        ## Gets the firewallEnabled property value. Whether the firewall should be enabled or not.
-        ## @return a boolean
-        ## 
-        def firewall_enabled
-            return @firewall_enabled
-        end
-        ## 
-        ## Sets the firewallEnabled property value. Whether the firewall should be enabled or not.
-        ## @param value Value to set for the firewallEnabled property.
-        ## @return a void
-        ## 
-        def firewall_enabled=(value)
-            @firewall_enabled = value
         end
         ## 
         ## Gets the firewallEnableStealthMode property value. Corresponds to 'Enable stealth mode.'
@@ -142,11 +127,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the firewallEnableStealthMode property value. Corresponds to 'Enable stealth mode.'
-        ## @param value Value to set for the firewallEnableStealthMode property.
+        ## @param value Value to set for the firewall_enable_stealth_mode property.
         ## @return a void
         ## 
         def firewall_enable_stealth_mode=(value)
             @firewall_enable_stealth_mode = value
+        end
+        ## 
+        ## Gets the firewallEnabled property value. Whether the firewall should be enabled or not.
+        ## @return a boolean
+        ## 
+        def firewall_enabled
+            return @firewall_enabled
+        end
+        ## 
+        ## Sets the firewallEnabled property value. Whether the firewall should be enabled or not.
+        ## @param value Value to set for the firewall_enabled property.
+        ## @return a void
+        ## 
+        def firewall_enabled=(value)
+            @firewall_enabled = value
         end
         ## 
         ## The deserialization information for the current model
@@ -157,8 +157,8 @@ module MicrosoftGraph::Models
                 "deviceThreatProtectionEnabled" => lambda {|n| @device_threat_protection_enabled = n.get_boolean_value() },
                 "deviceThreatProtectionRequiredSecurityLevel" => lambda {|n| @device_threat_protection_required_security_level = n.get_enum_value(MicrosoftGraph::Models::DeviceThreatProtectionLevel) },
                 "firewallBlockAllIncoming" => lambda {|n| @firewall_block_all_incoming = n.get_boolean_value() },
-                "firewallEnabled" => lambda {|n| @firewall_enabled = n.get_boolean_value() },
                 "firewallEnableStealthMode" => lambda {|n| @firewall_enable_stealth_mode = n.get_boolean_value() },
+                "firewallEnabled" => lambda {|n| @firewall_enabled = n.get_boolean_value() },
                 "osMaximumVersion" => lambda {|n| @os_maximum_version = n.get_string_value() },
                 "osMinimumVersion" => lambda {|n| @os_minimum_version = n.get_string_value() },
                 "passwordBlockSimple" => lambda {|n| @password_block_simple = n.get_boolean_value() },
@@ -182,7 +182,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osMaximumVersion property value. Maximum MacOS version.
-        ## @param value Value to set for the osMaximumVersion property.
+        ## @param value Value to set for the os_maximum_version property.
         ## @return a void
         ## 
         def os_maximum_version=(value)
@@ -197,7 +197,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osMinimumVersion property value. Minimum MacOS version.
-        ## @param value Value to set for the osMinimumVersion property.
+        ## @param value Value to set for the os_minimum_version property.
         ## @return a void
         ## 
         def os_minimum_version=(value)
@@ -212,7 +212,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordBlockSimple property value. Indicates whether or not to block simple passwords.
-        ## @param value Value to set for the passwordBlockSimple property.
+        ## @param value Value to set for the password_block_simple property.
         ## @return a void
         ## 
         def password_block_simple=(value)
@@ -227,7 +227,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 65535
-        ## @param value Value to set for the passwordExpirationDays property.
+        ## @param value Value to set for the password_expiration_days property.
         ## @return a void
         ## 
         def password_expiration_days=(value)
@@ -242,7 +242,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
-        ## @param value Value to set for the passwordMinimumCharacterSetCount property.
+        ## @param value Value to set for the password_minimum_character_set_count property.
         ## @return a void
         ## 
         def password_minimum_character_set_count=(value)
@@ -257,7 +257,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinimumLength property value. Minimum length of password. Valid values 4 to 14
-        ## @param value Value to set for the passwordMinimumLength property.
+        ## @param value Value to set for the password_minimum_length property.
         ## @return a void
         ## 
         def password_minimum_length=(value)
@@ -272,7 +272,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
-        ## @param value Value to set for the passwordMinutesOfInactivityBeforeLock property.
+        ## @param value Value to set for the password_minutes_of_inactivity_before_lock property.
         ## @return a void
         ## 
         def password_minutes_of_inactivity_before_lock=(value)
@@ -287,7 +287,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 1 to 24
-        ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
+        ## @param value Value to set for the password_previous_password_block_count property.
         ## @return a void
         ## 
         def password_previous_password_block_count=(value)
@@ -302,7 +302,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequired property value. Whether or not to require a password.
-        ## @param value Value to set for the passwordRequired property.
+        ## @param value Value to set for the password_required property.
         ## @return a void
         ## 
         def password_required=(value)
@@ -317,7 +317,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequiredType property value. Possible values of required passwords.
-        ## @param value Value to set for the passwordRequiredType property.
+        ## @param value Value to set for the password_required_type property.
         ## @return a void
         ## 
         def password_required_type=(value)
@@ -334,8 +334,8 @@ module MicrosoftGraph::Models
             writer.write_boolean_value("deviceThreatProtectionEnabled", @device_threat_protection_enabled)
             writer.write_enum_value("deviceThreatProtectionRequiredSecurityLevel", @device_threat_protection_required_security_level)
             writer.write_boolean_value("firewallBlockAllIncoming", @firewall_block_all_incoming)
-            writer.write_boolean_value("firewallEnabled", @firewall_enabled)
             writer.write_boolean_value("firewallEnableStealthMode", @firewall_enable_stealth_mode)
+            writer.write_boolean_value("firewallEnabled", @firewall_enabled)
             writer.write_string_value("osMaximumVersion", @os_maximum_version)
             writer.write_string_value("osMinimumVersion", @os_minimum_version)
             writer.write_boolean_value("passwordBlockSimple", @password_block_simple)
@@ -358,7 +358,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the storageRequireEncryption property value. Require encryption on Mac OS devices.
-        ## @param value Value to set for the storageRequireEncryption property.
+        ## @param value Value to set for the storage_require_encryption property.
         ## @return a void
         ## 
         def storage_require_encryption=(value)
@@ -373,7 +373,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the systemIntegrityProtectionEnabled property value. Require that devices have enabled system integrity protection.
-        ## @param value Value to set for the systemIntegrityProtectionEnabled property.
+        ## @param value Value to set for the system_integrity_protection_enabled property.
         ## @return a void
         ## 
         def system_integrity_protection_enabled=(value)

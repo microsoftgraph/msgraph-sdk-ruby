@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
-        ## @param value Value to set for the isAssigned property.
+        ## @param value Value to set for the is_assigned property.
         ## @return a void
         ## 
         def is_assigned=(value)

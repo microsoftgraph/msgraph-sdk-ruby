@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name of the rule.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hasError property value. Indicates whether the rule is in an error condition. Read-only.
-        ## @param value Value to set for the hasError property.
+        ## @param value Value to set for the has_error property.
         ## @return a void
         ## 
         def has_error=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isEnabled property value. Indicates whether the rule is enabled to be applied to messages.
-        ## @param value Value to set for the isEnabled property.
+        ## @param value Value to set for the is_enabled property.
         ## @return a void
         ## 
         def is_enabled=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isReadOnly property value. Indicates if the rule is read-only and cannot be modified or deleted by the rules REST API.
-        ## @param value Value to set for the isReadOnly property.
+        ## @param value Value to set for the is_read_only property.
         ## @return a void
         ## 
         def is_read_only=(value)

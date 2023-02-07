@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the previewType property value. This sets the type of preview that shows up on the task. The possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
-        ## @param value Value to set for the previewType property.
+        ## @param value Value to set for the preview_type property.
         ## @return a void
         ## 
         def preview_type=(value)

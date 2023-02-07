@@ -47,7 +47,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the principalScopes property value. Defines the scopes of the principals whose access to resources are reviewed in the access review.
-        ## @param value Value to set for the principalScopes property.
+        ## @param value Value to set for the principal_scopes property.
         ## @return a void
         ## 
         def principal_scopes=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceScopes property value. Defines the scopes of the resources for which access is reviewed.
-        ## @param value Value to set for the resourceScopes property.
+        ## @param value Value to set for the resource_scopes property.
         ## @return a void
         ## 
         def resource_scopes=(value)

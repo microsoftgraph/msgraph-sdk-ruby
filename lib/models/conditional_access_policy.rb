@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Specifies a display name for the conditionalAccessPolicy object.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the grantControls property value. Specifies the grant controls that must be fulfilled to pass the policy.
-        ## @param value Value to set for the grantControls property.
+        ## @param value Value to set for the grant_controls property.
         ## @return a void
         ## 
         def grant_controls=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.
-        ## @param value Value to set for the modifiedDateTime property.
+        ## @param value Value to set for the modified_date_time property.
         ## @return a void
         ## 
         def modified_date_time=(value)
@@ -178,7 +178,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sessionControls property value. Specifies the session controls that are enforced after sign-in.
-        ## @param value Value to set for the sessionControls property.
+        ## @param value Value to set for the session_controls property.
         ## @return a void
         ## 
         def session_controls=(value)

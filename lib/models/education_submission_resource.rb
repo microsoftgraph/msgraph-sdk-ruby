@@ -20,7 +20,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignmentResourceUrl property value. Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.
-        ## @param value Value to set for the assignmentResourceUrl property.
+        ## @param value Value to set for the assignment_resource_url property.
         ## @return a void
         ## 
         def assignment_resource_url=(value)

@@ -71,7 +71,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isDefault property value. Indicates whether this is the user's default notebook. Read-only.
-        ## @param value Value to set for the isDefault property.
+        ## @param value Value to set for the is_default property.
         ## @return a void
         ## 
         def is_default=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isShared property value. Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.
-        ## @param value Value to set for the isShared property.
+        ## @param value Value to set for the is_shared property.
         ## @return a void
         ## 
         def is_shared=(value)
@@ -116,7 +116,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sectionGroups property value. The section groups in the notebook. Read-only. Nullable.
-        ## @param value Value to set for the sectionGroups property.
+        ## @param value Value to set for the section_groups property.
         ## @return a void
         ## 
         def section_groups=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sectionGroupsUrl property value. The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.
-        ## @param value Value to set for the sectionGroupsUrl property.
+        ## @param value Value to set for the section_groups_url property.
         ## @return a void
         ## 
         def section_groups_url=(value)
@@ -161,7 +161,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sectionsUrl property value. The URL for the sections navigation property, which returns all the sections in the notebook. Read-only.
-        ## @param value Value to set for the sectionsUrl property.
+        ## @param value Value to set for the sections_url property.
         ## @return a void
         ## 
         def sections_url=(value)
@@ -193,7 +193,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userRole property value. Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
-        ## @param value Value to set for the userRole property.
+        ## @param value Value to set for the user_role property.
         ## @return a void
         ## 
         def user_role=(value)

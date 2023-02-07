@@ -9,19 +9,19 @@ module MicrosoftGraph::Models
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
         ## 
-        # The attachmentType property
+        # The type of the attachment. The possible values are: file, item, reference. Required.
         @attachment_type
         ## 
-        # The contentType property
+        # The nature of the data in the attachment. Optional.
         @content_type
         ## 
-        # The name property
+        # The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
         @name
         ## 
         # The OdataType property
         @odata_type
         ## 
-        # The size property
+        # The length of the attachment in bytes. Required.
         @size
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -39,15 +39,15 @@ module MicrosoftGraph::Models
             @additional_data = value
         end
         ## 
-        ## Gets the attachmentType property value. The attachmentType property
+        ## Gets the attachmentType property value. The type of the attachment. The possible values are: file, item, reference. Required.
         ## @return a attachment_type
         ## 
         def attachment_type
             return @attachment_type
         end
         ## 
-        ## Sets the attachmentType property value. The attachmentType property
-        ## @param value Value to set for the attachmentType property.
+        ## Sets the attachmentType property value. The type of the attachment. The possible values are: file, item, reference. Required.
+        ## @param value Value to set for the attachment_type property.
         ## @return a void
         ## 
         def attachment_type=(value)
@@ -61,15 +61,15 @@ module MicrosoftGraph::Models
             @additional_data = Hash.new
         end
         ## 
-        ## Gets the contentType property value. The contentType property
+        ## Gets the contentType property value. The nature of the data in the attachment. Optional.
         ## @return a string
         ## 
         def content_type
             return @content_type
         end
         ## 
-        ## Sets the contentType property value. The contentType property
-        ## @param value Value to set for the contentType property.
+        ## Sets the contentType property value. The nature of the data in the attachment. Optional.
+        ## @param value Value to set for the content_type property.
         ## @return a void
         ## 
         def content_type=(value)
@@ -98,14 +98,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the name property value. The name property
+        ## Gets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
         ## @return a string
         ## 
         def name
             return @name
         end
         ## 
-        ## Sets the name property value. The name property
+        ## Sets the name property value. The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.
         ## @param value Value to set for the name property.
         ## @return a void
         ## 
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -142,14 +142,14 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the size property value. The size property
+        ## Gets the size property value. The length of the attachment in bytes. Required.
         ## @return a int64
         ## 
         def size
             return @size
         end
         ## 
-        ## Sets the size property value. The size property
+        ## Sets the size property value. The length of the attachment in bytes. Required.
         ## @param value Value to set for the size property.
         ## @return a void
         ## 

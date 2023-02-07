@@ -31,7 +31,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resultType property value. The threat assessment result type. Possible values are: checkPolicy, rescan.
-        ## @param value Value to set for the resultType property.
+        ## @param value Value to set for the result_type property.
         ## @return a void
         ## 
         def result_type=(value)

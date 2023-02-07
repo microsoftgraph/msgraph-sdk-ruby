@@ -90,7 +90,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the packageType property value. Indicates the package type of an MSI Win32LobApp.
-        ## @param value Value to set for the packageType property.
+        ## @param value Value to set for the package_type property.
         ## @return a void
         ## 
         def package_type=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the productCode property value. The MSI product code.
-        ## @param value Value to set for the productCode property.
+        ## @param value Value to set for the product_code property.
         ## @return a void
         ## 
         def product_code=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the productName property value. The MSI product name.
-        ## @param value Value to set for the productName property.
+        ## @param value Value to set for the product_name property.
         ## @return a void
         ## 
         def product_name=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the productVersion property value. The MSI product version.
-        ## @param value Value to set for the productVersion property.
+        ## @param value Value to set for the product_version property.
         ## @return a void
         ## 
         def product_version=(value)
@@ -180,7 +180,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the requiresReboot property value. Whether the MSI app requires the machine to reboot to complete installation.
-        ## @param value Value to set for the requiresReboot property.
+        ## @param value Value to set for the requires_reboot property.
         ## @return a void
         ## 
         def requires_reboot=(value)
@@ -212,7 +212,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the upgradeCode property value. The MSI upgrade code.
-        ## @param value Value to set for the upgradeCode property.
+        ## @param value Value to set for the upgrade_code property.
         ## @return a void
         ## 
         def upgrade_code=(value)

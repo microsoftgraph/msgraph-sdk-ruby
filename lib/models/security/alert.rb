@@ -100,7 +100,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the actorDisplayName property value. The adversary or activity group that is associated with this alert.
-        ## @param value Value to set for the actorDisplayName property.
+        ## @param value Value to set for the actor_display_name property.
         ## @return a void
         ## 
         def actor_display_name=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the alertWebUrl property value. URL for the alert page in the Microsoft 365 Defender portal.
-        ## @param value Value to set for the alertWebUrl property.
+        ## @param value Value to set for the alert_web_url property.
         ## @return a void
         ## 
         def alert_web_url=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the assignedTo property value. Owner of the alert, or null if no owner is assigned.
-        ## @param value Value to set for the assignedTo property.
+        ## @param value Value to set for the assigned_to property.
         ## @return a void
         ## 
         def assigned_to=(value)
@@ -197,7 +197,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the createdDateTime property value. Time when Microsoft 365 Defender created the alert.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -236,7 +236,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the detectionSource property value. Detection technology or sensor that identified the notable component or activity.
-        ## @param value Value to set for the detectionSource property.
+        ## @param value Value to set for the detection_source property.
         ## @return a void
         ## 
         def detection_source=(value)
@@ -251,7 +251,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the detectorId property value. The ID of the detector that triggered the alert.
-        ## @param value Value to set for the detectorId property.
+        ## @param value Value to set for the detector_id property.
         ## @return a void
         ## 
         def detector_id=(value)
@@ -296,7 +296,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the firstActivityDateTime property value. The earliest activity associated with the alert.
-        ## @param value Value to set for the firstActivityDateTime property.
+        ## @param value Value to set for the first_activity_date_time property.
         ## @return a void
         ## 
         def first_activity_date_time=(value)
@@ -347,7 +347,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the incidentId property value. Unique identifier to represent the incident this alert resource is associated with.
-        ## @param value Value to set for the incidentId property.
+        ## @param value Value to set for the incident_id property.
         ## @return a void
         ## 
         def incident_id=(value)
@@ -362,7 +362,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the incidentWebUrl property value. URL for the incident page in the Microsoft 365 Defender portal.
-        ## @param value Value to set for the incidentWebUrl property.
+        ## @param value Value to set for the incident_web_url property.
         ## @return a void
         ## 
         def incident_web_url=(value)
@@ -377,7 +377,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the lastActivityDateTime property value. The oldest activity associated with the alert.
-        ## @param value Value to set for the lastActivityDateTime property.
+        ## @param value Value to set for the last_activity_date_time property.
         ## @return a void
         ## 
         def last_activity_date_time=(value)
@@ -392,7 +392,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the lastUpdateDateTime property value. Time when the alert was last updated at Microsoft 365 Defender.
-        ## @param value Value to set for the lastUpdateDateTime property.
+        ## @param value Value to set for the last_update_date_time property.
         ## @return a void
         ## 
         def last_update_date_time=(value)
@@ -407,7 +407,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the mitreTechniques property value. The attack techniques, as aligned with the MITRE ATT&CK framework.
-        ## @param value Value to set for the mitreTechniques property.
+        ## @param value Value to set for the mitre_techniques property.
         ## @return a void
         ## 
         def mitre_techniques=(value)
@@ -422,7 +422,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the providerAlertId property value. The ID of the alert as it appears in the security provider product that generated the alert.
-        ## @param value Value to set for the providerAlertId property.
+        ## @param value Value to set for the provider_alert_id property.
         ## @return a void
         ## 
         def provider_alert_id=(value)
@@ -437,7 +437,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the recommendedActions property value. Recommended response and remediation actions to take in the event this alert was generated.
-        ## @param value Value to set for the recommendedActions property.
+        ## @param value Value to set for the recommended_actions property.
         ## @return a void
         ## 
         def recommended_actions=(value)
@@ -452,7 +452,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the resolvedDateTime property value. Time when the alert was resolved.
-        ## @param value Value to set for the resolvedDateTime property.
+        ## @param value Value to set for the resolved_date_time property.
         ## @return a void
         ## 
         def resolved_date_time=(value)
@@ -504,7 +504,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the serviceSource property value. The serviceSource property
-        ## @param value Value to set for the serviceSource property.
+        ## @param value Value to set for the service_source property.
         ## @return a void
         ## 
         def service_source=(value)
@@ -549,7 +549,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the tenantId property value. The Azure Active Directory tenant the alert was created in.
-        ## @param value Value to set for the tenantId property.
+        ## @param value Value to set for the tenant_id property.
         ## @return a void
         ## 
         def tenant_id=(value)
@@ -564,7 +564,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the threatDisplayName property value. The threat associated with this alert.
-        ## @param value Value to set for the threatDisplayName property.
+        ## @param value Value to set for the threat_display_name property.
         ## @return a void
         ## 
         def threat_display_name=(value)
@@ -579,7 +579,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the threatFamilyName property value. Threat family associated with this alert.
-        ## @param value Value to set for the threatFamilyName property.
+        ## @param value Value to set for the threat_family_name property.
         ## @return a void
         ## 
         def threat_family_name=(value)

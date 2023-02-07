@@ -52,7 +52,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
-        ## @param value Value to set for the submissionAnimationDisabled property.
+        ## @param value Value to set for the submission_animation_disabled property.
         ## @return a void
         ## 
         def submission_animation_disabled=(value)

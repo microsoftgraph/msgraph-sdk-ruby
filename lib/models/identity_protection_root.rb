@@ -76,7 +76,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskDetections property value. Risk detection in Azure AD Identity Protection and the associated information about the detection.
-        ## @param value Value to set for the riskDetections property.
+        ## @param value Value to set for the risk_detections property.
         ## @return a void
         ## 
         def risk_detections=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskyServicePrincipals property value. Azure AD service principals that are at risk.
-        ## @param value Value to set for the riskyServicePrincipals property.
+        ## @param value Value to set for the risky_service_principals property.
         ## @return a void
         ## 
         def risky_service_principals=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskyUsers property value. Users that are flagged as at-risk by Azure AD Identity Protection.
-        ## @param value Value to set for the riskyUsers property.
+        ## @param value Value to set for the risky_users property.
         ## @return a void
         ## 
         def risky_users=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the servicePrincipalRiskDetections property value. Represents information about detected at-risk service principals in an Azure AD tenant.
-        ## @param value Value to set for the servicePrincipalRiskDetections property.
+        ## @param value Value to set for the service_principal_risk_detections property.
         ## @return a void
         ## 
         def service_principal_risk_detections=(value)

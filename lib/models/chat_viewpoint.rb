@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isHidden property value. Indicates whether the chat is hidden for the current user.
-        ## @param value Value to set for the isHidden property.
+        ## @param value Value to set for the is_hidden property.
         ## @return a void
         ## 
         def is_hidden=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastMessageReadDateTime property value. Represents the dateTime up until which the current user has read chatMessages in a specific chat.
-        ## @param value Value to set for the lastMessageReadDateTime property.
+        ## @param value Value to set for the last_message_read_date_time property.
         ## @return a void
         ## 
         def last_message_read_date_time=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

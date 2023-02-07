@@ -47,7 +47,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the joinMeetingId property value. The ID used to join the meeting.
-        ## @param value Value to set for the joinMeetingId property.
+        ## @param value Value to set for the join_meeting_id property.
         ## @return a void
         ## 
         def join_meeting_id=(value)

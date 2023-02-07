@@ -6,32 +6,17 @@ module MicrosoftGraph::Models
     class IosStoreApp < MicrosoftGraph::Models::MobileApp
         include MicrosoftKiotaAbstractions::Parsable
         ## 
-        # Contains properties of the possible iOS device types the mobile app can run on.
-        @applicable_device_type
-        ## 
         # The Apple App Store URL
         @app_store_url
+        ## 
+        # Contains properties of the possible iOS device types the mobile app can run on.
+        @applicable_device_type
         ## 
         # The Identity Name.
         @bundle_id
         ## 
         # The value for the minimum applicable operating system.
         @minimum_supported_operating_system
-        ## 
-        ## Gets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
-        ## @return a ios_device_type
-        ## 
-        def applicable_device_type
-            return @applicable_device_type
-        end
-        ## 
-        ## Sets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
-        ## @param value Value to set for the applicableDeviceType property.
-        ## @return a void
-        ## 
-        def applicable_device_type=(value)
-            @applicable_device_type = value
-        end
         ## 
         ## Gets the appStoreUrl property value. The Apple App Store URL
         ## @return a string
@@ -41,11 +26,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appStoreUrl property value. The Apple App Store URL
-        ## @param value Value to set for the appStoreUrl property.
+        ## @param value Value to set for the app_store_url property.
         ## @return a void
         ## 
         def app_store_url=(value)
             @app_store_url = value
+        end
+        ## 
+        ## Gets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
+        ## @return a ios_device_type
+        ## 
+        def applicable_device_type
+            return @applicable_device_type
+        end
+        ## 
+        ## Sets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
+        ## @param value Value to set for the applicable_device_type property.
+        ## @return a void
+        ## 
+        def applicable_device_type=(value)
+            @applicable_device_type = value
         end
         ## 
         ## Gets the bundleId property value. The Identity Name.
@@ -56,7 +56,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bundleId property value. The Identity Name.
-        ## @param value Value to set for the bundleId property.
+        ## @param value Value to set for the bundle_id property.
         ## @return a void
         ## 
         def bundle_id=(value)
@@ -85,8 +85,8 @@ module MicrosoftGraph::Models
         ## 
         def get_field_deserializers()
             return super.merge({
-                "applicableDeviceType" => lambda {|n| @applicable_device_type = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IosDeviceType.create_from_discriminator_value(pn) }) },
                 "appStoreUrl" => lambda {|n| @app_store_url = n.get_string_value() },
+                "applicableDeviceType" => lambda {|n| @applicable_device_type = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IosDeviceType.create_from_discriminator_value(pn) }) },
                 "bundleId" => lambda {|n| @bundle_id = n.get_string_value() },
                 "minimumSupportedOperatingSystem" => lambda {|n| @minimum_supported_operating_system = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IosMinimumOperatingSystem.create_from_discriminator_value(pn) }) },
             })
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
-        ## @param value Value to set for the minimumSupportedOperatingSystem property.
+        ## @param value Value to set for the minimum_supported_operating_system property.
         ## @return a void
         ## 
         def minimum_supported_operating_system=(value)
@@ -114,8 +114,8 @@ module MicrosoftGraph::Models
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
             super
-            writer.write_object_value("applicableDeviceType", @applicable_device_type)
             writer.write_string_value("appStoreUrl", @app_store_url)
+            writer.write_object_value("applicableDeviceType", @applicable_device_type)
             writer.write_string_value("bundleId", @bundle_id)
             writer.write_object_value("minimumSupportedOperatingSystem", @minimum_supported_operating_system)
         end

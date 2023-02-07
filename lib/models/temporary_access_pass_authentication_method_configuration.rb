@@ -49,7 +49,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the defaultLength property value. Default length in characters of a Temporary Access Pass object. Must be between 8 and 48 characters.
-        ## @param value Value to set for the defaultLength property.
+        ## @param value Value to set for the default_length property.
         ## @return a void
         ## 
         def default_length=(value)
@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the defaultLifetimeInMinutes property value. Default lifetime in minutes for a Temporary Access Pass. Value can be any integer between the minimumLifetimeInMinutes and maximumLifetimeInMinutes.
-        ## @param value Value to set for the defaultLifetimeInMinutes property.
+        ## @param value Value to set for the default_lifetime_in_minutes property.
         ## @return a void
         ## 
         def default_lifetime_in_minutes=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
-        ## @param value Value to set for the includeTargets property.
+        ## @param value Value to set for the include_targets property.
         ## @return a void
         ## 
         def include_targets=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isUsableOnce property value. If true, all the passes in the tenant will be restricted to one-time use. If false, passes in the tenant can be created to be either one-time use or reusable.
-        ## @param value Value to set for the isUsableOnce property.
+        ## @param value Value to set for the is_usable_once property.
         ## @return a void
         ## 
         def is_usable_once=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maximumLifetimeInMinutes property value. Maximum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).
-        ## @param value Value to set for the maximumLifetimeInMinutes property.
+        ## @param value Value to set for the maximum_lifetime_in_minutes property.
         ## @return a void
         ## 
         def maximum_lifetime_in_minutes=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minimumLifetimeInMinutes property value. Minimum lifetime in minutes for any Temporary Access Pass created in the tenant. Value can be between 10 and 43200 minutes (equivalent to 30 days).
-        ## @param value Value to set for the minimumLifetimeInMinutes property.
+        ## @param value Value to set for the minimum_lifetime_in_minutes property.
         ## @return a void
         ## 
         def minimum_lifetime_in_minutes=(value)

@@ -7,9 +7,9 @@ require_relative '../../../../groups'
 require_relative '../../../item'
 require_relative '../../team'
 require_relative '../primary_channel'
-require_relative './add/add_request_builder'
 require_relative './count/count_request_builder'
 require_relative './members'
+require_relative './microsoft_graph_add/microsoft_graph_add_request_builder'
 
 module MicrosoftGraph::Groups::Item::Team::PrimaryChannel::Members
     ## 
@@ -17,14 +17,14 @@ module MicrosoftGraph::Groups::Item::Team::PrimaryChannel::Members
     class MembersRequestBuilder
         
         ## 
-        # Provides operations to call the add method.
-        def add()
-            return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::Members::Add::AddRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::Members::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the add method.
+        def microsoft_graph_add()
+            return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::Members::MicrosoftGraphAdd::MicrosoftGraphAddRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

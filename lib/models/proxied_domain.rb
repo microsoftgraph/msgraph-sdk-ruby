@@ -70,7 +70,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the ipAddressOrFQDN property value. The IP address or FQDN
-        ## @param value Value to set for the ipAddressOrFQDN property.
+        ## @param value Value to set for the ip_address_or_f_q_d_n property.
         ## @return a void
         ## 
         def ip_address_or_f_q_d_n=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

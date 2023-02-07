@@ -76,7 +76,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the recommendedActions property value. List of recommended actions for a tenant to improve its security posture based on the attack simulation and training campaign attack type.
-        ## @param value Value to set for the recommendedActions property.
+        ## @param value Value to set for the recommended_actions property.
         ## @return a void
         ## 
         def recommended_actions=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resolvedTargetsCount property value. Number of valid users in the attack simulation and training campaign.
-        ## @param value Value to set for the resolvedTargetsCount property.
+        ## @param value Value to set for the resolved_targets_count property.
         ## @return a void
         ## 
         def resolved_targets_count=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the simulationEventsContent property value. Summary of simulation events in the attack simulation and training campaign.
-        ## @param value Value to set for the simulationEventsContent property.
+        ## @param value Value to set for the simulation_events_content property.
         ## @return a void
         ## 
         def simulation_events_content=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the trainingEventsContent property value. Summary of assigned trainings in the attack simulation and training campaign.
-        ## @param value Value to set for the trainingEventsContent property.
+        ## @param value Value to set for the training_events_content property.
         ## @return a void
         ## 
         def training_events_content=(value)

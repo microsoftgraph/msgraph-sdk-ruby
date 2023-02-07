@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sortBy property value. The method by which the folder should be sorted.
-        ## @param value Value to set for the sortBy property.
+        ## @param value Value to set for the sort_by property.
         ## @return a void
         ## 
         def sort_by=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sortOrder property value. If true, indicates that items should be sorted in descending order. Otherwise, items should be sorted ascending.
-        ## @param value Value to set for the sortOrder property.
+        ## @param value Value to set for the sort_order property.
         ## @return a void
         ## 
         def sort_order=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the viewType property value. The type of view that should be used to represent the folder.
-        ## @param value Value to set for the viewType property.
+        ## @param value Value to set for the view_type property.
         ## @return a void
         ## 
         def view_type=(value)

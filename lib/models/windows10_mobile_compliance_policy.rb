@@ -39,14 +39,14 @@ module MicrosoftGraph::Models
         # The number of previous passwords to prevent re-use of.
         @password_previous_password_block_count
         ## 
+        # Require a password to unlock an idle device.
+        @password_require_to_unlock_from_idle
+        ## 
         # Require a password to unlock Windows Phone device.
         @password_required
         ## 
         # Possible values of required passwords.
         @password_required_type
-        ## 
-        # Require a password to unlock an idle device.
-        @password_require_to_unlock_from_idle
         ## 
         # Require devices to be reported as healthy by Windows Device Health Attestation - secure boot is enabled.
         @secure_boot_enabled
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bitLockerEnabled property value. Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled
-        ## @param value Value to set for the bitLockerEnabled property.
+        ## @param value Value to set for the bit_locker_enabled property.
         ## @return a void
         ## 
         def bit_locker_enabled=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the codeIntegrityEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation.
-        ## @param value Value to set for the codeIntegrityEnabled property.
+        ## @param value Value to set for the code_integrity_enabled property.
         ## @return a void
         ## 
         def code_integrity_enabled=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the earlyLaunchAntiMalwareDriverEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation - early launch antimalware driver is enabled.
-        ## @param value Value to set for the earlyLaunchAntiMalwareDriverEnabled property.
+        ## @param value Value to set for the early_launch_anti_malware_driver_enabled property.
         ## @return a void
         ## 
         def early_launch_anti_malware_driver_enabled=(value)
@@ -132,9 +132,9 @@ module MicrosoftGraph::Models
                 "passwordMinimumLength" => lambda {|n| @password_minimum_length = n.get_number_value() },
                 "passwordMinutesOfInactivityBeforeLock" => lambda {|n| @password_minutes_of_inactivity_before_lock = n.get_number_value() },
                 "passwordPreviousPasswordBlockCount" => lambda {|n| @password_previous_password_block_count = n.get_number_value() },
+                "passwordRequireToUnlockFromIdle" => lambda {|n| @password_require_to_unlock_from_idle = n.get_boolean_value() },
                 "passwordRequired" => lambda {|n| @password_required = n.get_boolean_value() },
                 "passwordRequiredType" => lambda {|n| @password_required_type = n.get_enum_value(MicrosoftGraph::Models::RequiredPasswordType) },
-                "passwordRequireToUnlockFromIdle" => lambda {|n| @password_require_to_unlock_from_idle = n.get_boolean_value() },
                 "secureBootEnabled" => lambda {|n| @secure_boot_enabled = n.get_boolean_value() },
                 "storageRequireEncryption" => lambda {|n| @storage_require_encryption = n.get_boolean_value() },
             })
@@ -148,7 +148,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osMaximumVersion property value. Maximum Windows Phone version.
-        ## @param value Value to set for the osMaximumVersion property.
+        ## @param value Value to set for the os_maximum_version property.
         ## @return a void
         ## 
         def os_maximum_version=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osMinimumVersion property value. Minimum Windows Phone version.
-        ## @param value Value to set for the osMinimumVersion property.
+        ## @param value Value to set for the os_minimum_version property.
         ## @return a void
         ## 
         def os_minimum_version=(value)
@@ -178,7 +178,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordBlockSimple property value. Whether or not to block syncing the calendar.
-        ## @param value Value to set for the passwordBlockSimple property.
+        ## @param value Value to set for the password_block_simple property.
         ## @return a void
         ## 
         def password_block_simple=(value)
@@ -193,7 +193,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordExpirationDays property value. Number of days before password expiration. Valid values 1 to 255
-        ## @param value Value to set for the passwordExpirationDays property.
+        ## @param value Value to set for the password_expiration_days property.
         ## @return a void
         ## 
         def password_expiration_days=(value)
@@ -208,7 +208,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
-        ## @param value Value to set for the passwordMinimumCharacterSetCount property.
+        ## @param value Value to set for the password_minimum_character_set_count property.
         ## @return a void
         ## 
         def password_minimum_character_set_count=(value)
@@ -223,7 +223,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinimumLength property value. Minimum password length. Valid values 4 to 16
-        ## @param value Value to set for the passwordMinimumLength property.
+        ## @param value Value to set for the password_minimum_length property.
         ## @return a void
         ## 
         def password_minimum_length=(value)
@@ -238,7 +238,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
-        ## @param value Value to set for the passwordMinutesOfInactivityBeforeLock property.
+        ## @param value Value to set for the password_minutes_of_inactivity_before_lock property.
         ## @return a void
         ## 
         def password_minutes_of_inactivity_before_lock=(value)
@@ -253,11 +253,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordPreviousPasswordBlockCount property value. The number of previous passwords to prevent re-use of.
-        ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
+        ## @param value Value to set for the password_previous_password_block_count property.
         ## @return a void
         ## 
         def password_previous_password_block_count=(value)
             @password_previous_password_block_count = value
+        end
+        ## 
+        ## Gets the passwordRequireToUnlockFromIdle property value. Require a password to unlock an idle device.
+        ## @return a boolean
+        ## 
+        def password_require_to_unlock_from_idle
+            return @password_require_to_unlock_from_idle
+        end
+        ## 
+        ## Sets the passwordRequireToUnlockFromIdle property value. Require a password to unlock an idle device.
+        ## @param value Value to set for the password_require_to_unlock_from_idle property.
+        ## @return a void
+        ## 
+        def password_require_to_unlock_from_idle=(value)
+            @password_require_to_unlock_from_idle = value
         end
         ## 
         ## Gets the passwordRequired property value. Require a password to unlock Windows Phone device.
@@ -268,7 +283,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequired property value. Require a password to unlock Windows Phone device.
-        ## @param value Value to set for the passwordRequired property.
+        ## @param value Value to set for the password_required property.
         ## @return a void
         ## 
         def password_required=(value)
@@ -283,26 +298,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequiredType property value. Possible values of required passwords.
-        ## @param value Value to set for the passwordRequiredType property.
+        ## @param value Value to set for the password_required_type property.
         ## @return a void
         ## 
         def password_required_type=(value)
             @password_required_type = value
-        end
-        ## 
-        ## Gets the passwordRequireToUnlockFromIdle property value. Require a password to unlock an idle device.
-        ## @return a boolean
-        ## 
-        def password_require_to_unlock_from_idle
-            return @password_require_to_unlock_from_idle
-        end
-        ## 
-        ## Sets the passwordRequireToUnlockFromIdle property value. Require a password to unlock an idle device.
-        ## @param value Value to set for the passwordRequireToUnlockFromIdle property.
-        ## @return a void
-        ## 
-        def password_require_to_unlock_from_idle=(value)
-            @password_require_to_unlock_from_idle = value
         end
         ## 
         ## Gets the secureBootEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation - secure boot is enabled.
@@ -313,7 +313,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the secureBootEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation - secure boot is enabled.
-        ## @param value Value to set for the secureBootEnabled property.
+        ## @param value Value to set for the secure_boot_enabled property.
         ## @return a void
         ## 
         def secure_boot_enabled=(value)
@@ -338,9 +338,9 @@ module MicrosoftGraph::Models
             writer.write_number_value("passwordMinimumLength", @password_minimum_length)
             writer.write_number_value("passwordMinutesOfInactivityBeforeLock", @password_minutes_of_inactivity_before_lock)
             writer.write_number_value("passwordPreviousPasswordBlockCount", @password_previous_password_block_count)
+            writer.write_boolean_value("passwordRequireToUnlockFromIdle", @password_require_to_unlock_from_idle)
             writer.write_boolean_value("passwordRequired", @password_required)
             writer.write_enum_value("passwordRequiredType", @password_required_type)
-            writer.write_boolean_value("passwordRequireToUnlockFromIdle", @password_require_to_unlock_from_idle)
             writer.write_boolean_value("secureBootEnabled", @secure_boot_enabled)
             writer.write_boolean_value("storageRequireEncryption", @storage_require_encryption)
         end
@@ -353,7 +353,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the storageRequireEncryption property value. Require encryption on windows devices.
-        ## @param value Value to set for the storageRequireEncryption property.
+        ## @param value Value to set for the storage_require_encryption property.
         ## @return a void
         ## 
         def storage_require_encryption=(value)

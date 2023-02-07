@@ -25,7 +25,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the actionName property value. Type of action this operation is going to perform. The actionName should be concise and limited to as few words as possible.
-        ## @param value Value to set for the actionName property.
+        ## @param value Value to set for the action_name property.
         ## @return a void
         ## 
         def action_name=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceName property value. Name of the Resource this operation is performed on.
-        ## @param value Value to set for the resourceName property.
+        ## @param value Value to set for the resource_name property.
         ## @return a void
         ## 
         def resource_name=(value)

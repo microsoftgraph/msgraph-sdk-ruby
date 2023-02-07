@@ -34,7 +34,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enabledRules property value. The collection of rules that are enabled for this policy rule. For example, MultiFactorAuthentication, Ticketing, and Justification.
-        ## @param value Value to set for the enabledRules property.
+        ## @param value Value to set for the enabled_rules property.
         ## @return a void
         ## 
         def enabled_rules=(value)

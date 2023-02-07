@@ -30,7 +30,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the countriesAndRegions property value. List of countries and/or regions in two-letter format specified by ISO 3166-2. Required.
-        ## @param value Value to set for the countriesAndRegions property.
+        ## @param value Value to set for the countries_and_regions property.
         ## @return a void
         ## 
         def countries_and_regions=(value)
@@ -45,7 +45,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the countryLookupMethod property value. Determines what method is used to decide which country the user is located in. Possible values are clientIpAddress(default) and authenticatorAppGps. Note: authenticatorAppGps is not yet supported in the Microsoft Cloud for US Government.
-        ## @param value Value to set for the countryLookupMethod property.
+        ## @param value Value to set for the country_lookup_method property.
         ## @return a void
         ## 
         def country_lookup_method=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeUnknownCountriesAndRegions property value. true if IP addresses that don't map to a country or region should be included in the named location. Optional. Default value is false.
-        ## @param value Value to set for the includeUnknownCountriesAndRegions property.
+        ## @param value Value to set for the include_unknown_countries_and_regions property.
         ## @return a void
         ## 
         def include_unknown_countries_and_regions=(value)

@@ -71,7 +71,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bitLockerEnabled property value. Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled
-        ## @param value Value to set for the bitLockerEnabled property.
+        ## @param value Value to set for the bit_locker_enabled property.
         ## @return a void
         ## 
         def bit_locker_enabled=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the codeIntegrityEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation.
-        ## @param value Value to set for the codeIntegrityEnabled property.
+        ## @param value Value to set for the code_integrity_enabled property.
         ## @return a void
         ## 
         def code_integrity_enabled=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the earlyLaunchAntiMalwareDriverEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation - early launch antimalware driver is enabled.
-        ## @param value Value to set for the earlyLaunchAntiMalwareDriverEnabled property.
+        ## @param value Value to set for the early_launch_anti_malware_driver_enabled property.
         ## @return a void
         ## 
         def early_launch_anti_malware_driver_enabled=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mobileOsMaximumVersion property value. Maximum Windows Phone version.
-        ## @param value Value to set for the mobileOsMaximumVersion property.
+        ## @param value Value to set for the mobile_os_maximum_version property.
         ## @return a void
         ## 
         def mobile_os_maximum_version=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mobileOsMinimumVersion property value. Minimum Windows Phone version.
-        ## @param value Value to set for the mobileOsMinimumVersion property.
+        ## @param value Value to set for the mobile_os_minimum_version property.
         ## @return a void
         ## 
         def mobile_os_minimum_version=(value)
@@ -190,7 +190,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osMaximumVersion property value. Maximum Windows 10 version.
-        ## @param value Value to set for the osMaximumVersion property.
+        ## @param value Value to set for the os_maximum_version property.
         ## @return a void
         ## 
         def os_maximum_version=(value)
@@ -205,7 +205,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osMinimumVersion property value. Minimum Windows 10 version.
-        ## @param value Value to set for the osMinimumVersion property.
+        ## @param value Value to set for the os_minimum_version property.
         ## @return a void
         ## 
         def os_minimum_version=(value)
@@ -220,7 +220,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordBlockSimple property value. Indicates whether or not to block simple password.
-        ## @param value Value to set for the passwordBlockSimple property.
+        ## @param value Value to set for the password_block_simple property.
         ## @return a void
         ## 
         def password_block_simple=(value)
@@ -235,7 +235,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordExpirationDays property value. The password expiration in days.
-        ## @param value Value to set for the passwordExpirationDays property.
+        ## @param value Value to set for the password_expiration_days property.
         ## @return a void
         ## 
         def password_expiration_days=(value)
@@ -250,7 +250,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
-        ## @param value Value to set for the passwordMinimumCharacterSetCount property.
+        ## @param value Value to set for the password_minimum_character_set_count property.
         ## @return a void
         ## 
         def password_minimum_character_set_count=(value)
@@ -265,7 +265,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinimumLength property value. The minimum password length.
-        ## @param value Value to set for the passwordMinimumLength property.
+        ## @param value Value to set for the password_minimum_length property.
         ## @return a void
         ## 
         def password_minimum_length=(value)
@@ -280,7 +280,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
-        ## @param value Value to set for the passwordMinutesOfInactivityBeforeLock property.
+        ## @param value Value to set for the password_minutes_of_inactivity_before_lock property.
         ## @return a void
         ## 
         def password_minutes_of_inactivity_before_lock=(value)
@@ -295,7 +295,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordPreviousPasswordBlockCount property value. The number of previous passwords to prevent re-use of.
-        ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
+        ## @param value Value to set for the password_previous_password_block_count property.
         ## @return a void
         ## 
         def password_previous_password_block_count=(value)
@@ -310,7 +310,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequired property value. Require a password to unlock Windows device.
-        ## @param value Value to set for the passwordRequired property.
+        ## @param value Value to set for the password_required property.
         ## @return a void
         ## 
         def password_required=(value)
@@ -325,7 +325,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequiredToUnlockFromIdle property value. Require a password to unlock an idle device.
-        ## @param value Value to set for the passwordRequiredToUnlockFromIdle property.
+        ## @param value Value to set for the password_required_to_unlock_from_idle property.
         ## @return a void
         ## 
         def password_required_to_unlock_from_idle=(value)
@@ -340,7 +340,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequiredType property value. Possible values of required passwords.
-        ## @param value Value to set for the passwordRequiredType property.
+        ## @param value Value to set for the password_required_type property.
         ## @return a void
         ## 
         def password_required_type=(value)
@@ -355,7 +355,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the requireHealthyDeviceReport property value. Require devices to be reported as healthy by Windows Device Health Attestation.
-        ## @param value Value to set for the requireHealthyDeviceReport property.
+        ## @param value Value to set for the require_healthy_device_report property.
         ## @return a void
         ## 
         def require_healthy_device_report=(value)
@@ -370,7 +370,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the secureBootEnabled property value. Require devices to be reported as healthy by Windows Device Health Attestation - secure boot is enabled.
-        ## @param value Value to set for the secureBootEnabled property.
+        ## @param value Value to set for the secure_boot_enabled property.
         ## @return a void
         ## 
         def secure_boot_enabled=(value)
@@ -413,7 +413,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the storageRequireEncryption property value. Require encryption on windows devices.
-        ## @param value Value to set for the storageRequireEncryption property.
+        ## @param value Value to set for the storage_require_encryption property.
         ## @return a void
         ## 
         def storage_require_encryption=(value)

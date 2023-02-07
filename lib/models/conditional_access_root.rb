@@ -26,7 +26,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the authenticationContextClassReferences property value. Read-only. Nullable. Returns a collection of the specified authentication context class references.
-        ## @param value Value to set for the authenticationContextClassReferences property.
+        ## @param value Value to set for the authentication_context_class_references property.
         ## @return a void
         ## 
         def authentication_context_class_references=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the namedLocations property value. Read-only. Nullable. Returns a collection of the specified named locations.
-        ## @param value Value to set for the namedLocations property.
+        ## @param value Value to set for the named_locations property.
         ## @return a void
         ## 
         def named_locations=(value)

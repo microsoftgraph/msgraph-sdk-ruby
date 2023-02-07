@@ -59,7 +59,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the registryHive property value. Registry hive of the key that the recorded action was applied to.
-        ## @param value Value to set for the registryHive property.
+        ## @param value Value to set for the registry_hive property.
         ## @return a void
         ## 
         def registry_hive=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the registryKey property value. Registry key that the recorded action was applied to.
-        ## @param value Value to set for the registryKey property.
+        ## @param value Value to set for the registry_key property.
         ## @return a void
         ## 
         def registry_key=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the registryValue property value. Data of the registry value that the recorded action was applied to.
-        ## @param value Value to set for the registryValue property.
+        ## @param value Value to set for the registry_value property.
         ## @return a void
         ## 
         def registry_value=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the registryValueName property value. Name of the registry value that the recorded action was applied to.
-        ## @param value Value to set for the registryValueName property.
+        ## @param value Value to set for the registry_value_name property.
         ## @return a void
         ## 
         def registry_value_name=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the registryValueType property value. Data type, such as binary or string, of the registry value that the recorded action was applied to.
-        ## @param value Value to set for the registryValueType property.
+        ## @param value Value to set for the registry_value_type property.
         ## @return a void
         ## 
         def registry_value_type=(value)

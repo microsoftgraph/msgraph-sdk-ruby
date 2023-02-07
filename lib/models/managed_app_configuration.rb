@@ -42,7 +42,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the customSettings property value. A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
-        ## @param value Value to set for the customSettings property.
+        ## @param value Value to set for the custom_settings property.
         ## @return a void
         ## 
         def custom_settings=(value)

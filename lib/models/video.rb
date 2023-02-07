@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the audioBitsPerSample property value. Number of audio bits per sample.
-        ## @param value Value to set for the audioBitsPerSample property.
+        ## @param value Value to set for the audio_bits_per_sample property.
         ## @return a void
         ## 
         def audio_bits_per_sample=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the audioChannels property value. Number of audio channels.
-        ## @param value Value to set for the audioChannels property.
+        ## @param value Value to set for the audio_channels property.
         ## @return a void
         ## 
         def audio_channels=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the audioFormat property value. Name of the audio format (AAC, MP3, etc.).
-        ## @param value Value to set for the audioFormat property.
+        ## @param value Value to set for the audio_format property.
         ## @return a void
         ## 
         def audio_format=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the audioSamplesPerSecond property value. Number of audio samples per second.
-        ## @param value Value to set for the audioSamplesPerSecond property.
+        ## @param value Value to set for the audio_samples_per_second property.
         ## @return a void
         ## 
         def audio_samples_per_second=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fourCC property value. 'Four character code' name of the video format.
-        ## @param value Value to set for the fourCC property.
+        ## @param value Value to set for the four_c_c property.
         ## @return a void
         ## 
         def four_c_c=(value)
@@ -186,7 +186,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the frameRate property value. Frame rate of the video.
-        ## @param value Value to set for the frameRate property.
+        ## @param value Value to set for the frame_rate property.
         ## @return a void
         ## 
         def frame_rate=(value)
@@ -235,7 +235,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

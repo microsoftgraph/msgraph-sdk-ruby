@@ -60,6 +60,8 @@ module MicrosoftGraph::Models
                         return Win32LobAppAssignmentSettings.new
                     when "#microsoft.graph.windowsAppXAppAssignmentSettings"
                         return WindowsAppXAppAssignmentSettings.new
+                    when "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings"
+                        return WindowsUniversalAppXAppAssignmentSettings.new
                 end
             end
             return MobileAppAssignmentSettings.new
@@ -82,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

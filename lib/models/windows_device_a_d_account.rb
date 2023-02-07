@@ -37,7 +37,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the domainName property value. Not yet documented
-        ## @param value Value to set for the domainName property.
+        ## @param value Value to set for the domain_name property.
         ## @return a void
         ## 
         def domain_name=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userName property value. Not yet documented
-        ## @param value Value to set for the userName property.
+        ## @param value Value to set for the user_name property.
         ## @return a void
         ## 
         def user_name=(value)

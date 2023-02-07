@@ -37,7 +37,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the displayName property value. The name of the security group.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the securityGroupId property value. Unique identifier of the security group.
-        ## @param value Value to set for the securityGroupId property.
+        ## @param value Value to set for the security_group_id property.
         ## @return a void
         ## 
         def security_group_id=(value)

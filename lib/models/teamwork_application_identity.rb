@@ -17,7 +17,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applicationIdentityType property value. Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, outgoingWebhook, and unknownFutureValue.
-        ## @param value Value to set for the applicationIdentityType property.
+        ## @param value Value to set for the application_identity_type property.
         ## @return a void
         ## 
         def application_identity_type=(value)

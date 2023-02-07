@@ -135,14 +135,14 @@ module MicrosoftGraph::Models
         # Indicates whether or not to block the web browser's auto fill feature.
         @web_browser_block_autofill
         ## 
-        # Indicates whether or not to block the web browser.
-        @web_browser_blocked
-        ## 
         # Indicates whether or not to block JavaScript within the web browser.
         @web_browser_block_java_script
         ## 
         # Indicates whether or not to block popups within the web browser.
         @web_browser_block_popups
+        ## 
+        # Indicates whether or not to block the web browser.
+        @web_browser_blocked
         ## 
         # Web Browser Cookie Settings.
         @web_browser_cookie_settings
@@ -158,7 +158,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appsBlockClipboardSharing property value. Indicates whether or not to block clipboard sharing to copy and paste between applications.
-        ## @param value Value to set for the appsBlockClipboardSharing property.
+        ## @param value Value to set for the apps_block_clipboard_sharing property.
         ## @return a void
         ## 
         def apps_block_clipboard_sharing=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appsBlockCopyPaste property value. Indicates whether or not to block copy and paste within applications.
-        ## @param value Value to set for the appsBlockCopyPaste property.
+        ## @param value Value to set for the apps_block_copy_paste property.
         ## @return a void
         ## 
         def apps_block_copy_paste=(value)
@@ -188,7 +188,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appsBlockYouTube property value. Indicates whether or not to block the YouTube app.
-        ## @param value Value to set for the appsBlockYouTube property.
+        ## @param value Value to set for the apps_block_you_tube property.
         ## @return a void
         ## 
         def apps_block_you_tube=(value)
@@ -203,7 +203,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appsHideList property value. List of apps to be hidden on the KNOX device. This collection can contain a maximum of 500 elements.
-        ## @param value Value to set for the appsHideList property.
+        ## @param value Value to set for the apps_hide_list property.
         ## @return a void
         ## 
         def apps_hide_list=(value)
@@ -218,7 +218,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appsInstallAllowList property value. List of apps which can be installed on the KNOX device. This collection can contain a maximum of 500 elements.
-        ## @param value Value to set for the appsInstallAllowList property.
+        ## @param value Value to set for the apps_install_allow_list property.
         ## @return a void
         ## 
         def apps_install_allow_list=(value)
@@ -233,7 +233,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appsLaunchBlockList property value. List of apps which are blocked from being launched on the KNOX device. This collection can contain a maximum of 500 elements.
-        ## @param value Value to set for the appsLaunchBlockList property.
+        ## @param value Value to set for the apps_launch_block_list property.
         ## @return a void
         ## 
         def apps_launch_block_list=(value)
@@ -248,7 +248,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bluetoothBlocked property value. Indicates whether or not to block Bluetooth.
-        ## @param value Value to set for the bluetoothBlocked property.
+        ## @param value Value to set for the bluetooth_blocked property.
         ## @return a void
         ## 
         def bluetooth_blocked=(value)
@@ -263,7 +263,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cameraBlocked property value. Indicates whether or not to block the use of the camera.
-        ## @param value Value to set for the cameraBlocked property.
+        ## @param value Value to set for the camera_blocked property.
         ## @return a void
         ## 
         def camera_blocked=(value)
@@ -278,7 +278,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cellularBlockDataRoaming property value. Indicates whether or not to block data roaming.
-        ## @param value Value to set for the cellularBlockDataRoaming property.
+        ## @param value Value to set for the cellular_block_data_roaming property.
         ## @return a void
         ## 
         def cellular_block_data_roaming=(value)
@@ -293,7 +293,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cellularBlockMessaging property value. Indicates whether or not to block SMS/MMS messaging.
-        ## @param value Value to set for the cellularBlockMessaging property.
+        ## @param value Value to set for the cellular_block_messaging property.
         ## @return a void
         ## 
         def cellular_block_messaging=(value)
@@ -308,7 +308,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cellularBlockVoiceRoaming property value. Indicates whether or not to block voice roaming.
-        ## @param value Value to set for the cellularBlockVoiceRoaming property.
+        ## @param value Value to set for the cellular_block_voice_roaming property.
         ## @return a void
         ## 
         def cellular_block_voice_roaming=(value)
@@ -323,7 +323,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cellularBlockWiFiTethering property value. Indicates whether or not to block syncing Wi-Fi tethering.
-        ## @param value Value to set for the cellularBlockWiFiTethering property.
+        ## @param value Value to set for the cellular_block_wi_fi_tethering property.
         ## @return a void
         ## 
         def cellular_block_wi_fi_tethering=(value)
@@ -338,7 +338,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the compliantAppListType property value. Possible values of the compliance app list.
-        ## @param value Value to set for the compliantAppListType property.
+        ## @param value Value to set for the compliant_app_list_type property.
         ## @return a void
         ## 
         def compliant_app_list_type=(value)
@@ -353,7 +353,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
-        ## @param value Value to set for the compliantAppsList property.
+        ## @param value Value to set for the compliant_apps_list property.
         ## @return a void
         ## 
         def compliant_apps_list=(value)
@@ -385,7 +385,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceSharingAllowed property value. Indicates whether or not to allow device sharing mode.
-        ## @param value Value to set for the deviceSharingAllowed property.
+        ## @param value Value to set for the device_sharing_allowed property.
         ## @return a void
         ## 
         def device_sharing_allowed=(value)
@@ -400,7 +400,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the diagnosticDataBlockSubmission property value. Indicates whether or not to block diagnostic data submission.
-        ## @param value Value to set for the diagnosticDataBlockSubmission property.
+        ## @param value Value to set for the diagnostic_data_block_submission property.
         ## @return a void
         ## 
         def diagnostic_data_block_submission=(value)
@@ -415,7 +415,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the factoryResetBlocked property value. Indicates whether or not to block user performing a factory reset.
-        ## @param value Value to set for the factoryResetBlocked property.
+        ## @param value Value to set for the factory_reset_blocked property.
         ## @return a void
         ## 
         def factory_reset_blocked=(value)
@@ -470,9 +470,9 @@ module MicrosoftGraph::Models
                 "voiceAssistantBlocked" => lambda {|n| @voice_assistant_blocked = n.get_boolean_value() },
                 "voiceDialingBlocked" => lambda {|n| @voice_dialing_blocked = n.get_boolean_value() },
                 "webBrowserBlockAutofill" => lambda {|n| @web_browser_block_autofill = n.get_boolean_value() },
-                "webBrowserBlocked" => lambda {|n| @web_browser_blocked = n.get_boolean_value() },
                 "webBrowserBlockJavaScript" => lambda {|n| @web_browser_block_java_script = n.get_boolean_value() },
                 "webBrowserBlockPopups" => lambda {|n| @web_browser_block_popups = n.get_boolean_value() },
+                "webBrowserBlocked" => lambda {|n| @web_browser_blocked = n.get_boolean_value() },
                 "webBrowserCookieSettings" => lambda {|n| @web_browser_cookie_settings = n.get_enum_value(MicrosoftGraph::Models::WebBrowserCookieSettings) },
                 "wiFiBlocked" => lambda {|n| @wi_fi_blocked = n.get_boolean_value() },
             })
@@ -486,7 +486,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the googleAccountBlockAutoSync property value. Indicates whether or not to block Google account auto sync.
-        ## @param value Value to set for the googleAccountBlockAutoSync property.
+        ## @param value Value to set for the google_account_block_auto_sync property.
         ## @return a void
         ## 
         def google_account_block_auto_sync=(value)
@@ -501,7 +501,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the googlePlayStoreBlocked property value. Indicates whether or not to block the Google Play store.
-        ## @param value Value to set for the googlePlayStoreBlocked property.
+        ## @param value Value to set for the google_play_store_blocked property.
         ## @return a void
         ## 
         def google_play_store_blocked=(value)
@@ -516,7 +516,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the kioskModeApps property value. A list of apps that will be allowed to run when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.
-        ## @param value Value to set for the kioskModeApps property.
+        ## @param value Value to set for the kiosk_mode_apps property.
         ## @return a void
         ## 
         def kiosk_mode_apps=(value)
@@ -531,7 +531,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the kioskModeBlockSleepButton property value. Indicates whether or not to block the screen sleep button while in Kiosk Mode.
-        ## @param value Value to set for the kioskModeBlockSleepButton property.
+        ## @param value Value to set for the kiosk_mode_block_sleep_button property.
         ## @return a void
         ## 
         def kiosk_mode_block_sleep_button=(value)
@@ -546,7 +546,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the kioskModeBlockVolumeButtons property value. Indicates whether or not to block the volume buttons while in Kiosk Mode.
-        ## @param value Value to set for the kioskModeBlockVolumeButtons property.
+        ## @param value Value to set for the kiosk_mode_block_volume_buttons property.
         ## @return a void
         ## 
         def kiosk_mode_block_volume_buttons=(value)
@@ -561,7 +561,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the locationServicesBlocked property value. Indicates whether or not to block location services.
-        ## @param value Value to set for the locationServicesBlocked property.
+        ## @param value Value to set for the location_services_blocked property.
         ## @return a void
         ## 
         def location_services_blocked=(value)
@@ -576,7 +576,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the nfcBlocked property value. Indicates whether or not to block Near-Field Communication.
-        ## @param value Value to set for the nfcBlocked property.
+        ## @param value Value to set for the nfc_blocked property.
         ## @return a void
         ## 
         def nfc_blocked=(value)
@@ -591,7 +591,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
-        ## @param value Value to set for the passwordBlockFingerprintUnlock property.
+        ## @param value Value to set for the password_block_fingerprint_unlock property.
         ## @return a void
         ## 
         def password_block_fingerprint_unlock=(value)
@@ -606,7 +606,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordBlockTrustAgents property value. Indicates whether or not to block Smart Lock and other trust agents.
-        ## @param value Value to set for the passwordBlockTrustAgents property.
+        ## @param value Value to set for the password_block_trust_agents property.
         ## @return a void
         ## 
         def password_block_trust_agents=(value)
@@ -621,7 +621,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 365
-        ## @param value Value to set for the passwordExpirationDays property.
+        ## @param value Value to set for the password_expiration_days property.
         ## @return a void
         ## 
         def password_expiration_days=(value)
@@ -636,7 +636,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinimumLength property value. Minimum length of passwords. Valid values 4 to 16
-        ## @param value Value to set for the passwordMinimumLength property.
+        ## @param value Value to set for the password_minimum_length property.
         ## @return a void
         ## 
         def password_minimum_length=(value)
@@ -651,7 +651,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
-        ## @param value Value to set for the passwordMinutesOfInactivityBeforeScreenTimeout property.
+        ## @param value Value to set for the password_minutes_of_inactivity_before_screen_timeout property.
         ## @return a void
         ## 
         def password_minutes_of_inactivity_before_screen_timeout=(value)
@@ -666,7 +666,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
-        ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
+        ## @param value Value to set for the password_previous_password_block_count property.
         ## @return a void
         ## 
         def password_previous_password_block_count=(value)
@@ -681,7 +681,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequired property value. Indicates whether or not to require a password.
-        ## @param value Value to set for the passwordRequired property.
+        ## @param value Value to set for the password_required property.
         ## @return a void
         ## 
         def password_required=(value)
@@ -696,7 +696,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRequiredType property value. Android required password type.
-        ## @param value Value to set for the passwordRequiredType property.
+        ## @param value Value to set for the password_required_type property.
         ## @return a void
         ## 
         def password_required_type=(value)
@@ -711,7 +711,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordSignInFailureCountBeforeFactoryReset property value. Number of sign in failures allowed before factory reset. Valid values 1 to 16
-        ## @param value Value to set for the passwordSignInFailureCountBeforeFactoryReset property.
+        ## @param value Value to set for the password_sign_in_failure_count_before_factory_reset property.
         ## @return a void
         ## 
         def password_sign_in_failure_count_before_factory_reset=(value)
@@ -726,7 +726,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the powerOffBlocked property value. Indicates whether or not to block powering off the device.
-        ## @param value Value to set for the powerOffBlocked property.
+        ## @param value Value to set for the power_off_blocked property.
         ## @return a void
         ## 
         def power_off_blocked=(value)
@@ -741,7 +741,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the screenCaptureBlocked property value. Indicates whether or not to block screenshots.
-        ## @param value Value to set for the screenCaptureBlocked property.
+        ## @param value Value to set for the screen_capture_blocked property.
         ## @return a void
         ## 
         def screen_capture_blocked=(value)
@@ -756,7 +756,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityRequireVerifyApps property value. Require the Android Verify apps feature is turned on.
-        ## @param value Value to set for the securityRequireVerifyApps property.
+        ## @param value Value to set for the security_require_verify_apps property.
         ## @return a void
         ## 
         def security_require_verify_apps=(value)
@@ -813,9 +813,9 @@ module MicrosoftGraph::Models
             writer.write_boolean_value("voiceAssistantBlocked", @voice_assistant_blocked)
             writer.write_boolean_value("voiceDialingBlocked", @voice_dialing_blocked)
             writer.write_boolean_value("webBrowserBlockAutofill", @web_browser_block_autofill)
-            writer.write_boolean_value("webBrowserBlocked", @web_browser_blocked)
             writer.write_boolean_value("webBrowserBlockJavaScript", @web_browser_block_java_script)
             writer.write_boolean_value("webBrowserBlockPopups", @web_browser_block_popups)
+            writer.write_boolean_value("webBrowserBlocked", @web_browser_blocked)
             writer.write_enum_value("webBrowserCookieSettings", @web_browser_cookie_settings)
             writer.write_boolean_value("wiFiBlocked", @wi_fi_blocked)
         end
@@ -828,7 +828,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the storageBlockGoogleBackup property value. Indicates whether or not to block Google Backup.
-        ## @param value Value to set for the storageBlockGoogleBackup property.
+        ## @param value Value to set for the storage_block_google_backup property.
         ## @return a void
         ## 
         def storage_block_google_backup=(value)
@@ -843,7 +843,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the storageBlockRemovableStorage property value. Indicates whether or not to block removable storage usage.
-        ## @param value Value to set for the storageBlockRemovableStorage property.
+        ## @param value Value to set for the storage_block_removable_storage property.
         ## @return a void
         ## 
         def storage_block_removable_storage=(value)
@@ -858,7 +858,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the storageRequireDeviceEncryption property value. Indicates whether or not to require device encryption.
-        ## @param value Value to set for the storageRequireDeviceEncryption property.
+        ## @param value Value to set for the storage_require_device_encryption property.
         ## @return a void
         ## 
         def storage_require_device_encryption=(value)
@@ -873,7 +873,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the storageRequireRemovableStorageEncryption property value. Indicates whether or not to require removable storage encryption.
-        ## @param value Value to set for the storageRequireRemovableStorageEncryption property.
+        ## @param value Value to set for the storage_require_removable_storage_encryption property.
         ## @return a void
         ## 
         def storage_require_removable_storage_encryption=(value)
@@ -888,7 +888,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the voiceAssistantBlocked property value. Indicates whether or not to block the use of the Voice Assistant.
-        ## @param value Value to set for the voiceAssistantBlocked property.
+        ## @param value Value to set for the voice_assistant_blocked property.
         ## @return a void
         ## 
         def voice_assistant_blocked=(value)
@@ -903,7 +903,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the voiceDialingBlocked property value. Indicates whether or not to block voice dialing.
-        ## @param value Value to set for the voiceDialingBlocked property.
+        ## @param value Value to set for the voice_dialing_blocked property.
         ## @return a void
         ## 
         def voice_dialing_blocked=(value)
@@ -918,26 +918,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webBrowserBlockAutofill property value. Indicates whether or not to block the web browser's auto fill feature.
-        ## @param value Value to set for the webBrowserBlockAutofill property.
+        ## @param value Value to set for the web_browser_block_autofill property.
         ## @return a void
         ## 
         def web_browser_block_autofill=(value)
             @web_browser_block_autofill = value
-        end
-        ## 
-        ## Gets the webBrowserBlocked property value. Indicates whether or not to block the web browser.
-        ## @return a boolean
-        ## 
-        def web_browser_blocked
-            return @web_browser_blocked
-        end
-        ## 
-        ## Sets the webBrowserBlocked property value. Indicates whether or not to block the web browser.
-        ## @param value Value to set for the webBrowserBlocked property.
-        ## @return a void
-        ## 
-        def web_browser_blocked=(value)
-            @web_browser_blocked = value
         end
         ## 
         ## Gets the webBrowserBlockJavaScript property value. Indicates whether or not to block JavaScript within the web browser.
@@ -948,7 +933,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webBrowserBlockJavaScript property value. Indicates whether or not to block JavaScript within the web browser.
-        ## @param value Value to set for the webBrowserBlockJavaScript property.
+        ## @param value Value to set for the web_browser_block_java_script property.
         ## @return a void
         ## 
         def web_browser_block_java_script=(value)
@@ -963,11 +948,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webBrowserBlockPopups property value. Indicates whether or not to block popups within the web browser.
-        ## @param value Value to set for the webBrowserBlockPopups property.
+        ## @param value Value to set for the web_browser_block_popups property.
         ## @return a void
         ## 
         def web_browser_block_popups=(value)
             @web_browser_block_popups = value
+        end
+        ## 
+        ## Gets the webBrowserBlocked property value. Indicates whether or not to block the web browser.
+        ## @return a boolean
+        ## 
+        def web_browser_blocked
+            return @web_browser_blocked
+        end
+        ## 
+        ## Sets the webBrowserBlocked property value. Indicates whether or not to block the web browser.
+        ## @param value Value to set for the web_browser_blocked property.
+        ## @return a void
+        ## 
+        def web_browser_blocked=(value)
+            @web_browser_blocked = value
         end
         ## 
         ## Gets the webBrowserCookieSettings property value. Web Browser Cookie Settings.
@@ -978,7 +978,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webBrowserCookieSettings property value. Web Browser Cookie Settings.
-        ## @param value Value to set for the webBrowserCookieSettings property.
+        ## @param value Value to set for the web_browser_cookie_settings property.
         ## @return a void
         ## 
         def web_browser_cookie_settings=(value)
@@ -993,7 +993,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the wiFiBlocked property value. Indicates whether or not to block syncing Wi-Fi.
-        ## @param value Value to set for the wiFiBlocked property.
+        ## @param value Value to set for the wi_fi_blocked property.
         ## @return a void
         ## 
         def wi_fi_blocked=(value)

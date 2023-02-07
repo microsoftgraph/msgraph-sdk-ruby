@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowCreateUpdateChannels property value. If set to true, guests can add and update channels.
-        ## @param value Value to set for the allowCreateUpdateChannels property.
+        ## @param value Value to set for the allow_create_update_channels property.
         ## @return a void
         ## 
         def allow_create_update_channels=(value)
@@ -56,7 +56,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowDeleteChannels property value. If set to true, guests can delete channels.
-        ## @param value Value to set for the allowDeleteChannels property.
+        ## @param value Value to set for the allow_delete_channels property.
         ## @return a void
         ## 
         def allow_delete_channels=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

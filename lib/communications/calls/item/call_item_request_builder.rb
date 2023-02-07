@@ -4,29 +4,29 @@ require_relative '../../../models/call'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../communications'
 require_relative '../calls'
-require_relative './add_large_gallery_view/add_large_gallery_view_request_builder'
-require_relative './answer/answer_request_builder'
 require_relative './audio_routing_groups/audio_routing_groups_request_builder'
 require_relative './audio_routing_groups/item/audio_routing_group_item_request_builder'
-require_relative './cancel_media_processing/cancel_media_processing_request_builder'
-require_relative './change_screen_sharing_role/change_screen_sharing_role_request_builder'
 require_relative './content_sharing_sessions/content_sharing_sessions_request_builder'
 require_relative './content_sharing_sessions/item/content_sharing_session_item_request_builder'
 require_relative './item'
-require_relative './keep_alive/keep_alive_request_builder'
-require_relative './mute/mute_request_builder'
+require_relative './microsoft_graph_add_large_gallery_view/microsoft_graph_add_large_gallery_view_request_builder'
+require_relative './microsoft_graph_answer/microsoft_graph_answer_request_builder'
+require_relative './microsoft_graph_cancel_media_processing/microsoft_graph_cancel_media_processing_request_builder'
+require_relative './microsoft_graph_change_screen_sharing_role/microsoft_graph_change_screen_sharing_role_request_builder'
+require_relative './microsoft_graph_keep_alive/microsoft_graph_keep_alive_request_builder'
+require_relative './microsoft_graph_mute/microsoft_graph_mute_request_builder'
+require_relative './microsoft_graph_play_prompt/microsoft_graph_play_prompt_request_builder'
+require_relative './microsoft_graph_record_response/microsoft_graph_record_response_request_builder'
+require_relative './microsoft_graph_redirect/microsoft_graph_redirect_request_builder'
+require_relative './microsoft_graph_reject/microsoft_graph_reject_request_builder'
+require_relative './microsoft_graph_subscribe_to_tone/microsoft_graph_subscribe_to_tone_request_builder'
+require_relative './microsoft_graph_transfer/microsoft_graph_transfer_request_builder'
+require_relative './microsoft_graph_unmute/microsoft_graph_unmute_request_builder'
+require_relative './microsoft_graph_update_recording_status/microsoft_graph_update_recording_status_request_builder'
 require_relative './operations/item/comms_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
 require_relative './participants/item/participant_item_request_builder'
 require_relative './participants/participants_request_builder'
-require_relative './play_prompt/play_prompt_request_builder'
-require_relative './record_response/record_response_request_builder'
-require_relative './redirect/redirect_request_builder'
-require_relative './reject/reject_request_builder'
-require_relative './subscribe_to_tone/subscribe_to_tone_request_builder'
-require_relative './transfer/transfer_request_builder'
-require_relative './unmute/unmute_request_builder'
-require_relative './update_recording_status/update_recording_status_request_builder'
 
 module MicrosoftGraph::Communications::Calls::Item
     ## 
@@ -34,29 +34,9 @@ module MicrosoftGraph::Communications::Calls::Item
     class CallItemRequestBuilder
         
         ## 
-        # Provides operations to call the addLargeGalleryView method.
-        def add_large_gallery_view()
-            return MicrosoftGraph::Communications::Calls::Item::AddLargeGalleryView::AddLargeGalleryViewRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the answer method.
-        def answer()
-            return MicrosoftGraph::Communications::Calls::Item::Answer::AnswerRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.
         def audio_routing_groups()
             return MicrosoftGraph::Communications::Calls::Item::AudioRoutingGroups::AudioRoutingGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the cancelMediaProcessing method.
-        def cancel_media_processing()
-            return MicrosoftGraph::Communications::Calls::Item::CancelMediaProcessing::CancelMediaProcessingRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the changeScreenSharingRole method.
-        def change_screen_sharing_role()
-            return MicrosoftGraph::Communications::Calls::Item::ChangeScreenSharingRole::ChangeScreenSharingRoleRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the contentSharingSessions property of the microsoft.graph.call entity.
@@ -64,14 +44,74 @@ module MicrosoftGraph::Communications::Calls::Item
             return MicrosoftGraph::Communications::Calls::Item::ContentSharingSessions::ContentSharingSessionsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the addLargeGalleryView method.
+        def microsoft_graph_add_large_gallery_view()
+            return MicrosoftGraph::Communications::Calls::Item::MicrosoftGraphAddLargeGalleryView::MicrosoftGraphAddLargeGalleryViewRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the answer method.
+        def microsoft_graph_answer()
+            return MicrosoftGraph::Communications::Calls::Item::MicrosoftGraphAnswer::MicrosoftGraphAnswerRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the cancelMediaProcessing method.
+        def microsoft_graph_cancel_media_processing()
+            return MicrosoftGraph::Communications::Calls::Item::MicrosoftGraphCancelMediaProcessing::MicrosoftGraphCancelMediaProcessingRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the changeScreenSharingRole method.
+        def microsoft_graph_change_screen_sharing_role()
+            return MicrosoftGraph::Communications::Calls::Item::MicrosoftGraphChangeScreenSharingRole::MicrosoftGraphChangeScreenSharingRoleRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the keepAlive method.
-        def keep_alive()
-            return MicrosoftGraph::Communications::Calls::Item::KeepAlive::KeepAliveRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_keep_alive()
+            return MicrosoftGraph::Communications::Calls::Item::MicrosoftGraphKeepAlive::MicrosoftGraphKeepAliveRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the mute method.
-        def mute()
-            return MicrosoftGraph::Communications::Calls::Item::Mute::MuteRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_mute()
+            return MicrosoftGraph::Communications::Calls::Item::MicrosoftGraphMute::MicrosoftGraphMuteRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the playPrompt method.
+        def microsoft_graph_play_prompt()
+            return MicrosoftGraph::Communications::Calls::Item::MicrosoftGraphPlayPrompt::MicrosoftGraphPlayPromptRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the recordResponse method.
+        def microsoft_graph_record_response()
+            return MicrosoftGraph::Communications::Calls::Item::MicrosoftGraphRecordResponse::MicrosoftGraphRecordResponseRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the redirect method.
+        def microsoft_graph_redirect()
+            return MicrosoftGraph::Communications::Calls::Item::MicrosoftGraphRedirect::MicrosoftGraphRedirectRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the reject method.
+        def microsoft_graph_reject()
+            return MicrosoftGraph::Communications::Calls::Item::MicrosoftGraphReject::MicrosoftGraphRejectRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the subscribeToTone method.
+        def microsoft_graph_subscribe_to_tone()
+            return MicrosoftGraph::Communications::Calls::Item::MicrosoftGraphSubscribeToTone::MicrosoftGraphSubscribeToToneRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the transfer method.
+        def microsoft_graph_transfer()
+            return MicrosoftGraph::Communications::Calls::Item::MicrosoftGraphTransfer::MicrosoftGraphTransferRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the unmute method.
+        def microsoft_graph_unmute()
+            return MicrosoftGraph::Communications::Calls::Item::MicrosoftGraphUnmute::MicrosoftGraphUnmuteRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the updateRecordingStatus method.
+        def microsoft_graph_update_recording_status()
+            return MicrosoftGraph::Communications::Calls::Item::MicrosoftGraphUpdateRecordingStatus::MicrosoftGraphUpdateRecordingStatusRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the operations property of the microsoft.graph.call entity.
@@ -87,48 +127,8 @@ module MicrosoftGraph::Communications::Calls::Item
         # Path parameters for the request
         @path_parameters
         ## 
-        # Provides operations to call the playPrompt method.
-        def play_prompt()
-            return MicrosoftGraph::Communications::Calls::Item::PlayPrompt::PlayPromptRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the recordResponse method.
-        def record_response()
-            return MicrosoftGraph::Communications::Calls::Item::RecordResponse::RecordResponseRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the redirect method.
-        def redirect()
-            return MicrosoftGraph::Communications::Calls::Item::Redirect::RedirectRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the reject method.
-        def reject()
-            return MicrosoftGraph::Communications::Calls::Item::Reject::RejectRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the subscribeToTone method.
-        def subscribe_to_tone()
-            return MicrosoftGraph::Communications::Calls::Item::SubscribeToTone::SubscribeToToneRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the transfer method.
-        def transfer()
-            return MicrosoftGraph::Communications::Calls::Item::Transfer::TransferRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the unmute method.
-        def unmute()
-            return MicrosoftGraph::Communications::Calls::Item::Unmute::UnmuteRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the updateRecordingStatus method.
-        def update_recording_status()
-            return MicrosoftGraph::Communications::Calls::Item::UpdateRecordingStatus::UpdateRecordingStatusRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template

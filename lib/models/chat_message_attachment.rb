@@ -27,7 +27,7 @@ module MicrosoftGraph::Models
         # The OdataType property
         @odata_type
         ## 
-        # The teamsAppId property
+        # The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
         @teams_app_id
         ## 
         # URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentType property value. The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework's Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.
-        ## @param value Value to set for the contentType property.
+        ## @param value Value to set for the content_type property.
         ## @return a void
         ## 
         def content_type=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentUrl property value. URL for the content of the attachment. Supported protocols: http, https, file and data.
-        ## @param value Value to set for the contentUrl property.
+        ## @param value Value to set for the content_url property.
         ## @return a void
         ## 
         def content_url=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -187,15 +187,15 @@ module MicrosoftGraph::Models
             writer.write_additional_data(@additional_data)
         end
         ## 
-        ## Gets the teamsAppId property value. The teamsAppId property
+        ## Gets the teamsAppId property value. The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
         ## @return a string
         ## 
         def teams_app_id
             return @teams_app_id
         end
         ## 
-        ## Sets the teamsAppId property value. The teamsAppId property
-        ## @param value Value to set for the teamsAppId property.
+        ## Sets the teamsAppId property value. The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.
+        ## @param value Value to set for the teams_app_id property.
         ## @return a void
         ## 
         def teams_app_id=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the thumbnailUrl property value. URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.
-        ## @param value Value to set for the thumbnailUrl property.
+        ## @param value Value to set for the thumbnail_url property.
         ## @return a void
         ## 
         def thumbnail_url=(value)

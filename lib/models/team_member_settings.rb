@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowAddRemoveApps property value. If set to true, members can add and remove apps.
-        ## @param value Value to set for the allowAddRemoveApps property.
+        ## @param value Value to set for the allow_add_remove_apps property.
         ## @return a void
         ## 
         def allow_add_remove_apps=(value)
@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowCreatePrivateChannels property value. If set to true, members can add and update private channels.
-        ## @param value Value to set for the allowCreatePrivateChannels property.
+        ## @param value Value to set for the allow_create_private_channels property.
         ## @return a void
         ## 
         def allow_create_private_channels=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowCreateUpdateChannels property value. If set to true, members can add and update channels.
-        ## @param value Value to set for the allowCreateUpdateChannels property.
+        ## @param value Value to set for the allow_create_update_channels property.
         ## @return a void
         ## 
         def allow_create_update_channels=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowCreateUpdateRemoveConnectors property value. If set to true, members can add, update, and remove connectors.
-        ## @param value Value to set for the allowCreateUpdateRemoveConnectors property.
+        ## @param value Value to set for the allow_create_update_remove_connectors property.
         ## @return a void
         ## 
         def allow_create_update_remove_connectors=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowCreateUpdateRemoveTabs property value. If set to true, members can add, update, and remove tabs.
-        ## @param value Value to set for the allowCreateUpdateRemoveTabs property.
+        ## @param value Value to set for the allow_create_update_remove_tabs property.
         ## @return a void
         ## 
         def allow_create_update_remove_tabs=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowDeleteChannels property value. If set to true, members can delete channels.
-        ## @param value Value to set for the allowDeleteChannels property.
+        ## @param value Value to set for the allow_delete_channels property.
         ## @return a void
         ## 
         def allow_delete_channels=(value)
@@ -174,7 +174,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

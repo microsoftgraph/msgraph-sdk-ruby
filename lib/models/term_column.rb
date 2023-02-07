@@ -49,7 +49,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowMultipleValues property value. Specifies whether the column will allow more than one value.
-        ## @param value Value to set for the allowMultipleValues property.
+        ## @param value Value to set for the allow_multiple_values property.
         ## @return a void
         ## 
         def allow_multiple_values=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the parentTerm property value. The parentTerm property
-        ## @param value Value to set for the parentTerm property.
+        ## @param value Value to set for the parent_term property.
         ## @return a void
         ## 
         def parent_term=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the showFullyQualifiedName property value. Specifies whether to display the entire term path or only the term label.
-        ## @param value Value to set for the showFullyQualifiedName property.
+        ## @param value Value to set for the show_fully_qualified_name property.
         ## @return a void
         ## 
         def show_fully_qualified_name=(value)
@@ -152,7 +152,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the termSet property value. The termSet property
-        ## @param value Value to set for the termSet property.
+        ## @param value Value to set for the term_set property.
         ## @return a void
         ## 
         def term_set=(value)

@@ -7,11 +7,11 @@ module MicrosoftGraph::Models
     class TodoTask < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
-        # The attachments property
-        @attachments
-        ## 
         # The attachmentSessions property
         @attachment_sessions
+        ## 
+        # A collection of file attachments for the task.
+        @attachments
         ## 
         # The task body that typically contains information about the task.
         @body
@@ -37,7 +37,7 @@ module MicrosoftGraph::Models
         # The collection of open extensions defined for the task. Nullable.
         @extensions
         ## 
-        # The hasAttachments property
+        # Indicates whether the task has attachments.
         @has_attachments
         ## 
         # The importance property
@@ -58,7 +58,7 @@ module MicrosoftGraph::Models
         # The date and time in the specified time zone for a reminder alert of the task to occur.
         @reminder_date_time
         ## 
-        # The startDateTime property
+        # The date and time in the specified time zone at which the task is scheduled to start.
         @start_date_time
         ## 
         # The status property
@@ -66,21 +66,6 @@ module MicrosoftGraph::Models
         ## 
         # A brief description of the task.
         @title
-        ## 
-        ## Gets the attachments property value. The attachments property
-        ## @return a attachment_base
-        ## 
-        def attachments
-            return @attachments
-        end
-        ## 
-        ## Sets the attachments property value. The attachments property
-        ## @param value Value to set for the attachments property.
-        ## @return a void
-        ## 
-        def attachments=(value)
-            @attachments = value
-        end
         ## 
         ## Gets the attachmentSessions property value. The attachmentSessions property
         ## @return a attachment_session
@@ -90,11 +75,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the attachmentSessions property value. The attachmentSessions property
-        ## @param value Value to set for the attachmentSessions property.
+        ## @param value Value to set for the attachment_sessions property.
         ## @return a void
         ## 
         def attachment_sessions=(value)
             @attachment_sessions = value
+        end
+        ## 
+        ## Gets the attachments property value. A collection of file attachments for the task.
+        ## @return a attachment_base
+        ## 
+        def attachments
+            return @attachments
+        end
+        ## 
+        ## Sets the attachments property value. A collection of file attachments for the task.
+        ## @param value Value to set for the attachments property.
+        ## @return a void
+        ## 
+        def attachments=(value)
+            @attachments = value
         end
         ## 
         ## Gets the body property value. The task body that typically contains information about the task.
@@ -120,7 +120,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bodyLastModifiedDateTime property value. The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
-        ## @param value Value to set for the bodyLastModifiedDateTime property.
+        ## @param value Value to set for the body_last_modified_date_time property.
         ## @return a void
         ## 
         def body_last_modified_date_time=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the checklistItems property value. A collection of checklistItems linked to a task.
-        ## @param value Value to set for the checklistItems property.
+        ## @param value Value to set for the checklist_items property.
         ## @return a void
         ## 
         def checklist_items=(value)
@@ -165,7 +165,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the completedDateTime property value. The date and time in the specified time zone that the task was finished.
-        ## @param value Value to set for the completedDateTime property.
+        ## @param value Value to set for the completed_date_time property.
         ## @return a void
         ## 
         def completed_date_time=(value)
@@ -187,7 +187,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -211,7 +211,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dueDateTime property value. The date and time in the specified time zone that the task is to be finished.
-        ## @param value Value to set for the dueDateTime property.
+        ## @param value Value to set for the due_date_time property.
         ## @return a void
         ## 
         def due_date_time=(value)
@@ -238,8 +238,8 @@ module MicrosoftGraph::Models
         ## 
         def get_field_deserializers()
             return super.merge({
-                "attachments" => lambda {|n| @attachments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AttachmentBase.create_from_discriminator_value(pn) }) },
                 "attachmentSessions" => lambda {|n| @attachment_sessions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AttachmentSession.create_from_discriminator_value(pn) }) },
+                "attachments" => lambda {|n| @attachments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AttachmentBase.create_from_discriminator_value(pn) }) },
                 "body" => lambda {|n| @body = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ItemBody.create_from_discriminator_value(pn) }) },
                 "bodyLastModifiedDateTime" => lambda {|n| @body_last_modified_date_time = n.get_date_time_value() },
                 "categories" => lambda {|n| @categories = n.get_collection_of_primitive_values(String) },
@@ -261,15 +261,15 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the hasAttachments property value. The hasAttachments property
+        ## Gets the hasAttachments property value. Indicates whether the task has attachments.
         ## @return a boolean
         ## 
         def has_attachments
             return @has_attachments
         end
         ## 
-        ## Sets the hasAttachments property value. The hasAttachments property
-        ## @param value Value to set for the hasAttachments property.
+        ## Sets the hasAttachments property value. Indicates whether the task has attachments.
+        ## @param value Value to set for the has_attachments property.
         ## @return a void
         ## 
         def has_attachments=(value)
@@ -299,7 +299,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isReminderOn property value. Set to true if an alert is set to remind the user of the task.
-        ## @param value Value to set for the isReminderOn property.
+        ## @param value Value to set for the is_reminder_on property.
         ## @return a void
         ## 
         def is_reminder_on=(value)
@@ -314,7 +314,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -329,7 +329,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the linkedResources property value. A collection of resources linked to the task.
-        ## @param value Value to set for the linkedResources property.
+        ## @param value Value to set for the linked_resources property.
         ## @return a void
         ## 
         def linked_resources=(value)
@@ -359,7 +359,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the reminderDateTime property value. The date and time in the specified time zone for a reminder alert of the task to occur.
-        ## @param value Value to set for the reminderDateTime property.
+        ## @param value Value to set for the reminder_date_time property.
         ## @return a void
         ## 
         def reminder_date_time=(value)
@@ -373,8 +373,8 @@ module MicrosoftGraph::Models
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
             super
-            writer.write_collection_of_object_values("attachments", @attachments)
             writer.write_collection_of_object_values("attachmentSessions", @attachment_sessions)
+            writer.write_collection_of_object_values("attachments", @attachments)
             writer.write_object_value("body", @body)
             writer.write_date_time_value("bodyLastModifiedDateTime", @body_last_modified_date_time)
             writer.write_collection_of_primitive_values("categories", @categories)
@@ -395,15 +395,15 @@ module MicrosoftGraph::Models
             writer.write_string_value("title", @title)
         end
         ## 
-        ## Gets the startDateTime property value. The startDateTime property
+        ## Gets the startDateTime property value. The date and time in the specified time zone at which the task is scheduled to start.
         ## @return a date_time_time_zone
         ## 
         def start_date_time
             return @start_date_time
         end
         ## 
-        ## Sets the startDateTime property value. The startDateTime property
-        ## @param value Value to set for the startDateTime property.
+        ## Sets the startDateTime property value. The date and time in the specified time zone at which the task is scheduled to start.
+        ## @param value Value to set for the start_date_time property.
         ## @return a void
         ## 
         def start_date_time=(value)

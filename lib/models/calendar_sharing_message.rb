@@ -26,7 +26,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the canAccept property value. The canAccept property
-        ## @param value Value to set for the canAccept property.
+        ## @param value Value to set for the can_accept property.
         ## @return a void
         ## 
         def can_accept=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharingMessageAction property value. The sharingMessageAction property
-        ## @param value Value to set for the sharingMessageAction property.
+        ## @param value Value to set for the sharing_message_action property.
         ## @return a void
         ## 
         def sharing_message_action=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharingMessageActions property value. The sharingMessageActions property
-        ## @param value Value to set for the sharingMessageActions property.
+        ## @param value Value to set for the sharing_message_actions property.
         ## @return a void
         ## 
         def sharing_message_actions=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the suggestedCalendarName property value. The suggestedCalendarName property
-        ## @param value Value to set for the suggestedCalendarName property.
+        ## @param value Value to set for the suggested_calendar_name property.
         ## @return a void
         ## 
         def suggested_calendar_name=(value)

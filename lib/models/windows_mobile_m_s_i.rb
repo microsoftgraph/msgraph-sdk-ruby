@@ -26,7 +26,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the commandLine property value. The command line.
-        ## @param value Value to set for the commandLine property.
+        ## @param value Value to set for the command_line property.
         ## @return a void
         ## 
         def command_line=(value)
@@ -70,7 +70,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the ignoreVersionDetection property value. A boolean to control whether the app's version will be used to detect the app after it is installed on a device. Set this to true for Windows Mobile MSI Line of Business (LoB) apps that use a self update feature.
-        ## @param value Value to set for the ignoreVersionDetection property.
+        ## @param value Value to set for the ignore_version_detection property.
         ## @return a void
         ## 
         def ignore_version_detection=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the productCode property value. The product code.
-        ## @param value Value to set for the productCode property.
+        ## @param value Value to set for the product_code property.
         ## @return a void
         ## 
         def product_code=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the productVersion property value. The product version of Windows Mobile MSI Line of Business (LoB) app.
-        ## @param value Value to set for the productVersion property.
+        ## @param value Value to set for the product_version property.
         ## @return a void
         ## 
         def product_version=(value)

@@ -10,8 +10,8 @@ require_relative '../../../item'
 require_relative '../../calendars'
 require_relative '../item'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
 require_relative './events'
+require_relative './microsoft_graph_delta/microsoft_graph_delta_request_builder'
 
 module MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events
     ## 
@@ -22,6 +22,11 @@ module MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Event
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Events::MicrosoftGraphDelta::MicrosoftGraphDeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -45,13 +50,6 @@ module MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::Event
             @request_adapter = request_adapter
             path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
             @path_parameters = path_parameters if path_parameters.is_a? Hash
-        end
-        ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Retrieve a list of events in a calendar.  The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or get the instances of an event.

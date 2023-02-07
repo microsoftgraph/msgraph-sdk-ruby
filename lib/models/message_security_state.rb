@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the connectingIP property value. The connectingIP property
-        ## @param value Value to set for the connectingIP property.
+        ## @param value Value to set for the connecting_i_p property.
         ## @return a void
         ## 
         def connecting_i_p=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deliveryAction property value. The deliveryAction property
-        ## @param value Value to set for the deliveryAction property.
+        ## @param value Value to set for the delivery_action property.
         ## @return a void
         ## 
         def delivery_action=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deliveryLocation property value. The deliveryLocation property
-        ## @param value Value to set for the deliveryLocation property.
+        ## @param value Value to set for the delivery_location property.
         ## @return a void
         ## 
         def delivery_location=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the internetMessageId property value. The internetMessageId property
-        ## @param value Value to set for the internetMessageId property.
+        ## @param value Value to set for the internet_message_id property.
         ## @return a void
         ## 
         def internet_message_id=(value)
@@ -172,7 +172,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the messageFingerprint property value. The messageFingerprint property
-        ## @param value Value to set for the messageFingerprint property.
+        ## @param value Value to set for the message_fingerprint property.
         ## @return a void
         ## 
         def message_fingerprint=(value)
@@ -187,7 +187,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the messageReceivedDateTime property value. The messageReceivedDateTime property
-        ## @param value Value to set for the messageReceivedDateTime property.
+        ## @param value Value to set for the message_received_date_time property.
         ## @return a void
         ## 
         def message_received_date_time=(value)
@@ -202,7 +202,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the messageSubject property value. The messageSubject property
-        ## @param value Value to set for the messageSubject property.
+        ## @param value Value to set for the message_subject property.
         ## @return a void
         ## 
         def message_subject=(value)
@@ -217,7 +217,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the networkMessageId property value. The networkMessageId property
-        ## @param value Value to set for the networkMessageId property.
+        ## @param value Value to set for the network_message_id property.
         ## @return a void
         ## 
         def network_message_id=(value)
@@ -232,7 +232,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

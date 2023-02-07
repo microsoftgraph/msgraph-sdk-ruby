@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the archiveFolder property value. Folder ID of an archive folder for the user.
-        ## @param value Value to set for the archiveFolder property.
+        ## @param value Value to set for the archive_folder property.
         ## @return a void
         ## 
         def archive_folder=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the automaticRepliesSetting property value. Configuration settings to automatically notify the sender of an incoming email with a message from the signed-in user.
-        ## @param value Value to set for the automaticRepliesSetting property.
+        ## @param value Value to set for the automatic_replies_setting property.
         ## @return a void
         ## 
         def automatic_replies_setting=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dateFormat property value. The date format for the user's mailbox.
-        ## @param value Value to set for the dateFormat property.
+        ## @param value Value to set for the date_format property.
         ## @return a void
         ## 
         def date_format=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the delegateMeetingMessageDeliveryOptions property value. If the user has a calendar delegate, this specifies whether the delegate, mailbox owner, or both receive meeting messages and meeting responses. Possible values are: sendToDelegateAndInformationToPrincipal, sendToDelegateAndPrincipal, sendToDelegateOnly.
-        ## @param value Value to set for the delegateMeetingMessageDeliveryOptions property.
+        ## @param value Value to set for the delegate_meeting_message_delivery_options property.
         ## @return a void
         ## 
         def delegate_meeting_message_delivery_options=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -205,7 +205,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the timeFormat property value. The time format for the user's mailbox.
-        ## @param value Value to set for the timeFormat property.
+        ## @param value Value to set for the time_format property.
         ## @return a void
         ## 
         def time_format=(value)
@@ -220,7 +220,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the timeZone property value. The default time zone for the user's mailbox.
-        ## @param value Value to set for the timeZone property.
+        ## @param value Value to set for the time_zone property.
         ## @return a void
         ## 
         def time_zone=(value)
@@ -235,7 +235,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userPurpose property value. The userPurpose property
-        ## @param value Value to set for the userPurpose property.
+        ## @param value Value to set for the user_purpose property.
         ## @return a void
         ## 
         def user_purpose=(value)
@@ -250,7 +250,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the workingHours property value. The days of the week and hours in a specific time zone that the user works.
-        ## @param value Value to set for the workingHours property.
+        ## @param value Value to set for the working_hours property.
         ## @return a void
         ## 
         def working_hours=(value)

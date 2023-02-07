@@ -52,7 +52,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowStaffSelection property value. True if to allow customers to choose a specific person for the booking.
-        ## @param value Value to set for the allowStaffSelection property.
+        ## @param value Value to set for the allow_staff_selection property.
         ## @return a void
         ## 
         def allow_staff_selection=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maximumAdvance property value. Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.
-        ## @param value Value to set for the maximumAdvance property.
+        ## @param value Value to set for the maximum_advance property.
         ## @return a void
         ## 
         def maximum_advance=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minimumLeadTime property value. The minimum amount of time before which bookings and cancellations must be made. It follows the ISO 8601 format.
-        ## @param value Value to set for the minimumLeadTime property.
+        ## @param value Value to set for the minimum_lead_time property.
         ## @return a void
         ## 
         def minimum_lead_time=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -142,7 +142,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sendConfirmationsToOwner property value. True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.
-        ## @param value Value to set for the sendConfirmationsToOwner property.
+        ## @param value Value to set for the send_confirmations_to_owner property.
         ## @return a void
         ## 
         def send_confirmations_to_owner=(value)
@@ -172,7 +172,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the timeSlotInterval property value. Duration of each time slot, denoted in ISO 8601 format.
-        ## @param value Value to set for the timeSlotInterval property.
+        ## @param value Value to set for the time_slot_interval property.
         ## @return a void
         ## 
         def time_slot_interval=(value)

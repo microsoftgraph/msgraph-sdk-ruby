@@ -60,7 +60,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the errorDetails property value. An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
-        ## @param value Value to set for the errorDetails property.
+        ## @param value Value to set for the error_details property.
         ## @return a void
         ## 
         def error_details=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sourceId property value. The identifier that was converted. This value is the original, un-converted identifier.
-        ## @param value Value to set for the sourceId property.
+        ## @param value Value to set for the source_id property.
         ## @return a void
         ## 
         def source_id=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the targetId property value. The converted identifier. This value is not present if the conversion failed.
-        ## @param value Value to set for the targetId property.
+        ## @param value Value to set for the target_id property.
         ## @return a void
         ## 
         def target_id=(value)

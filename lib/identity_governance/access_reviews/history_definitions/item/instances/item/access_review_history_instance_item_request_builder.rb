@@ -7,8 +7,8 @@ require_relative '../../../../access_reviews'
 require_relative '../../../history_definitions'
 require_relative '../../item'
 require_relative '../instances'
-require_relative './generate_download_uri/generate_download_uri_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_generate_download_uri/microsoft_graph_generate_download_uri_request_builder'
 
 module MicrosoftGraph::IdentityGovernance::AccessReviews::HistoryDefinitions::Item::Instances::Item
     ## 
@@ -17,8 +17,8 @@ module MicrosoftGraph::IdentityGovernance::AccessReviews::HistoryDefinitions::It
         
         ## 
         # Provides operations to call the generateDownloadUri method.
-        def generate_download_uri()
-            return MicrosoftGraph::IdentityGovernance::AccessReviews::HistoryDefinitions::Item::Instances::Item::GenerateDownloadUri::GenerateDownloadUriRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_generate_download_uri()
+            return MicrosoftGraph::IdentityGovernance::AccessReviews::HistoryDefinitions::Item::Instances::Item::MicrosoftGraphGenerateDownloadUri::MicrosoftGraphGenerateDownloadUriRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

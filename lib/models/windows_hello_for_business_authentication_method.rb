@@ -35,7 +35,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The date and time that this Windows Hello for Business key was registered.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the device on which Windows Hello for Business is registered
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the keyStrength property value. Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.
-        ## @param value Value to set for the keyStrength property.
+        ## @param value Value to set for the key_strength property.
         ## @return a void
         ## 
         def key_strength=(value)

@@ -39,7 +39,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the attemptsCount property value. Number of times the operation was attempted before being marked successful or failed.
-        ## @param value Value to set for the attemptsCount property.
+        ## @param value Value to set for the attempts_count property.
         ## @return a void
         ## 
         def attempts_count=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. Time when the operation was created.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -116,7 +116,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastActionDateTime property value. Time when the async operation was last updated.
-        ## @param value Value to set for the lastActionDateTime property.
+        ## @param value Value to set for the last_action_date_time property.
         ## @return a void
         ## 
         def last_action_date_time=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the operationType property value. The operationType property
-        ## @param value Value to set for the operationType property.
+        ## @param value Value to set for the operation_type property.
         ## @return a void
         ## 
         def operation_type=(value)
@@ -178,7 +178,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the targetResourceId property value. The ID of the object that's created or modified as result of this async operation, typically a team.
-        ## @param value Value to set for the targetResourceId property.
+        ## @param value Value to set for the target_resource_id property.
         ## @return a void
         ## 
         def target_resource_id=(value)
@@ -193,7 +193,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the targetResourceLocation property value. The location of the object that's created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.
-        ## @param value Value to set for the targetResourceLocation property.
+        ## @param value Value to set for the target_resource_location property.
         ## @return a void
         ## 
         def target_resource_location=(value)

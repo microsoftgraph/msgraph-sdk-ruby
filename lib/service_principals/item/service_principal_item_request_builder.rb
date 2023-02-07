@@ -3,15 +3,10 @@ require_relative '../../microsoft_graph'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/service_principal'
 require_relative '../service_principals'
-require_relative './add_key/add_key_request_builder'
-require_relative './add_password/add_password_request_builder'
-require_relative './add_token_signing_certificate/add_token_signing_certificate_request_builder'
 require_relative './app_role_assigned_to/app_role_assigned_to_request_builder'
 require_relative './app_role_assigned_to/item/app_role_assignment_item_request_builder'
 require_relative './app_role_assignments/app_role_assignments_request_builder'
 require_relative './app_role_assignments/item/app_role_assignment_item_request_builder'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './claims_mapping_policies/claims_mapping_policies_request_builder'
 require_relative './claims_mapping_policies/item/claims_mapping_policy_item_request_builder'
 require_relative './created_objects/created_objects_request_builder'
@@ -22,22 +17,27 @@ require_relative './endpoints/endpoints_request_builder'
 require_relative './endpoints/item/endpoint_item_request_builder'
 require_relative './federated_identity_credentials/federated_identity_credentials_request_builder'
 require_relative './federated_identity_credentials/item/federated_identity_credential_item_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './home_realm_discovery_policies/home_realm_discovery_policies_request_builder'
 require_relative './home_realm_discovery_policies/item/home_realm_discovery_policy_item_request_builder'
 require_relative './item'
 require_relative './member_of/item/directory_object_item_request_builder'
 require_relative './member_of/member_of_request_builder'
+require_relative './microsoft_graph_add_key/microsoft_graph_add_key_request_builder'
+require_relative './microsoft_graph_add_password/microsoft_graph_add_password_request_builder'
+require_relative './microsoft_graph_add_token_signing_certificate/microsoft_graph_add_token_signing_certificate_request_builder'
+require_relative './microsoft_graph_check_member_groups/microsoft_graph_check_member_groups_request_builder'
+require_relative './microsoft_graph_check_member_objects/microsoft_graph_check_member_objects_request_builder'
+require_relative './microsoft_graph_get_member_groups/microsoft_graph_get_member_groups_request_builder'
+require_relative './microsoft_graph_get_member_objects/microsoft_graph_get_member_objects_request_builder'
+require_relative './microsoft_graph_remove_key/microsoft_graph_remove_key_request_builder'
+require_relative './microsoft_graph_remove_password/microsoft_graph_remove_password_request_builder'
+require_relative './microsoft_graph_restore/microsoft_graph_restore_request_builder'
 require_relative './oauth2_permission_grants/item/o_auth2_permission_grant_item_request_builder'
 require_relative './oauth2_permission_grants/oauth2_permission_grants_request_builder'
 require_relative './owned_objects/item/directory_object_item_request_builder'
 require_relative './owned_objects/owned_objects_request_builder'
 require_relative './owners/item/directory_object_item_request_builder'
 require_relative './owners/owners_request_builder'
-require_relative './remove_key/remove_key_request_builder'
-require_relative './remove_password/remove_password_request_builder'
-require_relative './restore/restore_request_builder'
 require_relative './token_issuance_policies/item/token_issuance_policy_item_request_builder'
 require_relative './token_issuance_policies/token_issuance_policies_request_builder'
 require_relative './token_lifetime_policies/item/token_lifetime_policy_item_request_builder'
@@ -51,21 +51,6 @@ module MicrosoftGraph::ServicePrincipals::Item
     class ServicePrincipalItemRequestBuilder
         
         ## 
-        # Provides operations to call the addKey method.
-        def add_key()
-            return MicrosoftGraph::ServicePrincipals::Item::AddKey::AddKeyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the addPassword method.
-        def add_password()
-            return MicrosoftGraph::ServicePrincipals::Item::AddPassword::AddPasswordRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the addTokenSigningCertificate method.
-        def add_token_signing_certificate()
-            return MicrosoftGraph::ServicePrincipals::Item::AddTokenSigningCertificate::AddTokenSigningCertificateRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the appRoleAssignedTo property of the microsoft.graph.servicePrincipal entity.
         def app_role_assigned_to()
             return MicrosoftGraph::ServicePrincipals::Item::AppRoleAssignedTo::AppRoleAssignedToRequestBuilder.new(@path_parameters, @request_adapter)
@@ -74,16 +59,6 @@ module MicrosoftGraph::ServicePrincipals::Item
         # Provides operations to manage the appRoleAssignments property of the microsoft.graph.servicePrincipal entity.
         def app_role_assignments()
             return MicrosoftGraph::ServicePrincipals::Item::AppRoleAssignments::AppRoleAssignmentsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the checkMemberGroups method.
-        def check_member_groups()
-            return MicrosoftGraph::ServicePrincipals::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the checkMemberObjects method.
-        def check_member_objects()
-            return MicrosoftGraph::ServicePrincipals::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the claimsMappingPolicies property of the microsoft.graph.servicePrincipal entity.
@@ -111,16 +86,6 @@ module MicrosoftGraph::ServicePrincipals::Item
             return MicrosoftGraph::ServicePrincipals::Item::FederatedIdentityCredentials::FederatedIdentityCredentialsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the getMemberGroups method.
-        def get_member_groups()
-            return MicrosoftGraph::ServicePrincipals::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the getMemberObjects method.
-        def get_member_objects()
-            return MicrosoftGraph::ServicePrincipals::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.servicePrincipal entity.
         def home_realm_discovery_policies()
             return MicrosoftGraph::ServicePrincipals::Item::HomeRealmDiscoveryPolicies::HomeRealmDiscoveryPoliciesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -129,6 +94,56 @@ module MicrosoftGraph::ServicePrincipals::Item
         # Provides operations to manage the memberOf property of the microsoft.graph.servicePrincipal entity.
         def member_of()
             return MicrosoftGraph::ServicePrincipals::Item::MemberOf::MemberOfRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the addKey method.
+        def microsoft_graph_add_key()
+            return MicrosoftGraph::ServicePrincipals::Item::MicrosoftGraphAddKey::MicrosoftGraphAddKeyRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the addPassword method.
+        def microsoft_graph_add_password()
+            return MicrosoftGraph::ServicePrincipals::Item::MicrosoftGraphAddPassword::MicrosoftGraphAddPasswordRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the addTokenSigningCertificate method.
+        def microsoft_graph_add_token_signing_certificate()
+            return MicrosoftGraph::ServicePrincipals::Item::MicrosoftGraphAddTokenSigningCertificate::MicrosoftGraphAddTokenSigningCertificateRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkMemberGroups method.
+        def microsoft_graph_check_member_groups()
+            return MicrosoftGraph::ServicePrincipals::Item::MicrosoftGraphCheckMemberGroups::MicrosoftGraphCheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the checkMemberObjects method.
+        def microsoft_graph_check_member_objects()
+            return MicrosoftGraph::ServicePrincipals::Item::MicrosoftGraphCheckMemberObjects::MicrosoftGraphCheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getMemberGroups method.
+        def microsoft_graph_get_member_groups()
+            return MicrosoftGraph::ServicePrincipals::Item::MicrosoftGraphGetMemberGroups::MicrosoftGraphGetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the getMemberObjects method.
+        def microsoft_graph_get_member_objects()
+            return MicrosoftGraph::ServicePrincipals::Item::MicrosoftGraphGetMemberObjects::MicrosoftGraphGetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the removeKey method.
+        def microsoft_graph_remove_key()
+            return MicrosoftGraph::ServicePrincipals::Item::MicrosoftGraphRemoveKey::MicrosoftGraphRemoveKeyRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the removePassword method.
+        def microsoft_graph_remove_password()
+            return MicrosoftGraph::ServicePrincipals::Item::MicrosoftGraphRemovePassword::MicrosoftGraphRemovePasswordRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the restore method.
+        def microsoft_graph_restore()
+            return MicrosoftGraph::ServicePrincipals::Item::MicrosoftGraphRestore::MicrosoftGraphRestoreRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.servicePrincipal entity.
@@ -149,23 +164,8 @@ module MicrosoftGraph::ServicePrincipals::Item
         # Path parameters for the request
         @path_parameters
         ## 
-        # Provides operations to call the removeKey method.
-        def remove_key()
-            return MicrosoftGraph::ServicePrincipals::Item::RemoveKey::RemoveKeyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the removePassword method.
-        def remove_password()
-            return MicrosoftGraph::ServicePrincipals::Item::RemovePassword::RemovePasswordRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the restore method.
-        def restore()
-            return MicrosoftGraph::ServicePrincipals::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.servicePrincipal entity.
         def token_issuance_policies()
@@ -359,7 +359,7 @@ module MicrosoftGraph::ServicePrincipals::Item
             return MicrosoftGraph::ServicePrincipals::Item::Owners::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Update entity in servicePrincipals by key (id)
+        ## Update entity in servicePrincipals
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of service_principal
@@ -431,7 +431,7 @@ module MicrosoftGraph::ServicePrincipals::Item
             return MicrosoftGraph::ServicePrincipals::Item::TokenLifetimePolicies::Item::TokenLifetimePolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
         end
         ## 
-        ## Update entity in servicePrincipals by key (id)
+        ## Update entity in servicePrincipals
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

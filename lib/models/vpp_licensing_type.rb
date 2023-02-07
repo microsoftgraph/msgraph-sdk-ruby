@@ -70,7 +70,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the supportsDeviceLicensing property value. Whether the program supports the device licensing type.
-        ## @param value Value to set for the supportsDeviceLicensing property.
+        ## @param value Value to set for the supports_device_licensing property.
         ## @return a void
         ## 
         def supports_device_licensing=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the supportsUserLicensing property value. Whether the program supports the user licensing type.
-        ## @param value Value to set for the supportsUserLicensing property.
+        ## @param value Value to set for the supports_user_licensing property.
         ## @return a void
         ## 
         def supports_user_licensing=(value)

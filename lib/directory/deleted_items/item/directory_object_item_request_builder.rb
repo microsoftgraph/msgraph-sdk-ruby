@@ -4,15 +4,15 @@ require_relative '../../../models/directory_object'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../directory'
 require_relative '../deleted_items'
-require_relative './application/application_request_builder'
-require_relative './check_member_groups/check_member_groups_request_builder'
-require_relative './check_member_objects/check_member_objects_request_builder'
-require_relative './get_member_groups/get_member_groups_request_builder'
-require_relative './get_member_objects/get_member_objects_request_builder'
-require_relative './group/group_request_builder'
 require_relative './item'
-require_relative './restore/restore_request_builder'
-require_relative './user/user_request_builder'
+require_relative './microsoft_graph_application/microsoft_graph_application_request_builder'
+require_relative './microsoft_graph_check_member_groups/microsoft_graph_check_member_groups_request_builder'
+require_relative './microsoft_graph_check_member_objects/microsoft_graph_check_member_objects_request_builder'
+require_relative './microsoft_graph_get_member_groups/microsoft_graph_get_member_groups_request_builder'
+require_relative './microsoft_graph_get_member_objects/microsoft_graph_get_member_objects_request_builder'
+require_relative './microsoft_graph_group/microsoft_graph_group_request_builder'
+require_relative './microsoft_graph_restore/microsoft_graph_restore_request_builder'
+require_relative './microsoft_graph_user/microsoft_graph_user_request_builder'
 
 module MicrosoftGraph::Directory::DeletedItems::Item
     ## 
@@ -21,33 +21,43 @@ module MicrosoftGraph::Directory::DeletedItems::Item
         
         ## 
         # Casts the previous resource to application.
-        def application()
-            return MicrosoftGraph::Directory::DeletedItems::Item::Application::ApplicationRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_application()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphApplication::MicrosoftGraphApplicationRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the checkMemberGroups method.
-        def check_member_groups()
-            return MicrosoftGraph::Directory::DeletedItems::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_check_member_groups()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphCheckMemberGroups::MicrosoftGraphCheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the checkMemberObjects method.
-        def check_member_objects()
-            return MicrosoftGraph::Directory::DeletedItems::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_check_member_objects()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphCheckMemberObjects::MicrosoftGraphCheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getMemberGroups method.
-        def get_member_groups()
-            return MicrosoftGraph::Directory::DeletedItems::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_member_groups()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphGetMemberGroups::MicrosoftGraphGetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getMemberObjects method.
-        def get_member_objects()
-            return MicrosoftGraph::Directory::DeletedItems::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_member_objects()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphGetMemberObjects::MicrosoftGraphGetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to group.
-        def group()
-            return MicrosoftGraph::Directory::DeletedItems::Item::Group::GroupRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_group()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphGroup::MicrosoftGraphGroupRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the restore method.
+        def microsoft_graph_restore()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphRestore::MicrosoftGraphRestoreRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Casts the previous resource to user.
+        def microsoft_graph_user()
+            return MicrosoftGraph::Directory::DeletedItems::Item::MicrosoftGraphUser::MicrosoftGraphUserRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -56,18 +66,8 @@ module MicrosoftGraph::Directory::DeletedItems::Item
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the restore method.
-        def restore()
-            return MicrosoftGraph::Directory::DeletedItems::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        # Casts the previous resource to user.
-        def user()
-            return MicrosoftGraph::Directory::DeletedItems::Item::User::UserRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request

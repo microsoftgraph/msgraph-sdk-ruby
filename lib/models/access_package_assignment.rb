@@ -36,7 +36,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accessPackage property value. Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.
-        ## @param value Value to set for the accessPackage property.
+        ## @param value Value to set for the access_package property.
         ## @return a void
         ## 
         def access_package=(value)
@@ -51,7 +51,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignmentPolicy property value. Read-only. Supports $filter (eq) on the id property and $expand query parameters.
-        ## @param value Value to set for the assignmentPolicy property.
+        ## @param value Value to set for the assignment_policy property.
         ## @return a void
         ## 
         def assignment_policy=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the expiredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        ## @param value Value to set for the expiredDateTime property.
+        ## @param value Value to set for the expired_date_time property.
         ## @return a void
         ## 
         def expired_date_time=(value)

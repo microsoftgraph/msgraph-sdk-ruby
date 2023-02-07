@@ -64,7 +64,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the dynamicallyAdjustTopicCount property value. Indicates whether the themes model should dynamically optimize the number of generated topics. To learn more, see Adjust maximum number of themes dynamically.
-        ## @param value Value to set for the dynamicallyAdjustTopicCount property.
+        ## @param value Value to set for the dynamically_adjust_topic_count property.
         ## @return a void
         ## 
         def dynamically_adjust_topic_count=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the ignoreNumbers property value. Indicates whether the themes model should exclude numbers while parsing document texts. To learn more, see Include numbers in themes.
-        ## @param value Value to set for the ignoreNumbers property.
+        ## @param value Value to set for the ignore_numbers property.
         ## @return a void
         ## 
         def ignore_numbers=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the isEnabled property value. Indicates whether themes model is enabled for the case.
-        ## @param value Value to set for the isEnabled property.
+        ## @param value Value to set for the is_enabled property.
         ## @return a void
         ## 
         def is_enabled=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the topicCount property value. The total number of topics that the themes model will generate for a review set. To learn more, see Maximum number of themes.
-        ## @param value Value to set for the topicCount property.
+        ## @param value Value to set for the topic_count property.
         ## @return a void
         ## 
         def topic_count=(value)

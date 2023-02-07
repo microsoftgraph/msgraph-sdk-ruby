@@ -47,7 +47,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the proposedNewTime property value. The proposedNewTime property
-        ## @param value Value to set for the proposedNewTime property.
+        ## @param value Value to set for the proposed_new_time property.
         ## @return a void
         ## 
         def proposed_new_time=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the responseType property value. The responseType property
-        ## @param value Value to set for the responseType property.
+        ## @param value Value to set for the response_type property.
         ## @return a void
         ## 
         def response_type=(value)

@@ -45,7 +45,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accessPackagesIncompatibleWith property value. The access packages that are incompatible with this package. Read-only.
-        ## @param value Value to set for the accessPackagesIncompatibleWith property.
+        ## @param value Value to set for the access_packages_incompatible_with property.
         ## @return a void
         ## 
         def access_packages_incompatible_with=(value)
@@ -60,7 +60,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignmentPolicies property value. The assignmentPolicies property
-        ## @param value Value to set for the assignmentPolicies property.
+        ## @param value Value to set for the assignment_policies property.
         ## @return a void
         ## 
         def assignment_policies=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name of the access package. Supports $filter (eq, contains).
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -169,7 +169,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the incompatibleAccessPackages property value. The access packages whose assigned users are ineligible to be assigned this access package.
-        ## @param value Value to set for the incompatibleAccessPackages property.
+        ## @param value Value to set for the incompatible_access_packages property.
         ## @return a void
         ## 
         def incompatible_access_packages=(value)
@@ -184,7 +184,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the incompatibleGroups property value. The groups whose members are ineligible to be assigned this access package.
-        ## @param value Value to set for the incompatibleGroups property.
+        ## @param value Value to set for the incompatible_groups property.
         ## @return a void
         ## 
         def incompatible_groups=(value)
@@ -199,7 +199,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isHidden property value. Whether the access package is hidden from the requestor.
-        ## @param value Value to set for the isHidden property.
+        ## @param value Value to set for the is_hidden property.
         ## @return a void
         ## 
         def is_hidden=(value)
@@ -214,7 +214,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        ## @param value Value to set for the modifiedDateTime property.
+        ## @param value Value to set for the modified_date_time property.
         ## @return a void
         ## 
         def modified_date_time=(value)

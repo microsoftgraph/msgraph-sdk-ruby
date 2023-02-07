@@ -26,7 +26,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
-        ## @param value Value to set for the activatedUsing property.
+        ## @param value Value to set for the activated_using property.
         ## @return a void
         ## 
         def activated_using=(value)
@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignmentType property value. Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
-        ## @param value Value to set for the assignmentType property.
+        ## @param value Value to set for the assignment_type property.
         ## @return a void
         ## 
         def assignment_type=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the memberType property value. How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
-        ## @param value Value to set for the memberType property.
+        ## @param value Value to set for the member_type property.
         ## @return a void
         ## 
         def member_type=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the scheduleInfo property value. The period of the role assignment. It can represent a single occurrence or multiple recurrences.
-        ## @param value Value to set for the scheduleInfo property.
+        ## @param value Value to set for the schedule_info property.
         ## @return a void
         ## 
         def schedule_info=(value)

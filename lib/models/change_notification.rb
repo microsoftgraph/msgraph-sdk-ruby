@@ -66,7 +66,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the changeType property value. The changeType property
-        ## @param value Value to set for the changeType property.
+        ## @param value Value to set for the change_type property.
         ## @return a void
         ## 
         def change_type=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the clientState property value. Value of the clientState property sent in the subscription request (if any). The maximum length is 255 characters. The client can check whether the change notification came from the service by comparing the values of the clientState property. The value of the clientState property sent with the subscription is compared with the value of the clientState property received with each change notification. Optional.
-        ## @param value Value to set for the clientState property.
+        ## @param value Value to set for the client_state property.
         ## @return a void
         ## 
         def client_state=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the encryptedContent property value. (Preview) Encrypted content attached with the change notification. Only provided if encryptionCertificate and includeResourceData were defined during the subscription request and if the resource supports it. Optional.
-        ## @param value Value to set for the encryptedContent property.
+        ## @param value Value to set for the encrypted_content property.
         ## @return a void
         ## 
         def encrypted_content=(value)
@@ -161,7 +161,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lifecycleEvent property value. The type of lifecycle notification if the current notification is a lifecycle notification. Optional. Supported values are missed, subscriptionRemoved, reauthorizationRequired. Optional.
-        ## @param value Value to set for the lifecycleEvent property.
+        ## @param value Value to set for the lifecycle_event property.
         ## @return a void
         ## 
         def lifecycle_event=(value)
@@ -176,7 +176,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -206,7 +206,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceData property value. The content of this property depends on the type of resource being subscribed to. Optional.
-        ## @param value Value to set for the resourceData property.
+        ## @param value Value to set for the resource_data property.
         ## @return a void
         ## 
         def resource_data=(value)
@@ -241,7 +241,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the subscriptionExpirationDateTime property value. The expiration time for the subscription. Required.
-        ## @param value Value to set for the subscriptionExpirationDateTime property.
+        ## @param value Value to set for the subscription_expiration_date_time property.
         ## @return a void
         ## 
         def subscription_expiration_date_time=(value)
@@ -256,7 +256,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the subscriptionId property value. The unique identifier of the subscription that generated the notification.Required.
-        ## @param value Value to set for the subscriptionId property.
+        ## @param value Value to set for the subscription_id property.
         ## @return a void
         ## 
         def subscription_id=(value)
@@ -271,7 +271,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tenantId property value. The unique identifier of the tenant from which the change notification originated. Required.
-        ## @param value Value to set for the tenantId property.
+        ## @param value Value to set for the tenant_id property.
         ## @return a void
         ## 
         def tenant_id=(value)

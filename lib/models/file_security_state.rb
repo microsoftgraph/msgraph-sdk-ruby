@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
-        ## @param value Value to set for the fileHash property.
+        ## @param value Value to set for the file_hash property.
         ## @return a void
         ## 
         def file_hash=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskScore property value. Provider generated/calculated risk score of the alert file. Recommended value range of 0-1, which equates to a percentage.
-        ## @param value Value to set for the riskScore property.
+        ## @param value Value to set for the risk_score property.
         ## @return a void
         ## 
         def risk_score=(value)

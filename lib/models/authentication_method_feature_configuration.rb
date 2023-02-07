@@ -60,7 +60,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the excludeTarget property value. A single entity that is excluded from this feature.
-        ## @param value Value to set for the excludeTarget property.
+        ## @param value Value to set for the exclude_target property.
         ## @return a void
         ## 
         def exclude_target=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeTarget property value. A single entity that is included in this feature.
-        ## @param value Value to set for the includeTarget property.
+        ## @param value Value to set for the include_target property.
         ## @return a void
         ## 
         def include_target=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

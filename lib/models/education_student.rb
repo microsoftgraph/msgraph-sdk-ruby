@@ -54,7 +54,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the birthDate property value. Birth date of the student.
-        ## @param value Value to set for the birthDate property.
+        ## @param value Value to set for the birth_date property.
         ## @return a void
         ## 
         def birth_date=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalId property value. ID of the student in the source system.
-        ## @param value Value to set for the externalId property.
+        ## @param value Value to set for the external_id property.
         ## @return a void
         ## 
         def external_id=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the graduationYear property value. Year the student is graduating from the school.
-        ## @param value Value to set for the graduationYear property.
+        ## @param value Value to set for the graduation_year property.
         ## @return a void
         ## 
         def graduation_year=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -191,7 +191,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the studentNumber property value. Student Number.
-        ## @param value Value to set for the studentNumber property.
+        ## @param value Value to set for the student_number property.
         ## @return a void
         ## 
         def student_number=(value)

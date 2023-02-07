@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the calendarSyncEnabled property value. Not yet documented
-        ## @param value Value to set for the calendarSyncEnabled property.
+        ## @param value Value to set for the calendar_sync_enabled property.
         ## @return a void
         ## 
         def calendar_sync_enabled=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceAccount property value. Not yet documented
-        ## @param value Value to set for the deviceAccount property.
+        ## @param value Value to set for the device_account property.
         ## @return a void
         ## 
         def device_account=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceAccountEmail property value. Not yet documented
-        ## @param value Value to set for the deviceAccountEmail property.
+        ## @param value Value to set for the device_account_email property.
         ## @return a void
         ## 
         def device_account_email=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the exchangeServer property value. Not yet documented
-        ## @param value Value to set for the exchangeServer property.
+        ## @param value Value to set for the exchange_server property.
         ## @return a void
         ## 
         def exchange_server=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordRotationEnabled property value. Not yet documented
-        ## @param value Value to set for the passwordRotationEnabled property.
+        ## @param value Value to set for the password_rotation_enabled property.
         ## @return a void
         ## 
         def password_rotation_enabled=(value)
@@ -190,7 +190,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sessionInitiationProtocalAddress property value. Not yet documented
-        ## @param value Value to set for the sessionInitiationProtocalAddress property.
+        ## @param value Value to set for the session_initiation_protocal_address property.
         ## @return a void
         ## 
         def session_initiation_protocal_address=(value)

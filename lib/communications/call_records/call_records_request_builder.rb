@@ -7,8 +7,8 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../communications'
 require_relative './call_records'
 require_relative './count/count_request_builder'
-require_relative './get_direct_routing_calls_with_from_date_time_with_to_date_time/get_direct_routing_calls_with_from_date_time_with_to_date_time_request_builder'
-require_relative './get_pstn_calls_with_from_date_time_with_to_date_time/get_pstn_calls_with_from_date_time_with_to_date_time_request_builder'
+require_relative './microsoft_graph_call_records_get_direct_routing_calls_with_from_date_time_with_to_date_time/0b4f001d2cd1a7e58f5621cb93199ac931951ed45d61c42860726e4f516f11f4'
+require_relative './microsoft_graph_call_records_get_pstn_calls_with_from_date_time_with_to_date_time/2ff200d164cec84baf5b570e76631427bf3cd3168578fa5068b156783f678b22'
 
 module MicrosoftGraph::Communications::CallRecords
     ## 
@@ -61,23 +61,23 @@ module MicrosoftGraph::Communications::CallRecords
         ## Provides operations to call the getDirectRoutingCalls method.
         ## @param fromDateTime Usage: fromDateTime={fromDateTime}
         ## @param toDateTime Usage: toDateTime={toDateTime}
-        ## @return a get_direct_routing_calls_with_from_date_time_with_to_date_time_request_builder
+        ## @return a microsoft_graph_call_records_get_direct_routing_calls_with_from_date_time_with_to_date_time_request_builder
         ## 
-        def get_direct_routing_calls_with_from_date_time_with_to_date_time(from_date_time, to_date_time)
+        def microsoft_graph_call_records_get_direct_routing_calls_with_from_date_time_with_to_date_time(from_date_time, to_date_time)
             raise StandardError, 'from_date_time cannot be null' if from_date_time.nil?
             raise StandardError, 'to_date_time cannot be null' if to_date_time.nil?
-            return GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder.new(@path_parameters, @request_adapter, fromDateTime, toDateTime)
+            return MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder.new(@path_parameters, @request_adapter, fromDateTime, toDateTime)
         end
         ## 
         ## Provides operations to call the getPstnCalls method.
         ## @param fromDateTime Usage: fromDateTime={fromDateTime}
         ## @param toDateTime Usage: toDateTime={toDateTime}
-        ## @return a get_pstn_calls_with_from_date_time_with_to_date_time_request_builder
+        ## @return a microsoft_graph_call_records_get_pstn_calls_with_from_date_time_with_to_date_time_request_builder
         ## 
-        def get_pstn_calls_with_from_date_time_with_to_date_time(from_date_time, to_date_time)
+        def microsoft_graph_call_records_get_pstn_calls_with_from_date_time_with_to_date_time(from_date_time, to_date_time)
             raise StandardError, 'from_date_time cannot be null' if from_date_time.nil?
             raise StandardError, 'to_date_time cannot be null' if to_date_time.nil?
-            return GetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder.new(@path_parameters, @request_adapter, fromDateTime, toDateTime)
+            return MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder.new(@path_parameters, @request_adapter, fromDateTime, toDateTime)
         end
         ## 
         ## Create new navigation property to callRecords for communications

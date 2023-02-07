@@ -10,20 +10,20 @@ require_relative '../../item'
 require_relative '../messages'
 require_relative './attachments/attachments_request_builder'
 require_relative './attachments/item/attachment_item_request_builder'
-require_relative './copy/copy_request_builder'
-require_relative './create_forward/create_forward_request_builder'
-require_relative './create_reply/create_reply_request_builder'
-require_relative './create_reply_all/create_reply_all_request_builder'
 require_relative './extensions/extensions_request_builder'
 require_relative './extensions/item/extension_item_request_builder'
-require_relative './forward/forward_request_builder'
 require_relative './item'
-require_relative './move/move_request_builder'
+require_relative './microsoft_graph_copy/microsoft_graph_copy_request_builder'
+require_relative './microsoft_graph_create_forward/microsoft_graph_create_forward_request_builder'
+require_relative './microsoft_graph_create_reply/microsoft_graph_create_reply_request_builder'
+require_relative './microsoft_graph_create_reply_all/microsoft_graph_create_reply_all_request_builder'
+require_relative './microsoft_graph_forward/microsoft_graph_forward_request_builder'
+require_relative './microsoft_graph_move/microsoft_graph_move_request_builder'
+require_relative './microsoft_graph_reply/microsoft_graph_reply_request_builder'
+require_relative './microsoft_graph_reply_all/microsoft_graph_reply_all_request_builder'
+require_relative './microsoft_graph_send/microsoft_graph_send_request_builder'
 require_relative './multi_value_extended_properties/item/multi_value_legacy_extended_property_item_request_builder'
 require_relative './multi_value_extended_properties/multi_value_extended_properties_request_builder'
-require_relative './reply/reply_request_builder'
-require_relative './reply_all/reply_all_request_builder'
-require_relative './send/send_request_builder'
 require_relative './single_value_extended_properties/item/single_value_legacy_extended_property_item_request_builder'
 require_relative './single_value_extended_properties/single_value_extended_properties_request_builder'
 require_relative './value/content_request_builder'
@@ -44,39 +44,54 @@ module MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item
             return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::Value::ContentRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the copy method.
-        def copy()
-            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::Copy::CopyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the createForward method.
-        def create_forward()
-            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::CreateForward::CreateForwardRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the createReply method.
-        def create_reply()
-            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::CreateReply::CreateReplyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the createReplyAll method.
-        def create_reply_all()
-            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::CreateReplyAll::CreateReplyAllRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the extensions property of the microsoft.graph.message entity.
         def extensions()
             return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::Extensions::ExtensionsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the copy method.
+        def microsoft_graph_copy()
+            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::MicrosoftGraphCopy::MicrosoftGraphCopyRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the createForward method.
+        def microsoft_graph_create_forward()
+            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::MicrosoftGraphCreateForward::MicrosoftGraphCreateForwardRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the createReply method.
+        def microsoft_graph_create_reply()
+            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::MicrosoftGraphCreateReply::MicrosoftGraphCreateReplyRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the createReplyAll method.
+        def microsoft_graph_create_reply_all()
+            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::MicrosoftGraphCreateReplyAll::MicrosoftGraphCreateReplyAllRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the forward method.
-        def forward()
-            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::Forward::ForwardRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_forward()
+            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::MicrosoftGraphForward::MicrosoftGraphForwardRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the move method.
-        def move()
-            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::Move::MoveRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_move()
+            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::MicrosoftGraphMove::MicrosoftGraphMoveRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the reply method.
+        def microsoft_graph_reply()
+            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::MicrosoftGraphReply::MicrosoftGraphReplyRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the replyAll method.
+        def microsoft_graph_reply_all()
+            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::MicrosoftGraphReplyAll::MicrosoftGraphReplyAllRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the send method.
+        def microsoft_graph_send()
+            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::MicrosoftGraphSend::MicrosoftGraphSendRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.message entity.
@@ -87,23 +102,8 @@ module MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item
         # Path parameters for the request
         @path_parameters
         ## 
-        # Provides operations to call the reply method.
-        def reply()
-            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::Reply::ReplyRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the replyAll method.
-        def reply_all()
-            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::ReplyAll::ReplyAllRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the send method.
-        def send()
-            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::Send::SendRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.message entity.
         def single_value_extended_properties()

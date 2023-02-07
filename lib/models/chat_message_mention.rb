@@ -12,11 +12,11 @@ module MicrosoftGraph::Models
         # Index of an entity being mentioned in the specified chatMessage. Matches the {index} value in the corresponding <at id='{index}'> tag in the message body.
         @id
         ## 
-        # The entity (user, application, team, or channel) that was @mentioned.
-        @mentioned
-        ## 
         # String used to represent the mention. For example, a user's display name, a team name.
         @mention_text
+        ## 
+        # The entity (user, application, team, or channel) that was @mentioned.
+        @mentioned
         ## 
         # The OdataType property
         @odata_type
@@ -58,8 +58,8 @@ module MicrosoftGraph::Models
         def get_field_deserializers()
             return {
                 "id" => lambda {|n| @id = n.get_number_value() },
-                "mentioned" => lambda {|n| @mentioned = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ChatMessageMentionedIdentitySet.create_from_discriminator_value(pn) }) },
                 "mentionText" => lambda {|n| @mention_text = n.get_string_value() },
+                "mentioned" => lambda {|n| @mentioned = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ChatMessageMentionedIdentitySet.create_from_discriminator_value(pn) }) },
                 "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
             }
         end
@@ -79,6 +79,21 @@ module MicrosoftGraph::Models
             @id = value
         end
         ## 
+        ## Gets the mentionText property value. String used to represent the mention. For example, a user's display name, a team name.
+        ## @return a string
+        ## 
+        def mention_text
+            return @mention_text
+        end
+        ## 
+        ## Sets the mentionText property value. String used to represent the mention. For example, a user's display name, a team name.
+        ## @param value Value to set for the mention_text property.
+        ## @return a void
+        ## 
+        def mention_text=(value)
+            @mention_text = value
+        end
+        ## 
         ## Gets the mentioned property value. The entity (user, application, team, or channel) that was @mentioned.
         ## @return a chat_message_mentioned_identity_set
         ## 
@@ -94,21 +109,6 @@ module MicrosoftGraph::Models
             @mentioned = value
         end
         ## 
-        ## Gets the mentionText property value. String used to represent the mention. For example, a user's display name, a team name.
-        ## @return a string
-        ## 
-        def mention_text
-            return @mention_text
-        end
-        ## 
-        ## Sets the mentionText property value. String used to represent the mention. For example, a user's display name, a team name.
-        ## @param value Value to set for the mentionText property.
-        ## @return a void
-        ## 
-        def mention_text=(value)
-            @mention_text = value
-        end
-        ## 
         ## Gets the @odata.type property value. The OdataType property
         ## @return a string
         ## 
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -131,8 +131,8 @@ module MicrosoftGraph::Models
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
             writer.write_number_value("id", @id)
-            writer.write_object_value("mentioned", @mentioned)
             writer.write_string_value("mentionText", @mention_text)
+            writer.write_object_value("mentioned", @mentioned)
             writer.write_string_value("@odata.type", @odata_type)
             writer.write_additional_data(@additional_data)
         end

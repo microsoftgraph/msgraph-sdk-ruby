@@ -66,7 +66,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Display name of the training.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the latestTrainingStatus property value. Latest status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.
-        ## @param value Value to set for the latestTrainingStatus property.
+        ## @param value Value to set for the latest_training_status property.
         ## @return a void
         ## 
         def latest_training_status=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the trainingAssignedProperties property value. Event details of the training when it was assigned to the user.
-        ## @param value Value to set for the trainingAssignedProperties property.
+        ## @param value Value to set for the training_assigned_properties property.
         ## @return a void
         ## 
         def training_assigned_properties=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the trainingCompletedProperties property value. Event details of the training when it was completed by the user.
-        ## @param value Value to set for the trainingCompletedProperties property.
+        ## @param value Value to set for the training_completed_properties property.
         ## @return a void
         ## 
         def training_completed_properties=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the trainingUpdatedProperties property value. Event details of the training when it was updated/in-progress by the user.
-        ## @param value Value to set for the trainingUpdatedProperties property.
+        ## @param value Value to set for the training_updated_properties property.
         ## @return a void
         ## 
         def training_updated_properties=(value)

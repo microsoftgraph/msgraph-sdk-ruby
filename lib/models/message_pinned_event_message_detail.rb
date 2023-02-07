@@ -38,7 +38,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the eventDateTime property value. Date and time when the event occurred.
-        ## @param value Value to set for the eventDateTime property.
+        ## @param value Value to set for the event_date_time property.
         ## @return a void
         ## 
         def event_date_time=(value)

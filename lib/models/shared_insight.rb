@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastShared property value. Details about the shared item. Read only.
-        ## @param value Value to set for the lastShared property.
+        ## @param value Value to set for the last_shared property.
         ## @return a void
         ## 
         def last_shared=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastSharedMethod property value. The lastSharedMethod property
-        ## @param value Value to set for the lastSharedMethod property.
+        ## @param value Value to set for the last_shared_method property.
         ## @return a void
         ## 
         def last_shared_method=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceReference property value. Reference properties of the shared document, such as the url and type of the document. Read-only
-        ## @param value Value to set for the resourceReference property.
+        ## @param value Value to set for the resource_reference property.
         ## @return a void
         ## 
         def resource_reference=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceVisualization property value. Properties that you can use to visualize the document in your experience. Read-only
-        ## @param value Value to set for the resourceVisualization property.
+        ## @param value Value to set for the resource_visualization property.
         ## @return a void
         ## 
         def resource_visualization=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharingHistory property value. The sharingHistory property
-        ## @param value Value to set for the sharingHistory property.
+        ## @param value Value to set for the sharing_history property.
         ## @return a void
         ## 
         def sharing_history=(value)

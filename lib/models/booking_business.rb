@@ -21,11 +21,11 @@ module MicrosoftGraph::Models
         # The set of appointments of this business in a specified date range. Read-only. Nullable.
         @calendar_view
         ## 
-        # All the customers of this business. Read-only. Nullable.
-        @customers
-        ## 
         # All the custom questions of this business. Read-only. Nullable.
         @custom_questions
+        ## 
+        # All the customers of this business. Read-only. Nullable.
+        @customers
         ## 
         # The code for the currency that the business operates in on Microsoft Bookings.
         @default_currency_iso
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the businessHours property value. The hours of operation for the business.
-        ## @param value Value to set for the businessHours property.
+        ## @param value Value to set for the business_hours property.
         ## @return a void
         ## 
         def business_hours=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the businessType property value. The type of business.
-        ## @param value Value to set for the businessType property.
+        ## @param value Value to set for the business_type property.
         ## @return a void
         ## 
         def business_type=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the calendarView property value. The set of appointments of this business in a specified date range. Read-only. Nullable.
-        ## @param value Value to set for the calendarView property.
+        ## @param value Value to set for the calendar_view property.
         ## @return a void
         ## 
         def calendar_view=(value)
@@ -151,6 +151,21 @@ module MicrosoftGraph::Models
             return BookingBusiness.new
         end
         ## 
+        ## Gets the customQuestions property value. All the custom questions of this business. Read-only. Nullable.
+        ## @return a booking_custom_question
+        ## 
+        def custom_questions
+            return @custom_questions
+        end
+        ## 
+        ## Sets the customQuestions property value. All the custom questions of this business. Read-only. Nullable.
+        ## @param value Value to set for the custom_questions property.
+        ## @return a void
+        ## 
+        def custom_questions=(value)
+            @custom_questions = value
+        end
+        ## 
         ## Gets the customers property value. All the customers of this business. Read-only. Nullable.
         ## @return a booking_customer_base
         ## 
@@ -166,21 +181,6 @@ module MicrosoftGraph::Models
             @customers = value
         end
         ## 
-        ## Gets the customQuestions property value. All the custom questions of this business. Read-only. Nullable.
-        ## @return a booking_custom_question
-        ## 
-        def custom_questions
-            return @custom_questions
-        end
-        ## 
-        ## Sets the customQuestions property value. All the custom questions of this business. Read-only. Nullable.
-        ## @param value Value to set for the customQuestions property.
-        ## @return a void
-        ## 
-        def custom_questions=(value)
-            @custom_questions = value
-        end
-        ## 
         ## Gets the defaultCurrencyIso property value. The code for the currency that the business operates in on Microsoft Bookings.
         ## @return a string
         ## 
@@ -189,7 +189,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the defaultCurrencyIso property value. The code for the currency that the business operates in on Microsoft Bookings.
-        ## @param value Value to set for the defaultCurrencyIso property.
+        ## @param value Value to set for the default_currency_iso property.
         ## @return a void
         ## 
         def default_currency_iso=(value)
@@ -204,7 +204,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the business, which interfaces with customers. This name appears at the top of the business scheduling page.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -236,8 +236,8 @@ module MicrosoftGraph::Models
                 "businessHours" => lambda {|n| @business_hours = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingWorkHours.create_from_discriminator_value(pn) }) },
                 "businessType" => lambda {|n| @business_type = n.get_string_value() },
                 "calendarView" => lambda {|n| @calendar_view = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingAppointment.create_from_discriminator_value(pn) }) },
-                "customers" => lambda {|n| @customers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingCustomerBase.create_from_discriminator_value(pn) }) },
                 "customQuestions" => lambda {|n| @custom_questions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingCustomQuestion.create_from_discriminator_value(pn) }) },
+                "customers" => lambda {|n| @customers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingCustomerBase.create_from_discriminator_value(pn) }) },
                 "defaultCurrencyIso" => lambda {|n| @default_currency_iso = n.get_string_value() },
                 "displayName" => lambda {|n| @display_name = n.get_string_value() },
                 "email" => lambda {|n| @email = n.get_string_value() },
@@ -260,7 +260,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isPublished property value. The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.
-        ## @param value Value to set for the isPublished property.
+        ## @param value Value to set for the is_published property.
         ## @return a void
         ## 
         def is_published=(value)
@@ -275,7 +275,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the languageTag property value. The language of the self-service booking page.
-        ## @param value Value to set for the languageTag property.
+        ## @param value Value to set for the language_tag property.
         ## @return a void
         ## 
         def language_tag=(value)
@@ -305,7 +305,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the publicUrl property value. The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.
-        ## @param value Value to set for the publicUrl property.
+        ## @param value Value to set for the public_url property.
         ## @return a void
         ## 
         def public_url=(value)
@@ -320,7 +320,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the schedulingPolicy property value. Specifies how bookings can be created for this business.
-        ## @param value Value to set for the schedulingPolicy property.
+        ## @param value Value to set for the scheduling_policy property.
         ## @return a void
         ## 
         def scheduling_policy=(value)
@@ -339,8 +339,8 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("businessHours", @business_hours)
             writer.write_string_value("businessType", @business_type)
             writer.write_collection_of_object_values("calendarView", @calendar_view)
-            writer.write_collection_of_object_values("customers", @customers)
             writer.write_collection_of_object_values("customQuestions", @custom_questions)
+            writer.write_collection_of_object_values("customers", @customers)
             writer.write_string_value("defaultCurrencyIso", @default_currency_iso)
             writer.write_string_value("displayName", @display_name)
             writer.write_string_value("email", @email)
@@ -375,7 +375,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the staffMembers property value. All the staff members that provide services in this business. Read-only. Nullable.
-        ## @param value Value to set for the staffMembers property.
+        ## @param value Value to set for the staff_members property.
         ## @return a void
         ## 
         def staff_members=(value)
@@ -390,7 +390,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webSiteUrl property value. The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.
-        ## @param value Value to set for the webSiteUrl property.
+        ## @param value Value to set for the web_site_url property.
         ## @return a void
         ## 
         def web_site_url=(value)

@@ -74,7 +74,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query is specified. For example, ./manager.
-        ## @param value Value to set for the queryRoot property.
+        ## @param value Value to set for the query_root property.
         ## @return a void
         ## 
         def query_root=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the queryType property value. Indicates the type of query. Types include MicrosoftGraph and ARM.
-        ## @param value Value to set for the queryType property.
+        ## @param value Value to set for the query_type property.
         ## @return a void
         ## 
         def query_type=(value)

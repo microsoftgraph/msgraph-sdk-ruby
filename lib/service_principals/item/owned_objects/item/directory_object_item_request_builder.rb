@@ -5,12 +5,12 @@ require_relative '../../../../models/o_data_errors/o_data_error'
 require_relative '../../../service_principals'
 require_relative '../../item'
 require_relative '../owned_objects'
-require_relative './application/application_request_builder'
-require_relative './app_role_assignment/app_role_assignment_request_builder'
-require_relative './endpoint/endpoint_request_builder'
-require_relative './group/group_request_builder'
 require_relative './item'
-require_relative './service_principal/service_principal_request_builder'
+require_relative './microsoft_graph_application/microsoft_graph_application_request_builder'
+require_relative './microsoft_graph_app_role_assignment/microsoft_graph_app_role_assignment_request_builder'
+require_relative './microsoft_graph_endpoint/microsoft_graph_endpoint_request_builder'
+require_relative './microsoft_graph_group/microsoft_graph_group_request_builder'
+require_relative './microsoft_graph_service_principal/microsoft_graph_service_principal_request_builder'
 
 module MicrosoftGraph::ServicePrincipals::Item::OwnedObjects::Item
     ## 
@@ -19,23 +19,28 @@ module MicrosoftGraph::ServicePrincipals::Item::OwnedObjects::Item
         
         ## 
         # Casts the previous resource to application.
-        def application()
-            return MicrosoftGraph::ServicePrincipals::Item::OwnedObjects::Item::Application::ApplicationRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_application()
+            return MicrosoftGraph::ServicePrincipals::Item::OwnedObjects::Item::MicrosoftGraphApplication::MicrosoftGraphApplicationRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to appRoleAssignment.
-        def app_role_assignment()
-            return MicrosoftGraph::ServicePrincipals::Item::OwnedObjects::Item::AppRoleAssignment::AppRoleAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_app_role_assignment()
+            return MicrosoftGraph::ServicePrincipals::Item::OwnedObjects::Item::MicrosoftGraphAppRoleAssignment::MicrosoftGraphAppRoleAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to endpoint.
-        def endpoint()
-            return MicrosoftGraph::ServicePrincipals::Item::OwnedObjects::Item::Endpoint::EndpointRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_endpoint()
+            return MicrosoftGraph::ServicePrincipals::Item::OwnedObjects::Item::MicrosoftGraphEndpoint::MicrosoftGraphEndpointRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Casts the previous resource to group.
-        def group()
-            return MicrosoftGraph::ServicePrincipals::Item::OwnedObjects::Item::Group::GroupRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_group()
+            return MicrosoftGraph::ServicePrincipals::Item::OwnedObjects::Item::MicrosoftGraphGroup::MicrosoftGraphGroupRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Casts the previous resource to servicePrincipal.
+        def microsoft_graph_service_principal()
+            return MicrosoftGraph::ServicePrincipals::Item::OwnedObjects::Item::MicrosoftGraphServicePrincipal::MicrosoftGraphServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -43,11 +48,6 @@ module MicrosoftGraph::ServicePrincipals::Item::OwnedObjects::Item
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Casts the previous resource to servicePrincipal.
-        def service_principal()
-            return MicrosoftGraph::ServicePrincipals::Item::OwnedObjects::Item::ServicePrincipal::ServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template

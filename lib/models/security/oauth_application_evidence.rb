@@ -27,7 +27,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the appId property value. Unique identifier of the application.
-        ## @param value Value to set for the appId property.
+        ## @param value Value to set for the app_id property.
         ## @return a void
         ## 
         def app_id=(value)
@@ -58,7 +58,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the displayName property value. Name of the application.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the objectId property value. The unique identifier of the application object in Azure AD.
-        ## @param value Value to set for the objectId property.
+        ## @param value Value to set for the object_id property.
         ## @return a void
         ## 
         def object_id=(value)

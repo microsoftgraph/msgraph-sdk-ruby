@@ -54,7 +54,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Inherited property. The human-readable name of the policy. Optional. Read-only.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the selfServiceSignUp property value. Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. Optional. Read-only.
-        ## @param value Value to set for the selfServiceSignUp property.
+        ## @param value Value to set for the self_service_sign_up property.
         ## @return a void
         ## 
         def self_service_sign_up=(value)

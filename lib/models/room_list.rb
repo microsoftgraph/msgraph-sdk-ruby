@@ -37,7 +37,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the emailAddress property value. The email address of the room list.
-        ## @param value Value to set for the emailAddress property.
+        ## @param value Value to set for the email_address property.
         ## @return a void
         ## 
         def email_address=(value)

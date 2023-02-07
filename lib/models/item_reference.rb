@@ -9,13 +9,13 @@ module MicrosoftGraph::Models
         # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
         @additional_data
         ## 
-        # Unique identifier of the drive instance that contains the item. Read-only.
+        # Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
         @drive_id
         ## 
-        # Identifies the type of drive. See [drive][] resource for values.
+        # Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
         @drive_type
         ## 
-        # Unique identifier of the item in the drive. Read-only.
+        # Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
         @id
         ## 
         # The name of the item being referenced. Read-only.
@@ -33,7 +33,7 @@ module MicrosoftGraph::Models
         # Returns identifiers useful for SharePoint REST compatibility. Read-only.
         @sharepoint_ids
         ## 
-        # For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+        # For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
         @site_id
         ## 
         ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -67,30 +67,30 @@ module MicrosoftGraph::Models
             return ItemReference.new
         end
         ## 
-        ## Gets the driveId property value. Unique identifier of the drive instance that contains the item. Read-only.
+        ## Gets the driveId property value. Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
         ## @return a string
         ## 
         def drive_id
             return @drive_id
         end
         ## 
-        ## Sets the driveId property value. Unique identifier of the drive instance that contains the item. Read-only.
-        ## @param value Value to set for the driveId property.
+        ## Sets the driveId property value. Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
+        ## @param value Value to set for the drive_id property.
         ## @return a void
         ## 
         def drive_id=(value)
             @drive_id = value
         end
         ## 
-        ## Gets the driveType property value. Identifies the type of drive. See [drive][] resource for values.
+        ## Gets the driveType property value. Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
         ## @return a string
         ## 
         def drive_type
             return @drive_type
         end
         ## 
-        ## Sets the driveType property value. Identifies the type of drive. See [drive][] resource for values.
-        ## @param value Value to set for the driveType property.
+        ## Sets the driveType property value. Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
+        ## @param value Value to set for the drive_type property.
         ## @return a void
         ## 
         def drive_type=(value)
@@ -114,14 +114,14 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the id property value. Unique identifier of the item in the drive. Read-only.
+        ## Gets the id property value. Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
         ## @return a string
         ## 
         def id
             return @id
         end
         ## 
-        ## Sets the id property value. Unique identifier of the item in the drive. Read-only.
+        ## Sets the id property value. Unique identifier of the driveItem in the drive or a listItem in a list. Read-only.
         ## @param value Value to set for the id property.
         ## @return a void
         ## 
@@ -152,7 +152,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -200,7 +200,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the shareId property value. A unique identifier for a shared resource that can be accessed via the [Shares][] API.
-        ## @param value Value to set for the shareId property.
+        ## @param value Value to set for the share_id property.
         ## @return a void
         ## 
         def share_id=(value)
@@ -215,22 +215,22 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
-        ## @param value Value to set for the sharepointIds property.
+        ## @param value Value to set for the sharepoint_ids property.
         ## @return a void
         ## 
         def sharepoint_ids=(value)
             @sharepoint_ids = value
         end
         ## 
-        ## Gets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+        ## Gets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
         ## @return a string
         ## 
         def site_id
             return @site_id
         end
         ## 
-        ## Sets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
-        ## @param value Value to set for the siteId property.
+        ## Sets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
+        ## @param value Value to set for the site_id property.
         ## @return a void
         ## 
         def site_id=(value)

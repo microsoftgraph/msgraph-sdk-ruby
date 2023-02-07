@@ -4,5 +4,6 @@ module MicrosoftGraph::Models
         Presenter: :Presenter,
         UnknownFutureValue: :UnknownFutureValue,
         Producer: :Producer,
+        Coorganizer: :Coorganizer,
     }
 end

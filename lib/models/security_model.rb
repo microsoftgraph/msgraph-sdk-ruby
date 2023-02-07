@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the attackSimulation property value. The attackSimulation property
-        ## @param value Value to set for the attackSimulation property.
+        ## @param value Value to set for the attack_simulation property.
         ## @return a void
         ## 
         def attack_simulation=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
-        ## @param value Value to set for the secureScoreControlProfiles property.
+        ## @param value Value to set for the secure_score_control_profiles property.
         ## @return a void
         ## 
         def secure_score_control_profiles=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the secureScores property value. The secureScores property
-        ## @param value Value to set for the secureScores property.
+        ## @param value Value to set for the secure_scores property.
         ## @return a void
         ## 
         def secure_scores=(value)

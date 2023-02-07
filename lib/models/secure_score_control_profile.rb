@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the actionType property value. Control action type (Config, Review, Behavior).
-        ## @param value Value to set for the actionType property.
+        ## @param value Value to set for the action_type property.
         ## @return a void
         ## 
         def action_type=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the actionUrl property value. URL to where the control can be actioned.
-        ## @param value Value to set for the actionUrl property.
+        ## @param value Value to set for the action_url property.
         ## @return a void
         ## 
         def action_url=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the azureTenantId property value. GUID string for tenant ID.
-        ## @param value Value to set for the azureTenantId property.
+        ## @param value Value to set for the azure_tenant_id property.
         ## @return a void
         ## 
         def azure_tenant_id=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the complianceInformation property value. The collection of compliance information associated with secure score control
-        ## @param value Value to set for the complianceInformation property.
+        ## @param value Value to set for the compliance_information property.
         ## @return a void
         ## 
         def compliance_information=(value)
@@ -139,7 +139,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
-        ## @param value Value to set for the controlCategory property.
+        ## @param value Value to set for the control_category property.
         ## @return a void
         ## 
         def control_category=(value)
@@ -154,7 +154,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the controlStateUpdates property value. Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).
-        ## @param value Value to set for the controlStateUpdates property.
+        ## @param value Value to set for the control_state_updates property.
         ## @return a void
         ## 
         def control_state_updates=(value)
@@ -220,7 +220,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the implementationCost property value. Resource cost of implemmentating control (low, moderate, high).
-        ## @param value Value to set for the implementationCost property.
+        ## @param value Value to set for the implementation_cost property.
         ## @return a void
         ## 
         def implementation_cost=(value)
@@ -235,7 +235,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. Time at which the control profile entity was last modified. The Timestamp type represents date and time
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -250,7 +250,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maxScore property value. max attainable score for the control.
-        ## @param value Value to set for the maxScore property.
+        ## @param value Value to set for the max_score property.
         ## @return a void
         ## 
         def max_score=(value)
@@ -295,7 +295,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the remediationImpact property value. Description of the impact on users of the remediation.
-        ## @param value Value to set for the remediationImpact property.
+        ## @param value Value to set for the remediation_impact property.
         ## @return a void
         ## 
         def remediation_impact=(value)
@@ -398,7 +398,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userImpact property value. The userImpact property
-        ## @param value Value to set for the userImpact property.
+        ## @param value Value to set for the user_impact property.
         ## @return a void
         ## 
         def user_impact=(value)
@@ -413,7 +413,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the vendorInformation property value. The vendorInformation property
-        ## @param value Value to set for the vendorInformation property.
+        ## @param value Value to set for the vendor_information property.
         ## @return a void
         ## 
         def vendor_information=(value)

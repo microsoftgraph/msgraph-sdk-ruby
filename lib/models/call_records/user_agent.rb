@@ -42,7 +42,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the applicationVersion property value. Identifies the version of application software used by this endpoint.
-        ## @param value Value to set for the applicationVersion property.
+        ## @param value Value to set for the application_version property.
         ## @return a void
         ## 
         def application_version=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the headerValue property value. User-agent header value reported by this endpoint.
-        ## @param value Value to set for the headerValue property.
+        ## @param value Value to set for the header_value property.
         ## @return a void
         ## 
         def header_value=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

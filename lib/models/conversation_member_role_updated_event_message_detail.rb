@@ -31,7 +31,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the conversationMemberRoles property value. Roles for the coversation member user.
-        ## @param value Value to set for the conversationMemberRoles property.
+        ## @param value Value to set for the conversation_member_roles property.
         ## @return a void
         ## 
         def conversation_member_roles=(value)
@@ -46,7 +46,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the conversationMemberUser property value. Identity of the conversation member user.
-        ## @param value Value to set for the conversationMemberUser property.
+        ## @param value Value to set for the conversation_member_user property.
         ## @return a void
         ## 
         def conversation_member_user=(value)

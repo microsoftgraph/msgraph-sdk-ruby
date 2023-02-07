@@ -17,7 +17,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the certificateAuthorities property value. Collection of certificate authorities which creates a trusted certificate chain.
-        ## @param value Value to set for the certificateAuthorities property.
+        ## @param value Value to set for the certificate_authorities property.
         ## @return a void
         ## 
         def certificate_authorities=(value)

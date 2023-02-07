@@ -57,11 +57,11 @@ module MicrosoftGraph::Models
         # Text values of the specified range. The Text value will not depend on the cell width. The # sign substitution that happens in Excel UI will not affect the text value returned by the API. Read-only.
         @text
         ## 
-        # Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
-        @values
-        ## 
         # Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
         @value_types
+        ## 
+        # Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
+        @values
         ## 
         # The worksheet containing the current range. Read-only.
         @worksheet
@@ -89,7 +89,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the addressLocal property value. Represents range reference for the specified range in the language of the user. Read-only.
-        ## @param value Value to set for the addressLocal property.
+        ## @param value Value to set for the address_local property.
         ## @return a void
         ## 
         def address_local=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cellCount property value. Number of cells in the range. Read-only.
-        ## @param value Value to set for the cellCount property.
+        ## @param value Value to set for the cell_count property.
         ## @return a void
         ## 
         def cell_count=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the columnCount property value. Represents the total number of columns in the range. Read-only.
-        ## @param value Value to set for the columnCount property.
+        ## @param value Value to set for the column_count property.
         ## @return a void
         ## 
         def column_count=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the columnHidden property value. Represents if all columns of the current range are hidden.
-        ## @param value Value to set for the columnHidden property.
+        ## @param value Value to set for the column_hidden property.
         ## @return a void
         ## 
         def column_hidden=(value)
@@ -149,7 +149,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the columnIndex property value. Represents the column number of the first cell in the range. Zero-indexed. Read-only.
-        ## @param value Value to set for the columnIndex property.
+        ## @param value Value to set for the column_index property.
         ## @return a void
         ## 
         def column_index=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the formulasLocal property value. Represents the formula in A1-style notation, in the user's language and number-formatting locale.  For example, the English '=SUM(A1, 1.5)' formula would become '=SUMME(A1; 1,5)' in German.
-        ## @param value Value to set for the formulasLocal property.
+        ## @param value Value to set for the formulas_local property.
         ## @return a void
         ## 
         def formulas_local=(value)
@@ -225,7 +225,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the formulasR1C1 property value. Represents the formula in R1C1-style notation.
-        ## @param value Value to set for the formulasR1C1 property.
+        ## @param value Value to set for the formulas_r1_c1 property.
         ## @return a void
         ## 
         def formulas_r1_c1=(value)
@@ -254,8 +254,8 @@ module MicrosoftGraph::Models
                 "rowIndex" => lambda {|n| @row_index = n.get_number_value() },
                 "sort" => lambda {|n| @sort = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WorkbookRangeSort.create_from_discriminator_value(pn) }) },
                 "text" => lambda {|n| @text = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
-                "values" => lambda {|n| @values = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                 "valueTypes" => lambda {|n| @value_types = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
+                "values" => lambda {|n| @values = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Json.create_from_discriminator_value(pn) }) },
                 "worksheet" => lambda {|n| @worksheet = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WorkbookWorksheet.create_from_discriminator_value(pn) }) },
             })
         end
@@ -283,7 +283,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the numberFormat property value. Represents Excel's number format code for the given cell.
-        ## @param value Value to set for the numberFormat property.
+        ## @param value Value to set for the number_format property.
         ## @return a void
         ## 
         def number_format=(value)
@@ -298,7 +298,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the rowCount property value. Returns the total number of rows in the range. Read-only.
-        ## @param value Value to set for the rowCount property.
+        ## @param value Value to set for the row_count property.
         ## @return a void
         ## 
         def row_count=(value)
@@ -313,7 +313,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the rowHidden property value. Represents if all rows of the current range are hidden.
-        ## @param value Value to set for the rowHidden property.
+        ## @param value Value to set for the row_hidden property.
         ## @return a void
         ## 
         def row_hidden=(value)
@@ -328,7 +328,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the rowIndex property value. Returns the row number of the first cell in the range. Zero-indexed. Read-only.
-        ## @param value Value to set for the rowIndex property.
+        ## @param value Value to set for the row_index property.
         ## @return a void
         ## 
         def row_index=(value)
@@ -359,8 +359,8 @@ module MicrosoftGraph::Models
             writer.write_number_value("rowIndex", @row_index)
             writer.write_object_value("sort", @sort)
             writer.write_object_value("text", @text)
-            writer.write_object_value("values", @values)
             writer.write_object_value("valueTypes", @value_types)
+            writer.write_object_value("values", @values)
             writer.write_object_value("worksheet", @worksheet)
         end
         ## 
@@ -394,6 +394,21 @@ module MicrosoftGraph::Models
             @text = value
         end
         ## 
+        ## Gets the valueTypes property value. Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
+        ## @return a json
+        ## 
+        def value_types
+            return @value_types
+        end
+        ## 
+        ## Sets the valueTypes property value. Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
+        ## @param value Value to set for the value_types property.
+        ## @return a void
+        ## 
+        def value_types=(value)
+            @value_types = value
+        end
+        ## 
         ## Gets the values property value. Represents the raw values of the specified range. The data returned could be of type string, number, or a boolean. Cell that contain an error will return the error string.
         ## @return a json
         ## 
@@ -407,21 +422,6 @@ module MicrosoftGraph::Models
         ## 
         def values=(value)
             @values = value
-        end
-        ## 
-        ## Gets the valueTypes property value. Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
-        ## @return a json
-        ## 
-        def value_types
-            return @value_types
-        end
-        ## 
-        ## Sets the valueTypes property value. Represents the type of data of each cell. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error. Read-only.
-        ## @param value Value to set for the valueTypes property.
-        ## @return a void
-        ## 
-        def value_types=(value)
-            @value_types = value
         end
         ## 
         ## Gets the worksheet property value. The worksheet containing the current range. Read-only.

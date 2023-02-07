@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the skypeId property value. The skypeId property
-        ## @param value Value to set for the skypeId property.
+        ## @param value Value to set for the skype_id property.
         ## @return a void
         ## 
         def skype_id=(value)

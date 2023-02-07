@@ -68,7 +68,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the createdByDisplayName property value. The person or app name that submitted the comment.
-        ## @param value Value to set for the createdByDisplayName property.
+        ## @param value Value to set for the created_by_display_name property.
         ## @return a void
         ## 
         def created_by_display_name=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the createdDateTime property value. The time when the comment was submitted.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

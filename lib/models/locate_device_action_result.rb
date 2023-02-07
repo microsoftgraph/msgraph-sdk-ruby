@@ -33,7 +33,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceLocation property value. device location
-        ## @param value Value to set for the deviceLocation property.
+        ## @param value Value to set for the device_location property.
         ## @return a void
         ## 
         def device_location=(value)

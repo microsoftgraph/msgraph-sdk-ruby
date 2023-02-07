@@ -4,9 +4,9 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/risky_user'
 require_relative '../../models/risky_user_collection_response'
 require_relative '../identity_protection'
-require_relative './confirm_compromised/confirm_compromised_request_builder'
 require_relative './count/count_request_builder'
-require_relative './dismiss/dismiss_request_builder'
+require_relative './microsoft_graph_confirm_compromised/microsoft_graph_confirm_compromised_request_builder'
+require_relative './microsoft_graph_dismiss/microsoft_graph_dismiss_request_builder'
 require_relative './risky_users'
 
 module MicrosoftGraph::IdentityProtection::RiskyUsers
@@ -15,19 +15,19 @@ module MicrosoftGraph::IdentityProtection::RiskyUsers
     class RiskyUsersRequestBuilder
         
         ## 
-        # Provides operations to call the confirmCompromised method.
-        def confirm_compromised()
-            return MicrosoftGraph::IdentityProtection::RiskyUsers::ConfirmCompromised::ConfirmCompromisedRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::IdentityProtection::RiskyUsers::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the confirmCompromised method.
+        def microsoft_graph_confirm_compromised()
+            return MicrosoftGraph::IdentityProtection::RiskyUsers::MicrosoftGraphConfirmCompromised::MicrosoftGraphConfirmCompromisedRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the dismiss method.
-        def dismiss()
-            return MicrosoftGraph::IdentityProtection::RiskyUsers::Dismiss::DismissRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_dismiss()
+            return MicrosoftGraph::IdentityProtection::RiskyUsers::MicrosoftGraphDismiss::MicrosoftGraphDismissRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

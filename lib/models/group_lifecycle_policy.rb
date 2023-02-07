@@ -23,7 +23,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the alternateNotificationEmails property value. List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.
-        ## @param value Value to set for the alternateNotificationEmails property.
+        ## @param value Value to set for the alternate_notification_emails property.
         ## @return a void
         ## 
         def alternate_notification_emails=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the groupLifetimeInDays property value. Number of days before a group expires and needs to be renewed. Once renewed, the group expiration is extended by the number of days defined.
-        ## @param value Value to set for the groupLifetimeInDays property.
+        ## @param value Value to set for the group_lifetime_in_days property.
         ## @return a void
         ## 
         def group_lifetime_in_days=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managedGroupTypes property value. The group type for which the expiration policy applies. Possible values are All, Selected or None.
-        ## @param value Value to set for the managedGroupTypes property.
+        ## @param value Value to set for the managed_group_types property.
         ## @return a void
         ## 
         def managed_group_types=(value)

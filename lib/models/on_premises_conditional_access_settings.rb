@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the excludedGroups property value. User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.
-        ## @param value Value to set for the excludedGroups property.
+        ## @param value Value to set for the excluded_groups property.
         ## @return a void
         ## 
         def excluded_groups=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includedGroups property value. User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.
-        ## @param value Value to set for the includedGroups property.
+        ## @param value Value to set for the included_groups property.
         ## @return a void
         ## 
         def included_groups=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the overrideDefaultRule property value. Override the default access rule when allowing a device to ensure access is granted.
-        ## @param value Value to set for the overrideDefaultRule property.
+        ## @param value Value to set for the override_default_rule property.
         ## @return a void
         ## 
         def override_default_rule=(value)

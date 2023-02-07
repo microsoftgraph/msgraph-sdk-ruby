@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resolveAvailability property value. If set to true and the specified resource is busy, findMeetingTimes looks for another resource that is free. If set to false and the specified resource is busy, findMeetingTimes returns the resource best ranked in the user's cache without checking if it's free. Default is true.
-        ## @param value Value to set for the resolveAvailability property.
+        ## @param value Value to set for the resolve_availability property.
         ## @return a void
         ## 
         def resolve_availability=(value)

@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the openSlotCount property value. Count of the number of slots for the given open shift.
-        ## @param value Value to set for the openSlotCount property.
+        ## @param value Value to set for the open_slot_count property.
         ## @return a void
         ## 
         def open_slot_count=(value)

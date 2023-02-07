@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activityDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the activityDateTime property.
+        ## @param value Value to set for the activity_date_time property.
         ## @return a void
         ## 
         def activity_date_time=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the changeId property value. Unique ID of this change in this cycle.
-        ## @param value Value to set for the changeId property.
+        ## @param value Value to set for the change_id property.
         ## @return a void
         ## 
         def change_id=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cycleId property value. Unique ID per job iteration.
-        ## @param value Value to set for the cycleId property.
+        ## @param value Value to set for the cycle_id property.
         ## @return a void
         ## 
         def cycle_id=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the durationInMilliseconds property value. Indicates how long this provisioning action took to finish. Measured in milliseconds.
-        ## @param value Value to set for the durationInMilliseconds property.
+        ## @param value Value to set for the duration_in_milliseconds property.
         ## @return a void
         ## 
         def duration_in_milliseconds=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the initiatedBy property value. Details of who initiated this provisioning.
-        ## @param value Value to set for the initiatedBy property.
+        ## @param value Value to set for the initiated_by property.
         ## @return a void
         ## 
         def initiated_by=(value)
@@ -178,7 +178,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the jobId property value. The unique ID for the whole provisioning job.
-        ## @param value Value to set for the jobId property.
+        ## @param value Value to set for the job_id property.
         ## @return a void
         ## 
         def job_id=(value)
@@ -193,7 +193,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the modifiedProperties property value. Details of each property that was modified in this provisioning action on this object.
-        ## @param value Value to set for the modifiedProperties property.
+        ## @param value Value to set for the modified_properties property.
         ## @return a void
         ## 
         def modified_properties=(value)
@@ -208,7 +208,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
-        ## @param value Value to set for the provisioningAction property.
+        ## @param value Value to set for the provisioning_action property.
         ## @return a void
         ## 
         def provisioning_action=(value)
@@ -223,7 +223,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the provisioningStatusInfo property value. Details of provisioning status.
-        ## @param value Value to set for the provisioningStatusInfo property.
+        ## @param value Value to set for the provisioning_status_info property.
         ## @return a void
         ## 
         def provisioning_status_info=(value)
@@ -238,7 +238,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the provisioningSteps property value. Details of each step in provisioning.
-        ## @param value Value to set for the provisioningSteps property.
+        ## @param value Value to set for the provisioning_steps property.
         ## @return a void
         ## 
         def provisioning_steps=(value)
@@ -278,7 +278,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the servicePrincipal property value. Represents the service principal used for provisioning.
-        ## @param value Value to set for the servicePrincipal property.
+        ## @param value Value to set for the service_principal property.
         ## @return a void
         ## 
         def service_principal=(value)
@@ -293,7 +293,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sourceIdentity property value. Details of source object being provisioned.
-        ## @param value Value to set for the sourceIdentity property.
+        ## @param value Value to set for the source_identity property.
         ## @return a void
         ## 
         def source_identity=(value)
@@ -308,7 +308,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sourceSystem property value. Details of source system of the object being provisioned.
-        ## @param value Value to set for the sourceSystem property.
+        ## @param value Value to set for the source_system property.
         ## @return a void
         ## 
         def source_system=(value)
@@ -323,7 +323,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the targetIdentity property value. Details of target object being provisioned.
-        ## @param value Value to set for the targetIdentity property.
+        ## @param value Value to set for the target_identity property.
         ## @return a void
         ## 
         def target_identity=(value)
@@ -338,7 +338,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the targetSystem property value. Details of target system of the object being provisioned.
-        ## @param value Value to set for the targetSystem property.
+        ## @param value Value to set for the target_system property.
         ## @return a void
         ## 
         def target_system=(value)
@@ -353,7 +353,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tenantId property value. Unique Azure AD tenant ID.
-        ## @param value Value to set for the tenantId property.
+        ## @param value Value to set for the tenant_id property.
         ## @return a void
         ## 
         def tenant_id=(value)

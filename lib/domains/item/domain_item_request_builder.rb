@@ -7,14 +7,14 @@ require_relative './domain_name_references/domain_name_references_request_builde
 require_relative './domain_name_references/item/directory_object_item_request_builder'
 require_relative './federation_configuration/federation_configuration_request_builder'
 require_relative './federation_configuration/item/internal_domain_federation_item_request_builder'
-require_relative './force_delete/force_delete_request_builder'
 require_relative './item'
-require_relative './promote/promote_request_builder'
+require_relative './microsoft_graph_force_delete/microsoft_graph_force_delete_request_builder'
+require_relative './microsoft_graph_promote/microsoft_graph_promote_request_builder'
+require_relative './microsoft_graph_verify/microsoft_graph_verify_request_builder'
 require_relative './service_configuration_records/item/domain_dns_record_item_request_builder'
 require_relative './service_configuration_records/service_configuration_records_request_builder'
 require_relative './verification_dns_records/item/domain_dns_record_item_request_builder'
 require_relative './verification_dns_records/verification_dns_records_request_builder'
-require_relative './verify/verify_request_builder'
 
 module MicrosoftGraph::Domains::Item
     ## 
@@ -33,17 +33,22 @@ module MicrosoftGraph::Domains::Item
         end
         ## 
         # Provides operations to call the forceDelete method.
-        def force_delete()
-            return MicrosoftGraph::Domains::Item::ForceDelete::ForceDeleteRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_force_delete()
+            return MicrosoftGraph::Domains::Item::MicrosoftGraphForceDelete::MicrosoftGraphForceDeleteRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the promote method.
+        def microsoft_graph_promote()
+            return MicrosoftGraph::Domains::Item::MicrosoftGraphPromote::MicrosoftGraphPromoteRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the verify method.
+        def microsoft_graph_verify()
+            return MicrosoftGraph::Domains::Item::MicrosoftGraphVerify::MicrosoftGraphVerifyRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
         @path_parameters
-        ## 
-        # Provides operations to call the promote method.
-        def promote()
-            return MicrosoftGraph::Domains::Item::Promote::PromoteRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
@@ -59,11 +64,6 @@ module MicrosoftGraph::Domains::Item
         # Provides operations to manage the verificationDnsRecords property of the microsoft.graph.domain entity.
         def verification_dns_records()
             return MicrosoftGraph::Domains::Item::VerificationDnsRecords::VerificationDnsRecordsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the verify method.
-        def verify()
-            return MicrosoftGraph::Domains::Item::Verify::VerifyRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Instantiates a new DomainItemRequestBuilder and sets the default values.

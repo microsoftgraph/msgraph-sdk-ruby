@@ -6,7 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../communications'
 require_relative './calls'
 require_relative './count/count_request_builder'
-require_relative './log_teleconference_device_quality/log_teleconference_device_quality_request_builder'
+require_relative './microsoft_graph_log_teleconference_device_quality/microsoft_graph_log_teleconference_device_quality_request_builder'
 
 module MicrosoftGraph::Communications::Calls
     ## 
@@ -20,8 +20,8 @@ module MicrosoftGraph::Communications::Calls
         end
         ## 
         # Provides operations to call the logTeleconferenceDeviceQuality method.
-        def log_teleconference_device_quality()
-            return MicrosoftGraph::Communications::Calls::LogTeleconferenceDeviceQuality::LogTeleconferenceDeviceQualityRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_log_teleconference_device_quality()
+            return MicrosoftGraph::Communications::Calls::MicrosoftGraphLogTeleconferenceDeviceQuality::MicrosoftGraphLogTeleconferenceDeviceQualityRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

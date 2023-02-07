@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the identityType property value. Type of identity that has been provisioned, such as 'user' or 'group'.
-        ## @param value Value to set for the identityType property.
+        ## @param value Value to set for the identity_type property.
         ## @return a void
         ## 
         def identity_type=(value)

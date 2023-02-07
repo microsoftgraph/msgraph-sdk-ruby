@@ -55,7 +55,7 @@ module MicrosoftGraph::Models::ExternalConnectors
         end
         ## 
         ## Sets the displayName property value. The friendly name of the external group. Optional.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)

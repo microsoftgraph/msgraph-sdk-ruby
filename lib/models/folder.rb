@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the childCount property value. Number of children contained immediately within this container.
-        ## @param value Value to set for the childCount property.
+        ## @param value Value to set for the child_count property.
         ## @return a void
         ## 
         def child_count=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

@@ -4,9 +4,9 @@ require_relative '../../models/identity_provider_base'
 require_relative '../../models/identity_provider_base_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../directory'
-require_relative './available_provider_types/available_provider_types_request_builder'
 require_relative './count/count_request_builder'
 require_relative './federation_configurations'
+require_relative './microsoft_graph_available_provider_types/microsoft_graph_available_provider_types_request_builder'
 
 module MicrosoftGraph::Directory::FederationConfigurations
     ## 
@@ -19,6 +19,11 @@ module MicrosoftGraph::Directory::FederationConfigurations
             return MicrosoftGraph::Directory::FederationConfigurations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the availableProviderTypes method.
+        def microsoft_graph_available_provider_types()
+            return MicrosoftGraph::Directory::FederationConfigurations::MicrosoftGraphAvailableProviderTypes::MicrosoftGraphAvailableProviderTypesRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
@@ -27,13 +32,6 @@ module MicrosoftGraph::Directory::FederationConfigurations
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        ## Provides operations to call the availableProviderTypes method.
-        ## @return a available_provider_types_request_builder
-        ## 
-        def available_provider_types()
-            return AvailableProviderTypesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new FederationConfigurationsRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request

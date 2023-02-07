@@ -17,7 +17,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appUserModelId property value. The app user model ID of the contained app of a WindowsUniversalAppX app.
-        ## @param value Value to set for the appUserModelId property.
+        ## @param value Value to set for the app_user_model_id property.
         ## @return a void
         ## 
         def app_user_model_id=(value)

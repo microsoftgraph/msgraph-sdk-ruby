@@ -6,8 +6,8 @@ require_relative '../../../contacts'
 require_relative '../../item'
 require_relative '../direct_reports'
 require_relative './item'
-require_relative './org_contact/org_contact_request_builder'
-require_relative './user/user_request_builder'
+require_relative './microsoft_graph_org_contact/microsoft_graph_org_contact_request_builder'
+require_relative './microsoft_graph_user/microsoft_graph_user_request_builder'
 
 module MicrosoftGraph::Contacts::Item::DirectReports::Item
     ## 
@@ -16,8 +16,13 @@ module MicrosoftGraph::Contacts::Item::DirectReports::Item
         
         ## 
         # Casts the previous resource to orgContact.
-        def org_contact()
-            return MicrosoftGraph::Contacts::Item::DirectReports::Item::OrgContact::OrgContactRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_org_contact()
+            return MicrosoftGraph::Contacts::Item::DirectReports::Item::MicrosoftGraphOrgContact::MicrosoftGraphOrgContactRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Casts the previous resource to user.
+        def microsoft_graph_user()
+            return MicrosoftGraph::Contacts::Item::DirectReports::Item::MicrosoftGraphUser::MicrosoftGraphUserRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -28,11 +33,6 @@ module MicrosoftGraph::Contacts::Item::DirectReports::Item
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        # Casts the previous resource to user.
-        def user()
-            return MicrosoftGraph::Contacts::Item::DirectReports::Item::User::UserRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request

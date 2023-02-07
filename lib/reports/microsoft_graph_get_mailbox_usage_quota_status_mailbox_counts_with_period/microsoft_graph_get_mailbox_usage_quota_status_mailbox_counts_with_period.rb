@@ -1,0 +1,2 @@
+module MicrosoftGraph::Reports::MicrosoftGraphGetMailboxUsageQuotaStatusMailboxCountsWithPeriod
+end

@@ -6,9 +6,6 @@ module MicrosoftGraph::Models
     class RbacApplication < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
-        # Resource to grant access to users or groups.
-        @role_assignments
-        ## 
         # Instances for active role assignments.
         @role_assignment_schedule_instances
         ## 
@@ -17,6 +14,9 @@ module MicrosoftGraph::Models
         ## 
         # Schedules for active role assignment operations.
         @role_assignment_schedules
+        ## 
+        # Resource to grant access to users or groups.
+        @role_assignments
         ## 
         # Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
         @role_definitions
@@ -51,30 +51,15 @@ module MicrosoftGraph::Models
         ## 
         def get_field_deserializers()
             return super.merge({
-                "roleAssignments" => lambda {|n| @role_assignments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignment.create_from_discriminator_value(pn) }) },
                 "roleAssignmentScheduleInstances" => lambda {|n| @role_assignment_schedule_instances = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignmentScheduleInstance.create_from_discriminator_value(pn) }) },
                 "roleAssignmentScheduleRequests" => lambda {|n| @role_assignment_schedule_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignmentScheduleRequest.create_from_discriminator_value(pn) }) },
                 "roleAssignmentSchedules" => lambda {|n| @role_assignment_schedules = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignmentSchedule.create_from_discriminator_value(pn) }) },
+                "roleAssignments" => lambda {|n| @role_assignments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignment.create_from_discriminator_value(pn) }) },
                 "roleDefinitions" => lambda {|n| @role_definitions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UnifiedRoleDefinition.create_from_discriminator_value(pn) }) },
                 "roleEligibilityScheduleInstances" => lambda {|n| @role_eligibility_schedule_instances = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UnifiedRoleEligibilityScheduleInstance.create_from_discriminator_value(pn) }) },
                 "roleEligibilityScheduleRequests" => lambda {|n| @role_eligibility_schedule_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UnifiedRoleEligibilityScheduleRequest.create_from_discriminator_value(pn) }) },
                 "roleEligibilitySchedules" => lambda {|n| @role_eligibility_schedules = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UnifiedRoleEligibilitySchedule.create_from_discriminator_value(pn) }) },
             })
-        end
-        ## 
-        ## Gets the roleAssignments property value. Resource to grant access to users or groups.
-        ## @return a unified_role_assignment
-        ## 
-        def role_assignments
-            return @role_assignments
-        end
-        ## 
-        ## Sets the roleAssignments property value. Resource to grant access to users or groups.
-        ## @param value Value to set for the roleAssignments property.
-        ## @return a void
-        ## 
-        def role_assignments=(value)
-            @role_assignments = value
         end
         ## 
         ## Gets the roleAssignmentScheduleInstances property value. Instances for active role assignments.
@@ -85,7 +70,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleAssignmentScheduleInstances property value. Instances for active role assignments.
-        ## @param value Value to set for the roleAssignmentScheduleInstances property.
+        ## @param value Value to set for the role_assignment_schedule_instances property.
         ## @return a void
         ## 
         def role_assignment_schedule_instances=(value)
@@ -100,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleAssignmentScheduleRequests property value. Requests for active role assignments to principals through PIM.
-        ## @param value Value to set for the roleAssignmentScheduleRequests property.
+        ## @param value Value to set for the role_assignment_schedule_requests property.
         ## @return a void
         ## 
         def role_assignment_schedule_requests=(value)
@@ -115,11 +100,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleAssignmentSchedules property value. Schedules for active role assignment operations.
-        ## @param value Value to set for the roleAssignmentSchedules property.
+        ## @param value Value to set for the role_assignment_schedules property.
         ## @return a void
         ## 
         def role_assignment_schedules=(value)
             @role_assignment_schedules = value
+        end
+        ## 
+        ## Gets the roleAssignments property value. Resource to grant access to users or groups.
+        ## @return a unified_role_assignment
+        ## 
+        def role_assignments
+            return @role_assignments
+        end
+        ## 
+        ## Sets the roleAssignments property value. Resource to grant access to users or groups.
+        ## @param value Value to set for the role_assignments property.
+        ## @return a void
+        ## 
+        def role_assignments=(value)
+            @role_assignments = value
         end
         ## 
         ## Gets the roleDefinitions property value. Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleDefinitions property value. Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
-        ## @param value Value to set for the roleDefinitions property.
+        ## @param value Value to set for the role_definitions property.
         ## @return a void
         ## 
         def role_definitions=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleEligibilityScheduleInstances property value. Instances for role eligibility requests.
-        ## @param value Value to set for the roleEligibilityScheduleInstances property.
+        ## @param value Value to set for the role_eligibility_schedule_instances property.
         ## @return a void
         ## 
         def role_eligibility_schedule_instances=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleEligibilityScheduleRequests property value. Requests for role eligibilities for principals through PIM.
-        ## @param value Value to set for the roleEligibilityScheduleRequests property.
+        ## @param value Value to set for the role_eligibility_schedule_requests property.
         ## @return a void
         ## 
         def role_eligibility_schedule_requests=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleEligibilitySchedules property value. Schedules for role eligibility operations.
-        ## @param value Value to set for the roleEligibilitySchedules property.
+        ## @param value Value to set for the role_eligibility_schedules property.
         ## @return a void
         ## 
         def role_eligibility_schedules=(value)
@@ -189,10 +189,10 @@ module MicrosoftGraph::Models
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
             super
-            writer.write_collection_of_object_values("roleAssignments", @role_assignments)
             writer.write_collection_of_object_values("roleAssignmentScheduleInstances", @role_assignment_schedule_instances)
             writer.write_collection_of_object_values("roleAssignmentScheduleRequests", @role_assignment_schedule_requests)
             writer.write_collection_of_object_values("roleAssignmentSchedules", @role_assignment_schedules)
+            writer.write_collection_of_object_values("roleAssignments", @role_assignments)
             writer.write_collection_of_object_values("roleDefinitions", @role_definitions)
             writer.write_collection_of_object_values("roleEligibilityScheduleInstances", @role_eligibility_schedule_instances)
             writer.write_collection_of_object_values("roleEligibilityScheduleRequests", @role_eligibility_schedule_requests)

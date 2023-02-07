@@ -96,7 +96,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deletedDateTime property value. Date and time when this object was deleted. Always null when the object hasn't been deleted.
-        ## @param value Value to set for the deletedDateTime property.
+        ## @param value Value to set for the deleted_date_time property.
         ## @return a void
         ## 
         def deleted_date_time=(value)

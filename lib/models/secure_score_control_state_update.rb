@@ -51,7 +51,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignedTo property value. Assigns the control to the user who will take the action.
-        ## @param value Value to set for the assignedTo property.
+        ## @param value Value to set for the assigned_to property.
         ## @return a void
         ## 
         def assigned_to=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the updatedBy property value. ID of the user who updated tenant state.
-        ## @param value Value to set for the updatedBy property.
+        ## @param value Value to set for the updated_by property.
         ## @return a void
         ## 
         def updated_by=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the updatedDateTime property value. Time at which the control state was updated.
-        ## @param value Value to set for the updatedDateTime property.
+        ## @param value Value to set for the updated_date_time property.
         ## @return a void
         ## 
         def updated_date_time=(value)

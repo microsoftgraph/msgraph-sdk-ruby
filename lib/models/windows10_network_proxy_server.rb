@@ -104,7 +104,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the useForLocalAddresses property value. Specifies whether the proxy server should be used for local (intranet) addresses.
-        ## @param value Value to set for the useForLocalAddresses property.
+        ## @param value Value to set for the use_for_local_addresses property.
         ## @return a void
         ## 
         def use_for_local_addresses=(value)

@@ -29,7 +29,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the androidRestriction property value. Android restrictions based on platform, platform operating system version, and device ownership
-        ## @param value Value to set for the androidRestriction property.
+        ## @param value Value to set for the android_restriction property.
         ## @return a void
         ## 
         def android_restriction=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the iosRestriction property value. Ios restrictions based on platform, platform operating system version, and device ownership
-        ## @param value Value to set for the iosRestriction property.
+        ## @param value Value to set for the ios_restriction property.
         ## @return a void
         ## 
         def ios_restriction=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the macOSRestriction property value. Mac restrictions based on platform, platform operating system version, and device ownership
-        ## @param value Value to set for the macOSRestriction property.
+        ## @param value Value to set for the mac_o_s_restriction property.
         ## @return a void
         ## 
         def mac_o_s_restriction=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the windowsMobileRestriction property value. Windows mobile restrictions based on platform, platform operating system version, and device ownership
-        ## @param value Value to set for the windowsMobileRestriction property.
+        ## @param value Value to set for the windows_mobile_restriction property.
         ## @return a void
         ## 
         def windows_mobile_restriction=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the windowsRestriction property value. Windows restrictions based on platform, platform operating system version, and device ownership
-        ## @param value Value to set for the windowsRestriction property.
+        ## @param value Value to set for the windows_restriction property.
         ## @return a void
         ## 
         def windows_restriction=(value)

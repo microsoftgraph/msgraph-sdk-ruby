@@ -35,7 +35,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appDataEncryptionType property value. Represents the level to which app data is encrypted for managed apps
-        ## @param value Value to set for the appDataEncryptionType property.
+        ## @param value Value to set for the app_data_encryption_type property.
         ## @return a void
         ## 
         def app_data_encryption_type=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the customBrowserProtocol property value. A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-        ## @param value Value to set for the customBrowserProtocol property.
+        ## @param value Value to set for the custom_browser_protocol property.
         ## @return a void
         ## 
         def custom_browser_protocol=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
-        ## @param value Value to set for the deployedAppCount property.
+        ## @param value Value to set for the deployed_app_count property.
         ## @return a void
         ## 
         def deployed_app_count=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-        ## @param value Value to set for the deploymentSummary property.
+        ## @param value Value to set for the deployment_summary property.
         ## @return a void
         ## 
         def deployment_summary=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the faceIdBlocked property value. Indicates whether use of the FaceID is allowed in place of a pin if PinRequired is set to True.
-        ## @param value Value to set for the faceIdBlocked property.
+        ## @param value Value to set for the face_id_blocked property.
         ## @return a void
         ## 
         def face_id_blocked=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minimumRequiredSdkVersion property value. Versions less than the specified version will block the managed app from accessing company data.
-        ## @param value Value to set for the minimumRequiredSdkVersion property.
+        ## @param value Value to set for the minimum_required_sdk_version property.
         ## @return a void
         ## 
         def minimum_required_sdk_version=(value)

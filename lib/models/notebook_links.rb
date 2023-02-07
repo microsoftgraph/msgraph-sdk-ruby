@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the oneNoteClientUrl property value. Opens the notebook in the OneNote native client if it's installed.
-        ## @param value Value to set for the oneNoteClientUrl property.
+        ## @param value Value to set for the one_note_client_url property.
         ## @return a void
         ## 
         def one_note_client_url=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the oneNoteWebUrl property value. Opens the notebook in OneNote on the web.
-        ## @param value Value to set for the oneNoteWebUrl property.
+        ## @param value Value to set for the one_note_web_url property.
         ## @return a void
         ## 
         def one_note_web_url=(value)

@@ -42,7 +42,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the certificateUpdateResult property value. Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.
-        ## @param value Value to set for the certificateUpdateResult property.
+        ## @param value Value to set for the certificate_update_result property.
         ## @return a void
         ## 
         def certificate_update_result=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastRunDateTime property value. Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
-        ## @param value Value to set for the lastRunDateTime property.
+        ## @param value Value to set for the last_run_date_time property.
         ## @return a void
         ## 
         def last_run_date_time=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

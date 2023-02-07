@@ -5,7 +5,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_app_management'
 require_relative '../managed_app_policies'
 require_relative './item'
-require_relative './target_apps/target_apps_request_builder'
+require_relative './microsoft_graph_target_apps/microsoft_graph_target_apps_request_builder'
 
 module MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item
     ## 
@@ -13,16 +13,16 @@ module MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item
     class ManagedAppPolicyItemRequestBuilder
         
         ## 
+        # Provides operations to call the targetApps method.
+        def microsoft_graph_target_apps()
+            return MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item::MicrosoftGraphTargetApps::MicrosoftGraphTargetAppsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the targetApps method.
-        def target_apps()
-            return MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item::TargetApps::TargetAppsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template

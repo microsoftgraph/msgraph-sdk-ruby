@@ -9,7 +9,7 @@ module MicrosoftGraph::Models
         # Name of the bucket.
         @name
         ## 
-        # Hint used to order items of this type in a list view. The format is defined as outlined here.
+        # Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
         @order_hint
         ## 
         # Plan ID to which the bucket belongs.
@@ -61,15 +61,15 @@ module MicrosoftGraph::Models
             @name = value
         end
         ## 
-        ## Gets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
+        ## Gets the orderHint property value. Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
         ## @return a string
         ## 
         def order_hint
             return @order_hint
         end
         ## 
-        ## Sets the orderHint property value. Hint used to order items of this type in a list view. The format is defined as outlined here.
-        ## @param value Value to set for the orderHint property.
+        ## Sets the orderHint property value. Hint used to order items of this type in a list view. For details about the supported format, see Using order hints in Planner.
+        ## @param value Value to set for the order_hint property.
         ## @return a void
         ## 
         def order_hint=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the planId property value. Plan ID to which the bucket belongs.
-        ## @param value Value to set for the planId property.
+        ## @param value Value to set for the plan_id property.
         ## @return a void
         ## 
         def plan_id=(value)

@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the issuerUri property value. Issuer URI of the federation server.
-        ## @param value Value to set for the issuerUri property.
+        ## @param value Value to set for the issuer_uri property.
         ## @return a void
         ## 
         def issuer_uri=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the metadataExchangeUri property value. URI of the metadata exchange endpoint used for authentication from rich client applications.
-        ## @param value Value to set for the metadataExchangeUri property.
+        ## @param value Value to set for the metadata_exchange_uri property.
         ## @return a void
         ## 
         def metadata_exchange_uri=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passiveSignInUri property value. URI that web-based clients are directed to when signing in to Azure Active Directory (Azure AD) services.
-        ## @param value Value to set for the passiveSignInUri property.
+        ## @param value Value to set for the passive_sign_in_uri property.
         ## @return a void
         ## 
         def passive_sign_in_uri=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the preferredAuthenticationProtocol property value. Preferred authentication protocol. The possible values are: wsFed, saml, unknownFutureValue.
-        ## @param value Value to set for the preferredAuthenticationProtocol property.
+        ## @param value Value to set for the preferred_authentication_protocol property.
         ## @return a void
         ## 
         def preferred_authentication_protocol=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the signingCertificate property value. Current certificate used to sign tokens passed to the Microsoft identity platform. The certificate is formatted as a Base64 encoded string of the public portion of the federated IdP's token signing certificate and must be compatible with the X509Certificate2 class.   This property is used in the following scenarios:  if a rollover is required outside of the autorollover update a new federation service is being set up  if the new token signing certificate isn't present in the federation properties after the federation service certificate has been updated.   Azure AD updates certificates via an autorollover process in which it attempts to retrieve a new certificate from the federation service metadata, 30 days before expiry of the current certificate. If a new certificate isn't available, Azure AD monitors the metadata daily and will update the federation settings for the domain when a new certificate is available.
-        ## @param value Value to set for the signingCertificate property.
+        ## @param value Value to set for the signing_certificate property.
         ## @return a void
         ## 
         def signing_certificate=(value)

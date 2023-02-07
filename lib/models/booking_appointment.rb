@@ -12,11 +12,11 @@ module MicrosoftGraph::Models
         # The URL of the meeting to join anonymously.
         @anonymous_join_web_url
         ## 
-        # A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
-        @customers
-        ## 
         # The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
         @customer_time_zone
+        ## 
+        # A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+        @customers
         ## 
         # The length of the appointment, denoted in ISO8601 format.
         @duration
@@ -86,7 +86,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the additionalInformation property value. Additional information that is sent to the customer when an appointment is confirmed.
-        ## @param value Value to set for the additionalInformation property.
+        ## @param value Value to set for the additional_information property.
         ## @return a void
         ## 
         def additional_information=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the anonymousJoinWebUrl property value. The URL of the meeting to join anonymously.
-        ## @param value Value to set for the anonymousJoinWebUrl property.
+        ## @param value Value to set for the anonymous_join_web_url property.
         ## @return a void
         ## 
         def anonymous_join_web_url=(value)
@@ -124,6 +124,21 @@ module MicrosoftGraph::Models
             return BookingAppointment.new
         end
         ## 
+        ## Gets the customerTimeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
+        ## @return a string
+        ## 
+        def customer_time_zone
+            return @customer_time_zone
+        end
+        ## 
+        ## Sets the customerTimeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
+        ## @param value Value to set for the customer_time_zone property.
+        ## @return a void
+        ## 
+        def customer_time_zone=(value)
+            @customer_time_zone = value
+        end
+        ## 
         ## Gets the customers property value. A collection of customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
         ## @return a booking_customer_information_base
         ## 
@@ -137,21 +152,6 @@ module MicrosoftGraph::Models
         ## 
         def customers=(value)
             @customers = value
-        end
-        ## 
-        ## Gets the customerTimeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
-        ## @return a string
-        ## 
-        def customer_time_zone
-            return @customer_time_zone
-        end
-        ## 
-        ## Sets the customerTimeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
-        ## @param value Value to set for the customerTimeZone property.
-        ## @return a void
-        ## 
-        def customer_time_zone=(value)
-            @customer_time_zone = value
         end
         ## 
         ## Gets the duration property value. The length of the appointment, denoted in ISO8601 format.
@@ -177,7 +177,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the endDateTime property value. The endDateTime property
-        ## @param value Value to set for the endDateTime property.
+        ## @param value Value to set for the end_date_time property.
         ## @return a void
         ## 
         def end_date_time=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the filledAttendeesCount property value. The current number of customers in the appointment
-        ## @param value Value to set for the filledAttendeesCount property.
+        ## @param value Value to set for the filled_attendees_count property.
         ## @return a void
         ## 
         def filled_attendees_count=(value)
@@ -206,8 +206,8 @@ module MicrosoftGraph::Models
             return super.merge({
                 "additionalInformation" => lambda {|n| @additional_information = n.get_string_value() },
                 "anonymousJoinWebUrl" => lambda {|n| @anonymous_join_web_url = n.get_string_value() },
-                "customers" => lambda {|n| @customers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingCustomerInformationBase.create_from_discriminator_value(pn) }) },
                 "customerTimeZone" => lambda {|n| @customer_time_zone = n.get_string_value() },
+                "customers" => lambda {|n| @customers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::BookingCustomerInformationBase.create_from_discriminator_value(pn) }) },
                 "duration" => lambda {|n| @duration = n.get_duration_value() },
                 "endDateTime" => lambda {|n| @end_date_time = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DateTimeTimeZone.create_from_discriminator_value(pn) }) },
                 "filledAttendeesCount" => lambda {|n| @filled_attendees_count = n.get_number_value() },
@@ -239,7 +239,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isLocationOnline property value. If true, indicates that the appointment will be held online. Default value is false.
-        ## @param value Value to set for the isLocationOnline property.
+        ## @param value Value to set for the is_location_online property.
         ## @return a void
         ## 
         def is_location_online=(value)
@@ -254,7 +254,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the joinWebUrl property value. The URL of the online meeting for the appointment.
-        ## @param value Value to set for the joinWebUrl property.
+        ## @param value Value to set for the join_web_url property.
         ## @return a void
         ## 
         def join_web_url=(value)
@@ -269,7 +269,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maximumAttendeesCount property value. The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
-        ## @param value Value to set for the maximumAttendeesCount property.
+        ## @param value Value to set for the maximum_attendees_count property.
         ## @return a void
         ## 
         def maximum_attendees_count=(value)
@@ -284,7 +284,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
-        ## @param value Value to set for the optOutOfCustomerEmail property.
+        ## @param value Value to set for the opt_out_of_customer_email property.
         ## @return a void
         ## 
         def opt_out_of_customer_email=(value)
@@ -299,7 +299,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the postBuffer property value. The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
-        ## @param value Value to set for the postBuffer property.
+        ## @param value Value to set for the post_buffer property.
         ## @return a void
         ## 
         def post_buffer=(value)
@@ -314,7 +314,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the preBuffer property value. The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
-        ## @param value Value to set for the preBuffer property.
+        ## @param value Value to set for the pre_buffer property.
         ## @return a void
         ## 
         def pre_buffer=(value)
@@ -344,7 +344,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the priceType property value. Represents the type of pricing of a booking service.
-        ## @param value Value to set for the priceType property.
+        ## @param value Value to set for the price_type property.
         ## @return a void
         ## 
         def price_type=(value)
@@ -374,7 +374,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
-        ## @param value Value to set for the selfServiceAppointmentId property.
+        ## @param value Value to set for the self_service_appointment_id property.
         ## @return a void
         ## 
         def self_service_appointment_id=(value)
@@ -390,8 +390,8 @@ module MicrosoftGraph::Models
             super
             writer.write_string_value("additionalInformation", @additional_information)
             writer.write_string_value("anonymousJoinWebUrl", @anonymous_join_web_url)
-            writer.write_collection_of_object_values("customers", @customers)
             writer.write_string_value("customerTimeZone", @customer_time_zone)
+            writer.write_collection_of_object_values("customers", @customers)
             writer.write_object_value("endDateTime", @end_date_time)
             writer.write_boolean_value("isLocationOnline", @is_location_online)
             writer.write_string_value("joinWebUrl", @join_web_url)
@@ -420,7 +420,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the serviceId property value. The ID of the bookingService associated with this appointment.
-        ## @param value Value to set for the serviceId property.
+        ## @param value Value to set for the service_id property.
         ## @return a void
         ## 
         def service_id=(value)
@@ -435,7 +435,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the serviceLocation property value. The location where the service is delivered.
-        ## @param value Value to set for the serviceLocation property.
+        ## @param value Value to set for the service_location property.
         ## @return a void
         ## 
         def service_location=(value)
@@ -450,7 +450,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
-        ## @param value Value to set for the serviceName property.
+        ## @param value Value to set for the service_name property.
         ## @return a void
         ## 
         def service_name=(value)
@@ -465,7 +465,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the serviceNotes property value. Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
-        ## @param value Value to set for the serviceNotes property.
+        ## @param value Value to set for the service_notes property.
         ## @return a void
         ## 
         def service_notes=(value)
@@ -480,7 +480,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the smsNotificationsEnabled property value. If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
-        ## @param value Value to set for the smsNotificationsEnabled property.
+        ## @param value Value to set for the sms_notifications_enabled property.
         ## @return a void
         ## 
         def sms_notifications_enabled=(value)
@@ -495,7 +495,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the staffMemberIds property value. The ID of each bookingStaffMember who is scheduled in this appointment.
-        ## @param value Value to set for the staffMemberIds property.
+        ## @param value Value to set for the staff_member_ids property.
         ## @return a void
         ## 
         def staff_member_ids=(value)
@@ -510,7 +510,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the startDateTime property value. The startDateTime property
-        ## @param value Value to set for the startDateTime property.
+        ## @param value Value to set for the start_date_time property.
         ## @return a void
         ## 
         def start_date_time=(value)

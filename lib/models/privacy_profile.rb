@@ -48,7 +48,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contactEmail property value. A valid smtp email address for the privacy statement contact. Not required.
-        ## @param value Value to set for the contactEmail property.
+        ## @param value Value to set for the contact_email property.
         ## @return a void
         ## 
         def contact_email=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the statementUrl property value. A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company's privacy statement. Not required.
-        ## @param value Value to set for the statementUrl property.
+        ## @param value Value to set for the statement_url property.
         ## @return a void
         ## 
         def statement_url=(value)

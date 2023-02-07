@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.
-        ## @param value Value to set for the createdBy property.
+        ## @param value Value to set for the created_by property.
         ## @return a void
         ## 
         def created_by=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. Date and time of item creation. Read-only.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -154,7 +154,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fileSystemInfo property value. Information about the remote item from the local file system. Read-only.
-        ## @param value Value to set for the fileSystemInfo property.
+        ## @param value Value to set for the file_system_info property.
         ## @return a void
         ## 
         def file_system_info=(value)
@@ -242,7 +242,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
-        ## @param value Value to set for the lastModifiedBy property.
+        ## @param value Value to set for the last_modified_by property.
         ## @return a void
         ## 
         def last_modified_by=(value)
@@ -257,7 +257,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. Date and time the item was last modified. Read-only.
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -287,7 +287,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -317,7 +317,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the parentReference property value. Properties of the parent of the remote item. Read-only.
-        ## @param value Value to set for the parentReference property.
+        ## @param value Value to set for the parent_reference property.
         ## @return a void
         ## 
         def parent_reference=(value)
@@ -376,7 +376,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharepointIds property value. Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.
-        ## @param value Value to set for the sharepointIds property.
+        ## @param value Value to set for the sharepoint_ids property.
         ## @return a void
         ## 
         def sharepoint_ids=(value)
@@ -406,7 +406,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the specialFolder property value. If the current item is also available as a special folder, this facet is returned. Read-only.
-        ## @param value Value to set for the specialFolder property.
+        ## @param value Value to set for the special_folder property.
         ## @return a void
         ## 
         def special_folder=(value)
@@ -436,7 +436,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webDavUrl property value. DAV compatible URL for the item.
-        ## @param value Value to set for the webDavUrl property.
+        ## @param value Value to set for the web_dav_url property.
         ## @return a void
         ## 
         def web_dav_url=(value)
@@ -451,7 +451,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webUrl property value. URL that displays the resource in the browser. Read-only.
-        ## @param value Value to set for the webUrl property.
+        ## @param value Value to set for the web_url property.
         ## @return a void
         ## 
         def web_url=(value)

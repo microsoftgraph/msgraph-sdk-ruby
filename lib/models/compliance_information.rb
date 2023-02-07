@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the certificationControls property value. Collection of the certification controls associated with certification
-        ## @param value Value to set for the certificationControls property.
+        ## @param value Value to set for the certification_controls property.
         ## @return a void
         ## 
         def certification_controls=(value)
@@ -56,7 +56,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the certificationName property value. Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)
-        ## @param value Value to set for the certificationName property.
+        ## @param value Value to set for the certification_name property.
         ## @return a void
         ## 
         def certification_name=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

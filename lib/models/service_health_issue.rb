@@ -88,7 +88,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the featureGroup property value. The feature group name of the service issue.
-        ## @param value Value to set for the featureGroup property.
+        ## @param value Value to set for the feature_group property.
         ## @return a void
         ## 
         def feature_group=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the impactDescription property value. The description of the service issue impact.
-        ## @param value Value to set for the impactDescription property.
+        ## @param value Value to set for the impact_description property.
         ## @return a void
         ## 
         def impact_description=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isResolved property value. Indicates whether the issue is resolved.
-        ## @param value Value to set for the isResolved property.
+        ## @param value Value to set for the is_resolved property.
         ## @return a void
         ## 
         def is_resolved=(value)

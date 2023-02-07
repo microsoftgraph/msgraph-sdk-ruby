@@ -52,7 +52,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayLanguageLocale property value. The language locale to use when the Edge app displays text to the user.
-        ## @param value Value to set for the displayLanguageLocale property.
+        ## @param value Value to set for the display_language_locale property.
         ## @return a void
         ## 
         def display_language_locale=(value)

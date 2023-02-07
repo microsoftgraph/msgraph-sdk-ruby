@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the averageInboundJitter property value. The average inbound stream network jitter.
-        ## @param value Value to set for the averageInboundJitter property.
+        ## @param value Value to set for the average_inbound_jitter property.
         ## @return a void
         ## 
         def average_inbound_jitter=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the averageInboundPacketLossRateInPercentage property value. The average inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-        ## @param value Value to set for the averageInboundPacketLossRateInPercentage property.
+        ## @param value Value to set for the average_inbound_packet_loss_rate_in_percentage property.
         ## @return a void
         ## 
         def average_inbound_packet_loss_rate_in_percentage=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the averageInboundRoundTripDelay property value. The average inbound stream network round trip delay.
-        ## @param value Value to set for the averageInboundRoundTripDelay property.
+        ## @param value Value to set for the average_inbound_round_trip_delay property.
         ## @return a void
         ## 
         def average_inbound_round_trip_delay=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the averageOutboundJitter property value. The average outbound stream network jitter.
-        ## @param value Value to set for the averageOutboundJitter property.
+        ## @param value Value to set for the average_outbound_jitter property.
         ## @return a void
         ## 
         def average_outbound_jitter=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the averageOutboundPacketLossRateInPercentage property value. The average outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-        ## @param value Value to set for the averageOutboundPacketLossRateInPercentage property.
+        ## @param value Value to set for the average_outbound_packet_loss_rate_in_percentage property.
         ## @return a void
         ## 
         def average_outbound_packet_loss_rate_in_percentage=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the averageOutboundRoundTripDelay property value. The average outbound stream network round trip delay.
-        ## @param value Value to set for the averageOutboundRoundTripDelay property.
+        ## @param value Value to set for the average_outbound_round_trip_delay property.
         ## @return a void
         ## 
         def average_outbound_round_trip_delay=(value)
@@ -188,7 +188,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the channelIndex property value. The channel index of media. Indexing begins with 1.  If a media session contains 3 video modalities, channel indexes will be 1, 2, and 3.
-        ## @param value Value to set for the channelIndex property.
+        ## @param value Value to set for the channel_index property.
         ## @return a void
         ## 
         def channel_index=(value)
@@ -261,7 +261,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the inboundPackets property value. The total number of the inbound packets.
-        ## @param value Value to set for the inboundPackets property.
+        ## @param value Value to set for the inbound_packets property.
         ## @return a void
         ## 
         def inbound_packets=(value)
@@ -276,7 +276,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the localIPAddress property value. the local IP address for the media session.
-        ## @param value Value to set for the localIPAddress property.
+        ## @param value Value to set for the local_i_p_address property.
         ## @return a void
         ## 
         def local_i_p_address=(value)
@@ -291,7 +291,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the localPort property value. The local media port.
-        ## @param value Value to set for the localPort property.
+        ## @param value Value to set for the local_port property.
         ## @return a void
         ## 
         def local_port=(value)
@@ -306,7 +306,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maximumInboundJitter property value. The maximum inbound stream network jitter.
-        ## @param value Value to set for the maximumInboundJitter property.
+        ## @param value Value to set for the maximum_inbound_jitter property.
         ## @return a void
         ## 
         def maximum_inbound_jitter=(value)
@@ -321,7 +321,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maximumInboundPacketLossRateInPercentage property value. The maximum inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-        ## @param value Value to set for the maximumInboundPacketLossRateInPercentage property.
+        ## @param value Value to set for the maximum_inbound_packet_loss_rate_in_percentage property.
         ## @return a void
         ## 
         def maximum_inbound_packet_loss_rate_in_percentage=(value)
@@ -336,7 +336,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maximumInboundRoundTripDelay property value. The maximum inbound stream network round trip delay.
-        ## @param value Value to set for the maximumInboundRoundTripDelay property.
+        ## @param value Value to set for the maximum_inbound_round_trip_delay property.
         ## @return a void
         ## 
         def maximum_inbound_round_trip_delay=(value)
@@ -351,7 +351,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maximumOutboundJitter property value. The maximum outbound stream network jitter.
-        ## @param value Value to set for the maximumOutboundJitter property.
+        ## @param value Value to set for the maximum_outbound_jitter property.
         ## @return a void
         ## 
         def maximum_outbound_jitter=(value)
@@ -366,7 +366,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maximumOutboundPacketLossRateInPercentage property value. The maximum outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-        ## @param value Value to set for the maximumOutboundPacketLossRateInPercentage property.
+        ## @param value Value to set for the maximum_outbound_packet_loss_rate_in_percentage property.
         ## @return a void
         ## 
         def maximum_outbound_packet_loss_rate_in_percentage=(value)
@@ -381,7 +381,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maximumOutboundRoundTripDelay property value. The maximum outbound stream network round trip delay.
-        ## @param value Value to set for the maximumOutboundRoundTripDelay property.
+        ## @param value Value to set for the maximum_outbound_round_trip_delay property.
         ## @return a void
         ## 
         def maximum_outbound_round_trip_delay=(value)
@@ -396,7 +396,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mediaDuration property value. The total modality duration. If the media enabled and disabled multiple times, MediaDuration will the summation of all of the durations.
-        ## @param value Value to set for the mediaDuration property.
+        ## @param value Value to set for the media_duration property.
         ## @return a void
         ## 
         def media_duration=(value)
@@ -411,7 +411,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the networkLinkSpeedInBytes property value. The network link speed in bytes
-        ## @param value Value to set for the networkLinkSpeedInBytes property.
+        ## @param value Value to set for the network_link_speed_in_bytes property.
         ## @return a void
         ## 
         def network_link_speed_in_bytes=(value)
@@ -426,7 +426,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -441,7 +441,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the outboundPackets property value. The total number of the outbound packets.
-        ## @param value Value to set for the outboundPackets property.
+        ## @param value Value to set for the outbound_packets property.
         ## @return a void
         ## 
         def outbound_packets=(value)
@@ -456,7 +456,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the remoteIPAddress property value. The remote IP address for the media session.
-        ## @param value Value to set for the remoteIPAddress property.
+        ## @param value Value to set for the remote_i_p_address property.
         ## @return a void
         ## 
         def remote_i_p_address=(value)
@@ -471,7 +471,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the remotePort property value. The remote media port.
-        ## @param value Value to set for the remotePort property.
+        ## @param value Value to set for the remote_port property.
         ## @return a void
         ## 
         def remote_port=(value)

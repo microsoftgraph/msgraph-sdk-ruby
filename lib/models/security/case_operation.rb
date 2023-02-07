@@ -52,7 +52,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the completedDateTime property value. The date and time the operation was completed.
-        ## @param value Value to set for the completedDateTime property.
+        ## @param value Value to set for the completed_date_time property.
         ## @return a void
         ## 
         def completed_date_time=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the createdBy property value. The user that created the operation.
-        ## @param value Value to set for the createdBy property.
+        ## @param value Value to set for the created_by property.
         ## @return a void
         ## 
         def created_by=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the createdDateTime property value. The date and time the operation was created.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the percentProgress property value. The progress of the operation.
-        ## @param value Value to set for the percentProgress property.
+        ## @param value Value to set for the percent_progress property.
         ## @return a void
         ## 
         def percent_progress=(value)
@@ -161,7 +161,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the resultInfo property value. Contains success and failure-specific result information.
-        ## @param value Value to set for the resultInfo property.
+        ## @param value Value to set for the result_info property.
         ## @return a void
         ## 
         def result_info=(value)

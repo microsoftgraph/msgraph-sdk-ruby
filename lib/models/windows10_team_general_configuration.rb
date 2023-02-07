@@ -75,7 +75,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the azureOperationalInsightsBlockTelemetry property value. Indicates whether or not to Block Azure Operational Insights.
-        ## @param value Value to set for the azureOperationalInsightsBlockTelemetry property.
+        ## @param value Value to set for the azure_operational_insights_block_telemetry property.
         ## @return a void
         ## 
         def azure_operational_insights_block_telemetry=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the azureOperationalInsightsWorkspaceId property value. The Azure Operational Insights workspace id.
-        ## @param value Value to set for the azureOperationalInsightsWorkspaceId property.
+        ## @param value Value to set for the azure_operational_insights_workspace_id property.
         ## @return a void
         ## 
         def azure_operational_insights_workspace_id=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the azureOperationalInsightsWorkspaceKey property value. The Azure Operational Insights Workspace key.
-        ## @param value Value to set for the azureOperationalInsightsWorkspaceKey property.
+        ## @param value Value to set for the azure_operational_insights_workspace_key property.
         ## @return a void
         ## 
         def azure_operational_insights_workspace_key=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the connectAppBlockAutoLaunch property value. Specifies whether to automatically launch the Connect app whenever a projection is initiated.
-        ## @param value Value to set for the connectAppBlockAutoLaunch property.
+        ## @param value Value to set for the connect_app_block_auto_launch property.
         ## @return a void
         ## 
         def connect_app_block_auto_launch=(value)
@@ -180,7 +180,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maintenanceWindowBlocked property value. Indicates whether or not to Block setting a maintenance window for device updates.
-        ## @param value Value to set for the maintenanceWindowBlocked property.
+        ## @param value Value to set for the maintenance_window_blocked property.
         ## @return a void
         ## 
         def maintenance_window_blocked=(value)
@@ -195,7 +195,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maintenanceWindowDurationInHours property value. Maintenance window duration for device updates. Valid values 0 to 5
-        ## @param value Value to set for the maintenanceWindowDurationInHours property.
+        ## @param value Value to set for the maintenance_window_duration_in_hours property.
         ## @return a void
         ## 
         def maintenance_window_duration_in_hours=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maintenanceWindowStartTime property value. Maintenance window start time for device updates.
-        ## @param value Value to set for the maintenanceWindowStartTime property.
+        ## @param value Value to set for the maintenance_window_start_time property.
         ## @return a void
         ## 
         def maintenance_window_start_time=(value)
@@ -225,7 +225,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the miracastBlocked property value. Indicates whether or not to Block wireless projection.
-        ## @param value Value to set for the miracastBlocked property.
+        ## @param value Value to set for the miracast_blocked property.
         ## @return a void
         ## 
         def miracast_blocked=(value)
@@ -240,7 +240,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the miracastChannel property value. Possible values for Miracast channel.
-        ## @param value Value to set for the miracastChannel property.
+        ## @param value Value to set for the miracast_channel property.
         ## @return a void
         ## 
         def miracast_channel=(value)
@@ -255,7 +255,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the miracastRequirePin property value. Indicates whether or not to require a pin for wireless projection.
-        ## @param value Value to set for the miracastRequirePin property.
+        ## @param value Value to set for the miracast_require_pin property.
         ## @return a void
         ## 
         def miracast_require_pin=(value)
@@ -299,7 +299,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the settingsBlockMyMeetingsAndFiles property value. Specifies whether to disable the 'My meetings and files' feature in the Start menu, which shows the signed-in user's meetings and files from Office 365.
-        ## @param value Value to set for the settingsBlockMyMeetingsAndFiles property.
+        ## @param value Value to set for the settings_block_my_meetings_and_files property.
         ## @return a void
         ## 
         def settings_block_my_meetings_and_files=(value)
@@ -314,7 +314,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the settingsBlockSessionResume property value. Specifies whether to allow the ability to resume a session when the session times out.
-        ## @param value Value to set for the settingsBlockSessionResume property.
+        ## @param value Value to set for the settings_block_session_resume property.
         ## @return a void
         ## 
         def settings_block_session_resume=(value)
@@ -329,7 +329,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the settingsBlockSigninSuggestions property value. Specifies whether to disable auto-populating of the sign-in dialog with invitees from scheduled meetings.
-        ## @param value Value to set for the settingsBlockSigninSuggestions property.
+        ## @param value Value to set for the settings_block_signin_suggestions property.
         ## @return a void
         ## 
         def settings_block_signin_suggestions=(value)
@@ -344,7 +344,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the settingsDefaultVolume property value. Specifies the default volume value for a new session. Permitted values are 0-100. The default is 45. Valid values 0 to 100
-        ## @param value Value to set for the settingsDefaultVolume property.
+        ## @param value Value to set for the settings_default_volume property.
         ## @return a void
         ## 
         def settings_default_volume=(value)
@@ -359,7 +359,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the settingsScreenTimeoutInMinutes property value. Specifies the number of minutes until the Hub screen turns off.
-        ## @param value Value to set for the settingsScreenTimeoutInMinutes property.
+        ## @param value Value to set for the settings_screen_timeout_in_minutes property.
         ## @return a void
         ## 
         def settings_screen_timeout_in_minutes=(value)
@@ -374,7 +374,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the settingsSessionTimeoutInMinutes property value. Specifies the number of minutes until the session times out.
-        ## @param value Value to set for the settingsSessionTimeoutInMinutes property.
+        ## @param value Value to set for the settings_session_timeout_in_minutes property.
         ## @return a void
         ## 
         def settings_session_timeout_in_minutes=(value)
@@ -389,7 +389,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the settingsSleepTimeoutInMinutes property value. Specifies the number of minutes until the Hub enters sleep mode.
-        ## @param value Value to set for the settingsSleepTimeoutInMinutes property.
+        ## @param value Value to set for the settings_sleep_timeout_in_minutes property.
         ## @return a void
         ## 
         def settings_sleep_timeout_in_minutes=(value)
@@ -404,7 +404,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the welcomeScreenBackgroundImageUrl property value. The welcome screen background image URL. The URL must use the HTTPS protocol and return a PNG image.
-        ## @param value Value to set for the welcomeScreenBackgroundImageUrl property.
+        ## @param value Value to set for the welcome_screen_background_image_url property.
         ## @return a void
         ## 
         def welcome_screen_background_image_url=(value)
@@ -419,7 +419,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the welcomeScreenBlockAutomaticWakeUp property value. Indicates whether or not to Block the welcome screen from waking up automatically when someone enters the room.
-        ## @param value Value to set for the welcomeScreenBlockAutomaticWakeUp property.
+        ## @param value Value to set for the welcome_screen_block_automatic_wake_up property.
         ## @return a void
         ## 
         def welcome_screen_block_automatic_wake_up=(value)
@@ -434,7 +434,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the welcomeScreenMeetingInformation property value. Possible values for welcome screen meeting information.
-        ## @param value Value to set for the welcomeScreenMeetingInformation property.
+        ## @param value Value to set for the welcome_screen_meeting_information property.
         ## @return a void
         ## 
         def welcome_screen_meeting_information=(value)

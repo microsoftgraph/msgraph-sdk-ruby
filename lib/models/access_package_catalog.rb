@@ -39,7 +39,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accessPackages property value. The access packages in this catalog. Read-only. Nullable.
-        ## @param value Value to set for the accessPackages property.
+        ## @param value Value to set for the access_packages property.
         ## @return a void
         ## 
         def access_packages=(value)
@@ -54,7 +54,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the catalogType property value. Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.
-        ## @param value Value to set for the catalogType property.
+        ## @param value Value to set for the catalog_type property.
         ## @return a void
         ## 
         def catalog_type=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name of the access package catalog.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isExternallyVisible property value. Whether the access packages in this catalog can be requested by users outside of the tenant.
-        ## @param value Value to set for the isExternallyVisible property.
+        ## @param value Value to set for the is_externally_visible property.
         ## @return a void
         ## 
         def is_externally_visible=(value)
@@ -161,7 +161,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        ## @param value Value to set for the modifiedDateTime property.
+        ## @param value Value to set for the modified_date_time property.
         ## @return a void
         ## 
         def modified_date_time=(value)

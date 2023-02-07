@@ -6,11 +6,11 @@ module MicrosoftGraph::Models
     class OptionalClaim
         include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
         ## 
-        # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-        @additional_data
-        ## 
         # Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.
         @additional_properties
+        ## 
+        # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+        @additional_data
         ## 
         # If the value is true, the claim specified by the client is necessary to ensure a smooth authorization experience for the specific task requested by the end user. The default value is false.
         @essential
@@ -47,7 +47,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the additionalProperties property value. Additional properties of the claim. If a property exists in this collection, it modifies the behavior of the optional claim specified in the name property.
-        ## @param value Value to set for the additionalProperties property.
+        ## @param value Value to set for the additional_properties property.
         ## @return a void
         ## 
         def additional_properties=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

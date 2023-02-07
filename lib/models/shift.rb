@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the draftShift property value. The draft version of this shift that is viewable by managers. Required.
-        ## @param value Value to set for the draftShift property.
+        ## @param value Value to set for the draft_shift property.
         ## @return a void
         ## 
         def draft_shift=(value)
@@ -70,7 +70,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the schedulingGroupId property value. ID of the scheduling group the shift is part of. Required.
-        ## @param value Value to set for the schedulingGroupId property.
+        ## @param value Value to set for the scheduling_group_id property.
         ## @return a void
         ## 
         def scheduling_group_id=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharedShift property value. The shared version of this shift that is viewable by both employees and managers. Required.
-        ## @param value Value to set for the sharedShift property.
+        ## @param value Value to set for the shared_shift property.
         ## @return a void
         ## 
         def shared_shift=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userId property value. ID of the user assigned to the shift. Required.
-        ## @param value Value to set for the userId property.
+        ## @param value Value to set for the user_id property.
         ## @return a void
         ## 
         def user_id=(value)

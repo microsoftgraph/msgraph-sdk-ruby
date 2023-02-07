@@ -47,7 +47,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowedToCreateApps property value. Indicates whether the default user role can create applications.
-        ## @param value Value to set for the allowedToCreateApps property.
+        ## @param value Value to set for the allowed_to_create_apps property.
         ## @return a void
         ## 
         def allowed_to_create_apps=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups.
-        ## @param value Value to set for the allowedToCreateSecurityGroups property.
+        ## @param value Value to set for the allowed_to_create_security_groups property.
         ## @return a void
         ## 
         def allowed_to_create_security_groups=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowedToReadOtherUsers property value. Indicates whether the default user role can read other users.
-        ## @param value Value to set for the allowedToReadOtherUsers property.
+        ## @param value Value to set for the allowed_to_read_other_users property.
         ## @return a void
         ## 
         def allowed_to_read_other_users=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the permissionGrantPoliciesAssigned property value. Indicates if user consent to apps is allowed, and if it is, which permission to grant consent and which app consent policy (permissionGrantPolicy) govern the permission for users to grant consent. Value should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.
-        ## @param value Value to set for the permissionGrantPoliciesAssigned property.
+        ## @param value Value to set for the permission_grant_policies_assigned property.
         ## @return a void
         ## 
         def permission_grant_policies_assigned=(value)

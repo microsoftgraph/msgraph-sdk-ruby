@@ -53,7 +53,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the userAccount property value. The user account details.
-        ## @param value Value to set for the userAccount property.
+        ## @param value Value to set for the user_account property.
         ## @return a void
         ## 
         def user_account=(value)

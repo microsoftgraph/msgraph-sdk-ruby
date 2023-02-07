@@ -6,5 +6,6 @@ module MicrosoftGraph::Models
         ConnectionPending: :ConnectionPending,
         Connected: :Connected,
         Disconnected: :Disconnected,
+        UnknownFutureValue: :UnknownFutureValue,
     }
 end

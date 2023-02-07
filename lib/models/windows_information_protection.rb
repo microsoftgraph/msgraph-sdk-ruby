@@ -21,14 +21,14 @@ module MicrosoftGraph::Models
         # Primary enterprise domain
         @enterprise_domain
         ## 
-        # This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
-        @enterprise_internal_proxy_servers
-        ## 
         # Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
         @enterprise_i_p_ranges
         ## 
         # Boolean value that tells the client to accept the configured list and not to use heuristics to attempt to find other subnets. Default is false
         @enterprise_i_p_ranges_are_authoritative
+        ## 
+        # This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
+        @enterprise_internal_proxy_servers
         ## 
         # This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected These locations will be considered a safe destination for enterprise data to be shared to
         @enterprise_network_domain_names
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the azureRightsManagementServicesAllowed property value. Specifies whether to allow Azure RMS encryption for WIP
-        ## @param value Value to set for the azureRightsManagementServicesAllowed property.
+        ## @param value Value to set for the azure_rights_management_services_allowed property.
         ## @return a void
         ## 
         def azure_rights_management_services_allowed=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dataRecoveryCertificate property value. Specifies a recovery certificate that can be used for data recovery of encrypted files. This is the same as the data recovery agent(DRA) certificate for encrypting file system(EFS)
-        ## @param value Value to set for the dataRecoveryCertificate property.
+        ## @param value Value to set for the data_recovery_certificate property.
         ## @return a void
         ## 
         def data_recovery_certificate=(value)
@@ -161,7 +161,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enforcementLevel property value. Possible values for WIP Protection enforcement levels
-        ## @param value Value to set for the enforcementLevel property.
+        ## @param value Value to set for the enforcement_level property.
         ## @return a void
         ## 
         def enforcement_level=(value)
@@ -176,26 +176,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enterpriseDomain property value. Primary enterprise domain
-        ## @param value Value to set for the enterpriseDomain property.
+        ## @param value Value to set for the enterprise_domain property.
         ## @return a void
         ## 
         def enterprise_domain=(value)
             @enterprise_domain = value
-        end
-        ## 
-        ## Gets the enterpriseInternalProxyServers property value. This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
-        ## @return a windows_information_protection_resource_collection
-        ## 
-        def enterprise_internal_proxy_servers
-            return @enterprise_internal_proxy_servers
-        end
-        ## 
-        ## Sets the enterpriseInternalProxyServers property value. This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
-        ## @param value Value to set for the enterpriseInternalProxyServers property.
-        ## @return a void
-        ## 
-        def enterprise_internal_proxy_servers=(value)
-            @enterprise_internal_proxy_servers = value
         end
         ## 
         ## Gets the enterpriseIPRanges property value. Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
@@ -206,7 +191,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enterpriseIPRanges property value. Sets the enterprise IP ranges that define the computers in the enterprise network. Data that comes from those computers will be considered part of the enterprise and protected. These locations will be considered a safe destination for enterprise data to be shared to
-        ## @param value Value to set for the enterpriseIPRanges property.
+        ## @param value Value to set for the enterprise_i_p_ranges property.
         ## @return a void
         ## 
         def enterprise_i_p_ranges=(value)
@@ -221,11 +206,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enterpriseIPRangesAreAuthoritative property value. Boolean value that tells the client to accept the configured list and not to use heuristics to attempt to find other subnets. Default is false
-        ## @param value Value to set for the enterpriseIPRangesAreAuthoritative property.
+        ## @param value Value to set for the enterprise_i_p_ranges_are_authoritative property.
         ## @return a void
         ## 
         def enterprise_i_p_ranges_are_authoritative=(value)
             @enterprise_i_p_ranges_are_authoritative = value
+        end
+        ## 
+        ## Gets the enterpriseInternalProxyServers property value. This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
+        ## @return a windows_information_protection_resource_collection
+        ## 
+        def enterprise_internal_proxy_servers
+            return @enterprise_internal_proxy_servers
+        end
+        ## 
+        ## Sets the enterpriseInternalProxyServers property value. This is the comma-separated list of internal proxy servers. For example, '157.54.14.28, 157.54.11.118, 10.202.14.167, 157.53.14.163, 157.69.210.59'. These proxies have been configured by the admin to connect to specific resources on the Internet. They are considered to be enterprise network locations. The proxies are only leveraged in configuring the EnterpriseProxiedDomains policy to force traffic to the matched domains through these proxies
+        ## @param value Value to set for the enterprise_internal_proxy_servers property.
+        ## @return a void
+        ## 
+        def enterprise_internal_proxy_servers=(value)
+            @enterprise_internal_proxy_servers = value
         end
         ## 
         ## Gets the enterpriseNetworkDomainNames property value. This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected These locations will be considered a safe destination for enterprise data to be shared to
@@ -236,7 +236,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enterpriseNetworkDomainNames property value. This is the list of domains that comprise the boundaries of the enterprise. Data from one of these domains that is sent to a device will be considered enterprise data and protected These locations will be considered a safe destination for enterprise data to be shared to
-        ## @param value Value to set for the enterpriseNetworkDomainNames property.
+        ## @param value Value to set for the enterprise_network_domain_names property.
         ## @return a void
         ## 
         def enterprise_network_domain_names=(value)
@@ -251,7 +251,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enterpriseProtectedDomainNames property value. List of enterprise domains to be protected
-        ## @param value Value to set for the enterpriseProtectedDomainNames property.
+        ## @param value Value to set for the enterprise_protected_domain_names property.
         ## @return a void
         ## 
         def enterprise_protected_domain_names=(value)
@@ -266,7 +266,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enterpriseProxiedDomains property value. Contains a list of Enterprise resource domains hosted in the cloud that need to be protected. Connections to these resources are considered enterprise data. If a proxy is paired with a cloud resource, traffic to the cloud resource will be routed through the enterprise network via the denoted proxy server (on Port 80). A proxy server used for this purpose must also be configured using the EnterpriseInternalProxyServers policy
-        ## @param value Value to set for the enterpriseProxiedDomains property.
+        ## @param value Value to set for the enterprise_proxied_domains property.
         ## @return a void
         ## 
         def enterprise_proxied_domains=(value)
@@ -281,7 +281,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enterpriseProxyServers property value. This is a list of proxy servers. Any server not on this list is considered non-enterprise
-        ## @param value Value to set for the enterpriseProxyServers property.
+        ## @param value Value to set for the enterprise_proxy_servers property.
         ## @return a void
         ## 
         def enterprise_proxy_servers=(value)
@@ -296,7 +296,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enterpriseProxyServersAreAuthoritative property value. Boolean value that tells the client to accept the configured list of proxies and not try to detect other work proxies. Default is false
-        ## @param value Value to set for the enterpriseProxyServersAreAuthoritative property.
+        ## @param value Value to set for the enterprise_proxy_servers_are_authoritative property.
         ## @return a void
         ## 
         def enterprise_proxy_servers_are_authoritative=(value)
@@ -311,7 +311,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the exemptAppLockerFiles property value. Another way to input exempt apps through xml files
-        ## @param value Value to set for the exemptAppLockerFiles property.
+        ## @param value Value to set for the exempt_app_locker_files property.
         ## @return a void
         ## 
         def exempt_app_locker_files=(value)
@@ -326,7 +326,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the exemptApps property value. Exempt applications can also access enterprise data, but the data handled by those applications are not protected. This is because some critical enterprise applications may have compatibility problems with encrypted data.
-        ## @param value Value to set for the exemptApps property.
+        ## @param value Value to set for the exempt_apps property.
         ## @return a void
         ## 
         def exempt_apps=(value)
@@ -343,9 +343,9 @@ module MicrosoftGraph::Models
                 "dataRecoveryCertificate" => lambda {|n| @data_recovery_certificate = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WindowsInformationProtectionDataRecoveryCertificate.create_from_discriminator_value(pn) }) },
                 "enforcementLevel" => lambda {|n| @enforcement_level = n.get_enum_value(MicrosoftGraph::Models::WindowsInformationProtectionEnforcementLevel) },
                 "enterpriseDomain" => lambda {|n| @enterprise_domain = n.get_string_value() },
-                "enterpriseInternalProxyServers" => lambda {|n| @enterprise_internal_proxy_servers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsInformationProtectionResourceCollection.create_from_discriminator_value(pn) }) },
                 "enterpriseIPRanges" => lambda {|n| @enterprise_i_p_ranges = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsInformationProtectionIPRangeCollection.create_from_discriminator_value(pn) }) },
                 "enterpriseIPRangesAreAuthoritative" => lambda {|n| @enterprise_i_p_ranges_are_authoritative = n.get_boolean_value() },
+                "enterpriseInternalProxyServers" => lambda {|n| @enterprise_internal_proxy_servers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsInformationProtectionResourceCollection.create_from_discriminator_value(pn) }) },
                 "enterpriseNetworkDomainNames" => lambda {|n| @enterprise_network_domain_names = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsInformationProtectionResourceCollection.create_from_discriminator_value(pn) }) },
                 "enterpriseProtectedDomainNames" => lambda {|n| @enterprise_protected_domain_names = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsInformationProtectionResourceCollection.create_from_discriminator_value(pn) }) },
                 "enterpriseProxiedDomains" => lambda {|n| @enterprise_proxied_domains = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsInformationProtectionProxiedDomainCollection.create_from_discriminator_value(pn) }) },
@@ -374,7 +374,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the iconsVisible property value. Determines whether overlays are added to icons for WIP protected files in Explorer and enterprise only app tiles in the Start menu. Starting in Windows 10, version 1703 this setting also configures the visibility of the WIP icon in the title bar of a WIP-protected app
-        ## @param value Value to set for the iconsVisible property.
+        ## @param value Value to set for the icons_visible property.
         ## @return a void
         ## 
         def icons_visible=(value)
@@ -389,7 +389,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the indexingEncryptedStoresOrItemsBlocked property value. This switch is for the Windows Search Indexer, to allow or disallow indexing of items
-        ## @param value Value to set for the indexingEncryptedStoresOrItemsBlocked property.
+        ## @param value Value to set for the indexing_encrypted_stores_or_items_blocked property.
         ## @return a void
         ## 
         def indexing_encrypted_stores_or_items_blocked=(value)
@@ -404,7 +404,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
-        ## @param value Value to set for the isAssigned property.
+        ## @param value Value to set for the is_assigned property.
         ## @return a void
         ## 
         def is_assigned=(value)
@@ -419,7 +419,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the neutralDomainResources property value. List of domain names that can used for work or personal resource
-        ## @param value Value to set for the neutralDomainResources property.
+        ## @param value Value to set for the neutral_domain_resources property.
         ## @return a void
         ## 
         def neutral_domain_resources=(value)
@@ -434,7 +434,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the protectedAppLockerFiles property value. Another way to input protected apps through xml files
-        ## @param value Value to set for the protectedAppLockerFiles property.
+        ## @param value Value to set for the protected_app_locker_files property.
         ## @return a void
         ## 
         def protected_app_locker_files=(value)
@@ -449,7 +449,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the protectedApps property value. Protected applications can access enterprise data and the data handled by those applications are protected with encryption
-        ## @param value Value to set for the protectedApps property.
+        ## @param value Value to set for the protected_apps property.
         ## @return a void
         ## 
         def protected_apps=(value)
@@ -464,7 +464,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the protectionUnderLockConfigRequired property value. Specifies whether the protection under lock feature (also known as encrypt under pin) should be configured
-        ## @param value Value to set for the protectionUnderLockConfigRequired property.
+        ## @param value Value to set for the protection_under_lock_config_required property.
         ## @return a void
         ## 
         def protection_under_lock_config_required=(value)
@@ -479,7 +479,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the revokeOnUnenrollDisabled property value. This policy controls whether to revoke the WIP keys when a device unenrolls from the management service. If set to 1 (Don't revoke keys), the keys will not be revoked and the user will continue to have access to protected files after unenrollment. If the keys are not revoked, there will be no revoked file cleanup subsequently.
-        ## @param value Value to set for the revokeOnUnenrollDisabled property.
+        ## @param value Value to set for the revoke_on_unenroll_disabled property.
         ## @return a void
         ## 
         def revoke_on_unenroll_disabled=(value)
@@ -494,7 +494,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the rightsManagementServicesTemplateId property value. TemplateID GUID to use for RMS encryption. The RMS template allows the IT admin to configure the details about who has access to RMS-protected file and how long they have access
-        ## @param value Value to set for the rightsManagementServicesTemplateId property.
+        ## @param value Value to set for the rights_management_services_template_id property.
         ## @return a void
         ## 
         def rights_management_services_template_id=(value)
@@ -513,9 +513,9 @@ module MicrosoftGraph::Models
             writer.write_object_value("dataRecoveryCertificate", @data_recovery_certificate)
             writer.write_enum_value("enforcementLevel", @enforcement_level)
             writer.write_string_value("enterpriseDomain", @enterprise_domain)
-            writer.write_collection_of_object_values("enterpriseInternalProxyServers", @enterprise_internal_proxy_servers)
             writer.write_collection_of_object_values("enterpriseIPRanges", @enterprise_i_p_ranges)
             writer.write_boolean_value("enterpriseIPRangesAreAuthoritative", @enterprise_i_p_ranges_are_authoritative)
+            writer.write_collection_of_object_values("enterpriseInternalProxyServers", @enterprise_internal_proxy_servers)
             writer.write_collection_of_object_values("enterpriseNetworkDomainNames", @enterprise_network_domain_names)
             writer.write_collection_of_object_values("enterpriseProtectedDomainNames", @enterprise_protected_domain_names)
             writer.write_collection_of_object_values("enterpriseProxiedDomains", @enterprise_proxied_domains)
@@ -543,7 +543,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the smbAutoEncryptedFileExtensions property value. Specifies a list of file extensions, so that files with these extensions are encrypted when copying from an SMB share within the corporate boundary
-        ## @param value Value to set for the smbAutoEncryptedFileExtensions property.
+        ## @param value Value to set for the smb_auto_encrypted_file_extensions property.
         ## @return a void
         ## 
         def smb_auto_encrypted_file_extensions=(value)

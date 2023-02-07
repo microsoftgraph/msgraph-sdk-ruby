@@ -27,7 +27,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activeHoursEnd property value. Active Hours End (active hours mean the time window when updates install should not happen)
-        ## @param value Value to set for the activeHoursEnd property.
+        ## @param value Value to set for the active_hours_end property.
         ## @return a void
         ## 
         def active_hours_end=(value)
@@ -42,7 +42,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activeHoursStart property value. Active Hours Start (active hours mean the time window when updates install should not happen)
-        ## @param value Value to set for the activeHoursStart property.
+        ## @param value Value to set for the active_hours_start property.
         ## @return a void
         ## 
         def active_hours_start=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the scheduledInstallDays property value. Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.
-        ## @param value Value to set for the scheduledInstallDays property.
+        ## @param value Value to set for the scheduled_install_days property.
         ## @return a void
         ## 
         def scheduled_install_days=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the utcTimeOffsetInMinutes property value. UTC Time Offset indicated in minutes
-        ## @param value Value to set for the utcTimeOffsetInMinutes property.
+        ## @param value Value to set for the utc_time_offset_in_minutes property.
         ## @return a void
         ## 
         def utc_time_offset_in_minutes=(value)

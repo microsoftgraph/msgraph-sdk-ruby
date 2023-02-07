@@ -30,7 +30,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the appId property value. Unique identifier of the application.
-        ## @param value Value to set for the appId property.
+        ## @param value Value to set for the app_id property.
         ## @return a void
         ## 
         def app_id=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the displayName property value. Name of the application.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the instanceId property value. Identifier of the instance of the Software as a Service (SaaS) application.
-        ## @param value Value to set for the instanceId property.
+        ## @param value Value to set for the instance_id property.
         ## @return a void
         ## 
         def instance_id=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the instanceName property value. Name of the instance of the SaaS application.
-        ## @param value Value to set for the instanceName property.
+        ## @param value Value to set for the instance_name property.
         ## @return a void
         ## 
         def instance_name=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the saasAppId property value. The identifier of the SaaS application.
-        ## @param value Value to set for the saasAppId property.
+        ## @param value Value to set for the saas_app_id property.
         ## @return a void
         ## 
         def saas_app_id=(value)
