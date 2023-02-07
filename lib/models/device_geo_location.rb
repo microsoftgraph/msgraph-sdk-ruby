@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the horizontalAccuracy property value. Accuracy of longitude and latitude in meters
-        ## @param value Value to set for the horizontalAccuracy property.
+        ## @param value Value to set for the horizontal_accuracy property.
         ## @return a void
         ## 
         def horizontal_accuracy=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastCollectedDateTime property value. Time at which location was recorded, relative to UTC
-        ## @param value Value to set for the lastCollectedDateTime property.
+        ## @param value Value to set for the last_collected_date_time property.
         ## @return a void
         ## 
         def last_collected_date_time=(value)
@@ -185,7 +185,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -233,7 +233,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the verticalAccuracy property value. Accuracy of altitude in meters
-        ## @param value Value to set for the verticalAccuracy property.
+        ## @param value Value to set for the vertical_accuracy property.
         ## @return a void
         ## 
         def vertical_accuracy=(value)

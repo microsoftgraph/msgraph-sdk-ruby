@@ -52,7 +52,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowedDeviceCount property value. Total count of devices with Exchange Access State: Allowed.
-        ## @param value Value to set for the allowedDeviceCount property.
+        ## @param value Value to set for the allowed_device_count property.
         ## @return a void
         ## 
         def allowed_device_count=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the blockedDeviceCount property value. Total count of devices with Exchange Access State: Blocked.
-        ## @param value Value to set for the blockedDeviceCount property.
+        ## @param value Value to set for the blocked_device_count property.
         ## @return a void
         ## 
         def blocked_device_count=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the quarantinedDeviceCount property value. Total count of devices with Exchange Access State: Quarantined.
-        ## @param value Value to set for the quarantinedDeviceCount property.
+        ## @param value Value to set for the quarantined_device_count property.
         ## @return a void
         ## 
         def quarantined_device_count=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the unavailableDeviceCount property value. Total count of devices for which no Exchange Access State could be found.
-        ## @param value Value to set for the unavailableDeviceCount property.
+        ## @param value Value to set for the unavailable_device_count property.
         ## @return a void
         ## 
         def unavailable_device_count=(value)
@@ -172,7 +172,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the unknownDeviceCount property value. Total count of devices with Exchange Access State: Unknown.
-        ## @param value Value to set for the unknownDeviceCount property.
+        ## @param value Value to set for the unknown_device_count property.
         ## @return a void
         ## 
         def unknown_device_count=(value)

@@ -76,7 +76,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the fileName property value. The name of the file.
-        ## @param value Value to set for the fileName property.
+        ## @param value Value to set for the file_name property.
         ## @return a void
         ## 
         def file_name=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the filePath property value. The file path (location) of the file instance.
-        ## @param value Value to set for the filePath property.
+        ## @param value Value to set for the file_path property.
         ## @return a void
         ## 
         def file_path=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the filePublisher property value. The publisher of the file.
-        ## @param value Value to set for the filePublisher property.
+        ## @param value Value to set for the file_publisher property.
         ## @return a void
         ## 
         def file_publisher=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the fileSize property value. The size of the file in bytes.
-        ## @param value Value to set for the fileSize property.
+        ## @param value Value to set for the file_size property.
         ## @return a void
         ## 
         def file_size=(value)
@@ -168,7 +168,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

@@ -5,7 +5,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../me'
 require_relative './count/count_request_builder'
 require_relative './created_objects'
-require_relative './service_principal/service_principal_request_builder'
+require_relative './microsoft_graph_service_principal/microsoft_graph_service_principal_request_builder'
 
 module MicrosoftGraph::Me::CreatedObjects
     ## 
@@ -18,16 +18,16 @@ module MicrosoftGraph::Me::CreatedObjects
             return MicrosoftGraph::Me::CreatedObjects::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Casts the previous resource to servicePrincipal.
+        def microsoft_graph_service_principal()
+            return MicrosoftGraph::Me::CreatedObjects::MicrosoftGraphServicePrincipal::MicrosoftGraphServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Casts the previous resource to servicePrincipal.
-        def service_principal()
-            return MicrosoftGraph::Me::CreatedObjects::ServicePrincipal::ServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template

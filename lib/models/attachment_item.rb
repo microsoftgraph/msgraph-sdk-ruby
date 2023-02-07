@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the attachmentType property value. The type of attachment. Possible values are: file, item, reference. Required.
-        ## @param value Value to set for the attachmentType property.
+        ## @param value Value to set for the attachment_type property.
         ## @return a void
         ## 
         def attachment_type=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentId property value. The CID or Content-Id of the attachment for referencing in case of in-line attachments using <img src='cid:contentId'> tag in HTML messages. Optional.
-        ## @param value Value to set for the contentId property.
+        ## @param value Value to set for the content_id property.
         ## @return a void
         ## 
         def content_id=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentType property value. The nature of the data in the attachment. Optional.
-        ## @param value Value to set for the contentType property.
+        ## @param value Value to set for the content_type property.
         ## @return a void
         ## 
         def content_type=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isInline property value. true if the attachment is an inline attachment; otherwise, false. Optional.
-        ## @param value Value to set for the isInline property.
+        ## @param value Value to set for the is_inline property.
         ## @return a void
         ## 
         def is_inline=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

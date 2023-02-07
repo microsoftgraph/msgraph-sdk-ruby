@@ -62,7 +62,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the detectionStatus property value. The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
-        ## @param value Value to set for the detectionStatus property.
+        ## @param value Value to set for the detection_status property.
         ## @return a void
         ## 
         def detection_status=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the imageFile property value. Image file details.
-        ## @param value Value to set for the imageFile property.
+        ## @param value Value to set for the image_file property.
         ## @return a void
         ## 
         def image_file=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
-        ## @param value Value to set for the mdeDeviceId property.
+        ## @param value Value to set for the mde_device_id property.
         ## @return a void
         ## 
         def mde_device_id=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the parentProcessCreationDateTime property value. Date and time when the parent of the process was created.
-        ## @param value Value to set for the parentProcessCreationDateTime property.
+        ## @param value Value to set for the parent_process_creation_date_time property.
         ## @return a void
         ## 
         def parent_process_creation_date_time=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the parentProcessId property value. Process ID (PID) of the parent process that spawned the process.
-        ## @param value Value to set for the parentProcessId property.
+        ## @param value Value to set for the parent_process_id property.
         ## @return a void
         ## 
         def parent_process_id=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the parentProcessImageFile property value. Parent process image file details.
-        ## @param value Value to set for the parentProcessImageFile property.
+        ## @param value Value to set for the parent_process_image_file property.
         ## @return a void
         ## 
         def parent_process_image_file=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the processCommandLine property value. Command line used to create the new process.
-        ## @param value Value to set for the processCommandLine property.
+        ## @param value Value to set for the process_command_line property.
         ## @return a void
         ## 
         def process_command_line=(value)
@@ -185,7 +185,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the processCreationDateTime property value. Date and time the process was created.
-        ## @param value Value to set for the processCreationDateTime property.
+        ## @param value Value to set for the process_creation_date_time property.
         ## @return a void
         ## 
         def process_creation_date_time=(value)
@@ -200,7 +200,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the processId property value. Process ID (PID) of the newly created process.
-        ## @param value Value to set for the processId property.
+        ## @param value Value to set for the process_id property.
         ## @return a void
         ## 
         def process_id=(value)
@@ -234,7 +234,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the userAccount property value. User details of the user that ran the process.
-        ## @param value Value to set for the userAccount property.
+        ## @param value Value to set for the user_account property.
         ## @return a void
         ## 
         def user_account=(value)

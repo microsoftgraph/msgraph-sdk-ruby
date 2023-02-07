@@ -42,7 +42,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the orderHint property value. Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.
-        ## @param value Value to set for the orderHint property.
+        ## @param value Value to set for the order_hint property.
         ## @return a void
         ## 
         def order_hint=(value)

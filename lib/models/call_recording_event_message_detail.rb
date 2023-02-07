@@ -35,7 +35,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callId property value. Unique identifier of the call.
-        ## @param value Value to set for the callId property.
+        ## @param value Value to set for the call_id property.
         ## @return a void
         ## 
         def call_id=(value)
@@ -50,7 +50,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callRecordingDisplayName property value. Display name for the call recording.
-        ## @param value Value to set for the callRecordingDisplayName property.
+        ## @param value Value to set for the call_recording_display_name property.
         ## @return a void
         ## 
         def call_recording_display_name=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callRecordingDuration property value. Duration of the call recording.
-        ## @param value Value to set for the callRecordingDuration property.
+        ## @param value Value to set for the call_recording_duration property.
         ## @return a void
         ## 
         def call_recording_duration=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callRecordingStatus property value. Status of the call recording. Possible values are: success, failure, initial, chunkFinished, unknownFutureValue.
-        ## @param value Value to set for the callRecordingStatus property.
+        ## @param value Value to set for the call_recording_status property.
         ## @return a void
         ## 
         def call_recording_status=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callRecordingUrl property value. Call recording URL.
-        ## @param value Value to set for the callRecordingUrl property.
+        ## @param value Value to set for the call_recording_url property.
         ## @return a void
         ## 
         def call_recording_url=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the meetingOrganizer property value. Organizer of the meeting.
-        ## @param value Value to set for the meetingOrganizer property.
+        ## @param value Value to set for the meeting_organizer property.
         ## @return a void
         ## 
         def meeting_organizer=(value)

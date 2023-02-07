@@ -33,7 +33,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the approvalId property value. The identifier of the approval of the request.
-        ## @param value Value to set for the approvalId property.
+        ## @param value Value to set for the approval_id property.
         ## @return a void
         ## 
         def approval_id=(value)
@@ -48,7 +48,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the completedDateTime property value. The request completion date time.
-        ## @param value Value to set for the completedDateTime property.
+        ## @param value Value to set for the completed_date_time property.
         ## @return a void
         ## 
         def completed_date_time=(value)
@@ -70,7 +70,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdBy property value. The principal that created the request.
-        ## @param value Value to set for the createdBy property.
+        ## @param value Value to set for the created_by property.
         ## @return a void
         ## 
         def created_by=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The request creation date time.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the customData property value. Free text field to define any custom data for the request. Not used.
-        ## @param value Value to set for the customData property.
+        ## @param value Value to set for the custom_data property.
         ## @return a void
         ## 
         def custom_data=(value)

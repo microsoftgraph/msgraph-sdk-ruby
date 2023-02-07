@@ -126,7 +126,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assistantName property value. The name of the contact's assistant.
-        ## @param value Value to set for the assistantName property.
+        ## @param value Value to set for the assistant_name property.
         ## @return a void
         ## 
         def assistant_name=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the businessAddress property value. The contact's business address.
-        ## @param value Value to set for the businessAddress property.
+        ## @param value Value to set for the business_address property.
         ## @return a void
         ## 
         def business_address=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the businessHomePage property value. The business home page of the contact.
-        ## @param value Value to set for the businessHomePage property.
+        ## @param value Value to set for the business_home_page property.
         ## @return a void
         ## 
         def business_home_page=(value)
@@ -186,7 +186,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the businessPhones property value. The contact's business phone numbers.
-        ## @param value Value to set for the businessPhones property.
+        ## @param value Value to set for the business_phones property.
         ## @return a void
         ## 
         def business_phones=(value)
@@ -216,7 +216,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the companyName property value. The name of the contact's company.
-        ## @param value Value to set for the companyName property.
+        ## @param value Value to set for the company_name property.
         ## @return a void
         ## 
         def company_name=(value)
@@ -263,7 +263,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The contact's display name. You can specify the display name in a create or update operation. Note that later updates to other properties may cause an automatically generated value to overwrite the displayName value you have specified. To preserve a pre-existing value, always include it as displayName in an update operation.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -278,7 +278,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the emailAddresses property value. The contact's email addresses.
-        ## @param value Value to set for the emailAddresses property.
+        ## @param value Value to set for the email_addresses property.
         ## @return a void
         ## 
         def email_addresses=(value)
@@ -308,7 +308,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fileAs property value. The name the contact is filed under.
-        ## @param value Value to set for the fileAs property.
+        ## @param value Value to set for the file_as property.
         ## @return a void
         ## 
         def file_as=(value)
@@ -383,7 +383,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the givenName property value. The contact's given name.
-        ## @param value Value to set for the givenName property.
+        ## @param value Value to set for the given_name property.
         ## @return a void
         ## 
         def given_name=(value)
@@ -398,7 +398,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the homeAddress property value. The contact's home address.
-        ## @param value Value to set for the homeAddress property.
+        ## @param value Value to set for the home_address property.
         ## @return a void
         ## 
         def home_address=(value)
@@ -413,7 +413,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the homePhones property value. The contact's home phone numbers.
-        ## @param value Value to set for the homePhones property.
+        ## @param value Value to set for the home_phones property.
         ## @return a void
         ## 
         def home_phones=(value)
@@ -428,7 +428,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the imAddresses property value. The imAddresses property
-        ## @param value Value to set for the imAddresses property.
+        ## @param value Value to set for the im_addresses property.
         ## @return a void
         ## 
         def im_addresses=(value)
@@ -458,7 +458,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the jobTitle property value. The jobTitle property
-        ## @param value Value to set for the jobTitle property.
+        ## @param value Value to set for the job_title property.
         ## @return a void
         ## 
         def job_title=(value)
@@ -488,7 +488,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the middleName property value. The middleName property
-        ## @param value Value to set for the middleName property.
+        ## @param value Value to set for the middle_name property.
         ## @return a void
         ## 
         def middle_name=(value)
@@ -503,7 +503,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mobilePhone property value. The mobilePhone property
-        ## @param value Value to set for the mobilePhone property.
+        ## @param value Value to set for the mobile_phone property.
         ## @return a void
         ## 
         def mobile_phone=(value)
@@ -518,7 +518,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contact. Read-only. Nullable.
-        ## @param value Value to set for the multiValueExtendedProperties property.
+        ## @param value Value to set for the multi_value_extended_properties property.
         ## @return a void
         ## 
         def multi_value_extended_properties=(value)
@@ -533,7 +533,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the nickName property value. The nickName property
-        ## @param value Value to set for the nickName property.
+        ## @param value Value to set for the nick_name property.
         ## @return a void
         ## 
         def nick_name=(value)
@@ -548,7 +548,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the officeLocation property value. The officeLocation property
-        ## @param value Value to set for the officeLocation property.
+        ## @param value Value to set for the office_location property.
         ## @return a void
         ## 
         def office_location=(value)
@@ -563,7 +563,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the otherAddress property value. The otherAddress property
-        ## @param value Value to set for the otherAddress property.
+        ## @param value Value to set for the other_address property.
         ## @return a void
         ## 
         def other_address=(value)
@@ -578,7 +578,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the parentFolderId property value. The parentFolderId property
-        ## @param value Value to set for the parentFolderId property.
+        ## @param value Value to set for the parent_folder_id property.
         ## @return a void
         ## 
         def parent_folder_id=(value)
@@ -593,7 +593,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the personalNotes property value. The personalNotes property
-        ## @param value Value to set for the personalNotes property.
+        ## @param value Value to set for the personal_notes property.
         ## @return a void
         ## 
         def personal_notes=(value)
@@ -684,7 +684,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contact. Read-only. Nullable.
-        ## @param value Value to set for the singleValueExtendedProperties property.
+        ## @param value Value to set for the single_value_extended_properties property.
         ## @return a void
         ## 
         def single_value_extended_properties=(value)
@@ -699,7 +699,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the spouseName property value. The spouseName property
-        ## @param value Value to set for the spouseName property.
+        ## @param value Value to set for the spouse_name property.
         ## @return a void
         ## 
         def spouse_name=(value)
@@ -744,7 +744,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the yomiCompanyName property value. The yomiCompanyName property
-        ## @param value Value to set for the yomiCompanyName property.
+        ## @param value Value to set for the yomi_company_name property.
         ## @return a void
         ## 
         def yomi_company_name=(value)
@@ -759,7 +759,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the yomiGivenName property value. The yomiGivenName property
-        ## @param value Value to set for the yomiGivenName property.
+        ## @param value Value to set for the yomi_given_name property.
         ## @return a void
         ## 
         def yomi_given_name=(value)
@@ -774,7 +774,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the yomiSurname property value. The yomiSurname property
-        ## @param value Value to set for the yomiSurname property.
+        ## @param value Value to set for the yomi_surname property.
         ## @return a void
         ## 
         def yomi_surname=(value)

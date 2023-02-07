@@ -6,7 +6,7 @@ require_relative '../../../service_principals'
 require_relative '../../item'
 require_relative '../created_objects'
 require_relative './item'
-require_relative './service_principal/service_principal_request_builder'
+require_relative './microsoft_graph_service_principal/microsoft_graph_service_principal_request_builder'
 
 module MicrosoftGraph::ServicePrincipals::Item::CreatedObjects::Item
     ## 
@@ -14,16 +14,16 @@ module MicrosoftGraph::ServicePrincipals::Item::CreatedObjects::Item
     class DirectoryObjectItemRequestBuilder
         
         ## 
+        # Casts the previous resource to servicePrincipal.
+        def microsoft_graph_service_principal()
+            return MicrosoftGraph::ServicePrincipals::Item::CreatedObjects::Item::MicrosoftGraphServicePrincipal::MicrosoftGraphServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Casts the previous resource to servicePrincipal.
-        def service_principal()
-            return MicrosoftGraph::ServicePrincipals::Item::CreatedObjects::Item::ServicePrincipal::ServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template

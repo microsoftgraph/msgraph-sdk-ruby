@@ -7,9 +7,9 @@ require_relative '../../entitlement_management'
 require_relative '../role_assignment_schedule_requests'
 require_relative './activated_using/activated_using_request_builder'
 require_relative './app_scope/app_scope_request_builder'
-require_relative './cancel/cancel_request_builder'
 require_relative './directory_scope/directory_scope_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_cancel/microsoft_graph_cancel_request_builder'
 require_relative './principal/principal_request_builder'
 require_relative './role_definition/role_definition_request_builder'
 require_relative './target_schedule/target_schedule_request_builder'
@@ -30,14 +30,14 @@ module MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignmentSche
             return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignmentScheduleRequests::Item::AppScope::AppScopeRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the cancel method.
-        def cancel()
-            return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignmentScheduleRequests::Item::Cancel::CancelRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleAssignmentScheduleRequest entity.
         def directory_scope()
             return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignmentScheduleRequests::Item::DirectoryScope::DirectoryScopeRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the cancel method.
+        def microsoft_graph_cancel()
+            return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignmentScheduleRequests::Item::MicrosoftGraphCancel::MicrosoftGraphCancelRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

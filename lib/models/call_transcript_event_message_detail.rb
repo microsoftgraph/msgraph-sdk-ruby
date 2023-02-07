@@ -23,7 +23,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callId property value. Unique identifier of the call.
-        ## @param value Value to set for the callId property.
+        ## @param value Value to set for the call_id property.
         ## @return a void
         ## 
         def call_id=(value)
@@ -38,7 +38,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callTranscriptICalUid property value. Unique identifier for a call transcript.
-        ## @param value Value to set for the callTranscriptICalUid property.
+        ## @param value Value to set for the call_transcript_i_cal_uid property.
         ## @return a void
         ## 
         def call_transcript_i_cal_uid=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the meetingOrganizer property value. The organizer of the meeting.
-        ## @param value Value to set for the meetingOrganizer property.
+        ## @param value Value to set for the meeting_organizer property.
         ## @return a void
         ## 
         def meeting_organizer=(value)

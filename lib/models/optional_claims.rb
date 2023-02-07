@@ -29,7 +29,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accessToken property value. The optional claims returned in the JWT access token.
-        ## @param value Value to set for the accessToken property.
+        ## @param value Value to set for the access_token property.
         ## @return a void
         ## 
         def access_token=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the idToken property value. The optional claims returned in the JWT ID token.
-        ## @param value Value to set for the idToken property.
+        ## @param value Value to set for the id_token property.
         ## @return a void
         ## 
         def id_token=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the saml2Token property value. The optional claims returned in the SAML token.
-        ## @param value Value to set for the saml2Token property.
+        ## @param value Value to set for the saml2_token property.
         ## @return a void
         ## 
         def saml2_token=(value)

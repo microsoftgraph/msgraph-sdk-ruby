@@ -29,7 +29,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the aaGuids property value. A collection of Authenticator Attestation GUIDs. AADGUIDs define key types and manufacturers.
-        ## @param value Value to set for the aaGuids property.
+        ## @param value Value to set for the aa_guids property.
         ## @return a void
         ## 
         def aa_guids=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enforcementType property value. Enforcement type. Possible values are: allow, block.
-        ## @param value Value to set for the enforcementType property.
+        ## @param value Value to set for the enforcement_type property.
         ## @return a void
         ## 
         def enforcement_type=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isEnforced property value. Determines if the configured key enforcement is enabled.
-        ## @param value Value to set for the isEnforced property.
+        ## @param value Value to set for the is_enforced property.
         ## @return a void
         ## 
         def is_enforced=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

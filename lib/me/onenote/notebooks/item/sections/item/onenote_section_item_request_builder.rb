@@ -7,9 +7,9 @@ require_relative '../../../../onenote'
 require_relative '../../../notebooks'
 require_relative '../../item'
 require_relative '../sections'
-require_relative './copy_to_notebook/copy_to_notebook_request_builder'
-require_relative './copy_to_section_group/copy_to_section_group_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_copy_to_notebook/microsoft_graph_copy_to_notebook_request_builder'
+require_relative './microsoft_graph_copy_to_section_group/microsoft_graph_copy_to_section_group_request_builder'
 require_relative './pages/item/onenote_page_item_request_builder'
 require_relative './pages/pages_request_builder'
 require_relative './parent_notebook/parent_notebook_request_builder'
@@ -22,13 +22,13 @@ module MicrosoftGraph::Me::Onenote::Notebooks::Item::Sections::Item
         
         ## 
         # Provides operations to call the copyToNotebook method.
-        def copy_to_notebook()
-            return MicrosoftGraph::Me::Onenote::Notebooks::Item::Sections::Item::CopyToNotebook::CopyToNotebookRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_copy_to_notebook()
+            return MicrosoftGraph::Me::Onenote::Notebooks::Item::Sections::Item::MicrosoftGraphCopyToNotebook::MicrosoftGraphCopyToNotebookRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the copyToSectionGroup method.
-        def copy_to_section_group()
-            return MicrosoftGraph::Me::Onenote::Notebooks::Item::Sections::Item::CopyToSectionGroup::CopyToSectionGroupRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_copy_to_section_group()
+            return MicrosoftGraph::Me::Onenote::Notebooks::Item::Sections::Item::MicrosoftGraphCopyToSectionGroup::MicrosoftGraphCopyToSectionGroupRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.

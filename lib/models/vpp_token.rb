@@ -50,7 +50,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appleId property value. The apple Id associated with the given Apple Volume Purchase Program Token.
-        ## @param value Value to set for the appleId property.
+        ## @param value Value to set for the apple_id property.
         ## @return a void
         ## 
         def apple_id=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the automaticallyUpdateApps property value. Whether or not apps for the VPP token will be automatically updated.
-        ## @param value Value to set for the automaticallyUpdateApps property.
+        ## @param value Value to set for the automatically_update_apps property.
         ## @return a void
         ## 
         def automatically_update_apps=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the countryOrRegion property value. Whether or not apps for the VPP token will be automatically updated.
-        ## @param value Value to set for the countryOrRegion property.
+        ## @param value Value to set for the country_or_region property.
         ## @return a void
         ## 
         def country_or_region=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the expirationDateTime property value. The expiration date time of the Apple Volume Purchase Program Token.
-        ## @param value Value to set for the expirationDateTime property.
+        ## @param value Value to set for the expiration_date_time property.
         ## @return a void
         ## 
         def expiration_date_time=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. Last modification date time associated with the Apple Volume Purchase Program Token.
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastSyncDateTime property value. The last time when an application sync was done with the Apple volume purchase program service using the the Apple Volume Purchase Program Token.
-        ## @param value Value to set for the lastSyncDateTime property.
+        ## @param value Value to set for the last_sync_date_time property.
         ## @return a void
         ## 
         def last_sync_date_time=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastSyncStatus property value. Possible sync statuses associated with an Apple Volume Purchase Program token.
-        ## @param value Value to set for the lastSyncStatus property.
+        ## @param value Value to set for the last_sync_status property.
         ## @return a void
         ## 
         def last_sync_status=(value)
@@ -190,7 +190,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the organizationName property value. The organization associated with the Apple Volume Purchase Program Token
-        ## @param value Value to set for the organizationName property.
+        ## @param value Value to set for the organization_name property.
         ## @return a void
         ## 
         def organization_name=(value)
@@ -255,7 +255,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the vppTokenAccountType property value. Possible types of an Apple Volume Purchase Program token.
-        ## @param value Value to set for the vppTokenAccountType property.
+        ## @param value Value to set for the vpp_token_account_type property.
         ## @return a void
         ## 
         def vpp_token_account_type=(value)

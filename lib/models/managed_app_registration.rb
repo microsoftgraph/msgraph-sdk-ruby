@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appIdentifier property value. The app package Identifier
-        ## @param value Value to set for the appIdentifier property.
+        ## @param value Value to set for the app_identifier property.
         ## @return a void
         ## 
         def app_identifier=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applicationVersion property value. App version
-        ## @param value Value to set for the applicationVersion property.
+        ## @param value Value to set for the application_version property.
         ## @return a void
         ## 
         def application_version=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appliedPolicies property value. Zero or more policys already applied on the registered app when it last synchronized with managment service.
-        ## @param value Value to set for the appliedPolicies property.
+        ## @param value Value to set for the applied_policies property.
         ## @return a void
         ## 
         def applied_policies=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. Date and time of creation
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -148,7 +148,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceName property value. Host device name
-        ## @param value Value to set for the deviceName property.
+        ## @param value Value to set for the device_name property.
         ## @return a void
         ## 
         def device_name=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceTag property value. App management SDK generated tag, which helps relate apps hosted on the same device. Not guaranteed to relate apps in all conditions.
-        ## @param value Value to set for the deviceTag property.
+        ## @param value Value to set for the device_tag property.
         ## @return a void
         ## 
         def device_tag=(value)
@@ -178,7 +178,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceType property value. Host device type
-        ## @param value Value to set for the deviceType property.
+        ## @param value Value to set for the device_type property.
         ## @return a void
         ## 
         def device_type=(value)
@@ -193,7 +193,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the flaggedReasons property value. Zero or more reasons an app registration is flagged. E.g. app running on rooted device
-        ## @param value Value to set for the flaggedReasons property.
+        ## @param value Value to set for the flagged_reasons property.
         ## @return a void
         ## 
         def flagged_reasons=(value)
@@ -231,7 +231,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the intendedPolicies property value. Zero or more policies admin intended for the app as of now.
-        ## @param value Value to set for the intendedPolicies property.
+        ## @param value Value to set for the intended_policies property.
         ## @return a void
         ## 
         def intended_policies=(value)
@@ -246,7 +246,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastSyncDateTime property value. Date and time of last the app synced with management service.
-        ## @param value Value to set for the lastSyncDateTime property.
+        ## @param value Value to set for the last_sync_date_time property.
         ## @return a void
         ## 
         def last_sync_date_time=(value)
@@ -261,7 +261,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managementSdkVersion property value. App management SDK version
-        ## @param value Value to set for the managementSdkVersion property.
+        ## @param value Value to set for the management_sdk_version property.
         ## @return a void
         ## 
         def management_sdk_version=(value)
@@ -291,7 +291,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the platformVersion property value. Operating System version
-        ## @param value Value to set for the platformVersion property.
+        ## @param value Value to set for the platform_version property.
         ## @return a void
         ## 
         def platform_version=(value)
@@ -330,7 +330,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userId property value. The user Id to who this app registration belongs.
-        ## @param value Value to set for the userId property.
+        ## @param value Value to set for the user_id property.
         ## @return a void
         ## 
         def user_id=(value)

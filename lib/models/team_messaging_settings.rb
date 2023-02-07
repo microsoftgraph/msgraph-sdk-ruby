@@ -50,7 +50,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowChannelMentions property value. If set to true, @channel mentions are allowed.
-        ## @param value Value to set for the allowChannelMentions property.
+        ## @param value Value to set for the allow_channel_mentions property.
         ## @return a void
         ## 
         def allow_channel_mentions=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowOwnerDeleteMessages property value. If set to true, owners can delete any message.
-        ## @param value Value to set for the allowOwnerDeleteMessages property.
+        ## @param value Value to set for the allow_owner_delete_messages property.
         ## @return a void
         ## 
         def allow_owner_delete_messages=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowTeamMentions property value. If set to true, @team mentions are allowed.
-        ## @param value Value to set for the allowTeamMentions property.
+        ## @param value Value to set for the allow_team_mentions property.
         ## @return a void
         ## 
         def allow_team_mentions=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowUserDeleteMessages property value. If set to true, users can delete their messages.
-        ## @param value Value to set for the allowUserDeleteMessages property.
+        ## @param value Value to set for the allow_user_delete_messages property.
         ## @return a void
         ## 
         def allow_user_delete_messages=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowUserEditMessages property value. If set to true, users can edit their messages.
-        ## @param value Value to set for the allowUserEditMessages property.
+        ## @param value Value to set for the allow_user_edit_messages property.
         ## @return a void
         ## 
         def allow_user_edit_messages=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

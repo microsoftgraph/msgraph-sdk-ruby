@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mediaInfo property value. The mediaInfo property
-        ## @param value Value to set for the mediaInfo property.
+        ## @param value Value to set for the media_info property.
         ## @return a void
         ## 
         def media_info=(value)

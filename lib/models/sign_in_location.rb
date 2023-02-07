@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the countryOrRegion property value. Provides the country code info (2 letter code) where the sign-in originated.  This is calculated using latitude/longitude information from the sign-in activity.
-        ## @param value Value to set for the countryOrRegion property.
+        ## @param value Value to set for the country_or_region property.
         ## @return a void
         ## 
         def country_or_region=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the geoCoordinates property value. Provides the latitude, longitude and altitude where the sign-in originated.
-        ## @param value Value to set for the geoCoordinates property.
+        ## @param value Value to set for the geo_coordinates property.
         ## @return a void
         ## 
         def geo_coordinates=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

@@ -35,7 +35,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the createdBy property value. The user who created the dataSource.
-        ## @param value Value to set for the createdBy property.
+        ## @param value Value to set for the created_by property.
         ## @return a void
         ## 
         def created_by=(value)
@@ -50,7 +50,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the createdDateTime property value. The date and time the dataSource was created.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the displayName property value. The display name of the dataSource. This will be the name of the SharePoint site.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the holdStatus property value. The hold status of the dataSource.The possible values are: notApplied, applied, applying, removing, partial
-        ## @param value Value to set for the holdStatus property.
+        ## @param value Value to set for the hold_status property.
         ## @return a void
         ## 
         def hold_status=(value)

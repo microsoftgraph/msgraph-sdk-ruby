@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pendingContentUpdate property value. A property that indicates that an operation that might update the binary content of a file is pending completion.
-        ## @param value Value to set for the pendingContentUpdate property.
+        ## @param value Value to set for the pending_content_update property.
         ## @return a void
         ## 
         def pending_content_update=(value)

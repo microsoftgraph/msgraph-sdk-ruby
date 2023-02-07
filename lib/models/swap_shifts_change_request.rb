@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the recipientShiftId property value. ShiftId for the recipient user with whom the request is to swap.
-        ## @param value Value to set for the recipientShiftId property.
+        ## @param value Value to set for the recipient_shift_id property.
         ## @return a void
         ## 
         def recipient_shift_id=(value)

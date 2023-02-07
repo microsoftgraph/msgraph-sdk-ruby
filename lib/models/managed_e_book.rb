@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The date and time when the eBook file was created.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceStates property value. The list of installation states for this eBook.
-        ## @param value Value to set for the deviceStates property.
+        ## @param value Value to set for the device_states property.
         ## @return a void
         ## 
         def device_states=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Name of the eBook.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -176,7 +176,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the informationUrl property value. The more information Url.
-        ## @param value Value to set for the informationUrl property.
+        ## @param value Value to set for the information_url property.
         ## @return a void
         ## 
         def information_url=(value)
@@ -191,7 +191,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the installSummary property value. Mobile App Install Summary.
-        ## @param value Value to set for the installSummary property.
+        ## @param value Value to set for the install_summary property.
         ## @return a void
         ## 
         def install_summary=(value)
@@ -206,7 +206,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the largeCover property value. Book cover.
-        ## @param value Value to set for the largeCover property.
+        ## @param value Value to set for the large_cover property.
         ## @return a void
         ## 
         def large_cover=(value)
@@ -221,7 +221,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. The date and time when the eBook was last modified.
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -236,7 +236,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the privacyInformationUrl property value. The privacy statement Url.
-        ## @param value Value to set for the privacyInformationUrl property.
+        ## @param value Value to set for the privacy_information_url property.
         ## @return a void
         ## 
         def privacy_information_url=(value)
@@ -251,7 +251,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the publishedDateTime property value. The date and time when the eBook was published.
-        ## @param value Value to set for the publishedDateTime property.
+        ## @param value Value to set for the published_date_time property.
         ## @return a void
         ## 
         def published_date_time=(value)
@@ -303,7 +303,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userStateSummary property value. The list of installation states for this eBook.
-        ## @param value Value to set for the userStateSummary property.
+        ## @param value Value to set for the user_state_summary property.
         ## @return a void
         ## 
         def user_state_summary=(value)

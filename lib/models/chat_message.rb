@@ -114,7 +114,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the channelIdentity property value. If the message was sent in a channel, represents identity of the channel.
-        ## @param value Value to set for the channelIdentity property.
+        ## @param value Value to set for the channel_identity property.
         ## @return a void
         ## 
         def channel_identity=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the chatId property value. If the message was sent in a chat, represents the identity of the chat.
-        ## @param value Value to set for the chatId property.
+        ## @param value Value to set for the chat_id property.
         ## @return a void
         ## 
         def chat_id=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. Timestamp of when the chat message was created.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deletedDateTime property value. Read only. Timestamp at which the chat message was deleted, or null if not deleted.
-        ## @param value Value to set for the deletedDateTime property.
+        ## @param value Value to set for the deleted_date_time property.
         ## @return a void
         ## 
         def deleted_date_time=(value)
@@ -205,7 +205,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the eventDetail property value. Read-only. If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.
-        ## @param value Value to set for the eventDetail property.
+        ## @param value Value to set for the event_detail property.
         ## @return a void
         ## 
         def event_detail=(value)
@@ -266,7 +266,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hostedContents property value. Content in a message hosted by Microsoft Teams - for example, images or code snippets.
-        ## @param value Value to set for the hostedContents property.
+        ## @param value Value to set for the hosted_contents property.
         ## @return a void
         ## 
         def hosted_contents=(value)
@@ -296,7 +296,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastEditedDateTime property value. Read only. Timestamp when edits to the chat message were made. Triggers an 'Edited' flag in the Teams UI. If no edits are made the value is null.
-        ## @param value Value to set for the lastEditedDateTime property.
+        ## @param value Value to set for the last_edited_date_time property.
         ## @return a void
         ## 
         def last_edited_date_time=(value)
@@ -311,7 +311,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -356,7 +356,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the messageType property value. The messageType property
-        ## @param value Value to set for the messageType property.
+        ## @param value Value to set for the message_type property.
         ## @return a void
         ## 
         def message_type=(value)
@@ -371,7 +371,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the policyViolation property value. Defines the properties of a policy violation set by a data loss prevention (DLP) application.
-        ## @param value Value to set for the policyViolation property.
+        ## @param value Value to set for the policy_violation property.
         ## @return a void
         ## 
         def policy_violation=(value)
@@ -416,7 +416,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the replyToId property value. Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)
-        ## @param value Value to set for the replyToId property.
+        ## @param value Value to set for the reply_to_id property.
         ## @return a void
         ## 
         def reply_to_id=(value)
@@ -493,7 +493,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webUrl property value. Read-only. Link to the message in Microsoft Teams.
-        ## @param value Value to set for the webUrl property.
+        ## @param value Value to set for the web_url property.
         ## @return a void
         ## 
         def web_url=(value)

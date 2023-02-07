@@ -59,7 +59,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceRestartBehavior property value. Indicates the type of restart action.
-        ## @param value Value to set for the deviceRestartBehavior property.
+        ## @param value Value to set for the device_restart_behavior property.
         ## @return a void
         ## 
         def device_restart_behavior=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the runAsAccount property value. Indicates the type of execution context the app runs in.
-        ## @param value Value to set for the runAsAccount property.
+        ## @param value Value to set for the run_as_account property.
         ## @return a void
         ## 
         def run_as_account=(value)

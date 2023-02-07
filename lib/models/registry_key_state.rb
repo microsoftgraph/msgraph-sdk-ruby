@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the oldKey property value. Previous (i.e. before changed) registry key (excludes HIVE).
-        ## @param value Value to set for the oldKey property.
+        ## @param value Value to set for the old_key property.
         ## @return a void
         ## 
         def old_key=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the oldValueData property value. Previous (i.e. before changed) registry key value data (contents).
-        ## @param value Value to set for the oldValueData property.
+        ## @param value Value to set for the old_value_data property.
         ## @return a void
         ## 
         def old_value_data=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the oldValueName property value. Previous (i.e. before changed) registry key value name.
-        ## @param value Value to set for the oldValueName property.
+        ## @param value Value to set for the old_value_name property.
         ## @return a void
         ## 
         def old_value_name=(value)
@@ -205,7 +205,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the processId property value. Process ID (PID) of the process that modified the registry key (process details will appear in the alert 'processes' collection).
-        ## @param value Value to set for the processId property.
+        ## @param value Value to set for the process_id property.
         ## @return a void
         ## 
         def process_id=(value)
@@ -240,7 +240,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the valueData property value. Current (i.e. changed) registry key value data (contents).
-        ## @param value Value to set for the valueData property.
+        ## @param value Value to set for the value_data property.
         ## @return a void
         ## 
         def value_data=(value)
@@ -255,7 +255,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the valueName property value. Current (i.e. changed) registry key value name
-        ## @param value Value to set for the valueName property.
+        ## @param value Value to set for the value_name property.
         ## @return a void
         ## 
         def value_name=(value)
@@ -270,7 +270,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the valueType property value. Registry key value type REG_BINARY REG_DWORD REG_DWORD_LITTLE_ENDIAN REG_DWORD_BIG_ENDIANREG_EXPAND_SZ REG_LINK REG_MULTI_SZ REG_NONE REG_QWORD REG_QWORD_LITTLE_ENDIAN REG_SZ Possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.
-        ## @param value Value to set for the valueType property.
+        ## @param value Value to set for the value_type property.
         ## @return a void
         ## 
         def value_type=(value)

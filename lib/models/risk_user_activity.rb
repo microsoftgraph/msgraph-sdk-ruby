@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskEventTypes property value. The type of risk event detected.
-        ## @param value Value to set for the riskEventTypes property.
+        ## @param value Value to set for the risk_event_types property.
         ## @return a void
         ## 
         def risk_event_types=(value)

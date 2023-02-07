@@ -49,11 +49,11 @@ module MicrosoftGraph::Models
         # The user's calendar groups. Read-only. Nullable.
         @calendar_groups
         ## 
-        # The user's calendars. Read-only. Nullable.
-        @calendars
-        ## 
         # The calendar view for the calendar. Read-only. Nullable.
         @calendar_view
+        ## 
+        # The user's calendars. Read-only. Nullable.
+        @calendars
         ## 
         # The chats property
         @chats
@@ -111,6 +111,9 @@ module MicrosoftGraph::Models
         ## 
         # The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
         @employee_id
+        ## 
+        # The employeeLeaveDateTime property
+        @employee_leave_date_time
         ## 
         # Represents organization data (e.g. division and costCenter) associated with a user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
         @employee_org_data
@@ -181,14 +184,14 @@ module MicrosoftGraph::Models
         # The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
         @mail
         ## 
-        # Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.
-        @mailbox_settings
-        ## 
         # The user's mail folders. Read-only. Nullable.
         @mail_folders
         ## 
         # The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         @mail_nickname
+        ## 
+        # Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.
+        @mailbox_settings
         ## 
         # Zero or more managed app registrations that belong to the user.
         @managed_app_registrations
@@ -216,12 +219,6 @@ module MicrosoftGraph::Models
         ## 
         # The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         @office_location
-        ## 
-        # The onenote property
-        @onenote
-        ## 
-        # The onlineMeetings property
-        @online_meetings
         ## 
         # Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
         @on_premises_distinguished_name
@@ -252,6 +249,12 @@ module MicrosoftGraph::Models
         ## 
         # Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
         @on_premises_user_principal_name
+        ## 
+        # The onenote property
+        @onenote
+        ## 
+        # The onlineMeetings property
+        @online_meetings
         ## 
         # A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
         @other_mails
@@ -369,7 +372,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the aboutMe property value. A freeform text entry field for the user to describe themselves. Returned only on $select.
-        ## @param value Value to set for the aboutMe property.
+        ## @param value Value to set for the about_me property.
         ## @return a void
         ## 
         def about_me=(value)
@@ -384,7 +387,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accountEnabled property value. true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).
-        ## @param value Value to set for the accountEnabled property.
+        ## @param value Value to set for the account_enabled property.
         ## @return a void
         ## 
         def account_enabled=(value)
@@ -414,7 +417,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).
-        ## @param value Value to set for the ageGroup property.
+        ## @param value Value to set for the age_group property.
         ## @return a void
         ## 
         def age_group=(value)
@@ -429,7 +432,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the agreementAcceptances property value. The user's terms of use acceptance statuses. Read-only. Nullable.
-        ## @param value Value to set for the agreementAcceptances property.
+        ## @param value Value to set for the agreement_acceptances property.
         ## @return a void
         ## 
         def agreement_acceptances=(value)
@@ -444,7 +447,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appRoleAssignments property value. Represents the app roles a user has been granted for an application. Supports $expand.
-        ## @param value Value to set for the appRoleAssignments property.
+        ## @param value Value to set for the app_role_assignments property.
         ## @return a void
         ## 
         def app_role_assignments=(value)
@@ -459,7 +462,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
-        ## @param value Value to set for the assignedLicenses property.
+        ## @param value Value to set for the assigned_licenses property.
         ## @return a void
         ## 
         def assigned_licenses=(value)
@@ -474,7 +477,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignedPlans property value. The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
-        ## @param value Value to set for the assignedPlans property.
+        ## @param value Value to set for the assigned_plans property.
         ## @return a void
         ## 
         def assigned_plans=(value)
@@ -504,7 +507,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the authorizationInfo property value. The authorizationInfo property
-        ## @param value Value to set for the authorizationInfo property.
+        ## @param value Value to set for the authorization_info property.
         ## @return a void
         ## 
         def authorization_info=(value)
@@ -534,7 +537,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the businessPhones property value. The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
-        ## @param value Value to set for the businessPhones property.
+        ## @param value Value to set for the business_phones property.
         ## @return a void
         ## 
         def business_phones=(value)
@@ -564,11 +567,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the calendarGroups property value. The user's calendar groups. Read-only. Nullable.
-        ## @param value Value to set for the calendarGroups property.
+        ## @param value Value to set for the calendar_groups property.
         ## @return a void
         ## 
         def calendar_groups=(value)
             @calendar_groups = value
+        end
+        ## 
+        ## Gets the calendarView property value. The calendar view for the calendar. Read-only. Nullable.
+        ## @return a event
+        ## 
+        def calendar_view
+            return @calendar_view
+        end
+        ## 
+        ## Sets the calendarView property value. The calendar view for the calendar. Read-only. Nullable.
+        ## @param value Value to set for the calendar_view property.
+        ## @return a void
+        ## 
+        def calendar_view=(value)
+            @calendar_view = value
         end
         ## 
         ## Gets the calendars property value. The user's calendars. Read-only. Nullable.
@@ -584,21 +602,6 @@ module MicrosoftGraph::Models
         ## 
         def calendars=(value)
             @calendars = value
-        end
-        ## 
-        ## Gets the calendarView property value. The calendar view for the calendar. Read-only. Nullable.
-        ## @return a event
-        ## 
-        def calendar_view
-            return @calendar_view
-        end
-        ## 
-        ## Sets the calendarView property value. The calendar view for the calendar. Read-only. Nullable.
-        ## @param value Value to set for the calendarView property.
-        ## @return a void
-        ## 
-        def calendar_view=(value)
-            @calendar_view = value
         end
         ## 
         ## Gets the chats property value. The chats property
@@ -639,7 +642,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the companyName property value. The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        ## @param value Value to set for the companyName property.
+        ## @param value Value to set for the company_name property.
         ## @return a void
         ## 
         def company_name=(value)
@@ -654,7 +657,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the consentProvidedForMinor property value. Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).
-        ## @param value Value to set for the consentProvidedForMinor property.
+        ## @param value Value to set for the consent_provided_for_minor property.
         ## @return a void
         ## 
         def consent_provided_for_minor=(value)
@@ -677,7 +680,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contactFolders property value. The user's contacts folders. Read-only. Nullable.
-        ## @param value Value to set for the contactFolders property.
+        ## @param value Value to set for the contact_folders property.
         ## @return a void
         ## 
         def contact_folders=(value)
@@ -722,7 +725,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only.  Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -737,7 +740,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdObjects property value. Directory objects that were created by the user. Read-only. Nullable.
-        ## @param value Value to set for the createdObjects property.
+        ## @param value Value to set for the created_objects property.
         ## @return a void
         ## 
         def created_objects=(value)
@@ -761,7 +764,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the creationType property value. Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
-        ## @param value Value to set for the creationType property.
+        ## @param value Value to set for the creation_type property.
         ## @return a void
         ## 
         def creation_type=(value)
@@ -791,7 +794,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceEnrollmentLimit property value. The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
-        ## @param value Value to set for the deviceEnrollmentLimit property.
+        ## @param value Value to set for the device_enrollment_limit property.
         ## @return a void
         ## 
         def device_enrollment_limit=(value)
@@ -806,7 +809,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceManagementTroubleshootingEvents property value. The list of troubleshooting events for this user.
-        ## @param value Value to set for the deviceManagementTroubleshootingEvents property.
+        ## @param value Value to set for the device_management_troubleshooting_events property.
         ## @return a void
         ## 
         def device_management_troubleshooting_events=(value)
@@ -821,7 +824,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the directReports property value. The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-        ## @param value Value to set for the directReports property.
+        ## @param value Value to set for the direct_reports property.
         ## @return a void
         ## 
         def direct_reports=(value)
@@ -836,7 +839,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -881,7 +884,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the employeeHireDate property value. The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
-        ## @param value Value to set for the employeeHireDate property.
+        ## @param value Value to set for the employee_hire_date property.
         ## @return a void
         ## 
         def employee_hire_date=(value)
@@ -896,11 +899,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the employeeId property value. The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-        ## @param value Value to set for the employeeId property.
+        ## @param value Value to set for the employee_id property.
         ## @return a void
         ## 
         def employee_id=(value)
             @employee_id = value
+        end
+        ## 
+        ## Gets the employeeLeaveDateTime property value. The employeeLeaveDateTime property
+        ## @return a date_time
+        ## 
+        def employee_leave_date_time
+            return @employee_leave_date_time
+        end
+        ## 
+        ## Sets the employeeLeaveDateTime property value. The employeeLeaveDateTime property
+        ## @param value Value to set for the employee_leave_date_time property.
+        ## @return a void
+        ## 
+        def employee_leave_date_time=(value)
+            @employee_leave_date_time = value
         end
         ## 
         ## Gets the employeeOrgData property value. Represents organization data (e.g. division and costCenter) associated with a user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
@@ -911,7 +929,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the employeeOrgData property value. Represents organization data (e.g. division and costCenter) associated with a user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
-        ## @param value Value to set for the employeeOrgData property.
+        ## @param value Value to set for the employee_org_data property.
         ## @return a void
         ## 
         def employee_org_data=(value)
@@ -926,7 +944,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the employeeType property value. Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith).
-        ## @param value Value to set for the employeeType property.
+        ## @param value Value to set for the employee_type property.
         ## @return a void
         ## 
         def employee_type=(value)
@@ -971,7 +989,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalUserState property value. For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter (eq, ne, not , in).
-        ## @param value Value to set for the externalUserState property.
+        ## @param value Value to set for the external_user_state property.
         ## @return a void
         ## 
         def external_user_state=(value)
@@ -986,7 +1004,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalUserStateChangeDateTime property value. Shows the timestamp for the latest change to the externalUserState property. Returned only on $select. Supports $filter (eq, ne, not , in).
-        ## @param value Value to set for the externalUserStateChangeDateTime property.
+        ## @param value Value to set for the external_user_state_change_date_time property.
         ## @return a void
         ## 
         def external_user_state_change_date_time=(value)
@@ -1001,7 +1019,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the faxNumber property value. The fax number of the user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-        ## @param value Value to set for the faxNumber property.
+        ## @param value Value to set for the fax_number property.
         ## @return a void
         ## 
         def fax_number=(value)
@@ -1016,7 +1034,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the followedSites property value. The followedSites property
-        ## @param value Value to set for the followedSites property.
+        ## @param value Value to set for the followed_sites property.
         ## @return a void
         ## 
         def followed_sites=(value)
@@ -1042,8 +1060,8 @@ module MicrosoftGraph::Models
                 "businessPhones" => lambda {|n| @business_phones = n.get_collection_of_primitive_values(String) },
                 "calendar" => lambda {|n| @calendar = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Calendar.create_from_discriminator_value(pn) }) },
                 "calendarGroups" => lambda {|n| @calendar_groups = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CalendarGroup.create_from_discriminator_value(pn) }) },
-                "calendars" => lambda {|n| @calendars = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Calendar.create_from_discriminator_value(pn) }) },
                 "calendarView" => lambda {|n| @calendar_view = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Event.create_from_discriminator_value(pn) }) },
+                "calendars" => lambda {|n| @calendars = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Calendar.create_from_discriminator_value(pn) }) },
                 "chats" => lambda {|n| @chats = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Chat.create_from_discriminator_value(pn) }) },
                 "city" => lambda {|n| @city = n.get_string_value() },
                 "companyName" => lambda {|n| @company_name = n.get_string_value() },
@@ -1063,6 +1081,7 @@ module MicrosoftGraph::Models
                 "drives" => lambda {|n| @drives = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Drive.create_from_discriminator_value(pn) }) },
                 "employeeHireDate" => lambda {|n| @employee_hire_date = n.get_date_time_value() },
                 "employeeId" => lambda {|n| @employee_id = n.get_string_value() },
+                "employeeLeaveDateTime" => lambda {|n| @employee_leave_date_time = n.get_date_time_value() },
                 "employeeOrgData" => lambda {|n| @employee_org_data = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EmployeeOrgData.create_from_discriminator_value(pn) }) },
                 "employeeType" => lambda {|n| @employee_type = n.get_string_value() },
                 "events" => lambda {|n| @events = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Event.create_from_discriminator_value(pn) }) },
@@ -1086,9 +1105,9 @@ module MicrosoftGraph::Models
                 "licenseAssignmentStates" => lambda {|n| @license_assignment_states = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::LicenseAssignmentState.create_from_discriminator_value(pn) }) },
                 "licenseDetails" => lambda {|n| @license_details = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::LicenseDetails.create_from_discriminator_value(pn) }) },
                 "mail" => lambda {|n| @mail = n.get_string_value() },
-                "mailboxSettings" => lambda {|n| @mailbox_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::MailboxSettings.create_from_discriminator_value(pn) }) },
                 "mailFolders" => lambda {|n| @mail_folders = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::MailFolder.create_from_discriminator_value(pn) }) },
                 "mailNickname" => lambda {|n| @mail_nickname = n.get_string_value() },
+                "mailboxSettings" => lambda {|n| @mailbox_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::MailboxSettings.create_from_discriminator_value(pn) }) },
                 "managedAppRegistrations" => lambda {|n| @managed_app_registrations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ManagedAppRegistration.create_from_discriminator_value(pn) }) },
                 "managedDevices" => lambda {|n| @managed_devices = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ManagedDevice.create_from_discriminator_value(pn) }) },
                 "manager" => lambda {|n| @manager = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
@@ -1098,8 +1117,6 @@ module MicrosoftGraph::Models
                 "mySite" => lambda {|n| @my_site = n.get_string_value() },
                 "oauth2PermissionGrants" => lambda {|n| @oauth2_permission_grants = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::OAuth2PermissionGrant.create_from_discriminator_value(pn) }) },
                 "officeLocation" => lambda {|n| @office_location = n.get_string_value() },
-                "onenote" => lambda {|n| @onenote = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Onenote.create_from_discriminator_value(pn) }) },
-                "onlineMeetings" => lambda {|n| @online_meetings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::OnlineMeeting.create_from_discriminator_value(pn) }) },
                 "onPremisesDistinguishedName" => lambda {|n| @on_premises_distinguished_name = n.get_string_value() },
                 "onPremisesDomainName" => lambda {|n| @on_premises_domain_name = n.get_string_value() },
                 "onPremisesExtensionAttributes" => lambda {|n| @on_premises_extension_attributes = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::OnPremisesExtensionAttributes.create_from_discriminator_value(pn) }) },
@@ -1110,6 +1127,8 @@ module MicrosoftGraph::Models
                 "onPremisesSecurityIdentifier" => lambda {|n| @on_premises_security_identifier = n.get_string_value() },
                 "onPremisesSyncEnabled" => lambda {|n| @on_premises_sync_enabled = n.get_boolean_value() },
                 "onPremisesUserPrincipalName" => lambda {|n| @on_premises_user_principal_name = n.get_string_value() },
+                "onenote" => lambda {|n| @onenote = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Onenote.create_from_discriminator_value(pn) }) },
+                "onlineMeetings" => lambda {|n| @online_meetings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::OnlineMeeting.create_from_discriminator_value(pn) }) },
                 "otherMails" => lambda {|n| @other_mails = n.get_collection_of_primitive_values(String) },
                 "outlook" => lambda {|n| @outlook = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::OutlookUser.create_from_discriminator_value(pn) }) },
                 "ownedDevices" => lambda {|n| @owned_devices = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
@@ -1157,7 +1176,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the givenName property value. The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-        ## @param value Value to set for the givenName property.
+        ## @param value Value to set for the given_name property.
         ## @return a void
         ## 
         def given_name=(value)
@@ -1172,7 +1191,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
-        ## @param value Value to set for the hireDate property.
+        ## @param value Value to set for the hire_date property.
         ## @return a void
         ## 
         def hire_date=(value)
@@ -1202,7 +1221,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the imAddresses property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).
-        ## @param value Value to set for the imAddresses property.
+        ## @param value Value to set for the im_addresses property.
         ## @return a void
         ## 
         def im_addresses=(value)
@@ -1217,7 +1236,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the inferenceClassification property value. Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
-        ## @param value Value to set for the inferenceClassification property.
+        ## @param value Value to set for the inference_classification property.
         ## @return a void
         ## 
         def inference_classification=(value)
@@ -1262,7 +1281,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isResourceAccount property value. Do not use – reserved for future use.
-        ## @param value Value to set for the isResourceAccount property.
+        ## @param value Value to set for the is_resource_account property.
         ## @return a void
         ## 
         def is_resource_account=(value)
@@ -1277,7 +1296,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the jobTitle property value. The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-        ## @param value Value to set for the jobTitle property.
+        ## @param value Value to set for the job_title property.
         ## @return a void
         ## 
         def job_title=(value)
@@ -1292,7 +1311,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the joinedTeams property value. The joinedTeams property
-        ## @param value Value to set for the joinedTeams property.
+        ## @param value Value to set for the joined_teams property.
         ## @return a void
         ## 
         def joined_teams=(value)
@@ -1307,7 +1326,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastPasswordChangeDateTime property value. The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
-        ## @param value Value to set for the lastPasswordChangeDateTime property.
+        ## @param value Value to set for the last_password_change_date_time property.
         ## @return a void
         ## 
         def last_password_change_date_time=(value)
@@ -1322,7 +1341,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.
-        ## @param value Value to set for the legalAgeGroupClassification property.
+        ## @param value Value to set for the legal_age_group_classification property.
         ## @return a void
         ## 
         def legal_age_group_classification=(value)
@@ -1337,7 +1356,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the licenseAssignmentStates property value. State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
-        ## @param value Value to set for the licenseAssignmentStates property.
+        ## @param value Value to set for the license_assignment_states property.
         ## @return a void
         ## 
         def license_assignment_states=(value)
@@ -1352,7 +1371,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the licenseDetails property value. A collection of this user's license details. Read-only.
-        ## @param value Value to set for the licenseDetails property.
+        ## @param value Value to set for the license_details property.
         ## @return a void
         ## 
         def license_details=(value)
@@ -1374,21 +1393,6 @@ module MicrosoftGraph::Models
             @mail = value
         end
         ## 
-        ## Gets the mailboxSettings property value. Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.
-        ## @return a mailbox_settings
-        ## 
-        def mailbox_settings
-            return @mailbox_settings
-        end
-        ## 
-        ## Sets the mailboxSettings property value. Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.
-        ## @param value Value to set for the mailboxSettings property.
-        ## @return a void
-        ## 
-        def mailbox_settings=(value)
-            @mailbox_settings = value
-        end
-        ## 
         ## Gets the mailFolders property value. The user's mail folders. Read-only. Nullable.
         ## @return a mail_folder
         ## 
@@ -1397,7 +1401,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mailFolders property value. The user's mail folders. Read-only. Nullable.
-        ## @param value Value to set for the mailFolders property.
+        ## @param value Value to set for the mail_folders property.
         ## @return a void
         ## 
         def mail_folders=(value)
@@ -1412,11 +1416,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        ## @param value Value to set for the mailNickname property.
+        ## @param value Value to set for the mail_nickname property.
         ## @return a void
         ## 
         def mail_nickname=(value)
             @mail_nickname = value
+        end
+        ## 
+        ## Gets the mailboxSettings property value. Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.
+        ## @return a mailbox_settings
+        ## 
+        def mailbox_settings
+            return @mailbox_settings
+        end
+        ## 
+        ## Sets the mailboxSettings property value. Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.
+        ## @param value Value to set for the mailbox_settings property.
+        ## @return a void
+        ## 
+        def mailbox_settings=(value)
+            @mailbox_settings = value
         end
         ## 
         ## Gets the managedAppRegistrations property value. Zero or more managed app registrations that belong to the user.
@@ -1427,7 +1446,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managedAppRegistrations property value. Zero or more managed app registrations that belong to the user.
-        ## @param value Value to set for the managedAppRegistrations property.
+        ## @param value Value to set for the managed_app_registrations property.
         ## @return a void
         ## 
         def managed_app_registrations=(value)
@@ -1442,7 +1461,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managedDevices property value. The managed devices associated with the user.
-        ## @param value Value to set for the managedDevices property.
+        ## @param value Value to set for the managed_devices property.
         ## @return a void
         ## 
         def managed_devices=(value)
@@ -1472,7 +1491,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the memberOf property value. The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-        ## @param value Value to set for the memberOf property.
+        ## @param value Value to set for the member_of property.
         ## @return a void
         ## 
         def member_of=(value)
@@ -1502,7 +1521,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        ## @param value Value to set for the mobilePhone property.
+        ## @param value Value to set for the mobile_phone property.
         ## @return a void
         ## 
         def mobile_phone=(value)
@@ -1517,7 +1536,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mySite property value. The URL for the user's personal site. Returned only on $select.
-        ## @param value Value to set for the mySite property.
+        ## @param value Value to set for the my_site property.
         ## @return a void
         ## 
         def my_site=(value)
@@ -1532,7 +1551,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the oauth2PermissionGrants property value. The oauth2PermissionGrants property
-        ## @param value Value to set for the oauth2PermissionGrants property.
+        ## @param value Value to set for the oauth2_permission_grants property.
         ## @return a void
         ## 
         def oauth2_permission_grants=(value)
@@ -1547,11 +1566,161 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the officeLocation property value. The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        ## @param value Value to set for the officeLocation property.
+        ## @param value Value to set for the office_location property.
         ## @return a void
         ## 
         def office_location=(value)
             @office_location = value
+        end
+        ## 
+        ## Gets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
+        ## @return a string
+        ## 
+        def on_premises_distinguished_name
+            return @on_premises_distinguished_name
+        end
+        ## 
+        ## Sets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
+        ## @param value Value to set for the on_premises_distinguished_name property.
+        ## @return a void
+        ## 
+        def on_premises_distinguished_name=(value)
+            @on_premises_distinguished_name = value
+        end
+        ## 
+        ## Gets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
+        ## @return a string
+        ## 
+        def on_premises_domain_name
+            return @on_premises_domain_name
+        end
+        ## 
+        ## Sets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
+        ## @param value Value to set for the on_premises_domain_name property.
+        ## @return a void
+        ## 
+        def on_premises_domain_name=(value)
+            @on_premises_domain_name = value
+        end
+        ## 
+        ## Gets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Returned only on $select. Supports $filter (eq, ne, not, in).
+        ## @return a on_premises_extension_attributes
+        ## 
+        def on_premises_extension_attributes
+            return @on_premises_extension_attributes
+        end
+        ## 
+        ## Sets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Returned only on $select. Supports $filter (eq, ne, not, in).
+        ## @param value Value to set for the on_premises_extension_attributes property.
+        ## @return a void
+        ## 
+        def on_premises_extension_attributes=(value)
+            @on_premises_extension_attributes = value
+        end
+        ## 
+        ## Gets the onPremisesImmutableId property value. This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..
+        ## @return a string
+        ## 
+        def on_premises_immutable_id
+            return @on_premises_immutable_id
+        end
+        ## 
+        ## Sets the onPremisesImmutableId property value. This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..
+        ## @param value Value to set for the on_premises_immutable_id property.
+        ## @return a void
+        ## 
+        def on_premises_immutable_id=(value)
+            @on_premises_immutable_id = value
+        end
+        ## 
+        ## Gets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).
+        ## @return a date_time
+        ## 
+        def on_premises_last_sync_date_time
+            return @on_premises_last_sync_date_time
+        end
+        ## 
+        ## Sets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).
+        ## @param value Value to set for the on_premises_last_sync_date_time property.
+        ## @return a void
+        ## 
+        def on_premises_last_sync_date_time=(value)
+            @on_premises_last_sync_date_time = value
+        end
+        ## 
+        ## Gets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning. Returned only on $select. Supports $filter (eq, not, ge, le).
+        ## @return a on_premises_provisioning_error
+        ## 
+        def on_premises_provisioning_errors
+            return @on_premises_provisioning_errors
+        end
+        ## 
+        ## Sets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning. Returned only on $select. Supports $filter (eq, not, ge, le).
+        ## @param value Value to set for the on_premises_provisioning_errors property.
+        ## @return a void
+        ## 
+        def on_premises_provisioning_errors=(value)
+            @on_premises_provisioning_errors = value
+        end
+        ## 
+        ## Gets the onPremisesSamAccountName property value. Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+        ## @return a string
+        ## 
+        def on_premises_sam_account_name
+            return @on_premises_sam_account_name
+        end
+        ## 
+        ## Sets the onPremisesSamAccountName property value. Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+        ## @param value Value to set for the on_premises_sam_account_name property.
+        ## @return a void
+        ## 
+        def on_premises_sam_account_name=(value)
+            @on_premises_sam_account_name = value
+        end
+        ## 
+        ## Gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.  Supports $filter (eq including on null values).
+        ## @return a string
+        ## 
+        def on_premises_security_identifier
+            return @on_premises_security_identifier
+        end
+        ## 
+        ## Sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.  Supports $filter (eq including on null values).
+        ## @param value Value to set for the on_premises_security_identifier property.
+        ## @return a void
+        ## 
+        def on_premises_security_identifier=(value)
+            @on_premises_security_identifier = value
+        end
+        ## 
+        ## Gets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
+        ## @return a boolean
+        ## 
+        def on_premises_sync_enabled
+            return @on_premises_sync_enabled
+        end
+        ## 
+        ## Sets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
+        ## @param value Value to set for the on_premises_sync_enabled property.
+        ## @return a void
+        ## 
+        def on_premises_sync_enabled=(value)
+            @on_premises_sync_enabled = value
+        end
+        ## 
+        ## Gets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+        ## @return a string
+        ## 
+        def on_premises_user_principal_name
+            return @on_premises_user_principal_name
+        end
+        ## 
+        ## Sets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+        ## @param value Value to set for the on_premises_user_principal_name property.
+        ## @return a void
+        ## 
+        def on_premises_user_principal_name=(value)
+            @on_premises_user_principal_name = value
         end
         ## 
         ## Gets the onenote property value. The onenote property
@@ -1577,161 +1746,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the onlineMeetings property value. The onlineMeetings property
-        ## @param value Value to set for the onlineMeetings property.
+        ## @param value Value to set for the online_meetings property.
         ## @return a void
         ## 
         def online_meetings=(value)
             @online_meetings = value
-        end
-        ## 
-        ## Gets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
-        ## @return a string
-        ## 
-        def on_premises_distinguished_name
-            return @on_premises_distinguished_name
-        end
-        ## 
-        ## Sets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
-        ## @param value Value to set for the onPremisesDistinguishedName property.
-        ## @return a void
-        ## 
-        def on_premises_distinguished_name=(value)
-            @on_premises_distinguished_name = value
-        end
-        ## 
-        ## Gets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
-        ## @return a string
-        ## 
-        def on_premises_domain_name
-            return @on_premises_domain_name
-        end
-        ## 
-        ## Sets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
-        ## @param value Value to set for the onPremisesDomainName property.
-        ## @return a void
-        ## 
-        def on_premises_domain_name=(value)
-            @on_premises_domain_name = value
-        end
-        ## 
-        ## Gets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Returned only on $select. Supports $filter (eq, ne, not, in).
-        ## @return a on_premises_extension_attributes
-        ## 
-        def on_premises_extension_attributes
-            return @on_premises_extension_attributes
-        end
-        ## 
-        ## Sets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Returned only on $select. Supports $filter (eq, ne, not, in).
-        ## @param value Value to set for the onPremisesExtensionAttributes property.
-        ## @return a void
-        ## 
-        def on_premises_extension_attributes=(value)
-            @on_premises_extension_attributes = value
-        end
-        ## 
-        ## Gets the onPremisesImmutableId property value. This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..
-        ## @return a string
-        ## 
-        def on_premises_immutable_id
-            return @on_premises_immutable_id
-        end
-        ## 
-        ## Sets the onPremisesImmutableId property value. This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..
-        ## @param value Value to set for the onPremisesImmutableId property.
-        ## @return a void
-        ## 
-        def on_premises_immutable_id=(value)
-            @on_premises_immutable_id = value
-        end
-        ## 
-        ## Gets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).
-        ## @return a date_time
-        ## 
-        def on_premises_last_sync_date_time
-            return @on_premises_last_sync_date_time
-        end
-        ## 
-        ## Sets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).
-        ## @param value Value to set for the onPremisesLastSyncDateTime property.
-        ## @return a void
-        ## 
-        def on_premises_last_sync_date_time=(value)
-            @on_premises_last_sync_date_time = value
-        end
-        ## 
-        ## Gets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning. Returned only on $select. Supports $filter (eq, not, ge, le).
-        ## @return a on_premises_provisioning_error
-        ## 
-        def on_premises_provisioning_errors
-            return @on_premises_provisioning_errors
-        end
-        ## 
-        ## Sets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning. Returned only on $select. Supports $filter (eq, not, ge, le).
-        ## @param value Value to set for the onPremisesProvisioningErrors property.
-        ## @return a void
-        ## 
-        def on_premises_provisioning_errors=(value)
-            @on_premises_provisioning_errors = value
-        end
-        ## 
-        ## Gets the onPremisesSamAccountName property value. Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-        ## @return a string
-        ## 
-        def on_premises_sam_account_name
-            return @on_premises_sam_account_name
-        end
-        ## 
-        ## Sets the onPremisesSamAccountName property value. Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-        ## @param value Value to set for the onPremisesSamAccountName property.
-        ## @return a void
-        ## 
-        def on_premises_sam_account_name=(value)
-            @on_premises_sam_account_name = value
-        end
-        ## 
-        ## Gets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.  Supports $filter (eq including on null values).
-        ## @return a string
-        ## 
-        def on_premises_security_identifier
-            return @on_premises_security_identifier
-        end
-        ## 
-        ## Sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.  Supports $filter (eq including on null values).
-        ## @param value Value to set for the onPremisesSecurityIdentifier property.
-        ## @return a void
-        ## 
-        def on_premises_security_identifier=(value)
-            @on_premises_security_identifier = value
-        end
-        ## 
-        ## Gets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
-        ## @return a boolean
-        ## 
-        def on_premises_sync_enabled
-            return @on_premises_sync_enabled
-        end
-        ## 
-        ## Sets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
-        ## @param value Value to set for the onPremisesSyncEnabled property.
-        ## @return a void
-        ## 
-        def on_premises_sync_enabled=(value)
-            @on_premises_sync_enabled = value
-        end
-        ## 
-        ## Gets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-        ## @return a string
-        ## 
-        def on_premises_user_principal_name
-            return @on_premises_user_principal_name
-        end
-        ## 
-        ## Sets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-        ## @param value Value to set for the onPremisesUserPrincipalName property.
-        ## @return a void
-        ## 
-        def on_premises_user_principal_name=(value)
-            @on_premises_user_principal_name = value
         end
         ## 
         ## Gets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
@@ -1742,7 +1761,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
-        ## @param value Value to set for the otherMails property.
+        ## @param value Value to set for the other_mails property.
         ## @return a void
         ## 
         def other_mails=(value)
@@ -1772,7 +1791,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the ownedDevices property value. Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
-        ## @param value Value to set for the ownedDevices property.
+        ## @param value Value to set for the owned_devices property.
         ## @return a void
         ## 
         def owned_devices=(value)
@@ -1787,7 +1806,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-        ## @param value Value to set for the ownedObjects property.
+        ## @param value Value to set for the owned_objects property.
         ## @return a void
         ## 
         def owned_objects=(value)
@@ -1802,7 +1821,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).
-        ## @param value Value to set for the passwordPolicies property.
+        ## @param value Value to set for the password_policies property.
         ## @return a void
         ## 
         def password_policies=(value)
@@ -1817,7 +1836,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
-        ## @param value Value to set for the passwordProfile property.
+        ## @param value Value to set for the password_profile property.
         ## @return a void
         ## 
         def password_profile=(value)
@@ -1832,7 +1851,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pastProjects property value. A list for the user to enumerate their past projects. Returned only on $select.
-        ## @param value Value to set for the pastProjects property.
+        ## @param value Value to set for the past_projects property.
         ## @return a void
         ## 
         def past_projects=(value)
@@ -1907,7 +1926,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the postalCode property value. The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        ## @param value Value to set for the postalCode property.
+        ## @param value Value to set for the postal_code property.
         ## @return a void
         ## 
         def postal_code=(value)
@@ -1922,7 +1941,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the preferredDataLocation property value. The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
-        ## @param value Value to set for the preferredDataLocation property.
+        ## @param value Value to set for the preferred_data_location property.
         ## @return a void
         ## 
         def preferred_data_location=(value)
@@ -1937,7 +1956,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the preferredLanguage property value. The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
-        ## @param value Value to set for the preferredLanguage property.
+        ## @param value Value to set for the preferred_language property.
         ## @return a void
         ## 
         def preferred_language=(value)
@@ -1952,7 +1971,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the preferredName property value. The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
-        ## @param value Value to set for the preferredName property.
+        ## @param value Value to set for the preferred_name property.
         ## @return a void
         ## 
         def preferred_name=(value)
@@ -1982,7 +2001,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
-        ## @param value Value to set for the provisionedPlans property.
+        ## @param value Value to set for the provisioned_plans property.
         ## @return a void
         ## 
         def provisioned_plans=(value)
@@ -1997,7 +2016,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
-        ## @param value Value to set for the proxyAddresses property.
+        ## @param value Value to set for the proxy_addresses property.
         ## @return a void
         ## 
         def proxy_addresses=(value)
@@ -2012,7 +2031,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand.
-        ## @param value Value to set for the registeredDevices property.
+        ## @param value Value to set for the registered_devices property.
         ## @return a void
         ## 
         def registered_devices=(value)
@@ -2057,7 +2076,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the scopedRoleMemberOf property value. The scopedRoleMemberOf property
-        ## @param value Value to set for the scopedRoleMemberOf property.
+        ## @param value Value to set for the scoped_role_member_of property.
         ## @return a void
         ## 
         def scoped_role_member_of=(value)
@@ -2072,7 +2091,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the securityIdentifier property value. Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
-        ## @param value Value to set for the securityIdentifier property.
+        ## @param value Value to set for the security_identifier property.
         ## @return a void
         ## 
         def security_identifier=(value)
@@ -2100,8 +2119,8 @@ module MicrosoftGraph::Models
             writer.write_collection_of_primitive_values("businessPhones", @business_phones)
             writer.write_object_value("calendar", @calendar)
             writer.write_collection_of_object_values("calendarGroups", @calendar_groups)
-            writer.write_collection_of_object_values("calendars", @calendars)
             writer.write_collection_of_object_values("calendarView", @calendar_view)
+            writer.write_collection_of_object_values("calendars", @calendars)
             writer.write_collection_of_object_values("chats", @chats)
             writer.write_string_value("city", @city)
             writer.write_string_value("companyName", @company_name)
@@ -2121,6 +2140,7 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("drives", @drives)
             writer.write_date_time_value("employeeHireDate", @employee_hire_date)
             writer.write_string_value("employeeId", @employee_id)
+            writer.write_date_time_value("employeeLeaveDateTime", @employee_leave_date_time)
             writer.write_object_value("employeeOrgData", @employee_org_data)
             writer.write_string_value("employeeType", @employee_type)
             writer.write_collection_of_object_values("events", @events)
@@ -2144,9 +2164,9 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("licenseAssignmentStates", @license_assignment_states)
             writer.write_collection_of_object_values("licenseDetails", @license_details)
             writer.write_string_value("mail", @mail)
-            writer.write_object_value("mailboxSettings", @mailbox_settings)
             writer.write_collection_of_object_values("mailFolders", @mail_folders)
             writer.write_string_value("mailNickname", @mail_nickname)
+            writer.write_object_value("mailboxSettings", @mailbox_settings)
             writer.write_collection_of_object_values("managedAppRegistrations", @managed_app_registrations)
             writer.write_collection_of_object_values("managedDevices", @managed_devices)
             writer.write_object_value("manager", @manager)
@@ -2156,8 +2176,6 @@ module MicrosoftGraph::Models
             writer.write_string_value("mySite", @my_site)
             writer.write_collection_of_object_values("oauth2PermissionGrants", @oauth2_permission_grants)
             writer.write_string_value("officeLocation", @office_location)
-            writer.write_object_value("onenote", @onenote)
-            writer.write_collection_of_object_values("onlineMeetings", @online_meetings)
             writer.write_string_value("onPremisesDistinguishedName", @on_premises_distinguished_name)
             writer.write_string_value("onPremisesDomainName", @on_premises_domain_name)
             writer.write_object_value("onPremisesExtensionAttributes", @on_premises_extension_attributes)
@@ -2168,6 +2186,8 @@ module MicrosoftGraph::Models
             writer.write_string_value("onPremisesSecurityIdentifier", @on_premises_security_identifier)
             writer.write_boolean_value("onPremisesSyncEnabled", @on_premises_sync_enabled)
             writer.write_string_value("onPremisesUserPrincipalName", @on_premises_user_principal_name)
+            writer.write_object_value("onenote", @onenote)
+            writer.write_collection_of_object_values("onlineMeetings", @online_meetings)
             writer.write_collection_of_primitive_values("otherMails", @other_mails)
             writer.write_object_value("outlook", @outlook)
             writer.write_collection_of_object_values("ownedDevices", @owned_devices)
@@ -2229,7 +2249,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the showInAddressList property value. Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
-        ## @param value Value to set for the showInAddressList property.
+        ## @param value Value to set for the show_in_address_list property.
         ## @return a void
         ## 
         def show_in_address_list=(value)
@@ -2244,7 +2264,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
-        ## @param value Value to set for the signInSessionsValidFromDateTime property.
+        ## @param value Value to set for the sign_in_sessions_valid_from_date_time property.
         ## @return a void
         ## 
         def sign_in_sessions_valid_from_date_time=(value)
@@ -2289,7 +2309,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the streetAddress property value. The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        ## @param value Value to set for the streetAddress property.
+        ## @param value Value to set for the street_address property.
         ## @return a void
         ## 
         def street_address=(value)
@@ -2349,7 +2369,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the transitiveMemberOf property value. The groups, including nested groups, and directory roles that a user is a member of. Nullable.
-        ## @param value Value to set for the transitiveMemberOf property.
+        ## @param value Value to set for the transitive_member_of property.
         ## @return a void
         ## 
         def transitive_member_of=(value)
@@ -2364,7 +2384,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the usageLocation property value. A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-        ## @param value Value to set for the usageLocation property.
+        ## @param value Value to set for the usage_location property.
         ## @return a void
         ## 
         def usage_location=(value)
@@ -2379,7 +2399,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.
-        ## @param value Value to set for the userPrincipalName property.
+        ## @param value Value to set for the user_principal_name property.
         ## @return a void
         ## 
         def user_principal_name=(value)
@@ -2394,7 +2414,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userType property value. A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
-        ## @param value Value to set for the userType property.
+        ## @param value Value to set for the user_type property.
         ## @return a void
         ## 
         def user_type=(value)

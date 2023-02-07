@@ -46,7 +46,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name of the connected organization. Supports $filter (eq).
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalSponsors property value. The externalSponsors property
-        ## @param value Value to set for the externalSponsors property.
+        ## @param value Value to set for the external_sponsors property.
         ## @return a void
         ## 
         def external_sponsors=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the identitySources property value. The identity sources in this connected organization, one of azureActiveDirectoryTenant, domainIdentitySource, externalDomainFederation or crossCloudAzureActiveDirectoryTenant. Nullable.
-        ## @param value Value to set for the identitySources property.
+        ## @param value Value to set for the identity_sources property.
         ## @return a void
         ## 
         def identity_sources=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the internalSponsors property value. The internalSponsors property
-        ## @param value Value to set for the internalSponsors property.
+        ## @param value Value to set for the internal_sponsors property.
         ## @return a void
         ## 
         def internal_sponsors=(value)
@@ -161,7 +161,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        ## @param value Value to set for the modifiedDateTime property.
+        ## @param value Value to set for the modified_date_time property.
         ## @return a void
         ## 
         def modified_date_time=(value)

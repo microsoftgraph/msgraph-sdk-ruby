@@ -7,11 +7,11 @@ module MicrosoftGraph::Models::Security
     class EdiscoverySearch < MicrosoftGraph::Models::Security::Search
         include MicrosoftKiotaAbstractions::Parsable
         ## 
-        # Adds an additional source to the eDiscovery search.
-        @additional_sources
-        ## 
         # Adds the results of the eDiscovery search to the specified reviewSet.
         @add_to_review_set_operation
+        ## 
+        # Adds an additional source to the eDiscovery search.
+        @additional_sources
         ## 
         # Custodian sources that are included in the eDiscovery search.
         @custodian_sources
@@ -25,21 +25,6 @@ module MicrosoftGraph::Models::Security
         # noncustodialDataSource sources that are included in the eDiscovery search
         @noncustodial_sources
         ## 
-        ## Gets the additionalSources property value. Adds an additional source to the eDiscovery search.
-        ## @return a data_source
-        ## 
-        def additional_sources
-            return @additional_sources
-        end
-        ## 
-        ## Sets the additionalSources property value. Adds an additional source to the eDiscovery search.
-        ## @param value Value to set for the additionalSources property.
-        ## @return a void
-        ## 
-        def additional_sources=(value)
-            @additional_sources = value
-        end
-        ## 
         ## Gets the addToReviewSetOperation property value. Adds the results of the eDiscovery search to the specified reviewSet.
         ## @return a ediscovery_add_to_review_set_operation
         ## 
@@ -48,11 +33,26 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the addToReviewSetOperation property value. Adds the results of the eDiscovery search to the specified reviewSet.
-        ## @param value Value to set for the addToReviewSetOperation property.
+        ## @param value Value to set for the add_to_review_set_operation property.
         ## @return a void
         ## 
         def add_to_review_set_operation=(value)
             @add_to_review_set_operation = value
+        end
+        ## 
+        ## Gets the additionalSources property value. Adds an additional source to the eDiscovery search.
+        ## @return a data_source
+        ## 
+        def additional_sources
+            return @additional_sources
+        end
+        ## 
+        ## Sets the additionalSources property value. Adds an additional source to the eDiscovery search.
+        ## @param value Value to set for the additional_sources property.
+        ## @return a void
+        ## 
+        def additional_sources=(value)
+            @additional_sources = value
         end
         ## 
         ## Instantiates a new EdiscoverySearch and sets the default values.
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the custodianSources property value. Custodian sources that are included in the eDiscovery search.
-        ## @param value Value to set for the custodianSources property.
+        ## @param value Value to set for the custodian_sources property.
         ## @return a void
         ## 
         def custodian_sources=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the dataSourceScopes property value. When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
-        ## @param value Value to set for the dataSourceScopes property.
+        ## @param value Value to set for the data_source_scopes property.
         ## @return a void
         ## 
         def data_source_scopes=(value)
@@ -107,8 +107,8 @@ module MicrosoftGraph::Models::Security
         ## 
         def get_field_deserializers()
             return super.merge({
-                "additionalSources" => lambda {|n| @additional_sources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Security::DataSource.create_from_discriminator_value(pn) }) },
                 "addToReviewSetOperation" => lambda {|n| @add_to_review_set_operation = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryAddToReviewSetOperation.create_from_discriminator_value(pn) }) },
+                "additionalSources" => lambda {|n| @additional_sources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Security::DataSource.create_from_discriminator_value(pn) }) },
                 "custodianSources" => lambda {|n| @custodian_sources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Security::DataSource.create_from_discriminator_value(pn) }) },
                 "dataSourceScopes" => lambda {|n| @data_source_scopes = n.get_enum_value(MicrosoftGraph::Models::Security::DataSourceScopes) },
                 "lastEstimateStatisticsOperation" => lambda {|n| @last_estimate_statistics_operation = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryEstimateOperation.create_from_discriminator_value(pn) }) },
@@ -124,7 +124,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the lastEstimateStatisticsOperation property value. The last estimate operation associated with the eDiscovery search.
-        ## @param value Value to set for the lastEstimateStatisticsOperation property.
+        ## @param value Value to set for the last_estimate_statistics_operation property.
         ## @return a void
         ## 
         def last_estimate_statistics_operation=(value)
@@ -139,7 +139,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the noncustodialSources property value. noncustodialDataSource sources that are included in the eDiscovery search
-        ## @param value Value to set for the noncustodialSources property.
+        ## @param value Value to set for the noncustodial_sources property.
         ## @return a void
         ## 
         def noncustodial_sources=(value)
@@ -153,8 +153,8 @@ module MicrosoftGraph::Models::Security
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
             super
-            writer.write_collection_of_object_values("additionalSources", @additional_sources)
             writer.write_object_value("addToReviewSetOperation", @add_to_review_set_operation)
+            writer.write_collection_of_object_values("additionalSources", @additional_sources)
             writer.write_collection_of_object_values("custodianSources", @custodian_sources)
             writer.write_enum_value("dataSourceScopes", @data_source_scopes)
             writer.write_object_value("lastEstimateStatisticsOperation", @last_estimate_statistics_operation)

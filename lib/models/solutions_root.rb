@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bookingBusinesses property value. The bookingBusinesses property
-        ## @param value Value to set for the bookingBusinesses property.
+        ## @param value Value to set for the booking_businesses property.
         ## @return a void
         ## 
         def booking_businesses=(value)
@@ -56,7 +56,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bookingCurrencies property value. The bookingCurrencies property
-        ## @param value Value to set for the bookingCurrencies property.
+        ## @param value Value to set for the booking_currencies property.
         ## @return a void
         ## 
         def booking_currencies=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

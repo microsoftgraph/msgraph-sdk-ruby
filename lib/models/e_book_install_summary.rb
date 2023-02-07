@@ -48,7 +48,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the failedDeviceCount property value. Number of Devices that have failed to install this book.
-        ## @param value Value to set for the failedDeviceCount property.
+        ## @param value Value to set for the failed_device_count property.
         ## @return a void
         ## 
         def failed_device_count=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the failedUserCount property value. Number of Users that have 1 or more device that failed to install this book.
-        ## @param value Value to set for the failedUserCount property.
+        ## @param value Value to set for the failed_user_count property.
         ## @return a void
         ## 
         def failed_user_count=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the installedDeviceCount property value. Number of Devices that have successfully installed this book.
-        ## @param value Value to set for the installedDeviceCount property.
+        ## @param value Value to set for the installed_device_count property.
         ## @return a void
         ## 
         def installed_device_count=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the installedUserCount property value. Number of Users whose devices have all succeeded to install this book.
-        ## @param value Value to set for the installedUserCount property.
+        ## @param value Value to set for the installed_user_count property.
         ## @return a void
         ## 
         def installed_user_count=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notInstalledDeviceCount property value. Number of Devices that does not have this book installed.
-        ## @param value Value to set for the notInstalledDeviceCount property.
+        ## @param value Value to set for the not_installed_device_count property.
         ## @return a void
         ## 
         def not_installed_device_count=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notInstalledUserCount property value. Number of Users that did not install this book.
-        ## @param value Value to set for the notInstalledUserCount property.
+        ## @param value Value to set for the not_installed_user_count property.
         ## @return a void
         ## 
         def not_installed_user_count=(value)

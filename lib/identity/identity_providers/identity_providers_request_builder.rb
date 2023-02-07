@@ -4,9 +4,9 @@ require_relative '../../models/identity_provider_base'
 require_relative '../../models/identity_provider_base_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../identity'
-require_relative './available_provider_types/available_provider_types_request_builder'
 require_relative './count/count_request_builder'
 require_relative './identity_providers'
+require_relative './microsoft_graph_available_provider_types/microsoft_graph_available_provider_types_request_builder'
 
 module MicrosoftGraph::Identity::IdentityProviders
     ## 
@@ -19,6 +19,11 @@ module MicrosoftGraph::Identity::IdentityProviders
             return MicrosoftGraph::Identity::IdentityProviders::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the availableProviderTypes method.
+        def microsoft_graph_available_provider_types()
+            return MicrosoftGraph::Identity::IdentityProviders::MicrosoftGraphAvailableProviderTypes::MicrosoftGraphAvailableProviderTypesRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
@@ -27,13 +32,6 @@ module MicrosoftGraph::Identity::IdentityProviders
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        ## Provides operations to call the availableProviderTypes method.
-        ## @return a available_provider_types_request_builder
-        ## 
-        def available_provider_types()
-            return AvailableProviderTypesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new IdentityProvidersRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
@@ -63,7 +61,7 @@ module MicrosoftGraph::Identity::IdentityProviders
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityProviderBaseCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Create an identity provider resource that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD. In Azure AD B2C, this operation can currently create a socialIdentityProvider, or an appleManagedIdentityProvider resource.
+        ## Create an identity provider object that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD. In Azure AD B2C, this operation can currently create a socialIdentityProvider, or an appleManagedIdentityProvider resource.
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of identity_provider_base
@@ -97,7 +95,7 @@ module MicrosoftGraph::Identity::IdentityProviders
             return request_info
         end
         ## 
-        ## Create an identity provider resource that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD. In Azure AD B2C, this operation can currently create a socialIdentityProvider, or an appleManagedIdentityProvider resource.
+        ## Create an identity provider object that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD. In Azure AD B2C, this operation can currently create a socialIdentityProvider, or an appleManagedIdentityProvider resource.
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

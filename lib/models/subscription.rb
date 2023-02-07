@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applicationId property value. Optional. Identifier of the application used to create the subscription. Read-only.
-        ## @param value Value to set for the applicationId property.
+        ## @param value Value to set for the application_id property.
         ## @return a void
         ## 
         def application_id=(value)
@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the changeType property value. Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.
-        ## @param value Value to set for the changeType property.
+        ## @param value Value to set for the change_type property.
         ## @return a void
         ## 
         def change_type=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the clientState property value. Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 128 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
-        ## @param value Value to set for the clientState property.
+        ## @param value Value to set for the client_state property.
         ## @return a void
         ## 
         def client_state=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the creatorId property value. Optional. Identifier of the user or service principal that created the subscription. If the app used delegated permissions to create the subscription, this field contains the id of the signed-in user the app called on behalf of. If the app used application permissions, this field contains the id of the service principal corresponding to the app. Read-only.
-        ## @param value Value to set for the creatorId property.
+        ## @param value Value to set for the creator_id property.
         ## @return a void
         ## 
         def creator_id=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the encryptionCertificate property value. Optional. A base64-encoded representation of a certificate with a public key used to encrypt resource data in change notifications. Optional but required when includeResourceData is true.
-        ## @param value Value to set for the encryptionCertificate property.
+        ## @param value Value to set for the encryption_certificate property.
         ## @return a void
         ## 
         def encryption_certificate=(value)
@@ -148,7 +148,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the encryptionCertificateId property value. Optional. A custom app-provided identifier to help identify the certificate needed to decrypt resource data.
-        ## @param value Value to set for the encryptionCertificateId property.
+        ## @param value Value to set for the encryption_certificate_id property.
         ## @return a void
         ## 
         def encryption_certificate_id=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the expirationDateTime property value. Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.
-        ## @param value Value to set for the expirationDateTime property.
+        ## @param value Value to set for the expiration_date_time property.
         ## @return a void
         ## 
         def expiration_date_time=(value)
@@ -200,7 +200,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeResourceData property value. Optional. When set to true, change notifications include resource data (such as content of a chat message).
-        ## @param value Value to set for the includeResourceData property.
+        ## @param value Value to set for the include_resource_data property.
         ## @return a void
         ## 
         def include_resource_data=(value)
@@ -215,7 +215,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the latestSupportedTlsVersion property value. Optional. Specifies the latest version of Transport Layer Security (TLS) that the notification endpoint, specified by notificationUrl, supports. The possible values are: v1_0, v1_1, v1_2, v1_3. For subscribers whose notification endpoint supports a version lower than the currently recommended version (TLS 1.2), specifying this property by a set timeline allows them to temporarily use their deprecated version of TLS before completing their upgrade to TLS 1.2. For these subscribers, not setting this property per the timeline would result in subscription operations failing. For subscribers whose notification endpoint already supports TLS 1.2, setting this property is optional. In such cases, Microsoft Graph defaults the property to v1_2.
-        ## @param value Value to set for the latestSupportedTlsVersion property.
+        ## @param value Value to set for the latest_supported_tls_version property.
         ## @return a void
         ## 
         def latest_supported_tls_version=(value)
@@ -230,7 +230,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lifecycleNotificationUrl property value. Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol.
-        ## @param value Value to set for the lifecycleNotificationUrl property.
+        ## @param value Value to set for the lifecycle_notification_url property.
         ## @return a void
         ## 
         def lifecycle_notification_url=(value)
@@ -245,7 +245,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notificationQueryOptions property value. Optional. OData query options for specifying value for the targeting resource. Clients receive notifications when resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.
-        ## @param value Value to set for the notificationQueryOptions property.
+        ## @param value Value to set for the notification_query_options property.
         ## @return a void
         ## 
         def notification_query_options=(value)
@@ -260,7 +260,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notificationUrl property value. Required. The URL of the endpoint that will receive the change notifications. This URL must make use of the HTTPS protocol.
-        ## @param value Value to set for the notificationUrl property.
+        ## @param value Value to set for the notification_url property.
         ## @return a void
         ## 
         def notification_url=(value)
@@ -275,7 +275,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notificationUrlAppId property value. Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.
-        ## @param value Value to set for the notificationUrlAppId property.
+        ## @param value Value to set for the notification_url_app_id property.
         ## @return a void
         ## 
         def notification_url_app_id=(value)

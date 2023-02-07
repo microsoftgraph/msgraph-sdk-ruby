@@ -4,7 +4,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/place'
 require_relative '../places'
 require_relative './item'
-require_relative './room/room_request_builder'
+require_relative './microsoft_graph_room/microsoft_graph_room_request_builder'
 
 module MicrosoftGraph::Places::Item
     ## 
@@ -12,16 +12,16 @@ module MicrosoftGraph::Places::Item
     class PlaceItemRequestBuilder
         
         ## 
+        # Casts the previous resource to room.
+        def microsoft_graph_room()
+            return MicrosoftGraph::Places::Item::MicrosoftGraphRoom::MicrosoftGraphRoomRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Casts the previous resource to room.
-        def room()
-            return MicrosoftGraph::Places::Item::Room::RoomRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
@@ -40,7 +40,7 @@ module MicrosoftGraph::Places::Item
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Delete entity from places by key (id)
+        ## Delete entity from places
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of void
         ## 
@@ -84,7 +84,7 @@ module MicrosoftGraph::Places::Item
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Place.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Delete entity from places by key (id)
+        ## Delete entity from places
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 

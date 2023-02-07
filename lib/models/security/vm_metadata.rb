@@ -48,7 +48,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the cloudProvider property value. The cloudProvider property
-        ## @param value Value to set for the cloudProvider property.
+        ## @param value Value to set for the cloud_provider property.
         ## @return a void
         ## 
         def cloud_provider=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the resourceId property value. Unique identifier of the Azure resource.
-        ## @param value Value to set for the resourceId property.
+        ## @param value Value to set for the resource_id property.
         ## @return a void
         ## 
         def resource_id=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the subscriptionId property value. Unique identifier of the Azure subscription the customer tenant belongs to.
-        ## @param value Value to set for the subscriptionId property.
+        ## @param value Value to set for the subscription_id property.
         ## @return a void
         ## 
         def subscription_id=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the vmId property value. Unique identifier of the virtual machine instance.
-        ## @param value Value to set for the vmId property.
+        ## @param value Value to set for the vm_id property.
         ## @return a void
         ## 
         def vm_id=(value)

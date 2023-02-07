@@ -17,7 +17,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appConsentRequests property value. A collection of userConsentRequest objects for a specific application.
-        ## @param value Value to set for the appConsentRequests property.
+        ## @param value Value to set for the app_consent_requests property.
         ## @return a void
         ## 
         def app_consent_requests=(value)

@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the tag as it will appear to the user in Microsoft Teams.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the memberCount property value. The number of users assigned to the tag.
-        ## @param value Value to set for the memberCount property.
+        ## @param value Value to set for the member_count property.
         ## @return a void
         ## 
         def member_count=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tagType property value. The type of the tag. Default is standard.
-        ## @param value Value to set for the tagType property.
+        ## @param value Value to set for the tag_type property.
         ## @return a void
         ## 
         def tag_type=(value)
@@ -152,7 +152,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the teamId property value. ID of the team in which the tag is defined.
-        ## @param value Value to set for the teamId property.
+        ## @param value Value to set for the team_id property.
         ## @return a void
         ## 
         def team_id=(value)

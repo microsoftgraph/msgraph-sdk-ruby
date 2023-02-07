@@ -37,7 +37,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fileName property value. File name associated with the Value property (.xml).
-        ## @param value Value to set for the fileName property.
+        ## @param value Value to set for the file_name property.
         ## @return a void
         ## 
         def file_name=(value)

@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the servicePrincipal property value. The servicePrincipal property
-        ## @param value Value to set for the servicePrincipal property.
+        ## @param value Value to set for the service_principal property.
         ## @return a void
         ## 
         def service_principal=(value)

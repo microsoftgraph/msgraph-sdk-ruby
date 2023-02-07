@@ -19,13 +19,13 @@ require_relative './managed_e_books/item/managed_e_book_item_request_builder'
 require_relative './managed_e_books/managed_e_books_request_builder'
 require_relative './mdm_windows_information_protection_policies/item/mdm_windows_information_protection_policy_item_request_builder'
 require_relative './mdm_windows_information_protection_policies/mdm_windows_information_protection_policies_request_builder'
+require_relative './microsoft_graph_sync_microsoft_store_for_business_apps/microsoft_graph_sync_microsoft_store_for_business_apps_request_builder'
 require_relative './mobile_app_categories/item/mobile_app_category_item_request_builder'
 require_relative './mobile_app_categories/mobile_app_categories_request_builder'
 require_relative './mobile_app_configurations/item/managed_device_mobile_app_configuration_item_request_builder'
 require_relative './mobile_app_configurations/mobile_app_configurations_request_builder'
 require_relative './mobile_apps/item/mobile_app_item_request_builder'
 require_relative './mobile_apps/mobile_apps_request_builder'
-require_relative './sync_microsoft_store_for_business_apps/sync_microsoft_store_for_business_apps_request_builder'
 require_relative './targeted_managed_app_configurations/item/targeted_managed_app_configuration_item_request_builder'
 require_relative './targeted_managed_app_configurations/targeted_managed_app_configurations_request_builder'
 require_relative './vpp_tokens/item/vpp_token_item_request_builder'
@@ -79,6 +79,11 @@ module MicrosoftGraph::DeviceAppManagement
             return MicrosoftGraph::DeviceAppManagement::MdmWindowsInformationProtectionPolicies::MdmWindowsInformationProtectionPoliciesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the syncMicrosoftStoreForBusinessApps method.
+        def microsoft_graph_sync_microsoft_store_for_business_apps()
+            return MicrosoftGraph::DeviceAppManagement::MicrosoftGraphSyncMicrosoftStoreForBusinessApps::MicrosoftGraphSyncMicrosoftStoreForBusinessAppsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to manage the mobileAppCategories property of the microsoft.graph.deviceAppManagement entity.
         def mobile_app_categories()
             return MicrosoftGraph::DeviceAppManagement::MobileAppCategories::MobileAppCategoriesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -99,11 +104,6 @@ module MicrosoftGraph::DeviceAppManagement
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the syncMicrosoftStoreForBusinessApps method.
-        def sync_microsoft_store_for_business_apps()
-            return MicrosoftGraph::DeviceAppManagement::SyncMicrosoftStoreForBusinessApps::SyncMicrosoftStoreForBusinessAppsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the targetedManagedAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
         def targeted_managed_app_configurations()

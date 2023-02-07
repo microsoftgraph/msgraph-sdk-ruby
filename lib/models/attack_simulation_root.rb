@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the simulationAutomations property value. Represents simulation automation created to run on a tenant.
-        ## @param value Value to set for the simulationAutomations property.
+        ## @param value Value to set for the simulation_automations property.
         ## @return a void
         ## 
         def simulation_automations=(value)

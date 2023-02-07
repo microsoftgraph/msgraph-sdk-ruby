@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdBy property value. The createdBy property
-        ## @param value Value to set for the createdBy property.
+        ## @param value Value to set for the created_by property.
         ## @return a void
         ## 
         def created_by=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name of the app provided by the app developer.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
-        ## @param value Value to set for the publishingState property.
+        ## @param value Value to set for the publishing_state property.
         ## @return a void
         ## 
         def publishing_state=(value)
@@ -183,7 +183,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the shortDescription property value. Short description of the application.
-        ## @param value Value to set for the shortDescription property.
+        ## @param value Value to set for the short_description property.
         ## @return a void
         ## 
         def short_description=(value)
@@ -198,7 +198,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the teamsAppId property value. The ID from the Teams app manifest.
-        ## @param value Value to set for the teamsAppId property.
+        ## @param value Value to set for the teams_app_id property.
         ## @return a void
         ## 
         def teams_app_id=(value)

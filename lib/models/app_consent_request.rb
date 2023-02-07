@@ -26,7 +26,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appDisplayName property value. The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.
-        ## @param value Value to set for the appDisplayName property.
+        ## @param value Value to set for the app_display_name property.
         ## @return a void
         ## 
         def app_display_name=(value)
@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appId property value. The identifier of the application. Required. Supports $filter (eq only) and $orderby.
-        ## @param value Value to set for the appId property.
+        ## @param value Value to set for the app_id property.
         ## @return a void
         ## 
         def app_id=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pendingScopes property value. A list of pending scopes waiting for approval. Required.
-        ## @param value Value to set for the pendingScopes property.
+        ## @param value Value to set for the pending_scopes property.
         ## @return a void
         ## 
         def pending_scopes=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userConsentRequests property value. A list of pending user consent requests. Supports $filter (eq).
-        ## @param value Value to set for the userConsentRequests property.
+        ## @param value Value to set for the user_consent_requests property.
         ## @return a void
         ## 
         def user_consent_requests=(value)

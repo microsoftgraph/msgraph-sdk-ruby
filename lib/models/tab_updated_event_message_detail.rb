@@ -73,7 +73,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tabId property value. Unique identifier of the tab.
-        ## @param value Value to set for the tabId property.
+        ## @param value Value to set for the tab_id property.
         ## @return a void
         ## 
         def tab_id=(value)

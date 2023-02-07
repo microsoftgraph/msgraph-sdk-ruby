@@ -52,7 +52,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the unlockPin property value. Pin to unlock the client
-        ## @param value Value to set for the unlockPin property.
+        ## @param value Value to set for the unlock_pin property.
         ## @return a void
         ## 
         def unlock_pin=(value)

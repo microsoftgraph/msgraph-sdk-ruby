@@ -9,10 +9,10 @@ require_relative '../../connected_organizations'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './external_sponsors'
-require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
-require_relative './get_by_ids/get_by_ids_request_builder'
+require_relative './microsoft_graph_get_available_extension_properties/microsoft_graph_get_available_extension_properties_request_builder'
+require_relative './microsoft_graph_get_by_ids/microsoft_graph_get_by_ids_request_builder'
+require_relative './microsoft_graph_validate_properties/microsoft_graph_validate_properties_request_builder'
 require_relative './ref/ref_request_builder'
-require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::ExternalSponsors
     ## 
@@ -26,13 +26,18 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrgan
         end
         ## 
         # Provides operations to call the getAvailableExtensionProperties method.
-        def get_available_extension_properties()
-            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::ExternalSponsors::GetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_available_extension_properties()
+            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::ExternalSponsors::MicrosoftGraphGetAvailableExtensionProperties::MicrosoftGraphGetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getByIds method.
-        def get_by_ids()
-            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::ExternalSponsors::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_by_ids()
+            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::ExternalSponsors::MicrosoftGraphGetByIds::MicrosoftGraphGetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the validateProperties method.
+        def microsoft_graph_validate_properties()
+            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::ExternalSponsors::MicrosoftGraphValidateProperties::MicrosoftGraphValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -48,11 +53,6 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrgan
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        # Provides operations to call the validateProperties method.
-        def validate_properties()
-            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::ExternalSponsors::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new ExternalSponsorsRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request

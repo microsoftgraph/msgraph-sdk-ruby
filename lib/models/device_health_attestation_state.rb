@@ -76,11 +76,11 @@ module MicrosoftGraph::Models
         # The Operating System Revision List that was loaded during initial boot on the attested device
         @operating_system_rev_list_info
         ## 
-        # The measurement that is captured in PCR[0]
-        @pcr0
-        ## 
         # Informational attribute that identifies the HASH algorithm that was used by TPM
         @pcr_hash_algorithm
+        ## 
+        # The measurement that is captured in PCR[0]
+        @pcr0
         ## 
         # The number of times a PC device has hibernated or resumed
         @reset_count
@@ -132,7 +132,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the attestationIdentityKey property value. TWhen an Attestation Identity Key (AIK) is present on a device, it indicates that the device has an endorsement key (EK) certificate.
-        ## @param value Value to set for the attestationIdentityKey property.
+        ## @param value Value to set for the attestation_identity_key property.
         ## @return a void
         ## 
         def attestation_identity_key=(value)
@@ -147,7 +147,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bitLockerStatus property value. On or Off of BitLocker Drive Encryption
-        ## @param value Value to set for the bitLockerStatus property.
+        ## @param value Value to set for the bit_locker_status property.
         ## @return a void
         ## 
         def bit_locker_status=(value)
@@ -162,7 +162,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bootAppSecurityVersion property value. The security version number of the Boot Application
-        ## @param value Value to set for the bootAppSecurityVersion property.
+        ## @param value Value to set for the boot_app_security_version property.
         ## @return a void
         ## 
         def boot_app_security_version=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bootDebugging property value. When bootDebugging is enabled, the device is used in development and testing
-        ## @param value Value to set for the bootDebugging property.
+        ## @param value Value to set for the boot_debugging property.
         ## @return a void
         ## 
         def boot_debugging=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bootManagerSecurityVersion property value. The security version number of the Boot Application
-        ## @param value Value to set for the bootManagerSecurityVersion property.
+        ## @param value Value to set for the boot_manager_security_version property.
         ## @return a void
         ## 
         def boot_manager_security_version=(value)
@@ -207,7 +207,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bootManagerVersion property value. The version of the Boot Manager
-        ## @param value Value to set for the bootManagerVersion property.
+        ## @param value Value to set for the boot_manager_version property.
         ## @return a void
         ## 
         def boot_manager_version=(value)
@@ -222,7 +222,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bootRevisionListInfo property value. The Boot Revision List that was loaded during initial boot on the attested device
-        ## @param value Value to set for the bootRevisionListInfo property.
+        ## @param value Value to set for the boot_revision_list_info property.
         ## @return a void
         ## 
         def boot_revision_list_info=(value)
@@ -237,7 +237,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the codeIntegrity property value. When code integrity is enabled, code execution is restricted to integrity verified code
-        ## @param value Value to set for the codeIntegrity property.
+        ## @param value Value to set for the code_integrity property.
         ## @return a void
         ## 
         def code_integrity=(value)
@@ -252,7 +252,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the codeIntegrityCheckVersion property value. The version of the Boot Manager
-        ## @param value Value to set for the codeIntegrityCheckVersion property.
+        ## @param value Value to set for the code_integrity_check_version property.
         ## @return a void
         ## 
         def code_integrity_check_version=(value)
@@ -267,7 +267,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the codeIntegrityPolicy property value. The Code Integrity policy that is controlling the security of the boot environment
-        ## @param value Value to set for the codeIntegrityPolicy property.
+        ## @param value Value to set for the code_integrity_policy property.
         ## @return a void
         ## 
         def code_integrity_policy=(value)
@@ -289,7 +289,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentNamespaceUrl property value. The DHA report version. (Namespace version)
-        ## @param value Value to set for the contentNamespaceUrl property.
+        ## @param value Value to set for the content_namespace_url property.
         ## @return a void
         ## 
         def content_namespace_url=(value)
@@ -304,7 +304,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentVersion property value. The HealthAttestation state schema version
-        ## @param value Value to set for the contentVersion property.
+        ## @param value Value to set for the content_version property.
         ## @return a void
         ## 
         def content_version=(value)
@@ -328,7 +328,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dataExcutionPolicy property value. DEP Policy defines a set of hardware and software technologies that perform additional checks on memory
-        ## @param value Value to set for the dataExcutionPolicy property.
+        ## @param value Value to set for the data_excution_policy property.
         ## @return a void
         ## 
         def data_excution_policy=(value)
@@ -343,7 +343,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceHealthAttestationStatus property value. The DHA report version. (Namespace version)
-        ## @param value Value to set for the deviceHealthAttestationStatus property.
+        ## @param value Value to set for the device_health_attestation_status property.
         ## @return a void
         ## 
         def device_health_attestation_status=(value)
@@ -358,7 +358,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the earlyLaunchAntiMalwareDriverProtection property value. ELAM provides protection for the computers in your network when they start up
-        ## @param value Value to set for the earlyLaunchAntiMalwareDriverProtection property.
+        ## @param value Value to set for the early_launch_anti_malware_driver_protection property.
         ## @return a void
         ## 
         def early_launch_anti_malware_driver_protection=(value)
@@ -392,8 +392,8 @@ module MicrosoftGraph::Models
                 "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 "operatingSystemKernelDebugging" => lambda {|n| @operating_system_kernel_debugging = n.get_string_value() },
                 "operatingSystemRevListInfo" => lambda {|n| @operating_system_rev_list_info = n.get_string_value() },
-                "pcr0" => lambda {|n| @pcr0 = n.get_string_value() },
                 "pcrHashAlgorithm" => lambda {|n| @pcr_hash_algorithm = n.get_string_value() },
+                "pcr0" => lambda {|n| @pcr0 = n.get_string_value() },
                 "resetCount" => lambda {|n| @reset_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                 "restartCount" => lambda {|n| @restart_count = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                 "safeMode" => lambda {|n| @safe_mode = n.get_string_value() },
@@ -414,7 +414,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the healthAttestationSupportedStatus property value. This attribute indicates if DHA is supported for the device
-        ## @param value Value to set for the healthAttestationSupportedStatus property.
+        ## @param value Value to set for the health_attestation_supported_status property.
         ## @return a void
         ## 
         def health_attestation_supported_status=(value)
@@ -429,7 +429,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the healthStatusMismatchInfo property value. This attribute appears if DHA-Service detects an integrity issue
-        ## @param value Value to set for the healthStatusMismatchInfo property.
+        ## @param value Value to set for the health_status_mismatch_info property.
         ## @return a void
         ## 
         def health_status_mismatch_info=(value)
@@ -444,7 +444,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the issuedDateTime property value. The DateTime when device was evaluated or issued to MDM
-        ## @param value Value to set for the issuedDateTime property.
+        ## @param value Value to set for the issued_date_time property.
         ## @return a void
         ## 
         def issued_date_time=(value)
@@ -459,7 +459,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastUpdateDateTime property value. The Timestamp of the last update.
-        ## @param value Value to set for the lastUpdateDateTime property.
+        ## @param value Value to set for the last_update_date_time property.
         ## @return a void
         ## 
         def last_update_date_time=(value)
@@ -474,7 +474,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -489,7 +489,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the operatingSystemKernelDebugging property value. When operatingSystemKernelDebugging is enabled, the device is used in development and testing
-        ## @param value Value to set for the operatingSystemKernelDebugging property.
+        ## @param value Value to set for the operating_system_kernel_debugging property.
         ## @return a void
         ## 
         def operating_system_kernel_debugging=(value)
@@ -504,11 +504,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the operatingSystemRevListInfo property value. The Operating System Revision List that was loaded during initial boot on the attested device
-        ## @param value Value to set for the operatingSystemRevListInfo property.
+        ## @param value Value to set for the operating_system_rev_list_info property.
         ## @return a void
         ## 
         def operating_system_rev_list_info=(value)
             @operating_system_rev_list_info = value
+        end
+        ## 
+        ## Gets the pcrHashAlgorithm property value. Informational attribute that identifies the HASH algorithm that was used by TPM
+        ## @return a string
+        ## 
+        def pcr_hash_algorithm
+            return @pcr_hash_algorithm
+        end
+        ## 
+        ## Sets the pcrHashAlgorithm property value. Informational attribute that identifies the HASH algorithm that was used by TPM
+        ## @param value Value to set for the pcr_hash_algorithm property.
+        ## @return a void
+        ## 
+        def pcr_hash_algorithm=(value)
+            @pcr_hash_algorithm = value
         end
         ## 
         ## Gets the pcr0 property value. The measurement that is captured in PCR[0]
@@ -526,21 +541,6 @@ module MicrosoftGraph::Models
             @pcr0 = value
         end
         ## 
-        ## Gets the pcrHashAlgorithm property value. Informational attribute that identifies the HASH algorithm that was used by TPM
-        ## @return a string
-        ## 
-        def pcr_hash_algorithm
-            return @pcr_hash_algorithm
-        end
-        ## 
-        ## Sets the pcrHashAlgorithm property value. Informational attribute that identifies the HASH algorithm that was used by TPM
-        ## @param value Value to set for the pcrHashAlgorithm property.
-        ## @return a void
-        ## 
-        def pcr_hash_algorithm=(value)
-            @pcr_hash_algorithm = value
-        end
-        ## 
         ## Gets the resetCount property value. The number of times a PC device has hibernated or resumed
         ## @return a int64
         ## 
@@ -549,7 +549,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resetCount property value. The number of times a PC device has hibernated or resumed
-        ## @param value Value to set for the resetCount property.
+        ## @param value Value to set for the reset_count property.
         ## @return a void
         ## 
         def reset_count=(value)
@@ -564,7 +564,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the restartCount property value. The number of times a PC device has rebooted
-        ## @param value Value to set for the restartCount property.
+        ## @param value Value to set for the restart_count property.
         ## @return a void
         ## 
         def restart_count=(value)
@@ -579,7 +579,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the safeMode property value. Safe mode is a troubleshooting option for Windows that starts your computer in a limited state
-        ## @param value Value to set for the safeMode property.
+        ## @param value Value to set for the safe_mode property.
         ## @return a void
         ## 
         def safe_mode=(value)
@@ -594,7 +594,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the secureBoot property value. When Secure Boot is enabled, the core components must have the correct cryptographic signatures
-        ## @param value Value to set for the secureBoot property.
+        ## @param value Value to set for the secure_boot property.
         ## @return a void
         ## 
         def secure_boot=(value)
@@ -609,7 +609,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the secureBootConfigurationPolicyFingerPrint property value. Fingerprint of the Custom Secure Boot Configuration Policy
-        ## @param value Value to set for the secureBootConfigurationPolicyFingerPrint property.
+        ## @param value Value to set for the secure_boot_configuration_policy_finger_print property.
         ## @return a void
         ## 
         def secure_boot_configuration_policy_finger_print=(value)
@@ -644,8 +644,8 @@ module MicrosoftGraph::Models
             writer.write_string_value("@odata.type", @odata_type)
             writer.write_string_value("operatingSystemKernelDebugging", @operating_system_kernel_debugging)
             writer.write_string_value("operatingSystemRevListInfo", @operating_system_rev_list_info)
-            writer.write_string_value("pcr0", @pcr0)
             writer.write_string_value("pcrHashAlgorithm", @pcr_hash_algorithm)
+            writer.write_string_value("pcr0", @pcr0)
             writer.write_object_value("resetCount", @reset_count)
             writer.write_object_value("restartCount", @restart_count)
             writer.write_string_value("safeMode", @safe_mode)
@@ -666,7 +666,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the testSigning property value. When test signing is allowed, the device does not enforce signature validation during boot
-        ## @param value Value to set for the testSigning property.
+        ## @param value Value to set for the test_signing property.
         ## @return a void
         ## 
         def test_signing=(value)
@@ -681,7 +681,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tpmVersion property value. The security version number of the Boot Application
-        ## @param value Value to set for the tpmVersion property.
+        ## @param value Value to set for the tpm_version property.
         ## @return a void
         ## 
         def tpm_version=(value)
@@ -696,7 +696,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the virtualSecureMode property value. VSM is a container that protects high value assets from a compromised kernel
-        ## @param value Value to set for the virtualSecureMode property.
+        ## @param value Value to set for the virtual_secure_mode property.
         ## @return a void
         ## 
         def virtual_secure_mode=(value)
@@ -711,7 +711,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the windowsPE property value. Operating system running with limited services that is used to prepare a computer for Windows
-        ## @param value Value to set for the windowsPE property.
+        ## @param value Value to set for the windows_p_e property.
         ## @return a void
         ## 
         def windows_p_e=(value)

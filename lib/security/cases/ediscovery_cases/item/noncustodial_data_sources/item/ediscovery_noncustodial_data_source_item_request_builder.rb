@@ -7,24 +7,19 @@ require_relative '../../../../cases'
 require_relative '../../../ediscovery_cases'
 require_relative '../../item'
 require_relative '../noncustodial_data_sources'
-require_relative './apply_hold/apply_hold_request_builder'
 require_relative './data_source/data_source_request_builder'
 require_relative './item'
 require_relative './last_index_operation/last_index_operation_request_builder'
-require_relative './release/release_request_builder'
-require_relative './remove_hold/remove_hold_request_builder'
-require_relative './update_index/update_index_request_builder'
+require_relative './microsoft_graph_security_apply_hold/microsoft_graph_security_apply_hold_request_builder'
+require_relative './microsoft_graph_security_release/microsoft_graph_security_release_request_builder'
+require_relative './microsoft_graph_security_remove_hold/microsoft_graph_security_remove_hold_request_builder'
+require_relative './microsoft_graph_security_update_index/microsoft_graph_security_update_index_request_builder'
 
 module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::Item
     ## 
     # Provides operations to manage the noncustodialDataSources property of the microsoft.graph.security.ediscoveryCase entity.
     class EdiscoveryNoncustodialDataSourceItemRequestBuilder
         
-        ## 
-        # Provides operations to call the applyHold method.
-        def apply_hold()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::Item::ApplyHold::ApplyHoldRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the dataSource property of the microsoft.graph.security.ediscoveryNoncustodialDataSource entity.
         def data_source()
@@ -36,26 +31,31 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataS
             return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::Item::LastIndexOperation::LastIndexOperationRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Path parameters for the request
-        @path_parameters
+        # Provides operations to call the applyHold method.
+        def microsoft_graph_security_apply_hold()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::Item::MicrosoftGraphSecurityApplyHold::MicrosoftGraphSecurityApplyHoldRequestBuilder.new(@path_parameters, @request_adapter)
+        end
         ## 
         # Provides operations to call the release method.
-        def release()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::Item::Release::ReleaseRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_security_release()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::Item::MicrosoftGraphSecurityRelease::MicrosoftGraphSecurityReleaseRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the removeHold method.
-        def remove_hold()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::Item::RemoveHold::RemoveHoldRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_security_remove_hold()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::Item::MicrosoftGraphSecurityRemoveHold::MicrosoftGraphSecurityRemoveHoldRequestBuilder.new(@path_parameters, @request_adapter)
         end
+        ## 
+        # Provides operations to call the updateIndex method.
+        def microsoft_graph_security_update_index()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::Item::MicrosoftGraphSecurityUpdateIndex::MicrosoftGraphSecurityUpdateIndexRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Path parameters for the request
+        @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the updateIndex method.
-        def update_index()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::Item::UpdateIndex::UpdateIndexRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template

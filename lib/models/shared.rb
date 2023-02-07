@@ -77,7 +77,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharedBy property value. The identity of the user who shared the item. Read-only.
-        ## @param value Value to set for the sharedBy property.
+        ## @param value Value to set for the shared_by property.
         ## @return a void
         ## 
         def shared_by=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharedDateTime property value. The UTC date and time when the item was shared. Read-only.
-        ## @param value Value to set for the sharedDateTime property.
+        ## @param value Value to set for the shared_date_time property.
         ## @return a void
         ## 
         def shared_date_time=(value)

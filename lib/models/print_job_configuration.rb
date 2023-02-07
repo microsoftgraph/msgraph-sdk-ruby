@@ -107,7 +107,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the colorMode property value. The color mode the printer should use to print the job. Valid values are described in the table below. Read-only.
-        ## @param value Value to set for the colorMode property.
+        ## @param value Value to set for the color_mode property.
         ## @return a void
         ## 
         def color_mode=(value)
@@ -168,7 +168,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the duplexMode property value. The duplex mode the printer should use when printing the job. Valid values are described in the table below. Read-only.
-        ## @param value Value to set for the duplexMode property.
+        ## @param value Value to set for the duplex_mode property.
         ## @return a void
         ## 
         def duplex_mode=(value)
@@ -183,7 +183,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the feedOrientation property value. The orientation to use when feeding media into the printer. Valid values are described in the following table. Read-only.
-        ## @param value Value to set for the feedOrientation property.
+        ## @param value Value to set for the feed_orientation property.
         ## @return a void
         ## 
         def feed_orientation=(value)
@@ -213,7 +213,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fitPdfToPage property value. The fitPdfToPage property
-        ## @param value Value to set for the fitPdfToPage property.
+        ## @param value Value to set for the fit_pdf_to_page property.
         ## @return a void
         ## 
         def fit_pdf_to_page=(value)
@@ -256,7 +256,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the inputBin property value. The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
-        ## @param value Value to set for the inputBin property.
+        ## @param value Value to set for the input_bin property.
         ## @return a void
         ## 
         def input_bin=(value)
@@ -286,7 +286,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
-        ## @param value Value to set for the mediaSize property.
+        ## @param value Value to set for the media_size property.
         ## @return a void
         ## 
         def media_size=(value)
@@ -301,7 +301,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mediaType property value. The mediaType property
-        ## @param value Value to set for the mediaType property.
+        ## @param value Value to set for the media_type property.
         ## @return a void
         ## 
         def media_type=(value)
@@ -316,7 +316,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the multipageLayout property value. The multipageLayout property
-        ## @param value Value to set for the multipageLayout property.
+        ## @param value Value to set for the multipage_layout property.
         ## @return a void
         ## 
         def multipage_layout=(value)
@@ -331,7 +331,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -361,7 +361,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the outputBin property value. The outputBin property
-        ## @param value Value to set for the outputBin property.
+        ## @param value Value to set for the output_bin property.
         ## @return a void
         ## 
         def output_bin=(value)
@@ -376,7 +376,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pageRanges property value. The pageRanges property
-        ## @param value Value to set for the pageRanges property.
+        ## @param value Value to set for the page_ranges property.
         ## @return a void
         ## 
         def page_ranges=(value)
@@ -391,7 +391,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pagesPerSheet property value. The pagesPerSheet property
-        ## @param value Value to set for the pagesPerSheet property.
+        ## @param value Value to set for the pages_per_sheet property.
         ## @return a void
         ## 
         def pages_per_sheet=(value)

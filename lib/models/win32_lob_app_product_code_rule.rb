@@ -51,7 +51,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the productCode property value. The product code of the app.
-        ## @param value Value to set for the productCode property.
+        ## @param value Value to set for the product_code property.
         ## @return a void
         ## 
         def product_code=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the productVersion property value. The product version comparison value.
-        ## @param value Value to set for the productVersion property.
+        ## @param value Value to set for the product_version property.
         ## @return a void
         ## 
         def product_version=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the productVersionOperator property value. Contains properties for detection operator.
-        ## @param value Value to set for the productVersionOperator property.
+        ## @param value Value to set for the product_version_operator property.
         ## @return a void
         ## 
         def product_version_operator=(value)

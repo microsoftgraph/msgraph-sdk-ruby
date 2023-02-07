@@ -9,9 +9,6 @@ module MicrosoftGraph::Models
         # The audioRoutingGroups property
         @audio_routing_groups
         ## 
-        # The callback URL on which callbacks will be delivered. Must be https.
-        @callback_uri
-        ## 
         # A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
         @call_chain_id
         ## 
@@ -20,6 +17,9 @@ module MicrosoftGraph::Models
         ## 
         # The routing information on how the call was retargeted. Read-only.
         @call_routes
+        ## 
+        # The callback URL on which callbacks will be delivered. Must be https.
+        @callback_uri
         ## 
         # The chat information. Required information for joining a meeting.
         @chat_info
@@ -86,26 +86,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the audioRoutingGroups property value. The audioRoutingGroups property
-        ## @param value Value to set for the audioRoutingGroups property.
+        ## @param value Value to set for the audio_routing_groups property.
         ## @return a void
         ## 
         def audio_routing_groups=(value)
             @audio_routing_groups = value
-        end
-        ## 
-        ## Gets the callbackUri property value. The callback URL on which callbacks will be delivered. Must be https.
-        ## @return a string
-        ## 
-        def callback_uri
-            return @callback_uri
-        end
-        ## 
-        ## Sets the callbackUri property value. The callback URL on which callbacks will be delivered. Must be https.
-        ## @param value Value to set for the callbackUri property.
-        ## @return a void
-        ## 
-        def callback_uri=(value)
-            @callback_uri = value
         end
         ## 
         ## Gets the callChainId property value. A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
@@ -116,7 +101,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callChainId property value. A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.
-        ## @param value Value to set for the callChainId property.
+        ## @param value Value to set for the call_chain_id property.
         ## @return a void
         ## 
         def call_chain_id=(value)
@@ -131,7 +116,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callOptions property value. Contains the optional features for the call.
-        ## @param value Value to set for the callOptions property.
+        ## @param value Value to set for the call_options property.
         ## @return a void
         ## 
         def call_options=(value)
@@ -146,11 +131,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the callRoutes property value. The routing information on how the call was retargeted. Read-only.
-        ## @param value Value to set for the callRoutes property.
+        ## @param value Value to set for the call_routes property.
         ## @return a void
         ## 
         def call_routes=(value)
             @call_routes = value
+        end
+        ## 
+        ## Gets the callbackUri property value. The callback URL on which callbacks will be delivered. Must be https.
+        ## @return a string
+        ## 
+        def callback_uri
+            return @callback_uri
+        end
+        ## 
+        ## Sets the callbackUri property value. The callback URL on which callbacks will be delivered. Must be https.
+        ## @param value Value to set for the callback_uri property.
+        ## @return a void
+        ## 
+        def callback_uri=(value)
+            @callback_uri = value
         end
         ## 
         ## Gets the chatInfo property value. The chat information. Required information for joining a meeting.
@@ -161,7 +161,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the chatInfo property value. The chat information. Required information for joining a meeting.
-        ## @param value Value to set for the chatInfo property.
+        ## @param value Value to set for the chat_info property.
         ## @return a void
         ## 
         def chat_info=(value)
@@ -183,7 +183,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentSharingSessions property value. The contentSharingSessions property
-        ## @param value Value to set for the contentSharingSessions property.
+        ## @param value Value to set for the content_sharing_sessions property.
         ## @return a void
         ## 
         def content_sharing_sessions=(value)
@@ -220,10 +220,10 @@ module MicrosoftGraph::Models
         def get_field_deserializers()
             return super.merge({
                 "audioRoutingGroups" => lambda {|n| @audio_routing_groups = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AudioRoutingGroup.create_from_discriminator_value(pn) }) },
-                "callbackUri" => lambda {|n| @callback_uri = n.get_string_value() },
                 "callChainId" => lambda {|n| @call_chain_id = n.get_string_value() },
                 "callOptions" => lambda {|n| @call_options = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CallOptions.create_from_discriminator_value(pn) }) },
                 "callRoutes" => lambda {|n| @call_routes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CallRoute.create_from_discriminator_value(pn) }) },
+                "callbackUri" => lambda {|n| @callback_uri = n.get_string_value() },
                 "chatInfo" => lambda {|n| @chat_info = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ChatInfo.create_from_discriminator_value(pn) }) },
                 "contentSharingSessions" => lambda {|n| @content_sharing_sessions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ContentSharingSession.create_from_discriminator_value(pn) }) },
                 "direction" => lambda {|n| @direction = n.get_enum_value(MicrosoftGraph::Models::CallDirection) },
@@ -254,7 +254,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the incomingContext property value. Call context associated with an incoming call.
-        ## @param value Value to set for the incomingContext property.
+        ## @param value Value to set for the incoming_context property.
         ## @return a void
         ## 
         def incoming_context=(value)
@@ -269,7 +269,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mediaConfig property value. The media configuration. Required.
-        ## @param value Value to set for the mediaConfig property.
+        ## @param value Value to set for the media_config property.
         ## @return a void
         ## 
         def media_config=(value)
@@ -284,7 +284,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mediaState property value. Read-only. The call media state.
-        ## @param value Value to set for the mediaState property.
+        ## @param value Value to set for the media_state property.
         ## @return a void
         ## 
         def media_state=(value)
@@ -299,7 +299,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the meetingInfo property value. The meeting information. Required information for meeting scenarios.
-        ## @param value Value to set for the meetingInfo property.
+        ## @param value Value to set for the meeting_info property.
         ## @return a void
         ## 
         def meeting_info=(value)
@@ -314,7 +314,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the myParticipantId property value. The myParticipantId property
-        ## @param value Value to set for the myParticipantId property.
+        ## @param value Value to set for the my_participant_id property.
         ## @return a void
         ## 
         def my_participant_id=(value)
@@ -359,7 +359,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the requestedModalities property value. The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.
-        ## @param value Value to set for the requestedModalities property.
+        ## @param value Value to set for the requested_modalities property.
         ## @return a void
         ## 
         def requested_modalities=(value)
@@ -374,7 +374,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resultInfo property value. The result information. For example can hold termination reason. Read-only.
-        ## @param value Value to set for the resultInfo property.
+        ## @param value Value to set for the result_info property.
         ## @return a void
         ## 
         def result_info=(value)
@@ -389,10 +389,10 @@ module MicrosoftGraph::Models
             raise StandardError, 'writer cannot be null' if writer.nil?
             super
             writer.write_collection_of_object_values("audioRoutingGroups", @audio_routing_groups)
-            writer.write_string_value("callbackUri", @callback_uri)
             writer.write_string_value("callChainId", @call_chain_id)
             writer.write_object_value("callOptions", @call_options)
             writer.write_collection_of_object_values("callRoutes", @call_routes)
+            writer.write_string_value("callbackUri", @callback_uri)
             writer.write_object_value("chatInfo", @chat_info)
             writer.write_collection_of_object_values("contentSharingSessions", @content_sharing_sessions)
             writer.write_enum_value("direction", @direction)
@@ -482,7 +482,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tenantId property value. The tenantId property
-        ## @param value Value to set for the tenantId property.
+        ## @param value Value to set for the tenant_id property.
         ## @return a void
         ## 
         def tenant_id=(value)
@@ -497,7 +497,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the toneInfo property value. The toneInfo property
-        ## @param value Value to set for the toneInfo property.
+        ## @param value Value to set for the tone_info property.
         ## @return a void
         ## 
         def tone_info=(value)

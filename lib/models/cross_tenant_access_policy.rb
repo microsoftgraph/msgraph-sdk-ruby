@@ -23,7 +23,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowedCloudEndpoints property value. The allowedCloudEndpoints property
-        ## @param value Value to set for the allowedCloudEndpoints property.
+        ## @param value Value to set for the allowed_cloud_endpoints property.
         ## @return a void
         ## 
         def allowed_cloud_endpoints=(value)

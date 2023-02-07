@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the identityProvider property value. For internal use only
-        ## @param value Value to set for the identityProvider property.
+        ## @param value Value to set for the identity_provider property.
         ## @return a void
         ## 
         def identity_provider=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

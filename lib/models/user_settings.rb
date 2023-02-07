@@ -30,7 +30,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contributionToContentDiscoveryAsOrganizationDisabled property value. The contributionToContentDiscoveryAsOrganizationDisabled property
-        ## @param value Value to set for the contributionToContentDiscoveryAsOrganizationDisabled property.
+        ## @param value Value to set for the contribution_to_content_discovery_as_organization_disabled property.
         ## @return a void
         ## 
         def contribution_to_content_discovery_as_organization_disabled=(value)
@@ -45,7 +45,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contributionToContentDiscoveryDisabled property value. The contributionToContentDiscoveryDisabled property
-        ## @param value Value to set for the contributionToContentDiscoveryDisabled property.
+        ## @param value Value to set for the contribution_to_content_discovery_disabled property.
         ## @return a void
         ## 
         def contribution_to_content_discovery_disabled=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the shiftPreferences property value. The shiftPreferences property
-        ## @param value Value to set for the shiftPreferences property.
+        ## @param value Value to set for the shift_preferences property.
         ## @return a void
         ## 
         def shift_preferences=(value)

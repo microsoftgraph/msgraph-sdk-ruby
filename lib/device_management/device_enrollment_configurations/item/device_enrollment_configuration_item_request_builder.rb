@@ -4,11 +4,11 @@ require_relative '../../../models/device_enrollment_configuration'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_management'
 require_relative '../device_enrollment_configurations'
-require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
 require_relative './assignments/item/enrollment_configuration_assignment_item_request_builder'
 require_relative './item'
-require_relative './set_priority/set_priority_request_builder'
+require_relative './microsoft_graph_assign/microsoft_graph_assign_request_builder'
+require_relative './microsoft_graph_set_priority/microsoft_graph_set_priority_request_builder'
 
 module MicrosoftGraph::DeviceManagement::DeviceEnrollmentConfigurations::Item
     ## 
@@ -16,14 +16,19 @@ module MicrosoftGraph::DeviceManagement::DeviceEnrollmentConfigurations::Item
     class DeviceEnrollmentConfigurationItemRequestBuilder
         
         ## 
-        # Provides operations to call the assign method.
-        def assign()
-            return MicrosoftGraph::DeviceManagement::DeviceEnrollmentConfigurations::Item::Assign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.
         def assignments()
             return MicrosoftGraph::DeviceManagement::DeviceEnrollmentConfigurations::Item::Assignments::AssignmentsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the assign method.
+        def microsoft_graph_assign()
+            return MicrosoftGraph::DeviceManagement::DeviceEnrollmentConfigurations::Item::MicrosoftGraphAssign::MicrosoftGraphAssignRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the setPriority method.
+        def microsoft_graph_set_priority()
+            return MicrosoftGraph::DeviceManagement::DeviceEnrollmentConfigurations::Item::MicrosoftGraphSetPriority::MicrosoftGraphSetPriorityRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -31,11 +36,6 @@ module MicrosoftGraph::DeviceManagement::DeviceEnrollmentConfigurations::Item
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the setPriority method.
-        def set_priority()
-            return MicrosoftGraph::DeviceManagement::DeviceEnrollmentConfigurations::Item::SetPriority::SetPriorityRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template

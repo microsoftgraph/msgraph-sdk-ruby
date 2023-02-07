@@ -27,7 +27,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the accountName property value. User account name of the logged-on user.
-        ## @param value Value to set for the accountName property.
+        ## @param value Value to set for the account_name property.
         ## @return a void
         ## 
         def account_name=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the domainName property value. User account domain of the logged-on user.
-        ## @param value Value to set for the domainName property.
+        ## @param value Value to set for the domain_name property.
         ## @return a void
         ## 
         def domain_name=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

@@ -9,7 +9,7 @@ require_relative '../../assignments'
 require_relative '../item'
 require_relative './categories'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
+require_relative './microsoft_graph_delta/microsoft_graph_delta_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph::Education::Me::Assignments::Item::Categories
@@ -21,6 +21,11 @@ module MicrosoftGraph::Education::Me::Assignments::Item::Categories
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Education::Me::Assignments::Item::Categories::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::Education::Me::Assignments::Item::Categories::MicrosoftGraphDelta::MicrosoftGraphDeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -49,13 +54,6 @@ module MicrosoftGraph::Education::Me::Assignments::Item::Categories
             @request_adapter = request_adapter
             path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
             @path_parameters = path_parameters if path_parameters.is_a? Hash
-        end
-        ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.

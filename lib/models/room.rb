@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the audioDeviceName property value. Specifies the name of the audio device in the room.
-        ## @param value Value to set for the audioDeviceName property.
+        ## @param value Value to set for the audio_device_name property.
         ## @return a void
         ## 
         def audio_device_name=(value)
@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bookingType property value. Type of room. Possible values are standard, and reserved.
-        ## @param value Value to set for the bookingType property.
+        ## @param value Value to set for the booking_type property.
         ## @return a void
         ## 
         def booking_type=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayDeviceName property value. Specifies the name of the display device in the room.
-        ## @param value Value to set for the displayDeviceName property.
+        ## @param value Value to set for the display_device_name property.
         ## @return a void
         ## 
         def display_device_name=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the emailAddress property value. Email address of the room.
-        ## @param value Value to set for the emailAddress property.
+        ## @param value Value to set for the email_address property.
         ## @return a void
         ## 
         def email_address=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the floorLabel property value. Specifies a descriptive label for the floor, for example, P.
-        ## @param value Value to set for the floorLabel property.
+        ## @param value Value to set for the floor_label property.
         ## @return a void
         ## 
         def floor_label=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the floorNumber property value. Specifies the floor number that the room is on.
-        ## @param value Value to set for the floorNumber property.
+        ## @param value Value to set for the floor_number property.
         ## @return a void
         ## 
         def floor_number=(value)
@@ -211,7 +211,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isWheelChairAccessible property value. Specifies whether the room is wheelchair accessible.
-        ## @param value Value to set for the isWheelChairAccessible property.
+        ## @param value Value to set for the is_wheel_chair_accessible property.
         ## @return a void
         ## 
         def is_wheel_chair_accessible=(value)
@@ -293,7 +293,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the videoDeviceName property value. Specifies the name of the video device in the room.
-        ## @param value Value to set for the videoDeviceName property.
+        ## @param value Value to set for the video_device_name property.
         ## @return a void
         ## 
         def video_device_name=(value)

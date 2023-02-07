@@ -26,7 +26,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appIconWebUrl property value. URL that points to the icon of the app.
-        ## @param value Value to set for the appIconWebUrl property.
+        ## @param value Value to set for the app_icon_web_url property.
         ## @return a void
         ## 
         def app_icon_web_url=(value)
@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appId property value. Teams app ID of the application.
-        ## @param value Value to set for the appId property.
+        ## @param value Value to set for the app_id property.
         ## @return a void
         ## 
         def app_id=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the teamsEmbeddedContentUrl property value. URL for the app resource that will be opened by Teams.
-        ## @param value Value to set for the teamsEmbeddedContentUrl property.
+        ## @param value Value to set for the teams_embedded_content_url property.
         ## @return a void
         ## 
         def teams_embedded_content_url=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webUrl property value. URL for the app resource that can be opened in the browser.
-        ## @param value Value to set for the webUrl property.
+        ## @param value Value to set for the web_url property.
         ## @return a void
         ## 
         def web_url=(value)

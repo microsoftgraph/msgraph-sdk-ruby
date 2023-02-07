@@ -10,11 +10,11 @@ module MicrosoftGraph::Models
         # Specifies how accounts are managed on a shared PC. Only applies when disableAccountManager is false.
         @account_manager_policy
         ## 
-        # Type of accounts that are allowed to share the PC.
-        @allowed_accounts
-        ## 
         # Specifies whether local storage is allowed on a shared PC.
         @allow_local_storage
+        ## 
+        # Type of accounts that are allowed to share the PC.
+        @allowed_accounts
         ## 
         # Disables the account manager for shared PC mode.
         @disable_account_manager
@@ -51,26 +51,11 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accountManagerPolicy property value. Specifies how accounts are managed on a shared PC. Only applies when disableAccountManager is false.
-        ## @param value Value to set for the accountManagerPolicy property.
+        ## @param value Value to set for the account_manager_policy property.
         ## @return a void
         ## 
         def account_manager_policy=(value)
             @account_manager_policy = value
-        end
-        ## 
-        ## Gets the allowedAccounts property value. Type of accounts that are allowed to share the PC.
-        ## @return a shared_p_c_allowed_account_type
-        ## 
-        def allowed_accounts
-            return @allowed_accounts
-        end
-        ## 
-        ## Sets the allowedAccounts property value. Type of accounts that are allowed to share the PC.
-        ## @param value Value to set for the allowedAccounts property.
-        ## @return a void
-        ## 
-        def allowed_accounts=(value)
-            @allowed_accounts = value
         end
         ## 
         ## Gets the allowLocalStorage property value. Specifies whether local storage is allowed on a shared PC.
@@ -81,11 +66,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowLocalStorage property value. Specifies whether local storage is allowed on a shared PC.
-        ## @param value Value to set for the allowLocalStorage property.
+        ## @param value Value to set for the allow_local_storage property.
         ## @return a void
         ## 
         def allow_local_storage=(value)
             @allow_local_storage = value
+        end
+        ## 
+        ## Gets the allowedAccounts property value. Type of accounts that are allowed to share the PC.
+        ## @return a shared_p_c_allowed_account_type
+        ## 
+        def allowed_accounts
+            return @allowed_accounts
+        end
+        ## 
+        ## Sets the allowedAccounts property value. Type of accounts that are allowed to share the PC.
+        ## @param value Value to set for the allowed_accounts property.
+        ## @return a void
+        ## 
+        def allowed_accounts=(value)
+            @allowed_accounts = value
         end
         ## 
         ## Instantiates a new SharedPCConfiguration and sets the default values.
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the disableAccountManager property value. Disables the account manager for shared PC mode.
-        ## @param value Value to set for the disableAccountManager property.
+        ## @param value Value to set for the disable_account_manager property.
         ## @return a void
         ## 
         def disable_account_manager=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the disableEduPolicies property value. Specifies whether the default shared PC education environment policies should be disabled. For Windows 10 RS2 and later, this policy will be applied without setting Enabled to true.
-        ## @param value Value to set for the disableEduPolicies property.
+        ## @param value Value to set for the disable_edu_policies property.
         ## @return a void
         ## 
         def disable_edu_policies=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the disablePowerPolicies property value. Specifies whether the default shared PC power policies should be disabled.
-        ## @param value Value to set for the disablePowerPolicies property.
+        ## @param value Value to set for the disable_power_policies property.
         ## @return a void
         ## 
         def disable_power_policies=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the disableSignInOnResume property value. Disables the requirement to sign in whenever the device wakes up from sleep mode.
-        ## @param value Value to set for the disableSignInOnResume property.
+        ## @param value Value to set for the disable_sign_in_on_resume property.
         ## @return a void
         ## 
         def disable_sign_in_on_resume=(value)
@@ -186,8 +186,8 @@ module MicrosoftGraph::Models
         def get_field_deserializers()
             return super.merge({
                 "accountManagerPolicy" => lambda {|n| @account_manager_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SharedPCAccountManagerPolicy.create_from_discriminator_value(pn) }) },
-                "allowedAccounts" => lambda {|n| @allowed_accounts = n.get_enum_value(MicrosoftGraph::Models::SharedPCAllowedAccountType) },
                 "allowLocalStorage" => lambda {|n| @allow_local_storage = n.get_boolean_value() },
+                "allowedAccounts" => lambda {|n| @allowed_accounts = n.get_enum_value(MicrosoftGraph::Models::SharedPCAllowedAccountType) },
                 "disableAccountManager" => lambda {|n| @disable_account_manager = n.get_boolean_value() },
                 "disableEduPolicies" => lambda {|n| @disable_edu_policies = n.get_boolean_value() },
                 "disablePowerPolicies" => lambda {|n| @disable_power_policies = n.get_boolean_value() },
@@ -208,7 +208,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the idleTimeBeforeSleepInSeconds property value. Specifies the time in seconds that a device must sit idle before the PC goes to sleep. Setting this value to 0 prevents the sleep timeout from occurring.
-        ## @param value Value to set for the idleTimeBeforeSleepInSeconds property.
+        ## @param value Value to set for the idle_time_before_sleep_in_seconds property.
         ## @return a void
         ## 
         def idle_time_before_sleep_in_seconds=(value)
@@ -223,7 +223,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the kioskAppDisplayName property value. Specifies the display text for the account shown on the sign-in screen which launches the app specified by SetKioskAppUserModelId. Only applies when KioskAppUserModelId is set.
-        ## @param value Value to set for the kioskAppDisplayName property.
+        ## @param value Value to set for the kiosk_app_display_name property.
         ## @return a void
         ## 
         def kiosk_app_display_name=(value)
@@ -238,7 +238,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the kioskAppUserModelId property value. Specifies the application user model ID of the app to use with assigned access.
-        ## @param value Value to set for the kioskAppUserModelId property.
+        ## @param value Value to set for the kiosk_app_user_model_id property.
         ## @return a void
         ## 
         def kiosk_app_user_model_id=(value)
@@ -253,7 +253,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the maintenanceStartTime property value. Specifies the daily start time of maintenance hour.
-        ## @param value Value to set for the maintenanceStartTime property.
+        ## @param value Value to set for the maintenance_start_time property.
         ## @return a void
         ## 
         def maintenance_start_time=(value)
@@ -268,8 +268,8 @@ module MicrosoftGraph::Models
             raise StandardError, 'writer cannot be null' if writer.nil?
             super
             writer.write_object_value("accountManagerPolicy", @account_manager_policy)
-            writer.write_enum_value("allowedAccounts", @allowed_accounts)
             writer.write_boolean_value("allowLocalStorage", @allow_local_storage)
+            writer.write_enum_value("allowedAccounts", @allowed_accounts)
             writer.write_boolean_value("disableAccountManager", @disable_account_manager)
             writer.write_boolean_value("disableEduPolicies", @disable_edu_policies)
             writer.write_boolean_value("disablePowerPolicies", @disable_power_policies)

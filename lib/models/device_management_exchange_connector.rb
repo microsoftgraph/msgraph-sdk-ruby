@@ -44,7 +44,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the connectorServerName property value. The name of the server hosting the Exchange Connector.
-        ## @param value Value to set for the connectorServerName property.
+        ## @param value Value to set for the connector_server_name property.
         ## @return a void
         ## 
         def connector_server_name=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the exchangeAlias property value. An alias assigned to the Exchange server
-        ## @param value Value to set for the exchangeAlias property.
+        ## @param value Value to set for the exchange_alias property.
         ## @return a void
         ## 
         def exchange_alias=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the exchangeConnectorType property value. The type of Exchange Connector.
-        ## @param value Value to set for the exchangeConnectorType property.
+        ## @param value Value to set for the exchange_connector_type property.
         ## @return a void
         ## 
         def exchange_connector_type=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the exchangeOrganization property value. Exchange Organization to the Exchange server
-        ## @param value Value to set for the exchangeOrganization property.
+        ## @param value Value to set for the exchange_organization property.
         ## @return a void
         ## 
         def exchange_organization=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastSyncDateTime property value. Last sync time for the Exchange Connector
-        ## @param value Value to set for the lastSyncDateTime property.
+        ## @param value Value to set for the last_sync_date_time property.
         ## @return a void
         ## 
         def last_sync_date_time=(value)
@@ -152,7 +152,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the primarySmtpAddress property value. Email address used to configure the Service To Service Exchange Connector.
-        ## @param value Value to set for the primarySmtpAddress property.
+        ## @param value Value to set for the primary_smtp_address property.
         ## @return a void
         ## 
         def primary_smtp_address=(value)
@@ -185,7 +185,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the serverName property value. The name of the Exchange server.
-        ## @param value Value to set for the serverName property.
+        ## @param value Value to set for the server_name property.
         ## @return a void
         ## 
         def server_name=(value)

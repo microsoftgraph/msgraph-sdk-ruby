@@ -10,7 +10,7 @@ require_relative '../../../lists'
 require_relative '../../item'
 require_relative '../subscriptions'
 require_relative './item'
-require_relative './reauthorize/reauthorize_request_builder'
+require_relative './microsoft_graph_reauthorize/microsoft_graph_reauthorize_request_builder'
 
 module MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Subscriptions::Item
     ## 
@@ -18,13 +18,13 @@ module MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Subscriptions::It
     class SubscriptionItemRequestBuilder
         
         ## 
+        # Provides operations to call the reauthorize method.
+        def microsoft_graph_reauthorize()
+            return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Subscriptions::Item::MicrosoftGraphReauthorize::MicrosoftGraphReauthorizeRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
-        ## 
-        # Provides operations to call the reauthorize method.
-        def reauthorize()
-            return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Subscriptions::Item::Reauthorize::ReauthorizeRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter

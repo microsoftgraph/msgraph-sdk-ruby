@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the logoUrl property value. CDN URL to the application's logo, Read-only.
-        ## @param value Value to set for the logoUrl property.
+        ## @param value Value to set for the logo_url property.
         ## @return a void
         ## 
         def logo_url=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the marketingUrl property value. Link to the application's marketing page. For example, https://www.contoso.com/app/marketing
-        ## @param value Value to set for the marketingUrl property.
+        ## @param value Value to set for the marketing_url property.
         ## @return a void
         ## 
         def marketing_url=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the privacyStatementUrl property value. Link to the application's privacy statement. For example, https://www.contoso.com/app/privacy
-        ## @param value Value to set for the privacyStatementUrl property.
+        ## @param value Value to set for the privacy_statement_url property.
         ## @return a void
         ## 
         def privacy_statement_url=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the supportUrl property value. Link to the application's support page. For example, https://www.contoso.com/app/support
-        ## @param value Value to set for the supportUrl property.
+        ## @param value Value to set for the support_url property.
         ## @return a void
         ## 
         def support_url=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the termsOfServiceUrl property value. Link to the application's terms of service statement. For example, https://www.contoso.com/app/termsofservice
-        ## @param value Value to set for the termsOfServiceUrl property.
+        ## @param value Value to set for the terms_of_service_url property.
         ## @return a void
         ## 
         def terms_of_service_url=(value)

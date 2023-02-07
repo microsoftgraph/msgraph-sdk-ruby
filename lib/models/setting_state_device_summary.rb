@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the compliantDeviceCount property value. Device Compliant count for the setting
-        ## @param value Value to set for the compliantDeviceCount property.
+        ## @param value Value to set for the compliant_device_count property.
         ## @return a void
         ## 
         def compliant_device_count=(value)
@@ -58,7 +58,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the conflictDeviceCount property value. Device conflict error count for the setting
-        ## @param value Value to set for the conflictDeviceCount property.
+        ## @param value Value to set for the conflict_device_count property.
         ## @return a void
         ## 
         def conflict_device_count=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the errorDeviceCount property value. Device error count for the setting
-        ## @param value Value to set for the errorDeviceCount property.
+        ## @param value Value to set for the error_device_count property.
         ## @return a void
         ## 
         def error_device_count=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the instancePath property value. Name of the InstancePath for the setting
-        ## @param value Value to set for the instancePath property.
+        ## @param value Value to set for the instance_path property.
         ## @return a void
         ## 
         def instance_path=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the nonCompliantDeviceCount property value. Device NonCompliant count for the setting
-        ## @param value Value to set for the nonCompliantDeviceCount property.
+        ## @param value Value to set for the non_compliant_device_count property.
         ## @return a void
         ## 
         def non_compliant_device_count=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notApplicableDeviceCount property value. Device Not Applicable count for the setting
-        ## @param value Value to set for the notApplicableDeviceCount property.
+        ## @param value Value to set for the not_applicable_device_count property.
         ## @return a void
         ## 
         def not_applicable_device_count=(value)
@@ -166,7 +166,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the remediatedDeviceCount property value. Device Compliant count for the setting
-        ## @param value Value to set for the remediatedDeviceCount property.
+        ## @param value Value to set for the remediated_device_count property.
         ## @return a void
         ## 
         def remediated_device_count=(value)
@@ -199,7 +199,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the settingName property value. Name of the setting
-        ## @param value Value to set for the settingName property.
+        ## @param value Value to set for the setting_name property.
         ## @return a void
         ## 
         def setting_name=(value)
@@ -214,7 +214,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the unknownDeviceCount property value. Device Unkown count for the setting
-        ## @param value Value to set for the unknownDeviceCount property.
+        ## @param value Value to set for the unknown_device_count property.
         ## @return a void
         ## 
         def unknown_device_count=(value)

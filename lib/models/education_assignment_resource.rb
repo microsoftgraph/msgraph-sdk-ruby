@@ -36,7 +36,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the distributeForStudentWork property value. Indicates whether this resource should be copied to each student submission for modification and submission. Required
-        ## @param value Value to set for the distributeForStudentWork property.
+        ## @param value Value to set for the distribute_for_student_work property.
         ## @return a void
         ## 
         def distribute_for_student_work=(value)

@@ -30,7 +30,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the addedDateTime property value. The timestamp when the verified publisher was first added or most recently updated.
-        ## @param value Value to set for the addedDateTime property.
+        ## @param value Value to set for the added_date_time property.
         ## @return a void
         ## 
         def added_date_time=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The verified publisher name from the app publisher's Partner Center account.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the verifiedPublisherId property value. The ID of the verified publisher from the app publisher's Partner Center account.
-        ## @param value Value to set for the verifiedPublisherId property.
+        ## @param value Value to set for the verified_publisher_id property.
         ## @return a void
         ## 
         def verified_publisher_id=(value)

@@ -6,7 +6,6 @@ require_relative '../../../../drives'
 require_relative '../../../item'
 require_relative '../../list'
 require_relative '../content_types'
-require_relative './associate_with_hub_sites/associate_with_hub_sites_request_builder'
 require_relative './base/base_request_builder'
 require_relative './base_types/base_types_request_builder'
 require_relative './base_types/item/content_type_item_request_builder'
@@ -16,22 +15,18 @@ require_relative './column_positions/column_positions_request_builder'
 require_relative './column_positions/item/column_definition_item_request_builder'
 require_relative './columns/columns_request_builder'
 require_relative './columns/item/column_definition_item_request_builder'
-require_relative './copy_to_default_content_location/copy_to_default_content_location_request_builder'
-require_relative './is_published/is_published_request_builder'
 require_relative './item'
-require_relative './publish/publish_request_builder'
-require_relative './unpublish/unpublish_request_builder'
+require_relative './microsoft_graph_associate_with_hub_sites/microsoft_graph_associate_with_hub_sites_request_builder'
+require_relative './microsoft_graph_copy_to_default_content_location/microsoft_graph_copy_to_default_content_location_request_builder'
+require_relative './microsoft_graph_is_published/microsoft_graph_is_published_request_builder'
+require_relative './microsoft_graph_publish/microsoft_graph_publish_request_builder'
+require_relative './microsoft_graph_unpublish/microsoft_graph_unpublish_request_builder'
 
 module MicrosoftGraph::Drives::Item::List::ContentTypes::Item
     ## 
     # Provides operations to manage the contentTypes property of the microsoft.graph.list entity.
     class ContentTypeItemRequestBuilder
         
-        ## 
-        # Provides operations to call the associateWithHubSites method.
-        def associate_with_hub_sites()
-            return MicrosoftGraph::Drives::Item::List::ContentTypes::Item::AssociateWithHubSites::AssociateWithHubSitesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the base property of the microsoft.graph.contentType entity.
         def base()
@@ -58,26 +53,36 @@ module MicrosoftGraph::Drives::Item::List::ContentTypes::Item
             return MicrosoftGraph::Drives::Item::List::ContentTypes::Item::Columns::ColumnsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the associateWithHubSites method.
+        def microsoft_graph_associate_with_hub_sites()
+            return MicrosoftGraph::Drives::Item::List::ContentTypes::Item::MicrosoftGraphAssociateWithHubSites::MicrosoftGraphAssociateWithHubSitesRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the copyToDefaultContentLocation method.
-        def copy_to_default_content_location()
-            return MicrosoftGraph::Drives::Item::List::ContentTypes::Item::CopyToDefaultContentLocation::CopyToDefaultContentLocationRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_copy_to_default_content_location()
+            return MicrosoftGraph::Drives::Item::List::ContentTypes::Item::MicrosoftGraphCopyToDefaultContentLocation::MicrosoftGraphCopyToDefaultContentLocationRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the isPublished method.
+        def microsoft_graph_is_published()
+            return MicrosoftGraph::Drives::Item::List::ContentTypes::Item::MicrosoftGraphIsPublished::MicrosoftGraphIsPublishedRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the publish method.
+        def microsoft_graph_publish()
+            return MicrosoftGraph::Drives::Item::List::ContentTypes::Item::MicrosoftGraphPublish::MicrosoftGraphPublishRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the unpublish method.
+        def microsoft_graph_unpublish()
+            return MicrosoftGraph::Drives::Item::List::ContentTypes::Item::MicrosoftGraphUnpublish::MicrosoftGraphUnpublishRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
         @path_parameters
         ## 
-        # Provides operations to call the publish method.
-        def publish()
-            return MicrosoftGraph::Drives::Item::List::ContentTypes::Item::Publish::PublishRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the unpublish method.
-        def unpublish()
-            return MicrosoftGraph::Drives::Item::List::ContentTypes::Item::Unpublish::UnpublishRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
@@ -166,13 +171,6 @@ module MicrosoftGraph::Drives::Item::List::ContentTypes::Item
             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ContentType.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
-        ## Provides operations to call the isPublished method.
-        ## @return a is_published_request_builder
-        ## 
-        def is_published()
-            return IsPublishedRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         ## Update the navigation property contentTypes in drives

@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune.
-        ## @param value Value to set for the uninstallOnDeviceRemoval property.
+        ## @param value Value to set for the uninstall_on_device_removal property.
         ## @return a void
         ## 
         def uninstall_on_device_removal=(value)

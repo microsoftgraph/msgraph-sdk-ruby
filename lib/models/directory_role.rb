@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name for the directory role. Read-only. Supports $filter (eq), $search, $select.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleTemplateId property value. The id of the directoryRoleTemplate that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. Supports $filter (eq), $select.
-        ## @param value Value to set for the roleTemplateId property.
+        ## @param value Value to set for the role_template_id property.
         ## @return a void
         ## 
         def role_template_id=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the scopedMembers property value. Members of this directory role that are scoped to administrative units. Read-only. Nullable.
-        ## @param value Value to set for the scopedMembers property.
+        ## @param value Value to set for the scoped_members property.
         ## @return a void
         ## 
         def scoped_members=(value)

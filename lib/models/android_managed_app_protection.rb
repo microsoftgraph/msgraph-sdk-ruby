@@ -76,7 +76,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the customBrowserDisplayName property value. Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-        ## @param value Value to set for the customBrowserDisplayName property.
+        ## @param value Value to set for the custom_browser_display_name property.
         ## @return a void
         ## 
         def custom_browser_display_name=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the customBrowserPackageId property value. Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.
-        ## @param value Value to set for the customBrowserPackageId property.
+        ## @param value Value to set for the custom_browser_package_id property.
         ## @return a void
         ## 
         def custom_browser_package_id=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
-        ## @param value Value to set for the deployedAppCount property.
+        ## @param value Value to set for the deployed_app_count property.
         ## @return a void
         ## 
         def deployed_app_count=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-        ## @param value Value to set for the deploymentSummary property.
+        ## @param value Value to set for the deployment_summary property.
         ## @return a void
         ## 
         def deployment_summary=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the disableAppEncryptionIfDeviceEncryptionIsEnabled property value. When this setting is enabled, app level encryption is disabled if device level encryption is enabled
-        ## @param value Value to set for the disableAppEncryptionIfDeviceEncryptionIsEnabled property.
+        ## @param value Value to set for the disable_app_encryption_if_device_encryption_is_enabled property.
         ## @return a void
         ## 
         def disable_app_encryption_if_device_encryption_is_enabled=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the encryptAppData property value. Indicates whether application data for managed apps should be encrypted
-        ## @param value Value to set for the encryptAppData property.
+        ## @param value Value to set for the encrypt_app_data property.
         ## @return a void
         ## 
         def encrypt_app_data=(value)
@@ -184,7 +184,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minimumRequiredPatchVersion property value. Define the oldest required Android security patch level a user can have to gain secure access to the app.
-        ## @param value Value to set for the minimumRequiredPatchVersion property.
+        ## @param value Value to set for the minimum_required_patch_version property.
         ## @return a void
         ## 
         def minimum_required_patch_version=(value)
@@ -199,7 +199,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the minimumWarningPatchVersion property value. Define the oldest recommended Android security patch level a user can have for secure access to the app.
-        ## @param value Value to set for the minimumWarningPatchVersion property.
+        ## @param value Value to set for the minimum_warning_patch_version property.
         ## @return a void
         ## 
         def minimum_warning_patch_version=(value)
@@ -214,7 +214,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the screenCaptureBlocked property value. Indicates whether a managed user can take screen captures of managed apps
-        ## @param value Value to set for the screenCaptureBlocked property.
+        ## @param value Value to set for the screen_capture_blocked property.
         ## @return a void
         ## 
         def screen_capture_blocked=(value)

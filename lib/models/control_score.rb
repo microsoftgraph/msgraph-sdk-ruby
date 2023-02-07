@@ -54,7 +54,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the controlCategory property value. Control action category (Identity, Data, Device, Apps, Infrastructure).
-        ## @param value Value to set for the controlCategory property.
+        ## @param value Value to set for the control_category property.
         ## @return a void
         ## 
         def control_category=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the controlName property value. Control unique name.
-        ## @param value Value to set for the controlName property.
+        ## @param value Value to set for the control_name property.
         ## @return a void
         ## 
         def control_name=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

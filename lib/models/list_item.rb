@@ -58,7 +58,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentType property value. The content type of this list item
-        ## @param value Value to set for the contentType property.
+        ## @param value Value to set for the content_type property.
         ## @return a void
         ## 
         def content_type=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the documentSetVersions property value. Version information for a document set version created by a user.
-        ## @param value Value to set for the documentSetVersions property.
+        ## @param value Value to set for the document_set_versions property.
         ## @return a void
         ## 
         def document_set_versions=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the driveItem property value. For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
-        ## @param value Value to set for the driveItem property.
+        ## @param value Value to set for the drive_item property.
         ## @return a void
         ## 
         def drive_item=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
-        ## @param value Value to set for the sharepointIds property.
+        ## @param value Value to set for the sharepoint_ids property.
         ## @return a void
         ## 
         def sharepoint_ids=(value)

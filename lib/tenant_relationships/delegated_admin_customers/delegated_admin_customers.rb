@@ -1,0 +1,2 @@
+module MicrosoftGraph::TenantRelationships::DelegatedAdminCustomers
+end

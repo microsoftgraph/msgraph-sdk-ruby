@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the excludedItemCount property value. Count of items that are excluded from the request.
-        ## @param value Value to set for the excludedItemCount property.
+        ## @param value Value to set for the excluded_item_count property.
         ## @return a void
         ## 
         def excluded_item_count=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the insightCounts property value. Count of items per insight.
-        ## @param value Value to set for the insightCounts property.
+        ## @param value Value to set for the insight_counts property.
         ## @return a void
         ## 
         def insight_counts=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the itemCount property value. Count of items found.
-        ## @param value Value to set for the itemCount property.
+        ## @param value Value to set for the item_count property.
         ## @return a void
         ## 
         def item_count=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the itemNeedReview property value. Count of item that need review.
-        ## @param value Value to set for the itemNeedReview property.
+        ## @param value Value to set for the item_need_review property.
         ## @return a void
         ## 
         def item_need_review=(value)
@@ -148,7 +148,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the productItemCounts property value. Count of items per product, such as Exchange, SharePoint, OneDrive, and Teams.
-        ## @param value Value to set for the productItemCounts property.
+        ## @param value Value to set for the product_item_counts property.
         ## @return a void
         ## 
         def product_item_counts=(value)
@@ -195,7 +195,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the signedOffItemCount property value. Count of items signed off by the administrator.
-        ## @param value Value to set for the signedOffItemCount property.
+        ## @param value Value to set for the signed_off_item_count property.
         ## @return a void
         ## 
         def signed_off_item_count=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the totalItemSize property value. Total item size in bytes.
-        ## @param value Value to set for the totalItemSize property.
+        ## @param value Value to set for the total_item_size property.
         ## @return a void
         ## 
         def total_item_size=(value)

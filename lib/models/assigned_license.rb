@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the disabledPlans property value. A collection of the unique identifiers for plans that have been disabled.
-        ## @param value Value to set for the disabledPlans property.
+        ## @param value Value to set for the disabled_plans property.
         ## @return a void
         ## 
         def disabled_plans=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the skuId property value. The unique identifier for the SKU.
-        ## @param value Value to set for the skuId property.
+        ## @param value Value to set for the sku_id property.
         ## @return a void
         ## 
         def sku_id=(value)

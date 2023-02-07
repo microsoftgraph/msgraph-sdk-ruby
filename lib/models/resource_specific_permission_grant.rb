@@ -29,7 +29,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the clientAppId property value. ID of the service principal of the Azure AD app that has been granted access. Read-only.
-        ## @param value Value to set for the clientAppId property.
+        ## @param value Value to set for the client_app_id property.
         ## @return a void
         ## 
         def client_app_id=(value)
@@ -44,7 +44,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the clientId property value. ID of the Azure AD app that has been granted access. Read-only.
-        ## @param value Value to set for the clientId property.
+        ## @param value Value to set for the client_id property.
         ## @return a void
         ## 
         def client_id=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the permissionType property value. The type of permission. Possible values are: Application, Delegated. Read-only.
-        ## @param value Value to set for the permissionType property.
+        ## @param value Value to set for the permission_type property.
         ## @return a void
         ## 
         def permission_type=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceAppId property value. ID of the Azure AD app that is hosting the resource. Read-only.
-        ## @param value Value to set for the resourceAppId property.
+        ## @param value Value to set for the resource_app_id property.
         ## @return a void
         ## 
         def resource_app_id=(value)

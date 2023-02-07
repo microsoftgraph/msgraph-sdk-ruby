@@ -34,7 +34,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the ediscoveryCases property value. The ediscoveryCases property
-        ## @param value Value to set for the ediscoveryCases property.
+        ## @param value Value to set for the ediscovery_cases property.
         ## @return a void
         ## 
         def ediscovery_cases=(value)

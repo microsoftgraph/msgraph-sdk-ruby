@@ -50,7 +50,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires
-        ## @param value Value to set for the complianceGracePeriodExpirationDateTime property.
+        ## @param value Value to set for the compliance_grace_period_expiration_date_time property.
         ## @return a void
         ## 
         def compliance_grace_period_expiration_date_time=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceId property value. The Device Id that is being reported
-        ## @param value Value to set for the deviceId property.
+        ## @param value Value to set for the device_id property.
         ## @return a void
         ## 
         def device_id=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceModel property value. The device model that is being reported
-        ## @param value Value to set for the deviceModel property.
+        ## @param value Value to set for the device_model property.
         ## @return a void
         ## 
         def device_model=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceName property value. The Device Name that is being reported
-        ## @param value Value to set for the deviceName property.
+        ## @param value Value to set for the device_name property.
         ## @return a void
         ## 
         def device_name=(value)
@@ -180,7 +180,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the settingName property value. The Setting Name that is being reported
-        ## @param value Value to set for the settingName property.
+        ## @param value Value to set for the setting_name property.
         ## @return a void
         ## 
         def setting_name=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userEmail property value. The User email address that is being reported
-        ## @param value Value to set for the userEmail property.
+        ## @param value Value to set for the user_email property.
         ## @return a void
         ## 
         def user_email=(value)
@@ -225,7 +225,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userId property value. The user Id that is being reported
-        ## @param value Value to set for the userId property.
+        ## @param value Value to set for the user_id property.
         ## @return a void
         ## 
         def user_id=(value)
@@ -240,7 +240,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userName property value. The User Name that is being reported
-        ## @param value Value to set for the userName property.
+        ## @param value Value to set for the user_name property.
         ## @return a void
         ## 
         def user_name=(value)
@@ -255,7 +255,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userPrincipalName property value. The User PrincipalName that is being reported
-        ## @param value Value to set for the userPrincipalName property.
+        ## @param value Value to set for the user_principal_name property.
         ## @return a void
         ## 
         def user_principal_name=(value)

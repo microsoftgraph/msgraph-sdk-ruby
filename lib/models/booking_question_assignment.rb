@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isRequired property value. The ID of the custom question.
-        ## @param value Value to set for the isRequired property.
+        ## @param value Value to set for the is_required property.
         ## @return a void
         ## 
         def is_required=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the questionId property value. Indicates whether it is mandatory to answer the custom question.
-        ## @param value Value to set for the questionId property.
+        ## @param value Value to set for the question_id property.
         ## @return a void
         ## 
         def question_id=(value)

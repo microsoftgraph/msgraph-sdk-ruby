@@ -7,9 +7,9 @@ require_relative '../../entitlement_management'
 require_relative '../assignment_requests'
 require_relative './access_package/access_package_request_builder'
 require_relative './assignment/assignment_request_builder'
-require_relative './cancel/cancel_request_builder'
 require_relative './item'
-require_relative './reprocess/reprocess_request_builder'
+require_relative './microsoft_graph_cancel/microsoft_graph_cancel_request_builder'
+require_relative './microsoft_graph_reprocess/microsoft_graph_reprocess_request_builder'
 require_relative './requestor/requestor_request_builder'
 
 module MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequests::Item
@@ -29,17 +29,17 @@ module MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequ
         end
         ## 
         # Provides operations to call the cancel method.
-        def cancel()
-            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequests::Item::Cancel::CancelRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_cancel()
+            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequests::Item::MicrosoftGraphCancel::MicrosoftGraphCancelRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the reprocess method.
+        def microsoft_graph_reprocess()
+            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequests::Item::MicrosoftGraphReprocess::MicrosoftGraphReprocessRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
         @path_parameters
-        ## 
-        # Provides operations to call the reprocess method.
-        def reprocess()
-            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequests::Item::Reprocess::ReprocessRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter

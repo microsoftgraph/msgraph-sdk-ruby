@@ -6,7 +6,7 @@ module MicrosoftGraph::Models
     class IpNamedLocation < MicrosoftGraph::Models::NamedLocation
         include MicrosoftKiotaAbstractions::Parsable
         ## 
-        # List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596. Required.
+        # List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.
         @ip_ranges
         ## 
         # true if this location is explicitly trusted. Optional. Default value is false.
@@ -38,15 +38,15 @@ module MicrosoftGraph::Models
             })
         end
         ## 
-        ## Gets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596. Required.
+        ## Gets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.
         ## @return a ip_range
         ## 
         def ip_ranges
             return @ip_ranges
         end
         ## 
-        ## Sets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC596. Required.
-        ## @param value Value to set for the ipRanges property.
+        ## Sets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.
+        ## @param value Value to set for the ip_ranges property.
         ## @return a void
         ## 
         def ip_ranges=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isTrusted property value. true if this location is explicitly trusted. Optional. Default value is false.
-        ## @param value Value to set for the isTrusted property.
+        ## @param value Value to set for the is_trusted property.
         ## @return a void
         ## 
         def is_trusted=(value)

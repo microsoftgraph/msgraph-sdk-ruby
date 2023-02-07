@@ -88,7 +88,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the listId property value. The unique identifier (guid) for the item's list in SharePoint.
-        ## @param value Value to set for the listId property.
+        ## @param value Value to set for the list_id property.
         ## @return a void
         ## 
         def list_id=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the listItemId property value. An integer identifier for the item within the containing list.
-        ## @param value Value to set for the listItemId property.
+        ## @param value Value to set for the list_item_id property.
         ## @return a void
         ## 
         def list_item_id=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the listItemUniqueId property value. The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.
-        ## @param value Value to set for the listItemUniqueId property.
+        ## @param value Value to set for the list_item_unique_id property.
         ## @return a void
         ## 
         def list_item_unique_id=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -165,7 +165,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the siteId property value. The unique identifier (guid) for the item's site collection (SPSite).
-        ## @param value Value to set for the siteId property.
+        ## @param value Value to set for the site_id property.
         ## @return a void
         ## 
         def site_id=(value)
@@ -180,7 +180,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the siteUrl property value. The SharePoint URL for the site that contains the item.
-        ## @param value Value to set for the siteUrl property.
+        ## @param value Value to set for the site_url property.
         ## @return a void
         ## 
         def site_url=(value)
@@ -195,7 +195,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tenantId property value. The unique identifier (guid) for the tenancy.
-        ## @param value Value to set for the tenantId property.
+        ## @param value Value to set for the tenant_id property.
         ## @return a void
         ## 
         def tenant_id=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the webId property value. The unique identifier (guid) for the item's site (SPWeb).
-        ## @param value Value to set for the webId property.
+        ## @param value Value to set for the web_id property.
         ## @return a void
         ## 
         def web_id=(value)

@@ -44,7 +44,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowMultipleSelection property value. Indicates whether multiple values can be selected from the source.
-        ## @param value Value to set for the allowMultipleSelection property.
+        ## @param value Value to set for the allow_multiple_selection property.
         ## @return a void
         ## 
         def allow_multiple_selection=(value)
@@ -59,7 +59,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the chooseFromType property value. Whether to allow selection of people only, or people and groups. Must be one of peopleAndGroups or peopleOnly.
-        ## @param value Value to set for the chooseFromType property.
+        ## @param value Value to set for the choose_from_type property.
         ## @return a void
         ## 
         def choose_from_type=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayAs property value. How to display the information about the person or group chosen. See below.
-        ## @param value Value to set for the displayAs property.
+        ## @param value Value to set for the display_as property.
         ## @return a void
         ## 
         def display_as=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

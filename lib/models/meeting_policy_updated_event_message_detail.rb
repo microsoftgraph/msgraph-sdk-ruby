@@ -66,7 +66,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the meetingChatEnabled property value. Represents whether the meeting chat is enabled or not.
-        ## @param value Value to set for the meetingChatEnabled property.
+        ## @param value Value to set for the meeting_chat_enabled property.
         ## @return a void
         ## 
         def meeting_chat_enabled=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the meetingChatId property value. Unique identifier of the meeting chat.
-        ## @param value Value to set for the meetingChatId property.
+        ## @param value Value to set for the meeting_chat_id property.
         ## @return a void
         ## 
         def meeting_chat_id=(value)

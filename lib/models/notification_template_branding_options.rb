@@ -8,5 +8,6 @@ module MicrosoftGraph::Models
         IncludeContactInformation: :IncludeContactInformation,
         IncludeCompanyPortalLink: :IncludeCompanyPortalLink,
         IncludeDeviceDetails: :IncludeDeviceDetails,
+        UnknownFutureValue: :UnknownFutureValue,
     }
 end

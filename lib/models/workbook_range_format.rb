@@ -56,7 +56,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the columnWidth property value. Gets or sets the width of all colums within the range. If the column widths are not uniform, null will be returned.
-        ## @param value Value to set for the columnWidth property.
+        ## @param value Value to set for the column_width property.
         ## @return a void
         ## 
         def column_width=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the horizontalAlignment property value. Represents the horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.
-        ## @param value Value to set for the horizontalAlignment property.
+        ## @param value Value to set for the horizontal_alignment property.
         ## @return a void
         ## 
         def horizontal_alignment=(value)
@@ -164,7 +164,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the rowHeight property value. Gets or sets the height of all rows in the range. If the row heights are not uniform null will be returned.
-        ## @param value Value to set for the rowHeight property.
+        ## @param value Value to set for the row_height property.
         ## @return a void
         ## 
         def row_height=(value)
@@ -197,7 +197,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the verticalAlignment property value. Represents the vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.
-        ## @param value Value to set for the verticalAlignment property.
+        ## @param value Value to set for the vertical_alignment property.
         ## @return a void
         ## 
         def vertical_alignment=(value)
@@ -212,7 +212,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the wrapText property value. Indicates if Excel wraps the text in the object. A null value indicates that the entire range doesn't have uniform wrap setting
-        ## @param value Value to set for the wrapText property.
+        ## @param value Value to set for the wrap_text property.
         ## @return a void
         ## 
         def wrap_text=(value)

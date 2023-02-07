@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the immutableId property value. Unique identifier for the user object in Active Directory.
-        ## @param value Value to set for the immutableId property.
+        ## @param value Value to set for the immutable_id property.
         ## @return a void
         ## 
         def immutable_id=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

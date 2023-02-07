@@ -32,7 +32,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appAuthorized property value. Whether the partner's AAD app has been authorized to access Intune.
-        ## @param value Value to set for the appAuthorized property.
+        ## @param value Value to set for the app_authorized property.
         ## @return a void
         ## 
         def app_authorized=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Display name of the TEM partner.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
-        ## @param value Value to set for the lastConnectionDateTime property.
+        ## @param value Value to set for the last_connection_date_time property.
         ## @return a void
         ## 
         def last_connection_date_time=(value)

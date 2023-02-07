@@ -27,7 +27,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the azureADAppId property value. The unique identifier of the Azure AD application used by this endpoint.
-        ## @param value Value to set for the azureADAppId property.
+        ## @param value Value to set for the azure_a_d_app_id property.
         ## @return a void
         ## 
         def azure_a_d_app_id=(value)
@@ -42,7 +42,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the communicationServiceId property value. Immutable resource identifier of the Azure Communication Service associated with this endpoint based on Communication Services APIs.
-        ## @param value Value to set for the communicationServiceId property.
+        ## @param value Value to set for the communication_service_id property.
         ## @return a void
         ## 
         def communication_service_id=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the productFamily property value. The productFamily property
-        ## @param value Value to set for the productFamily property.
+        ## @param value Value to set for the product_family property.
         ## @return a void
         ## 
         def product_family=(value)

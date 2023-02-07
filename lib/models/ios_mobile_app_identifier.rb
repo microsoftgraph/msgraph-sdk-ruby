@@ -17,7 +17,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bundleId property value. The identifier for an app, as specified in the app store.
-        ## @param value Value to set for the bundleId property.
+        ## @param value Value to set for the bundle_id property.
         ## @return a void
         ## 
         def bundle_id=(value)

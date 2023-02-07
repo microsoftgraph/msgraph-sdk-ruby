@@ -52,6 +52,21 @@ module MicrosoftGraph::Models
             return ItemPreviewInfo.new
         end
         ## 
+        ## Gets the getUrl property value. The getUrl property
+        ## @return a string
+        ## 
+        def get_url
+            return @get_url
+        end
+        ## 
+        ## Sets the getUrl property value. The getUrl property
+        ## @param value Value to set for the get_url property.
+        ## @return a void
+        ## 
+        def get_url=(value)
+            @get_url = value
+        end
+        ## 
         ## The deserialization information for the current model
         ## @return a i_dictionary
         ## 
@@ -64,21 +79,6 @@ module MicrosoftGraph::Models
             }
         end
         ## 
-        ## Gets the getUrl property value. The getUrl property
-        ## @return a string
-        ## 
-        def get_url
-            return @get_url
-        end
-        ## 
-        ## Sets the getUrl property value. The getUrl property
-        ## @param value Value to set for the getUrl property.
-        ## @return a void
-        ## 
-        def get_url=(value)
-            @get_url = value
-        end
-        ## 
         ## Gets the @odata.type property value. The OdataType property
         ## @return a string
         ## 
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the postParameters property value. The postParameters property
-        ## @param value Value to set for the postParameters property.
+        ## @param value Value to set for the post_parameters property.
         ## @return a void
         ## 
         def post_parameters=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the postUrl property value. The postUrl property
-        ## @param value Value to set for the postUrl property.
+        ## @param value Value to set for the post_url property.
         ## @return a void
         ## 
         def post_url=(value)

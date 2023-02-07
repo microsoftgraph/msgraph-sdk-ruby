@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative '../models/application_template'
 require_relative '../models/application_template_collection_response'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './application_templates'
@@ -54,22 +53,6 @@ module MicrosoftGraph::ApplicationTemplates
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ApplicationTemplateCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Add new entity to applicationTemplates
-        ## @param body The request body
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a Fiber of application_template
-        ## 
-        def post(body, request_configuration=nil)
-            raise StandardError, 'body cannot be null' if body.nil?
-            request_info = self.to_post_request_information(
-                body, request_configuration
-            )
-            error_mapping = Hash.new
-            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ApplicationTemplate.create_from_discriminator_value(pn) }, error_mapping)
-        end
-        ## 
         ## Retrieve a list of applicationTemplate objects from the Azure AD application gallery.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
@@ -85,26 +68,6 @@ module MicrosoftGraph::ApplicationTemplates
                 request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                 request_info.add_request_options(request_configuration.options)
             end
-            return request_info
-        end
-        ## 
-        ## Add new entity to applicationTemplates
-        ## @param body The request body
-        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
-        ## @return a request_information
-        ## 
-        def to_post_request_information(body, request_configuration=nil)
-            raise StandardError, 'body cannot be null' if body.nil?
-            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-            request_info.url_template = @url_template
-            request_info.path_parameters = @path_parameters
-            request_info.http_method = :POST
-            request_info.headers.add('Accept', 'application/json')
-            unless request_configuration.nil?
-                request_info.add_headers_from_raw_object(request_configuration.headers)
-                request_info.add_request_options(request_configuration.options)
-            end
-            request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
             return request_info
         end
 
@@ -179,18 +142,6 @@ module MicrosoftGraph::ApplicationTemplates
             ## 
             # Request query parameters
             attr_accessor :query_parameters
-        end
-
-        ## 
-        # Configuration for the request such as headers, query parameters, and middleware options.
-        class ApplicationTemplatesRequestBuilderPostRequestConfiguration
-            
-            ## 
-            # Request headers
-            attr_accessor :headers
-            ## 
-            # Request options
-            attr_accessor :options
         end
     end
 end

@@ -111,7 +111,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isAzureAdJoined property value. The isAzureAdJoined property
-        ## @param value Value to set for the isAzureAdJoined property.
+        ## @param value Value to set for the is_azure_ad_joined property.
         ## @return a void
         ## 
         def is_azure_ad_joined=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isAzureAdRegistered property value. The isAzureAdRegistered property
-        ## @param value Value to set for the isAzureAdRegistered property.
+        ## @param value Value to set for the is_azure_ad_registered property.
         ## @return a void
         ## 
         def is_azure_ad_registered=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isHybridAzureDomainJoined property value. True if the host is domain joined to an on-premises Active Directory domain.
-        ## @param value Value to set for the isHybridAzureDomainJoined property.
+        ## @param value Value to set for the is_hybrid_azure_domain_joined property.
         ## @return a void
         ## 
         def is_hybrid_azure_domain_joined=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the netBiosName property value. The local host name, without the DNS domain name.
-        ## @param value Value to set for the netBiosName property.
+        ## @param value Value to set for the net_bios_name property.
         ## @return a void
         ## 
         def net_bios_name=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -201,7 +201,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the privateIpAddress property value. Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.
-        ## @param value Value to set for the privateIpAddress property.
+        ## @param value Value to set for the private_ip_address property.
         ## @return a void
         ## 
         def private_ip_address=(value)
@@ -216,7 +216,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the publicIpAddress property value. Publicly routable IPv4 or IPv6 address (see RFC 1918) at time of the alert.
-        ## @param value Value to set for the publicIpAddress property.
+        ## @param value Value to set for the public_ip_address property.
         ## @return a void
         ## 
         def public_ip_address=(value)
@@ -231,7 +231,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the riskScore property value. Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.
-        ## @param value Value to set for the riskScore property.
+        ## @param value Value to set for the risk_score property.
         ## @return a void
         ## 
         def risk_score=(value)

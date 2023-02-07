@@ -76,7 +76,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the providerVersion property value. Version of the provider or subprovider, if it exists, that generated the alert. Required
-        ## @param value Value to set for the providerVersion property.
+        ## @param value Value to set for the provider_version property.
         ## @return a void
         ## 
         def provider_version=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the subProvider property value. Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.
-        ## @param value Value to set for the subProvider property.
+        ## @param value Value to set for the sub_provider property.
         ## @return a void
         ## 
         def sub_provider=(value)

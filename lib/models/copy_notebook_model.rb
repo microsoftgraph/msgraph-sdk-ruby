@@ -88,7 +88,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdBy property value. The createdBy property
-        ## @param value Value to set for the createdBy property.
+        ## @param value Value to set for the created_by property.
         ## @return a void
         ## 
         def created_by=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdByIdentity property value. The createdByIdentity property
-        ## @param value Value to set for the createdByIdentity property.
+        ## @param value Value to set for the created_by_identity property.
         ## @return a void
         ## 
         def created_by_identity=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdTime property value. The createdTime property
-        ## @param value Value to set for the createdTime property.
+        ## @param value Value to set for the created_time property.
         ## @return a void
         ## 
         def created_time=(value)
@@ -181,7 +181,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isDefault property value. The isDefault property
-        ## @param value Value to set for the isDefault property.
+        ## @param value Value to set for the is_default property.
         ## @return a void
         ## 
         def is_default=(value)
@@ -196,7 +196,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isShared property value. The isShared property
-        ## @param value Value to set for the isShared property.
+        ## @param value Value to set for the is_shared property.
         ## @return a void
         ## 
         def is_shared=(value)
@@ -211,7 +211,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedBy property value. The lastModifiedBy property
-        ## @param value Value to set for the lastModifiedBy property.
+        ## @param value Value to set for the last_modified_by property.
         ## @return a void
         ## 
         def last_modified_by=(value)
@@ -226,7 +226,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedByIdentity property value. The lastModifiedByIdentity property
-        ## @param value Value to set for the lastModifiedByIdentity property.
+        ## @param value Value to set for the last_modified_by_identity property.
         ## @return a void
         ## 
         def last_modified_by_identity=(value)
@@ -241,7 +241,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedTime property value. The lastModifiedTime property
-        ## @param value Value to set for the lastModifiedTime property.
+        ## @param value Value to set for the last_modified_time property.
         ## @return a void
         ## 
         def last_modified_time=(value)
@@ -286,7 +286,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -301,7 +301,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sectionGroupsUrl property value. The sectionGroupsUrl property
-        ## @param value Value to set for the sectionGroupsUrl property.
+        ## @param value Value to set for the section_groups_url property.
         ## @return a void
         ## 
         def section_groups_url=(value)
@@ -316,7 +316,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sectionsUrl property value. The sectionsUrl property
-        ## @param value Value to set for the sectionsUrl property.
+        ## @param value Value to set for the sections_url property.
         ## @return a void
         ## 
         def sections_url=(value)
@@ -371,7 +371,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userRole property value. The userRole property
-        ## @param value Value to set for the userRole property.
+        ## @param value Value to set for the user_role property.
         ## @return a void
         ## 
         def user_role=(value)

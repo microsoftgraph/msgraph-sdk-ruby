@@ -17,7 +17,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the anonymousGuestId property value. The anonymousGuestId property
-        ## @param value Value to set for the anonymousGuestId property.
+        ## @param value Value to set for the anonymous_guest_id property.
         ## @return a void
         ## 
         def anonymous_guest_id=(value)

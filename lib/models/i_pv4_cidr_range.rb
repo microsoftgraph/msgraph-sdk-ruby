@@ -17,7 +17,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the cidrAddress property value. IPv4 address in CIDR notation. Not nullable.
-        ## @param value Value to set for the cidrAddress property.
+        ## @param value Value to set for the cidr_address property.
         ## @return a void
         ## 
         def cidr_address=(value)

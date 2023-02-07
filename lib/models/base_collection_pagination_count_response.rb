@@ -64,7 +64,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.count property value. The OdataCount property
-        ## @param value Value to set for the OdataCount property.
+        ## @param value Value to set for the odata_count property.
         ## @return a void
         ## 
         def odata_count=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.nextLink property value. The OdataNextLink property
-        ## @param value Value to set for the OdataNextLink property.
+        ## @param value Value to set for the odata_next_link property.
         ## @return a void
         ## 
         def odata_next_link=(value)

@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activityBasedTimeoutPolicies property value. The policy that controls the idle time out for web sessions for applications.
-        ## @param value Value to set for the activityBasedTimeoutPolicies property.
+        ## @param value Value to set for the activity_based_timeout_policies property.
         ## @return a void
         ## 
         def activity_based_timeout_policies=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the adminConsentRequestPolicy property value. The policy by which consent requests are created and managed for the entire tenant.
-        ## @param value Value to set for the adminConsentRequestPolicy property.
+        ## @param value Value to set for the admin_consent_request_policy property.
         ## @return a void
         ## 
         def admin_consent_request_policy=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of external users.
-        ## @param value Value to set for the authenticationFlowsPolicy property.
+        ## @param value Value to set for the authentication_flows_policy property.
         ## @return a void
         ## 
         def authentication_flows_policy=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
-        ## @param value Value to set for the authenticationMethodsPolicy property.
+        ## @param value Value to set for the authentication_methods_policy property.
         ## @return a void
         ## 
         def authentication_methods_policy=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
-        ## @param value Value to set for the authorizationPolicy property.
+        ## @param value Value to set for the authorization_policy property.
         ## @return a void
         ## 
         def authorization_policy=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the claimsMappingPolicies property value. The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
-        ## @param value Value to set for the claimsMappingPolicies property.
+        ## @param value Value to set for the claims_mapping_policies property.
         ## @return a void
         ## 
         def claims_mapping_policies=(value)
@@ -152,7 +152,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the conditionalAccessPolicies property value. The custom rules that define an access scenario.
-        ## @param value Value to set for the conditionalAccessPolicies property.
+        ## @param value Value to set for the conditional_access_policies property.
         ## @return a void
         ## 
         def conditional_access_policies=(value)
@@ -183,7 +183,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Azure AD tenants.
-        ## @param value Value to set for the crossTenantAccessPolicy property.
+        ## @param value Value to set for the cross_tenant_access_policy property.
         ## @return a void
         ## 
         def cross_tenant_access_policy=(value)
@@ -198,7 +198,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the featureRolloutPolicies property value. The feature rollout policy associated with a directory object.
-        ## @param value Value to set for the featureRolloutPolicies property.
+        ## @param value Value to set for the feature_rollout_policies property.
         ## @return a void
         ## 
         def feature_rollout_policies=(value)
@@ -237,7 +237,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the homeRealmDiscoveryPolicies property value. The policy to control Azure AD authentication behavior for federated users.
-        ## @param value Value to set for the homeRealmDiscoveryPolicies property.
+        ## @param value Value to set for the home_realm_discovery_policies property.
         ## @return a void
         ## 
         def home_realm_discovery_policies=(value)
@@ -252,7 +252,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the identitySecurityDefaultsEnforcementPolicy property value. The policy that represents the security defaults that protect against common attacks.
-        ## @param value Value to set for the identitySecurityDefaultsEnforcementPolicy property.
+        ## @param value Value to set for the identity_security_defaults_enforcement_policy property.
         ## @return a void
         ## 
         def identity_security_defaults_enforcement_policy=(value)
@@ -267,7 +267,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the permissionGrantPolicies property value. The policy that specifies the conditions under which consent can be granted.
-        ## @param value Value to set for the permissionGrantPolicies property.
+        ## @param value Value to set for the permission_grant_policies property.
         ## @return a void
         ## 
         def permission_grant_policies=(value)
@@ -282,7 +282,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleManagementPolicies property value. Specifies the various policies associated with scopes and roles.
-        ## @param value Value to set for the roleManagementPolicies property.
+        ## @param value Value to set for the role_management_policies property.
         ## @return a void
         ## 
         def role_management_policies=(value)
@@ -297,7 +297,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleManagementPolicyAssignments property value. The assignment of a role management policy to a role definition object.
-        ## @param value Value to set for the roleManagementPolicyAssignments property.
+        ## @param value Value to set for the role_management_policy_assignments property.
         ## @return a void
         ## 
         def role_management_policy_assignments=(value)
@@ -337,7 +337,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Azure AD.
-        ## @param value Value to set for the tokenIssuancePolicies property.
+        ## @param value Value to set for the token_issuance_policies property.
         ## @return a void
         ## 
         def token_issuance_policies=(value)
@@ -352,7 +352,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
-        ## @param value Value to set for the tokenLifetimePolicies property.
+        ## @param value Value to set for the token_lifetime_policies property.
         ## @return a void
         ## 
         def token_lifetime_policies=(value)

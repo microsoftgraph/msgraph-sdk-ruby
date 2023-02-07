@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the percentComplete property value. The operation percent complete if the operation is still in running status.
-        ## @param value Value to set for the percentComplete property.
+        ## @param value Value to set for the percent_complete property.
         ## @return a void
         ## 
         def percent_complete=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceId property value. The resource id.
-        ## @param value Value to set for the resourceId property.
+        ## @param value Value to set for the resource_id property.
         ## @return a void
         ## 
         def resource_id=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceLocation property value. The resource URI for the object. For example, the resource URI for a copied page or section.
-        ## @param value Value to set for the resourceLocation property.
+        ## @param value Value to set for the resource_location property.
         ## @return a void
         ## 
         def resource_location=(value)

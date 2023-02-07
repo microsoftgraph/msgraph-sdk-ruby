@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the membershipRule property value. Determines the allowed target users for this policy. For more information about the syntax of the membership rule, see Membership Rules syntax.
-        ## @param value Value to set for the membershipRule property.
+        ## @param value Value to set for the membership_rule property.
         ## @return a void
         ## 
         def membership_rule=(value)

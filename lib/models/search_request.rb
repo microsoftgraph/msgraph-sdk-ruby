@@ -71,7 +71,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the aggregationFilters property value. The aggregationFilters property
-        ## @param value Value to set for the aggregationFilters property.
+        ## @param value Value to set for the aggregation_filters property.
         ## @return a void
         ## 
         def aggregation_filters=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentSources property value. The contentSources property
-        ## @param value Value to set for the contentSources property.
+        ## @param value Value to set for the content_sources property.
         ## @return a void
         ## 
         def content_sources=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enableTopResults property value. The enableTopResults property
-        ## @param value Value to set for the enableTopResults property.
+        ## @param value Value to set for the enable_top_results property.
         ## @return a void
         ## 
         def enable_top_results=(value)
@@ -147,7 +147,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the entityTypes property value. The entityTypes property
-        ## @param value Value to set for the entityTypes property.
+        ## @param value Value to set for the entity_types property.
         ## @return a void
         ## 
         def entity_types=(value)
@@ -213,7 +213,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -243,7 +243,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the queryAlterationOptions property value. The queryAlterationOptions property
-        ## @param value Value to set for the queryAlterationOptions property.
+        ## @param value Value to set for the query_alteration_options property.
         ## @return a void
         ## 
         def query_alteration_options=(value)
@@ -258,7 +258,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resultTemplateOptions property value. The resultTemplateOptions property
-        ## @param value Value to set for the resultTemplateOptions property.
+        ## @param value Value to set for the result_template_options property.
         ## @return a void
         ## 
         def result_template_options=(value)
@@ -310,7 +310,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sortProperties property value. The sortProperties property
-        ## @param value Value to set for the sortProperties property.
+        ## @param value Value to set for the sort_properties property.
         ## @return a void
         ## 
         def sort_properties=(value)

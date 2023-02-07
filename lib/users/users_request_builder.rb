@@ -4,11 +4,11 @@ require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/user'
 require_relative '../models/user_collection_response'
 require_relative './count/count_request_builder'
-require_relative './delta/delta_request_builder'
-require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
-require_relative './get_by_ids/get_by_ids_request_builder'
+require_relative './microsoft_graph_delta/microsoft_graph_delta_request_builder'
+require_relative './microsoft_graph_get_available_extension_properties/microsoft_graph_get_available_extension_properties_request_builder'
+require_relative './microsoft_graph_get_by_ids/microsoft_graph_get_by_ids_request_builder'
+require_relative './microsoft_graph_validate_properties/microsoft_graph_validate_properties_request_builder'
 require_relative './users'
-require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph::Users
     ## 
@@ -21,14 +21,24 @@ module MicrosoftGraph::Users
             return MicrosoftGraph::Users::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the delta method.
+        def microsoft_graph_delta()
+            return MicrosoftGraph::Users::MicrosoftGraphDelta::MicrosoftGraphDeltaRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Provides operations to call the getAvailableExtensionProperties method.
-        def get_available_extension_properties()
-            return MicrosoftGraph::Users::GetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_available_extension_properties()
+            return MicrosoftGraph::Users::MicrosoftGraphGetAvailableExtensionProperties::MicrosoftGraphGetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to call the getByIds method.
-        def get_by_ids()
-            return MicrosoftGraph::Users::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_get_by_ids()
+            return MicrosoftGraph::Users::MicrosoftGraphGetByIds::MicrosoftGraphGetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the validateProperties method.
+        def microsoft_graph_validate_properties()
+            return MicrosoftGraph::Users::MicrosoftGraphValidateProperties::MicrosoftGraphValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -39,11 +49,6 @@ module MicrosoftGraph::Users
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template
-        ## 
-        # Provides operations to call the validateProperties method.
-        def validate_properties()
-            return MicrosoftGraph::Users::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         ## Instantiates a new UsersRequestBuilder and sets the default values.
         ## @param pathParameters Path parameters for the request
@@ -59,14 +64,7 @@ module MicrosoftGraph::Users
             @path_parameters = path_parameters if path_parameters.is_a? Hash
         end
         ## 
-        ## Provides operations to call the delta method.
-        ## @return a delta_request_builder
-        ## 
-        def delta()
-            return DeltaRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        ## Retrieve a list of user objects.
+        ## Retrieve the properties and relationships of user object.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of user_collection_response
         ## 
@@ -96,7 +94,7 @@ module MicrosoftGraph::Users
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::User.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Retrieve a list of user objects.
+        ## Retrieve the properties and relationships of user object.
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information
         ## 
@@ -135,7 +133,7 @@ module MicrosoftGraph::Users
         end
 
         ## 
-        # Retrieve a list of user objects.
+        # Retrieve the properties and relationships of user object.
         class UsersRequestBuilderGetQueryParameters
             
             ## 

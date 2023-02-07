@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowedOnlineMeetingProviders property value. Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
-        ## @param value Value to set for the allowedOnlineMeetingProviders property.
+        ## @param value Value to set for the allowed_online_meeting_providers property.
         ## @return a void
         ## 
         def allowed_online_meeting_providers=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the calendarPermissions property value. The permissions of the users with whom the calendar is shared.
-        ## @param value Value to set for the calendarPermissions property.
+        ## @param value Value to set for the calendar_permissions property.
         ## @return a void
         ## 
         def calendar_permissions=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the calendarView property value. The calendar view for the calendar. Navigation property. Read-only.
-        ## @param value Value to set for the calendarView property.
+        ## @param value Value to set for the calendar_view property.
         ## @return a void
         ## 
         def calendar_view=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the canEdit property value. true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.
-        ## @param value Value to set for the canEdit property.
+        ## @param value Value to set for the can_edit property.
         ## @return a void
         ## 
         def can_edit=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the canShare property value. true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.
-        ## @param value Value to set for the canShare property.
+        ## @param value Value to set for the can_share property.
         ## @return a void
         ## 
         def can_share=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the canViewPrivateItems property value. true if the user can read calendar items that have been marked private, false otherwise.
-        ## @param value Value to set for the canViewPrivateItems property.
+        ## @param value Value to set for the can_view_private_items property.
         ## @return a void
         ## 
         def can_view_private_items=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the changeKey property value. Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
-        ## @param value Value to set for the changeKey property.
+        ## @param value Value to set for the change_key property.
         ## @return a void
         ## 
         def change_key=(value)
@@ -204,7 +204,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the defaultOnlineMeetingProvider property value. The default online meeting provider for meetings sent from this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.
-        ## @param value Value to set for the defaultOnlineMeetingProvider property.
+        ## @param value Value to set for the default_online_meeting_provider property.
         ## @return a void
         ## 
         def default_online_meeting_provider=(value)
@@ -260,7 +260,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hexColor property value. The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is empty. Read-only.
-        ## @param value Value to set for the hexColor property.
+        ## @param value Value to set for the hex_color property.
         ## @return a void
         ## 
         def hex_color=(value)
@@ -275,7 +275,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isDefaultCalendar property value. true if this is the default calendar where new events are created by default, false otherwise.
-        ## @param value Value to set for the isDefaultCalendar property.
+        ## @param value Value to set for the is_default_calendar property.
         ## @return a void
         ## 
         def is_default_calendar=(value)
@@ -290,7 +290,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isRemovable property value. Indicates whether this user calendar can be deleted from the user mailbox.
-        ## @param value Value to set for the isRemovable property.
+        ## @param value Value to set for the is_removable property.
         ## @return a void
         ## 
         def is_removable=(value)
@@ -305,7 +305,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isTallyingResponses property value. Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users' primary calendars support tracking of meeting responses.
-        ## @param value Value to set for the isTallyingResponses property.
+        ## @param value Value to set for the is_tallying_responses property.
         ## @return a void
         ## 
         def is_tallying_responses=(value)
@@ -320,7 +320,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.
-        ## @param value Value to set for the multiValueExtendedProperties property.
+        ## @param value Value to set for the multi_value_extended_properties property.
         ## @return a void
         ## 
         def multi_value_extended_properties=(value)
@@ -392,7 +392,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the calendar. Read-only. Nullable.
-        ## @param value Value to set for the singleValueExtendedProperties property.
+        ## @param value Value to set for the single_value_extended_properties property.
         ## @return a void
         ## 
         def single_value_extended_properties=(value)

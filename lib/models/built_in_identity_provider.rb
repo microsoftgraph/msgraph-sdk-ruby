@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the identityProviderType property value. The identity provider type. For a B2B scenario, possible values: AADSignup, MicrosoftAccount, EmailOTP. Required.
-        ## @param value Value to set for the identityProviderType property.
+        ## @param value Value to set for the identity_provider_type property.
         ## @return a void
         ## 
         def identity_provider_type=(value)

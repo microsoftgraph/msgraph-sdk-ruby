@@ -99,7 +99,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The date and time the app was created.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -120,6 +120,8 @@ module MicrosoftGraph::Models
                         return AndroidLobApp.new
                     when "#microsoft.graph.androidStoreApp"
                         return AndroidStoreApp.new
+                    when "#microsoft.graph.iosiPadOSWebClip"
+                        return IosiPadOSWebClip.new
                     when "#microsoft.graph.iosLobApp"
                         return IosLobApp.new
                     when "#microsoft.graph.iosStoreApp"
@@ -158,6 +160,8 @@ module MicrosoftGraph::Models
                         return WindowsMobileMSI.new
                     when "#microsoft.graph.windowsUniversalAppX"
                         return WindowsUniversalAppX.new
+                    when "#microsoft.graph.windowsWebApp"
+                        return WindowsWebApp.new
                 end
             end
             return MobileApp.new
@@ -201,7 +205,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The admin provided or imported title of the app.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -239,7 +243,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the informationUrl property value. The more information Url.
-        ## @param value Value to set for the informationUrl property.
+        ## @param value Value to set for the information_url property.
         ## @return a void
         ## 
         def information_url=(value)
@@ -254,7 +258,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isFeatured property value. The value indicating whether the app is marked as featured by the admin.
-        ## @param value Value to set for the isFeatured property.
+        ## @param value Value to set for the is_featured property.
         ## @return a void
         ## 
         def is_featured=(value)
@@ -269,7 +273,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the largeIcon property value. The large icon, to be displayed in the app details and used for upload of the icon.
-        ## @param value Value to set for the largeIcon property.
+        ## @param value Value to set for the large_icon property.
         ## @return a void
         ## 
         def large_icon=(value)
@@ -284,7 +288,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. The date and time the app was last modified.
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -329,7 +333,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the privacyInformationUrl property value. The privacy statement Url.
-        ## @param value Value to set for the privacyInformationUrl property.
+        ## @param value Value to set for the privacy_information_url property.
         ## @return a void
         ## 
         def privacy_information_url=(value)
@@ -359,7 +363,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the publishingState property value. Indicates the publishing state of an app.
-        ## @param value Value to set for the publishingState property.
+        ## @param value Value to set for the publishing_state property.
         ## @return a void
         ## 
         def publishing_state=(value)

@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bottomMargins property value. A list of supported bottom margins(in microns) for the printer.
-        ## @param value Value to set for the bottomMargins property.
+        ## @param value Value to set for the bottom_margins property.
         ## @return a void
         ## 
         def bottom_margins=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the colorModes property value. The color modes supported by the printer. Valid values are described in the following table.
-        ## @param value Value to set for the colorModes property.
+        ## @param value Value to set for the color_modes property.
         ## @return a void
         ## 
         def color_modes=(value)
@@ -162,7 +162,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentTypes property value. A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.
-        ## @param value Value to set for the contentTypes property.
+        ## @param value Value to set for the content_types property.
         ## @return a void
         ## 
         def content_types=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the copiesPerJob property value. The range of copies per job supported by the printer.
-        ## @param value Value to set for the copiesPerJob property.
+        ## @param value Value to set for the copies_per_job property.
         ## @return a void
         ## 
         def copies_per_job=(value)
@@ -216,7 +216,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the duplexModes property value. The list of duplex modes that are supported by the printer. Valid values are described in the following table.
-        ## @param value Value to set for the duplexModes property.
+        ## @param value Value to set for the duplex_modes property.
         ## @return a void
         ## 
         def duplex_modes=(value)
@@ -231,7 +231,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the feedOrientations property value. The list of feed orientations that are supported by the printer.
-        ## @param value Value to set for the feedOrientations property.
+        ## @param value Value to set for the feed_orientations property.
         ## @return a void
         ## 
         def feed_orientations=(value)
@@ -295,7 +295,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the inputBins property value. Supported input bins for the printer.
-        ## @param value Value to set for the inputBins property.
+        ## @param value Value to set for the input_bins property.
         ## @return a void
         ## 
         def input_bins=(value)
@@ -310,7 +310,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isColorPrintingSupported property value. True if color printing is supported by the printer; false otherwise. Read-only.
-        ## @param value Value to set for the isColorPrintingSupported property.
+        ## @param value Value to set for the is_color_printing_supported property.
         ## @return a void
         ## 
         def is_color_printing_supported=(value)
@@ -325,7 +325,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isPageRangeSupported property value. True if the printer supports printing by page ranges; false otherwise.
-        ## @param value Value to set for the isPageRangeSupported property.
+        ## @param value Value to set for the is_page_range_supported property.
         ## @return a void
         ## 
         def is_page_range_supported=(value)
@@ -340,7 +340,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the leftMargins property value. A list of supported left margins(in microns) for the printer.
-        ## @param value Value to set for the leftMargins property.
+        ## @param value Value to set for the left_margins property.
         ## @return a void
         ## 
         def left_margins=(value)
@@ -355,7 +355,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mediaColors property value. The media (i.e., paper) colors supported by the printer.
-        ## @param value Value to set for the mediaColors property.
+        ## @param value Value to set for the media_colors property.
         ## @return a void
         ## 
         def media_colors=(value)
@@ -370,7 +370,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mediaSizes property value. The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.
-        ## @param value Value to set for the mediaSizes property.
+        ## @param value Value to set for the media_sizes property.
         ## @return a void
         ## 
         def media_sizes=(value)
@@ -385,7 +385,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mediaTypes property value. The media types supported by the printer.
-        ## @param value Value to set for the mediaTypes property.
+        ## @param value Value to set for the media_types property.
         ## @return a void
         ## 
         def media_types=(value)
@@ -400,7 +400,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the multipageLayouts property value. The presentation directions supported by the printer. Supported values are described in the following table.
-        ## @param value Value to set for the multipageLayouts property.
+        ## @param value Value to set for the multipage_layouts property.
         ## @return a void
         ## 
         def multipage_layouts=(value)
@@ -415,7 +415,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -445,7 +445,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the outputBins property value. The printer's supported output bins (trays).
-        ## @param value Value to set for the outputBins property.
+        ## @param value Value to set for the output_bins property.
         ## @return a void
         ## 
         def output_bins=(value)
@@ -460,7 +460,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pagesPerSheet property value. Supported number of Input Pages to impose upon a single Impression.
-        ## @param value Value to set for the pagesPerSheet property.
+        ## @param value Value to set for the pages_per_sheet property.
         ## @return a void
         ## 
         def pages_per_sheet=(value)
@@ -490,7 +490,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the rightMargins property value. A list of supported right margins(in microns) for the printer.
-        ## @param value Value to set for the rightMargins property.
+        ## @param value Value to set for the right_margins property.
         ## @return a void
         ## 
         def right_margins=(value)
@@ -555,7 +555,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the supportsFitPdfToPage property value. True if the printer supports scaling PDF pages to match the print media size; false otherwise.
-        ## @param value Value to set for the supportsFitPdfToPage property.
+        ## @param value Value to set for the supports_fit_pdf_to_page property.
         ## @return a void
         ## 
         def supports_fit_pdf_to_page=(value)
@@ -570,7 +570,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the topMargins property value. A list of supported top margins(in microns) for the printer.
-        ## @param value Value to set for the topMargins property.
+        ## @param value Value to set for the top_margins property.
         ## @return a void
         ## 
         def top_margins=(value)

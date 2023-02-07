@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hasPhysicalDevice property value. True if the printer has a physical device for printing. Read-only.
-        ## @param value Value to set for the hasPhysicalDevice property.
+        ## @param value Value to set for the has_physical_device property.
         ## @return a void
         ## 
         def has_physical_device=(value)
@@ -98,7 +98,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isShared property value. True if the printer is shared; false otherwise. Read-only.
-        ## @param value Value to set for the isShared property.
+        ## @param value Value to set for the is_shared property.
         ## @return a void
         ## 
         def is_shared=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastSeenDateTime property value. The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
-        ## @param value Value to set for the lastSeenDateTime property.
+        ## @param value Value to set for the last_seen_date_time property.
         ## @return a void
         ## 
         def last_seen_date_time=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the registeredDateTime property value. The DateTimeOffset when the printer was registered. Read-only.
-        ## @param value Value to set for the registeredDateTime property.
+        ## @param value Value to set for the registered_date_time property.
         ## @return a void
         ## 
         def registered_date_time=(value)
@@ -174,7 +174,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the taskTriggers property value. A list of task triggers that are associated with the printer.
-        ## @param value Value to set for the taskTriggers property.
+        ## @param value Value to set for the task_triggers property.
         ## @return a void
         ## 
         def task_triggers=(value)

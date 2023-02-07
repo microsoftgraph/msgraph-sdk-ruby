@@ -92,7 +92,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the occurredDateTime property value. The date and time at which the error occurred.
-        ## @param value Value to set for the occurredDateTime property.
+        ## @param value Value to set for the occurred_date_time property.
         ## @return a void
         ## 
         def occurred_date_time=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the propertyCausingError property value. Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress
-        ## @param value Value to set for the propertyCausingError property.
+        ## @param value Value to set for the property_causing_error property.
         ## @return a void
         ## 
         def property_causing_error=(value)

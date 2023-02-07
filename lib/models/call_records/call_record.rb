@@ -62,7 +62,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the endDateTime property value. UTC time when the last user left the call. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the endDateTime property.
+        ## @param value Value to set for the end_date_time property.
         ## @return a void
         ## 
         def end_date_time=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the joinWebUrl property value. Meeting URL associated to the call. May not be available for a peerToPeer call record type.
-        ## @param value Value to set for the joinWebUrl property.
+        ## @param value Value to set for the join_web_url property.
         ## @return a void
         ## 
         def join_web_url=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the lastModifiedDateTime property value. UTC time when the call record was created. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -204,7 +204,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the startDateTime property value. UTC time when the first user joined the call. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        ## @param value Value to set for the startDateTime property.
+        ## @param value Value to set for the start_date_time property.
         ## @return a void
         ## 
         def start_date_time=(value)

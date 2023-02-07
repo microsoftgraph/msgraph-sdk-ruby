@@ -17,7 +17,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the chatId property value. The unique identifier for the chat whose members should receive the notifications.
-        ## @param value Value to set for the chatId property.
+        ## @param value Value to set for the chat_id property.
         ## @return a void
         ## 
         def chat_id=(value)

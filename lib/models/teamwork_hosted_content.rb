@@ -27,7 +27,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentBytes property value. Write only. Bytes for the hosted content (such as images).
-        ## @param value Value to set for the contentBytes property.
+        ## @param value Value to set for the content_bytes property.
         ## @return a void
         ## 
         def content_bytes=(value)
@@ -42,7 +42,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentType property value. Write only. Content type. sicj as image/png, image/jpg.
-        ## @param value Value to set for the contentType property.
+        ## @param value Value to set for the content_type property.
         ## @return a void
         ## 
         def content_type=(value)

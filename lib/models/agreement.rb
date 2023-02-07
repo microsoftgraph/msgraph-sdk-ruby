@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Display name of the agreement. The display name is used for internal tracking of the agreement but is not shown to end users who view the agreement. Supports $filter (eq).
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isPerDeviceAcceptanceRequired property value. Indicates whether end users are required to accept this agreement on every device that they access it from. The end user is required to register their device in Azure AD, if they haven't already done so. Supports $filter (eq).
-        ## @param value Value to set for the isPerDeviceAcceptanceRequired property.
+        ## @param value Value to set for the is_per_device_acceptance_required property.
         ## @return a void
         ## 
         def is_per_device_acceptance_required=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isViewingBeforeAcceptanceRequired property value. Indicates whether the user has to expand the agreement before accepting. Supports $filter (eq).
-        ## @param value Value to set for the isViewingBeforeAcceptanceRequired property.
+        ## @param value Value to set for the is_viewing_before_acceptance_required property.
         ## @return a void
         ## 
         def is_viewing_before_acceptance_required=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the termsExpiration property value. Expiration schedule and frequency of agreement for all users. Supports $filter (eq).
-        ## @param value Value to set for the termsExpiration property.
+        ## @param value Value to set for the terms_expiration property.
         ## @return a void
         ## 
         def terms_expiration=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userReacceptRequiredFrequency property value. The duration after which the user must re-accept the terms of use. The value is represented in ISO 8601 format for durations. Supports $filter (eq).
-        ## @param value Value to set for the userReacceptRequiredFrequency property.
+        ## @param value Value to set for the user_reaccept_required_frequency property.
         ## @return a void
         ## 
         def user_reaccept_required_frequency=(value)

@@ -67,7 +67,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display or friendly name of the role Assignment.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceScopes property value. List of ids of role scope member security groups.  These are IDs from Azure Active Directory.
-        ## @param value Value to set for the resourceScopes property.
+        ## @param value Value to set for the resource_scopes property.
         ## @return a void
         ## 
         def resource_scopes=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the roleDefinition property value. Role definition this assignment is part of.
-        ## @param value Value to set for the roleDefinition property.
+        ## @param value Value to set for the role_definition property.
         ## @return a void
         ## 
         def role_definition=(value)

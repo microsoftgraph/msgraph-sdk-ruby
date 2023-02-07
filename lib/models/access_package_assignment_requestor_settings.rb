@@ -59,7 +59,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowCustomAssignmentSchedule property value. If false, the requestor is not permitted to include a schedule in their request.
-        ## @param value Value to set for the allowCustomAssignmentSchedule property.
+        ## @param value Value to set for the allow_custom_assignment_schedule property.
         ## @return a void
         ## 
         def allow_custom_assignment_schedule=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enableOnBehalfRequestorsToAddAccess property value. If true, allows on-behalf-of requestors to create a request to add access for another principal.
-        ## @param value Value to set for the enableOnBehalfRequestorsToAddAccess property.
+        ## @param value Value to set for the enable_on_behalf_requestors_to_add_access property.
         ## @return a void
         ## 
         def enable_on_behalf_requestors_to_add_access=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enableOnBehalfRequestorsToRemoveAccess property value. If true, allows on-behalf-of requestors to create a request to remove access for another principal.
-        ## @param value Value to set for the enableOnBehalfRequestorsToRemoveAccess property.
+        ## @param value Value to set for the enable_on_behalf_requestors_to_remove_access property.
         ## @return a void
         ## 
         def enable_on_behalf_requestors_to_remove_access=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enableOnBehalfRequestorsToUpdateAccess property value. If true, allows on-behalf-of requestors to create a request to update access for another principal.
-        ## @param value Value to set for the enableOnBehalfRequestorsToUpdateAccess property.
+        ## @param value Value to set for the enable_on_behalf_requestors_to_update_access property.
         ## @return a void
         ## 
         def enable_on_behalf_requestors_to_update_access=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enableTargetsToSelfAddAccess property value. If true, allows requestors to create a request to add access for themselves.
-        ## @param value Value to set for the enableTargetsToSelfAddAccess property.
+        ## @param value Value to set for the enable_targets_to_self_add_access property.
         ## @return a void
         ## 
         def enable_targets_to_self_add_access=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enableTargetsToSelfRemoveAccess property value. If true, allows requestors to create a request to remove their access.
-        ## @param value Value to set for the enableTargetsToSelfRemoveAccess property.
+        ## @param value Value to set for the enable_targets_to_self_remove_access property.
         ## @return a void
         ## 
         def enable_targets_to_self_remove_access=(value)
@@ -165,7 +165,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enableTargetsToSelfUpdateAccess property value. If true, allows requestors to create a request to update their access.
-        ## @param value Value to set for the enableTargetsToSelfUpdateAccess property.
+        ## @param value Value to set for the enable_targets_to_self_update_access property.
         ## @return a void
         ## 
         def enable_targets_to_self_update_access=(value)
@@ -197,7 +197,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -212,7 +212,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the onBehalfRequestors property value. The principals who can request on-behalf-of others.
-        ## @param value Value to set for the onBehalfRequestors property.
+        ## @param value Value to set for the on_behalf_requestors property.
         ## @return a void
         ## 
         def on_behalf_requestors=(value)

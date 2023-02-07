@@ -59,7 +59,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isDefaultRecipientsEnabled property value. Indicates whether a default recipient will receive the notification email.
-        ## @param value Value to set for the isDefaultRecipientsEnabled property.
+        ## @param value Value to set for the is_default_recipients_enabled property.
         ## @return a void
         ## 
         def is_default_recipients_enabled=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notificationLevel property value. The level of notification. The possible values are None, Critical, All.
-        ## @param value Value to set for the notificationLevel property.
+        ## @param value Value to set for the notification_level property.
         ## @return a void
         ## 
         def notification_level=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notificationRecipients property value. The list of recipients of the email notifications.
-        ## @param value Value to set for the notificationRecipients property.
+        ## @param value Value to set for the notification_recipients property.
         ## @return a void
         ## 
         def notification_recipients=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notificationType property value. The type of notification. Only Email is supported.
-        ## @param value Value to set for the notificationType property.
+        ## @param value Value to set for the notification_type property.
         ## @return a void
         ## 
         def notification_type=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the recipientType property value. The type of recipient of the notification. The possible values are Requestor, Approver, Admin.
-        ## @param value Value to set for the recipientType property.
+        ## @param value Value to set for the recipient_type property.
         ## @return a void
         ## 
         def recipient_type=(value)

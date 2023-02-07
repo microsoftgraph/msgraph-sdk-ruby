@@ -51,7 +51,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the changedBy property value. Identity of the user who changed the  subject rights request.
-        ## @param value Value to set for the changedBy property.
+        ## @param value Value to set for the changed_by property.
         ## @return a void
         ## 
         def changed_by=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the eventDateTime property value. Data and time when the entity was changed.
-        ## @param value Value to set for the eventDateTime property.
+        ## @param value Value to set for the event_date_time property.
         ## @return a void
         ## 
         def event_date_time=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the stageStatus property value. The status of the stage when the entity was changed. Possible values are: notStarted, current, completed, failed, unknownFutureValue.
-        ## @param value Value to set for the stageStatus property.
+        ## @param value Value to set for the stage_status property.
         ## @return a void
         ## 
         def stage_status=(value)

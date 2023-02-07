@@ -1,3 +1,0 @@
-require_relative 'log_teleconference_device_quality_post_request_body'
-module MicrosoftGraph::Communications::Calls::LogTeleconferenceDeviceQuality
-end

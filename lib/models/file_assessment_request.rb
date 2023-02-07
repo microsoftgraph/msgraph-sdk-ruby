@@ -28,7 +28,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentData property value. Base64 encoded file content. The file content cannot fetch back because it isn't stored.
-        ## @param value Value to set for the contentData property.
+        ## @param value Value to set for the content_data property.
         ## @return a void
         ## 
         def content_data=(value)
@@ -52,7 +52,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fileName property value. The file name.
-        ## @param value Value to set for the fileName property.
+        ## @param value Value to set for the file_name property.
         ## @return a void
         ## 
         def file_name=(value)

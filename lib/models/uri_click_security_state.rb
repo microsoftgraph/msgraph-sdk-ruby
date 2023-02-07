@@ -54,7 +54,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the clickAction property value. The clickAction property
-        ## @param value Value to set for the clickAction property.
+        ## @param value Value to set for the click_action property.
         ## @return a void
         ## 
         def click_action=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the clickDateTime property value. The clickDateTime property
-        ## @param value Value to set for the clickDateTime property.
+        ## @param value Value to set for the click_date_time property.
         ## @return a void
         ## 
         def click_date_time=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -161,7 +161,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sourceId property value. The sourceId property
-        ## @param value Value to set for the sourceId property.
+        ## @param value Value to set for the source_id property.
         ## @return a void
         ## 
         def source_id=(value)
@@ -176,7 +176,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the uriDomain property value. The uriDomain property
-        ## @param value Value to set for the uriDomain property.
+        ## @param value Value to set for the uri_domain property.
         ## @return a void
         ## 
         def uri_domain=(value)

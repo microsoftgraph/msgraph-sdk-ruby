@@ -54,7 +54,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the crc32Hash property value. The CRC32 value of the file in little endian (if available). Read-only.
-        ## @param value Value to set for the crc32Hash property.
+        ## @param value Value to set for the crc32_hash property.
         ## @return a void
         ## 
         def crc32_hash=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the quickXorHash property value. A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.
-        ## @param value Value to set for the quickXorHash property.
+        ## @param value Value to set for the quick_xor_hash property.
         ## @return a void
         ## 
         def quick_xor_hash=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sha1Hash property value. SHA1 hash for the contents of the file (if available). Read-only.
-        ## @param value Value to set for the sha1Hash property.
+        ## @param value Value to set for the sha1_hash property.
         ## @return a void
         ## 
         def sha1_hash=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sha256Hash property value. SHA256 hash for the contents of the file (if available). Read-only.
-        ## @param value Value to set for the sha256Hash property.
+        ## @param value Value to set for the sha256_hash property.
         ## @return a void
         ## 
         def sha256_hash=(value)

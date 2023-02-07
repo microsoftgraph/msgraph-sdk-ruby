@@ -7,8 +7,8 @@ require_relative '../../../../cases'
 require_relative '../../../ediscovery_cases'
 require_relative '../../item'
 require_relative '../review_sets'
-require_relative './add_to_review_set/add_to_review_set_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_security_add_to_review_set/microsoft_graph_security_add_to_review_set_request_builder'
 require_relative './queries/item/ediscovery_review_set_query_item_request_builder'
 require_relative './queries/queries_request_builder'
 
@@ -19,8 +19,8 @@ module MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item
         
         ## 
         # Provides operations to call the addToReviewSet method.
-        def add_to_review_set()
-            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::AddToReviewSet::AddToReviewSetRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_security_add_to_review_set()
+            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::MicrosoftGraphSecurityAddToReviewSet::MicrosoftGraphSecurityAddToReviewSetRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request

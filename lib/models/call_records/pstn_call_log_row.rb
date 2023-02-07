@@ -14,17 +14,17 @@ module MicrosoftGraph::Models::CallRecords
         # The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
         @call_duration_source
         ## 
-        # Number dialed in E.164 format.
-        @callee_number
-        ## 
-        # Number that received the call for inbound calls or the number dialed for outbound calls. E.164 format.
-        @caller_number
-        ## 
         # Call identifier. Not guaranteed to be unique.
         @call_id
         ## 
         # Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
         @call_type
+        ## 
+        # Number dialed in E.164 format.
+        @callee_number
+        ## 
+        # Number that received the call for inbound calls or the number dialed for outbound calls. E.164 format.
+        @caller_number
         ## 
         # Amount of money or cost of the call that is charged to your account.
         @charge
@@ -106,41 +106,11 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
-        ## @param value Value to set for the callDurationSource property.
+        ## @param value Value to set for the call_duration_source property.
         ## @return a void
         ## 
         def call_duration_source=(value)
             @call_duration_source = value
-        end
-        ## 
-        ## Gets the calleeNumber property value. Number dialed in E.164 format.
-        ## @return a string
-        ## 
-        def callee_number
-            return @callee_number
-        end
-        ## 
-        ## Sets the calleeNumber property value. Number dialed in E.164 format.
-        ## @param value Value to set for the calleeNumber property.
-        ## @return a void
-        ## 
-        def callee_number=(value)
-            @callee_number = value
-        end
-        ## 
-        ## Gets the callerNumber property value. Number that received the call for inbound calls or the number dialed for outbound calls. E.164 format.
-        ## @return a string
-        ## 
-        def caller_number
-            return @caller_number
-        end
-        ## 
-        ## Sets the callerNumber property value. Number that received the call for inbound calls or the number dialed for outbound calls. E.164 format.
-        ## @param value Value to set for the callerNumber property.
-        ## @return a void
-        ## 
-        def caller_number=(value)
-            @caller_number = value
         end
         ## 
         ## Gets the callId property value. Call identifier. Not guaranteed to be unique.
@@ -151,7 +121,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the callId property value. Call identifier. Not guaranteed to be unique.
-        ## @param value Value to set for the callId property.
+        ## @param value Value to set for the call_id property.
         ## @return a void
         ## 
         def call_id=(value)
@@ -166,11 +136,41 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the callType property value. Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
-        ## @param value Value to set for the callType property.
+        ## @param value Value to set for the call_type property.
         ## @return a void
         ## 
         def call_type=(value)
             @call_type = value
+        end
+        ## 
+        ## Gets the calleeNumber property value. Number dialed in E.164 format.
+        ## @return a string
+        ## 
+        def callee_number
+            return @callee_number
+        end
+        ## 
+        ## Sets the calleeNumber property value. Number dialed in E.164 format.
+        ## @param value Value to set for the callee_number property.
+        ## @return a void
+        ## 
+        def callee_number=(value)
+            @callee_number = value
+        end
+        ## 
+        ## Gets the callerNumber property value. Number that received the call for inbound calls or the number dialed for outbound calls. E.164 format.
+        ## @return a string
+        ## 
+        def caller_number
+            return @caller_number
+        end
+        ## 
+        ## Sets the callerNumber property value. Number that received the call for inbound calls or the number dialed for outbound calls. E.164 format.
+        ## @param value Value to set for the caller_number property.
+        ## @return a void
+        ## 
+        def caller_number=(value)
+            @caller_number = value
         end
         ## 
         ## Gets the charge property value. Amount of money or cost of the call that is charged to your account.
@@ -196,7 +196,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the conferenceId property value. ID of the audio conference.
-        ## @param value Value to set for the conferenceId property.
+        ## @param value Value to set for the conference_id property.
         ## @return a void
         ## 
         def conference_id=(value)
@@ -211,7 +211,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the connectionCharge property value. Connection fee price.
-        ## @param value Value to set for the connectionCharge property.
+        ## @param value Value to set for the connection_charge property.
         ## @return a void
         ## 
         def connection_charge=(value)
@@ -257,7 +257,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the destinationContext property value. Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user's location.
-        ## @param value Value to set for the destinationContext property.
+        ## @param value Value to set for the destination_context property.
         ## @return a void
         ## 
         def destination_context=(value)
@@ -272,7 +272,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the destinationName property value. Country or region dialed.
-        ## @param value Value to set for the destinationName property.
+        ## @param value Value to set for the destination_name property.
         ## @return a void
         ## 
         def destination_name=(value)
@@ -302,7 +302,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the endDateTime property value. Call end time.
-        ## @param value Value to set for the endDateTime property.
+        ## @param value Value to set for the end_date_time property.
         ## @return a void
         ## 
         def end_date_time=(value)
@@ -315,10 +315,10 @@ module MicrosoftGraph::Models::CallRecords
         def get_field_deserializers()
             return {
                 "callDurationSource" => lambda {|n| @call_duration_source = n.get_enum_value(MicrosoftGraph::Models::CallRecords::PstnCallDurationSource) },
-                "calleeNumber" => lambda {|n| @callee_number = n.get_string_value() },
-                "callerNumber" => lambda {|n| @caller_number = n.get_string_value() },
                 "callId" => lambda {|n| @call_id = n.get_string_value() },
                 "callType" => lambda {|n| @call_type = n.get_string_value() },
+                "calleeNumber" => lambda {|n| @callee_number = n.get_string_value() },
+                "callerNumber" => lambda {|n| @caller_number = n.get_string_value() },
                 "charge" => lambda {|n| @charge = n.get_object_value(lambda {|pn| Decimal.create_from_discriminator_value(pn) }) },
                 "conferenceId" => lambda {|n| @conference_id = n.get_string_value() },
                 "connectionCharge" => lambda {|n| @connection_charge = n.get_object_value(lambda {|pn| Decimal.create_from_discriminator_value(pn) }) },
@@ -364,7 +364,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the inventoryType property value. User's phone number type, such as a service of toll-free number.
-        ## @param value Value to set for the inventoryType property.
+        ## @param value Value to set for the inventory_type property.
         ## @return a void
         ## 
         def inventory_type=(value)
@@ -379,7 +379,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the licenseCapability property value. The license used for the call.
-        ## @param value Value to set for the licenseCapability property.
+        ## @param value Value to set for the license_capability property.
         ## @return a void
         ## 
         def license_capability=(value)
@@ -394,7 +394,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -423,10 +423,10 @@ module MicrosoftGraph::Models::CallRecords
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
             writer.write_enum_value("callDurationSource", @call_duration_source)
-            writer.write_string_value("calleeNumber", @callee_number)
-            writer.write_string_value("callerNumber", @caller_number)
             writer.write_string_value("callId", @call_id)
             writer.write_string_value("callType", @call_type)
+            writer.write_string_value("calleeNumber", @callee_number)
+            writer.write_string_value("callerNumber", @caller_number)
             writer.write_object_value("charge", @charge)
             writer.write_string_value("conferenceId", @conference_id)
             writer.write_object_value("connectionCharge", @connection_charge)
@@ -457,7 +457,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the startDateTime property value. Call start time.
-        ## @param value Value to set for the startDateTime property.
+        ## @param value Value to set for the start_date_time property.
         ## @return a void
         ## 
         def start_date_time=(value)
@@ -472,7 +472,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the tenantCountryCode property value. Country code of the tenant, ISO 3166-1 alpha-2.
-        ## @param value Value to set for the tenantCountryCode property.
+        ## @param value Value to set for the tenant_country_code property.
         ## @return a void
         ## 
         def tenant_country_code=(value)
@@ -487,7 +487,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the usageCountryCode property value. Country code of the user, ISO 3166-1 alpha-2.
-        ## @param value Value to set for the usageCountryCode property.
+        ## @param value Value to set for the usage_country_code property.
         ## @return a void
         ## 
         def usage_country_code=(value)
@@ -502,7 +502,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the userDisplayName property value. Display name of the user.
-        ## @param value Value to set for the userDisplayName property.
+        ## @param value Value to set for the user_display_name property.
         ## @return a void
         ## 
         def user_display_name=(value)
@@ -517,7 +517,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the userId property value. Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).
-        ## @param value Value to set for the userId property.
+        ## @param value Value to set for the user_id property.
         ## @return a void
         ## 
         def user_id=(value)
@@ -532,7 +532,7 @@ module MicrosoftGraph::Models::CallRecords
         end
         ## 
         ## Sets the userPrincipalName property value. UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
-        ## @param value Value to set for the userPrincipalName property.
+        ## @param value Value to set for the user_principal_name property.
         ## @return a void
         ## 
         def user_principal_name=(value)

@@ -30,7 +30,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the configurationDeployedUserCount property value. Not yet documented
-        ## @param value Value to set for the configurationDeployedUserCount property.
+        ## @param value Value to set for the configuration_deployed_user_count property.
         ## @return a void
         ## 
         def configuration_deployed_user_count=(value)
@@ -45,7 +45,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the configurationDeploymentSummaryPerApp property value. Not yet documented
-        ## @param value Value to set for the configurationDeploymentSummaryPerApp property.
+        ## @param value Value to set for the configuration_deployment_summary_per_app property.
         ## @return a void
         ## 
         def configuration_deployment_summary_per_app=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Not yet documented
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastRefreshTime property value. Not yet documented
-        ## @param value Value to set for the lastRefreshTime property.
+        ## @param value Value to set for the last_refresh_time property.
         ## @return a void
         ## 
         def last_refresh_time=(value)

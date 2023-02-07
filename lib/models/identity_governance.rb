@@ -32,7 +32,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accessReviews property value. The accessReviews property
-        ## @param value Value to set for the accessReviews property.
+        ## @param value Value to set for the access_reviews property.
         ## @return a void
         ## 
         def access_reviews=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the appConsent property value. The appConsent property
-        ## @param value Value to set for the appConsent property.
+        ## @param value Value to set for the app_consent property.
         ## @return a void
         ## 
         def app_consent=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the entitlementManagement property value. The entitlementManagement property
-        ## @param value Value to set for the entitlementManagement property.
+        ## @param value Value to set for the entitlement_management property.
         ## @return a void
         ## 
         def entitlement_management=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the termsOfUse property value. The termsOfUse property
-        ## @param value Value to set for the termsOfUse property.
+        ## @param value Value to set for the terms_of_use property.
         ## @return a void
         ## 
         def terms_of_use=(value)

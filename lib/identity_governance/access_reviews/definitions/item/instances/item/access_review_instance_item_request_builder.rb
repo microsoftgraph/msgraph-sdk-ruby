@@ -7,40 +7,25 @@ require_relative '../../../../access_reviews'
 require_relative '../../../definitions'
 require_relative '../../item'
 require_relative '../instances'
-require_relative './accept_recommendations/accept_recommendations_request_builder'
-require_relative './apply_decisions/apply_decisions_request_builder'
-require_relative './batch_record_decisions/batch_record_decisions_request_builder'
 require_relative './contacted_reviewers/contacted_reviewers_request_builder'
 require_relative './contacted_reviewers/item/access_review_reviewer_item_request_builder'
 require_relative './decisions/decisions_request_builder'
 require_relative './decisions/item/access_review_instance_decision_item_item_request_builder'
 require_relative './item'
-require_relative './reset_decisions/reset_decisions_request_builder'
-require_relative './send_reminder/send_reminder_request_builder'
+require_relative './microsoft_graph_accept_recommendations/microsoft_graph_accept_recommendations_request_builder'
+require_relative './microsoft_graph_apply_decisions/microsoft_graph_apply_decisions_request_builder'
+require_relative './microsoft_graph_batch_record_decisions/microsoft_graph_batch_record_decisions_request_builder'
+require_relative './microsoft_graph_reset_decisions/microsoft_graph_reset_decisions_request_builder'
+require_relative './microsoft_graph_send_reminder/microsoft_graph_send_reminder_request_builder'
+require_relative './microsoft_graph_stop/microsoft_graph_stop_request_builder'
 require_relative './stages/item/access_review_stage_item_request_builder'
 require_relative './stages/stages_request_builder'
-require_relative './stop/stop_request_builder'
 
 module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item
     ## 
     # Provides operations to manage the instances property of the microsoft.graph.accessReviewScheduleDefinition entity.
     class AccessReviewInstanceItemRequestBuilder
         
-        ## 
-        # Provides operations to call the acceptRecommendations method.
-        def accept_recommendations()
-            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::AcceptRecommendations::AcceptRecommendationsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the applyDecisions method.
-        def apply_decisions()
-            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::ApplyDecisions::ApplyDecisionsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the batchRecordDecisions method.
-        def batch_record_decisions()
-            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::BatchRecordDecisions::BatchRecordDecisionsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
         def contacted_reviewers()
@@ -52,30 +37,45 @@ module MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Ins
             return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Decisions::DecisionsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the acceptRecommendations method.
+        def microsoft_graph_accept_recommendations()
+            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::MicrosoftGraphAcceptRecommendations::MicrosoftGraphAcceptRecommendationsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the applyDecisions method.
+        def microsoft_graph_apply_decisions()
+            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::MicrosoftGraphApplyDecisions::MicrosoftGraphApplyDecisionsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the batchRecordDecisions method.
+        def microsoft_graph_batch_record_decisions()
+            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::MicrosoftGraphBatchRecordDecisions::MicrosoftGraphBatchRecordDecisionsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the resetDecisions method.
+        def microsoft_graph_reset_decisions()
+            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::MicrosoftGraphResetDecisions::MicrosoftGraphResetDecisionsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the sendReminder method.
+        def microsoft_graph_send_reminder()
+            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::MicrosoftGraphSendReminder::MicrosoftGraphSendReminderRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the stop method.
+        def microsoft_graph_stop()
+            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::MicrosoftGraphStop::MicrosoftGraphStopRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
         ## 
-        # Provides operations to call the resetDecisions method.
-        def reset_decisions()
-            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::ResetDecisions::ResetDecisionsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the sendReminder method.
-        def send_reminder()
-            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::SendReminder::SendReminderRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
         def stages()
             return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Stages::StagesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
-        # Provides operations to call the stop method.
-        def stop()
-            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Stop::StopRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Url template to use to build the URL for the current request builder

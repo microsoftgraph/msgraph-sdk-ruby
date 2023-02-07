@@ -66,7 +66,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the payloadFileName property value. Payload file name (.mobileconfig
-        ## @param value Value to set for the payloadFileName property.
+        ## @param value Value to set for the payload_file_name property.
         ## @return a void
         ## 
         def payload_file_name=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the payloadName property value. Name that is displayed to the user.
-        ## @param value Value to set for the payloadName property.
+        ## @param value Value to set for the payload_name property.
         ## @return a void
         ## 
         def payload_name=(value)

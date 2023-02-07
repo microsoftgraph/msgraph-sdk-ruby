@@ -12,6 +12,9 @@ module MicrosoftGraph::Models
         # Partner display name
         @display_name
         ## 
+        # User groups that specifies whether enrollment is through partner.
+        @groups_requiring_partner_enrollment
+        ## 
         # Whether device management partner is configured or not
         @is_configured
         ## 
@@ -57,7 +60,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Partner display name
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -70,6 +73,7 @@ module MicrosoftGraph::Models
         def get_field_deserializers()
             return super.merge({
                 "displayName" => lambda {|n| @display_name = n.get_string_value() },
+                "groupsRequiringPartnerEnrollment" => lambda {|n| @groups_requiring_partner_enrollment = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeviceManagementPartnerAssignment.create_from_discriminator_value(pn) }) },
                 "isConfigured" => lambda {|n| @is_configured = n.get_boolean_value() },
                 "lastHeartbeatDateTime" => lambda {|n| @last_heartbeat_date_time = n.get_date_time_value() },
                 "partnerAppType" => lambda {|n| @partner_app_type = n.get_enum_value(MicrosoftGraph::Models::DeviceManagementPartnerAppType) },
@@ -80,6 +84,21 @@ module MicrosoftGraph::Models
             })
         end
         ## 
+        ## Gets the groupsRequiringPartnerEnrollment property value. User groups that specifies whether enrollment is through partner.
+        ## @return a device_management_partner_assignment
+        ## 
+        def groups_requiring_partner_enrollment
+            return @groups_requiring_partner_enrollment
+        end
+        ## 
+        ## Sets the groupsRequiringPartnerEnrollment property value. User groups that specifies whether enrollment is through partner.
+        ## @param value Value to set for the groups_requiring_partner_enrollment property.
+        ## @return a void
+        ## 
+        def groups_requiring_partner_enrollment=(value)
+            @groups_requiring_partner_enrollment = value
+        end
+        ## 
         ## Gets the isConfigured property value. Whether device management partner is configured or not
         ## @return a boolean
         ## 
@@ -88,7 +107,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isConfigured property value. Whether device management partner is configured or not
-        ## @param value Value to set for the isConfigured property.
+        ## @param value Value to set for the is_configured property.
         ## @return a void
         ## 
         def is_configured=(value)
@@ -103,7 +122,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastHeartbeatDateTime property value. Timestamp of last heartbeat after admin enabled option Connect to Device management Partner
-        ## @param value Value to set for the lastHeartbeatDateTime property.
+        ## @param value Value to set for the last_heartbeat_date_time property.
         ## @return a void
         ## 
         def last_heartbeat_date_time=(value)
@@ -118,7 +137,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the partnerAppType property value. Partner App Type.
-        ## @param value Value to set for the partnerAppType property.
+        ## @param value Value to set for the partner_app_type property.
         ## @return a void
         ## 
         def partner_app_type=(value)
@@ -133,7 +152,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the partnerState property value. Partner state of this tenant.
-        ## @param value Value to set for the partnerState property.
+        ## @param value Value to set for the partner_state property.
         ## @return a void
         ## 
         def partner_state=(value)
@@ -148,6 +167,7 @@ module MicrosoftGraph::Models
             raise StandardError, 'writer cannot be null' if writer.nil?
             super
             writer.write_string_value("displayName", @display_name)
+            writer.write_collection_of_object_values("groupsRequiringPartnerEnrollment", @groups_requiring_partner_enrollment)
             writer.write_boolean_value("isConfigured", @is_configured)
             writer.write_date_time_value("lastHeartbeatDateTime", @last_heartbeat_date_time)
             writer.write_enum_value("partnerAppType", @partner_app_type)
@@ -165,7 +185,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the singleTenantAppId property value. Partner Single tenant App id
-        ## @param value Value to set for the singleTenantAppId property.
+        ## @param value Value to set for the single_tenant_app_id property.
         ## @return a void
         ## 
         def single_tenant_app_id=(value)
@@ -180,7 +200,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime property value. DateTime in UTC when PartnerDevices will be marked as NonCompliant
-        ## @param value Value to set for the whenPartnerDevicesWillBeMarkedAsNonCompliantDateTime property.
+        ## @param value Value to set for the when_partner_devices_will_be_marked_as_non_compliant_date_time property.
         ## @return a void
         ## 
         def when_partner_devices_will_be_marked_as_non_compliant_date_time=(value)
@@ -195,7 +215,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the whenPartnerDevicesWillBeRemovedDateTime property value. DateTime in UTC when PartnerDevices will be removed
-        ## @param value Value to set for the whenPartnerDevicesWillBeRemovedDateTime property.
+        ## @param value Value to set for the when_partner_devices_will_be_removed_date_time property.
         ## @return a void
         ## 
         def when_partner_devices_will_be_removed_date_time=(value)

@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the pkcs12Value property value. Represents the pfx content that is sent. The value should be a base-64 encoded version of the actual certificate content. Required.
-        ## @param value Value to set for the pkcs12Value property.
+        ## @param value Value to set for the pkcs12_value property.
         ## @return a void
         ## 
         def pkcs12_value=(value)

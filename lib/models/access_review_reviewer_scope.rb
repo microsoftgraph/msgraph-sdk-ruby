@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the queryRoot property value. In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.
-        ## @param value Value to set for the queryRoot property.
+        ## @param value Value to set for the query_root property.
         ## @return a void
         ## 
         def query_root=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the queryType property value. The type of query. Examples include MicrosoftGraph and ARM.
-        ## @param value Value to set for the queryType property.
+        ## @param value Value to set for the query_type property.
         ## @return a void
         ## 
         def query_type=(value)

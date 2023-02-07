@@ -71,7 +71,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentUrl property value. The URL for the page's HTML content.  Read-only.
-        ## @param value Value to set for the contentUrl property.
+        ## @param value Value to set for the content_url property.
         ## @return a void
         ## 
         def content_url=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdByAppId property value. The unique identifier of the application that created the page. Read-only.
-        ## @param value Value to set for the createdByAppId property.
+        ## @param value Value to set for the created_by_app_id property.
         ## @return a void
         ## 
         def created_by_app_id=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastModifiedDateTime property value. The date and time when the page was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        ## @param value Value to set for the lastModifiedDateTime property.
+        ## @param value Value to set for the last_modified_date_time property.
         ## @return a void
         ## 
         def last_modified_date_time=(value)
@@ -189,7 +189,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the parentNotebook property value. The notebook that contains the page.  Read-only.
-        ## @param value Value to set for the parentNotebook property.
+        ## @param value Value to set for the parent_notebook property.
         ## @return a void
         ## 
         def parent_notebook=(value)
@@ -204,7 +204,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the parentSection property value. The section that contains the page. Read-only.
-        ## @param value Value to set for the parentSection property.
+        ## @param value Value to set for the parent_section property.
         ## @return a void
         ## 
         def parent_section=(value)
@@ -254,7 +254,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userTags property value. The userTags property
-        ## @param value Value to set for the userTags property.
+        ## @param value Value to set for the user_tags property.
         ## @return a void
         ## 
         def user_tags=(value)

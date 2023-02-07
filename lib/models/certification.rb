@@ -51,7 +51,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the certificationDetailsUrl property value. URL that shows certification details for the application.
-        ## @param value Value to set for the certificationDetailsUrl property.
+        ## @param value Value to set for the certification_details_url property.
         ## @return a void
         ## 
         def certification_details_url=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the certificationExpirationDateTime property value. The timestamp when the current certification for the application will expire.
-        ## @param value Value to set for the certificationExpirationDateTime property.
+        ## @param value Value to set for the certification_expiration_date_time property.
         ## @return a void
         ## 
         def certification_expiration_date_time=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isCertifiedByMicrosoft property value. Indicates whether the application is certified by Microsoft.
-        ## @param value Value to set for the isCertifiedByMicrosoft property.
+        ## @param value Value to set for the is_certified_by_microsoft property.
         ## @return a void
         ## 
         def is_certified_by_microsoft=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isPublisherAttested property value. Indicates whether the application has been self-attested by the application developer or the publisher.
-        ## @param value Value to set for the isPublisherAttested property.
+        ## @param value Value to set for the is_publisher_attested property.
         ## @return a void
         ## 
         def is_publisher_attested=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastCertificationDateTime property value. The timestamp when the certification for the application was most recently added or updated.
-        ## @param value Value to set for the lastCertificationDateTime property.
+        ## @param value Value to set for the last_certification_date_time property.
         ## @return a void
         ## 
         def last_certification_date_time=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

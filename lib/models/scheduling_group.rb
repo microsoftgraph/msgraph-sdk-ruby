@@ -40,7 +40,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name for the schedulingGroup. Required.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isActive property value. Indicates whether the schedulingGroup can be used when creating new entities or updating existing ones. Required.
-        ## @param value Value to set for the isActive property.
+        ## @param value Value to set for the is_active property.
         ## @return a void
         ## 
         def is_active=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userIds property value. The list of user IDs that are a member of the schedulingGroup. Required.
-        ## @param value Value to set for the userIds property.
+        ## @param value Value to set for the user_ids property.
         ## @return a void
         ## 
         def user_ids=(value)

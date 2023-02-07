@@ -57,7 +57,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accountName property value. User account identifier (user account context the process ran under) for example, AccountName, SID, and so on.
-        ## @param value Value to set for the accountName property.
+        ## @param value Value to set for the account_name property.
         ## @return a void
         ## 
         def account_name=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the commandLine property value. The full process invocation commandline including all parameters.
-        ## @param value Value to set for the commandLine property.
+        ## @param value Value to set for the command_line property.
         ## @return a void
         ## 
         def command_line=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. Time at which the process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fileHash property value. Complex type containing file hashes (cryptographic and location-sensitive).
-        ## @param value Value to set for the fileHash property.
+        ## @param value Value to set for the file_hash property.
         ## @return a void
         ## 
         def file_hash=(value)
@@ -169,7 +169,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the integrityLevel property value. The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.
-        ## @param value Value to set for the integrityLevel property.
+        ## @param value Value to set for the integrity_level property.
         ## @return a void
         ## 
         def integrity_level=(value)
@@ -184,7 +184,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isElevated property value. True if the process is elevated.
-        ## @param value Value to set for the isElevated property.
+        ## @param value Value to set for the is_elevated property.
         ## @return a void
         ## 
         def is_elevated=(value)
@@ -214,7 +214,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -229,7 +229,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the parentProcessCreatedDateTime property value. DateTime at which the parent process was started. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-        ## @param value Value to set for the parentProcessCreatedDateTime property.
+        ## @param value Value to set for the parent_process_created_date_time property.
         ## @return a void
         ## 
         def parent_process_created_date_time=(value)
@@ -244,7 +244,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the parentProcessId property value. The Process ID (PID) of the parent process.
-        ## @param value Value to set for the parentProcessId property.
+        ## @param value Value to set for the parent_process_id property.
         ## @return a void
         ## 
         def parent_process_id=(value)
@@ -259,7 +259,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the parentProcessName property value. The name of the image file of the parent process.
-        ## @param value Value to set for the parentProcessName property.
+        ## @param value Value to set for the parent_process_name property.
         ## @return a void
         ## 
         def parent_process_name=(value)
@@ -289,7 +289,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the processId property value. The Process ID (PID) of the process.
-        ## @param value Value to set for the processId property.
+        ## @param value Value to set for the process_id property.
         ## @return a void
         ## 
         def process_id=(value)

@@ -41,7 +41,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the channelId property value. The identity of the channel in which the message was posted.
-        ## @param value Value to set for the channelId property.
+        ## @param value Value to set for the channel_id property.
         ## @return a void
         ## 
         def channel_id=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the teamId property value. The identity of the team in which the message was posted.
-        ## @param value Value to set for the teamId property.
+        ## @param value Value to set for the team_id property.
         ## @return a void
         ## 
         def team_id=(value)

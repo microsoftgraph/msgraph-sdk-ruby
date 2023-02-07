@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceLocation property value. The resource URI for the result.
-        ## @param value Value to set for the resourceLocation property.
+        ## @param value Value to set for the resource_location property.
         ## @return a void
         ## 
         def resource_location=(value)

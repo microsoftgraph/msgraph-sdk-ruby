@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accountEnabled property value. true if the account is enabled; otherwise, false. Required. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.
-        ## @param value Value to set for the accountEnabled property.
+        ## @param value Value to set for the account_enabled property.
         ## @return a void
         ## 
         def account_enabled=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the alternativeSecurityIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le).
-        ## @param value Value to set for the alternativeSecurityIds property.
+        ## @param value Value to set for the alternative_security_ids property.
         ## @return a void
         ## 
         def alternative_security_ids=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the approximateLastSignInDateTime property value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, and eq on null values) and $orderBy.
-        ## @param value Value to set for the approximateLastSignInDateTime property.
+        ## @param value Value to set for the approximate_last_sign_in_date_time property.
         ## @return a void
         ## 
         def approximate_last_sign_in_date_time=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the complianceExpirationDateTime property value. The timestamp when the device is no longer deemed compliant. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        ## @param value Value to set for the complianceExpirationDateTime property.
+        ## @param value Value to set for the compliance_expiration_date_time property.
         ## @return a void
         ## 
         def compliance_expiration_date_time=(value)
@@ -164,7 +164,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceId property value. Unique identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Supports $filter (eq, ne, not, startsWith).
-        ## @param value Value to set for the deviceId property.
+        ## @param value Value to set for the device_id property.
         ## @return a void
         ## 
         def device_id=(value)
@@ -179,7 +179,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceMetadata property value. For internal use only. Set to null.
-        ## @param value Value to set for the deviceMetadata property.
+        ## @param value Value to set for the device_metadata property.
         ## @return a void
         ## 
         def device_metadata=(value)
@@ -194,7 +194,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceVersion property value. For internal use only.
-        ## @param value Value to set for the deviceVersion property.
+        ## @param value Value to set for the device_version property.
         ## @return a void
         ## 
         def device_version=(value)
@@ -209,7 +209,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -271,7 +271,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isCompliant property value. true if the device complies with Mobile Device Management (MDM) policies; otherwise, false. Read-only. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-        ## @param value Value to set for the isCompliant property.
+        ## @param value Value to set for the is_compliant property.
         ## @return a void
         ## 
         def is_compliant=(value)
@@ -286,7 +286,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isManaged property value. true if the device is managed by a Mobile Device Management (MDM) app; otherwise, false. This can only be updated by Intune for any device OS type or by an approved MDM app for Windows OS devices. Supports $filter (eq, ne, not).
-        ## @param value Value to set for the isManaged property.
+        ## @param value Value to set for the is_managed property.
         ## @return a void
         ## 
         def is_managed=(value)
@@ -301,7 +301,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mdmAppId property value. Application identifier used to register device into MDM. Read-only. Supports $filter (eq, ne, not, startsWith).
-        ## @param value Value to set for the mdmAppId property.
+        ## @param value Value to set for the mdm_app_id property.
         ## @return a void
         ## 
         def mdm_app_id=(value)
@@ -316,7 +316,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the memberOf property value. Groups and administrative units that this device is a member of. Read-only. Nullable. Supports $expand.
-        ## @param value Value to set for the memberOf property.
+        ## @param value Value to set for the member_of property.
         ## @return a void
         ## 
         def member_of=(value)
@@ -331,7 +331,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the onPremisesLastSyncDateTime property value. The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Read-only. Supports $filter (eq, ne, not, ge, le, in).
-        ## @param value Value to set for the onPremisesLastSyncDateTime property.
+        ## @param value Value to set for the on_premises_last_sync_date_time property.
         ## @return a void
         ## 
         def on_premises_last_sync_date_time=(value)
@@ -346,7 +346,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the onPremisesSyncEnabled property value. true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
-        ## @param value Value to set for the onPremisesSyncEnabled property.
+        ## @param value Value to set for the on_premises_sync_enabled property.
         ## @return a void
         ## 
         def on_premises_sync_enabled=(value)
@@ -361,7 +361,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the operatingSystem property value. The type of operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
-        ## @param value Value to set for the operatingSystem property.
+        ## @param value Value to set for the operating_system property.
         ## @return a void
         ## 
         def operating_system=(value)
@@ -376,7 +376,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the operatingSystemVersion property value. The version of the operating system on the device. Required. Supports $filter (eq, ne, not, ge, le, startsWith, and eq on null values).
-        ## @param value Value to set for the operatingSystemVersion property.
+        ## @param value Value to set for the operating_system_version property.
         ## @return a void
         ## 
         def operating_system_version=(value)
@@ -391,7 +391,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the physicalIds property value. For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith,/$count eq 0, /$count ne 0).
-        ## @param value Value to set for the physicalIds property.
+        ## @param value Value to set for the physical_ids property.
         ## @return a void
         ## 
         def physical_ids=(value)
@@ -406,7 +406,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the profileType property value. The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
-        ## @param value Value to set for the profileType property.
+        ## @param value Value to set for the profile_type property.
         ## @return a void
         ## 
         def profile_type=(value)
@@ -421,7 +421,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the registeredOwners property value. The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
-        ## @param value Value to set for the registeredOwners property.
+        ## @param value Value to set for the registered_owners property.
         ## @return a void
         ## 
         def registered_owners=(value)
@@ -436,7 +436,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the registeredUsers property value. Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
-        ## @param value Value to set for the registeredUsers property.
+        ## @param value Value to set for the registered_users property.
         ## @return a void
         ## 
         def registered_users=(value)
@@ -484,7 +484,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the systemLabels property value. List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).
-        ## @param value Value to set for the systemLabels property.
+        ## @param value Value to set for the system_labels property.
         ## @return a void
         ## 
         def system_labels=(value)
@@ -499,7 +499,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the transitiveMemberOf property value. Groups and administrative units that the device is a member of. This operation is transitive. Supports $expand.
-        ## @param value Value to set for the transitiveMemberOf property.
+        ## @param value Value to set for the transitive_member_of property.
         ## @return a void
         ## 
         def transitive_member_of=(value)
@@ -514,7 +514,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the trustType property value. Type of trust for the joined device. Read-only. Possible values:  Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory
-        ## @param value Value to set for the trustType property.
+        ## @param value Value to set for the trust_type property.
         ## @return a void
         ## 
         def trust_type=(value)

@@ -4,7 +4,6 @@ require_relative '../../../models/device_compliance_policy'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_management'
 require_relative '../device_compliance_policies'
-require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
 require_relative './assignments/item/device_compliance_policy_assignment_item_request_builder'
 require_relative './device_setting_state_summaries/device_setting_state_summaries_request_builder'
@@ -13,7 +12,8 @@ require_relative './device_statuses/device_statuses_request_builder'
 require_relative './device_statuses/item/device_compliance_device_status_item_request_builder'
 require_relative './device_status_overview/device_status_overview_request_builder'
 require_relative './item'
-require_relative './schedule_actions_for_rules/schedule_actions_for_rules_request_builder'
+require_relative './microsoft_graph_assign/microsoft_graph_assign_request_builder'
+require_relative './microsoft_graph_schedule_actions_for_rules/microsoft_graph_schedule_actions_for_rules_request_builder'
 require_relative './scheduled_actions_for_rule/item/device_compliance_scheduled_action_for_rule_item_request_builder'
 require_relative './scheduled_actions_for_rule/scheduled_actions_for_rule_request_builder'
 require_relative './user_statuses/item/device_compliance_user_status_item_request_builder'
@@ -25,11 +25,6 @@ module MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item
     # Provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.
     class DeviceCompliancePolicyItemRequestBuilder
         
-        ## 
-        # Provides operations to call the assign method.
-        def assign()
-            return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::Assign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the assignments property of the microsoft.graph.deviceCompliancePolicy entity.
         def assignments()
@@ -51,16 +46,21 @@ module MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item
             return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::DeviceStatusOverview::DeviceStatusOverviewRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the assign method.
+        def microsoft_graph_assign()
+            return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::MicrosoftGraphAssign::MicrosoftGraphAssignRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the scheduleActionsForRules method.
+        def microsoft_graph_schedule_actions_for_rules()
+            return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::MicrosoftGraphScheduleActionsForRules::MicrosoftGraphScheduleActionsForRulesRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the scheduleActionsForRules method.
-        def schedule_actions_for_rules()
-            return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::ScheduleActionsForRules::ScheduleActionsForRulesRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceCompliancePolicy entity.
         def scheduled_actions_for_rule()

@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the androidManagedAppProtections property value. Android managed app policies.
-        ## @param value Value to set for the androidManagedAppProtections property.
+        ## @param value Value to set for the android_managed_app_protections property.
         ## @return a void
         ## 
         def android_managed_app_protections=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the defaultManagedAppProtections property value. Default managed app policies.
-        ## @param value Value to set for the defaultManagedAppProtections property.
+        ## @param value Value to set for the default_managed_app_protections property.
         ## @return a void
         ## 
         def default_managed_app_protections=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the iosManagedAppProtections property value. iOS managed app policies.
-        ## @param value Value to set for the iosManagedAppProtections property.
+        ## @param value Value to set for the ios_managed_app_protections property.
         ## @return a void
         ## 
         def ios_managed_app_protections=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isEnabledForMicrosoftStoreForBusiness property value. Whether the account is enabled for syncing applications from the Microsoft Store for Business.
-        ## @param value Value to set for the isEnabledForMicrosoftStoreForBusiness property.
+        ## @param value Value to set for the is_enabled_for_microsoft_store_for_business property.
         ## @return a void
         ## 
         def is_enabled_for_microsoft_store_for_business=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managedAppPolicies property value. Managed app policies.
-        ## @param value Value to set for the managedAppPolicies property.
+        ## @param value Value to set for the managed_app_policies property.
         ## @return a void
         ## 
         def managed_app_policies=(value)
@@ -186,7 +186,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managedAppRegistrations property value. The managed app registrations.
-        ## @param value Value to set for the managedAppRegistrations property.
+        ## @param value Value to set for the managed_app_registrations property.
         ## @return a void
         ## 
         def managed_app_registrations=(value)
@@ -201,7 +201,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managedAppStatuses property value. The managed app statuses.
-        ## @param value Value to set for the managedAppStatuses property.
+        ## @param value Value to set for the managed_app_statuses property.
         ## @return a void
         ## 
         def managed_app_statuses=(value)
@@ -216,7 +216,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managedEBooks property value. The Managed eBook.
-        ## @param value Value to set for the managedEBooks property.
+        ## @param value Value to set for the managed_e_books property.
         ## @return a void
         ## 
         def managed_e_books=(value)
@@ -231,7 +231,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mdmWindowsInformationProtectionPolicies property value. Windows information protection for apps running on devices which are MDM enrolled.
-        ## @param value Value to set for the mdmWindowsInformationProtectionPolicies property.
+        ## @param value Value to set for the mdm_windows_information_protection_policies property.
         ## @return a void
         ## 
         def mdm_windows_information_protection_policies=(value)
@@ -246,7 +246,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the microsoftStoreForBusinessLanguage property value. The locale information used to sync applications from the Microsoft Store for Business. Cultures that are specific to a country/region. The names of these cultures follow RFC 4646 (Windows Vista and later). The format is -<country/regioncode2>, where  is a lowercase two-letter code derived from ISO 639-1 and <country/regioncode2> is an uppercase two-letter code derived from ISO 3166. For example, en-US for English (United States) is a specific culture.
-        ## @param value Value to set for the microsoftStoreForBusinessLanguage property.
+        ## @param value Value to set for the microsoft_store_for_business_language property.
         ## @return a void
         ## 
         def microsoft_store_for_business_language=(value)
@@ -261,7 +261,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the microsoftStoreForBusinessLastCompletedApplicationSyncTime property value. The last time an application sync from the Microsoft Store for Business was completed.
-        ## @param value Value to set for the microsoftStoreForBusinessLastCompletedApplicationSyncTime property.
+        ## @param value Value to set for the microsoft_store_for_business_last_completed_application_sync_time property.
         ## @return a void
         ## 
         def microsoft_store_for_business_last_completed_application_sync_time=(value)
@@ -276,7 +276,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the microsoftStoreForBusinessLastSuccessfulSyncDateTime property value. The last time the apps from the Microsoft Store for Business were synced successfully for the account.
-        ## @param value Value to set for the microsoftStoreForBusinessLastSuccessfulSyncDateTime property.
+        ## @param value Value to set for the microsoft_store_for_business_last_successful_sync_date_time property.
         ## @return a void
         ## 
         def microsoft_store_for_business_last_successful_sync_date_time=(value)
@@ -291,7 +291,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mobileAppCategories property value. The mobile app categories.
-        ## @param value Value to set for the mobileAppCategories property.
+        ## @param value Value to set for the mobile_app_categories property.
         ## @return a void
         ## 
         def mobile_app_categories=(value)
@@ -306,7 +306,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mobileAppConfigurations property value. The Managed Device Mobile Application Configurations.
-        ## @param value Value to set for the mobileAppConfigurations property.
+        ## @param value Value to set for the mobile_app_configurations property.
         ## @return a void
         ## 
         def mobile_app_configurations=(value)
@@ -321,7 +321,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mobileApps property value. The mobile apps.
-        ## @param value Value to set for the mobileApps property.
+        ## @param value Value to set for the mobile_apps property.
         ## @return a void
         ## 
         def mobile_apps=(value)
@@ -363,7 +363,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the targetedManagedAppConfigurations property value. Targeted managed app configurations.
-        ## @param value Value to set for the targetedManagedAppConfigurations property.
+        ## @param value Value to set for the targeted_managed_app_configurations property.
         ## @return a void
         ## 
         def targeted_managed_app_configurations=(value)
@@ -378,7 +378,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the vppTokens property value. List of Vpp tokens for this organization.
-        ## @param value Value to set for the vppTokens property.
+        ## @param value Value to set for the vpp_tokens property.
         ## @return a void
         ## 
         def vpp_tokens=(value)
@@ -393,7 +393,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the windowsInformationProtectionPolicies property value. Windows information protection for apps running on devices which are not MDM enrolled.
-        ## @param value Value to set for the windowsInformationProtectionPolicies property.
+        ## @param value Value to set for the windows_information_protection_policies property.
         ## @return a void
         ## 
         def windows_information_protection_policies=(value)

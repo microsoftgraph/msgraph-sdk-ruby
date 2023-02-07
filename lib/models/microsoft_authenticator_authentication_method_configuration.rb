@@ -37,7 +37,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the featureSettings property value. A collection of Microsoft Authenticator settings such as application context and location context, and whether they are enabled for all users or specific users only.
-        ## @param value Value to set for the featureSettings property.
+        ## @param value Value to set for the feature_settings property.
         ## @return a void
         ## 
         def feature_settings=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
-        ## @param value Value to set for the includeTargets property.
+        ## @param value Value to set for the include_targets property.
         ## @return a void
         ## 
         def include_targets=(value)

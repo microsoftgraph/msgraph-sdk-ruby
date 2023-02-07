@@ -15,7 +15,7 @@ module MicrosoftGraph::Models
         # The OdataType property
         @odata_type
         ## 
-        # Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
+        # Specifies the participant's role in the meeting.
         @role
         ## 
         # User principal name of the participant.
@@ -87,21 +87,21 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
             @odata_type = value
         end
         ## 
-        ## Gets the role property value. Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
+        ## Gets the role property value. Specifies the participant's role in the meeting.
         ## @return a online_meeting_role
         ## 
         def role
             return @role
         end
         ## 
-        ## Sets the role property value. Specifies the participant's role in the meeting.  Possible values are attendee, presenter, producer, and unknownFutureValue.
+        ## Sets the role property value. Specifies the participant's role in the meeting.
         ## @param value Value to set for the role property.
         ## @return a void
         ## 

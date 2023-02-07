@@ -44,7 +44,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the complianceUrl property value. The URL a user can visit to read about the data loss prevention policies for the organization. (ie, policies about what users shouldn't say in chats)
-        ## @param value Value to set for the complianceUrl property.
+        ## @param value Value to set for the compliance_url property.
         ## @return a void
         ## 
         def compliance_url=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the generalText property value. Explanatory text shown to the sender of the message.
-        ## @param value Value to set for the generalText property.
+        ## @param value Value to set for the general_text property.
         ## @return a void
         ## 
         def general_text=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the matchedConditionDescriptions property value. The list of improper data in the message that was detected by the data loss prevention app. Each DLP app defines its own conditions, examples include 'Credit Card Number' and 'Social Security Number'.
-        ## @param value Value to set for the matchedConditionDescriptions property.
+        ## @param value Value to set for the matched_condition_descriptions property.
         ## @return a void
         ## 
         def matched_condition_descriptions=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

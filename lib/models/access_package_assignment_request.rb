@@ -19,11 +19,11 @@ module MicrosoftGraph::Models
         # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter.
         @created_date_time
         ## 
-        # The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
-        @requestor
-        ## 
         # The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property cannot be changed once set.
         @request_type
+        ## 
+        # The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
+        @requestor
         ## 
         # The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
         @schedule
@@ -42,7 +42,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accessPackage property value. The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable.  Supports $expand.
-        ## @param value Value to set for the accessPackage property.
+        ## @param value Value to set for the access_package property.
         ## @return a void
         ## 
         def access_package=(value)
@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the completedDateTime property value. The date of the end of processing, either successful or failure, of a request. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-        ## @param value Value to set for the completedDateTime property.
+        ## @param value Value to set for the completed_date_time property.
         ## @return a void
         ## 
         def completed_date_time=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter.
-        ## @param value Value to set for the createdDateTime property.
+        ## @param value Value to set for the created_date_time property.
         ## @return a void
         ## 
         def created_date_time=(value)
@@ -119,12 +119,27 @@ module MicrosoftGraph::Models
                 "assignment" => lambda {|n| @assignment = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageAssignment.create_from_discriminator_value(pn) }) },
                 "completedDateTime" => lambda {|n| @completed_date_time = n.get_date_time_value() },
                 "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
-                "requestor" => lambda {|n| @requestor = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageSubject.create_from_discriminator_value(pn) }) },
                 "requestType" => lambda {|n| @request_type = n.get_enum_value(MicrosoftGraph::Models::AccessPackageRequestType) },
+                "requestor" => lambda {|n| @requestor = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageSubject.create_from_discriminator_value(pn) }) },
                 "schedule" => lambda {|n| @schedule = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EntitlementManagementSchedule.create_from_discriminator_value(pn) }) },
                 "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraph::Models::AccessPackageRequestState) },
                 "status" => lambda {|n| @status = n.get_string_value() },
             })
+        end
+        ## 
+        ## Gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property cannot be changed once set.
+        ## @return a access_package_request_type
+        ## 
+        def request_type
+            return @request_type
+        end
+        ## 
+        ## Sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property cannot be changed once set.
+        ## @param value Value to set for the request_type property.
+        ## @return a void
+        ## 
+        def request_type=(value)
+            @request_type = value
         end
         ## 
         ## Gets the requestor property value. The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.
@@ -140,21 +155,6 @@ module MicrosoftGraph::Models
         ## 
         def requestor=(value)
             @requestor = value
-        end
-        ## 
-        ## Gets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property cannot be changed once set.
-        ## @return a access_package_request_type
-        ## 
-        def request_type
-            return @request_type
-        end
-        ## 
-        ## Sets the requestType property value. The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property cannot be changed once set.
-        ## @param value Value to set for the requestType property.
-        ## @return a void
-        ## 
-        def request_type=(value)
-            @request_type = value
         end
         ## 
         ## Gets the schedule property value. The range of dates that access is to be assigned to the requestor. This property cannot be changed once set.
@@ -183,8 +183,8 @@ module MicrosoftGraph::Models
             writer.write_object_value("assignment", @assignment)
             writer.write_date_time_value("completedDateTime", @completed_date_time)
             writer.write_date_time_value("createdDateTime", @created_date_time)
-            writer.write_object_value("requestor", @requestor)
             writer.write_enum_value("requestType", @request_type)
+            writer.write_object_value("requestor", @requestor)
             writer.write_object_value("schedule", @schedule)
             writer.write_enum_value("state", @state)
             writer.write_string_value("status", @status)

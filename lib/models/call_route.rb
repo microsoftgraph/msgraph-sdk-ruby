@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the routingType property value. The routingType property
-        ## @param value Value to set for the routingType property.
+        ## @param value Value to set for the routing_type property.
         ## @return a void
         ## 
         def routing_type=(value)

@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osMaximumVersion property value. Max OS version supported
-        ## @param value Value to set for the osMaximumVersion property.
+        ## @param value Value to set for the os_maximum_version property.
         ## @return a void
         ## 
         def os_maximum_version=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osMinimumVersion property value. Min OS version supported
-        ## @param value Value to set for the osMinimumVersion property.
+        ## @param value Value to set for the os_minimum_version property.
         ## @return a void
         ## 
         def os_minimum_version=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the personalDeviceEnrollmentBlocked property value. Block personally owned devices from enrolling
-        ## @param value Value to set for the personalDeviceEnrollmentBlocked property.
+        ## @param value Value to set for the personal_device_enrollment_blocked property.
         ## @return a void
         ## 
         def personal_device_enrollment_blocked=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the platformBlocked property value. Block the platform from enrolling
-        ## @param value Value to set for the platformBlocked property.
+        ## @param value Value to set for the platform_blocked property.
         ## @return a void
         ## 
         def platform_blocked=(value)

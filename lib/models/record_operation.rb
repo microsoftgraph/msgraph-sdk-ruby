@@ -46,7 +46,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the recordingAccessToken property value. The access token required to retrieve the recording.
-        ## @param value Value to set for the recordingAccessToken property.
+        ## @param value Value to set for the recording_access_token property.
         ## @return a void
         ## 
         def recording_access_token=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the recordingLocation property value. The location where the recording is located.
-        ## @param value Value to set for the recordingLocation property.
+        ## @param value Value to set for the recording_location property.
         ## @return a void
         ## 
         def recording_location=(value)

@@ -29,7 +29,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowPrinting property value. Indicates whether or not to allow the app from printing during the test.
-        ## @param value Value to set for the allowPrinting property.
+        ## @param value Value to set for the allow_printing property.
         ## @return a void
         ## 
         def allow_printing=(value)
@@ -44,7 +44,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowScreenCapture property value. Indicates whether or not to allow screen capture capability during a test.
-        ## @param value Value to set for the allowScreenCapture property.
+        ## @param value Value to set for the allow_screen_capture property.
         ## @return a void
         ## 
         def allow_screen_capture=(value)
@@ -59,7 +59,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowTextSuggestion property value. Indicates whether or not to allow text suggestions during the test.
-        ## @param value Value to set for the allowTextSuggestion property.
+        ## @param value Value to set for the allow_text_suggestion property.
         ## @return a void
         ## 
         def allow_text_suggestion=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the configurationAccount property value. The account used to configure the Windows device for taking the test. The user can be a domain account (domain/user), an AAD account (username@tenant.com) or a local account (username).
-        ## @param value Value to set for the configurationAccount property.
+        ## @param value Value to set for the configuration_account property.
         ## @return a void
         ## 
         def configuration_account=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the launchUri property value. Url link to an assessment that's automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).
-        ## @param value Value to set for the launchUri property.
+        ## @param value Value to set for the launch_uri property.
         ## @return a void
         ## 
         def launch_uri=(value)

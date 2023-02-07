@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deliveryOptimizationPriority property value. Contains value for delivery optimization priority.
-        ## @param value Value to set for the deliveryOptimizationPriority property.
+        ## @param value Value to set for the delivery_optimization_priority property.
         ## @return a void
         ## 
         def delivery_optimization_priority=(value)
@@ -70,7 +70,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the installTimeSettings property value. The install time settings to apply for this app assignment.
-        ## @param value Value to set for the installTimeSettings property.
+        ## @param value Value to set for the install_time_settings property.
         ## @return a void
         ## 
         def install_time_settings=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the restartSettings property value. The reboot settings to apply for this app assignment.
-        ## @param value Value to set for the restartSettings property.
+        ## @param value Value to set for the restart_settings property.
         ## @return a void
         ## 
         def restart_settings=(value)

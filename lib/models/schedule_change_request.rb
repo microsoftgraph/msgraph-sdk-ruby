@@ -39,7 +39,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignedTo property value. The assignedTo property
-        ## @param value Value to set for the assignedTo property.
+        ## @param value Value to set for the assigned_to property.
         ## @return a void
         ## 
         def assigned_to=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managerActionDateTime property value. The managerActionDateTime property
-        ## @param value Value to set for the managerActionDateTime property.
+        ## @param value Value to set for the manager_action_date_time property.
         ## @return a void
         ## 
         def manager_action_date_time=(value)
@@ -116,7 +116,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managerActionMessage property value. The managerActionMessage property
-        ## @param value Value to set for the managerActionMessage property.
+        ## @param value Value to set for the manager_action_message property.
         ## @return a void
         ## 
         def manager_action_message=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managerUserId property value. The managerUserId property
-        ## @param value Value to set for the managerUserId property.
+        ## @param value Value to set for the manager_user_id property.
         ## @return a void
         ## 
         def manager_user_id=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the senderDateTime property value. The senderDateTime property
-        ## @param value Value to set for the senderDateTime property.
+        ## @param value Value to set for the sender_date_time property.
         ## @return a void
         ## 
         def sender_date_time=(value)
@@ -161,7 +161,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the senderMessage property value. The senderMessage property
-        ## @param value Value to set for the senderMessage property.
+        ## @param value Value to set for the sender_message property.
         ## @return a void
         ## 
         def sender_message=(value)
@@ -176,7 +176,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the senderUserId property value. The senderUserId property
-        ## @param value Value to set for the senderUserId property.
+        ## @param value Value to set for the sender_user_id property.
         ## @return a void
         ## 
         def sender_user_id=(value)

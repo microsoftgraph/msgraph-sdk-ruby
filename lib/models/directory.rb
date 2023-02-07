@@ -23,7 +23,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the administrativeUnits property value. Conceptual container for user and group directory objects.
-        ## @param value Value to set for the administrativeUnits property.
+        ## @param value Value to set for the administrative_units property.
         ## @return a void
         ## 
         def administrative_units=(value)
@@ -54,7 +54,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deletedItems property value. Recently deleted items. Read-only. Nullable.
-        ## @param value Value to set for the deletedItems property.
+        ## @param value Value to set for the deleted_items property.
         ## @return a void
         ## 
         def deleted_items=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the federationConfigurations property value. Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
-        ## @param value Value to set for the federationConfigurations property.
+        ## @param value Value to set for the federation_configurations property.
         ## @return a void
         ## 
         def federation_configurations=(value)

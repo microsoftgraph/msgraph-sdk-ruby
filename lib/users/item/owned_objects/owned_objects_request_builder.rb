@@ -4,11 +4,11 @@ require_relative '../../../models/directory_object_collection_response'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../users'
 require_relative '../item'
-require_relative './application/application_request_builder'
 require_relative './count/count_request_builder'
-require_relative './group/group_request_builder'
+require_relative './microsoft_graph_application/microsoft_graph_application_request_builder'
+require_relative './microsoft_graph_group/microsoft_graph_group_request_builder'
+require_relative './microsoft_graph_service_principal/microsoft_graph_service_principal_request_builder'
 require_relative './owned_objects'
-require_relative './service_principal/service_principal_request_builder'
 
 module MicrosoftGraph::Users::Item::OwnedObjects
     ## 
@@ -16,19 +16,24 @@ module MicrosoftGraph::Users::Item::OwnedObjects
     class OwnedObjectsRequestBuilder
         
         ## 
-        # Casts the previous resource to application.
-        def application()
-            return MicrosoftGraph::Users::Item::OwnedObjects::Application::ApplicationRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to count the resources in the collection.
         def count()
             return MicrosoftGraph::Users::Item::OwnedObjects::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Casts the previous resource to application.
+        def microsoft_graph_application()
+            return MicrosoftGraph::Users::Item::OwnedObjects::MicrosoftGraphApplication::MicrosoftGraphApplicationRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Casts the previous resource to group.
-        def group()
-            return MicrosoftGraph::Users::Item::OwnedObjects::Group::GroupRequestBuilder.new(@path_parameters, @request_adapter)
+        def microsoft_graph_group()
+            return MicrosoftGraph::Users::Item::OwnedObjects::MicrosoftGraphGroup::MicrosoftGraphGroupRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Casts the previous resource to servicePrincipal.
+        def microsoft_graph_service_principal()
+            return MicrosoftGraph::Users::Item::OwnedObjects::MicrosoftGraphServicePrincipal::MicrosoftGraphServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Path parameters for the request
@@ -36,11 +41,6 @@ module MicrosoftGraph::Users::Item::OwnedObjects
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Casts the previous resource to servicePrincipal.
-        def service_principal()
-            return MicrosoftGraph::Users::Item::OwnedObjects::ServicePrincipal::ServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template

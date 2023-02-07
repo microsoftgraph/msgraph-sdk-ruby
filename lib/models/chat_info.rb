@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the messageId property value. The unique identifier of a message in a Microsoft Teams channel.
-        ## @param value Value to set for the messageId property.
+        ## @param value Value to set for the message_id property.
         ## @return a void
         ## 
         def message_id=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the replyChainMessageId property value. The ID of the reply message.
-        ## @param value Value to set for the replyChainMessageId property.
+        ## @param value Value to set for the reply_chain_message_id property.
         ## @return a void
         ## 
         def reply_chain_message_id=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the threadId property value. The unique identifier for a thread in Microsoft Teams.
-        ## @param value Value to set for the threadId property.
+        ## @param value Value to set for the thread_id property.
         ## @return a void
         ## 
         def thread_id=(value)

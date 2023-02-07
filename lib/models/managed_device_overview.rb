@@ -45,7 +45,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceExchangeAccessStateSummary property value. Distribution of Exchange Access State in Intune
-        ## @param value Value to set for the deviceExchangeAccessStateSummary property.
+        ## @param value Value to set for the device_exchange_access_state_summary property.
         ## @return a void
         ## 
         def device_exchange_access_state_summary=(value)
@@ -60,7 +60,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceOperatingSystemSummary property value. Device operating system summary.
-        ## @param value Value to set for the deviceOperatingSystemSummary property.
+        ## @param value Value to set for the device_operating_system_summary property.
         ## @return a void
         ## 
         def device_operating_system_summary=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dualEnrolledDeviceCount property value. The number of devices enrolled in both MDM and EAS
-        ## @param value Value to set for the dualEnrolledDeviceCount property.
+        ## @param value Value to set for the dual_enrolled_device_count property.
         ## @return a void
         ## 
         def dual_enrolled_device_count=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enrolledDeviceCount property value. Total enrolled device count. Does not include PC devices managed via Intune PC Agent
-        ## @param value Value to set for the enrolledDeviceCount property.
+        ## @param value Value to set for the enrolled_device_count property.
         ## @return a void
         ## 
         def enrolled_device_count=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mdmEnrolledCount property value. The number of devices enrolled in MDM
-        ## @param value Value to set for the mdmEnrolledCount property.
+        ## @param value Value to set for the mdm_enrolled_count property.
         ## @return a void
         ## 
         def mdm_enrolled_count=(value)

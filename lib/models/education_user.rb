@@ -46,11 +46,11 @@ module MicrosoftGraph::Models
         # The SMTP address for the user, for example, jeff@contoso.onmicrosoft.com. Read-Only. Supports $filter.
         @mail
         ## 
-        # The mail address of the user.
-        @mailing_address
-        ## 
         # The mail alias for the user. This property must be specified when a user is created. Supports $filter.
         @mail_nickname
+        ## 
+        # The mail address of the user.
+        @mailing_address
         ## 
         # The middle name of the user.
         @middle_name
@@ -129,7 +129,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the accountEnabled property value. True if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter.
-        ## @param value Value to set for the accountEnabled property.
+        ## @param value Value to set for the account_enabled property.
         ## @return a void
         ## 
         def account_enabled=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignedLicenses property value. The licenses that are assigned to the user. Not nullable.
-        ## @param value Value to set for the assignedLicenses property.
+        ## @param value Value to set for the assigned_licenses property.
         ## @return a void
         ## 
         def assigned_licenses=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the assignedPlans property value. The plans that are assigned to the user. Read-only. Not nullable.
-        ## @param value Value to set for the assignedPlans property.
+        ## @param value Value to set for the assigned_plans property.
         ## @return a void
         ## 
         def assigned_plans=(value)
@@ -189,7 +189,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the businessPhones property value. The telephone numbers for the user. Note: Although this is a string collection, only one number can be set for this property.
-        ## @param value Value to set for the businessPhones property.
+        ## @param value Value to set for the business_phones property.
         ## @return a void
         ## 
         def business_phones=(value)
@@ -226,7 +226,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the createdBy property value. The entity who created the user.
-        ## @param value Value to set for the createdBy property.
+        ## @param value Value to set for the created_by property.
         ## @return a void
         ## 
         def created_by=(value)
@@ -265,7 +265,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Supports $filter and $orderby.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)
@@ -280,7 +280,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalSource property value. Where this user was created from. Possible values are: sis, manual.
-        ## @param value Value to set for the externalSource property.
+        ## @param value Value to set for the external_source property.
         ## @return a void
         ## 
         def external_source=(value)
@@ -295,7 +295,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the externalSourceDetail property value. The name of the external source this resource was generated from.
-        ## @param value Value to set for the externalSourceDetail property.
+        ## @param value Value to set for the external_source_detail property.
         ## @return a void
         ## 
         def external_source_detail=(value)
@@ -320,8 +320,8 @@ module MicrosoftGraph::Models
                 "externalSourceDetail" => lambda {|n| @external_source_detail = n.get_string_value() },
                 "givenName" => lambda {|n| @given_name = n.get_string_value() },
                 "mail" => lambda {|n| @mail = n.get_string_value() },
-                "mailingAddress" => lambda {|n| @mailing_address = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PhysicalAddress.create_from_discriminator_value(pn) }) },
                 "mailNickname" => lambda {|n| @mail_nickname = n.get_string_value() },
+                "mailingAddress" => lambda {|n| @mailing_address = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PhysicalAddress.create_from_discriminator_value(pn) }) },
                 "middleName" => lambda {|n| @middle_name = n.get_string_value() },
                 "mobilePhone" => lambda {|n| @mobile_phone = n.get_string_value() },
                 "officeLocation" => lambda {|n| @office_location = n.get_string_value() },
@@ -356,7 +356,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the givenName property value. The given name (first name) of the user. Supports $filter.
-        ## @param value Value to set for the givenName property.
+        ## @param value Value to set for the given_name property.
         ## @return a void
         ## 
         def given_name=(value)
@@ -378,21 +378,6 @@ module MicrosoftGraph::Models
             @mail = value
         end
         ## 
-        ## Gets the mailingAddress property value. The mail address of the user.
-        ## @return a physical_address
-        ## 
-        def mailing_address
-            return @mailing_address
-        end
-        ## 
-        ## Sets the mailingAddress property value. The mail address of the user.
-        ## @param value Value to set for the mailingAddress property.
-        ## @return a void
-        ## 
-        def mailing_address=(value)
-            @mailing_address = value
-        end
-        ## 
         ## Gets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Supports $filter.
         ## @return a string
         ## 
@@ -401,11 +386,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Supports $filter.
-        ## @param value Value to set for the mailNickname property.
+        ## @param value Value to set for the mail_nickname property.
         ## @return a void
         ## 
         def mail_nickname=(value)
             @mail_nickname = value
+        end
+        ## 
+        ## Gets the mailingAddress property value. The mail address of the user.
+        ## @return a physical_address
+        ## 
+        def mailing_address
+            return @mailing_address
+        end
+        ## 
+        ## Sets the mailingAddress property value. The mail address of the user.
+        ## @param value Value to set for the mailing_address property.
+        ## @return a void
+        ## 
+        def mailing_address=(value)
+            @mailing_address = value
         end
         ## 
         ## Gets the middleName property value. The middle name of the user.
@@ -416,7 +416,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the middleName property value. The middle name of the user.
-        ## @param value Value to set for the middleName property.
+        ## @param value Value to set for the middle_name property.
         ## @return a void
         ## 
         def middle_name=(value)
@@ -431,7 +431,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mobilePhone property value. The primary cellular telephone number for the user.
-        ## @param value Value to set for the mobilePhone property.
+        ## @param value Value to set for the mobile_phone property.
         ## @return a void
         ## 
         def mobile_phone=(value)
@@ -446,7 +446,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the officeLocation property value. The officeLocation property
-        ## @param value Value to set for the officeLocation property.
+        ## @param value Value to set for the office_location property.
         ## @return a void
         ## 
         def office_location=(value)
@@ -461,7 +461,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the onPremisesInfo property value. Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.
-        ## @param value Value to set for the onPremisesInfo property.
+        ## @param value Value to set for the on_premises_info property.
         ## @return a void
         ## 
         def on_premises_info=(value)
@@ -476,7 +476,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two can be specified together; for example: DisablePasswordExpiration, DisableStrongPassword.
-        ## @param value Value to set for the passwordPolicies property.
+        ## @param value Value to set for the password_policies property.
         ## @return a void
         ## 
         def password_policies=(value)
@@ -491,7 +491,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required.
-        ## @param value Value to set for the passwordProfile property.
+        ## @param value Value to set for the password_profile property.
         ## @return a void
         ## 
         def password_profile=(value)
@@ -506,7 +506,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the preferredLanguage property value. The preferred language for the user that should follow the ISO 639-1 code, for example, en-US.
-        ## @param value Value to set for the preferredLanguage property.
+        ## @param value Value to set for the preferred_language property.
         ## @return a void
         ## 
         def preferred_language=(value)
@@ -521,7 +521,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the primaryRole property value. The primaryRole property
-        ## @param value Value to set for the primaryRole property.
+        ## @param value Value to set for the primary_role property.
         ## @return a void
         ## 
         def primary_role=(value)
@@ -536,7 +536,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable.
-        ## @param value Value to set for the provisionedPlans property.
+        ## @param value Value to set for the provisioned_plans property.
         ## @return a void
         ## 
         def provisioned_plans=(value)
@@ -551,7 +551,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the refreshTokensValidFromDateTime property value. The refreshTokensValidFromDateTime property
-        ## @param value Value to set for the refreshTokensValidFromDateTime property.
+        ## @param value Value to set for the refresh_tokens_valid_from_date_time property.
         ## @return a void
         ## 
         def refresh_tokens_valid_from_date_time=(value)
@@ -566,7 +566,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the relatedContacts property value. Related records associated with the user. Read-only.
-        ## @param value Value to set for the relatedContacts property.
+        ## @param value Value to set for the related_contacts property.
         ## @return a void
         ## 
         def related_contacts=(value)
@@ -581,7 +581,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the residenceAddress property value. The address where the user lives.
-        ## @param value Value to set for the residenceAddress property.
+        ## @param value Value to set for the residence_address property.
         ## @return a void
         ## 
         def residence_address=(value)
@@ -638,8 +638,8 @@ module MicrosoftGraph::Models
             writer.write_string_value("externalSourceDetail", @external_source_detail)
             writer.write_string_value("givenName", @given_name)
             writer.write_string_value("mail", @mail)
-            writer.write_object_value("mailingAddress", @mailing_address)
             writer.write_string_value("mailNickname", @mail_nickname)
+            writer.write_object_value("mailingAddress", @mailing_address)
             writer.write_string_value("middleName", @middle_name)
             writer.write_string_value("mobilePhone", @mobile_phone)
             writer.write_string_value("officeLocation", @office_location)
@@ -673,7 +673,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the showInAddressList property value. True if the Outlook Global Address List should contain this user; otherwise, false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.
-        ## @param value Value to set for the showInAddressList property.
+        ## @param value Value to set for the show_in_address_list property.
         ## @return a void
         ## 
         def show_in_address_list=(value)
@@ -718,7 +718,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the taughtClasses property value. Classes for which the user is a teacher.
-        ## @param value Value to set for the taughtClasses property.
+        ## @param value Value to set for the taught_classes property.
         ## @return a void
         ## 
         def taught_classes=(value)
@@ -748,7 +748,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the usageLocation property value. A two-letter country code (ISO standard 3166). Required for users who will be assigned licenses due to a legal requirement to check for availability of services in countries or regions. Examples include: US, JP, and GB. Not nullable. Supports $filter.
-        ## @param value Value to set for the usageLocation property.
+        ## @param value Value to set for the usage_location property.
         ## @return a void
         ## 
         def usage_location=(value)
@@ -778,7 +778,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an internet-style login name for the user based on the internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of the organization. Supports $filter and $orderby.
-        ## @param value Value to set for the userPrincipalName property.
+        ## @param value Value to set for the user_principal_name property.
         ## @return a void
         ## 
         def user_principal_name=(value)
@@ -793,7 +793,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userType property value. A string value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter.
-        ## @param value Value to set for the userType property.
+        ## @param value Value to set for the user_type property.
         ## @return a void
         ## 
         def user_type=(value)

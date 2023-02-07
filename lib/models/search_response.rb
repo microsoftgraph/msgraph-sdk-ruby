@@ -76,7 +76,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hitsContainers property value. A collection of search results.
-        ## @param value Value to set for the hitsContainers property.
+        ## @param value Value to set for the hits_containers property.
         ## @return a void
         ## 
         def hits_containers=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the queryAlterationResponse property value. Provides information related to spelling corrections in the alteration response.
-        ## @param value Value to set for the queryAlterationResponse property.
+        ## @param value Value to set for the query_alteration_response property.
         ## @return a void
         ## 
         def query_alteration_response=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resultTemplates property value. A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
-        ## @param value Value to set for the resultTemplates property.
+        ## @param value Value to set for the result_templates property.
         ## @return a void
         ## 
         def result_templates=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the searchTerms property value. Contains the search terms sent in the initial search query.
-        ## @param value Value to set for the searchTerms property.
+        ## @param value Value to set for the search_terms property.
         ## @return a void
         ## 
         def search_terms=(value)

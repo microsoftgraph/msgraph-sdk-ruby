@@ -23,7 +23,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the binaryName property value. The binary name.
-        ## @param value Value to set for the binaryName property.
+        ## @param value Value to set for the binary_name property.
         ## @return a void
         ## 
         def binary_name=(value)
@@ -38,7 +38,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the binaryVersionHigh property value. The high binary version.
-        ## @param value Value to set for the binaryVersionHigh property.
+        ## @param value Value to set for the binary_version_high property.
         ## @return a void
         ## 
         def binary_version_high=(value)
@@ -53,7 +53,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the binaryVersionLow property value. The lower binary version.
-        ## @param value Value to set for the binaryVersionLow property.
+        ## @param value Value to set for the binary_version_low property.
         ## @return a void
         ## 
         def binary_version_low=(value)

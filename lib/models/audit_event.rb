@@ -63,7 +63,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activityDateTime property value. The date time in UTC when the activity was performed.
-        ## @param value Value to set for the activityDateTime property.
+        ## @param value Value to set for the activity_date_time property.
         ## @return a void
         ## 
         def activity_date_time=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activityOperationType property value. The HTTP operation type of the activity.
-        ## @param value Value to set for the activityOperationType property.
+        ## @param value Value to set for the activity_operation_type property.
         ## @return a void
         ## 
         def activity_operation_type=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activityResult property value. The result of the activity.
-        ## @param value Value to set for the activityResult property.
+        ## @param value Value to set for the activity_result property.
         ## @return a void
         ## 
         def activity_result=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activityType property value. The type of activity that was being performed.
-        ## @param value Value to set for the activityType property.
+        ## @param value Value to set for the activity_type property.
         ## @return a void
         ## 
         def activity_type=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the componentName property value. Component name.
-        ## @param value Value to set for the componentName property.
+        ## @param value Value to set for the component_name property.
         ## @return a void
         ## 
         def component_name=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the correlationId property value. The client request Id that is used to correlate activity within the system.
-        ## @param value Value to set for the correlationId property.
+        ## @param value Value to set for the correlation_id property.
         ## @return a void
         ## 
         def correlation_id=(value)
@@ -199,7 +199,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. Event display name.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)

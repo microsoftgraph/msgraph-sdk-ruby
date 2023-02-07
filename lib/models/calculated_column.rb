@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the outputType property value. The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
-        ## @param value Value to set for the outputType property.
+        ## @param value Value to set for the output_type property.
         ## @return a void
         ## 
         def output_type=(value)

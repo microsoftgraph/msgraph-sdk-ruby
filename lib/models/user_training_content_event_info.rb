@@ -73,7 +73,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the contentDateTime property value. Date and time of the training content playback by the user.
-        ## @param value Value to set for the contentDateTime property.
+        ## @param value Value to set for the content_date_time property.
         ## @return a void
         ## 
         def content_date_time=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the ipAddress property value. IP address of the user for the training event.
-        ## @param value Value to set for the ipAddress property.
+        ## @param value Value to set for the ip_address property.
         ## @return a void
         ## 
         def ip_address=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osPlatformDeviceDetails property value. The operating system, platform, and device details of the user for the training event.
-        ## @param value Value to set for the osPlatformDeviceDetails property.
+        ## @param value Value to set for the os_platform_device_details property.
         ## @return a void
         ## 
         def os_platform_device_details=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the potentialScoreImpact property value. Potential improvement in the tenant security posture after completion of the training by the user.
-        ## @param value Value to set for the potentialScoreImpact property.
+        ## @param value Value to set for the potential_score_impact property.
         ## @return a void
         ## 
         def potential_score_impact=(value)

@@ -7,32 +7,17 @@ module MicrosoftGraph::Models
     class EducationAssignmentDefaults < MicrosoftGraph::Models::Entity
         include MicrosoftKiotaAbstractions::Parsable
         ## 
-        # Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
-        @added_student_action
-        ## 
         # Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
         @add_to_calendar_action
+        ## 
+        # Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
+        @added_student_action
         ## 
         # Class-level default value for due time field. Default value is 23:59:00.
         @due_time
         ## 
         # Default Teams channel to which notifications will be sent. Default value is null.
         @notification_channel_url
-        ## 
-        ## Gets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
-        ## @return a education_added_student_action
-        ## 
-        def added_student_action
-            return @added_student_action
-        end
-        ## 
-        ## Sets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
-        ## @param value Value to set for the addedStudentAction property.
-        ## @return a void
-        ## 
-        def added_student_action=(value)
-            @added_student_action = value
-        end
         ## 
         ## Gets the addToCalendarAction property value. Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
         ## @return a education_add_to_calendar_options
@@ -42,11 +27,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the addToCalendarAction property value. Optional field to control adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
-        ## @param value Value to set for the addToCalendarAction property.
+        ## @param value Value to set for the add_to_calendar_action property.
         ## @return a void
         ## 
         def add_to_calendar_action=(value)
             @add_to_calendar_action = value
+        end
+        ## 
+        ## Gets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
+        ## @return a education_added_student_action
+        ## 
+        def added_student_action
+            return @added_student_action
+        end
+        ## 
+        ## Sets the addedStudentAction property value. Class-level default behavior for handling students who are added after the assignment is published. Possible values are: none, assignIfOpen.
+        ## @param value Value to set for the added_student_action property.
+        ## @return a void
+        ## 
+        def added_student_action=(value)
+            @added_student_action = value
         end
         ## 
         ## Instantiates a new EducationAssignmentDefaults and sets the default values.
@@ -73,7 +73,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the dueTime property value. Class-level default value for due time field. Default value is 23:59:00.
-        ## @param value Value to set for the dueTime property.
+        ## @param value Value to set for the due_time property.
         ## @return a void
         ## 
         def due_time=(value)
@@ -85,8 +85,8 @@ module MicrosoftGraph::Models
         ## 
         def get_field_deserializers()
             return super.merge({
-                "addedStudentAction" => lambda {|n| @added_student_action = n.get_enum_value(MicrosoftGraph::Models::EducationAddedStudentAction) },
                 "addToCalendarAction" => lambda {|n| @add_to_calendar_action = n.get_enum_value(MicrosoftGraph::Models::EducationAddToCalendarOptions) },
+                "addedStudentAction" => lambda {|n| @added_student_action = n.get_enum_value(MicrosoftGraph::Models::EducationAddedStudentAction) },
                 "dueTime" => lambda {|n| @due_time = n.get_time_value() },
                 "notificationChannelUrl" => lambda {|n| @notification_channel_url = n.get_string_value() },
             })
@@ -100,7 +100,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notificationChannelUrl property value. Default Teams channel to which notifications will be sent. Default value is null.
-        ## @param value Value to set for the notificationChannelUrl property.
+        ## @param value Value to set for the notification_channel_url property.
         ## @return a void
         ## 
         def notification_channel_url=(value)
@@ -114,8 +114,8 @@ module MicrosoftGraph::Models
         def serialize(writer)
             raise StandardError, 'writer cannot be null' if writer.nil?
             super
-            writer.write_enum_value("addedStudentAction", @added_student_action)
             writer.write_enum_value("addToCalendarAction", @add_to_calendar_action)
+            writer.write_enum_value("addedStudentAction", @added_student_action)
             writer.write_time_value("dueTime", @due_time)
             writer.write_string_value("notificationChannelUrl", @notification_channel_url)
         end

@@ -6,12 +6,12 @@ require_relative '../../device_app_management'
 require_relative '../targeted_managed_app_configurations'
 require_relative './apps/apps_request_builder'
 require_relative './apps/item/managed_mobile_app_item_request_builder'
-require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
 require_relative './assignments/item/targeted_managed_app_policy_assignment_item_request_builder'
 require_relative './deployment_summary/deployment_summary_request_builder'
 require_relative './item'
-require_relative './target_apps/target_apps_request_builder'
+require_relative './microsoft_graph_assign/microsoft_graph_assign_request_builder'
+require_relative './microsoft_graph_target_apps/microsoft_graph_target_apps_request_builder'
 
 module MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item
     ## 
@@ -24,11 +24,6 @@ module MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::It
             return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::Apps::AppsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to call the assign method.
-        def assign()
-            return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::Assign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
-        end
-        ## 
         # Provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.
         def assignments()
             return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::Assignments::AssignmentsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -39,16 +34,21 @@ module MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::It
             return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::DeploymentSummary::DeploymentSummaryRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
+        # Provides operations to call the assign method.
+        def microsoft_graph_assign()
+            return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::MicrosoftGraphAssign::MicrosoftGraphAssignRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to call the targetApps method.
+        def microsoft_graph_target_apps()
+            return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::MicrosoftGraphTargetApps::MicrosoftGraphTargetAppsRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
         # Path parameters for the request
         @path_parameters
         ## 
         # The request adapter to use to execute the requests.
         @request_adapter
-        ## 
-        # Provides operations to call the targetApps method.
-        def target_apps()
-            return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::TargetApps::TargetAppsRequestBuilder.new(@path_parameters, @request_adapter)
-        end
         ## 
         # Url template to use to build the URL for the current request builder
         @url_template

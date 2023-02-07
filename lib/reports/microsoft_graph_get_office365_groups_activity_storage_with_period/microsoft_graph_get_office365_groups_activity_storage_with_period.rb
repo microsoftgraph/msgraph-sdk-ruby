@@ -1,0 +1,2 @@
+module MicrosoftGraph::Reports::MicrosoftGraphGetOffice365GroupsActivityStorageWithPeriod
+end

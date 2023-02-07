@@ -32,7 +32,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the check32BitOn64System property value. A value indicating whether to expand environment variables in the 32-bit context on 64-bit systems.
-        ## @param value Value to set for the check32BitOn64System property.
+        ## @param value Value to set for the check32_bit_on64_system property.
         ## @return a void
         ## 
         def check32_bit_on64_system=(value)
@@ -47,7 +47,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the comparisonValue property value. The file or folder comparison value.
-        ## @param value Value to set for the comparisonValue property.
+        ## @param value Value to set for the comparison_value property.
         ## @return a void
         ## 
         def comparison_value=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fileOrFolderName property value. The file or folder name to look up.
-        ## @param value Value to set for the fileOrFolderName property.
+        ## @param value Value to set for the file_or_folder_name property.
         ## @return a void
         ## 
         def file_or_folder_name=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the operationType property value. Contains all supported file system detection type.
-        ## @param value Value to set for the operationType property.
+        ## @param value Value to set for the operation_type property.
         ## @return a void
         ## 
         def operation_type=(value)

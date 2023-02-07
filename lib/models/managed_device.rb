@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         # Enrollment time of the device. This property is read-only.
         @enrolled_date_time
         ## 
-        # Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
+        # Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
         @ethernet_mac_address
         ## 
         # Device Exchange Access State.
@@ -188,7 +188,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the activationLockBypassCode property value. The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.
-        ## @param value Value to set for the activationLockBypassCode property.
+        ## @param value Value to set for the activation_lock_bypass_code property.
         ## @return a void
         ## 
         def activation_lock_bypass_code=(value)
@@ -203,7 +203,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the androidSecurityPatchLevel property value. Android security patch level. This property is read-only.
-        ## @param value Value to set for the androidSecurityPatchLevel property.
+        ## @param value Value to set for the android_security_patch_level property.
         ## @return a void
         ## 
         def android_security_patch_level=(value)
@@ -218,7 +218,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the azureADDeviceId property value. The unique identifier for the Azure Active Directory device. Read only. This property is read-only.
-        ## @param value Value to set for the azureADDeviceId property.
+        ## @param value Value to set for the azure_a_d_device_id property.
         ## @return a void
         ## 
         def azure_a_d_device_id=(value)
@@ -233,7 +233,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the azureADRegistered property value. Whether the device is Azure Active Directory registered. This property is read-only.
-        ## @param value Value to set for the azureADRegistered property.
+        ## @param value Value to set for the azure_a_d_registered property.
         ## @return a void
         ## 
         def azure_a_d_registered=(value)
@@ -248,7 +248,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the complianceGracePeriodExpirationDateTime property value. The DateTime when device compliance grace period expires. This property is read-only.
-        ## @param value Value to set for the complianceGracePeriodExpirationDateTime property.
+        ## @param value Value to set for the compliance_grace_period_expiration_date_time property.
         ## @return a void
         ## 
         def compliance_grace_period_expiration_date_time=(value)
@@ -263,7 +263,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the complianceState property value. Compliance state.
-        ## @param value Value to set for the complianceState property.
+        ## @param value Value to set for the compliance_state property.
         ## @return a void
         ## 
         def compliance_state=(value)
@@ -278,7 +278,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the configurationManagerClientEnabledFeatures property value. ConfigrMgr client enabled features. This property is read-only.
-        ## @param value Value to set for the configurationManagerClientEnabledFeatures property.
+        ## @param value Value to set for the configuration_manager_client_enabled_features property.
         ## @return a void
         ## 
         def configuration_manager_client_enabled_features=(value)
@@ -309,7 +309,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceActionResults property value. List of ComplexType deviceActionResult objects. This property is read-only.
-        ## @param value Value to set for the deviceActionResults property.
+        ## @param value Value to set for the device_action_results property.
         ## @return a void
         ## 
         def device_action_results=(value)
@@ -324,7 +324,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceCategory property value. Device category
-        ## @param value Value to set for the deviceCategory property.
+        ## @param value Value to set for the device_category property.
         ## @return a void
         ## 
         def device_category=(value)
@@ -339,7 +339,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceCategoryDisplayName property value. Device category display name. This property is read-only.
-        ## @param value Value to set for the deviceCategoryDisplayName property.
+        ## @param value Value to set for the device_category_display_name property.
         ## @return a void
         ## 
         def device_category_display_name=(value)
@@ -354,7 +354,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceCompliancePolicyStates property value. Device compliance policy states for this device.
-        ## @param value Value to set for the deviceCompliancePolicyStates property.
+        ## @param value Value to set for the device_compliance_policy_states property.
         ## @return a void
         ## 
         def device_compliance_policy_states=(value)
@@ -369,7 +369,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceConfigurationStates property value. Device configuration states for this device.
-        ## @param value Value to set for the deviceConfigurationStates property.
+        ## @param value Value to set for the device_configuration_states property.
         ## @return a void
         ## 
         def device_configuration_states=(value)
@@ -384,7 +384,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceEnrollmentType property value. Possible ways of adding a mobile device to management.
-        ## @param value Value to set for the deviceEnrollmentType property.
+        ## @param value Value to set for the device_enrollment_type property.
         ## @return a void
         ## 
         def device_enrollment_type=(value)
@@ -399,7 +399,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceHealthAttestationState property value. The device health attestation state. This property is read-only.
-        ## @param value Value to set for the deviceHealthAttestationState property.
+        ## @param value Value to set for the device_health_attestation_state property.
         ## @return a void
         ## 
         def device_health_attestation_state=(value)
@@ -414,7 +414,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceName property value. Name of the device. This property is read-only.
-        ## @param value Value to set for the deviceName property.
+        ## @param value Value to set for the device_name property.
         ## @return a void
         ## 
         def device_name=(value)
@@ -429,7 +429,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceRegistrationState property value. Device registration status.
-        ## @param value Value to set for the deviceRegistrationState property.
+        ## @param value Value to set for the device_registration_state property.
         ## @return a void
         ## 
         def device_registration_state=(value)
@@ -444,7 +444,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the easActivated property value. Whether the device is Exchange ActiveSync activated. This property is read-only.
-        ## @param value Value to set for the easActivated property.
+        ## @param value Value to set for the eas_activated property.
         ## @return a void
         ## 
         def eas_activated=(value)
@@ -459,7 +459,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the easActivationDateTime property value. Exchange ActivationSync activation time of the device. This property is read-only.
-        ## @param value Value to set for the easActivationDateTime property.
+        ## @param value Value to set for the eas_activation_date_time property.
         ## @return a void
         ## 
         def eas_activation_date_time=(value)
@@ -474,7 +474,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the easDeviceId property value. Exchange ActiveSync Id of the device. This property is read-only.
-        ## @param value Value to set for the easDeviceId property.
+        ## @param value Value to set for the eas_device_id property.
         ## @return a void
         ## 
         def eas_device_id=(value)
@@ -489,7 +489,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the emailAddress property value. Email(s) for the user associated with the device. This property is read-only.
-        ## @param value Value to set for the emailAddress property.
+        ## @param value Value to set for the email_address property.
         ## @return a void
         ## 
         def email_address=(value)
@@ -504,22 +504,22 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the enrolledDateTime property value. Enrollment time of the device. This property is read-only.
-        ## @param value Value to set for the enrolledDateTime property.
+        ## @param value Value to set for the enrolled_date_time property.
         ## @return a void
         ## 
         def enrolled_date_time=(value)
             @enrolled_date_time = value
         end
         ## 
-        ## Gets the ethernetMacAddress property value. Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
+        ## Gets the ethernetMacAddress property value. Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
         ## @return a string
         ## 
         def ethernet_mac_address
             return @ethernet_mac_address
         end
         ## 
-        ## Sets the ethernetMacAddress property value. Ethernet MAC. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
-        ## @param value Value to set for the ethernetMacAddress property.
+        ## Sets the ethernetMacAddress property value. Indicates Ethernet MAC Address of the device. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity. Individual get call with select query options is needed to retrieve actual values. Example: deviceManagement/managedDevices({managedDeviceId})?$select=ethernetMacAddress Supports: $select. $Search is not supported. Read-only. This property is read-only.
+        ## @param value Value to set for the ethernet_mac_address property.
         ## @return a void
         ## 
         def ethernet_mac_address=(value)
@@ -534,7 +534,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the exchangeAccessState property value. Device Exchange Access State.
-        ## @param value Value to set for the exchangeAccessState property.
+        ## @param value Value to set for the exchange_access_state property.
         ## @return a void
         ## 
         def exchange_access_state=(value)
@@ -549,7 +549,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the exchangeAccessStateReason property value. Device Exchange Access State Reason.
-        ## @param value Value to set for the exchangeAccessStateReason property.
+        ## @param value Value to set for the exchange_access_state_reason property.
         ## @return a void
         ## 
         def exchange_access_state_reason=(value)
@@ -564,7 +564,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the exchangeLastSuccessfulSyncDateTime property value. Last time the device contacted Exchange. This property is read-only.
-        ## @param value Value to set for the exchangeLastSuccessfulSyncDateTime property.
+        ## @param value Value to set for the exchange_last_successful_sync_date_time property.
         ## @return a void
         ## 
         def exchange_last_successful_sync_date_time=(value)
@@ -579,7 +579,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the freeStorageSpaceInBytes property value. Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
-        ## @param value Value to set for the freeStorageSpaceInBytes property.
+        ## @param value Value to set for the free_storage_space_in_bytes property.
         ## @return a void
         ## 
         def free_storage_space_in_bytes=(value)
@@ -689,7 +689,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isEncrypted property value. Device encryption status. This property is read-only.
-        ## @param value Value to set for the isEncrypted property.
+        ## @param value Value to set for the is_encrypted property.
         ## @return a void
         ## 
         def is_encrypted=(value)
@@ -704,7 +704,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isSupervised property value. Device supervised status. This property is read-only.
-        ## @param value Value to set for the isSupervised property.
+        ## @param value Value to set for the is_supervised property.
         ## @return a void
         ## 
         def is_supervised=(value)
@@ -719,7 +719,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the jailBroken property value. whether the device is jail broken or rooted. This property is read-only.
-        ## @param value Value to set for the jailBroken property.
+        ## @param value Value to set for the jail_broken property.
         ## @return a void
         ## 
         def jail_broken=(value)
@@ -734,7 +734,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the lastSyncDateTime property value. The date and time that the device last completed a successful sync with Intune. This property is read-only.
-        ## @param value Value to set for the lastSyncDateTime property.
+        ## @param value Value to set for the last_sync_date_time property.
         ## @return a void
         ## 
         def last_sync_date_time=(value)
@@ -749,7 +749,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managedDeviceName property value. Automatically generated name to identify a device. Can be overwritten to a user friendly name.
-        ## @param value Value to set for the managedDeviceName property.
+        ## @param value Value to set for the managed_device_name property.
         ## @return a void
         ## 
         def managed_device_name=(value)
@@ -764,7 +764,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managedDeviceOwnerType property value. Owner type of device.
-        ## @param value Value to set for the managedDeviceOwnerType property.
+        ## @param value Value to set for the managed_device_owner_type property.
         ## @return a void
         ## 
         def managed_device_owner_type=(value)
@@ -779,7 +779,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managementAgent property value. The managementAgent property
-        ## @param value Value to set for the managementAgent property.
+        ## @param value Value to set for the management_agent property.
         ## @return a void
         ## 
         def management_agent=(value)
@@ -794,7 +794,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managementCertificateExpirationDate property value. Reports device management certificate expiration date. This property is read-only.
-        ## @param value Value to set for the managementCertificateExpirationDate property.
+        ## @param value Value to set for the management_certificate_expiration_date property.
         ## @return a void
         ## 
         def management_certificate_expiration_date=(value)
@@ -869,7 +869,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the operatingSystem property value. Operating system of the device. Windows, iOS, etc. This property is read-only.
-        ## @param value Value to set for the operatingSystem property.
+        ## @param value Value to set for the operating_system property.
         ## @return a void
         ## 
         def operating_system=(value)
@@ -884,7 +884,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the osVersion property value. Operating system version of the device. This property is read-only.
-        ## @param value Value to set for the osVersion property.
+        ## @param value Value to set for the os_version property.
         ## @return a void
         ## 
         def os_version=(value)
@@ -899,7 +899,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the partnerReportedThreatState property value. Available health states for the Device Health API
-        ## @param value Value to set for the partnerReportedThreatState property.
+        ## @param value Value to set for the partner_reported_threat_state property.
         ## @return a void
         ## 
         def partner_reported_threat_state=(value)
@@ -914,7 +914,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the phoneNumber property value. Phone number of the device. This property is read-only.
-        ## @param value Value to set for the phoneNumber property.
+        ## @param value Value to set for the phone_number property.
         ## @return a void
         ## 
         def phone_number=(value)
@@ -929,7 +929,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the physicalMemoryInBytes property value. Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.
-        ## @param value Value to set for the physicalMemoryInBytes property.
+        ## @param value Value to set for the physical_memory_in_bytes property.
         ## @return a void
         ## 
         def physical_memory_in_bytes=(value)
@@ -944,7 +944,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the remoteAssistanceSessionErrorDetails property value. An error string that identifies issues when creating Remote Assistance session objects. This property is read-only.
-        ## @param value Value to set for the remoteAssistanceSessionErrorDetails property.
+        ## @param value Value to set for the remote_assistance_session_error_details property.
         ## @return a void
         ## 
         def remote_assistance_session_error_details=(value)
@@ -959,7 +959,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the remoteAssistanceSessionUrl property value. Url that allows a Remote Assistance session to be established with the device. This property is read-only.
-        ## @param value Value to set for the remoteAssistanceSessionUrl property.
+        ## @param value Value to set for the remote_assistance_session_url property.
         ## @return a void
         ## 
         def remote_assistance_session_url=(value)
@@ -974,11 +974,26 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the requireUserEnrollmentApproval property value. Reports if the managed iOS device is user approval enrollment. This property is read-only.
-        ## @param value Value to set for the requireUserEnrollmentApproval property.
+        ## @param value Value to set for the require_user_enrollment_approval property.
         ## @return a void
         ## 
         def require_user_enrollment_approval=(value)
             @require_user_enrollment_approval = value
+        end
+        ## 
+        ## Gets the serialNumber property value. SerialNumber. This property is read-only.
+        ## @return a string
+        ## 
+        def serial_number
+            return @serial_number
+        end
+        ## 
+        ## Sets the serialNumber property value. SerialNumber. This property is read-only.
+        ## @param value Value to set for the serial_number property.
+        ## @return a void
+        ## 
+        def serial_number=(value)
+            @serial_number = value
         end
         ## 
         ## Serializes information the current object
@@ -1004,21 +1019,6 @@ module MicrosoftGraph::Models
             writer.write_collection_of_object_values("users", @users)
         end
         ## 
-        ## Gets the serialNumber property value. SerialNumber. This property is read-only.
-        ## @return a string
-        ## 
-        def serial_number
-            return @serial_number
-        end
-        ## 
-        ## Sets the serialNumber property value. SerialNumber. This property is read-only.
-        ## @param value Value to set for the serialNumber property.
-        ## @return a void
-        ## 
-        def serial_number=(value)
-            @serial_number = value
-        end
-        ## 
         ## Gets the subscriberCarrier property value. Subscriber Carrier. This property is read-only.
         ## @return a string
         ## 
@@ -1027,7 +1027,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the subscriberCarrier property value. Subscriber Carrier. This property is read-only.
-        ## @param value Value to set for the subscriberCarrier property.
+        ## @param value Value to set for the subscriber_carrier property.
         ## @return a void
         ## 
         def subscriber_carrier=(value)
@@ -1042,7 +1042,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the totalStorageSpaceInBytes property value. Total Storage in Bytes. This property is read-only.
-        ## @param value Value to set for the totalStorageSpaceInBytes property.
+        ## @param value Value to set for the total_storage_space_in_bytes property.
         ## @return a void
         ## 
         def total_storage_space_in_bytes=(value)
@@ -1072,7 +1072,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userDisplayName property value. User display name. This property is read-only.
-        ## @param value Value to set for the userDisplayName property.
+        ## @param value Value to set for the user_display_name property.
         ## @return a void
         ## 
         def user_display_name=(value)
@@ -1087,7 +1087,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userId property value. Unique Identifier for the user associated with the device. This property is read-only.
-        ## @param value Value to set for the userId property.
+        ## @param value Value to set for the user_id property.
         ## @return a void
         ## 
         def user_id=(value)
@@ -1102,7 +1102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the userPrincipalName property value. Device user principal name. This property is read-only.
-        ## @param value Value to set for the userPrincipalName property.
+        ## @param value Value to set for the user_principal_name property.
         ## @return a void
         ## 
         def user_principal_name=(value)
@@ -1132,7 +1132,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the wiFiMacAddress property value. Wi-Fi MAC. This property is read-only.
-        ## @param value Value to set for the wiFiMacAddress property.
+        ## @param value Value to set for the wi_fi_mac_address property.
         ## @return a void
         ## 
         def wi_fi_mac_address=(value)

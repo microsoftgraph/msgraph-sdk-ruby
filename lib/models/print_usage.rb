@@ -27,7 +27,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the completedBlackAndWhiteJobCount property value. The completedBlackAndWhiteJobCount property
-        ## @param value Value to set for the completedBlackAndWhiteJobCount property.
+        ## @param value Value to set for the completed_black_and_white_job_count property.
         ## @return a void
         ## 
         def completed_black_and_white_job_count=(value)
@@ -42,14 +42,14 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the completedColorJobCount property value. The completedColorJobCount property
-        ## @param value Value to set for the completedColorJobCount property.
+        ## @param value Value to set for the completed_color_job_count property.
         ## @return a void
         ## 
         def completed_color_job_count=(value)
             @completed_color_job_count = value
         end
         ## 
-        ## Instantiates a new PrintUsage and sets the default values.
+        ## Instantiates a new printUsage and sets the default values.
         ## @return a void
         ## 
         def initialize()
@@ -95,7 +95,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the incompleteJobCount property value. The incompleteJobCount property
-        ## @param value Value to set for the incompleteJobCount property.
+        ## @param value Value to set for the incomplete_job_count property.
         ## @return a void
         ## 
         def incomplete_job_count=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the usageDate property value. The usageDate property
-        ## @param value Value to set for the usageDate property.
+        ## @param value Value to set for the usage_date property.
         ## @return a void
         ## 
         def usage_date=(value)

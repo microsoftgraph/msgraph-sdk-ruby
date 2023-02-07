@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bodyContains property value. Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.
-        ## @param value Value to set for the bodyContains property.
+        ## @param value Value to set for the body_contains property.
         ## @return a void
         ## 
         def body_contains=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the bodyOrSubjectContains property value. Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.
-        ## @param value Value to set for the bodyOrSubjectContains property.
+        ## @param value Value to set for the body_or_subject_contains property.
         ## @return a void
         ## 
         def body_or_subject_contains=(value)
@@ -186,7 +186,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the fromAddresses property value. Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.
-        ## @param value Value to set for the fromAddresses property.
+        ## @param value Value to set for the from_addresses property.
         ## @return a void
         ## 
         def from_addresses=(value)
@@ -240,7 +240,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the hasAttachments property value. Indicates whether an incoming message must have attachments in order for the condition or exception to apply.
-        ## @param value Value to set for the hasAttachments property.
+        ## @param value Value to set for the has_attachments property.
         ## @return a void
         ## 
         def has_attachments=(value)
@@ -255,7 +255,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the headerContains property value. Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.
-        ## @param value Value to set for the headerContains property.
+        ## @param value Value to set for the header_contains property.
         ## @return a void
         ## 
         def header_contains=(value)
@@ -285,7 +285,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isApprovalRequest property value. Indicates whether an incoming message must be an approval request in order for the condition or exception to apply.
-        ## @param value Value to set for the isApprovalRequest property.
+        ## @param value Value to set for the is_approval_request property.
         ## @return a void
         ## 
         def is_approval_request=(value)
@@ -300,7 +300,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isAutomaticForward property value. Indicates whether an incoming message must be automatically forwarded in order for the condition or exception to apply.
-        ## @param value Value to set for the isAutomaticForward property.
+        ## @param value Value to set for the is_automatic_forward property.
         ## @return a void
         ## 
         def is_automatic_forward=(value)
@@ -315,7 +315,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isAutomaticReply property value. Indicates whether an incoming message must be an auto reply in order for the condition or exception to apply.
-        ## @param value Value to set for the isAutomaticReply property.
+        ## @param value Value to set for the is_automatic_reply property.
         ## @return a void
         ## 
         def is_automatic_reply=(value)
@@ -330,7 +330,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isEncrypted property value. Indicates whether an incoming message must be encrypted in order for the condition or exception to apply.
-        ## @param value Value to set for the isEncrypted property.
+        ## @param value Value to set for the is_encrypted property.
         ## @return a void
         ## 
         def is_encrypted=(value)
@@ -345,7 +345,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isMeetingRequest property value. Indicates whether an incoming message must be a meeting request in order for the condition or exception to apply.
-        ## @param value Value to set for the isMeetingRequest property.
+        ## @param value Value to set for the is_meeting_request property.
         ## @return a void
         ## 
         def is_meeting_request=(value)
@@ -360,7 +360,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isMeetingResponse property value. Indicates whether an incoming message must be a meeting response in order for the condition or exception to apply.
-        ## @param value Value to set for the isMeetingResponse property.
+        ## @param value Value to set for the is_meeting_response property.
         ## @return a void
         ## 
         def is_meeting_response=(value)
@@ -375,7 +375,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isNonDeliveryReport property value. Indicates whether an incoming message must be a non-delivery report in order for the condition or exception to apply.
-        ## @param value Value to set for the isNonDeliveryReport property.
+        ## @param value Value to set for the is_non_delivery_report property.
         ## @return a void
         ## 
         def is_non_delivery_report=(value)
@@ -390,7 +390,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isPermissionControlled property value. Indicates whether an incoming message must be permission controlled (RMS-protected) in order for the condition or exception to apply.
-        ## @param value Value to set for the isPermissionControlled property.
+        ## @param value Value to set for the is_permission_controlled property.
         ## @return a void
         ## 
         def is_permission_controlled=(value)
@@ -405,7 +405,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isReadReceipt property value. Indicates whether an incoming message must be a read receipt in order for the condition or exception to apply.
-        ## @param value Value to set for the isReadReceipt property.
+        ## @param value Value to set for the is_read_receipt property.
         ## @return a void
         ## 
         def is_read_receipt=(value)
@@ -420,7 +420,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isSigned property value. Indicates whether an incoming message must be S/MIME-signed in order for the condition or exception to apply.
-        ## @param value Value to set for the isSigned property.
+        ## @param value Value to set for the is_signed property.
         ## @return a void
         ## 
         def is_signed=(value)
@@ -435,7 +435,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isVoicemail property value. Indicates whether an incoming message must be a voice mail in order for the condition or exception to apply.
-        ## @param value Value to set for the isVoicemail property.
+        ## @param value Value to set for the is_voicemail property.
         ## @return a void
         ## 
         def is_voicemail=(value)
@@ -450,7 +450,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the messageActionFlag property value. Represents the flag-for-action value that appears on an incoming message in order for the condition or exception to apply. The possible values are: any, call, doNotForward, followUp, fyi, forward, noResponseNecessary, read, reply, replyToAll, review.
-        ## @param value Value to set for the messageActionFlag property.
+        ## @param value Value to set for the message_action_flag property.
         ## @return a void
         ## 
         def message_action_flag=(value)
@@ -465,7 +465,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the notSentToMe property value. Indicates whether the owner of the mailbox must not be a recipient of an incoming message in order for the condition or exception to apply.
-        ## @param value Value to set for the notSentToMe property.
+        ## @param value Value to set for the not_sent_to_me property.
         ## @return a void
         ## 
         def not_sent_to_me=(value)
@@ -480,7 +480,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -495,7 +495,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the recipientContains property value. Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.
-        ## @param value Value to set for the recipientContains property.
+        ## @param value Value to set for the recipient_contains property.
         ## @return a void
         ## 
         def recipient_contains=(value)
@@ -510,7 +510,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the senderContains property value. Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.
-        ## @param value Value to set for the senderContains property.
+        ## @param value Value to set for the sender_contains property.
         ## @return a void
         ## 
         def sender_contains=(value)
@@ -540,7 +540,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sentCcMe property value. Indicates whether the owner of the mailbox must be in the ccRecipients property of an incoming message in order for the condition or exception to apply.
-        ## @param value Value to set for the sentCcMe property.
+        ## @param value Value to set for the sent_cc_me property.
         ## @return a void
         ## 
         def sent_cc_me=(value)
@@ -555,7 +555,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sentOnlyToMe property value. Indicates whether the owner of the mailbox must be the only recipient in an incoming message in order for the condition or exception to apply.
-        ## @param value Value to set for the sentOnlyToMe property.
+        ## @param value Value to set for the sent_only_to_me property.
         ## @return a void
         ## 
         def sent_only_to_me=(value)
@@ -570,7 +570,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sentToAddresses property value. Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.
-        ## @param value Value to set for the sentToAddresses property.
+        ## @param value Value to set for the sent_to_addresses property.
         ## @return a void
         ## 
         def sent_to_addresses=(value)
@@ -585,7 +585,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sentToMe property value. Indicates whether the owner of the mailbox must be in the toRecipients property of an incoming message in order for the condition or exception to apply.
-        ## @param value Value to set for the sentToMe property.
+        ## @param value Value to set for the sent_to_me property.
         ## @return a void
         ## 
         def sent_to_me=(value)
@@ -600,7 +600,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the sentToOrCcMe property value. Indicates whether the owner of the mailbox must be in either a toRecipients or ccRecipients property of an incoming message in order for the condition or exception to apply.
-        ## @param value Value to set for the sentToOrCcMe property.
+        ## @param value Value to set for the sent_to_or_cc_me property.
         ## @return a void
         ## 
         def sent_to_or_cc_me=(value)
@@ -655,7 +655,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the subjectContains property value. Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.
-        ## @param value Value to set for the subjectContains property.
+        ## @param value Value to set for the subject_contains property.
         ## @return a void
         ## 
         def subject_contains=(value)
@@ -670,7 +670,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the withinSizeRange property value. Represents the minimum and maximum sizes (in kilobytes) that an incoming message must fall in between in order for the condition or exception to apply.
-        ## @param value Value to set for the withinSizeRange property.
+        ## @param value Value to set for the within_size_range property.
         ## @return a void
         ## 
         def within_size_range=(value)

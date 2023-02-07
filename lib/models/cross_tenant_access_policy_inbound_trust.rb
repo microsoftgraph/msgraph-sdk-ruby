@@ -72,7 +72,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isCompliantDeviceAccepted property value. Specifies whether compliant devices from external Azure AD organizations are trusted.
-        ## @param value Value to set for the isCompliantDeviceAccepted property.
+        ## @param value Value to set for the is_compliant_device_accepted property.
         ## @return a void
         ## 
         def is_compliant_device_accepted=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isHybridAzureADJoinedDeviceAccepted property value. Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
-        ## @param value Value to set for the isHybridAzureADJoinedDeviceAccepted property.
+        ## @param value Value to set for the is_hybrid_azure_a_d_joined_device_accepted property.
         ## @return a void
         ## 
         def is_hybrid_azure_a_d_joined_device_accepted=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the isMfaAccepted property value. Specifies whether MFA from external Azure AD organizations is trusted.
-        ## @param value Value to set for the isMfaAccepted property.
+        ## @param value Value to set for the is_mfa_accepted property.
         ## @return a void
         ## 
         def is_mfa_accepted=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)

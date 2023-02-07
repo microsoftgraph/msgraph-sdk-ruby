@@ -68,7 +68,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the applyActions property value. Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.
-        ## @param value Value to set for the applyActions property.
+        ## @param value Value to set for the apply_actions property.
         ## @return a void
         ## 
         def apply_actions=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the autoApplyDecisionsEnabled property value. Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.
-        ## @param value Value to set for the autoApplyDecisionsEnabled property.
+        ## @param value Value to set for the auto_apply_decisions_enabled property.
         ## @return a void
         ## 
         def auto_apply_decisions_enabled=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the decisionHistoriesForReviewersEnabled property value. Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).
-        ## @param value Value to set for the decisionHistoriesForReviewersEnabled property.
+        ## @param value Value to set for the decision_histories_for_reviewers_enabled property.
         ## @return a void
         ## 
         def decision_histories_for_reviewers_enabled=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the defaultDecision property value. Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.
-        ## @param value Value to set for the defaultDecision property.
+        ## @param value Value to set for the default_decision property.
         ## @return a void
         ## 
         def default_decision=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the defaultDecisionEnabled property value. Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.
-        ## @param value Value to set for the defaultDecisionEnabled property.
+        ## @param value Value to set for the default_decision_enabled property.
         ## @return a void
         ## 
         def default_decision_enabled=(value)
@@ -179,7 +179,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the instanceDurationInDays property value. Duration of an access review instance in days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its durationInDays setting will be used instead of the value of this property.
-        ## @param value Value to set for the instanceDurationInDays property.
+        ## @param value Value to set for the instance_duration_in_days property.
         ## @return a void
         ## 
         def instance_duration_in_days=(value)
@@ -194,7 +194,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the justificationRequiredOnApproval property value. Indicates whether reviewers are required to provide justification with their decision. Default value is false.
-        ## @param value Value to set for the justificationRequiredOnApproval property.
+        ## @param value Value to set for the justification_required_on_approval property.
         ## @return a void
         ## 
         def justification_required_on_approval=(value)
@@ -209,7 +209,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the mailNotificationsEnabled property value. Indicates whether emails are enabled or disabled. Default value is false.
-        ## @param value Value to set for the mailNotificationsEnabled property.
+        ## @param value Value to set for the mail_notifications_enabled property.
         ## @return a void
         ## 
         def mail_notifications_enabled=(value)
@@ -224,7 +224,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -239,7 +239,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
-        ## @param value Value to set for the recommendationsEnabled property.
+        ## @param value Value to set for the recommendations_enabled property.
         ## @return a void
         ## 
         def recommendations_enabled=(value)
@@ -269,7 +269,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the reminderNotificationsEnabled property value. Indicates whether reminders are enabled or disabled. Default value is false.
-        ## @param value Value to set for the reminderNotificationsEnabled property.
+        ## @param value Value to set for the reminder_notifications_enabled property.
         ## @return a void
         ## 
         def reminder_notifications_enabled=(value)

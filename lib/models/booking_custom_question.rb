@@ -25,7 +25,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the answerInputType property value. The expected answer type. The possible values are: text, radioButton, unknownFutureValue.
-        ## @param value Value to set for the answerInputType property.
+        ## @param value Value to set for the answer_input_type property.
         ## @return a void
         ## 
         def answer_input_type=(value)
@@ -40,7 +40,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the answerOptions property value. List of possible answer values.
-        ## @param value Value to set for the answerOptions property.
+        ## @param value Value to set for the answer_options property.
         ## @return a void
         ## 
         def answer_options=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the displayName property value. The question.
-        ## @param value Value to set for the displayName property.
+        ## @param value Value to set for the display_name property.
         ## @return a void
         ## 
         def display_name=(value)

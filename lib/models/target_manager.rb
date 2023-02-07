@@ -43,7 +43,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the managerLevel property value. Manager level, between 1 and 4. The direct manager is 1.
-        ## @param value Value to set for the managerLevel property.
+        ## @param value Value to set for the manager_level property.
         ## @return a void
         ## 
         def manager_level=(value)

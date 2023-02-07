@@ -34,7 +34,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the acknowledgedDateTime property value. Date and time the custodian acknowledged a hold notification.
-        ## @param value Value to set for the acknowledgedDateTime property.
+        ## @param value Value to set for the acknowledged_date_time property.
         ## @return a void
         ## 
         def acknowledged_date_time=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the lastIndexOperation property value. Operation entity that represents the latest indexing for the custodian.
-        ## @param value Value to set for the lastIndexOperation property.
+        ## @param value Value to set for the last_index_operation property.
         ## @return a void
         ## 
         def last_index_operation=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the siteSources property value. Data source entity for SharePoint sites associated with the custodian.
-        ## @param value Value to set for the siteSources property.
+        ## @param value Value to set for the site_sources property.
         ## @return a void
         ## 
         def site_sources=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the unifiedGroupSources property value. Data source entity for groups associated with the custodian.
-        ## @param value Value to set for the unifiedGroupSources property.
+        ## @param value Value to set for the unified_group_sources property.
         ## @return a void
         ## 
         def unified_group_sources=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph::Models::Security
         end
         ## 
         ## Sets the userSources property value. Data source entity for a the custodian. This is the container for a custodian's mailbox and OneDrive for Business site.
-        ## @param value Value to set for the userSources property.
+        ## @param value Value to set for the user_sources property.
         ## @return a void
         ## 
         def user_sources=(value)

@@ -50,7 +50,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowMultipleValues property value. Indicates whether multiple values can be selected from the source.
-        ## @param value Value to set for the allowMultipleValues property.
+        ## @param value Value to set for the allow_multiple_values property.
         ## @return a void
         ## 
         def allow_multiple_values=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the allowUnlimitedLength property value. Indicates whether values in the column should be able to exceed the standard limit of 255 characters.
-        ## @param value Value to set for the allowUnlimitedLength property.
+        ## @param value Value to set for the allow_unlimited_length property.
         ## @return a void
         ## 
         def allow_unlimited_length=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the columnName property value. The name of the lookup source column.
-        ## @param value Value to set for the columnName property.
+        ## @param value Value to set for the column_name property.
         ## @return a void
         ## 
         def column_name=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the listId property value. The unique identifier of the lookup source list.
-        ## @param value Value to set for the listId property.
+        ## @param value Value to set for the list_id property.
         ## @return a void
         ## 
         def list_id=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the primaryLookupColumnId property value. If specified, this column is a secondary lookup, pulling an additional field from the list item looked up by the primary lookup. Use the list item looked up by the primary as the source for the column named here.
-        ## @param value Value to set for the primaryLookupColumnId property.
+        ## @param value Value to set for the primary_lookup_column_id property.
         ## @return a void
         ## 
         def primary_lookup_column_id=(value)

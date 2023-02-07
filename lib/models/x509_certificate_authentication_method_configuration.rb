@@ -23,7 +23,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the authenticationModeConfiguration property value. Defines strong authentication configurations. This configuration includes the default authentication mode and the different rules for strong authentication bindings.
-        ## @param value Value to set for the authenticationModeConfiguration property.
+        ## @param value Value to set for the authentication_mode_configuration property.
         ## @return a void
         ## 
         def authentication_mode_configuration=(value)
@@ -38,7 +38,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the certificateUserBindings property value. Defines fields in the X.509 certificate that map to attributes of the Azure AD user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.
-        ## @param value Value to set for the certificateUserBindings property.
+        ## @param value Value to set for the certificate_user_bindings property.
         ## @return a void
         ## 
         def certificate_user_bindings=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
-        ## @param value Value to set for the includeTargets property.
+        ## @param value Value to set for the include_targets property.
         ## @return a void
         ## 
         def include_targets=(value)

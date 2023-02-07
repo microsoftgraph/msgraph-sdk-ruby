@@ -55,7 +55,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the compliancePolicy property value. Whether compliance policy is managed by Intune
-        ## @param value Value to set for the compliancePolicy property.
+        ## @param value Value to set for the compliance_policy property.
         ## @return a void
         ## 
         def compliance_policy=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the deviceConfiguration property value. Whether device configuration is managed by Intune
-        ## @param value Value to set for the deviceConfiguration property.
+        ## @param value Value to set for the device_configuration property.
         ## @return a void
         ## 
         def device_configuration=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the modernApps property value. Whether modern application is managed by Intune
-        ## @param value Value to set for the modernApps property.
+        ## @param value Value to set for the modern_apps property.
         ## @return a void
         ## 
         def modern_apps=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the @odata.type property value. The OdataType property
-        ## @param value Value to set for the OdataType property.
+        ## @param value Value to set for the odata_type property.
         ## @return a void
         ## 
         def odata_type=(value)
@@ -161,7 +161,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the resourceAccess property value. Whether resource access is managed by Intune
-        ## @param value Value to set for the resourceAccess property.
+        ## @param value Value to set for the resource_access property.
         ## @return a void
         ## 
         def resource_access=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the windowsUpdateForBusiness property value. Whether Windows Update for Business is managed by Intune
-        ## @param value Value to set for the windowsUpdateForBusiness property.
+        ## @param value Value to set for the windows_update_for_business property.
         ## @return a void
         ## 
         def windows_update_for_business=(value)

@@ -68,7 +68,7 @@ module MicrosoftGraph::Groups::Item::Planner::Plans::Item::Tasks::Item::Progress
             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PlannerProgressTaskBoardTaskFormat.create_from_discriminator_value(pn) }, error_mapping)
         end
         ## 
-        ## Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+        ## Update the navigation property progressTaskBoardFormat in groups
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a Fiber of planner_progress_task_board_task_format
@@ -118,7 +118,7 @@ module MicrosoftGraph::Groups::Item::Planner::Plans::Item::Tasks::Item::Progress
             return request_info
         end
         ## 
-        ## Update the properties of **plannerProgressTaskBoardTaskFormat** object.
+        ## Update the navigation property progressTaskBoardFormat in groups
         ## @param body The request body
         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
         ## @return a request_information

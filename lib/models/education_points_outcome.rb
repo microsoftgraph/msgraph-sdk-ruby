@@ -62,7 +62,7 @@ module MicrosoftGraph::Models
         end
         ## 
         ## Sets the publishedPoints property value. A copy of the points property that is made when the grade is released to the student.
-        ## @param value Value to set for the publishedPoints property.
+        ## @param value Value to set for the published_points property.
         ## @return a void
         ## 
         def published_points=(value)
