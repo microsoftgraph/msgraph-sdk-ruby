@@ -1,7 +1,11 @@
-module MicrosoftGraph::Models::Security
-    VmCloudProvider = {
-        Unknown: :Unknown,
-        Azure: :Azure,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        module Security
+            VmCloudProvider = {
+                Unknown: :Unknown,
+                Azure: :Azure,
+                UnknownFutureValue: :UnknownFutureValue,
+            }
+        end
+    end
 end

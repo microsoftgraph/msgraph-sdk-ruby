@@ -1,2 +1,0 @@
-module MicrosoftGraph::DeviceManagement::WindowsInformationProtectionNetworkLearningSummaries
-end

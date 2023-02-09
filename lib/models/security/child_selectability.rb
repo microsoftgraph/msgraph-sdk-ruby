@@ -1,7 +1,11 @@
-module MicrosoftGraph::Models::Security
-    ChildSelectability = {
-        One: :One,
-        Many: :Many,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        module Security
+            ChildSelectability = {
+                One: :One,
+                Many: :Many,
+                UnknownFutureValue: :UnknownFutureValue,
+            }
+        end
+    end
 end

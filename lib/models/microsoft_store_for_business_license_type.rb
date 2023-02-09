@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    MicrosoftStoreForBusinessLicenseType = {
-        Offline: :Offline,
-        Online: :Online,
-    }
+module MicrosoftGraph
+    module Models
+        MicrosoftStoreForBusinessLicenseType = {
+            Offline: :Offline,
+            Online: :Online,
+        }
+    end
 end

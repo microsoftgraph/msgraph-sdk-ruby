@@ -1,8 +1,10 @@
-module MicrosoftGraph::Models
-    ConnectionDirection = {
-        Unknown: :Unknown,
-        Inbound: :Inbound,
-        Outbound: :Outbound,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        ConnectionDirection = {
+            Unknown: :Unknown,
+            Inbound: :Inbound,
+            Outbound: :Outbound,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

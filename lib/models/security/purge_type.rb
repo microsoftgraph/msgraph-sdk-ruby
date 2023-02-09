@@ -1,7 +1,11 @@
-module MicrosoftGraph::Models::Security
-    PurgeType = {
-        Recoverable: :Recoverable,
-        PermanentlyDeleted: :PermanentlyDeleted,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        module Security
+            PurgeType = {
+                Recoverable: :Recoverable,
+                PermanentlyDeleted: :PermanentlyDeleted,
+                UnknownFutureValue: :UnknownFutureValue,
+            }
+        end
+    end
 end

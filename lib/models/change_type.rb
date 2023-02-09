@@ -1,7 +1,9 @@
-module MicrosoftGraph::Models
-    ChangeType = {
-        Created: :Created,
-        Updated: :Updated,
-        Deleted: :Deleted,
-    }
+module MicrosoftGraph
+    module Models
+        ChangeType = {
+            Created: :Created,
+            Updated: :Updated,
+            Deleted: :Deleted,
+        }
+    end
 end

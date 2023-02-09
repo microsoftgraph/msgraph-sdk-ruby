@@ -1,8 +1,10 @@
-module MicrosoftGraph::Models
-    PostType = {
-        Regular: :Regular,
-        Quick: :Quick,
-        Strategic: :Strategic,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        PostType = {
+            Regular: :Regular,
+            Quick: :Quick,
+            Strategic: :Strategic,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    WorkforceIntegrationEncryptionProtocol = {
-        SharedSecret: :SharedSecret,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        WorkforceIntegrationEncryptionProtocol = {
+            SharedSecret: :SharedSecret,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

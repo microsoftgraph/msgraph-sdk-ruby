@@ -1,5 +1,7 @@
-module MicrosoftGraph::Models
-    CalendarSharingActionType = {
-        Accept: :Accept,
-    }
+module MicrosoftGraph
+    module Models
+        CalendarSharingActionType = {
+            Accept: :Accept,
+        }
+    end
 end

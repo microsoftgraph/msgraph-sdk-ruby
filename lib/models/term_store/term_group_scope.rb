@@ -1,8 +1,12 @@
-module MicrosoftGraph::Models::TermStore
-    TermGroupScope = {
-        Global: :Global,
-        System: :System,
-        SiteCollection: :SiteCollection,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        module TermStore
+            TermGroupScope = {
+                Global: :Global,
+                System: :System,
+                SiteCollection: :SiteCollection,
+                UnknownFutureValue: :UnknownFutureValue,
+            }
+        end
+    end
 end

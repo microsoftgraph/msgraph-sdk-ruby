@@ -1,8 +1,10 @@
-module MicrosoftGraph::Models
-    ActivityDomain = {
-        Unknown: :Unknown,
-        Work: :Work,
-        Personal: :Personal,
-        Unrestricted: :Unrestricted,
-    }
+module MicrosoftGraph
+    module Models
+        ActivityDomain = {
+            Unknown: :Unknown,
+            Work: :Work,
+            Personal: :Personal,
+            Unrestricted: :Unrestricted,
+        }
+    end
 end

@@ -16,5 +16,3 @@ require_relative 'store'
 require_relative 'store_collection_response'
 require_relative 'term'
 require_relative 'term_collection_response'
-module MicrosoftGraph::Models::TermStore
-end

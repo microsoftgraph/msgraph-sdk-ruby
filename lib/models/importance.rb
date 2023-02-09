@@ -1,7 +1,9 @@
-module MicrosoftGraph::Models
-    Importance = {
-        Low: :Low,
-        Normal: :Normal,
-        High: :High,
-    }
+module MicrosoftGraph
+    module Models
+        Importance = {
+            Low: :Low,
+            Normal: :Normal,
+            High: :High,
+        }
+    end
 end

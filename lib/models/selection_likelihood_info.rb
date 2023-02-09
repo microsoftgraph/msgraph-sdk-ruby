@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    SelectionLikelihoodInfo = {
-        NotSpecified: :NotSpecified,
-        High: :High,
-    }
+module MicrosoftGraph
+    module Models
+        SelectionLikelihoodInfo = {
+            NotSpecified: :NotSpecified,
+            High: :High,
+        }
+    end
 end

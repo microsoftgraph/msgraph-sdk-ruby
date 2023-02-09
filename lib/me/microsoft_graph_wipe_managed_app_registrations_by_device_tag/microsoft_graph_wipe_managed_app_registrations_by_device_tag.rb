@@ -1,3 +1,1 @@
 require_relative 'wipe_managed_app_registrations_by_device_tag_post_request_body'
-module MicrosoftGraph::Me::MicrosoftGraphWipeManagedAppRegistrationsByDeviceTag
-end

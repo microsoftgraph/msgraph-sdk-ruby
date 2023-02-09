@@ -104,5 +104,3 @@ require_relative 'unified_group_source'
 require_relative 'url_evidence'
 require_relative 'user_evidence'
 require_relative 'user_source'
-module MicrosoftGraph::Models::Security
-end

@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    DelegatedAdminRelationshipOperationType = {
-        DelegatedAdminAccessAssignmentUpdate: :DelegatedAdminAccessAssignmentUpdate,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        DelegatedAdminRelationshipOperationType = {
+            DelegatedAdminAccessAssignmentUpdate: :DelegatedAdminAccessAssignmentUpdate,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

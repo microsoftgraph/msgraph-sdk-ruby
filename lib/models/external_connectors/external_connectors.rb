@@ -25,5 +25,3 @@ require_relative 'properties'
 require_relative 'property'
 require_relative 'property_collection_response'
 require_relative 'schema'
-module MicrosoftGraph::Models::ExternalConnectors
-end

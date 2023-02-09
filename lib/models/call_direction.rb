@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    CallDirection = {
-        Incoming: :Incoming,
-        Outgoing: :Outgoing,
-    }
+module MicrosoftGraph
+    module Models
+        CallDirection = {
+            Incoming: :Incoming,
+            Outgoing: :Outgoing,
+        }
+    end
 end

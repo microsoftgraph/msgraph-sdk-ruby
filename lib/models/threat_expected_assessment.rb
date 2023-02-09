@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    ThreatExpectedAssessment = {
-        Block: :Block,
-        Unblock: :Unblock,
-    }
+module MicrosoftGraph
+    module Models
+        ThreatExpectedAssessment = {
+            Block: :Block,
+            Unblock: :Unblock,
+        }
+    end
 end

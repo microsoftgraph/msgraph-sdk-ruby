@@ -1,8 +1,10 @@
-module MicrosoftGraph::Models
-    SecurityResourceType = {
-        Unknown: :Unknown,
-        Attacked: :Attacked,
-        Related: :Related,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        SecurityResourceType = {
+            Unknown: :Unknown,
+            Attacked: :Attacked,
+            Related: :Related,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

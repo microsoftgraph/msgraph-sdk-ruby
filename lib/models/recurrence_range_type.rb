@@ -1,7 +1,9 @@
-module MicrosoftGraph::Models
-    RecurrenceRangeType = {
-        EndDate: :EndDate,
-        NoEnd: :NoEnd,
-        Numbered: :Numbered,
-    }
+module MicrosoftGraph
+    module Models
+        RecurrenceRangeType = {
+            EndDate: :EndDate,
+            NoEnd: :NoEnd,
+            Numbered: :Numbered,
+        }
+    end
 end

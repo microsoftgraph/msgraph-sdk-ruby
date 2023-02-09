@@ -1,9 +1,11 @@
-module MicrosoftGraph::Models
-    DataPolicyOperationStatus = {
-        NotStarted: :NotStarted,
-        Running: :Running,
-        Complete: :Complete,
-        Failed: :Failed,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        DataPolicyOperationStatus = {
+            NotStarted: :NotStarted,
+            Running: :Running,
+            Complete: :Complete,
+            Failed: :Failed,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

@@ -1,3 +1,1 @@
 require_relative 'get_effective_permissions_with_scope_response'
-module MicrosoftGraph::DeviceManagement::MicrosoftGraphGetEffectivePermissionsWithScope
-end

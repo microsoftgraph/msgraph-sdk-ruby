@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    AuthenticationMethodState = {
-        Enabled: :Enabled,
-        Disabled: :Disabled,
-    }
+module MicrosoftGraph
+    module Models
+        AuthenticationMethodState = {
+            Enabled: :Enabled,
+            Disabled: :Disabled,
+        }
+    end
 end

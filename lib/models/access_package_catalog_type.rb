@@ -1,8 +1,10 @@
-module MicrosoftGraph::Models
-    AccessPackageCatalogType = {
-        UserManaged: :UserManaged,
-        ServiceDefault: :ServiceDefault,
-        ServiceManaged: :ServiceManaged,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        AccessPackageCatalogType = {
+            UserManaged: :UserManaged,
+            ServiceDefault: :ServiceDefault,
+            ServiceManaged: :ServiceManaged,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

@@ -1,7 +1,9 @@
-module MicrosoftGraph::Models
-    ConnectedOrganizationState = {
-        Configured: :Configured,
-        Proposed: :Proposed,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        ConnectedOrganizationState = {
+            Configured: :Configured,
+            Proposed: :Proposed,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

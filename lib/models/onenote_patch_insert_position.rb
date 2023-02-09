@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    OnenotePatchInsertPosition = {
-        After: :After,
-        Before: :Before,
-    }
+module MicrosoftGraph
+    module Models
+        OnenotePatchInsertPosition = {
+            After: :After,
+            Before: :Before,
+        }
+    end
 end
