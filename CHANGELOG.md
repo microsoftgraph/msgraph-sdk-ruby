@@ -11,6 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+## [0.15.0] - 2023-02-09
+
+### Changed
+
+- Changed the module declaration so the package also work with Rails import logic.
+
 ## [0.14.0] - 2023-02-07
 
 ### Changed
