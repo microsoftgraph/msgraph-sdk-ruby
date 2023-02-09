@@ -1,7 +1,9 @@
-module MicrosoftGraph::Models
-    GiphyRatingType = {
-        Strict: :Strict,
-        Moderate: :Moderate,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        GiphyRatingType = {
+            Strict: :Strict,
+            Moderate: :Moderate,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

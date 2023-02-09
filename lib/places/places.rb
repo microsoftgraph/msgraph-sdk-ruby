@@ -1,2 +1,0 @@
-module MicrosoftGraph::Places
-end

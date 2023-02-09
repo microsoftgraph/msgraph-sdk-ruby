@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    DelegatedAdminAccessContainerType = {
-        SecurityGroup: :SecurityGroup,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        DelegatedAdminAccessContainerType = {
+            SecurityGroup: :SecurityGroup,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    PersistentBrowserSessionMode = {
-        Always: :Always,
-        Never: :Never,
-    }
+module MicrosoftGraph
+    module Models
+        PersistentBrowserSessionMode = {
+            Always: :Always,
+            Never: :Never,
+        }
+    end
 end

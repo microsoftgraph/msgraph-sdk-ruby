@@ -1,2 +1,0 @@
-module MicrosoftGraph::Policies::AuthenticationMethodsPolicy::AuthenticationMethodConfigurations
-end

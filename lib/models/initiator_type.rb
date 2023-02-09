@@ -1,8 +1,10 @@
-module MicrosoftGraph::Models
-    InitiatorType = {
-        User: :User,
-        Application: :Application,
-        System: :System,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        InitiatorType = {
+            User: :User,
+            Application: :Application,
+            System: :System,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

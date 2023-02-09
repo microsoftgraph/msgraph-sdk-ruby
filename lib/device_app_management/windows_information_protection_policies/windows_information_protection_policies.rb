@@ -1,2 +1,0 @@
-module MicrosoftGraph::DeviceAppManagement::WindowsInformationProtectionPolicies
-end

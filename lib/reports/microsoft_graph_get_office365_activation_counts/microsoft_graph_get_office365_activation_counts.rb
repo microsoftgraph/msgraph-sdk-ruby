@@ -1,2 +1,0 @@
-module MicrosoftGraph::Reports::MicrosoftGraphGetOffice365ActivationCounts
-end

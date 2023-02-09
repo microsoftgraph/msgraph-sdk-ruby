@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    TeamworkActivityTopicSource = {
-        EntityUrl: :EntityUrl,
-        Text: :Text,
-    }
+module MicrosoftGraph
+    module Models
+        TeamworkActivityTopicSource = {
+            EntityUrl: :EntityUrl,
+            Text: :Text,
+        }
+    end
 end

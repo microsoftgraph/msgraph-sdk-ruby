@@ -1,9 +1,11 @@
-module MicrosoftGraph::Models
-    ## 
-    # Partner App Type.
-    DeviceManagementPartnerAppType = {
-        Unknown: :Unknown,
-        SingleTenantApp: :SingleTenantApp,
-        MultiTenantApp: :MultiTenantApp,
-    }
+module MicrosoftGraph
+    module Models
+        ## 
+        # Partner App Type.
+        DeviceManagementPartnerAppType = {
+            Unknown: :Unknown,
+            SingleTenantApp: :SingleTenantApp,
+            MultiTenantApp: :MultiTenantApp,
+        }
+    end
 end

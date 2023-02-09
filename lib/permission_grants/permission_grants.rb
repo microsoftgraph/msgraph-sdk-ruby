@@ -1,2 +1,0 @@
-module MicrosoftGraph::PermissionGrants
-end

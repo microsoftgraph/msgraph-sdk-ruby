@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    SettingSourceType = {
-        DeviceConfiguration: :DeviceConfiguration,
-        DeviceIntent: :DeviceIntent,
-    }
+module MicrosoftGraph
+    module Models
+        SettingSourceType = {
+            DeviceConfiguration: :DeviceConfiguration,
+            DeviceIntent: :DeviceIntent,
+        }
+    end
 end

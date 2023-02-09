@@ -1,3 +1,1 @@
 require_relative 'assign_user_to_device_post_request_body'
-module MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::Item::MicrosoftGraphAssignUserToDevice
-end

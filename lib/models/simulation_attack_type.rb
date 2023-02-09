@@ -1,9 +1,11 @@
-module MicrosoftGraph::Models
-    SimulationAttackType = {
-        Unknown: :Unknown,
-        Social: :Social,
-        Cloud: :Cloud,
-        Endpoint: :Endpoint,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        SimulationAttackType = {
+            Unknown: :Unknown,
+            Social: :Social,
+            Cloud: :Cloud,
+            Endpoint: :Endpoint,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

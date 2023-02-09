@@ -1,7 +1,9 @@
-module MicrosoftGraph::Models
-    AttachmentType = {
-        File: :File,
-        Item: :Item,
-        Reference: :Reference,
-    }
+module MicrosoftGraph
+    module Models
+        AttachmentType = {
+            File: :File,
+            Item: :Item,
+            Reference: :Reference,
+        }
+    end
 end

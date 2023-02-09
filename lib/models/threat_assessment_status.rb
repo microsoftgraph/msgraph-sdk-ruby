@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    ThreatAssessmentStatus = {
-        Pending: :Pending,
-        Completed: :Completed,
-    }
+module MicrosoftGraph
+    module Models
+        ThreatAssessmentStatus = {
+            Pending: :Pending,
+            Completed: :Completed,
+        }
+    end
 end

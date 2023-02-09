@@ -1,9 +1,11 @@
-module MicrosoftGraph::Models
-    AlertFeedback = {
-        Unknown: :Unknown,
-        TruePositive: :TruePositive,
-        FalsePositive: :FalsePositive,
-        BenignPositive: :BenignPositive,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        AlertFeedback = {
+            Unknown: :Unknown,
+            TruePositive: :TruePositive,
+            FalsePositive: :FalsePositive,
+            BenignPositive: :BenignPositive,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

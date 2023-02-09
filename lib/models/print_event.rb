@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    PrintEvent = {
-        JobStarted: :JobStarted,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        PrintEvent = {
+            JobStarted: :JobStarted,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

@@ -1,8 +1,10 @@
-module MicrosoftGraph::Models
-    TeamworkCallEventType = {
-        Call: :Call,
-        Meeting: :Meeting,
-        ScreenShare: :ScreenShare,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        TeamworkCallEventType = {
+            Call: :Call,
+            Meeting: :Meeting,
+            ScreenShare: :ScreenShare,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

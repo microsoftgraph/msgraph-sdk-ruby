@@ -38,5 +38,3 @@ require_relative 'client_user_agent'
 require_relative 'participant_endpoint'
 require_relative 'service_endpoint'
 require_relative 'service_user_agent'
-module MicrosoftGraph::Models::CallRecords
-end

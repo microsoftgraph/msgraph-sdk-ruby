@@ -1,2 +1,0 @@
-module MicrosoftGraph::Me::MicrosoftGraphRemoveAllDevicesFromManagement
-end

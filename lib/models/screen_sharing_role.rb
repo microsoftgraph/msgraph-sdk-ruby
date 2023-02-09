@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    ScreenSharingRole = {
-        Viewer: :Viewer,
-        Sharer: :Sharer,
-    }
+module MicrosoftGraph
+    module Models
+        ScreenSharingRole = {
+            Viewer: :Viewer,
+            Sharer: :Sharer,
+        }
+    end
 end

@@ -1,7 +1,9 @@
-module MicrosoftGraph::Models
-    LifecycleEventType = {
-        Missed: :Missed,
-        SubscriptionRemoved: :SubscriptionRemoved,
-        ReauthorizationRequired: :ReauthorizationRequired,
-    }
+module MicrosoftGraph
+    module Models
+        LifecycleEventType = {
+            Missed: :Missed,
+            SubscriptionRemoved: :SubscriptionRemoved,
+            ReauthorizationRequired: :ReauthorizationRequired,
+        }
+    end
 end

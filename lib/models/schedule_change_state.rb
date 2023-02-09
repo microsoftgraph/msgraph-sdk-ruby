@@ -1,8 +1,10 @@
-module MicrosoftGraph::Models
-    ScheduleChangeState = {
-        Pending: :Pending,
-        Approved: :Approved,
-        Declined: :Declined,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        ScheduleChangeState = {
+            Pending: :Pending,
+            Approved: :Approved,
+            Declined: :Declined,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

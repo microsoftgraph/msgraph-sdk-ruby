@@ -1,8 +1,10 @@
-module MicrosoftGraph::Models
-    ActivityType = {
-        Signin: :Signin,
-        User: :User,
-        UnknownFutureValue: :UnknownFutureValue,
-        ServicePrincipal: :ServicePrincipal,
-    }
+module MicrosoftGraph
+    module Models
+        ActivityType = {
+            Signin: :Signin,
+            User: :User,
+            UnknownFutureValue: :UnknownFutureValue,
+            ServicePrincipal: :ServicePrincipal,
+        }
+    end
 end

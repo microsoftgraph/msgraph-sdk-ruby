@@ -1,7 +1,9 @@
-module MicrosoftGraph::Models
-    AttestationLevel = {
-        Attested: :Attested,
-        NotAttested: :NotAttested,
-        UnknownFutureValue: :UnknownFutureValue,
-    }
+module MicrosoftGraph
+    module Models
+        AttestationLevel = {
+            Attested: :Attested,
+            NotAttested: :NotAttested,
+            UnknownFutureValue: :UnknownFutureValue,
+        }
+    end
 end

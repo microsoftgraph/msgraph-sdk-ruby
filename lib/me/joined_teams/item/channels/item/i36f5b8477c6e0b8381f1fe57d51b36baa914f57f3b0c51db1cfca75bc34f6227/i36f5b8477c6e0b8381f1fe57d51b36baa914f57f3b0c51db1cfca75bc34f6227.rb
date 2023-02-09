@@ -1,3 +1,1 @@
 require_relative 'c41596d4fbffe103bb724f3952f09f0aa3c5ec4e2176790cca62f27819ff9897'
-module MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::I36f5b8477c6e0b8381f1fe57d51b36baa914f57f3b0c51db1cfca75bc34f6227
-end

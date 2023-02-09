@@ -1,6 +1,8 @@
-module MicrosoftGraph::Models
-    BodyType = {
-        Text: :Text,
-        Html: :Html,
-    }
+module MicrosoftGraph
+    module Models
+        BodyType = {
+            Text: :Text,
+            Html: :Html,
+        }
+    end
 end
