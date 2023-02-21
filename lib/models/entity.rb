@@ -190,6 +190,8 @@ module MicrosoftGraph
                             return AuthoredNote.new
                         when "#microsoft.graph.authorizationPolicy"
                             return AuthorizationPolicy.new
+                        when "#microsoft.graph.azureCommunicationServicesUserConversationMember"
+                            return AzureCommunicationServicesUserConversationMember.new
                         when "#microsoft.graph.b2xIdentityUserFlow"
                             return B2xIdentityUserFlow.new
                         when "#microsoft.graph.baseItem"
@@ -308,6 +310,8 @@ module MicrosoftGraph
                             return DelegatedAdminServiceManagementDetail.new
                         when "#microsoft.graph.delegatedPermissionClassification"
                             return DelegatedPermissionClassification.new
+                        when "#microsoft.graph.deletedTeam"
+                            return DeletedTeam.new
                         when "#microsoft.graph.detectedApp"
                             return DetectedApp.new
                         when "#microsoft.graph.device"

@@ -7,17 +7,17 @@ module MicrosoftGraph
         class AnonymousGuestConversationMember < MicrosoftGraph::Models::ConversationMember
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The anonymousGuestId property
+            # Unique ID that represents the user. Note: This ID can change if the user leaves and rejoins the meeting, or joins from a different device.
             @anonymous_guest_id
             ## 
-            ## Gets the anonymousGuestId property value. The anonymousGuestId property
+            ## Gets the anonymousGuestId property value. Unique ID that represents the user. Note: This ID can change if the user leaves and rejoins the meeting, or joins from a different device.
             ## @return a string
             ## 
             def anonymous_guest_id
                 return @anonymous_guest_id
             end
             ## 
-            ## Sets the anonymousGuestId property value. The anonymousGuestId property
+            ## Sets the anonymousGuestId property value. Unique ID that represents the user. Note: This ID can change if the user leaves and rejoins the meeting, or joins from a different device.
             ## @param value Value to set for the anonymous_guest_id property.
             ## @return a void
             ## 

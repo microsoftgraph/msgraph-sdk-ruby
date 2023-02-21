@@ -2,6 +2,8 @@ require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/teamwork'
+require_relative './deleted_teams/deleted_teams_request_builder'
+require_relative './deleted_teams/item/deleted_team_item_request_builder'
 require_relative './microsoft_graph_send_activity_notification_to_recipients/microsoft_graph_send_activity_notification_to_recipients_request_builder'
 require_relative './teamwork'
 require_relative './workforce_integrations/item/workforce_integration_item_request_builder'
@@ -13,6 +15,11 @@ module MicrosoftGraph
         # Provides operations to manage the teamwork singleton.
         class TeamworkRequestBuilder
             
+            ## 
+            # Provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
+            def deleted_teams()
+                return MicrosoftGraph::Teamwork::DeletedTeams::DeletedTeamsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
             ## 
             # Provides operations to call the sendActivityNotificationToRecipients method.
             def microsoft_graph_send_activity_notification_to_recipients()
@@ -45,6 +52,17 @@ module MicrosoftGraph
                 @request_adapter = request_adapter
                 path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
                 @path_parameters = path_parameters if path_parameters.is_a? Hash
+            end
+            ## 
+            ## Provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
+            ## @param id Unique identifier of the item
+            ## @return a deleted_team_item_request_builder
+            ## 
+            def deleted_teams_by_id(id)
+                raise StandardError, 'id cannot be null' if id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["deletedTeam%2Did"] = id
+                return MicrosoftGraph::Teamwork::DeletedTeams::Item::DeletedTeamItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Get teamwork

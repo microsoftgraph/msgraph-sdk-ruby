@@ -10,6 +10,7 @@ module MicrosoftGraph
             ListItem: :ListItem,
             Drive: :Drive,
             UnknownFutureValue: :UnknownFutureValue,
+            ChatMessage: :ChatMessage,
         }
     end
 end

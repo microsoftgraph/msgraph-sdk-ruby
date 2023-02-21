@@ -7,10 +7,10 @@ module MicrosoftGraph
         class SkypeForBusinessUserConversationMember < MicrosoftGraph::Models::ConversationMember
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The tenantId property
+            # ID of the tenant that the user belongs to.
             @tenant_id
             ## 
-            # The userId property
+            # Azure Active Directory ID of the user.
             @user_id
             ## 
             ## Instantiates a new SkypeForBusinessUserConversationMember and sets the default values.
@@ -51,14 +51,14 @@ module MicrosoftGraph
                 writer.write_string_value("userId", @user_id)
             end
             ## 
-            ## Gets the tenantId property value. The tenantId property
+            ## Gets the tenantId property value. ID of the tenant that the user belongs to.
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. The tenantId property
+            ## Sets the tenantId property value. ID of the tenant that the user belongs to.
             ## @param value Value to set for the tenant_id property.
             ## @return a void
             ## 
@@ -66,14 +66,14 @@ module MicrosoftGraph
                 @tenant_id = value
             end
             ## 
-            ## Gets the userId property value. The userId property
+            ## Gets the userId property value. Azure Active Directory ID of the user.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. The userId property
+            ## Sets the userId property value. Azure Active Directory ID of the user.
             ## @param value Value to set for the user_id property.
             ## @return a void
             ## 

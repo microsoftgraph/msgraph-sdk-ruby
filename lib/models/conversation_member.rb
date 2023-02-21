@@ -38,6 +38,8 @@ module MicrosoftGraph
                             return AadUserConversationMember.new
                         when "#microsoft.graph.anonymousGuestConversationMember"
                             return AnonymousGuestConversationMember.new
+                        when "#microsoft.graph.azureCommunicationServicesUserConversationMember"
+                            return AzureCommunicationServicesUserConversationMember.new
                         when "#microsoft.graph.microsoftAccountUserConversationMember"
                             return MicrosoftAccountUserConversationMember.new
                         when "#microsoft.graph.skypeForBusinessUserConversationMember"
