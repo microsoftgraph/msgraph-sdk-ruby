@@ -7,7 +7,7 @@ module MicrosoftGraph
         class SkypeUserConversationMember < MicrosoftGraph::Models::ConversationMember
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The skypeId property
+            # Skype ID of the user.
             @skype_id
             ## 
             ## Instantiates a new SkypeUserConversationMember and sets the default values.
@@ -46,14 +46,14 @@ module MicrosoftGraph
                 writer.write_string_value("skypeId", @skype_id)
             end
             ## 
-            ## Gets the skypeId property value. The skypeId property
+            ## Gets the skypeId property value. Skype ID of the user.
             ## @return a string
             ## 
             def skype_id
                 return @skype_id
             end
             ## 
-            ## Sets the skypeId property value. The skypeId property
+            ## Sets the skypeId property value. Skype ID of the user.
             ## @param value Value to set for the skype_id property.
             ## @return a void
             ## 

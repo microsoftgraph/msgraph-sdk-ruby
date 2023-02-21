@@ -40,8 +40,14 @@ module MicrosoftGraph
             # The queryAlterationOptions property
             @query_alteration_options
             ## 
+            # The region property
+            @region
+            ## 
             # The resultTemplateOptions property
             @result_template_options
+            ## 
+            # The sharePointOneDriveOptions property
+            @share_point_one_drive_options
             ## 
             # The size property
             @size
@@ -200,7 +206,9 @@ module MicrosoftGraph
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "query" => lambda {|n| @query = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SearchQuery.create_from_discriminator_value(pn) }) },
                     "queryAlterationOptions" => lambda {|n| @query_alteration_options = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SearchAlterationOptions.create_from_discriminator_value(pn) }) },
+                    "region" => lambda {|n| @region = n.get_string_value() },
                     "resultTemplateOptions" => lambda {|n| @result_template_options = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ResultTemplateOption.create_from_discriminator_value(pn) }) },
+                    "sharePointOneDriveOptions" => lambda {|n| @share_point_one_drive_options = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SharePointOneDriveOptions.create_from_discriminator_value(pn) }) },
                     "size" => lambda {|n| @size = n.get_number_value() },
                     "sortProperties" => lambda {|n| @sort_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SortProperty.create_from_discriminator_value(pn) }) },
                 }
@@ -251,6 +259,21 @@ module MicrosoftGraph
                 @query_alteration_options = value
             end
             ## 
+            ## Gets the region property value. The region property
+            ## @return a string
+            ## 
+            def region
+                return @region
+            end
+            ## 
+            ## Sets the region property value. The region property
+            ## @param value Value to set for the region property.
+            ## @return a void
+            ## 
+            def region=(value)
+                @region = value
+            end
+            ## 
             ## Gets the resultTemplateOptions property value. The resultTemplateOptions property
             ## @return a result_template_option
             ## 
@@ -282,10 +305,27 @@ module MicrosoftGraph
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_object_value("query", @query)
                 writer.write_object_value("queryAlterationOptions", @query_alteration_options)
+                writer.write_string_value("region", @region)
                 writer.write_object_value("resultTemplateOptions", @result_template_options)
+                writer.write_object_value("sharePointOneDriveOptions", @share_point_one_drive_options)
                 writer.write_number_value("size", @size)
                 writer.write_collection_of_object_values("sortProperties", @sort_properties)
                 writer.write_additional_data(@additional_data)
+            end
+            ## 
+            ## Gets the sharePointOneDriveOptions property value. The sharePointOneDriveOptions property
+            ## @return a share_point_one_drive_options
+            ## 
+            def share_point_one_drive_options
+                return @share_point_one_drive_options
+            end
+            ## 
+            ## Sets the sharePointOneDriveOptions property value. The sharePointOneDriveOptions property
+            ## @param value Value to set for the share_point_one_drive_options property.
+            ## @return a void
+            ## 
+            def share_point_one_drive_options=(value)
+                @share_point_one_drive_options = value
             end
             ## 
             ## Gets the size property value. The size property

@@ -7,7 +7,7 @@ module MicrosoftGraph
         class MicrosoftAccountUserConversationMember < MicrosoftGraph::Models::ConversationMember
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The userId property
+            # Microsoft Account ID of the user.
             @user_id
             ## 
             ## Instantiates a new MicrosoftAccountUserConversationMember and sets the default values.
@@ -46,14 +46,14 @@ module MicrosoftGraph
                 writer.write_string_value("userId", @user_id)
             end
             ## 
-            ## Gets the userId property value. The userId property
+            ## Gets the userId property value. Microsoft Account ID of the user.
             ## @return a string
             ## 
             def user_id
                 return @user_id
             end
             ## 
-            ## Sets the userId property value. The userId property
+            ## Sets the userId property value. Microsoft Account ID of the user.
             ## @param value Value to set for the user_id property.
             ## @return a void
             ## 

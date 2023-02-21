@@ -50,7 +50,7 @@ module MicrosoftGraph
                 @calls = value
             end
             ## 
-            ## Instantiates a new CloudCommunications and sets the default values.
+            ## Instantiates a new cloudCommunications and sets the default values.
             ## @return a void
             ## 
             def initialize()

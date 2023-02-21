@@ -19,7 +19,7 @@ module MicrosoftGraph
             # ID of the user assigned to the shift. Required.
             @user_id
             ## 
-            ## Instantiates a new Shift and sets the default values.
+            ## Instantiates a new shift and sets the default values.
             ## @return a void
             ## 
             def initialize()
