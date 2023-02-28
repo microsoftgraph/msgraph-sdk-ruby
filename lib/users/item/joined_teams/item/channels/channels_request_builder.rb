@@ -9,7 +9,7 @@ require_relative '../../joined_teams'
 require_relative '../item'
 require_relative './channels'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_get_all_messages/microsoft_graph_get_all_messages_request_builder'
+require_relative './get_all_messages/get_all_messages_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -28,8 +28,8 @@ module MicrosoftGraph
                             end
                             ## 
                             # Provides operations to call the getAllMessages method.
-                            def microsoft_graph_get_all_messages()
-                                return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::MicrosoftGraphGetAllMessages::MicrosoftGraphGetAllMessagesRequestBuilder.new(@path_parameters, @request_adapter)
+                            def get_all_messages()
+                                return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::GetAllMessages::GetAllMessagesRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             # Path parameters for the request

@@ -10,12 +10,12 @@ require_relative './attack_simulation/attack_simulation_request_builder'
 require_relative './cases/cases_request_builder'
 require_relative './incidents/incidents_request_builder'
 require_relative './incidents/item/incident_item_request_builder'
-require_relative './microsoft_graph_security_run_hunting_query/microsoft_graph_security_run_hunting_query_request_builder'
 require_relative './secure_score_control_profiles/item/secure_score_control_profile_item_request_builder'
 require_relative './secure_score_control_profiles/secure_score_control_profiles_request_builder'
 require_relative './secure_scores/item/secure_score_item_request_builder'
 require_relative './secure_scores/secure_scores_request_builder'
 require_relative './security'
+require_relative './security_run_hunting_query/security_run_hunting_query_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -49,11 +49,6 @@ module MicrosoftGraph
                 return MicrosoftGraph::Security::Incidents::IncidentsRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
-            # Provides operations to call the runHuntingQuery method.
-            def microsoft_graph_security_run_hunting_query()
-                return MicrosoftGraph::Security::MicrosoftGraphSecurityRunHuntingQuery::MicrosoftGraphSecurityRunHuntingQueryRequestBuilder.new(@path_parameters, @request_adapter)
-            end
-            ## 
             # Path parameters for the request
             @path_parameters
             ## 
@@ -68,6 +63,11 @@ module MicrosoftGraph
             # Provides operations to manage the secureScores property of the microsoft.graph.security entity.
             def secure_scores()
                 return MicrosoftGraph::Security::SecureScores::SecureScoresRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to call the runHuntingQuery method.
+            def security_run_hunting_query()
+                return MicrosoftGraph::Security::SecurityRunHuntingQuery::SecurityRunHuntingQueryRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Url template to use to build the URL for the current request builder

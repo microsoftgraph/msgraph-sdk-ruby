@@ -11,7 +11,7 @@ require_relative '../../../worksheets'
 require_relative '../../item'
 require_relative '../pivot_tables'
 require_relative './item'
-require_relative './microsoft_graph_refresh/microsoft_graph_refresh_request_builder'
+require_relative './refresh/refresh_request_builder'
 require_relative './worksheet/worksheet_request_builder'
 
 module MicrosoftGraph
@@ -29,13 +29,13 @@ module MicrosoftGraph
                                         class WorkbookPivotTableItemRequestBuilder
                                             
                                             ## 
-                                            # Provides operations to call the refresh method.
-                                            def microsoft_graph_refresh()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::PivotTables::Item::MicrosoftGraphRefresh::MicrosoftGraphRefreshRequestBuilder.new(@path_parameters, @request_adapter)
-                                            end
-                                            ## 
                                             # Path parameters for the request
                                             @path_parameters
+                                            ## 
+                                            # Provides operations to call the refresh method.
+                                            def refresh()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::PivotTables::Item::Refresh::RefreshRequestBuilder.new(@path_parameters, @request_adapter)
+                                            end
                                             ## 
                                             # The request adapter to use to execute the requests.
                                             @request_adapter

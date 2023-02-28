@@ -7,6 +7,7 @@ require_relative '../../../../item'
 require_relative '../../../sites'
 require_relative '../../item'
 require_relative '../content_types'
+require_relative './associate_with_hub_sites/associate_with_hub_sites_request_builder'
 require_relative './base/base_request_builder'
 require_relative './base_types/base_types_request_builder'
 require_relative './base_types/item/content_type_item_request_builder'
@@ -16,12 +17,11 @@ require_relative './column_positions/column_positions_request_builder'
 require_relative './column_positions/item/column_definition_item_request_builder'
 require_relative './columns/columns_request_builder'
 require_relative './columns/item/column_definition_item_request_builder'
+require_relative './copy_to_default_content_location/copy_to_default_content_location_request_builder'
+require_relative './is_published/is_published_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_associate_with_hub_sites/microsoft_graph_associate_with_hub_sites_request_builder'
-require_relative './microsoft_graph_copy_to_default_content_location/microsoft_graph_copy_to_default_content_location_request_builder'
-require_relative './microsoft_graph_is_published/microsoft_graph_is_published_request_builder'
-require_relative './microsoft_graph_publish/microsoft_graph_publish_request_builder'
-require_relative './microsoft_graph_unpublish/microsoft_graph_unpublish_request_builder'
+require_relative './publish/publish_request_builder'
+require_relative './unpublish/unpublish_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -34,6 +34,11 @@ module MicrosoftGraph
                             # Provides operations to manage the contentTypes property of the microsoft.graph.site entity.
                             class ContentTypeItemRequestBuilder
                                 
+                                ## 
+                                # Provides operations to call the associateWithHubSites method.
+                                def associate_with_hub_sites()
+                                    return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Item::AssociateWithHubSites::AssociateWithHubSitesRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
                                 ## 
                                 # Provides operations to manage the base property of the microsoft.graph.contentType entity.
                                 def base()
@@ -60,36 +65,31 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Item::Columns::ColumnsRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
-                                # Provides operations to call the associateWithHubSites method.
-                                def microsoft_graph_associate_with_hub_sites()
-                                    return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Item::MicrosoftGraphAssociateWithHubSites::MicrosoftGraphAssociateWithHubSitesRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
                                 # Provides operations to call the copyToDefaultContentLocation method.
-                                def microsoft_graph_copy_to_default_content_location()
-                                    return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Item::MicrosoftGraphCopyToDefaultContentLocation::MicrosoftGraphCopyToDefaultContentLocationRequestBuilder.new(@path_parameters, @request_adapter)
+                                def copy_to_default_content_location()
+                                    return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Item::CopyToDefaultContentLocation::CopyToDefaultContentLocationRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the isPublished method.
-                                def microsoft_graph_is_published()
-                                    return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Item::MicrosoftGraphIsPublished::MicrosoftGraphIsPublishedRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to call the publish method.
-                                def microsoft_graph_publish()
-                                    return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Item::MicrosoftGraphPublish::MicrosoftGraphPublishRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to call the unpublish method.
-                                def microsoft_graph_unpublish()
-                                    return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Item::MicrosoftGraphUnpublish::MicrosoftGraphUnpublishRequestBuilder.new(@path_parameters, @request_adapter)
+                                def is_published()
+                                    return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Item::IsPublished::IsPublishedRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Path parameters for the request
                                 @path_parameters
                                 ## 
+                                # Provides operations to call the publish method.
+                                def publish()
+                                    return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Item::Publish::PublishRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
                                 # The request adapter to use to execute the requests.
                                 @request_adapter
+                                ## 
+                                # Provides operations to call the unpublish method.
+                                def unpublish()
+                                    return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Item::Unpublish::UnpublishRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
                                 ## 
                                 # Url template to use to build the URL for the current request builder
                                 @url_template

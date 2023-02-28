@@ -13,6 +13,9 @@ module MicrosoftGraph
             # The policy by which consent requests are created and managed for the entire tenant.
             @admin_consent_request_policy
             ## 
+            # The appManagementPolicies property
+            @app_management_policies
+            ## 
             # The policy configuration of the self-service sign-up experience of external users.
             @authentication_flows_policy
             ## 
@@ -30,6 +33,9 @@ module MicrosoftGraph
             ## 
             # The custom rules that define an access scenario when interacting with external Azure AD tenants.
             @cross_tenant_access_policy
+            ## 
+            # The defaultAppManagementPolicy property
+            @default_app_management_policy
             ## 
             # The feature rollout policy associated with a directory object.
             @feature_rollout_policies
@@ -83,6 +89,21 @@ module MicrosoftGraph
             ## 
             def admin_consent_request_policy=(value)
                 @admin_consent_request_policy = value
+            end
+            ## 
+            ## Gets the appManagementPolicies property value. The appManagementPolicies property
+            ## @return a app_management_policy
+            ## 
+            def app_management_policies
+                return @app_management_policies
+            end
+            ## 
+            ## Sets the appManagementPolicies property value. The appManagementPolicies property
+            ## @param value Value to set for the app_management_policies property.
+            ## @return a void
+            ## 
+            def app_management_policies=(value)
+                @app_management_policies = value
             end
             ## 
             ## Gets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of external users.
@@ -191,6 +212,21 @@ module MicrosoftGraph
                 @cross_tenant_access_policy = value
             end
             ## 
+            ## Gets the defaultAppManagementPolicy property value. The defaultAppManagementPolicy property
+            ## @return a tenant_app_management_policy
+            ## 
+            def default_app_management_policy
+                return @default_app_management_policy
+            end
+            ## 
+            ## Sets the defaultAppManagementPolicy property value. The defaultAppManagementPolicy property
+            ## @param value Value to set for the default_app_management_policy property.
+            ## @return a void
+            ## 
+            def default_app_management_policy=(value)
+                @default_app_management_policy = value
+            end
+            ## 
             ## Gets the featureRolloutPolicies property value. The feature rollout policy associated with a directory object.
             ## @return a feature_rollout_policy
             ## 
@@ -213,12 +249,14 @@ module MicrosoftGraph
                 return super.merge({
                     "activityBasedTimeoutPolicies" => lambda {|n| @activity_based_timeout_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ActivityBasedTimeoutPolicy.create_from_discriminator_value(pn) }) },
                     "adminConsentRequestPolicy" => lambda {|n| @admin_consent_request_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AdminConsentRequestPolicy.create_from_discriminator_value(pn) }) },
+                    "appManagementPolicies" => lambda {|n| @app_management_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AppManagementPolicy.create_from_discriminator_value(pn) }) },
                     "authenticationFlowsPolicy" => lambda {|n| @authentication_flows_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AuthenticationFlowsPolicy.create_from_discriminator_value(pn) }) },
                     "authenticationMethodsPolicy" => lambda {|n| @authentication_methods_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AuthenticationMethodsPolicy.create_from_discriminator_value(pn) }) },
                     "authorizationPolicy" => lambda {|n| @authorization_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AuthorizationPolicy.create_from_discriminator_value(pn) }) },
                     "claimsMappingPolicies" => lambda {|n| @claims_mapping_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ClaimsMappingPolicy.create_from_discriminator_value(pn) }) },
                     "conditionalAccessPolicies" => lambda {|n| @conditional_access_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessPolicy.create_from_discriminator_value(pn) }) },
                     "crossTenantAccessPolicy" => lambda {|n| @cross_tenant_access_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicy.create_from_discriminator_value(pn) }) },
+                    "defaultAppManagementPolicy" => lambda {|n| @default_app_management_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TenantAppManagementPolicy.create_from_discriminator_value(pn) }) },
                     "featureRolloutPolicies" => lambda {|n| @feature_rollout_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::FeatureRolloutPolicy.create_from_discriminator_value(pn) }) },
                     "homeRealmDiscoveryPolicies" => lambda {|n| @home_realm_discovery_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::HomeRealmDiscoveryPolicy.create_from_discriminator_value(pn) }) },
                     "identitySecurityDefaultsEnforcementPolicy" => lambda {|n| @identity_security_defaults_enforcement_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySecurityDefaultsEnforcementPolicy.create_from_discriminator_value(pn) }) },
@@ -314,12 +352,14 @@ module MicrosoftGraph
                 super
                 writer.write_collection_of_object_values("activityBasedTimeoutPolicies", @activity_based_timeout_policies)
                 writer.write_object_value("adminConsentRequestPolicy", @admin_consent_request_policy)
+                writer.write_collection_of_object_values("appManagementPolicies", @app_management_policies)
                 writer.write_object_value("authenticationFlowsPolicy", @authentication_flows_policy)
                 writer.write_object_value("authenticationMethodsPolicy", @authentication_methods_policy)
                 writer.write_object_value("authorizationPolicy", @authorization_policy)
                 writer.write_collection_of_object_values("claimsMappingPolicies", @claims_mapping_policies)
                 writer.write_collection_of_object_values("conditionalAccessPolicies", @conditional_access_policies)
                 writer.write_object_value("crossTenantAccessPolicy", @cross_tenant_access_policy)
+                writer.write_object_value("defaultAppManagementPolicy", @default_app_management_policy)
                 writer.write_collection_of_object_values("featureRolloutPolicies", @feature_rollout_policies)
                 writer.write_collection_of_object_values("homeRealmDiscoveryPolicies", @home_realm_discovery_policies)
                 writer.write_object_value("identitySecurityDefaultsEnforcementPolicy", @identity_security_defaults_enforcement_policy)

@@ -7,7 +7,7 @@ module MicrosoftGraph
         class CrossTenantAccessPolicy < MicrosoftGraph::Models::PolicyBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The allowedCloudEndpoints property
+            # Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.
             @allowed_cloud_endpoints
             ## 
             # Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
@@ -16,14 +16,14 @@ module MicrosoftGraph
             # Defines partner-specific configurations for external Azure Active Directory organizations.
             @partners
             ## 
-            ## Gets the allowedCloudEndpoints property value. The allowedCloudEndpoints property
+            ## Gets the allowedCloudEndpoints property value. Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.
             ## @return a string
             ## 
             def allowed_cloud_endpoints
                 return @allowed_cloud_endpoints
             end
             ## 
-            ## Sets the allowedCloudEndpoints property value. The allowedCloudEndpoints property
+            ## Sets the allowedCloudEndpoints property value. Used to specify which Microsoft clouds an organization would like to collaborate with. By default, this value is empty. Supported values for this field are: microsoftonline.com, microsoftonline.us, and partner.microsoftonline.cn.
             ## @param value Value to set for the allowed_cloud_endpoints property.
             ## @return a void
             ## 

@@ -11,10 +11,10 @@ require_relative './item'
 require_relative './items/item/drive_item_item_request_builder'
 require_relative './items/items_request_builder'
 require_relative './list/list_request_builder'
-require_relative './microsoft_graph_recent/microsoft_graph_recent_request_builder'
-require_relative './microsoft_graph_search_with_q/microsoft_graph_search_with_q_request_builder'
-require_relative './microsoft_graph_shared_with_me/microsoft_graph_shared_with_me_request_builder'
+require_relative './recent/recent_request_builder'
 require_relative './root/root_request_builder'
+require_relative './search_with_q/search_with_q_request_builder'
+require_relative './shared_with_me/shared_with_me_request_builder'
 require_relative './special/item/drive_item_item_request_builder'
 require_relative './special/special_request_builder'
 
@@ -46,18 +46,13 @@ module MicrosoftGraph
                     return MicrosoftGraph::Drives::Item::List::ListRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
-                # Provides operations to call the recent method.
-                def microsoft_graph_recent()
-                    return MicrosoftGraph::Drives::Item::MicrosoftGraphRecent::MicrosoftGraphRecentRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the sharedWithMe method.
-                def microsoft_graph_shared_with_me()
-                    return MicrosoftGraph::Drives::Item::MicrosoftGraphSharedWithMe::MicrosoftGraphSharedWithMeRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
                 # Path parameters for the request
                 @path_parameters
+                ## 
+                # Provides operations to call the recent method.
+                def recent()
+                    return MicrosoftGraph::Drives::Item::Recent::RecentRequestBuilder.new(@path_parameters, @request_adapter)
+                end
                 ## 
                 # The request adapter to use to execute the requests.
                 @request_adapter
@@ -65,6 +60,11 @@ module MicrosoftGraph
                 # Provides operations to manage the root property of the microsoft.graph.drive entity.
                 def root()
                     return MicrosoftGraph::Drives::Item::Root::RootRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the sharedWithMe method.
+                def shared_with_me()
+                    return MicrosoftGraph::Drives::Item::SharedWithMe::SharedWithMeRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the special property of the microsoft.graph.drive entity.
@@ -150,15 +150,6 @@ module MicrosoftGraph
                     return MicrosoftGraph::Drives::Item::Items::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
-                ## Provides operations to call the search method.
-                ## @param q Usage: q='{q}'
-                ## @return a microsoft_graph_search_with_q_request_builder
-                ## 
-                def microsoft_graph_search_with_q(q)
-                    raise StandardError, 'q cannot be null' if q.nil?
-                    return MicrosoftGraphSearchWithQRequestBuilder.new(@path_parameters, @request_adapter, q)
-                end
-                ## 
                 ## Update entity in drives
                 ## @param body The request body
                 ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
@@ -173,6 +164,15 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Drive.create_from_discriminator_value(pn) }, error_mapping)
+                end
+                ## 
+                ## Provides operations to call the search method.
+                ## @param q Usage: q='{q}'
+                ## @return a search_with_q_request_builder
+                ## 
+                def search_with_q(q)
+                    raise StandardError, 'q cannot be null' if q.nil?
+                    return SearchWithQRequestBuilder.new(@path_parameters, @request_adapter, q)
                 end
                 ## 
                 ## Provides operations to manage the special property of the microsoft.graph.drive entity.

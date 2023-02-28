@@ -8,9 +8,9 @@ require_relative '../../../conversations'
 require_relative '../../item'
 require_relative '../threads'
 require_relative './item'
-require_relative './microsoft_graph_reply/microsoft_graph_reply_request_builder'
 require_relative './posts/item/post_item_request_builder'
 require_relative './posts/posts_request_builder'
+require_relative './reply/reply_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -24,17 +24,17 @@ module MicrosoftGraph
                             class ConversationThreadItemRequestBuilder
                                 
                                 ## 
-                                # Provides operations to call the reply method.
-                                def microsoft_graph_reply()
-                                    return MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::MicrosoftGraphReply::MicrosoftGraphReplyRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
                                 # Path parameters for the request
                                 @path_parameters
                                 ## 
                                 # Provides operations to manage the posts property of the microsoft.graph.conversationThread entity.
                                 def posts()
                                     return MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::Posts::PostsRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                # Provides operations to call the reply method.
+                                def reply()
+                                    return MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::Reply::ReplyRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # The request adapter to use to execute the requests.

@@ -7,9 +7,9 @@ require_relative '../../../item'
 require_relative '../../team'
 require_relative '../installed_apps'
 require_relative './item'
-require_relative './microsoft_graph_upgrade/microsoft_graph_upgrade_request_builder'
 require_relative './teams_app/teams_app_request_builder'
 require_relative './teams_app_definition/teams_app_definition_request_builder'
+require_relative './upgrade/upgrade_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -21,11 +21,6 @@ module MicrosoftGraph
                         # Provides operations to manage the installedApps property of the microsoft.graph.team entity.
                         class TeamsAppInstallationItemRequestBuilder
                             
-                            ## 
-                            # Provides operations to call the upgrade method.
-                            def microsoft_graph_upgrade()
-                                return MicrosoftGraph::Groups::Item::Team::InstalledApps::Item::MicrosoftGraphUpgrade::MicrosoftGraphUpgradeRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
                             ## 
                             # Path parameters for the request
                             @path_parameters
@@ -41,6 +36,11 @@ module MicrosoftGraph
                             # Provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.
                             def teams_app_definition()
                                 return MicrosoftGraph::Groups::Item::Team::InstalledApps::Item::TeamsAppDefinition::TeamsAppDefinitionRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # Provides operations to call the upgrade method.
+                            def upgrade()
+                                return MicrosoftGraph::Groups::Item::Team::InstalledApps::Item::Upgrade::UpgradeRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             # Url template to use to build the URL for the current request builder

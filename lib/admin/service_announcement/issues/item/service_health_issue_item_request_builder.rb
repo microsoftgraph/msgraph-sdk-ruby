@@ -5,8 +5,8 @@ require_relative '../../../../models/service_health_issue'
 require_relative '../../../admin'
 require_relative '../../service_announcement'
 require_relative '../issues'
+require_relative './incident_report/incident_report_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_incident_report/microsoft_graph_incident_report_request_builder'
 
 module MicrosoftGraph
     module Admin
@@ -19,8 +19,8 @@ module MicrosoftGraph
                         
                         ## 
                         # Provides operations to call the incidentReport method.
-                        def microsoft_graph_incident_report()
-                            return MicrosoftGraph::Admin::ServiceAnnouncement::Issues::Item::MicrosoftGraphIncidentReport::MicrosoftGraphIncidentReportRequestBuilder.new(@path_parameters, @request_adapter)
+                        def incident_report()
+                            return MicrosoftGraph::Admin::ServiceAnnouncement::Issues::Item::IncidentReport::IncidentReportRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Path parameters for the request

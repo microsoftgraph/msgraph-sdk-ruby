@@ -9,6 +9,7 @@ require_relative './agreement_acceptances/agreement_acceptances_request_builder'
 require_relative './agreement_acceptances/item/agreement_acceptance_item_request_builder'
 require_relative './app_role_assignments/app_role_assignments_request_builder'
 require_relative './app_role_assignments/item/app_role_assignment_item_request_builder'
+require_relative './assign_license/assign_license_request_builder'
 require_relative './authentication/authentication_request_builder'
 require_relative './calendar/calendar_request_builder'
 require_relative './calendar_groups/calendar_groups_request_builder'
@@ -17,8 +18,11 @@ require_relative './calendars/calendars_request_builder'
 require_relative './calendars/item/calendar_item_request_builder'
 require_relative './calendar_view/calendar_view_request_builder'
 require_relative './calendar_view/item/event_item_request_builder'
+require_relative './change_password/change_password_request_builder'
 require_relative './chats/chats_request_builder'
 require_relative './chats/item/chat_item_request_builder'
+require_relative './check_member_groups/check_member_groups_request_builder'
+require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './contact_folders/contact_folders_request_builder'
 require_relative './contact_folders/item/contact_folder_item_request_builder'
 require_relative './contacts/contacts_request_builder'
@@ -34,10 +38,20 @@ require_relative './drives/drives_request_builder'
 require_relative './drives/item/drive_item_request_builder'
 require_relative './events/events_request_builder'
 require_relative './events/item/event_item_request_builder'
+require_relative './export_device_and_app_management_data/export_device_and_app_management_data_request_builder'
+require_relative './export_device_and_app_management_data_with_skip_with_top/export_device_and_app_management_data_with_skip_with_top_request_builder'
+require_relative './export_personal_data/export_personal_data_request_builder'
 require_relative './extensions/extensions_request_builder'
 require_relative './extensions/item/extension_item_request_builder'
+require_relative './find_meeting_times/find_meeting_times_request_builder'
 require_relative './followed_sites/followed_sites_request_builder'
 require_relative './followed_sites/item/site_item_request_builder'
+require_relative './get_mail_tips/get_mail_tips_request_builder'
+require_relative './get_managed_app_diagnostic_statuses/get_managed_app_diagnostic_statuses_request_builder'
+require_relative './get_managed_app_policies/get_managed_app_policies_request_builder'
+require_relative './get_managed_devices_with_app_failures/get_managed_devices_with_app_failures_request_builder'
+require_relative './get_member_groups/get_member_groups_request_builder'
+require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './inference_classification/inference_classification_request_builder'
 require_relative './insights/insights_request_builder'
 require_relative './item'
@@ -56,28 +70,6 @@ require_relative './member_of/item/directory_object_item_request_builder'
 require_relative './member_of/member_of_request_builder'
 require_relative './messages/item/message_item_request_builder'
 require_relative './messages/messages_request_builder'
-require_relative './microsoft_graph_assign_license/microsoft_graph_assign_license_request_builder'
-require_relative './microsoft_graph_change_password/microsoft_graph_change_password_request_builder'
-require_relative './microsoft_graph_check_member_groups/microsoft_graph_check_member_groups_request_builder'
-require_relative './microsoft_graph_check_member_objects/microsoft_graph_check_member_objects_request_builder'
-require_relative './microsoft_graph_export_device_and_app_management_data/microsoft_graph_export_device_and_app_management_data_request_builder'
-require_relative './microsoft_graph_export_device_and_app_management_data_with_skip_with_top/microsoft_graph_export_device_and_app_management_data_with_skip_with_top_request_builder'
-require_relative './microsoft_graph_export_personal_data/microsoft_graph_export_personal_data_request_builder'
-require_relative './microsoft_graph_find_meeting_times/microsoft_graph_find_meeting_times_request_builder'
-require_relative './microsoft_graph_get_mail_tips/microsoft_graph_get_mail_tips_request_builder'
-require_relative './microsoft_graph_get_managed_app_diagnostic_statuses/microsoft_graph_get_managed_app_diagnostic_statuses_request_builder'
-require_relative './microsoft_graph_get_managed_app_policies/microsoft_graph_get_managed_app_policies_request_builder'
-require_relative './microsoft_graph_get_managed_devices_with_app_failures/microsoft_graph_get_managed_devices_with_app_failures_request_builder'
-require_relative './microsoft_graph_get_member_groups/microsoft_graph_get_member_groups_request_builder'
-require_relative './microsoft_graph_get_member_objects/microsoft_graph_get_member_objects_request_builder'
-require_relative './microsoft_graph_reminder_view_with_start_date_time_with_end_date_time/microsoft_graph_reminder_view_with_start_date_time_with_end_date_time_request_builder'
-require_relative './microsoft_graph_remove_all_devices_from_management/microsoft_graph_remove_all_devices_from_management_request_builder'
-require_relative './microsoft_graph_reprocess_license_assignment/microsoft_graph_reprocess_license_assignment_request_builder'
-require_relative './microsoft_graph_restore/microsoft_graph_restore_request_builder'
-require_relative './microsoft_graph_revoke_sign_in_sessions/microsoft_graph_revoke_sign_in_sessions_request_builder'
-require_relative './microsoft_graph_send_mail/microsoft_graph_send_mail_request_builder'
-require_relative './microsoft_graph_translate_exchange_ids/microsoft_graph_translate_exchange_ids_request_builder'
-require_relative './microsoft_graph_wipe_managed_app_registrations_by_device_tag/microsoft_graph_wipe_managed_app_registrations_by_device_tag_request_builder'
 require_relative './oauth2_permission_grants/item/o_auth2_permission_grant_item_request_builder'
 require_relative './oauth2_permission_grants/oauth2_permission_grants_request_builder'
 require_relative './onenote/onenote_request_builder'
@@ -97,13 +89,21 @@ require_relative './planner/planner_request_builder'
 require_relative './presence/presence_request_builder'
 require_relative './registered_devices/item/directory_object_item_request_builder'
 require_relative './registered_devices/registered_devices_request_builder'
+require_relative './reminder_view_with_start_date_time_with_end_date_time/reminder_view_with_start_date_time_with_end_date_time_request_builder'
+require_relative './remove_all_devices_from_management/remove_all_devices_from_management_request_builder'
+require_relative './reprocess_license_assignment/reprocess_license_assignment_request_builder'
+require_relative './restore/restore_request_builder'
+require_relative './revoke_sign_in_sessions/revoke_sign_in_sessions_request_builder'
 require_relative './scoped_role_member_of/item/scoped_role_membership_item_request_builder'
 require_relative './scoped_role_member_of/scoped_role_member_of_request_builder'
+require_relative './send_mail/send_mail_request_builder'
 require_relative './settings/settings_request_builder'
 require_relative './teamwork/teamwork_request_builder'
 require_relative './todo/todo_request_builder'
 require_relative './transitive_member_of/item/directory_object_item_request_builder'
 require_relative './transitive_member_of/transitive_member_of_request_builder'
+require_relative './translate_exchange_ids/translate_exchange_ids_request_builder'
+require_relative './wipe_managed_app_registrations_by_device_tag/wipe_managed_app_registrations_by_device_tag_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -126,6 +126,11 @@ module MicrosoftGraph
                 # Provides operations to manage the appRoleAssignments property of the microsoft.graph.user entity.
                 def app_role_assignments()
                     return MicrosoftGraph::Users::Item::AppRoleAssignments::AppRoleAssignmentsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the assignLicense method.
+                def assign_license()
+                    return MicrosoftGraph::Users::Item::AssignLicense::AssignLicenseRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the authentication property of the microsoft.graph.user entity.
@@ -153,9 +158,24 @@ module MicrosoftGraph
                     return MicrosoftGraph::Users::Item::CalendarView::CalendarViewRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to call the changePassword method.
+                def change_password()
+                    return MicrosoftGraph::Users::Item::ChangePassword::ChangePasswordRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the chats property of the microsoft.graph.user entity.
                 def chats()
                     return MicrosoftGraph::Users::Item::Chats::ChatsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the checkMemberGroups method.
+                def check_member_groups()
+                    return MicrosoftGraph::Users::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the checkMemberObjects method.
+                def check_member_objects()
+                    return MicrosoftGraph::Users::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the contactFolders property of the microsoft.graph.user entity.
@@ -198,14 +218,59 @@ module MicrosoftGraph
                     return MicrosoftGraph::Users::Item::Events::EventsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to call the exportDeviceAndAppManagementData method.
+                def export_device_and_app_management_data()
+                    return MicrosoftGraph::Users::Item::ExportDeviceAndAppManagementData::ExportDeviceAndAppManagementDataRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the exportPersonalData method.
+                def export_personal_data()
+                    return MicrosoftGraph::Users::Item::ExportPersonalData::ExportPersonalDataRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the extensions property of the microsoft.graph.user entity.
                 def extensions()
                     return MicrosoftGraph::Users::Item::Extensions::ExtensionsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to call the findMeetingTimes method.
+                def find_meeting_times()
+                    return MicrosoftGraph::Users::Item::FindMeetingTimes::FindMeetingTimesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the followedSites property of the microsoft.graph.user entity.
                 def followed_sites()
                     return MicrosoftGraph::Users::Item::FollowedSites::FollowedSitesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the getMailTips method.
+                def get_mail_tips()
+                    return MicrosoftGraph::Users::Item::GetMailTips::GetMailTipsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the getManagedAppDiagnosticStatuses method.
+                def get_managed_app_diagnostic_statuses()
+                    return MicrosoftGraph::Users::Item::GetManagedAppDiagnosticStatuses::GetManagedAppDiagnosticStatusesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the getManagedAppPolicies method.
+                def get_managed_app_policies()
+                    return MicrosoftGraph::Users::Item::GetManagedAppPolicies::GetManagedAppPoliciesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the getManagedDevicesWithAppFailures method.
+                def get_managed_devices_with_app_failures()
+                    return MicrosoftGraph::Users::Item::GetManagedDevicesWithAppFailures::GetManagedDevicesWithAppFailuresRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the getMemberGroups method.
+                def get_member_groups()
+                    return MicrosoftGraph::Users::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the getMemberObjects method.
+                def get_member_objects()
+                    return MicrosoftGraph::Users::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the inferenceClassification property of the microsoft.graph.user entity.
@@ -256,106 +321,6 @@ module MicrosoftGraph
                 # Provides operations to manage the messages property of the microsoft.graph.user entity.
                 def messages()
                     return MicrosoftGraph::Users::Item::Messages::MessagesRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the assignLicense method.
-                def microsoft_graph_assign_license()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphAssignLicense::MicrosoftGraphAssignLicenseRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the changePassword method.
-                def microsoft_graph_change_password()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphChangePassword::MicrosoftGraphChangePasswordRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the checkMemberGroups method.
-                def microsoft_graph_check_member_groups()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphCheckMemberGroups::MicrosoftGraphCheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the checkMemberObjects method.
-                def microsoft_graph_check_member_objects()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphCheckMemberObjects::MicrosoftGraphCheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the exportDeviceAndAppManagementData method.
-                def microsoft_graph_export_device_and_app_management_data()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphExportDeviceAndAppManagementData::MicrosoftGraphExportDeviceAndAppManagementDataRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the exportPersonalData method.
-                def microsoft_graph_export_personal_data()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphExportPersonalData::MicrosoftGraphExportPersonalDataRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the findMeetingTimes method.
-                def microsoft_graph_find_meeting_times()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphFindMeetingTimes::MicrosoftGraphFindMeetingTimesRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the getMailTips method.
-                def microsoft_graph_get_mail_tips()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphGetMailTips::MicrosoftGraphGetMailTipsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the getManagedAppDiagnosticStatuses method.
-                def microsoft_graph_get_managed_app_diagnostic_statuses()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphGetManagedAppDiagnosticStatuses::MicrosoftGraphGetManagedAppDiagnosticStatusesRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the getManagedAppPolicies method.
-                def microsoft_graph_get_managed_app_policies()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphGetManagedAppPolicies::MicrosoftGraphGetManagedAppPoliciesRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the getManagedDevicesWithAppFailures method.
-                def microsoft_graph_get_managed_devices_with_app_failures()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphGetManagedDevicesWithAppFailures::MicrosoftGraphGetManagedDevicesWithAppFailuresRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the getMemberGroups method.
-                def microsoft_graph_get_member_groups()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphGetMemberGroups::MicrosoftGraphGetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the getMemberObjects method.
-                def microsoft_graph_get_member_objects()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphGetMemberObjects::MicrosoftGraphGetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the removeAllDevicesFromManagement method.
-                def microsoft_graph_remove_all_devices_from_management()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphRemoveAllDevicesFromManagement::MicrosoftGraphRemoveAllDevicesFromManagementRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the reprocessLicenseAssignment method.
-                def microsoft_graph_reprocess_license_assignment()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphReprocessLicenseAssignment::MicrosoftGraphReprocessLicenseAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the restore method.
-                def microsoft_graph_restore()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphRestore::MicrosoftGraphRestoreRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the revokeSignInSessions method.
-                def microsoft_graph_revoke_sign_in_sessions()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphRevokeSignInSessions::MicrosoftGraphRevokeSignInSessionsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the sendMail method.
-                def microsoft_graph_send_mail()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphSendMail::MicrosoftGraphSendMailRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the translateExchangeIds method.
-                def microsoft_graph_translate_exchange_ids()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphTranslateExchangeIds::MicrosoftGraphTranslateExchangeIdsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the wipeManagedAppRegistrationsByDeviceTag method.
-                def microsoft_graph_wipe_managed_app_registrations_by_device_tag()
-                    return MicrosoftGraph::Users::Item::MicrosoftGraphWipeManagedAppRegistrationsByDeviceTag::MicrosoftGraphWipeManagedAppRegistrationsByDeviceTagRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.user entity.
@@ -421,12 +386,37 @@ module MicrosoftGraph
                     return MicrosoftGraph::Users::Item::RegisteredDevices::RegisteredDevicesRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to call the removeAllDevicesFromManagement method.
+                def remove_all_devices_from_management()
+                    return MicrosoftGraph::Users::Item::RemoveAllDevicesFromManagement::RemoveAllDevicesFromManagementRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the reprocessLicenseAssignment method.
+                def reprocess_license_assignment()
+                    return MicrosoftGraph::Users::Item::ReprocessLicenseAssignment::ReprocessLicenseAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # The request adapter to use to execute the requests.
                 @request_adapter
+                ## 
+                # Provides operations to call the restore method.
+                def restore()
+                    return MicrosoftGraph::Users::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the revokeSignInSessions method.
+                def revoke_sign_in_sessions()
+                    return MicrosoftGraph::Users::Item::RevokeSignInSessions::RevokeSignInSessionsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
                 ## 
                 # Provides operations to manage the scopedRoleMemberOf property of the microsoft.graph.user entity.
                 def scoped_role_member_of()
                     return MicrosoftGraph::Users::Item::ScopedRoleMemberOf::ScopedRoleMemberOfRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the sendMail method.
+                def send_mail()
+                    return MicrosoftGraph::Users::Item::SendMail::SendMailRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the settings property of the microsoft.graph.user entity.
@@ -449,8 +439,18 @@ module MicrosoftGraph
                     return MicrosoftGraph::Users::Item::TransitiveMemberOf::TransitiveMemberOfRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to call the translateExchangeIds method.
+                def translate_exchange_ids()
+                    return MicrosoftGraph::Users::Item::TranslateExchangeIds::TranslateExchangeIdsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Url template to use to build the URL for the current request builder
                 @url_template
+                ## 
+                # Provides operations to call the wipeManagedAppRegistrationsByDeviceTag method.
+                def wipe_managed_app_registrations_by_device_tag()
+                    return MicrosoftGraph::Users::Item::WipeManagedAppRegistrationsByDeviceTag::WipeManagedAppRegistrationsByDeviceTagRequestBuilder.new(@path_parameters, @request_adapter)
+                end
                 ## 
                 ## Provides operations to manage the activities property of the microsoft.graph.user entity.
                 ## @param id Unique identifier of the item
@@ -634,6 +634,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Users::Item::Events::Item::EventItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
+                ## Provides operations to call the exportDeviceAndAppManagementData method.
+                ## @param skip Usage: skip={skip}
+                ## @param top Usage: top={top}
+                ## @return a export_device_and_app_management_data_with_skip_with_top_request_builder
+                ## 
+                def export_device_and_app_management_data_with_skip_with_top(skip, top)
+                    raise StandardError, 'skip cannot be null' if skip.nil?
+                    raise StandardError, 'top cannot be null' if top.nil?
+                    return ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder.new(@path_parameters, @request_adapter, skip, top)
+                end
+                ## 
                 ## Provides operations to manage the extensions property of the microsoft.graph.user entity.
                 ## @param id Unique identifier of the item
                 ## @return a extension_item_request_builder
@@ -747,28 +758,6 @@ module MicrosoftGraph
                     return MicrosoftGraph::Users::Item::Messages::Item::MessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
-                ## Provides operations to call the exportDeviceAndAppManagementData method.
-                ## @param skip Usage: skip={skip}
-                ## @param top Usage: top={top}
-                ## @return a microsoft_graph_export_device_and_app_management_data_with_skip_with_top_request_builder
-                ## 
-                def microsoft_graph_export_device_and_app_management_data_with_skip_with_top(skip, top)
-                    raise StandardError, 'skip cannot be null' if skip.nil?
-                    raise StandardError, 'top cannot be null' if top.nil?
-                    return MicrosoftGraphExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder.new(@path_parameters, @request_adapter, skip, top)
-                end
-                ## 
-                ## Provides operations to call the reminderView method.
-                ## @param EndDateTime Usage: EndDateTime='{EndDateTime}'
-                ## @param StartDateTime Usage: StartDateTime='{StartDateTime}'
-                ## @return a microsoft_graph_reminder_view_with_start_date_time_with_end_date_time_request_builder
-                ## 
-                def microsoft_graph_reminder_view_with_start_date_time_with_end_date_time(end_date_time, start_date_time)
-                    raise StandardError, 'end_date_time cannot be null' if end_date_time.nil?
-                    raise StandardError, 'start_date_time cannot be null' if start_date_time.nil?
-                    return MicrosoftGraphReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder.new(@path_parameters, @request_adapter, EndDateTime, StartDateTime)
-                end
-                ## 
                 ## Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.user entity.
                 ## @param id Unique identifier of the item
                 ## @return a o_auth2_permission_grant_item_request_builder
@@ -860,6 +849,17 @@ module MicrosoftGraph
                     url_tpl_params = @path_parameters.clone
                     url_tpl_params["directoryObject%2Did"] = id
                     return MicrosoftGraph::Users::Item::RegisteredDevices::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
+                ## Provides operations to call the reminderView method.
+                ## @param EndDateTime Usage: EndDateTime='{EndDateTime}'
+                ## @param StartDateTime Usage: StartDateTime='{StartDateTime}'
+                ## @return a reminder_view_with_start_date_time_with_end_date_time_request_builder
+                ## 
+                def reminder_view_with_start_date_time_with_end_date_time(end_date_time, start_date_time)
+                    raise StandardError, 'end_date_time cannot be null' if end_date_time.nil?
+                    raise StandardError, 'start_date_time cannot be null' if start_date_time.nil?
+                    return ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder.new(@path_parameters, @request_adapter, EndDateTime, StartDateTime)
                 end
                 ## 
                 ## Provides operations to manage the scopedRoleMemberOf property of the microsoft.graph.user entity.

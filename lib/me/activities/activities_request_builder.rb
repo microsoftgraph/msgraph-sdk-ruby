@@ -6,7 +6,7 @@ require_relative '../../models/user_activity_collection_response'
 require_relative '../me'
 require_relative './activities'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_recent/microsoft_graph_recent_request_builder'
+require_relative './recent/recent_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -21,13 +21,13 @@ module MicrosoftGraph
                     return MicrosoftGraph::Me::Activities::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
-                # Provides operations to call the recent method.
-                def microsoft_graph_recent()
-                    return MicrosoftGraph::Me::Activities::MicrosoftGraphRecent::MicrosoftGraphRecentRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
                 # Path parameters for the request
                 @path_parameters
+                ## 
+                # Provides operations to call the recent method.
+                def recent()
+                    return MicrosoftGraph::Me::Activities::Recent::RecentRequestBuilder.new(@path_parameters, @request_adapter)
+                end
                 ## 
                 # The request adapter to use to execute the requests.
                 @request_adapter

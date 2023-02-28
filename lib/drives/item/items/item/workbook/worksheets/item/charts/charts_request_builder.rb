@@ -10,12 +10,11 @@ require_relative '../../../../item'
 require_relative '../../../workbook'
 require_relative '../../worksheets'
 require_relative '../item'
+require_relative './add/add_request_builder'
 require_relative './charts'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_add/microsoft_graph_add_request_builder'
-require_relative './microsoft_graph_count/microsoft_graph_count_request_builder'
-require_relative './microsoft_graph_item_at_with_index/microsoft_graph_item_at_with_index_request_builder'
-require_relative './microsoft_graph_item_with_name/microsoft_graph_item_with_name_request_builder'
+require_relative './item_at_with_index/item_at_with_index_request_builder'
+require_relative './item_with_name/item_with_name_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -31,19 +30,14 @@ module MicrosoftGraph
                                     class ChartsRequestBuilder
                                         
                                         ## 
-                                        # Provides operations to count the resources in the collection.
-                                        def count()
-                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
-                                        end
-                                        ## 
                                         # Provides operations to call the add method.
-                                        def microsoft_graph_add()
-                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::MicrosoftGraphAdd::MicrosoftGraphAddRequestBuilder.new(@path_parameters, @request_adapter)
+                                        def add()
+                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Add::AddRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
                                         # Provides operations to call the count method.
-                                        def microsoft_graph_count()
-                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::MicrosoftGraphCount::MicrosoftGraphCountRequestBuilder.new(@path_parameters, @request_adapter)
+                                        def count()
+                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
                                         # Path parameters for the request
@@ -85,20 +79,20 @@ module MicrosoftGraph
                                         ## 
                                         ## Provides operations to call the itemAt method.
                                         ## @param index Usage: index={index}
-                                        ## @return a microsoft_graph_item_at_with_index_request_builder
+                                        ## @return a item_at_with_index_request_builder
                                         ## 
-                                        def microsoft_graph_item_at_with_index(index)
+                                        def item_at_with_index(index)
                                             raise StandardError, 'index cannot be null' if index.nil?
-                                            return MicrosoftGraphItemAtWithIndexRequestBuilder.new(@path_parameters, @request_adapter, index)
+                                            return ItemAtWithIndexRequestBuilder.new(@path_parameters, @request_adapter, index)
                                         end
                                         ## 
                                         ## Provides operations to call the item method.
                                         ## @param name Usage: name='{name}'
-                                        ## @return a microsoft_graph_item_with_name_request_builder
+                                        ## @return a item_with_name_request_builder
                                         ## 
-                                        def microsoft_graph_item_with_name(name)
+                                        def item_with_name(name)
                                             raise StandardError, 'name cannot be null' if name.nil?
-                                            return MicrosoftGraphItemWithNameRequestBuilder.new(@path_parameters, @request_adapter, name)
+                                            return ItemWithNameRequestBuilder.new(@path_parameters, @request_adapter, name)
                                         end
                                         ## 
                                         ## Use this API to create a new Chart.

@@ -6,7 +6,6 @@ require_relative '../../../../users'
 require_relative '../../../item'
 require_relative '../../joined_teams'
 require_relative '../item'
-require_relative './microsoft_graph_share/microsoft_graph_share_request_builder'
 require_relative './offer_shift_requests/item/offer_shift_request_item_request_builder'
 require_relative './offer_shift_requests/offer_shift_requests_request_builder'
 require_relative './open_shift_change_requests/item/open_shift_change_request_item_request_builder'
@@ -16,6 +15,7 @@ require_relative './open_shifts/open_shifts_request_builder'
 require_relative './schedule'
 require_relative './scheduling_groups/item/scheduling_group_item_request_builder'
 require_relative './scheduling_groups/scheduling_groups_request_builder'
+require_relative './share/share_request_builder'
 require_relative './shifts/item/shift_item_request_builder'
 require_relative './shifts/shifts_request_builder'
 require_relative './swap_shifts_change_requests/item/swap_shifts_change_request_item_request_builder'
@@ -37,11 +37,6 @@ module MicrosoftGraph
                         # Provides operations to manage the schedule property of the microsoft.graph.team entity.
                         class ScheduleRequestBuilder
                             
-                            ## 
-                            # Provides operations to call the share method.
-                            def microsoft_graph_share()
-                                return MicrosoftGraph::Users::Item::JoinedTeams::Item::Schedule::MicrosoftGraphShare::MicrosoftGraphShareRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
                             ## 
                             # Provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.
                             def offer_shift_requests()
@@ -67,6 +62,11 @@ module MicrosoftGraph
                             # Provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
                             def scheduling_groups()
                                 return MicrosoftGraph::Users::Item::JoinedTeams::Item::Schedule::SchedulingGroups::SchedulingGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # Provides operations to call the share method.
+                            def share()
+                                return MicrosoftGraph::Users::Item::JoinedTeams::Item::Schedule::Share::ShareRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             # Provides operations to manage the shifts property of the microsoft.graph.schedule entity.

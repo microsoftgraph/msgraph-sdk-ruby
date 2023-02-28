@@ -7,18 +7,18 @@ require_relative '../../../item'
 require_relative '../../items'
 require_relative '../item'
 require_relative './application/application_request_builder'
+require_relative './close_session/close_session_request_builder'
 require_relative './comments/comments_request_builder'
 require_relative './comments/item/workbook_comment_item_request_builder'
+require_relative './create_session/create_session_request_builder'
 require_relative './functions/functions_request_builder'
-require_relative './microsoft_graph_close_session/microsoft_graph_close_session_request_builder'
-require_relative './microsoft_graph_create_session/microsoft_graph_create_session_request_builder'
-require_relative './microsoft_graph_refresh_session/microsoft_graph_refresh_session_request_builder'
-require_relative './microsoft_graph_session_info_resource_with_key/microsoft_graph_session_info_resource_with_key_request_builder'
-require_relative './microsoft_graph_table_row_operation_result_with_key/microsoft_graph_table_row_operation_result_with_key_request_builder'
 require_relative './names/item/workbook_named_item_item_request_builder'
 require_relative './names/names_request_builder'
 require_relative './operations/item/workbook_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
+require_relative './refresh_session/refresh_session_request_builder'
+require_relative './session_info_resource_with_key/session_info_resource_with_key_request_builder'
+require_relative './table_row_operation_result_with_key/table_row_operation_result_with_key_request_builder'
 require_relative './tables/item/workbook_table_item_request_builder'
 require_relative './tables/tables_request_builder'
 require_relative './workbook'
@@ -41,29 +41,24 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Application::ApplicationRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            # Provides operations to call the closeSession method.
+                            def close_session()
+                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::CloseSession::CloseSessionRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
                             # Provides operations to manage the comments property of the microsoft.graph.workbook entity.
                             def comments()
                                 return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Comments::CommentsRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            # Provides operations to call the createSession method.
+                            def create_session()
+                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::CreateSession::CreateSessionRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
                             # Provides operations to manage the functions property of the microsoft.graph.workbook entity.
                             def functions()
                                 return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::FunctionsRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
-                            ## 
-                            # Provides operations to call the closeSession method.
-                            def microsoft_graph_close_session()
-                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::MicrosoftGraphCloseSession::MicrosoftGraphCloseSessionRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
-                            ## 
-                            # Provides operations to call the createSession method.
-                            def microsoft_graph_create_session()
-                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::MicrosoftGraphCreateSession::MicrosoftGraphCreateSessionRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
-                            ## 
-                            # Provides operations to call the refreshSession method.
-                            def microsoft_graph_refresh_session()
-                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::MicrosoftGraphRefreshSession::MicrosoftGraphRefreshSessionRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             # Provides operations to manage the names property of the microsoft.graph.workbook entity.
@@ -78,6 +73,11 @@ module MicrosoftGraph
                             ## 
                             # Path parameters for the request
                             @path_parameters
+                            ## 
+                            # Provides operations to call the refreshSession method.
+                            def refresh_session()
+                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::RefreshSession::RefreshSessionRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
                             ## 
                             # The request adapter to use to execute the requests.
                             @request_adapter
@@ -148,24 +148,6 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Workbook.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Provides operations to call the sessionInfoResource method.
-                            ## @param key Usage: key='{key}'
-                            ## @return a microsoft_graph_session_info_resource_with_key_request_builder
-                            ## 
-                            def microsoft_graph_session_info_resource_with_key(key)
-                                raise StandardError, 'key cannot be null' if key.nil?
-                                return MicrosoftGraphSessionInfoResourceWithKeyRequestBuilder.new(@path_parameters, @request_adapter, key)
-                            end
-                            ## 
-                            ## Provides operations to call the tableRowOperationResult method.
-                            ## @param key Usage: key='{key}'
-                            ## @return a microsoft_graph_table_row_operation_result_with_key_request_builder
-                            ## 
-                            def microsoft_graph_table_row_operation_result_with_key(key)
-                                raise StandardError, 'key cannot be null' if key.nil?
-                                return MicrosoftGraphTableRowOperationResultWithKeyRequestBuilder.new(@path_parameters, @request_adapter, key)
-                            end
-                            ## 
                             ## Provides operations to manage the names property of the microsoft.graph.workbook entity.
                             ## @param id Unique identifier of the item
                             ## @return a workbook_named_item_item_request_builder
@@ -202,6 +184,24 @@ module MicrosoftGraph
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Workbook.create_from_discriminator_value(pn) }, error_mapping)
+                            end
+                            ## 
+                            ## Provides operations to call the sessionInfoResource method.
+                            ## @param key Usage: key='{key}'
+                            ## @return a session_info_resource_with_key_request_builder
+                            ## 
+                            def session_info_resource_with_key(key)
+                                raise StandardError, 'key cannot be null' if key.nil?
+                                return SessionInfoResourceWithKeyRequestBuilder.new(@path_parameters, @request_adapter, key)
+                            end
+                            ## 
+                            ## Provides operations to call the tableRowOperationResult method.
+                            ## @param key Usage: key='{key}'
+                            ## @return a table_row_operation_result_with_key_request_builder
+                            ## 
+                            def table_row_operation_result_with_key(key)
+                                raise StandardError, 'key cannot be null' if key.nil?
+                                return TableRowOperationResultWithKeyRequestBuilder.new(@path_parameters, @request_adapter, key)
                             end
                             ## 
                             ## Provides operations to manage the tables property of the microsoft.graph.workbook entity.

@@ -9,7 +9,7 @@ require_relative '../../item'
 require_relative '../versions'
 require_relative './content/content_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_restore_version/microsoft_graph_restore_version_request_builder'
+require_relative './restore_version/restore_version_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -28,16 +28,16 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Drives::Item::Items::Item::Versions::Item::Content::ContentRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
-                                # Provides operations to call the restoreVersion method.
-                                def microsoft_graph_restore_version()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Versions::Item::MicrosoftGraphRestoreVersion::MicrosoftGraphRestoreVersionRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
                                 # Path parameters for the request
                                 @path_parameters
                                 ## 
                                 # The request adapter to use to execute the requests.
                                 @request_adapter
+                                ## 
+                                # Provides operations to call the restoreVersion method.
+                                def restore_version()
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Versions::Item::RestoreVersion::RestoreVersionRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
                                 ## 
                                 # Url template to use to build the URL for the current request builder
                                 @url_template

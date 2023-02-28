@@ -33,6 +33,8 @@ module MicrosoftGraph
                     case mapping_value
                         when "#microsoft.graph.activityBasedTimeoutPolicy"
                             return ActivityBasedTimeoutPolicy.new
+                        when "#microsoft.graph.appManagementPolicy"
+                            return AppManagementPolicy.new
                         when "#microsoft.graph.authorizationPolicy"
                             return AuthorizationPolicy.new
                         when "#microsoft.graph.claimsMappingPolicy"
@@ -47,6 +49,8 @@ module MicrosoftGraph
                             return PermissionGrantPolicy.new
                         when "#microsoft.graph.stsPolicy"
                             return StsPolicy.new
+                        when "#microsoft.graph.tenantAppManagementPolicy"
+                            return TenantAppManagementPolicy.new
                         when "#microsoft.graph.tokenIssuancePolicy"
                             return TokenIssuancePolicy.new
                         when "#microsoft.graph.tokenLifetimePolicy"

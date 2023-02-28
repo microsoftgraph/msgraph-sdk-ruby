@@ -4,9 +4,9 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/subject_rights_request'
 require_relative '../../privacy'
 require_relative '../subject_rights_requests'
+require_relative './get_final_attachment/get_final_attachment_request_builder'
+require_relative './get_final_report/get_final_report_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_get_final_attachment/microsoft_graph_get_final_attachment_request_builder'
-require_relative './microsoft_graph_get_final_report/microsoft_graph_get_final_report_request_builder'
 require_relative './notes/item/authored_note_item_request_builder'
 require_relative './notes/notes_request_builder'
 require_relative './team/team_request_builder'
@@ -21,13 +21,13 @@ module MicrosoftGraph
                     
                     ## 
                     # Provides operations to call the getFinalAttachment method.
-                    def microsoft_graph_get_final_attachment()
-                        return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::MicrosoftGraphGetFinalAttachment::MicrosoftGraphGetFinalAttachmentRequestBuilder.new(@path_parameters, @request_adapter)
+                    def get_final_attachment()
+                        return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::GetFinalAttachment::GetFinalAttachmentRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Provides operations to call the getFinalReport method.
-                    def microsoft_graph_get_final_report()
-                        return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::MicrosoftGraphGetFinalReport::MicrosoftGraphGetFinalReportRequestBuilder.new(@path_parameters, @request_adapter)
+                    def get_final_report()
+                        return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::GetFinalReport::GetFinalReportRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.

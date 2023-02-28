@@ -16,9 +16,9 @@ require_relative '../../../../item'
 require_relative '../../../points'
 require_relative '../../item'
 require_relative '../format'
+require_relative './clear/clear_request_builder'
 require_relative './fill'
-require_relative './microsoft_graph_clear/microsoft_graph_clear_request_builder'
-require_relative './microsoft_graph_set_solid_color/microsoft_graph_set_solid_color_request_builder'
+require_relative './set_solid_color/set_solid_color_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -42,13 +42,8 @@ module MicrosoftGraph
                                                                     
                                                                     ## 
                                                                     # Provides operations to call the clear method.
-                                                                    def microsoft_graph_clear()
-                                                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Series::Item::Points::Item::Format::Fill::MicrosoftGraphClear::MicrosoftGraphClearRequestBuilder.new(@path_parameters, @request_adapter)
-                                                                    end
-                                                                    ## 
-                                                                    # Provides operations to call the setSolidColor method.
-                                                                    def microsoft_graph_set_solid_color()
-                                                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Series::Item::Points::Item::Format::Fill::MicrosoftGraphSetSolidColor::MicrosoftGraphSetSolidColorRequestBuilder.new(@path_parameters, @request_adapter)
+                                                                    def clear()
+                                                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Series::Item::Points::Item::Format::Fill::Clear::ClearRequestBuilder.new(@path_parameters, @request_adapter)
                                                                     end
                                                                     ## 
                                                                     # Path parameters for the request
@@ -56,6 +51,11 @@ module MicrosoftGraph
                                                                     ## 
                                                                     # The request adapter to use to execute the requests.
                                                                     @request_adapter
+                                                                    ## 
+                                                                    # Provides operations to call the setSolidColor method.
+                                                                    def set_solid_color()
+                                                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Series::Item::Points::Item::Format::Fill::SetSolidColor::SetSolidColorRequestBuilder.new(@path_parameters, @request_adapter)
+                                                                    end
                                                                     ## 
                                                                     # Url template to use to build the URL for the current request builder
                                                                     @url_template

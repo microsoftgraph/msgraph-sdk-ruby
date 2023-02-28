@@ -3,12 +3,12 @@ require_relative '../../microsoft_graph'
 require_relative '../../models/directory_object'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../directory_objects'
+require_relative './check_member_groups/check_member_groups_request_builder'
+require_relative './check_member_objects/check_member_objects_request_builder'
+require_relative './get_member_groups/get_member_groups_request_builder'
+require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_check_member_groups/microsoft_graph_check_member_groups_request_builder'
-require_relative './microsoft_graph_check_member_objects/microsoft_graph_check_member_objects_request_builder'
-require_relative './microsoft_graph_get_member_groups/microsoft_graph_get_member_groups_request_builder'
-require_relative './microsoft_graph_get_member_objects/microsoft_graph_get_member_objects_request_builder'
-require_relative './microsoft_graph_restore/microsoft_graph_restore_request_builder'
+require_relative './restore/restore_request_builder'
 
 module MicrosoftGraph
     module DirectoryObjects
@@ -19,28 +19,23 @@ module MicrosoftGraph
                 
                 ## 
                 # Provides operations to call the checkMemberGroups method.
-                def microsoft_graph_check_member_groups()
-                    return MicrosoftGraph::DirectoryObjects::Item::MicrosoftGraphCheckMemberGroups::MicrosoftGraphCheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+                def check_member_groups()
+                    return MicrosoftGraph::DirectoryObjects::Item::CheckMemberGroups::CheckMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to call the checkMemberObjects method.
-                def microsoft_graph_check_member_objects()
-                    return MicrosoftGraph::DirectoryObjects::Item::MicrosoftGraphCheckMemberObjects::MicrosoftGraphCheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
+                def check_member_objects()
+                    return MicrosoftGraph::DirectoryObjects::Item::CheckMemberObjects::CheckMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to call the getMemberGroups method.
-                def microsoft_graph_get_member_groups()
-                    return MicrosoftGraph::DirectoryObjects::Item::MicrosoftGraphGetMemberGroups::MicrosoftGraphGetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
+                def get_member_groups()
+                    return MicrosoftGraph::DirectoryObjects::Item::GetMemberGroups::GetMemberGroupsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to call the getMemberObjects method.
-                def microsoft_graph_get_member_objects()
-                    return MicrosoftGraph::DirectoryObjects::Item::MicrosoftGraphGetMemberObjects::MicrosoftGraphGetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the restore method.
-                def microsoft_graph_restore()
-                    return MicrosoftGraph::DirectoryObjects::Item::MicrosoftGraphRestore::MicrosoftGraphRestoreRequestBuilder.new(@path_parameters, @request_adapter)
+                def get_member_objects()
+                    return MicrosoftGraph::DirectoryObjects::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Path parameters for the request
@@ -48,6 +43,11 @@ module MicrosoftGraph
                 ## 
                 # The request adapter to use to execute the requests.
                 @request_adapter
+                ## 
+                # Provides operations to call the restore method.
+                def restore()
+                    return MicrosoftGraph::DirectoryObjects::Item::Restore::RestoreRequestBuilder.new(@path_parameters, @request_adapter)
+                end
                 ## 
                 # Url template to use to build the URL for the current request builder
                 @url_template

@@ -7,7 +7,7 @@ require_relative './call_records/item/call_record_item_request_builder'
 require_relative './calls/calls_request_builder'
 require_relative './calls/item/call_item_request_builder'
 require_relative './communications'
-require_relative './microsoft_graph_get_presences_by_user_id/microsoft_graph_get_presences_by_user_id_request_builder'
+require_relative './get_presences_by_user_id/get_presences_by_user_id_request_builder'
 require_relative './online_meetings/item/online_meeting_item_request_builder'
 require_relative './online_meetings/online_meetings_request_builder'
 require_relative './presences/item/presence_item_request_builder'
@@ -31,8 +31,8 @@ module MicrosoftGraph
             end
             ## 
             # Provides operations to call the getPresencesByUserId method.
-            def microsoft_graph_get_presences_by_user_id()
-                return MicrosoftGraph::Communications::MicrosoftGraphGetPresencesByUserId::MicrosoftGraphGetPresencesByUserIdRequestBuilder.new(@path_parameters, @request_adapter)
+            def get_presences_by_user_id()
+                return MicrosoftGraph::Communications::GetPresencesByUserId::GetPresencesByUserIdRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.

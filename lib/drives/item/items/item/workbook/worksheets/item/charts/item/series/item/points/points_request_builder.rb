@@ -15,8 +15,7 @@ require_relative '../../../item'
 require_relative '../../series'
 require_relative '../item'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_count/microsoft_graph_count_request_builder'
-require_relative './microsoft_graph_item_at_with_index/microsoft_graph_item_at_with_index_request_builder'
+require_relative './item_at_with_index/item_at_with_index_request_builder'
 require_relative './points'
 
 module MicrosoftGraph
@@ -37,14 +36,9 @@ module MicrosoftGraph
                                                     class PointsRequestBuilder
                                                         
                                                         ## 
-                                                        # Provides operations to count the resources in the collection.
+                                                        # Provides operations to call the count method.
                                                         def count()
                                                             return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Series::Item::Points::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
-                                                        end
-                                                        ## 
-                                                        # Provides operations to call the count method.
-                                                        def microsoft_graph_count()
-                                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Series::Item::Points::MicrosoftGraphCount::MicrosoftGraphCountRequestBuilder.new(@path_parameters, @request_adapter)
                                                         end
                                                         ## 
                                                         # Path parameters for the request
@@ -70,7 +64,7 @@ module MicrosoftGraph
                                                             @path_parameters = path_parameters if path_parameters.is_a? Hash
                                                         end
                                                         ## 
-                                                        ## Retrieve a list of chartpoints objects.
+                                                        ## Retrieve a list of chartpoint objects.
                                                         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a Fiber of workbook_chart_point_collection_response
                                                         ## 
@@ -86,11 +80,11 @@ module MicrosoftGraph
                                                         ## 
                                                         ## Provides operations to call the itemAt method.
                                                         ## @param index Usage: index={index}
-                                                        ## @return a microsoft_graph_item_at_with_index_request_builder
+                                                        ## @return a item_at_with_index_request_builder
                                                         ## 
-                                                        def microsoft_graph_item_at_with_index(index)
+                                                        def item_at_with_index(index)
                                                             raise StandardError, 'index cannot be null' if index.nil?
-                                                            return MicrosoftGraphItemAtWithIndexRequestBuilder.new(@path_parameters, @request_adapter, index)
+                                                            return ItemAtWithIndexRequestBuilder.new(@path_parameters, @request_adapter, index)
                                                         end
                                                         ## 
                                                         ## Use this API to create a new ChartPoints.
@@ -109,7 +103,7 @@ module MicrosoftGraph
                                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookChartPoint.create_from_discriminator_value(pn) }, error_mapping)
                                                         end
                                                         ## 
-                                                        ## Retrieve a list of chartpoints objects.
+                                                        ## Retrieve a list of chartpoint objects.
                                                         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a request_information
                                                         ## 
@@ -148,7 +142,7 @@ module MicrosoftGraph
                                                         end
 
                                                         ## 
-                                                        # Retrieve a list of chartpoints objects.
+                                                        # Retrieve a list of chartpoint objects.
                                                         class PointsRequestBuilderGetQueryParameters
                                                             
                                                             ## 

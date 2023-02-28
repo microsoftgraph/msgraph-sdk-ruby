@@ -4,7 +4,7 @@ require_relative '../../models/apple_push_notification_certificate'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_management'
 require_relative './apple_push_notification_certificate'
-require_relative './microsoft_graph_download_apple_push_notification_certificate_signing_request/microsoft_graph_download_apple_push_notification_certificate_signing_request_request_builder'
+require_relative './download_apple_push_notification_certificate_signing_request/download_apple_push_notification_certificate_signing_request_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -15,8 +15,8 @@ module MicrosoftGraph
                 
                 ## 
                 # Provides operations to call the downloadApplePushNotificationCertificateSigningRequest method.
-                def microsoft_graph_download_apple_push_notification_certificate_signing_request()
-                    return MicrosoftGraph::DeviceManagement::ApplePushNotificationCertificate::MicrosoftGraphDownloadApplePushNotificationCertificateSigningRequest::MicrosoftGraphDownloadApplePushNotificationCertificateSigningRequestRequestBuilder.new(@path_parameters, @request_adapter)
+                def download_apple_push_notification_certificate_signing_request()
+                    return MicrosoftGraph::DeviceManagement::ApplePushNotificationCertificate::DownloadApplePushNotificationCertificateSigningRequest::DownloadApplePushNotificationCertificateSigningRequestRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Path parameters for the request

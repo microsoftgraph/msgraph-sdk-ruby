@@ -8,7 +8,7 @@ require_relative '../assignments'
 require_relative './access_package/access_package_request_builder'
 require_relative './assignment_policy/assignment_policy_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_reprocess/microsoft_graph_reprocess_request_builder'
+require_relative './reprocess/reprocess_request_builder'
 require_relative './target/target_request_builder'
 
 module MicrosoftGraph
@@ -31,13 +31,13 @@ module MicrosoftGraph
                             return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Assignments::Item::AssignmentPolicy::AssignmentPolicyRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        # Provides operations to call the reprocess method.
-                        def microsoft_graph_reprocess()
-                            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Assignments::Item::MicrosoftGraphReprocess::MicrosoftGraphReprocessRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
                         # Path parameters for the request
                         @path_parameters
+                        ## 
+                        # Provides operations to call the reprocess method.
+                        def reprocess()
+                            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Assignments::Item::Reprocess::ReprocessRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
                         ## 
                         # The request adapter to use to execute the requests.
                         @request_adapter

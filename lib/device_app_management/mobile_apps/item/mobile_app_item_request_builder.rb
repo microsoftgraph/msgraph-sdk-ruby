@@ -4,14 +4,14 @@ require_relative '../../../models/mobile_app'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_app_management'
 require_relative '../mobile_apps'
+require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
 require_relative './assignments/item/mobile_app_assignment_item_request_builder'
 require_relative './categories/categories_request_builder'
 require_relative './categories/item/mobile_app_category_item_request_builder'
+require_relative './graph_managed_mobile_lob_app/graph_managed_mobile_lob_app_request_builder'
+require_relative './graph_mobile_lob_app/graph_mobile_lob_app_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_assign/microsoft_graph_assign_request_builder'
-require_relative './microsoft_graph_managed_mobile_lob_app/microsoft_graph_managed_mobile_lob_app_request_builder'
-require_relative './microsoft_graph_mobile_lob_app/microsoft_graph_mobile_lob_app_request_builder'
 
 module MicrosoftGraph
     module DeviceAppManagement
@@ -21,6 +21,11 @@ module MicrosoftGraph
                 # Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
                 class MobileAppItemRequestBuilder
                     
+                    ## 
+                    # Provides operations to call the assign method.
+                    def assign()
+                        return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::Assign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     # Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
                     def assignments()
@@ -32,19 +37,14 @@ module MicrosoftGraph
                         return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::Categories::CategoriesRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    # Provides operations to call the assign method.
-                    def microsoft_graph_assign()
-                        return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::MicrosoftGraphAssign::MicrosoftGraphAssignRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
                     # Casts the previous resource to managedMobileLobApp.
-                    def microsoft_graph_managed_mobile_lob_app()
-                        return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::MicrosoftGraphManagedMobileLobApp::MicrosoftGraphManagedMobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
+                    def graph_managed_mobile_lob_app()
+                        return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::GraphManagedMobileLobApp::GraphManagedMobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Casts the previous resource to mobileLobApp.
-                    def microsoft_graph_mobile_lob_app()
-                        return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::MicrosoftGraphMobileLobApp::MicrosoftGraphMobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
+                    def graph_mobile_lob_app()
+                        return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::GraphMobileLobApp::GraphMobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Path parameters for the request

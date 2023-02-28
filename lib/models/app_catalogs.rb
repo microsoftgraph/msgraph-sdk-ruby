@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The teamsApps property
             @teams_apps
             ## 
-            ## Instantiates a new AppCatalogs and sets the default values.
+            ## Instantiates a new appCatalogs and sets the default values.
             ## @return a void
             ## 
             def initialize()

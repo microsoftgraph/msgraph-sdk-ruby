@@ -12,12 +12,12 @@ require_relative '../../../sections'
 require_relative '../../item'
 require_relative '../pages'
 require_relative './content/content_request_builder'
+require_relative './copy_to_section/copy_to_section_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_copy_to_section/microsoft_graph_copy_to_section_request_builder'
-require_relative './microsoft_graph_onenote_patch_content/microsoft_graph_onenote_patch_content_request_builder'
-require_relative './microsoft_graph_preview/microsoft_graph_preview_request_builder'
+require_relative './onenote_patch_content/onenote_patch_content_request_builder'
 require_relative './parent_notebook/parent_notebook_request_builder'
 require_relative './parent_section/parent_section_request_builder'
+require_relative './preview/preview_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -41,18 +41,13 @@ module MicrosoftGraph
                                                 end
                                                 ## 
                                                 # Provides operations to call the copyToSection method.
-                                                def microsoft_graph_copy_to_section()
-                                                    return MicrosoftGraph::Me::Onenote::Notebooks::Item::SectionGroups::Item::Sections::Item::Pages::Item::MicrosoftGraphCopyToSection::MicrosoftGraphCopyToSectionRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def copy_to_section()
+                                                    return MicrosoftGraph::Me::Onenote::Notebooks::Item::SectionGroups::Item::Sections::Item::Pages::Item::CopyToSection::CopyToSectionRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to call the onenotePatchContent method.
-                                                def microsoft_graph_onenote_patch_content()
-                                                    return MicrosoftGraph::Me::Onenote::Notebooks::Item::SectionGroups::Item::Sections::Item::Pages::Item::MicrosoftGraphOnenotePatchContent::MicrosoftGraphOnenotePatchContentRequestBuilder.new(@path_parameters, @request_adapter)
-                                                end
-                                                ## 
-                                                # Provides operations to call the preview method.
-                                                def microsoft_graph_preview()
-                                                    return MicrosoftGraph::Me::Onenote::Notebooks::Item::SectionGroups::Item::Sections::Item::Pages::Item::MicrosoftGraphPreview::MicrosoftGraphPreviewRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def onenote_patch_content()
+                                                    return MicrosoftGraph::Me::Onenote::Notebooks::Item::SectionGroups::Item::Sections::Item::Pages::Item::OnenotePatchContent::OnenotePatchContentRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to manage the parentNotebook property of the microsoft.graph.onenotePage entity.
@@ -67,6 +62,11 @@ module MicrosoftGraph
                                                 ## 
                                                 # Path parameters for the request
                                                 @path_parameters
+                                                ## 
+                                                # Provides operations to call the preview method.
+                                                def preview()
+                                                    return MicrosoftGraph::Me::Onenote::Notebooks::Item::SectionGroups::Item::Sections::Item::Pages::Item::Preview::PreviewRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
                                                 ## 
                                                 # The request adapter to use to execute the requests.
                                                 @request_adapter

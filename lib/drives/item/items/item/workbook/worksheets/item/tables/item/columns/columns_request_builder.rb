@@ -12,11 +12,10 @@ require_relative '../../../../worksheets'
 require_relative '../../../item'
 require_relative '../../tables'
 require_relative '../item'
+require_relative './add/add_request_builder'
 require_relative './columns'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_add/microsoft_graph_add_request_builder'
-require_relative './microsoft_graph_count/microsoft_graph_count_request_builder'
-require_relative './microsoft_graph_item_at_with_index/microsoft_graph_item_at_with_index_request_builder'
+require_relative './item_at_with_index/item_at_with_index_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -34,19 +33,14 @@ module MicrosoftGraph
                                             class ColumnsRequestBuilder
                                                 
                                                 ## 
-                                                # Provides operations to count the resources in the collection.
-                                                def count()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Columns::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
-                                                end
-                                                ## 
                                                 # Provides operations to call the add method.
-                                                def microsoft_graph_add()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Columns::MicrosoftGraphAdd::MicrosoftGraphAddRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def add()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Columns::Add::AddRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to call the count method.
-                                                def microsoft_graph_count()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Columns::MicrosoftGraphCount::MicrosoftGraphCountRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def count()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Columns::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Path parameters for the request
@@ -88,11 +82,11 @@ module MicrosoftGraph
                                                 ## 
                                                 ## Provides operations to call the itemAt method.
                                                 ## @param index Usage: index={index}
-                                                ## @return a microsoft_graph_item_at_with_index_request_builder
+                                                ## @return a item_at_with_index_request_builder
                                                 ## 
-                                                def microsoft_graph_item_at_with_index(index)
+                                                def item_at_with_index(index)
                                                     raise StandardError, 'index cannot be null' if index.nil?
-                                                    return MicrosoftGraphItemAtWithIndexRequestBuilder.new(@path_parameters, @request_adapter, index)
+                                                    return ItemAtWithIndexRequestBuilder.new(@path_parameters, @request_adapter, index)
                                                 end
                                                 ## 
                                                 ## Use this API to create a new TableColumn.

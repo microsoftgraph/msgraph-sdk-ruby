@@ -6,10 +6,10 @@ require_relative '../../../models/resource_specific_permission_grant_collection_
 require_relative '../../groups'
 require_relative '../item'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_get_available_extension_properties/microsoft_graph_get_available_extension_properties_request_builder'
-require_relative './microsoft_graph_get_by_ids/microsoft_graph_get_by_ids_request_builder'
-require_relative './microsoft_graph_validate_properties/microsoft_graph_validate_properties_request_builder'
+require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
+require_relative './get_by_ids/get_by_ids_request_builder'
 require_relative './permission_grants'
+require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -26,18 +26,13 @@ module MicrosoftGraph
                     end
                     ## 
                     # Provides operations to call the getAvailableExtensionProperties method.
-                    def microsoft_graph_get_available_extension_properties()
-                        return MicrosoftGraph::Groups::Item::PermissionGrants::MicrosoftGraphGetAvailableExtensionProperties::MicrosoftGraphGetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+                    def get_available_extension_properties()
+                        return MicrosoftGraph::Groups::Item::PermissionGrants::GetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Provides operations to call the getByIds method.
-                    def microsoft_graph_get_by_ids()
-                        return MicrosoftGraph::Groups::Item::PermissionGrants::MicrosoftGraphGetByIds::MicrosoftGraphGetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the validateProperties method.
-                    def microsoft_graph_validate_properties()
-                        return MicrosoftGraph::Groups::Item::PermissionGrants::MicrosoftGraphValidateProperties::MicrosoftGraphValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+                    def get_by_ids()
+                        return MicrosoftGraph::Groups::Item::PermissionGrants::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Path parameters for the request
@@ -48,6 +43,11 @@ module MicrosoftGraph
                     ## 
                     # Url template to use to build the URL for the current request builder
                     @url_template
+                    ## 
+                    # Provides operations to call the validateProperties method.
+                    def validate_properties()
+                        return MicrosoftGraph::Groups::Item::PermissionGrants::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     ## Instantiates a new PermissionGrantsRequestBuilder and sets the default values.
                     ## @param pathParameters Path parameters for the request

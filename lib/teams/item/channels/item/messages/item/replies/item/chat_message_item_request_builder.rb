@@ -12,8 +12,8 @@ require_relative '../replies'
 require_relative './hosted_contents/hosted_contents_request_builder'
 require_relative './hosted_contents/item/chat_message_hosted_content_item_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_soft_delete/microsoft_graph_soft_delete_request_builder'
-require_relative './microsoft_graph_undo_soft_delete/microsoft_graph_undo_soft_delete_request_builder'
+require_relative './soft_delete/soft_delete_request_builder'
+require_relative './undo_soft_delete/undo_soft_delete_request_builder'
 
 module MicrosoftGraph
     module Teams
@@ -34,21 +34,21 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Teams::Item::Channels::Item::Messages::Item::Replies::Item::HostedContents::HostedContentsRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
-                                        # Provides operations to call the softDelete method.
-                                        def microsoft_graph_soft_delete()
-                                            return MicrosoftGraph::Teams::Item::Channels::Item::Messages::Item::Replies::Item::MicrosoftGraphSoftDelete::MicrosoftGraphSoftDeleteRequestBuilder.new(@path_parameters, @request_adapter)
-                                        end
-                                        ## 
-                                        # Provides operations to call the undoSoftDelete method.
-                                        def microsoft_graph_undo_soft_delete()
-                                            return MicrosoftGraph::Teams::Item::Channels::Item::Messages::Item::Replies::Item::MicrosoftGraphUndoSoftDelete::MicrosoftGraphUndoSoftDeleteRequestBuilder.new(@path_parameters, @request_adapter)
-                                        end
-                                        ## 
                                         # Path parameters for the request
                                         @path_parameters
                                         ## 
                                         # The request adapter to use to execute the requests.
                                         @request_adapter
+                                        ## 
+                                        # Provides operations to call the softDelete method.
+                                        def soft_delete()
+                                            return MicrosoftGraph::Teams::Item::Channels::Item::Messages::Item::Replies::Item::SoftDelete::SoftDeleteRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
+                                        # Provides operations to call the undoSoftDelete method.
+                                        def undo_soft_delete()
+                                            return MicrosoftGraph::Teams::Item::Channels::Item::Messages::Item::Replies::Item::UndoSoftDelete::UndoSoftDeleteRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
                                         ## 
                                         # Url template to use to build the URL for the current request builder
                                         @url_template

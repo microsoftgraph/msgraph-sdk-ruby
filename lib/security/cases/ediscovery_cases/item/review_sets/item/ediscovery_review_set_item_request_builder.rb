@@ -8,9 +8,9 @@ require_relative '../../../ediscovery_cases'
 require_relative '../../item'
 require_relative '../review_sets'
 require_relative './item'
-require_relative './microsoft_graph_security_add_to_review_set/microsoft_graph_security_add_to_review_set_request_builder'
 require_relative './queries/item/ediscovery_review_set_query_item_request_builder'
 require_relative './queries/queries_request_builder'
+require_relative './security_add_to_review_set/security_add_to_review_set_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -24,11 +24,6 @@ module MicrosoftGraph
                             class EdiscoveryReviewSetItemRequestBuilder
                                 
                                 ## 
-                                # Provides operations to call the addToReviewSet method.
-                                def microsoft_graph_security_add_to_review_set()
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::MicrosoftGraphSecurityAddToReviewSet::MicrosoftGraphSecurityAddToReviewSetRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
                                 # Path parameters for the request
                                 @path_parameters
                                 ## 
@@ -39,6 +34,11 @@ module MicrosoftGraph
                                 ## 
                                 # The request adapter to use to execute the requests.
                                 @request_adapter
+                                ## 
+                                # Provides operations to call the addToReviewSet method.
+                                def security_add_to_review_set()
+                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::SecurityAddToReviewSet::SecurityAddToReviewSetRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
                                 ## 
                                 # Url template to use to build the URL for the current request builder
                                 @url_template

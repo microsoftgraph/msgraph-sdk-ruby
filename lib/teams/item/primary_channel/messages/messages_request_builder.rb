@@ -7,8 +7,8 @@ require_relative '../../../teams'
 require_relative '../../item'
 require_relative '../primary_channel'
 require_relative './count/count_request_builder'
+require_relative './delta/delta_request_builder'
 require_relative './messages'
-require_relative './microsoft_graph_delta/microsoft_graph_delta_request_builder'
 
 module MicrosoftGraph
     module Teams
@@ -26,8 +26,8 @@ module MicrosoftGraph
                         end
                         ## 
                         # Provides operations to call the delta method.
-                        def microsoft_graph_delta()
-                            return MicrosoftGraph::Teams::Item::PrimaryChannel::Messages::MicrosoftGraphDelta::MicrosoftGraphDeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                        def delta()
+                            return MicrosoftGraph::Teams::Item::PrimaryChannel::Messages::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Path parameters for the request

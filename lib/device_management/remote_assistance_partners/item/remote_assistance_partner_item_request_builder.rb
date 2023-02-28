@@ -4,9 +4,9 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/remote_assistance_partner'
 require_relative '../../device_management'
 require_relative '../remote_assistance_partners'
+require_relative './begin_onboarding/begin_onboarding_request_builder'
+require_relative './disconnect/disconnect_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_begin_onboarding/microsoft_graph_begin_onboarding_request_builder'
-require_relative './microsoft_graph_disconnect/microsoft_graph_disconnect_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -18,13 +18,13 @@ module MicrosoftGraph
                     
                     ## 
                     # Provides operations to call the beginOnboarding method.
-                    def microsoft_graph_begin_onboarding()
-                        return MicrosoftGraph::DeviceManagement::RemoteAssistancePartners::Item::MicrosoftGraphBeginOnboarding::MicrosoftGraphBeginOnboardingRequestBuilder.new(@path_parameters, @request_adapter)
+                    def begin_onboarding()
+                        return MicrosoftGraph::DeviceManagement::RemoteAssistancePartners::Item::BeginOnboarding::BeginOnboardingRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Provides operations to call the disconnect method.
-                    def microsoft_graph_disconnect()
-                        return MicrosoftGraph::DeviceManagement::RemoteAssistancePartners::Item::MicrosoftGraphDisconnect::MicrosoftGraphDisconnectRequestBuilder.new(@path_parameters, @request_adapter)
+                    def disconnect()
+                        return MicrosoftGraph::DeviceManagement::RemoteAssistancePartners::Item::Disconnect::DisconnectRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Path parameters for the request

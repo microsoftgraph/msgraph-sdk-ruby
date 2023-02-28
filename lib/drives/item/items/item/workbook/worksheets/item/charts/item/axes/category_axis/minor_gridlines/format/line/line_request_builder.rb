@@ -15,8 +15,8 @@ require_relative '../../../../axes'
 require_relative '../../../category_axis'
 require_relative '../../minor_gridlines'
 require_relative '../format'
+require_relative './clear/clear_request_builder'
 require_relative './line'
-require_relative './microsoft_graph_clear/microsoft_graph_clear_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -39,8 +39,8 @@ module MicrosoftGraph
                                                                 
                                                                 ## 
                                                                 # Provides operations to call the clear method.
-                                                                def microsoft_graph_clear()
-                                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Axes::CategoryAxis::MinorGridlines::Format::Line::MicrosoftGraphClear::MicrosoftGraphClearRequestBuilder.new(@path_parameters, @request_adapter)
+                                                                def clear()
+                                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Axes::CategoryAxis::MinorGridlines::Format::Line::Clear::ClearRequestBuilder.new(@path_parameters, @request_adapter)
                                                                 end
                                                                 ## 
                                                                 # Path parameters for the request

@@ -34,6 +34,8 @@ module MicrosoftGraph
                             return AdministrativeUnit.new
                         when "#microsoft.graph.application"
                             return Application.new
+                        when "#microsoft.graph.appManagementPolicy"
+                            return AppManagementPolicy.new
                         when "#microsoft.graph.appRoleAssignment"
                             return AppRoleAssignment.new
                         when "#microsoft.graph.authorizationPolicy"
@@ -78,6 +80,8 @@ module MicrosoftGraph
                             return ServicePrincipal.new
                         when "#microsoft.graph.stsPolicy"
                             return StsPolicy.new
+                        when "#microsoft.graph.tenantAppManagementPolicy"
+                            return TenantAppManagementPolicy.new
                         when "#microsoft.graph.tokenIssuancePolicy"
                             return TokenIssuancePolicy.new
                         when "#microsoft.graph.tokenLifetimePolicy"

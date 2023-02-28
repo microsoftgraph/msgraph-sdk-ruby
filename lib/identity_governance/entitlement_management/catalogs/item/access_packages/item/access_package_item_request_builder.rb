@@ -12,12 +12,12 @@ require_relative './access_packages_incompatible_with/item/access_package_item_r
 require_relative './assignment_policies/assignment_policies_request_builder'
 require_relative './assignment_policies/item/access_package_assignment_policy_item_request_builder'
 require_relative './catalog/catalog_request_builder'
+require_relative './get_applicable_policy_requirements/get_applicable_policy_requirements_request_builder'
 require_relative './incompatible_access_packages/incompatible_access_packages_request_builder'
 require_relative './incompatible_access_packages/item/access_package_item_request_builder'
 require_relative './incompatible_groups/incompatible_groups_request_builder'
 require_relative './incompatible_groups/item/group_item_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_get_applicable_policy_requirements/microsoft_graph_get_applicable_policy_requirements_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -46,6 +46,11 @@ module MicrosoftGraph
                                     return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::Catalog::CatalogRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                # Provides operations to call the getApplicablePolicyRequirements method.
+                                def get_applicable_policy_requirements()
+                                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::GetApplicablePolicyRequirements::GetApplicablePolicyRequirementsRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
                                 # Provides operations to manage the incompatibleAccessPackages property of the microsoft.graph.accessPackage entity.
                                 def incompatible_access_packages()
                                     return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::IncompatibleAccessPackages::IncompatibleAccessPackagesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -54,11 +59,6 @@ module MicrosoftGraph
                                 # Provides operations to manage the incompatibleGroups property of the microsoft.graph.accessPackage entity.
                                 def incompatible_groups()
                                     return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::IncompatibleGroups::IncompatibleGroupsRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to call the getApplicablePolicyRequirements method.
-                                def microsoft_graph_get_applicable_policy_requirements()
-                                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::MicrosoftGraphGetApplicablePolicyRequirements::MicrosoftGraphGetApplicablePolicyRequirementsRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Path parameters for the request

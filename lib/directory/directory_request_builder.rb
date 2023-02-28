@@ -9,6 +9,8 @@ require_relative './deleted_items/item/directory_object_item_request_builder'
 require_relative './directory'
 require_relative './federation_configurations/federation_configurations_request_builder'
 require_relative './federation_configurations/item/identity_provider_base_item_request_builder'
+require_relative './on_premises_synchronization/item/on_premises_directory_synchronization_item_request_builder'
+require_relative './on_premises_synchronization/on_premises_synchronization_request_builder'
 
 module MicrosoftGraph
     module Directory
@@ -30,6 +32,11 @@ module MicrosoftGraph
             # Provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.
             def federation_configurations()
                 return MicrosoftGraph::Directory::FederationConfigurations::FederationConfigurationsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
+            def on_premises_synchronization()
+                return MicrosoftGraph::Directory::OnPremisesSynchronization::OnPremisesSynchronizationRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Path parameters for the request
@@ -100,6 +107,17 @@ module MicrosoftGraph
                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Directory.create_from_discriminator_value(pn) }, error_mapping)
+            end
+            ## 
+            ## Provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
+            ## @param id Unique identifier of the item
+            ## @return a on_premises_directory_synchronization_item_request_builder
+            ## 
+            def on_premises_synchronization_by_id(id)
+                raise StandardError, 'id cannot be null' if id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["onPremisesDirectorySynchronization%2Did"] = id
+                return MicrosoftGraph::Directory::OnPremisesSynchronization::Item::OnPremisesDirectorySynchronizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Update directory

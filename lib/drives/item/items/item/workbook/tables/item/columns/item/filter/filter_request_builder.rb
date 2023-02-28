@@ -11,19 +11,19 @@ require_relative '../../../../tables'
 require_relative '../../../item'
 require_relative '../../columns'
 require_relative '../item'
+require_relative './apply/apply_request_builder'
+require_relative './apply_bottom_items_filter/apply_bottom_items_filter_request_builder'
+require_relative './apply_bottom_percent_filter/apply_bottom_percent_filter_request_builder'
+require_relative './apply_cell_color_filter/apply_cell_color_filter_request_builder'
+require_relative './apply_custom_filter/apply_custom_filter_request_builder'
+require_relative './apply_dynamic_filter/apply_dynamic_filter_request_builder'
+require_relative './apply_font_color_filter/apply_font_color_filter_request_builder'
+require_relative './apply_icon_filter/apply_icon_filter_request_builder'
+require_relative './apply_top_items_filter/apply_top_items_filter_request_builder'
+require_relative './apply_top_percent_filter/apply_top_percent_filter_request_builder'
+require_relative './apply_values_filter/apply_values_filter_request_builder'
+require_relative './clear/clear_request_builder'
 require_relative './filter'
-require_relative './microsoft_graph_apply/microsoft_graph_apply_request_builder'
-require_relative './microsoft_graph_apply_bottom_items_filter/microsoft_graph_apply_bottom_items_filter_request_builder'
-require_relative './microsoft_graph_apply_bottom_percent_filter/microsoft_graph_apply_bottom_percent_filter_request_builder'
-require_relative './microsoft_graph_apply_cell_color_filter/microsoft_graph_apply_cell_color_filter_request_builder'
-require_relative './microsoft_graph_apply_custom_filter/microsoft_graph_apply_custom_filter_request_builder'
-require_relative './microsoft_graph_apply_dynamic_filter/microsoft_graph_apply_dynamic_filter_request_builder'
-require_relative './microsoft_graph_apply_font_color_filter/microsoft_graph_apply_font_color_filter_request_builder'
-require_relative './microsoft_graph_apply_icon_filter/microsoft_graph_apply_icon_filter_request_builder'
-require_relative './microsoft_graph_apply_top_items_filter/microsoft_graph_apply_top_items_filter_request_builder'
-require_relative './microsoft_graph_apply_top_percent_filter/microsoft_graph_apply_top_percent_filter_request_builder'
-require_relative './microsoft_graph_apply_values_filter/microsoft_graph_apply_values_filter_request_builder'
-require_relative './microsoft_graph_clear/microsoft_graph_clear_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -42,63 +42,63 @@ module MicrosoftGraph
                                                 
                                                 ## 
                                                 # Provides operations to call the apply method.
-                                                def microsoft_graph_apply()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::MicrosoftGraphApply::MicrosoftGraphApplyRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def apply()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::Apply::ApplyRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to call the applyBottomItemsFilter method.
-                                                def microsoft_graph_apply_bottom_items_filter()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::MicrosoftGraphApplyBottomItemsFilter::MicrosoftGraphApplyBottomItemsFilterRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def apply_bottom_items_filter()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::ApplyBottomItemsFilter::ApplyBottomItemsFilterRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to call the applyBottomPercentFilter method.
-                                                def microsoft_graph_apply_bottom_percent_filter()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::MicrosoftGraphApplyBottomPercentFilter::MicrosoftGraphApplyBottomPercentFilterRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def apply_bottom_percent_filter()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::ApplyBottomPercentFilter::ApplyBottomPercentFilterRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to call the applyCellColorFilter method.
-                                                def microsoft_graph_apply_cell_color_filter()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::MicrosoftGraphApplyCellColorFilter::MicrosoftGraphApplyCellColorFilterRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def apply_cell_color_filter()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::ApplyCellColorFilter::ApplyCellColorFilterRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to call the applyCustomFilter method.
-                                                def microsoft_graph_apply_custom_filter()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::MicrosoftGraphApplyCustomFilter::MicrosoftGraphApplyCustomFilterRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def apply_custom_filter()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::ApplyCustomFilter::ApplyCustomFilterRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to call the applyDynamicFilter method.
-                                                def microsoft_graph_apply_dynamic_filter()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::MicrosoftGraphApplyDynamicFilter::MicrosoftGraphApplyDynamicFilterRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def apply_dynamic_filter()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::ApplyDynamicFilter::ApplyDynamicFilterRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to call the applyFontColorFilter method.
-                                                def microsoft_graph_apply_font_color_filter()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::MicrosoftGraphApplyFontColorFilter::MicrosoftGraphApplyFontColorFilterRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def apply_font_color_filter()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::ApplyFontColorFilter::ApplyFontColorFilterRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to call the applyIconFilter method.
-                                                def microsoft_graph_apply_icon_filter()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::MicrosoftGraphApplyIconFilter::MicrosoftGraphApplyIconFilterRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def apply_icon_filter()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::ApplyIconFilter::ApplyIconFilterRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to call the applyTopItemsFilter method.
-                                                def microsoft_graph_apply_top_items_filter()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::MicrosoftGraphApplyTopItemsFilter::MicrosoftGraphApplyTopItemsFilterRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def apply_top_items_filter()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::ApplyTopItemsFilter::ApplyTopItemsFilterRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to call the applyTopPercentFilter method.
-                                                def microsoft_graph_apply_top_percent_filter()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::MicrosoftGraphApplyTopPercentFilter::MicrosoftGraphApplyTopPercentFilterRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def apply_top_percent_filter()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::ApplyTopPercentFilter::ApplyTopPercentFilterRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to call the applyValuesFilter method.
-                                                def microsoft_graph_apply_values_filter()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::MicrosoftGraphApplyValuesFilter::MicrosoftGraphApplyValuesFilterRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def apply_values_filter()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::ApplyValuesFilter::ApplyValuesFilterRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to call the clear method.
-                                                def microsoft_graph_clear()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::MicrosoftGraphClear::MicrosoftGraphClearRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def clear()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::Clear::ClearRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Path parameters for the request
