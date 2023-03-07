@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @address = value
             end
             ## 
-            ## Instantiates a new Place and sets the default values.
+            ## Instantiates a new place and sets the default values.
             ## @return a void
             ## 
             def initialize()

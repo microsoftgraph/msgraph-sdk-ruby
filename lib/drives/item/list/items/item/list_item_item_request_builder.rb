@@ -11,9 +11,9 @@ require_relative './document_set_versions/document_set_versions_request_builder'
 require_relative './document_set_versions/item/document_set_version_item_request_builder'
 require_relative './drive_item/drive_item_request_builder'
 require_relative './fields/fields_request_builder'
+require_relative './get_activities_by_interval/get_activities_by_interval_request_builder'
+require_relative './get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval/dab1c2feb9ecf2d349721478e4ff8fe9c46b97a0c44110851b2b17a08d22383e'
 require_relative './item'
-require_relative './microsoft_graph_get_activities_by_interval/microsoft_graph_get_activities_by_interval_request_builder'
-require_relative './microsoft_graph_get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval/cbebca9239e160fa34849175f00ddb767cfdaa14415ce0009894670fb3d5c600'
 require_relative './versions/item/list_item_version_item_request_builder'
 require_relative './versions/versions_request_builder'
 
@@ -49,8 +49,8 @@ module MicrosoftGraph
                             end
                             ## 
                             # Provides operations to call the getActivitiesByInterval method.
-                            def microsoft_graph_get_activities_by_interval()
-                                return MicrosoftGraph::Drives::Item::List::Items::Item::MicrosoftGraphGetActivitiesByInterval::MicrosoftGraphGetActivitiesByIntervalRequestBuilder.new(@path_parameters, @request_adapter)
+                            def get_activities_by_interval()
+                                return MicrosoftGraph::Drives::Item::List::Items::Item::GetActivitiesByInterval::GetActivitiesByIntervalRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             # Path parameters for the request
@@ -124,13 +124,13 @@ module MicrosoftGraph
                             ## @param endDateTime Usage: endDateTime='{endDateTime}'
                             ## @param interval Usage: interval='{interval}'
                             ## @param startDateTime Usage: startDateTime='{startDateTime}'
-                            ## @return a microsoft_graph_get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval_request_builder
+                            ## @return a get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval_request_builder
                             ## 
-                            def microsoft_graph_get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval(end_date_time, interval, start_date_time)
+                            def get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval(end_date_time, interval, start_date_time)
                                 raise StandardError, 'end_date_time cannot be null' if end_date_time.nil?
                                 raise StandardError, 'interval cannot be null' if interval.nil?
                                 raise StandardError, 'start_date_time cannot be null' if start_date_time.nil?
-                                return MicrosoftGraphGetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder.new(@path_parameters, @request_adapter, endDateTime, interval, startDateTime)
+                                return GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder.new(@path_parameters, @request_adapter, endDateTime, interval, startDateTime)
                             end
                             ## 
                             ## Update the navigation property items in drives

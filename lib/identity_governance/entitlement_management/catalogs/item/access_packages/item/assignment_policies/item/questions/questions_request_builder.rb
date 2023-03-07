@@ -57,7 +57,7 @@ module MicrosoftGraph
                                                 @path_parameters = path_parameters if path_parameters.is_a? Hash
                                             end
                                             ## 
-                                            ## Get questions from identityGovernance
+                                            ## Questions that are posed to the  requestor.
                                             ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of access_package_question_collection_response
                                             ## 
@@ -87,7 +87,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageQuestion.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Get questions from identityGovernance
+                                            ## Questions that are posed to the  requestor.
                                             ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -126,7 +126,7 @@ module MicrosoftGraph
                                             end
 
                                             ## 
-                                            # Get questions from identityGovernance
+                                            # Questions that are posed to the  requestor.
                                             class QuestionsRequestBuilderGetQueryParameters
                                                 
                                                 ## 

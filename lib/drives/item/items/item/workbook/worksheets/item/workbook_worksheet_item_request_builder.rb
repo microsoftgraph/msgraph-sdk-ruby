@@ -8,21 +8,21 @@ require_relative '../../../../items'
 require_relative '../../../item'
 require_relative '../../workbook'
 require_relative '../worksheets'
+require_relative './cell_with_row_with_column/cell_with_row_with_column_request_builder'
 require_relative './charts/charts_request_builder'
 require_relative './charts/item/workbook_chart_item_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_cell_with_row_with_column/microsoft_graph_cell_with_row_with_column_request_builder'
-require_relative './microsoft_graph_range/microsoft_graph_range_request_builder'
-require_relative './microsoft_graph_range_with_address/microsoft_graph_range_with_address_request_builder'
-require_relative './microsoft_graph_used_range/microsoft_graph_used_range_request_builder'
-require_relative './microsoft_graph_used_range_with_values_only/microsoft_graph_used_range_with_values_only_request_builder'
 require_relative './names/item/workbook_named_item_item_request_builder'
 require_relative './names/names_request_builder'
 require_relative './pivot_tables/item/workbook_pivot_table_item_request_builder'
 require_relative './pivot_tables/pivot_tables_request_builder'
 require_relative './protection/protection_request_builder'
+require_relative './range/range_request_builder'
+require_relative './range_with_address/range_with_address_request_builder'
 require_relative './tables/item/workbook_table_item_request_builder'
 require_relative './tables/tables_request_builder'
+require_relative './used_range/used_range_request_builder'
+require_relative './used_range_with_values_only/used_range_with_values_only_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -40,16 +40,6 @@ module MicrosoftGraph
                                     # Provides operations to manage the charts property of the microsoft.graph.workbookWorksheet entity.
                                     def charts()
                                         return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::ChartsRequestBuilder.new(@path_parameters, @request_adapter)
-                                    end
-                                    ## 
-                                    # Provides operations to call the range method.
-                                    def microsoft_graph_range()
-                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::MicrosoftGraphRange::MicrosoftGraphRangeRequestBuilder.new(@path_parameters, @request_adapter)
-                                    end
-                                    ## 
-                                    # Provides operations to call the usedRange method.
-                                    def microsoft_graph_used_range()
-                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::MicrosoftGraphUsedRange::MicrosoftGraphUsedRangeRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
                                     # Provides operations to manage the names property of the microsoft.graph.workbookWorksheet entity.
@@ -70,6 +60,11 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Protection::ProtectionRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
+                                    # Provides operations to call the range method.
+                                    def range()
+                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Range::RangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
                                     # The request adapter to use to execute the requests.
                                     @request_adapter
                                     ## 
@@ -80,6 +75,22 @@ module MicrosoftGraph
                                     ## 
                                     # Url template to use to build the URL for the current request builder
                                     @url_template
+                                    ## 
+                                    # Provides operations to call the usedRange method.
+                                    def used_range()
+                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::UsedRange::UsedRangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to call the cell method.
+                                    ## @param column Usage: column={column}
+                                    ## @param row Usage: row={row}
+                                    ## @return a cell_with_row_with_column_request_builder
+                                    ## 
+                                    def cell_with_row_with_column(column, row)
+                                        raise StandardError, 'column cannot be null' if column.nil?
+                                        raise StandardError, 'row cannot be null' if row.nil?
+                                        return CellWithRowWithColumnRequestBuilder.new(@path_parameters, @request_adapter, column, row)
+                                    end
                                     ## 
                                     ## Provides operations to manage the charts property of the microsoft.graph.workbookWorksheet entity.
                                     ## @param id Unique identifier of the item
@@ -134,35 +145,6 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookWorksheet.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Provides operations to call the cell method.
-                                    ## @param column Usage: column={column}
-                                    ## @param row Usage: row={row}
-                                    ## @return a microsoft_graph_cell_with_row_with_column_request_builder
-                                    ## 
-                                    def microsoft_graph_cell_with_row_with_column(column, row)
-                                        raise StandardError, 'column cannot be null' if column.nil?
-                                        raise StandardError, 'row cannot be null' if row.nil?
-                                        return MicrosoftGraphCellWithRowWithColumnRequestBuilder.new(@path_parameters, @request_adapter, column, row)
-                                    end
-                                    ## 
-                                    ## Provides operations to call the range method.
-                                    ## @param address Usage: address='{address}'
-                                    ## @return a microsoft_graph_range_with_address_request_builder
-                                    ## 
-                                    def microsoft_graph_range_with_address(address)
-                                        raise StandardError, 'address cannot be null' if address.nil?
-                                        return MicrosoftGraphRangeWithAddressRequestBuilder.new(@path_parameters, @request_adapter, address)
-                                    end
-                                    ## 
-                                    ## Provides operations to call the usedRange method.
-                                    ## @param valuesOnly Usage: valuesOnly={valuesOnly}
-                                    ## @return a microsoft_graph_used_range_with_values_only_request_builder
-                                    ## 
-                                    def microsoft_graph_used_range_with_values_only(values_only)
-                                        raise StandardError, 'values_only cannot be null' if values_only.nil?
-                                        return MicrosoftGraphUsedRangeWithValuesOnlyRequestBuilder.new(@path_parameters, @request_adapter, valuesOnly)
-                                    end
-                                    ## 
                                     ## Provides operations to manage the names property of the microsoft.graph.workbookWorksheet entity.
                                     ## @param id Unique identifier of the item
                                     ## @return a workbook_named_item_item_request_builder
@@ -199,6 +181,15 @@ module MicrosoftGraph
                                         url_tpl_params = @path_parameters.clone
                                         url_tpl_params["workbookPivotTable%2Did"] = id
                                         return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::PivotTables::Item::WorkbookPivotTableItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to call the range method.
+                                    ## @param address Usage: address='{address}'
+                                    ## @return a range_with_address_request_builder
+                                    ## 
+                                    def range_with_address(address)
+                                        raise StandardError, 'address cannot be null' if address.nil?
+                                        return RangeWithAddressRequestBuilder.new(@path_parameters, @request_adapter, address)
                                     end
                                     ## 
                                     ## Provides operations to manage the tables property of the microsoft.graph.workbookWorksheet entity.
@@ -264,6 +255,15 @@ module MicrosoftGraph
                                         end
                                         request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
                                         return request_info
+                                    end
+                                    ## 
+                                    ## Provides operations to call the usedRange method.
+                                    ## @param valuesOnly Usage: valuesOnly={valuesOnly}
+                                    ## @return a used_range_with_values_only_request_builder
+                                    ## 
+                                    def used_range_with_values_only(values_only)
+                                        raise StandardError, 'values_only cannot be null' if values_only.nil?
+                                        return UsedRangeWithValuesOnlyRequestBuilder.new(@path_parameters, @request_adapter, valuesOnly)
                                     end
 
                                     ## 

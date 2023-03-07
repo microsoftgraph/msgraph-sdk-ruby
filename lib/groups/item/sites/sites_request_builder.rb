@@ -4,9 +4,9 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/site_collection_response'
 require_relative '../../groups'
 require_relative '../item'
+require_relative './add/add_request_builder'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_add/microsoft_graph_add_request_builder'
-require_relative './microsoft_graph_remove/microsoft_graph_remove_request_builder'
+require_relative './remove/remove_request_builder'
 require_relative './sites'
 
 module MicrosoftGraph
@@ -18,23 +18,23 @@ module MicrosoftGraph
                 class SitesRequestBuilder
                     
                     ## 
+                    # Provides operations to call the add method.
+                    def add()
+                        return MicrosoftGraph::Groups::Item::Sites::Add::AddRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Groups::Item::Sites::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    # Provides operations to call the add method.
-                    def microsoft_graph_add()
-                        return MicrosoftGraph::Groups::Item::Sites::MicrosoftGraphAdd::MicrosoftGraphAddRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the remove method.
-                    def microsoft_graph_remove()
-                        return MicrosoftGraph::Groups::Item::Sites::MicrosoftGraphRemove::MicrosoftGraphRemoveRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
                     # Path parameters for the request
                     @path_parameters
+                    ## 
+                    # Provides operations to call the remove method.
+                    def remove()
+                        return MicrosoftGraph::Groups::Item::Sites::Remove::RemoveRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     # The request adapter to use to execute the requests.
                     @request_adapter

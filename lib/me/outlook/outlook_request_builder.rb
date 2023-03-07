@@ -5,10 +5,10 @@ require_relative '../../models/outlook_user'
 require_relative '../me'
 require_relative './master_categories/item/outlook_category_item_request_builder'
 require_relative './master_categories/master_categories_request_builder'
-require_relative './microsoft_graph_supported_languages/microsoft_graph_supported_languages_request_builder'
-require_relative './microsoft_graph_supported_time_zones/microsoft_graph_supported_time_zones_request_builder'
-require_relative './microsoft_graph_supported_time_zones_with_time_zone_standard/microsoft_graph_supported_time_zones_with_time_zone_standard_request_builder'
 require_relative './outlook'
+require_relative './supported_languages/supported_languages_request_builder'
+require_relative './supported_time_zones/supported_time_zones_request_builder'
+require_relative './supported_time_zones_with_time_zone_standard/supported_time_zones_with_time_zone_standard_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -23,21 +23,21 @@ module MicrosoftGraph
                     return MicrosoftGraph::Me::Outlook::MasterCategories::MasterCategoriesRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
-                # Provides operations to call the supportedLanguages method.
-                def microsoft_graph_supported_languages()
-                    return MicrosoftGraph::Me::Outlook::MicrosoftGraphSupportedLanguages::MicrosoftGraphSupportedLanguagesRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                # Provides operations to call the supportedTimeZones method.
-                def microsoft_graph_supported_time_zones()
-                    return MicrosoftGraph::Me::Outlook::MicrosoftGraphSupportedTimeZones::MicrosoftGraphSupportedTimeZonesRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
                 # Path parameters for the request
                 @path_parameters
                 ## 
                 # The request adapter to use to execute the requests.
                 @request_adapter
+                ## 
+                # Provides operations to call the supportedLanguages method.
+                def supported_languages()
+                    return MicrosoftGraph::Me::Outlook::SupportedLanguages::SupportedLanguagesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to call the supportedTimeZones method.
+                def supported_time_zones()
+                    return MicrosoftGraph::Me::Outlook::SupportedTimeZones::SupportedTimeZonesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
                 ## 
                 # Url template to use to build the URL for the current request builder
                 @url_template
@@ -83,11 +83,11 @@ module MicrosoftGraph
                 ## 
                 ## Provides operations to call the supportedTimeZones method.
                 ## @param TimeZoneStandard Usage: TimeZoneStandard='{TimeZoneStandard}'
-                ## @return a microsoft_graph_supported_time_zones_with_time_zone_standard_request_builder
+                ## @return a supported_time_zones_with_time_zone_standard_request_builder
                 ## 
-                def microsoft_graph_supported_time_zones_with_time_zone_standard(time_zone_standard)
+                def supported_time_zones_with_time_zone_standard(time_zone_standard)
                     raise StandardError, 'time_zone_standard cannot be null' if time_zone_standard.nil?
-                    return MicrosoftGraphSupportedTimeZonesWithTimeZoneStandardRequestBuilder.new(@path_parameters, @request_adapter, TimeZoneStandard)
+                    return SupportedTimeZonesWithTimeZoneStandardRequestBuilder.new(@path_parameters, @request_adapter, TimeZoneStandard)
                 end
                 ## 
                 ## Get outlook from me

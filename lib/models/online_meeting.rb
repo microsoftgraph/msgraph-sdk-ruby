@@ -14,8 +14,14 @@ module MicrosoftGraph
             # Indicates whether attendees can turn on their microphone.
             @allow_attendee_to_enable_mic
             ## 
+            # Specifies the mode of meeting chat.
+            @allow_meeting_chat
+            ## 
             # Indicates whether Teams reactions are enabled for the meeting.
             @allow_teamwork_reactions
+            ## 
+            # Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
+            @allowed_presenters
             ## 
             # The attendance reports of an online meeting. Read-only.
             @attendance_reports
@@ -104,6 +110,21 @@ module MicrosoftGraph
                 @allow_attendee_to_enable_mic = value
             end
             ## 
+            ## Gets the allowMeetingChat property value. Specifies the mode of meeting chat.
+            ## @return a meeting_chat_mode
+            ## 
+            def allow_meeting_chat
+                return @allow_meeting_chat
+            end
+            ## 
+            ## Sets the allowMeetingChat property value. Specifies the mode of meeting chat.
+            ## @param value Value to set for the allow_meeting_chat property.
+            ## @return a void
+            ## 
+            def allow_meeting_chat=(value)
+                @allow_meeting_chat = value
+            end
+            ## 
             ## Gets the allowTeamworkReactions property value. Indicates whether Teams reactions are enabled for the meeting.
             ## @return a boolean
             ## 
@@ -117,6 +138,21 @@ module MicrosoftGraph
             ## 
             def allow_teamwork_reactions=(value)
                 @allow_teamwork_reactions = value
+            end
+            ## 
+            ## Gets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
+            ## @return a online_meeting_presenters
+            ## 
+            def allowed_presenters
+                return @allowed_presenters
+            end
+            ## 
+            ## Sets the allowedPresenters property value. Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
+            ## @param value Value to set for the allowed_presenters property.
+            ## @return a void
+            ## 
+            def allowed_presenters=(value)
+                @allowed_presenters = value
             end
             ## 
             ## Gets the attendanceReports property value. The attendance reports of an online meeting. Read-only.
@@ -194,7 +230,7 @@ module MicrosoftGraph
                 @chat_info = value
             end
             ## 
-            ## Instantiates a new onlineMeeting and sets the default values.
+            ## Instantiates a new OnlineMeeting and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -262,7 +298,9 @@ module MicrosoftGraph
                 return super.merge({
                     "allowAttendeeToEnableCamera" => lambda {|n| @allow_attendee_to_enable_camera = n.get_boolean_value() },
                     "allowAttendeeToEnableMic" => lambda {|n| @allow_attendee_to_enable_mic = n.get_boolean_value() },
+                    "allowMeetingChat" => lambda {|n| @allow_meeting_chat = n.get_enum_value(MicrosoftGraph::Models::MeetingChatMode) },
                     "allowTeamworkReactions" => lambda {|n| @allow_teamwork_reactions = n.get_boolean_value() },
+                    "allowedPresenters" => lambda {|n| @allowed_presenters = n.get_enum_value(MicrosoftGraph::Models::OnlineMeetingPresenters) },
                     "attendanceReports" => lambda {|n| @attendance_reports = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::MeetingAttendanceReport.create_from_discriminator_value(pn) }) },
                     "attendeeReport" => lambda {|n| @attendee_report = n.get_string_value() },
                     "audioConferencing" => lambda {|n| @audio_conferencing = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AudioConferencing.create_from_discriminator_value(pn) }) },
@@ -414,7 +452,9 @@ module MicrosoftGraph
                 super
                 writer.write_boolean_value("allowAttendeeToEnableCamera", @allow_attendee_to_enable_camera)
                 writer.write_boolean_value("allowAttendeeToEnableMic", @allow_attendee_to_enable_mic)
+                writer.write_enum_value("allowMeetingChat", @allow_meeting_chat)
                 writer.write_boolean_value("allowTeamworkReactions", @allow_teamwork_reactions)
+                writer.write_enum_value("allowedPresenters", @allowed_presenters)
                 writer.write_collection_of_object_values("attendanceReports", @attendance_reports)
                 writer.write_object_value("attendeeReport", @attendee_report)
                 writer.write_object_value("audioConferencing", @audio_conferencing)

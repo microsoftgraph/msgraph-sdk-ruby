@@ -35,7 +35,7 @@ module MicrosoftGraph
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @modified_date_time
             ## 
-            # The questions property
+            # Questions that are posed to the  requestor.
             @questions
             ## 
             # Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.
@@ -223,14 +223,14 @@ module MicrosoftGraph
                 @modified_date_time = value
             end
             ## 
-            ## Gets the questions property value. The questions property
+            ## Gets the questions property value. Questions that are posed to the  requestor.
             ## @return a access_package_question
             ## 
             def questions
                 return @questions
             end
             ## 
-            ## Sets the questions property value. The questions property
+            ## Sets the questions property value. Questions that are posed to the  requestor.
             ## @param value Value to set for the questions property.
             ## @return a void
             ## 

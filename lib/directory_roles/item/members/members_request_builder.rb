@@ -5,13 +5,13 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../directory_roles'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './graph_application/graph_application_request_builder'
+require_relative './graph_device/graph_device_request_builder'
+require_relative './graph_group/graph_group_request_builder'
+require_relative './graph_org_contact/graph_org_contact_request_builder'
+require_relative './graph_service_principal/graph_service_principal_request_builder'
+require_relative './graph_user/graph_user_request_builder'
 require_relative './members'
-require_relative './microsoft_graph_application/microsoft_graph_application_request_builder'
-require_relative './microsoft_graph_device/microsoft_graph_device_request_builder'
-require_relative './microsoft_graph_group/microsoft_graph_group_request_builder'
-require_relative './microsoft_graph_org_contact/microsoft_graph_org_contact_request_builder'
-require_relative './microsoft_graph_service_principal/microsoft_graph_service_principal_request_builder'
-require_relative './microsoft_graph_user/microsoft_graph_user_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -29,33 +29,33 @@ module MicrosoftGraph
                     end
                     ## 
                     # Casts the previous resource to application.
-                    def microsoft_graph_application()
-                        return MicrosoftGraph::DirectoryRoles::Item::Members::MicrosoftGraphApplication::MicrosoftGraphApplicationRequestBuilder.new(@path_parameters, @request_adapter)
+                    def graph_application()
+                        return MicrosoftGraph::DirectoryRoles::Item::Members::GraphApplication::GraphApplicationRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Casts the previous resource to device.
-                    def microsoft_graph_device()
-                        return MicrosoftGraph::DirectoryRoles::Item::Members::MicrosoftGraphDevice::MicrosoftGraphDeviceRequestBuilder.new(@path_parameters, @request_adapter)
+                    def graph_device()
+                        return MicrosoftGraph::DirectoryRoles::Item::Members::GraphDevice::GraphDeviceRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Casts the previous resource to group.
-                    def microsoft_graph_group()
-                        return MicrosoftGraph::DirectoryRoles::Item::Members::MicrosoftGraphGroup::MicrosoftGraphGroupRequestBuilder.new(@path_parameters, @request_adapter)
+                    def graph_group()
+                        return MicrosoftGraph::DirectoryRoles::Item::Members::GraphGroup::GraphGroupRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Casts the previous resource to orgContact.
-                    def microsoft_graph_org_contact()
-                        return MicrosoftGraph::DirectoryRoles::Item::Members::MicrosoftGraphOrgContact::MicrosoftGraphOrgContactRequestBuilder.new(@path_parameters, @request_adapter)
+                    def graph_org_contact()
+                        return MicrosoftGraph::DirectoryRoles::Item::Members::GraphOrgContact::GraphOrgContactRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Casts the previous resource to servicePrincipal.
-                    def microsoft_graph_service_principal()
-                        return MicrosoftGraph::DirectoryRoles::Item::Members::MicrosoftGraphServicePrincipal::MicrosoftGraphServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
+                    def graph_service_principal()
+                        return MicrosoftGraph::DirectoryRoles::Item::Members::GraphServicePrincipal::GraphServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Casts the previous resource to user.
-                    def microsoft_graph_user()
-                        return MicrosoftGraph::DirectoryRoles::Item::Members::MicrosoftGraphUser::MicrosoftGraphUserRequestBuilder.new(@path_parameters, @request_adapter)
+                    def graph_user()
+                        return MicrosoftGraph::DirectoryRoles::Item::Members::GraphUser::GraphUserRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Path parameters for the request

@@ -342,7 +342,7 @@ module MicrosoftGraph
             return MicrosoftGraph::PermissionGrants::PermissionGrantsRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Provides operations to manage the collection of place entities.
+        # The places property
         def places()
             return MicrosoftGraph::Places::PlacesRequestBuilder.new(@path_parameters, @request_adapter)
         end

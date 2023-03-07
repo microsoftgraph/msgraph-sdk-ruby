@@ -5,13 +5,8 @@ require_relative '../../../../models/o_data_errors/o_data_error'
 require_relative '../../../service_principals'
 require_relative '../../item'
 require_relative '../transitive_member_of'
+require_relative './graph_group/graph_group_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_application/microsoft_graph_application_request_builder'
-require_relative './microsoft_graph_device/microsoft_graph_device_request_builder'
-require_relative './microsoft_graph_group/microsoft_graph_group_request_builder'
-require_relative './microsoft_graph_org_contact/microsoft_graph_org_contact_request_builder'
-require_relative './microsoft_graph_service_principal/microsoft_graph_service_principal_request_builder'
-require_relative './microsoft_graph_user/microsoft_graph_user_request_builder'
 
 module MicrosoftGraph
     module ServicePrincipals
@@ -23,34 +18,9 @@ module MicrosoftGraph
                     class DirectoryObjectItemRequestBuilder
                         
                         ## 
-                        # Casts the previous resource to application.
-                        def microsoft_graph_application()
-                            return MicrosoftGraph::ServicePrincipals::Item::TransitiveMemberOf::Item::MicrosoftGraphApplication::MicrosoftGraphApplicationRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        # Casts the previous resource to device.
-                        def microsoft_graph_device()
-                            return MicrosoftGraph::ServicePrincipals::Item::TransitiveMemberOf::Item::MicrosoftGraphDevice::MicrosoftGraphDeviceRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
                         # Casts the previous resource to group.
-                        def microsoft_graph_group()
-                            return MicrosoftGraph::ServicePrincipals::Item::TransitiveMemberOf::Item::MicrosoftGraphGroup::MicrosoftGraphGroupRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        # Casts the previous resource to orgContact.
-                        def microsoft_graph_org_contact()
-                            return MicrosoftGraph::ServicePrincipals::Item::TransitiveMemberOf::Item::MicrosoftGraphOrgContact::MicrosoftGraphOrgContactRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        # Casts the previous resource to servicePrincipal.
-                        def microsoft_graph_service_principal()
-                            return MicrosoftGraph::ServicePrincipals::Item::TransitiveMemberOf::Item::MicrosoftGraphServicePrincipal::MicrosoftGraphServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        # Casts the previous resource to user.
-                        def microsoft_graph_user()
-                            return MicrosoftGraph::ServicePrincipals::Item::TransitiveMemberOf::Item::MicrosoftGraphUser::MicrosoftGraphUserRequestBuilder.new(@path_parameters, @request_adapter)
+                        def graph_group()
+                            return MicrosoftGraph::ServicePrincipals::Item::TransitiveMemberOf::Item::GraphGroup::GraphGroupRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Path parameters for the request

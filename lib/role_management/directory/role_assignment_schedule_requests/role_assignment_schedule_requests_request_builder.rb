@@ -6,7 +6,7 @@ require_relative '../../../models/unified_role_assignment_schedule_request_colle
 require_relative '../../role_management'
 require_relative '../directory'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_filter_by_current_user_with_on/microsoft_graph_filter_by_current_user_with_on_request_builder'
+require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
 require_relative './role_assignment_schedule_requests'
 
 module MicrosoftGraph
@@ -46,6 +46,15 @@ module MicrosoftGraph
                         @path_parameters = path_parameters if path_parameters.is_a? Hash
                     end
                     ## 
+                    ## Provides operations to call the filterByCurrentUser method.
+                    ## @param on Usage: on='{on}'
+                    ## @return a filter_by_current_user_with_on_request_builder
+                    ## 
+                    def filter_by_current_user_with_on(on)
+                        raise StandardError, 'on cannot be null' if on.nil?
+                        return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
+                    end
+                    ## 
                     ## Retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments.
                     ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of unified_role_assignment_schedule_request_collection_response
@@ -58,15 +67,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignmentScheduleRequestCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to call the filterByCurrentUser method.
-                    ## @param on Usage: on='{on}'
-                    ## @return a microsoft_graph_filter_by_current_user_with_on_request_builder
-                    ## 
-                    def microsoft_graph_filter_by_current_user_with_on(on)
-                        raise StandardError, 'on cannot be null' if on.nil?
-                        return MicrosoftGraphFilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
                     end
                     ## 
                     ## In PIM, carry out the following operations through the unifiedRoleAssignmentScheduleRequest object:+ Request active and persistent role assignments for a principal, with or without expiry dates.+ Activate, deactivate, extend, or renew an eligible role assignment for a principal. To call this API to update, renew, and extend assignments for yourself, you must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.

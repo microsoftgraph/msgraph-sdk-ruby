@@ -6,7 +6,7 @@ require_relative '../../../me'
 require_relative '../../authentication'
 require_relative '../methods'
 require_relative './item'
-require_relative './microsoft_graph_reset_password/microsoft_graph_reset_password_request_builder'
+require_relative './reset_password/reset_password_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -18,16 +18,16 @@ module MicrosoftGraph
                     class AuthenticationMethodItemRequestBuilder
                         
                         ## 
-                        # Provides operations to call the resetPassword method.
-                        def microsoft_graph_reset_password()
-                            return MicrosoftGraph::Me::Authentication::Methods::Item::MicrosoftGraphResetPassword::MicrosoftGraphResetPasswordRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
                         # Path parameters for the request
                         @path_parameters
                         ## 
                         # The request adapter to use to execute the requests.
                         @request_adapter
+                        ## 
+                        # Provides operations to call the resetPassword method.
+                        def reset_password()
+                            return MicrosoftGraph::Me::Authentication::Methods::Item::ResetPassword::ResetPasswordRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
                         ## 
                         # Url template to use to build the URL for the current request builder
                         @url_template

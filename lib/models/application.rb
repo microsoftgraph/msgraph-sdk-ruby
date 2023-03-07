@@ -17,6 +17,9 @@ module MicrosoftGraph
             # The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Supports $filter (eq).
             @app_id
             ## 
+            # The appManagementPolicies property
+            @app_management_policies
+            ## 
             # The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
             @app_roles
             ## 
@@ -177,6 +180,21 @@ module MicrosoftGraph
             ## 
             def app_id=(value)
                 @app_id = value
+            end
+            ## 
+            ## Gets the appManagementPolicies property value. The appManagementPolicies property
+            ## @return a app_management_policy
+            ## 
+            def app_management_policies
+                return @app_management_policies
+            end
+            ## 
+            ## Sets the appManagementPolicies property value. The appManagementPolicies property
+            ## @param value Value to set for the app_management_policies property.
+            ## @return a void
+            ## 
+            def app_management_policies=(value)
+                @app_management_policies = value
             end
             ## 
             ## Gets the appRoles property value. The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
@@ -369,6 +387,7 @@ module MicrosoftGraph
                     "addIns" => lambda {|n| @add_ins = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AddIn.create_from_discriminator_value(pn) }) },
                     "api" => lambda {|n| @api = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ApiApplication.create_from_discriminator_value(pn) }) },
                     "appId" => lambda {|n| @app_id = n.get_string_value() },
+                    "appManagementPolicies" => lambda {|n| @app_management_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AppManagementPolicy.create_from_discriminator_value(pn) }) },
                     "appRoles" => lambda {|n| @app_roles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AppRole.create_from_discriminator_value(pn) }) },
                     "applicationTemplateId" => lambda {|n| @application_template_id = n.get_string_value() },
                     "certification" => lambda {|n| @certification = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Certification.create_from_discriminator_value(pn) }) },
@@ -706,6 +725,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("addIns", @add_ins)
                 writer.write_object_value("api", @api)
                 writer.write_string_value("appId", @app_id)
+                writer.write_collection_of_object_values("appManagementPolicies", @app_management_policies)
                 writer.write_collection_of_object_values("appRoles", @app_roles)
                 writer.write_string_value("applicationTemplateId", @application_template_id)
                 writer.write_object_value("certification", @certification)

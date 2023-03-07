@@ -3,8 +3,8 @@ require_relative '../../microsoft_graph'
 require_relative '../../models/application_template'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../application_templates'
+require_relative './instantiate/instantiate_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_instantiate/microsoft_graph_instantiate_request_builder'
 
 module MicrosoftGraph
     module ApplicationTemplates
@@ -15,8 +15,8 @@ module MicrosoftGraph
                 
                 ## 
                 # Provides operations to call the instantiate method.
-                def microsoft_graph_instantiate()
-                    return MicrosoftGraph::ApplicationTemplates::Item::MicrosoftGraphInstantiate::MicrosoftGraphInstantiateRequestBuilder.new(@path_parameters, @request_adapter)
+                def instantiate()
+                    return MicrosoftGraph::ApplicationTemplates::Item::Instantiate::InstantiateRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Path parameters for the request

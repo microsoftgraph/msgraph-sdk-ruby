@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # A class containing the properties for Audit Event.
         class AuditEvent < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -161,7 +163,7 @@ module MicrosoftGraph
                 @component_name = value
             end
             ## 
-            ## Instantiates a new AuditEvent and sets the default values.
+            ## Instantiates a new auditEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

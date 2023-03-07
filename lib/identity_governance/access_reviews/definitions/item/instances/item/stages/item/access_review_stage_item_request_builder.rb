@@ -12,7 +12,7 @@ require_relative '../stages'
 require_relative './decisions/decisions_request_builder'
 require_relative './decisions/item/access_review_instance_decision_item_item_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_stop/microsoft_graph_stop_request_builder'
+require_relative './stop/stop_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -33,16 +33,16 @@ module MicrosoftGraph
                                             return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Stages::Item::Decisions::DecisionsRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
-                                        # Provides operations to call the stop method.
-                                        def microsoft_graph_stop()
-                                            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Stages::Item::MicrosoftGraphStop::MicrosoftGraphStopRequestBuilder.new(@path_parameters, @request_adapter)
-                                        end
-                                        ## 
                                         # Path parameters for the request
                                         @path_parameters
                                         ## 
                                         # The request adapter to use to execute the requests.
                                         @request_adapter
+                                        ## 
+                                        # Provides operations to call the stop method.
+                                        def stop()
+                                            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Stages::Item::Stop::StopRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
                                         ## 
                                         # Url template to use to build the URL for the current request builder
                                         @url_template

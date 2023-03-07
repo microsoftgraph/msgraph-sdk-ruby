@@ -13,16 +13,16 @@ require_relative '../charts'
 require_relative './axes/axes_request_builder'
 require_relative './data_labels/data_labels_request_builder'
 require_relative './format/format_request_builder'
+require_relative './image/image_request_builder'
+require_relative './image_with_width/image_with_width_request_builder'
+require_relative './image_with_width_with_height/image_with_width_with_height_request_builder'
+require_relative './image_with_width_with_height_with_fitting_mode/image_with_width_with_height_with_fitting_mode_request_builder'
 require_relative './item'
 require_relative './legend/legend_request_builder'
-require_relative './microsoft_graph_image/microsoft_graph_image_request_builder'
-require_relative './microsoft_graph_image_with_width/microsoft_graph_image_with_width_request_builder'
-require_relative './microsoft_graph_image_with_width_with_height/microsoft_graph_image_with_width_with_height_request_builder'
-require_relative './microsoft_graph_image_with_width_with_height_with_fitting_mode/microsoft_graph_image_with_width_with_height_with_fitting_mode_request_builder'
-require_relative './microsoft_graph_set_data/microsoft_graph_set_data_request_builder'
-require_relative './microsoft_graph_set_position/microsoft_graph_set_position_request_builder'
 require_relative './series/item/workbook_chart_series_item_request_builder'
 require_relative './series/series_request_builder'
+require_relative './set_data/set_data_request_builder'
+require_relative './set_position/set_position_request_builder'
 require_relative './title/title_request_builder'
 require_relative './worksheet/worksheet_request_builder'
 
@@ -56,24 +56,14 @@ module MicrosoftGraph
                                                 return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Format::FormatRequestBuilder.new(@path_parameters, @request_adapter)
                                             end
                                             ## 
+                                            # Provides operations to call the image method.
+                                            def image()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Image::ImageRequestBuilder.new(@path_parameters, @request_adapter)
+                                            end
+                                            ## 
                                             # Provides operations to manage the legend property of the microsoft.graph.workbookChart entity.
                                             def legend()
                                                 return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Legend::LegendRequestBuilder.new(@path_parameters, @request_adapter)
-                                            end
-                                            ## 
-                                            # Provides operations to call the image method.
-                                            def microsoft_graph_image()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::MicrosoftGraphImage::MicrosoftGraphImageRequestBuilder.new(@path_parameters, @request_adapter)
-                                            end
-                                            ## 
-                                            # Provides operations to call the setData method.
-                                            def microsoft_graph_set_data()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::MicrosoftGraphSetData::MicrosoftGraphSetDataRequestBuilder.new(@path_parameters, @request_adapter)
-                                            end
-                                            ## 
-                                            # Provides operations to call the setPosition method.
-                                            def microsoft_graph_set_position()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::MicrosoftGraphSetPosition::MicrosoftGraphSetPositionRequestBuilder.new(@path_parameters, @request_adapter)
                                             end
                                             ## 
                                             # Path parameters for the request
@@ -85,6 +75,16 @@ module MicrosoftGraph
                                             # Provides operations to manage the series property of the microsoft.graph.workbookChart entity.
                                             def series()
                                                 return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Series::SeriesRequestBuilder.new(@path_parameters, @request_adapter)
+                                            end
+                                            ## 
+                                            # Provides operations to call the setData method.
+                                            def set_data()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::SetData::SetDataRequestBuilder.new(@path_parameters, @request_adapter)
+                                            end
+                                            ## 
+                                            # Provides operations to call the setPosition method.
+                                            def set_position()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::SetPosition::SetPositionRequestBuilder.new(@path_parameters, @request_adapter)
                                             end
                                             ## 
                                             # Provides operations to manage the title property of the microsoft.graph.workbookChart entity.
@@ -144,35 +144,35 @@ module MicrosoftGraph
                                             ## 
                                             ## Provides operations to call the image method.
                                             ## @param width Usage: width={width}
-                                            ## @return a microsoft_graph_image_with_width_request_builder
+                                            ## @return a image_with_width_request_builder
                                             ## 
-                                            def microsoft_graph_image_with_width(width)
+                                            def image_with_width(width)
                                                 raise StandardError, 'width cannot be null' if width.nil?
-                                                return MicrosoftGraphImageWithWidthRequestBuilder.new(@path_parameters, @request_adapter, width)
+                                                return ImageWithWidthRequestBuilder.new(@path_parameters, @request_adapter, width)
                                             end
                                             ## 
                                             ## Provides operations to call the image method.
                                             ## @param height Usage: height={height}
                                             ## @param width Usage: width={width}
-                                            ## @return a microsoft_graph_image_with_width_with_height_request_builder
+                                            ## @return a image_with_width_with_height_request_builder
                                             ## 
-                                            def microsoft_graph_image_with_width_with_height(height, width)
+                                            def image_with_width_with_height(height, width)
                                                 raise StandardError, 'height cannot be null' if height.nil?
                                                 raise StandardError, 'width cannot be null' if width.nil?
-                                                return MicrosoftGraphImageWithWidthWithHeightRequestBuilder.new(@path_parameters, @request_adapter, height, width)
+                                                return ImageWithWidthWithHeightRequestBuilder.new(@path_parameters, @request_adapter, height, width)
                                             end
                                             ## 
                                             ## Provides operations to call the image method.
                                             ## @param fittingMode Usage: fittingMode='{fittingMode}'
                                             ## @param height Usage: height={height}
                                             ## @param width Usage: width={width}
-                                            ## @return a microsoft_graph_image_with_width_with_height_with_fitting_mode_request_builder
+                                            ## @return a image_with_width_with_height_with_fitting_mode_request_builder
                                             ## 
-                                            def microsoft_graph_image_with_width_with_height_with_fitting_mode(fitting_mode, height, width)
+                                            def image_with_width_with_height_with_fitting_mode(fitting_mode, height, width)
                                                 raise StandardError, 'fitting_mode cannot be null' if fitting_mode.nil?
                                                 raise StandardError, 'height cannot be null' if height.nil?
                                                 raise StandardError, 'width cannot be null' if width.nil?
-                                                return MicrosoftGraphImageWithWidthWithHeightWithFittingModeRequestBuilder.new(@path_parameters, @request_adapter, fittingMode, height, width)
+                                                return ImageWithWidthWithHeightWithFittingModeRequestBuilder.new(@path_parameters, @request_adapter, fittingMode, height, width)
                                             end
                                             ## 
                                             ## Update the navigation property charts in drives

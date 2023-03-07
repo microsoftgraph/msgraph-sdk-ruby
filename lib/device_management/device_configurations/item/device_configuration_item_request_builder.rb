@@ -4,6 +4,7 @@ require_relative '../../../models/device_configuration'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_management'
 require_relative '../device_configurations'
+require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
 require_relative './assignments/item/device_configuration_assignment_item_request_builder'
 require_relative './device_setting_state_summaries/device_setting_state_summaries_request_builder'
@@ -11,9 +12,8 @@ require_relative './device_setting_state_summaries/item/setting_state_device_sum
 require_relative './device_statuses/device_statuses_request_builder'
 require_relative './device_statuses/item/device_configuration_device_status_item_request_builder'
 require_relative './device_status_overview/device_status_overview_request_builder'
+require_relative './get_oma_setting_plain_text_value_with_secret_reference_value_id/get_oma_setting_plain_text_value_with_secret_reference_value_id_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_assign/microsoft_graph_assign_request_builder'
-require_relative './microsoft_graph_get_oma_setting_plain_text_value_with_secret_reference_value_id/microsoft_graph_get_oma_setting_plain_text_value_with_secret_reference_value_id_request_builder'
 require_relative './user_statuses/item/device_configuration_user_status_item_request_builder'
 require_relative './user_statuses/user_statuses_request_builder'
 require_relative './user_status_overview/user_status_overview_request_builder'
@@ -26,6 +26,11 @@ module MicrosoftGraph
                 # Provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.
                 class DeviceConfigurationItemRequestBuilder
                     
+                    ## 
+                    # Provides operations to call the assign method.
+                    def assign()
+                        return MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item::Assign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     # Provides operations to manage the assignments property of the microsoft.graph.deviceConfiguration entity.
                     def assignments()
@@ -45,11 +50,6 @@ module MicrosoftGraph
                     # Provides operations to manage the deviceStatusOverview property of the microsoft.graph.deviceConfiguration entity.
                     def device_status_overview()
                         return MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item::DeviceStatusOverview::DeviceStatusOverviewRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the assign method.
-                    def microsoft_graph_assign()
-                        return MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item::MicrosoftGraphAssign::MicrosoftGraphAssignRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Path parameters for the request
@@ -148,11 +148,11 @@ module MicrosoftGraph
                     ## 
                     ## Provides operations to call the getOmaSettingPlainTextValue method.
                     ## @param secretReferenceValueId Usage: secretReferenceValueId='{secretReferenceValueId}'
-                    ## @return a microsoft_graph_get_oma_setting_plain_text_value_with_secret_reference_value_id_request_builder
+                    ## @return a get_oma_setting_plain_text_value_with_secret_reference_value_id_request_builder
                     ## 
-                    def microsoft_graph_get_oma_setting_plain_text_value_with_secret_reference_value_id(secret_reference_value_id)
+                    def get_oma_setting_plain_text_value_with_secret_reference_value_id(secret_reference_value_id)
                         raise StandardError, 'secret_reference_value_id cannot be null' if secret_reference_value_id.nil?
-                        return MicrosoftGraphGetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder.new(@path_parameters, @request_adapter, secretReferenceValueId)
+                        return GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder.new(@path_parameters, @request_adapter, secretReferenceValueId)
                     end
                     ## 
                     ## Update the navigation property deviceConfigurations in deviceManagement

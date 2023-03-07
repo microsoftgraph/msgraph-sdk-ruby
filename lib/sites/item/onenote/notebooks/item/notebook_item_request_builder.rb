@@ -6,8 +6,8 @@ require_relative '../../../../sites'
 require_relative '../../../item'
 require_relative '../../onenote'
 require_relative '../notebooks'
+require_relative './copy_notebook/copy_notebook_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_copy_notebook/microsoft_graph_copy_notebook_request_builder'
 require_relative './section_groups/item/section_group_item_request_builder'
 require_relative './section_groups/section_groups_request_builder'
 require_relative './sections/item/onenote_section_item_request_builder'
@@ -25,8 +25,8 @@ module MicrosoftGraph
                             
                             ## 
                             # Provides operations to call the copyNotebook method.
-                            def microsoft_graph_copy_notebook()
-                                return MicrosoftGraph::Sites::Item::Onenote::Notebooks::Item::MicrosoftGraphCopyNotebook::MicrosoftGraphCopyNotebookRequestBuilder.new(@path_parameters, @request_adapter)
+                            def copy_notebook()
+                                return MicrosoftGraph::Sites::Item::Onenote::Notebooks::Item::CopyNotebook::CopyNotebookRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             # Path parameters for the request

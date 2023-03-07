@@ -6,8 +6,8 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_management'
 require_relative './audit_events'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_get_audit_activity_types_with_category/microsoft_graph_get_audit_activity_types_with_category_request_builder'
-require_relative './microsoft_graph_get_audit_categories/microsoft_graph_get_audit_categories_request_builder'
+require_relative './get_audit_activity_types_with_category/get_audit_activity_types_with_category_request_builder'
+require_relative './get_audit_categories/get_audit_categories_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -23,8 +23,8 @@ module MicrosoftGraph
                 end
                 ## 
                 # Provides operations to call the getAuditCategories method.
-                def microsoft_graph_get_audit_categories()
-                    return MicrosoftGraph::DeviceManagement::AuditEvents::MicrosoftGraphGetAuditCategories::MicrosoftGraphGetAuditCategoriesRequestBuilder.new(@path_parameters, @request_adapter)
+                def get_audit_categories()
+                    return MicrosoftGraph::DeviceManagement::AuditEvents::GetAuditCategories::GetAuditCategoriesRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Path parameters for the request
@@ -66,11 +66,11 @@ module MicrosoftGraph
                 ## 
                 ## Provides operations to call the getAuditActivityTypes method.
                 ## @param category Usage: category='{category}'
-                ## @return a microsoft_graph_get_audit_activity_types_with_category_request_builder
+                ## @return a get_audit_activity_types_with_category_request_builder
                 ## 
-                def microsoft_graph_get_audit_activity_types_with_category(category)
+                def get_audit_activity_types_with_category(category)
                     raise StandardError, 'category cannot be null' if category.nil?
-                    return MicrosoftGraphGetAuditActivityTypesWithCategoryRequestBuilder.new(@path_parameters, @request_adapter, category)
+                    return GetAuditActivityTypesWithCategoryRequestBuilder.new(@path_parameters, @request_adapter, category)
                 end
                 ## 
                 ## Create new navigation property to auditEvents for deviceManagement

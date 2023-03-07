@@ -6,7 +6,7 @@ require_relative './models'
 module MicrosoftGraph
     module Models
         ## 
-        # Entity which represents a connection to Mobile threat defense partner.
+        # Entity which represents a connection to Mobile Threat Defense partner.
         class MobileThreatDefenseConnector < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 

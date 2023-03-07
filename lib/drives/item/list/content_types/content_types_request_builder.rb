@@ -6,11 +6,11 @@ require_relative '../../../../models/o_data_errors/o_data_error'
 require_relative '../../../drives'
 require_relative '../../item'
 require_relative '../list'
+require_relative './add_copy/add_copy_request_builder'
+require_relative './add_copy_from_content_type_hub/add_copy_from_content_type_hub_request_builder'
 require_relative './content_types'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_add_copy/microsoft_graph_add_copy_request_builder'
-require_relative './microsoft_graph_add_copy_from_content_type_hub/microsoft_graph_add_copy_from_content_type_hub_request_builder'
-require_relative './microsoft_graph_get_compatible_hub_content_types/microsoft_graph_get_compatible_hub_content_types_request_builder'
+require_relative './get_compatible_hub_content_types/get_compatible_hub_content_types_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -22,24 +22,24 @@ module MicrosoftGraph
                     class ContentTypesRequestBuilder
                         
                         ## 
+                        # Provides operations to call the addCopy method.
+                        def add_copy()
+                            return MicrosoftGraph::Drives::Item::List::ContentTypes::AddCopy::AddCopyRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to call the addCopyFromContentTypeHub method.
+                        def add_copy_from_content_type_hub()
+                            return MicrosoftGraph::Drives::Item::List::ContentTypes::AddCopyFromContentTypeHub::AddCopyFromContentTypeHubRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Drives::Item::List::ContentTypes::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        # Provides operations to call the addCopy method.
-                        def microsoft_graph_add_copy()
-                            return MicrosoftGraph::Drives::Item::List::ContentTypes::MicrosoftGraphAddCopy::MicrosoftGraphAddCopyRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        # Provides operations to call the addCopyFromContentTypeHub method.
-                        def microsoft_graph_add_copy_from_content_type_hub()
-                            return MicrosoftGraph::Drives::Item::List::ContentTypes::MicrosoftGraphAddCopyFromContentTypeHub::MicrosoftGraphAddCopyFromContentTypeHubRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
                         # Provides operations to call the getCompatibleHubContentTypes method.
-                        def microsoft_graph_get_compatible_hub_content_types()
-                            return MicrosoftGraph::Drives::Item::List::ContentTypes::MicrosoftGraphGetCompatibleHubContentTypes::MicrosoftGraphGetCompatibleHubContentTypesRequestBuilder.new(@path_parameters, @request_adapter)
+                        def get_compatible_hub_content_types()
+                            return MicrosoftGraph::Drives::Item::List::ContentTypes::GetCompatibleHubContentTypes::GetCompatibleHubContentTypesRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Path parameters for the request

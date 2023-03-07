@@ -5,7 +5,7 @@ require_relative '../../../models/vpp_token'
 require_relative '../../device_app_management'
 require_relative '../vpp_tokens'
 require_relative './item'
-require_relative './microsoft_graph_sync_licenses/microsoft_graph_sync_licenses_request_builder'
+require_relative './sync_licenses/sync_licenses_request_builder'
 
 module MicrosoftGraph
     module DeviceAppManagement
@@ -16,16 +16,16 @@ module MicrosoftGraph
                 class VppTokenItemRequestBuilder
                     
                     ## 
-                    # Provides operations to call the syncLicenses method.
-                    def microsoft_graph_sync_licenses()
-                        return MicrosoftGraph::DeviceAppManagement::VppTokens::Item::MicrosoftGraphSyncLicenses::MicrosoftGraphSyncLicensesRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
                     # Path parameters for the request
                     @path_parameters
                     ## 
                     # The request adapter to use to execute the requests.
                     @request_adapter
+                    ## 
+                    # Provides operations to call the syncLicenses method.
+                    def sync_licenses()
+                        return MicrosoftGraph::DeviceAppManagement::VppTokens::Item::SyncLicenses::SyncLicensesRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     # Url template to use to build the URL for the current request builder
                     @url_template

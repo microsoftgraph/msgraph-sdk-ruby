@@ -11,8 +11,8 @@ require_relative '../../../workbook'
 require_relative '../../worksheets'
 require_relative '../item'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_refresh_all/microsoft_graph_refresh_all_request_builder'
 require_relative './pivot_tables'
+require_relative './refresh_all/refresh_all_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -33,13 +33,13 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::PivotTables::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
-                                        # Provides operations to call the refreshAll method.
-                                        def microsoft_graph_refresh_all()
-                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::PivotTables::MicrosoftGraphRefreshAll::MicrosoftGraphRefreshAllRequestBuilder.new(@path_parameters, @request_adapter)
-                                        end
-                                        ## 
                                         # Path parameters for the request
                                         @path_parameters
+                                        ## 
+                                        # Provides operations to call the refreshAll method.
+                                        def refresh_all()
+                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::PivotTables::RefreshAll::RefreshAllRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
                                         ## 
                                         # The request adapter to use to execute the requests.
                                         @request_adapter

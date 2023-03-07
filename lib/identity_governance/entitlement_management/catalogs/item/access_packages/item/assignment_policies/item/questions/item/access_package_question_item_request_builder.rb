@@ -66,7 +66,7 @@ module MicrosoftGraph
                                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                                 end
                                                 ## 
-                                                ## Get questions from identityGovernance
+                                                ## Questions that are posed to the  requestor.
                                                 ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a Fiber of access_package_question
                                                 ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph
                                                     return request_info
                                                 end
                                                 ## 
-                                                ## Get questions from identityGovernance
+                                                ## Questions that are posed to the  requestor.
                                                 ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a request_information
                                                 ## 
@@ -163,7 +163,7 @@ module MicrosoftGraph
                                                 end
 
                                                 ## 
-                                                # Get questions from identityGovernance
+                                                # Questions that are posed to the  requestor.
                                                 class AccessPackageQuestionItemRequestBuilderGetQueryParameters
                                                     
                                                     ## 

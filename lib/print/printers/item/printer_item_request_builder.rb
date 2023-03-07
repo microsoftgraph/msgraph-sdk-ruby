@@ -7,7 +7,7 @@ require_relative '../printers'
 require_relative './connectors/connectors_request_builder'
 require_relative './connectors/item/print_connector_item_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_restore_factory_defaults/microsoft_graph_restore_factory_defaults_request_builder'
+require_relative './restore_factory_defaults/restore_factory_defaults_request_builder'
 require_relative './shares/item/printer_share_item_request_builder'
 require_relative './shares/shares_request_builder'
 require_relative './task_triggers/item/print_task_trigger_item_request_builder'
@@ -27,16 +27,16 @@ module MicrosoftGraph
                         return MicrosoftGraph::Print::Printers::Item::Connectors::ConnectorsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    # Provides operations to call the restoreFactoryDefaults method.
-                    def microsoft_graph_restore_factory_defaults()
-                        return MicrosoftGraph::Print::Printers::Item::MicrosoftGraphRestoreFactoryDefaults::MicrosoftGraphRestoreFactoryDefaultsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
                     # Path parameters for the request
                     @path_parameters
                     ## 
                     # The request adapter to use to execute the requests.
                     @request_adapter
+                    ## 
+                    # Provides operations to call the restoreFactoryDefaults method.
+                    def restore_factory_defaults()
+                        return MicrosoftGraph::Print::Printers::Item::RestoreFactoryDefaults::RestoreFactoryDefaultsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     # Provides operations to manage the shares property of the microsoft.graph.printer entity.
                     def shares()

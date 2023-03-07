@@ -2,7 +2,7 @@ require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/search_entity'
-require_relative './microsoft_graph_query/microsoft_graph_query_request_builder'
+require_relative './query/query_request_builder'
 require_relative './search'
 
 module MicrosoftGraph
@@ -12,13 +12,13 @@ module MicrosoftGraph
         class SearchRequestBuilder
             
             ## 
-            # Provides operations to call the query method.
-            def microsoft_graph_query()
-                return MicrosoftGraph::Search::MicrosoftGraphQuery::MicrosoftGraphQueryRequestBuilder.new(@path_parameters, @request_adapter)
-            end
-            ## 
             # Path parameters for the request
             @path_parameters
+            ## 
+            # Provides operations to call the query method.
+            def query()
+                return MicrosoftGraph::Search::Query::QueryRequestBuilder.new(@path_parameters, @request_adapter)
+            end
             ## 
             # The request adapter to use to execute the requests.
             @request_adapter

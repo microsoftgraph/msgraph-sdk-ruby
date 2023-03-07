@@ -16,6 +16,9 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
+            # Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
+            @scope
+            ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
@@ -54,6 +57,7 @@ module MicrosoftGraph
                 return {
                     "isDialInBypassEnabled" => lambda {|n| @is_dial_in_bypass_enabled = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "scope" => lambda {|n| @scope = n.get_enum_value(MicrosoftGraph::Models::LobbyBypassScope) },
                 }
             end
             ## 
@@ -87,6 +91,21 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
+            ## Gets the scope property value. Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
+            ## @return a lobby_bypass_scope
+            ## 
+            def scope
+                return @scope
+            end
+            ## 
+            ## Sets the scope property value. Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.
+            ## @param value Value to set for the scope property.
+            ## @return a void
+            ## 
+            def scope=(value)
+                @scope = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -95,6 +114,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_boolean_value("isDialInBypassEnabled", @is_dial_in_bypass_enabled)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_enum_value("scope", @scope)
                 writer.write_additional_data(@additional_data)
             end
         end

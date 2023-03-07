@@ -4,7 +4,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/permission'
 require_relative '../../shares'
 require_relative '../item'
-require_relative './microsoft_graph_grant/microsoft_graph_grant_request_builder'
+require_relative './grant/grant_request_builder'
 require_relative './permission'
 
 module MicrosoftGraph
@@ -17,8 +17,8 @@ module MicrosoftGraph
                     
                     ## 
                     # Provides operations to call the grant method.
-                    def microsoft_graph_grant()
-                        return MicrosoftGraph::Shares::Item::Permission::MicrosoftGraphGrant::MicrosoftGraphGrantRequestBuilder.new(@path_parameters, @request_adapter)
+                    def grant()
+                        return MicrosoftGraph::Shares::Item::Permission::Grant::GrantRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Path parameters for the request

@@ -10,19 +10,19 @@ require_relative '../../../../workbook'
 require_relative '../../../worksheets'
 require_relative '../../item'
 require_relative '../tables'
+require_relative './clear_filters/clear_filters_request_builder'
 require_relative './columns/columns_request_builder'
 require_relative './columns/item/workbook_table_column_item_request_builder'
+require_relative './convert_to_range/convert_to_range_request_builder'
+require_relative './data_body_range/data_body_range_request_builder'
+require_relative './header_row_range/header_row_range_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_clear_filters/microsoft_graph_clear_filters_request_builder'
-require_relative './microsoft_graph_convert_to_range/microsoft_graph_convert_to_range_request_builder'
-require_relative './microsoft_graph_data_body_range/microsoft_graph_data_body_range_request_builder'
-require_relative './microsoft_graph_header_row_range/microsoft_graph_header_row_range_request_builder'
-require_relative './microsoft_graph_range/microsoft_graph_range_request_builder'
-require_relative './microsoft_graph_reapply_filters/microsoft_graph_reapply_filters_request_builder'
-require_relative './microsoft_graph_total_row_range/microsoft_graph_total_row_range_request_builder'
+require_relative './range/range_request_builder'
+require_relative './reapply_filters/reapply_filters_request_builder'
 require_relative './rows/item/workbook_table_row_item_request_builder'
 require_relative './rows/rows_request_builder'
 require_relative './sort/sort_request_builder'
+require_relative './total_row_range/total_row_range_request_builder'
 require_relative './worksheet/worksheet_request_builder'
 
 module MicrosoftGraph
@@ -40,48 +40,43 @@ module MicrosoftGraph
                                         class WorkbookTableItemRequestBuilder
                                             
                                             ## 
+                                            # Provides operations to call the clearFilters method.
+                                            def clear_filters()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::ClearFilters::ClearFiltersRequestBuilder.new(@path_parameters, @request_adapter)
+                                            end
+                                            ## 
                                             # Provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
                                             def columns()
                                                 return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Columns::ColumnsRequestBuilder.new(@path_parameters, @request_adapter)
                                             end
                                             ## 
-                                            # Provides operations to call the clearFilters method.
-                                            def microsoft_graph_clear_filters()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::MicrosoftGraphClearFilters::MicrosoftGraphClearFiltersRequestBuilder.new(@path_parameters, @request_adapter)
-                                            end
-                                            ## 
                                             # Provides operations to call the convertToRange method.
-                                            def microsoft_graph_convert_to_range()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::MicrosoftGraphConvertToRange::MicrosoftGraphConvertToRangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                            def convert_to_range()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::ConvertToRange::ConvertToRangeRequestBuilder.new(@path_parameters, @request_adapter)
                                             end
                                             ## 
                                             # Provides operations to call the dataBodyRange method.
-                                            def microsoft_graph_data_body_range()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::MicrosoftGraphDataBodyRange::MicrosoftGraphDataBodyRangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                            def data_body_range()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::DataBodyRange::DataBodyRangeRequestBuilder.new(@path_parameters, @request_adapter)
                                             end
                                             ## 
                                             # Provides operations to call the headerRowRange method.
-                                            def microsoft_graph_header_row_range()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::MicrosoftGraphHeaderRowRange::MicrosoftGraphHeaderRowRangeRequestBuilder.new(@path_parameters, @request_adapter)
-                                            end
-                                            ## 
-                                            # Provides operations to call the range method.
-                                            def microsoft_graph_range()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::MicrosoftGraphRange::MicrosoftGraphRangeRequestBuilder.new(@path_parameters, @request_adapter)
-                                            end
-                                            ## 
-                                            # Provides operations to call the reapplyFilters method.
-                                            def microsoft_graph_reapply_filters()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::MicrosoftGraphReapplyFilters::MicrosoftGraphReapplyFiltersRequestBuilder.new(@path_parameters, @request_adapter)
-                                            end
-                                            ## 
-                                            # Provides operations to call the totalRowRange method.
-                                            def microsoft_graph_total_row_range()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::MicrosoftGraphTotalRowRange::MicrosoftGraphTotalRowRangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                            def header_row_range()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::HeaderRowRange::HeaderRowRangeRequestBuilder.new(@path_parameters, @request_adapter)
                                             end
                                             ## 
                                             # Path parameters for the request
                                             @path_parameters
+                                            ## 
+                                            # Provides operations to call the range method.
+                                            def range()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Range::RangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                            end
+                                            ## 
+                                            # Provides operations to call the reapplyFilters method.
+                                            def reapply_filters()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::ReapplyFilters::ReapplyFiltersRequestBuilder.new(@path_parameters, @request_adapter)
+                                            end
                                             ## 
                                             # The request adapter to use to execute the requests.
                                             @request_adapter
@@ -94,6 +89,11 @@ module MicrosoftGraph
                                             # Provides operations to manage the sort property of the microsoft.graph.workbookTable entity.
                                             def sort()
                                                 return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Sort::SortRequestBuilder.new(@path_parameters, @request_adapter)
+                                            end
+                                            ## 
+                                            # Provides operations to call the totalRowRange method.
+                                            def total_row_range()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::TotalRowRange::TotalRowRangeRequestBuilder.new(@path_parameters, @request_adapter)
                                             end
                                             ## 
                                             # Url template to use to build the URL for the current request builder

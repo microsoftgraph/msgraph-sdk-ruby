@@ -146,6 +146,8 @@ module MicrosoftGraph
                             return Application.new
                         when "#microsoft.graph.applicationTemplate"
                             return ApplicationTemplate.new
+                        when "#microsoft.graph.appManagementPolicy"
+                            return AppManagementPolicy.new
                         when "#microsoft.graph.appRoleAssignment"
                             return AppRoleAssignment.new
                         when "#microsoft.graph.approval"
@@ -470,6 +472,8 @@ module MicrosoftGraph
                             return EnrollmentConfigurationAssignment.new
                         when "#microsoft.graph.enrollmentTroubleshootingEvent"
                             return EnrollmentTroubleshootingEvent.new
+                        when "#microsoft.graph.enterpriseCodeSigningCertificate"
+                            return EnterpriseCodeSigningCertificate.new
                         when "#microsoft.graph.entitlementManagement"
                             return EntitlementManagement.new
                         when "#microsoft.graph.entitlementManagementSettings"
@@ -560,6 +564,8 @@ module MicrosoftGraph
                             return IosiPadOSWebClip.new
                         when "#microsoft.graph.iosLobApp"
                             return IosLobApp.new
+                        when "#microsoft.graph.iosLobAppProvisioningConfigurationAssignment"
+                            return IosLobAppProvisioningConfigurationAssignment.new
                         when "#microsoft.graph.iosManagedAppProtection"
                             return IosManagedAppProtection.new
                         when "#microsoft.graph.iosManagedAppRegistration"
@@ -742,6 +748,8 @@ module MicrosoftGraph
                             return OnlineMeeting.new
                         when "#microsoft.graph.onPremisesConditionalAccessSettings"
                             return OnPremisesConditionalAccessSettings.new
+                        when "#microsoft.graph.onPremisesDirectorySynchronization"
+                            return OnPremisesDirectorySynchronization.new
                         when "#microsoft.graph.openShift"
                             return OpenShift.new
                         when "#microsoft.graph.openShiftChangeRequest"
@@ -1024,6 +1032,8 @@ module MicrosoftGraph
                             return TemporaryAccessPassAuthenticationMethod.new
                         when "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration"
                             return TemporaryAccessPassAuthenticationMethodConfiguration.new
+                        when "#microsoft.graph.tenantAppManagementPolicy"
+                            return TenantAppManagementPolicy.new
                         when "#microsoft.graph.termsAndConditions"
                             return TermsAndConditions.new
                         when "#microsoft.graph.termsAndConditionsAcceptanceStatus"

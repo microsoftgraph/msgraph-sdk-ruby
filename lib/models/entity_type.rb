@@ -11,6 +11,7 @@ module MicrosoftGraph
             Drive: :Drive,
             UnknownFutureValue: :UnknownFutureValue,
             ChatMessage: :ChatMessage,
+            Person: :Person,
         }
     end
 end

@@ -11,9 +11,9 @@ require_relative '../../../../worksheets'
 require_relative '../../../item'
 require_relative '../../tables'
 require_relative '../item'
-require_relative './microsoft_graph_apply/microsoft_graph_apply_request_builder'
-require_relative './microsoft_graph_clear/microsoft_graph_clear_request_builder'
-require_relative './microsoft_graph_reapply/microsoft_graph_reapply_request_builder'
+require_relative './apply/apply_request_builder'
+require_relative './clear/clear_request_builder'
+require_relative './reapply/reapply_request_builder'
 require_relative './sort'
 
 module MicrosoftGraph
@@ -33,22 +33,22 @@ module MicrosoftGraph
                                                 
                                                 ## 
                                                 # Provides operations to call the apply method.
-                                                def microsoft_graph_apply()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Sort::MicrosoftGraphApply::MicrosoftGraphApplyRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def apply()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Sort::Apply::ApplyRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to call the clear method.
-                                                def microsoft_graph_clear()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Sort::MicrosoftGraphClear::MicrosoftGraphClearRequestBuilder.new(@path_parameters, @request_adapter)
-                                                end
-                                                ## 
-                                                # Provides operations to call the reapply method.
-                                                def microsoft_graph_reapply()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Sort::MicrosoftGraphReapply::MicrosoftGraphReapplyRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def clear()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Sort::Clear::ClearRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Path parameters for the request
                                                 @path_parameters
+                                                ## 
+                                                # Provides operations to call the reapply method.
+                                                def reapply()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Sort::Reapply::ReapplyRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
                                                 ## 
                                                 # The request adapter to use to execute the requests.
                                                 @request_adapter

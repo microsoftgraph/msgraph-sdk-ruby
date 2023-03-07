@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The secret key of the method. Always returns null.
             @secret_key
             ## 
-            ## Instantiates a new SoftwareOathAuthenticationMethod and sets the default values.
+            ## Instantiates a new softwareOathAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()

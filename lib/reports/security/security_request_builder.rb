@@ -3,9 +3,9 @@ require_relative '../../microsoft_graph'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/security_reports_root'
 require_relative '../reports'
-require_relative './microsoft_graph_get_attack_simulation_repeat_offenders/microsoft_graph_get_attack_simulation_repeat_offenders_request_builder'
-require_relative './microsoft_graph_get_attack_simulation_simulation_user_coverage/microsoft_graph_get_attack_simulation_simulation_user_coverage_request_builder'
-require_relative './microsoft_graph_get_attack_simulation_training_user_coverage/microsoft_graph_get_attack_simulation_training_user_coverage_request_builder'
+require_relative './get_attack_simulation_repeat_offenders/get_attack_simulation_repeat_offenders_request_builder'
+require_relative './get_attack_simulation_simulation_user_coverage/get_attack_simulation_simulation_user_coverage_request_builder'
+require_relative './get_attack_simulation_training_user_coverage/get_attack_simulation_training_user_coverage_request_builder'
 require_relative './security'
 
 module MicrosoftGraph
@@ -17,18 +17,18 @@ module MicrosoftGraph
                 
                 ## 
                 # Provides operations to call the getAttackSimulationRepeatOffenders method.
-                def microsoft_graph_get_attack_simulation_repeat_offenders()
-                    return MicrosoftGraph::Reports::Security::MicrosoftGraphGetAttackSimulationRepeatOffenders::MicrosoftGraphGetAttackSimulationRepeatOffendersRequestBuilder.new(@path_parameters, @request_adapter)
+                def get_attack_simulation_repeat_offenders()
+                    return MicrosoftGraph::Reports::Security::GetAttackSimulationRepeatOffenders::GetAttackSimulationRepeatOffendersRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to call the getAttackSimulationSimulationUserCoverage method.
-                def microsoft_graph_get_attack_simulation_simulation_user_coverage()
-                    return MicrosoftGraph::Reports::Security::MicrosoftGraphGetAttackSimulationSimulationUserCoverage::MicrosoftGraphGetAttackSimulationSimulationUserCoverageRequestBuilder.new(@path_parameters, @request_adapter)
+                def get_attack_simulation_simulation_user_coverage()
+                    return MicrosoftGraph::Reports::Security::GetAttackSimulationSimulationUserCoverage::GetAttackSimulationSimulationUserCoverageRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to call the getAttackSimulationTrainingUserCoverage method.
-                def microsoft_graph_get_attack_simulation_training_user_coverage()
-                    return MicrosoftGraph::Reports::Security::MicrosoftGraphGetAttackSimulationTrainingUserCoverage::MicrosoftGraphGetAttackSimulationTrainingUserCoverageRequestBuilder.new(@path_parameters, @request_adapter)
+                def get_attack_simulation_training_user_coverage()
+                    return MicrosoftGraph::Reports::Security::GetAttackSimulationTrainingUserCoverage::GetAttackSimulationTrainingUserCoverageRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Path parameters for the request

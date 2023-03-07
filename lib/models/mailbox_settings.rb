@@ -34,7 +34,7 @@ module MicrosoftGraph
             # The default time zone for the user's mailbox.
             @time_zone
             ## 
-            # The userPurpose property
+            # The purpose of the mailbox. Differentiates a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Possible values are: user, linked, shared, room, equipment, others, unknownFutureValue. Read-only.
             @user_purpose
             ## 
             # The days of the week and hours in a specific time zone that the user works.
@@ -228,14 +228,14 @@ module MicrosoftGraph
                 @time_zone = value
             end
             ## 
-            ## Gets the userPurpose property value. The userPurpose property
+            ## Gets the userPurpose property value. The purpose of the mailbox. Differentiates a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Possible values are: user, linked, shared, room, equipment, others, unknownFutureValue. Read-only.
             ## @return a user_purpose
             ## 
             def user_purpose
                 return @user_purpose
             end
             ## 
-            ## Sets the userPurpose property value. The userPurpose property
+            ## Sets the userPurpose property value. The purpose of the mailbox. Differentiates a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Possible values are: user, linked, shared, room, equipment, others, unknownFutureValue. Read-only.
             ## @param value Value to set for the user_purpose property.
             ## @return a void
             ## 

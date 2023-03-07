@@ -8,7 +8,7 @@ require_relative '../../../items'
 require_relative '../../item'
 require_relative '../workbook'
 require_relative './application'
-require_relative './microsoft_graph_calculate/microsoft_graph_calculate_request_builder'
+require_relative './calculate/calculate_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -23,8 +23,8 @@ module MicrosoftGraph
                                 
                                 ## 
                                 # Provides operations to call the calculate method.
-                                def microsoft_graph_calculate()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Application::MicrosoftGraphCalculate::MicrosoftGraphCalculateRequestBuilder.new(@path_parameters, @request_adapter)
+                                def calculate()
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Application::Calculate::CalculateRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Path parameters for the request

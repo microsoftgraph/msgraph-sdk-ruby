@@ -5,8 +5,8 @@ require_relative '../../models/managed_app_registration_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_app_management'
 require_relative './count/count_request_builder'
+require_relative './get_user_ids_with_flagged_app_registration/get_user_ids_with_flagged_app_registration_request_builder'
 require_relative './managed_app_registrations'
-require_relative './microsoft_graph_get_user_ids_with_flagged_app_registration/microsoft_graph_get_user_ids_with_flagged_app_registration_request_builder'
 
 module MicrosoftGraph
     module DeviceAppManagement
@@ -22,8 +22,8 @@ module MicrosoftGraph
                 end
                 ## 
                 # Provides operations to call the getUserIdsWithFlaggedAppRegistration method.
-                def microsoft_graph_get_user_ids_with_flagged_app_registration()
-                    return MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::MicrosoftGraphGetUserIdsWithFlaggedAppRegistration::MicrosoftGraphGetUserIdsWithFlaggedAppRegistrationRequestBuilder.new(@path_parameters, @request_adapter)
+                def get_user_ids_with_flagged_app_registration()
+                    return MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::GetUserIdsWithFlaggedAppRegistration::GetUserIdsWithFlaggedAppRegistrationRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Path parameters for the request

@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.
             @sms_sign_in_state
             ## 
-            ## Instantiates a new PhoneAuthenticationMethod and sets the default values.
+            ## Instantiates a new phoneAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()
