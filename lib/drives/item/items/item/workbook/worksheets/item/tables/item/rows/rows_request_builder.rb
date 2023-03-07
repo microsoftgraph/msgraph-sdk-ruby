@@ -12,10 +12,9 @@ require_relative '../../../../worksheets'
 require_relative '../../../item'
 require_relative '../../tables'
 require_relative '../item'
+require_relative './add/add_request_builder'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_add/microsoft_graph_add_request_builder'
-require_relative './microsoft_graph_count/microsoft_graph_count_request_builder'
-require_relative './microsoft_graph_item_at_with_index/microsoft_graph_item_at_with_index_request_builder'
+require_relative './item_at_with_index/item_at_with_index_request_builder'
 require_relative './rows'
 
 module MicrosoftGraph
@@ -34,19 +33,14 @@ module MicrosoftGraph
                                             class RowsRequestBuilder
                                                 
                                                 ## 
-                                                # Provides operations to count the resources in the collection.
-                                                def count()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Rows::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
-                                                end
-                                                ## 
                                                 # Provides operations to call the add method.
-                                                def microsoft_graph_add()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Rows::MicrosoftGraphAdd::MicrosoftGraphAddRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def add()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Rows::Add::AddRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Provides operations to call the count method.
-                                                def microsoft_graph_count()
-                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Rows::MicrosoftGraphCount::MicrosoftGraphCountRequestBuilder.new(@path_parameters, @request_adapter)
+                                                def count()
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Rows::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
                                                 # Path parameters for the request
@@ -88,11 +82,11 @@ module MicrosoftGraph
                                                 ## 
                                                 ## Provides operations to call the itemAt method.
                                                 ## @param index Usage: index={index}
-                                                ## @return a microsoft_graph_item_at_with_index_request_builder
+                                                ## @return a item_at_with_index_request_builder
                                                 ## 
-                                                def microsoft_graph_item_at_with_index(index)
+                                                def item_at_with_index(index)
                                                     raise StandardError, 'index cannot be null' if index.nil?
-                                                    return MicrosoftGraphItemAtWithIndexRequestBuilder.new(@path_parameters, @request_adapter, index)
+                                                    return ItemAtWithIndexRequestBuilder.new(@path_parameters, @request_adapter, index)
                                                 end
                                                 ## 
                                                 ## Adds rows to the end of a table.  Note that this API can accept multiple rows of data. Adding one row at a time can affect performance. The recommended approach is to batch the rows together in a single call rather than inserting single rows. For best results, collect the rows to be inserted on the application side and perform a single row add operation. Experiment with the number of rows to determine the ideal number of rows to use in a single API call.  This request might occasionally result in a `504 HTTP` error. The appropriate response to this error is to repeat the request.

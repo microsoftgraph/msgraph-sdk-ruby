@@ -4,8 +4,8 @@ require_relative '../../../models/directory_object'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../me'
 require_relative '../created_objects'
+require_relative './graph_service_principal/graph_service_principal_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_service_principal/microsoft_graph_service_principal_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -17,8 +17,8 @@ module MicrosoftGraph
                     
                     ## 
                     # Casts the previous resource to servicePrincipal.
-                    def microsoft_graph_service_principal()
-                        return MicrosoftGraph::Me::CreatedObjects::Item::MicrosoftGraphServicePrincipal::MicrosoftGraphServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
+                    def graph_service_principal()
+                        return MicrosoftGraph::Me::CreatedObjects::Item::GraphServicePrincipal::GraphServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Path parameters for the request

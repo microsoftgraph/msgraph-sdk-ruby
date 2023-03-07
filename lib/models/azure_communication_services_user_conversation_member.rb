@@ -7,17 +7,17 @@ module MicrosoftGraph
         class AzureCommunicationServicesUserConversationMember < MicrosoftGraph::Models::ConversationMember
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The azureCommunicationServicesId property
+            # Azure Communication Services ID of the user.
             @azure_communication_services_id
             ## 
-            ## Gets the azureCommunicationServicesId property value. The azureCommunicationServicesId property
+            ## Gets the azureCommunicationServicesId property value. Azure Communication Services ID of the user.
             ## @return a string
             ## 
             def azure_communication_services_id
                 return @azure_communication_services_id
             end
             ## 
-            ## Sets the azureCommunicationServicesId property value. The azureCommunicationServicesId property
+            ## Sets the azureCommunicationServicesId property value. Azure Communication Services ID of the user.
             ## @param value Value to set for the azure_communication_services_id property.
             ## @return a void
             ## 

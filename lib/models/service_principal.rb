@@ -25,6 +25,9 @@ module MicrosoftGraph
             # The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
             @app_id
             ## 
+            # The appManagementPolicies property
+            @app_management_policies
+            ## 
             # Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
             @app_owner_organization_id
             ## 
@@ -239,6 +242,21 @@ module MicrosoftGraph
             ## 
             def app_id=(value)
                 @app_id = value
+            end
+            ## 
+            ## Gets the appManagementPolicies property value. The appManagementPolicies property
+            ## @return a app_management_policy
+            ## 
+            def app_management_policies
+                return @app_management_policies
+            end
+            ## 
+            ## Sets the appManagementPolicies property value. The appManagementPolicies property
+            ## @param value Value to set for the app_management_policies property.
+            ## @return a void
+            ## 
+            def app_management_policies=(value)
+                @app_management_policies = value
             end
             ## 
             ## Gets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
@@ -479,6 +497,7 @@ module MicrosoftGraph
                     "appDescription" => lambda {|n| @app_description = n.get_string_value() },
                     "appDisplayName" => lambda {|n| @app_display_name = n.get_string_value() },
                     "appId" => lambda {|n| @app_id = n.get_string_value() },
+                    "appManagementPolicies" => lambda {|n| @app_management_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AppManagementPolicy.create_from_discriminator_value(pn) }) },
                     "appOwnerOrganizationId" => lambda {|n| @app_owner_organization_id = n.get_guid_value() },
                     "appRoleAssignedTo" => lambda {|n| @app_role_assigned_to = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AppRoleAssignment.create_from_discriminator_value(pn) }) },
                     "appRoleAssignmentRequired" => lambda {|n| @app_role_assignment_required = n.get_boolean_value() },
@@ -822,6 +841,7 @@ module MicrosoftGraph
                 writer.write_string_value("appDescription", @app_description)
                 writer.write_string_value("appDisplayName", @app_display_name)
                 writer.write_string_value("appId", @app_id)
+                writer.write_collection_of_object_values("appManagementPolicies", @app_management_policies)
                 writer.write_guid_value("appOwnerOrganizationId", @app_owner_organization_id)
                 writer.write_collection_of_object_values("appRoleAssignedTo", @app_role_assigned_to)
                 writer.write_boolean_value("appRoleAssignmentRequired", @app_role_assignment_required)

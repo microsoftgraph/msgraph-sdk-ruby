@@ -4,11 +4,11 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/presence'
 require_relative '../../users'
 require_relative '../item'
-require_relative './microsoft_graph_clear_presence/microsoft_graph_clear_presence_request_builder'
-require_relative './microsoft_graph_clear_user_preferred_presence/microsoft_graph_clear_user_preferred_presence_request_builder'
-require_relative './microsoft_graph_set_presence/microsoft_graph_set_presence_request_builder'
-require_relative './microsoft_graph_set_user_preferred_presence/microsoft_graph_set_user_preferred_presence_request_builder'
+require_relative './clear_presence/clear_presence_request_builder'
+require_relative './clear_user_preferred_presence/clear_user_preferred_presence_request_builder'
 require_relative './presence'
+require_relative './set_presence/set_presence_request_builder'
+require_relative './set_user_preferred_presence/set_user_preferred_presence_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -20,23 +20,13 @@ module MicrosoftGraph
                     
                     ## 
                     # Provides operations to call the clearPresence method.
-                    def microsoft_graph_clear_presence()
-                        return MicrosoftGraph::Users::Item::Presence::MicrosoftGraphClearPresence::MicrosoftGraphClearPresenceRequestBuilder.new(@path_parameters, @request_adapter)
+                    def clear_presence()
+                        return MicrosoftGraph::Users::Item::Presence::ClearPresence::ClearPresenceRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Provides operations to call the clearUserPreferredPresence method.
-                    def microsoft_graph_clear_user_preferred_presence()
-                        return MicrosoftGraph::Users::Item::Presence::MicrosoftGraphClearUserPreferredPresence::MicrosoftGraphClearUserPreferredPresenceRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the setPresence method.
-                    def microsoft_graph_set_presence()
-                        return MicrosoftGraph::Users::Item::Presence::MicrosoftGraphSetPresence::MicrosoftGraphSetPresenceRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the setUserPreferredPresence method.
-                    def microsoft_graph_set_user_preferred_presence()
-                        return MicrosoftGraph::Users::Item::Presence::MicrosoftGraphSetUserPreferredPresence::MicrosoftGraphSetUserPreferredPresenceRequestBuilder.new(@path_parameters, @request_adapter)
+                    def clear_user_preferred_presence()
+                        return MicrosoftGraph::Users::Item::Presence::ClearUserPreferredPresence::ClearUserPreferredPresenceRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Path parameters for the request
@@ -44,6 +34,16 @@ module MicrosoftGraph
                     ## 
                     # The request adapter to use to execute the requests.
                     @request_adapter
+                    ## 
+                    # Provides operations to call the setPresence method.
+                    def set_presence()
+                        return MicrosoftGraph::Users::Item::Presence::SetPresence::SetPresenceRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to call the setUserPreferredPresence method.
+                    def set_user_preferred_presence()
+                        return MicrosoftGraph::Users::Item::Presence::SetUserPreferredPresence::SetUserPreferredPresenceRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     # Url template to use to build the URL for the current request builder
                     @url_template

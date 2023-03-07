@@ -9,8 +9,8 @@ require_relative '../../../joined_teams'
 require_relative '../../item'
 require_relative '../primary_channel'
 require_relative './count/count_request_builder'
+require_relative './delta/delta_request_builder'
 require_relative './messages'
-require_relative './microsoft_graph_delta/microsoft_graph_delta_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -30,8 +30,8 @@ module MicrosoftGraph
                                 end
                                 ## 
                                 # Provides operations to call the delta method.
-                                def microsoft_graph_delta()
-                                    return MicrosoftGraph::Users::Item::JoinedTeams::Item::PrimaryChannel::Messages::MicrosoftGraphDelta::MicrosoftGraphDeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                                def delta()
+                                    return MicrosoftGraph::Users::Item::JoinedTeams::Item::PrimaryChannel::Messages::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Path parameters for the request
@@ -71,7 +71,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatMessageCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Send a new chatMessage in the specified channel.
+                                ## Send a new chatMessage in the specified channel or a chat.
                                 ## @param body The request body
                                 ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of chat_message
@@ -105,7 +105,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Send a new chatMessage in the specified channel.
+                                ## Send a new chatMessage in the specified channel or a chat.
                                 ## @param body The request body
                                 ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information

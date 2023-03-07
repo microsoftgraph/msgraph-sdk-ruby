@@ -5,7 +5,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_management'
 require_relative '../exchange_connectors'
 require_relative './item'
-require_relative './microsoft_graph_sync/microsoft_graph_sync_request_builder'
+require_relative './sync/sync_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -16,16 +16,16 @@ module MicrosoftGraph
                 class DeviceManagementExchangeConnectorItemRequestBuilder
                     
                     ## 
-                    # Provides operations to call the sync method.
-                    def microsoft_graph_sync()
-                        return MicrosoftGraph::DeviceManagement::ExchangeConnectors::Item::MicrosoftGraphSync::MicrosoftGraphSyncRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
                     # Path parameters for the request
                     @path_parameters
                     ## 
                     # The request adapter to use to execute the requests.
                     @request_adapter
+                    ## 
+                    # Provides operations to call the sync method.
+                    def sync()
+                        return MicrosoftGraph::DeviceManagement::ExchangeConnectors::Item::Sync::SyncRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     # Url template to use to build the URL for the current request builder
                     @url_template

@@ -4,7 +4,7 @@ require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/teamwork'
 require_relative './deleted_teams/deleted_teams_request_builder'
 require_relative './deleted_teams/item/deleted_team_item_request_builder'
-require_relative './microsoft_graph_send_activity_notification_to_recipients/microsoft_graph_send_activity_notification_to_recipients_request_builder'
+require_relative './send_activity_notification_to_recipients/send_activity_notification_to_recipients_request_builder'
 require_relative './teamwork'
 require_relative './workforce_integrations/item/workforce_integration_item_request_builder'
 require_relative './workforce_integrations/workforce_integrations_request_builder'
@@ -21,16 +21,16 @@ module MicrosoftGraph
                 return MicrosoftGraph::Teamwork::DeletedTeams::DeletedTeamsRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
-            # Provides operations to call the sendActivityNotificationToRecipients method.
-            def microsoft_graph_send_activity_notification_to_recipients()
-                return MicrosoftGraph::Teamwork::MicrosoftGraphSendActivityNotificationToRecipients::MicrosoftGraphSendActivityNotificationToRecipientsRequestBuilder.new(@path_parameters, @request_adapter)
-            end
-            ## 
             # Path parameters for the request
             @path_parameters
             ## 
             # The request adapter to use to execute the requests.
             @request_adapter
+            ## 
+            # Provides operations to call the sendActivityNotificationToRecipients method.
+            def send_activity_notification_to_recipients()
+                return MicrosoftGraph::Teamwork::SendActivityNotificationToRecipients::SendActivityNotificationToRecipientsRequestBuilder.new(@path_parameters, @request_adapter)
+            end
             ## 
             # Url template to use to build the URL for the current request builder
             @url_template

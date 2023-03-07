@@ -6,7 +6,7 @@ require_relative '../../../models/unified_role_eligibility_schedule_request_coll
 require_relative '../../role_management'
 require_relative '../entitlement_management'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_filter_by_current_user_with_on/microsoft_graph_filter_by_current_user_with_on_request_builder'
+require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
 require_relative './role_eligibility_schedule_requests'
 
 module MicrosoftGraph
@@ -46,6 +46,15 @@ module MicrosoftGraph
                         @path_parameters = path_parameters if path_parameters.is_a? Hash
                     end
                     ## 
+                    ## Provides operations to call the filterByCurrentUser method.
+                    ## @param on Usage: on='{on}'
+                    ## @return a filter_by_current_user_with_on_request_builder
+                    ## 
+                    def filter_by_current_user_with_on(on)
+                        raise StandardError, 'on cannot be null' if on.nil?
+                        return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
+                    end
+                    ## 
                     ## In PIM, retrieve the requests for role eligibilities for principals made through the unifiedRoleEligibilityScheduleRequest object.
                     ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of unified_role_eligibility_schedule_request_collection_response
@@ -58,15 +67,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleEligibilityScheduleRequestCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to call the filterByCurrentUser method.
-                    ## @param on Usage: on='{on}'
-                    ## @return a microsoft_graph_filter_by_current_user_with_on_request_builder
-                    ## 
-                    def microsoft_graph_filter_by_current_user_with_on(on)
-                        raise StandardError, 'on cannot be null' if on.nil?
-                        return MicrosoftGraphFilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
                     end
                     ## 
                     ## In PIM, request for a role eligibility for a principal through the unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.

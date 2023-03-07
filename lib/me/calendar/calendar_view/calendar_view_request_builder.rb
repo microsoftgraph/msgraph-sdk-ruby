@@ -6,7 +6,7 @@ require_relative '../../me'
 require_relative '../calendar'
 require_relative './calendar_view'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_delta/microsoft_graph_delta_request_builder'
+require_relative './delta/delta_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -23,8 +23,8 @@ module MicrosoftGraph
                     end
                     ## 
                     # Provides operations to call the delta method.
-                    def microsoft_graph_delta()
-                        return MicrosoftGraph::Me::Calendar::CalendarView::MicrosoftGraphDelta::MicrosoftGraphDeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                    def delta()
+                        return MicrosoftGraph::Me::Calendar::CalendarView::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Path parameters for the request

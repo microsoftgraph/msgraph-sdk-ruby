@@ -11,7 +11,7 @@ require_relative '../../child_folders'
 require_relative '../item'
 require_relative './contacts'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_delta/microsoft_graph_delta_request_builder'
+require_relative './delta/delta_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -32,8 +32,8 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     # Provides operations to call the delta method.
-                                    def microsoft_graph_delta()
-                                        return MicrosoftGraph::Users::Item::ContactFolders::Item::ChildFolders::Item::Contacts::MicrosoftGraphDelta::MicrosoftGraphDeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                                    def delta()
+                                        return MicrosoftGraph::Users::Item::ContactFolders::Item::ChildFolders::Item::Contacts::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
                                     # Path parameters for the request

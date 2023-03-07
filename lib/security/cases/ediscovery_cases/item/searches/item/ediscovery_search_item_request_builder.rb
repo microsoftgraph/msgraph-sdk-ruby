@@ -14,10 +14,10 @@ require_relative './custodian_sources/custodian_sources_request_builder'
 require_relative './custodian_sources/item/data_source_item_request_builder'
 require_relative './item'
 require_relative './last_estimate_statistics_operation/last_estimate_statistics_operation_request_builder'
-require_relative './microsoft_graph_security_estimate_statistics/microsoft_graph_security_estimate_statistics_request_builder'
-require_relative './microsoft_graph_security_purge_data/microsoft_graph_security_purge_data_request_builder'
 require_relative './noncustodial_sources/item/ediscovery_noncustodial_data_source_item_request_builder'
 require_relative './noncustodial_sources/noncustodial_sources_request_builder'
+require_relative './security_estimate_statistics/security_estimate_statistics_request_builder'
+require_relative './security_purge_data/security_purge_data_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -51,16 +51,6 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::LastEstimateStatisticsOperation::LastEstimateStatisticsOperationRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
-                                # Provides operations to call the estimateStatistics method.
-                                def microsoft_graph_security_estimate_statistics()
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::MicrosoftGraphSecurityEstimateStatistics::MicrosoftGraphSecurityEstimateStatisticsRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to call the purgeData method.
-                                def microsoft_graph_security_purge_data()
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::MicrosoftGraphSecurityPurgeData::MicrosoftGraphSecurityPurgeDataRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
                                 # Provides operations to manage the noncustodialSources property of the microsoft.graph.security.ediscoverySearch entity.
                                 def noncustodial_sources()
                                     return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::NoncustodialSources::NoncustodialSourcesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -71,6 +61,16 @@ module MicrosoftGraph
                                 ## 
                                 # The request adapter to use to execute the requests.
                                 @request_adapter
+                                ## 
+                                # Provides operations to call the estimateStatistics method.
+                                def security_estimate_statistics()
+                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::SecurityEstimateStatistics::SecurityEstimateStatisticsRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                # Provides operations to call the purgeData method.
+                                def security_purge_data()
+                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::SecurityPurgeData::SecurityPurgeDataRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
                                 ## 
                                 # Url template to use to build the URL for the current request builder
                                 @url_template

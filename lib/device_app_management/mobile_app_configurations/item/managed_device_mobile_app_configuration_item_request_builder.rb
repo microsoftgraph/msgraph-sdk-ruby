@@ -4,13 +4,13 @@ require_relative '../../../models/managed_device_mobile_app_configuration'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_app_management'
 require_relative '../mobile_app_configurations'
+require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
 require_relative './assignments/item/managed_device_mobile_app_configuration_assignment_item_request_builder'
 require_relative './device_statuses/device_statuses_request_builder'
 require_relative './device_statuses/item/managed_device_mobile_app_configuration_device_status_item_request_builder'
 require_relative './device_status_summary/device_status_summary_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_assign/microsoft_graph_assign_request_builder'
 require_relative './user_statuses/item/managed_device_mobile_app_configuration_user_status_item_request_builder'
 require_relative './user_statuses/user_statuses_request_builder'
 require_relative './user_status_summary/user_status_summary_request_builder'
@@ -23,6 +23,11 @@ module MicrosoftGraph
                 # Provides operations to manage the mobileAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
                 class ManagedDeviceMobileAppConfigurationItemRequestBuilder
                     
+                    ## 
+                    # Provides operations to call the assign method.
+                    def assign()
+                        return MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Item::Assign::AssignRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     # Provides operations to manage the assignments property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.
                     def assignments()
@@ -37,11 +42,6 @@ module MicrosoftGraph
                     # Provides operations to manage the deviceStatusSummary property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.
                     def device_status_summary()
                         return MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Item::DeviceStatusSummary::DeviceStatusSummaryRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    # Provides operations to call the assign method.
-                    def microsoft_graph_assign()
-                        return MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Item::MicrosoftGraphAssign::MicrosoftGraphAssignRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Path parameters for the request

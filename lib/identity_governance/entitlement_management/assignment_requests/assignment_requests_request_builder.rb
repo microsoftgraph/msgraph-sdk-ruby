@@ -7,7 +7,7 @@ require_relative '../../identity_governance'
 require_relative '../entitlement_management'
 require_relative './assignment_requests'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_filter_by_current_user_with_on/microsoft_graph_filter_by_current_user_with_on_request_builder'
+require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -46,6 +46,15 @@ module MicrosoftGraph
                         @path_parameters = path_parameters if path_parameters.is_a? Hash
                     end
                     ## 
+                    ## Provides operations to call the filterByCurrentUser method.
+                    ## @param on Usage: on='{on}'
+                    ## @return a filter_by_current_user_with_on_request_builder
+                    ## 
+                    def filter_by_current_user_with_on(on)
+                        raise StandardError, 'on cannot be null' if on.nil?
+                        return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
+                    end
+                    ## 
                     ## In Azure AD entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages.
                     ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of access_package_assignment_request_collection_response
@@ -58,15 +67,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageAssignmentRequestCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to call the filterByCurrentUser method.
-                    ## @param on Usage: on='{on}'
-                    ## @return a microsoft_graph_filter_by_current_user_with_on_request_builder
-                    ## 
-                    def microsoft_graph_filter_by_current_user_with_on(on)
-                        raise StandardError, 'on cannot be null' if on.nil?
-                        return MicrosoftGraphFilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
                     end
                     ## 
                     ## In Azure AD Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.

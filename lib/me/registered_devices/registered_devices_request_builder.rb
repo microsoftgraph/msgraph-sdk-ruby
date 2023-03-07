@@ -4,9 +4,9 @@ require_relative '../../models/directory_object_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../me'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_app_role_assignment/microsoft_graph_app_role_assignment_request_builder'
-require_relative './microsoft_graph_device/microsoft_graph_device_request_builder'
-require_relative './microsoft_graph_endpoint/microsoft_graph_endpoint_request_builder'
+require_relative './graph_app_role_assignment/graph_app_role_assignment_request_builder'
+require_relative './graph_device/graph_device_request_builder'
+require_relative './graph_endpoint/graph_endpoint_request_builder'
 require_relative './registered_devices'
 
 module MicrosoftGraph
@@ -23,18 +23,18 @@ module MicrosoftGraph
                 end
                 ## 
                 # Casts the previous resource to appRoleAssignment.
-                def microsoft_graph_app_role_assignment()
-                    return MicrosoftGraph::Me::RegisteredDevices::MicrosoftGraphAppRoleAssignment::MicrosoftGraphAppRoleAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
+                def graph_app_role_assignment()
+                    return MicrosoftGraph::Me::RegisteredDevices::GraphAppRoleAssignment::GraphAppRoleAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Casts the previous resource to device.
-                def microsoft_graph_device()
-                    return MicrosoftGraph::Me::RegisteredDevices::MicrosoftGraphDevice::MicrosoftGraphDeviceRequestBuilder.new(@path_parameters, @request_adapter)
+                def graph_device()
+                    return MicrosoftGraph::Me::RegisteredDevices::GraphDevice::GraphDeviceRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Casts the previous resource to endpoint.
-                def microsoft_graph_endpoint()
-                    return MicrosoftGraph::Me::RegisteredDevices::MicrosoftGraphEndpoint::MicrosoftGraphEndpointRequestBuilder.new(@path_parameters, @request_adapter)
+                def graph_endpoint()
+                    return MicrosoftGraph::Me::RegisteredDevices::GraphEndpoint::GraphEndpointRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Path parameters for the request

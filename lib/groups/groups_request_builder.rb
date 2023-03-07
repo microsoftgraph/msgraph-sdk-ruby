@@ -4,11 +4,11 @@ require_relative '../models/group'
 require_relative '../models/group_collection_response'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './count/count_request_builder'
+require_relative './delta/delta_request_builder'
+require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
+require_relative './get_by_ids/get_by_ids_request_builder'
 require_relative './groups'
-require_relative './microsoft_graph_delta/microsoft_graph_delta_request_builder'
-require_relative './microsoft_graph_get_available_extension_properties/microsoft_graph_get_available_extension_properties_request_builder'
-require_relative './microsoft_graph_get_by_ids/microsoft_graph_get_by_ids_request_builder'
-require_relative './microsoft_graph_validate_properties/microsoft_graph_validate_properties_request_builder'
+require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -23,23 +23,18 @@ module MicrosoftGraph
             end
             ## 
             # Provides operations to call the delta method.
-            def microsoft_graph_delta()
-                return MicrosoftGraph::Groups::MicrosoftGraphDelta::MicrosoftGraphDeltaRequestBuilder.new(@path_parameters, @request_adapter)
+            def delta()
+                return MicrosoftGraph::Groups::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to call the getAvailableExtensionProperties method.
-            def microsoft_graph_get_available_extension_properties()
-                return MicrosoftGraph::Groups::MicrosoftGraphGetAvailableExtensionProperties::MicrosoftGraphGetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+            def get_available_extension_properties()
+                return MicrosoftGraph::Groups::GetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to call the getByIds method.
-            def microsoft_graph_get_by_ids()
-                return MicrosoftGraph::Groups::MicrosoftGraphGetByIds::MicrosoftGraphGetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
-            end
-            ## 
-            # Provides operations to call the validateProperties method.
-            def microsoft_graph_validate_properties()
-                return MicrosoftGraph::Groups::MicrosoftGraphValidateProperties::MicrosoftGraphValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+            def get_by_ids()
+                return MicrosoftGraph::Groups::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Path parameters for the request
@@ -50,6 +45,11 @@ module MicrosoftGraph
             ## 
             # Url template to use to build the URL for the current request builder
             @url_template
+            ## 
+            # Provides operations to call the validateProperties method.
+            def validate_properties()
+                return MicrosoftGraph::Groups::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
             ## 
             ## Instantiates a new GroupsRequestBuilder and sets the default values.
             ## @param pathParameters Path parameters for the request

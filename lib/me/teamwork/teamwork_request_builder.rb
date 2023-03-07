@@ -7,7 +7,7 @@ require_relative './associated_teams/associated_teams_request_builder'
 require_relative './associated_teams/item/associated_team_info_item_request_builder'
 require_relative './installed_apps/installed_apps_request_builder'
 require_relative './installed_apps/item/user_scope_teams_app_installation_item_request_builder'
-require_relative './microsoft_graph_send_activity_notification/microsoft_graph_send_activity_notification_request_builder'
+require_relative './send_activity_notification/send_activity_notification_request_builder'
 require_relative './teamwork'
 
 module MicrosoftGraph
@@ -28,16 +28,16 @@ module MicrosoftGraph
                     return MicrosoftGraph::Me::Teamwork::InstalledApps::InstalledAppsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
-                # Provides operations to call the sendActivityNotification method.
-                def microsoft_graph_send_activity_notification()
-                    return MicrosoftGraph::Me::Teamwork::MicrosoftGraphSendActivityNotification::MicrosoftGraphSendActivityNotificationRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
                 # Path parameters for the request
                 @path_parameters
                 ## 
                 # The request adapter to use to execute the requests.
                 @request_adapter
+                ## 
+                # Provides operations to call the sendActivityNotification method.
+                def send_activity_notification()
+                    return MicrosoftGraph::Me::Teamwork::SendActivityNotification::SendActivityNotificationRequestBuilder.new(@path_parameters, @request_adapter)
+                end
                 ## 
                 # Url template to use to build the URL for the current request builder
                 @url_template

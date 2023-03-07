@@ -47,7 +47,7 @@ module MicrosoftGraph
                 @assigned_to = value
             end
             ## 
-            ## Instantiates a new ScheduleChangeRequest and sets the default values.
+            ## Instantiates a new scheduleChangeRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

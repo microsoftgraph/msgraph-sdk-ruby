@@ -4,11 +4,11 @@ require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/user'
 require_relative '../models/user_collection_response'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_delta/microsoft_graph_delta_request_builder'
-require_relative './microsoft_graph_get_available_extension_properties/microsoft_graph_get_available_extension_properties_request_builder'
-require_relative './microsoft_graph_get_by_ids/microsoft_graph_get_by_ids_request_builder'
-require_relative './microsoft_graph_validate_properties/microsoft_graph_validate_properties_request_builder'
+require_relative './delta/delta_request_builder'
+require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
+require_relative './get_by_ids/get_by_ids_request_builder'
 require_relative './users'
+require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -23,23 +23,18 @@ module MicrosoftGraph
             end
             ## 
             # Provides operations to call the delta method.
-            def microsoft_graph_delta()
-                return MicrosoftGraph::Users::MicrosoftGraphDelta::MicrosoftGraphDeltaRequestBuilder.new(@path_parameters, @request_adapter)
+            def delta()
+                return MicrosoftGraph::Users::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to call the getAvailableExtensionProperties method.
-            def microsoft_graph_get_available_extension_properties()
-                return MicrosoftGraph::Users::MicrosoftGraphGetAvailableExtensionProperties::MicrosoftGraphGetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+            def get_available_extension_properties()
+                return MicrosoftGraph::Users::GetAvailableExtensionProperties::GetAvailableExtensionPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to call the getByIds method.
-            def microsoft_graph_get_by_ids()
-                return MicrosoftGraph::Users::MicrosoftGraphGetByIds::MicrosoftGraphGetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
-            end
-            ## 
-            # Provides operations to call the validateProperties method.
-            def microsoft_graph_validate_properties()
-                return MicrosoftGraph::Users::MicrosoftGraphValidateProperties::MicrosoftGraphValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+            def get_by_ids()
+                return MicrosoftGraph::Users::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Path parameters for the request
@@ -51,6 +46,11 @@ module MicrosoftGraph
             # Url template to use to build the URL for the current request builder
             @url_template
             ## 
+            # Provides operations to call the validateProperties method.
+            def validate_properties()
+                return MicrosoftGraph::Users::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             ## Instantiates a new UsersRequestBuilder and sets the default values.
             ## @param pathParameters Path parameters for the request
             ## @param requestAdapter The request adapter to use to execute the requests.
@@ -59,7 +59,7 @@ module MicrosoftGraph
             def initialize(path_parameters, request_adapter)
                 raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
                 raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                @url_template = "{+baseurl}/users{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}"
+                @url_template = "{+baseurl}/users{?%24top,%24search,%24filter,%24count,%24orderby,%24select,%24expand}"
                 @request_adapter = request_adapter
                 path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
                 @path_parameters = path_parameters if path_parameters.is_a? Hash
@@ -156,9 +156,6 @@ module MicrosoftGraph
                 # Select properties to be returned
                 attr_accessor :select
                 ## 
-                # Skip the first n items
-                attr_accessor :skip
-                ## 
                 # Show only the first n items
                 attr_accessor :top
                 ## 
@@ -181,8 +178,6 @@ module MicrosoftGraph
                             return "%24search"
                         when "select"
                             return "%24select"
-                        when "skip"
-                            return "%24skip"
                         when "top"
                             return "%24top"
                         else

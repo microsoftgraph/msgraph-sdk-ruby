@@ -6,8 +6,8 @@ require_relative '../../../models/todo_task_list_collection_response'
 require_relative '../../me'
 require_relative '../todo'
 require_relative './count/count_request_builder'
+require_relative './delta/delta_request_builder'
 require_relative './lists'
-require_relative './microsoft_graph_delta/microsoft_graph_delta_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -24,8 +24,8 @@ module MicrosoftGraph
                     end
                     ## 
                     # Provides operations to call the delta method.
-                    def microsoft_graph_delta()
-                        return MicrosoftGraph::Me::Todo::Lists::MicrosoftGraphDelta::MicrosoftGraphDeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                    def delta()
+                        return MicrosoftGraph::Me::Todo::Lists::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Path parameters for the request

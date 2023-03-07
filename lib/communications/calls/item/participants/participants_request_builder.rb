@@ -7,7 +7,7 @@ require_relative '../../../communications'
 require_relative '../../calls'
 require_relative '../item'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_invite/microsoft_graph_invite_request_builder'
+require_relative './invite/invite_request_builder'
 require_relative './participants'
 
 module MicrosoftGraph
@@ -26,8 +26,8 @@ module MicrosoftGraph
                         end
                         ## 
                         # Provides operations to call the invite method.
-                        def microsoft_graph_invite()
-                            return MicrosoftGraph::Communications::Calls::Item::Participants::MicrosoftGraphInvite::MicrosoftGraphInviteRequestBuilder.new(@path_parameters, @request_adapter)
+                        def invite()
+                            return MicrosoftGraph::Communications::Calls::Item::Participants::Invite::InviteRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Path parameters for the request

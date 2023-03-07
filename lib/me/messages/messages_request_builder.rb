@@ -5,8 +5,8 @@ require_relative '../../models/message_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../me'
 require_relative './count/count_request_builder'
+require_relative './delta/delta_request_builder'
 require_relative './messages'
-require_relative './microsoft_graph_delta/microsoft_graph_delta_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -22,8 +22,8 @@ module MicrosoftGraph
                 end
                 ## 
                 # Provides operations to call the delta method.
-                def microsoft_graph_delta()
-                    return MicrosoftGraph::Me::Messages::MicrosoftGraphDelta::MicrosoftGraphDeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                def delta()
+                    return MicrosoftGraph::Me::Messages::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Path parameters for the request
@@ -63,7 +63,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MessageCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
+                ## Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:- Include an attachment to the **message**.- Update the draft later to add content to the **body** or change other message properties. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
                 ## @param body The request body
                 ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of message
@@ -97,7 +97,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
+                ## Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:- Include an attachment to the **message**.- Update the draft later to add content to the **body** or change other message properties. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
                 ## @param body The request body
                 ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information

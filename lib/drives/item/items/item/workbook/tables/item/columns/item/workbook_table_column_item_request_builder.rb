@@ -10,12 +10,12 @@ require_relative '../../../../workbook'
 require_relative '../../../tables'
 require_relative '../../item'
 require_relative '../columns'
+require_relative './data_body_range/data_body_range_request_builder'
 require_relative './filter/filter_request_builder'
+require_relative './header_row_range/header_row_range_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_data_body_range/microsoft_graph_data_body_range_request_builder'
-require_relative './microsoft_graph_header_row_range/microsoft_graph_header_row_range_request_builder'
-require_relative './microsoft_graph_range/microsoft_graph_range_request_builder'
-require_relative './microsoft_graph_total_row_range/microsoft_graph_total_row_range_request_builder'
+require_relative './range/range_request_builder'
+require_relative './total_row_range/total_row_range_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -32,36 +32,36 @@ module MicrosoftGraph
                                         class WorkbookTableColumnItemRequestBuilder
                                             
                                             ## 
+                                            # Provides operations to call the dataBodyRange method.
+                                            def data_body_range()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::DataBodyRange::DataBodyRangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                            end
+                                            ## 
                                             # Provides operations to manage the filter property of the microsoft.graph.workbookTableColumn entity.
                                             def filter()
                                                 return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Filter::FilterRequestBuilder.new(@path_parameters, @request_adapter)
                                             end
                                             ## 
-                                            # Provides operations to call the dataBodyRange method.
-                                            def microsoft_graph_data_body_range()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::MicrosoftGraphDataBodyRange::MicrosoftGraphDataBodyRangeRequestBuilder.new(@path_parameters, @request_adapter)
-                                            end
-                                            ## 
                                             # Provides operations to call the headerRowRange method.
-                                            def microsoft_graph_header_row_range()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::MicrosoftGraphHeaderRowRange::MicrosoftGraphHeaderRowRangeRequestBuilder.new(@path_parameters, @request_adapter)
-                                            end
-                                            ## 
-                                            # Provides operations to call the range method.
-                                            def microsoft_graph_range()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::MicrosoftGraphRange::MicrosoftGraphRangeRequestBuilder.new(@path_parameters, @request_adapter)
-                                            end
-                                            ## 
-                                            # Provides operations to call the totalRowRange method.
-                                            def microsoft_graph_total_row_range()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::MicrosoftGraphTotalRowRange::MicrosoftGraphTotalRowRangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                            def header_row_range()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::HeaderRowRange::HeaderRowRangeRequestBuilder.new(@path_parameters, @request_adapter)
                                             end
                                             ## 
                                             # Path parameters for the request
                                             @path_parameters
                                             ## 
+                                            # Provides operations to call the range method.
+                                            def range()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::Range::RangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                            end
+                                            ## 
                                             # The request adapter to use to execute the requests.
                                             @request_adapter
+                                            ## 
+                                            # Provides operations to call the totalRowRange method.
+                                            def total_row_range()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::TotalRowRange::TotalRowRangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                            end
                                             ## 
                                             # Url template to use to build the URL for the current request builder
                                             @url_template

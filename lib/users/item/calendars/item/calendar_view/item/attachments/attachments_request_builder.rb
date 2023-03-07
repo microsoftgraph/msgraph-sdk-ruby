@@ -11,7 +11,7 @@ require_relative '../../calendar_view'
 require_relative '../item'
 require_relative './attachments'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_create_upload_session/microsoft_graph_create_upload_session_request_builder'
+require_relative './create_upload_session/create_upload_session_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -32,8 +32,8 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     # Provides operations to call the createUploadSession method.
-                                    def microsoft_graph_create_upload_session()
-                                        return MicrosoftGraph::Users::Item::Calendars::Item::CalendarView::Item::Attachments::MicrosoftGraphCreateUploadSession::MicrosoftGraphCreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
+                                    def create_upload_session()
+                                        return MicrosoftGraph::Users::Item::Calendars::Item::CalendarView::Item::Attachments::CreateUploadSession::CreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
                                     # Path parameters for the request
@@ -73,7 +73,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AttachmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+                                    ## Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
                                     ## @param body The request body
                                     ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of attachment
@@ -107,7 +107,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+                                    ## Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
                                     ## @param body The request body
                                     ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information

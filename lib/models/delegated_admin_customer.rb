@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The Azure AD-assigned tenant ID of the customer. Read-only.
             @tenant_id
             ## 
-            ## Instantiates a new DelegatedAdminCustomer and sets the default values.
+            ## Instantiates a new delegatedAdminCustomer and sets the default values.
             ## @return a void
             ## 
             def initialize()

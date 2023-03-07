@@ -11,7 +11,7 @@ require_relative '../../../tables'
 require_relative '../../item'
 require_relative '../rows'
 require_relative './item'
-require_relative './microsoft_graph_range/microsoft_graph_range_request_builder'
+require_relative './range/range_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -28,13 +28,13 @@ module MicrosoftGraph
                                         class WorkbookTableRowItemRequestBuilder
                                             
                                             ## 
-                                            # Provides operations to call the range method.
-                                            def microsoft_graph_range()
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Rows::Item::MicrosoftGraphRange::MicrosoftGraphRangeRequestBuilder.new(@path_parameters, @request_adapter)
-                                            end
-                                            ## 
                                             # Path parameters for the request
                                             @path_parameters
+                                            ## 
+                                            # Provides operations to call the range method.
+                                            def range()
+                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Rows::Item::Range::RangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                            end
                                             ## 
                                             # The request adapter to use to execute the requests.
                                             @request_adapter

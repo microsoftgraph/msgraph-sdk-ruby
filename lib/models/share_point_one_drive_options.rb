@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The includeContent property
+            # The type of search content. The possible values are: sharedContent, privateContent, unknownFutureValue. Read-only.
             @include_content
             ## 
             # The OdataType property
@@ -57,14 +57,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the includeContent property value. The includeContent property
+            ## Gets the includeContent property value. The type of search content. The possible values are: sharedContent, privateContent, unknownFutureValue. Read-only.
             ## @return a search_content
             ## 
             def include_content
                 return @include_content
             end
             ## 
-            ## Sets the includeContent property value. The includeContent property
+            ## Sets the includeContent property value. The type of search content. The possible values are: sharedContent, privateContent, unknownFutureValue. Read-only.
             ## @param value Value to set for the include_content property.
             ## @return a void
             ## 

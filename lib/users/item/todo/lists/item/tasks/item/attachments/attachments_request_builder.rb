@@ -12,7 +12,7 @@ require_relative '../../tasks'
 require_relative '../item'
 require_relative './attachments'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_create_upload_session/microsoft_graph_create_upload_session_request_builder'
+require_relative './create_upload_session/create_upload_session_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -34,8 +34,8 @@ module MicrosoftGraph
                                         end
                                         ## 
                                         # Provides operations to call the createUploadSession method.
-                                        def microsoft_graph_create_upload_session()
-                                            return MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::Attachments::MicrosoftGraphCreateUploadSession::MicrosoftGraphCreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
+                                        def create_upload_session()
+                                            return MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::Attachments::CreateUploadSession::CreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
                                         # Path parameters for the request

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The display name of the identity provider.
             @display_name
             ## 
-            ## Instantiates a new IdentityProviderBase and sets the default values.
+            ## Instantiates a new identityProviderBase and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -5,6 +5,8 @@ require_relative '../models/policy_root'
 require_relative './activity_based_timeout_policies/activity_based_timeout_policies_request_builder'
 require_relative './activity_based_timeout_policies/item/activity_based_timeout_policy_item_request_builder'
 require_relative './admin_consent_request_policy/admin_consent_request_policy_request_builder'
+require_relative './app_management_policies/app_management_policies_request_builder'
+require_relative './app_management_policies/item/app_management_policy_item_request_builder'
 require_relative './authentication_flows_policy/authentication_flows_policy_request_builder'
 require_relative './authentication_methods_policy/authentication_methods_policy_request_builder'
 require_relative './authorization_policy/authorization_policy_request_builder'
@@ -13,6 +15,7 @@ require_relative './claims_mapping_policies/item/claims_mapping_policy_item_requ
 require_relative './conditional_access_policies/conditional_access_policies_request_builder'
 require_relative './conditional_access_policies/item/conditional_access_policy_item_request_builder'
 require_relative './cross_tenant_access_policy/cross_tenant_access_policy_request_builder'
+require_relative './default_app_management_policy/default_app_management_policy_request_builder'
 require_relative './feature_rollout_policies/feature_rollout_policies_request_builder'
 require_relative './feature_rollout_policies/item/feature_rollout_policy_item_request_builder'
 require_relative './home_realm_discovery_policies/home_realm_discovery_policies_request_builder'
@@ -47,6 +50,11 @@ module MicrosoftGraph
                 return MicrosoftGraph::Policies::AdminConsentRequestPolicy::AdminConsentRequestPolicyRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to manage the appManagementPolicies property of the microsoft.graph.policyRoot entity.
+            def app_management_policies()
+                return MicrosoftGraph::Policies::AppManagementPolicies::AppManagementPoliciesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to manage the authenticationFlowsPolicy property of the microsoft.graph.policyRoot entity.
             def authentication_flows_policy()
                 return MicrosoftGraph::Policies::AuthenticationFlowsPolicy::AuthenticationFlowsPolicyRequestBuilder.new(@path_parameters, @request_adapter)
@@ -75,6 +83,11 @@ module MicrosoftGraph
             # Provides operations to manage the crossTenantAccessPolicy property of the microsoft.graph.policyRoot entity.
             def cross_tenant_access_policy()
                 return MicrosoftGraph::Policies::CrossTenantAccessPolicy::CrossTenantAccessPolicyRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the defaultAppManagementPolicy property of the microsoft.graph.policyRoot entity.
+            def default_app_management_policy()
+                return MicrosoftGraph::Policies::DefaultAppManagementPolicy::DefaultAppManagementPolicyRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.policyRoot entity.
@@ -135,6 +148,17 @@ module MicrosoftGraph
                 url_tpl_params = @path_parameters.clone
                 url_tpl_params["activityBasedTimeoutPolicy%2Did"] = id
                 return MicrosoftGraph::Policies::ActivityBasedTimeoutPolicies::Item::ActivityBasedTimeoutPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
+            end
+            ## 
+            ## Provides operations to manage the appManagementPolicies property of the microsoft.graph.policyRoot entity.
+            ## @param id Unique identifier of the item
+            ## @return a app_management_policy_item_request_builder
+            ## 
+            def app_management_policies_by_id(id)
+                raise StandardError, 'id cannot be null' if id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["appManagementPolicy%2Did"] = id
+                return MicrosoftGraph::Policies::AppManagementPolicies::Item::AppManagementPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Provides operations to manage the claimsMappingPolicies property of the microsoft.graph.policyRoot entity.

@@ -7,8 +7,8 @@ require_relative '../../../groups'
 require_relative '../../item'
 require_relative '../onenote'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_get_notebook_from_web_url/microsoft_graph_get_notebook_from_web_url_request_builder'
-require_relative './microsoft_graph_get_recent_notebooks_with_include_personal_notebooks/microsoft_graph_get_recent_notebooks_with_include_personal_notebooks_request_builder'
+require_relative './get_notebook_from_web_url/get_notebook_from_web_url_request_builder'
+require_relative './get_recent_notebooks_with_include_personal_notebooks/get_recent_notebooks_with_include_personal_notebooks_request_builder'
 require_relative './notebooks'
 
 module MicrosoftGraph
@@ -27,8 +27,8 @@ module MicrosoftGraph
                         end
                         ## 
                         # Provides operations to call the getNotebookFromWebUrl method.
-                        def microsoft_graph_get_notebook_from_web_url()
-                            return MicrosoftGraph::Groups::Item::Onenote::Notebooks::MicrosoftGraphGetNotebookFromWebUrl::MicrosoftGraphGetNotebookFromWebUrlRequestBuilder.new(@path_parameters, @request_adapter)
+                        def get_notebook_from_web_url()
+                            return MicrosoftGraph::Groups::Item::Onenote::Notebooks::GetNotebookFromWebUrl::GetNotebookFromWebUrlRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Path parameters for the request
@@ -70,11 +70,11 @@ module MicrosoftGraph
                         ## 
                         ## Provides operations to call the getRecentNotebooks method.
                         ## @param includePersonalNotebooks Usage: includePersonalNotebooks={includePersonalNotebooks}
-                        ## @return a microsoft_graph_get_recent_notebooks_with_include_personal_notebooks_request_builder
+                        ## @return a get_recent_notebooks_with_include_personal_notebooks_request_builder
                         ## 
-                        def microsoft_graph_get_recent_notebooks_with_include_personal_notebooks(include_personal_notebooks)
+                        def get_recent_notebooks_with_include_personal_notebooks(include_personal_notebooks)
                             raise StandardError, 'include_personal_notebooks cannot be null' if include_personal_notebooks.nil?
-                            return MicrosoftGraphGetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder.new(@path_parameters, @request_adapter, includePersonalNotebooks)
+                            return GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder.new(@path_parameters, @request_adapter, includePersonalNotebooks)
                         end
                         ## 
                         ## Create a new OneNote notebook.

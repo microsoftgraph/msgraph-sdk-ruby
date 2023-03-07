@@ -16,6 +16,9 @@ module MicrosoftGraph
             # Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
             @federation_configurations
             ## 
+            # A container for on-premises directory synchronization functionalities that are available for the organization.
+            @on_premises_synchronization
+            ## 
             ## Gets the administrativeUnits property value. Conceptual container for user and group directory objects.
             ## @return a administrative_unit
             ## 
@@ -85,7 +88,23 @@ module MicrosoftGraph
                     "administrativeUnits" => lambda {|n| @administrative_units = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AdministrativeUnit.create_from_discriminator_value(pn) }) },
                     "deletedItems" => lambda {|n| @deleted_items = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
                     "federationConfigurations" => lambda {|n| @federation_configurations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::IdentityProviderBase.create_from_discriminator_value(pn) }) },
+                    "onPremisesSynchronization" => lambda {|n| @on_premises_synchronization = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::OnPremisesDirectorySynchronization.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the onPremisesSynchronization property value. A container for on-premises directory synchronization functionalities that are available for the organization.
+            ## @return a on_premises_directory_synchronization
+            ## 
+            def on_premises_synchronization
+                return @on_premises_synchronization
+            end
+            ## 
+            ## Sets the onPremisesSynchronization property value. A container for on-premises directory synchronization functionalities that are available for the organization.
+            ## @param value Value to set for the on_premises_synchronization property.
+            ## @return a void
+            ## 
+            def on_premises_synchronization=(value)
+                @on_premises_synchronization = value
             end
             ## 
             ## Serializes information the current object
@@ -98,6 +117,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("administrativeUnits", @administrative_units)
                 writer.write_collection_of_object_values("deletedItems", @deleted_items)
                 writer.write_collection_of_object_values("federationConfigurations", @federation_configurations)
+                writer.write_collection_of_object_values("onPremisesSynchronization", @on_premises_synchronization)
             end
         end
     end

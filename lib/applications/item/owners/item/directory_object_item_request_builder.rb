@@ -3,11 +3,11 @@ require_relative '../../../../microsoft_graph'
 require_relative '../../../applications'
 require_relative '../../item'
 require_relative '../owners'
+require_relative './graph_app_role_assignment/graph_app_role_assignment_request_builder'
+require_relative './graph_endpoint/graph_endpoint_request_builder'
+require_relative './graph_service_principal/graph_service_principal_request_builder'
+require_relative './graph_user/graph_user_request_builder'
 require_relative './item'
-require_relative './microsoft_graph_app_role_assignment/microsoft_graph_app_role_assignment_request_builder'
-require_relative './microsoft_graph_endpoint/microsoft_graph_endpoint_request_builder'
-require_relative './microsoft_graph_service_principal/microsoft_graph_service_principal_request_builder'
-require_relative './microsoft_graph_user/microsoft_graph_user_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -21,23 +21,23 @@ module MicrosoftGraph
                         
                         ## 
                         # Casts the previous resource to appRoleAssignment.
-                        def microsoft_graph_app_role_assignment()
-                            return MicrosoftGraph::Applications::Item::Owners::Item::MicrosoftGraphAppRoleAssignment::MicrosoftGraphAppRoleAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
+                        def graph_app_role_assignment()
+                            return MicrosoftGraph::Applications::Item::Owners::Item::GraphAppRoleAssignment::GraphAppRoleAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Casts the previous resource to endpoint.
-                        def microsoft_graph_endpoint()
-                            return MicrosoftGraph::Applications::Item::Owners::Item::MicrosoftGraphEndpoint::MicrosoftGraphEndpointRequestBuilder.new(@path_parameters, @request_adapter)
+                        def graph_endpoint()
+                            return MicrosoftGraph::Applications::Item::Owners::Item::GraphEndpoint::GraphEndpointRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Casts the previous resource to servicePrincipal.
-                        def microsoft_graph_service_principal()
-                            return MicrosoftGraph::Applications::Item::Owners::Item::MicrosoftGraphServicePrincipal::MicrosoftGraphServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
+                        def graph_service_principal()
+                            return MicrosoftGraph::Applications::Item::Owners::Item::GraphServicePrincipal::GraphServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Casts the previous resource to user.
-                        def microsoft_graph_user()
-                            return MicrosoftGraph::Applications::Item::Owners::Item::MicrosoftGraphUser::MicrosoftGraphUserRequestBuilder.new(@path_parameters, @request_adapter)
+                        def graph_user()
+                            return MicrosoftGraph::Applications::Item::Owners::Item::GraphUser::GraphUserRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Path parameters for the request

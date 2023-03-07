@@ -6,8 +6,8 @@ require_relative '../../contacts'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './direct_reports'
-require_relative './microsoft_graph_org_contact/microsoft_graph_org_contact_request_builder'
-require_relative './microsoft_graph_user/microsoft_graph_user_request_builder'
+require_relative './graph_org_contact/graph_org_contact_request_builder'
+require_relative './graph_user/graph_user_request_builder'
 
 module MicrosoftGraph
     module Contacts
@@ -24,13 +24,13 @@ module MicrosoftGraph
                     end
                     ## 
                     # Casts the previous resource to orgContact.
-                    def microsoft_graph_org_contact()
-                        return MicrosoftGraph::Contacts::Item::DirectReports::MicrosoftGraphOrgContact::MicrosoftGraphOrgContactRequestBuilder.new(@path_parameters, @request_adapter)
+                    def graph_org_contact()
+                        return MicrosoftGraph::Contacts::Item::DirectReports::GraphOrgContact::GraphOrgContactRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Casts the previous resource to user.
-                    def microsoft_graph_user()
-                        return MicrosoftGraph::Contacts::Item::DirectReports::MicrosoftGraphUser::MicrosoftGraphUserRequestBuilder.new(@path_parameters, @request_adapter)
+                    def graph_user()
+                        return MicrosoftGraph::Contacts::Item::DirectReports::GraphUser::GraphUserRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Path parameters for the request

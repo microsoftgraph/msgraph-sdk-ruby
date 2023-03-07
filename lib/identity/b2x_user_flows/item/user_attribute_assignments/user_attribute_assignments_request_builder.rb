@@ -7,8 +7,8 @@ require_relative '../../../identity'
 require_relative '../../b2x_user_flows'
 require_relative '../item'
 require_relative './count/count_request_builder'
-require_relative './microsoft_graph_get_order/microsoft_graph_get_order_request_builder'
-require_relative './microsoft_graph_set_order/microsoft_graph_set_order_request_builder'
+require_relative './get_order/get_order_request_builder'
+require_relative './set_order/set_order_request_builder'
 require_relative './user_attribute_assignments'
 
 module MicrosoftGraph
@@ -27,13 +27,8 @@ module MicrosoftGraph
                         end
                         ## 
                         # Provides operations to call the getOrder method.
-                        def microsoft_graph_get_order()
-                            return MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments::MicrosoftGraphGetOrder::MicrosoftGraphGetOrderRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        # Provides operations to call the setOrder method.
-                        def microsoft_graph_set_order()
-                            return MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments::MicrosoftGraphSetOrder::MicrosoftGraphSetOrderRequestBuilder.new(@path_parameters, @request_adapter)
+                        def get_order()
+                            return MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments::GetOrder::GetOrderRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Path parameters for the request
@@ -41,6 +36,11 @@ module MicrosoftGraph
                         ## 
                         # The request adapter to use to execute the requests.
                         @request_adapter
+                        ## 
+                        # Provides operations to call the setOrder method.
+                        def set_order()
+                            return MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments::SetOrder::SetOrderRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
                         ## 
                         # Url template to use to build the URL for the current request builder
                         @url_template

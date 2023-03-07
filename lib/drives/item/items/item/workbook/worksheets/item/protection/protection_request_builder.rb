@@ -9,9 +9,9 @@ require_relative '../../../../item'
 require_relative '../../../workbook'
 require_relative '../../worksheets'
 require_relative '../item'
-require_relative './microsoft_graph_protect/microsoft_graph_protect_request_builder'
-require_relative './microsoft_graph_unprotect/microsoft_graph_unprotect_request_builder'
+require_relative './protect/protect_request_builder'
 require_relative './protection'
+require_relative './unprotect/unprotect_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -27,21 +27,21 @@ module MicrosoftGraph
                                     class ProtectionRequestBuilder
                                         
                                         ## 
-                                        # Provides operations to call the protect method.
-                                        def microsoft_graph_protect()
-                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Protection::MicrosoftGraphProtect::MicrosoftGraphProtectRequestBuilder.new(@path_parameters, @request_adapter)
-                                        end
-                                        ## 
-                                        # Provides operations to call the unprotect method.
-                                        def microsoft_graph_unprotect()
-                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Protection::MicrosoftGraphUnprotect::MicrosoftGraphUnprotectRequestBuilder.new(@path_parameters, @request_adapter)
-                                        end
-                                        ## 
                                         # Path parameters for the request
                                         @path_parameters
                                         ## 
+                                        # Provides operations to call the protect method.
+                                        def protect()
+                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Protection::Protect::ProtectRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
                                         # The request adapter to use to execute the requests.
                                         @request_adapter
+                                        ## 
+                                        # Provides operations to call the unprotect method.
+                                        def unprotect()
+                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Protection::Unprotect::UnprotectRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
                                         ## 
                                         # Url template to use to build the URL for the current request builder
                                         @url_template

@@ -10,7 +10,7 @@ require_relative '../../../review_sets'
 require_relative '../../item'
 require_relative '../queries'
 require_relative './item'
-require_relative './microsoft_graph_security_apply_tags/microsoft_graph_security_apply_tags_request_builder'
+require_relative './security_apply_tags/security_apply_tags_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -26,16 +26,16 @@ module MicrosoftGraph
                                     class EdiscoveryReviewSetQueryItemRequestBuilder
                                         
                                         ## 
-                                        # Provides operations to call the applyTags method.
-                                        def microsoft_graph_security_apply_tags()
-                                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item::MicrosoftGraphSecurityApplyTags::MicrosoftGraphSecurityApplyTagsRequestBuilder.new(@path_parameters, @request_adapter)
-                                        end
-                                        ## 
                                         # Path parameters for the request
                                         @path_parameters
                                         ## 
                                         # The request adapter to use to execute the requests.
                                         @request_adapter
+                                        ## 
+                                        # Provides operations to call the applyTags method.
+                                        def security_apply_tags()
+                                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item::SecurityApplyTags::SecurityApplyTagsRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
                                         ## 
                                         # Url template to use to build the URL for the current request builder
                                         @url_template
