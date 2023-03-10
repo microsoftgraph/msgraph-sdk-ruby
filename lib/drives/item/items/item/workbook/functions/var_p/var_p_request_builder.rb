@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Var_P
                                 ## 
                                 # Provides operations to call the var_P method.
-                                class Var_PRequestBuilder
+                                class VarPRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Var_PRequestBuilderPostRequestConfiguration
+                                    class VarPRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

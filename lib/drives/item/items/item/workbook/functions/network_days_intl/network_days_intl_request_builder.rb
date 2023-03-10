@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module NetworkDays_Intl
                                 ## 
                                 # Provides operations to call the networkDays_Intl method.
-                                class NetworkDays_IntlRequestBuilder
+                                class NetworkDaysIntlRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class NetworkDays_IntlRequestBuilderPostRequestConfiguration
+                                    class NetworkDaysIntlRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

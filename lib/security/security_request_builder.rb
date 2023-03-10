@@ -31,7 +31,7 @@ module MicrosoftGraph
             ## 
             # Provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.
             def alerts_v2()
-                return MicrosoftGraph::Security::Alerts_v2::Alerts_v2RequestBuilder.new(@path_parameters, @request_adapter)
+                return MicrosoftGraph::Security::Alerts_v2::AlertsV2RequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             # Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.

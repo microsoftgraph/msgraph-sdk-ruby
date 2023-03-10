@@ -17,7 +17,7 @@ module MicrosoftGraph
                     module Workbook
                         module Functions
                             module Percentile_Inc
-                                class Percentile_IncPostRequestBody
+                                class PercentileIncPostRequestBody
                                     include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
                                     ## 
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -59,7 +59,7 @@ module MicrosoftGraph
                                         @array = value
                                     end
                                     ## 
-                                    ## Instantiates a new percentile_IncPostRequestBody and sets the default values.
+                                    ## Instantiates a new PercentileIncPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                     ## 
                                     def self.create_from_discriminator_value(parse_node)
                                         raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-                                        return Percentile_IncPostRequestBody.new
+                                        return PercentileIncPostRequestBody.new
                                     end
                                     ## 
                                     ## The deserialization information for the current model

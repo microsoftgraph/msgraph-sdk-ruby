@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Erf_Precise
                                 ## 
                                 # Provides operations to call the erf_Precise method.
-                                class Erf_PreciseRequestBuilder
+                                class ErfPreciseRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Erf_PreciseRequestBuilderPostRequestConfiguration
+                                    class ErfPreciseRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

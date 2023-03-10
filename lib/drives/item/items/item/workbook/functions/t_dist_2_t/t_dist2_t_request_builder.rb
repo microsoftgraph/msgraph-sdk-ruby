@@ -8,7 +8,7 @@ require_relative '../../../../items'
 require_relative '../../../item'
 require_relative '../../workbook'
 require_relative '../functions'
-require_relative './t_inv_2_t'
+require_relative './t_dist_2_t'
 
 module MicrosoftGraph
     module Drives
@@ -17,10 +17,10 @@ module MicrosoftGraph
                 module Item
                     module Workbook
                         module Functions
-                            module T_Inv_2T
+                            module T_Dist_2T
                                 ## 
-                                # Provides operations to call the t_Inv_2T method.
-                                class T_Inv_2TRequestBuilder
+                                # Provides operations to call the t_Dist_2T method.
+                                class TDist2TRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -32,7 +32,7 @@ module MicrosoftGraph
                                     # Url template to use to build the URL for the current request builder
                                     @url_template
                                     ## 
-                                    ## Instantiates a new T_Inv_2TRequestBuilder and sets the default values.
+                                    ## Instantiates a new T_Dist_2TRequestBuilder and sets the default values.
                                     ## @param pathParameters Path parameters for the request
                                     ## @param requestAdapter The request adapter to use to execute the requests.
                                     ## @return a void
@@ -40,13 +40,13 @@ module MicrosoftGraph
                                     def initialize(path_parameters, request_adapter)
                                         raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
                                         raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                        @url_template = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/t_Inv_2T"
+                                        @url_template = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/t_Dist_2T"
                                         @request_adapter = request_adapter
                                         path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
                                         @path_parameters = path_parameters if path_parameters.is_a? Hash
                                     end
                                     ## 
-                                    ## Invoke action t_Inv_2T
+                                    ## Invoke action t_Dist_2T
                                     ## @param body The request body
                                     ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of workbook_function_result
@@ -62,7 +62,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookFunctionResult.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Invoke action t_Inv_2T
+                                    ## Invoke action t_Dist_2T
                                     ## @param body The request body
                                     ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class T_Inv_2TRequestBuilderPostRequestConfiguration
+                                    class TDist2TRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

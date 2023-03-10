@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Gamma_Dist
                                 ## 
                                 # Provides operations to call the gamma_Dist method.
-                                class Gamma_DistRequestBuilder
+                                class GammaDistRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Gamma_DistRequestBuilderPostRequestConfiguration
+                                    class GammaDistRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

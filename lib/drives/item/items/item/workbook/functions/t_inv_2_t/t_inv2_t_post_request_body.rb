@@ -17,7 +17,7 @@ module MicrosoftGraph
                     module Workbook
                         module Functions
                             module T_Inv_2T
-                                class T_Inv_2TPostRequestBody
+                                class TInv2TPostRequestBody
                                     include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
                                     ## 
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -44,7 +44,7 @@ module MicrosoftGraph
                                         @additional_data = value
                                     end
                                     ## 
-                                    ## Instantiates a new t_Inv_2TPostRequestBody and sets the default values.
+                                    ## Instantiates a new TInv2TPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -53,11 +53,11 @@ module MicrosoftGraph
                                     ## 
                                     ## Creates a new instance of the appropriate class based on discriminator value
                                     ## @param parseNode The parse node to use to read the discriminator value and create the object
-                                    ## @return a t_inv_2_t_post_request_body
+                                    ## @return a t_inv2_t_post_request_body
                                     ## 
                                     def self.create_from_discriminator_value(parse_node)
                                         raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-                                        return T_Inv_2TPostRequestBody.new
+                                        return TInv2TPostRequestBody.new
                                     end
                                     ## 
                                     ## Gets the degFreedom property value. The degFreedom property

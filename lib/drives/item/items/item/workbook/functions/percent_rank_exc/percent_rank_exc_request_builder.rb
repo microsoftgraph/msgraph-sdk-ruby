@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module PercentRank_Exc
                                 ## 
                                 # Provides operations to call the percentRank_Exc method.
-                                class PercentRank_ExcRequestBuilder
+                                class PercentRankExcRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class PercentRank_ExcRequestBuilderPostRequestConfiguration
+                                    class PercentRankExcRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

@@ -72,7 +72,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the attachmentsArchive property value. The zip file that contains all attachments for a message.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def attachments_archive
                 return @attachments_archive
@@ -140,7 +140,7 @@ module MicrosoftGraph
                 return super.merge({
                     "actionRequiredByDateTime" => lambda {|n| @action_required_by_date_time = n.get_date_time_value() },
                     "attachments" => lambda {|n| @attachments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ServiceAnnouncementAttachment.create_from_discriminator_value(pn) }) },
-                    "attachmentsArchive" => lambda {|n| @attachments_archive = n.get_string_value() },
+                    "attachmentsArchive" => lambda {|n| @attachments_archive = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "body" => lambda {|n| @body = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ItemBody.create_from_discriminator_value(pn) }) },
                     "category" => lambda {|n| @category = n.get_enum_value(MicrosoftGraph::Models::ServiceUpdateCategory) },
                     "hasAttachments" => lambda {|n| @has_attachments = n.get_boolean_value() },

@@ -14,7 +14,7 @@ module MicrosoftGraph
             # For security, the password is always returned as null from a LIST or GET operation.
             @password
             ## 
-            ## Instantiates a new passwordAuthenticationMethod and sets the default values.
+            ## Instantiates a new PasswordAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()

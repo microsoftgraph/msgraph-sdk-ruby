@@ -17,7 +17,7 @@ module MicrosoftGraph
                     module Workbook
                         module Functions
                             module Quartile_Inc
-                                class Quartile_IncPostRequestBody
+                                class QuartileIncPostRequestBody
                                     include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
                                     ## 
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -59,7 +59,7 @@ module MicrosoftGraph
                                         @array = value
                                     end
                                     ## 
-                                    ## Instantiates a new quartile_IncPostRequestBody and sets the default values.
+                                    ## Instantiates a new QuartileIncPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                     ## 
                                     def self.create_from_discriminator_value(parse_node)
                                         raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-                                        return Quartile_IncPostRequestBody.new
+                                        return QuartileIncPostRequestBody.new
                                     end
                                     ## 
                                     ## The deserialization information for the current model

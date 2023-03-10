@@ -107,7 +107,7 @@ module MicrosoftGraph
                     "azureStorageUriExpirationDateTime" => lambda {|n| @azure_storage_uri_expiration_date_time = n.get_date_time_value() },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "isCommitted" => lambda {|n| @is_committed = n.get_boolean_value() },
-                    "manifest" => lambda {|n| @manifest = n.get_string_value() },
+                    "manifest" => lambda {|n| @manifest = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "name" => lambda {|n| @name = n.get_string_value() },
                     "size" => lambda {|n| @size = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
                     "sizeEncrypted" => lambda {|n| @size_encrypted = n.get_object_value(lambda {|pn| Int64.create_from_discriminator_value(pn) }) },
@@ -131,7 +131,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the manifest property value. The manifest information.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def manifest
                 return @manifest

@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module F_Dist
                                 ## 
                                 # Provides operations to call the f_Dist method.
-                                class F_DistRequestBuilder
+                                class FDistRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class F_DistRequestBuilderPostRequestConfiguration
+                                    class FDistRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

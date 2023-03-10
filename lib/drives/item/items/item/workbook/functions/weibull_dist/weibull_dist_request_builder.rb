@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Weibull_Dist
                                 ## 
                                 # Provides operations to call the weibull_Dist method.
-                                class Weibull_DistRequestBuilder
+                                class WeibullDistRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Weibull_DistRequestBuilderPostRequestConfiguration
+                                    class WeibullDistRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

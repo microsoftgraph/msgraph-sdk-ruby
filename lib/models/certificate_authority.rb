@@ -47,7 +47,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the certificate property value. Required. The base64 encoded string representing the public certificate.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def certificate
                 return @certificate
@@ -112,7 +112,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "certificate" => lambda {|n| @certificate = n.get_string_value() },
+                    "certificate" => lambda {|n| @certificate = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "certificateRevocationListUrl" => lambda {|n| @certificate_revocation_list_url = n.get_string_value() },
                     "deltaCertificateRevocationListUrl" => lambda {|n| @delta_certificate_revocation_list_url = n.get_string_value() },
                     "isRootAuthority" => lambda {|n| @is_root_authority = n.get_boolean_value() },

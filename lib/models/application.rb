@@ -242,7 +242,7 @@ module MicrosoftGraph
                 @certification = value
             end
             ## 
-            ## Instantiates a new Application and sets the default values.
+            ## Instantiates a new application and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -406,7 +406,7 @@ module MicrosoftGraph
                     "isDeviceOnlyAuthSupported" => lambda {|n| @is_device_only_auth_supported = n.get_boolean_value() },
                     "isFallbackPublicClient" => lambda {|n| @is_fallback_public_client = n.get_boolean_value() },
                     "keyCredentials" => lambda {|n| @key_credentials = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::KeyCredential.create_from_discriminator_value(pn) }) },
-                    "logo" => lambda {|n| @logo = n.get_string_value() },
+                    "logo" => lambda {|n| @logo = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "notes" => lambda {|n| @notes = n.get_string_value() },
                     "oauth2RequirePostResponse" => lambda {|n| @oauth2_require_post_response = n.get_boolean_value() },
                     "optionalClaims" => lambda {|n| @optional_claims = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::OptionalClaims.create_from_discriminator_value(pn) }) },
@@ -536,7 +536,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the logo property value. The main logo for the application. Not nullable.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def logo
                 return @logo

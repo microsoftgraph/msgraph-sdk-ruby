@@ -17,7 +17,7 @@ module MicrosoftGraph
                     module Workbook
                         module Functions
                             module Beta_Inv
-                                class Beta_InvPostRequestBody
+                                class BetaInvPostRequestBody
                                     include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
                                     ## 
                                     # The A property
@@ -113,7 +113,7 @@ module MicrosoftGraph
                                         @beta = value
                                     end
                                     ## 
-                                    ## Instantiates a new beta_InvPostRequestBody and sets the default values.
+                                    ## Instantiates a new BetaInvPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -126,7 +126,7 @@ module MicrosoftGraph
                                     ## 
                                     def self.create_from_discriminator_value(parse_node)
                                         raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-                                        return Beta_InvPostRequestBody.new
+                                        return BetaInvPostRequestBody.new
                                     end
                                     ## 
                                     ## The deserialization information for the current model

@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Poisson_Dist
                                 ## 
                                 # Provides operations to call the poisson_Dist method.
-                                class Poisson_DistRequestBuilder
+                                class PoissonDistRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Poisson_DistRequestBuilderPostRequestConfiguration
+                                    class PoissonDistRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

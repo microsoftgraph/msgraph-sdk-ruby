@@ -53,7 +53,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the file property value. File as a byte array
-            ## @return a binary
+            ## @return a base64url
             ## 
             def file
                 return @file
@@ -88,7 +88,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "file" => lambda {|n| @file = n.get_string_value() },
+                    "file" => lambda {|n| @file = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "fileHash" => lambda {|n| @file_hash = n.get_string_value() },
                     "version" => lambda {|n| @version = n.get_string_value() },
                 })

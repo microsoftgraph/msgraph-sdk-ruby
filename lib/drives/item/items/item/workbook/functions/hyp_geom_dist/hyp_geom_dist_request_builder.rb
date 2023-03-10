@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module HypGeom_Dist
                                 ## 
                                 # Provides operations to call the hypGeom_Dist method.
-                                class HypGeom_DistRequestBuilder
+                                class HypGeomDistRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class HypGeom_DistRequestBuilderPostRequestConfiguration
+                                    class HypGeomDistRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

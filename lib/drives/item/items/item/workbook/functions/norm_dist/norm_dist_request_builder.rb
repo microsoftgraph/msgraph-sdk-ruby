@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Norm_Dist
                                 ## 
                                 # Provides operations to call the norm_Dist method.
-                                class Norm_DistRequestBuilder
+                                class NormDistRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Norm_DistRequestBuilderPostRequestConfiguration
+                                    class NormDistRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

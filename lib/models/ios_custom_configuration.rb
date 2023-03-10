@@ -38,14 +38,14 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "payload" => lambda {|n| @payload = n.get_string_value() },
+                    "payload" => lambda {|n| @payload = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "payloadFileName" => lambda {|n| @payload_file_name = n.get_string_value() },
                     "payloadName" => lambda {|n| @payload_name = n.get_string_value() },
                 })
             end
             ## 
             ## Gets the payload property value. Payload. (UTF8 encoded byte array)
-            ## @return a binary
+            ## @return a base64url
             ## 
             def payload
                 return @payload

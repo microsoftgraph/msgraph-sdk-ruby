@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the data property value. Data that represents the terms of use PDF document. Read-only.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def data
                 return @data
@@ -67,7 +67,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "data" => lambda {|n| @data = n.get_string_value() },
+                    "data" => lambda {|n| @data = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end

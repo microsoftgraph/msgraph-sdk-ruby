@@ -53,7 +53,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the backgroundImage property value. Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def background_image
                 return @background_image
@@ -83,7 +83,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the bannerLogo property value. A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def banner_logo
                 return @banner_logo
@@ -159,13 +159,13 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "backgroundColor" => lambda {|n| @background_color = n.get_string_value() },
-                    "backgroundImage" => lambda {|n| @background_image = n.get_string_value() },
+                    "backgroundImage" => lambda {|n| @background_image = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "backgroundImageRelativeUrl" => lambda {|n| @background_image_relative_url = n.get_string_value() },
-                    "bannerLogo" => lambda {|n| @banner_logo = n.get_string_value() },
+                    "bannerLogo" => lambda {|n| @banner_logo = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "bannerLogoRelativeUrl" => lambda {|n| @banner_logo_relative_url = n.get_string_value() },
                     "cdnList" => lambda {|n| @cdn_list = n.get_collection_of_primitive_values(String) },
                     "signInPageText" => lambda {|n| @sign_in_page_text = n.get_string_value() },
-                    "squareLogo" => lambda {|n| @square_logo = n.get_string_value() },
+                    "squareLogo" => lambda {|n| @square_logo = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "squareLogoRelativeUrl" => lambda {|n| @square_logo_relative_url = n.get_string_value() },
                     "usernameHintText" => lambda {|n| @username_hint_text = n.get_string_value() },
                 })
@@ -206,7 +206,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the squareLogo property value. A square version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG no larger than 240 x 240 pixels and no more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def square_logo
                 return @square_logo

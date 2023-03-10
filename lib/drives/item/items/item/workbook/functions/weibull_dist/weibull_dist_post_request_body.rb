@@ -17,7 +17,7 @@ module MicrosoftGraph
                     module Workbook
                         module Functions
                             module Weibull_Dist
-                                class Weibull_DistPostRequestBody
+                                class WeibullDistPostRequestBody
                                     include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
                                     ## 
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -80,7 +80,7 @@ module MicrosoftGraph
                                         @beta = value
                                     end
                                     ## 
-                                    ## Instantiates a new weibull_DistPostRequestBody and sets the default values.
+                                    ## Instantiates a new WeibullDistPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -93,7 +93,7 @@ module MicrosoftGraph
                                     ## 
                                     def self.create_from_discriminator_value(parse_node)
                                         raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-                                        return Weibull_DistPostRequestBody.new
+                                        return WeibullDistPostRequestBody.new
                                     end
                                     ## 
                                     ## Gets the cumulative property value. The cumulative property

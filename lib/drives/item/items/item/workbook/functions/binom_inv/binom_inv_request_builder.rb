@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Binom_Inv
                                 ## 
                                 # Provides operations to call the binom_Inv method.
-                                class Binom_InvRequestBuilder
+                                class BinomInvRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Binom_InvRequestBuilderPostRequestConfiguration
+                                    class BinomInvRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

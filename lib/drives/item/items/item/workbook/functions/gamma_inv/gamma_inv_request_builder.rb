@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Gamma_Inv
                                 ## 
                                 # Provides operations to call the gamma_Inv method.
-                                class Gamma_InvRequestBuilder
+                                class GammaInvRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Gamma_InvRequestBuilderPostRequestConfiguration
+                                    class GammaInvRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

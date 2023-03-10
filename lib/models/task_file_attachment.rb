@@ -19,7 +19,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the contentBytes property value. The base64-encoded contents of the file.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def content_bytes
                 return @content_bytes
@@ -47,7 +47,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "contentBytes" => lambda {|n| @content_bytes = n.get_string_value() },
+                    "contentBytes" => lambda {|n| @content_bytes = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 

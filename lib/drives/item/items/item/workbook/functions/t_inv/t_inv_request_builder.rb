@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module T_Inv
                                 ## 
                                 # Provides operations to call the t_Inv method.
-                                class T_InvRequestBuilder
+                                class TInvRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class T_InvRequestBuilderPostRequestConfiguration
+                                    class TInvRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

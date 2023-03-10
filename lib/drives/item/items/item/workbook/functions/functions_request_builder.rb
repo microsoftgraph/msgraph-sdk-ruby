@@ -345,10 +345,10 @@ require_relative './true_escaped/true_request_builder'
 require_relative './trunc/trunc_request_builder'
 require_relative './type/type_request_builder'
 require_relative './t_dist/t_dist_request_builder'
-require_relative './t_dist_2_t/t_dist_2_t_request_builder'
+require_relative './t_dist_2_t/t_dist2_t_request_builder'
 require_relative './t_dist_r_t/t_dist_r_t_request_builder'
 require_relative './t_inv/t_inv_request_builder'
-require_relative './t_inv_2_t/t_inv_2_t_request_builder'
+require_relative './t_inv_2_t/t_inv2_t_request_builder'
 require_relative './unichar/unichar_request_builder'
 require_relative './unicode/unicode_request_builder'
 require_relative './upper/upper_request_builder'
@@ -534,12 +534,12 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the beta_Dist method.
                                 def beta_dist()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Beta_Dist::Beta_DistRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Beta_Dist::BetaDistRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the beta_Inv method.
                                 def beta_inv()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Beta_Inv::Beta_InvRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Beta_Inv::BetaInvRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the bin2Dec method.
@@ -559,17 +559,17 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the binom_Dist method.
                                 def binom_dist()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Binom_Dist::Binom_DistRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Binom_Dist::BinomDistRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the binom_Dist_Range method.
                                 def binom_dist_range()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Binom_Dist_Range::Binom_Dist_RangeRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Binom_Dist_Range::BinomDistRangeRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the binom_Inv method.
                                 def binom_inv()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Binom_Inv::Binom_InvRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Binom_Inv::BinomInvRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the bitand method.
@@ -599,12 +599,12 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the ceiling_Math method.
                                 def ceiling_math()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Ceiling_Math::Ceiling_MathRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Ceiling_Math::CeilingMathRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the ceiling_Precise method.
                                 def ceiling_precise()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Ceiling_Precise::Ceiling_PreciseRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Ceiling_Precise::CeilingPreciseRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the char method.
@@ -614,22 +614,22 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the chiSq_Dist method.
                                 def chi_sq_dist()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::ChiSq_Dist::ChiSq_DistRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::ChiSq_Dist::ChiSqDistRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the chiSq_Dist_RT method.
                                 def chi_sq_dist_r_t()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::ChiSq_Dist_RT::ChiSq_Dist_RTRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::ChiSq_Dist_RT::ChiSqDistRTRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the chiSq_Inv method.
                                 def chi_sq_inv()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::ChiSq_Inv::ChiSq_InvRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::ChiSq_Inv::ChiSqInvRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the chiSq_Inv_RT method.
                                 def chi_sq_inv_r_t()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::ChiSq_Inv_RT::ChiSq_Inv_RTRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::ChiSq_Inv_RT::ChiSqInvRTRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the choose method.
@@ -674,12 +674,12 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the confidence_Norm method.
                                 def confidence_norm()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Confidence_Norm::Confidence_NormRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Confidence_Norm::ConfidenceNormRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the confidence_T method.
                                 def confidence_t()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Confidence_T::Confidence_TRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Confidence_T::ConfidenceTRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the convert method.
@@ -944,7 +944,7 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the ecma_Ceiling method.
                                 def ecma_ceiling()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Ecma_Ceiling::Ecma_CeilingRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Ecma_Ceiling::EcmaCeilingRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the edate method.
@@ -969,7 +969,7 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the erf_Precise method.
                                 def erf_precise()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Erf_Precise::Erf_PreciseRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Erf_Precise::ErfPreciseRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the erfC method.
@@ -979,12 +979,12 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the erfC_Precise method.
                                 def erf_c_precise()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::ErfC_Precise::ErfC_PreciseRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::ErfC_Precise::ErfCPreciseRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the error_Type method.
                                 def error_type()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Error_Type::Error_TypeRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Error_Type::ErrorTypeRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the even method.
@@ -1004,27 +1004,27 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the expon_Dist method.
                                 def expon_dist()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Expon_Dist::Expon_DistRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Expon_Dist::ExponDistRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the f_Dist method.
                                 def f_dist()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::F_Dist::F_DistRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::F_Dist::FDistRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the f_Dist_RT method.
                                 def f_dist_r_t()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::F_Dist_RT::F_Dist_RTRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::F_Dist_RT::FDistRTRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the f_Inv method.
                                 def f_inv()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::F_Inv::F_InvRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::F_Inv::FInvRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the f_Inv_RT method.
                                 def f_inv_r_t()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::F_Inv_RT::F_Inv_RTRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::F_Inv_RT::FInvRTRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the fact method.
@@ -1069,12 +1069,12 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the floor_Math method.
                                 def floor_math()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Floor_Math::Floor_MathRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Floor_Math::FloorMathRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the floor_Precise method.
                                 def floor_precise()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Floor_Precise::Floor_PreciseRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Floor_Precise::FloorPreciseRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the fv method.
@@ -1094,12 +1094,12 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the gamma_Dist method.
                                 def gamma_dist()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Gamma_Dist::Gamma_DistRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Gamma_Dist::GammaDistRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the gamma_Inv method.
                                 def gamma_inv()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Gamma_Inv::Gamma_InvRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Gamma_Inv::GammaInvRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the gammaLn method.
@@ -1109,7 +1109,7 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the gammaLn_Precise method.
                                 def gamma_ln_precise()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::GammaLn_Precise::GammaLn_PreciseRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::GammaLn_Precise::GammaLnPreciseRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the gauss method.
@@ -1169,7 +1169,7 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the hypGeom_Dist method.
                                 def hyp_geom_dist()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::HypGeom_Dist::HypGeom_DistRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::HypGeom_Dist::HypGeomDistRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the if method.
@@ -1364,7 +1364,7 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the iso_Ceiling method.
                                 def iso_ceiling()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Iso_Ceiling::Iso_CeilingRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Iso_Ceiling::IsoCeilingRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the isOdd method.
@@ -1444,12 +1444,12 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the logNorm_Dist method.
                                 def log_norm_dist()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::LogNorm_Dist::LogNorm_DistRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::LogNorm_Dist::LogNormDistRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the logNorm_Inv method.
                                 def log_norm_inv()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::LogNorm_Inv::LogNorm_InvRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::LogNorm_Inv::LogNormInvRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the lookup method.
@@ -1549,7 +1549,7 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the negBinom_Dist method.
                                 def neg_binom_dist()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::NegBinom_Dist::NegBinom_DistRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::NegBinom_Dist::NegBinomDistRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the networkDays method.
@@ -1559,7 +1559,7 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the networkDays_Intl method.
                                 def network_days_intl()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::NetworkDays_Intl::NetworkDays_IntlRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::NetworkDays_Intl::NetworkDaysIntlRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the nominal method.
@@ -1569,22 +1569,22 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the norm_Dist method.
                                 def norm_dist()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Norm_Dist::Norm_DistRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Norm_Dist::NormDistRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the norm_Inv method.
                                 def norm_inv()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Norm_Inv::Norm_InvRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Norm_Inv::NormInvRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the norm_S_Dist method.
                                 def norm_s_dist()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Norm_S_Dist::Norm_S_DistRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Norm_S_Dist::NormSDistRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the norm_S_Inv method.
                                 def norm_s_inv()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Norm_S_Inv::Norm_S_InvRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Norm_S_Inv::NormSInvRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the not method.
@@ -1667,22 +1667,22 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the percentile_Exc method.
                                 def percentile_exc()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Percentile_Exc::Percentile_ExcRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Percentile_Exc::PercentileExcRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the percentile_Inc method.
                                 def percentile_inc()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Percentile_Inc::Percentile_IncRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Percentile_Inc::PercentileIncRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the percentRank_Exc method.
                                 def percent_rank_exc()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::PercentRank_Exc::PercentRank_ExcRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::PercentRank_Exc::PercentRankExcRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the percentRank_Inc method.
                                 def percent_rank_inc()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::PercentRank_Inc::PercentRank_IncRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::PercentRank_Inc::PercentRankIncRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the permut method.
@@ -1712,7 +1712,7 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the poisson_Dist method.
                                 def poisson_dist()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Poisson_Dist::Poisson_DistRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Poisson_Dist::PoissonDistRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the power method.
@@ -1757,12 +1757,12 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the quartile_Exc method.
                                 def quartile_exc()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Quartile_Exc::Quartile_ExcRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Quartile_Exc::QuartileExcRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the quartile_Inc method.
                                 def quartile_inc()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Quartile_Inc::Quartile_IncRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Quartile_Inc::QuartileIncRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the quotient method.
@@ -1787,12 +1787,12 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the rank_Avg method.
                                 def rank_avg()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Rank_Avg::Rank_AvgRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Rank_Avg::RankAvgRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the rank_Eq method.
                                 def rank_eq()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Rank_Eq::Rank_EqRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Rank_Eq::RankEqRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the rate method.
@@ -1915,7 +1915,7 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the skew_p method.
                                 def skew_p()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Skew_p::Skew_pRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Skew_p::SkewPRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the sln method.
@@ -1945,12 +1945,12 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the stDev_P method.
                                 def st_dev_p()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::StDev_P::StDev_PRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::StDev_P::StDevPRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the stDev_S method.
                                 def st_dev_s()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::StDev_S::StDev_SRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::StDev_S::StDevSRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the stDevA method.
@@ -2005,27 +2005,27 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the t_Dist method.
                                 def t_dist()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::T_Dist::T_DistRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::T_Dist::TDistRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the t_Dist_2T method.
                                 def t_dist_2_t()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::T_Dist_2T::T_Dist_2TRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::T_Dist_2T::TDist2TRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the t_Dist_RT method.
                                 def t_dist_r_t()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::T_Dist_RT::T_Dist_RTRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::T_Dist_RT::TDistRTRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the t_Inv method.
                                 def t_inv()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::T_Inv::T_InvRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::T_Inv::TInvRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the t_Inv_2T method.
                                 def t_inv_2_t()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::T_Inv_2T::T_Inv_2TRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::T_Inv_2T::TInv2TRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the tan method.
@@ -2128,12 +2128,12 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the var_P method.
                                 def var_p()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Var_P::Var_PRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Var_P::VarPRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the var_S method.
                                 def var_s()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Var_S::Var_SRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Var_S::VarSRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the varA method.
@@ -2168,7 +2168,7 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the weibull_Dist method.
                                 def weibull_dist()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Weibull_Dist::Weibull_DistRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Weibull_Dist::WeibullDistRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the workDay method.
@@ -2178,7 +2178,7 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the workDay_Intl method.
                                 def work_day_intl()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::WorkDay_Intl::WorkDay_IntlRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::WorkDay_Intl::WorkDayIntlRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to call the xirr method.
@@ -2223,7 +2223,7 @@ module MicrosoftGraph
                                 ## 
                                 # Provides operations to call the z_Test method.
                                 def z_test()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Z_Test::Z_TestRequestBuilder.new(@path_parameters, @request_adapter)
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Functions::Z_Test::ZTestRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new FunctionsRequestBuilder and sets the default values.

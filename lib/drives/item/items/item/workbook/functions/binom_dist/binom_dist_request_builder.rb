@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Binom_Dist
                                 ## 
                                 # Provides operations to call the binom_Dist method.
-                                class Binom_DistRequestBuilder
+                                class BinomDistRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Binom_DistRequestBuilderPostRequestConfiguration
+                                    class BinomDistRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

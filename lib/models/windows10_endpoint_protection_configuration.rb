@@ -388,7 +388,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the defenderExploitProtectionXml property value. Xml content containing information regarding exploit protection details.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def defender_exploit_protection_xml
                 return @defender_exploit_protection_xml
@@ -664,7 +664,7 @@ module MicrosoftGraph
                     "bitLockerRemovableDrivePolicy" => lambda {|n| @bit_locker_removable_drive_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::BitLockerRemovableDrivePolicy.create_from_discriminator_value(pn) }) },
                     "defenderAdditionalGuardedFolders" => lambda {|n| @defender_additional_guarded_folders = n.get_collection_of_primitive_values(String) },
                     "defenderAttackSurfaceReductionExcludedPaths" => lambda {|n| @defender_attack_surface_reduction_excluded_paths = n.get_collection_of_primitive_values(String) },
-                    "defenderExploitProtectionXml" => lambda {|n| @defender_exploit_protection_xml = n.get_string_value() },
+                    "defenderExploitProtectionXml" => lambda {|n| @defender_exploit_protection_xml = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "defenderExploitProtectionXmlFileName" => lambda {|n| @defender_exploit_protection_xml_file_name = n.get_string_value() },
                     "defenderGuardedFoldersAllowedAppPaths" => lambda {|n| @defender_guarded_folders_allowed_app_paths = n.get_collection_of_primitive_values(String) },
                     "defenderSecurityCenterBlockExploitProtectionOverride" => lambda {|n| @defender_security_center_block_exploit_protection_override = n.get_boolean_value() },

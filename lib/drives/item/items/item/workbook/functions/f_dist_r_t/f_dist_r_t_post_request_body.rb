@@ -17,7 +17,7 @@ module MicrosoftGraph
                     module Workbook
                         module Functions
                             module F_Dist_RT
-                                class F_Dist_RTPostRequestBody
+                                class FDistRTPostRequestBody
                                     include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
                                     ## 
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -47,7 +47,7 @@ module MicrosoftGraph
                                         @additional_data = value
                                     end
                                     ## 
-                                    ## Instantiates a new f_Dist_RTPostRequestBody and sets the default values.
+                                    ## Instantiates a new FDistRTPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -60,7 +60,7 @@ module MicrosoftGraph
                                     ## 
                                     def self.create_from_discriminator_value(parse_node)
                                         raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-                                        return F_Dist_RTPostRequestBody.new
+                                        return FDistRTPostRequestBody.new
                                     end
                                     ## 
                                     ## Gets the degFreedom1 property value. The degFreedom1 property

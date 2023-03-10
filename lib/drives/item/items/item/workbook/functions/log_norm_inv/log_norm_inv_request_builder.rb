@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module LogNorm_Inv
                                 ## 
                                 # Provides operations to call the logNorm_Inv method.
-                                class LogNorm_InvRequestBuilder
+                                class LogNormInvRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class LogNorm_InvRequestBuilderPostRequestConfiguration
+                                    class LogNormInvRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

@@ -64,7 +64,7 @@ module MicrosoftGraph
                                                             @path_parameters = path_parameters if path_parameters.is_a? Hash
                                                         end
                                                         ## 
-                                                        ## Retrieve a list of chartpoints objects.
+                                                        ## Retrieve a list of chartpoint objects.
                                                         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a Fiber of workbook_chart_point_collection_response
                                                         ## 
@@ -103,7 +103,7 @@ module MicrosoftGraph
                                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookChartPoint.create_from_discriminator_value(pn) }, error_mapping)
                                                         end
                                                         ## 
-                                                        ## Retrieve a list of chartpoints objects.
+                                                        ## Retrieve a list of chartpoint objects.
                                                         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a request_information
                                                         ## 
@@ -142,7 +142,7 @@ module MicrosoftGraph
                                                         end
 
                                                         ## 
-                                                        # Retrieve a list of chartpoints objects.
+                                                        # Retrieve a list of chartpoint objects.
                                                         class PointsRequestBuilderGetQueryParameters
                                                             
                                                             ## 

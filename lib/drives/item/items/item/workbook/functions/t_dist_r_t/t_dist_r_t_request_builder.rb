@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module T_Dist_RT
                                 ## 
                                 # Provides operations to call the t_Dist_RT method.
-                                class T_Dist_RTRequestBuilder
+                                class TDistRTRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class T_Dist_RTRequestBuilderPostRequestConfiguration
+                                    class TDistRTRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers
