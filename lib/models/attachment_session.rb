@@ -25,7 +25,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the content property value. The content streams that are uploaded.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def content
                 return @content
@@ -68,7 +68,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "content" => lambda {|n| @content = n.get_string_value() },
+                    "content" => lambda {|n| @content = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "expirationDateTime" => lambda {|n| @expiration_date_time = n.get_date_time_value() },
                     "nextExpectedRanges" => lambda {|n| @next_expected_ranges = n.get_collection_of_primitive_values(String) },
                 })

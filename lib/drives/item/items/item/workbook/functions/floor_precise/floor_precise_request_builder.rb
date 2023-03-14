@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Floor_Precise
                                 ## 
                                 # Provides operations to call the floor_Precise method.
-                                class Floor_PreciseRequestBuilder
+                                class FloorPreciseRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Floor_PreciseRequestBuilderPostRequestConfiguration
+                                    class FloorPreciseRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

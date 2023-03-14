@@ -68,7 +68,7 @@ module MicrosoftGraph
                 @additional_notification_recipients = value
             end
             ## 
-            ## Instantiates a new AccessReviewScheduleDefinition and sets the default values.
+            ## Instantiates a new accessReviewScheduleDefinition and sets the default values.
             ## @return a void
             ## 
             def initialize()

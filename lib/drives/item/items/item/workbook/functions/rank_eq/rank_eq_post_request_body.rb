@@ -17,7 +17,7 @@ module MicrosoftGraph
                     module Workbook
                         module Functions
                             module Rank_Eq
-                                class Rank_EqPostRequestBody
+                                class RankEqPostRequestBody
                                     include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
                                     ## 
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -47,7 +47,7 @@ module MicrosoftGraph
                                         @additional_data = value
                                     end
                                     ## 
-                                    ## Instantiates a new rank_EqPostRequestBody and sets the default values.
+                                    ## Instantiates a new RankEqPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -60,7 +60,7 @@ module MicrosoftGraph
                                     ## 
                                     def self.create_from_discriminator_value(parse_node)
                                         raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-                                        return Rank_EqPostRequestBody.new
+                                        return RankEqPostRequestBody.new
                                     end
                                     ## 
                                     ## The deserialization information for the current model

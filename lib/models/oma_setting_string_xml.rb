@@ -51,7 +51,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "fileName" => lambda {|n| @file_name = n.get_string_value() },
-                    "value" => lambda {|n| @value = n.get_string_value() },
+                    "value" => lambda {|n| @value = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the value property value. Value. (UTF8 encoded byte array)
-            ## @return a binary
+            ## @return a base64url
             ## 
             def value
                 return @value

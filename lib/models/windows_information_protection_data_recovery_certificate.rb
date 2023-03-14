@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the certificate property value. Data recovery Certificate
-            ## @return a binary
+            ## @return a base64url
             ## 
             def certificate
                 return @certificate
@@ -109,7 +109,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "certificate" => lambda {|n| @certificate = n.get_string_value() },
+                    "certificate" => lambda {|n| @certificate = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "expirationDateTime" => lambda {|n| @expiration_date_time = n.get_date_time_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },

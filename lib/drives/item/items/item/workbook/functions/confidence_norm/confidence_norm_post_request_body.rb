@@ -17,7 +17,7 @@ module MicrosoftGraph
                     module Workbook
                         module Functions
                             module Confidence_Norm
-                                class Confidence_NormPostRequestBody
+                                class ConfidenceNormPostRequestBody
                                     include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
                                     ## 
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -62,7 +62,7 @@ module MicrosoftGraph
                                         @alpha = value
                                     end
                                     ## 
-                                    ## Instantiates a new confidence_NormPostRequestBody and sets the default values.
+                                    ## Instantiates a new ConfidenceNormPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -75,7 +75,7 @@ module MicrosoftGraph
                                     ## 
                                     def self.create_from_discriminator_value(parse_node)
                                         raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-                                        return Confidence_NormPostRequestBody.new
+                                        return ConfidenceNormPostRequestBody.new
                                     end
                                     ## 
                                     ## The deserialization information for the current model

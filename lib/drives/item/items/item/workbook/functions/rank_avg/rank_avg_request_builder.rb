@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Rank_Avg
                                 ## 
                                 # Provides operations to call the rank_Avg method.
-                                class Rank_AvgRequestBuilder
+                                class RankAvgRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Rank_AvgRequestBuilderPostRequestConfiguration
+                                    class RankAvgRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Z_Test
                                 ## 
                                 # Provides operations to call the z_Test method.
-                                class Z_TestRequestBuilder
+                                class ZTestRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Z_TestRequestBuilderPostRequestConfiguration
+                                    class ZTestRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Iso_Ceiling
                                 ## 
                                 # Provides operations to call the iso_Ceiling method.
-                                class Iso_CeilingRequestBuilder
+                                class IsoCeilingRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Iso_CeilingRequestBuilderPostRequestConfiguration
+                                    class IsoCeilingRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

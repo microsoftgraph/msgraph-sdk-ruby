@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the customKeyIdentifier property value. Do not use.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def custom_key_identifier
                 return @custom_key_identifier
@@ -116,7 +116,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "customKeyIdentifier" => lambda {|n| @custom_key_identifier = n.get_string_value() },
+                    "customKeyIdentifier" => lambda {|n| @custom_key_identifier = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "endDateTime" => lambda {|n| @end_date_time = n.get_date_time_value() },
                     "hint" => lambda {|n| @hint = n.get_string_value() },

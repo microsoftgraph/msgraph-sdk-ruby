@@ -17,7 +17,7 @@ module MicrosoftGraph
                     module Workbook
                         module Functions
                             module Iso_Ceiling
-                                class Iso_CeilingPostRequestBody
+                                class IsoCeilingPostRequestBody
                                     include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
                                     ## 
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -44,7 +44,7 @@ module MicrosoftGraph
                                         @additional_data = value
                                     end
                                     ## 
-                                    ## Instantiates a new iso_CeilingPostRequestBody and sets the default values.
+                                    ## Instantiates a new IsoCeilingPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -57,7 +57,7 @@ module MicrosoftGraph
                                     ## 
                                     def self.create_from_discriminator_value(parse_node)
                                         raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-                                        return Iso_CeilingPostRequestBody.new
+                                        return IsoCeilingPostRequestBody.new
                                     end
                                     ## 
                                     ## The deserialization information for the current model

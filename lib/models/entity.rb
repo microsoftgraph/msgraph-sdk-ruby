@@ -594,6 +594,10 @@ module MicrosoftGraph
                             return ItemAnalytics.new
                         when "#microsoft.graph.itemAttachment"
                             return ItemAttachment.new
+                        when "#microsoft.graph.learningContent"
+                            return LearningContent.new
+                        when "#microsoft.graph.learningProvider"
+                            return LearningProvider.new
                         when "#microsoft.graph.licenseDetails"
                             return LicenseDetails.new
                         when "#microsoft.graph.linkedResource"

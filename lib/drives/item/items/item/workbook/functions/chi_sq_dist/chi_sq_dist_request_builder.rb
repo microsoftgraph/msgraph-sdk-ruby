@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module ChiSq_Dist
                                 ## 
                                 # Provides operations to call the chiSq_Dist method.
-                                class ChiSq_DistRequestBuilder
+                                class ChiSqDistRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class ChiSq_DistRequestBuilderPostRequestConfiguration
+                                    class ChiSqDistRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

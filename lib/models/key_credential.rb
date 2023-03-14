@@ -70,7 +70,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the customKeyIdentifier property value. A 40-character binary type that can be used to identify the credential. Optional. When not provided in the payload, defaults to the thumbprint of the certificate.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def custom_key_identifier
                 return @custom_key_identifier
@@ -119,10 +119,10 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "customKeyIdentifier" => lambda {|n| @custom_key_identifier = n.get_string_value() },
+                    "customKeyIdentifier" => lambda {|n| @custom_key_identifier = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "endDateTime" => lambda {|n| @end_date_time = n.get_date_time_value() },
-                    "key" => lambda {|n| @key = n.get_string_value() },
+                    "key" => lambda {|n| @key = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "keyId" => lambda {|n| @key_id = n.get_guid_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
@@ -132,7 +132,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the key property value. The certificate's raw data in byte array converted to Base64 string. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def key
                 return @key

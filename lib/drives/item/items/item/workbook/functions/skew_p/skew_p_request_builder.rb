@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Skew_p
                                 ## 
                                 # Provides operations to call the skew_p method.
-                                class Skew_pRequestBuilder
+                                class SkewPRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Skew_pRequestBuilderPostRequestConfiguration
+                                    class SkewPRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module PercentRank_Inc
                                 ## 
                                 # Provides operations to call the percentRank_Inc method.
-                                class PercentRank_IncRequestBuilder
+                                class PercentRankIncRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class PercentRank_IncRequestBuilderPostRequestConfiguration
+                                    class PercentRankIncRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

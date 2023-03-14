@@ -187,7 +187,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the content property value. The content stream, if the item represents a file.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def content
                 return @content
@@ -280,7 +280,7 @@ module MicrosoftGraph
                     "bundle" => lambda {|n| @bundle = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Bundle.create_from_discriminator_value(pn) }) },
                     "cTag" => lambda {|n| @c_tag = n.get_string_value() },
                     "children" => lambda {|n| @children = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DriveItem.create_from_discriminator_value(pn) }) },
-                    "content" => lambda {|n| @content = n.get_string_value() },
+                    "content" => lambda {|n| @content = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "deleted" => lambda {|n| @deleted = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Deleted.create_from_discriminator_value(pn) }) },
                     "file" => lambda {|n| @file = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::File.create_from_discriminator_value(pn) }) },
                     "fileSystemInfo" => lambda {|n| @file_system_info = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::FileSystemInfo.create_from_discriminator_value(pn) }) },

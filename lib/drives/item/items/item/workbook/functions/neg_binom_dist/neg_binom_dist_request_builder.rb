@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module NegBinom_Dist
                                 ## 
                                 # Provides operations to call the negBinom_Dist method.
-                                class NegBinom_DistRequestBuilder
+                                class NegBinomDistRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class NegBinom_DistRequestBuilderPostRequestConfiguration
+                                    class NegBinomDistRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

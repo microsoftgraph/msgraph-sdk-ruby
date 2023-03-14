@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Binom_Dist_Range
                                 ## 
                                 # Provides operations to call the binom_Dist_Range method.
-                                class Binom_Dist_RangeRequestBuilder
+                                class BinomDistRangeRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Binom_Dist_RangeRequestBuilderPostRequestConfiguration
+                                    class BinomDistRangeRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

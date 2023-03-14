@@ -17,7 +17,7 @@ module MicrosoftGraph
                     module Workbook
                         module Functions
                             module Gamma_Inv
-                                class Gamma_InvPostRequestBody
+                                class GammaInvPostRequestBody
                                     include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
                                     ## 
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -77,7 +77,7 @@ module MicrosoftGraph
                                         @beta = value
                                     end
                                     ## 
-                                    ## Instantiates a new gamma_InvPostRequestBody and sets the default values.
+                                    ## Instantiates a new GammaInvPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -90,7 +90,7 @@ module MicrosoftGraph
                                     ## 
                                     def self.create_from_discriminator_value(parse_node)
                                         raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-                                        return Gamma_InvPostRequestBody.new
+                                        return GammaInvPostRequestBody.new
                                     end
                                     ## 
                                     ## The deserialization information for the current model

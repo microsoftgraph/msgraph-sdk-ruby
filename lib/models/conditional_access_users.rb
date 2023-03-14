@@ -13,6 +13,9 @@ module MicrosoftGraph
             # Group IDs excluded from scope of policy.
             @exclude_groups
             ## 
+            # The excludeGuestsOrExternalUsers property
+            @exclude_guests_or_external_users
+            ## 
             # Role IDs excluded from scope of policy.
             @exclude_roles
             ## 
@@ -21,6 +24,9 @@ module MicrosoftGraph
             ## 
             # Group IDs in scope of policy unless explicitly excluded, or All.
             @include_groups
+            ## 
+            # The includeGuestsOrExternalUsers property
+            @include_guests_or_external_users
             ## 
             # Role IDs in scope of policy unless explicitly excluded, or All.
             @include_roles
@@ -77,6 +83,21 @@ module MicrosoftGraph
                 @exclude_groups = value
             end
             ## 
+            ## Gets the excludeGuestsOrExternalUsers property value. The excludeGuestsOrExternalUsers property
+            ## @return a conditional_access_guests_or_external_users
+            ## 
+            def exclude_guests_or_external_users
+                return @exclude_guests_or_external_users
+            end
+            ## 
+            ## Sets the excludeGuestsOrExternalUsers property value. The excludeGuestsOrExternalUsers property
+            ## @param value Value to set for the exclude_guests_or_external_users property.
+            ## @return a void
+            ## 
+            def exclude_guests_or_external_users=(value)
+                @exclude_guests_or_external_users = value
+            end
+            ## 
             ## Gets the excludeRoles property value. Role IDs excluded from scope of policy.
             ## @return a string
             ## 
@@ -113,9 +134,11 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "excludeGroups" => lambda {|n| @exclude_groups = n.get_collection_of_primitive_values(String) },
+                    "excludeGuestsOrExternalUsers" => lambda {|n| @exclude_guests_or_external_users = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessGuestsOrExternalUsers.create_from_discriminator_value(pn) }) },
                     "excludeRoles" => lambda {|n| @exclude_roles = n.get_collection_of_primitive_values(String) },
                     "excludeUsers" => lambda {|n| @exclude_users = n.get_collection_of_primitive_values(String) },
                     "includeGroups" => lambda {|n| @include_groups = n.get_collection_of_primitive_values(String) },
+                    "includeGuestsOrExternalUsers" => lambda {|n| @include_guests_or_external_users = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessGuestsOrExternalUsers.create_from_discriminator_value(pn) }) },
                     "includeRoles" => lambda {|n| @include_roles = n.get_collection_of_primitive_values(String) },
                     "includeUsers" => lambda {|n| @include_users = n.get_collection_of_primitive_values(String) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
@@ -135,6 +158,21 @@ module MicrosoftGraph
             ## 
             def include_groups=(value)
                 @include_groups = value
+            end
+            ## 
+            ## Gets the includeGuestsOrExternalUsers property value. The includeGuestsOrExternalUsers property
+            ## @return a conditional_access_guests_or_external_users
+            ## 
+            def include_guests_or_external_users
+                return @include_guests_or_external_users
+            end
+            ## 
+            ## Sets the includeGuestsOrExternalUsers property value. The includeGuestsOrExternalUsers property
+            ## @param value Value to set for the include_guests_or_external_users property.
+            ## @return a void
+            ## 
+            def include_guests_or_external_users=(value)
+                @include_guests_or_external_users = value
             end
             ## 
             ## Gets the includeRoles property value. Role IDs in scope of policy unless explicitly excluded, or All.
@@ -189,9 +227,11 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_collection_of_primitive_values("excludeGroups", @exclude_groups)
+                writer.write_object_value("excludeGuestsOrExternalUsers", @exclude_guests_or_external_users)
                 writer.write_collection_of_primitive_values("excludeRoles", @exclude_roles)
                 writer.write_collection_of_primitive_values("excludeUsers", @exclude_users)
                 writer.write_collection_of_primitive_values("includeGroups", @include_groups)
+                writer.write_object_value("includeGuestsOrExternalUsers", @include_guests_or_external_users)
                 writer.write_collection_of_primitive_values("includeRoles", @include_roles)
                 writer.write_collection_of_primitive_values("includeUsers", @include_users)
                 writer.write_string_value("@odata.type", @odata_type)

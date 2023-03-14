@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module ChiSq_Inv
                                 ## 
                                 # Provides operations to call the chiSq_Inv method.
-                                class ChiSq_InvRequestBuilder
+                                class ChiSqInvRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class ChiSq_InvRequestBuilderPostRequestConfiguration
+                                    class ChiSqInvRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

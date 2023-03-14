@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Quartile_Inc
                                 ## 
                                 # Provides operations to call the quartile_Inc method.
-                                class Quartile_IncRequestBuilder
+                                class QuartileIncRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Quartile_IncRequestBuilderPostRequestConfiguration
+                                    class QuartileIncRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

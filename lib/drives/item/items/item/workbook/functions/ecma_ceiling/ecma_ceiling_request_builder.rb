@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Ecma_Ceiling
                                 ## 
                                 # Provides operations to call the ecma_Ceiling method.
-                                class Ecma_CeilingRequestBuilder
+                                class EcmaCeilingRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Ecma_CeilingRequestBuilderPostRequestConfiguration
+                                    class EcmaCeilingRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

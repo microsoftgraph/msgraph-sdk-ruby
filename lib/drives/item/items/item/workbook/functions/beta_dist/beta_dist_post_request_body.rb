@@ -17,7 +17,7 @@ module MicrosoftGraph
                     module Workbook
                         module Functions
                             module Beta_Dist
-                                class Beta_DistPostRequestBody
+                                class BetaDistPostRequestBody
                                     include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
                                     ## 
                                     # The A property
@@ -116,7 +116,7 @@ module MicrosoftGraph
                                         @beta = value
                                     end
                                     ## 
-                                    ## Instantiates a new beta_DistPostRequestBody and sets the default values.
+                                    ## Instantiates a new BetaDistPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -129,7 +129,7 @@ module MicrosoftGraph
                                     ## 
                                     def self.create_from_discriminator_value(parse_node)
                                         raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-                                        return Beta_DistPostRequestBody.new
+                                        return BetaDistPostRequestBody.new
                                     end
                                     ## 
                                     ## Gets the cumulative property value. The cumulative property

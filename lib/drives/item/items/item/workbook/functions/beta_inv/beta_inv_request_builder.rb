@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Beta_Inv
                                 ## 
                                 # Provides operations to call the beta_Inv method.
-                                class Beta_InvRequestBuilder
+                                class BetaInvRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Beta_InvRequestBuilderPostRequestConfiguration
+                                    class BetaInvRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

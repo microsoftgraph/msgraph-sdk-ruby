@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Beta_Dist
                                 ## 
                                 # Provides operations to call the beta_Dist method.
-                                class Beta_DistRequestBuilder
+                                class BetaDistRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Beta_DistRequestBuilderPostRequestConfiguration
+                                    class BetaDistRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

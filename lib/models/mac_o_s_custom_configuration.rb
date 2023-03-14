@@ -4,8 +4,6 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
-        ## 
-        # This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSCustomConfiguration resource.
         class MacOSCustomConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -18,7 +16,7 @@ module MicrosoftGraph
             # Name that is displayed to the user.
             @payload_name
             ## 
-            ## Instantiates a new macOSCustomConfiguration and sets the default values.
+            ## Instantiates a new MacOSCustomConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -40,14 +38,14 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "payload" => lambda {|n| @payload = n.get_string_value() },
+                    "payload" => lambda {|n| @payload = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "payloadFileName" => lambda {|n| @payload_file_name = n.get_string_value() },
                     "payloadName" => lambda {|n| @payload_name = n.get_string_value() },
                 })
             end
             ## 
             ## Gets the payload property value. Payload. (UTF8 encoded byte array)
-            ## @return a binary
+            ## @return a base64url
             ## 
             def payload
                 return @payload

@@ -59,7 +59,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "identityProvider" => lambda {|n| @identity_provider = n.get_string_value() },
-                    "key" => lambda {|n| @key = n.get_string_value() },
+                    "key" => lambda {|n| @key = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "type" => lambda {|n| @type = n.get_number_value() },
                 }
@@ -81,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the key property value. For internal use only
-            ## @return a binary
+            ## @return a base64url
             ## 
             def key
                 return @key

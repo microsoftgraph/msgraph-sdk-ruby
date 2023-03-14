@@ -73,7 +73,7 @@ module MicrosoftGraph
                 @column_count = value
             end
             ## 
-            ## Instantiates a new workbookRangeView and sets the default values.
+            ## Instantiates a new WorkbookRangeView and sets the default values.
             ## @return a void
             ## 
             def initialize()

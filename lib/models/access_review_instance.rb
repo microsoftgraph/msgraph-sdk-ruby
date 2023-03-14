@@ -35,7 +35,7 @@ module MicrosoftGraph
             # Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.
             @status
             ## 
-            ## Instantiates a new AccessReviewInstance and sets the default values.
+            ## Instantiates a new accessReviewInstance and sets the default values.
             ## @return a void
             ## 
             def initialize()

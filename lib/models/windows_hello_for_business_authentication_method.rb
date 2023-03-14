@@ -20,7 +20,7 @@ module MicrosoftGraph
             # Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.
             @key_strength
             ## 
-            ## Instantiates a new windowsHelloForBusinessAuthenticationMethod and sets the default values.
+            ## Instantiates a new WindowsHelloForBusinessAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()

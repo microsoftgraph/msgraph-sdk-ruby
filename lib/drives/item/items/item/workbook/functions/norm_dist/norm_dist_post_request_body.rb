@@ -17,7 +17,7 @@ module MicrosoftGraph
                     module Workbook
                         module Functions
                             module Norm_Dist
-                                class Norm_DistPostRequestBody
+                                class NormDistPostRequestBody
                                     include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
                                     ## 
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -50,7 +50,7 @@ module MicrosoftGraph
                                         @additional_data = value
                                     end
                                     ## 
-                                    ## Instantiates a new norm_DistPostRequestBody and sets the default values.
+                                    ## Instantiates a new NormDistPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -63,7 +63,7 @@ module MicrosoftGraph
                                     ## 
                                     def self.create_from_discriminator_value(parse_node)
                                         raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-                                        return Norm_DistPostRequestBody.new
+                                        return NormDistPostRequestBody.new
                                     end
                                     ## 
                                     ## Gets the cumulative property value. The cumulative property

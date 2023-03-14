@@ -68,7 +68,7 @@ module MicrosoftGraph
                 return super.merge({
                     "assignedUserPrincipalName" => lambda {|n| @assigned_user_principal_name = n.get_string_value() },
                     "groupTag" => lambda {|n| @group_tag = n.get_string_value() },
-                    "hardwareIdentifier" => lambda {|n| @hardware_identifier = n.get_string_value() },
+                    "hardwareIdentifier" => lambda {|n| @hardware_identifier = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "importId" => lambda {|n| @import_id = n.get_string_value() },
                     "productKey" => lambda {|n| @product_key = n.get_string_value() },
                     "serialNumber" => lambda {|n| @serial_number = n.get_string_value() },
@@ -92,7 +92,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the hardwareIdentifier property value. Hardware Blob of the Windows autopilot device.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def hardware_identifier
                 return @hardware_identifier

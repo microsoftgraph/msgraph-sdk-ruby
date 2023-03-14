@@ -31,7 +31,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the encodedSettingXml property value. mdm app configuration Base64 binary.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def encoded_setting_xml
                 return @encoded_setting_xml
@@ -50,7 +50,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "encodedSettingXml" => lambda {|n| @encoded_setting_xml = n.get_string_value() },
+                    "encodedSettingXml" => lambda {|n| @encoded_setting_xml = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "settings" => lambda {|n| @settings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AppConfigurationSettingItem.create_from_discriminator_value(pn) }) },
                 })
             end
