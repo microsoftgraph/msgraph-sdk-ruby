@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module WorkDay_Intl
                                 ## 
                                 # Provides operations to call the workDay_Intl method.
-                                class WorkDay_IntlRequestBuilder
+                                class WorkDayIntlRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class WorkDay_IntlRequestBuilderPostRequestConfiguration
+                                    class WorkDayIntlRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

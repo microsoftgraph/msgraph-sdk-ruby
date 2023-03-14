@@ -41,7 +41,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the content property value. Not yet documented
-            ## @return a binary
+            ## @return a base64url
             ## 
             def content
                 return @content
@@ -69,7 +69,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
-                    "content" => lambda {|n| @content = n.get_string_value() },
+                    "content" => lambda {|n| @content = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
             end

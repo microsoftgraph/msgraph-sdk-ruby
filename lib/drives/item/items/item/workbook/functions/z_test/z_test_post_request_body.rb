@@ -17,7 +17,7 @@ module MicrosoftGraph
                     module Workbook
                         module Functions
                             module Z_Test
-                                class Z_TestPostRequestBody
+                                class ZTestPostRequestBody
                                     include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
                                     ## 
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -62,7 +62,7 @@ module MicrosoftGraph
                                         @array = value
                                     end
                                     ## 
-                                    ## Instantiates a new z_TestPostRequestBody and sets the default values.
+                                    ## Instantiates a new ZTestPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -75,7 +75,7 @@ module MicrosoftGraph
                                     ## 
                                     def self.create_from_discriminator_value(parse_node)
                                         raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-                                        return Z_TestPostRequestBody.new
+                                        return ZTestPostRequestBody.new
                                     end
                                     ## 
                                     ## The deserialization information for the current model

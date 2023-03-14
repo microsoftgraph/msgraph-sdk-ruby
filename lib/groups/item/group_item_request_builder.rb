@@ -462,7 +462,7 @@ module MicrosoftGraph
                     return MicrosoftGraph::Groups::Item::Owners::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
-                ## Update the properties of a group object.
+                ## Add a member to a security or Microsoft 365 group through the **members** navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
                 ## @param body The request body
                 ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of group
@@ -578,7 +578,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Update the properties of a group object.
+                ## Add a member to a security or Microsoft 365 group through the **members** navigation property. The following table shows the types of members that can be added to either security groups or Microsoft 365 groups.
                 ## @param body The request body
                 ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information

@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module F_Inv
                                 ## 
                                 # Provides operations to call the f_Inv method.
-                                class F_InvRequestBuilder
+                                class FInvRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class F_InvRequestBuilderPostRequestConfiguration
+                                    class FInvRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

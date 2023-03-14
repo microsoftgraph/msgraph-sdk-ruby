@@ -197,7 +197,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the conversationIndex property value. Indicates the position of the message within the conversation.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def conversation_index
                 return @conversation_index
@@ -290,7 +290,7 @@ module MicrosoftGraph
                     "bodyPreview" => lambda {|n| @body_preview = n.get_string_value() },
                     "ccRecipients" => lambda {|n| @cc_recipients = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Recipient.create_from_discriminator_value(pn) }) },
                     "conversationId" => lambda {|n| @conversation_id = n.get_string_value() },
-                    "conversationIndex" => lambda {|n| @conversation_index = n.get_string_value() },
+                    "conversationIndex" => lambda {|n| @conversation_index = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "extensions" => lambda {|n| @extensions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Extension.create_from_discriminator_value(pn) }) },
                     "flag" => lambda {|n| @flag = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::FollowupFlag.create_from_discriminator_value(pn) }) },
                     "from" => lambda {|n| @from = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Recipient.create_from_discriminator_value(pn) }) },

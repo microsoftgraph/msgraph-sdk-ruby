@@ -47,6 +47,7 @@ require_relative './domains/item/domain_item_request_builder'
 require_relative './drives/drives_request_builder'
 require_relative './drives/item/drive_item_request_builder'
 require_relative './education/education_request_builder'
+require_relative './employee_experience/employee_experience_request_builder'
 require_relative './external/external_request_builder'
 require_relative './group_lifecycle_policies/group_lifecycle_policies_request_builder'
 require_relative './group_lifecycle_policies/item/group_lifecycle_policy_item_request_builder'
@@ -257,6 +258,11 @@ module MicrosoftGraph
         # Provides operations to manage the educationRoot singleton.
         def education()
             return MicrosoftGraph::Education::EducationRequestBuilder.new(@path_parameters, @request_adapter)
+        end
+        ## 
+        # Provides operations to manage the employeeExperience singleton.
+        def employee_experience()
+            return MicrosoftGraph::EmployeeExperience::EmployeeExperienceRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
         # Provides operations to manage the external singleton.

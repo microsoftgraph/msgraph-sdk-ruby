@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Quartile_Exc
                                 ## 
                                 # Provides operations to call the quartile_Exc method.
-                                class Quartile_ExcRequestBuilder
+                                class QuartileExcRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Quartile_ExcRequestBuilderPostRequestConfiguration
+                                    class QuartileExcRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

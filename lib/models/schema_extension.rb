@@ -22,7 +22,7 @@ module MicrosoftGraph
             # Set of Microsoft Graph types (that can support extensions) that the schema extension can be applied to. Select from administrativeUnit, contact, device, event, group, message, organization, post, todoTask, todoTaskList, or user.
             @target_types
             ## 
-            ## Instantiates a new schemaExtension and sets the default values.
+            ## Instantiates a new SchemaExtension and sets the default values.
             ## @return a void
             ## 
             def initialize()

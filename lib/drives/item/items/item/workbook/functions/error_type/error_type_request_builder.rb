@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Error_Type
                                 ## 
                                 # Provides operations to call the error_Type method.
-                                class Error_TypeRequestBuilder
+                                class ErrorTypeRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Error_TypeRequestBuilderPostRequestConfiguration
+                                    class ErrorTypeRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

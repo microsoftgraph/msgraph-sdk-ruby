@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module LogNorm_Dist
                                 ## 
                                 # Provides operations to call the logNorm_Dist method.
-                                class LogNorm_DistRequestBuilder
+                                class LogNormDistRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class LogNorm_DistRequestBuilderPostRequestConfiguration
+                                    class LogNormDistRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

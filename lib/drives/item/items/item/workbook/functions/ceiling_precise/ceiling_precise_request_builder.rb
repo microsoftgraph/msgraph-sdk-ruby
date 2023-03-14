@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Ceiling_Precise
                                 ## 
                                 # Provides operations to call the ceiling_Precise method.
-                                class Ceiling_PreciseRequestBuilder
+                                class CeilingPreciseRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Ceiling_PreciseRequestBuilderPostRequestConfiguration
+                                    class CeilingPreciseRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

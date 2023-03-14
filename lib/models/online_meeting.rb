@@ -171,7 +171,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the attendeeReport property value. The content stream of the attendee report of a Microsoft Teams live event. Read-only.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def attendee_report
                 return @attendee_report
@@ -230,7 +230,7 @@ module MicrosoftGraph
                 @chat_info = value
             end
             ## 
-            ## Instantiates a new OnlineMeeting and sets the default values.
+            ## Instantiates a new onlineMeeting and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -302,7 +302,7 @@ module MicrosoftGraph
                     "allowTeamworkReactions" => lambda {|n| @allow_teamwork_reactions = n.get_boolean_value() },
                     "allowedPresenters" => lambda {|n| @allowed_presenters = n.get_enum_value(MicrosoftGraph::Models::OnlineMeetingPresenters) },
                     "attendanceReports" => lambda {|n| @attendance_reports = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::MeetingAttendanceReport.create_from_discriminator_value(pn) }) },
-                    "attendeeReport" => lambda {|n| @attendee_report = n.get_string_value() },
+                    "attendeeReport" => lambda {|n| @attendee_report = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "audioConferencing" => lambda {|n| @audio_conferencing = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AudioConferencing.create_from_discriminator_value(pn) }) },
                     "broadcastSettings" => lambda {|n| @broadcast_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::BroadcastMeetingSettings.create_from_discriminator_value(pn) }) },
                     "chatInfo" => lambda {|n| @chat_info = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ChatInfo.create_from_discriminator_value(pn) }) },

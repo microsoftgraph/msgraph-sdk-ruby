@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Confidence_T
                                 ## 
                                 # Provides operations to call the confidence_T method.
-                                class Confidence_TRequestBuilder
+                                class ConfidenceTRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Confidence_TRequestBuilderPostRequestConfiguration
+                                    class ConfidenceTRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

@@ -1,1 +1,1 @@
-require_relative 't_dist_2_t_post_request_body'
+require_relative 't_dist2_t_post_request_body'

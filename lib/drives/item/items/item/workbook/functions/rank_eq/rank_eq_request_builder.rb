@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Rank_Eq
                                 ## 
                                 # Provides operations to call the rank_Eq method.
-                                class Rank_EqRequestBuilder
+                                class RankEqRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Rank_EqRequestBuilderPostRequestConfiguration
+                                    class RankEqRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

@@ -2040,8 +2040,8 @@ module MicrosoftGraph
                     "startMenuHideSleep" => lambda {|n| @start_menu_hide_sleep = n.get_boolean_value() },
                     "startMenuHideSwitchAccount" => lambda {|n| @start_menu_hide_switch_account = n.get_boolean_value() },
                     "startMenuHideUserTile" => lambda {|n| @start_menu_hide_user_tile = n.get_boolean_value() },
-                    "startMenuLayoutEdgeAssetsXml" => lambda {|n| @start_menu_layout_edge_assets_xml = n.get_string_value() },
-                    "startMenuLayoutXml" => lambda {|n| @start_menu_layout_xml = n.get_string_value() },
+                    "startMenuLayoutEdgeAssetsXml" => lambda {|n| @start_menu_layout_edge_assets_xml = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
+                    "startMenuLayoutXml" => lambda {|n| @start_menu_layout_xml = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "startMenuMode" => lambda {|n| @start_menu_mode = n.get_enum_value(MicrosoftGraph::Models::WindowsStartMenuModeType) },
                     "startMenuPinnedFolderDocuments" => lambda {|n| @start_menu_pinned_folder_documents = n.get_enum_value(MicrosoftGraph::Models::VisibilitySetting) },
                     "startMenuPinnedFolderDownloads" => lambda {|n| @start_menu_pinned_folder_downloads = n.get_enum_value(MicrosoftGraph::Models::VisibilitySetting) },
@@ -3478,7 +3478,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the startMenuLayoutEdgeAssetsXml property value. This policy setting allows you to import Edge assets to be used with startMenuLayoutXml policy. Start layout can contain secondary tile from Edge app which looks for Edge local asset file. Edge local asset would not exist and cause Edge secondary tile to appear empty in this case. This policy only gets applied when startMenuLayoutXml policy is modified. The value should be a UTF-8 Base64 encoded byte array.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def start_menu_layout_edge_assets_xml
                 return @start_menu_layout_edge_assets_xml
@@ -3493,7 +3493,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the startMenuLayoutXml property value. Allows admins to override the default Start menu layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in a UTF8 encoded byte array format.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def start_menu_layout_xml
                 return @start_menu_layout_xml

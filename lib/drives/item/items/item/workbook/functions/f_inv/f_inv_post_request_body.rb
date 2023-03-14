@@ -17,7 +17,7 @@ module MicrosoftGraph
                     module Workbook
                         module Functions
                             module F_Inv
-                                class F_InvPostRequestBody
+                                class FInvPostRequestBody
                                     include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
                                     ## 
                                     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -47,7 +47,7 @@ module MicrosoftGraph
                                         @additional_data = value
                                     end
                                     ## 
-                                    ## Instantiates a new f_InvPostRequestBody and sets the default values.
+                                    ## Instantiates a new FInvPostRequestBody and sets the default values.
                                     ## @return a void
                                     ## 
                                     def initialize()
@@ -60,7 +60,7 @@ module MicrosoftGraph
                                     ## 
                                     def self.create_from_discriminator_value(parse_node)
                                         raise StandardError, 'parse_node cannot be null' if parse_node.nil?
-                                        return F_InvPostRequestBody.new
+                                        return FInvPostRequestBody.new
                                     end
                                     ## 
                                     ## Gets the degFreedom1 property value. The degFreedom1 property

@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module StDev_S
                                 ## 
                                 # Provides operations to call the stDev_S method.
-                                class StDev_SRequestBuilder
+                                class StDevSRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class StDev_SRequestBuilderPostRequestConfiguration
+                                    class StDevSRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

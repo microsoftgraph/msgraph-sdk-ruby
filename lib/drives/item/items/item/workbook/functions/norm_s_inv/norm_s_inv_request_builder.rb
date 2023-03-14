@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Norm_S_Inv
                                 ## 
                                 # Provides operations to call the norm_S_Inv method.
-                                class Norm_S_InvRequestBuilder
+                                class NormSInvRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Norm_S_InvRequestBuilderPostRequestConfiguration
+                                    class NormSInvRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

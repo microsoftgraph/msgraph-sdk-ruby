@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Confidence_Norm
                                 ## 
                                 # Provides operations to call the confidence_Norm method.
-                                class Confidence_NormRequestBuilder
+                                class ConfidenceNormRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Confidence_NormRequestBuilderPostRequestConfiguration
+                                    class ConfidenceNormRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

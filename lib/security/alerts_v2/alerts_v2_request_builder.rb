@@ -12,7 +12,7 @@ module MicrosoftGraph
         module Alerts_v2
             ## 
             # Provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.
-            class Alerts_v2RequestBuilder
+            class AlertsV2RequestBuilder
                 
                 ## 
                 # Provides operations to count the resources in the collection.
@@ -113,7 +113,7 @@ module MicrosoftGraph
 
                 ## 
                 # Get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.
-                class Alerts_v2RequestBuilderGetQueryParameters
+                class AlertsV2RequestBuilderGetQueryParameters
                     
                     ## 
                     # Include count of items
@@ -171,7 +171,7 @@ module MicrosoftGraph
 
                 ## 
                 # Configuration for the request such as headers, query parameters, and middleware options.
-                class Alerts_v2RequestBuilderGetRequestConfiguration
+                class AlertsV2RequestBuilderGetRequestConfiguration
                     
                     ## 
                     # Request headers
@@ -186,7 +186,7 @@ module MicrosoftGraph
 
                 ## 
                 # Configuration for the request such as headers, query parameters, and middleware options.
-                class Alerts_v2RequestBuilderPostRequestConfiguration
+                class AlertsV2RequestBuilderPostRequestConfiguration
                     
                     ## 
                     # Request headers

@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module GammaLn_Precise
                                 ## 
                                 # Provides operations to call the gammaLn_Precise method.
-                                class GammaLn_PreciseRequestBuilder
+                                class GammaLnPreciseRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class GammaLn_PreciseRequestBuilderPostRequestConfiguration
+                                    class GammaLnPreciseRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

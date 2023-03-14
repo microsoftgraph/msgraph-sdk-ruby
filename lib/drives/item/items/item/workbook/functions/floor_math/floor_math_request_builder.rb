@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Floor_Math
                                 ## 
                                 # Provides operations to call the floor_Math method.
-                                class Floor_MathRequestBuilder
+                                class FloorMathRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Floor_MathRequestBuilderPostRequestConfiguration
+                                    class FloorMathRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers

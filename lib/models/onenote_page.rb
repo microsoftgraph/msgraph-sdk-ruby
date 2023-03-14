@@ -50,7 +50,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the content property value. The page's HTML content.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def content
                 return @content
@@ -108,7 +108,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "content" => lambda {|n| @content = n.get_string_value() },
+                    "content" => lambda {|n| @content = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "contentUrl" => lambda {|n| @content_url = n.get_string_value() },
                     "createdByAppId" => lambda {|n| @created_by_app_id = n.get_string_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },

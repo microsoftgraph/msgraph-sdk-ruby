@@ -31,7 +31,7 @@ module MicrosoftGraph
             end
             ## 
             ## Gets the content property value. The attachment content.
-            ## @return a binary
+            ## @return a base64url
             ## 
             def content
                 return @content
@@ -74,7 +74,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
-                    "content" => lambda {|n| @content = n.get_string_value() },
+                    "content" => lambda {|n| @content = n.get_object_value(lambda {|pn| Base64url.create_from_discriminator_value(pn) }) },
                     "contentType" => lambda {|n| @content_type = n.get_string_value() },
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "name" => lambda {|n| @name = n.get_string_value() },

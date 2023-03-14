@@ -20,7 +20,7 @@ module MicrosoftGraph
                             module Percentile_Inc
                                 ## 
                                 # Provides operations to call the percentile_Inc method.
-                                class Percentile_IncRequestBuilder
+                                class PercentileIncRequestBuilder
                                     
                                     ## 
                                     # Path parameters for the request
@@ -84,7 +84,7 @@ module MicrosoftGraph
 
                                     ## 
                                     # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class Percentile_IncRequestBuilderPostRequestConfiguration
+                                    class PercentileIncRequestBuilderPostRequestConfiguration
                                         
                                         ## 
                                         # Request headers
