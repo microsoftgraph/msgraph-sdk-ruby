@@ -159,17 +159,15 @@ class MicrosoftGraph
 
     def each(start = 0)
       return to_enum(:each, start) unless block_given?
-      @next_link ||= query_path
-      Array(@internal_values[start..-1]).each do |element|
-        yield(element)
-      end
 
-      unless last?
+      while !last?
         start = [@internal_values.size, start].max
 
         fetch_next_page
 
-        each(start, &Proc.new { yield })
+        Array(@internal_values[start..-1]).each do |element|
+          yield(element)
+        end
       end
     end
 
