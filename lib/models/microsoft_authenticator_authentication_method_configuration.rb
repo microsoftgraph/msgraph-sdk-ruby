@@ -13,7 +13,7 @@ module MicrosoftGraph
             # A collection of groups that are enabled to use the authentication method. Expanded by default.
             @include_targets
             ## 
-            ## Instantiates a new MicrosoftAuthenticatorAuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new microsoftAuthenticatorAuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

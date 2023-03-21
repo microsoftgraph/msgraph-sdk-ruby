@@ -13,6 +13,9 @@ module MicrosoftGraph
             # Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
             @allow_invites_from
             ## 
+            # The allowUserConsentForRiskyApps property
+            @allow_user_consent_for_risky_apps
+            ## 
             # Indicates whether users can sign up for email based subscriptions.
             @allowed_to_sign_up_email_based_subscriptions
             ## 
@@ -56,6 +59,21 @@ module MicrosoftGraph
             ## 
             def allow_invites_from=(value)
                 @allow_invites_from = value
+            end
+            ## 
+            ## Gets the allowUserConsentForRiskyApps property value. The allowUserConsentForRiskyApps property
+            ## @return a boolean
+            ## 
+            def allow_user_consent_for_risky_apps
+                return @allow_user_consent_for_risky_apps
+            end
+            ## 
+            ## Sets the allowUserConsentForRiskyApps property value. The allowUserConsentForRiskyApps property
+            ## @param value Value to set for the allow_user_consent_for_risky_apps property.
+            ## @return a void
+            ## 
+            def allow_user_consent_for_risky_apps=(value)
+                @allow_user_consent_for_risky_apps = value
             end
             ## 
             ## Gets the allowedToSignUpEmailBasedSubscriptions property value. Indicates whether users can sign up for email based subscriptions.
@@ -142,6 +160,7 @@ module MicrosoftGraph
                 return super.merge({
                     "allowEmailVerifiedUsersToJoinOrganization" => lambda {|n| @allow_email_verified_users_to_join_organization = n.get_boolean_value() },
                     "allowInvitesFrom" => lambda {|n| @allow_invites_from = n.get_enum_value(MicrosoftGraph::Models::AllowInvitesFrom) },
+                    "allowUserConsentForRiskyApps" => lambda {|n| @allow_user_consent_for_risky_apps = n.get_boolean_value() },
                     "allowedToSignUpEmailBasedSubscriptions" => lambda {|n| @allowed_to_sign_up_email_based_subscriptions = n.get_boolean_value() },
                     "allowedToUseSSPR" => lambda {|n| @allowed_to_use_s_s_p_r = n.get_boolean_value() },
                     "blockMsolPowerShell" => lambda {|n| @block_msol_power_shell = n.get_boolean_value() },
@@ -174,6 +193,7 @@ module MicrosoftGraph
                 super
                 writer.write_boolean_value("allowEmailVerifiedUsersToJoinOrganization", @allow_email_verified_users_to_join_organization)
                 writer.write_enum_value("allowInvitesFrom", @allow_invites_from)
+                writer.write_boolean_value("allowUserConsentForRiskyApps", @allow_user_consent_for_risky_apps)
                 writer.write_boolean_value("allowedToSignUpEmailBasedSubscriptions", @allowed_to_sign_up_email_based_subscriptions)
                 writer.write_boolean_value("allowedToUseSSPR", @allowed_to_use_s_s_p_r)
                 writer.write_boolean_value("blockMsolPowerShell", @block_msol_power_shell)

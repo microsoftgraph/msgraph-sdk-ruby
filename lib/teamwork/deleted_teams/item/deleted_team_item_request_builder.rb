@@ -70,7 +70,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Get deletedTeams from teamwork
+                    ## The deleted team.
                     ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of deleted_team
                     ## 
@@ -116,7 +116,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Get deletedTeams from teamwork
+                    ## The deleted team.
                     ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -167,7 +167,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get deletedTeams from teamwork
+                    # The deleted team.
                     class DeletedTeamItemRequestBuilderGetQueryParameters
                         
                         ## 

@@ -5,6 +5,7 @@ require_relative '../../../../models/o_data_errors/o_data_error'
 require_relative '../../../users'
 require_relative '../../item'
 require_relative '../member_of'
+require_relative './graph_administrative_unit/graph_administrative_unit_request_builder'
 require_relative './graph_group/graph_group_request_builder'
 require_relative './item'
 
@@ -17,6 +18,11 @@ module MicrosoftGraph
                     # Provides operations to manage the memberOf property of the microsoft.graph.user entity.
                     class DirectoryObjectItemRequestBuilder
                         
+                        ## 
+                        # Casts the previous resource to administrativeUnit.
+                        def graph_administrative_unit()
+                            return MicrosoftGraph::Users::Item::MemberOf::Item::GraphAdministrativeUnit::GraphAdministrativeUnitRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
                         ## 
                         # Casts the previous resource to group.
                         def graph_group()

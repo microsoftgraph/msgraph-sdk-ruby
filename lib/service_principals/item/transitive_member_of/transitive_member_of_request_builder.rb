@@ -5,6 +5,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../service_principals'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './graph_administrative_unit/graph_administrative_unit_request_builder'
 require_relative './graph_group/graph_group_request_builder'
 require_relative './transitive_member_of'
 
@@ -20,6 +21,11 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::ServicePrincipals::Item::TransitiveMemberOf::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Casts the previous resource to administrativeUnit.
+                    def graph_administrative_unit()
+                        return MicrosoftGraph::ServicePrincipals::Item::TransitiveMemberOf::GraphAdministrativeUnit::GraphAdministrativeUnitRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Casts the previous resource to group.

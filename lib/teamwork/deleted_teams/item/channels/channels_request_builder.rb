@@ -53,7 +53,7 @@ module MicrosoftGraph
                             @path_parameters = path_parameters if path_parameters.is_a? Hash
                         end
                         ## 
-                        ## Get channels from teamwork
+                        ## The channels that are either shared with this deleted team or created in this deleted team.
                         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of channel_collection_response
                         ## 
@@ -83,7 +83,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Channel.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get channels from teamwork
+                        ## The channels that are either shared with this deleted team or created in this deleted team.
                         ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -122,7 +122,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get channels from teamwork
+                        # The channels that are either shared with this deleted team or created in this deleted team.
                         class ChannelsRequestBuilderGetQueryParameters
                             
                             ## 
