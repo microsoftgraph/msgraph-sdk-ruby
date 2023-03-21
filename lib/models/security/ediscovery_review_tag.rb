@@ -48,7 +48,7 @@ module MicrosoftGraph
                     @child_tags = value
                 end
                 ## 
-                ## Instantiates a new EdiscoveryReviewTag and sets the default values.
+                ## Instantiates a new ediscoveryReviewTag and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

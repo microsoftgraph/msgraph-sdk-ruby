@@ -7,7 +7,7 @@ module MicrosoftGraph
         class Teamwork < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The deletedTeams property
+            # The deleted team.
             @deleted_teams
             ## 
             # The workforceIntegrations property
@@ -29,14 +29,14 @@ module MicrosoftGraph
                 return Teamwork.new
             end
             ## 
-            ## Gets the deletedTeams property value. The deletedTeams property
+            ## Gets the deletedTeams property value. The deleted team.
             ## @return a deleted_team
             ## 
             def deleted_teams
                 return @deleted_teams
             end
             ## 
-            ## Sets the deletedTeams property value. The deletedTeams property
+            ## Sets the deletedTeams property value. The deleted team.
             ## @param value Value to set for the deleted_teams property.
             ## @return a void
             ## 

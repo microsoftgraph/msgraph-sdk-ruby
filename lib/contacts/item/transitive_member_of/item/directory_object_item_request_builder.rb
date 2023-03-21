@@ -5,6 +5,7 @@ require_relative '../../../../models/o_data_errors/o_data_error'
 require_relative '../../../contacts'
 require_relative '../../item'
 require_relative '../transitive_member_of'
+require_relative './graph_administrative_unit/graph_administrative_unit_request_builder'
 require_relative './graph_group/graph_group_request_builder'
 require_relative './item'
 
@@ -17,6 +18,11 @@ module MicrosoftGraph
                     # Provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.
                     class DirectoryObjectItemRequestBuilder
                         
+                        ## 
+                        # Casts the previous resource to administrativeUnit.
+                        def graph_administrative_unit()
+                            return MicrosoftGraph::Contacts::Item::TransitiveMemberOf::Item::GraphAdministrativeUnit::GraphAdministrativeUnitRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
                         ## 
                         # Casts the previous resource to group.
                         def graph_group()

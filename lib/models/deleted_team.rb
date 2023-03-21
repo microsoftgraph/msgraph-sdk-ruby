@@ -7,17 +7,17 @@ module MicrosoftGraph
         class DeletedTeam < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The channels property
+            # The channels that are either shared with this deleted team or created in this deleted team.
             @channels
             ## 
-            ## Gets the channels property value. The channels property
+            ## Gets the channels property value. The channels that are either shared with this deleted team or created in this deleted team.
             ## @return a channel
             ## 
             def channels
                 return @channels
             end
             ## 
-            ## Sets the channels property value. The channels property
+            ## Sets the channels property value. The channels that are either shared with this deleted team or created in this deleted team.
             ## @param value Value to set for the channels property.
             ## @return a void
             ## 

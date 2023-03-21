@@ -114,7 +114,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Get channels from teamwork
+                            ## The channels that are either shared with this deleted team or created in this deleted team.
                             ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of channel
                             ## 
@@ -204,7 +204,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Get channels from teamwork
+                            ## The channels that are either shared with this deleted team or created in this deleted team.
                             ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -255,7 +255,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get channels from teamwork
+                            # The channels that are either shared with this deleted team or created in this deleted team.
                             class ChannelItemRequestBuilderGetQueryParameters
                                 
                                 ## 
