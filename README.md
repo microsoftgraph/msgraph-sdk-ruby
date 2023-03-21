@@ -42,8 +42,8 @@ You must get a **MicrosoftGraphServiceClient** object to make requests against t
 ```ruby
 require "microsoft_graph"
 
-adapter = MicrosoftGraph::MicrosoftGraphRequestAdapter.new(authentication_provider)
-client = MicrosoftGraph::MicrosoftGraphServiceClient.new(adapter)
+adapter = MicrosoftGraph::GraphRequestAdapter.new(authentication_provider)
+client = MicrosoftGraph::GraphServiceClient.new(adapter)
 ```
 
 ## 3. Make requests against the service
