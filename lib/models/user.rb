@@ -332,6 +332,9 @@ module MicrosoftGraph
             # Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
             @show_in_address_list
             ## 
+            # The signInActivity property
+            @sign_in_activity
+            ## 
             # Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
             @sign_in_sessions_valid_from_date_time
             ## 
@@ -749,7 +752,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a user
             ## 
             def self.create_from_discriminator_value(parse_node)
@@ -1155,6 +1158,7 @@ module MicrosoftGraph
                     "securityIdentifier" => lambda {|n| @security_identifier = n.get_string_value() },
                     "settings" => lambda {|n| @settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserSettings.create_from_discriminator_value(pn) }) },
                     "showInAddressList" => lambda {|n| @show_in_address_list = n.get_boolean_value() },
+                    "signInActivity" => lambda {|n| @sign_in_activity = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SignInActivity.create_from_discriminator_value(pn) }) },
                     "signInSessionsValidFromDateTime" => lambda {|n| @sign_in_sessions_valid_from_date_time = n.get_date_time_value() },
                     "skills" => lambda {|n| @skills = n.get_collection_of_primitive_values(String) },
                     "state" => lambda {|n| @state = n.get_string_value() },
@@ -2214,6 +2218,7 @@ module MicrosoftGraph
                 writer.write_string_value("securityIdentifier", @security_identifier)
                 writer.write_object_value("settings", @settings)
                 writer.write_boolean_value("showInAddressList", @show_in_address_list)
+                writer.write_object_value("signInActivity", @sign_in_activity)
                 writer.write_date_time_value("signInSessionsValidFromDateTime", @sign_in_sessions_valid_from_date_time)
                 writer.write_collection_of_primitive_values("skills", @skills)
                 writer.write_string_value("state", @state)
@@ -2255,6 +2260,21 @@ module MicrosoftGraph
             ## 
             def show_in_address_list=(value)
                 @show_in_address_list = value
+            end
+            ## 
+            ## Gets the signInActivity property value. The signInActivity property
+            ## @return a sign_in_activity
+            ## 
+            def sign_in_activity
+                return @sign_in_activity
+            end
+            ## 
+            ## Sets the signInActivity property value. The signInActivity property
+            ## @param value Value to set for the sign_in_activity property.
+            ## @return a void
+            ## 
+            def sign_in_activity=(value)
+                @sign_in_activity = value
             end
             ## 
             ## Gets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.

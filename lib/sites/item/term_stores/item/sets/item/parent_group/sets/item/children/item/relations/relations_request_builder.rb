@@ -32,7 +32,7 @@ module MicrosoftGraph
                                                 module Relations
                                                     ## 
                                                     # Provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
-                                                    class RelationsRequestBuilder
+                                                    class RelationsRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                                         
                                                         ## 
                                                         # Provides operations to count the resources in the collection.
@@ -40,31 +40,17 @@ module MicrosoftGraph
                                                             return MicrosoftGraph::Sites::Item::TermStores::Item::Sets::Item::ParentGroup::Sets::Item::Children::Item::Relations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                                         end
                                                         ## 
-                                                        # Path parameters for the request
-                                                        @path_parameters
-                                                        ## 
-                                                        # The request adapter to use to execute the requests.
-                                                        @request_adapter
-                                                        ## 
-                                                        # Url template to use to build the URL for the current request builder
-                                                        @url_template
-                                                        ## 
                                                         ## Instantiates a new RelationsRequestBuilder and sets the default values.
-                                                        ## @param pathParameters Path parameters for the request
-                                                        ## @param requestAdapter The request adapter to use to execute the requests.
+                                                        ## @param path_parameters Path parameters for the request
+                                                        ## @param request_adapter The request adapter to use to execute the requests.
                                                         ## @return a void
                                                         ## 
                                                         def initialize(path_parameters, request_adapter)
-                                                            raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                                            raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                                            @url_template = "{+baseurl}/sites/{site%2Did}/termStores/{store%2Did}/sets/{set%2Did}/parentGroup/sets/{set%2Did1}/children/{term%2Did}/relations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}"
-                                                            @request_adapter = request_adapter
-                                                            path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                                            @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                                            super(path_parameters, request_adapter, "{+baseurl}/sites/{site%2Did}/termStores/{store%2Did}/sets/{set%2Did}/parentGroup/sets/{set%2Did1}/children/{term%2Did}/relations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                                         end
                                                         ## 
                                                         ## To indicate which terms are related to the current term as either pinned or reused.
-                                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a Fiber of relation_collection_response
                                                         ## 
                                                         def get(request_configuration=nil)
@@ -79,7 +65,7 @@ module MicrosoftGraph
                                                         ## 
                                                         ## Create new navigation property to relations for sites
                                                         ## @param body The request body
-                                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a Fiber of relation
                                                         ## 
                                                         def post(body, request_configuration=nil)
@@ -94,7 +80,7 @@ module MicrosoftGraph
                                                         end
                                                         ## 
                                                         ## To indicate which terms are related to the current term as either pinned or reused.
-                                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a request_information
                                                         ## 
                                                         def to_get_request_information(request_configuration=nil)
@@ -113,7 +99,7 @@ module MicrosoftGraph
                                                         ## 
                                                         ## Create new navigation property to relations for sites
                                                         ## @param body The request body
-                                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a request_information
                                                         ## 
                                                         def to_post_request_information(body, request_configuration=nil)
@@ -161,7 +147,7 @@ module MicrosoftGraph
                                                             attr_accessor :top
                                                             ## 
                                                             ## Maps the query parameters names to their encoded names for the URI template parsing.
-                                                            ## @param originalName The original query parameter name in the class.
+                                                            ## @param original_name The original query parameter name in the class.
                                                             ## @return a string
                                                             ## 
                                                             def get_query_parameter(original_name)
@@ -187,33 +173,6 @@ module MicrosoftGraph
                                                                         return original_name
                                                                 end
                                                             end
-                                                        end
-
-                                                        ## 
-                                                        # Configuration for the request such as headers, query parameters, and middleware options.
-                                                        class RelationsRequestBuilderGetRequestConfiguration
-                                                            
-                                                            ## 
-                                                            # Request headers
-                                                            attr_accessor :headers
-                                                            ## 
-                                                            # Request options
-                                                            attr_accessor :options
-                                                            ## 
-                                                            # Request query parameters
-                                                            attr_accessor :query_parameters
-                                                        end
-
-                                                        ## 
-                                                        # Configuration for the request such as headers, query parameters, and middleware options.
-                                                        class RelationsRequestBuilderPostRequestConfiguration
-                                                            
-                                                            ## 
-                                                            # Request headers
-                                                            attr_accessor :headers
-                                                            ## 
-                                                            # Request options
-                                                            attr_accessor :options
                                                         end
                                                     end
                                                 end

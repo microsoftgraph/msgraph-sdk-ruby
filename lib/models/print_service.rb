@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Endpoints that can be used to access the service. Read-only. Nullable.
             @endpoints
             ## 
-            ## Instantiates a new PrintService and sets the default values.
+            ## Instantiates a new printService and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -18,7 +18,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a print_service
             ## 
             def self.create_from_discriminator_value(parse_node)

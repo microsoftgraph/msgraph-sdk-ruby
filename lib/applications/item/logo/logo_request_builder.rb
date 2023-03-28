@@ -11,34 +11,20 @@ module MicrosoftGraph
             module Logo
                 ## 
                 # Provides operations to manage the media for the application entity.
-                class LogoRequestBuilder
+                class LogoRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
                     ## 
-                    # Path parameters for the request
-                    @path_parameters
-                    ## 
-                    # The request adapter to use to execute the requests.
-                    @request_adapter
-                    ## 
-                    # Url template to use to build the URL for the current request builder
-                    @url_template
-                    ## 
                     ## Instantiates a new LogoRequestBuilder and sets the default values.
-                    ## @param pathParameters Path parameters for the request
-                    ## @param requestAdapter The request adapter to use to execute the requests.
+                    ## @param path_parameters Path parameters for the request
+                    ## @param request_adapter The request adapter to use to execute the requests.
                     ## @return a void
                     ## 
                     def initialize(path_parameters, request_adapter)
-                        raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                        raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                        @url_template = "{+baseurl}/applications/{application%2Did}/logo"
-                        @request_adapter = request_adapter
-                        path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                        @path_parameters = path_parameters if path_parameters.is_a? Hash
+                        super(path_parameters, request_adapter, "{+baseurl}/applications/{application%2Did}/logo")
                     end
                     ## 
                     ## The main logo for the application. Not nullable.
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of binary
                     ## 
                     def get(request_configuration=nil)
@@ -53,7 +39,7 @@ module MicrosoftGraph
                     ## 
                     ## The main logo for the application. Not nullable.
                     ## @param body Binary request body
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
                     def put(body, request_configuration=nil)
@@ -68,7 +54,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## The main logo for the application. Not nullable.
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_get_request_information(request_configuration=nil)
@@ -85,7 +71,7 @@ module MicrosoftGraph
                     ## 
                     ## The main logo for the application. Not nullable.
                     ## @param body Binary request body
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_put_request_information(body, request_configuration=nil)
@@ -100,30 +86,6 @@ module MicrosoftGraph
                         end
                         request_info.set_content_from_parsable(self.request_adapter, "", body)
                         return request_info
-                    end
-
-                    ## 
-                    # Configuration for the request such as headers, query parameters, and middleware options.
-                    class LogoRequestBuilderGetRequestConfiguration
-                        
-                        ## 
-                        # Request headers
-                        attr_accessor :headers
-                        ## 
-                        # Request options
-                        attr_accessor :options
-                    end
-
-                    ## 
-                    # Configuration for the request such as headers, query parameters, and middleware options.
-                    class LogoRequestBuilderPutRequestConfiguration
-                        
-                        ## 
-                        # Request headers
-                        attr_accessor :headers
-                        ## 
-                        # Request options
-                        attr_accessor :options
                     end
                 end
             end

@@ -22,7 +22,7 @@ module MicrosoftGraph
                             module Resources
                                 ## 
                                 # Provides operations to manage the resources property of the microsoft.graph.educationSubmission entity.
-                                class ResourcesRequestBuilder
+                                class ResourcesRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                     
                                     ## 
                                     # Provides operations to count the resources in the collection.
@@ -30,31 +30,17 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Education::Me::Assignments::Item::Submissions::Item::Resources::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
-                                    # Path parameters for the request
-                                    @path_parameters
-                                    ## 
-                                    # The request adapter to use to execute the requests.
-                                    @request_adapter
-                                    ## 
-                                    # Url template to use to build the URL for the current request builder
-                                    @url_template
-                                    ## 
                                     ## Instantiates a new ResourcesRequestBuilder and sets the default values.
-                                    ## @param pathParameters Path parameters for the request
-                                    ## @param requestAdapter The request adapter to use to execute the requests.
+                                    ## @param path_parameters Path parameters for the request
+                                    ## @param request_adapter The request adapter to use to execute the requests.
                                     ## @return a void
                                     ## 
                                     def initialize(path_parameters, request_adapter)
-                                        raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                        raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                        @url_template = "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/resources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}"
-                                        @request_adapter = request_adapter
-                                        path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                        @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                        super(path_parameters, request_adapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/resources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                     end
                                     ## 
                                     ## List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this was copied from the assignment during the assign process. These resources are the working copy of the assignment. The **submittedResources** are the resources that have officially been submitted to be graded.
-                                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of education_submission_resource_collection_response
                                     ## 
                                     def get(request_configuration=nil)
@@ -69,7 +55,7 @@ module MicrosoftGraph
                                     ## 
                                     ## Add an educationSubmissionResource to a submission resource list. Only teachers and students can perform this operation. The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`. To create a new file-based resource, upload the file to the resources folder associated with the submission. If the file doesn't exist or is not in that folder, the POST request will fail.
                                     ## @param body The request body
-                                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of education_submission_resource
                                     ## 
                                     def post(body, request_configuration=nil)
@@ -84,7 +70,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## List the resources associated with a submission. Only teachers, students, and applications with application permissions can perform this operation. The educationSubmissionResource object is a wrapper around the actual resource object the student is working on. The wrapper also includes a pointer to the resources on the assignment if this was copied from the assignment during the assign process. These resources are the working copy of the assignment. The **submittedResources** are the resources that have officially been submitted to be graded.
-                                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
                                     def to_get_request_information(request_configuration=nil)
@@ -103,7 +89,7 @@ module MicrosoftGraph
                                     ## 
                                     ## Add an educationSubmissionResource to a submission resource list. Only teachers and students can perform this operation. The operation will not succeed if the **allowStudentsToAddResources** flag is not set to `true`. To create a new file-based resource, upload the file to the resources folder associated with the submission. If the file doesn't exist or is not in that folder, the POST request will fail.
                                     ## @param body The request body
-                                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
                                     def to_post_request_information(body, request_configuration=nil)
@@ -151,7 +137,7 @@ module MicrosoftGraph
                                         attr_accessor :top
                                         ## 
                                         ## Maps the query parameters names to their encoded names for the URI template parsing.
-                                        ## @param originalName The original query parameter name in the class.
+                                        ## @param original_name The original query parameter name in the class.
                                         ## @return a string
                                         ## 
                                         def get_query_parameter(original_name)
@@ -177,33 +163,6 @@ module MicrosoftGraph
                                                     return original_name
                                             end
                                         end
-                                    end
-
-                                    ## 
-                                    # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class ResourcesRequestBuilderGetRequestConfiguration
-                                        
-                                        ## 
-                                        # Request headers
-                                        attr_accessor :headers
-                                        ## 
-                                        # Request options
-                                        attr_accessor :options
-                                        ## 
-                                        # Request query parameters
-                                        attr_accessor :query_parameters
-                                    end
-
-                                    ## 
-                                    # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class ResourcesRequestBuilderPostRequestConfiguration
-                                        
-                                        ## 
-                                        # Request headers
-                                        attr_accessor :headers
-                                        ## 
-                                        # Request options
-                                        attr_accessor :options
                                     end
                                 end
                             end

@@ -9,6 +9,7 @@ require_relative './graph_app_role_assignment/graph_app_role_assignment_request_
 require_relative './graph_endpoint/graph_endpoint_request_builder'
 require_relative './graph_service_principal/graph_service_principal_request_builder'
 require_relative './graph_user/graph_user_request_builder'
+require_relative './ref/ref_request_builder'
 require_relative './registered_users'
 
 module MicrosoftGraph
@@ -17,7 +18,7 @@ module MicrosoftGraph
             module RegisteredUsers
                 ## 
                 # Provides operations to manage the registeredUsers property of the microsoft.graph.device entity.
-                class RegisteredUsersRequestBuilder
+                class RegisteredUsersRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
                     ## 
                     # Provides operations to count the resources in the collection.
@@ -45,31 +46,22 @@ module MicrosoftGraph
                         return MicrosoftGraph::Devices::Item::RegisteredUsers::GraphUser::GraphUserRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    # Path parameters for the request
-                    @path_parameters
-                    ## 
-                    # The request adapter to use to execute the requests.
-                    @request_adapter
-                    ## 
-                    # Url template to use to build the URL for the current request builder
-                    @url_template
+                    # Provides operations to manage the collection of device entities.
+                    def ref()
+                        return MicrosoftGraph::Devices::Item::RegisteredUsers::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     ## Instantiates a new RegisteredUsersRequestBuilder and sets the default values.
-                    ## @param pathParameters Path parameters for the request
-                    ## @param requestAdapter The request adapter to use to execute the requests.
+                    ## @param path_parameters Path parameters for the request
+                    ## @param request_adapter The request adapter to use to execute the requests.
                     ## @return a void
                     ## 
                     def initialize(path_parameters, request_adapter)
-                        raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                        raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                        @url_template = "{+baseurl}/devices/{device%2Did}/registeredUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}"
-                        @request_adapter = request_adapter
-                        path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                        @path_parameters = path_parameters if path_parameters.is_a? Hash
+                        super(path_parameters, request_adapter, "{+baseurl}/devices/{device%2Did}/registeredUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
                     ## Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of directory_object_collection_response
                     ## 
                     def get(request_configuration=nil)
@@ -83,7 +75,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_get_request_information(request_configuration=nil)
@@ -130,7 +122,7 @@ module MicrosoftGraph
                         attr_accessor :top
                         ## 
                         ## Maps the query parameters names to their encoded names for the URI template parsing.
-                        ## @param originalName The original query parameter name in the class.
+                        ## @param original_name The original query parameter name in the class.
                         ## @return a string
                         ## 
                         def get_query_parameter(original_name)
@@ -156,21 +148,6 @@ module MicrosoftGraph
                                     return original_name
                             end
                         end
-                    end
-
-                    ## 
-                    # Configuration for the request such as headers, query parameters, and middleware options.
-                    class RegisteredUsersRequestBuilderGetRequestConfiguration
-                        
-                        ## 
-                        # Request headers
-                        attr_accessor :headers
-                        ## 
-                        # Request options
-                        attr_accessor :options
-                        ## 
-                        # Request query parameters
-                        attr_accessor :query_parameters
                     end
                 end
             end

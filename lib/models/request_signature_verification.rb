@@ -10,10 +10,10 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The allowedWeakAlgorithms property
+            # Specifies which weak algorithms are allowed.  The possible values are: rsaSha1, unknownFutureValue.
             @allowed_weak_algorithms
             ## 
-            # The isSignedRequestRequired property
+            # Specifies whether signed authentication requests for this application should be required.
             @is_signed_request_required
             ## 
             # The OdataType property
@@ -34,14 +34,14 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Gets the allowedWeakAlgorithms property value. The allowedWeakAlgorithms property
+            ## Gets the allowedWeakAlgorithms property value. Specifies which weak algorithms are allowed.  The possible values are: rsaSha1, unknownFutureValue.
             ## @return a weak_algorithms
             ## 
             def allowed_weak_algorithms
                 return @allowed_weak_algorithms
             end
             ## 
-            ## Sets the allowedWeakAlgorithms property value. The allowedWeakAlgorithms property
+            ## Sets the allowedWeakAlgorithms property value. Specifies which weak algorithms are allowed.  The possible values are: rsaSha1, unknownFutureValue.
             ## @param value Value to set for the allowed_weak_algorithms property.
             ## @return a void
             ## 
@@ -57,7 +57,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a request_signature_verification
             ## 
             def self.create_from_discriminator_value(parse_node)
@@ -76,14 +76,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the isSignedRequestRequired property value. The isSignedRequestRequired property
+            ## Gets the isSignedRequestRequired property value. Specifies whether signed authentication requests for this application should be required.
             ## @return a boolean
             ## 
             def is_signed_request_required
                 return @is_signed_request_required
             end
             ## 
-            ## Sets the isSignedRequestRequired property value. The isSignedRequestRequired property
+            ## Sets the isSignedRequestRequired property value. Specifies whether signed authentication requests for this application should be required.
             ## @param value Value to set for the is_signed_request_required property.
             ## @return a void
             ## 

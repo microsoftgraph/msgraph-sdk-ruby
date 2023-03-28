@@ -20,7 +20,7 @@ module MicrosoftGraph
                     module Item
                         ## 
                         # Provides operations to manage the languages property of the microsoft.graph.b2xIdentityUserFlow entity.
-                        class UserFlowLanguageConfigurationItemRequestBuilder
+                        class UserFlowLanguageConfigurationItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                             
                             ## 
                             # Provides operations to manage the defaultPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
@@ -33,27 +33,13 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Identity::B2xUserFlows::Item::Languages::Item::OverridesPages::OverridesPagesRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
-                            # Path parameters for the request
-                            @path_parameters
-                            ## 
-                            # The request adapter to use to execute the requests.
-                            @request_adapter
-                            ## 
-                            # Url template to use to build the URL for the current request builder
-                            @url_template
-                            ## 
                             ## Instantiates a new UserFlowLanguageConfigurationItemRequestBuilder and sets the default values.
-                            ## @param pathParameters Path parameters for the request
-                            ## @param requestAdapter The request adapter to use to execute the requests.
+                            ## @param path_parameters Path parameters for the request
+                            ## @param request_adapter The request adapter to use to execute the requests.
                             ## @return a void
                             ## 
                             def initialize(path_parameters, request_adapter)
-                                raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                @url_template = "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/languages/{userFlowLanguageConfiguration%2Did}{?%24select,%24expand}"
-                                @request_adapter = request_adapter
-                                path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                super(path_parameters, request_adapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/languages/{userFlowLanguageConfiguration%2Did}{?%24select,%24expand}")
                             end
                             ## 
                             ## Provides operations to manage the defaultPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
@@ -68,7 +54,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Delete navigation property languages for identity
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
                             def delete(request_configuration=nil)
@@ -82,7 +68,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of user_flow_language_configuration
                             ## 
                             def get(request_configuration=nil)
@@ -108,7 +94,7 @@ module MicrosoftGraph
                             ## 
                             ## Update the navigation property languages in identity
                             ## @param body The request body
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of user_flow_language_configuration
                             ## 
                             def patch(body, request_configuration=nil)
@@ -123,7 +109,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Delete navigation property languages for identity
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_delete_request_information(request_configuration=nil)
@@ -139,7 +125,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_get_request_information(request_configuration=nil)
@@ -158,7 +144,7 @@ module MicrosoftGraph
                             ## 
                             ## Update the navigation property languages in identity
                             ## @param body The request body
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_patch_request_information(body, request_configuration=nil)
@@ -177,18 +163,6 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Configuration for the request such as headers, query parameters, and middleware options.
-                            class UserFlowLanguageConfigurationItemRequestBuilderDeleteRequestConfiguration
-                                
-                                ## 
-                                # Request headers
-                                attr_accessor :headers
-                                ## 
-                                # Request options
-                                attr_accessor :options
-                            end
-
-                            ## 
                             # The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
                             class UserFlowLanguageConfigurationItemRequestBuilderGetQueryParameters
                                 
@@ -200,7 +174,7 @@ module MicrosoftGraph
                                 attr_accessor :select
                                 ## 
                                 ## Maps the query parameters names to their encoded names for the URI template parsing.
-                                ## @param originalName The original query parameter name in the class.
+                                ## @param original_name The original query parameter name in the class.
                                 ## @return a string
                                 ## 
                                 def get_query_parameter(original_name)
@@ -214,33 +188,6 @@ module MicrosoftGraph
                                             return original_name
                                     end
                                 end
-                            end
-
-                            ## 
-                            # Configuration for the request such as headers, query parameters, and middleware options.
-                            class UserFlowLanguageConfigurationItemRequestBuilderGetRequestConfiguration
-                                
-                                ## 
-                                # Request headers
-                                attr_accessor :headers
-                                ## 
-                                # Request options
-                                attr_accessor :options
-                                ## 
-                                # Request query parameters
-                                attr_accessor :query_parameters
-                            end
-
-                            ## 
-                            # Configuration for the request such as headers, query parameters, and middleware options.
-                            class UserFlowLanguageConfigurationItemRequestBuilderPatchRequestConfiguration
-                                
-                                ## 
-                                # Request headers
-                                attr_accessor :headers
-                                ## 
-                                # Request options
-                                attr_accessor :options
                             end
                         end
                     end

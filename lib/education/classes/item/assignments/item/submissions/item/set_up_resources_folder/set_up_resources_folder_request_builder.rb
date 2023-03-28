@@ -22,34 +22,20 @@ module MicrosoftGraph
                                 module SetUpResourcesFolder
                                     ## 
                                     # Provides operations to call the setUpResourcesFolder method.
-                                    class SetUpResourcesFolderRequestBuilder
+                                    class SetUpResourcesFolderRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                         
                                         ## 
-                                        # Path parameters for the request
-                                        @path_parameters
-                                        ## 
-                                        # The request adapter to use to execute the requests.
-                                        @request_adapter
-                                        ## 
-                                        # Url template to use to build the URL for the current request builder
-                                        @url_template
-                                        ## 
                                         ## Instantiates a new SetUpResourcesFolderRequestBuilder and sets the default values.
-                                        ## @param pathParameters Path parameters for the request
-                                        ## @param requestAdapter The request adapter to use to execute the requests.
+                                        ## @param path_parameters Path parameters for the request
+                                        ## @param request_adapter The request adapter to use to execute the requests.
                                         ## @return a void
                                         ## 
                                         def initialize(path_parameters, request_adapter)
-                                            raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                            raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                            @url_template = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/setUpResourcesFolder"
-                                            @request_adapter = request_adapter
-                                            path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                            @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                            super(path_parameters, request_adapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/setUpResourcesFolder")
                                         end
                                         ## 
                                         ## Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission. Only teachers and students can perform this operation. Note that files must be located in this folder in order to be added as resources. Only a student in the class can determine what files to upload in a given submission-level resource folder. 
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of education_submission
                                         ## 
                                         def post(request_configuration=nil)
@@ -63,7 +49,7 @@ module MicrosoftGraph
                                         end
                                         ## 
                                         ## Trigger the creation of the SharePoint resource folder where all file-based resources (Word, Excel, and so on) should be uploaded for a given submission. Only teachers and students can perform this operation. Note that files must be located in this folder in order to be added as resources. Only a student in the class can determine what files to upload in a given submission-level resource folder. 
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
                                         def to_post_request_information(request_configuration=nil)
@@ -77,18 +63,6 @@ module MicrosoftGraph
                                                 request_info.add_request_options(request_configuration.options)
                                             end
                                             return request_info
-                                        end
-
-                                        ## 
-                                        # Configuration for the request such as headers, query parameters, and middleware options.
-                                        class SetUpResourcesFolderRequestBuilderPostRequestConfiguration
-                                            
-                                            ## 
-                                            # Request headers
-                                            attr_accessor :headers
-                                            ## 
-                                            # Request options
-                                            attr_accessor :options
                                         end
                                     end
                                 end

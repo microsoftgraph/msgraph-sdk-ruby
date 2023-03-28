@@ -22,34 +22,20 @@ module MicrosoftGraph
                                 module Unsubmit
                                     ## 
                                     # Provides operations to call the unsubmit method.
-                                    class UnsubmitRequestBuilder
+                                    class UnsubmitRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                         
                                         ## 
-                                        # Path parameters for the request
-                                        @path_parameters
-                                        ## 
-                                        # The request adapter to use to execute the requests.
-                                        @request_adapter
-                                        ## 
-                                        # Url template to use to build the URL for the current request builder
-                                        @url_template
-                                        ## 
                                         ## Instantiates a new UnsubmitRequestBuilder and sets the default values.
-                                        ## @param pathParameters Path parameters for the request
-                                        ## @param requestAdapter The request adapter to use to execute the requests.
+                                        ## @param path_parameters Path parameters for the request
+                                        ## @param request_adapter The request adapter to use to execute the requests.
                                         ## @return a void
                                         ## 
                                         def initialize(path_parameters, request_adapter)
-                                            raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                            raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                            @url_template = "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/unsubmit"
-                                            @request_adapter = request_adapter
-                                            path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                            @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                            super(path_parameters, request_adapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/unsubmit")
                                         end
                                         ## 
                                         ## Indicate that a student wants to work on the submission of the assignment after it was turned in. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from `submitted` to `working`. During the submit process, all the resources are copied from **submittedResources** to  **workingResources**. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student's assignment on their behalf.
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of education_submission
                                         ## 
                                         def post(request_configuration=nil)
@@ -63,7 +49,7 @@ module MicrosoftGraph
                                         end
                                         ## 
                                         ## Indicate that a student wants to work on the submission of the assignment after it was turned in. Only teachers, students, and applications with application permissions can perform this operation. This method changes the status of the submission from `submitted` to `working`. During the submit process, all the resources are copied from **submittedResources** to  **workingResources**. The teacher will be looking at the working resources list for grading. A teacher can also unsubmit a student's assignment on their behalf.
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
                                         def to_post_request_information(request_configuration=nil)
@@ -77,18 +63,6 @@ module MicrosoftGraph
                                                 request_info.add_request_options(request_configuration.options)
                                             end
                                             return request_info
-                                        end
-
-                                        ## 
-                                        # Configuration for the request such as headers, query parameters, and middleware options.
-                                        class UnsubmitRequestBuilderPostRequestConfiguration
-                                            
-                                            ## 
-                                            # Request headers
-                                            attr_accessor :headers
-                                            ## 
-                                            # Request options
-                                            attr_accessor :options
                                         end
                                     end
                                 end

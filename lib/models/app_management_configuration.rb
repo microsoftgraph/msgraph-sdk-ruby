@@ -10,13 +10,13 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The keyCredentials property
+            # Collection of keyCredential restrictions settings to be applied to an application or service principal.
             @key_credentials
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The passwordCredentials property
+            # Collection of password restrictions settings to be applied to an application or service principal.
             @password_credentials
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a app_management_configuration
             ## 
             def self.create_from_discriminator_value(parse_node)
@@ -61,14 +61,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the keyCredentials property value. The keyCredentials property
+            ## Gets the keyCredentials property value. Collection of keyCredential restrictions settings to be applied to an application or service principal.
             ## @return a key_credential_configuration
             ## 
             def key_credentials
                 return @key_credentials
             end
             ## 
-            ## Sets the keyCredentials property value. The keyCredentials property
+            ## Sets the keyCredentials property value. Collection of keyCredential restrictions settings to be applied to an application or service principal.
             ## @param value Value to set for the key_credentials property.
             ## @return a void
             ## 
@@ -91,14 +91,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the passwordCredentials property value. The passwordCredentials property
+            ## Gets the passwordCredentials property value. Collection of password restrictions settings to be applied to an application or service principal.
             ## @return a password_credential_configuration
             ## 
             def password_credentials
                 return @password_credentials
             end
             ## 
-            ## Sets the passwordCredentials property value. The passwordCredentials property
+            ## Sets the passwordCredentials property value. Collection of password restrictions settings to be applied to an application or service principal.
             ## @param value Value to set for the password_credentials property.
             ## @return a void
             ## 

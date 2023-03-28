@@ -10,34 +10,20 @@ module MicrosoftGraph
         module Item
             ## 
             # Provides operations to manage the collection of schemaExtension entities.
-            class SchemaExtensionItemRequestBuilder
+            class SchemaExtensionItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                 
                 ## 
-                # Path parameters for the request
-                @path_parameters
-                ## 
-                # The request adapter to use to execute the requests.
-                @request_adapter
-                ## 
-                # Url template to use to build the URL for the current request builder
-                @url_template
-                ## 
                 ## Instantiates a new SchemaExtensionItemRequestBuilder and sets the default values.
-                ## @param pathParameters Path parameters for the request
-                ## @param requestAdapter The request adapter to use to execute the requests.
+                ## @param path_parameters Path parameters for the request
+                ## @param request_adapter The request adapter to use to execute the requests.
                 ## @return a void
                 ## 
                 def initialize(path_parameters, request_adapter)
-                    raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                    raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                    @url_template = "{+baseurl}/schemaExtensions/{schemaExtension%2Did}{?%24select,%24expand}"
-                    @request_adapter = request_adapter
-                    path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                    @path_parameters = path_parameters if path_parameters.is_a? Hash
+                    super(path_parameters, request_adapter, "{+baseurl}/schemaExtensions/{schemaExtension%2Did}{?%24select,%24expand}")
                 end
                 ## 
                 ## Delete the definition of a schema extension. Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the `InDevelopment` state. Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of void
                 ## 
                 def delete(request_configuration=nil)
@@ -51,7 +37,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Get schemaExtension
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of schema_extension
                 ## 
                 def get(request_configuration=nil)
@@ -66,7 +52,7 @@ module MicrosoftGraph
                 ## 
                 ## Update properties in the definition of the specified schemaExtension. Additive updates to the extension can only be made when the extension is in the `InDevelopment` or `Available` status. This means custom properties or target resource types cannot be removed from the definition, but new custom properties can be added and the description of the extension changed. The update applies to all the resources that are included in the **targetTypes** property of the extension. These resources are among the supporting resource types. For delegated flows, the signed-in user can update a schema extension as long as the **owner** property of the extension is set to the **appId** of an application the signed-in user owns. That application can be the one that initially created the extension, or some other application owned by the signed-in user.  This criteria for the **owner** property allows a signed-in user to make updates through other applications they don't own, such as Microsoft Graph Explorer. When using Graph Explorer to update a **schemaExtension** resource, include the **owner** property in the PATCH request body. For more information, see the Extensions section in Known issues with Microsoft Graph.
                 ## @param body The request body
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of schema_extension
                 ## 
                 def patch(body, request_configuration=nil)
@@ -81,7 +67,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Delete the definition of a schema extension. Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the `InDevelopment` state. Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_delete_request_information(request_configuration=nil)
@@ -97,7 +83,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Get schemaExtension
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_get_request_information(request_configuration=nil)
@@ -116,7 +102,7 @@ module MicrosoftGraph
                 ## 
                 ## Update properties in the definition of the specified schemaExtension. Additive updates to the extension can only be made when the extension is in the `InDevelopment` or `Available` status. This means custom properties or target resource types cannot be removed from the definition, but new custom properties can be added and the description of the extension changed. The update applies to all the resources that are included in the **targetTypes** property of the extension. These resources are among the supporting resource types. For delegated flows, the signed-in user can update a schema extension as long as the **owner** property of the extension is set to the **appId** of an application the signed-in user owns. That application can be the one that initially created the extension, or some other application owned by the signed-in user.  This criteria for the **owner** property allows a signed-in user to make updates through other applications they don't own, such as Microsoft Graph Explorer. When using Graph Explorer to update a **schemaExtension** resource, include the **owner** property in the PATCH request body. For more information, see the Extensions section in Known issues with Microsoft Graph.
                 ## @param body The request body
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_patch_request_information(body, request_configuration=nil)
@@ -135,18 +121,6 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Configuration for the request such as headers, query parameters, and middleware options.
-                class SchemaExtensionItemRequestBuilderDeleteRequestConfiguration
-                    
-                    ## 
-                    # Request headers
-                    attr_accessor :headers
-                    ## 
-                    # Request options
-                    attr_accessor :options
-                end
-
-                ## 
                 # Get schemaExtension
                 class SchemaExtensionItemRequestBuilderGetQueryParameters
                     
@@ -158,7 +132,7 @@ module MicrosoftGraph
                     attr_accessor :select
                     ## 
                     ## Maps the query parameters names to their encoded names for the URI template parsing.
-                    ## @param originalName The original query parameter name in the class.
+                    ## @param original_name The original query parameter name in the class.
                     ## @return a string
                     ## 
                     def get_query_parameter(original_name)
@@ -172,33 +146,6 @@ module MicrosoftGraph
                                 return original_name
                         end
                     end
-                end
-
-                ## 
-                # Configuration for the request such as headers, query parameters, and middleware options.
-                class SchemaExtensionItemRequestBuilderGetRequestConfiguration
-                    
-                    ## 
-                    # Request headers
-                    attr_accessor :headers
-                    ## 
-                    # Request options
-                    attr_accessor :options
-                    ## 
-                    # Request query parameters
-                    attr_accessor :query_parameters
-                end
-
-                ## 
-                # Configuration for the request such as headers, query parameters, and middleware options.
-                class SchemaExtensionItemRequestBuilderPatchRequestConfiguration
-                    
-                    ## 
-                    # Request headers
-                    attr_accessor :headers
-                    ## 
-                    # Request options
-                    attr_accessor :options
                 end
             end
         end

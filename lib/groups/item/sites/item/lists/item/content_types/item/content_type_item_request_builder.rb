@@ -10,7 +10,7 @@ require_relative '../../../lists'
 require_relative '../../item'
 require_relative '../content_types'
 require_relative './associate_with_hub_sites/associate_with_hub_sites_request_builder'
-require_relative './base/base_request_builder'
+require_relative './base/base_request_builder_escaped'
 require_relative './base_types/base_types_request_builder'
 require_relative './base_types/item/content_type_item_request_builder'
 require_relative './column_links/column_links_request_builder'
@@ -36,7 +36,7 @@ module MicrosoftGraph
                                 module Item
                                     ## 
                                     # Provides operations to manage the contentTypes property of the microsoft.graph.list entity.
-                                    class ContentTypeItemRequestBuilder
+                                    class ContentTypeItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                         
                                         ## 
                                         # Provides operations to call the associateWithHubSites method.
@@ -46,7 +46,7 @@ module MicrosoftGraph
                                         ## 
                                         # Provides operations to manage the base property of the microsoft.graph.contentType entity.
                                         def base()
-                                            return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::ContentTypes::Item::Base::BaseRequestBuilder.new(@path_parameters, @request_adapter)
+                                            return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::ContentTypes::Item::Base::BaseRequestBuilder_escaped.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
                                         # Provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.
@@ -79,24 +79,15 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::ContentTypes::Item::IsPublished::IsPublishedRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
-                                        # Path parameters for the request
-                                        @path_parameters
-                                        ## 
                                         # Provides operations to call the publish method.
                                         def publish()
                                             return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::ContentTypes::Item::Publish::PublishRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
-                                        # The request adapter to use to execute the requests.
-                                        @request_adapter
-                                        ## 
                                         # Provides operations to call the unpublish method.
                                         def unpublish()
                                             return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::ContentTypes::Item::Unpublish::UnpublishRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
-                                        ## 
-                                        # Url template to use to build the URL for the current request builder
-                                        @url_template
                                         ## 
                                         ## Provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.
                                         ## @param id Unique identifier of the item
@@ -143,21 +134,16 @@ module MicrosoftGraph
                                         end
                                         ## 
                                         ## Instantiates a new ContentTypeItemRequestBuilder and sets the default values.
-                                        ## @param pathParameters Path parameters for the request
-                                        ## @param requestAdapter The request adapter to use to execute the requests.
+                                        ## @param path_parameters Path parameters for the request
+                                        ## @param request_adapter The request adapter to use to execute the requests.
                                         ## @return a void
                                         ## 
                                         def initialize(path_parameters, request_adapter)
-                                            raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                            raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                            @url_template = "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}{?%24select,%24expand}"
-                                            @request_adapter = request_adapter
-                                            path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                            @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                            super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}{?%24select,%24expand}")
                                         end
                                         ## 
                                         ## Delete navigation property contentTypes for groups
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of void
                                         ## 
                                         def delete(request_configuration=nil)
@@ -171,7 +157,7 @@ module MicrosoftGraph
                                         end
                                         ## 
                                         ## The collection of content types present in this list.
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of content_type
                                         ## 
                                         def get(request_configuration=nil)
@@ -186,7 +172,7 @@ module MicrosoftGraph
                                         ## 
                                         ## Update the navigation property contentTypes in groups
                                         ## @param body The request body
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of content_type
                                         ## 
                                         def patch(body, request_configuration=nil)
@@ -201,7 +187,7 @@ module MicrosoftGraph
                                         end
                                         ## 
                                         ## Delete navigation property contentTypes for groups
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
                                         def to_delete_request_information(request_configuration=nil)
@@ -217,7 +203,7 @@ module MicrosoftGraph
                                         end
                                         ## 
                                         ## The collection of content types present in this list.
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
                                         def to_get_request_information(request_configuration=nil)
@@ -236,7 +222,7 @@ module MicrosoftGraph
                                         ## 
                                         ## Update the navigation property contentTypes in groups
                                         ## @param body The request body
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
                                         def to_patch_request_information(body, request_configuration=nil)
@@ -255,18 +241,6 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # Configuration for the request such as headers, query parameters, and middleware options.
-                                        class ContentTypeItemRequestBuilderDeleteRequestConfiguration
-                                            
-                                            ## 
-                                            # Request headers
-                                            attr_accessor :headers
-                                            ## 
-                                            # Request options
-                                            attr_accessor :options
-                                        end
-
-                                        ## 
                                         # The collection of content types present in this list.
                                         class ContentTypeItemRequestBuilderGetQueryParameters
                                             
@@ -278,7 +252,7 @@ module MicrosoftGraph
                                             attr_accessor :select
                                             ## 
                                             ## Maps the query parameters names to their encoded names for the URI template parsing.
-                                            ## @param originalName The original query parameter name in the class.
+                                            ## @param original_name The original query parameter name in the class.
                                             ## @return a string
                                             ## 
                                             def get_query_parameter(original_name)
@@ -292,33 +266,6 @@ module MicrosoftGraph
                                                         return original_name
                                                 end
                                             end
-                                        end
-
-                                        ## 
-                                        # Configuration for the request such as headers, query parameters, and middleware options.
-                                        class ContentTypeItemRequestBuilderGetRequestConfiguration
-                                            
-                                            ## 
-                                            # Request headers
-                                            attr_accessor :headers
-                                            ## 
-                                            # Request options
-                                            attr_accessor :options
-                                            ## 
-                                            # Request query parameters
-                                            attr_accessor :query_parameters
-                                        end
-
-                                        ## 
-                                        # Configuration for the request such as headers, query parameters, and middleware options.
-                                        class ContentTypeItemRequestBuilderPatchRequestConfiguration
-                                            
-                                            ## 
-                                            # Request headers
-                                            attr_accessor :headers
-                                            ## 
-                                            # Request options
-                                            attr_accessor :options
                                         end
                                     end
                                 end

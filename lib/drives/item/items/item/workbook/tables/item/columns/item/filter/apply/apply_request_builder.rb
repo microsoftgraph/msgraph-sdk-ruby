@@ -27,35 +27,21 @@ module MicrosoftGraph
                                             module Apply
                                                 ## 
                                                 # Provides operations to call the apply method.
-                                                class ApplyRequestBuilder
+                                                class ApplyRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                                     
                                                     ## 
-                                                    # Path parameters for the request
-                                                    @path_parameters
-                                                    ## 
-                                                    # The request adapter to use to execute the requests.
-                                                    @request_adapter
-                                                    ## 
-                                                    # Url template to use to build the URL for the current request builder
-                                                    @url_template
-                                                    ## 
                                                     ## Instantiates a new ApplyRequestBuilder and sets the default values.
-                                                    ## @param pathParameters Path parameters for the request
-                                                    ## @param requestAdapter The request adapter to use to execute the requests.
+                                                    ## @param path_parameters Path parameters for the request
+                                                    ## @param request_adapter The request adapter to use to execute the requests.
                                                     ## @return a void
                                                     ## 
                                                     def initialize(path_parameters, request_adapter)
-                                                        raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                                        raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                                        @url_template = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/{workbookTable%2Did}/columns/{workbookTableColumn%2Did}/filter/apply"
-                                                        @request_adapter = request_adapter
-                                                        path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                                        @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                                        super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/{workbookTable%2Did}/columns/{workbookTableColumn%2Did}/filter/apply")
                                                     end
                                                     ## 
                                                     ## Apply the given filter criteria on the given column.
                                                     ## @param body The request body
-                                                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a Fiber of void
                                                     ## 
                                                     def post(body, request_configuration=nil)
@@ -71,7 +57,7 @@ module MicrosoftGraph
                                                     ## 
                                                     ## Apply the given filter criteria on the given column.
                                                     ## @param body The request body
-                                                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a request_information
                                                     ## 
                                                     def to_post_request_information(body, request_configuration=nil)
@@ -86,18 +72,6 @@ module MicrosoftGraph
                                                         end
                                                         request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
                                                         return request_info
-                                                    end
-
-                                                    ## 
-                                                    # Configuration for the request such as headers, query parameters, and middleware options.
-                                                    class ApplyRequestBuilderPostRequestConfiguration
-                                                        
-                                                        ## 
-                                                        # Request headers
-                                                        attr_accessor :headers
-                                                        ## 
-                                                        # Request options
-                                                        attr_accessor :options
                                                     end
                                                 end
                                             end

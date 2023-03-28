@@ -19,35 +19,21 @@ module MicrosoftGraph
                             module Forward
                                 ## 
                                 # Provides operations to call the forward method.
-                                class ForwardRequestBuilder
+                                class ForwardRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                     
                                     ## 
-                                    # Path parameters for the request
-                                    @path_parameters
-                                    ## 
-                                    # The request adapter to use to execute the requests.
-                                    @request_adapter
-                                    ## 
-                                    # Url template to use to build the URL for the current request builder
-                                    @url_template
-                                    ## 
                                     ## Instantiates a new ForwardRequestBuilder and sets the default values.
-                                    ## @param pathParameters Path parameters for the request
-                                    ## @param requestAdapter The request adapter to use to execute the requests.
+                                    ## @param path_parameters Path parameters for the request
+                                    ## @param request_adapter The request adapter to use to execute the requests.
                                     ## @return a void
                                     ## 
                                     def initialize(path_parameters, request_adapter)
-                                        raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                        raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                        @url_template = "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/messages/{message%2Did}/forward"
-                                        @request_adapter = request_adapter
-                                        path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                        @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                        super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/messages/{message%2Did}/forward")
                                     end
                                     ## 
                                     ## Forward a message using either JSON or MIME format. When using JSON format, you can:- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to forward a message, and send it later.
                                     ## @param body The request body
-                                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
                                     def post(body, request_configuration=nil)
@@ -63,7 +49,7 @@ module MicrosoftGraph
                                     ## 
                                     ## Forward a message using either JSON or MIME format. When using JSON format, you can:- Specify either a comment or the **body** property of the `message` parameter. Specifying both will return an HTTP 400 Bad Request error.- Specify either the `toRecipients` parameter or the **toRecipients** property of the `message` parameter. Specifying both or specifying neither will return an HTTP 400 Bad Request error. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft to forward a message, and send it later.
                                     ## @param body The request body
-                                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
                                     def to_post_request_information(body, request_configuration=nil)
@@ -78,18 +64,6 @@ module MicrosoftGraph
                                         end
                                         request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
                                         return request_info
-                                    end
-
-                                    ## 
-                                    # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class ForwardRequestBuilderPostRequestConfiguration
-                                        
-                                        ## 
-                                        # Request headers
-                                        attr_accessor :headers
-                                        ## 
-                                        # Request options
-                                        attr_accessor :options
                                     end
                                 end
                             end

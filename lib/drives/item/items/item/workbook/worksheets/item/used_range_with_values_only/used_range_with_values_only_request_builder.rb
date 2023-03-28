@@ -22,35 +22,21 @@ module MicrosoftGraph
                                 module UsedRangeWithValuesOnly
                                     ## 
                                     # Provides operations to call the usedRange method.
-                                    class UsedRangeWithValuesOnlyRequestBuilder
+                                    class UsedRangeWithValuesOnlyRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                         
                                         ## 
-                                        # Path parameters for the request
-                                        @path_parameters
-                                        ## 
-                                        # The request adapter to use to execute the requests.
-                                        @request_adapter
-                                        ## 
-                                        # Url template to use to build the URL for the current request builder
-                                        @url_template
-                                        ## 
                                         ## Instantiates a new UsedRangeWithValuesOnlyRequestBuilder and sets the default values.
-                                        ## @param pathParameters Path parameters for the request
-                                        ## @param requestAdapter The request adapter to use to execute the requests.
-                                        ## @param valuesOnly Usage: valuesOnly={valuesOnly}
+                                        ## @param path_parameters Path parameters for the request
+                                        ## @param request_adapter The request adapter to use to execute the requests.
+                                        ## @param values_only Usage: valuesOnly={valuesOnly}
                                         ## @return a void
                                         ## 
                                         def initialize(path_parameters, request_adapter, values_only=nil)
-                                            raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                            raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                            @url_template = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/usedRange(valuesOnly={valuesOnly})"
-                                            @request_adapter = request_adapter
-                                            path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                            @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                            super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/usedRange(valuesOnly={valuesOnly})")
                                         end
                                         ## 
                                         ## Invoke function usedRange
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of workbook_range
                                         ## 
                                         def get(request_configuration=nil)
@@ -64,7 +50,7 @@ module MicrosoftGraph
                                         end
                                         ## 
                                         ## Invoke function usedRange
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
                                         def to_get_request_information(request_configuration=nil)
@@ -78,18 +64,6 @@ module MicrosoftGraph
                                                 request_info.add_request_options(request_configuration.options)
                                             end
                                             return request_info
-                                        end
-
-                                        ## 
-                                        # Configuration for the request such as headers, query parameters, and middleware options.
-                                        class UsedRangeWithValuesOnlyRequestBuilderGetRequestConfiguration
-                                            
-                                            ## 
-                                            # Request headers
-                                            attr_accessor :headers
-                                            ## 
-                                            # Request options
-                                            attr_accessor :options
                                         end
                                     end
                                 end

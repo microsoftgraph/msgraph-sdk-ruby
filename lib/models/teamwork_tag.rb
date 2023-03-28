@@ -7,7 +7,7 @@ module MicrosoftGraph
         class TeamworkTag < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The description of the tag as it will appear to the user in Microsoft Teams.
+            # The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
             @description
             ## 
             # The name of the tag as it will appear to the user in Microsoft Teams.
@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a teamwork_tag
             ## 
             def self.create_from_discriminator_value(parse_node)
@@ -41,14 +41,14 @@ module MicrosoftGraph
                 return TeamworkTag.new
             end
             ## 
-            ## Gets the description property value. The description of the tag as it will appear to the user in Microsoft Teams.
+            ## Gets the description property value. The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. The description of the tag as it will appear to the user in Microsoft Teams.
+            ## Sets the description property value. The description of the tag as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 

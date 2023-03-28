@@ -20,35 +20,21 @@ module MicrosoftGraph
                             module Leftb
                                 ## 
                                 # Provides operations to call the leftb method.
-                                class LeftbRequestBuilder
+                                class LeftbRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                     
                                     ## 
-                                    # Path parameters for the request
-                                    @path_parameters
-                                    ## 
-                                    # The request adapter to use to execute the requests.
-                                    @request_adapter
-                                    ## 
-                                    # Url template to use to build the URL for the current request builder
-                                    @url_template
-                                    ## 
                                     ## Instantiates a new LeftbRequestBuilder and sets the default values.
-                                    ## @param pathParameters Path parameters for the request
-                                    ## @param requestAdapter The request adapter to use to execute the requests.
+                                    ## @param path_parameters Path parameters for the request
+                                    ## @param request_adapter The request adapter to use to execute the requests.
                                     ## @return a void
                                     ## 
                                     def initialize(path_parameters, request_adapter)
-                                        raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                        raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                        @url_template = "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/leftb"
-                                        @request_adapter = request_adapter
-                                        path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                        @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                        super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/functions/leftb")
                                     end
                                     ## 
                                     ## Invoke action leftb
                                     ## @param body The request body
-                                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of workbook_function_result
                                     ## 
                                     def post(body, request_configuration=nil)
@@ -64,7 +50,7 @@ module MicrosoftGraph
                                     ## 
                                     ## Invoke action leftb
                                     ## @param body The request body
-                                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
                                     def to_post_request_information(body, request_configuration=nil)
@@ -80,18 +66,6 @@ module MicrosoftGraph
                                         end
                                         request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
                                         return request_info
-                                    end
-
-                                    ## 
-                                    # Configuration for the request such as headers, query parameters, and middleware options.
-                                    class LeftbRequestBuilderPostRequestConfiguration
-                                        
-                                        ## 
-                                        # Request headers
-                                        attr_accessor :headers
-                                        ## 
-                                        # Request options
-                                        attr_accessor :options
                                     end
                                 end
                             end

@@ -30,7 +30,7 @@ module MicrosoftGraph
             module Item
                 ## 
                 # Provides operations to manage the calendarView property of the microsoft.graph.user entity.
-                class EventItemRequestBuilder
+                class EventItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
                     ## 
                     # Provides operations to call the accept method.
@@ -83,12 +83,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::Me::CalendarView::Item::MultiValueExtendedProperties::MultiValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    # Path parameters for the request
-                    @path_parameters
-                    ## 
-                    # The request adapter to use to execute the requests.
-                    @request_adapter
-                    ## 
                     # Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
                     def single_value_extended_properties()
                         return MicrosoftGraph::Me::CalendarView::Item::SingleValueExtendedProperties::SingleValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -104,9 +98,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::Me::CalendarView::Item::TentativelyAccept::TentativelyAcceptRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    # Url template to use to build the URL for the current request builder
-                    @url_template
-                    ## 
                     ## Provides operations to manage the attachments property of the microsoft.graph.event entity.
                     ## @param id Unique identifier of the item
                     ## @return a attachment_item_request_builder
@@ -119,17 +110,12 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Instantiates a new EventItemRequestBuilder and sets the default values.
-                    ## @param pathParameters Path parameters for the request
-                    ## @param requestAdapter The request adapter to use to execute the requests.
+                    ## @param path_parameters Path parameters for the request
+                    ## @param request_adapter The request adapter to use to execute the requests.
                     ## @return a void
                     ## 
                     def initialize(path_parameters, request_adapter)
-                        raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                        raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                        @url_template = "{+baseurl}/me/calendarView/{event%2Did}{?startDateTime*,endDateTime*,%24select}"
-                        @request_adapter = request_adapter
-                        path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                        @path_parameters = path_parameters if path_parameters.is_a? Hash
+                        super(path_parameters, request_adapter, "{+baseurl}/me/calendarView/{event%2Did}{?startDateTime*,endDateTime*,%24select,%24expand}")
                     end
                     ## 
                     ## Provides operations to manage the extensions property of the microsoft.graph.event entity.
@@ -144,7 +130,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## The calendar view for the calendar. Read-only. Nullable.
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of event
                     ## 
                     def get(request_configuration=nil)
@@ -191,7 +177,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## The calendar view for the calendar. Read-only. Nullable.
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_get_request_information(request_configuration=nil)
@@ -216,6 +202,9 @@ module MicrosoftGraph
                         # The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
                         attr_accessor :end_date_time
                         ## 
+                        # Expand related entities
+                        attr_accessor :expand
+                        ## 
                         # Select properties to be returned
                         attr_accessor :select
                         ## 
@@ -223,33 +212,20 @@ module MicrosoftGraph
                         attr_accessor :start_date_time
                         ## 
                         ## Maps the query parameters names to their encoded names for the URI template parsing.
-                        ## @param originalName The original query parameter name in the class.
+                        ## @param original_name The original query parameter name in the class.
                         ## @return a string
                         ## 
                         def get_query_parameter(original_name)
                             raise StandardError, 'original_name cannot be null' if original_name.nil?
                             case original_name
+                                when "expand"
+                                    return "%24expand"
                                 when "select"
                                     return "%24select"
                                 else
                                     return original_name
                             end
                         end
-                    end
-
-                    ## 
-                    # Configuration for the request such as headers, query parameters, and middleware options.
-                    class EventItemRequestBuilderGetRequestConfiguration
-                        
-                        ## 
-                        # Request headers
-                        attr_accessor :headers
-                        ## 
-                        # Request options
-                        attr_accessor :options
-                        ## 
-                        # Request query parameters
-                        attr_accessor :query_parameters
                     end
                 end
             end

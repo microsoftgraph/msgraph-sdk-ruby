@@ -28,7 +28,7 @@ module MicrosoftGraph
                         module Item
                             ## 
                             # Provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
-                            class AccessPackageItemRequestBuilder
+                            class AccessPackageItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                 
                                 ## 
                                 # Provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
@@ -61,15 +61,6 @@ module MicrosoftGraph
                                     return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::IncompatibleGroups::IncompatibleGroupsRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
-                                # Path parameters for the request
-                                @path_parameters
-                                ## 
-                                # The request adapter to use to execute the requests.
-                                @request_adapter
-                                ## 
-                                # Url template to use to build the URL for the current request builder
-                                @url_template
-                                ## 
                                 ## Provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
                                 ## @param id Unique identifier of the item
                                 ## @return a access_package_item_request_builder
@@ -93,21 +84,16 @@ module MicrosoftGraph
                                 end
                                 ## 
                                 ## Instantiates a new AccessPackageItemRequestBuilder and sets the default values.
-                                ## @param pathParameters Path parameters for the request
-                                ## @param requestAdapter The request adapter to use to execute the requests.
+                                ## @param path_parameters Path parameters for the request
+                                ## @param request_adapter The request adapter to use to execute the requests.
                                 ## @return a void
                                 ## 
                                 def initialize(path_parameters, request_adapter)
-                                    raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                    raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                    @url_template = "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}/accessPackages/{accessPackage%2Did}{?%24select,%24expand}"
-                                    @request_adapter = request_adapter
-                                    path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                    @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                    super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}/accessPackages/{accessPackage%2Did}{?%24select,%24expand}")
                                 end
                                 ## 
                                 ## Delete navigation property accessPackages for identityGovernance
-                                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
                                 ## 
                                 def delete(request_configuration=nil)
@@ -121,7 +107,7 @@ module MicrosoftGraph
                                 end
                                 ## 
                                 ## The access packages in this catalog. Read-only. Nullable.
-                                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of access_package
                                 ## 
                                 def get(request_configuration=nil)
@@ -158,7 +144,7 @@ module MicrosoftGraph
                                 ## 
                                 ## Update the navigation property accessPackages in identityGovernance
                                 ## @param body The request body
-                                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of access_package
                                 ## 
                                 def patch(body, request_configuration=nil)
@@ -173,7 +159,7 @@ module MicrosoftGraph
                                 end
                                 ## 
                                 ## Delete navigation property accessPackages for identityGovernance
-                                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
                                 def to_delete_request_information(request_configuration=nil)
@@ -189,7 +175,7 @@ module MicrosoftGraph
                                 end
                                 ## 
                                 ## The access packages in this catalog. Read-only. Nullable.
-                                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
                                 def to_get_request_information(request_configuration=nil)
@@ -208,7 +194,7 @@ module MicrosoftGraph
                                 ## 
                                 ## Update the navigation property accessPackages in identityGovernance
                                 ## @param body The request body
-                                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
                                 def to_patch_request_information(body, request_configuration=nil)
@@ -227,18 +213,6 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Configuration for the request such as headers, query parameters, and middleware options.
-                                class AccessPackageItemRequestBuilderDeleteRequestConfiguration
-                                    
-                                    ## 
-                                    # Request headers
-                                    attr_accessor :headers
-                                    ## 
-                                    # Request options
-                                    attr_accessor :options
-                                end
-
-                                ## 
                                 # The access packages in this catalog. Read-only. Nullable.
                                 class AccessPackageItemRequestBuilderGetQueryParameters
                                     
@@ -250,7 +224,7 @@ module MicrosoftGraph
                                     attr_accessor :select
                                     ## 
                                     ## Maps the query parameters names to their encoded names for the URI template parsing.
-                                    ## @param originalName The original query parameter name in the class.
+                                    ## @param original_name The original query parameter name in the class.
                                     ## @return a string
                                     ## 
                                     def get_query_parameter(original_name)
@@ -264,33 +238,6 @@ module MicrosoftGraph
                                                 return original_name
                                         end
                                     end
-                                end
-
-                                ## 
-                                # Configuration for the request such as headers, query parameters, and middleware options.
-                                class AccessPackageItemRequestBuilderGetRequestConfiguration
-                                    
-                                    ## 
-                                    # Request headers
-                                    attr_accessor :headers
-                                    ## 
-                                    # Request options
-                                    attr_accessor :options
-                                    ## 
-                                    # Request query parameters
-                                    attr_accessor :query_parameters
-                                end
-
-                                ## 
-                                # Configuration for the request such as headers, query parameters, and middleware options.
-                                class AccessPackageItemRequestBuilderPatchRequestConfiguration
-                                    
-                                    ## 
-                                    # Request headers
-                                    attr_accessor :headers
-                                    ## 
-                                    # Request options
-                                    attr_accessor :options
                                 end
                             end
                         end

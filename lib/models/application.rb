@@ -17,7 +17,7 @@ module MicrosoftGraph
             # The unique identifier for the application that is assigned to an application by Azure AD. Not nullable. Read-only. Supports $filter (eq).
             @app_id
             ## 
-            # The appManagementPolicies property
+            # The appManagementPolicy applied to this application.
             @app_management_policies
             ## 
             # The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
@@ -101,7 +101,7 @@ module MicrosoftGraph
             # The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain. Supports $filter (eq, ne, ge, le, startsWith).
             @publisher_domain
             ## 
-            # The requestSignatureVerification property
+            # Specifies whether this application requires Azure AD to verify the signed authentication requests.
             @request_signature_verification
             ## 
             # Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
@@ -182,14 +182,14 @@ module MicrosoftGraph
                 @app_id = value
             end
             ## 
-            ## Gets the appManagementPolicies property value. The appManagementPolicies property
+            ## Gets the appManagementPolicies property value. The appManagementPolicy applied to this application.
             ## @return a app_management_policy
             ## 
             def app_management_policies
                 return @app_management_policies
             end
             ## 
-            ## Sets the appManagementPolicies property value. The appManagementPolicies property
+            ## Sets the appManagementPolicies property value. The appManagementPolicy applied to this application.
             ## @param value Value to set for the app_management_policies property.
             ## @return a void
             ## 
@@ -242,7 +242,7 @@ module MicrosoftGraph
                 @certification = value
             end
             ## 
-            ## Instantiates a new Application and sets the default values.
+            ## Instantiates a new application and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -281,7 +281,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a application
             ## 
             def self.create_from_discriminator_value(parse_node)
@@ -670,14 +670,14 @@ module MicrosoftGraph
                 @publisher_domain = value
             end
             ## 
-            ## Gets the requestSignatureVerification property value. The requestSignatureVerification property
+            ## Gets the requestSignatureVerification property value. Specifies whether this application requires Azure AD to verify the signed authentication requests.
             ## @return a request_signature_verification
             ## 
             def request_signature_verification
                 return @request_signature_verification
             end
             ## 
-            ## Sets the requestSignatureVerification property value. The requestSignatureVerification property
+            ## Sets the requestSignatureVerification property value. Specifies whether this application requires Azure AD to verify the signed authentication requests.
             ## @param value Value to set for the request_signature_verification property.
             ## @return a void
             ## 

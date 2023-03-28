@@ -110,7 +110,7 @@ module MicrosoftGraph
         module Item
             ## 
             # Provides operations to manage the collection of user entities.
-            class UserItemRequestBuilder
+            class UserItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                 
                 ## 
                 # Provides operations to manage the activities property of the microsoft.graph.user entity.
@@ -353,9 +353,6 @@ module MicrosoftGraph
                     return MicrosoftGraph::Users::Item::OwnedObjects::OwnedObjectsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
-                # Path parameters for the request
-                @path_parameters
-                ## 
                 # Provides operations to manage the people property of the microsoft.graph.user entity.
                 def people()
                     return MicrosoftGraph::Users::Item::People::PeopleRequestBuilder.new(@path_parameters, @request_adapter)
@@ -395,9 +392,6 @@ module MicrosoftGraph
                 def reprocess_license_assignment()
                     return MicrosoftGraph::Users::Item::ReprocessLicenseAssignment::ReprocessLicenseAssignmentRequestBuilder.new(@path_parameters, @request_adapter)
                 end
-                ## 
-                # The request adapter to use to execute the requests.
-                @request_adapter
                 ## 
                 # Provides operations to call the restore method.
                 def restore()
@@ -443,9 +437,6 @@ module MicrosoftGraph
                 def translate_exchange_ids()
                     return MicrosoftGraph::Users::Item::TranslateExchangeIds::TranslateExchangeIdsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
-                ## 
-                # Url template to use to build the URL for the current request builder
-                @url_template
                 ## 
                 # Provides operations to call the wipeManagedAppRegistrationsByDeviceTag method.
                 def wipe_managed_app_registrations_by_device_tag()
@@ -530,17 +521,12 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Instantiates a new UserItemRequestBuilder and sets the default values.
-                ## @param pathParameters Path parameters for the request
-                ## @param requestAdapter The request adapter to use to execute the requests.
+                ## @param path_parameters Path parameters for the request
+                ## @param request_adapter The request adapter to use to execute the requests.
                 ## @return a void
                 ## 
                 def initialize(path_parameters, request_adapter)
-                    raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                    raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                    @url_template = "{+baseurl}/users/{user%2Did}{?%24select,%24expand}"
-                    @request_adapter = request_adapter
-                    path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                    @path_parameters = path_parameters if path_parameters.is_a? Hash
+                    super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}{?%24select,%24expand}")
                 end
                 ## 
                 ## Provides operations to manage the contactFolders property of the microsoft.graph.user entity.
@@ -577,7 +563,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of void
                 ## 
                 def delete(request_configuration=nil)
@@ -668,7 +654,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Retrieve the properties and relationships of user object.
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of user
                 ## 
                 def get(request_configuration=nil)
@@ -804,7 +790,7 @@ module MicrosoftGraph
                 ## 
                 ## Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
                 ## @param body The request body
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of user
                 ## 
                 def patch(body, request_configuration=nil)
@@ -852,8 +838,8 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Provides operations to call the reminderView method.
-                ## @param EndDateTime Usage: EndDateTime='{EndDateTime}'
-                ## @param StartDateTime Usage: StartDateTime='{StartDateTime}'
+                ## @param end_date_time Usage: EndDateTime='{EndDateTime}'
+                ## @param start_date_time Usage: StartDateTime='{StartDateTime}'
                 ## @return a reminder_view_with_start_date_time_with_end_date_time_request_builder
                 ## 
                 def reminder_view_with_start_date_time_with_end_date_time(end_date_time, start_date_time)
@@ -874,7 +860,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_delete_request_information(request_configuration=nil)
@@ -890,7 +876,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Retrieve the properties and relationships of user object.
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_get_request_information(request_configuration=nil)
@@ -909,7 +895,7 @@ module MicrosoftGraph
                 ## 
                 ## Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
                 ## @param body The request body
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_patch_request_information(body, request_configuration=nil)
@@ -939,18 +925,6 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Configuration for the request such as headers, query parameters, and middleware options.
-                class UserItemRequestBuilderDeleteRequestConfiguration
-                    
-                    ## 
-                    # Request headers
-                    attr_accessor :headers
-                    ## 
-                    # Request options
-                    attr_accessor :options
-                end
-
-                ## 
                 # Retrieve the properties and relationships of user object.
                 class UserItemRequestBuilderGetQueryParameters
                     
@@ -962,7 +936,7 @@ module MicrosoftGraph
                     attr_accessor :select
                     ## 
                     ## Maps the query parameters names to their encoded names for the URI template parsing.
-                    ## @param originalName The original query parameter name in the class.
+                    ## @param original_name The original query parameter name in the class.
                     ## @return a string
                     ## 
                     def get_query_parameter(original_name)
@@ -976,33 +950,6 @@ module MicrosoftGraph
                                 return original_name
                         end
                     end
-                end
-
-                ## 
-                # Configuration for the request such as headers, query parameters, and middleware options.
-                class UserItemRequestBuilderGetRequestConfiguration
-                    
-                    ## 
-                    # Request headers
-                    attr_accessor :headers
-                    ## 
-                    # Request options
-                    attr_accessor :options
-                    ## 
-                    # Request query parameters
-                    attr_accessor :query_parameters
-                end
-
-                ## 
-                # Configuration for the request such as headers, query parameters, and middleware options.
-                class UserItemRequestBuilderPatchRequestConfiguration
-                    
-                    ## 
-                    # Request headers
-                    attr_accessor :headers
-                    ## 
-                    # Request options
-                    attr_accessor :options
                 end
             end
         end

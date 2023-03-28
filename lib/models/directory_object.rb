@@ -11,7 +11,7 @@ module MicrosoftGraph
             # Date and time when this object was deleted. Always null when the object hasn't been deleted.
             @deleted_date_time
             ## 
-            ## Instantiates a new directoryObject and sets the default values.
+            ## Instantiates a new DirectoryObject and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -19,7 +19,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a directory_object
             ## 
             def self.create_from_discriminator_value(parse_node)

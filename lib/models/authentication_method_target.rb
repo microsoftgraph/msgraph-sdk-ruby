@@ -21,7 +21,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a authentication_method_target
             ## 
             def self.create_from_discriminator_value(parse_node)
@@ -32,6 +32,8 @@ module MicrosoftGraph
                     case mapping_value
                         when "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget"
                             return MicrosoftAuthenticatorAuthenticationMethodTarget.new
+                        when "#microsoft.graph.smsAuthenticationMethodTarget"
+                            return SmsAuthenticationMethodTarget.new
                     end
                 end
                 return AuthenticationMethodTarget.new

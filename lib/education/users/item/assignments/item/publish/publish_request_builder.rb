@@ -18,34 +18,20 @@ module MicrosoftGraph
                         module Publish
                             ## 
                             # Provides operations to call the publish method.
-                            class PublishRequestBuilder
+                            class PublishRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                 
                                 ## 
-                                # Path parameters for the request
-                                @path_parameters
-                                ## 
-                                # The request adapter to use to execute the requests.
-                                @request_adapter
-                                ## 
-                                # Url template to use to build the URL for the current request builder
-                                @url_template
-                                ## 
                                 ## Instantiates a new PublishRequestBuilder and sets the default values.
-                                ## @param pathParameters Path parameters for the request
-                                ## @param requestAdapter The request adapter to use to execute the requests.
+                                ## @param path_parameters Path parameters for the request
+                                ## @param request_adapter The request adapter to use to execute the requests.
                                 ## @return a void
                                 ## 
                                 def initialize(path_parameters, request_adapter)
-                                    raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                    raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                    @url_template = "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/publish"
-                                    @request_adapter = request_adapter
-                                    path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                    @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                    super(path_parameters, request_adapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/publish")
                                 end
                                 ## 
                                 ## Publish an education assignment. Change the state of an educationAssignment from its original `draft` status to the `published` status.  You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.  Only a teacher in the class can make this call. When an assignment is in draft status, students will not see the assignment, nor will there be any submission objects. Calling this API creates educationSubmission objects and displays the assignment in each student's list. The state of the assignment goes back to `draft` if there is any backend failure during publish process. To update the properties of a published **assignment**, see update an assignment.
-                                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of education_assignment
                                 ## 
                                 def post(request_configuration=nil)
@@ -59,7 +45,7 @@ module MicrosoftGraph
                                 end
                                 ## 
                                 ## Publish an education assignment. Change the state of an educationAssignment from its original `draft` status to the `published` status.  You can change the state from `draft` to `scheduled` if the **assignment** is scheduled for a future date.  Only a teacher in the class can make this call. When an assignment is in draft status, students will not see the assignment, nor will there be any submission objects. Calling this API creates educationSubmission objects and displays the assignment in each student's list. The state of the assignment goes back to `draft` if there is any backend failure during publish process. To update the properties of a published **assignment**, see update an assignment.
-                                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
                                 def to_post_request_information(request_configuration=nil)
@@ -73,18 +59,6 @@ module MicrosoftGraph
                                         request_info.add_request_options(request_configuration.options)
                                     end
                                     return request_info
-                                end
-
-                                ## 
-                                # Configuration for the request such as headers, query parameters, and middleware options.
-                                class PublishRequestBuilderPostRequestConfiguration
-                                    
-                                    ## 
-                                    # Request headers
-                                    attr_accessor :headers
-                                    ## 
-                                    # Request options
-                                    attr_accessor :options
                                 end
                             end
                         end
