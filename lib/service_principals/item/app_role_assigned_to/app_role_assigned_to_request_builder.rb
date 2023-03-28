@@ -14,7 +14,7 @@ module MicrosoftGraph
             module AppRoleAssignedTo
                 ## 
                 # Provides operations to manage the appRoleAssignedTo property of the microsoft.graph.servicePrincipal entity.
-                class AppRoleAssignedToRequestBuilder
+                class AppRoleAssignedToRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
                     ## 
                     # Provides operations to count the resources in the collection.
@@ -22,31 +22,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::ServicePrincipals::Item::AppRoleAssignedTo::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    # Path parameters for the request
-                    @path_parameters
-                    ## 
-                    # The request adapter to use to execute the requests.
-                    @request_adapter
-                    ## 
-                    # Url template to use to build the URL for the current request builder
-                    @url_template
-                    ## 
                     ## Instantiates a new AppRoleAssignedToRequestBuilder and sets the default values.
-                    ## @param pathParameters Path parameters for the request
-                    ## @param requestAdapter The request adapter to use to execute the requests.
+                    ## @param path_parameters Path parameters for the request
+                    ## @param request_adapter The request adapter to use to execute the requests.
                     ## @return a void
                     ## 
                     def initialize(path_parameters, request_adapter)
-                        raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                        raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                        @url_template = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/appRoleAssignedTo{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}"
-                        @request_adapter = request_adapter
-                        path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                        @path_parameters = path_parameters if path_parameters.is_a? Hash
+                        super(path_parameters, request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/appRoleAssignedTo{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
                     ## Retrieve a list of appRoleAssignment that users, groups, or client service principals have been granted for the given resource service principal. For example, if the resource service principal is the service principal for the Microsoft Graph API, this will return all service principals that have been granted any app-only permissions to Microsoft Graph. If the resource service principal is an application that has app roles granted to users and groups, this will return all the users and groups assigned app roles for this application.
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of app_role_assignment_collection_response
                     ## 
                     def get(request_configuration=nil)
@@ -61,7 +47,7 @@ module MicrosoftGraph
                     ## 
                     ## Assign an app role for a resource service principal, to a user, group, or client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment, you need three identifiers:
                     ## @param body The request body
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of app_role_assignment
                     ## 
                     def post(body, request_configuration=nil)
@@ -76,7 +62,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Retrieve a list of appRoleAssignment that users, groups, or client service principals have been granted for the given resource service principal. For example, if the resource service principal is the service principal for the Microsoft Graph API, this will return all service principals that have been granted any app-only permissions to Microsoft Graph. If the resource service principal is an application that has app roles granted to users and groups, this will return all the users and groups assigned app roles for this application.
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_get_request_information(request_configuration=nil)
@@ -95,7 +81,7 @@ module MicrosoftGraph
                     ## 
                     ## Assign an app role for a resource service principal, to a user, group, or client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment, you need three identifiers:
                     ## @param body The request body
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_post_request_information(body, request_configuration=nil)
@@ -143,7 +129,7 @@ module MicrosoftGraph
                         attr_accessor :top
                         ## 
                         ## Maps the query parameters names to their encoded names for the URI template parsing.
-                        ## @param originalName The original query parameter name in the class.
+                        ## @param original_name The original query parameter name in the class.
                         ## @return a string
                         ## 
                         def get_query_parameter(original_name)
@@ -169,33 +155,6 @@ module MicrosoftGraph
                                     return original_name
                             end
                         end
-                    end
-
-                    ## 
-                    # Configuration for the request such as headers, query parameters, and middleware options.
-                    class AppRoleAssignedToRequestBuilderGetRequestConfiguration
-                        
-                        ## 
-                        # Request headers
-                        attr_accessor :headers
-                        ## 
-                        # Request options
-                        attr_accessor :options
-                        ## 
-                        # Request query parameters
-                        attr_accessor :query_parameters
-                    end
-
-                    ## 
-                    # Configuration for the request such as headers, query parameters, and middleware options.
-                    class AppRoleAssignedToRequestBuilderPostRequestConfiguration
-                        
-                        ## 
-                        # Request headers
-                        attr_accessor :headers
-                        ## 
-                        # Request options
-                        attr_accessor :options
                     end
                 end
             end

@@ -13,7 +13,7 @@ module MicrosoftGraph
         module Messages
             ## 
             # Provides operations to manage the messages property of the microsoft.graph.user entity.
-            class MessagesRequestBuilder
+            class MessagesRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                 
                 ## 
                 # Provides operations to count the resources in the collection.
@@ -26,31 +26,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Me::Messages::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
-                # Path parameters for the request
-                @path_parameters
-                ## 
-                # The request adapter to use to execute the requests.
-                @request_adapter
-                ## 
-                # Url template to use to build the URL for the current request builder
-                @url_template
-                ## 
                 ## Instantiates a new MessagesRequestBuilder and sets the default values.
-                ## @param pathParameters Path parameters for the request
-                ## @param requestAdapter The request adapter to use to execute the requests.
+                ## @param path_parameters Path parameters for the request
+                ## @param request_adapter The request adapter to use to execute the requests.
                 ## @return a void
                 ## 
                 def initialize(path_parameters, request_adapter)
-                    raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                    raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                    @url_template = "{+baseurl}/me/messages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}"
-                    @request_adapter = request_adapter
-                    path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                    @path_parameters = path_parameters if path_parameters.is_a? Hash
+                    super(path_parameters, request_adapter, "{+baseurl}/me/messages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
                 ## Get the messages in the signed-in user's mailbox (including the Deleted Items and Clutter folders). Depending on the page size and mailbox data, getting messages from a mailbox can incur multiple requests. The default page size is 10 messages. Use `$top` to customize the page size, within the range of 1 and 1000. To improve the operation response time, use `$select` to specify the exact properties you need; see example 1 below. Fine-tune the values for `$select` and `$top`, especially when you must use a larger page size, as returning a page with hundreds of messages each with a full response payload may trigger the gateway timeout (HTTP 504). To get the next page of messages, simply apply the entire URL returned in `@odata.nextLink` to the next get-messages request. This URL includes any query parameters you may have specified in the initial request.  Do not try to extract the `$skip` value from the `@odata.nextLink` URL to manipulate responses. This API uses the `$skip` value to keep count of all the items it has gone through in the user's mailbox to return a page of message-type items. It's therefore possible that even in the initial response, the `$skip` value is larger than the page size. For more information, see Paging Microsoft Graph data in your app. Currently, this operation returns message bodies in only HTML format. There are two scenarios where an app can get messages in another user's mail folder:
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of message_collection_response
                 ## 
                 def get(request_configuration=nil)
@@ -63,9 +49,9 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MessageCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:- Include an attachment to the **message**.- Update the draft later to add content to the **body** or change other message properties. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
+                ## Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
                 ## @param body The request body
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of message
                 ## 
                 def post(body, request_configuration=nil)
@@ -80,7 +66,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Get the messages in the signed-in user's mailbox (including the Deleted Items and Clutter folders). Depending on the page size and mailbox data, getting messages from a mailbox can incur multiple requests. The default page size is 10 messages. Use `$top` to customize the page size, within the range of 1 and 1000. To improve the operation response time, use `$select` to specify the exact properties you need; see example 1 below. Fine-tune the values for `$select` and `$top`, especially when you must use a larger page size, as returning a page with hundreds of messages each with a full response payload may trigger the gateway timeout (HTTP 504). To get the next page of messages, simply apply the entire URL returned in `@odata.nextLink` to the next get-messages request. This URL includes any query parameters you may have specified in the initial request.  Do not try to extract the `$skip` value from the `@odata.nextLink` URL to manipulate responses. This API uses the `$skip` value to keep count of all the items it has gone through in the user's mailbox to return a page of message-type items. It's therefore possible that even in the initial response, the `$skip` value is larger than the page size. For more information, see Paging Microsoft Graph data in your app. Currently, this operation returns message bodies in only HTML format. There are two scenarios where an app can get messages in another user's mail folder:
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_get_request_information(request_configuration=nil)
@@ -97,9 +83,9 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:- Include an attachment to the **message**.- Update the draft later to add content to the **body** or change other message properties. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
+                ## Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
                 ## @param body The request body
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_post_request_information(body, request_configuration=nil)
@@ -125,6 +111,9 @@ module MicrosoftGraph
                     # Include count of items
                     attr_accessor :count
                     ## 
+                    # Expand related entities
+                    attr_accessor :expand
+                    ## 
                     # Filter items by property values
                     attr_accessor :filter
                     ## 
@@ -144,7 +133,7 @@ module MicrosoftGraph
                     attr_accessor :top
                     ## 
                     ## Maps the query parameters names to their encoded names for the URI template parsing.
-                    ## @param originalName The original query parameter name in the class.
+                    ## @param original_name The original query parameter name in the class.
                     ## @return a string
                     ## 
                     def get_query_parameter(original_name)
@@ -152,6 +141,8 @@ module MicrosoftGraph
                         case original_name
                             when "count"
                                 return "%24count"
+                            when "expand"
+                                return "%24expand"
                             when "filter"
                                 return "%24filter"
                             when "orderby"
@@ -168,33 +159,6 @@ module MicrosoftGraph
                                 return original_name
                         end
                     end
-                end
-
-                ## 
-                # Configuration for the request such as headers, query parameters, and middleware options.
-                class MessagesRequestBuilderGetRequestConfiguration
-                    
-                    ## 
-                    # Request headers
-                    attr_accessor :headers
-                    ## 
-                    # Request options
-                    attr_accessor :options
-                    ## 
-                    # Request query parameters
-                    attr_accessor :query_parameters
-                end
-
-                ## 
-                # Configuration for the request such as headers, query parameters, and middleware options.
-                class MessagesRequestBuilderPostRequestConfiguration
-                    
-                    ## 
-                    # Request headers
-                    attr_accessor :headers
-                    ## 
-                    # Request options
-                    attr_accessor :options
                 end
             end
         end

@@ -42,7 +42,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Creates a new instance of the appropriate class based on discriminator value
-                        ## @param parseNode The parse node to use to read the discriminator value and create the object
+                        ## @param parse_node The parse node to use to read the discriminator value and create the object
                         ## @return a get_oma_setting_plain_text_value_with_secret_reference_value_id_response
                         ## 
                         def self.create_from_discriminator_value(parse_node)

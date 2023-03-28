@@ -4,8 +4,6 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
-        ## 
-        # The Role Definition resource. The role definition is the foundation of role based access in Intune. The role combines an Intune resource such as a Mobile App and associated role permissions such as Create or Read for the resource. There are two types of roles, built-in and custom. Built-in roles cannot be modified. Both built-in roles and custom roles must have assignments to be enforced. Create custom roles if you want to define a role that allows any of the available resources and role permissions to be combined into a single role.
         class RoleDefinition < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -32,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a role_definition
             ## 
             def self.create_from_discriminator_value(parse_node)

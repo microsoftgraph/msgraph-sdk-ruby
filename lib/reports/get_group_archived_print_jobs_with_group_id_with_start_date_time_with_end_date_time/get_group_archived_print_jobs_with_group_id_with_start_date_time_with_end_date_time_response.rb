@@ -22,7 +22,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Creates a new instance of the appropriate class based on discriminator value
-                ## @param parseNode The parse node to use to read the discriminator value and create the object
+                ## @param parse_node The parse node to use to read the discriminator value and create the object
                 ## @return a get_group_archived_print_jobs_with_group_id_with_start_date_time_with_end_date_time_response
                 ## 
                 def self.create_from_discriminator_value(parse_node)

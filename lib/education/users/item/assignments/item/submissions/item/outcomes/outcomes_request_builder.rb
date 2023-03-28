@@ -24,7 +24,7 @@ module MicrosoftGraph
                                 module Outcomes
                                     ## 
                                     # Provides operations to manage the outcomes property of the microsoft.graph.educationSubmission entity.
-                                    class OutcomesRequestBuilder
+                                    class OutcomesRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                         
                                         ## 
                                         # Provides operations to count the resources in the collection.
@@ -32,31 +32,17 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Education::Users::Item::Assignments::Item::Submissions::Item::Outcomes::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
-                                        # Path parameters for the request
-                                        @path_parameters
-                                        ## 
-                                        # The request adapter to use to execute the requests.
-                                        @request_adapter
-                                        ## 
-                                        # Url template to use to build the URL for the current request builder
-                                        @url_template
-                                        ## 
                                         ## Instantiates a new OutcomesRequestBuilder and sets the default values.
-                                        ## @param pathParameters Path parameters for the request
-                                        ## @param requestAdapter The request adapter to use to execute the requests.
+                                        ## @param path_parameters Path parameters for the request
+                                        ## @param request_adapter The request adapter to use to execute the requests.
                                         ## @return a void
                                         ## 
                                         def initialize(path_parameters, request_adapter)
-                                            raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                            raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                            @url_template = "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/outcomes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}"
-                                            @request_adapter = request_adapter
-                                            path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                            @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                            super(path_parameters, request_adapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/outcomes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                         end
                                         ## 
                                         ## Retrieve a list of educationOutcome objects. There are four types of outcomes: **educationPointsOutcome**, **educationFeedbackOutcome**, **educationRubricOutcome**, and **educationFeedbackResourceOutcome**. Only teachers, students, and applications with application permissions can perform this operation. A submission for a credit assignment (one that has no point value and no rubric) will have an educationFeedbackOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for a points assignment (one that has a point value assigned) will have both an educationFeedbackOutcome and an educationPointsOutcome. A submission for an assignment with an attached rubric, if the rubric is a credit rubric (no points), will have an educationFeedbackOutcome and an educationRubricOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for an assignment with an attached rubric, if the rubric is a points rubric, will have an educationFeedbackOutcome, an educationPointsOutcome, and an educationRubricOutcome. A submission for a feedback resource will have an educationFeedbackResourceOutcome. All outcome types have a regular and a published property appropriate to that type of outcome; for example, **points** and **publishedPoints**, **feedback** and **publishedFeedback**. The regular property is the most recent value updated by the teacher; the published property is the most recent value returned to the student.
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of education_outcome_collection_response
                                         ## 
                                         def get(request_configuration=nil)
@@ -71,7 +57,7 @@ module MicrosoftGraph
                                         ## 
                                         ## Create a new feedback resource for a submission. Only a teacher can perform this operation. To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment. If the file doesn't exist or isn't in that folder, the `POST` request will fail.
                                         ## @param body The request body
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of education_outcome
                                         ## 
                                         def post(body, request_configuration=nil)
@@ -86,7 +72,7 @@ module MicrosoftGraph
                                         end
                                         ## 
                                         ## Retrieve a list of educationOutcome objects. There are four types of outcomes: **educationPointsOutcome**, **educationFeedbackOutcome**, **educationRubricOutcome**, and **educationFeedbackResourceOutcome**. Only teachers, students, and applications with application permissions can perform this operation. A submission for a credit assignment (one that has no point value and no rubric) will have an educationFeedbackOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for a points assignment (one that has a point value assigned) will have both an educationFeedbackOutcome and an educationPointsOutcome. A submission for an assignment with an attached rubric, if the rubric is a credit rubric (no points), will have an educationFeedbackOutcome and an educationRubricOutcome. (It might also return an educationPointsOutcome, but that outcome is ignored.) A submission for an assignment with an attached rubric, if the rubric is a points rubric, will have an educationFeedbackOutcome, an educationPointsOutcome, and an educationRubricOutcome. A submission for a feedback resource will have an educationFeedbackResourceOutcome. All outcome types have a regular and a published property appropriate to that type of outcome; for example, **points** and **publishedPoints**, **feedback** and **publishedFeedback**. The regular property is the most recent value updated by the teacher; the published property is the most recent value returned to the student.
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
                                         def to_get_request_information(request_configuration=nil)
@@ -105,7 +91,7 @@ module MicrosoftGraph
                                         ## 
                                         ## Create a new feedback resource for a submission. Only a teacher can perform this operation. To create a new file-based resource, upload the file to the feedback resources folder associated with the assignment. If the file doesn't exist or isn't in that folder, the `POST` request will fail.
                                         ## @param body The request body
-                                        ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
                                         def to_post_request_information(body, request_configuration=nil)
@@ -153,7 +139,7 @@ module MicrosoftGraph
                                             attr_accessor :top
                                             ## 
                                             ## Maps the query parameters names to their encoded names for the URI template parsing.
-                                            ## @param originalName The original query parameter name in the class.
+                                            ## @param original_name The original query parameter name in the class.
                                             ## @return a string
                                             ## 
                                             def get_query_parameter(original_name)
@@ -179,33 +165,6 @@ module MicrosoftGraph
                                                         return original_name
                                                 end
                                             end
-                                        end
-
-                                        ## 
-                                        # Configuration for the request such as headers, query parameters, and middleware options.
-                                        class OutcomesRequestBuilderGetRequestConfiguration
-                                            
-                                            ## 
-                                            # Request headers
-                                            attr_accessor :headers
-                                            ## 
-                                            # Request options
-                                            attr_accessor :options
-                                            ## 
-                                            # Request query parameters
-                                            attr_accessor :query_parameters
-                                        end
-
-                                        ## 
-                                        # Configuration for the request such as headers, query parameters, and middleware options.
-                                        class OutcomesRequestBuilderPostRequestConfiguration
-                                            
-                                            ## 
-                                            # Request headers
-                                            attr_accessor :headers
-                                            ## 
-                                            # Request options
-                                            attr_accessor :options
                                         end
                                     end
                                 end

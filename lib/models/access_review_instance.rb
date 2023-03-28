@@ -35,7 +35,7 @@ module MicrosoftGraph
             # Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.
             @status
             ## 
-            ## Instantiates a new accessReviewInstance and sets the default values.
+            ## Instantiates a new AccessReviewInstance and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -58,7 +58,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a access_review_instance
             ## 
             def self.create_from_discriminator_value(parse_node)

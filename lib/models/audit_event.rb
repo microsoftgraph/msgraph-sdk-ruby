@@ -5,8 +5,6 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
-        ## 
-        # A class containing the properties for Audit Event.
         class AuditEvent < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -163,7 +161,7 @@ module MicrosoftGraph
                 @component_name = value
             end
             ## 
-            ## Instantiates a new auditEvent and sets the default values.
+            ## Instantiates a new AuditEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -186,7 +184,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a audit_event
             ## 
             def self.create_from_discriminator_value(parse_node)

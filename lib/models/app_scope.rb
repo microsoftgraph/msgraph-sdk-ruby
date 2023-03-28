@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Describes the type of app-specific resource represented by the app scope. Provided for display purposes, so a user interface can convey to the user the kind of app specific resource represented by the app scope. Read-only.
             @type
             ## 
-            ## Instantiates a new appScope and sets the default values.
+            ## Instantiates a new AppScope and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -21,7 +21,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a app_scope
             ## 
             def self.create_from_discriminator_value(parse_node)

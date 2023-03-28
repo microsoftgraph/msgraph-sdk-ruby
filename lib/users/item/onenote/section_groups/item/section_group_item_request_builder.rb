@@ -22,7 +22,7 @@ module MicrosoftGraph
                     module Item
                         ## 
                         # Provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.
-                        class SectionGroupItemRequestBuilder
+                        class SectionGroupItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                             
                             ## 
                             # Provides operations to manage the parentNotebook property of the microsoft.graph.sectionGroup entity.
@@ -35,12 +35,6 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Users::Item::Onenote::SectionGroups::Item::ParentSectionGroup::ParentSectionGroupRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
-                            # Path parameters for the request
-                            @path_parameters
-                            ## 
-                            # The request adapter to use to execute the requests.
-                            @request_adapter
-                            ## 
                             # Provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
                             def section_groups()
                                 return MicrosoftGraph::Users::Item::Onenote::SectionGroups::Item::SectionGroups::SectionGroupsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -51,25 +45,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Users::Item::Onenote::SectionGroups::Item::Sections::SectionsRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
-                            # Url template to use to build the URL for the current request builder
-                            @url_template
-                            ## 
                             ## Instantiates a new SectionGroupItemRequestBuilder and sets the default values.
-                            ## @param pathParameters Path parameters for the request
-                            ## @param requestAdapter The request adapter to use to execute the requests.
+                            ## @param path_parameters Path parameters for the request
+                            ## @param request_adapter The request adapter to use to execute the requests.
                             ## @return a void
                             ## 
                             def initialize(path_parameters, request_adapter)
-                                raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                @url_template = "{+baseurl}/users/{user%2Did}/onenote/sectionGroups/{sectionGroup%2Did}{?%24select,%24expand}"
-                                @request_adapter = request_adapter
-                                path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/onenote/sectionGroups/{sectionGroup%2Did}{?%24select,%24expand}")
                             end
                             ## 
                             ## Delete navigation property sectionGroups for users
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
                             def delete(request_configuration=nil)
@@ -83,7 +69,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of section_group
                             ## 
                             def get(request_configuration=nil)
@@ -98,7 +84,7 @@ module MicrosoftGraph
                             ## 
                             ## Update the navigation property sectionGroups in users
                             ## @param body The request body
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of section_group
                             ## 
                             def patch(body, request_configuration=nil)
@@ -135,7 +121,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Delete navigation property sectionGroups for users
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_delete_request_information(request_configuration=nil)
@@ -151,7 +137,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_get_request_information(request_configuration=nil)
@@ -170,7 +156,7 @@ module MicrosoftGraph
                             ## 
                             ## Update the navigation property sectionGroups in users
                             ## @param body The request body
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_patch_request_information(body, request_configuration=nil)
@@ -189,18 +175,6 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Configuration for the request such as headers, query parameters, and middleware options.
-                            class SectionGroupItemRequestBuilderDeleteRequestConfiguration
-                                
-                                ## 
-                                # Request headers
-                                attr_accessor :headers
-                                ## 
-                                # Request options
-                                attr_accessor :options
-                            end
-
-                            ## 
                             # The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
                             class SectionGroupItemRequestBuilderGetQueryParameters
                                 
@@ -212,7 +186,7 @@ module MicrosoftGraph
                                 attr_accessor :select
                                 ## 
                                 ## Maps the query parameters names to their encoded names for the URI template parsing.
-                                ## @param originalName The original query parameter name in the class.
+                                ## @param original_name The original query parameter name in the class.
                                 ## @return a string
                                 ## 
                                 def get_query_parameter(original_name)
@@ -226,33 +200,6 @@ module MicrosoftGraph
                                             return original_name
                                     end
                                 end
-                            end
-
-                            ## 
-                            # Configuration for the request such as headers, query parameters, and middleware options.
-                            class SectionGroupItemRequestBuilderGetRequestConfiguration
-                                
-                                ## 
-                                # Request headers
-                                attr_accessor :headers
-                                ## 
-                                # Request options
-                                attr_accessor :options
-                                ## 
-                                # Request query parameters
-                                attr_accessor :query_parameters
-                            end
-
-                            ## 
-                            # Configuration for the request such as headers, query parameters, and middleware options.
-                            class SectionGroupItemRequestBuilderPatchRequestConfiguration
-                                
-                                ## 
-                                # Request headers
-                                attr_accessor :headers
-                                ## 
-                                # Request options
-                                attr_accessor :options
                             end
                         end
                     end

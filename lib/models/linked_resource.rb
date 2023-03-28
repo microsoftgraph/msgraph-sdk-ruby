@@ -7,26 +7,26 @@ module MicrosoftGraph
         class LinkedResource < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Field indicating the app name of the source that is sending the linkedResource.
+            # The app name of the source that sends the linkedResource.
             @application_name
             ## 
-            # Field indicating the title of the linkedResource.
+            # The title of the linkedResource.
             @display_name
             ## 
-            # Id of the object that is associated with this task on the third-party/partner system.
+            # ID of the object that is associated with this task on the third-party/partner system.
             @external_id
             ## 
             # Deep link to the linkedResource.
             @web_url
             ## 
-            ## Gets the applicationName property value. Field indicating the app name of the source that is sending the linkedResource.
+            ## Gets the applicationName property value. The app name of the source that sends the linkedResource.
             ## @return a string
             ## 
             def application_name
                 return @application_name
             end
             ## 
-            ## Sets the applicationName property value. Field indicating the app name of the source that is sending the linkedResource.
+            ## Sets the applicationName property value. The app name of the source that sends the linkedResource.
             ## @param value Value to set for the application_name property.
             ## @return a void
             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a linked_resource
             ## 
             def self.create_from_discriminator_value(parse_node)
@@ -50,14 +50,14 @@ module MicrosoftGraph
                 return LinkedResource.new
             end
             ## 
-            ## Gets the displayName property value. Field indicating the title of the linkedResource.
+            ## Gets the displayName property value. The title of the linkedResource.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Field indicating the title of the linkedResource.
+            ## Sets the displayName property value. The title of the linkedResource.
             ## @param value Value to set for the display_name property.
             ## @return a void
             ## 
@@ -65,14 +65,14 @@ module MicrosoftGraph
                 @display_name = value
             end
             ## 
-            ## Gets the externalId property value. Id of the object that is associated with this task on the third-party/partner system.
+            ## Gets the externalId property value. ID of the object that is associated with this task on the third-party/partner system.
             ## @return a string
             ## 
             def external_id
                 return @external_id
             end
             ## 
-            ## Sets the externalId property value. Id of the object that is associated with this task on the third-party/partner system.
+            ## Sets the externalId property value. ID of the object that is associated with this task on the third-party/partner system.
             ## @param value Value to set for the external_id property.
             ## @return a void
             ## 

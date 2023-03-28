@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a entity
             ## 
             def self.create_from_discriminator_value(parse_node)
@@ -974,10 +974,16 @@ module MicrosoftGraph
                             return SkypeForBusinessUserConversationMember.new
                         when "#microsoft.graph.skypeUserConversationMember"
                             return SkypeUserConversationMember.new
+                        when "#microsoft.graph.smsAuthenticationMethodConfiguration"
+                            return SmsAuthenticationMethodConfiguration.new
+                        when "#microsoft.graph.smsAuthenticationMethodTarget"
+                            return SmsAuthenticationMethodTarget.new
                         when "#microsoft.graph.socialIdentityProvider"
                             return SocialIdentityProvider.new
                         when "#microsoft.graph.softwareOathAuthenticationMethod"
                             return SoftwareOathAuthenticationMethod.new
+                        when "#microsoft.graph.softwareOathAuthenticationMethodConfiguration"
+                            return SoftwareOathAuthenticationMethodConfiguration.new
                         when "#microsoft.graph.softwareUpdateStatusSummary"
                             return SoftwareUpdateStatusSummary.new
                         when "#microsoft.graph.startHoldMusicOperation"
@@ -1134,6 +1140,8 @@ module MicrosoftGraph
                             return UserSettings.new
                         when "#microsoft.graph.userTeamwork"
                             return UserTeamwork.new
+                        when "#microsoft.graph.voiceAuthenticationMethodConfiguration"
+                            return VoiceAuthenticationMethodConfiguration.new
                         when "#microsoft.graph.vppToken"
                             return VppToken.new
                         when "#microsoft.graph.webApp"

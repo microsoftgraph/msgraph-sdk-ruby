@@ -12,35 +12,21 @@ module MicrosoftGraph
             module AddTokenSigningCertificate
                 ## 
                 # Provides operations to call the addTokenSigningCertificate method.
-                class AddTokenSigningCertificateRequestBuilder
+                class AddTokenSigningCertificateRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
                     ## 
-                    # Path parameters for the request
-                    @path_parameters
-                    ## 
-                    # The request adapter to use to execute the requests.
-                    @request_adapter
-                    ## 
-                    # Url template to use to build the URL for the current request builder
-                    @url_template
-                    ## 
                     ## Instantiates a new AddTokenSigningCertificateRequestBuilder and sets the default values.
-                    ## @param pathParameters Path parameters for the request
-                    ## @param requestAdapter The request adapter to use to execute the requests.
+                    ## @param path_parameters Path parameters for the request
+                    ## @param request_adapter The request adapter to use to execute the requests.
                     ## @return a void
                     ## 
                     def initialize(path_parameters, request_adapter)
-                        raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                        raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                        @url_template = "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/addTokenSigningCertificate"
-                        @request_adapter = request_adapter
-                        path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                        @path_parameters = path_parameters if path_parameters.is_a? Hash
+                        super(path_parameters, request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/addTokenSigningCertificate")
                     end
                     ## 
                     ## Create a self-signed signing certificate and return a selfSignedCertificate object, which is the public part of the generated certificate.  The self-signed signing certificate is composed of the following objects, which are added to the servicePrincipal: + The keyCredentials object with the following objects:    + A private key object with **usage** set to `Sign`.    + A public key object with **usage** set to `Verify`.+ The passwordCredentials object.  All the objects have the same value of **customKeyIdentifier**. The **passwordCredential** is used to open the PFX file (private key). It and the associated private key object have the same value of **keyId**. When set during creation through the **displayName** property, the subject of the certificate cannot be updated. The **startDateTime** is set to the same time the certificate is created using the action. The **endDateTime** can be up to three years after the certificate is created.
                     ## @param body The request body
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of self_signed_certificate
                     ## 
                     def post(body, request_configuration=nil)
@@ -56,7 +42,7 @@ module MicrosoftGraph
                     ## 
                     ## Create a self-signed signing certificate and return a selfSignedCertificate object, which is the public part of the generated certificate.  The self-signed signing certificate is composed of the following objects, which are added to the servicePrincipal: + The keyCredentials object with the following objects:    + A private key object with **usage** set to `Sign`.    + A public key object with **usage** set to `Verify`.+ The passwordCredentials object.  All the objects have the same value of **customKeyIdentifier**. The **passwordCredential** is used to open the PFX file (private key). It and the associated private key object have the same value of **keyId**. When set during creation through the **displayName** property, the subject of the certificate cannot be updated. The **startDateTime** is set to the same time the certificate is created using the action. The **endDateTime** can be up to three years after the certificate is created.
                     ## @param body The request body
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_post_request_information(body, request_configuration=nil)
@@ -72,18 +58,6 @@ module MicrosoftGraph
                         end
                         request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
                         return request_info
-                    end
-
-                    ## 
-                    # Configuration for the request such as headers, query parameters, and middleware options.
-                    class AddTokenSigningCertificateRequestBuilderPostRequestConfiguration
-                        
-                        ## 
-                        # Request headers
-                        attr_accessor :headers
-                        ## 
-                        # Request options
-                        attr_accessor :options
                     end
                 end
             end

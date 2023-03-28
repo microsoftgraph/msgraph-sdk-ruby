@@ -19,7 +19,7 @@ module MicrosoftGraph
                 module Item
                     ## 
                     # Builds and executes requests for operations under \directoryRoles\{directoryRole-id}\members\{directoryObject-id}
-                    class DirectoryObjectItemRequestBuilder
+                    class DirectoryObjectItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                         
                         ## 
                         # Casts the previous resource to application.
@@ -52,32 +52,18 @@ module MicrosoftGraph
                             return MicrosoftGraph::DirectoryRoles::Item::Members::Item::GraphUser::GraphUserRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        # Path parameters for the request
-                        @path_parameters
-                        ## 
                         # Provides operations to manage the collection of directoryRole entities.
                         def ref()
                             return MicrosoftGraph::DirectoryRoles::Item::Members::Item::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        # The request adapter to use to execute the requests.
-                        @request_adapter
-                        ## 
-                        # Url template to use to build the URL for the current request builder
-                        @url_template
-                        ## 
                         ## Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
-                        ## @param pathParameters Path parameters for the request
-                        ## @param requestAdapter The request adapter to use to execute the requests.
+                        ## @param path_parameters Path parameters for the request
+                        ## @param request_adapter The request adapter to use to execute the requests.
                         ## @return a void
                         ## 
                         def initialize(path_parameters, request_adapter)
-                            raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                            raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                            @url_template = "{+baseurl}/directoryRoles/{directoryRole%2Did}/members/{directoryObject%2Did}"
-                            @request_adapter = request_adapter
-                            path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                            @path_parameters = path_parameters if path_parameters.is_a? Hash
+                            super(path_parameters, request_adapter, "{+baseurl}/directoryRoles/{directoryRole%2Did}/members/{directoryObject%2Did}")
                         end
                     end
                 end

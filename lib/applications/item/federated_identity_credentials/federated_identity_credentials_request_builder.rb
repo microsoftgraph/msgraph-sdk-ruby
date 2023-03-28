@@ -14,7 +14,7 @@ module MicrosoftGraph
             module FederatedIdentityCredentials
                 ## 
                 # Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
-                class FederatedIdentityCredentialsRequestBuilder
+                class FederatedIdentityCredentialsRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
                     ## 
                     # Provides operations to count the resources in the collection.
@@ -22,31 +22,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Applications::Item::FederatedIdentityCredentials::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    # Path parameters for the request
-                    @path_parameters
-                    ## 
-                    # The request adapter to use to execute the requests.
-                    @request_adapter
-                    ## 
-                    # Url template to use to build the URL for the current request builder
-                    @url_template
-                    ## 
                     ## Instantiates a new FederatedIdentityCredentialsRequestBuilder and sets the default values.
-                    ## @param pathParameters Path parameters for the request
-                    ## @param requestAdapter The request adapter to use to execute the requests.
+                    ## @param path_parameters Path parameters for the request
+                    ## @param request_adapter The request adapter to use to execute the requests.
                     ## @return a void
                     ## 
                     def initialize(path_parameters, request_adapter)
-                        raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                        raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                        @url_template = "{+baseurl}/applications/{application%2Did}/federatedIdentityCredentials{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}"
-                        @request_adapter = request_adapter
-                        path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                        @path_parameters = path_parameters if path_parameters.is_a? Hash
+                        super(path_parameters, request_adapter, "{+baseurl}/applications/{application%2Did}/federatedIdentityCredentials{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
                     ## Get a list of the federatedIdentityCredential objects and their properties.
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of federated_identity_credential_collection_response
                     ## 
                     def get(request_configuration=nil)
@@ -61,7 +47,7 @@ module MicrosoftGraph
                     ## 
                     ## Create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
                     ## @param body The request body
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of federated_identity_credential
                     ## 
                     def post(body, request_configuration=nil)
@@ -76,7 +62,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Get a list of the federatedIdentityCredential objects and their properties.
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_get_request_information(request_configuration=nil)
@@ -95,7 +81,7 @@ module MicrosoftGraph
                     ## 
                     ## Create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
                     ## @param body The request body
-                    ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
                     def to_post_request_information(body, request_configuration=nil)
@@ -143,7 +129,7 @@ module MicrosoftGraph
                         attr_accessor :top
                         ## 
                         ## Maps the query parameters names to their encoded names for the URI template parsing.
-                        ## @param originalName The original query parameter name in the class.
+                        ## @param original_name The original query parameter name in the class.
                         ## @return a string
                         ## 
                         def get_query_parameter(original_name)
@@ -169,33 +155,6 @@ module MicrosoftGraph
                                     return original_name
                             end
                         end
-                    end
-
-                    ## 
-                    # Configuration for the request such as headers, query parameters, and middleware options.
-                    class FederatedIdentityCredentialsRequestBuilderGetRequestConfiguration
-                        
-                        ## 
-                        # Request headers
-                        attr_accessor :headers
-                        ## 
-                        # Request options
-                        attr_accessor :options
-                        ## 
-                        # Request query parameters
-                        attr_accessor :query_parameters
-                    end
-
-                    ## 
-                    # Configuration for the request such as headers, query parameters, and middleware options.
-                    class FederatedIdentityCredentialsRequestBuilderPostRequestConfiguration
-                        
-                        ## 
-                        # Request headers
-                        attr_accessor :headers
-                        ## 
-                        # Request options
-                        attr_accessor :options
                     end
                 end
             end

@@ -13,7 +13,10 @@ module MicrosoftGraph
             # A collection of groups that are enabled to use the authentication method. Expanded by default.
             @include_targets
             ## 
-            ## Instantiates a new microsoftAuthenticatorAuthenticationMethodConfiguration and sets the default values.
+            # The isSoftwareOathEnabled property
+            @is_software_oath_enabled
+            ## 
+            ## Instantiates a new MicrosoftAuthenticatorAuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -22,7 +25,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a microsoft_authenticator_authentication_method_configuration
             ## 
             def self.create_from_discriminator_value(parse_node)
@@ -52,6 +55,7 @@ module MicrosoftGraph
                 return super.merge({
                     "featureSettings" => lambda {|n| @feature_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::MicrosoftAuthenticatorFeatureSettings.create_from_discriminator_value(pn) }) },
                     "includeTargets" => lambda {|n| @include_targets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::MicrosoftAuthenticatorAuthenticationMethodTarget.create_from_discriminator_value(pn) }) },
+                    "isSoftwareOathEnabled" => lambda {|n| @is_software_oath_enabled = n.get_boolean_value() },
                 })
             end
             ## 
@@ -70,6 +74,21 @@ module MicrosoftGraph
                 @include_targets = value
             end
             ## 
+            ## Gets the isSoftwareOathEnabled property value. The isSoftwareOathEnabled property
+            ## @return a boolean
+            ## 
+            def is_software_oath_enabled
+                return @is_software_oath_enabled
+            end
+            ## 
+            ## Sets the isSoftwareOathEnabled property value. The isSoftwareOathEnabled property
+            ## @param value Value to set for the is_software_oath_enabled property.
+            ## @return a void
+            ## 
+            def is_software_oath_enabled=(value)
+                @is_software_oath_enabled = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -79,6 +98,7 @@ module MicrosoftGraph
                 super
                 writer.write_object_value("featureSettings", @feature_settings)
                 writer.write_collection_of_object_values("includeTargets", @include_targets)
+                writer.write_boolean_value("isSoftwareOathEnabled", @is_software_oath_enabled)
             end
         end
     end

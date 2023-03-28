@@ -35,7 +35,7 @@ module MicrosoftGraph
                     module Schedule
                         ## 
                         # Provides operations to manage the schedule property of the microsoft.graph.team entity.
-                        class ScheduleRequestBuilder
+                        class ScheduleRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                             
                             ## 
                             # Provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.
@@ -52,12 +52,6 @@ module MicrosoftGraph
                             def open_shifts()
                                 return MicrosoftGraph::Users::Item::JoinedTeams::Item::Schedule::OpenShifts::OpenShiftsRequestBuilder.new(@path_parameters, @request_adapter)
                             end
-                            ## 
-                            # Path parameters for the request
-                            @path_parameters
-                            ## 
-                            # The request adapter to use to execute the requests.
-                            @request_adapter
                             ## 
                             # Provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
                             def scheduling_groups()
@@ -94,25 +88,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Users::Item::JoinedTeams::Item::Schedule::TimesOff::TimesOffRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
-                            # Url template to use to build the URL for the current request builder
-                            @url_template
-                            ## 
                             ## Instantiates a new ScheduleRequestBuilder and sets the default values.
-                            ## @param pathParameters Path parameters for the request
-                            ## @param requestAdapter The request adapter to use to execute the requests.
+                            ## @param path_parameters Path parameters for the request
+                            ## @param request_adapter The request adapter to use to execute the requests.
                             ## @return a void
                             ## 
                             def initialize(path_parameters, request_adapter)
-                                raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                @url_template = "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule{?%24select,%24expand}"
-                                @request_adapter = request_adapter
-                                path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule{?%24select,%24expand}")
                             end
                             ## 
                             ## Delete navigation property schedule for users
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
                             def delete(request_configuration=nil)
@@ -126,7 +112,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).When clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the `provisionStatusCode` property. Clients can also inspect the configuration of the schedule.
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of schedule
                             ## 
                             def get(request_configuration=nil)
@@ -174,7 +160,7 @@ module MicrosoftGraph
                             ## 
                             ## Update the navigation property schedule in users
                             ## @param body The request body
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of schedule
                             ## 
                             def put(body, request_configuration=nil)
@@ -255,7 +241,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Delete navigation property schedule for users
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_delete_request_information(request_configuration=nil)
@@ -271,7 +257,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).When clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the `provisionStatusCode` property. Clients can also inspect the configuration of the schedule.
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_get_request_information(request_configuration=nil)
@@ -290,7 +276,7 @@ module MicrosoftGraph
                             ## 
                             ## Update the navigation property schedule in users
                             ## @param body The request body
-                            ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
                             def to_put_request_information(body, request_configuration=nil)
@@ -309,18 +295,6 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Configuration for the request such as headers, query parameters, and middleware options.
-                            class ScheduleRequestBuilderDeleteRequestConfiguration
-                                
-                                ## 
-                                # Request headers
-                                attr_accessor :headers
-                                ## 
-                                # Request options
-                                attr_accessor :options
-                            end
-
-                            ## 
                             # Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).When clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the `provisionStatusCode` property. Clients can also inspect the configuration of the schedule.
                             class ScheduleRequestBuilderGetQueryParameters
                                 
@@ -332,7 +306,7 @@ module MicrosoftGraph
                                 attr_accessor :select
                                 ## 
                                 ## Maps the query parameters names to their encoded names for the URI template parsing.
-                                ## @param originalName The original query parameter name in the class.
+                                ## @param original_name The original query parameter name in the class.
                                 ## @return a string
                                 ## 
                                 def get_query_parameter(original_name)
@@ -346,33 +320,6 @@ module MicrosoftGraph
                                             return original_name
                                     end
                                 end
-                            end
-
-                            ## 
-                            # Configuration for the request such as headers, query parameters, and middleware options.
-                            class ScheduleRequestBuilderGetRequestConfiguration
-                                
-                                ## 
-                                # Request headers
-                                attr_accessor :headers
-                                ## 
-                                # Request options
-                                attr_accessor :options
-                                ## 
-                                # Request query parameters
-                                attr_accessor :query_parameters
-                            end
-
-                            ## 
-                            # Configuration for the request such as headers, query parameters, and middleware options.
-                            class ScheduleRequestBuilderPutRequestConfiguration
-                                
-                                ## 
-                                # Request headers
-                                attr_accessor :headers
-                                ## 
-                                # Request options
-                                attr_accessor :options
                             end
                         end
                     end

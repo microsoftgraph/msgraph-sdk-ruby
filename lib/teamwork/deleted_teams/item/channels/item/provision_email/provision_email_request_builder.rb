@@ -18,34 +18,20 @@ module MicrosoftGraph
                         module ProvisionEmail
                             ## 
                             # Provides operations to call the provisionEmail method.
-                            class ProvisionEmailRequestBuilder
+                            class ProvisionEmailRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                 
                                 ## 
-                                # Path parameters for the request
-                                @path_parameters
-                                ## 
-                                # The request adapter to use to execute the requests.
-                                @request_adapter
-                                ## 
-                                # Url template to use to build the URL for the current request builder
-                                @url_template
-                                ## 
                                 ## Instantiates a new ProvisionEmailRequestBuilder and sets the default values.
-                                ## @param pathParameters Path parameters for the request
-                                ## @param requestAdapter The request adapter to use to execute the requests.
+                                ## @param path_parameters Path parameters for the request
+                                ## @param request_adapter The request adapter to use to execute the requests.
                                 ## @return a void
                                 ## 
                                 def initialize(path_parameters, request_adapter)
-                                    raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                                    raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                                    @url_template = "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/provisionEmail"
-                                    @request_adapter = request_adapter
-                                    path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                                    @path_parameters = path_parameters if path_parameters.is_a? Hash
+                                    super(path_parameters, request_adapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/provisionEmail")
                                 end
                                 ## 
                                 ## Provision an email address for a channel. Microsoft Teams doesn't automatically provision an email address for a **channel** by default. To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a **channel**, use the removeEmail method.
-                                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of provision_channel_email_result
                                 ## 
                                 def post(request_configuration=nil)
@@ -59,7 +45,7 @@ module MicrosoftGraph
                                 end
                                 ## 
                                 ## Provision an email address for a channel. Microsoft Teams doesn't automatically provision an email address for a **channel** by default. To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a **channel**, use the removeEmail method.
-                                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
                                 def to_post_request_information(request_configuration=nil)
@@ -73,18 +59,6 @@ module MicrosoftGraph
                                         request_info.add_request_options(request_configuration.options)
                                     end
                                     return request_info
-                                end
-
-                                ## 
-                                # Configuration for the request such as headers, query parameters, and middleware options.
-                                class ProvisionEmailRequestBuilderPostRequestConfiguration
-                                    
-                                    ## 
-                                    # Request headers
-                                    attr_accessor :headers
-                                    ## 
-                                    # Request options
-                                    attr_accessor :options
                                 end
                             end
                         end

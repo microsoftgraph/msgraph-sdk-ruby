@@ -25,7 +25,7 @@ module MicrosoftGraph
             # The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
             @app_id
             ## 
-            # The appManagementPolicies property
+            # The appManagementPolicy applied to this application.
             @app_management_policies
             ## 
             # Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
@@ -244,14 +244,14 @@ module MicrosoftGraph
                 @app_id = value
             end
             ## 
-            ## Gets the appManagementPolicies property value. The appManagementPolicies property
+            ## Gets the appManagementPolicies property value. The appManagementPolicy applied to this application.
             ## @return a app_management_policy
             ## 
             def app_management_policies
                 return @app_management_policies
             end
             ## 
-            ## Sets the appManagementPolicies property value. The appManagementPolicies property
+            ## Sets the appManagementPolicies property value. The appManagementPolicy applied to this application.
             ## @param value Value to set for the app_management_policies property.
             ## @return a void
             ## 
@@ -364,7 +364,7 @@ module MicrosoftGraph
                 @claims_mapping_policies = value
             end
             ## 
-            ## Instantiates a new ServicePrincipal and sets the default values.
+            ## Instantiates a new servicePrincipal and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -388,7 +388,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a service_principal
             ## 
             def self.create_from_discriminator_value(parse_node)

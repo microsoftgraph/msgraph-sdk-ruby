@@ -17,10 +17,10 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # The restrictForAppsCreatedAfterDateTime property
+            # Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.
             @restrict_for_apps_created_after_date_time
             ## 
-            # The restrictionType property
+            # The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
             @restriction_type
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -46,7 +46,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a key_credential_configuration
             ## 
             def self.create_from_discriminator_value(parse_node)
@@ -96,14 +96,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the restrictForAppsCreatedAfterDateTime property value. The restrictForAppsCreatedAfterDateTime property
+            ## Gets the restrictForAppsCreatedAfterDateTime property value. Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.
             ## @return a date_time
             ## 
             def restrict_for_apps_created_after_date_time
                 return @restrict_for_apps_created_after_date_time
             end
             ## 
-            ## Sets the restrictForAppsCreatedAfterDateTime property value. The restrictForAppsCreatedAfterDateTime property
+            ## Sets the restrictForAppsCreatedAfterDateTime property value. Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.
             ## @param value Value to set for the restrict_for_apps_created_after_date_time property.
             ## @return a void
             ## 
@@ -111,14 +111,14 @@ module MicrosoftGraph
                 @restrict_for_apps_created_after_date_time = value
             end
             ## 
-            ## Gets the restrictionType property value. The restrictionType property
+            ## Gets the restrictionType property value. The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
             ## @return a app_key_credential_restriction_type
             ## 
             def restriction_type
                 return @restriction_type
             end
             ## 
-            ## Sets the restrictionType property value. The restrictionType property
+            ## Sets the restrictionType property value. The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.
             ## @param value Value to set for the restriction_type property.
             ## @return a void
             ## 

@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The policy by which consent requests are created and managed for the entire tenant.
             @admin_consent_request_policy
             ## 
-            # The appManagementPolicies property
+            # The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
             @app_management_policies
             ## 
             # The policy configuration of the self-service sign-up experience of external users.
@@ -34,7 +34,7 @@ module MicrosoftGraph
             # The custom rules that define an access scenario when interacting with external Azure AD tenants.
             @cross_tenant_access_policy
             ## 
-            # The defaultAppManagementPolicy property
+            # The tenant-wide policy that enforces app management restrictions for all applications and service principals.
             @default_app_management_policy
             ## 
             # The feature rollout policy associated with a directory object.
@@ -91,14 +91,14 @@ module MicrosoftGraph
                 @admin_consent_request_policy = value
             end
             ## 
-            ## Gets the appManagementPolicies property value. The appManagementPolicies property
+            ## Gets the appManagementPolicies property value. The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
             ## @return a app_management_policy
             ## 
             def app_management_policies
                 return @app_management_policies
             end
             ## 
-            ## Sets the appManagementPolicies property value. The appManagementPolicies property
+            ## Sets the appManagementPolicies property value. The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
             ## @param value Value to set for the app_management_policies property.
             ## @return a void
             ## 
@@ -189,7 +189,7 @@ module MicrosoftGraph
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
-            ## @param parseNode The parse node to use to read the discriminator value and create the object
+            ## @param parse_node The parse node to use to read the discriminator value and create the object
             ## @return a policy_root
             ## 
             def self.create_from_discriminator_value(parse_node)
@@ -212,14 +212,14 @@ module MicrosoftGraph
                 @cross_tenant_access_policy = value
             end
             ## 
-            ## Gets the defaultAppManagementPolicy property value. The defaultAppManagementPolicy property
+            ## Gets the defaultAppManagementPolicy property value. The tenant-wide policy that enforces app management restrictions for all applications and service principals.
             ## @return a tenant_app_management_policy
             ## 
             def default_app_management_policy
                 return @default_app_management_policy
             end
             ## 
-            ## Sets the defaultAppManagementPolicy property value. The defaultAppManagementPolicy property
+            ## Sets the defaultAppManagementPolicy property value. The tenant-wide policy that enforces app management restrictions for all applications and service principals.
             ## @param value Value to set for the default_app_management_policy property.
             ## @return a void
             ## 

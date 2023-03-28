@@ -11,7 +11,7 @@ module MicrosoftGraph
         module Item
             ## 
             # Provides operations to manage the collection of place entities.
-            class PlaceItemRequestBuilder
+            class PlaceItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                 
                 ## 
                 # Casts the previous resource to room.
@@ -19,31 +19,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Places::Item::GraphRoom::GraphRoomRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
-                # Path parameters for the request
-                @path_parameters
-                ## 
-                # The request adapter to use to execute the requests.
-                @request_adapter
-                ## 
-                # Url template to use to build the URL for the current request builder
-                @url_template
-                ## 
                 ## Instantiates a new PlaceItemRequestBuilder and sets the default values.
-                ## @param pathParameters Path parameters for the request
-                ## @param requestAdapter The request adapter to use to execute the requests.
+                ## @param path_parameters Path parameters for the request
+                ## @param request_adapter The request adapter to use to execute the requests.
                 ## @return a void
                 ## 
                 def initialize(path_parameters, request_adapter)
-                    raise StandardError, 'path_parameters cannot be null' if path_parameters.nil?
-                    raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-                    @url_template = "{+baseurl}/places/{place%2Did}"
-                    @request_adapter = request_adapter
-                    path_parameters = { "request-raw-url" => path_parameters } if path_parameters.is_a? String
-                    @path_parameters = path_parameters if path_parameters.is_a? Hash
+                    super(path_parameters, request_adapter, "{+baseurl}/places/{place%2Did}")
                 end
                 ## 
                 ## Delete entity from places
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of void
                 ## 
                 def delete(request_configuration=nil)
@@ -58,7 +44,7 @@ module MicrosoftGraph
                 ## 
                 ## Update the properties of place object, which can be a room or roomList. You can identify the **room** or **roomList** by specifying the **id** or **emailAddress** property.
                 ## @param body The request body
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of place
                 ## 
                 def patch(body, request_configuration=nil)
@@ -73,7 +59,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Delete entity from places
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_delete_request_information(request_configuration=nil)
@@ -90,7 +76,7 @@ module MicrosoftGraph
                 ## 
                 ## Update the properties of place object, which can be a room or roomList. You can identify the **room** or **roomList** by specifying the **id** or **emailAddress** property.
                 ## @param body The request body
-                ## @param requestConfiguration Configuration for the request such as headers, query parameters, and middleware options.
+                ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
                 def to_patch_request_information(body, request_configuration=nil)
@@ -106,30 +92,6 @@ module MicrosoftGraph
                     end
                     request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
                     return request_info
-                end
-
-                ## 
-                # Configuration for the request such as headers, query parameters, and middleware options.
-                class PlaceItemRequestBuilderDeleteRequestConfiguration
-                    
-                    ## 
-                    # Request headers
-                    attr_accessor :headers
-                    ## 
-                    # Request options
-                    attr_accessor :options
-                end
-
-                ## 
-                # Configuration for the request such as headers, query parameters, and middleware options.
-                class PlaceItemRequestBuilderPatchRequestConfiguration
-                    
-                    ## 
-                    # Request headers
-                    attr_accessor :headers
-                    ## 
-                    # Request options
-                    attr_accessor :options
                 end
             end
         end

@@ -112,7 +112,7 @@ require_relative './users/users_request_builder'
 module MicrosoftGraph
     ## 
     # The main entry point of the SDK, exposes the configuration and the fluent API.
-    class GraphBaseServiceClient
+    class GraphBaseServiceClient < MicrosoftKiotaAbstractions::BaseRequestBuilder
         
         ## 
         # Provides operations to manage the admin singleton.
@@ -340,9 +340,6 @@ module MicrosoftGraph
             return MicrosoftGraph::Organization::OrganizationRequestBuilder.new(@path_parameters, @request_adapter)
         end
         ## 
-        # Path parameters for the request
-        @path_parameters
-        ## 
         # Provides operations to manage the collection of resourceSpecificPermissionGrant entities.
         def permission_grants()
             return MicrosoftGraph::PermissionGrants::PermissionGrantsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -377,9 +374,6 @@ module MicrosoftGraph
         def reports()
             return MicrosoftGraph::Reports::ReportsRequestBuilder.new(@path_parameters, @request_adapter)
         end
-        ## 
-        # The request adapter to use to execute the requests.
-        @request_adapter
         ## 
         # Provides operations to manage the roleManagement singleton.
         def role_management()
@@ -455,9 +449,6 @@ module MicrosoftGraph
         def tenant_relationships()
             return MicrosoftGraph::TenantRelationships::TenantRelationshipsRequestBuilder.new(@path_parameters, @request_adapter)
         end
-        ## 
-        # Url template to use to build the URL for the current request builder
-        @url_template
         ## 
         # Provides operations to manage the collection of user entities.
         def users()
@@ -553,16 +544,13 @@ module MicrosoftGraph
         end
         ## 
         ## Instantiates a new GraphBaseServiceClient and sets the default values.
-        ## @param requestAdapter The request adapter to use to execute the requests.
+        ## @param request_adapter The request adapter to use to execute the requests.
         ## @return a void
         ## 
         def initialize(request_adapter)
-            raise StandardError, 'request_adapter cannot be null' if request_adapter.nil?
-            @path_parameters = Hash.new
-            @url_template = "{+baseurl}"
+            super(Hash.new, request_adapter, "{+baseurl}")
             MicrosoftKiotaAbstractions::ApiClientBuilder.register_default_serializer(MicrosoftKiotaSerializationJson::JsonSerializationWriterFactory)
             MicrosoftKiotaAbstractions::ApiClientBuilder.register_default_deserializer(MicrosoftKiotaSerializationJson::JsonParseNodeFactory)
-            @request_adapter = request_adapter
             if @request_adapter.get_base_url.nil? || @request_adapter.get_base_url.empty?
                 @request_adapter.set_base_url('https://graph.microsoft.com/v1.0')
             end
