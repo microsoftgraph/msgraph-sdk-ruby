@@ -118,7 +118,7 @@ module MicrosoftGraph
                                         ## @return a void
                                         ## 
                                         def initialize(path_parameters, request_adapter)
-                                            super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/instances/{event%2Did1}{?%24select}")
+                                            super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/instances/{event%2Did1}{?startDateTime*,endDateTime*,%24select}")
                                         end
                                         ## 
                                         ## Provides operations to manage the extensions property of the microsoft.graph.event entity.
@@ -191,8 +191,14 @@ module MicrosoftGraph
                                         class EventItemRequestBuilderGetQueryParameters
                                             
                                             ## 
+                                            # The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
+                                            attr_accessor :end_date_time
+                                            ## 
                                             # Select properties to be returned
                                             attr_accessor :select
+                                            ## 
+                                            # The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
+                                            attr_accessor :start_date_time
                                             ## 
                                             ## Maps the query parameters names to their encoded names for the URI template parsing.
                                             ## @param original_name The original query parameter name in the class.

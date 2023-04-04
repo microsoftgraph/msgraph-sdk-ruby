@@ -4,6 +4,8 @@ require_relative './models'
 require_relative './security/alert'
 require_relative './security/cases_root'
 require_relative './security/incident'
+require_relative './security/triggers_root'
+require_relative './security/trigger_types_root'
 
 module MicrosoftGraph
     module Models
@@ -30,6 +32,12 @@ module MicrosoftGraph
             ## 
             # The secureScores property
             @secure_scores
+            ## 
+            # The triggerTypes property
+            @trigger_types
+            ## 
+            # The triggers property
+            @triggers
             ## 
             ## Gets the alerts property value. The alerts property
             ## @return a alert
@@ -119,6 +127,8 @@ module MicrosoftGraph
                     "incidents" => lambda {|n| @incidents = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Security::Incident.create_from_discriminator_value(pn) }) },
                     "secureScoreControlProfiles" => lambda {|n| @secure_score_control_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecureScoreControlProfile.create_from_discriminator_value(pn) }) },
                     "secureScores" => lambda {|n| @secure_scores = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecureScore.create_from_discriminator_value(pn) }) },
+                    "triggerTypes" => lambda {|n| @trigger_types = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Security::TriggerTypesRoot.create_from_discriminator_value(pn) }) },
+                    "triggers" => lambda {|n| @triggers = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Security::TriggersRoot.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -181,6 +191,38 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("incidents", @incidents)
                 writer.write_collection_of_object_values("secureScoreControlProfiles", @secure_score_control_profiles)
                 writer.write_collection_of_object_values("secureScores", @secure_scores)
+                writer.write_object_value("triggerTypes", @trigger_types)
+                writer.write_object_value("triggers", @triggers)
+            end
+            ## 
+            ## Gets the triggerTypes property value. The triggerTypes property
+            ## @return a trigger_types_root
+            ## 
+            def trigger_types
+                return @trigger_types
+            end
+            ## 
+            ## Sets the triggerTypes property value. The triggerTypes property
+            ## @param value Value to set for the trigger_types property.
+            ## @return a void
+            ## 
+            def trigger_types=(value)
+                @trigger_types = value
+            end
+            ## 
+            ## Gets the triggers property value. The triggers property
+            ## @return a triggers_root
+            ## 
+            def triggers
+                return @triggers
+            end
+            ## 
+            ## Sets the triggers property value. The triggers property
+            ## @param value Value to set for the triggers property.
+            ## @return a void
+            ## 
+            def triggers=(value)
+                @triggers = value
             end
         end
     end

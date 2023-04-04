@@ -34,7 +34,7 @@ module MicrosoftGraph
                     ## @return a void
                     ## 
                     def initialize(path_parameters, request_adapter)
-                        super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/contactFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}")
+                        super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/contactFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
                     ## Get the contact folder collection in the default Contacts folder of the signed-in user.
@@ -101,7 +101,7 @@ module MicrosoftGraph
                             request_info.add_headers_from_raw_object(request_configuration.headers)
                             request_info.add_request_options(request_configuration.options)
                         end
-                        request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+                        request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
                     end
 
@@ -112,6 +112,9 @@ module MicrosoftGraph
                         ## 
                         # Include count of items
                         attr_accessor :count
+                        ## 
+                        # Expand related entities
+                        attr_accessor :expand
                         ## 
                         # Filter items by property values
                         attr_accessor :filter
@@ -137,6 +140,8 @@ module MicrosoftGraph
                             case original_name
                                 when "count"
                                     return "%24count"
+                                when "expand"
+                                    return "%24expand"
                                 when "filter"
                                     return "%24filter"
                                 when "orderby"

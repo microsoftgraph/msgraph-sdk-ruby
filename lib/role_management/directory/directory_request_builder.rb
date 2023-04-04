@@ -4,6 +4,8 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/rbac_application'
 require_relative '../role_management'
 require_relative './directory'
+require_relative './resource_namespaces/item/unified_rbac_resource_namespace_item_request_builder'
+require_relative './resource_namespaces/resource_namespaces_request_builder'
 require_relative './role_assignments/item/unified_role_assignment_item_request_builder'
 require_relative './role_assignments/role_assignments_request_builder'
 require_relative './role_assignment_schedule_instances/item/unified_role_assignment_schedule_instance_item_request_builder'
@@ -28,6 +30,11 @@ module MicrosoftGraph
             # Provides operations to manage the directory property of the microsoft.graph.roleManagement entity.
             class DirectoryRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                 
+                ## 
+                # Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.
+                def resource_namespaces()
+                    return MicrosoftGraph::RoleManagement::Directory::ResourceNamespaces::ResourceNamespacesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
                 ## 
                 # Provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.
                 def role_assignments()
@@ -80,7 +87,7 @@ module MicrosoftGraph
                 ## 
                 ## Delete navigation property directory for roleManagement
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                ## @return a Fiber of void
+                ## @return a Fiber of binary
                 ## 
                 def delete(request_configuration=nil)
                     request_info = self.to_delete_request_information(
@@ -89,7 +96,7 @@ module MicrosoftGraph
                     error_mapping = Hash.new
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    return @request_adapter.send_async(request_info, nil, error_mapping)
+                    return @request_adapter.send_async(request_info, Binary, error_mapping)
                 end
                 ## 
                 ## Get directory from roleManagement
@@ -120,6 +127,17 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RbacApplication.create_from_discriminator_value(pn) }, error_mapping)
+                end
+                ## 
+                ## Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.
+                ## @param id Unique identifier of the item
+                ## @return a unified_rbac_resource_namespace_item_request_builder
+                ## 
+                def resource_namespaces_by_id(id)
+                    raise StandardError, 'id cannot be null' if id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["unifiedRbacResourceNamespace%2Did"] = id
+                    return MicrosoftGraph::RoleManagement::Directory::ResourceNamespaces::Item::UnifiedRbacResourceNamespaceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.
@@ -260,7 +278,7 @@ module MicrosoftGraph
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
-                    request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+                    request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
                 end
 

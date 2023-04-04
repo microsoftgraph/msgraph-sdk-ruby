@@ -34,7 +34,7 @@ module MicrosoftGraph
                         ## 
                         ## Delete navigation property trending for me
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                        ## @return a Fiber of void
+                        ## @return a Fiber of binary
                         ## 
                         def delete(request_configuration=nil)
                             request_info = self.to_delete_request_information(
@@ -43,7 +43,7 @@ module MicrosoftGraph
                             error_mapping = Hash.new
                             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            return @request_adapter.send_async(request_info, nil, error_mapping)
+                            return @request_adapter.send_async(request_info, Binary, error_mapping)
                         end
                         ## 
                         ## Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
@@ -126,7 +126,7 @@ module MicrosoftGraph
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.add_request_options(request_configuration.options)
                             end
-                            request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+                            request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
 

@@ -30,10 +30,10 @@ module MicrosoftGraph
                         ## @return a void
                         ## 
                         def initialize(path_parameters, request_adapter)
-                            super(path_parameters, request_adapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/calendarView{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
+                            super(path_parameters, request_adapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/calendarView{?start*,end*,%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
+                        ## The set of appointments of this business in a specified date range. Read-only. Nullable.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of booking_appointment_collection_response
                         ## 
@@ -63,7 +63,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BookingAppointment.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
+                        ## The set of appointments of this business in a specified date range. Read-only. Nullable.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -97,17 +97,20 @@ module MicrosoftGraph
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.add_request_options(request_configuration.options)
                             end
-                            request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+                            request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
 
                         ## 
-                        # Get the collection of bookingAppointment objects for a bookingBusiness that occurs in the specified date range.
+                        # The set of appointments of this business in a specified date range. Read-only. Nullable.
                         class CalendarViewRequestBuilderGetQueryParameters
                             
                             ## 
                             # Include count of items
                             attr_accessor :count
+                            ## 
+                            # The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
+                            attr_accessor :end_escaped
                             ## 
                             # Expand related entities
                             attr_accessor :expand
@@ -126,6 +129,9 @@ module MicrosoftGraph
                             ## 
                             # Skip the first n items
                             attr_accessor :skip
+                            ## 
+                            # The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
+                            attr_accessor :start
                             ## 
                             # Show only the first n items
                             attr_accessor :top

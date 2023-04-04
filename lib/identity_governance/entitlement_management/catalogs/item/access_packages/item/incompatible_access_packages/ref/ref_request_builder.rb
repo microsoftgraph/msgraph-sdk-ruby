@@ -98,7 +98,7 @@ module MicrosoftGraph
                                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                                 request_info.add_request_options(request_configuration.options)
                                             end
-                                            request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+                                            request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                             return request_info
                                         end
 

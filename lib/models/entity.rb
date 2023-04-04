@@ -1076,6 +1076,10 @@ module MicrosoftGraph
                             return TokenLifetimePolicy.new
                         when "#microsoft.graph.trending"
                             return Trending.new
+                        when "#microsoft.graph.unifiedRbacResourceAction"
+                            return UnifiedRbacResourceAction.new
+                        when "#microsoft.graph.unifiedRbacResourceNamespace"
+                            return UnifiedRbacResourceNamespace.new
                         when "#microsoft.graph.unifiedRoleAssignment"
                             return UnifiedRoleAssignment.new
                         when "#microsoft.graph.unifiedRoleAssignmentSchedule"
@@ -1168,6 +1172,8 @@ module MicrosoftGraph
                             return Windows81CompliancePolicy.new
                         when "#microsoft.graph.windows81GeneralConfiguration"
                             return Windows81GeneralConfiguration.new
+                        when "#microsoft.graph.windowsAppX"
+                            return WindowsAppX.new
                         when "#microsoft.graph.windowsAutopilotDeviceIdentity"
                             return WindowsAutopilotDeviceIdentity.new
                         when "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration"

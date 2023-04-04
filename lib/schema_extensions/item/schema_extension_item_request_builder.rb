@@ -24,7 +24,7 @@ module MicrosoftGraph
                 ## 
                 ## Delete the definition of a schema extension. Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the `InDevelopment` state. Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                ## @return a Fiber of void
+                ## @return a Fiber of binary
                 ## 
                 def delete(request_configuration=nil)
                     request_info = self.to_delete_request_information(
@@ -33,7 +33,7 @@ module MicrosoftGraph
                     error_mapping = Hash.new
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                    return @request_adapter.send_async(request_info, nil, error_mapping)
+                    return @request_adapter.send_async(request_info, Binary, error_mapping)
                 end
                 ## 
                 ## Get schemaExtension
@@ -116,7 +116,7 @@ module MicrosoftGraph
                         request_info.add_headers_from_raw_object(request_configuration.headers)
                         request_info.add_request_options(request_configuration.options)
                     end
-                    request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+                    request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
                 end
 

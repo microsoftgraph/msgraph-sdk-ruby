@@ -63,7 +63,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatMessageCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Send a new reply to a chatMessage in a specified channel.
+                                            ## Create a new reply to a chatMessage in a specified channel.
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of chat_message
@@ -97,7 +97,7 @@ module MicrosoftGraph
                                                 return request_info
                                             end
                                             ## 
-                                            ## Send a new reply to a chatMessage in a specified channel.
+                                            ## Create a new reply to a chatMessage in a specified channel.
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
@@ -113,7 +113,7 @@ module MicrosoftGraph
                                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                                     request_info.add_request_options(request_configuration.options)
                                                 end
-                                                request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+                                                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                                 return request_info
                                             end
 

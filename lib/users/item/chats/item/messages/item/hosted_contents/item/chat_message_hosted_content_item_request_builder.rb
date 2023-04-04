@@ -10,6 +10,7 @@ require_relative '../../../messages'
 require_relative '../../item'
 require_relative '../hosted_contents'
 require_relative './item'
+require_relative './value/content_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -25,6 +26,11 @@ module MicrosoftGraph
                                     class ChatMessageHostedContentItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                         
                                         ## 
+                                        # Provides operations to manage the media for the user entity.
+                                        def content()
+                                            return MicrosoftGraph::Users::Item::Chats::Item::Messages::Item::HostedContents::Item::Value::ContentRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
                                         ## Instantiates a new ChatMessageHostedContentItemRequestBuilder and sets the default values.
                                         ## @param path_parameters Path parameters for the request
                                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -36,7 +42,7 @@ module MicrosoftGraph
                                         ## 
                                         ## Delete navigation property hostedContents for users
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                        ## @return a Fiber of void
+                                        ## @return a Fiber of binary
                                         ## 
                                         def delete(request_configuration=nil)
                                             request_info = self.to_delete_request_information(
@@ -45,7 +51,7 @@ module MicrosoftGraph
                                             error_mapping = Hash.new
                                             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                            return @request_adapter.send_async(request_info, nil, error_mapping)
+                                            return @request_adapter.send_async(request_info, Binary, error_mapping)
                                         end
                                         ## 
                                         ## Content in a message hosted by Microsoft Teams - for example, images or code snippets.
@@ -128,7 +134,7 @@ module MicrosoftGraph
                                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                                 request_info.add_request_options(request_configuration.options)
                                             end
-                                            request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+                                            request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                             return request_info
                                         end
 

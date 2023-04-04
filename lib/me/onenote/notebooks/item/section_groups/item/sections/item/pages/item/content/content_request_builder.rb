@@ -1,6 +1,7 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../../../../../../../microsoft_graph'
 require_relative '../../../../../../../../../../../models/o_data_errors/o_data_error'
+require_relative '../../../../../../../../../../../models/onenote_page'
 require_relative '../../../../../../../../../../me'
 require_relative '../../../../../../../../../onenote'
 require_relative '../../../../../../../../notebooks'
@@ -56,7 +57,7 @@ module MicrosoftGraph
                                                     ## The page's HTML content.
                                                     ## @param body Binary request body
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                                                    ## @return a Fiber of void
+                                                    ## @return a Fiber of onenote_page
                                                     ## 
                                                     def put(body, request_configuration=nil)
                                                         raise StandardError, 'body cannot be null' if body.nil?
@@ -66,7 +67,7 @@ module MicrosoftGraph
                                                         error_mapping = Hash.new
                                                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                                        return @request_adapter.send_async(request_info, nil, error_mapping)
+                                                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnenotePage.create_from_discriminator_value(pn) }, error_mapping)
                                                     end
                                                     ## 
                                                     ## The page's HTML content.
@@ -96,11 +97,12 @@ module MicrosoftGraph
                                                         request_info.url_template = @url_template
                                                         request_info.path_parameters = @path_parameters
                                                         request_info.http_method = :PUT
+                                                        request_info.headers.add('Accept', 'application/json')
                                                         unless request_configuration.nil?
                                                             request_info.add_headers_from_raw_object(request_configuration.headers)
                                                             request_info.add_request_options(request_configuration.options)
                                                         end
-                                                        request_info.set_content_from_parsable(self.request_adapter, "", body)
+                                                        request_info.set_content_from_parsable(@request_adapter, "", body)
                                                         return request_info
                                                     end
                                                 end
