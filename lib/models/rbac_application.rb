@@ -7,6 +7,9 @@ module MicrosoftGraph
         class RbacApplication < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The resourceNamespaces property
+            @resource_namespaces
+            ## 
             # Instances for active role assignments.
             @role_assignment_schedule_instances
             ## 
@@ -52,6 +55,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "resourceNamespaces" => lambda {|n| @resource_namespaces = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UnifiedRbacResourceNamespace.create_from_discriminator_value(pn) }) },
                     "roleAssignmentScheduleInstances" => lambda {|n| @role_assignment_schedule_instances = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignmentScheduleInstance.create_from_discriminator_value(pn) }) },
                     "roleAssignmentScheduleRequests" => lambda {|n| @role_assignment_schedule_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignmentScheduleRequest.create_from_discriminator_value(pn) }) },
                     "roleAssignmentSchedules" => lambda {|n| @role_assignment_schedules = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignmentSchedule.create_from_discriminator_value(pn) }) },
@@ -61,6 +65,21 @@ module MicrosoftGraph
                     "roleEligibilityScheduleRequests" => lambda {|n| @role_eligibility_schedule_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UnifiedRoleEligibilityScheduleRequest.create_from_discriminator_value(pn) }) },
                     "roleEligibilitySchedules" => lambda {|n| @role_eligibility_schedules = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UnifiedRoleEligibilitySchedule.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the resourceNamespaces property value. The resourceNamespaces property
+            ## @return a unified_rbac_resource_namespace
+            ## 
+            def resource_namespaces
+                return @resource_namespaces
+            end
+            ## 
+            ## Sets the resourceNamespaces property value. The resourceNamespaces property
+            ## @param value Value to set for the resource_namespaces property.
+            ## @return a void
+            ## 
+            def resource_namespaces=(value)
+                @resource_namespaces = value
             end
             ## 
             ## Gets the roleAssignmentScheduleInstances property value. Instances for active role assignments.
@@ -190,6 +209,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_collection_of_object_values("resourceNamespaces", @resource_namespaces)
                 writer.write_collection_of_object_values("roleAssignmentScheduleInstances", @role_assignment_schedule_instances)
                 writer.write_collection_of_object_values("roleAssignmentScheduleRequests", @role_assignment_schedule_requests)
                 writer.write_collection_of_object_values("roleAssignmentSchedules", @role_assignment_schedules)

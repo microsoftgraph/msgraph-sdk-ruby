@@ -3,6 +3,7 @@ require_relative '../microsoft_graph'
 require_relative '../models/admin'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './admin'
+require_relative './edge/edge_request_builder'
 require_relative './service_announcement/service_announcement_request_builder'
 
 module MicrosoftGraph
@@ -11,6 +12,11 @@ module MicrosoftGraph
         # Provides operations to manage the admin singleton.
         class AdminRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
             
+            ## 
+            # Provides operations to manage the edge property of the microsoft.graph.admin entity.
+            def edge()
+                return MicrosoftGraph::Admin::Edge::EdgeRequestBuilder.new(@path_parameters, @request_adapter)
+            end
             ## 
             # Provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.
             def service_announcement()
@@ -90,7 +96,7 @@ module MicrosoftGraph
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.add_request_options(request_configuration.options)
                 end
-                request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                 return request_info
             end
 

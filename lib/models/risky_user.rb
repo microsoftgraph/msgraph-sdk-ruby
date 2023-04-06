@@ -35,7 +35,7 @@ module MicrosoftGraph
             # Risky user principal name.
             @user_principal_name
             ## 
-            ## Instantiates a new RiskyUser and sets the default values.
+            ## Instantiates a new riskyUser and sets the default values.
             ## @return a void
             ## 
             def initialize()

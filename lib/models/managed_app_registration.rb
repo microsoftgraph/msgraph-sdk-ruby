@@ -5,8 +5,6 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
-        ## 
-        # The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
         class ManagedAppRegistration < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -100,7 +98,7 @@ module MicrosoftGraph
                 @applied_policies = value
             end
             ## 
-            ## Instantiates a new managedAppRegistration and sets the default values.
+            ## Instantiates a new ManagedAppRegistration and sets the default values.
             ## @return a void
             ## 
             def initialize()

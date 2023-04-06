@@ -10,6 +10,9 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # The edge property
+            @edge
+            ## 
             # The OdataType property
             @odata_type
             ## 
@@ -47,11 +50,27 @@ module MicrosoftGraph
                 return Admin.new
             end
             ## 
+            ## Gets the edge property value. The edge property
+            ## @return a edge
+            ## 
+            def edge
+                return @edge
+            end
+            ## 
+            ## Sets the edge property value. The edge property
+            ## @param value Value to set for the edge property.
+            ## @return a void
+            ## 
+            def edge=(value)
+                @edge = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
                 return {
+                    "edge" => lambda {|n| @edge = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Edge.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "serviceAnnouncement" => lambda {|n| @service_announcement = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ServiceAnnouncement.create_from_discriminator_value(pn) }) },
                 }
@@ -78,6 +97,7 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_object_value("edge", @edge)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_object_value("serviceAnnouncement", @service_announcement)
                 writer.write_additional_data(@additional_data)

@@ -18,6 +18,9 @@ module MicrosoftGraph
                 # The user object identifier in Azure AD.
                 @azure_ad_user_id
                 ## 
+                # The displayName property
+                @display_name
+                ## 
                 # The name of the Active Directory domain of which the user is a member.
                 @domain_name
                 ## 
@@ -91,6 +94,21 @@ module MicrosoftGraph
                     return UserAccount.new
                 end
                 ## 
+                ## Gets the displayName property value. The displayName property
+                ## @return a string
+                ## 
+                def display_name
+                    return @display_name
+                end
+                ## 
+                ## Sets the displayName property value. The displayName property
+                ## @param value Value to set for the display_name property.
+                ## @return a void
+                ## 
+                def display_name=(value)
+                    @display_name = value
+                end
+                ## 
                 ## Gets the domainName property value. The name of the Active Directory domain of which the user is a member.
                 ## @return a string
                 ## 
@@ -113,6 +131,7 @@ module MicrosoftGraph
                     return {
                         "accountName" => lambda {|n| @account_name = n.get_string_value() },
                         "azureAdUserId" => lambda {|n| @azure_ad_user_id = n.get_string_value() },
+                        "displayName" => lambda {|n| @display_name = n.get_string_value() },
                         "domainName" => lambda {|n| @domain_name = n.get_string_value() },
                         "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                         "userPrincipalName" => lambda {|n| @user_principal_name = n.get_string_value() },
@@ -143,6 +162,7 @@ module MicrosoftGraph
                     raise StandardError, 'writer cannot be null' if writer.nil?
                     writer.write_string_value("accountName", @account_name)
                     writer.write_string_value("azureAdUserId", @azure_ad_user_id)
+                    writer.write_string_value("displayName", @display_name)
                     writer.write_string_value("domainName", @domain_name)
                     writer.write_string_value("@odata.type", @odata_type)
                     writer.write_string_value("userPrincipalName", @user_principal_name)

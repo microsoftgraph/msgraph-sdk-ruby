@@ -31,7 +31,7 @@ module MicrosoftGraph
                             ## @return a void
                             ## 
                             def initialize(path_parameters, request_adapter)
-                                super(path_parameters, request_adapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/calendarView/{bookingAppointment%2Did}{?%24select,%24expand}")
+                                super(path_parameters, request_adapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/calendarView/{bookingAppointment%2Did}{?start*,end*,%24select,%24expand}")
                             end
                             ## 
                             ## Delete navigation property calendarView for solutions
@@ -128,7 +128,7 @@ module MicrosoftGraph
                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                     request_info.add_request_options(request_configuration.options)
                                 end
-                                request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+                                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                 return request_info
                             end
 
@@ -137,11 +137,17 @@ module MicrosoftGraph
                             class BookingAppointmentItemRequestBuilderGetQueryParameters
                                 
                                 ## 
+                                # The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
+                                attr_accessor :end_escaped
+                                ## 
                                 # Expand related entities
                                 attr_accessor :expand
                                 ## 
                                 # Select properties to be returned
                                 attr_accessor :select
+                                ## 
+                                # The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
+                                attr_accessor :start
                                 ## 
                                 ## Maps the query parameters names to their encoded names for the URI template parsing.
                                 ## @param original_name The original query parameter name in the class.

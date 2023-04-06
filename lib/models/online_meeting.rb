@@ -230,7 +230,7 @@ module MicrosoftGraph
                 @chat_info = value
             end
             ## 
-            ## Instantiates a new onlineMeeting and sets the default values.
+            ## Instantiates a new OnlineMeeting and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -11,6 +11,7 @@ require_relative '../../../messages'
 require_relative '../../item'
 require_relative '../hosted_contents'
 require_relative './item'
+require_relative './value/content_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -26,6 +27,11 @@ module MicrosoftGraph
                                         # Provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
                                         class ChatMessageHostedContentItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                             
+                                            ## 
+                                            # Provides operations to manage the media for the user entity.
+                                            def content()
+                                                return MicrosoftGraph::Users::Item::JoinedTeams::Item::PrimaryChannel::Messages::Item::HostedContents::Item::Value::ContentRequestBuilder.new(@path_parameters, @request_adapter)
+                                            end
                                             ## 
                                             ## Instantiates a new ChatMessageHostedContentItemRequestBuilder and sets the default values.
                                             ## @param path_parameters Path parameters for the request
@@ -130,7 +136,7 @@ module MicrosoftGraph
                                                     request_info.add_headers_from_raw_object(request_configuration.headers)
                                                     request_info.add_request_options(request_configuration.options)
                                                 end
-                                                request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+                                                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                                 return request_info
                                             end
 

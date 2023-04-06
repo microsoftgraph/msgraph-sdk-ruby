@@ -222,6 +222,12 @@ module MicrosoftGraph
                             return BookingStaffMember.new
                         when "#microsoft.graph.bookingStaffMemberBase"
                             return BookingStaffMemberBase.new
+                        when "#microsoft.graph.browserSharedCookie"
+                            return BrowserSharedCookie.new
+                        when "#microsoft.graph.browserSite"
+                            return BrowserSite.new
+                        when "#microsoft.graph.browserSiteList"
+                            return BrowserSiteList.new
                         when "#microsoft.graph.builtInIdentityProvider"
                             return BuiltInIdentityProvider.new
                         when "#microsoft.graph.calendar"
@@ -424,6 +430,8 @@ module MicrosoftGraph
                             return DriveItemVersion.new
                         when "#microsoft.graph.eBookInstallSummary"
                             return EBookInstallSummary.new
+                        when "#microsoft.graph.edge"
+                            return Edge.new
                         when "#microsoft.graph.editionUpgradeConfiguration"
                             return EditionUpgradeConfiguration.new
                         when "#microsoft.graph.educationAssignment"
@@ -546,6 +554,8 @@ module MicrosoftGraph
                             return InferenceClassificationOverride.new
                         when "#microsoft.graph.internalDomainFederation"
                             return InternalDomainFederation.new
+                        when "#microsoft.graph.internetExplorerMode"
+                            return InternetExplorerMode.new
                         when "#microsoft.graph.invitation"
                             return Invitation.new
                         when "#microsoft.graph.inviteParticipantsOperation"
@@ -1076,6 +1086,10 @@ module MicrosoftGraph
                             return TokenLifetimePolicy.new
                         when "#microsoft.graph.trending"
                             return Trending.new
+                        when "#microsoft.graph.unifiedRbacResourceAction"
+                            return UnifiedRbacResourceAction.new
+                        when "#microsoft.graph.unifiedRbacResourceNamespace"
+                            return UnifiedRbacResourceNamespace.new
                         when "#microsoft.graph.unifiedRoleAssignment"
                             return UnifiedRoleAssignment.new
                         when "#microsoft.graph.unifiedRoleAssignmentSchedule"
@@ -1168,6 +1182,8 @@ module MicrosoftGraph
                             return Windows81CompliancePolicy.new
                         when "#microsoft.graph.windows81GeneralConfiguration"
                             return Windows81GeneralConfiguration.new
+                        when "#microsoft.graph.windowsAppX"
+                            return WindowsAppX.new
                         when "#microsoft.graph.windowsAutopilotDeviceIdentity"
                             return WindowsAutopilotDeviceIdentity.new
                         when "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration"

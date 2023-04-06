@@ -89,7 +89,7 @@ module MicrosoftGraph
                 @activated_date_time = value
             end
             ## 
-            ## Instantiates a new DelegatedAdminRelationship and sets the default values.
+            ## Instantiates a new delegatedAdminRelationship and sets the default values.
             ## @return a void
             ## 
             def initialize()
