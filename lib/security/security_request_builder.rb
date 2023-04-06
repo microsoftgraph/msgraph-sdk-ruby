@@ -16,6 +16,8 @@ require_relative './secure_scores/item/secure_score_item_request_builder'
 require_relative './secure_scores/secure_scores_request_builder'
 require_relative './security'
 require_relative './security_run_hunting_query/security_run_hunting_query_request_builder'
+require_relative './triggers/triggers_request_builder'
+require_relative './trigger_types/trigger_types_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -62,6 +64,16 @@ module MicrosoftGraph
             # Provides operations to call the runHuntingQuery method.
             def security_run_hunting_query()
                 return MicrosoftGraph::Security::SecurityRunHuntingQuery::SecurityRunHuntingQueryRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the triggers property of the microsoft.graph.security entity.
+            def triggers()
+                return MicrosoftGraph::Security::Triggers::TriggersRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            # Provides operations to manage the triggerTypes property of the microsoft.graph.security entity.
+            def trigger_types()
+                return MicrosoftGraph::Security::TriggerTypes::TriggerTypesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
             ## Provides operations to manage the alerts property of the microsoft.graph.security entity.
@@ -192,7 +204,7 @@ module MicrosoftGraph
                     request_info.add_headers_from_raw_object(request_configuration.headers)
                     request_info.add_request_options(request_configuration.options)
                 end
-                request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                 return request_info
             end
 

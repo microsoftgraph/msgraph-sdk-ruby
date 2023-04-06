@@ -16,6 +16,9 @@ module MicrosoftGraph
             # The search query containing the search terms. Required.
             @query_string
             ## 
+            # The queryTemplate property
+            @query_template
+            ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
             ## 
@@ -54,6 +57,7 @@ module MicrosoftGraph
                 return {
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "queryString" => lambda {|n| @query_string = n.get_string_value() },
+                    "queryTemplate" => lambda {|n| @query_template = n.get_string_value() },
                 }
             end
             ## 
@@ -87,6 +91,21 @@ module MicrosoftGraph
                 @query_string = value
             end
             ## 
+            ## Gets the queryTemplate property value. The queryTemplate property
+            ## @return a string
+            ## 
+            def query_template
+                return @query_template
+            end
+            ## 
+            ## Sets the queryTemplate property value. The queryTemplate property
+            ## @param value Value to set for the query_template property.
+            ## @return a void
+            ## 
+            def query_template=(value)
+                @query_template = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -95,6 +114,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_string_value("queryString", @query_string)
+                writer.write_string_value("queryTemplate", @query_template)
                 writer.write_additional_data(@additional_data)
             end
         end

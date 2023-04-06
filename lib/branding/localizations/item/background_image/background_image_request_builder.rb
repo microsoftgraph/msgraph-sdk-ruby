@@ -42,7 +42,7 @@ module MicrosoftGraph
                         ## Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
                         ## @param body Binary request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                        ## @return a Fiber of void
+                        ## @return a Fiber of binary
                         ## 
                         def put(body, request_configuration=nil)
                             raise StandardError, 'body cannot be null' if body.nil?
@@ -52,7 +52,7 @@ module MicrosoftGraph
                             error_mapping = Hash.new
                             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                            return @request_adapter.send_async(request_info, nil, error_mapping)
+                            return @request_adapter.send_async(request_info, Binary, error_mapping)
                         end
                         ## 
                         ## Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.
@@ -86,7 +86,7 @@ module MicrosoftGraph
                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                 request_info.add_request_options(request_configuration.options)
                             end
-                            request_info.set_content_from_parsable(self.request_adapter, "", body)
+                            request_info.set_content_from_parsable(@request_adapter, "", body)
                             return request_info
                         end
                     end

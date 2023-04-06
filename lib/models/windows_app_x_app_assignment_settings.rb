@@ -7,7 +7,7 @@ module MicrosoftGraph
         class WindowsAppXAppAssignmentSettings < MicrosoftGraph::Models::MobileAppAssignmentSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Whether or not to use device execution context for Windows AppX mobile app.
+            # When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.
             @use_device_context
             ## 
             ## Instantiates a new WindowsAppXAppAssignmentSettings and sets the default values.
@@ -46,14 +46,14 @@ module MicrosoftGraph
                 writer.write_boolean_value("useDeviceContext", @use_device_context)
             end
             ## 
-            ## Gets the useDeviceContext property value. Whether or not to use device execution context for Windows AppX mobile app.
+            ## Gets the useDeviceContext property value. When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.
             ## @return a boolean
             ## 
             def use_device_context
                 return @use_device_context
             end
             ## 
-            ## Sets the useDeviceContext property value. Whether or not to use device execution context for Windows AppX mobile app.
+            ## Sets the useDeviceContext property value. When TRUE, indicates that device execution context will be used for the AppX mobile app. When FALSE, indicates that user context will be used for the AppX mobile app. By default, this property is set to FALSE. Once this property has been set to TRUE it cannot be changed.
             ## @param value Value to set for the use_device_context property.
             ## @return a void
             ## 

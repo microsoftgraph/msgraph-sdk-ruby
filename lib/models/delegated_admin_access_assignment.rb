@@ -53,7 +53,7 @@ module MicrosoftGraph
                 @access_details = value
             end
             ## 
-            ## Instantiates a new DelegatedAdminAccessAssignment and sets the default values.
+            ## Instantiates a new delegatedAdminAccessAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

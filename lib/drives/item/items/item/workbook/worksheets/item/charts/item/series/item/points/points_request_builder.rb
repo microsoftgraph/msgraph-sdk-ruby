@@ -50,7 +50,7 @@ module MicrosoftGraph
                                                             super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/series/{workbookChartSeries%2Did}/points{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                                         end
                                                         ## 
-                                                        ## Retrieve a list of chartpoints objects.
+                                                        ## Retrieve a list of chartpoint objects.
                                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a Fiber of workbook_chart_point_collection_response
                                                         ## 
@@ -89,7 +89,7 @@ module MicrosoftGraph
                                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookChartPoint.create_from_discriminator_value(pn) }, error_mapping)
                                                         end
                                                         ## 
-                                                        ## Retrieve a list of chartpoints objects.
+                                                        ## Retrieve a list of chartpoint objects.
                                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a request_information
                                                         ## 
@@ -123,12 +123,12 @@ module MicrosoftGraph
                                                                 request_info.add_headers_from_raw_object(request_configuration.headers)
                                                                 request_info.add_request_options(request_configuration.options)
                                                             end
-                                                            request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+                                                            request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                                             return request_info
                                                         end
 
                                                         ## 
-                                                        # Retrieve a list of chartpoints objects.
+                                                        # Retrieve a list of chartpoint objects.
                                                         class PointsRequestBuilderGetQueryParameters
                                                             
                                                             ## 

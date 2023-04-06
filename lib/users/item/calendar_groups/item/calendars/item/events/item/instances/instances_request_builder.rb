@@ -45,10 +45,10 @@ module MicrosoftGraph
                                             ## @return a void
                                             ## 
                                             def initialize(path_parameters, request_adapter)
-                                                super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/events/{event%2Did}/instances{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}")
+                                                super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/events/{event%2Did}/instances{?startDateTime*,endDateTime*,%24top,%24skip,%24filter,%24count,%24orderby,%24select}")
                                             end
                                             ## 
-                                            ## Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the occurrences and exceptions of the event in the specified time range.
+                                            ## The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of event_collection_response
                                             ## 
@@ -62,7 +62,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EventCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the occurrences and exceptions of the event in the specified time range.
+                                            ## The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -81,12 +81,15 @@ module MicrosoftGraph
                                             end
 
                                             ## 
-                                            # Get the instances (occurrences) of an event for a specified time range.  If the event is a `seriesMaster` type, this returns the occurrences and exceptions of the event in the specified time range.
+                                            # The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
                                             class InstancesRequestBuilderGetQueryParameters
                                                 
                                                 ## 
                                                 # Include count of items
                                                 attr_accessor :count
+                                                ## 
+                                                # The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00
+                                                attr_accessor :end_date_time
                                                 ## 
                                                 # Filter items by property values
                                                 attr_accessor :filter
@@ -99,6 +102,9 @@ module MicrosoftGraph
                                                 ## 
                                                 # Skip the first n items
                                                 attr_accessor :skip
+                                                ## 
+                                                # The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00
+                                                attr_accessor :start_date_time
                                                 ## 
                                                 # Show only the first n items
                                                 attr_accessor :top

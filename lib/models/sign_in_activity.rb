@@ -11,16 +11,16 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The lastNonInteractiveSignInDateTime property
+            # The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
             @last_non_interactive_sign_in_date_time
             ## 
-            # The lastNonInteractiveSignInRequestId property
+            # Request identifier of the last non-interactive sign-in performed by this user.
             @last_non_interactive_sign_in_request_id
             ## 
-            # The lastSignInDateTime property
+            # The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
             @last_sign_in_date_time
             ## 
-            # The lastSignInRequestId property
+            # Request identifier of the last interactive sign-in performed by this user.
             @last_sign_in_request_id
             ## 
             # The OdataType property
@@ -70,14 +70,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the lastNonInteractiveSignInDateTime property value. The lastNonInteractiveSignInDateTime property
+            ## Gets the lastNonInteractiveSignInDateTime property value. The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
             ## @return a date_time
             ## 
             def last_non_interactive_sign_in_date_time
                 return @last_non_interactive_sign_in_date_time
             end
             ## 
-            ## Sets the lastNonInteractiveSignInDateTime property value. The lastNonInteractiveSignInDateTime property
+            ## Sets the lastNonInteractiveSignInDateTime property value. The last non-interactive sign-in date for a specific user. You can use this field to calculate the last time a client signed in to the directory on behalf of a user. Because some users may use clients to access tenant resources rather than signing into your tenant directly, you can use the non-interactive sign-in date to along with lastSignInDateTime to identify inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains non-interactive sign-ins going back to May 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
             ## @param value Value to set for the last_non_interactive_sign_in_date_time property.
             ## @return a void
             ## 
@@ -85,14 +85,14 @@ module MicrosoftGraph
                 @last_non_interactive_sign_in_date_time = value
             end
             ## 
-            ## Gets the lastNonInteractiveSignInRequestId property value. The lastNonInteractiveSignInRequestId property
+            ## Gets the lastNonInteractiveSignInRequestId property value. Request identifier of the last non-interactive sign-in performed by this user.
             ## @return a string
             ## 
             def last_non_interactive_sign_in_request_id
                 return @last_non_interactive_sign_in_request_id
             end
             ## 
-            ## Sets the lastNonInteractiveSignInRequestId property value. The lastNonInteractiveSignInRequestId property
+            ## Sets the lastNonInteractiveSignInRequestId property value. Request identifier of the last non-interactive sign-in performed by this user.
             ## @param value Value to set for the last_non_interactive_sign_in_request_id property.
             ## @return a void
             ## 
@@ -100,14 +100,14 @@ module MicrosoftGraph
                 @last_non_interactive_sign_in_request_id = value
             end
             ## 
-            ## Gets the lastSignInDateTime property value. The lastSignInDateTime property
+            ## Gets the lastSignInDateTime property value. The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
             ## @return a date_time
             ## 
             def last_sign_in_date_time
                 return @last_sign_in_date_time
             end
             ## 
-            ## Sets the lastSignInDateTime property value. The lastSignInDateTime property
+            ## Sets the lastSignInDateTime property value. The last interactive sign-in date and time for a specific user. You can use this field to calculate the last time a user signed in to the directory with an interactive authentication method. This field can be used to build reports, such as inactive users. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is: '2014-01-01T00:00:00Z'. Azure AD maintains interactive sign-ins going back to April 2020. For more information about using the value of this property, see Manage inactive user accounts in Azure AD.
             ## @param value Value to set for the last_sign_in_date_time property.
             ## @return a void
             ## 
@@ -115,14 +115,14 @@ module MicrosoftGraph
                 @last_sign_in_date_time = value
             end
             ## 
-            ## Gets the lastSignInRequestId property value. The lastSignInRequestId property
+            ## Gets the lastSignInRequestId property value. Request identifier of the last interactive sign-in performed by this user.
             ## @return a string
             ## 
             def last_sign_in_request_id
                 return @last_sign_in_request_id
             end
             ## 
-            ## Sets the lastSignInRequestId property value. The lastSignInRequestId property
+            ## Sets the lastSignInRequestId property value. Request identifier of the last interactive sign-in performed by this user.
             ## @param value Value to set for the last_sign_in_request_id property.
             ## @return a void
             ## 

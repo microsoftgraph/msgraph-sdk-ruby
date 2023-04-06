@@ -50,7 +50,7 @@ module MicrosoftGraph
                 @added_student_action = value
             end
             ## 
-            ## Instantiates a new educationAssignmentDefaults and sets the default values.
+            ## Instantiates a new EducationAssignmentDefaults and sets the default values.
             ## @return a void
             ## 
             def initialize()
