@@ -58,7 +58,7 @@ module MicrosoftGraph
                 @capability_status = value
             end
             ## 
-            ## Instantiates a new SubscribedSku and sets the default values.
+            ## Instantiates a new subscribedSku and sets the default values.
             ## @return a void
             ## 
             def initialize()

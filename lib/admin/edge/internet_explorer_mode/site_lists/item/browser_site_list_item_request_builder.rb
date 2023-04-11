@@ -62,7 +62,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Get siteLists from admin
+                            ## A collection of site lists to support Internet Explorer mode.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of browser_site_list
                             ## 
@@ -130,7 +130,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Get siteLists from admin
+                            ## A collection of site lists to support Internet Explorer mode.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -169,7 +169,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get siteLists from admin
+                            # A collection of site lists to support Internet Explorer mode.
                             class BrowserSiteListItemRequestBuilderGetQueryParameters
                                 
                                 ## 

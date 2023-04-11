@@ -33,7 +33,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/identityProtection/riskyUsers/{riskyUser%2Did}/history{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Read the properties and relationships of a riskyUserHistoryItem object.
+                        ## Get the riskyUserHistoryItems from the history navigation property.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of risky_user_history_item_collection_response
                         ## 
@@ -63,7 +63,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RiskyUserHistoryItem.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Read the properties and relationships of a riskyUserHistoryItem object.
+                        ## Get the riskyUserHistoryItems from the history navigation property.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -102,7 +102,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Read the properties and relationships of a riskyUserHistoryItem object.
+                        # Get the riskyUserHistoryItems from the history navigation property.
                         class HistoryRequestBuilderGetQueryParameters
                             
                             ## 

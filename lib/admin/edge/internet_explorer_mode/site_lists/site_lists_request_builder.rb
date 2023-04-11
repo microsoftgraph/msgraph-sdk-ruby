@@ -33,7 +33,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/admin/edge/internetExplorerMode/siteLists{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Get siteLists from admin
+                        ## Get a list of the browserSiteList objects and their properties.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of browser_site_list_collection_response
                         ## 
@@ -47,7 +47,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BrowserSiteListCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create new navigation property to siteLists for admin
+                        ## Create a new browserSiteList object to support Internet Explorer mode.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of browser_site_list
@@ -63,7 +63,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BrowserSiteList.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get siteLists from admin
+                        ## Get a list of the browserSiteList objects and their properties.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +81,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create new navigation property to siteLists for admin
+                        ## Create a new browserSiteList object to support Internet Explorer mode.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +102,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get siteLists from admin
+                        # Get a list of the browserSiteList objects and their properties.
                         class SiteListsRequestBuilderGetQueryParameters
                             
                             ## 

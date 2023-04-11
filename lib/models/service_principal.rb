@@ -364,7 +364,7 @@ module MicrosoftGraph
                 @claims_mapping_policies = value
             end
             ## 
-            ## Instantiates a new ServicePrincipal and sets the default values.
+            ## Instantiates a new servicePrincipal and sets the default values.
             ## @return a void
             ## 
             def initialize()

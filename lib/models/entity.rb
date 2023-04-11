@@ -260,8 +260,6 @@ module MicrosoftGraph
                             return ChecklistItem.new
                         when "#microsoft.graph.claimsMappingPolicy"
                             return ClaimsMappingPolicy.new
-                        when "#microsoft.graph.cloudCommunications"
-                            return CloudCommunications.new
                         when "#microsoft.graph.columnDefinition"
                             return ColumnDefinition.new
                         when "#microsoft.graph.columnLink"
@@ -964,6 +962,10 @@ module MicrosoftGraph
                             return SharedPCConfiguration.new
                         when "#microsoft.graph.sharedWithChannelTeamInfo"
                             return SharedWithChannelTeamInfo.new
+                        when "#microsoft.graph.sharepoint"
+                            return Sharepoint.new
+                        when "#microsoft.graph.sharepointSettings"
+                            return SharepointSettings.new
                         when "#microsoft.graph.shift"
                             return Shift.new
                         when "#microsoft.graph.shiftPreferences"
