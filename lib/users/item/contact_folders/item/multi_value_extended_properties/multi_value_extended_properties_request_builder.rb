@@ -8,6 +8,7 @@ require_relative '../../../item'
 require_relative '../../contact_folders'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/multi_value_legacy_extended_property_item_request_builder'
 require_relative './multi_value_extended_properties'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Users::Item::ContactFolders::Item::MultiValueExtendedProperties::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contactFolder entity.
+                            ## @param multi_value_legacy_extended_property_id Unique identifier of the item
+                            ## @return a multi_value_legacy_extended_property_item_request_builder
+                            ## 
+                            def by_multi_value_legacy_extended_property_id(multi_value_legacy_extended_property_id)
+                                raise StandardError, 'multi_value_legacy_extended_property_id cannot be null' if multi_value_legacy_extended_property_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["multiValueLegacyExtendedProperty%2Did"] = multi_value_legacy_extended_property_id
+                                return MicrosoftGraph::Users::Item::ContactFolders::Item::MultiValueExtendedProperties::Item::MultiValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new MultiValueExtendedPropertiesRequestBuilder and sets the default values.

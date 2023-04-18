@@ -5,7 +5,6 @@ require_relative '../../../models/security/incident'
 require_relative '../../security'
 require_relative '../incidents'
 require_relative './alerts/alerts_request_builder'
-require_relative './alerts/item/alert_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -20,17 +19,6 @@ module MicrosoftGraph
                     # Provides operations to manage the alerts property of the microsoft.graph.security.incident entity.
                     def alerts()
                         return MicrosoftGraph::Security::Incidents::Item::Alerts::AlertsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the alerts property of the microsoft.graph.security.incident entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a alert_item_request_builder
-                    ## 
-                    def alerts_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["alert%2Did"] = id
-                        return MicrosoftGraph::Security::Incidents::Item::Alerts::Item::AlertItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new IncidentItemRequestBuilder and sets the default values.

@@ -5,7 +5,6 @@ require_relative '../../../models/online_meeting'
 require_relative '../../me'
 require_relative '../online_meetings'
 require_relative './attendance_reports/attendance_reports_request_builder'
-require_relative './attendance_reports/item/meeting_attendance_report_item_request_builder'
 require_relative './attendee_report/attendee_report_request_builder'
 require_relative './item'
 
@@ -26,17 +25,6 @@ module MicrosoftGraph
                     # Provides operations to manage the media for the user entity.
                     def attendee_report()
                         return MicrosoftGraph::Me::OnlineMeetings::Item::AttendeeReport::AttendeeReportRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a meeting_attendance_report_item_request_builder
-                    ## 
-                    def attendance_reports_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["meetingAttendanceReport%2Did"] = id
-                        return MicrosoftGraph::Me::OnlineMeetings::Item::AttendanceReports::Item::MeetingAttendanceReportItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new OnlineMeetingItemRequestBuilder and sets the default values.

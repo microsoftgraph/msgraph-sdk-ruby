@@ -5,6 +5,7 @@ require_relative '../../../models/token_lifetime_policy_collection_response'
 require_relative '../../service_principals'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/token_lifetime_policy_item_request_builder'
 require_relative './token_lifetime_policies'
 
 module MicrosoftGraph
@@ -19,6 +20,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::ServicePrincipals::Item::TokenLifetimePolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.servicePrincipal entity.
+                    ## @param token_lifetime_policy_id Unique identifier of the item
+                    ## @return a token_lifetime_policy_item_request_builder
+                    ## 
+                    def by_token_lifetime_policy_id(token_lifetime_policy_id)
+                        raise StandardError, 'token_lifetime_policy_id cannot be null' if token_lifetime_policy_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["tokenLifetimePolicy%2Did"] = token_lifetime_policy_id
+                        return MicrosoftGraph::ServicePrincipals::Item::TokenLifetimePolicies::Item::TokenLifetimePolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new TokenLifetimePoliciesRequestBuilder and sets the default values.

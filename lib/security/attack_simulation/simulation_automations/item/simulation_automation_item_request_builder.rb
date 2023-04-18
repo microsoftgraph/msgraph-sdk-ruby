@@ -6,7 +6,6 @@ require_relative '../../../security'
 require_relative '../../attack_simulation'
 require_relative '../simulation_automations'
 require_relative './item'
-require_relative './runs/item/simulation_automation_run_item_request_builder'
 require_relative './runs/runs_request_builder'
 
 module MicrosoftGraph
@@ -75,17 +74,6 @@ module MicrosoftGraph
                             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SimulationAutomation.create_from_discriminator_value(pn) }, error_mapping)
-                        end
-                        ## 
-                        ## Provides operations to manage the runs property of the microsoft.graph.simulationAutomation entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a simulation_automation_run_item_request_builder
-                        ## 
-                        def runs_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["simulationAutomationRun%2Did"] = id
-                            return MicrosoftGraph::Security::AttackSimulation::SimulationAutomations::Item::Runs::Item::SimulationAutomationRunItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Delete navigation property simulationAutomations for security

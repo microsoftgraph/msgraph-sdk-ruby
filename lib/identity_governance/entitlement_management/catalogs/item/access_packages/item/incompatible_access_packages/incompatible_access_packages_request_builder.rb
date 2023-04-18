@@ -10,6 +10,7 @@ require_relative '../../access_packages'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './incompatible_access_packages'
+require_relative './item/access_package_item_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -33,6 +34,17 @@ module MicrosoftGraph
                                     # Provides operations to manage the collection of identityGovernance entities.
                                     def ref()
                                         return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::IncompatibleAccessPackages::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.catalogs.item.accessPackages.item.incompatibleAccessPackages.item collection
+                                    ## @param access_package_id1 Unique identifier of the item
+                                    ## @return a access_package_item_request_builder
+                                    ## 
+                                    def by_access_package_id1(access_package_id1)
+                                        raise StandardError, 'access_package_id1 cannot be null' if access_package_id1.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["accessPackage%2Did1"] = access_package_id1
+                                        return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::IncompatibleAccessPackages::Item::AccessPackageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new IncompatibleAccessPackagesRequestBuilder and sets the default values.

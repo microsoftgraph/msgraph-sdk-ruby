@@ -5,6 +5,7 @@ require_relative '../../models/identity_user_flow_attribute_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../identity'
 require_relative './count/count_request_builder'
+require_relative './item/identity_user_flow_attribute_item_request_builder'
 require_relative './user_flow_attributes'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Identity::UserFlowAttributes::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
+                ## @param identity_user_flow_attribute_id Unique identifier of the item
+                ## @return a identity_user_flow_attribute_item_request_builder
+                ## 
+                def by_identity_user_flow_attribute_id(identity_user_flow_attribute_id)
+                    raise StandardError, 'identity_user_flow_attribute_id cannot be null' if identity_user_flow_attribute_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["identityUserFlowAttribute%2Did"] = identity_user_flow_attribute_id
+                    return MicrosoftGraph::Identity::UserFlowAttributes::Item::IdentityUserFlowAttributeItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new UserFlowAttributesRequestBuilder and sets the default values.

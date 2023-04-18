@@ -3,13 +3,9 @@ require_relative '../microsoft_graph'
 require_relative '../models/directory'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './administrative_units/administrative_units_request_builder'
-require_relative './administrative_units/item/administrative_unit_item_request_builder'
 require_relative './deleted_items/deleted_items_request_builder'
-require_relative './deleted_items/item/directory_object_item_request_builder'
 require_relative './directory'
 require_relative './federation_configurations/federation_configurations_request_builder'
-require_relative './federation_configurations/item/identity_provider_base_item_request_builder'
-require_relative './on_premises_synchronization/item/on_premises_directory_synchronization_item_request_builder'
 require_relative './on_premises_synchronization/on_premises_synchronization_request_builder'
 
 module MicrosoftGraph
@@ -39,17 +35,6 @@ module MicrosoftGraph
                 return MicrosoftGraph::Directory::OnPremisesSynchronization::OnPremisesSynchronizationRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
-            ## Provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.
-            ## @param id Unique identifier of the item
-            ## @return a administrative_unit_item_request_builder
-            ## 
-            def administrative_units_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["administrativeUnit%2Did"] = id
-                return MicrosoftGraph::Directory::AdministrativeUnits::Item::AdministrativeUnitItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
             ## Instantiates a new DirectoryRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request
             ## @param request_adapter The request adapter to use to execute the requests.
@@ -57,28 +42,6 @@ module MicrosoftGraph
             ## 
             def initialize(path_parameters, request_adapter)
                 super(path_parameters, request_adapter, "{+baseurl}/directory{?%24select,%24expand}")
-            end
-            ## 
-            ## Provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
-            ## @param id Unique identifier of the item
-            ## @return a directory_object_item_request_builder
-            ## 
-            def deleted_items_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["directoryObject%2Did"] = id
-                return MicrosoftGraph::Directory::DeletedItems::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.
-            ## @param id Unique identifier of the item
-            ## @return a identity_provider_base_item_request_builder
-            ## 
-            def federation_configurations_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["identityProviderBase%2Did"] = id
-                return MicrosoftGraph::Directory::FederationConfigurations::Item::IdentityProviderBaseItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Get directory
@@ -93,17 +56,6 @@ module MicrosoftGraph
                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Directory.create_from_discriminator_value(pn) }, error_mapping)
-            end
-            ## 
-            ## Provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
-            ## @param id Unique identifier of the item
-            ## @return a on_premises_directory_synchronization_item_request_builder
-            ## 
-            def on_premises_synchronization_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["onPremisesDirectorySynchronization%2Did"] = id
-                return MicrosoftGraph::Directory::OnPremisesSynchronization::Item::OnPremisesDirectorySynchronizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Update directory

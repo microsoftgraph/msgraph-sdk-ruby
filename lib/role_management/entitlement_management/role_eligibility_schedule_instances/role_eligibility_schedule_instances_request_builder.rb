@@ -7,6 +7,7 @@ require_relative '../../role_management'
 require_relative '../entitlement_management'
 require_relative './count/count_request_builder'
 require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './item/unified_role_eligibility_schedule_instance_item_request_builder'
 require_relative './role_eligibility_schedule_instances'
 
 module MicrosoftGraph
@@ -21,6 +22,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleEligibilityScheduleInstances::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.
+                    ## @param unified_role_eligibility_schedule_instance_id Unique identifier of the item
+                    ## @return a unified_role_eligibility_schedule_instance_item_request_builder
+                    ## 
+                    def by_unified_role_eligibility_schedule_instance_id(unified_role_eligibility_schedule_instance_id)
+                        raise StandardError, 'unified_role_eligibility_schedule_instance_id cannot be null' if unified_role_eligibility_schedule_instance_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["unifiedRoleEligibilityScheduleInstance%2Did"] = unified_role_eligibility_schedule_instance_id
+                        return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleEligibilityScheduleInstances::Item::UnifiedRoleEligibilityScheduleInstanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new RoleEligibilityScheduleInstancesRequestBuilder and sets the default values.

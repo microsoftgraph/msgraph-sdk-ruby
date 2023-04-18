@@ -7,6 +7,7 @@ require_relative '../../../device_management'
 require_relative '../../notification_message_templates'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/localized_notification_message_item_request_builder'
 require_relative './localized_notification_messages'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item::LocalizedNotificationMessages::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the localizedNotificationMessages property of the microsoft.graph.notificationMessageTemplate entity.
+                        ## @param localized_notification_message_id Unique identifier of the item
+                        ## @return a localized_notification_message_item_request_builder
+                        ## 
+                        def by_localized_notification_message_id(localized_notification_message_id)
+                            raise StandardError, 'localized_notification_message_id cannot be null' if localized_notification_message_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["localizedNotificationMessage%2Did"] = localized_notification_message_id
+                            return MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item::LocalizedNotificationMessages::Item::LocalizedNotificationMessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new LocalizedNotificationMessagesRequestBuilder and sets the default values.

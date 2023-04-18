@@ -7,6 +7,7 @@ require_relative '../../groups'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './extensions'
+require_relative './item/extension_item_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Groups::Item::Extensions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the extensions property of the microsoft.graph.group entity.
+                    ## @param extension_id Unique identifier of the item
+                    ## @return a extension_item_request_builder
+                    ## 
+                    def by_extension_id(extension_id)
+                        raise StandardError, 'extension_id cannot be null' if extension_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["extension%2Did"] = extension_id
+                        return MicrosoftGraph::Groups::Item::Extensions::Item::ExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new ExtensionsRequestBuilder and sets the default values.

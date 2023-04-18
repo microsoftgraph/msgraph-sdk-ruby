@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../communications'
 require_relative './calls'
 require_relative './count/count_request_builder'
+require_relative './item/call_item_request_builder'
 require_relative './log_teleconference_device_quality/log_teleconference_device_quality_request_builder'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                 # Provides operations to call the logTeleconferenceDeviceQuality method.
                 def log_teleconference_device_quality()
                     return MicrosoftGraph::Communications::Calls::LogTeleconferenceDeviceQuality::LogTeleconferenceDeviceQualityRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
+                ## @param call_id Unique identifier of the item
+                ## @return a call_item_request_builder
+                ## 
+                def by_call_id(call_id)
+                    raise StandardError, 'call_id cannot be null' if call_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["call%2Did"] = call_id
+                    return MicrosoftGraph::Communications::Calls::Item::CallItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new CallsRequestBuilder and sets the default values.

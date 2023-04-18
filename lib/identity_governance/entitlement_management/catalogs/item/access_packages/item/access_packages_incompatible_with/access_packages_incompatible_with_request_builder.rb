@@ -10,6 +10,7 @@ require_relative '../../access_packages'
 require_relative '../item'
 require_relative './access_packages_incompatible_with'
 require_relative './count/count_request_builder'
+require_relative './item/access_package_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -27,6 +28,17 @@ module MicrosoftGraph
                                     # Provides operations to count the resources in the collection.
                                     def count()
                                         return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::AccessPackagesIncompatibleWith::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
+                                    ## @param access_package_id1 Unique identifier of the item
+                                    ## @return a access_package_item_request_builder
+                                    ## 
+                                    def by_access_package_id1(access_package_id1)
+                                        raise StandardError, 'access_package_id1 cannot be null' if access_package_id1.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["accessPackage%2Did1"] = access_package_id1
+                                        return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::AccessPackagesIncompatibleWith::Item::AccessPackageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new AccessPackagesIncompatibleWithRequestBuilder and sets the default values.

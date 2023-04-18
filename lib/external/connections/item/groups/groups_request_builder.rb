@@ -8,6 +8,7 @@ require_relative '../../connections'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './groups'
+require_relative './item/external_group_item_request_builder'
 
 module MicrosoftGraph
     module External
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::External::Connections::Item::Groups::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the groups property of the microsoft.graph.externalConnectors.externalConnection entity.
+                        ## @param external_group_id Unique identifier of the item
+                        ## @return a external_group_item_request_builder
+                        ## 
+                        def by_external_group_id(external_group_id)
+                            raise StandardError, 'external_group_id cannot be null' if external_group_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["externalGroup%2Did"] = external_group_id
+                            return MicrosoftGraph::External::Connections::Item::Groups::Item::ExternalGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new GroupsRequestBuilder and sets the default values.

@@ -8,6 +8,7 @@ require_relative '../../../joined_teams'
 require_relative '../../item'
 require_relative '../schedule'
 require_relative './count/count_request_builder'
+require_relative './item/scheduling_group_item_request_builder'
 require_relative './scheduling_groups'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Me::JoinedTeams::Item::Schedule::SchedulingGroups::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
+                            ## @param scheduling_group_id Unique identifier of the item
+                            ## @return a scheduling_group_item_request_builder
+                            ## 
+                            def by_scheduling_group_id(scheduling_group_id)
+                                raise StandardError, 'scheduling_group_id cannot be null' if scheduling_group_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["schedulingGroup%2Did"] = scheduling_group_id
+                                return MicrosoftGraph::Me::JoinedTeams::Item::Schedule::SchedulingGroups::Item::SchedulingGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new SchedulingGroupsRequestBuilder and sets the default values.

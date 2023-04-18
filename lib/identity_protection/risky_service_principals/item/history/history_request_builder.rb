@@ -8,6 +8,7 @@ require_relative '../../risky_service_principals'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './history'
+require_relative './item/risky_service_principal_history_item_item_request_builder'
 
 module MicrosoftGraph
     module IdentityProtection
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::IdentityProtection::RiskyServicePrincipals::Item::History::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the history property of the microsoft.graph.riskyServicePrincipal entity.
+                        ## @param risky_service_principal_history_item_id Unique identifier of the item
+                        ## @return a risky_service_principal_history_item_item_request_builder
+                        ## 
+                        def by_risky_service_principal_history_item_id(risky_service_principal_history_item_id)
+                            raise StandardError, 'risky_service_principal_history_item_id cannot be null' if risky_service_principal_history_item_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["riskyServicePrincipalHistoryItem%2Did"] = risky_service_principal_history_item_id
+                            return MicrosoftGraph::IdentityProtection::RiskyServicePrincipals::Item::History::Item::RiskyServicePrincipalHistoryItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new HistoryRequestBuilder and sets the default values.

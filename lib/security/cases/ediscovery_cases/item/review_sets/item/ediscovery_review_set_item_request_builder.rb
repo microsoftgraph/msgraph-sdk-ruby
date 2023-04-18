@@ -8,7 +8,6 @@ require_relative '../../../ediscovery_cases'
 require_relative '../../item'
 require_relative '../review_sets'
 require_relative './item'
-require_relative './queries/item/ediscovery_review_set_query_item_request_builder'
 require_relative './queries/queries_request_builder'
 require_relative './security_add_to_review_set/security_add_to_review_set_request_builder'
 
@@ -85,17 +84,6 @@ module MicrosoftGraph
                                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryReviewSet.create_from_discriminator_value(pn) }, error_mapping)
-                                end
-                                ## 
-                                ## Provides operations to manage the queries property of the microsoft.graph.security.ediscoveryReviewSet entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a ediscovery_review_set_query_item_request_builder
-                                ## 
-                                def queries_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["ediscoveryReviewSetQuery%2Did"] = id
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item::EdiscoveryReviewSetQueryItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Delete navigation property reviewSets for security

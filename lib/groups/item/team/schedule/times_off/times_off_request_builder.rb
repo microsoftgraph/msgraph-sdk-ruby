@@ -8,6 +8,7 @@ require_relative '../../../item'
 require_relative '../../team'
 require_relative '../schedule'
 require_relative './count/count_request_builder'
+require_relative './item/time_off_item_request_builder'
 require_relative './times_off'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Groups::Item::Team::Schedule::TimesOff::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the timesOff property of the microsoft.graph.schedule entity.
+                            ## @param time_off_id Unique identifier of the item
+                            ## @return a time_off_item_request_builder
+                            ## 
+                            def by_time_off_id(time_off_id)
+                                raise StandardError, 'time_off_id cannot be null' if time_off_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["timeOff%2Did"] = time_off_id
+                                return MicrosoftGraph::Groups::Item::Team::Schedule::TimesOff::Item::TimeOffItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new TimesOffRequestBuilder and sets the default values.

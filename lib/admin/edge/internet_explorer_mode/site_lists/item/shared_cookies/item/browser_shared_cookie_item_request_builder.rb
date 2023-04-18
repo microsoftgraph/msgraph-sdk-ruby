@@ -46,7 +46,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Get sharedCookies from admin
+                                    ## A collection of shared cookies defined for the site list.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of browser_shared_cookie
                                     ## 
@@ -92,7 +92,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Get sharedCookies from admin
+                                    ## A collection of shared cookies defined for the site list.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -131,7 +131,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Get sharedCookies from admin
+                                    # A collection of shared cookies defined for the site list.
                                     class BrowserSharedCookieItemRequestBuilderGetQueryParameters
                                         
                                         ## 

@@ -6,6 +6,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../connections'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/connection_operation_item_request_builder'
 require_relative './operations'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Connections::Item::Operations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the operations property of the microsoft.graph.externalConnectors.externalConnection entity.
+                    ## @param connection_operation_id Unique identifier of the item
+                    ## @return a connection_operation_item_request_builder
+                    ## 
+                    def by_connection_operation_id(connection_operation_id)
+                        raise StandardError, 'connection_operation_id cannot be null' if connection_operation_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["connectionOperation%2Did"] = connection_operation_id
+                        return MicrosoftGraph::Connections::Item::Operations::Item::ConnectionOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new OperationsRequestBuilder and sets the default values.

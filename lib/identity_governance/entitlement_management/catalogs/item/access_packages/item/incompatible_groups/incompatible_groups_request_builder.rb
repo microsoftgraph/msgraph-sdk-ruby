@@ -10,6 +10,7 @@ require_relative '../../access_packages'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './incompatible_groups'
+require_relative './item/group_item_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -33,6 +34,17 @@ module MicrosoftGraph
                                     # Provides operations to manage the collection of identityGovernance entities.
                                     def ref()
                                         return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::IncompatibleGroups::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.catalogs.item.accessPackages.item.incompatibleGroups.item collection
+                                    ## @param group_id Unique identifier of the item
+                                    ## @return a group_item_request_builder
+                                    ## 
+                                    def by_group_id(group_id)
+                                        raise StandardError, 'group_id cannot be null' if group_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["group%2Did"] = group_id
+                                        return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::IncompatibleGroups::Item::GroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new IncompatibleGroupsRequestBuilder and sets the default values.

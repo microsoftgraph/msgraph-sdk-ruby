@@ -8,6 +8,7 @@ require_relative '../entitlement_management'
 require_relative './access_package_assignment_approvals'
 require_relative './count/count_request_builder'
 require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './item/approval_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -21,6 +22,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackageAssignmentApprovals::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the accessPackageAssignmentApprovals property of the microsoft.graph.entitlementManagement entity.
+                    ## @param approval_id Unique identifier of the item
+                    ## @return a approval_item_request_builder
+                    ## 
+                    def by_approval_id(approval_id)
+                        raise StandardError, 'approval_id cannot be null' if approval_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["approval%2Did"] = approval_id
+                        return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackageAssignmentApprovals::Item::ApprovalItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AccessPackageAssignmentApprovalsRequestBuilder and sets the default values.

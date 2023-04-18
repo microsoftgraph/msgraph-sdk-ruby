@@ -8,6 +8,7 @@ require_relative '../../terms_and_conditions'
 require_relative '../item'
 require_relative './acceptance_statuses'
 require_relative './count/count_request_builder'
+require_relative './item/terms_and_conditions_acceptance_status_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::DeviceManagement::TermsAndConditions::Item::AcceptanceStatuses::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
+                        ## @param terms_and_conditions_acceptance_status_id Unique identifier of the item
+                        ## @return a terms_and_conditions_acceptance_status_item_request_builder
+                        ## 
+                        def by_terms_and_conditions_acceptance_status_id(terms_and_conditions_acceptance_status_id)
+                            raise StandardError, 'terms_and_conditions_acceptance_status_id cannot be null' if terms_and_conditions_acceptance_status_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["termsAndConditionsAcceptanceStatus%2Did"] = terms_and_conditions_acceptance_status_id
+                            return MicrosoftGraph::DeviceManagement::TermsAndConditions::Item::AcceptanceStatuses::Item::TermsAndConditionsAcceptanceStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new AcceptanceStatusesRequestBuilder and sets the default values.

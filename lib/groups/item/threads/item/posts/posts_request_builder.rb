@@ -7,6 +7,7 @@ require_relative '../../../item'
 require_relative '../../threads'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/post_item_request_builder'
 require_relative './posts'
 
 module MicrosoftGraph
@@ -23,6 +24,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Groups::Item::Threads::Item::Posts::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the posts property of the microsoft.graph.conversationThread entity.
+                            ## @param post_id Unique identifier of the item
+                            ## @return a post_item_request_builder
+                            ## 
+                            def by_post_id(post_id)
+                                raise StandardError, 'post_id cannot be null' if post_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["post%2Did"] = post_id
+                                return MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::PostItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new PostsRequestBuilder and sets the default values.

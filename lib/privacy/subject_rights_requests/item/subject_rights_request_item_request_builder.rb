@@ -7,7 +7,6 @@ require_relative '../subject_rights_requests'
 require_relative './get_final_attachment/get_final_attachment_request_builder'
 require_relative './get_final_report/get_final_report_request_builder'
 require_relative './item'
-require_relative './notes/item/authored_note_item_request_builder'
 require_relative './notes/notes_request_builder'
 require_relative './team/team_request_builder'
 
@@ -75,17 +74,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SubjectRightsRequest.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a authored_note_item_request_builder
-                    ## 
-                    def notes_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["authoredNote%2Did"] = id
-                        return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::Notes::Item::AuthoredNoteItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Update the navigation property subjectRightsRequests in privacy

@@ -5,7 +5,6 @@ require_relative '../../models/shared_drive_item'
 require_relative '../shares'
 require_relative './drive_item/drive_item_request_builder'
 require_relative './item'
-require_relative './items/item/drive_item_item_request_builder'
 require_relative './items/items_request_builder'
 require_relative './list/list_request_builder'
 require_relative './list_item/list_item_request_builder'
@@ -91,17 +90,6 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SharedDriveItem.create_from_discriminator_value(pn) }, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the items property of the microsoft.graph.sharedDriveItem entity.
-                ## @param id Unique identifier of the item
-                ## @return a drive_item_item_request_builder
-                ## 
-                def items_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["driveItem%2Did"] = id
-                    return MicrosoftGraph::Shares::Item::Items::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Update entity in shares

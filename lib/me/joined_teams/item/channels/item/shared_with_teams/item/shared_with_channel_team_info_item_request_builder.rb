@@ -9,7 +9,6 @@ require_relative '../../../channels'
 require_relative '../../item'
 require_relative '../shared_with_teams'
 require_relative './allowed_members/allowed_members_request_builder'
-require_relative './allowed_members/item/conversation_member_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -28,17 +27,6 @@ module MicrosoftGraph
                                     # Provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.
                                     def allowed_members()
                                         return MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::SharedWithTeams::Item::AllowedMembers::AllowedMembersRequestBuilder.new(@path_parameters, @request_adapter)
-                                    end
-                                    ## 
-                                    ## Provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a conversation_member_item_request_builder
-                                    ## 
-                                    def allowed_members_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["conversationMember%2Did"] = id
-                                        return MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::SharedWithTeams::Item::AllowedMembers::Item::ConversationMemberItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new SharedWithChannelTeamInfoItemRequestBuilder and sets the default values.

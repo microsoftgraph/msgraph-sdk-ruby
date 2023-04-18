@@ -7,6 +7,7 @@ require_relative '../../../communications'
 require_relative '../../call_records'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/session_item_request_builder'
 require_relative './sessions'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Communications::CallRecords::Item::Sessions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
+                        ## @param session_id Unique identifier of the item
+                        ## @return a session_item_request_builder
+                        ## 
+                        def by_session_id(session_id)
+                            raise StandardError, 'session_id cannot be null' if session_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["session%2Did"] = session_id
+                            return MicrosoftGraph::Communications::CallRecords::Item::Sessions::Item::SessionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new SessionsRequestBuilder and sets the default values.

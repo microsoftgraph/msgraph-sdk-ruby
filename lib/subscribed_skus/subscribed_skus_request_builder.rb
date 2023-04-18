@@ -3,6 +3,7 @@ require_relative '../microsoft_graph'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/subscribed_sku'
 require_relative '../models/subscribed_sku_collection_response'
+require_relative './item/subscribed_sku_item_request_builder'
 require_relative './subscribed_skus'
 
 module MicrosoftGraph
@@ -11,6 +12,17 @@ module MicrosoftGraph
         # Provides operations to manage the collection of subscribedSku entities.
         class SubscribedSkusRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
             
+            ## 
+            ## Provides operations to manage the collection of subscribedSku entities.
+            ## @param subscribed_sku_id Unique identifier of the item
+            ## @return a subscribed_sku_item_request_builder
+            ## 
+            def by_subscribed_sku_id(subscribed_sku_id)
+                raise StandardError, 'subscribed_sku_id cannot be null' if subscribed_sku_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["subscribedSku%2Did"] = subscribed_sku_id
+                return MicrosoftGraph::SubscribedSkus::Item::SubscribedSkuItemRequestBuilder.new(url_tpl_params, @request_adapter)
+            end
             ## 
             ## Instantiates a new SubscribedSkusRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request

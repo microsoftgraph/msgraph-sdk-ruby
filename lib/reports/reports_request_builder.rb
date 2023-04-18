@@ -4,9 +4,7 @@ require_relative '../microsoft_graph'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/report_root'
 require_relative './daily_print_usage_by_printer/daily_print_usage_by_printer_request_builder'
-require_relative './daily_print_usage_by_printer/item/print_usage_by_printer_item_request_builder'
 require_relative './daily_print_usage_by_user/daily_print_usage_by_user_request_builder'
-require_relative './daily_print_usage_by_user/item/print_usage_by_user_item_request_builder'
 require_relative './device_configuration_device_activity/device_configuration_device_activity_request_builder'
 require_relative './device_configuration_user_activity/device_configuration_user_activity_request_builder'
 require_relative './get_email_activity_counts_with_period/get_email_activity_counts_with_period_request_builder'
@@ -103,9 +101,7 @@ require_relative './managed_device_enrollment_failure_details/managed_device_enr
 require_relative './managed_device_enrollment_failure_details_with_skip_with_top_with_filter_with_skip_token/54eee1926ea81dba1a95277923eee079ffc56a067bd10f19cfc481c67bf020bd'
 require_relative './managed_device_enrollment_top_failures/managed_device_enrollment_top_failures_request_builder'
 require_relative './managed_device_enrollment_top_failures_with_period/managed_device_enrollment_top_failures_with_period_request_builder'
-require_relative './monthly_print_usage_by_printer/item/print_usage_by_printer_item_request_builder'
 require_relative './monthly_print_usage_by_printer/monthly_print_usage_by_printer_request_builder'
-require_relative './monthly_print_usage_by_user/item/print_usage_by_user_item_request_builder'
 require_relative './monthly_print_usage_by_user/monthly_print_usage_by_user_request_builder'
 require_relative './reports'
 require_relative './security/security_request_builder'
@@ -184,28 +180,6 @@ module MicrosoftGraph
             ## 
             def initialize(path_parameters, request_adapter)
                 super(path_parameters, request_adapter, "{+baseurl}/reports{?%24select,%24expand}")
-            end
-            ## 
-            ## Provides operations to manage the dailyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a print_usage_by_printer_item_request_builder
-            ## 
-            def daily_print_usage_by_printer_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["printUsageByPrinter%2Did"] = id
-                return MicrosoftGraph::Reports::DailyPrintUsageByPrinter::Item::PrintUsageByPrinterItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the dailyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a print_usage_by_user_item_request_builder
-            ## 
-            def daily_print_usage_by_user_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["printUsageByUser%2Did"] = id
-                return MicrosoftGraph::Reports::DailyPrintUsageByUser::Item::PrintUsageByUserItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Get reports
@@ -1039,28 +1013,6 @@ module MicrosoftGraph
             def managed_device_enrollment_top_failures_with_period(period)
                 raise StandardError, 'period cannot be null' if period.nil?
                 return ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder.new(@path_parameters, @request_adapter, period)
-            end
-            ## 
-            ## Provides operations to manage the monthlyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a print_usage_by_printer_item_request_builder
-            ## 
-            def monthly_print_usage_by_printer_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["printUsageByPrinter%2Did"] = id
-                return MicrosoftGraph::Reports::MonthlyPrintUsageByPrinter::Item::PrintUsageByPrinterItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the monthlyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a print_usage_by_user_item_request_builder
-            ## 
-            def monthly_print_usage_by_user_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["printUsageByUser%2Did"] = id
-                return MicrosoftGraph::Reports::MonthlyPrintUsageByUser::Item::PrintUsageByUserItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Update reports

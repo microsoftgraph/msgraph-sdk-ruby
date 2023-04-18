@@ -12,6 +12,7 @@ require_relative './delta/delta_request_builder'
 require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
 require_relative './get_by_ids/get_by_ids_request_builder'
 require_relative './internal_sponsors'
+require_relative './item/directory_object_item_request_builder'
 require_relative './ref/ref_request_builder'
 require_relative './validate_properties/validate_properties_request_builder'
 
@@ -54,6 +55,17 @@ module MicrosoftGraph
                             # Provides operations to call the validateProperties method.
                             def validate_properties()
                                 return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::InternalSponsors::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.connectedOrganizations.item.internalSponsors.item collection
+                            ## @param directory_object_id Unique identifier of the item
+                            ## @return a directory_object_item_request_builder
+                            ## 
+                            def by_directory_object_id(directory_object_id)
+                                raise StandardError, 'directory_object_id cannot be null' if directory_object_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["directoryObject%2Did"] = directory_object_id
+                                return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::InternalSponsors::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new InternalSponsorsRequestBuilder and sets the default values.

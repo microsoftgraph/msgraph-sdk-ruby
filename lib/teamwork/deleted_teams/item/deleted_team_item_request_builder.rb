@@ -5,7 +5,6 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../teamwork'
 require_relative '../deleted_teams'
 require_relative './channels/channels_request_builder'
-require_relative './channels/item/channel_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -20,17 +19,6 @@ module MicrosoftGraph
                     # Provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.
                     def channels()
                         return MicrosoftGraph::Teamwork::DeletedTeams::Item::Channels::ChannelsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a channel_item_request_builder
-                    ## 
-                    def channels_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["channel%2Did"] = id
-                        return MicrosoftGraph::Teamwork::DeletedTeams::Item::Channels::Item::ChannelItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new DeletedTeamItemRequestBuilder and sets the default values.

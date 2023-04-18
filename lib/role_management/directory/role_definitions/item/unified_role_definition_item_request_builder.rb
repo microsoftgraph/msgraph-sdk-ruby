@@ -6,7 +6,6 @@ require_relative '../../../role_management'
 require_relative '../../directory'
 require_relative '../role_definitions'
 require_relative './inherits_permissions_from/inherits_permissions_from_request_builder'
-require_relative './inherits_permissions_from/item/unified_role_definition_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -59,17 +58,6 @@ module MicrosoftGraph
                             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleDefinition.create_from_discriminator_value(pn) }, error_mapping)
-                        end
-                        ## 
-                        ## Provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a unified_role_definition_item_request_builder
-                        ## 
-                        def inherits_permissions_from_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["unifiedRoleDefinition%2Did1"] = id
-                            return MicrosoftGraph::RoleManagement::Directory::RoleDefinitions::Item::InheritsPermissionsFrom::Item::UnifiedRoleDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Update the navigation property roleDefinitions in roleManagement

@@ -9,7 +9,6 @@ require_relative '../../../item'
 require_relative '../../workbook'
 require_relative '../comments'
 require_relative './item'
-require_relative './replies/item/workbook_comment_reply_item_request_builder'
 require_relative './replies/replies_request_builder'
 
 module MicrosoftGraph
@@ -81,17 +80,6 @@ module MicrosoftGraph
                                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookComment.create_from_discriminator_value(pn) }, error_mapping)
-                                    end
-                                    ## 
-                                    ## Provides operations to manage the replies property of the microsoft.graph.workbookComment entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a workbook_comment_reply_item_request_builder
-                                    ## 
-                                    def replies_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["workbookCommentReply%2Did"] = id
-                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Comments::Item::Replies::Item::WorkbookCommentReplyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Delete navigation property comments for drives

@@ -11,6 +11,7 @@ require_relative '../../child_folders'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/message_item_request_builder'
 require_relative './messages'
 
 module MicrosoftGraph
@@ -34,6 +35,17 @@ module MicrosoftGraph
                                     # Provides operations to call the delta method.
                                     def delta()
                                         return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::Messages::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.
+                                    ## @param message_id Unique identifier of the item
+                                    ## @return a message_item_request_builder
+                                    ## 
+                                    def by_message_id(message_id)
+                                        raise StandardError, 'message_id cannot be null' if message_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["message%2Did"] = message_id
+                                        return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::Messages::Item::MessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new MessagesRequestBuilder and sets the default values.

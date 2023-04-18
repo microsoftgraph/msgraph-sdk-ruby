@@ -8,6 +8,7 @@ require_relative '../../item'
 require_relative '../calendar'
 require_relative './calendar_permissions'
 require_relative './count/count_request_builder'
+require_relative './item/calendar_permission_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Users::Item::Calendar::CalendarPermissions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.
+                        ## @param calendar_permission_id Unique identifier of the item
+                        ## @return a calendar_permission_item_request_builder
+                        ## 
+                        def by_calendar_permission_id(calendar_permission_id)
+                            raise StandardError, 'calendar_permission_id cannot be null' if calendar_permission_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["calendarPermission%2Did"] = calendar_permission_id
+                            return MicrosoftGraph::Users::Item::Calendar::CalendarPermissions::Item::CalendarPermissionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new CalendarPermissionsRequestBuilder and sets the default values.

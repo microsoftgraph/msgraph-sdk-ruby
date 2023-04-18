@@ -5,18 +5,13 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../education'
 require_relative '../classes'
 require_relative './assignment_categories/assignment_categories_request_builder'
-require_relative './assignment_categories/item/education_category_item_request_builder'
 require_relative './assignment_defaults/assignment_defaults_request_builder'
 require_relative './assignments/assignments_request_builder'
-require_relative './assignments/item/education_assignment_item_request_builder'
 require_relative './assignment_settings/assignment_settings_request_builder'
 require_relative './group/group_request_builder'
 require_relative './item'
-require_relative './members/item/education_user_item_request_builder'
 require_relative './members/members_request_builder'
-require_relative './schools/item/education_school_item_request_builder'
 require_relative './schools/schools_request_builder'
-require_relative './teachers/item/education_user_item_request_builder'
 require_relative './teachers/teachers_request_builder'
 
 module MicrosoftGraph
@@ -68,28 +63,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::Education::Classes::Item::Teachers::TeachersRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the assignmentCategories property of the microsoft.graph.educationClass entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a education_category_item_request_builder
-                    ## 
-                    def assignment_categories_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["educationCategory%2Did"] = id
-                        return MicrosoftGraph::Education::Classes::Item::AssignmentCategories::Item::EducationCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the assignments property of the microsoft.graph.educationClass entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a education_assignment_item_request_builder
-                    ## 
-                    def assignments_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["educationAssignment%2Did"] = id
-                        return MicrosoftGraph::Education::Classes::Item::Assignments::Item::EducationAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new EducationClassItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -127,17 +100,6 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationClass.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Gets an item from the MicrosoftGraph.education.classes.item.members.item collection
-                    ## @param id Unique identifier of the item
-                    ## @return a education_user_item_request_builder
-                    ## 
-                    def members_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["educationUser%2Did"] = id
-                        return MicrosoftGraph::Education::Classes::Item::Members::Item::EducationUserItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Update the navigation property classes in education
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
@@ -152,28 +114,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationClass.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the schools property of the microsoft.graph.educationClass entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a education_school_item_request_builder
-                    ## 
-                    def schools_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["educationSchool%2Did"] = id
-                        return MicrosoftGraph::Education::Classes::Item::Schools::Item::EducationSchoolItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Gets an item from the MicrosoftGraph.education.classes.item.teachers.item collection
-                    ## @param id Unique identifier of the item
-                    ## @return a education_user_item_request_builder
-                    ## 
-                    def teachers_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["educationUser%2Did"] = id
-                        return MicrosoftGraph::Education::Classes::Item::Teachers::Item::EducationUserItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Delete navigation property classes for education

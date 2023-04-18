@@ -10,6 +10,7 @@ require_relative '../../../item'
 require_relative '../../custodians'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/unified_group_source_item_request_builder'
 require_relative './unified_group_sources'
 
 module MicrosoftGraph
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     # Provides operations to count the resources in the collection.
                                     def count()
                                         return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::UnifiedGroupSources::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to manage the unifiedGroupSources property of the microsoft.graph.security.ediscoveryCustodian entity.
+                                    ## @param unified_group_source_id Unique identifier of the item
+                                    ## @return a unified_group_source_item_request_builder
+                                    ## 
+                                    def by_unified_group_source_id(unified_group_source_id)
+                                        raise StandardError, 'unified_group_source_id cannot be null' if unified_group_source_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["unifiedGroupSource%2Did"] = unified_group_source_id
+                                        return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::UnifiedGroupSources::Item::UnifiedGroupSourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new UnifiedGroupSourcesRequestBuilder and sets the default values.

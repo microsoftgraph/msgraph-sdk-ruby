@@ -9,6 +9,7 @@ require_relative '../../../item'
 require_relative '../../scheduled_actions_for_rule'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/device_compliance_action_item_item_request_builder'
 require_relative './scheduled_action_configurations'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::ScheduledActionsForRule::Item::ScheduledActionConfigurations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the scheduledActionConfigurations property of the microsoft.graph.deviceComplianceScheduledActionForRule entity.
+                                ## @param device_compliance_action_item_id Unique identifier of the item
+                                ## @return a device_compliance_action_item_item_request_builder
+                                ## 
+                                def by_device_compliance_action_item_id(device_compliance_action_item_id)
+                                    raise StandardError, 'device_compliance_action_item_id cannot be null' if device_compliance_action_item_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["deviceComplianceActionItem%2Did"] = device_compliance_action_item_id
+                                    return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::ScheduledActionsForRule::Item::ScheduledActionConfigurations::Item::DeviceComplianceActionItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new ScheduledActionConfigurationsRequestBuilder and sets the default values.
