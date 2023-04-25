@@ -31,7 +31,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/security.addToReviewSet")
                                     end
                                     ## 
-                                    ## Start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers. The location provides a URL that will return a Add to review set operation.
+                                    ## Invoke action addToReviewSet
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
@@ -47,7 +47,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Start the process of adding a collection from Microsoft 365 services to a review set. After the operation is created, you can get the status of the operation by retrieving the `Location` parameter from the response headers. The location provides a URL that will return a Add to review set operation.
+                                    ## Invoke action addToReviewSet
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information

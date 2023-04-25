@@ -7,6 +7,7 @@ require_relative '../../../users'
 require_relative '../../item'
 require_relative '../inference_classification'
 require_relative './count/count_request_builder'
+require_relative './item/inference_classification_override_item_request_builder'
 require_relative './overrides'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Users::Item::InferenceClassification::Overrides::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the overrides property of the microsoft.graph.inferenceClassification entity.
+                        ## @param inference_classification_override_id Unique identifier of the item
+                        ## @return a inference_classification_override_item_request_builder
+                        ## 
+                        def by_inference_classification_override_id(inference_classification_override_id)
+                            raise StandardError, 'inference_classification_override_id cannot be null' if inference_classification_override_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["inferenceClassificationOverride%2Did"] = inference_classification_override_id
+                            return MicrosoftGraph::Users::Item::InferenceClassification::Overrides::Item::InferenceClassificationOverrideItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new OverridesRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/inferenceClassification/overrides{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}")
                         end
                         ## 
-                        ## Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.
+                        ## A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of inference_classification_override_collection_response
                         ## 
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::InferenceClassificationOverrideCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create an override for a sender identified by an SMTP address. Future messages from that SMTP address will be consistently classifiedas specified in the override. **Note**
+                        ## Create new navigation property to overrides for users
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of inference_classification_override
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::InferenceClassificationOverride.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.
+                        ## A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create an override for a sender identified by an SMTP address. Future messages from that SMTP address will be consistently classifiedas specified in the override. **Note**
+                        ## Create new navigation property to overrides for users
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.
+                        # A set of overrides for a user to always classify messages from specific senders in certain ways: focused, or other. Read-only. Nullable.
                         class OverridesRequestBuilderGetQueryParameters
                             
                             ## 

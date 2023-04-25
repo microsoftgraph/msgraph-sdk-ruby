@@ -5,6 +5,7 @@ require_relative '../../models/print_task_definition'
 require_relative '../../models/print_task_definition_collection_response'
 require_relative '../print'
 require_relative './count/count_request_builder'
+require_relative './item/print_task_definition_item_request_builder'
 require_relative './task_definitions'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Print::TaskDefinitions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the taskDefinitions property of the microsoft.graph.print entity.
+                ## @param print_task_definition_id Unique identifier of the item
+                ## @return a print_task_definition_item_request_builder
+                ## 
+                def by_print_task_definition_id(print_task_definition_id)
+                    raise StandardError, 'print_task_definition_id cannot be null' if print_task_definition_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["printTaskDefinition%2Did"] = print_task_definition_id
+                    return MicrosoftGraph::Print::TaskDefinitions::Item::PrintTaskDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new TaskDefinitionsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/print/taskDefinitions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve a list of task definitions that the requesting app defined in the tenant. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+                ## List of abstract definition for a task that can be triggered when various events occur within Universal Print.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of print_task_definition_collection_response
                 ## 
@@ -43,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintTaskDefinitionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create a new task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+                ## Create new navigation property to taskDefinitions for print
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of print_task_definition
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintTaskDefinition.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve a list of task definitions that the requesting app defined in the tenant. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+                ## List of abstract definition for a task that can be triggered when various events occur within Universal Print.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create a new task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+                ## Create new navigation property to taskDefinitions for print
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve a list of task definitions that the requesting app defined in the tenant. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+                # List of abstract definition for a task that can be triggered when various events occur within Universal Print.
                 class TaskDefinitionsRequestBuilderGetQueryParameters
                     
                     ## 

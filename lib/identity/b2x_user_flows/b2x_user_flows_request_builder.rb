@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../identity'
 require_relative './b2x_user_flows'
 require_relative './count/count_request_builder'
+require_relative './item/b2x_identity_user_flow_item_request_builder'
 
 module MicrosoftGraph
     module Identity
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Identity::B2xUserFlows::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
+                ## @param b2x_identity_user_flow_id Unique identifier of the item
+                ## @return a b2x_identity_user_flow_item_request_builder
+                ## 
+                def by_b2x_identity_user_flow_id(b2x_identity_user_flow_id)
+                    raise StandardError, 'b2x_identity_user_flow_id cannot be null' if b2x_identity_user_flow_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["b2xIdentityUserFlow%2Did"] = b2x_identity_user_flow_id
+                    return MicrosoftGraph::Identity::B2xUserFlows::Item::B2xIdentityUserFlowItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new B2xUserFlowsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/identity/b2xUserFlows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve a list of b2xIdentityUserFlow objects.
+                ## Represents entry point for B2X/self-service sign-up identity userflows.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of b2x_identity_user_flow_collection_response
                 ## 
@@ -43,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::B2xIdentityUserFlowCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create a new b2xIdentityUserFlow object.
+                ## Create new navigation property to b2xUserFlows for identity
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of b2x_identity_user_flow
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::B2xIdentityUserFlow.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve a list of b2xIdentityUserFlow objects.
+                ## Represents entry point for B2X/self-service sign-up identity userflows.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create a new b2xIdentityUserFlow object.
+                ## Create new navigation property to b2xUserFlows for identity
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve a list of b2xIdentityUserFlow objects.
+                # Represents entry point for B2X/self-service sign-up identity userflows.
                 class B2xUserFlowsRequestBuilderGetQueryParameters
                     
                     ## 

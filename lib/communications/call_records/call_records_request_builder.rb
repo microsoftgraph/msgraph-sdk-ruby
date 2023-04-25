@@ -9,6 +9,7 @@ require_relative './call_records_get_direct_routing_calls_with_from_date_time_wi
 require_relative './call_records_get_pstn_calls_with_from_date_time_with_to_date_time/call_records_get_pstn_calls_with_from_date_time_with_to_date_time_request_builder'
 require_relative './call_records'
 require_relative './count/count_request_builder'
+require_relative './item/call_record_item_request_builder'
 
 module MicrosoftGraph
     module Communications
@@ -21,6 +22,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Communications::CallRecords::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
+                ## @param call_record_id Unique identifier of the item
+                ## @return a call_record_item_request_builder
+                ## 
+                def by_call_record_id(call_record_id)
+                    raise StandardError, 'call_record_id cannot be null' if call_record_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["callRecord%2Did"] = call_record_id
+                    return MicrosoftGraph::Communications::CallRecords::Item::CallRecordItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Provides operations to call the getDirectRoutingCalls method.

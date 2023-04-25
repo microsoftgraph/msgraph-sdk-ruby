@@ -30,7 +30,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/communications/calls/{call%2Did}/participants/{participant%2Did}/startHoldMusic")
                                 end
                                 ## 
-                                ## Put a participant on hold and play music in the background.
+                                ## Invoke action startHoldMusic
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of start_hold_music_operation
@@ -46,7 +46,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::StartHoldMusicOperation.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Put a participant on hold and play music in the background.
+                                ## Invoke action startHoldMusic
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information

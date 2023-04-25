@@ -3,6 +3,7 @@ require_relative '../microsoft_graph'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/subscription'
 require_relative '../models/subscription_collection_response'
+require_relative './item/subscription_item_request_builder'
 require_relative './subscriptions'
 
 module MicrosoftGraph
@@ -11,6 +12,17 @@ module MicrosoftGraph
         # Provides operations to manage the collection of subscription entities.
         class SubscriptionsRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
             
+            ## 
+            ## Provides operations to manage the collection of subscription entities.
+            ## @param subscription_id Unique identifier of the item
+            ## @return a subscription_item_request_builder
+            ## 
+            def by_subscription_id(subscription_id)
+                raise StandardError, 'subscription_id cannot be null' if subscription_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["subscription%2Did"] = subscription_id
+                return MicrosoftGraph::Subscriptions::Item::SubscriptionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+            end
             ## 
             ## Instantiates a new SubscriptionsRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request

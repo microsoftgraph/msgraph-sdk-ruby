@@ -32,7 +32,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians/{ediscoveryCustodian%2Did}/lastIndexOperation{?%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
+                                    ## Operation entity that represents the latest indexing for the custodian.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of ediscovery_index_operation
                                     ## 
@@ -46,7 +46,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryIndexOperation.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
+                                    ## Operation entity that represents the latest indexing for the custodian.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -65,7 +65,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Get a list of the ediscoveryIndexOperations associated with an ediscoveryCustodian.
+                                    # Operation entity that represents the latest indexing for the custodian.
                                     class LastIndexOperationRequestBuilderGetQueryParameters
                                         
                                         ## 

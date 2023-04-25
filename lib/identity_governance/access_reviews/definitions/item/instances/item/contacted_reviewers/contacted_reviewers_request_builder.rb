@@ -11,6 +11,7 @@ require_relative '../../instances'
 require_relative '../item'
 require_relative './contacted_reviewers'
 require_relative './count/count_request_builder'
+require_relative './item/access_review_reviewer_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -30,6 +31,17 @@ module MicrosoftGraph
                                         return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::ContactedReviewers::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
+                                    ## Provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
+                                    ## @param access_review_reviewer_id Unique identifier of the item
+                                    ## @return a access_review_reviewer_item_request_builder
+                                    ## 
+                                    def by_access_review_reviewer_id(access_review_reviewer_id)
+                                        raise StandardError, 'access_review_reviewer_id cannot be null' if access_review_reviewer_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["accessReviewReviewer%2Did"] = access_review_reviewer_id
+                                        return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::ContactedReviewers::Item::AccessReviewReviewerItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                    end
+                                    ## 
                                     ## Instantiates a new ContactedReviewersRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -39,7 +51,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition%2Did}/instances/{accessReviewInstance%2Did}/contactedReviewers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Get the reviewers for an access review instance, irrespective of whether or not they have received a notification. The reviewers are represented by an accessReviewReviewer object. A list of zero or more objects are returned, including all of their nested properties.
+                                    ## Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of access_review_reviewer_collection_response
                                     ## 
@@ -69,7 +81,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewReviewer.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Get the reviewers for an access review instance, irrespective of whether or not they have received a notification. The reviewers are represented by an accessReviewReviewer object. A list of zero or more objects are returned, including all of their nested properties.
+                                    ## Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -108,7 +120,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Get the reviewers for an access review instance, irrespective of whether or not they have received a notification. The reviewers are represented by an accessReviewReviewer object. A list of zero or more objects are returned, including all of their nested properties.
+                                    # Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.
                                     class ContactedReviewersRequestBuilderGetQueryParameters
                                         
                                         ## 

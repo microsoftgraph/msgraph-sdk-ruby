@@ -134,7 +134,7 @@ module MicrosoftGraph
                 @classification = value
             end
             ## 
-            ## Instantiates a new team and sets the default values.
+            ## Instantiates a new Team and sets the default values.
             ## @return a void
             ## 
             def initialize()

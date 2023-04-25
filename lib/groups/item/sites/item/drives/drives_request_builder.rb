@@ -8,6 +8,7 @@ require_relative '../../sites'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './drives'
+require_relative './item/drive_item_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -25,6 +26,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Groups::Item::Sites::Item::Drives::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the drives property of the microsoft.graph.site entity.
+                            ## @param drive_id Unique identifier of the item
+                            ## @return a drive_item_request_builder
+                            ## 
+                            def by_drive_id(drive_id)
+                                raise StandardError, 'drive_id cannot be null' if drive_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["drive%2Did"] = drive_id
+                                return MicrosoftGraph::Groups::Item::Sites::Item::Drives::Item::DriveItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new DrivesRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -34,7 +46,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/drives{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Retrieve the list of Drive resources available for a target User, Group, or Site.
+                            ## The collection of drives (document libraries) under this site.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of drive_collection_response
                             ## 
@@ -48,7 +60,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DriveCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Retrieve the list of Drive resources available for a target User, Group, or Site.
+                            ## The collection of drives (document libraries) under this site.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -67,7 +79,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Retrieve the list of Drive resources available for a target User, Group, or Site.
+                            # The collection of drives (document libraries) under this site.
                             class DrivesRequestBuilderGetQueryParameters
                                 
                                 ## 

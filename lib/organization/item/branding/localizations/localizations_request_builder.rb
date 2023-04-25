@@ -7,6 +7,7 @@ require_relative '../../../organization'
 require_relative '../../item'
 require_relative '../branding'
 require_relative './count/count_request_builder'
+require_relative './item/organizational_branding_localization_item_request_builder'
 require_relative './localizations'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Organization::Item::Branding::Localizations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
+                        ## @param organizational_branding_localization_id Unique identifier of the item
+                        ## @return a organizational_branding_localization_item_request_builder
+                        ## 
+                        def by_organizational_branding_localization_id(organizational_branding_localization_id)
+                            raise StandardError, 'organizational_branding_localization_id cannot be null' if organizational_branding_localization_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["organizationalBrandingLocalization%2Did"] = organizational_branding_localization_id
+                            return MicrosoftGraph::Organization::Item::Branding::Localizations::Item::OrganizationalBrandingLocalizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new LocalizationsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/organization/{organization%2Did}/branding/localizations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Retrieve all localization branding objects, including the default branding.
+                        ## Add different branding based on a locale.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of organizational_branding_localization_collection_response
                         ## 
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OrganizationalBrandingLocalizationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create a new organizationalBrandingLocalization object. This creates a localized branding and at the same time, the default branding if it doesn't exist. The default branding is created only once. It's loaded when a localized branding isn't configured for the user's browser language. To retrieve the default branding, see Get branding.
+                        ## Create new navigation property to localizations for organization
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of organizational_branding_localization
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OrganizationalBrandingLocalization.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Retrieve all localization branding objects, including the default branding.
+                        ## Add different branding based on a locale.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create a new organizationalBrandingLocalization object. This creates a localized branding and at the same time, the default branding if it doesn't exist. The default branding is created only once. It's loaded when a localized branding isn't configured for the user's browser language. To retrieve the default branding, see Get branding.
+                        ## Create new navigation property to localizations for organization
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Retrieve all localization branding objects, including the default branding.
+                        # Add different branding based on a locale.
                         class LocalizationsRequestBuilderGetQueryParameters
                             
                             ## 

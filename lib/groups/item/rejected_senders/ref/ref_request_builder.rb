@@ -27,7 +27,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/rejectedSenders/$ref{?%24top,%24skip,%24filter,%24count,%24orderby}")
                         end
                         ## 
-                        ## Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+                        ## The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of string_collection_response
                         ## 
@@ -57,7 +57,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+                        ## The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -95,7 +95,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+                        # The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
                         class RefRequestBuilderGetQueryParameters
                             
                             ## 

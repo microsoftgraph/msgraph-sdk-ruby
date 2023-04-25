@@ -29,7 +29,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/education/classes/{educationClass%2Did}/members/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}")
                             end
                             ## 
-                            ## Retrieves the educationUser members of an educationClass.
+                            ## All users in the class. Nullable.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of string_collection_response
                             ## 
@@ -59,7 +59,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Retrieves the educationUser members of an educationClass.
+                            ## All users in the class. Nullable.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -97,7 +97,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Retrieves the educationUser members of an educationClass.
+                            # All users in the class. Nullable.
                             class RefRequestBuilderGetQueryParameters
                                 
                                 ## 

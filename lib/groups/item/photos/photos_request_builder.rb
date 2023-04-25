@@ -5,6 +5,7 @@ require_relative '../../../models/profile_photo_collection_response'
 require_relative '../../groups'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/profile_photo_item_request_builder'
 require_relative './photos'
 
 module MicrosoftGraph
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Groups::Item::Photos::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the photos property of the microsoft.graph.group entity.
+                    ## @param profile_photo_id Unique identifier of the item
+                    ## @return a profile_photo_item_request_builder
+                    ## 
+                    def by_profile_photo_id(profile_photo_id)
+                        raise StandardError, 'profile_photo_id cannot be null' if profile_photo_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["profilePhoto%2Did"] = profile_photo_id
+                        return MicrosoftGraph::Groups::Item::Photos::Item::ProfilePhotoItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new PhotosRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -30,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/photos{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}")
                     end
                     ## 
-                    ## Retrieve a list of profilePhoto objects.
+                    ## The profile photos owned by the group. Read-only. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of profile_photo_collection_response
                     ## 
@@ -44,7 +56,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ProfilePhotoCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieve a list of profilePhoto objects.
+                    ## The profile photos owned by the group. Read-only. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve a list of profilePhoto objects.
+                    # The profile photos owned by the group. Read-only. Nullable.
                     class PhotosRequestBuilderGetQueryParameters
                         
                         ## 

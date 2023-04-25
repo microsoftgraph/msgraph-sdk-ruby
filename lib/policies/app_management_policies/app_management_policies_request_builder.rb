@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../policies'
 require_relative './app_management_policies'
 require_relative './count/count_request_builder'
+require_relative './item/app_management_policy_item_request_builder'
 
 module MicrosoftGraph
     module Policies
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Policies::AppManagementPolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the appManagementPolicies property of the microsoft.graph.policyRoot entity.
+                ## @param app_management_policy_id Unique identifier of the item
+                ## @return a app_management_policy_item_request_builder
+                ## 
+                def by_app_management_policy_id(app_management_policy_id)
+                    raise StandardError, 'app_management_policy_id cannot be null' if app_management_policy_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["appManagementPolicy%2Did"] = app_management_policy_id
+                    return MicrosoftGraph::Policies::AppManagementPolicies::Item::AppManagementPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new AppManagementPoliciesRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/policies/appManagementPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve a list of appManagementPolicy objects.
+                ## The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of app_management_policy_collection_response
                 ## 
@@ -43,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AppManagementPolicyCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create an appManagementPolicy object.
+                ## Create new navigation property to appManagementPolicies for policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of app_management_policy
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AppManagementPolicy.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve a list of appManagementPolicy objects.
+                ## The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create an appManagementPolicy object.
+                ## Create new navigation property to appManagementPolicies for policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve a list of appManagementPolicy objects.
+                # The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
                 class AppManagementPoliciesRequestBuilderGetQueryParameters
                     
                     ## 

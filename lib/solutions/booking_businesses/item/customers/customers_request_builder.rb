@@ -8,6 +8,7 @@ require_relative '../../booking_businesses'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './customers'
+require_relative './item/booking_customer_base_item_request_builder'
 
 module MicrosoftGraph
     module Solutions
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Solutions::BookingBusinesses::Item::Customers::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the customers property of the microsoft.graph.bookingBusiness entity.
+                        ## @param booking_customer_base_id Unique identifier of the item
+                        ## @return a booking_customer_base_item_request_builder
+                        ## 
+                        def by_booking_customer_base_id(booking_customer_base_id)
+                            raise StandardError, 'booking_customer_base_id cannot be null' if booking_customer_base_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["bookingCustomerBase%2Did"] = booking_customer_base_id
+                            return MicrosoftGraph::Solutions::BookingBusinesses::Item::Customers::Item::BookingCustomerBaseItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new CustomersRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/customers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Get a list of bookingCustomer objects of a business.
+                        ## All the customers of this business. Read-only. Nullable.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of booking_customer_base_collection_response
                         ## 
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BookingCustomerBaseCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create a new bookingCustomer object.
+                        ## Create new navigation property to customers for solutions
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of booking_customer_base
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BookingCustomerBase.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get a list of bookingCustomer objects of a business.
+                        ## All the customers of this business. Read-only. Nullable.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create a new bookingCustomer object.
+                        ## Create new navigation property to customers for solutions
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get a list of bookingCustomer objects of a business.
+                        # All the customers of this business. Read-only. Nullable.
                         class CustomersRequestBuilderGetQueryParameters
                             
                             ## 

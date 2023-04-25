@@ -8,15 +8,11 @@ require_relative '../../../catalogs'
 require_relative '../../item'
 require_relative '../access_packages'
 require_relative './access_packages_incompatible_with/access_packages_incompatible_with_request_builder'
-require_relative './access_packages_incompatible_with/item/access_package_item_request_builder'
 require_relative './assignment_policies/assignment_policies_request_builder'
-require_relative './assignment_policies/item/access_package_assignment_policy_item_request_builder'
 require_relative './catalog/catalog_request_builder'
 require_relative './get_applicable_policy_requirements/get_applicable_policy_requirements_request_builder'
 require_relative './incompatible_access_packages/incompatible_access_packages_request_builder'
-require_relative './incompatible_access_packages/item/access_package_item_request_builder'
 require_relative './incompatible_groups/incompatible_groups_request_builder'
-require_relative './incompatible_groups/item/group_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -61,28 +57,6 @@ module MicrosoftGraph
                                     return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::IncompatibleGroups::IncompatibleGroupsRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
-                                ## Provides operations to manage the accessPackagesIncompatibleWith property of the microsoft.graph.accessPackage entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a access_package_item_request_builder
-                                ## 
-                                def access_packages_incompatible_with_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["accessPackage%2Did1"] = id
-                                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::AccessPackagesIncompatibleWith::Item::AccessPackageItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
-                                ## Provides operations to manage the assignmentPolicies property of the microsoft.graph.accessPackage entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a access_package_assignment_policy_item_request_builder
-                                ## 
-                                def assignment_policies_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["accessPackageAssignmentPolicy%2Did"] = id
-                                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::AssignmentPolicies::Item::AccessPackageAssignmentPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
                                 ## Instantiates a new AccessPackageItemRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -118,28 +92,6 @@ module MicrosoftGraph
                                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackage.create_from_discriminator_value(pn) }, error_mapping)
-                                end
-                                ## 
-                                ## Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.catalogs.item.accessPackages.item.incompatibleAccessPackages.item collection
-                                ## @param id Unique identifier of the item
-                                ## @return a access_package_item_request_builder
-                                ## 
-                                def incompatible_access_packages_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["accessPackage%2Did1"] = id
-                                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::IncompatibleAccessPackages::Item::AccessPackageItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
-                                ## Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.catalogs.item.accessPackages.item.incompatibleGroups.item collection
-                                ## @param id Unique identifier of the item
-                                ## @return a group_item_request_builder
-                                ## 
-                                def incompatible_groups_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["group%2Did"] = id
-                                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::IncompatibleGroups::Item::GroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Update the navigation property accessPackages in identityGovernance

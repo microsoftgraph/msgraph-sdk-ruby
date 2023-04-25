@@ -7,6 +7,7 @@ require_relative '../../identity_governance'
 require_relative '../entitlement_management'
 require_relative './catalogs'
 require_relative './count/count_request_builder'
+require_relative './item/access_package_catalog_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the catalogs property of the microsoft.graph.entitlementManagement entity.
+                    ## @param access_package_catalog_id Unique identifier of the item
+                    ## @return a access_package_catalog_item_request_builder
+                    ## 
+                    def by_access_package_catalog_id(access_package_catalog_id)
+                        raise StandardError, 'access_package_catalog_id cannot be null' if access_package_catalog_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["accessPackageCatalog%2Did"] = access_package_catalog_id
+                        return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackageCatalogItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new CatalogsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/catalogs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Retrieve a list of accessPackageCatalog objects.
+                    ## A container for access packages.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of access_package_catalog_collection_response
                     ## 
@@ -45,7 +57,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageCatalogCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create a new accessPackageCatalog object.
+                    ## Create new navigation property to catalogs for identityGovernance
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of access_package_catalog
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageCatalog.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieve a list of accessPackageCatalog objects.
+                    ## A container for access packages.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -79,7 +91,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Create a new accessPackageCatalog object.
+                    ## Create new navigation property to catalogs for identityGovernance
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve a list of accessPackageCatalog objects.
+                    # A container for access packages.
                     class CatalogsRequestBuilderGetQueryParameters
                         
                         ## 

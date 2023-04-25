@@ -95,7 +95,7 @@ module MicrosoftGraph
                 @columns = value
             end
             ## 
-            ## Instantiates a new site and sets the default values.
+            ## Instantiates a new Site and sets the default values.
             ## @return a void
             ## 
             def initialize()

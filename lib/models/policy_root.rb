@@ -19,8 +19,11 @@ module MicrosoftGraph
             # The policy configuration of the self-service sign-up experience of external users.
             @authentication_flows_policy
             ## 
-            # The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+            # The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
             @authentication_methods_policy
+            ## 
+            # The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+            @authentication_strength_policies
             ## 
             # The policy that controls Azure AD authorization settings.
             @authorization_policy
@@ -121,19 +124,34 @@ module MicrosoftGraph
                 @authentication_flows_policy = value
             end
             ## 
-            ## Gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+            ## Gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
             ## @return a authentication_methods_policy
             ## 
             def authentication_methods_policy
                 return @authentication_methods_policy
             end
             ## 
-            ## Sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+            ## Sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
             ## @param value Value to set for the authentication_methods_policy property.
             ## @return a void
             ## 
             def authentication_methods_policy=(value)
                 @authentication_methods_policy = value
+            end
+            ## 
+            ## Gets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+            ## @return a authentication_strength_policy
+            ## 
+            def authentication_strength_policies
+                return @authentication_strength_policies
+            end
+            ## 
+            ## Sets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+            ## @param value Value to set for the authentication_strength_policies property.
+            ## @return a void
+            ## 
+            def authentication_strength_policies=(value)
+                @authentication_strength_policies = value
             end
             ## 
             ## Gets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
@@ -252,6 +270,7 @@ module MicrosoftGraph
                     "appManagementPolicies" => lambda {|n| @app_management_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AppManagementPolicy.create_from_discriminator_value(pn) }) },
                     "authenticationFlowsPolicy" => lambda {|n| @authentication_flows_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AuthenticationFlowsPolicy.create_from_discriminator_value(pn) }) },
                     "authenticationMethodsPolicy" => lambda {|n| @authentication_methods_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AuthenticationMethodsPolicy.create_from_discriminator_value(pn) }) },
+                    "authenticationStrengthPolicies" => lambda {|n| @authentication_strength_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AuthenticationStrengthPolicy.create_from_discriminator_value(pn) }) },
                     "authorizationPolicy" => lambda {|n| @authorization_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AuthorizationPolicy.create_from_discriminator_value(pn) }) },
                     "claimsMappingPolicies" => lambda {|n| @claims_mapping_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ClaimsMappingPolicy.create_from_discriminator_value(pn) }) },
                     "conditionalAccessPolicies" => lambda {|n| @conditional_access_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessPolicy.create_from_discriminator_value(pn) }) },
@@ -355,6 +374,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("appManagementPolicies", @app_management_policies)
                 writer.write_object_value("authenticationFlowsPolicy", @authentication_flows_policy)
                 writer.write_object_value("authenticationMethodsPolicy", @authentication_methods_policy)
+                writer.write_collection_of_object_values("authenticationStrengthPolicies", @authentication_strength_policies)
                 writer.write_object_value("authorizationPolicy", @authorization_policy)
                 writer.write_collection_of_object_values("claimsMappingPolicies", @claims_mapping_policies)
                 writer.write_collection_of_object_values("conditionalAccessPolicies", @conditional_access_policies)

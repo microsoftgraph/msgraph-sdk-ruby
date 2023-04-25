@@ -8,6 +8,7 @@ require_relative '../../device_compliance_policy_setting_state_summaries'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './device_compliance_setting_states'
+require_relative './item/device_compliance_setting_state_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicySettingStateSummaries::Item::DeviceComplianceSettingStates::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the deviceComplianceSettingStates property of the microsoft.graph.deviceCompliancePolicySettingStateSummary entity.
+                        ## @param device_compliance_setting_state_id Unique identifier of the item
+                        ## @return a device_compliance_setting_state_item_request_builder
+                        ## 
+                        def by_device_compliance_setting_state_id(device_compliance_setting_state_id)
+                            raise StandardError, 'device_compliance_setting_state_id cannot be null' if device_compliance_setting_state_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["deviceComplianceSettingState%2Did"] = device_compliance_setting_state_id
+                            return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicySettingStateSummaries::Item::DeviceComplianceSettingStates::Item::DeviceComplianceSettingStateItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new DeviceComplianceSettingStatesRequestBuilder and sets the default values.

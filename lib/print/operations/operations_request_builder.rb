@@ -5,6 +5,7 @@ require_relative '../../models/print_operation'
 require_relative '../../models/print_operation_collection_response'
 require_relative '../print'
 require_relative './count/count_request_builder'
+require_relative './item/print_operation_item_request_builder'
 require_relative './operations'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Print::Operations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the operations property of the microsoft.graph.print entity.
+                ## @param print_operation_id Unique identifier of the item
+                ## @return a print_operation_item_request_builder
+                ## 
+                def by_print_operation_id(print_operation_id)
+                    raise StandardError, 'print_operation_id cannot be null' if print_operation_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["printOperation%2Did"] = print_operation_id
+                    return MicrosoftGraph::Print::Operations::Item::PrintOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new OperationsRequestBuilder and sets the default values.

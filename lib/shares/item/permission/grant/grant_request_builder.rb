@@ -25,7 +25,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/permission/grant")
                         end
                         ## 
-                        ## Grant users access to a link represented by a [permission][].
+                        ## Invoke action grant
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of grant_response
@@ -41,7 +41,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Shares::Item::Permission::Grant::GrantResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Grant users access to a link represented by a [permission][].
+                        ## Invoke action grant
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

@@ -5,6 +5,7 @@ require_relative '../../models/print_usage_by_user'
 require_relative '../../models/print_usage_by_user_collection_response'
 require_relative '../reports'
 require_relative './count/count_request_builder'
+require_relative './item/print_usage_by_user_item_request_builder'
 require_relative './monthly_print_usage_by_user'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Reports::MonthlyPrintUsageByUser::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the monthlyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
+                ## @param print_usage_by_user_id Unique identifier of the item
+                ## @return a print_usage_by_user_item_request_builder
+                ## 
+                def by_print_usage_by_user_id(print_usage_by_user_id)
+                    raise StandardError, 'print_usage_by_user_id cannot be null' if print_usage_by_user_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["printUsageByUser%2Did"] = print_usage_by_user_id
+                    return MicrosoftGraph::Reports::MonthlyPrintUsageByUser::Item::PrintUsageByUserItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new MonthlyPrintUsageByUserRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/reports/monthlyPrintUsageByUser{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve a list of monthly print usage summaries, grouped by user.
+                ## Get monthlyPrintUsageByUser from reports
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of print_usage_by_user_collection_response
                 ## 
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintUsageByUser.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve a list of monthly print usage summaries, grouped by user.
+                ## Get monthlyPrintUsageByUser from reports
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve a list of monthly print usage summaries, grouped by user.
+                # Get monthlyPrintUsageByUser from reports
                 class MonthlyPrintUsageByUserRequestBuilderGetQueryParameters
                     
                     ## 

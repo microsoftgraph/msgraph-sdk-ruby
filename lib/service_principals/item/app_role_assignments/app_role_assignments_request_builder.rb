@@ -7,6 +7,7 @@ require_relative '../../service_principals'
 require_relative '../item'
 require_relative './app_role_assignments'
 require_relative './count/count_request_builder'
+require_relative './item/app_role_assignment_item_request_builder'
 
 module MicrosoftGraph
     module ServicePrincipals
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::ServicePrincipals::Item::AppRoleAssignments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the appRoleAssignments property of the microsoft.graph.servicePrincipal entity.
+                    ## @param app_role_assignment_id Unique identifier of the item
+                    ## @return a app_role_assignment_item_request_builder
+                    ## 
+                    def by_app_role_assignment_id(app_role_assignment_id)
+                        raise StandardError, 'app_role_assignment_id cannot be null' if app_role_assignment_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["appRoleAssignment%2Did"] = app_role_assignment_id
+                        return MicrosoftGraph::ServicePrincipals::Item::AppRoleAssignments::Item::AppRoleAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AppRoleAssignmentsRequestBuilder and sets the default values.
@@ -45,7 +57,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AppRoleAssignmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Assign an app role to a client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment to a client service principal, you need three identifiers:
+                    ## Create new navigation property to appRoleAssignments for servicePrincipals
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of app_role_assignment
@@ -79,7 +91,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Assign an app role to a client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment to a client service principal, you need three identifiers:
+                    ## Create new navigation property to appRoleAssignments for servicePrincipals
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information

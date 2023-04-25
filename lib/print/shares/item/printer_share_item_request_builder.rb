@@ -5,9 +5,7 @@ require_relative '../../../models/printer_share'
 require_relative '../../print'
 require_relative '../shares'
 require_relative './allowed_groups/allowed_groups_request_builder'
-require_relative './allowed_groups/item/group_item_request_builder'
 require_relative './allowed_users/allowed_users_request_builder'
-require_relative './allowed_users/item/user_item_request_builder'
 require_relative './item'
 require_relative './printer/printer_request_builder'
 
@@ -33,28 +31,6 @@ module MicrosoftGraph
                     # Provides operations to manage the printer property of the microsoft.graph.printerShare entity.
                     def printer()
                         return MicrosoftGraph::Print::Shares::Item::Printer::PrinterRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    ## Gets an item from the MicrosoftGraph.print.shares.item.allowedGroups.item collection
-                    ## @param id Unique identifier of the item
-                    ## @return a group_item_request_builder
-                    ## 
-                    def allowed_groups_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["group%2Did"] = id
-                        return MicrosoftGraph::Print::Shares::Item::AllowedGroups::Item::GroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Gets an item from the MicrosoftGraph.print.shares.item.allowedUsers.item collection
-                    ## @param id Unique identifier of the item
-                    ## @return a user_item_request_builder
-                    ## 
-                    def allowed_users_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["user%2Did"] = id
-                        return MicrosoftGraph::Print::Shares::Item::AllowedUsers::Item::UserItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new PrinterShareItemRequestBuilder and sets the default values.

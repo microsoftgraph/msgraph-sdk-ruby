@@ -7,6 +7,7 @@ require_relative '../../schools'
 require_relative '../item'
 require_relative './classes'
 require_relative './count/count_request_builder'
+require_relative './item/education_class_item_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -29,6 +30,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Education::Schools::Item::Classes::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Gets an item from the MicrosoftGraph.education.schools.item.classes.item collection
+                        ## @param education_class_id Unique identifier of the item
+                        ## @return a education_class_item_request_builder
+                        ## 
+                        def by_education_class_id(education_class_id)
+                            raise StandardError, 'education_class_id cannot be null' if education_class_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["educationClass%2Did"] = education_class_id
+                            return MicrosoftGraph::Education::Schools::Item::Classes::Item::EducationClassItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new ClassesRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -38,7 +50,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/education/schools/{educationSchool%2Did}/classes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Get the educationClass resources owned by an educationSchool.
+                        ## Classes taught at the school. Nullable.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of education_class_collection_response
                         ## 
@@ -52,7 +64,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationClassCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get the educationClass resources owned by an educationSchool.
+                        ## Classes taught at the school. Nullable.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -71,7 +83,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get the educationClass resources owned by an educationSchool.
+                        # Classes taught at the school. Nullable.
                         class ClassesRequestBuilderGetQueryParameters
                             
                             ## 

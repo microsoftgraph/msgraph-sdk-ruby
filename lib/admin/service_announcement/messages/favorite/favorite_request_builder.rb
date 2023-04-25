@@ -25,7 +25,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/admin/serviceAnnouncement/messages/favorite")
                         end
                         ## 
-                        ## Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
+                        ## Invoke action favorite
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of favorite_response
@@ -41,7 +41,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Favorite::FavoriteResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
+                        ## Invoke action favorite
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

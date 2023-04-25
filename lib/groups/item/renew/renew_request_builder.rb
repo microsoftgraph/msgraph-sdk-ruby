@@ -23,7 +23,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/renew")
                     end
                     ## 
-                    ## Renews a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
+                    ## Invoke action renew
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -37,7 +37,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Renews a group's expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
+                    ## Invoke action renew
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 

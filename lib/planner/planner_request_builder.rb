@@ -3,11 +3,8 @@ require_relative '../microsoft_graph'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/planner'
 require_relative './buckets/buckets_request_builder'
-require_relative './buckets/item/planner_bucket_item_request_builder'
 require_relative './planner'
-require_relative './plans/item/planner_plan_item_request_builder'
 require_relative './plans/plans_request_builder'
-require_relative './tasks/item/planner_task_item_request_builder'
 require_relative './tasks/tasks_request_builder'
 
 module MicrosoftGraph
@@ -30,17 +27,6 @@ module MicrosoftGraph
             # Provides operations to manage the tasks property of the microsoft.graph.planner entity.
             def tasks()
                 return MicrosoftGraph::Planner::Tasks::TasksRequestBuilder.new(@path_parameters, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the buckets property of the microsoft.graph.planner entity.
-            ## @param id Unique identifier of the item
-            ## @return a planner_bucket_item_request_builder
-            ## 
-            def buckets_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["plannerBucket%2Did"] = id
-                return MicrosoftGraph::Planner::Buckets::Item::PlannerBucketItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new PlannerRequestBuilder and sets the default values.
@@ -80,28 +66,6 @@ module MicrosoftGraph
                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Planner.create_from_discriminator_value(pn) }, error_mapping)
-            end
-            ## 
-            ## Provides operations to manage the plans property of the microsoft.graph.planner entity.
-            ## @param id Unique identifier of the item
-            ## @return a planner_plan_item_request_builder
-            ## 
-            def plans_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["plannerPlan%2Did"] = id
-                return MicrosoftGraph::Planner::Plans::Item::PlannerPlanItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the tasks property of the microsoft.graph.planner entity.
-            ## @param id Unique identifier of the item
-            ## @return a planner_task_item_request_builder
-            ## 
-            def tasks_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["plannerTask%2Did"] = id
-                return MicrosoftGraph::Planner::Tasks::Item::PlannerTaskItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Get planner

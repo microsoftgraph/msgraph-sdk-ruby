@@ -31,7 +31,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/versions/{driveItemVersion%2Did}/restoreVersion")
                                     end
                                     ## 
-                                    ## Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
+                                    ## Invoke action restoreVersion
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -45,7 +45,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Restore a previous version of a DriveItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the file.
+                                    ## Invoke action restoreVersion
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 

@@ -33,7 +33,7 @@ module MicrosoftGraph
                                             super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/calendar/events/{event%2Did}/instances/{event%2Did1}/tentativelyAccept")
                                         end
                                         ## 
-                                        ## Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
+                                        ## Invoke action tentativelyAccept
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of void
@@ -49,7 +49,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, nil, error_mapping)
                                         end
                                         ## 
-                                        ## Tentatively accept the specified event in a user calendar. If the event allows proposals for new times, on responding tentative to the event, an invitee can choose to suggest an alternative time by including the **proposedNewTime** parameter. For more information on how to propose a time, and how to receive and accept a new time proposal, see Propose new meeting times.
+                                        ## Invoke action tentativelyAccept
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information

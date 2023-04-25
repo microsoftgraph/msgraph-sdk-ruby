@@ -23,7 +23,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/applications/{application%2Did}/getMemberGroups")
                     end
                     ## 
-                    ## Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
+                    ## Invoke action getMemberGroups
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of get_member_groups_response
@@ -39,7 +39,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Applications::Item::GetMemberGroups::GetMemberGroupsResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
+                    ## Invoke action getMemberGroups
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information

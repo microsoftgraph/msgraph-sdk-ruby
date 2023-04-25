@@ -5,6 +5,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../groups'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/directory_object_item_request_builder'
 require_relative './ref/ref_request_builder'
 require_relative './rejected_senders'
 
@@ -27,6 +28,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Groups::Item::RejectedSenders::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Gets an item from the MicrosoftGraph.groups.item.rejectedSenders.item collection
+                    ## @param directory_object_id Unique identifier of the item
+                    ## @return a directory_object_item_request_builder
+                    ## 
+                    def by_directory_object_id(directory_object_id)
+                        raise StandardError, 'directory_object_id cannot be null' if directory_object_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["directoryObject%2Did"] = directory_object_id
+                        return MicrosoftGraph::Groups::Item::RejectedSenders::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new RejectedSendersRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -36,7 +48,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/rejectedSenders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}")
                     end
                     ## 
-                    ## Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+                    ## The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of directory_object_collection_response
                     ## 
@@ -50,7 +62,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObjectCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+                    ## The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -69,7 +81,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Users in the rejected senders list cannot post to conversations of the group (identified in the GET request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+                    # The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
                     class RejectedSendersRequestBuilderGetQueryParameters
                         
                         ## 

@@ -25,7 +25,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/print/printers/{printer%2Did}/restoreFactoryDefaults")
                         end
                         ## 
-                        ## Restore a printer's default settings to the values specified by the manufacturer.
+                        ## Invoke action restoreFactoryDefaults
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -39,7 +39,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Restore a printer's default settings to the values specified by the manufacturer.
+                        ## Invoke action restoreFactoryDefaults
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 

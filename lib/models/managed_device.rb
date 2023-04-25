@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Devices that are managed or pre-enrolled through Intune
         class ManagedDevice < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -284,7 +286,7 @@ module MicrosoftGraph
                 @configuration_manager_client_enabled_features = value
             end
             ## 
-            ## Instantiates a new ManagedDevice and sets the default values.
+            ## Instantiates a new managedDevice and sets the default values.
             ## @return a void
             ## 
             def initialize()

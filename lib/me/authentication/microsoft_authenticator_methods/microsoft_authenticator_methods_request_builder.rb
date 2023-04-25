@@ -5,6 +5,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../me'
 require_relative '../authentication'
 require_relative './count/count_request_builder'
+require_relative './item/microsoft_authenticator_authentication_method_item_request_builder'
 require_relative './microsoft_authenticator_methods'
 
 module MicrosoftGraph
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Me::Authentication::MicrosoftAuthenticatorMethods::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
+                    ## @param microsoft_authenticator_authentication_method_id Unique identifier of the item
+                    ## @return a microsoft_authenticator_authentication_method_item_request_builder
+                    ## 
+                    def by_microsoft_authenticator_authentication_method_id(microsoft_authenticator_authentication_method_id)
+                        raise StandardError, 'microsoft_authenticator_authentication_method_id cannot be null' if microsoft_authenticator_authentication_method_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["microsoftAuthenticatorAuthenticationMethod%2Did"] = microsoft_authenticator_authentication_method_id
+                        return MicrosoftGraph::Me::Authentication::MicrosoftAuthenticatorMethods::Item::MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new MicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -30,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/me/authentication/microsoftAuthenticatorMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get a list of the microsoftAuthenticatorAuthenticationMethod objects and their properties.
+                    ## The details of the Microsoft Authenticator app registered to a user for authentication.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of microsoft_authenticator_authentication_method_collection_response
                     ## 
@@ -44,7 +56,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MicrosoftAuthenticatorAuthenticationMethodCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get a list of the microsoftAuthenticatorAuthenticationMethod objects and their properties.
+                    ## The details of the Microsoft Authenticator app registered to a user for authentication.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get a list of the microsoftAuthenticatorAuthenticationMethod objects and their properties.
+                    # The details of the Microsoft Authenticator app registered to a user for authentication.
                     class MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters
                         
                         ## 

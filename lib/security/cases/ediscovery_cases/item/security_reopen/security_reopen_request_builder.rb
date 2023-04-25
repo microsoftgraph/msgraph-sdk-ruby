@@ -27,7 +27,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/security.reopen")
                             end
                             ## 
-                            ## Reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
+                            ## Invoke action reopen
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -41,7 +41,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
+                            ## Invoke action reopen
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 

@@ -25,7 +25,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/admin/serviceAnnouncement/messages/archive")
                         end
                         ## 
-                        ## Archive a list of serviceUpdateMessages for the signed in user.
+                        ## Invoke action archive
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of archive_response
@@ -41,7 +41,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Archive::ArchiveResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Archive a list of serviceUpdateMessages for the signed in user.
+                        ## Invoke action archive
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

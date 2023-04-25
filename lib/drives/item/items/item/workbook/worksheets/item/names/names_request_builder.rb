@@ -13,6 +13,7 @@ require_relative '../item'
 require_relative './add/add_request_builder'
 require_relative './add_formula_local/add_formula_local_request_builder'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_named_item_item_request_builder'
 require_relative './names'
 
 module MicrosoftGraph
@@ -44,6 +45,17 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Names::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
+                                        ## Provides operations to manage the names property of the microsoft.graph.workbookWorksheet entity.
+                                        ## @param workbook_named_item_id Unique identifier of the item
+                                        ## @return a workbook_named_item_item_request_builder
+                                        ## 
+                                        def by_workbook_named_item_id(workbook_named_item_id)
+                                            raise StandardError, 'workbook_named_item_id cannot be null' if workbook_named_item_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["workbookNamedItem%2Did"] = workbook_named_item_id
+                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Names::Item::WorkbookNamedItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                        end
+                                        ## 
                                         ## Instantiates a new NamesRequestBuilder and sets the default values.
                                         ## @param path_parameters Path parameters for the request
                                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -53,7 +65,7 @@ module MicrosoftGraph
                                             super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/names{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                         end
                                         ## 
-                                        ## Retrieve a list of named item associated with the worksheet. 
+                                        ## Returns collection of names that are associated with the worksheet. Read-only.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of workbook_named_item_collection_response
                                         ## 
@@ -83,7 +95,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookNamedItem.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Retrieve a list of named item associated with the worksheet. 
+                                        ## Returns collection of names that are associated with the worksheet. Read-only.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -122,7 +134,7 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # Retrieve a list of named item associated with the worksheet. 
+                                        # Returns collection of names that are associated with the worksheet. Read-only.
                                         class NamesRequestBuilderGetQueryParameters
                                             
                                             ## 

@@ -21,7 +21,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/me/translateExchangeIds")
                 end
                 ## 
-                ## Translate identifiers of Outlook-related resources between formats.
+                ## Invoke action translateExchangeIds
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of translate_exchange_ids_response
@@ -37,7 +37,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Me::TranslateExchangeIds::TranslateExchangeIdsResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Translate identifiers of Outlook-related resources between formats.
+                ## Invoke action translateExchangeIds
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information

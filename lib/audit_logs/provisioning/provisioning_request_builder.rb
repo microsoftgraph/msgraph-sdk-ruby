@@ -5,6 +5,7 @@ require_relative '../../models/provisioning_object_summary'
 require_relative '../../models/provisioning_object_summary_collection_response'
 require_relative '../audit_logs'
 require_relative './count/count_request_builder'
+require_relative './item/provisioning_object_summary_item_request_builder'
 require_relative './provisioning'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::AuditLogs::Provisioning::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
+                ## @param provisioning_object_summary_id Unique identifier of the item
+                ## @return a provisioning_object_summary_item_request_builder
+                ## 
+                def by_provisioning_object_summary_id(provisioning_object_summary_id)
+                    raise StandardError, 'provisioning_object_summary_id cannot be null' if provisioning_object_summary_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["provisioningObjectSummary%2Did"] = provisioning_object_summary_id
+                    return MicrosoftGraph::AuditLogs::Provisioning::Item::ProvisioningObjectSummaryItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new ProvisioningRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/auditLogs/provisioning{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
+                ## Get provisioning from auditLogs
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of provisioning_object_summary_collection_response
                 ## 
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ProvisioningObjectSummary.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
+                ## Get provisioning from auditLogs
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
+                # Get provisioning from auditLogs
                 class ProvisioningRequestBuilderGetQueryParameters
                     
                     ## 

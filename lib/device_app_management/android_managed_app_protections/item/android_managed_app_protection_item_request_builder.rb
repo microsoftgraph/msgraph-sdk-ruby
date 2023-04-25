@@ -5,7 +5,6 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_app_management'
 require_relative '../android_managed_app_protections'
 require_relative './apps/apps_request_builder'
-require_relative './apps/item/managed_mobile_app_item_request_builder'
 require_relative './deployment_summary/deployment_summary_request_builder'
 require_relative './item'
 
@@ -26,17 +25,6 @@ module MicrosoftGraph
                     # Provides operations to manage the deploymentSummary property of the microsoft.graph.androidManagedAppProtection entity.
                     def deployment_summary()
                         return MicrosoftGraph::DeviceAppManagement::AndroidManagedAppProtections::Item::DeploymentSummary::DeploymentSummaryRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the apps property of the microsoft.graph.androidManagedAppProtection entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a managed_mobile_app_item_request_builder
-                    ## 
-                    def apps_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["managedMobileApp%2Did"] = id
-                        return MicrosoftGraph::DeviceAppManagement::AndroidManagedAppProtections::Item::Apps::Item::ManagedMobileAppItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AndroidManagedAppProtectionItemRequestBuilder and sets the default values.

@@ -6,6 +6,7 @@ require_relative '../../../models/simulation_automation_collection_response'
 require_relative '../../security'
 require_relative '../attack_simulation'
 require_relative './count/count_request_builder'
+require_relative './item/simulation_automation_item_request_builder'
 require_relative './simulation_automations'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Security::AttackSimulation::SimulationAutomations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the simulationAutomations property of the microsoft.graph.attackSimulationRoot entity.
+                    ## @param simulation_automation_id Unique identifier of the item
+                    ## @return a simulation_automation_item_request_builder
+                    ## 
+                    def by_simulation_automation_id(simulation_automation_id)
+                        raise StandardError, 'simulation_automation_id cannot be null' if simulation_automation_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["simulationAutomation%2Did"] = simulation_automation_id
+                        return MicrosoftGraph::Security::AttackSimulation::SimulationAutomations::Item::SimulationAutomationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new SimulationAutomationsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/security/attackSimulation/simulationAutomations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get a list of attack simulation automations for a tenant.
+                    ## Represents simulation automation created to run on a tenant.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of simulation_automation_collection_response
                     ## 
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SimulationAutomation.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get a list of attack simulation automations for a tenant.
+                    ## Represents simulation automation created to run on a tenant.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get a list of attack simulation automations for a tenant.
+                    # Represents simulation automation created to run on a tenant.
                     class SimulationAutomationsRequestBuilderGetQueryParameters
                         
                         ## 

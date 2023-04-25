@@ -8,6 +8,7 @@ require_relative '../item'
 require_relative './contact_folders'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/contact_folder_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -28,6 +29,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Users::Item::ContactFolders::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the contactFolders property of the microsoft.graph.user entity.
+                    ## @param contact_folder_id Unique identifier of the item
+                    ## @return a contact_folder_item_request_builder
+                    ## 
+                    def by_contact_folder_id(contact_folder_id)
+                        raise StandardError, 'contact_folder_id cannot be null' if contact_folder_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["contactFolder%2Did"] = contact_folder_id
+                        return MicrosoftGraph::Users::Item::ContactFolders::Item::ContactFolderItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new ContactFoldersRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -37,7 +49,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/contactFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get the contact folder collection in the default Contacts folder of the signed-in user.
+                    ## The user's contacts folders. Read-only. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of contact_folder_collection_response
                     ## 
@@ -51,7 +63,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ContactFolderCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
+                    ## Create new navigation property to contactFolders for users
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of contact_folder
@@ -67,7 +79,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ContactFolder.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get the contact folder collection in the default Contacts folder of the signed-in user.
+                    ## The user's contacts folders. Read-only. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -85,7 +97,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Create a new contactFolder under the user's default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
+                    ## Create new navigation property to contactFolders for users
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -106,7 +118,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get the contact folder collection in the default Contacts folder of the signed-in user.
+                    # The user's contacts folders. Read-only. Nullable.
                     class ContactFoldersRequestBuilderGetQueryParameters
                         
                         ## 

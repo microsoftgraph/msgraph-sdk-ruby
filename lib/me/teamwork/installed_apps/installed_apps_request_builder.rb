@@ -7,6 +7,7 @@ require_relative '../../me'
 require_relative '../teamwork'
 require_relative './count/count_request_builder'
 require_relative './installed_apps'
+require_relative './item/user_scope_teams_app_installation_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Me::Teamwork::InstalledApps::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
+                    ## @param user_scope_teams_app_installation_id Unique identifier of the item
+                    ## @return a user_scope_teams_app_installation_item_request_builder
+                    ## 
+                    def by_user_scope_teams_app_installation_id(user_scope_teams_app_installation_id)
+                        raise StandardError, 'user_scope_teams_app_installation_id cannot be null' if user_scope_teams_app_installation_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["userScopeTeamsAppInstallation%2Did"] = user_scope_teams_app_installation_id
+                        return MicrosoftGraph::Me::Teamwork::InstalledApps::Item::UserScopeTeamsAppInstallationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new InstalledAppsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/me/teamwork/installedApps{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Retrieve the list of apps installed in the personal scope of the specified user.
+                    ## The apps installed in the personal scope of this user.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of user_scope_teams_app_installation_collection_response
                     ## 
@@ -45,7 +57,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserScopeTeamsAppInstallationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Install an app in the personal scope of the specified user.
+                    ## Create new navigation property to installedApps for me
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of user_scope_teams_app_installation
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserScopeTeamsAppInstallation.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieve the list of apps installed in the personal scope of the specified user.
+                    ## The apps installed in the personal scope of this user.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -79,7 +91,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Install an app in the personal scope of the specified user.
+                    ## Create new navigation property to installedApps for me
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve the list of apps installed in the personal scope of the specified user.
+                    # The apps installed in the personal scope of this user.
                     class InstalledAppsRequestBuilderGetQueryParameters
                         
                         ## 

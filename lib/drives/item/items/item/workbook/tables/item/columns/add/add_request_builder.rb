@@ -36,7 +36,7 @@ module MicrosoftGraph
                                                 super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/{workbookTable%2Did}/columns/add")
                                             end
                                             ## 
-                                            ## Adds a new column to the table.
+                                            ## Invoke action add
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of workbook_table_column
@@ -52,7 +52,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookTableColumn.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Adds a new column to the table.
+                                            ## Invoke action add
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information

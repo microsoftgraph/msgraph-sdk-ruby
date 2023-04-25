@@ -8,6 +8,7 @@ require_relative '../../../onenote'
 require_relative '../../section_groups'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/section_group_item_request_builder'
 require_relative './section_groups'
 
 module MicrosoftGraph
@@ -27,6 +28,17 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Users::Item::Onenote::SectionGroups::Item::SectionGroups::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                ## Provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
+                                ## @param section_group_id1 Unique identifier of the item
+                                ## @return a section_group_item_request_builder
+                                ## 
+                                def by_section_group_id1(section_group_id1)
+                                    raise StandardError, 'section_group_id1 cannot be null' if section_group_id1.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["sectionGroup%2Did1"] = section_group_id1
+                                    return MicrosoftGraph::Users::Item::Onenote::SectionGroups::Item::SectionGroups::Item::SectionGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                end
+                                ## 
                                 ## Instantiates a new SectionGroupsRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -36,7 +48,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/onenote/sectionGroups/{sectionGroup%2Did}/sectionGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                 end
                                 ## 
-                                ## Retrieve a list of section groups from the specified section group.
+                                ## The section groups in the section. Read-only. Nullable.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of section_group_collection_response
                                 ## 
@@ -50,7 +62,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SectionGroupCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Retrieve a list of section groups from the specified section group.
+                                ## The section groups in the section. Read-only. Nullable.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -69,7 +81,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Retrieve a list of section groups from the specified section group.
+                                # The section groups in the section. Read-only. Nullable.
                                 class SectionGroupsRequestBuilderGetQueryParameters
                                     
                                     ## 

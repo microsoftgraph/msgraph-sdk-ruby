@@ -10,6 +10,7 @@ require_relative '../../channels'
 require_relative '../item'
 require_relative './add/add_request_builder'
 require_relative './count/count_request_builder'
+require_relative './item/conversation_member_item_request_builder'
 require_relative './members'
 
 module MicrosoftGraph
@@ -34,6 +35,17 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Groups::Item::Team::Channels::Item::Members::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                ## Provides operations to manage the members property of the microsoft.graph.channel entity.
+                                ## @param conversation_member_id Unique identifier of the item
+                                ## @return a conversation_member_item_request_builder
+                                ## 
+                                def by_conversation_member_id(conversation_member_id)
+                                    raise StandardError, 'conversation_member_id cannot be null' if conversation_member_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["conversationMember%2Did"] = conversation_member_id
+                                    return MicrosoftGraph::Groups::Item::Team::Channels::Item::Members::Item::ConversationMemberItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                end
+                                ## 
                                 ## Instantiates a new MembersRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -43,7 +55,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/team/channels/{channel%2Did}/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                 end
                                 ## 
-                                ## Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
+                                ## A collection of membership records associated with the channel.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of conversation_member_collection_response
                                 ## 
@@ -57,7 +69,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConversationMemberCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Add a conversationMember to a channel.
+                                ## Create new navigation property to members for groups
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of conversation_member
@@ -73,7 +85,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConversationMember.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
+                                ## A collection of membership records associated with the channel.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -91,7 +103,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Add a conversationMember to a channel.
+                                ## Create new navigation property to members for groups
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
@@ -112,7 +124,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Retrieve a list of conversationMembers from a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve the channel member list.
+                                # A collection of membership records associated with the channel.
                                 class MembersRequestBuilderGetQueryParameters
                                     
                                     ## 

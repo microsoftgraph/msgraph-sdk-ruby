@@ -62,7 +62,7 @@ module MicrosoftGraph
                                                             return @request_adapter.send_async(request_info, nil, error_mapping)
                                                         end
                                                         ## 
-                                                        ## Retrieve the properties and relationships of chartgridlines object.
+                                                        ## Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
                                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a Fiber of workbook_chart_gridlines
                                                         ## 
@@ -76,7 +76,7 @@ module MicrosoftGraph
                                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookChartGridlines.create_from_discriminator_value(pn) }, error_mapping)
                                                         end
                                                         ## 
-                                                        ## Update the properties of chartgridlines object.
+                                                        ## Update the navigation property minorGridlines in drives
                                                         ## @param body The request body
                                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a Fiber of workbook_chart_gridlines
@@ -108,7 +108,7 @@ module MicrosoftGraph
                                                             return request_info
                                                         end
                                                         ## 
-                                                        ## Retrieve the properties and relationships of chartgridlines object.
+                                                        ## Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
                                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a request_information
                                                         ## 
@@ -126,7 +126,7 @@ module MicrosoftGraph
                                                             return request_info
                                                         end
                                                         ## 
-                                                        ## Update the properties of chartgridlines object.
+                                                        ## Update the navigation property minorGridlines in drives
                                                         ## @param body The request body
                                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a request_information
@@ -147,7 +147,7 @@ module MicrosoftGraph
                                                         end
 
                                                         ## 
-                                                        # Retrieve the properties and relationships of chartgridlines object.
+                                                        # Returns a Gridlines object that represents the minor gridlines for the specified axis. Read-only.
                                                         class MinorGridlinesRequestBuilderGetQueryParameters
                                                             
                                                             ## 

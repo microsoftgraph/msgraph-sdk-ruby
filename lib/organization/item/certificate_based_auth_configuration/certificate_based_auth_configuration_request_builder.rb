@@ -6,6 +6,7 @@ require_relative '../../organization'
 require_relative '../item'
 require_relative './certificate_based_auth_configuration'
 require_relative './count/count_request_builder'
+require_relative './item/certificate_based_auth_configuration_item_request_builder'
 
 module MicrosoftGraph
     module Organization
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Organization::Item::CertificateBasedAuthConfiguration::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the certificateBasedAuthConfiguration property of the microsoft.graph.organization entity.
+                    ## @param certificate_based_auth_configuration_id Unique identifier of the item
+                    ## @return a certificate_based_auth_configuration_item_request_builder
+                    ## 
+                    def by_certificate_based_auth_configuration_id(certificate_based_auth_configuration_id)
+                        raise StandardError, 'certificate_based_auth_configuration_id cannot be null' if certificate_based_auth_configuration_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["certificateBasedAuthConfiguration%2Did"] = certificate_based_auth_configuration_id
+                        return MicrosoftGraph::Organization::Item::CertificateBasedAuthConfiguration::Item::CertificateBasedAuthConfigurationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new CertificateBasedAuthConfigurationRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -30,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/organization/{organization%2Did}/certificateBasedAuthConfiguration{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get a list of certificateBasedAuthConfiguration objects.
+                    ## Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of certificate_based_auth_configuration_collection_response
                     ## 
@@ -44,7 +56,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CertificateBasedAuthConfigurationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get a list of certificateBasedAuthConfiguration objects.
+                    ## Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get a list of certificateBasedAuthConfiguration objects.
+                    # Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
                     class CertificateBasedAuthConfigurationRequestBuilderGetQueryParameters
                         
                         ## 

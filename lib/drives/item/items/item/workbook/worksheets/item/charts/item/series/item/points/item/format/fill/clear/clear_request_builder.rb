@@ -49,7 +49,7 @@ module MicrosoftGraph
                                                                             super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}/series/{workbookChartSeries%2Did}/points/{workbookChartPoint%2Did}/format/fill/clear")
                                                                         end
                                                                         ## 
-                                                                        ## Clear the fill color of a chart element.
+                                                                        ## Invoke action clear
                                                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                                         ## @return a Fiber of void
                                                                         ## 
@@ -63,7 +63,7 @@ module MicrosoftGraph
                                                                             return @request_adapter.send_async(request_info, nil, error_mapping)
                                                                         end
                                                                         ## 
-                                                                        ## Clear the fill color of a chart element.
+                                                                        ## Invoke action clear
                                                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                                         ## @return a request_information
                                                                         ## 

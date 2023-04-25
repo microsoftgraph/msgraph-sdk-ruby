@@ -4,6 +4,7 @@ require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/schema_extension'
 require_relative '../models/schema_extension_collection_response'
 require_relative './count/count_request_builder'
+require_relative './item/schema_extension_item_request_builder'
 require_relative './schema_extensions'
 
 module MicrosoftGraph
@@ -16,6 +17,17 @@ module MicrosoftGraph
             # Provides operations to count the resources in the collection.
             def count()
                 return MicrosoftGraph::SchemaExtensions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            ## Provides operations to manage the collection of schemaExtension entities.
+            ## @param schema_extension_id Unique identifier of the item
+            ## @return a schema_extension_item_request_builder
+            ## 
+            def by_schema_extension_id(schema_extension_id)
+                raise StandardError, 'schema_extension_id cannot be null' if schema_extension_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["schemaExtension%2Did"] = schema_extension_id
+                return MicrosoftGraph::SchemaExtensions::Item::SchemaExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new SchemaExtensionsRequestBuilder and sets the default values.

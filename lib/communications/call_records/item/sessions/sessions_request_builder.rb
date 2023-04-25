@@ -7,6 +7,7 @@ require_relative '../../../communications'
 require_relative '../../call_records'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/session_item_request_builder'
 require_relative './sessions'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Communications::CallRecords::Item::Sessions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.
+                        ## @param session_id Unique identifier of the item
+                        ## @return a session_item_request_builder
+                        ## 
+                        def by_session_id(session_id)
+                            raise StandardError, 'session_id cannot be null' if session_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["session%2Did"] = session_id
+                            return MicrosoftGraph::Communications::CallRecords::Item::Sessions::Item::SessionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new SessionsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}/sessions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Retrieve the list of sessions associated with a callRecord object.
+                        ## List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of session_collection_response
                         ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecords::Session.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Retrieve the list of sessions associated with a callRecord object.
+                        ## List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Retrieve the list of sessions associated with a callRecord object.
+                        # List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
                         class SessionsRequestBuilderGetQueryParameters
                             
                             ## 

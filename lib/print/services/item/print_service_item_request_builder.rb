@@ -5,7 +5,6 @@ require_relative '../../../models/print_service'
 require_relative '../../print'
 require_relative '../services'
 require_relative './endpoints/endpoints_request_builder'
-require_relative './endpoints/item/print_service_endpoint_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -43,17 +42,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the endpoints property of the microsoft.graph.printService entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a print_service_endpoint_item_request_builder
-                    ## 
-                    def endpoints_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["printServiceEndpoint%2Did"] = id
-                        return MicrosoftGraph::Print::Services::Item::Endpoints::Item::PrintServiceEndpointItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## The list of available Universal Print service endpoints.

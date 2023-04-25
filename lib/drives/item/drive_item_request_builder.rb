@@ -4,18 +4,14 @@ require_relative '../../models/drive'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../drives'
 require_relative './bundles/bundles_request_builder'
-require_relative './bundles/item/drive_item_item_request_builder'
 require_relative './following/following_request_builder'
-require_relative './following/item/drive_item_item_request_builder'
 require_relative './item'
-require_relative './items/item/drive_item_item_request_builder'
 require_relative './items/items_request_builder'
 require_relative './list/list_request_builder'
 require_relative './recent/recent_request_builder'
 require_relative './root/root_request_builder'
 require_relative './search_with_q/search_with_q_request_builder'
 require_relative './shared_with_me/shared_with_me_request_builder'
-require_relative './special/item/drive_item_item_request_builder'
 require_relative './special/special_request_builder'
 
 module MicrosoftGraph
@@ -66,17 +62,6 @@ module MicrosoftGraph
                     return MicrosoftGraph::Drives::Item::Special::SpecialRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
-                ## Provides operations to manage the bundles property of the microsoft.graph.drive entity.
-                ## @param id Unique identifier of the item
-                ## @return a drive_item_item_request_builder
-                ## 
-                def bundles_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["driveItem%2Did"] = id
-                    return MicrosoftGraph::Drives::Item::Bundles::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Instantiates a new DriveItemRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -100,18 +85,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Provides operations to manage the following property of the microsoft.graph.drive entity.
-                ## @param id Unique identifier of the item
-                ## @return a drive_item_item_request_builder
-                ## 
-                def following_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["driveItem%2Did"] = id
-                    return MicrosoftGraph::Drives::Item::Following::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+                ## Get entity from drives by key
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of drive
                 ## 
@@ -123,17 +97,6 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Drive.create_from_discriminator_value(pn) }, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the items property of the microsoft.graph.drive entity.
-                ## @param id Unique identifier of the item
-                ## @return a drive_item_item_request_builder
-                ## 
-                def items_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["driveItem%2Did"] = id
-                    return MicrosoftGraph::Drives::Item::Items::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Update entity in drives
@@ -161,17 +124,6 @@ module MicrosoftGraph
                     return SearchWithQRequestBuilder.new(@path_parameters, @request_adapter, q)
                 end
                 ## 
-                ## Provides operations to manage the special property of the microsoft.graph.drive entity.
-                ## @param id Unique identifier of the item
-                ## @return a drive_item_item_request_builder
-                ## 
-                def special_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["driveItem%2Did"] = id
-                    return MicrosoftGraph::Drives::Item::Special::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Delete entity from drives
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -188,7 +140,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+                ## Get entity from drives by key
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -227,7 +179,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+                # Get entity from drives by key
                 class DriveItemRequestBuilderGetQueryParameters
                     
                     ## 

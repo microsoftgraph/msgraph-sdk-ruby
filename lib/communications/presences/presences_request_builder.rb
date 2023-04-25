@@ -5,6 +5,7 @@ require_relative '../../models/presence'
 require_relative '../../models/presence_collection_response'
 require_relative '../communications'
 require_relative './count/count_request_builder'
+require_relative './item/presence_item_request_builder'
 require_relative './presences'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Communications::Presences::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the presences property of the microsoft.graph.cloudCommunications entity.
+                ## @param presence_id Unique identifier of the item
+                ## @return a presence_item_request_builder
+                ## 
+                def by_presence_id(presence_id)
+                    raise StandardError, 'presence_id cannot be null' if presence_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["presence%2Did"] = presence_id
+                    return MicrosoftGraph::Communications::Presences::Item::PresenceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new PresencesRequestBuilder and sets the default values.

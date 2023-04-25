@@ -5,6 +5,7 @@ require_relative '../../models/workforce_integration'
 require_relative '../../models/workforce_integration_collection_response'
 require_relative '../teamwork'
 require_relative './count/count_request_builder'
+require_relative './item/workforce_integration_item_request_builder'
 require_relative './workforce_integrations'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Teamwork::WorkforceIntegrations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.
+                ## @param workforce_integration_id Unique identifier of the item
+                ## @return a workforce_integration_item_request_builder
+                ## 
+                def by_workforce_integration_id(workforce_integration_id)
+                    raise StandardError, 'workforce_integration_id cannot be null' if workforce_integration_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["workforceIntegration%2Did"] = workforce_integration_id
+                    return MicrosoftGraph::Teamwork::WorkforceIntegrations::Item::WorkforceIntegrationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new WorkforceIntegrationsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/teamwork/workforceIntegrations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve a list of workforceIntegration objects.
+                ## Get workforceIntegrations from teamwork
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of workforce_integration_collection_response
                 ## 
@@ -43,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkforceIntegrationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create a new workforceIntegration object.You can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
+                ## Create new navigation property to workforceIntegrations for teamwork
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of workforce_integration
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkforceIntegration.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve a list of workforceIntegration objects.
+                ## Get workforceIntegrations from teamwork
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create a new workforceIntegration object.You can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
+                ## Create new navigation property to workforceIntegrations for teamwork
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve a list of workforceIntegration objects.
+                # Get workforceIntegrations from teamwork
                 class WorkforceIntegrationsRequestBuilderGetQueryParameters
                     
                     ## 

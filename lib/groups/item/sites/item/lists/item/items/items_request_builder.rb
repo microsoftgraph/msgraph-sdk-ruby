@@ -10,6 +10,7 @@ require_relative '../../../item'
 require_relative '../../lists'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/list_item_item_request_builder'
 require_relative './items'
 
 module MicrosoftGraph
@@ -30,6 +31,17 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
+                                    ## Provides operations to manage the items property of the microsoft.graph.list entity.
+                                    ## @param list_item_id Unique identifier of the item
+                                    ## @return a list_item_item_request_builder
+                                    ## 
+                                    def by_list_item_id(list_item_id)
+                                        raise StandardError, 'list_item_id cannot be null' if list_item_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["listItem%2Did"] = list_item_id
+                                        return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item::ListItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                    end
+                                    ## 
                                     ## Instantiates a new ItemsRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -39,7 +51,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/items{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Get the collection of [items][item] in a [list][].
+                                    ## All items contained in the list.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of list_item_collection_response
                                     ## 
@@ -53,7 +65,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ListItemCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Create a new [listItem][] in a [list][].
+                                    ## Create new navigation property to items for groups
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of list_item
@@ -69,7 +81,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ListItem.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Get the collection of [items][item] in a [list][].
+                                    ## All items contained in the list.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -87,7 +99,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Create a new [listItem][] in a [list][].
+                                    ## Create new navigation property to items for groups
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
@@ -108,7 +120,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Get the collection of [items][item] in a [list][].
+                                    # All items contained in the list.
                                     class ItemsRequestBuilderGetQueryParameters
                                         
                                         ## 

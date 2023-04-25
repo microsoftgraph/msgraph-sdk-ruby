@@ -10,6 +10,7 @@ require_relative '../../item'
 require_relative '../workbook'
 require_relative './add/add_request_builder'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_worksheet_item_request_builder'
 require_relative './worksheets'
 
 module MicrosoftGraph
@@ -34,6 +35,17 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                ## Provides operations to manage the worksheets property of the microsoft.graph.workbook entity.
+                                ## @param workbook_worksheet_id Unique identifier of the item
+                                ## @return a workbook_worksheet_item_request_builder
+                                ## 
+                                def by_workbook_worksheet_id(workbook_worksheet_id)
+                                    raise StandardError, 'workbook_worksheet_id cannot be null' if workbook_worksheet_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["workbookWorksheet%2Did"] = workbook_worksheet_id
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::WorkbookWorksheetItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                end
+                                ## 
                                 ## Instantiates a new WorksheetsRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -43,7 +55,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                 end
                                 ## 
-                                ## Retrieve a list of worksheet objects.
+                                ## Represents a collection of worksheets associated with the workbook. Read-only.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of workbook_worksheet_collection_response
                                 ## 
@@ -73,7 +85,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookWorksheet.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Retrieve a list of worksheet objects.
+                                ## Represents a collection of worksheets associated with the workbook. Read-only.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -112,7 +124,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Retrieve a list of worksheet objects.
+                                # Represents a collection of worksheets associated with the workbook. Read-only.
                                 class WorksheetsRequestBuilderGetQueryParameters
                                     
                                     ## 

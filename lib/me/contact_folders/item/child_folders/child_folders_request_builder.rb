@@ -9,6 +9,7 @@ require_relative '../item'
 require_relative './child_folders'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/contact_folder_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -30,6 +31,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Me::ContactFolders::Item::ChildFolders::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the childFolders property of the microsoft.graph.contactFolder entity.
+                        ## @param contact_folder_id1 Unique identifier of the item
+                        ## @return a contact_folder_item_request_builder
+                        ## 
+                        def by_contact_folder_id1(contact_folder_id1)
+                            raise StandardError, 'contact_folder_id1 cannot be null' if contact_folder_id1.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["contactFolder%2Did1"] = contact_folder_id1
+                            return MicrosoftGraph::Me::ContactFolders::Item::ChildFolders::Item::ContactFolderItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new ChildFoldersRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -39,7 +51,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/me/contactFolders/{contactFolder%2Did}/childFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Get a collection of child folders under the specified contact folder.
+                        ## The collection of child folders in the folder. Navigation property. Read-only. Nullable.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of contact_folder_collection_response
                         ## 
@@ -53,7 +65,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ContactFolderCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
+                        ## Create new navigation property to childFolders for me
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of contact_folder
@@ -69,7 +81,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ContactFolder.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get a collection of child folders under the specified contact folder.
+                        ## The collection of child folders in the folder. Navigation property. Read-only. Nullable.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -87,7 +99,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create a new contactFolder as a child of a specified folder.  You can also create a new contactFolder under the user's default contact folder.
+                        ## Create new navigation property to childFolders for me
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -108,7 +120,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get a collection of child folders under the specified contact folder.
+                        # The collection of child folders in the folder. Navigation property. Read-only. Nullable.
                         class ChildFoldersRequestBuilderGetQueryParameters
                             
                             ## 

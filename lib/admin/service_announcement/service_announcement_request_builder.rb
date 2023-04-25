@@ -4,10 +4,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/service_announcement'
 require_relative '../admin'
 require_relative './health_overviews/health_overviews_request_builder'
-require_relative './health_overviews/item/service_health_item_request_builder'
 require_relative './issues/issues_request_builder'
-require_relative './issues/item/service_health_issue_item_request_builder'
-require_relative './messages/item/service_update_message_item_request_builder'
 require_relative './messages/messages_request_builder'
 require_relative './service_announcement'
 
@@ -69,39 +66,6 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ServiceAnnouncement.create_from_discriminator_value(pn) }, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the healthOverviews property of the microsoft.graph.serviceAnnouncement entity.
-                ## @param id Unique identifier of the item
-                ## @return a service_health_item_request_builder
-                ## 
-                def health_overviews_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["serviceHealth%2Did"] = id
-                    return MicrosoftGraph::Admin::ServiceAnnouncement::HealthOverviews::Item::ServiceHealthItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the issues property of the microsoft.graph.serviceAnnouncement entity.
-                ## @param id Unique identifier of the item
-                ## @return a service_health_issue_item_request_builder
-                ## 
-                def issues_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["serviceHealthIssue%2Did"] = id
-                    return MicrosoftGraph::Admin::ServiceAnnouncement::Issues::Item::ServiceHealthIssueItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.
-                ## @param id Unique identifier of the item
-                ## @return a service_update_message_item_request_builder
-                ## 
-                def messages_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["serviceUpdateMessage%2Did"] = id
-                    return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Item::ServiceUpdateMessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Update the navigation property serviceAnnouncement in admin

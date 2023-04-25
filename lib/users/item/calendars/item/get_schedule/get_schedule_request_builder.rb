@@ -27,7 +27,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/getSchedule")
                             end
                             ## 
-                            ## Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
+                            ## Invoke action getSchedule
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of get_schedule_response
@@ -43,7 +43,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Users::Item::Calendars::Item::GetSchedule::GetScheduleResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
+                            ## Invoke action getSchedule
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information

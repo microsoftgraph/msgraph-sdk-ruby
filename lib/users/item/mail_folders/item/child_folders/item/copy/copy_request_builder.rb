@@ -32,7 +32,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/copy")
                                     end
                                     ## 
-                                    ## Copy a mailfolder and its contents to another mailfolder.
+                                    ## Invoke action copy
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of mail_folder
@@ -48,7 +48,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MailFolder.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Copy a mailfolder and its contents to another mailfolder.
+                                    ## Invoke action copy
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information

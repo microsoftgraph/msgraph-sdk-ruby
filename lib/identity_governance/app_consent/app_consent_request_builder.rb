@@ -4,7 +4,6 @@ require_relative '../../models/app_consent_approval_route'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../identity_governance'
 require_relative './app_consent_requests/app_consent_requests_request_builder'
-require_relative './app_consent_requests/item/app_consent_request_item_request_builder'
 require_relative './app_consent'
 
 module MicrosoftGraph
@@ -18,17 +17,6 @@ module MicrosoftGraph
                 # Provides operations to manage the appConsentRequests property of the microsoft.graph.appConsentApprovalRoute entity.
                 def app_consent_requests()
                     return MicrosoftGraph::IdentityGovernance::AppConsent::AppConsentRequests::AppConsentRequestsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the appConsentRequests property of the microsoft.graph.appConsentApprovalRoute entity.
-                ## @param id Unique identifier of the item
-                ## @return a app_consent_request_item_request_builder
-                ## 
-                def app_consent_requests_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["appConsentRequest%2Did"] = id
-                    return MicrosoftGraph::IdentityGovernance::AppConsent::AppConsentRequests::Item::AppConsentRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new AppConsentRequestBuilder and sets the default values.

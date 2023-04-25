@@ -6,6 +6,7 @@ require_relative '../../models/print_connector_collection_response'
 require_relative '../print'
 require_relative './connectors'
 require_relative './count/count_request_builder'
+require_relative './item/print_connector_item_request_builder'
 
 module MicrosoftGraph
     module Print
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Print::Connectors::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the connectors property of the microsoft.graph.print entity.
+                ## @param print_connector_id Unique identifier of the item
+                ## @return a print_connector_item_request_builder
+                ## 
+                def by_print_connector_id(print_connector_id)
+                    raise StandardError, 'print_connector_id cannot be null' if print_connector_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["printConnector%2Did"] = print_connector_id
+                    return MicrosoftGraph::Print::Connectors::Item::PrintConnectorItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new ConnectorsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/print/connectors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve a list of print connectors.
+                ## The list of available print connectors.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of print_connector_collection_response
                 ## 
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintConnector.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve a list of print connectors.
+                ## The list of available print connectors.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve a list of print connectors.
+                # The list of available print connectors.
                 class ConnectorsRequestBuilderGetQueryParameters
                     
                     ## 

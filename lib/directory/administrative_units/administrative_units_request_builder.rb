@@ -7,6 +7,7 @@ require_relative '../directory'
 require_relative './administrative_units'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/administrative_unit_item_request_builder'
 
 module MicrosoftGraph
     module Directory
@@ -26,6 +27,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Directory::AdministrativeUnits::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.
+                ## @param administrative_unit_id Unique identifier of the item
+                ## @return a administrative_unit_item_request_builder
+                ## 
+                def by_administrative_unit_id(administrative_unit_id)
+                    raise StandardError, 'administrative_unit_id cannot be null' if administrative_unit_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["administrativeUnit%2Did"] = administrative_unit_id
+                    return MicrosoftGraph::Directory::AdministrativeUnits::Item::AdministrativeUnitItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new AdministrativeUnitsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/directory/administrativeUnits{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve a list of administrativeUnit objects.
+                ## Conceptual container for user and group directory objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of administrative_unit_collection_response
                 ## 
@@ -49,7 +61,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AdministrativeUnitCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Use this API to create a new administrativeUnit.
+                ## Create new navigation property to administrativeUnits for directory
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of administrative_unit
@@ -65,7 +77,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AdministrativeUnit.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve a list of administrativeUnit objects.
+                ## Conceptual container for user and group directory objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -83,7 +95,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Use this API to create a new administrativeUnit.
+                ## Create new navigation property to administrativeUnits for directory
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -104,7 +116,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve a list of administrativeUnit objects.
+                # Conceptual container for user and group directory objects.
                 class AdministrativeUnitsRequestBuilderGetQueryParameters
                     
                     ## 

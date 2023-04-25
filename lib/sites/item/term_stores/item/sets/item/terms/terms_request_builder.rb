@@ -10,6 +10,7 @@ require_relative '../../../item'
 require_relative '../../sets'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/term_item_request_builder'
 require_relative './terms'
 
 module MicrosoftGraph
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     # Provides operations to count the resources in the collection.
                                     def count()
                                         return MicrosoftGraph::Sites::Item::TermStores::Item::Sets::Item::Terms::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to manage the terms property of the microsoft.graph.termStore.set entity.
+                                    ## @param term_id Unique identifier of the item
+                                    ## @return a term_item_request_builder
+                                    ## 
+                                    def by_term_id(term_id)
+                                        raise StandardError, 'term_id cannot be null' if term_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["term%2Did"] = term_id
+                                        return MicrosoftGraph::Sites::Item::TermStores::Item::Sets::Item::Terms::Item::TermItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new TermsRequestBuilder and sets the default values.

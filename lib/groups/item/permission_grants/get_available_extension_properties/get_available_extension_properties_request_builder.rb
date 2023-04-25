@@ -25,7 +25,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/permissionGrants/getAvailableExtensionProperties")
                         end
                         ## 
-                        ## Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:+ user+ group+ administrativeUnit+ application+ device+ organization
+                        ## Invoke action getAvailableExtensionProperties
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of get_available_extension_properties_response
@@ -41,7 +41,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Groups::Item::PermissionGrants::GetAvailableExtensionProperties::GetAvailableExtensionPropertiesResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:+ user+ group+ administrativeUnit+ application+ device+ organization
+                        ## Invoke action getAvailableExtensionProperties
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

@@ -23,7 +23,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/me/outlook/supportedLanguages(){?%24top,%24skip,%24search,%24filter,%24count}")
                     end
                     ## 
-                    ## Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by getting the user's mailbox settings.
+                    ## Invoke function supportedLanguages
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of supported_languages_response
                     ## 
@@ -37,7 +37,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Me::Outlook::SupportedLanguages::SupportedLanguagesResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by getting the user's mailbox settings.
+                    ## Invoke function supportedLanguages
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -56,7 +56,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get the list of locales and languages that are supported for the user, as configured on the user's mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by getting the user's mailbox settings.
+                    # Invoke function supportedLanguages
                     class SupportedLanguagesRequestBuilderGetQueryParameters
                         
                         ## 

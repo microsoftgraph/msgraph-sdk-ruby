@@ -7,6 +7,7 @@ require_relative '../../service_principals'
 require_relative '../item'
 require_relative './app_role_assigned_to'
 require_relative './count/count_request_builder'
+require_relative './item/app_role_assignment_item_request_builder'
 
 module MicrosoftGraph
     module ServicePrincipals
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::ServicePrincipals::Item::AppRoleAssignedTo::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the appRoleAssignedTo property of the microsoft.graph.servicePrincipal entity.
+                    ## @param app_role_assignment_id Unique identifier of the item
+                    ## @return a app_role_assignment_item_request_builder
+                    ## 
+                    def by_app_role_assignment_id(app_role_assignment_id)
+                        raise StandardError, 'app_role_assignment_id cannot be null' if app_role_assignment_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["appRoleAssignment%2Did"] = app_role_assignment_id
+                        return MicrosoftGraph::ServicePrincipals::Item::AppRoleAssignedTo::Item::AppRoleAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new AppRoleAssignedToRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/appRoleAssignedTo{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Retrieve a list of appRoleAssignment that users, groups, or client service principals have been granted for the given resource service principal. For example, if the resource service principal is the service principal for the Microsoft Graph API, this will return all service principals that have been granted any app-only permissions to Microsoft Graph. If the resource service principal is an application that has app roles granted to users and groups, this will return all the users and groups assigned app roles for this application.
+                    ## App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of app_role_assignment_collection_response
                     ## 
@@ -45,7 +57,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AppRoleAssignmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Assign an app role for a resource service principal, to a user, group, or client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment, you need three identifiers:
+                    ## Create new navigation property to appRoleAssignedTo for servicePrincipals
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of app_role_assignment
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AppRoleAssignment.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieve a list of appRoleAssignment that users, groups, or client service principals have been granted for the given resource service principal. For example, if the resource service principal is the service principal for the Microsoft Graph API, this will return all service principals that have been granted any app-only permissions to Microsoft Graph. If the resource service principal is an application that has app roles granted to users and groups, this will return all the users and groups assigned app roles for this application.
+                    ## App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -79,7 +91,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Assign an app role for a resource service principal, to a user, group, or client service principal. App roles that are assigned to service principals are also known as application permissions. Application permissions can be granted directly with app role assignments, or through a consent experience. To grant an app role assignment, you need three identifiers:
+                    ## Create new navigation property to appRoleAssignedTo for servicePrincipals
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve a list of appRoleAssignment that users, groups, or client service principals have been granted for the given resource service principal. For example, if the resource service principal is the service principal for the Microsoft Graph API, this will return all service principals that have been granted any app-only permissions to Microsoft Graph. If the resource service principal is an application that has app roles granted to users and groups, this will return all the users and groups assigned app roles for this application.
+                    # App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
                     class AppRoleAssignedToRequestBuilderGetQueryParameters
                         
                         ## 

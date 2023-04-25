@@ -6,6 +6,7 @@ require_relative '../../teams'
 require_relative '../item'
 require_relative './all_channels'
 require_relative './count/count_request_builder'
+require_relative './item/channel_item_request_builder'
 
 module MicrosoftGraph
     module Teams
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Teams::Item::AllChannels::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the allChannels property of the microsoft.graph.team entity.
+                    ## @param channel_id Unique identifier of the item
+                    ## @return a channel_item_request_builder
+                    ## 
+                    def by_channel_id(channel_id)
+                        raise StandardError, 'channel_id cannot be null' if channel_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["channel%2Did"] = channel_id
+                        return MicrosoftGraph::Teams::Item::AllChannels::Item::ChannelItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new AllChannelsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -30,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/teams/{team%2Did}/allChannels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get the list of channels either in this team or shared with this team (incoming channels).
+                    ## List of channels either hosted in or shared with the team (incoming channels).
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of channel_collection_response
                     ## 
@@ -44,7 +56,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChannelCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get the list of channels either in this team or shared with this team (incoming channels).
+                    ## List of channels either hosted in or shared with the team (incoming channels).
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get the list of channels either in this team or shared with this team (incoming channels).
+                    # List of channels either hosted in or shared with the team (incoming channels).
                     class AllChannelsRequestBuilderGetQueryParameters
                         
                         ## 

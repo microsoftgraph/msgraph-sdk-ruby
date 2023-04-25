@@ -7,6 +7,7 @@ require_relative '../../applications'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './federated_identity_credentials'
+require_relative './item/federated_identity_credential_item_request_builder'
 
 module MicrosoftGraph
     module Applications
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Applications::Item::FederatedIdentityCredentials::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
+                    ## @param federated_identity_credential_id Unique identifier of the item
+                    ## @return a federated_identity_credential_item_request_builder
+                    ## 
+                    def by_federated_identity_credential_id(federated_identity_credential_id)
+                        raise StandardError, 'federated_identity_credential_id cannot be null' if federated_identity_credential_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["federatedIdentityCredential%2Did"] = federated_identity_credential_id
+                        return MicrosoftGraph::Applications::Item::FederatedIdentityCredentials::Item::FederatedIdentityCredentialItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new FederatedIdentityCredentialsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/applications/{application%2Did}/federatedIdentityCredentials{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get a list of the federatedIdentityCredential objects and their properties.
+                    ## Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of federated_identity_credential_collection_response
                     ## 
@@ -45,7 +57,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::FederatedIdentityCredentialCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
+                    ## Create new navigation property to federatedIdentityCredentials for applications
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of federated_identity_credential
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::FederatedIdentityCredential.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get a list of the federatedIdentityCredential objects and their properties.
+                    ## Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -79,7 +91,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Create a new federatedIdentityCredential object for an application. By configuring a trust relationship between your Azure AD application registration and the identity provider for your compute platform, you can use tokens issued by that platform to authenticate with Microsoft identity platform and call APIs in the Microsoft ecosystem. Maximum of 20 objects can be added to an application.
+                    ## Create new navigation property to federatedIdentityCredentials for applications
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get a list of the federatedIdentityCredential objects and their properties.
+                    # Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).
                     class FederatedIdentityCredentialsRequestBuilderGetQueryParameters
                         
                         ## 

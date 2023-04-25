@@ -7,6 +7,7 @@ require_relative '../../me'
 require_relative '../teamwork'
 require_relative './associated_teams'
 require_relative './count/count_request_builder'
+require_relative './item/associated_team_info_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Me::Teamwork::AssociatedTeams::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.
+                    ## @param associated_team_info_id Unique identifier of the item
+                    ## @return a associated_team_info_item_request_builder
+                    ## 
+                    def by_associated_team_info_id(associated_team_info_id)
+                        raise StandardError, 'associated_team_info_id cannot be null' if associated_team_info_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["associatedTeamInfo%2Did"] = associated_team_info_id
+                        return MicrosoftGraph::Me::Teamwork::AssociatedTeams::Item::AssociatedTeamInfoItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new AssociatedTeamsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/me/teamwork/associatedTeams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:* A user can be a direct member of a team.* A user can be a member of a shared channel that is hosted inside a team.
+                    ## The list of associatedTeamInfo objects that a user is associated with.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of associated_team_info_collection_response
                     ## 
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AssociatedTeamInfo.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:* A user can be a direct member of a team.* A user can be a member of a shared channel that is hosted inside a team.
+                    ## The list of associatedTeamInfo objects that a user is associated with.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:* A user can be a direct member of a team.* A user can be a member of a shared channel that is hosted inside a team.
+                    # The list of associatedTeamInfo objects that a user is associated with.
                     class AssociatedTeamsRequestBuilderGetQueryParameters
                         
                         ## 

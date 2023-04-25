@@ -31,7 +31,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/events/{event%2Did}/instances/{event%2Did1}/dismissReminder")
                                     end
                                     ## 
-                                    ## Dismiss a reminder that has been triggered for an event in a user calendar.
+                                    ## Invoke action dismissReminder
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -45,7 +45,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Dismiss a reminder that has been triggered for an event in a user calendar.
+                                    ## Invoke action dismissReminder
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 

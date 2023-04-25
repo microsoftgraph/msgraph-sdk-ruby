@@ -48,7 +48,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Read the properties and relationships of an ediscoveryCaseSettings object.
+                            ## Returns a list of eDIscoverySettings objects in the case.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of ediscovery_case_settings
                             ## 
@@ -62,7 +62,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryCaseSettings.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the properties of an ediscoveryCaseSettings object.
+                            ## Update the navigation property settings in security
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of ediscovery_case_settings
@@ -94,7 +94,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Read the properties and relationships of an ediscoveryCaseSettings object.
+                            ## Returns a list of eDIscoverySettings objects in the case.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the properties of an ediscoveryCaseSettings object.
+                            ## Update the navigation property settings in security
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -133,7 +133,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Read the properties and relationships of an ediscoveryCaseSettings object.
+                            # Returns a list of eDIscoverySettings objects in the case.
                             class SettingsRequestBuilderGetQueryParameters
                                 
                                 ## 

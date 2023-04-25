@@ -7,6 +7,7 @@ require_relative '../../../teams'
 require_relative '../../item'
 require_relative '../schedule'
 require_relative './count/count_request_builder'
+require_relative './item/scheduling_group_item_request_builder'
 require_relative './scheduling_groups'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Teams::Item::Schedule::SchedulingGroups::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
+                        ## @param scheduling_group_id Unique identifier of the item
+                        ## @return a scheduling_group_item_request_builder
+                        ## 
+                        def by_scheduling_group_id(scheduling_group_id)
+                            raise StandardError, 'scheduling_group_id cannot be null' if scheduling_group_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["schedulingGroup%2Did"] = scheduling_group_id
+                            return MicrosoftGraph::Teams::Item::Schedule::SchedulingGroups::Item::SchedulingGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new SchedulingGroupsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/teams/{team%2Did}/schedule/schedulingGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}")
                         end
                         ## 
-                        ## Get the list of schedulingGroups in this schedule.
+                        ## The logical grouping of users in the schedule (usually by role).
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of scheduling_group_collection_response
                         ## 
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SchedulingGroupCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create a new schedulingGroup.
+                        ## Create new navigation property to schedulingGroups for teams
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of scheduling_group
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SchedulingGroup.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get the list of schedulingGroups in this schedule.
+                        ## The logical grouping of users in the schedule (usually by role).
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create a new schedulingGroup.
+                        ## Create new navigation property to schedulingGroups for teams
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get the list of schedulingGroups in this schedule.
+                        # The logical grouping of users in the schedule (usually by role).
                         class SchedulingGroupsRequestBuilderGetQueryParameters
                             
                             ## 

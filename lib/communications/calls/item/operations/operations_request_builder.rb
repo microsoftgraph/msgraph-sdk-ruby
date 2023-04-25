@@ -7,6 +7,7 @@ require_relative '../../../communications'
 require_relative '../../calls'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/comms_operation_item_request_builder'
 require_relative './operations'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Communications::Calls::Item::Operations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the operations property of the microsoft.graph.call entity.
+                        ## @param comms_operation_id Unique identifier of the item
+                        ## @return a comms_operation_item_request_builder
+                        ## 
+                        def by_comms_operation_id(comms_operation_id)
+                            raise StandardError, 'comms_operation_id cannot be null' if comms_operation_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["commsOperation%2Did"] = comms_operation_id
+                            return MicrosoftGraph::Communications::Calls::Item::Operations::Item::CommsOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new OperationsRequestBuilder and sets the default values.

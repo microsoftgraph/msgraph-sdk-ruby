@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Event representing an general failure.
         class DeviceManagementTroubleshootingEvent < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -14,7 +16,7 @@ module MicrosoftGraph
             # Time when the event occurred .
             @event_date_time
             ## 
-            ## Instantiates a new DeviceManagementTroubleshootingEvent and sets the default values.
+            ## Instantiates a new deviceManagementTroubleshootingEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -36,7 +36,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
+                ## The policy that represents the security defaults that protect against common attacks.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of identity_security_defaults_enforcement_policy
                 ## 
@@ -50,7 +50,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentitySecurityDefaultsEnforcementPolicy.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
+                ## Update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of identity_security_defaults_enforcement_policy
@@ -82,7 +82,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
+                ## The policy that represents the security defaults that protect against common attacks.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -100,7 +100,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
+                ## Update the navigation property identitySecurityDefaultsEnforcementPolicy in policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -121,7 +121,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
+                # The policy that represents the security defaults that protect against common attacks.
                 class IdentitySecurityDefaultsEnforcementPolicyRequestBuilderGetQueryParameters
                     
                     ## 

@@ -5,6 +5,7 @@ require_relative '../../models/planner_task'
 require_relative '../../models/planner_task_collection_response'
 require_relative '../planner'
 require_relative './count/count_request_builder'
+require_relative './item/planner_task_item_request_builder'
 require_relative './tasks'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Planner::Tasks::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the tasks property of the microsoft.graph.planner entity.
+                ## @param planner_task_id Unique identifier of the item
+                ## @return a planner_task_item_request_builder
+                ## 
+                def by_planner_task_id(planner_task_id)
+                    raise StandardError, 'planner_task_id cannot be null' if planner_task_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["plannerTask%2Did"] = planner_task_id
+                    return MicrosoftGraph::Planner::Tasks::Item::PlannerTaskItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new TasksRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/planner/tasks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve a list of **plannertask** objects.
+                ## Read-only. Nullable. Returns a collection of the specified tasks
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of planner_task_collection_response
                 ## 
@@ -43,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PlannerTaskCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create a new **plannerTask**.
+                ## Create new navigation property to tasks for planner
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of planner_task
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PlannerTask.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve a list of **plannertask** objects.
+                ## Read-only. Nullable. Returns a collection of the specified tasks
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create a new **plannerTask**.
+                ## Create new navigation property to tasks for planner
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve a list of **plannertask** objects.
+                # Read-only. Nullable. Returns a collection of the specified tasks
                 class TasksRequestBuilderGetQueryParameters
                     
                     ## 

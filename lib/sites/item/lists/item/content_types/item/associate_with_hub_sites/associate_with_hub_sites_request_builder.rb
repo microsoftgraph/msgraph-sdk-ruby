@@ -31,7 +31,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}/associateWithHubSites")
                                     end
                                     ## 
-                                    ## Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
+                                    ## Invoke action associateWithHubSites
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
@@ -47,7 +47,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Associate a published [content type][contentType] present in a content type hub with a list of hub sites.
+                                    ## Invoke action associateWithHubSites
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information

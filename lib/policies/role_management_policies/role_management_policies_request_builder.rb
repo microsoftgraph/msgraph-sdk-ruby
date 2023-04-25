@@ -5,6 +5,7 @@ require_relative '../../models/unified_role_management_policy'
 require_relative '../../models/unified_role_management_policy_collection_response'
 require_relative '../policies'
 require_relative './count/count_request_builder'
+require_relative './item/unified_role_management_policy_item_request_builder'
 require_relative './role_management_policies'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Policies::RoleManagementPolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.
+                ## @param unified_role_management_policy_id Unique identifier of the item
+                ## @return a unified_role_management_policy_item_request_builder
+                ## 
+                def by_unified_role_management_policy_id(unified_role_management_policy_id)
+                    raise StandardError, 'unified_role_management_policy_id cannot be null' if unified_role_management_policy_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["unifiedRoleManagementPolicy%2Did"] = unified_role_management_policy_id
+                    return MicrosoftGraph::Policies::RoleManagementPolicies::Item::UnifiedRoleManagementPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new RoleManagementPoliciesRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/policies/roleManagementPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Get role management policies and their details.
+                ## Specifies the various policies associated with scopes and roles.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of unified_role_management_policy_collection_response
                 ## 
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleManagementPolicy.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get role management policies and their details.
+                ## Specifies the various policies associated with scopes and roles.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get role management policies and their details.
+                # Specifies the various policies associated with scopes and roles.
                 class RoleManagementPoliciesRequestBuilderGetQueryParameters
                     
                     ## 

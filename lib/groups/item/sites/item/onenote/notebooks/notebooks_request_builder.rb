@@ -11,6 +11,7 @@ require_relative '../onenote'
 require_relative './count/count_request_builder'
 require_relative './get_notebook_from_web_url/get_notebook_from_web_url_request_builder'
 require_relative './get_recent_notebooks_with_include_personal_notebooks/get_recent_notebooks_with_include_personal_notebooks_request_builder'
+require_relative './item/notebook_item_request_builder'
 require_relative './notebooks'
 
 module MicrosoftGraph
@@ -35,6 +36,17 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::GetNotebookFromWebUrl::GetNotebookFromWebUrlRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                ## Provides operations to manage the notebooks property of the microsoft.graph.onenote entity.
+                                ## @param notebook_id Unique identifier of the item
+                                ## @return a notebook_item_request_builder
+                                ## 
+                                def by_notebook_id(notebook_id)
+                                    raise StandardError, 'notebook_id cannot be null' if notebook_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["notebook%2Did"] = notebook_id
+                                    return MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::Item::NotebookItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                end
+                                ## 
                                 ## Instantiates a new NotebooksRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -44,7 +56,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/notebooks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                 end
                                 ## 
-                                ## Retrieve a list of notebook objects.
+                                ## The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of notebook_collection_response
                                 ## 
@@ -67,7 +79,7 @@ module MicrosoftGraph
                                     return GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder.new(@path_parameters, @request_adapter, includePersonalNotebooks)
                                 end
                                 ## 
-                                ## Create a new OneNote notebook.
+                                ## Create new navigation property to notebooks for groups
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of notebook
@@ -83,7 +95,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Notebook.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Retrieve a list of notebook objects.
+                                ## The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -101,7 +113,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Create a new OneNote notebook.
+                                ## Create new navigation property to notebooks for groups
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
@@ -122,7 +134,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Retrieve a list of notebook objects.
+                                # The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
                                 class NotebooksRequestBuilderGetQueryParameters
                                     
                                     ## 

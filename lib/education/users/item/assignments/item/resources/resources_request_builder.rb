@@ -9,6 +9,7 @@ require_relative '../../../item'
 require_relative '../../assignments'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/education_assignment_resource_item_request_builder'
 require_relative './resources'
 
 module MicrosoftGraph
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Education::Users::Item::Assignments::Item::Resources::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                ## Provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.
+                                ## @param education_assignment_resource_id Unique identifier of the item
+                                ## @return a education_assignment_resource_item_request_builder
+                                ## 
+                                def by_education_assignment_resource_id(education_assignment_resource_id)
+                                    raise StandardError, 'education_assignment_resource_id cannot be null' if education_assignment_resource_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["educationAssignmentResource%2Did"] = education_assignment_resource_id
+                                    return MicrosoftGraph::Education::Users::Item::Assignments::Item::Resources::Item::EducationAssignmentResourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                end
+                                ## 
                                 ## Instantiates a new ResourcesRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -37,7 +49,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/resources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                 end
                                 ## 
-                                ## Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+                                ## Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of education_assignment_resource_collection_response
                                 ## 
@@ -51,7 +63,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationAssignmentResourceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
+                                ## Create new navigation property to resources for education
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of education_assignment_resource
@@ -67,7 +79,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationAssignmentResource.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+                                ## Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -85,7 +97,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created.
+                                ## Create new navigation property to resources for education
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
@@ -106,7 +118,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+                                # Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
                                 class ResourcesRequestBuilderGetQueryParameters
                                     
                                     ## 

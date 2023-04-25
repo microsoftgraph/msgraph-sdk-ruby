@@ -7,6 +7,7 @@ require_relative '../../app_management_policies'
 require_relative '../item'
 require_relative './applies_to'
 require_relative './count/count_request_builder'
+require_relative './item/directory_object_item_request_builder'
 
 module MicrosoftGraph
     module Policies
@@ -23,6 +24,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Policies::AppManagementPolicies::Item::AppliesTo::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
+                        ## @param directory_object_id Unique identifier of the item
+                        ## @return a directory_object_item_request_builder
+                        ## 
+                        def by_directory_object_id(directory_object_id)
+                            raise StandardError, 'directory_object_id cannot be null' if directory_object_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["directoryObject%2Did"] = directory_object_id
+                            return MicrosoftGraph::Policies::AppManagementPolicies::Item::AppliesTo::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new AppliesToRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -32,7 +44,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/policies/appManagementPolicies/{appManagementPolicy%2Did}/appliesTo{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## List application and service principal objects that are assigned an appManagementPolicy policy object.
+                        ## Collection of applications and service principals to which the policy is applied.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of directory_object_collection_response
                         ## 
@@ -46,7 +58,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObjectCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## List application and service principal objects that are assigned an appManagementPolicy policy object.
+                        ## Collection of applications and service principals to which the policy is applied.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -65,7 +77,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # List application and service principal objects that are assigned an appManagementPolicy policy object.
+                        # Collection of applications and service principals to which the policy is applied.
                         class AppliesToRequestBuilderGetQueryParameters
                             
                             ## 

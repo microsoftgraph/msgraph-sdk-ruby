@@ -5,6 +5,7 @@ require_relative '../../models/managed_app_policy_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_app_management'
 require_relative './count/count_request_builder'
+require_relative './item/managed_app_policy_item_request_builder'
 require_relative './managed_app_policies'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.
+                ## @param managed_app_policy_id Unique identifier of the item
+                ## @return a managed_app_policy_item_request_builder
+                ## 
+                def by_managed_app_policy_id(managed_app_policy_id)
+                    raise StandardError, 'managed_app_policy_id cannot be null' if managed_app_policy_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["managedAppPolicy%2Did"] = managed_app_policy_id
+                    return MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item::ManagedAppPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new ManagedAppPoliciesRequestBuilder and sets the default values.

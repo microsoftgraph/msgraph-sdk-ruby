@@ -60,7 +60,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Get a user's presence information.
+                ## Get presence from me
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of presence
                 ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Get a user's presence information.
+                ## Get presence from me
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -145,7 +145,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get a user's presence information.
+                # Get presence from me
                 class PresenceRequestBuilderGetQueryParameters
                     
                     ## 

@@ -7,6 +7,7 @@ require_relative '../identity'
 require_relative './available_provider_types/available_provider_types_request_builder'
 require_relative './count/count_request_builder'
 require_relative './identity_providers'
+require_relative './item/identity_provider_base_item_request_builder'
 
 module MicrosoftGraph
     module Identity
@@ -26,6 +27,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Identity::IdentityProviders::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.
+                ## @param identity_provider_base_id Unique identifier of the item
+                ## @return a identity_provider_base_item_request_builder
+                ## 
+                def by_identity_provider_base_id(identity_provider_base_id)
+                    raise StandardError, 'identity_provider_base_id cannot be null' if identity_provider_base_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["identityProviderBase%2Did"] = identity_provider_base_id
+                    return MicrosoftGraph::Identity::IdentityProviders::Item::IdentityProviderBaseItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new IdentityProvidersRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/identity/identityProviders{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For an Azure AD tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, or appleManagedIdentityProvider objects.
+                ## Get identityProviders from identity
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of identity_provider_base_collection_response
                 ## 
@@ -49,7 +61,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityProviderBaseCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create an identity provider object that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD. In Azure AD B2C, this operation can currently create a socialIdentityProvider, or an appleManagedIdentityProvider resource.
+                ## Create new navigation property to identityProviders for identity
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of identity_provider_base
@@ -65,7 +77,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityProviderBase.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For an Azure AD tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, or appleManagedIdentityProvider objects.
+                ## Get identityProviders from identity
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -83,7 +95,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create an identity provider object that is of the type specified in the request body. Among the types of providers derived from identityProviderBase, you can currently create a socialIdentityProvider resource in Azure AD. In Azure AD B2C, this operation can currently create a socialIdentityProvider, or an appleManagedIdentityProvider resource.
+                ## Create new navigation property to identityProviders for identity
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -104,7 +116,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For an Azure AD tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, or appleManagedIdentityProvider objects.
+                # Get identityProviders from identity
                 class IdentityProvidersRequestBuilderGetQueryParameters
                     
                     ## 

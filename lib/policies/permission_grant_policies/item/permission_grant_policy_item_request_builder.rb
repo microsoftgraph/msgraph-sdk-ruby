@@ -5,9 +5,7 @@ require_relative '../../../models/permission_grant_policy'
 require_relative '../../policies'
 require_relative '../permission_grant_policies'
 require_relative './excludes/excludes_request_builder'
-require_relative './excludes/item/permission_grant_condition_set_item_request_builder'
 require_relative './includes/includes_request_builder'
-require_relative './includes/item/permission_grant_condition_set_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -52,17 +50,6 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the excludes property of the microsoft.graph.permissionGrantPolicy entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a permission_grant_condition_set_item_request_builder
-                    ## 
-                    def excludes_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["permissionGrantConditionSet%2Did"] = id
-                        return MicrosoftGraph::Policies::PermissionGrantPolicies::Item::Excludes::Item::PermissionGrantConditionSetItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## The policy that specifies the conditions under which consent can be granted.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of permission_grant_policy
@@ -75,17 +62,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PermissionGrantPolicy.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the includes property of the microsoft.graph.permissionGrantPolicy entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a permission_grant_condition_set_item_request_builder
-                    ## 
-                    def includes_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["permissionGrantConditionSet%2Did"] = id
-                        return MicrosoftGraph::Policies::PermissionGrantPolicies::Item::Includes::Item::PermissionGrantConditionSetItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Update the navigation property permissionGrantPolicies in policies

@@ -14,6 +14,7 @@ require_relative '../item'
 require_relative './attachments'
 require_relative './count/count_request_builder'
 require_relative './create_upload_session/create_upload_session_request_builder'
+require_relative './item/attachment_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -40,6 +41,17 @@ module MicrosoftGraph
                                                 return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::CalendarView::Item::Attachments::CreateUploadSession::CreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
                                             end
                                             ## 
+                                            ## Provides operations to manage the attachments property of the microsoft.graph.event entity.
+                                            ## @param attachment_id Unique identifier of the item
+                                            ## @return a attachment_item_request_builder
+                                            ## 
+                                            def by_attachment_id(attachment_id)
+                                                raise StandardError, 'attachment_id cannot be null' if attachment_id.nil?
+                                                url_tpl_params = @path_parameters.clone
+                                                url_tpl_params["attachment%2Did"] = attachment_id
+                                                return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::CalendarView::Item::Attachments::Item::AttachmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                            end
+                                            ## 
                                             ## Instantiates a new AttachmentsRequestBuilder and sets the default values.
                                             ## @param path_parameters Path parameters for the request
                                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -49,7 +61,7 @@ module MicrosoftGraph
                                                 super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/attachments{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}")
                                             end
                                             ## 
-                                            ## Retrieve a list of attachment objects attached to an event.
+                                            ## The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of attachment_collection_response
                                             ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AttachmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+                                            ## Create new navigation property to attachments for users
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of attachment
@@ -79,7 +91,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Attachment.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Retrieve a list of attachment objects attached to an event.
+                                            ## The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -97,7 +109,7 @@ module MicrosoftGraph
                                                 return request_info
                                             end
                                             ## 
-                                            ## Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+                                            ## Create new navigation property to attachments for users
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
@@ -118,7 +130,7 @@ module MicrosoftGraph
                                             end
 
                                             ## 
-                                            # Retrieve a list of attachment objects attached to an event.
+                                            # The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
                                             class AttachmentsRequestBuilderGetQueryParameters
                                                 
                                                 ## 

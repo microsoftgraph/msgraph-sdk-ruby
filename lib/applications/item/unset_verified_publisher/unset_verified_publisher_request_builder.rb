@@ -23,7 +23,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/applications/{application%2Did}/unsetVerifiedPublisher")
                     end
                     ## 
-                    ## Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.
+                    ## Invoke action unsetVerifiedPublisher
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -37,7 +37,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.
+                    ## Invoke action unsetVerifiedPublisher
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 

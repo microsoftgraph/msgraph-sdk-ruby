@@ -9,6 +9,7 @@ require_relative '../../joined_teams'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './installed_apps'
+require_relative './item/teams_app_installation_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Users::Item::JoinedTeams::Item::InstalledApps::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the installedApps property of the microsoft.graph.team entity.
+                            ## @param teams_app_installation_id Unique identifier of the item
+                            ## @return a teams_app_installation_item_request_builder
+                            ## 
+                            def by_teams_app_installation_id(teams_app_installation_id)
+                                raise StandardError, 'teams_app_installation_id cannot be null' if teams_app_installation_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["teamsAppInstallation%2Did"] = teams_app_installation_id
+                                return MicrosoftGraph::Users::Item::JoinedTeams::Item::InstalledApps::Item::TeamsAppInstallationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new InstalledAppsRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/installedApps{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Retrieve a list of apps installed in the specified team.
+                            ## The apps installed in this team.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of teams_app_installation_collection_response
                             ## 
@@ -49,7 +61,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamsAppInstallationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Install an app to the specified team.
+                            ## Create new navigation property to installedApps for users
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of teams_app_installation
@@ -65,7 +77,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamsAppInstallation.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Retrieve a list of apps installed in the specified team.
+                            ## The apps installed in this team.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -83,7 +95,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Install an app to the specified team.
+                            ## Create new navigation property to installedApps for users
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -104,7 +116,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Retrieve a list of apps installed in the specified team.
+                            # The apps installed in this team.
                             class InstalledAppsRequestBuilderGetQueryParameters
                                 
                                 ## 

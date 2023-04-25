@@ -8,6 +8,7 @@ require_relative '../../../item'
 require_relative '../../conversations'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/conversation_thread_item_request_builder'
 require_relative './threads'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the threads property of the microsoft.graph.conversation entity.
+                            ## @param conversation_thread_id Unique identifier of the item
+                            ## @return a conversation_thread_item_request_builder
+                            ## 
+                            def by_conversation_thread_id(conversation_thread_id)
+                                raise StandardError, 'conversation_thread_id cannot be null' if conversation_thread_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["conversationThread%2Did"] = conversation_thread_id
+                                return MicrosoftGraph::Groups::Item::Conversations::Item::Threads::Item::ConversationThreadItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new ThreadsRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Get all the threads in a group conversation. Note: You can also get all the threads of a group.
+                            ## A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of conversation_thread_collection_response
                             ## 
@@ -49,7 +61,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConversationThreadCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Create a new thread in the specified conversation.  A thread and post are created as specified. Use reply thread to further post to that thread. Or, if you get the post ID, you can also reply to that post in that thread. Note: You can also start a new conversation by first creating a thread.
+                            ## Create new navigation property to threads for groups
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of conversation_thread
@@ -65,7 +77,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConversationThread.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Get all the threads in a group conversation. Note: You can also get all the threads of a group.
+                            ## A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -83,7 +95,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Create a new thread in the specified conversation.  A thread and post are created as specified. Use reply thread to further post to that thread. Or, if you get the post ID, you can also reply to that post in that thread. Note: You can also start a new conversation by first creating a thread.
+                            ## Create new navigation property to threads for groups
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -104,7 +116,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get all the threads in a group conversation. Note: You can also get all the threads of a group.
+                            # A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
                             class ThreadsRequestBuilderGetQueryParameters
                                 
                                 ## 

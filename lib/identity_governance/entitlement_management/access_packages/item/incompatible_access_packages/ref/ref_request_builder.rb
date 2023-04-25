@@ -31,7 +31,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleAccessPackages/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}")
                                 end
                                 ## 
-                                ## Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+                                ## The access packages whose assigned users are ineligible to be assigned this access package.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of string_collection_response
                                 ## 
@@ -61,7 +61,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+                                ## The access packages whose assigned users are ineligible to be assigned this access package.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -99,7 +99,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
+                                # The access packages whose assigned users are ineligible to be assigned this access package.
                                 class RefRequestBuilderGetQueryParameters
                                     
                                     ## 

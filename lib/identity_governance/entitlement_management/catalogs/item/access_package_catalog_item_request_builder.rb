@@ -6,7 +6,6 @@ require_relative '../../../identity_governance'
 require_relative '../../entitlement_management'
 require_relative '../catalogs'
 require_relative './access_packages/access_packages_request_builder'
-require_relative './access_packages/item/access_package_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -22,17 +21,6 @@ module MicrosoftGraph
                         # Provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
                         def access_packages()
                             return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::AccessPackagesRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a access_package_item_request_builder
-                        ## 
-                        def access_packages_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["accessPackage%2Did"] = id
-                            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::AccessPackageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new AccessPackageCatalogItemRequestBuilder and sets the default values.

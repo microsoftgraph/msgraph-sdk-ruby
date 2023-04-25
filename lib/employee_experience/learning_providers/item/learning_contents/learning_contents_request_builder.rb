@@ -7,6 +7,7 @@ require_relative '../../../employee_experience'
 require_relative '../../learning_providers'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/learning_content_item_request_builder'
 require_relative './learning_contents'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::EmployeeExperience::LearningProviders::Item::LearningContents::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the learningContents property of the microsoft.graph.learningProvider entity.
+                        ## @param learning_content_id Unique identifier of the item
+                        ## @return a learning_content_item_request_builder
+                        ## 
+                        def by_learning_content_id(learning_content_id)
+                            raise StandardError, 'learning_content_id cannot be null' if learning_content_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["learningContent%2Did"] = learning_content_id
+                            return MicrosoftGraph::EmployeeExperience::LearningProviders::Item::LearningContents::Item::LearningContentItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new LearningContentsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningContents{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider's content in Viva Learning.
+                        ## Learning catalog items for the provider.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of learning_content_collection_response
                         ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::LearningContent.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider's content in Viva Learning.
+                        ## Learning catalog items for the provider.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider's content in Viva Learning.
+                        # Learning catalog items for the provider.
                         class LearningContentsRequestBuilderGetQueryParameters
                             
                             ## 

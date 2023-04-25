@@ -8,6 +8,7 @@ require_relative '../../item'
 require_relative '../list'
 require_relative './columns'
 require_relative './count/count_request_builder'
+require_relative './item/column_definition_item_request_builder'
 
 module MicrosoftGraph
     module Shares
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Shares::Item::List::Columns::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the columns property of the microsoft.graph.list entity.
+                        ## @param column_definition_id Unique identifier of the item
+                        ## @return a column_definition_item_request_builder
+                        ## 
+                        def by_column_definition_id(column_definition_id)
+                            raise StandardError, 'column_definition_id cannot be null' if column_definition_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["columnDefinition%2Did"] = column_definition_id
+                            return MicrosoftGraph::Shares::Item::List::Columns::Item::ColumnDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new ColumnsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/columns{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [list][list].
+                        ## The collection of field definitions for this list.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of column_definition_collection_response
                         ## 
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ColumnDefinitionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+                        ## Create new navigation property to columns for shares
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of column_definition
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ColumnDefinition.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [list][list].
+                        ## The collection of field definitions for this list.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create a column for a [list][list] with a request that specifies a [columnDefinition][columnDefinition].
+                        ## Create new navigation property to columns for shares
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get the collection of columns represented as [columnDefinition][columnDefinition] resources in a [list][list].
+                        # The collection of field definitions for this list.
                         class ColumnsRequestBuilderGetQueryParameters
                             
                             ## 

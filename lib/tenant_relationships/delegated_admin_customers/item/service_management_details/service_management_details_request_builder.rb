@@ -7,6 +7,7 @@ require_relative '../../../tenant_relationships'
 require_relative '../../delegated_admin_customers'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/delegated_admin_service_management_detail_item_request_builder'
 require_relative './service_management_details'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::TenantRelationships::DelegatedAdminCustomers::Item::ServiceManagementDetails::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the serviceManagementDetails property of the microsoft.graph.delegatedAdminCustomer entity.
+                        ## @param delegated_admin_service_management_detail_id Unique identifier of the item
+                        ## @return a delegated_admin_service_management_detail_item_request_builder
+                        ## 
+                        def by_delegated_admin_service_management_detail_id(delegated_admin_service_management_detail_id)
+                            raise StandardError, 'delegated_admin_service_management_detail_id cannot be null' if delegated_admin_service_management_detail_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["delegatedAdminServiceManagementDetail%2Did"] = delegated_admin_service_management_detail_id
+                            return MicrosoftGraph::TenantRelationships::DelegatedAdminCustomers::Item::ServiceManagementDetails::Item::DelegatedAdminServiceManagementDetailItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new ServiceManagementDetailsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/tenantRelationships/delegatedAdminCustomers/{delegatedAdminCustomer%2Did}/serviceManagementDetails{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
+                        ## Contains the management details of a service in the customer tenant that's managed by delegated administration.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of delegated_admin_service_management_detail_collection_response
                         ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DelegatedAdminServiceManagementDetail.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
+                        ## Contains the management details of a service in the customer tenant that's managed by delegated administration.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
+                        # Contains the management details of a service in the customer tenant that's managed by delegated administration.
                         class ServiceManagementDetailsRequestBuilderGetQueryParameters
                             
                             ## 

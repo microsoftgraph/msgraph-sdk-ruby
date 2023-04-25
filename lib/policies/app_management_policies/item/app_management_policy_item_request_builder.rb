@@ -5,7 +5,6 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../policies'
 require_relative '../app_management_policies'
 require_relative './applies_to/applies_to_request_builder'
-require_relative './applies_to/item/directory_object_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -20,17 +19,6 @@ module MicrosoftGraph
                     # Provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
                     def applies_to()
                         return MicrosoftGraph::Policies::AppManagementPolicies::Item::AppliesTo::AppliesToRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a directory_object_item_request_builder
-                    ## 
-                    def applies_to_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["directoryObject%2Did"] = id
-                        return MicrosoftGraph::Policies::AppManagementPolicies::Item::AppliesTo::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AppManagementPolicyItemRequestBuilder and sets the default values.

@@ -5,16 +5,11 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../drives'
 require_relative '../item'
 require_relative './columns/columns_request_builder'
-require_relative './columns/item/column_definition_item_request_builder'
 require_relative './content_types/content_types_request_builder'
-require_relative './content_types/item/content_type_item_request_builder'
 require_relative './drive/drive_request_builder'
-require_relative './items/item/list_item_item_request_builder'
 require_relative './items/items_request_builder'
 require_relative './list'
-require_relative './operations/item/rich_long_running_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
-require_relative './subscriptions/item/subscription_item_request_builder'
 require_relative './subscriptions/subscriptions_request_builder'
 
 module MicrosoftGraph
@@ -56,17 +51,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::Drives::Item::List::Subscriptions::SubscriptionsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the columns property of the microsoft.graph.list entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a column_definition_item_request_builder
-                    ## 
-                    def columns_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["columnDefinition%2Did"] = id
-                        return MicrosoftGraph::Drives::Item::List::Columns::Item::ColumnDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new ListRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -74,17 +58,6 @@ module MicrosoftGraph
                     ## 
                     def initialize(path_parameters, request_adapter)
                         super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/list{?%24select,%24expand}")
-                    end
-                    ## 
-                    ## Provides operations to manage the contentTypes property of the microsoft.graph.list entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a content_type_item_request_builder
-                    ## 
-                    def content_types_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["contentType%2Did"] = id
-                        return MicrosoftGraph::Drives::Item::List::ContentTypes::Item::ContentTypeItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Delete navigation property list for drives
@@ -115,28 +88,6 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::List.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the items property of the microsoft.graph.list entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a list_item_item_request_builder
-                    ## 
-                    def items_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["listItem%2Did"] = id
-                        return MicrosoftGraph::Drives::Item::List::Items::Item::ListItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the operations property of the microsoft.graph.list entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a rich_long_running_operation_item_request_builder
-                    ## 
-                    def operations_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["richLongRunningOperation%2Did"] = id
-                        return MicrosoftGraph::Drives::Item::List::Operations::Item::RichLongRunningOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Update the navigation property list in drives
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
@@ -151,17 +102,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::List.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the subscriptions property of the microsoft.graph.list entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a subscription_item_request_builder
-                    ## 
-                    def subscriptions_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["subscription%2Did"] = id
-                        return MicrosoftGraph::Drives::Item::List::Subscriptions::Item::SubscriptionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Delete navigation property list for drives

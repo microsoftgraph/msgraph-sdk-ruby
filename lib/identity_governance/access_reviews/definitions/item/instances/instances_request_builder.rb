@@ -10,6 +10,7 @@ require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
 require_relative './instances'
+require_relative './item/access_review_instance_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -25,6 +26,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the instances property of the microsoft.graph.accessReviewScheduleDefinition entity.
+                            ## @param access_review_instance_id Unique identifier of the item
+                            ## @return a access_review_instance_item_request_builder
+                            ## 
+                            def by_access_review_instance_id(access_review_instance_id)
+                                raise StandardError, 'access_review_instance_id cannot be null' if access_review_instance_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["accessReviewInstance%2Did"] = access_review_instance_id
+                                return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::AccessReviewInstanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new InstancesRequestBuilder and sets the default values.
@@ -45,7 +57,7 @@ module MicrosoftGraph
                                 return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
                             end
                             ## 
-                            ## Get a list of the accessReviewInstance objects and their properties.
+                            ## If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of access_review_instance_collection_response
                             ## 
@@ -75,7 +87,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewInstance.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Get a list of the accessReviewInstance objects and their properties.
+                            ## If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -114,7 +126,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get a list of the accessReviewInstance objects and their properties.
+                            # If the accessReviewScheduleDefinition is a recurring access review, instances represent each recurrence. A review that does not recur will have exactly one instance. Instances also represent each unique resource under review in the accessReviewScheduleDefinition. If a review has multiple resources and multiple instances, each resource will have a unique instance for each recurrence.
                             class InstancesRequestBuilderGetQueryParameters
                                 
                                 ## 

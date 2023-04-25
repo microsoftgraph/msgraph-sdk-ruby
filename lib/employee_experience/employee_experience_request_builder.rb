@@ -3,7 +3,6 @@ require_relative '../microsoft_graph'
 require_relative '../models/employee_experience'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './employee_experience'
-require_relative './learning_providers/item/learning_provider_item_request_builder'
 require_relative './learning_providers/learning_providers_request_builder'
 
 module MicrosoftGraph
@@ -39,17 +38,6 @@ module MicrosoftGraph
                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EmployeeExperience.create_from_discriminator_value(pn) }, error_mapping)
-            end
-            ## 
-            ## Provides operations to manage the learningProviders property of the microsoft.graph.employeeExperience entity.
-            ## @param id Unique identifier of the item
-            ## @return a learning_provider_item_request_builder
-            ## 
-            def learning_providers_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["learningProvider%2Did"] = id
-                return MicrosoftGraph::EmployeeExperience::LearningProviders::Item::LearningProviderItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Update employeeExperience

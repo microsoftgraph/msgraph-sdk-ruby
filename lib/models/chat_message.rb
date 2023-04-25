@@ -53,6 +53,9 @@ module MicrosoftGraph
             # List of entities mentioned in the chat message. Supported entities are: user, bot, team, and channel.
             @mentions
             ## 
+            # The messageHistory property
+            @message_history
+            ## 
             # The messageType property
             @message_type
             ## 
@@ -248,6 +251,7 @@ module MicrosoftGraph
                     "lastModifiedDateTime" => lambda {|n| @last_modified_date_time = n.get_date_time_value() },
                     "locale" => lambda {|n| @locale = n.get_string_value() },
                     "mentions" => lambda {|n| @mentions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ChatMessageMention.create_from_discriminator_value(pn) }) },
+                    "messageHistory" => lambda {|n| @message_history = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ChatMessageHistoryItem.create_from_discriminator_value(pn) }) },
                     "messageType" => lambda {|n| @message_type = n.get_enum_value(MicrosoftGraph::Models::ChatMessageType) },
                     "policyViolation" => lambda {|n| @policy_violation = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ChatMessagePolicyViolation.create_from_discriminator_value(pn) }) },
                     "reactions" => lambda {|n| @reactions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ChatMessageReaction.create_from_discriminator_value(pn) }) },
@@ -349,6 +353,21 @@ module MicrosoftGraph
                 @mentions = value
             end
             ## 
+            ## Gets the messageHistory property value. The messageHistory property
+            ## @return a chat_message_history_item
+            ## 
+            def message_history
+                return @message_history
+            end
+            ## 
+            ## Sets the messageHistory property value. The messageHistory property
+            ## @param value Value to set for the message_history property.
+            ## @return a void
+            ## 
+            def message_history=(value)
+                @message_history = value
+            end
+            ## 
             ## Gets the messageType property value. The messageType property
             ## @return a chat_message_type
             ## 
@@ -446,6 +465,7 @@ module MicrosoftGraph
                 writer.write_date_time_value("lastModifiedDateTime", @last_modified_date_time)
                 writer.write_string_value("locale", @locale)
                 writer.write_collection_of_object_values("mentions", @mentions)
+                writer.write_collection_of_object_values("messageHistory", @message_history)
                 writer.write_enum_value("messageType", @message_type)
                 writer.write_object_value("policyViolation", @policy_violation)
                 writer.write_collection_of_object_values("reactions", @reactions)

@@ -7,6 +7,7 @@ require_relative '../../identity'
 require_relative '../conditional_access'
 require_relative './authentication_context_class_references'
 require_relative './count/count_request_builder'
+require_relative './item/authentication_context_class_reference_item_request_builder'
 
 module MicrosoftGraph
     module Identity
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Identity::ConditionalAccess::AuthenticationContextClassReferences::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.
+                    ## @param authentication_context_class_reference_id Unique identifier of the item
+                    ## @return a authentication_context_class_reference_item_request_builder
+                    ## 
+                    def by_authentication_context_class_reference_id(authentication_context_class_reference_id)
+                        raise StandardError, 'authentication_context_class_reference_id cannot be null' if authentication_context_class_reference_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["authenticationContextClassReference%2Did"] = authentication_context_class_reference_id
+                        return MicrosoftGraph::Identity::ConditionalAccess::AuthenticationContextClassReferences::Item::AuthenticationContextClassReferenceItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new AuthenticationContextClassReferencesRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/identity/conditionalAccess/authenticationContextClassReferences{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Retrieve a list of authenticationContextClassReference objects.
+                    ## Read-only. Nullable. Returns a collection of the specified authentication context class references.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of authentication_context_class_reference_collection_response
                     ## 
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AuthenticationContextClassReference.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieve a list of authenticationContextClassReference objects.
+                    ## Read-only. Nullable. Returns a collection of the specified authentication context class references.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve a list of authenticationContextClassReference objects.
+                    # Read-only. Nullable. Returns a collection of the specified authentication context class references.
                     class AuthenticationContextClassReferencesRequestBuilderGetQueryParameters
                         
                         ## 

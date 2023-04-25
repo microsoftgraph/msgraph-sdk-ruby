@@ -7,6 +7,7 @@ require_relative '../../../directory'
 require_relative '../../administrative_units'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/scoped_role_membership_item_request_builder'
 require_relative './scoped_role_members'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Directory::AdministrativeUnits::Item::ScopedRoleMembers::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the scopedRoleMembers property of the microsoft.graph.administrativeUnit entity.
+                        ## @param scoped_role_membership_id Unique identifier of the item
+                        ## @return a scoped_role_membership_item_request_builder
+                        ## 
+                        def by_scoped_role_membership_id(scoped_role_membership_id)
+                            raise StandardError, 'scoped_role_membership_id cannot be null' if scoped_role_membership_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["scopedRoleMembership%2Did"] = scoped_role_membership_id
+                            return MicrosoftGraph::Directory::AdministrativeUnits::Item::ScopedRoleMembers::Item::ScopedRoleMembershipItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new ScopedRoleMembersRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/scopedRoleMembers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## List Azure Active Directory (Azure AD) role assignments with administrative unit scope.
+                        ## Scoped-role members of this administrative unit.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of scoped_role_membership_collection_response
                         ## 
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ScopedRoleMembershipCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Assign an Azure Active Directory (Azure AD) role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
+                        ## Create new navigation property to scopedRoleMembers for directory
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of scoped_role_membership
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ScopedRoleMembership.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## List Azure Active Directory (Azure AD) role assignments with administrative unit scope.
+                        ## Scoped-role members of this administrative unit.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Assign an Azure Active Directory (Azure AD) role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
+                        ## Create new navigation property to scopedRoleMembers for directory
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # List Azure Active Directory (Azure AD) role assignments with administrative unit scope.
+                        # Scoped-role members of this administrative unit.
                         class ScopedRoleMembersRequestBuilderGetQueryParameters
                             
                             ## 
