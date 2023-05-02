@@ -78,7 +78,7 @@ module MicrosoftGraph
                                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                                     end
                                                     ## 
-                                                    ## Retrieve the properties and relationships of chartaxis object.
+                                                    ## Represents the value axis in an axis. Read-only.
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a Fiber of workbook_chart_axis
                                                     ## 
@@ -92,7 +92,7 @@ module MicrosoftGraph
                                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookChartAxis.create_from_discriminator_value(pn) }, error_mapping)
                                                     end
                                                     ## 
-                                                    ## Update the properties of chartaxis object.
+                                                    ## Update the navigation property valueAxis in drives
                                                     ## @param body The request body
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a Fiber of workbook_chart_axis
@@ -124,7 +124,7 @@ module MicrosoftGraph
                                                         return request_info
                                                     end
                                                     ## 
-                                                    ## Retrieve the properties and relationships of chartaxis object.
+                                                    ## Represents the value axis in an axis. Read-only.
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a request_information
                                                     ## 
@@ -142,7 +142,7 @@ module MicrosoftGraph
                                                         return request_info
                                                     end
                                                     ## 
-                                                    ## Update the properties of chartaxis object.
+                                                    ## Update the navigation property valueAxis in drives
                                                     ## @param body The request body
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a request_information
@@ -163,7 +163,7 @@ module MicrosoftGraph
                                                     end
 
                                                     ## 
-                                                    # Retrieve the properties and relationships of chartaxis object.
+                                                    # Represents the value axis in an axis. Read-only.
                                                     class ValueAxisRequestBuilderGetQueryParameters
                                                         
                                                         ## 

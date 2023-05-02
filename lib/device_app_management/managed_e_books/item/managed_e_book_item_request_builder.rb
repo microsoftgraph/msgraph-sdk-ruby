@@ -6,12 +6,9 @@ require_relative '../../device_app_management'
 require_relative '../managed_e_books'
 require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
-require_relative './assignments/item/managed_e_book_assignment_item_request_builder'
 require_relative './device_states/device_states_request_builder'
-require_relative './device_states/item/device_install_state_item_request_builder'
 require_relative './install_summary/install_summary_request_builder'
 require_relative './item'
-require_relative './user_state_summary/item/user_install_state_summary_item_request_builder'
 require_relative './user_state_summary/user_state_summary_request_builder'
 
 module MicrosoftGraph
@@ -48,17 +45,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::UserStateSummary::UserStateSummaryRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the assignments property of the microsoft.graph.managedEBook entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a managed_e_book_assignment_item_request_builder
-                    ## 
-                    def assignments_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["managedEBookAssignment%2Did"] = id
-                        return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::Assignments::Item::ManagedEBookAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new ManagedEBookItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -80,17 +66,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the deviceStates property of the microsoft.graph.managedEBook entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a device_install_state_item_request_builder
-                    ## 
-                    def device_states_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["deviceInstallState%2Did"] = id
-                        return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::DeviceStates::Item::DeviceInstallStateItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## The Managed eBook.
@@ -175,17 +150,6 @@ module MicrosoftGraph
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
-                    end
-                    ## 
-                    ## Provides operations to manage the userStateSummary property of the microsoft.graph.managedEBook entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a user_install_state_summary_item_request_builder
-                    ## 
-                    def user_state_summary_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["userInstallStateSummary%2Did"] = id
-                        return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::UserStateSummary::Item::UserInstallStateSummaryItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
 
                     ## 

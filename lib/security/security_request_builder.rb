@@ -3,16 +3,11 @@ require_relative '../microsoft_graph'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/security_model'
 require_relative './alerts/alerts_request_builder'
-require_relative './alerts/item/alert_item_request_builder'
 require_relative './alerts_v2/alerts_v2_request_builder'
-require_relative './alerts_v2/item/alert_item_request_builder'
 require_relative './attack_simulation/attack_simulation_request_builder'
 require_relative './cases/cases_request_builder'
 require_relative './incidents/incidents_request_builder'
-require_relative './incidents/item/incident_item_request_builder'
-require_relative './secure_score_control_profiles/item/secure_score_control_profile_item_request_builder'
 require_relative './secure_score_control_profiles/secure_score_control_profiles_request_builder'
-require_relative './secure_scores/item/secure_score_item_request_builder'
 require_relative './secure_scores/secure_scores_request_builder'
 require_relative './security'
 require_relative './security_run_hunting_query/security_run_hunting_query_request_builder'
@@ -76,28 +71,6 @@ module MicrosoftGraph
                 return MicrosoftGraph::Security::TriggerTypes::TriggerTypesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
-            ## Provides operations to manage the alerts property of the microsoft.graph.security entity.
-            ## @param id Unique identifier of the item
-            ## @return a alert_item_request_builder
-            ## 
-            def alerts_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["alert%2Did"] = id
-                return MicrosoftGraph::Security::Alerts::Item::AlertItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.
-            ## @param id Unique identifier of the item
-            ## @return a alert_item_request_builder
-            ## 
-            def alerts_v2_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["alert%2Did"] = id
-                return MicrosoftGraph::Security::Alerts_v2::Item::AlertItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
             ## Instantiates a new SecurityRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request
             ## @param request_adapter The request adapter to use to execute the requests.
@@ -121,17 +94,6 @@ module MicrosoftGraph
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityModel.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Provides operations to manage the incidents property of the microsoft.graph.security entity.
-            ## @param id Unique identifier of the item
-            ## @return a incident_item_request_builder
-            ## 
-            def incidents_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["incident%2Did"] = id
-                return MicrosoftGraph::Security::Incidents::Item::IncidentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
             ## Update security
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
@@ -146,28 +108,6 @@ module MicrosoftGraph
                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SecurityModel.create_from_discriminator_value(pn) }, error_mapping)
-            end
-            ## 
-            ## Provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.
-            ## @param id Unique identifier of the item
-            ## @return a secure_score_control_profile_item_request_builder
-            ## 
-            def secure_score_control_profiles_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["secureScoreControlProfile%2Did"] = id
-                return MicrosoftGraph::Security::SecureScoreControlProfiles::Item::SecureScoreControlProfileItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the secureScores property of the microsoft.graph.security entity.
-            ## @param id Unique identifier of the item
-            ## @return a secure_score_item_request_builder
-            ## 
-            def secure_scores_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["secureScore%2Did"] = id
-                return MicrosoftGraph::Security::SecureScores::Item::SecureScoreItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Get security

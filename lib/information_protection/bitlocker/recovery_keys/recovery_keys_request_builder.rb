@@ -5,6 +5,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../information_protection'
 require_relative '../bitlocker'
 require_relative './count/count_request_builder'
+require_relative './item/bitlocker_recovery_key_item_request_builder'
 require_relative './recovery_keys'
 
 module MicrosoftGraph
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::InformationProtection::Bitlocker::RecoveryKeys::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
+                    ## @param bitlocker_recovery_key_id Unique identifier of the item
+                    ## @return a bitlocker_recovery_key_item_request_builder
+                    ## 
+                    def by_bitlocker_recovery_key_id(bitlocker_recovery_key_id)
+                        raise StandardError, 'bitlocker_recovery_key_id cannot be null' if bitlocker_recovery_key_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["bitlockerRecoveryKey%2Did"] = bitlocker_recovery_key_id
+                        return MicrosoftGraph::InformationProtection::Bitlocker::RecoveryKeys::Item::BitlockerRecoveryKeyItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new RecoveryKeysRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -30,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/informationProtection/bitlocker/recoveryKeys{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the **key** property. For information about how to read the **key** property, see Get bitlockerRecoveryKey.
+                    ## The recovery keys associated with the bitlocker entity.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of bitlocker_recovery_key_collection_response
                     ## 
@@ -44,7 +56,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BitlockerRecoveryKeyCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the **key** property. For information about how to read the **key** property, see Get bitlockerRecoveryKey.
+                    ## The recovery keys associated with the bitlocker entity.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the **key** property. For information about how to read the **key** property, see Get bitlockerRecoveryKey.
+                    # The recovery keys associated with the bitlocker entity.
                     class RecoveryKeysRequestBuilderGetQueryParameters
                         
                         ## 

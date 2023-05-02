@@ -6,6 +6,7 @@ require_relative '../../domains'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './domain_name_references'
+require_relative './item/directory_object_item_request_builder'
 
 module MicrosoftGraph
     module Domains
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Domains::Item::DomainNameReferences::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the domainNameReferences property of the microsoft.graph.domain entity.
+                    ## @param directory_object_id Unique identifier of the item
+                    ## @return a directory_object_item_request_builder
+                    ## 
+                    def by_directory_object_id(directory_object_id)
+                        raise StandardError, 'directory_object_id cannot be null' if directory_object_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["directoryObject%2Did"] = directory_object_id
+                        return MicrosoftGraph::Domains::Item::DomainNameReferences::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new DomainNameReferencesRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -30,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/domains/{domain%2Did}/domainNameReferences{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Retrieve a list of directoryObject with a reference to the domain. The returned list will contain all directory objects that have a dependency on the domain.
+                    ## The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of directory_object_collection_response
                     ## 
@@ -44,7 +56,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObjectCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieve a list of directoryObject with a reference to the domain. The returned list will contain all directory objects that have a dependency on the domain.
+                    ## The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve a list of directoryObject with a reference to the domain. The returned list will contain all directory objects that have a dependency on the domain.
+                    # The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.
                     class DomainNameReferencesRequestBuilderGetQueryParameters
                         
                         ## 

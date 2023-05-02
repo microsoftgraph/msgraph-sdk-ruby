@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../me'
 require_relative './calendar_groups'
 require_relative './count/count_request_builder'
+require_relative './item/calendar_group_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Me::CalendarGroups::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the calendarGroups property of the microsoft.graph.user entity.
+                ## @param calendar_group_id Unique identifier of the item
+                ## @return a calendar_group_item_request_builder
+                ## 
+                def by_calendar_group_id(calendar_group_id)
+                    raise StandardError, 'calendar_group_id cannot be null' if calendar_group_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["calendarGroup%2Did"] = calendar_group_id
+                    return MicrosoftGraph::Me::CalendarGroups::Item::CalendarGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new CalendarGroupsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/me/calendarGroups{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}")
                 end
                 ## 
-                ## Get the user's calendar groups.
+                ## The user's calendar groups. Read-only. Nullable.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of calendar_group_collection_response
                 ## 
@@ -43,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CalendarGroupCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Use this API to create a new CalendarGroup.
+                ## Create new navigation property to calendarGroups for me
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of calendar_group
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CalendarGroup.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get the user's calendar groups.
+                ## The user's calendar groups. Read-only. Nullable.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Use this API to create a new CalendarGroup.
+                ## Create new navigation property to calendarGroups for me
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get the user's calendar groups.
+                # The user's calendar groups. Read-only. Nullable.
                 class CalendarGroupsRequestBuilderGetQueryParameters
                     
                     ## 

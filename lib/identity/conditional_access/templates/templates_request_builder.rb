@@ -5,6 +5,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../identity'
 require_relative '../conditional_access'
 require_relative './count/count_request_builder'
+require_relative './item/conditional_access_template_item_request_builder'
 require_relative './templates'
 
 module MicrosoftGraph
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Identity::ConditionalAccess::Templates::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
+                    ## @param conditional_access_template_id Unique identifier of the item
+                    ## @return a conditional_access_template_item_request_builder
+                    ## 
+                    def by_conditional_access_template_id(conditional_access_template_id)
+                        raise StandardError, 'conditional_access_template_id cannot be null' if conditional_access_template_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["conditionalAccessTemplate%2Did"] = conditional_access_template_id
+                        return MicrosoftGraph::Identity::ConditionalAccess::Templates::Item::ConditionalAccessTemplateItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new TemplatesRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -30,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/identity/conditionalAccess/templates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get a list of the conditionalAccessTemplate objects and their properties.
+                    ## Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of conditional_access_template_collection_response
                     ## 
@@ -44,7 +56,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConditionalAccessTemplateCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get a list of the conditionalAccessTemplate objects and their properties.
+                    ## Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get a list of the conditionalAccessTemplate objects and their properties.
+                    # Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
                     class TemplatesRequestBuilderGetQueryParameters
                         
                         ## 

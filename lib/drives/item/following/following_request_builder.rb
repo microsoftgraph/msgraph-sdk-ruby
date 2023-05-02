@@ -6,6 +6,7 @@ require_relative '../../drives'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './following'
+require_relative './item/drive_item_item_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Drives::Item::Following::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the following property of the microsoft.graph.drive entity.
+                    ## @param drive_item_id Unique identifier of the item
+                    ## @return a drive_item_item_request_builder
+                    ## 
+                    def by_drive_item_id(drive_item_id)
+                        raise StandardError, 'drive_item_id cannot be null' if drive_item_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["driveItem%2Did"] = drive_item_id
+                        return MicrosoftGraph::Drives::Item::Following::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new FollowingRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -30,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/following{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## List the items that have been followed by the signed in user.This collection includes items that are in the user's drive as well as items they have access to from other drives.
+                    ## The list of items the user is following. Only in OneDrive for Business.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of drive_item_collection_response
                     ## 
@@ -44,7 +56,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DriveItemCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## List the items that have been followed by the signed in user.This collection includes items that are in the user's drive as well as items they have access to from other drives.
+                    ## The list of items the user is following. Only in OneDrive for Business.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # List the items that have been followed by the signed in user.This collection includes items that are in the user's drive as well as items they have access to from other drives.
+                    # The list of items the user is following. Only in OneDrive for Business.
                     class FollowingRequestBuilderGetQueryParameters
                         
                         ## 

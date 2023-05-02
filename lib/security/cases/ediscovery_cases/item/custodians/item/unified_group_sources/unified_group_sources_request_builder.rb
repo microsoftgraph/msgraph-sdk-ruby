@@ -10,6 +10,7 @@ require_relative '../../../item'
 require_relative '../../custodians'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/unified_group_source_item_request_builder'
 require_relative './unified_group_sources'
 
 module MicrosoftGraph
@@ -30,6 +31,17 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::UnifiedGroupSources::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
+                                    ## Provides operations to manage the unifiedGroupSources property of the microsoft.graph.security.ediscoveryCustodian entity.
+                                    ## @param unified_group_source_id Unique identifier of the item
+                                    ## @return a unified_group_source_item_request_builder
+                                    ## 
+                                    def by_unified_group_source_id(unified_group_source_id)
+                                        raise StandardError, 'unified_group_source_id cannot be null' if unified_group_source_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["unifiedGroupSource%2Did"] = unified_group_source_id
+                                        return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::UnifiedGroupSources::Item::UnifiedGroupSourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                    end
+                                    ## 
                                     ## Instantiates a new UnifiedGroupSourcesRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -39,7 +51,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians/{ediscoveryCustodian%2Did}/unifiedGroupSources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
+                                    ## Data source entity for groups associated with the custodian.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of unified_group_source_collection_response
                                     ## 
@@ -53,7 +65,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::UnifiedGroupSourceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Create a new unifiedGroupSource object associated with an eDiscovery custodian.
+                                    ## Create new navigation property to unifiedGroupSources for security
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of unified_group_source
@@ -69,7 +81,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::UnifiedGroupSource.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
+                                    ## Data source entity for groups associated with the custodian.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -87,7 +99,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Create a new unifiedGroupSource object associated with an eDiscovery custodian.
+                                    ## Create new navigation property to unifiedGroupSources for security
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
@@ -108,7 +120,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
+                                    # Data source entity for groups associated with the custodian.
                                     class UnifiedGroupSourcesRequestBuilderGetQueryParameters
                                         
                                         ## 

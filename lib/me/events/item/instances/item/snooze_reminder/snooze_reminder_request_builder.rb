@@ -29,7 +29,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/me/events/{event%2Did}/instances/{event%2Did1}/snoozeReminder")
                                 end
                                 ## 
-                                ## Postpone a reminder for an event in a user calendar until a new time.
+                                ## Invoke action snoozeReminder
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
@@ -45,7 +45,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Postpone a reminder for an event in a user calendar until a new time.
+                                ## Invoke action snoozeReminder
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information

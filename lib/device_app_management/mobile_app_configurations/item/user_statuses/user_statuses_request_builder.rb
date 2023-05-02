@@ -7,6 +7,7 @@ require_relative '../../../device_app_management'
 require_relative '../../mobile_app_configurations'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/managed_device_mobile_app_configuration_user_status_item_request_builder'
 require_relative './user_statuses'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Item::UserStatuses::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the userStatuses property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.
+                        ## @param managed_device_mobile_app_configuration_user_status_id Unique identifier of the item
+                        ## @return a managed_device_mobile_app_configuration_user_status_item_request_builder
+                        ## 
+                        def by_managed_device_mobile_app_configuration_user_status_id(managed_device_mobile_app_configuration_user_status_id)
+                            raise StandardError, 'managed_device_mobile_app_configuration_user_status_id cannot be null' if managed_device_mobile_app_configuration_user_status_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["managedDeviceMobileAppConfigurationUserStatus%2Did"] = managed_device_mobile_app_configuration_user_status_id
+                            return MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Item::UserStatuses::Item::ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new UserStatusesRequestBuilder and sets the default values.

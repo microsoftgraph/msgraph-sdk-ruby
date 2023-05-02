@@ -8,6 +8,7 @@ require_relative '../../../item'
 require_relative '../../sites'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/rich_long_running_operation_item_request_builder'
 require_relative './operations'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Groups::Item::Sites::Item::Operations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the operations property of the microsoft.graph.site entity.
+                            ## @param rich_long_running_operation_id Unique identifier of the item
+                            ## @return a rich_long_running_operation_item_request_builder
+                            ## 
+                            def by_rich_long_running_operation_id(rich_long_running_operation_id)
+                                raise StandardError, 'rich_long_running_operation_id cannot be null' if rich_long_running_operation_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["richLongRunningOperation%2Did"] = rich_long_running_operation_id
+                                return MicrosoftGraph::Groups::Item::Sites::Item::Operations::Item::RichLongRunningOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new OperationsRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/operations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Get a list of rich long-running operations associated with a site.
+                            ## The collection of long-running operations on the site.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of rich_long_running_operation_collection_response
                             ## 
@@ -65,7 +77,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RichLongRunningOperation.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Get a list of rich long-running operations associated with a site.
+                            ## The collection of long-running operations on the site.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -104,7 +116,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get a list of rich long-running operations associated with a site.
+                            # The collection of long-running operations on the site.
                             class OperationsRequestBuilderGetQueryParameters
                                 
                                 ## 

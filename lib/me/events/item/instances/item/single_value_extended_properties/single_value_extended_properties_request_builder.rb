@@ -9,6 +9,7 @@ require_relative '../../../item'
 require_relative '../../instances'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/single_value_legacy_extended_property_item_request_builder'
 require_relative './single_value_extended_properties'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Me::Events::Item::Instances::Item::SingleValueExtendedProperties::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
+                                ## @param single_value_legacy_extended_property_id Unique identifier of the item
+                                ## @return a single_value_legacy_extended_property_item_request_builder
+                                ## 
+                                def by_single_value_legacy_extended_property_id(single_value_legacy_extended_property_id)
+                                    raise StandardError, 'single_value_legacy_extended_property_id cannot be null' if single_value_legacy_extended_property_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["singleValueLegacyExtendedProperty%2Did"] = single_value_legacy_extended_property_id
+                                    return MicrosoftGraph::Me::Events::Item::Instances::Item::SingleValueExtendedProperties::Item::SingleValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new SingleValueExtendedPropertiesRequestBuilder and sets the default values.

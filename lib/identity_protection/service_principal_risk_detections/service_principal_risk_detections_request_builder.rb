@@ -5,6 +5,7 @@ require_relative '../../models/service_principal_risk_detection'
 require_relative '../../models/service_principal_risk_detection_collection_response'
 require_relative '../identity_protection'
 require_relative './count/count_request_builder'
+require_relative './item/service_principal_risk_detection_item_request_builder'
 require_relative './service_principal_risk_detections'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::IdentityProtection::ServicePrincipalRiskDetections::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the servicePrincipalRiskDetections property of the microsoft.graph.identityProtectionRoot entity.
+                ## @param service_principal_risk_detection_id Unique identifier of the item
+                ## @return a service_principal_risk_detection_item_request_builder
+                ## 
+                def by_service_principal_risk_detection_id(service_principal_risk_detection_id)
+                    raise StandardError, 'service_principal_risk_detection_id cannot be null' if service_principal_risk_detection_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["servicePrincipalRiskDetection%2Did"] = service_principal_risk_detection_id
+                    return MicrosoftGraph::IdentityProtection::ServicePrincipalRiskDetections::Item::ServicePrincipalRiskDetectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new ServicePrincipalRiskDetectionsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/identityProtection/servicePrincipalRiskDetections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve the properties of a collection of servicePrincipalRiskDetection objects.
+                ## Represents information about detected at-risk service principals in an Azure AD tenant.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of service_principal_risk_detection_collection_response
                 ## 
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ServicePrincipalRiskDetection.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve the properties of a collection of servicePrincipalRiskDetection objects.
+                ## Represents information about detected at-risk service principals in an Azure AD tenant.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve the properties of a collection of servicePrincipalRiskDetection objects.
+                # Represents information about detected at-risk service principals in an Azure AD tenant.
                 class ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters
                     
                     ## 

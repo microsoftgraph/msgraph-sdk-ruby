@@ -7,6 +7,7 @@ require_relative '../../users'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './create_or_get/create_or_get_request_builder'
+require_relative './item/online_meeting_item_request_builder'
 require_relative './online_meetings'
 
 module MicrosoftGraph
@@ -28,6 +29,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Users::Item::OnlineMeetings::CreateOrGet::CreateOrGetRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
+                    ## @param online_meeting_id Unique identifier of the item
+                    ## @return a online_meeting_item_request_builder
+                    ## 
+                    def by_online_meeting_id(online_meeting_id)
+                        raise StandardError, 'online_meeting_id cannot be null' if online_meeting_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["onlineMeeting%2Did"] = online_meeting_id
+                        return MicrosoftGraph::Users::Item::OnlineMeetings::Item::OnlineMeetingItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new OnlineMeetingsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -37,7 +49,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/onlineMeetings{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions.
+                    ## Get onlineMeetings from users
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of online_meeting_collection_response
                     ## 
@@ -51,7 +63,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnlineMeetingCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create an online meeting on behalf of a user.
+                    ## Create new navigation property to onlineMeetings for users
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of online_meeting
@@ -67,7 +79,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnlineMeeting.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions.
+                    ## Get onlineMeetings from users
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -85,7 +97,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Create an online meeting on behalf of a user.
+                    ## Create new navigation property to onlineMeetings for users
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -106,7 +118,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report is an online meeting artifact. For details, see Online meeting artifacts and permissions.
+                    # Get onlineMeetings from users
                     class OnlineMeetingsRequestBuilderGetQueryParameters
                         
                         ## 

@@ -29,7 +29,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/calendarView/{bookingAppointment%2Did}/cancel")
                                 end
                                 ## 
-                                ## Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
+                                ## Cancels the giving booking appointment, sending a message to the involved parties.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
@@ -45,7 +45,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Cancel the specified bookingAppointment in the specified bookingBusiness and send a message to the involved customer and staff members.
+                                ## Cancels the giving booking appointment, sending a message to the involved parties.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information

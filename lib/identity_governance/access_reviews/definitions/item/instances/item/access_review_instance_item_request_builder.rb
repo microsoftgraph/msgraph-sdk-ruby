@@ -11,13 +11,10 @@ require_relative './accept_recommendations/accept_recommendations_request_builde
 require_relative './apply_decisions/apply_decisions_request_builder'
 require_relative './batch_record_decisions/batch_record_decisions_request_builder'
 require_relative './contacted_reviewers/contacted_reviewers_request_builder'
-require_relative './contacted_reviewers/item/access_review_reviewer_item_request_builder'
 require_relative './decisions/decisions_request_builder'
-require_relative './decisions/item/access_review_instance_decision_item_item_request_builder'
 require_relative './item'
 require_relative './reset_decisions/reset_decisions_request_builder'
 require_relative './send_reminder/send_reminder_request_builder'
-require_relative './stages/item/access_review_stage_item_request_builder'
 require_relative './stages/stages_request_builder'
 require_relative './stop/stop_request_builder'
 
@@ -87,28 +84,6 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition%2Did}/instances/{accessReviewInstance%2Did}{?%24select,%24expand}")
                                 end
                                 ## 
-                                ## Provides operations to manage the contactedReviewers property of the microsoft.graph.accessReviewInstance entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a access_review_reviewer_item_request_builder
-                                ## 
-                                def contacted_reviewers_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["accessReviewReviewer%2Did"] = id
-                                    return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::ContactedReviewers::Item::AccessReviewReviewerItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
-                                ## Provides operations to manage the decisions property of the microsoft.graph.accessReviewInstance entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a access_review_instance_decision_item_item_request_builder
-                                ## 
-                                def decisions_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["accessReviewInstanceDecisionItem%2Did"] = id
-                                    return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Decisions::Item::AccessReviewInstanceDecisionItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
                                 ## Delete navigation property instances for identityGovernance
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
@@ -151,17 +126,6 @@ module MicrosoftGraph
                                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewInstance.create_from_discriminator_value(pn) }, error_mapping)
-                                end
-                                ## 
-                                ## Provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a access_review_stage_item_request_builder
-                                ## 
-                                def stages_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["accessReviewStage%2Did"] = id
-                                    return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::Stages::Item::AccessReviewStageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Delete navigation property instances for identityGovernance

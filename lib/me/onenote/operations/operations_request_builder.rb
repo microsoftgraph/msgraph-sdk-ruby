@@ -6,6 +6,7 @@ require_relative '../../../models/onenote_operation_collection_response'
 require_relative '../../me'
 require_relative '../onenote'
 require_relative './count/count_request_builder'
+require_relative './item/onenote_operation_item_request_builder'
 require_relative './operations'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Me::Onenote::Operations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the operations property of the microsoft.graph.onenote entity.
+                    ## @param onenote_operation_id Unique identifier of the item
+                    ## @return a onenote_operation_item_request_builder
+                    ## 
+                    def by_onenote_operation_id(onenote_operation_id)
+                        raise StandardError, 'onenote_operation_id cannot be null' if onenote_operation_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["onenoteOperation%2Did"] = onenote_operation_id
+                        return MicrosoftGraph::Me::Onenote::Operations::Item::OnenoteOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new OperationsRequestBuilder and sets the default values.

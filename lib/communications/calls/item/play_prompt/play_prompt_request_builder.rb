@@ -26,7 +26,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/communications/calls/{call%2Did}/playPrompt")
                         end
                         ## 
-                        ## Play a prompt in the call. For more information about how to handle operations, see commsOperation
+                        ## Invoke action playPrompt
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of play_prompt_operation
@@ -42,7 +42,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PlayPromptOperation.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Play a prompt in the call. For more information about how to handle operations, see commsOperation
+                        ## Invoke action playPrompt
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

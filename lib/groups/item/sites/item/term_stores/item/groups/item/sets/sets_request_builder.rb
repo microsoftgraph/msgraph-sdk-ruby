@@ -12,6 +12,7 @@ require_relative '../../../item'
 require_relative '../../groups'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/set_item_request_builder'
 require_relative './sets'
 
 module MicrosoftGraph
@@ -34,6 +35,17 @@ module MicrosoftGraph
                                                 return MicrosoftGraph::Groups::Item::Sites::Item::TermStores::Item::Groups::Item::Sets::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                             end
                                             ## 
+                                            ## Provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
+                                            ## @param set_id Unique identifier of the item
+                                            ## @return a set_item_request_builder
+                                            ## 
+                                            def by_set_id(set_id)
+                                                raise StandardError, 'set_id cannot be null' if set_id.nil?
+                                                url_tpl_params = @path_parameters.clone
+                                                url_tpl_params["set%2Did"] = set_id
+                                                return MicrosoftGraph::Groups::Item::Sites::Item::TermStores::Item::Groups::Item::Sets::Item::SetItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                            end
+                                            ## 
                                             ## Instantiates a new SetsRequestBuilder and sets the default values.
                                             ## @param path_parameters Path parameters for the request
                                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -43,7 +55,7 @@ module MicrosoftGraph
                                                 super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStores/{store%2Did}/groups/{group%2Did1}/sets{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                             end
                                             ## 
-                                            ## Get a list of the set objects and their properties.
+                                            ## All sets under the group in a term [store].
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of set_collection_response
                                             ## 
@@ -73,7 +85,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Set.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Get a list of the set objects and their properties.
+                                            ## All sets under the group in a term [store].
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -112,7 +124,7 @@ module MicrosoftGraph
                                             end
 
                                             ## 
-                                            # Get a list of the set objects and their properties.
+                                            # All sets under the group in a term [store].
                                             class SetsRequestBuilderGetQueryParameters
                                                 
                                                 ## 

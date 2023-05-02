@@ -31,7 +31,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/categories/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}")
                                 end
                                 ## 
-                                ## List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+                                ## When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of string_collection_response
                                 ## 
@@ -61,7 +61,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+                                ## When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -99,7 +99,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+                                # When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
                                 class RefRequestBuilderGetQueryParameters
                                     
                                     ## 

@@ -7,6 +7,7 @@ require_relative '../../../users'
 require_relative '../../item'
 require_relative '../authentication'
 require_relative './count/count_request_builder'
+require_relative './item/long_running_operation_item_request_builder'
 require_relative './operations'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Users::Item::Authentication::Operations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the operations property of the microsoft.graph.authentication entity.
+                        ## @param long_running_operation_id Unique identifier of the item
+                        ## @return a long_running_operation_item_request_builder
+                        ## 
+                        def by_long_running_operation_id(long_running_operation_id)
+                            raise StandardError, 'long_running_operation_id cannot be null' if long_running_operation_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["longRunningOperation%2Did"] = long_running_operation_id
+                            return MicrosoftGraph::Users::Item::Authentication::Operations::Item::LongRunningOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new OperationsRequestBuilder and sets the default values.

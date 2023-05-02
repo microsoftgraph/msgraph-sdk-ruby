@@ -7,6 +7,7 @@ require_relative '../../../users'
 require_relative '../../item'
 require_relative '../outlook'
 require_relative './count/count_request_builder'
+require_relative './item/outlook_category_item_request_builder'
 require_relative './master_categories'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Users::Item::Outlook::MasterCategories::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
+                        ## @param outlook_category_id Unique identifier of the item
+                        ## @return a outlook_category_item_request_builder
+                        ## 
+                        def by_outlook_category_id(outlook_category_id)
+                            raise StandardError, 'outlook_category_id cannot be null' if outlook_category_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["outlookCategory%2Did"] = outlook_category_id
+                            return MicrosoftGraph::Users::Item::Outlook::MasterCategories::Item::OutlookCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new MasterCategoriesRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/outlook/masterCategories{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}")
                         end
                         ## 
-                        ## Get all the categories that have been defined for the user.
+                        ## A list of categories defined for the user.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of outlook_category_collection_response
                         ## 
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OutlookCategoryCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create an outlookCategory object in the user's master list of categories.
+                        ## Create new navigation property to masterCategories for users
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of outlook_category
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OutlookCategory.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get all the categories that have been defined for the user.
+                        ## A list of categories defined for the user.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create an outlookCategory object in the user's master list of categories.
+                        ## Create new navigation property to masterCategories for users
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get all the categories that have been defined for the user.
+                        # A list of categories defined for the user.
                         class MasterCategoriesRequestBuilderGetQueryParameters
                             
                             ## 

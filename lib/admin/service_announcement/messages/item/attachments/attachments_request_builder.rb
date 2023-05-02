@@ -9,6 +9,7 @@ require_relative '../../messages'
 require_relative '../item'
 require_relative './attachments'
 require_relative './count/count_request_builder'
+require_relative './item/service_announcement_attachment_item_request_builder'
 
 module MicrosoftGraph
     module Admin
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Item::Attachments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the attachments property of the microsoft.graph.serviceUpdateMessage entity.
+                            ## @param service_announcement_attachment_id Unique identifier of the item
+                            ## @return a service_announcement_attachment_item_request_builder
+                            ## 
+                            def by_service_announcement_attachment_id(service_announcement_attachment_id)
+                                raise StandardError, 'service_announcement_attachment_id cannot be null' if service_announcement_attachment_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["serviceAnnouncementAttachment%2Did"] = service_announcement_attachment_id
+                                return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Item::Attachments::Item::ServiceAnnouncementAttachmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new AttachmentsRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/admin/serviceAnnouncement/messages/{serviceUpdateMessage%2Did}/attachments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Get the list of attachments associated with a service message.
+                            ## A collection of serviceAnnouncementAttachments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of service_announcement_attachment_collection_response
                             ## 
@@ -65,7 +77,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ServiceAnnouncementAttachment.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Get the list of attachments associated with a service message.
+                            ## A collection of serviceAnnouncementAttachments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -104,7 +116,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get the list of attachments associated with a service message.
+                            # A collection of serviceAnnouncementAttachments.
                             class AttachmentsRequestBuilderGetQueryParameters
                                 
                                 ## 

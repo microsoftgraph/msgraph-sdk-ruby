@@ -5,6 +5,7 @@ require_relative '../../models/managed_device_mobile_app_configuration_collectio
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_app_management'
 require_relative './count/count_request_builder'
+require_relative './item/managed_device_mobile_app_configuration_item_request_builder'
 require_relative './mobile_app_configurations'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the mobileAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
+                ## @param managed_device_mobile_app_configuration_id Unique identifier of the item
+                ## @return a managed_device_mobile_app_configuration_item_request_builder
+                ## 
+                def by_managed_device_mobile_app_configuration_id(managed_device_mobile_app_configuration_id)
+                    raise StandardError, 'managed_device_mobile_app_configuration_id cannot be null' if managed_device_mobile_app_configuration_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["managedDeviceMobileAppConfiguration%2Did"] = managed_device_mobile_app_configuration_id
+                    return MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Item::ManagedDeviceMobileAppConfigurationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new MobileAppConfigurationsRequestBuilder and sets the default values.

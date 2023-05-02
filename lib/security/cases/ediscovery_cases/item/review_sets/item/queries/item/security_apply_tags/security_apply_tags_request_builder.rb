@@ -35,7 +35,7 @@ module MicrosoftGraph
                                                 super(path_parameters, request_adapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/queries/{ediscoveryReviewSetQuery%2Did}/security.applyTags")
                                             end
                                             ## 
-                                            ## Apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.
+                                            ## Invoke action applyTags
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of void
@@ -51,7 +51,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                             end
                                             ## 
-                                            ## Apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.
+                                            ## Invoke action applyTags
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information

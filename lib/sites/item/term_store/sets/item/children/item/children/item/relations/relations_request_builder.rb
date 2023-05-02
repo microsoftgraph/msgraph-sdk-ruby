@@ -13,6 +13,7 @@ require_relative '../../../item'
 require_relative '../../children'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/relation_item_request_builder'
 require_relative './relations'
 
 module MicrosoftGraph
@@ -34,6 +35,17 @@ module MicrosoftGraph
                                                 # Provides operations to count the resources in the collection.
                                                 def count()
                                                     return MicrosoftGraph::Sites::Item::TermStore::Sets::Item::Children::Item::Children::Item::Relations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                ## Provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
+                                                ## @param relation_id Unique identifier of the item
+                                                ## @return a relation_item_request_builder
+                                                ## 
+                                                def by_relation_id(relation_id)
+                                                    raise StandardError, 'relation_id cannot be null' if relation_id.nil?
+                                                    url_tpl_params = @path_parameters.clone
+                                                    url_tpl_params["relation%2Did"] = relation_id
+                                                    return MicrosoftGraph::Sites::Item::TermStore::Sets::Item::Children::Item::Children::Item::Relations::Item::RelationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                                 end
                                                 ## 
                                                 ## Instantiates a new RelationsRequestBuilder and sets the default values.

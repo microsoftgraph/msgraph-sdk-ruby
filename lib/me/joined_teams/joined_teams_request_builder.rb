@@ -6,6 +6,7 @@ require_relative '../../models/team_collection_response'
 require_relative '../me'
 require_relative './count/count_request_builder'
 require_relative './get_all_messages/get_all_messages_request_builder'
+require_relative './item/team_item_request_builder'
 require_relative './joined_teams'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Me::JoinedTeams::GetAllMessages::GetAllMessagesRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the joinedTeams property of the microsoft.graph.user entity.
+                ## @param team_id Unique identifier of the item
+                ## @return a team_item_request_builder
+                ## 
+                def by_team_id(team_id)
+                    raise StandardError, 'team_id cannot be null' if team_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["team%2Did"] = team_id
+                    return MicrosoftGraph::Me::JoinedTeams::Item::TeamItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new JoinedTeamsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/me/joinedTeams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Get the teams in Microsoft Teams that the user is a direct member of.
+                ## Get joinedTeams from me
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of team_collection_response
                 ## 
@@ -65,7 +77,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Team.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get the teams in Microsoft Teams that the user is a direct member of.
+                ## Get joinedTeams from me
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -104,7 +116,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get the teams in Microsoft Teams that the user is a direct member of.
+                # Get joinedTeams from me
                 class JoinedTeamsRequestBuilderGetQueryParameters
                     
                     ## 

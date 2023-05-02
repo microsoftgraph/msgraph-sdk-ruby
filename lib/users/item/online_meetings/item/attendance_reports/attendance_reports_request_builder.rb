@@ -9,6 +9,7 @@ require_relative '../../online_meetings'
 require_relative '../item'
 require_relative './attendance_reports'
 require_relative './count/count_request_builder'
+require_relative './item/meeting_attendance_report_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Users::Item::OnlineMeetings::Item::AttendanceReports::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
+                            ## @param meeting_attendance_report_id Unique identifier of the item
+                            ## @return a meeting_attendance_report_item_request_builder
+                            ## 
+                            def by_meeting_attendance_report_id(meeting_attendance_report_id)
+                                raise StandardError, 'meeting_attendance_report_id cannot be null' if meeting_attendance_report_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["meetingAttendanceReport%2Did"] = meeting_attendance_report_id
+                                return MicrosoftGraph::Users::Item::OnlineMeetings::Item::AttendanceReports::Item::MeetingAttendanceReportItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new AttendanceReportsRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}/attendanceReports{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.
+                            ## The attendance reports of an online meeting. Read-only.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of meeting_attendance_report_collection_response
                             ## 
@@ -65,7 +77,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MeetingAttendanceReport.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.
+                            ## The attendance reports of an online meeting. Read-only.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -104,7 +116,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get a list of meetingAttendanceReport objects for an onlineMeeting. Each time an online meeting ends, an attendance report is generated for that session.
+                            # The attendance reports of an online meeting. Read-only.
                             class AttendanceReportsRequestBuilderGetQueryParameters
                                 
                                 ## 

@@ -6,6 +6,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../domains'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/domain_dns_record_item_request_builder'
 require_relative './service_configuration_records'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Domains::Item::ServiceConfigurationRecords::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
+                    ## @param domain_dns_record_id Unique identifier of the item
+                    ## @return a domain_dns_record_item_request_builder
+                    ## 
+                    def by_domain_dns_record_id(domain_dns_record_id)
+                        raise StandardError, 'domain_dns_record_id cannot be null' if domain_dns_record_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["domainDnsRecord%2Did"] = domain_dns_record_id
+                        return MicrosoftGraph::Domains::Item::ServiceConfigurationRecords::Item::DomainDnsRecordItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new ServiceConfigurationRecordsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/domains/{domain%2Did}/serviceConfigurationRecords{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Retrieves a list of domainDnsRecord objects needed to enable services for the domain. Use the returned list to add records to the zone file of the domain. This can be done through the domain registrar or DNS server configuration.
+                    ## DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of domain_dns_record_collection_response
                     ## 
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DomainDnsRecord.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieves a list of domainDnsRecord objects needed to enable services for the domain. Use the returned list to add records to the zone file of the domain. This can be done through the domain registrar or DNS server configuration.
+                    ## DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieves a list of domainDnsRecord objects needed to enable services for the domain. Use the returned list to add records to the zone file of the domain. This can be done through the domain registrar or DNS server configuration.
+                    # DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.
                     class ServiceConfigurationRecordsRequestBuilderGetQueryParameters
                         
                         ## 

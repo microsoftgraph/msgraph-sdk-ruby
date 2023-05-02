@@ -5,6 +5,7 @@ require_relative '../../models/windows_autopilot_device_identity'
 require_relative '../../models/windows_autopilot_device_identity_collection_response'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
+require_relative './item/windows_autopilot_device_identity_item_request_builder'
 require_relative './windows_autopilot_device_identities'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
+                ## @param windows_autopilot_device_identity_id Unique identifier of the item
+                ## @return a windows_autopilot_device_identity_item_request_builder
+                ## 
+                def by_windows_autopilot_device_identity_id(windows_autopilot_device_identity_id)
+                    raise StandardError, 'windows_autopilot_device_identity_id cannot be null' if windows_autopilot_device_identity_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["windowsAutopilotDeviceIdentity%2Did"] = windows_autopilot_device_identity_id
+                    return MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::Item::WindowsAutopilotDeviceIdentityItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new WindowsAutopilotDeviceIdentitiesRequestBuilder and sets the default values.

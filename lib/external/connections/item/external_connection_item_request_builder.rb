@@ -5,11 +5,8 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../external'
 require_relative '../connections'
 require_relative './groups/groups_request_builder'
-require_relative './groups/item/external_group_item_request_builder'
 require_relative './item'
-require_relative './items/item/external_item_item_request_builder'
 require_relative './items/items_request_builder'
-require_relative './operations/item/connection_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
 require_relative './schema/schema_request_builder'
 
@@ -77,39 +74,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ExternalConnection.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the groups property of the microsoft.graph.externalConnectors.externalConnection entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a external_group_item_request_builder
-                    ## 
-                    def groups_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["externalGroup%2Did"] = id
-                        return MicrosoftGraph::External::Connections::Item::Groups::Item::ExternalGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the items property of the microsoft.graph.externalConnectors.externalConnection entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a external_item_item_request_builder
-                    ## 
-                    def items_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["externalItem%2Did"] = id
-                        return MicrosoftGraph::External::Connections::Item::Items::Item::ExternalItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the operations property of the microsoft.graph.externalConnectors.externalConnection entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a connection_operation_item_request_builder
-                    ## 
-                    def operations_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["connectionOperation%2Did"] = id
-                        return MicrosoftGraph::External::Connections::Item::Operations::Item::ConnectionOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Update the navigation property connections in external

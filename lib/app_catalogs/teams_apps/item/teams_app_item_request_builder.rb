@@ -5,7 +5,6 @@ require_relative '../../../models/teams_app'
 require_relative '../../app_catalogs'
 require_relative '../teams_apps'
 require_relative './app_definitions/app_definitions_request_builder'
-require_relative './app_definitions/item/teams_app_definition_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -20,17 +19,6 @@ module MicrosoftGraph
                     # Provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
                     def app_definitions()
                         return MicrosoftGraph::AppCatalogs::TeamsApps::Item::AppDefinitions::AppDefinitionsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a teams_app_definition_item_request_builder
-                    ## 
-                    def app_definitions_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["teamsAppDefinition%2Did"] = id
-                        return MicrosoftGraph::AppCatalogs::TeamsApps::Item::AppDefinitions::Item::TeamsAppDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new TeamsAppItemRequestBuilder and sets the default values.

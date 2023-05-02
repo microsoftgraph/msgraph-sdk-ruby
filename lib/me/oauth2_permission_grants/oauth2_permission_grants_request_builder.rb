@@ -4,6 +4,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/o_auth2_permission_grant_collection_response'
 require_relative '../me'
 require_relative './count/count_request_builder'
+require_relative './item/o_auth2_permission_grant_item_request_builder'
 require_relative './oauth2_permission_grants'
 
 module MicrosoftGraph
@@ -19,6 +20,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Me::Oauth2PermissionGrants::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.user entity.
+                ## @param o_auth2_permission_grant_id Unique identifier of the item
+                ## @return a o_auth2_permission_grant_item_request_builder
+                ## 
+                def by_o_auth2_permission_grant_id(o_auth2_permission_grant_id)
+                    raise StandardError, 'o_auth2_permission_grant_id cannot be null' if o_auth2_permission_grant_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["oAuth2PermissionGrant%2Did"] = o_auth2_permission_grant_id
+                    return MicrosoftGraph::Me::Oauth2PermissionGrants::Item::OAuth2PermissionGrantItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new Oauth2PermissionGrantsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -28,7 +40,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/me/oauth2PermissionGrants{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user.
+                ## Get oauth2PermissionGrants from me
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of o_auth2_permission_grant_collection_response
                 ## 
@@ -42,7 +54,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OAuth2PermissionGrantCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user.
+                ## Get oauth2PermissionGrants from me
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -61,7 +73,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user.
+                # Get oauth2PermissionGrants from me
                 class Oauth2PermissionGrantsRequestBuilderGetQueryParameters
                     
                     ## 

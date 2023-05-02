@@ -25,7 +25,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/communications/presences/{presence%2Did}/clearUserPreferredPresence")
                         end
                         ## 
-                        ## Clear the preferred availability and activity status for a user.
+                        ## Invoke action clearUserPreferredPresence
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -39,7 +39,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Clear the preferred availability and activity status for a user.
+                        ## Invoke action clearUserPreferredPresence
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 

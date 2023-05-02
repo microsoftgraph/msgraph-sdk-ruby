@@ -8,6 +8,7 @@ require_relative './delta/delta_request_builder'
 require_relative './directory_objects'
 require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
 require_relative './get_by_ids/get_by_ids_request_builder'
+require_relative './item/directory_object_item_request_builder'
 require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph
@@ -40,6 +41,17 @@ module MicrosoftGraph
             # Provides operations to call the validateProperties method.
             def validate_properties()
                 return MicrosoftGraph::DirectoryObjects::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            ## Provides operations to manage the collection of directoryObject entities.
+            ## @param directory_object_id Unique identifier of the item
+            ## @return a directory_object_item_request_builder
+            ## 
+            def by_directory_object_id(directory_object_id)
+                raise StandardError, 'directory_object_id cannot be null' if directory_object_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["directoryObject%2Did"] = directory_object_id
+                return MicrosoftGraph::DirectoryObjects::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new DirectoryObjectsRequestBuilder and sets the default values.

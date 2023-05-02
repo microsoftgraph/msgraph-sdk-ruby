@@ -68,7 +68,7 @@ module MicrosoftGraph
                 @allowed_users = value
             end
             ## 
-            ## Instantiates a new printerShare and sets the default values.
+            ## Instantiates a new PrinterShare and sets the default values.
             ## @return a void
             ## 
             def initialize()

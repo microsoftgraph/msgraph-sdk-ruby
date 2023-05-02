@@ -11,6 +11,7 @@ require_relative '../../calendars'
 require_relative '../item'
 require_relative './calendar_permissions'
 require_relative './count/count_request_builder'
+require_relative './item/calendar_permission_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     # Provides operations to count the resources in the collection.
                                     def count()
                                         return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::CalendarPermissions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.
+                                    ## @param calendar_permission_id Unique identifier of the item
+                                    ## @return a calendar_permission_item_request_builder
+                                    ## 
+                                    def by_calendar_permission_id(calendar_permission_id)
+                                        raise StandardError, 'calendar_permission_id cannot be null' if calendar_permission_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["calendarPermission%2Did"] = calendar_permission_id
+                                        return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::CalendarPermissions::Item::CalendarPermissionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new CalendarPermissionsRequestBuilder and sets the default values.
@@ -53,7 +65,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CalendarPermissionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
+                                    ## Create new navigation property to calendarPermissions for users
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of calendar_permission
@@ -87,7 +99,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated.
+                                    ## Create new navigation property to calendarPermissions for users
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information

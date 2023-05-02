@@ -8,6 +8,7 @@ require_relative '../service_announcement'
 require_relative './archive/archive_request_builder'
 require_relative './count/count_request_builder'
 require_relative './favorite/favorite_request_builder'
+require_relative './item/service_update_message_item_request_builder'
 require_relative './mark_read/mark_read_request_builder'
 require_relative './mark_unread/mark_unread_request_builder'
 require_relative './messages'
@@ -58,6 +59,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Unfavorite::UnfavoriteRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.
+                    ## @param service_update_message_id Unique identifier of the item
+                    ## @return a service_update_message_item_request_builder
+                    ## 
+                    def by_service_update_message_id(service_update_message_id)
+                        raise StandardError, 'service_update_message_id cannot be null' if service_update_message_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["serviceUpdateMessage%2Did"] = service_update_message_id
+                        return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Item::ServiceUpdateMessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new MessagesRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -67,7 +79,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/admin/serviceAnnouncement/messages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Retrieve the serviceUpdateMessage resources from the **messages** navigation property. This operation retrieves all service update messages that exist for the tenant.
+                    ## A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of service_update_message_collection_response
                     ## 
@@ -97,7 +109,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ServiceUpdateMessage.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieve the serviceUpdateMessage resources from the **messages** navigation property. This operation retrieves all service update messages that exist for the tenant.
+                    ## A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -136,7 +148,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve the serviceUpdateMessage resources from the **messages** navigation property. This operation retrieves all service update messages that exist for the tenant.
+                    # A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.
                     class MessagesRequestBuilderGetQueryParameters
                         
                         ## 

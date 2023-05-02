@@ -5,6 +5,7 @@ require_relative '../../../shares'
 require_relative '../../item'
 require_relative '../allowed_users'
 require_relative './item'
+require_relative './mailbox_settings/mailbox_settings_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -17,6 +18,11 @@ module MicrosoftGraph
                         # Builds and executes requests for operations under \print\shares\{printerShare-id}\allowedUsers\{user-id}
                         class UserItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                             
+                            ## 
+                            # The mailboxSettings property
+                            def mailbox_settings()
+                                return MicrosoftGraph::Print::Shares::Item::AllowedUsers::Item::MailboxSettings::MailboxSettingsRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
                             ## 
                             # Provides operations to manage the collection of print entities.
                             def ref()

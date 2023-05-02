@@ -6,9 +6,7 @@ require_relative '../../../identity_governance'
 require_relative '../../entitlement_management'
 require_relative '../connected_organizations'
 require_relative './external_sponsors/external_sponsors_request_builder'
-require_relative './external_sponsors/item/directory_object_item_request_builder'
 require_relative './internal_sponsors/internal_sponsors_request_builder'
-require_relative './internal_sponsors/item/directory_object_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -54,17 +52,6 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.connectedOrganizations.item.externalSponsors.item collection
-                        ## @param id Unique identifier of the item
-                        ## @return a directory_object_item_request_builder
-                        ## 
-                        def external_sponsors_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["directoryObject%2Did"] = id
-                            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::ExternalSponsors::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
                         ## References to a directory or domain of another organization whose users can request access.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of connected_organization
@@ -77,17 +64,6 @@ module MicrosoftGraph
                             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConnectedOrganization.create_from_discriminator_value(pn) }, error_mapping)
-                        end
-                        ## 
-                        ## Gets an item from the MicrosoftGraph.identityGovernance.entitlementManagement.connectedOrganizations.item.internalSponsors.item collection
-                        ## @param id Unique identifier of the item
-                        ## @return a directory_object_item_request_builder
-                        ## 
-                        def internal_sponsors_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["directoryObject%2Did"] = id
-                            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::InternalSponsors::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Update the navigation property connectedOrganizations in identityGovernance

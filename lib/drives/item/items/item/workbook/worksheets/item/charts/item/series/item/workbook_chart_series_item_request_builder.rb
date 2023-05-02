@@ -14,7 +14,6 @@ require_relative '../../item'
 require_relative '../series'
 require_relative './format/format_request_builder'
 require_relative './item'
-require_relative './points/item/workbook_chart_point_item_request_builder'
 require_relative './points/points_request_builder'
 
 module MicrosoftGraph
@@ -95,17 +94,6 @@ module MicrosoftGraph
                                                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookChartSeries.create_from_discriminator_value(pn) }, error_mapping)
-                                                    end
-                                                    ## 
-                                                    ## Provides operations to manage the points property of the microsoft.graph.workbookChartSeries entity.
-                                                    ## @param id Unique identifier of the item
-                                                    ## @return a workbook_chart_point_item_request_builder
-                                                    ## 
-                                                    def points_by_id(id)
-                                                        raise StandardError, 'id cannot be null' if id.nil?
-                                                        url_tpl_params = @path_parameters.clone
-                                                        url_tpl_params["workbookChartPoint%2Did"] = id
-                                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Series::Item::Points::Item::WorkbookChartPointItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                                     end
                                                     ## 
                                                     ## Delete navigation property series for drives

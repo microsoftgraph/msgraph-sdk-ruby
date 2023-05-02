@@ -6,6 +6,7 @@ require_relative '../../service_principals'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './home_realm_discovery_policies'
+require_relative './item/home_realm_discovery_policy_item_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -27,6 +28,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::ServicePrincipals::Item::HomeRealmDiscoveryPolicies::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Gets an item from the MicrosoftGraph.servicePrincipals.item.homeRealmDiscoveryPolicies.item collection
+                    ## @param home_realm_discovery_policy_id Unique identifier of the item
+                    ## @return a home_realm_discovery_policy_item_request_builder
+                    ## 
+                    def by_home_realm_discovery_policy_id(home_realm_discovery_policy_id)
+                        raise StandardError, 'home_realm_discovery_policy_id cannot be null' if home_realm_discovery_policy_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["homeRealmDiscoveryPolicy%2Did"] = home_realm_discovery_policy_id
+                        return MicrosoftGraph::ServicePrincipals::Item::HomeRealmDiscoveryPolicies::Item::HomeRealmDiscoveryPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new HomeRealmDiscoveryPoliciesRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -36,7 +48,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/homeRealmDiscoveryPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+                    ## The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of home_realm_discovery_policy_collection_response
                     ## 
@@ -50,7 +62,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::HomeRealmDiscoveryPolicyCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+                    ## The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -69,7 +81,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+                    # The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
                     class HomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters
                         
                         ## 

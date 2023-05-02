@@ -4,7 +4,6 @@ require_relative '../models/information_protection'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './bitlocker/bitlocker_request_builder'
 require_relative './information_protection'
-require_relative './threat_assessment_requests/item/threat_assessment_request_item_request_builder'
 require_relative './threat_assessment_requests/threat_assessment_requests_request_builder'
 
 module MicrosoftGraph
@@ -61,17 +60,6 @@ module MicrosoftGraph
                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::InformationProtection.create_from_discriminator_value(pn) }, error_mapping)
-            end
-            ## 
-            ## Provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.
-            ## @param id Unique identifier of the item
-            ## @return a threat_assessment_request_item_request_builder
-            ## 
-            def threat_assessment_requests_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["threatAssessmentRequest%2Did"] = id
-                return MicrosoftGraph::InformationProtection::ThreatAssessmentRequests::Item::ThreatAssessmentRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Get informationProtection

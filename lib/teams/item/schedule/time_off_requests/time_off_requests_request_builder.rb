@@ -7,6 +7,7 @@ require_relative '../../../teams'
 require_relative '../../item'
 require_relative '../schedule'
 require_relative './count/count_request_builder'
+require_relative './item/time_off_request_item_request_builder'
 require_relative './time_off_requests'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Teams::Item::Schedule::TimeOffRequests::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the timeOffRequests property of the microsoft.graph.schedule entity.
+                        ## @param time_off_request_id Unique identifier of the item
+                        ## @return a time_off_request_item_request_builder
+                        ## 
+                        def by_time_off_request_id(time_off_request_id)
+                            raise StandardError, 'time_off_request_id cannot be null' if time_off_request_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["timeOffRequest%2Did"] = time_off_request_id
+                            return MicrosoftGraph::Teams::Item::Schedule::TimeOffRequests::Item::TimeOffRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new TimeOffRequestsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/teams/{team%2Did}/schedule/timeOffRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}")
                         end
                         ## 
-                        ## Retrieve a list of timeOffRequest objects in the team.
+                        ## Get timeOffRequests from teams
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of time_off_request_collection_response
                         ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TimeOffRequest.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Retrieve a list of timeOffRequest objects in the team.
+                        ## Get timeOffRequests from teams
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Retrieve a list of timeOffRequest objects in the team.
+                        # Get timeOffRequests from teams
                         class TimeOffRequestsRequestBuilderGetQueryParameters
                             
                             ## 

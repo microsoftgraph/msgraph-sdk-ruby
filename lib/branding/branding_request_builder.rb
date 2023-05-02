@@ -5,7 +5,6 @@ require_relative '../models/organizational_branding'
 require_relative './background_image/background_image_request_builder'
 require_relative './banner_logo/banner_logo_request_builder'
 require_relative './branding'
-require_relative './localizations/item/organizational_branding_localization_item_request_builder'
 require_relative './localizations/localizations_request_builder'
 require_relative './square_logo/square_logo_request_builder'
 
@@ -57,17 +56,6 @@ module MicrosoftGraph
                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OrganizationalBranding.create_from_discriminator_value(pn) }, error_mapping)
-            end
-            ## 
-            ## Provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
-            ## @param id Unique identifier of the item
-            ## @return a organizational_branding_localization_item_request_builder
-            ## 
-            def localizations_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["organizationalBrandingLocalization%2Did"] = id
-                return MicrosoftGraph::Branding::Localizations::Item::OrganizationalBrandingLocalizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Update branding

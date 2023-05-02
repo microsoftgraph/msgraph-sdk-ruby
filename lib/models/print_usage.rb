@@ -50,7 +50,7 @@ module MicrosoftGraph
                 @completed_color_job_count = value
             end
             ## 
-            ## Instantiates a new printUsage and sets the default values.
+            ## Instantiates a new PrintUsage and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -5,19 +5,13 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../solutions'
 require_relative '../booking_businesses'
 require_relative './appointments/appointments_request_builder'
-require_relative './appointments/item/booking_appointment_item_request_builder'
 require_relative './calendar_view/calendar_view_request_builder'
-require_relative './calendar_view/item/booking_appointment_item_request_builder'
 require_relative './customers/customers_request_builder'
-require_relative './customers/item/booking_customer_base_item_request_builder'
 require_relative './custom_questions/custom_questions_request_builder'
-require_relative './custom_questions/item/booking_custom_question_item_request_builder'
 require_relative './get_staff_availability/get_staff_availability_request_builder'
 require_relative './item'
 require_relative './publish/publish_request_builder'
-require_relative './services/item/booking_service_item_request_builder'
 require_relative './services/services_request_builder'
-require_relative './staff_members/item/booking_staff_member_base_item_request_builder'
 require_relative './staff_members/staff_members_request_builder'
 require_relative './unpublish/unpublish_request_builder'
 
@@ -75,28 +69,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::Solutions::BookingBusinesses::Item::Unpublish::UnpublishRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a booking_appointment_item_request_builder
-                    ## 
-                    def appointments_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["bookingAppointment%2Did"] = id
-                        return MicrosoftGraph::Solutions::BookingBusinesses::Item::Appointments::Item::BookingAppointmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the calendarView property of the microsoft.graph.bookingBusiness entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a booking_appointment_item_request_builder
-                    ## 
-                    def calendar_view_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["bookingAppointment%2Did"] = id
-                        return MicrosoftGraph::Solutions::BookingBusinesses::Item::CalendarView::Item::BookingAppointmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new BookingBusinessItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -104,28 +76,6 @@ module MicrosoftGraph
                     ## 
                     def initialize(path_parameters, request_adapter)
                         super(path_parameters, request_adapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}{?%24select,%24expand}")
-                    end
-                    ## 
-                    ## Provides operations to manage the customers property of the microsoft.graph.bookingBusiness entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a booking_customer_base_item_request_builder
-                    ## 
-                    def customers_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["bookingCustomerBase%2Did"] = id
-                        return MicrosoftGraph::Solutions::BookingBusinesses::Item::Customers::Item::BookingCustomerBaseItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the customQuestions property of the microsoft.graph.bookingBusiness entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a booking_custom_question_item_request_builder
-                    ## 
-                    def custom_questions_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["bookingCustomQuestion%2Did"] = id
-                        return MicrosoftGraph::Solutions::BookingBusinesses::Item::CustomQuestions::Item::BookingCustomQuestionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Delete navigation property bookingBusinesses for solutions
@@ -170,28 +120,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BookingBusiness.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a booking_service_item_request_builder
-                    ## 
-                    def services_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["bookingService%2Did"] = id
-                        return MicrosoftGraph::Solutions::BookingBusinesses::Item::Services::Item::BookingServiceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a booking_staff_member_base_item_request_builder
-                    ## 
-                    def staff_members_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["bookingStaffMemberBase%2Did"] = id
-                        return MicrosoftGraph::Solutions::BookingBusinesses::Item::StaffMembers::Item::BookingStaffMemberBaseItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Delete navigation property bookingBusinesses for solutions

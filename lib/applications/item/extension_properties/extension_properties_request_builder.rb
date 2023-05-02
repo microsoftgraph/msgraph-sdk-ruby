@@ -7,6 +7,7 @@ require_relative '../../applications'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './extension_properties'
+require_relative './item/extension_property_item_request_builder'
 
 module MicrosoftGraph
     module Applications
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Applications::Item::ExtensionProperties::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the extensionProperties property of the microsoft.graph.application entity.
+                    ## @param extension_property_id Unique identifier of the item
+                    ## @return a extension_property_item_request_builder
+                    ## 
+                    def by_extension_property_id(extension_property_id)
+                        raise StandardError, 'extension_property_id cannot be null' if extension_property_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["extensionProperty%2Did"] = extension_property_id
+                        return MicrosoftGraph::Applications::Item::ExtensionProperties::Item::ExtensionPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new ExtensionPropertiesRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/applications/{application%2Did}/extensionProperties{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
+                    ## Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of extension_property_collection_response
                     ## 
@@ -45,7 +57,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExtensionPropertyCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create a new directory extension definition, represented by an extensionProperty object.
+                    ## Create new navigation property to extensionProperties for applications
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of extension_property
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExtensionProperty.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
+                    ## Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -79,7 +91,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Create a new directory extension definition, represented by an extensionProperty object.
+                    ## Create new navigation property to extensionProperties for applications
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
+                    # Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).
                     class ExtensionPropertiesRequestBuilderGetQueryParameters
                         
                         ## 

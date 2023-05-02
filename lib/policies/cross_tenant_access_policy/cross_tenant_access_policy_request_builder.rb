@@ -5,7 +5,6 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../policies'
 require_relative './cross_tenant_access_policy'
 require_relative './default/default_request_builder'
-require_relative './partners/item/cross_tenant_access_policy_configuration_partner_tenant_item_request_builder'
 require_relative './partners/partners_request_builder'
 
 module MicrosoftGraph
@@ -49,7 +48,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Read the properties and relationships of a crossTenantAccessPolicy object.
+                ## The custom rules that define an access scenario when interacting with external Azure AD tenants.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of cross_tenant_access_policy
                 ## 
@@ -63,18 +62,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicy.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Provides operations to manage the partners property of the microsoft.graph.crossTenantAccessPolicy entity.
-                ## @param id Unique identifier of the item
-                ## @return a cross_tenant_access_policy_configuration_partner_tenant_item_request_builder
-                ## 
-                def partners_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["crossTenantAccessPolicyConfigurationPartner%2DtenantId"] = id
-                    return MicrosoftGraph::Policies::CrossTenantAccessPolicy::Partners::Item::CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Update the properties of a cross-tenant access policy.
+                ## Update the navigation property crossTenantAccessPolicy in policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of cross_tenant_access_policy
@@ -106,7 +94,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Read the properties and relationships of a crossTenantAccessPolicy object.
+                ## The custom rules that define an access scenario when interacting with external Azure AD tenants.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -124,7 +112,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Update the properties of a cross-tenant access policy.
+                ## Update the navigation property crossTenantAccessPolicy in policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -145,7 +133,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Read the properties and relationships of a crossTenantAccessPolicy object.
+                # The custom rules that define an access scenario when interacting with external Azure AD tenants.
                 class CrossTenantAccessPolicyRequestBuilderGetQueryParameters
                     
                     ## 

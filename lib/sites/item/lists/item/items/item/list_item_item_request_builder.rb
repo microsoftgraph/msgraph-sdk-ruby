@@ -9,13 +9,11 @@ require_relative '../../item'
 require_relative '../items'
 require_relative './analytics/analytics_request_builder'
 require_relative './document_set_versions/document_set_versions_request_builder'
-require_relative './document_set_versions/item/document_set_version_item_request_builder'
 require_relative './drive_item/drive_item_request_builder'
 require_relative './fields/fields_request_builder'
 require_relative './get_activities_by_interval/get_activities_by_interval_request_builder'
 require_relative './get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval/dab1c2feb9ecf2d349721478e4ff8fe9c46b97a0c44110851b2b17a08d22383e'
 require_relative './item'
-require_relative './versions/item/list_item_version_item_request_builder'
 require_relative './versions/versions_request_builder'
 
 module MicrosoftGraph
@@ -81,17 +79,6 @@ module MicrosoftGraph
                                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
-                                end
-                                ## 
-                                ## Provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a document_set_version_item_request_builder
-                                ## 
-                                def document_set_versions_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["documentSetVersion%2Did"] = id
-                                    return MicrosoftGraph::Sites::Item::Lists::Item::Items::Item::DocumentSetVersions::Item::DocumentSetVersionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## All items contained in the list.
@@ -189,17 +176,6 @@ module MicrosoftGraph
                                     end
                                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                     return request_info
-                                end
-                                ## 
-                                ## Provides operations to manage the versions property of the microsoft.graph.listItem entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a list_item_version_item_request_builder
-                                ## 
-                                def versions_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["listItemVersion%2Did"] = id
-                                    return MicrosoftGraph::Sites::Item::Lists::Item::Items::Item::Versions::Item::ListItemVersionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
 
                                 ## 

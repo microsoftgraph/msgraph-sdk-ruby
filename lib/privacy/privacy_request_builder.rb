@@ -3,7 +3,6 @@ require_relative '../microsoft_graph'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/privacy'
 require_relative './privacy'
-require_relative './subject_rights_requests/item/subject_rights_request_item_request_builder'
 require_relative './subject_rights_requests/subject_rights_requests_request_builder'
 
 module MicrosoftGraph
@@ -55,17 +54,6 @@ module MicrosoftGraph
                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Privacy.create_from_discriminator_value(pn) }, error_mapping)
-            end
-            ## 
-            ## Provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
-            ## @param id Unique identifier of the item
-            ## @return a subject_rights_request_item_request_builder
-            ## 
-            def subject_rights_requests_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["subjectRightsRequest%2Did"] = id
-                return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::SubjectRightsRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Get privacy

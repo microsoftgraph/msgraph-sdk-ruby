@@ -8,7 +8,6 @@ require_relative '../../../ediscovery_cases'
 require_relative '../../item'
 require_relative '../tags'
 require_relative './child_tags/child_tags_request_builder'
-require_relative './child_tags/item/ediscovery_review_tag_item_request_builder'
 require_relative './item'
 require_relative './parent/parent_request_builder'
 
@@ -32,17 +31,6 @@ module MicrosoftGraph
                                 # Provides operations to manage the parent property of the microsoft.graph.security.ediscoveryReviewTag entity.
                                 def parent()
                                     return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags::Item::Parent::ParentRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                ## Provides operations to manage the childTags property of the microsoft.graph.security.ediscoveryReviewTag entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a ediscovery_review_tag_item_request_builder
-                                ## 
-                                def child_tags_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["ediscoveryReviewTag%2Did1"] = id
-                                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags::Item::ChildTags::Item::EdiscoveryReviewTagItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new EdiscoveryReviewTagItemRequestBuilder and sets the default values.

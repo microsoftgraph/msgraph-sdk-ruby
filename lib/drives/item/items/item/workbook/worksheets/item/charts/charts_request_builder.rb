@@ -13,6 +13,7 @@ require_relative '../item'
 require_relative './add/add_request_builder'
 require_relative './charts'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_chart_item_request_builder'
 require_relative './item_at_with_index/item_at_with_index_request_builder'
 require_relative './item_with_name/item_with_name_request_builder'
 
@@ -40,6 +41,17 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
+                                        ## Provides operations to manage the charts property of the microsoft.graph.workbookWorksheet entity.
+                                        ## @param workbook_chart_id Unique identifier of the item
+                                        ## @return a workbook_chart_item_request_builder
+                                        ## 
+                                        def by_workbook_chart_id(workbook_chart_id)
+                                            raise StandardError, 'workbook_chart_id cannot be null' if workbook_chart_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["workbookChart%2Did"] = workbook_chart_id
+                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::WorkbookChartItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                        end
+                                        ## 
                                         ## Instantiates a new ChartsRequestBuilder and sets the default values.
                                         ## @param path_parameters Path parameters for the request
                                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -49,7 +61,7 @@ module MicrosoftGraph
                                             super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                         end
                                         ## 
-                                        ## Retrieve a list of chart objects.
+                                        ## Returns collection of charts that are part of the worksheet. Read-only.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of workbook_chart_collection_response
                                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                                             return ItemWithNameRequestBuilder.new(@path_parameters, @request_adapter, name)
                                         end
                                         ## 
-                                        ## Use this API to create a new Chart.
+                                        ## Create new navigation property to charts for drives
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of workbook_chart
@@ -97,7 +109,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookChart.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Retrieve a list of chart objects.
+                                        ## Returns collection of charts that are part of the worksheet. Read-only.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -115,7 +127,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Use this API to create a new Chart.
+                                        ## Create new navigation property to charts for drives
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
@@ -136,7 +148,7 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # Retrieve a list of chart objects.
+                                        # Returns collection of charts that are part of the worksheet. Read-only.
                                         class ChartsRequestBuilderGetQueryParameters
                                             
                                             ## 

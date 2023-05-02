@@ -10,9 +10,7 @@ require_relative '../../onenote'
 require_relative '../notebooks'
 require_relative './copy_notebook/copy_notebook_request_builder'
 require_relative './item'
-require_relative './section_groups/item/section_group_item_request_builder'
 require_relative './section_groups/section_groups_request_builder'
-require_relative './sections/item/onenote_section_item_request_builder'
 require_relative './sections/sections_request_builder'
 
 module MicrosoftGraph
@@ -94,28 +92,6 @@ module MicrosoftGraph
                                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Notebook.create_from_discriminator_value(pn) }, error_mapping)
-                                    end
-                                    ## 
-                                    ## Provides operations to manage the sectionGroups property of the microsoft.graph.notebook entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a section_group_item_request_builder
-                                    ## 
-                                    def section_groups_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["sectionGroup%2Did"] = id
-                                        return MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::Item::SectionGroups::Item::SectionGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                    end
-                                    ## 
-                                    ## Provides operations to manage the sections property of the microsoft.graph.notebook entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a onenote_section_item_request_builder
-                                    ## 
-                                    def sections_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["onenoteSection%2Did"] = id
-                                        return MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::Item::Sections::Item::OnenoteSectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Delete navigation property notebooks for groups

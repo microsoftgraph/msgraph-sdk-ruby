@@ -32,7 +32,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches/{ediscoverySearch%2Did}/lastEstimateStatisticsOperation{?%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Get the last  ediscoveryEstimateOperation objects and their properties.
+                                    ## The last estimate operation associated with the eDiscovery search.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of ediscovery_estimate_operation
                                     ## 
@@ -46,7 +46,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryEstimateOperation.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Get the last  ediscoveryEstimateOperation objects and their properties.
+                                    ## The last estimate operation associated with the eDiscovery search.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -65,7 +65,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Get the last  ediscoveryEstimateOperation objects and their properties.
+                                    # The last estimate operation associated with the eDiscovery search.
                                     class LastEstimateStatisticsOperationRequestBuilderGetQueryParameters
                                         
                                         ## 

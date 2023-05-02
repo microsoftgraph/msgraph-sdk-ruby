@@ -4,9 +4,7 @@ require_relative '../../models/attack_simulation_root'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../security'
 require_relative './attack_simulation'
-require_relative './simulation_automations/item/simulation_automation_item_request_builder'
 require_relative './simulation_automations/simulation_automations_request_builder'
-require_relative './simulations/item/simulation_item_request_builder'
 require_relative './simulations/simulations_request_builder'
 
 module MicrosoftGraph
@@ -78,28 +76,6 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AttackSimulationRoot.create_from_discriminator_value(pn) }, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the simulationAutomations property of the microsoft.graph.attackSimulationRoot entity.
-                ## @param id Unique identifier of the item
-                ## @return a simulation_automation_item_request_builder
-                ## 
-                def simulation_automations_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["simulationAutomation%2Did"] = id
-                    return MicrosoftGraph::Security::AttackSimulation::SimulationAutomations::Item::SimulationAutomationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the simulations property of the microsoft.graph.attackSimulationRoot entity.
-                ## @param id Unique identifier of the item
-                ## @return a simulation_item_request_builder
-                ## 
-                def simulations_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["simulation%2Did"] = id
-                    return MicrosoftGraph::Security::AttackSimulation::Simulations::Item::SimulationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Delete navigation property attackSimulation for security

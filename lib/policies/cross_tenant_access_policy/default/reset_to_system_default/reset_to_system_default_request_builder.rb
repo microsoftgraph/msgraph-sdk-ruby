@@ -25,7 +25,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/policies/crossTenantAccessPolicy/default/resetToSystemDefault")
                         end
                         ## 
-                        ## Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
+                        ## Invoke action resetToSystemDefault
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -39,7 +39,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
+                        ## Invoke action resetToSystemDefault
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 

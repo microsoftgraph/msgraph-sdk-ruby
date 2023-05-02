@@ -38,7 +38,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Read the properties and relationships of a schema object.
+                    ## Get schema from connections
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of schema
                     ## 
@@ -84,7 +84,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Read the properties and relationships of a schema object.
+                    ## Get schema from connections
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -123,7 +123,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Read the properties and relationships of a schema object.
+                    # Get schema from connections
                     class SchemaRequestBuilderGetQueryParameters
                         
                         ## 

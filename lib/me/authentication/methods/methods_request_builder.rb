@@ -6,6 +6,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../me'
 require_relative '../authentication'
 require_relative './count/count_request_builder'
+require_relative './item/authentication_method_item_request_builder'
 require_relative './methods'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Me::Authentication::Methods::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the methods property of the microsoft.graph.authentication entity.
+                    ## @param authentication_method_id Unique identifier of the item
+                    ## @return a authentication_method_item_request_builder
+                    ## 
+                    def by_authentication_method_id(authentication_method_id)
+                        raise StandardError, 'authentication_method_id cannot be null' if authentication_method_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["authenticationMethod%2Did"] = authentication_method_id
+                        return MicrosoftGraph::Me::Authentication::Methods::Item::AuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new MethodsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/me/authentication/methods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
+                    ## Represents all authentication methods registered to a user.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of authentication_method_collection_response
                     ## 
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AuthenticationMethod.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
+                    ## Represents all authentication methods registered to a user.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
+                    # Represents all authentication methods registered to a user.
                     class MethodsRequestBuilderGetQueryParameters
                         
                         ## 

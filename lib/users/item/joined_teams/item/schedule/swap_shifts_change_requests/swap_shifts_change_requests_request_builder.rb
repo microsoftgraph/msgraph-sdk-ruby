@@ -9,6 +9,7 @@ require_relative '../../../joined_teams'
 require_relative '../../item'
 require_relative '../schedule'
 require_relative './count/count_request_builder'
+require_relative './item/swap_shifts_change_request_item_request_builder'
 require_relative './swap_shifts_change_requests'
 
 module MicrosoftGraph
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Users::Item::JoinedTeams::Item::Schedule::SwapShiftsChangeRequests::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                ## Provides operations to manage the swapShiftsChangeRequests property of the microsoft.graph.schedule entity.
+                                ## @param swap_shifts_change_request_id Unique identifier of the item
+                                ## @return a swap_shifts_change_request_item_request_builder
+                                ## 
+                                def by_swap_shifts_change_request_id(swap_shifts_change_request_id)
+                                    raise StandardError, 'swap_shifts_change_request_id cannot be null' if swap_shifts_change_request_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["swapShiftsChangeRequest%2Did"] = swap_shifts_change_request_id
+                                    return MicrosoftGraph::Users::Item::JoinedTeams::Item::Schedule::SwapShiftsChangeRequests::Item::SwapShiftsChangeRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                end
+                                ## 
                                 ## Instantiates a new SwapShiftsChangeRequestsRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -37,7 +49,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/swapShiftsChangeRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                 end
                                 ## 
-                                ## Retrieve a list of swapShiftsChangeRequest objects in the team.
+                                ## Get swapShiftsChangeRequests from users
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of swap_shifts_change_request_collection_response
                                 ## 
@@ -51,7 +63,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SwapShiftsChangeRequestCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Create an instance of a swapShiftsChangeRequest object.
+                                ## Create new navigation property to swapShiftsChangeRequests for users
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of swap_shifts_change_request
@@ -67,7 +79,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SwapShiftsChangeRequest.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Retrieve a list of swapShiftsChangeRequest objects in the team.
+                                ## Get swapShiftsChangeRequests from users
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -85,7 +97,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Create an instance of a swapShiftsChangeRequest object.
+                                ## Create new navigation property to swapShiftsChangeRequests for users
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
@@ -106,7 +118,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Retrieve a list of swapShiftsChangeRequest objects in the team.
+                                # Get swapShiftsChangeRequests from users
                                 class SwapShiftsChangeRequestsRequestBuilderGetQueryParameters
                                     
                                     ## 

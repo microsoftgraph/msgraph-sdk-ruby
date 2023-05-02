@@ -6,7 +6,6 @@ require_relative '../../../users'
 require_relative '../../item'
 require_relative '../calendar_groups'
 require_relative './calendars/calendars_request_builder'
-require_relative './calendars/item/calendar_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -22,17 +21,6 @@ module MicrosoftGraph
                         # Provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
                         def calendars()
                             return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::CalendarsRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a calendar_item_request_builder
-                        ## 
-                        def calendars_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["calendar%2Did"] = id
-                            return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::CalendarItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new CalendarGroupItemRequestBuilder and sets the default values.

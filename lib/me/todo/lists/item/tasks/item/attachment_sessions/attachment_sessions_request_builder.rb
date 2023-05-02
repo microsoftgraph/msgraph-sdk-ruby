@@ -10,6 +10,7 @@ require_relative '../../tasks'
 require_relative '../item'
 require_relative './attachment_sessions'
 require_relative './count/count_request_builder'
+require_relative './item/attachment_session_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -27,6 +28,17 @@ module MicrosoftGraph
                                     # Provides operations to count the resources in the collection.
                                     def count()
                                         return MicrosoftGraph::Me::Todo::Lists::Item::Tasks::Item::AttachmentSessions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
+                                    ## @param attachment_session_id Unique identifier of the item
+                                    ## @return a attachment_session_item_request_builder
+                                    ## 
+                                    def by_attachment_session_id(attachment_session_id)
+                                        raise StandardError, 'attachment_session_id cannot be null' if attachment_session_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["attachmentSession%2Did"] = attachment_session_id
+                                        return MicrosoftGraph::Me::Todo::Lists::Item::Tasks::Item::AttachmentSessions::Item::AttachmentSessionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new AttachmentSessionsRequestBuilder and sets the default values.

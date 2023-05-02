@@ -6,6 +6,7 @@ require_relative '../../../models/pinned_chat_message_info_collection_response'
 require_relative '../../chats'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/pinned_chat_message_info_item_request_builder'
 require_relative './pinned_messages'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Chats::Item::PinnedMessages::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
+                    ## @param pinned_chat_message_info_id Unique identifier of the item
+                    ## @return a pinned_chat_message_info_item_request_builder
+                    ## 
+                    def by_pinned_chat_message_info_id(pinned_chat_message_info_id)
+                        raise StandardError, 'pinned_chat_message_info_id cannot be null' if pinned_chat_message_info_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["pinnedChatMessageInfo%2Did"] = pinned_chat_message_info_id
+                        return MicrosoftGraph::Chats::Item::PinnedMessages::Item::PinnedChatMessageInfoItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new PinnedMessagesRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/chats/{chat%2Did}/pinnedMessages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get a list of pinnedChatMessages in a chat.
+                    ## A collection of all the pinned messages in the chat. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of pinned_chat_message_info_collection_response
                     ## 
@@ -45,7 +57,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PinnedChatMessageInfoCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Pin a chat message in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can pin a chat message.
+                    ## Create new navigation property to pinnedMessages for chats
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of pinned_chat_message_info
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PinnedChatMessageInfo.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get a list of pinnedChatMessages in a chat.
+                    ## A collection of all the pinned messages in the chat. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -79,7 +91,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Pin a chat message in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can pin a chat message.
+                    ## Create new navigation property to pinnedMessages for chats
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get a list of pinnedChatMessages in a chat.
+                    # A collection of all the pinned messages in the chat. Nullable.
                     class PinnedMessagesRequestBuilderGetQueryParameters
                         
                         ## 

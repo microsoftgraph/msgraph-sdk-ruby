@@ -4,63 +4,38 @@ require_relative '../models/device_management'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './apple_push_notification_certificate/apple_push_notification_certificate_request_builder'
 require_relative './audit_events/audit_events_request_builder'
-require_relative './audit_events/item/audit_event_item_request_builder'
 require_relative './compliance_management_partners/compliance_management_partners_request_builder'
-require_relative './compliance_management_partners/item/compliance_management_partner_item_request_builder'
 require_relative './conditional_access_settings/conditional_access_settings_request_builder'
 require_relative './detected_apps/detected_apps_request_builder'
-require_relative './detected_apps/item/detected_app_item_request_builder'
 require_relative './device_categories/device_categories_request_builder'
-require_relative './device_categories/item/device_category_item_request_builder'
 require_relative './device_compliance_policies/device_compliance_policies_request_builder'
-require_relative './device_compliance_policies/item/device_compliance_policy_item_request_builder'
 require_relative './device_compliance_policy_device_state_summary/device_compliance_policy_device_state_summary_request_builder'
 require_relative './device_compliance_policy_setting_state_summaries/device_compliance_policy_setting_state_summaries_request_builder'
-require_relative './device_compliance_policy_setting_state_summaries/item/device_compliance_policy_setting_state_summary_item_request_builder'
 require_relative './device_configuration_device_state_summaries/device_configuration_device_state_summaries_request_builder'
 require_relative './device_configurations/device_configurations_request_builder'
-require_relative './device_configurations/item/device_configuration_item_request_builder'
 require_relative './device_enrollment_configurations/device_enrollment_configurations_request_builder'
-require_relative './device_enrollment_configurations/item/device_enrollment_configuration_item_request_builder'
 require_relative './device_management_partners/device_management_partners_request_builder'
-require_relative './device_management_partners/item/device_management_partner_item_request_builder'
 require_relative './device_management'
 require_relative './exchange_connectors/exchange_connectors_request_builder'
-require_relative './exchange_connectors/item/device_management_exchange_connector_item_request_builder'
 require_relative './get_effective_permissions_with_scope/get_effective_permissions_with_scope_request_builder'
 require_relative './imported_windows_autopilot_device_identities/imported_windows_autopilot_device_identities_request_builder'
-require_relative './imported_windows_autopilot_device_identities/item/imported_windows_autopilot_device_identity_item_request_builder'
 require_relative './ios_update_statuses/ios_update_statuses_request_builder'
-require_relative './ios_update_statuses/item/ios_update_device_status_item_request_builder'
 require_relative './managed_device_overview/managed_device_overview_request_builder'
-require_relative './managed_devices/item/managed_device_item_request_builder'
 require_relative './managed_devices/managed_devices_request_builder'
-require_relative './mobile_threat_defense_connectors/item/mobile_threat_defense_connector_item_request_builder'
 require_relative './mobile_threat_defense_connectors/mobile_threat_defense_connectors_request_builder'
-require_relative './notification_message_templates/item/notification_message_template_item_request_builder'
 require_relative './notification_message_templates/notification_message_templates_request_builder'
-require_relative './remote_assistance_partners/item/remote_assistance_partner_item_request_builder'
 require_relative './remote_assistance_partners/remote_assistance_partners_request_builder'
 require_relative './reports/reports_request_builder'
-require_relative './resource_operations/item/resource_operation_item_request_builder'
 require_relative './resource_operations/resource_operations_request_builder'
-require_relative './role_assignments/item/device_and_app_management_role_assignment_item_request_builder'
 require_relative './role_assignments/role_assignments_request_builder'
-require_relative './role_definitions/item/role_definition_item_request_builder'
 require_relative './role_definitions/role_definitions_request_builder'
 require_relative './software_update_status_summary/software_update_status_summary_request_builder'
-require_relative './telecom_expense_management_partners/item/telecom_expense_management_partner_item_request_builder'
 require_relative './telecom_expense_management_partners/telecom_expense_management_partners_request_builder'
-require_relative './terms_and_conditions/item/terms_and_conditions_item_request_builder'
 require_relative './terms_and_conditions/terms_and_conditions_request_builder'
-require_relative './troubleshooting_events/item/device_management_troubleshooting_event_item_request_builder'
 require_relative './troubleshooting_events/troubleshooting_events_request_builder'
 require_relative './verify_windows_enrollment_auto_discovery_with_domain_name/verify_windows_enrollment_auto_discovery_with_domain_name_request_builder'
-require_relative './windows_autopilot_device_identities/item/windows_autopilot_device_identity_item_request_builder'
 require_relative './windows_autopilot_device_identities/windows_autopilot_device_identities_request_builder'
-require_relative './windows_information_protection_app_learning_summaries/item/windows_information_protection_app_learning_summary_item_request_builder'
 require_relative './windows_information_protection_app_learning_summaries/windows_information_protection_app_learning_summaries_request_builder'
-require_relative './windows_information_protection_network_learning_summaries/item/windows_information_protection_network_learning_summary_item_request_builder'
 require_relative './windows_information_protection_network_learning_summaries/windows_information_protection_network_learning_summaries_request_builder'
 
 module MicrosoftGraph
@@ -230,28 +205,6 @@ module MicrosoftGraph
                 return MicrosoftGraph::DeviceManagement::WindowsInformationProtectionNetworkLearningSummaries::WindowsInformationProtectionNetworkLearningSummariesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
-            ## Provides operations to manage the auditEvents property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a audit_event_item_request_builder
-            ## 
-            def audit_events_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["auditEvent%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::AuditEvents::Item::AuditEventItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the complianceManagementPartners property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a compliance_management_partner_item_request_builder
-            ## 
-            def compliance_management_partners_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["complianceManagementPartner%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::ComplianceManagementPartners::Item::ComplianceManagementPartnerItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
             ## Instantiates a new DeviceManagementRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request
             ## @param request_adapter The request adapter to use to execute the requests.
@@ -259,94 +212,6 @@ module MicrosoftGraph
             ## 
             def initialize(path_parameters, request_adapter)
                 super(path_parameters, request_adapter, "{+baseurl}/deviceManagement{?%24select,%24expand}")
-            end
-            ## 
-            ## Provides operations to manage the detectedApps property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a detected_app_item_request_builder
-            ## 
-            def detected_apps_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["detectedApp%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::DetectedApps::Item::DetectedAppItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the deviceCategories property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a device_category_item_request_builder
-            ## 
-            def device_categories_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["deviceCategory%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::DeviceCategories::Item::DeviceCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a device_compliance_policy_item_request_builder
-            ## 
-            def device_compliance_policies_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["deviceCompliancePolicy%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::DeviceCompliancePolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the deviceCompliancePolicySettingStateSummaries property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a device_compliance_policy_setting_state_summary_item_request_builder
-            ## 
-            def device_compliance_policy_setting_state_summaries_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["deviceCompliancePolicySettingStateSummary%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicySettingStateSummaries::Item::DeviceCompliancePolicySettingStateSummaryItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a device_configuration_item_request_builder
-            ## 
-            def device_configurations_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["deviceConfiguration%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item::DeviceConfigurationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a device_enrollment_configuration_item_request_builder
-            ## 
-            def device_enrollment_configurations_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["deviceEnrollmentConfiguration%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::DeviceEnrollmentConfigurations::Item::DeviceEnrollmentConfigurationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the deviceManagementPartners property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a device_management_partner_item_request_builder
-            ## 
-            def device_management_partners_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["deviceManagementPartner%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::DeviceManagementPartners::Item::DeviceManagementPartnerItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the exchangeConnectors property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a device_management_exchange_connector_item_request_builder
-            ## 
-            def exchange_connectors_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["deviceManagementExchangeConnector%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::ExchangeConnectors::Item::DeviceManagementExchangeConnectorItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Get deviceManagement
@@ -372,61 +237,6 @@ module MicrosoftGraph
                 return GetEffectivePermissionsWithScopeRequestBuilder.new(@path_parameters, @request_adapter, scope)
             end
             ## 
-            ## Provides operations to manage the importedWindowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a imported_windows_autopilot_device_identity_item_request_builder
-            ## 
-            def imported_windows_autopilot_device_identities_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["importedWindowsAutopilotDeviceIdentity%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::ImportedWindowsAutopilotDeviceIdentities::Item::ImportedWindowsAutopilotDeviceIdentityItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the iosUpdateStatuses property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a ios_update_device_status_item_request_builder
-            ## 
-            def ios_update_statuses_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["iosUpdateDeviceStatus%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::IosUpdateStatuses::Item::IosUpdateDeviceStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a managed_device_item_request_builder
-            ## 
-            def managed_devices_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["managedDevice%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::ManagedDevices::Item::ManagedDeviceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a mobile_threat_defense_connector_item_request_builder
-            ## 
-            def mobile_threat_defense_connectors_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["mobileThreatDefenseConnector%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::MobileThreatDefenseConnectors::Item::MobileThreatDefenseConnectorItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the notificationMessageTemplates property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a notification_message_template_item_request_builder
-            ## 
-            def notification_message_templates_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["notificationMessageTemplate%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item::NotificationMessageTemplateItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
             ## Update deviceManagement
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
@@ -441,72 +251,6 @@ module MicrosoftGraph
                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceManagement.create_from_discriminator_value(pn) }, error_mapping)
-            end
-            ## 
-            ## Provides operations to manage the remoteAssistancePartners property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a remote_assistance_partner_item_request_builder
-            ## 
-            def remote_assistance_partners_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["remoteAssistancePartner%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::RemoteAssistancePartners::Item::RemoteAssistancePartnerItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the resourceOperations property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a resource_operation_item_request_builder
-            ## 
-            def resource_operations_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["resourceOperation%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::ResourceOperations::Item::ResourceOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the roleAssignments property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a device_and_app_management_role_assignment_item_request_builder
-            ## 
-            def role_assignments_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["deviceAndAppManagementRoleAssignment%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::RoleAssignments::Item::DeviceAndAppManagementRoleAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the roleDefinitions property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a role_definition_item_request_builder
-            ## 
-            def role_definitions_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["roleDefinition%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::RoleDefinitions::Item::RoleDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a telecom_expense_management_partner_item_request_builder
-            ## 
-            def telecom_expense_management_partners_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["telecomExpenseManagementPartner%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::TelecomExpenseManagementPartners::Item::TelecomExpenseManagementPartnerItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the termsAndConditions property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a terms_and_conditions_item_request_builder
-            ## 
-            def terms_and_conditions_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["termsAndConditions%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::TermsAndConditions::Item::TermsAndConditionsItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Get deviceManagement
@@ -547,17 +291,6 @@ module MicrosoftGraph
                 return request_info
             end
             ## 
-            ## Provides operations to manage the troubleshootingEvents property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a device_management_troubleshooting_event_item_request_builder
-            ## 
-            def troubleshooting_events_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["deviceManagementTroubleshootingEvent%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::TroubleshootingEvents::Item::DeviceManagementTroubleshootingEventItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
             ## Provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
             ## @param domain_name Usage: domainName='{domainName}'
             ## @return a verify_windows_enrollment_auto_discovery_with_domain_name_request_builder
@@ -565,39 +298,6 @@ module MicrosoftGraph
             def verify_windows_enrollment_auto_discovery_with_domain_name(domain_name)
                 raise StandardError, 'domain_name cannot be null' if domain_name.nil?
                 return VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder.new(@path_parameters, @request_adapter, domainName)
-            end
-            ## 
-            ## Provides operations to manage the windowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a windows_autopilot_device_identity_item_request_builder
-            ## 
-            def windows_autopilot_device_identities_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["windowsAutopilotDeviceIdentity%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::WindowsAutopilotDeviceIdentities::Item::WindowsAutopilotDeviceIdentityItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the windowsInformationProtectionAppLearningSummaries property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a windows_information_protection_app_learning_summary_item_request_builder
-            ## 
-            def windows_information_protection_app_learning_summaries_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["windowsInformationProtectionAppLearningSummary%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::WindowsInformationProtectionAppLearningSummaries::Item::WindowsInformationProtectionAppLearningSummaryItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the windowsInformationProtectionNetworkLearningSummaries property of the microsoft.graph.deviceManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a windows_information_protection_network_learning_summary_item_request_builder
-            ## 
-            def windows_information_protection_network_learning_summaries_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["windowsInformationProtectionNetworkLearningSummary%2Did"] = id
-                return MicrosoftGraph::DeviceManagement::WindowsInformationProtectionNetworkLearningSummaries::Item::WindowsInformationProtectionNetworkLearningSummaryItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
 
             ## 

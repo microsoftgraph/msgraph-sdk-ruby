@@ -12,7 +12,6 @@ require_relative '../../../messages'
 require_relative '../../item'
 require_relative '../replies'
 require_relative './hosted_contents/hosted_contents_request_builder'
-require_relative './hosted_contents/item/chat_message_hosted_content_item_request_builder'
 require_relative './item'
 require_relative './soft_delete/soft_delete_request_builder'
 require_relative './undo_soft_delete/undo_soft_delete_request_builder'
@@ -83,17 +82,6 @@ module MicrosoftGraph
                                                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatMessage.create_from_discriminator_value(pn) }, error_mapping)
-                                                end
-                                                ## 
-                                                ## Provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-                                                ## @param id Unique identifier of the item
-                                                ## @return a chat_message_hosted_content_item_request_builder
-                                                ## 
-                                                def hosted_contents_by_id(id)
-                                                    raise StandardError, 'id cannot be null' if id.nil?
-                                                    url_tpl_params = @path_parameters.clone
-                                                    url_tpl_params["chatMessageHostedContent%2Did"] = id
-                                                    return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item::Messages::Item::Replies::Item::HostedContents::Item::ChatMessageHostedContentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                                 end
                                                 ## 
                                                 ## Update the navigation property replies in users

@@ -6,6 +6,7 @@ require_relative '../../groups'
 require_relative '../item'
 require_relative './accepted_senders'
 require_relative './count/count_request_builder'
+require_relative './item/directory_object_item_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -27,6 +28,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Groups::Item::AcceptedSenders::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Gets an item from the MicrosoftGraph.groups.item.acceptedSenders.item collection
+                    ## @param directory_object_id Unique identifier of the item
+                    ## @return a directory_object_item_request_builder
+                    ## 
+                    def by_directory_object_id(directory_object_id)
+                        raise StandardError, 'directory_object_id cannot be null' if directory_object_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["directoryObject%2Did"] = directory_object_id
+                        return MicrosoftGraph::Groups::Item::AcceptedSenders::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new AcceptedSendersRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -36,7 +48,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/acceptedSenders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}")
                     end
                     ## 
-                    ## Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+                    ## The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of directory_object_collection_response
                     ## 
@@ -50,7 +62,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObjectCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+                    ## The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -69,7 +81,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+                    # The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
                     class AcceptedSendersRequestBuilderGetQueryParameters
                         
                         ## 

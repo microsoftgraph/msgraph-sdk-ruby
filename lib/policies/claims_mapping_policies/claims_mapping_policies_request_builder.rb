@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../policies'
 require_relative './claims_mapping_policies'
 require_relative './count/count_request_builder'
+require_relative './item/claims_mapping_policy_item_request_builder'
 
 module MicrosoftGraph
     module Policies
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Policies::ClaimsMappingPolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the claimsMappingPolicies property of the microsoft.graph.policyRoot entity.
+                ## @param claims_mapping_policy_id Unique identifier of the item
+                ## @return a claims_mapping_policy_item_request_builder
+                ## 
+                def by_claims_mapping_policy_id(claims_mapping_policy_id)
+                    raise StandardError, 'claims_mapping_policy_id cannot be null' if claims_mapping_policy_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["claimsMappingPolicy%2Did"] = claims_mapping_policy_id
+                    return MicrosoftGraph::Policies::ClaimsMappingPolicies::Item::ClaimsMappingPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new ClaimsMappingPoliciesRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/policies/claimsMappingPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Get a list of claimsMappingPolicy objects.
+                ## The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of claims_mapping_policy_collection_response
                 ## 
@@ -43,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ClaimsMappingPolicyCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create a new claimsMappingPolicy object.
+                ## Create new navigation property to claimsMappingPolicies for policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of claims_mapping_policy
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ClaimsMappingPolicy.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get a list of claimsMappingPolicy objects.
+                ## The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create a new claimsMappingPolicy object.
+                ## Create new navigation property to claimsMappingPolicies for policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get a list of claimsMappingPolicy objects.
+                # The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
                 class ClaimsMappingPoliciesRequestBuilderGetQueryParameters
                     
                     ## 

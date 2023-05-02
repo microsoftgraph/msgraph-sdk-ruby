@@ -5,6 +5,7 @@ require_relative '../../models/site_collection_response'
 require_relative '../me'
 require_relative './count/count_request_builder'
 require_relative './followed_sites'
+require_relative './item/site_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -19,6 +20,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Me::FollowedSites::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the followedSites property of the microsoft.graph.user entity.
+                ## @param site_id Unique identifier of the item
+                ## @return a site_item_request_builder
+                ## 
+                def by_site_id(site_id)
+                    raise StandardError, 'site_id cannot be null' if site_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["site%2Did"] = site_id
+                    return MicrosoftGraph::Me::FollowedSites::Item::SiteItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new FollowedSitesRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -28,7 +40,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/me/followedSites{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## List the sites that have been followed by the signed in user.
+                ## Get followedSites from me
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of site_collection_response
                 ## 
@@ -42,7 +54,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SiteCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## List the sites that have been followed by the signed in user.
+                ## Get followedSites from me
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -61,7 +73,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # List the sites that have been followed by the signed in user.
+                # Get followedSites from me
                 class FollowedSitesRequestBuilderGetQueryParameters
                     
                     ## 

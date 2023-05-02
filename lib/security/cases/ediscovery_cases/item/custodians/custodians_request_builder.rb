@@ -9,6 +9,7 @@ require_relative '../../ediscovery_cases'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './custodians'
+require_relative './item/ediscovery_custodian_item_request_builder'
 require_relative './security_apply_hold/security_apply_hold_request_builder'
 require_relative './security_remove_hold/security_remove_hold_request_builder'
 
@@ -38,6 +39,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::SecurityRemoveHold::SecurityRemoveHoldRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.
+                            ## @param ediscovery_custodian_id Unique identifier of the item
+                            ## @return a ediscovery_custodian_item_request_builder
+                            ## 
+                            def by_ediscovery_custodian_id(ediscovery_custodian_id)
+                                raise StandardError, 'ediscovery_custodian_id cannot be null' if ediscovery_custodian_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["ediscoveryCustodian%2Did"] = ediscovery_custodian_id
+                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::EdiscoveryCustodianItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new CustodiansRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -47,7 +59,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Get a list of the custodian objects and their properties.
+                            ## Returns a list of case ediscoveryCustodian objects for this case.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of ediscovery_custodian_collection_response
                             ## 
@@ -61,7 +73,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryCustodianCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Create a new ediscoveryCustodian object.After the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
+                            ## Create new navigation property to custodians for security
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of ediscovery_custodian
@@ -77,7 +89,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryCustodian.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Get a list of the custodian objects and their properties.
+                            ## Returns a list of case ediscoveryCustodian objects for this case.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -95,7 +107,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Create a new ediscoveryCustodian object.After the custodian object is created, you will need to create the custodian's userSource to reference their mailbox and OneDrive for Business site.
+                            ## Create new navigation property to custodians for security
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -116,7 +128,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get a list of the custodian objects and their properties.
+                            # Returns a list of case ediscoveryCustodian objects for this case.
                             class CustodiansRequestBuilderGetQueryParameters
                                 
                                 ## 

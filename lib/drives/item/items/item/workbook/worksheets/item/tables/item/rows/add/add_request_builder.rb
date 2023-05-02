@@ -40,7 +40,7 @@ module MicrosoftGraph
                                                         super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tables/{workbookTable%2Did}/rows/add")
                                                     end
                                                     ## 
-                                                    ## Adds rows to the end of the table. Note that the API can accept multiple rows data using this API. Adding one row at a time could lead to performance degradation. The recommended approach would be to batch the rows together in a single call rather than doing single row insertion. For best results, collect the rows to be inserted on the application side and perform single rows add operation. Experiment with the number of rows to determine the ideal number of rows to use in single API call. 
+                                                    ## Invoke action add
                                                     ## @param body The request body
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a Fiber of workbook_table_row
@@ -56,7 +56,7 @@ module MicrosoftGraph
                                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookTableRow.create_from_discriminator_value(pn) }, error_mapping)
                                                     end
                                                     ## 
-                                                    ## Adds rows to the end of the table. Note that the API can accept multiple rows data using this API. Adding one row at a time could lead to performance degradation. The recommended approach would be to batch the rows together in a single call rather than doing single row insertion. For best results, collect the rows to be inserted on the application side and perform single rows add operation. Experiment with the number of rows to determine the ideal number of rows to use in single API call. 
+                                                    ## Invoke action add
                                                     ## @param body The request body
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a request_information

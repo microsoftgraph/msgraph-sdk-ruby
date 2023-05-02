@@ -5,7 +5,6 @@ require_relative '../../../models/user_activity'
 require_relative '../../me'
 require_relative '../activities'
 require_relative './history_items/history_items_request_builder'
-require_relative './history_items/item/activity_history_item_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -57,17 +56,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserActivity.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a activity_history_item_item_request_builder
-                    ## 
-                    def history_items_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["activityHistoryItem%2Did"] = id
-                        return MicrosoftGraph::Me::Activities::Item::HistoryItems::Item::ActivityHistoryItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Update the navigation property activities in me

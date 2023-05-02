@@ -36,7 +36,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Read the properties and relationships of an authenticationFlowsPolicy object.
+                ## The policy configuration of the self-service sign-up experience of external users.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of authentication_flows_policy
                 ## 
@@ -50,7 +50,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AuthenticationFlowsPolicy.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Update the **selfServiceSignUp** property of an authenticationFlowsPolicy object. The properties **id**, **type**, and **description** cannot be modified.
+                ## Update the navigation property authenticationFlowsPolicy in policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of authentication_flows_policy
@@ -82,7 +82,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Read the properties and relationships of an authenticationFlowsPolicy object.
+                ## The policy configuration of the self-service sign-up experience of external users.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -100,7 +100,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Update the **selfServiceSignUp** property of an authenticationFlowsPolicy object. The properties **id**, **type**, and **description** cannot be modified.
+                ## Update the navigation property authenticationFlowsPolicy in policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -121,7 +121,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Read the properties and relationships of an authenticationFlowsPolicy object.
+                # The policy configuration of the self-service sign-up experience of external users.
                 class AuthenticationFlowsPolicyRequestBuilderGetQueryParameters
                     
                     ## 

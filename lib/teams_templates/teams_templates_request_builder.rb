@@ -4,6 +4,7 @@ require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/teams_template'
 require_relative '../models/teams_template_collection_response'
 require_relative './count/count_request_builder'
+require_relative './item/teams_template_item_request_builder'
 require_relative './teams_templates'
 
 module MicrosoftGraph
@@ -16,6 +17,17 @@ module MicrosoftGraph
             # Provides operations to count the resources in the collection.
             def count()
                 return MicrosoftGraph::TeamsTemplates::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            ## Provides operations to manage the collection of teamsTemplate entities.
+            ## @param teams_template_id Unique identifier of the item
+            ## @return a teams_template_item_request_builder
+            ## 
+            def by_teams_template_id(teams_template_id)
+                raise StandardError, 'teams_template_id cannot be null' if teams_template_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["teamsTemplate%2Did"] = teams_template_id
+                return MicrosoftGraph::TeamsTemplates::Item::TeamsTemplateItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new TeamsTemplatesRequestBuilder and sets the default values.

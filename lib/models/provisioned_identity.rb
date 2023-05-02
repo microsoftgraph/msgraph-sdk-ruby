@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Type of identity that has been provisioned, such as 'user' or 'group'.
             @identity_type
             ## 
-            ## Instantiates a new ProvisionedIdentity and sets the default values.
+            ## Instantiates a new provisionedIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

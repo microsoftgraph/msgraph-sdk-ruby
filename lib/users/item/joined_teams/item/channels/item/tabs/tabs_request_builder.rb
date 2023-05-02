@@ -10,6 +10,7 @@ require_relative '../../../item'
 require_relative '../../channels'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/teams_tab_item_request_builder'
 require_relative './tabs'
 
 module MicrosoftGraph
@@ -30,6 +31,17 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item::Tabs::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
+                                    ## Provides operations to manage the tabs property of the microsoft.graph.channel entity.
+                                    ## @param teams_tab_id Unique identifier of the item
+                                    ## @return a teams_tab_item_request_builder
+                                    ## 
+                                    def by_teams_tab_id(teams_tab_id)
+                                        raise StandardError, 'teams_tab_id cannot be null' if teams_tab_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["teamsTab%2Did"] = teams_tab_id
+                                        return MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item::Tabs::Item::TeamsTabItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                    end
+                                    ## 
                                     ## Instantiates a new TabsRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -39,7 +51,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/channels/{channel%2Did}/tabs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Retrieve the list of tabs in the specified channel within a team. 
+                                    ## A collection of all the tabs in the channel. A navigation property.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of teams_tab_collection_response
                                     ## 
@@ -69,7 +81,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamsTab.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Retrieve the list of tabs in the specified channel within a team. 
+                                    ## A collection of all the tabs in the channel. A navigation property.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -108,7 +120,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Retrieve the list of tabs in the specified channel within a team. 
+                                    # A collection of all the tabs in the channel. A navigation property.
                                     class TabsRequestBuilderGetQueryParameters
                                         
                                         ## 

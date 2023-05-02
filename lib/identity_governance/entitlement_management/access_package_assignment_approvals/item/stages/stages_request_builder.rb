@@ -8,6 +8,7 @@ require_relative '../../../entitlement_management'
 require_relative '../../access_package_assignment_approvals'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/approval_stage_item_request_builder'
 require_relative './stages'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackageAssignmentApprovals::Item::Stages::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the stages property of the microsoft.graph.approval entity.
+                            ## @param approval_stage_id Unique identifier of the item
+                            ## @return a approval_stage_item_request_builder
+                            ## 
+                            def by_approval_stage_id(approval_stage_id)
+                                raise StandardError, 'approval_stage_id cannot be null' if approval_stage_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["approvalStage%2Did"] = approval_stage_id
+                                return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackageAssignmentApprovals::Item::Stages::Item::ApprovalStageItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new StagesRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignmentApprovals/{approval%2Did}/stages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## In Azure AD entitlement management, list the approvalStage objects associated with an approval object. This call can be made by an approver, providing the identifier of the access package assignment request.
+                            ## A collection of stages in the approval decision.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of approval_stage_collection_response
                             ## 
@@ -65,7 +77,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ApprovalStage.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## In Azure AD entitlement management, list the approvalStage objects associated with an approval object. This call can be made by an approver, providing the identifier of the access package assignment request.
+                            ## A collection of stages in the approval decision.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -104,7 +116,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # In Azure AD entitlement management, list the approvalStage objects associated with an approval object. This call can be made by an approver, providing the identifier of the access package assignment request.
+                            # A collection of stages in the approval decision.
                             class StagesRequestBuilderGetQueryParameters
                                 
                                 ## 

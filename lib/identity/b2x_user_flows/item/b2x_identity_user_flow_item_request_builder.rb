@@ -5,13 +5,9 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../identity'
 require_relative '../b2x_user_flows'
 require_relative './identity_providers/identity_providers_request_builder'
-require_relative './identity_providers/item/identity_provider_item_request_builder'
 require_relative './item'
-require_relative './languages/item/user_flow_language_configuration_item_request_builder'
 require_relative './languages/languages_request_builder'
-require_relative './user_attribute_assignments/item/identity_user_flow_attribute_assignment_item_request_builder'
 require_relative './user_attribute_assignments/user_attribute_assignments_request_builder'
-require_relative './user_flow_identity_providers/item/identity_provider_base_item_request_builder'
 require_relative './user_flow_identity_providers/user_flow_identity_providers_request_builder'
 
 module MicrosoftGraph
@@ -78,28 +74,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::B2xIdentityUserFlow.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the identityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a identity_provider_item_request_builder
-                    ## 
-                    def identity_providers_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["identityProvider%2Did"] = id
-                        return MicrosoftGraph::Identity::B2xUserFlows::Item::IdentityProviders::Item::IdentityProviderItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the languages property of the microsoft.graph.b2xIdentityUserFlow entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a user_flow_language_configuration_item_request_builder
-                    ## 
-                    def languages_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["userFlowLanguageConfiguration%2Did"] = id
-                        return MicrosoftGraph::Identity::B2xUserFlows::Item::Languages::Item::UserFlowLanguageConfigurationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Update the navigation property b2xUserFlows in identity
@@ -170,28 +144,6 @@ module MicrosoftGraph
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
-                    end
-                    ## 
-                    ## Provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a identity_user_flow_attribute_assignment_item_request_builder
-                    ## 
-                    def user_attribute_assignments_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["identityUserFlowAttributeAssignment%2Did"] = id
-                        return MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments::Item::IdentityUserFlowAttributeAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Gets an item from the MicrosoftGraph.identity.b2xUserFlows.item.userFlowIdentityProviders.item collection
-                    ## @param id Unique identifier of the item
-                    ## @return a identity_provider_base_item_request_builder
-                    ## 
-                    def user_flow_identity_providers_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["identityProviderBase%2Did"] = id
-                        return MicrosoftGraph::Identity::B2xUserFlows::Item::UserFlowIdentityProviders::Item::IdentityProviderBaseItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
 
                     ## 

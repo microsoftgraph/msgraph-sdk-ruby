@@ -11,6 +11,7 @@ require_relative '../../tasks'
 require_relative '../item'
 require_relative './checklist_items'
 require_relative './count/count_request_builder'
+require_relative './item/checklist_item_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     # Provides operations to count the resources in the collection.
                                     def count()
                                         return MicrosoftGraph::Me::Todo::Lists::Item::Tasks::Item::ChecklistItems::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
+                                    ## @param checklist_item_id Unique identifier of the item
+                                    ## @return a checklist_item_item_request_builder
+                                    ## 
+                                    def by_checklist_item_id(checklist_item_id)
+                                        raise StandardError, 'checklist_item_id cannot be null' if checklist_item_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["checklistItem%2Did"] = checklist_item_id
+                                        return MicrosoftGraph::Me::Todo::Lists::Item::Tasks::Item::ChecklistItems::Item::ChecklistItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new ChecklistItemsRequestBuilder and sets the default values.

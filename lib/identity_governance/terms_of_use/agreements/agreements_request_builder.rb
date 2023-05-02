@@ -7,6 +7,7 @@ require_relative '../../identity_governance'
 require_relative '../terms_of_use'
 require_relative './agreements'
 require_relative './count/count_request_builder'
+require_relative './item/agreement_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::IdentityGovernance::TermsOfUse::Agreements::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the agreements property of the microsoft.graph.termsOfUseContainer entity.
+                    ## @param agreement_id Unique identifier of the item
+                    ## @return a agreement_item_request_builder
+                    ## 
+                    def by_agreement_id(agreement_id)
+                        raise StandardError, 'agreement_id cannot be null' if agreement_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["agreement%2Did"] = agreement_id
+                        return MicrosoftGraph::IdentityGovernance::TermsOfUse::Agreements::Item::AgreementItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new AgreementsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/termsOfUse/agreements{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Retrieve a list of agreement objects.
+                    ## Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of agreement_collection_response
                     ## 
@@ -45,7 +57,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AgreementCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create a new agreement object.
+                    ## Create new navigation property to agreements for identityGovernance
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of agreement
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Agreement.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieve a list of agreement objects.
+                    ## Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -79,7 +91,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Create a new agreement object.
+                    ## Create new navigation property to agreements for identityGovernance
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve a list of agreement objects.
+                    # Represents a tenant's customizable terms of use agreement that's created and managed with Azure Active Directory (Azure AD).
                     class AgreementsRequestBuilderGetQueryParameters
                         
                         ## 

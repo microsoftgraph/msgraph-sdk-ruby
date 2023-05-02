@@ -24,7 +24,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/addPassword")
                     end
                     ## 
-                    ## Add a strong password or secret to a servicePrincipal object.
+                    ## Invoke action addPassword
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of password_credential
@@ -40,7 +40,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PasswordCredential.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Add a strong password or secret to a servicePrincipal object.
+                    ## Invoke action addPassword
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information

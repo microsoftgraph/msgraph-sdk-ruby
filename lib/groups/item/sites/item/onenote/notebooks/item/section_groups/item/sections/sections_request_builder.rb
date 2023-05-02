@@ -13,6 +13,7 @@ require_relative '../../../item'
 require_relative '../../section_groups'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/onenote_section_item_request_builder'
 require_relative './sections'
 
 module MicrosoftGraph
@@ -36,6 +37,17 @@ module MicrosoftGraph
                                                     return MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::Item::SectionGroups::Item::Sections::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
+                                                ## Provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
+                                                ## @param onenote_section_id Unique identifier of the item
+                                                ## @return a onenote_section_item_request_builder
+                                                ## 
+                                                def by_onenote_section_id(onenote_section_id)
+                                                    raise StandardError, 'onenote_section_id cannot be null' if onenote_section_id.nil?
+                                                    url_tpl_params = @path_parameters.clone
+                                                    url_tpl_params["onenoteSection%2Did"] = onenote_section_id
+                                                    return MicrosoftGraph::Groups::Item::Sites::Item::Onenote::Notebooks::Item::SectionGroups::Item::Sections::Item::OnenoteSectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                                end
+                                                ## 
                                                 ## Instantiates a new SectionsRequestBuilder and sets the default values.
                                                 ## @param path_parameters Path parameters for the request
                                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -45,7 +57,7 @@ module MicrosoftGraph
                                                     super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/notebooks/{notebook%2Did}/sectionGroups/{sectionGroup%2Did}/sections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                                 end
                                                 ## 
-                                                ## Retrieve a list of onenoteSection objects from the specified section group.
+                                                ## The sections in the section group. Read-only. Nullable.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a Fiber of onenote_section_collection_response
                                                 ## 
@@ -59,7 +71,7 @@ module MicrosoftGraph
                                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnenoteSectionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                                 end
                                                 ## 
-                                                ## Create a new onenoteSection in the specified section group.
+                                                ## Create new navigation property to sections for groups
                                                 ## @param body The request body
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a Fiber of onenote_section
@@ -75,7 +87,7 @@ module MicrosoftGraph
                                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnenoteSection.create_from_discriminator_value(pn) }, error_mapping)
                                                 end
                                                 ## 
-                                                ## Retrieve a list of onenoteSection objects from the specified section group.
+                                                ## The sections in the section group. Read-only. Nullable.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a request_information
                                                 ## 
@@ -93,7 +105,7 @@ module MicrosoftGraph
                                                     return request_info
                                                 end
                                                 ## 
-                                                ## Create a new onenoteSection in the specified section group.
+                                                ## Create new navigation property to sections for groups
                                                 ## @param body The request body
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a request_information
@@ -114,7 +126,7 @@ module MicrosoftGraph
                                                 end
 
                                                 ## 
-                                                # Retrieve a list of onenoteSection objects from the specified section group.
+                                                # The sections in the section group. Read-only. Nullable.
                                                 class SectionsRequestBuilderGetQueryParameters
                                                     
                                                     ## 

@@ -62,7 +62,7 @@ module MicrosoftGraph
                                                             return @request_adapter.send_async(request_info, nil, error_mapping)
                                                         end
                                                         ## 
-                                                        ## Retrieve the properties and relationships of chartaxistitle object.
+                                                        ## Represents the axis title. Read-only.
                                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a Fiber of workbook_chart_axis_title
                                                         ## 
@@ -76,7 +76,7 @@ module MicrosoftGraph
                                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookChartAxisTitle.create_from_discriminator_value(pn) }, error_mapping)
                                                         end
                                                         ## 
-                                                        ## Update the properties of chartaxistitle object.
+                                                        ## Update the navigation property title in drives
                                                         ## @param body The request body
                                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a Fiber of workbook_chart_axis_title
@@ -108,7 +108,7 @@ module MicrosoftGraph
                                                             return request_info
                                                         end
                                                         ## 
-                                                        ## Retrieve the properties and relationships of chartaxistitle object.
+                                                        ## Represents the axis title. Read-only.
                                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a request_information
                                                         ## 
@@ -126,7 +126,7 @@ module MicrosoftGraph
                                                             return request_info
                                                         end
                                                         ## 
-                                                        ## Update the properties of chartaxistitle object.
+                                                        ## Update the navigation property title in drives
                                                         ## @param body The request body
                                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                         ## @return a request_information
@@ -147,7 +147,7 @@ module MicrosoftGraph
                                                         end
 
                                                         ## 
-                                                        # Retrieve the properties and relationships of chartaxistitle object.
+                                                        # Represents the axis title. Read-only.
                                                         class TitleRequestBuilderGetQueryParameters
                                                             
                                                             ## 

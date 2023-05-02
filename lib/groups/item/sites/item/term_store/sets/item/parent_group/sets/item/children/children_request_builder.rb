@@ -15,6 +15,7 @@ require_relative '../../sets'
 require_relative '../item'
 require_relative './children'
 require_relative './count/count_request_builder'
+require_relative './item/term_item_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -38,6 +39,17 @@ module MicrosoftGraph
                                                         return MicrosoftGraph::Groups::Item::Sites::Item::TermStore::Sets::Item::ParentGroup::Sets::Item::Children::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                                     end
                                                     ## 
+                                                    ## Provides operations to manage the children property of the microsoft.graph.termStore.set entity.
+                                                    ## @param term_id Unique identifier of the item
+                                                    ## @return a term_item_request_builder
+                                                    ## 
+                                                    def by_term_id(term_id)
+                                                        raise StandardError, 'term_id cannot be null' if term_id.nil?
+                                                        url_tpl_params = @path_parameters.clone
+                                                        url_tpl_params["term%2Did"] = term_id
+                                                        return MicrosoftGraph::Groups::Item::Sites::Item::TermStore::Sets::Item::ParentGroup::Sets::Item::Children::Item::TermItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                                    end
+                                                    ## 
                                                     ## Instantiates a new ChildrenRequestBuilder and sets the default values.
                                                     ## @param path_parameters Path parameters for the request
                                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -47,7 +59,7 @@ module MicrosoftGraph
                                                         super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStore/sets/{set%2Did}/parentGroup/sets/{set%2Did1}/children{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                                     end
                                                     ## 
-                                                    ## Get the first level children of a [set] or [term] resource using the children navigation property.
+                                                    ## Children terms of set in term [store].
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a Fiber of term_collection_response
                                                     ## 
@@ -61,7 +73,7 @@ module MicrosoftGraph
                                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::TermCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                                     end
                                                     ## 
-                                                    ## Create a new term object.
+                                                    ## Create new navigation property to children for groups
                                                     ## @param body The request body
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a Fiber of term
@@ -77,7 +89,7 @@ module MicrosoftGraph
                                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Term.create_from_discriminator_value(pn) }, error_mapping)
                                                     end
                                                     ## 
-                                                    ## Get the first level children of a [set] or [term] resource using the children navigation property.
+                                                    ## Children terms of set in term [store].
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a request_information
                                                     ## 
@@ -95,7 +107,7 @@ module MicrosoftGraph
                                                         return request_info
                                                     end
                                                     ## 
-                                                    ## Create a new term object.
+                                                    ## Create new navigation property to children for groups
                                                     ## @param body The request body
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a request_information
@@ -116,7 +128,7 @@ module MicrosoftGraph
                                                     end
 
                                                     ## 
-                                                    # Get the first level children of a [set] or [term] resource using the children navigation property.
+                                                    # Children terms of set in term [store].
                                                     class ChildrenRequestBuilderGetQueryParameters
                                                         
                                                         ## 

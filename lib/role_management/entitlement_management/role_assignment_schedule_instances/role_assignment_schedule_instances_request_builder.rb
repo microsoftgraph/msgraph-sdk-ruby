@@ -7,6 +7,7 @@ require_relative '../../role_management'
 require_relative '../entitlement_management'
 require_relative './count/count_request_builder'
 require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './item/unified_role_assignment_schedule_instance_item_request_builder'
 require_relative './role_assignment_schedule_instances'
 
 module MicrosoftGraph
@@ -21,6 +22,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignmentScheduleInstances::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the roleAssignmentScheduleInstances property of the microsoft.graph.rbacApplication entity.
+                    ## @param unified_role_assignment_schedule_instance_id Unique identifier of the item
+                    ## @return a unified_role_assignment_schedule_instance_item_request_builder
+                    ## 
+                    def by_unified_role_assignment_schedule_instance_id(unified_role_assignment_schedule_instance_id)
+                        raise StandardError, 'unified_role_assignment_schedule_instance_id cannot be null' if unified_role_assignment_schedule_instance_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["unifiedRoleAssignmentScheduleInstance%2Did"] = unified_role_assignment_schedule_instance_id
+                        return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignmentScheduleInstances::Item::UnifiedRoleAssignmentScheduleInstanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new RoleAssignmentScheduleInstancesRequestBuilder and sets the default values.
@@ -41,7 +53,7 @@ module MicrosoftGraph
                         return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
                     end
                     ## 
-                    ## Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
+                    ## Instances for active role assignments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of unified_role_assignment_schedule_instance_collection_response
                     ## 
@@ -71,7 +83,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignmentScheduleInstance.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
+                    ## Instances for active role assignments.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -110,7 +122,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
+                    # Instances for active role assignments.
                     class RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters
                         
                         ## 

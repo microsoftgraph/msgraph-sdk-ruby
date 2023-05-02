@@ -6,7 +6,6 @@ require_relative '../../../identity_governance'
 require_relative '../../access_reviews'
 require_relative '../definitions'
 require_relative './instances/instances_request_builder'
-require_relative './instances/item/access_review_instance_item_request_builder'
 require_relative './item'
 require_relative './stop/stop_request_builder'
 
@@ -65,17 +64,6 @@ module MicrosoftGraph
                             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewScheduleDefinition.create_from_discriminator_value(pn) }, error_mapping)
-                        end
-                        ## 
-                        ## Provides operations to manage the instances property of the microsoft.graph.accessReviewScheduleDefinition entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a access_review_instance_item_request_builder
-                        ## 
-                        def instances_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["accessReviewInstance%2Did"] = id
-                            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::AccessReviewInstanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Update the navigation property definitions in identityGovernance

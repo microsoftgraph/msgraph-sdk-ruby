@@ -37,7 +37,7 @@ module MicrosoftGraph
             # Represents the Windows Hello for Business authentication method registered to a user for authentication.
             @windows_hello_for_business_methods
             ## 
-            ## Instantiates a new Authentication and sets the default values.
+            ## Instantiates a new authentication and sets the default values.
             ## @return a void
             ## 
             def initialize()

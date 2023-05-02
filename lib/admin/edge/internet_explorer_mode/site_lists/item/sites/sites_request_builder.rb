@@ -9,6 +9,7 @@ require_relative '../../../internet_explorer_mode'
 require_relative '../../site_lists'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/browser_site_item_request_builder'
 require_relative './sites'
 
 module MicrosoftGraph
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Admin::Edge::InternetExplorerMode::SiteLists::Item::Sites::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                ## Provides operations to manage the sites property of the microsoft.graph.browserSiteList entity.
+                                ## @param browser_site_id Unique identifier of the item
+                                ## @return a browser_site_item_request_builder
+                                ## 
+                                def by_browser_site_id(browser_site_id)
+                                    raise StandardError, 'browser_site_id cannot be null' if browser_site_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["browserSite%2Did"] = browser_site_id
+                                    return MicrosoftGraph::Admin::Edge::InternetExplorerMode::SiteLists::Item::Sites::Item::BrowserSiteItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                end
+                                ## 
                                 ## Instantiates a new SitesRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -37,7 +49,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/admin/edge/internetExplorerMode/siteLists/{browserSiteList%2Did}/sites{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                 end
                                 ## 
-                                ## Get sites from admin
+                                ## A collection of sites defined for the site list.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of browser_site_collection_response
                                 ## 
@@ -67,7 +79,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BrowserSite.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Get sites from admin
+                                ## A collection of sites defined for the site list.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -106,7 +118,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Get sites from admin
+                                # A collection of sites defined for the site list.
                                 class SitesRequestBuilderGetQueryParameters
                                     
                                     ## 

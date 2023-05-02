@@ -35,7 +35,7 @@ module MicrosoftGraph
                                                 super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}/copyToDefaultContentLocation")
                                             end
                                             ## 
-                                            ## Copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
+                                            ## Invoke action copyToDefaultContentLocation
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of void
@@ -51,7 +51,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                             end
                                             ## 
-                                            ## Copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.
+                                            ## Invoke action copyToDefaultContentLocation
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information

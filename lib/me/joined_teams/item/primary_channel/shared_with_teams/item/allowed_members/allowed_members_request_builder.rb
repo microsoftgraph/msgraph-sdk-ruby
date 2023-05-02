@@ -10,6 +10,7 @@ require_relative '../../shared_with_teams'
 require_relative '../item'
 require_relative './allowed_members'
 require_relative './count/count_request_builder'
+require_relative './item/conversation_member_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -29,6 +30,17 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Me::JoinedTeams::Item::PrimaryChannel::SharedWithTeams::Item::AllowedMembers::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
+                                    ## Provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.
+                                    ## @param conversation_member_id Unique identifier of the item
+                                    ## @return a conversation_member_item_request_builder
+                                    ## 
+                                    def by_conversation_member_id(conversation_member_id)
+                                        raise StandardError, 'conversation_member_id cannot be null' if conversation_member_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["conversationMember%2Did"] = conversation_member_id
+                                        return MicrosoftGraph::Me::JoinedTeams::Item::PrimaryChannel::SharedWithTeams::Item::AllowedMembers::Item::ConversationMemberItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                    end
+                                    ## 
                                     ## Instantiates a new AllowedMembersRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -38,7 +50,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/me/joinedTeams/{team%2Did}/primaryChannel/sharedWithTeams/{sharedWithChannelTeamInfo%2Did}/allowedMembers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:- Users with `Guest` role- Users who are externally authenticated in the tenant
+                                    ## A collection of team members who have access to the shared channel.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of conversation_member_collection_response
                                     ## 
@@ -52,7 +64,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConversationMemberCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:- Users with `Guest` role- Users who are externally authenticated in the tenant
+                                    ## A collection of team members who have access to the shared channel.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -71,7 +83,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:- Users with `Guest` role- Users who are externally authenticated in the tenant
+                                    # A collection of team members who have access to the shared channel.
                                     class AllowedMembersRequestBuilderGetQueryParameters
                                         
                                         ## 

@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../security'
 require_relative './alerts'
 require_relative './count/count_request_builder'
+require_relative './item/alert_item_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Security::Alerts::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the alerts property of the microsoft.graph.security entity.
+                ## @param alert_id Unique identifier of the item
+                ## @return a alert_item_request_builder
+                ## 
+                def by_alert_id(alert_id)
+                    raise StandardError, 'alert_id cannot be null' if alert_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["alert%2Did"] = alert_id
+                    return MicrosoftGraph::Security::Alerts::Item::AlertItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new AlertsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/security/alerts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve a list of alert objects.
+                ## Get alerts from security
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of alert_collection_response
                 ## 
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Alert.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve a list of alert objects.
+                ## Get alerts from security
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve a list of alert objects.
+                # Get alerts from security
                 class AlertsRequestBuilderGetQueryParameters
                     
                     ## 

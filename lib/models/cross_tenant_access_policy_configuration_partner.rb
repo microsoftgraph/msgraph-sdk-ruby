@@ -10,6 +10,9 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # The automaticUserConsentSettings property
+            @automatic_user_consent_settings
+            ## 
             # Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
             @b2b_collaboration_inbound
             ## 
@@ -47,6 +50,21 @@ module MicrosoftGraph
             ## 
             def additional_data=(value)
                 @additional_data = value
+            end
+            ## 
+            ## Gets the automaticUserConsentSettings property value. The automaticUserConsentSettings property
+            ## @return a inbound_outbound_policy_configuration
+            ## 
+            def automatic_user_consent_settings
+                return @automatic_user_consent_settings
+            end
+            ## 
+            ## Sets the automaticUserConsentSettings property value. The automaticUserConsentSettings property
+            ## @param value Value to set for the automatic_user_consent_settings property.
+            ## @return a void
+            ## 
+            def automatic_user_consent_settings=(value)
+                @automatic_user_consent_settings = value
             end
             ## 
             ## Gets the b2bCollaborationInbound property value. Defines your partner-specific configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
@@ -130,6 +148,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
+                    "automaticUserConsentSettings" => lambda {|n| @automatic_user_consent_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::InboundOutboundPolicyConfiguration.create_from_discriminator_value(pn) }) },
                     "b2bCollaborationInbound" => lambda {|n| @b2b_collaboration_inbound = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
                     "b2bCollaborationOutbound" => lambda {|n| @b2b_collaboration_outbound = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
                     "b2bDirectConnectInbound" => lambda {|n| @b2b_direct_connect_inbound = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
@@ -192,6 +211,7 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_object_value("automaticUserConsentSettings", @automatic_user_consent_settings)
                 writer.write_object_value("b2bCollaborationInbound", @b2b_collaboration_inbound)
                 writer.write_object_value("b2bCollaborationOutbound", @b2b_collaboration_outbound)
                 writer.write_object_value("b2bDirectConnectInbound", @b2b_direct_connect_inbound)

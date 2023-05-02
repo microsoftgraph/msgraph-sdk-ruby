@@ -29,7 +29,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/print/shares/{printerShare%2Did}/allowedGroups/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}")
                             end
                             ## 
-                            ## Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+                            ## The groups whose users have access to print using the printer.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of string_collection_response
                             ## 
@@ -59,7 +59,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+                            ## The groups whose users have access to print using the printer.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -97,7 +97,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+                            # The groups whose users have access to print using the printer.
                             class RefRequestBuilderGetQueryParameters
                                 
                                 ## 

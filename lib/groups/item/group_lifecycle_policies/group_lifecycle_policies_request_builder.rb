@@ -7,6 +7,7 @@ require_relative '../../groups'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './group_lifecycle_policies'
+require_relative './item/group_lifecycle_policy_item_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.
+                    ## @param group_lifecycle_policy_id Unique identifier of the item
+                    ## @return a group_lifecycle_policy_item_request_builder
+                    ## 
+                    def by_group_lifecycle_policy_id(group_lifecycle_policy_id)
+                        raise StandardError, 'group_lifecycle_policy_id cannot be null' if group_lifecycle_policy_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["groupLifecyclePolicy%2Did"] = group_lifecycle_policy_id
+                        return MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item::GroupLifecyclePolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new GroupLifecyclePoliciesRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/groupLifecyclePolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
+                    ## The collection of lifecycle policies for this group. Read-only. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of group_lifecycle_policy_collection_response
                     ## 
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::GroupLifecyclePolicy.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
+                    ## The collection of lifecycle policies for this group. Read-only. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
+                    # The collection of lifecycle policies for this group. Read-only. Nullable.
                     class GroupLifecyclePoliciesRequestBuilderGetQueryParameters
                         
                         ## 

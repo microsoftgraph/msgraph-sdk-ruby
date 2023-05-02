@@ -5,6 +5,7 @@ require_relative '../../models/on_premises_directory_synchronization'
 require_relative '../../models/on_premises_directory_synchronization_collection_response'
 require_relative '../directory'
 require_relative './count/count_request_builder'
+require_relative './item/on_premises_directory_synchronization_item_request_builder'
 require_relative './on_premises_synchronization'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Directory::OnPremisesSynchronization::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
+                ## @param on_premises_directory_synchronization_id Unique identifier of the item
+                ## @return a on_premises_directory_synchronization_item_request_builder
+                ## 
+                def by_on_premises_directory_synchronization_id(on_premises_directory_synchronization_id)
+                    raise StandardError, 'on_premises_directory_synchronization_id cannot be null' if on_premises_directory_synchronization_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["onPremisesDirectorySynchronization%2Did"] = on_premises_directory_synchronization_id
+                    return MicrosoftGraph::Directory::OnPremisesSynchronization::Item::OnPremisesDirectorySynchronizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new OnPremisesSynchronizationRequestBuilder and sets the default values.

@@ -4,6 +4,7 @@ require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/site_collection_response'
 require_relative './add/add_request_builder'
 require_relative './count/count_request_builder'
+require_relative './item/site_item_request_builder'
 require_relative './remove/remove_request_builder'
 require_relative './sites'
 
@@ -29,6 +30,17 @@ module MicrosoftGraph
                 return MicrosoftGraph::Sites::Remove::RemoveRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            ## Provides operations to manage the collection of site entities.
+            ## @param site_id Unique identifier of the item
+            ## @return a site_item_request_builder
+            ## 
+            def by_site_id(site_id)
+                raise StandardError, 'site_id cannot be null' if site_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["site%2Did"] = site_id
+                return MicrosoftGraph::Sites::Item::SiteItemRequestBuilder.new(url_tpl_params, @request_adapter)
+            end
+            ## 
             ## Instantiates a new SitesRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request
             ## @param request_adapter The request adapter to use to execute the requests.
@@ -38,7 +50,7 @@ module MicrosoftGraph
                 super(path_parameters, request_adapter, "{+baseurl}/sites{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
             end
             ## 
-            ## Search across a SharePoint tenant for [sites][] that match keywords provided. The only property that works for sorting is **createdDateTime**. The search filter is a free text search that uses multiple properties when retrieving the search results.
+            ## List all available sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a **[$search][]** query against the `/sites` collection to find sites matching given keywords. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of site_collection_response
             ## 
@@ -52,7 +64,7 @@ module MicrosoftGraph
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SiteCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Search across a SharePoint tenant for [sites][] that match keywords provided. The only property that works for sorting is **createdDateTime**. The search filter is a free text search that uses multiple properties when retrieving the search results.
+            ## List all available sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a **[$search][]** query against the `/sites` collection to find sites matching given keywords. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
             ## 
@@ -71,7 +83,7 @@ module MicrosoftGraph
             end
 
             ## 
-            # Search across a SharePoint tenant for [sites][] that match keywords provided. The only property that works for sorting is **createdDateTime**. The search filter is a free text search that uses multiple properties when retrieving the search results.
+            # List all available sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a **[$search][]** query against the `/sites` collection to find sites matching given keywords. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.
             class SitesRequestBuilderGetQueryParameters
                 
                 ## 

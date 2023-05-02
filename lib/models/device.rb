@@ -65,7 +65,7 @@ module MicrosoftGraph
             # The profile type of the device. Possible values: RegisteredDevice (default), SecureVM, Printer, Shared, IoT.
             @profile_type
             ## 
-            # The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
+            # The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
             @registered_owners
             ## 
             # Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
@@ -140,7 +140,7 @@ module MicrosoftGraph
                 @compliance_expiration_date_time = value
             end
             ## 
-            ## Instantiates a new Device and sets the default values.
+            ## Instantiates a new device and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -414,14 +414,14 @@ module MicrosoftGraph
                 @profile_type = value
             end
             ## 
-            ## Gets the registeredOwners property value. The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
+            ## Gets the registeredOwners property value. The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
             ## @return a directory_object
             ## 
             def registered_owners
                 return @registered_owners
             end
             ## 
-            ## Sets the registeredOwners property value. The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
+            ## Sets the registeredOwners property value. The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
             ## @param value Value to set for the registered_owners property.
             ## @return a void
             ## 

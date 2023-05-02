@@ -6,6 +6,7 @@ require_relative '../../models/security/alert_collection_response'
 require_relative '../security'
 require_relative './alerts_v2'
 require_relative './count/count_request_builder'
+require_relative './item/alert_item_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Security::Alerts_v2::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.
+                ## @param alert_id Unique identifier of the item
+                ## @return a alert_item_request_builder
+                ## 
+                def by_alert_id(alert_id)
+                    raise StandardError, 'alert_id cannot be null' if alert_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["alert%2Did"] = alert_id
+                    return MicrosoftGraph::Security::Alerts_v2::Item::AlertItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new Alerts_v2RequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/security/alerts_v2{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.
+                ## A collection of alerts in Microsoft 365 Defender.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of alert_collection_response
                 ## 
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::Alert.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.
+                ## A collection of alerts in Microsoft 365 Defender.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.
+                # A collection of alerts in Microsoft 365 Defender.
                 class AlertsV2RequestBuilderGetQueryParameters
                     
                     ## 
