@@ -4,7 +4,10 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/windows_information_protection_policy'
 require_relative '../../device_app_management'
 require_relative '../windows_information_protection_policies'
+require_relative './assignments/assignments_request_builder'
+require_relative './exempt_app_locker_files/exempt_app_locker_files_request_builder'
 require_relative './item'
+require_relative './protected_app_locker_files/protected_app_locker_files_request_builder'
 
 module MicrosoftGraph
     module DeviceAppManagement
@@ -14,6 +17,21 @@ module MicrosoftGraph
                 # Provides operations to manage the windowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
                 class WindowsInformationProtectionPolicyItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
+                    ## 
+                    # Provides operations to manage the assignments property of the microsoft.graph.windowsInformationProtection entity.
+                    def assignments()
+                        return MicrosoftGraph::DeviceAppManagement::WindowsInformationProtectionPolicies::Item::Assignments::AssignmentsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to manage the exemptAppLockerFiles property of the microsoft.graph.windowsInformationProtection entity.
+                    def exempt_app_locker_files()
+                        return MicrosoftGraph::DeviceAppManagement::WindowsInformationProtectionPolicies::Item::ExemptAppLockerFiles::ExemptAppLockerFilesRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to manage the protectedAppLockerFiles property of the microsoft.graph.windowsInformationProtection entity.
+                    def protected_app_locker_files()
+                        return MicrosoftGraph::DeviceAppManagement::WindowsInformationProtectionPolicies::Item::ProtectedAppLockerFiles::ProtectedAppLockerFilesRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     ## Instantiates a new WindowsInformationProtectionPolicyItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request

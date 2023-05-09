@@ -25,7 +25,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/remove")
                         end
                         ## 
-                        ## Unfollow a user's site or multiple sites.
+                        ## Invoke action remove
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of remove_response
@@ -41,7 +41,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Groups::Item::Sites::Remove::RemoveResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Unfollow a user's site or multiple sites.
+                        ## Invoke action remove
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

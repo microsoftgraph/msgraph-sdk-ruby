@@ -33,7 +33,7 @@ module MicrosoftGraph
                                             super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/channels/{channel%2Did}/members/add")
                                         end
                                         ## 
-                                        ## Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
+                                        ## Invoke action add
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of add_response
@@ -49,7 +49,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Users::Item::JoinedTeams::Item::Channels::Item::Members::Add::AddResponse.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Add multiple members in a single request to a team. The response provides details about which memberships could and couldn't be created.
+                                        ## Invoke action add
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information

@@ -35,7 +35,7 @@ module MicrosoftGraph
                                                 super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/lists/{list%2Did}/contentTypes/{contentType%2Did}/publish")
                                             end
                                             ## 
-                                            ## Publishes a [contentType][] present in the content type hub site.
+                                            ## Invoke action publish
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of void
                                             ## 
@@ -49,7 +49,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                             end
                                             ## 
-                                            ## Publishes a [contentType][] present in the content type hub site.
+                                            ## Invoke action publish
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 

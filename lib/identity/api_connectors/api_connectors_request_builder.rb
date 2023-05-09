@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../identity'
 require_relative './api_connectors'
 require_relative './count/count_request_builder'
+require_relative './item/identity_api_connector_item_request_builder'
 
 module MicrosoftGraph
     module Identity
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Identity::ApiConnectors::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.
+                ## @param identity_api_connector_id Unique identifier of the item
+                ## @return a identity_api_connector_item_request_builder
+                ## 
+                def by_identity_api_connector_id(identity_api_connector_id)
+                    raise StandardError, 'identity_api_connector_id cannot be null' if identity_api_connector_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["identityApiConnector%2Did"] = identity_api_connector_id
+                    return MicrosoftGraph::Identity::ApiConnectors::Item::IdentityApiConnectorItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new ApiConnectorsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/identity/apiConnectors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Read the properties of an identityApiConnector object.
+                ## Represents entry point for API connectors.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of identity_api_connector_collection_response
                 ## 
@@ -43,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityApiConnectorCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create a new identityApiConnector object.
+                ## Create new navigation property to apiConnectors for identity
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of identity_api_connector
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityApiConnector.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Read the properties of an identityApiConnector object.
+                ## Represents entry point for API connectors.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create a new identityApiConnector object.
+                ## Create new navigation property to apiConnectors for identity
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Read the properties of an identityApiConnector object.
+                # Represents entry point for API connectors.
                 class ApiConnectorsRequestBuilderGetQueryParameters
                     
                     ## 

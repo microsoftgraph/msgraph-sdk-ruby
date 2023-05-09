@@ -6,6 +6,7 @@ require_relative '../../../models/security/retention_event_type_collection_respo
 require_relative '../../security'
 require_relative '../trigger_types'
 require_relative './count/count_request_builder'
+require_relative './item/retention_event_type_item_request_builder'
 require_relative './retention_event_types'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Security::TriggerTypes::RetentionEventTypes::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the retentionEventTypes property of the microsoft.graph.security.triggerTypesRoot entity.
+                    ## @param retention_event_type_id Unique identifier of the item
+                    ## @return a retention_event_type_item_request_builder
+                    ## 
+                    def by_retention_event_type_id(retention_event_type_id)
+                        raise StandardError, 'retention_event_type_id cannot be null' if retention_event_type_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["retentionEventType%2Did"] = retention_event_type_id
+                        return MicrosoftGraph::Security::TriggerTypes::RetentionEventTypes::Item::RetentionEventTypeItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new RetentionEventTypesRequestBuilder and sets the default values.

@@ -7,6 +7,7 @@ require_relative '../../mobile_apps'
 require_relative '../item'
 require_relative './categories'
 require_relative './count/count_request_builder'
+require_relative './item/mobile_app_category_item_request_builder'
 
 module MicrosoftGraph
     module DeviceAppManagement
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::Categories::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
+                        ## @param mobile_app_category_id Unique identifier of the item
+                        ## @return a mobile_app_category_item_request_builder
+                        ## 
+                        def by_mobile_app_category_id(mobile_app_category_id)
+                            raise StandardError, 'mobile_app_category_id cannot be null' if mobile_app_category_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["mobileAppCategory%2Did"] = mobile_app_category_id
+                            return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::Categories::Item::MobileAppCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new CategoriesRequestBuilder and sets the default values.

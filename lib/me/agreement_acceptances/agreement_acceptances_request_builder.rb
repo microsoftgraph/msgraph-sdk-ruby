@@ -5,6 +5,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../me'
 require_relative './agreement_acceptances'
 require_relative './count/count_request_builder'
+require_relative './item/agreement_acceptance_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -19,6 +20,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Me::AgreementAcceptances::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.
+                ## @param agreement_acceptance_id Unique identifier of the item
+                ## @return a agreement_acceptance_item_request_builder
+                ## 
+                def by_agreement_acceptance_id(agreement_acceptance_id)
+                    raise StandardError, 'agreement_acceptance_id cannot be null' if agreement_acceptance_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["agreementAcceptance%2Did"] = agreement_acceptance_id
+                    return MicrosoftGraph::Me::AgreementAcceptances::Item::AgreementAcceptanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new AgreementAcceptancesRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -28,7 +40,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/me/agreementAcceptances{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve the signed-in user's agreementAcceptance objects.
+                ## The user's terms of use acceptance statuses. Read-only. Nullable.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of agreement_acceptance_collection_response
                 ## 
@@ -42,7 +54,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AgreementAcceptanceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve the signed-in user's agreementAcceptance objects.
+                ## The user's terms of use acceptance statuses. Read-only. Nullable.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -61,7 +73,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve the signed-in user's agreementAcceptance objects.
+                # The user's terms of use acceptance statuses. Read-only. Nullable.
                 class AgreementAcceptancesRequestBuilderGetQueryParameters
                     
                     ## 

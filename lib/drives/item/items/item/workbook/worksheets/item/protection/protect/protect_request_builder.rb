@@ -35,7 +35,7 @@ module MicrosoftGraph
                                                 super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/protection/protect")
                                             end
                                             ## 
-                                            ## Protect a worksheet. It throws if the worksheet has been protected.
+                                            ## Invoke action protect
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of void
@@ -51,7 +51,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                             end
                                             ## 
-                                            ## Protect a worksheet. It throws if the worksheet has been protected.
+                                            ## Invoke action protect
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information

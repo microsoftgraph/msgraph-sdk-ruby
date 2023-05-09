@@ -1,11 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../microsoft_graph'
+require_relative '../../../models/certificate_based_auth_configuration'
 require_relative '../../../models/certificate_based_auth_configuration_collection_response'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../organization'
 require_relative '../item'
 require_relative './certificate_based_auth_configuration'
 require_relative './count/count_request_builder'
+require_relative './item/certificate_based_auth_configuration_item_request_builder'
 
 module MicrosoftGraph
     module Organization
@@ -21,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Organization::Item::CertificateBasedAuthConfiguration::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the certificateBasedAuthConfiguration property of the microsoft.graph.organization entity.
+                    ## @param certificate_based_auth_configuration_id Unique identifier of the item
+                    ## @return a certificate_based_auth_configuration_item_request_builder
+                    ## 
+                    def by_certificate_based_auth_configuration_id(certificate_based_auth_configuration_id)
+                        raise StandardError, 'certificate_based_auth_configuration_id cannot be null' if certificate_based_auth_configuration_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["certificateBasedAuthConfiguration%2Did"] = certificate_based_auth_configuration_id
+                        return MicrosoftGraph::Organization::Item::CertificateBasedAuthConfiguration::Item::CertificateBasedAuthConfigurationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new CertificateBasedAuthConfigurationRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -30,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/organization/{organization%2Did}/certificateBasedAuthConfiguration{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get a list of certificateBasedAuthConfiguration objects.
+                    ## Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of certificate_based_auth_configuration_collection_response
                     ## 
@@ -44,7 +57,23 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CertificateBasedAuthConfigurationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get a list of certificateBasedAuthConfiguration objects.
+                    ## Create new navigation property to certificateBasedAuthConfiguration for organization
+                    ## @param body The request body
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @return a Fiber of certificate_based_auth_configuration
+                    ## 
+                    def post(body, request_configuration=nil)
+                        raise StandardError, 'body cannot be null' if body.nil?
+                        request_info = self.to_post_request_information(
+                            body, request_configuration
+                        )
+                        error_mapping = Hash.new
+                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                        return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CertificateBasedAuthConfiguration.create_from_discriminator_value(pn) }, error_mapping)
+                    end
+                    ## 
+                    ## Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -61,9 +90,29 @@ module MicrosoftGraph
                         end
                         return request_info
                     end
+                    ## 
+                    ## Create new navigation property to certificateBasedAuthConfiguration for organization
+                    ## @param body The request body
+                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
+                    ## @return a request_information
+                    ## 
+                    def to_post_request_information(body, request_configuration=nil)
+                        raise StandardError, 'body cannot be null' if body.nil?
+                        request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+                        request_info.url_template = @url_template
+                        request_info.path_parameters = @path_parameters
+                        request_info.http_method = :POST
+                        request_info.headers.add('Accept', 'application/json')
+                        unless request_configuration.nil?
+                            request_info.add_headers_from_raw_object(request_configuration.headers)
+                            request_info.add_request_options(request_configuration.options)
+                        end
+                        request_info.set_content_from_parsable(@request_adapter, "application/json", body)
+                        return request_info
+                    end
 
                     ## 
-                    # Get a list of certificateBasedAuthConfiguration objects.
+                    # Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
                     class CertificateBasedAuthConfigurationRequestBuilderGetQueryParameters
                         
                         ## 

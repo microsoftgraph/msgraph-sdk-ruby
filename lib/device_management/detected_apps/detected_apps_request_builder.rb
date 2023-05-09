@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
 require_relative './detected_apps'
+require_relative './item/detected_app_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceManagement::DetectedApps::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the detectedApps property of the microsoft.graph.deviceManagement entity.
+                ## @param detected_app_id Unique identifier of the item
+                ## @return a detected_app_item_request_builder
+                ## 
+                def by_detected_app_id(detected_app_id)
+                    raise StandardError, 'detected_app_id cannot be null' if detected_app_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["detectedApp%2Did"] = detected_app_id
+                    return MicrosoftGraph::DeviceManagement::DetectedApps::Item::DetectedAppItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new DetectedAppsRequestBuilder and sets the default values.

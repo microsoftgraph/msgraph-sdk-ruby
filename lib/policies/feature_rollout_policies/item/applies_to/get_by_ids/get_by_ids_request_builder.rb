@@ -27,7 +27,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/policies/featureRolloutPolicies/{featureRolloutPolicy%2Did}/appliesTo/getByIds")
                             end
                             ## 
-                            ## Return the directory objects specified in a list of IDs. Some common uses for this function are to:
+                            ## Invoke action getByIds
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of get_by_ids_response
@@ -43,7 +43,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Policies::FeatureRolloutPolicies::Item::AppliesTo::GetByIds::GetByIdsResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Return the directory objects specified in a list of IDs. Some common uses for this function are to:
+                            ## Invoke action getByIds
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information

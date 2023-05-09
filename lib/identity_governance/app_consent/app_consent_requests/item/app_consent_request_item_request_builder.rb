@@ -6,7 +6,6 @@ require_relative '../../../identity_governance'
 require_relative '../../app_consent'
 require_relative '../app_consent_requests'
 require_relative './item'
-require_relative './user_consent_requests/item/user_consent_request_item_request_builder'
 require_relative './user_consent_requests/user_consent_requests_request_builder'
 
 module MicrosoftGraph
@@ -129,17 +128,6 @@ module MicrosoftGraph
                             end
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
-                        end
-                        ## 
-                        ## Provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a user_consent_request_item_request_builder
-                        ## 
-                        def user_consent_requests_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["userConsentRequest%2Did"] = id
-                            return MicrosoftGraph::IdentityGovernance::AppConsent::AppConsentRequests::Item::UserConsentRequests::Item::UserConsentRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
 
                         ## 

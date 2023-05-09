@@ -9,9 +9,13 @@ require_relative './deleted_items'
 require_relative './delta/delta_request_builder'
 require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
 require_relative './get_by_ids/get_by_ids_request_builder'
+require_relative './graph_administrative_unit/graph_administrative_unit_request_builder'
 require_relative './graph_application/graph_application_request_builder'
+require_relative './graph_device/graph_device_request_builder'
 require_relative './graph_group/graph_group_request_builder'
+require_relative './graph_service_principal/graph_service_principal_request_builder'
 require_relative './graph_user/graph_user_request_builder'
+require_relative './item/directory_object_item_request_builder'
 require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph
@@ -42,14 +46,29 @@ module MicrosoftGraph
                     return MicrosoftGraph::Directory::DeletedItems::GetByIds::GetByIdsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Casts the previous resource to administrativeUnit.
+                def graph_administrative_unit()
+                    return MicrosoftGraph::Directory::DeletedItems::GraphAdministrativeUnit::GraphAdministrativeUnitRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Casts the previous resource to application.
                 def graph_application()
                     return MicrosoftGraph::Directory::DeletedItems::GraphApplication::GraphApplicationRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Casts the previous resource to device.
+                def graph_device()
+                    return MicrosoftGraph::Directory::DeletedItems::GraphDevice::GraphDeviceRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Casts the previous resource to group.
                 def graph_group()
                     return MicrosoftGraph::Directory::DeletedItems::GraphGroup::GraphGroupRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Casts the previous resource to servicePrincipal.
+                def graph_service_principal()
+                    return MicrosoftGraph::Directory::DeletedItems::GraphServicePrincipal::GraphServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Casts the previous resource to user.
@@ -60,6 +79,17 @@ module MicrosoftGraph
                 # Provides operations to call the validateProperties method.
                 def validate_properties()
                     return MicrosoftGraph::Directory::DeletedItems::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
+                ## @param directory_object_id Unique identifier of the item
+                ## @return a directory_object_item_request_builder
+                ## 
+                def by_directory_object_id(directory_object_id)
+                    raise StandardError, 'directory_object_id cannot be null' if directory_object_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["directoryObject%2Did"] = directory_object_id
+                    return MicrosoftGraph::Directory::DeletedItems::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new DeletedItemsRequestBuilder and sets the default values.

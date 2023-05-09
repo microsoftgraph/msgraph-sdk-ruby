@@ -7,6 +7,7 @@ require_relative '../../shares'
 require_relative '../item'
 require_relative './allowed_users'
 require_relative './count/count_request_builder'
+require_relative './item/user_item_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -29,6 +30,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Print::Shares::Item::AllowedUsers::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Gets an item from the MicrosoftGraph.print.shares.item.allowedUsers.item collection
+                        ## @param user_id Unique identifier of the item
+                        ## @return a user_item_request_builder
+                        ## 
+                        def by_user_id(user_id)
+                            raise StandardError, 'user_id cannot be null' if user_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["user%2Did"] = user_id
+                            return MicrosoftGraph::Print::Shares::Item::AllowedUsers::Item::UserItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new AllowedUsersRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -38,7 +50,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/print/shares/{printerShare%2Did}/allowedUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+                        ## The users who have access to print using the printer.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of user_collection_response
                         ## 
@@ -52,7 +64,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+                        ## The users who have access to print using the printer.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -71,7 +83,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
+                        # The users who have access to print using the printer.
                         class AllowedUsersRequestBuilderGetQueryParameters
                             
                             ## 

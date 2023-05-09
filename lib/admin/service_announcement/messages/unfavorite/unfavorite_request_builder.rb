@@ -25,7 +25,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/admin/serviceAnnouncement/messages/unfavorite")
                         end
                         ## 
-                        ## Remove the favorite status of serviceUpdateMessages for the signed in user.
+                        ## Invoke action unfavorite
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of unfavorite_response
@@ -41,7 +41,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Unfavorite::UnfavoriteResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Remove the favorite status of serviceUpdateMessages for the signed in user.
+                        ## Invoke action unfavorite
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

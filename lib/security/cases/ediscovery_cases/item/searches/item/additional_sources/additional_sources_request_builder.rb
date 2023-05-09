@@ -11,6 +11,7 @@ require_relative '../../searches'
 require_relative '../item'
 require_relative './additional_sources'
 require_relative './count/count_request_builder'
+require_relative './item/data_source_item_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -30,6 +31,17 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::AdditionalSources::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
+                                    ## Provides operations to manage the additionalSources property of the microsoft.graph.security.ediscoverySearch entity.
+                                    ## @param data_source_id Unique identifier of the item
+                                    ## @return a data_source_item_request_builder
+                                    ## 
+                                    def by_data_source_id(data_source_id)
+                                        raise StandardError, 'data_source_id cannot be null' if data_source_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["dataSource%2Did"] = data_source_id
+                                        return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::AdditionalSources::Item::DataSourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                    end
+                                    ## 
                                     ## Instantiates a new AdditionalSourcesRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -39,7 +51,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches/{ediscoverySearch%2Did}/additionalSources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Get the list of additional sources associated with an eDiscovery search.
+                                    ## Adds an additional source to the eDiscovery search.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of data_source_collection_response
                                     ## 
@@ -53,7 +65,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::DataSourceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Create a new additional source associated with an eDiscovery search.
+                                    ## Create new navigation property to additionalSources for security
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of data_source
@@ -69,7 +81,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::DataSource.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Get the list of additional sources associated with an eDiscovery search.
+                                    ## Adds an additional source to the eDiscovery search.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -87,7 +99,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Create a new additional source associated with an eDiscovery search.
+                                    ## Create new navigation property to additionalSources for security
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
@@ -108,7 +120,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Get the list of additional sources associated with an eDiscovery search.
+                                    # Adds an additional source to the eDiscovery search.
                                     class AdditionalSourcesRequestBuilderGetQueryParameters
                                         
                                         ## 

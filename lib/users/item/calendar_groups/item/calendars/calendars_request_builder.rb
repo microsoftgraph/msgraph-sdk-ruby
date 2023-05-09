@@ -9,6 +9,7 @@ require_relative '../../calendar_groups'
 require_relative '../item'
 require_relative './calendars'
 require_relative './count/count_request_builder'
+require_relative './item/calendar_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
+                            ## @param calendar_id Unique identifier of the item
+                            ## @return a calendar_item_request_builder
+                            ## 
+                            def by_calendar_id(calendar_id)
+                                raise StandardError, 'calendar_id cannot be null' if calendar_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["calendar%2Did"] = calendar_id
+                                return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::CalendarItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new CalendarsRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/calendarGroups/{calendarGroup%2Did}/calendars{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}")
                             end
                             ## 
-                            ## Retrieve a list of calendars belonging to a calendar group.
+                            ## The calendars in the calendar group. Navigation property. Read-only. Nullable.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of calendar_collection_response
                             ## 
@@ -49,7 +61,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CalendarCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Use this API to create a new calendar in a calendar group for a user.
+                            ## Create new navigation property to calendars for users
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of calendar
@@ -65,7 +77,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Calendar.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Retrieve a list of calendars belonging to a calendar group.
+                            ## The calendars in the calendar group. Navigation property. Read-only. Nullable.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -83,7 +95,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Use this API to create a new calendar in a calendar group for a user.
+                            ## Create new navigation property to calendars for users
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -104,7 +116,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Retrieve a list of calendars belonging to a calendar group.
+                            # The calendars in the calendar group. Navigation property. Read-only. Nullable.
                             class CalendarsRequestBuilderGetQueryParameters
                                 
                                 ## 

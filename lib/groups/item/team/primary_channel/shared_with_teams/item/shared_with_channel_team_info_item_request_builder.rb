@@ -8,8 +8,8 @@ require_relative '../../../team'
 require_relative '../../primary_channel'
 require_relative '../shared_with_teams'
 require_relative './allowed_members/allowed_members_request_builder'
-require_relative './allowed_members/item/conversation_member_item_request_builder'
 require_relative './item'
+require_relative './team/team_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -28,15 +28,9 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::SharedWithTeams::Item::AllowedMembers::AllowedMembersRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
-                                ## Provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a conversation_member_item_request_builder
-                                ## 
-                                def allowed_members_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["conversationMember%2Did"] = id
-                                    return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::SharedWithTeams::Item::AllowedMembers::Item::ConversationMemberItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                # Provides operations to manage the team property of the microsoft.graph.teamInfo entity.
+                                def team()
+                                    return MicrosoftGraph::Groups::Item::Team::PrimaryChannel::SharedWithTeams::Item::Team::TeamRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new SharedWithChannelTeamInfoItemRequestBuilder and sets the default values.

@@ -9,6 +9,9 @@ module MicrosoftGraph
             class ExternalConnection < MicrosoftGraph::Models::Entity
                 include MicrosoftKiotaAbstractions::Parsable
                 ## 
+                # Collects configurable settings related to activities involving connector content.
+                @activity_settings
+                ## 
                 # Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
                 @configuration
                 ## 
@@ -30,8 +33,26 @@ module MicrosoftGraph
                 # The schema property
                 @schema
                 ## 
+                # The settings configuring the search experience for content in this connection, such as the display templates for search results.
+                @search_settings
+                ## 
                 # Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.
                 @state
+                ## 
+                ## Gets the activitySettings property value. Collects configurable settings related to activities involving connector content.
+                ## @return a activity_settings
+                ## 
+                def activity_settings
+                    return @activity_settings
+                end
+                ## 
+                ## Sets the activitySettings property value. Collects configurable settings related to activities involving connector content.
+                ## @param value Value to set for the activity_settings property.
+                ## @return a void
+                ## 
+                def activity_settings=(value)
+                    @activity_settings = value
+                end
                 ## 
                 ## Gets the configuration property value. Specifies additional application IDs that are allowed to manage the connection and to index content in the connection. Optional.
                 ## @return a configuration
@@ -84,6 +105,7 @@ module MicrosoftGraph
                 ## 
                 def get_field_deserializers()
                     return super.merge({
+                        "activitySettings" => lambda {|n| @activity_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ActivitySettings.create_from_discriminator_value(pn) }) },
                         "configuration" => lambda {|n| @configuration = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::Configuration.create_from_discriminator_value(pn) }) },
                         "description" => lambda {|n| @description = n.get_string_value() },
                         "groups" => lambda {|n| @groups = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ExternalGroup.create_from_discriminator_value(pn) }) },
@@ -91,6 +113,7 @@ module MicrosoftGraph
                         "name" => lambda {|n| @name = n.get_string_value() },
                         "operations" => lambda {|n| @operations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ConnectionOperation.create_from_discriminator_value(pn) }) },
                         "schema" => lambda {|n| @schema = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::Schema.create_from_discriminator_value(pn) }) },
+                        "searchSettings" => lambda {|n| @search_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::SearchSettings.create_from_discriminator_value(pn) }) },
                         "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraph::Models::ExternalConnectors::ConnectionState) },
                     })
                 end
@@ -170,6 +193,21 @@ module MicrosoftGraph
                     @schema = value
                 end
                 ## 
+                ## Gets the searchSettings property value. The settings configuring the search experience for content in this connection, such as the display templates for search results.
+                ## @return a search_settings
+                ## 
+                def search_settings
+                    return @search_settings
+                end
+                ## 
+                ## Sets the searchSettings property value. The settings configuring the search experience for content in this connection, such as the display templates for search results.
+                ## @param value Value to set for the search_settings property.
+                ## @return a void
+                ## 
+                def search_settings=(value)
+                    @search_settings = value
+                end
+                ## 
                 ## Serializes information the current object
                 ## @param writer Serialization writer to use to serialize this model
                 ## @return a void
@@ -177,6 +215,7 @@ module MicrosoftGraph
                 def serialize(writer)
                     raise StandardError, 'writer cannot be null' if writer.nil?
                     super
+                    writer.write_object_value("activitySettings", @activity_settings)
                     writer.write_object_value("configuration", @configuration)
                     writer.write_string_value("description", @description)
                     writer.write_collection_of_object_values("groups", @groups)
@@ -184,6 +223,7 @@ module MicrosoftGraph
                     writer.write_string_value("name", @name)
                     writer.write_collection_of_object_values("operations", @operations)
                     writer.write_object_value("schema", @schema)
+                    writer.write_object_value("searchSettings", @search_settings)
                 end
                 ## 
                 ## Gets the state property value. Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.

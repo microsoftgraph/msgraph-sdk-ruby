@@ -4,6 +4,7 @@ require_relative '../../../models/home_realm_discovery_policy'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../policies'
 require_relative '../home_realm_discovery_policies'
+require_relative './applies_to/applies_to_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -14,6 +15,11 @@ module MicrosoftGraph
                 # Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.policyRoot entity.
                 class HomeRealmDiscoveryPolicyItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
+                    ## 
+                    # Provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
+                    def applies_to()
+                        return MicrosoftGraph::Policies::HomeRealmDiscoveryPolicies::Item::AppliesTo::AppliesToRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     ## Instantiates a new HomeRealmDiscoveryPolicyItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request

@@ -7,6 +7,7 @@ require_relative '../../../identity'
 require_relative '../../b2x_user_flows'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/user_flow_language_configuration_item_request_builder'
 require_relative './languages'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Identity::B2xUserFlows::Item::Languages::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the languages property of the microsoft.graph.b2xIdentityUserFlow entity.
+                        ## @param user_flow_language_configuration_id Unique identifier of the item
+                        ## @return a user_flow_language_configuration_item_request_builder
+                        ## 
+                        def by_user_flow_language_configuration_id(user_flow_language_configuration_id)
+                            raise StandardError, 'user_flow_language_configuration_id cannot be null' if user_flow_language_configuration_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["userFlowLanguageConfiguration%2Did"] = user_flow_language_configuration_id
+                            return MicrosoftGraph::Identity::B2xUserFlows::Item::Languages::Item::UserFlowLanguageConfigurationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new LanguagesRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/languages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Retrieve a list of languages supported for customization in a B2X user flow.
+                        ## The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of user_flow_language_configuration_collection_response
                         ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserFlowLanguageConfiguration.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Retrieve a list of languages supported for customization in a B2X user flow.
+                        ## The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Retrieve a list of languages supported for customization in a B2X user flow.
+                        # The languages supported for customization within the user flow. Language customization is enabled by default in self-service sign-up user flow. You cannot create custom languages in self-service sign-up user flows.
                         class LanguagesRequestBuilderGetQueryParameters
                             
                             ## 

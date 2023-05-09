@@ -25,7 +25,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/getStaffAvailability")
                         end
                         ## 
-                        ## Get the availability information of staff members of a Microsoft Bookings calendar.
+                        ## Invoke action getStaffAvailability
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of get_staff_availability_response
@@ -41,7 +41,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Solutions::BookingBusinesses::Item::GetStaffAvailability::GetStaffAvailabilityResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get the availability information of staff members of a Microsoft Bookings calendar.
+                        ## Invoke action getStaffAvailability
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

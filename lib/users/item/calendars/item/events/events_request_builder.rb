@@ -10,6 +10,7 @@ require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
 require_relative './events'
+require_relative './item/event_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -32,6 +33,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Users::Item::Calendars::Item::Events::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the events property of the microsoft.graph.calendar entity.
+                            ## @param event_id Unique identifier of the item
+                            ## @return a event_item_request_builder
+                            ## 
+                            def by_event_id(event_id)
+                                raise StandardError, 'event_id cannot be null' if event_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["event%2Did"] = event_id
+                                return MicrosoftGraph::Users::Item::Calendars::Item::Events::Item::EventItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new EventsRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -41,7 +53,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/events{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or get the instances of an event.
+                            ## The events in the calendar. Navigation property. Read-only.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of event_collection_response
                             ## 
@@ -55,7 +67,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EventCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. 
+                            ## Create new navigation property to events for users
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of event
@@ -71,7 +83,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Event.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or get the instances of an event.
+                            ## The events in the calendar. Navigation property. Read-only.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -89,7 +101,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. 
+                            ## Create new navigation property to events for users
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -110,7 +122,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Retrieve a list of events in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, or get the instances of an event.
+                            # The events in the calendar. Navigation property. Read-only.
                             class EventsRequestBuilderGetQueryParameters
                                 
                                 ## 

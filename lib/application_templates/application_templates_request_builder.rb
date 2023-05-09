@@ -4,6 +4,7 @@ require_relative '../models/application_template_collection_response'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './application_templates'
 require_relative './count/count_request_builder'
+require_relative './item/application_template_item_request_builder'
 
 module MicrosoftGraph
     module ApplicationTemplates
@@ -15,6 +16,17 @@ module MicrosoftGraph
             # Provides operations to count the resources in the collection.
             def count()
                 return MicrosoftGraph::ApplicationTemplates::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            ## Provides operations to manage the collection of applicationTemplate entities.
+            ## @param application_template_id Unique identifier of the item
+            ## @return a application_template_item_request_builder
+            ## 
+            def by_application_template_id(application_template_id)
+                raise StandardError, 'application_template_id cannot be null' if application_template_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["applicationTemplate%2Did"] = application_template_id
+                return MicrosoftGraph::ApplicationTemplates::Item::ApplicationTemplateItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new ApplicationTemplatesRequestBuilder and sets the default values.

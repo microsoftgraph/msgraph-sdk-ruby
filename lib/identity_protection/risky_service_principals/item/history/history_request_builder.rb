@@ -8,6 +8,7 @@ require_relative '../../risky_service_principals'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './history'
+require_relative './item/risky_service_principal_history_item_item_request_builder'
 
 module MicrosoftGraph
     module IdentityProtection
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::IdentityProtection::RiskyServicePrincipals::Item::History::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the history property of the microsoft.graph.riskyServicePrincipal entity.
+                        ## @param risky_service_principal_history_item_id Unique identifier of the item
+                        ## @return a risky_service_principal_history_item_item_request_builder
+                        ## 
+                        def by_risky_service_principal_history_item_id(risky_service_principal_history_item_id)
+                            raise StandardError, 'risky_service_principal_history_item_id cannot be null' if risky_service_principal_history_item_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["riskyServicePrincipalHistoryItem%2Did"] = risky_service_principal_history_item_id
+                            return MicrosoftGraph::IdentityProtection::RiskyServicePrincipals::Item::History::Item::RiskyServicePrincipalHistoryItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new HistoryRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/identityProtection/riskyServicePrincipals/{riskyServicePrincipal%2Did}/history{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Get the risk history of a riskyServicePrincipal object.
+                        ## Represents the risk history of Azure AD service principals.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of risky_service_principal_history_item_collection_response
                         ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RiskyServicePrincipalHistoryItem.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get the risk history of a riskyServicePrincipal object.
+                        ## Represents the risk history of Azure AD service principals.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get the risk history of a riskyServicePrincipal object.
+                        # Represents the risk history of Azure AD service principals.
                         class HistoryRequestBuilderGetQueryParameters
                             
                             ## 

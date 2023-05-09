@@ -44,7 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Read the default configuration of a cross-tenant access policy. This default configuration may be the service default assigned by Azure AD (**isServiceDefault** is `true`) or may be customized in your tenant (**isServiceDefault** is `false`).
+                    ## Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of cross_tenant_access_policy_configuration_default
                     ## 
@@ -58,7 +58,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyConfigurationDefault.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the default configuration of a cross-tenant access policy.
+                    ## Update the navigation property default in policies
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of cross_tenant_access_policy_configuration_default
@@ -90,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Read the default configuration of a cross-tenant access policy. This default configuration may be the service default assigned by Azure AD (**isServiceDefault** is `true`) or may be customized in your tenant (**isServiceDefault** is `false`).
+                    ## Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -108,7 +108,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the default configuration of a cross-tenant access policy.
+                    ## Update the navigation property default in policies
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -129,7 +129,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Read the default configuration of a cross-tenant access policy. This default configuration may be the service default assigned by Azure AD (**isServiceDefault** is `true`) or may be customized in your tenant (**isServiceDefault** is `false`).
+                    # Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
                     class DefaultRequestBuilderGetQueryParameters
                         
                         ## 

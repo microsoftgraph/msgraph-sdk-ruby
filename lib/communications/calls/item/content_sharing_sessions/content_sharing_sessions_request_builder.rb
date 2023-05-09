@@ -8,6 +8,7 @@ require_relative '../../calls'
 require_relative '../item'
 require_relative './content_sharing_sessions'
 require_relative './count/count_request_builder'
+require_relative './item/content_sharing_session_item_request_builder'
 
 module MicrosoftGraph
     module Communications
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Communications::Calls::Item::ContentSharingSessions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the contentSharingSessions property of the microsoft.graph.call entity.
+                        ## @param content_sharing_session_id Unique identifier of the item
+                        ## @return a content_sharing_session_item_request_builder
+                        ## 
+                        def by_content_sharing_session_id(content_sharing_session_id)
+                            raise StandardError, 'content_sharing_session_id cannot be null' if content_sharing_session_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["contentSharingSession%2Did"] = content_sharing_session_id
+                            return MicrosoftGraph::Communications::Calls::Item::ContentSharingSessions::Item::ContentSharingSessionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new ContentSharingSessionsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/communications/calls/{call%2Did}/contentSharingSessions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Retrieve a list of contentSharingSession objects in a call.
+                        ## Get contentSharingSessions from communications
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of content_sharing_session_collection_response
                         ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ContentSharingSession.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Retrieve a list of contentSharingSession objects in a call.
+                        ## Get contentSharingSessions from communications
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Retrieve a list of contentSharingSession objects in a call.
+                        # Get contentSharingSessions from communications
                         class ContentSharingSessionsRequestBuilderGetQueryParameters
                             
                             ## 

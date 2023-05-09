@@ -6,6 +6,7 @@ require_relative '../../applications'
 require_relative '../item'
 require_relative './app_management_policies'
 require_relative './count/count_request_builder'
+require_relative './item/app_management_policy_item_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -25,6 +26,17 @@ module MicrosoftGraph
                     # Provides operations to manage the collection of application entities.
                     def ref()
                         return MicrosoftGraph::Applications::Item::AppManagementPolicies::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Gets an item from the MicrosoftGraph.applications.item.appManagementPolicies.item collection
+                    ## @param app_management_policy_id Unique identifier of the item
+                    ## @return a app_management_policy_item_request_builder
+                    ## 
+                    def by_app_management_policy_id(app_management_policy_id)
+                        raise StandardError, 'app_management_policy_id cannot be null' if app_management_policy_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["appManagementPolicy%2Did"] = app_management_policy_id
+                        return MicrosoftGraph::Applications::Item::AppManagementPolicies::Item::AppManagementPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AppManagementPoliciesRequestBuilder and sets the default values.

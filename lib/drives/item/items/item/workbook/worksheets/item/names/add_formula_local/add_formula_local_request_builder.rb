@@ -36,7 +36,7 @@ module MicrosoftGraph
                                                 super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/names/addFormulaLocal")
                                             end
                                             ## 
-                                            ## Adds a new name to the collection of the given scope using the user's locale for the formula.
+                                            ## Invoke action addFormulaLocal
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of workbook_named_item
@@ -52,7 +52,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookNamedItem.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Adds a new name to the collection of the given scope using the user's locale for the formula.
+                                            ## Invoke action addFormulaLocal
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information

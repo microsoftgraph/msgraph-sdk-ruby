@@ -26,7 +26,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/communications/calls/{call%2Did}/updateRecordingStatus")
                         end
                         ## 
-                        ## Update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
+                        ## Invoke action updateRecordingStatus
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of update_recording_status_operation
@@ -42,7 +42,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UpdateRecordingStatusOperation.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the application's recording status associated with a call. This requires the use of the Teams policy-based recording solution.
+                        ## Invoke action updateRecordingStatus
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

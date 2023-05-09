@@ -29,7 +29,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/me/calendars/{calendar%2Did}/calendarView/{event%2Did}/accept")
                                 end
                                 ## 
-                                ## Accept the specified event in a user calendar.
+                                ## Invoke action accept
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
@@ -45,7 +45,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Accept the specified event in a user calendar.
+                                ## Invoke action accept
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information

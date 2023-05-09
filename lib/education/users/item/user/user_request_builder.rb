@@ -5,6 +5,7 @@ require_relative '../../../../models/user'
 require_relative '../../../education'
 require_relative '../../users'
 require_relative '../item'
+require_relative './mailbox_settings/mailbox_settings_request_builder'
 require_relative './user'
 
 module MicrosoftGraph
@@ -17,6 +18,11 @@ module MicrosoftGraph
                     class UserRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                         
                         ## 
+                        # The mailboxSettings property
+                        def mailbox_settings()
+                            return MicrosoftGraph::Education::Users::Item::User::MailboxSettings::MailboxSettingsRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new UserRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -26,7 +32,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/education/users/{educationUser%2Did}/user{?%24select,%24expand}")
                         end
                         ## 
-                        ## Retrieve the simple directory **user** that corresponds to this **educationUser**.
+                        ## The directory user that corresponds to this user.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of user
                         ## 
@@ -40,7 +46,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::User.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Retrieve the simple directory **user** that corresponds to this **educationUser**.
+                        ## The directory user that corresponds to this user.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -59,7 +65,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Retrieve the simple directory **user** that corresponds to this **educationUser**.
+                        # The directory user that corresponds to this user.
                         class UserRequestBuilderGetQueryParameters
                             
                             ## 

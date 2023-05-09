@@ -38,7 +38,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Retrieve the properties of an entitlementManagementSettings object.
+                    ## The settings that control the behavior of Azure AD entitlement management.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of entitlement_management_settings
                     ## 
@@ -52,7 +52,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EntitlementManagementSettings.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update an existing entitlementManagementSettings object to change one or more of its properties.
+                    ## Update the navigation property settings in identityGovernance
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of entitlement_management_settings
@@ -84,7 +84,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Retrieve the properties of an entitlementManagementSettings object.
+                    ## The settings that control the behavior of Azure AD entitlement management.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update an existing entitlementManagementSettings object to change one or more of its properties.
+                    ## Update the navigation property settings in identityGovernance
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -123,7 +123,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve the properties of an entitlementManagementSettings object.
+                    # The settings that control the behavior of Azure AD entitlement management.
                     class SettingsRequestBuilderGetQueryParameters
                         
                         ## 

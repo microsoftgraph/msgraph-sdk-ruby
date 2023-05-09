@@ -6,6 +6,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../identity'
 require_relative '../conditional_access'
 require_relative './count/count_request_builder'
+require_relative './item/named_location_item_request_builder'
 require_relative './named_locations'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Identity::ConditionalAccess::NamedLocations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.
+                    ## @param named_location_id Unique identifier of the item
+                    ## @return a named_location_item_request_builder
+                    ## 
+                    def by_named_location_id(named_location_id)
+                        raise StandardError, 'named_location_id cannot be null' if named_location_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["namedLocation%2Did"] = named_location_id
+                        return MicrosoftGraph::Identity::ConditionalAccess::NamedLocations::Item::NamedLocationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new NamedLocationsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/identity/conditionalAccess/namedLocations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get a list of namedLocation objects.
+                    ## Read-only. Nullable. Returns a collection of the specified named locations.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of named_location_collection_response
                     ## 
@@ -45,7 +57,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::NamedLocationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
+                    ## Create new navigation property to namedLocations for identity
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of named_location
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::NamedLocation.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get a list of namedLocation objects.
+                    ## Read-only. Nullable. Returns a collection of the specified named locations.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -79,7 +91,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
+                    ## Create new navigation property to namedLocations for identity
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get a list of namedLocation objects.
+                    # Read-only. Nullable. Returns a collection of the specified named locations.
                     class NamedLocationsRequestBuilderGetQueryParameters
                         
                         ## 

@@ -7,6 +7,7 @@ require_relative '../../../teams'
 require_relative '../../item'
 require_relative '../schedule'
 require_relative './count/count_request_builder'
+require_relative './item/open_shift_change_request_item_request_builder'
 require_relative './open_shift_change_requests'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Teams::Item::Schedule::OpenShiftChangeRequests::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the openShiftChangeRequests property of the microsoft.graph.schedule entity.
+                        ## @param open_shift_change_request_id Unique identifier of the item
+                        ## @return a open_shift_change_request_item_request_builder
+                        ## 
+                        def by_open_shift_change_request_id(open_shift_change_request_id)
+                            raise StandardError, 'open_shift_change_request_id cannot be null' if open_shift_change_request_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["openShiftChangeRequest%2Did"] = open_shift_change_request_id
+                            return MicrosoftGraph::Teams::Item::Schedule::OpenShiftChangeRequests::Item::OpenShiftChangeRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new OpenShiftChangeRequestsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/teams/{team%2Did}/schedule/openShiftChangeRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Retrieve a list of openShiftChangeRequest objects in a team.
+                        ## The open shift requests in the schedule.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of open_shift_change_request_collection_response
                         ## 
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OpenShiftChangeRequestCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create instance of an openShiftChangeRequest object.
+                        ## Create new navigation property to openShiftChangeRequests for teams
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of open_shift_change_request
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OpenShiftChangeRequest.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Retrieve a list of openShiftChangeRequest objects in a team.
+                        ## The open shift requests in the schedule.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create instance of an openShiftChangeRequest object.
+                        ## Create new navigation property to openShiftChangeRequests for teams
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Retrieve a list of openShiftChangeRequest objects in a team.
+                        # The open shift requests in the schedule.
                         class OpenShiftChangeRequestsRequestBuilderGetQueryParameters
                             
                             ## 

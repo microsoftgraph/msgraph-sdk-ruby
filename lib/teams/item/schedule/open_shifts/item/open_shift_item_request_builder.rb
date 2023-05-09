@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Get openShifts from teams
+                            ## The set of open shifts in a scheduling group in the schedule.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of open_shift
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Get openShifts from teams
+                            ## The set of open shifts in a scheduling group in the schedule.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get openShifts from teams
+                            # The set of open shifts in a scheduling group in the schedule.
                             class OpenShiftItemRequestBuilderGetQueryParameters
                                 
                                 ## 

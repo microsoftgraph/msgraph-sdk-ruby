@@ -8,6 +8,7 @@ require_relative '../../../cases'
 require_relative '../../ediscovery_cases'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/ediscovery_search_item_request_builder'
 require_relative './searches'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the searches property of the microsoft.graph.security.ediscoveryCase entity.
+                            ## @param ediscovery_search_id Unique identifier of the item
+                            ## @return a ediscovery_search_item_request_builder
+                            ## 
+                            def by_ediscovery_search_id(ediscovery_search_id)
+                                raise StandardError, 'ediscovery_search_id cannot be null' if ediscovery_search_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["ediscoverySearch%2Did"] = ediscovery_search_id
+                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::EdiscoverySearchItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new SearchesRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/searches{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Get the list of ediscoverySearch resources from an eDiscoveryCase object.
+                            ## Returns a list of eDiscoverySearch objects associated with this case.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of ediscovery_search_collection_response
                             ## 
@@ -49,7 +61,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoverySearchCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Create a new ediscoverySearch object.
+                            ## Create new navigation property to searches for security
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of ediscovery_search
@@ -65,7 +77,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoverySearch.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Get the list of ediscoverySearch resources from an eDiscoveryCase object.
+                            ## Returns a list of eDiscoverySearch objects associated with this case.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -83,7 +95,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Create a new ediscoverySearch object.
+                            ## Create new navigation property to searches for security
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -104,7 +116,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get the list of ediscoverySearch resources from an eDiscoveryCase object.
+                            # Returns a list of eDiscoverySearch objects associated with this case.
                             class SearchesRequestBuilderGetQueryParameters
                                 
                                 ## 

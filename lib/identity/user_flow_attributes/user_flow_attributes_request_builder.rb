@@ -5,6 +5,7 @@ require_relative '../../models/identity_user_flow_attribute_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../identity'
 require_relative './count/count_request_builder'
+require_relative './item/identity_user_flow_attribute_item_request_builder'
 require_relative './user_flow_attributes'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Identity::UserFlowAttributes::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.
+                ## @param identity_user_flow_attribute_id Unique identifier of the item
+                ## @return a identity_user_flow_attribute_item_request_builder
+                ## 
+                def by_identity_user_flow_attribute_id(identity_user_flow_attribute_id)
+                    raise StandardError, 'identity_user_flow_attribute_id cannot be null' if identity_user_flow_attribute_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["identityUserFlowAttribute%2Did"] = identity_user_flow_attribute_id
+                    return MicrosoftGraph::Identity::UserFlowAttributes::Item::IdentityUserFlowAttributeItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new UserFlowAttributesRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/identity/userFlowAttributes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve a list of identityUserFlowAttribute objects.
+                ## Represents entry point for identity userflow attributes.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of identity_user_flow_attribute_collection_response
                 ## 
@@ -43,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityUserFlowAttributeCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create a new identityUserFlowAttribute object.
+                ## Create new navigation property to userFlowAttributes for identity
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of identity_user_flow_attribute
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityUserFlowAttribute.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve a list of identityUserFlowAttribute objects.
+                ## Represents entry point for identity userflow attributes.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create a new identityUserFlowAttribute object.
+                ## Create new navigation property to userFlowAttributes for identity
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve a list of identityUserFlowAttribute objects.
+                # Represents entry point for identity userflow attributes.
                 class UserFlowAttributesRequestBuilderGetQueryParameters
                     
                     ## 

@@ -27,7 +27,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/homeRealmDiscoveryPolicies/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}")
                         end
                         ## 
-                        ## List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+                        ## The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of string_collection_response
                         ## 
@@ -57,7 +57,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+                        ## The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -95,7 +95,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+                        # The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
                         class RefRequestBuilderGetQueryParameters
                             
                             ## 

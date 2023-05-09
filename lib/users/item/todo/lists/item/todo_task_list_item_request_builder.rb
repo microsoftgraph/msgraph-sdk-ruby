@@ -7,9 +7,7 @@ require_relative '../../../item'
 require_relative '../../todo'
 require_relative '../lists'
 require_relative './extensions/extensions_request_builder'
-require_relative './extensions/item/extension_item_request_builder'
 require_relative './item'
-require_relative './tasks/item/todo_task_item_request_builder'
 require_relative './tasks/tasks_request_builder'
 
 module MicrosoftGraph
@@ -56,17 +54,6 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Provides operations to manage the extensions property of the microsoft.graph.todoTaskList entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a extension_item_request_builder
-                            ## 
-                            def extensions_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["extension%2Did"] = id
-                                return MicrosoftGraph::Users::Item::Todo::Lists::Item::Extensions::Item::ExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
                             ## The task lists in the users mailbox.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of todo_task_list
@@ -95,17 +82,6 @@ module MicrosoftGraph
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TodoTaskList.create_from_discriminator_value(pn) }, error_mapping)
-                            end
-                            ## 
-                            ## Provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a todo_task_item_request_builder
-                            ## 
-                            def tasks_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["todoTask%2Did"] = id
-                                return MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::TodoTaskItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Delete navigation property lists for users

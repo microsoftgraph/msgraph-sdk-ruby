@@ -66,7 +66,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, nil, error_mapping)
                                         end
                                         ## 
-                                        ## Retrieve the properties and relationships of tablesort object.
+                                        ## Represents the sorting for the table. Read-only.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of workbook_table_sort
                                         ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Retrieve the properties and relationships of tablesort object.
+                                        ## Represents the sorting for the table. Read-only.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -151,7 +151,7 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # Retrieve the properties and relationships of tablesort object.
+                                        # Represents the sorting for the table. Read-only.
                                         class SortRequestBuilderGetQueryParameters
                                             
                                             ## 

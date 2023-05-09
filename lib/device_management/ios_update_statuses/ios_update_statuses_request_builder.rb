@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
 require_relative './ios_update_statuses'
+require_relative './item/ios_update_device_status_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceManagement::IosUpdateStatuses::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the iosUpdateStatuses property of the microsoft.graph.deviceManagement entity.
+                ## @param ios_update_device_status_id Unique identifier of the item
+                ## @return a ios_update_device_status_item_request_builder
+                ## 
+                def by_ios_update_device_status_id(ios_update_device_status_id)
+                    raise StandardError, 'ios_update_device_status_id cannot be null' if ios_update_device_status_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["iosUpdateDeviceStatus%2Did"] = ios_update_device_status_id
+                    return MicrosoftGraph::DeviceManagement::IosUpdateStatuses::Item::IosUpdateDeviceStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new IosUpdateStatusesRequestBuilder and sets the default values.

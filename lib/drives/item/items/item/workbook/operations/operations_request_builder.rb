@@ -8,7 +8,7 @@ require_relative '../../../../item'
 require_relative '../../../items'
 require_relative '../../item'
 require_relative '../workbook'
-require_relative './count/count_request_builder'
+require_relative './item/workbook_operation_item_request_builder'
 require_relative './operations'
 
 module MicrosoftGraph
@@ -23,9 +23,15 @@ module MicrosoftGraph
                             class OperationsRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                 
                                 ## 
-                                # Provides operations to count the resources in the collection.
-                                def count()
-                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Operations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                ## Provides operations to manage the operations property of the microsoft.graph.workbook entity.
+                                ## @param workbook_operation_id Unique identifier of the item
+                                ## @return a workbook_operation_item_request_builder
+                                ## 
+                                def by_workbook_operation_id(workbook_operation_id)
+                                    raise StandardError, 'workbook_operation_id cannot be null' if workbook_operation_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["workbookOperation%2Did"] = workbook_operation_id
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Operations::Item::WorkbookOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new OperationsRequestBuilder and sets the default values.

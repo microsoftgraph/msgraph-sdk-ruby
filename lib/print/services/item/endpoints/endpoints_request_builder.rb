@@ -8,6 +8,7 @@ require_relative '../../services'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './endpoints'
+require_relative './item/print_service_endpoint_item_request_builder'
 
 module MicrosoftGraph
     module Print
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Print::Services::Item::Endpoints::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the endpoints property of the microsoft.graph.printService entity.
+                        ## @param print_service_endpoint_id Unique identifier of the item
+                        ## @return a print_service_endpoint_item_request_builder
+                        ## 
+                        def by_print_service_endpoint_id(print_service_endpoint_id)
+                            raise StandardError, 'print_service_endpoint_id cannot be null' if print_service_endpoint_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["printServiceEndpoint%2Did"] = print_service_endpoint_id
+                            return MicrosoftGraph::Print::Services::Item::Endpoints::Item::PrintServiceEndpointItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new EndpointsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/print/services/{printService%2Did}/endpoints{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Retrieve a list of endpoints exposed by a print service.
+                        ## Endpoints that can be used to access the service. Read-only. Nullable.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of print_service_endpoint_collection_response
                         ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintServiceEndpoint.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Retrieve a list of endpoints exposed by a print service.
+                        ## Endpoints that can be used to access the service. Read-only. Nullable.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Retrieve a list of endpoints exposed by a print service.
+                        # Endpoints that can be used to access the service. Read-only. Nullable.
                         class EndpointsRequestBuilderGetQueryParameters
                             
                             ## 

@@ -8,6 +8,7 @@ require_relative '../../../item'
 require_relative '../../joined_teams'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/teams_async_operation_item_request_builder'
 require_relative './operations'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Users::Item::JoinedTeams::Item::Operations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the operations property of the microsoft.graph.team entity.
+                            ## @param teams_async_operation_id Unique identifier of the item
+                            ## @return a teams_async_operation_item_request_builder
+                            ## 
+                            def by_teams_async_operation_id(teams_async_operation_id)
+                                raise StandardError, 'teams_async_operation_id cannot be null' if teams_async_operation_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["teamsAsyncOperation%2Did"] = teams_async_operation_id
+                                return MicrosoftGraph::Users::Item::JoinedTeams::Item::Operations::Item::TeamsAsyncOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new OperationsRequestBuilder and sets the default values.

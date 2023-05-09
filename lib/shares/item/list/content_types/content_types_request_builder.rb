@@ -11,6 +11,7 @@ require_relative './add_copy_from_content_type_hub/add_copy_from_content_type_hu
 require_relative './content_types'
 require_relative './count/count_request_builder'
 require_relative './get_compatible_hub_content_types/get_compatible_hub_content_types_request_builder'
+require_relative './item/content_type_item_request_builder'
 
 module MicrosoftGraph
     module Shares
@@ -42,6 +43,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Shares::Item::List::ContentTypes::GetCompatibleHubContentTypes::GetCompatibleHubContentTypesRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the contentTypes property of the microsoft.graph.list entity.
+                        ## @param content_type_id Unique identifier of the item
+                        ## @return a content_type_item_request_builder
+                        ## 
+                        def by_content_type_id(content_type_id)
+                            raise StandardError, 'content_type_id cannot be null' if content_type_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["contentType%2Did"] = content_type_id
+                            return MicrosoftGraph::Shares::Item::List::ContentTypes::Item::ContentTypeItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new ContentTypesRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -51,7 +63,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Get the collection of [contentType][contentType] resources in a [list][].
+                        ## The collection of content types present in this list.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of content_type_collection_response
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ContentType.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get the collection of [contentType][contentType] resources in a [list][].
+                        ## The collection of content types present in this list.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -120,7 +132,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get the collection of [contentType][contentType] resources in a [list][].
+                        # The collection of content types present in this list.
                         class ContentTypesRequestBuilderGetQueryParameters
                             
                             ## 

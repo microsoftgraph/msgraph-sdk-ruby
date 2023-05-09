@@ -7,6 +7,7 @@ require_relative '../../../privacy'
 require_relative '../../subject_rights_requests'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/authored_note_item_request_builder'
 require_relative './notes'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::Notes::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
+                        ## @param authored_note_id Unique identifier of the item
+                        ## @return a authored_note_item_request_builder
+                        ## 
+                        def by_authored_note_id(authored_note_id)
+                            raise StandardError, 'authored_note_id cannot be null' if authored_note_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["authoredNote%2Did"] = authored_note_id
+                            return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::Notes::Item::AuthoredNoteItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new NotesRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/privacy/subjectRightsRequests/{subjectRightsRequest%2Did}/notes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Get the list of authored notes assoicated with a subject rights request. 
+                        ## List of notes associcated with the request.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of authored_note_collection_response
                         ## 
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AuthoredNoteCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create a new authoredNote object.
+                        ## Create new navigation property to notes for privacy
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of authored_note
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AuthoredNote.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get the list of authored notes assoicated with a subject rights request. 
+                        ## List of notes associcated with the request.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create a new authoredNote object.
+                        ## Create new navigation property to notes for privacy
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get the list of authored notes assoicated with a subject rights request. 
+                        # List of notes associcated with the request.
                         class NotesRequestBuilderGetQueryParameters
                             
                             ## 

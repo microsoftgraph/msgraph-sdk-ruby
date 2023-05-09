@@ -9,6 +9,7 @@ require_relative '../../agreements'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './files'
+require_relative './item/agreement_file_localization_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::IdentityGovernance::TermsOfUse::Agreements::Item::Files::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the files property of the microsoft.graph.agreement entity.
+                            ## @param agreement_file_localization_id Unique identifier of the item
+                            ## @return a agreement_file_localization_item_request_builder
+                            ## 
+                            def by_agreement_file_localization_id(agreement_file_localization_id)
+                                raise StandardError, 'agreement_file_localization_id cannot be null' if agreement_file_localization_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["agreementFileLocalization%2Did"] = agreement_file_localization_id
+                                return MicrosoftGraph::IdentityGovernance::TermsOfUse::Agreements::Item::Files::Item::AgreementFileLocalizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new FilesRequestBuilder and sets the default values.
@@ -49,7 +61,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AgreementFileLocalizationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Create a new localized agreement file.
+                            ## Create new navigation property to files for identityGovernance
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of agreement_file_localization
@@ -83,7 +95,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Create a new localized agreement file.
+                            ## Create new navigation property to files for identityGovernance
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information

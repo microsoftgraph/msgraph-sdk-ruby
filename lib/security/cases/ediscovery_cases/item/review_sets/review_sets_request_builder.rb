@@ -8,6 +8,7 @@ require_relative '../../../cases'
 require_relative '../../ediscovery_cases'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/ediscovery_review_set_item_request_builder'
 require_relative './review_sets'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the reviewSets property of the microsoft.graph.security.ediscoveryCase entity.
+                            ## @param ediscovery_review_set_id Unique identifier of the item
+                            ## @return a ediscovery_review_set_item_request_builder
+                            ## 
+                            def by_ediscovery_review_set_id(ediscovery_review_set_id)
+                                raise StandardError, 'ediscovery_review_set_id cannot be null' if ediscovery_review_set_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["ediscoveryReviewSet%2Did"] = ediscovery_review_set_id
+                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::EdiscoveryReviewSetItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new ReviewSetsRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Get a list of ediscoveryReviewSet objects associated with an eDiscovery case.
+                            ## Returns a list of eDiscoveryReviewSet objects in the case.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of ediscovery_review_set_collection_response
                             ## 
@@ -49,7 +61,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryReviewSetCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Create a new ediscoveryReviewSet object.
+                            ## Create new navigation property to reviewSets for security
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of ediscovery_review_set
@@ -65,7 +77,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryReviewSet.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Get a list of ediscoveryReviewSet objects associated with an eDiscovery case.
+                            ## Returns a list of eDiscoveryReviewSet objects in the case.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -83,7 +95,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Create a new ediscoveryReviewSet object.
+                            ## Create new navigation property to reviewSets for security
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -104,7 +116,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get a list of ediscoveryReviewSet objects associated with an eDiscovery case.
+                            # Returns a list of eDiscoveryReviewSet objects in the case.
                             class ReviewSetsRequestBuilderGetQueryParameters
                                 
                                 ## 

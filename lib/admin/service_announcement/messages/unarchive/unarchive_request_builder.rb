@@ -25,7 +25,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/admin/serviceAnnouncement/messages/unarchive")
                         end
                         ## 
-                        ## Unarchive a list of serviceUpdateMessages for the signed in user.
+                        ## Invoke action unarchive
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of unarchive_response
@@ -41,7 +41,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Unarchive::UnarchiveResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Unarchive a list of serviceUpdateMessages for the signed in user.
+                        ## Invoke action unarchive
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

@@ -6,7 +6,11 @@ require_relative '../../../role_management'
 require_relative '../../entitlement_management'
 require_relative '../role_assignment_schedules'
 require_relative './activated_using/activated_using_request_builder'
+require_relative './app_scope/app_scope_request_builder'
+require_relative './directory_scope/directory_scope_request_builder'
 require_relative './item'
+require_relative './principal/principal_request_builder'
+require_relative './role_definition/role_definition_request_builder'
 
 module MicrosoftGraph
     module RoleManagement
@@ -21,6 +25,26 @@ module MicrosoftGraph
                         # Provides operations to manage the activatedUsing property of the microsoft.graph.unifiedRoleAssignmentSchedule entity.
                         def activated_using()
                             return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignmentSchedules::Item::ActivatedUsing::ActivatedUsingRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the appScope property of the microsoft.graph.unifiedRoleScheduleBase entity.
+                        def app_scope()
+                            return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignmentSchedules::Item::AppScope::AppScopeRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the directoryScope property of the microsoft.graph.unifiedRoleScheduleBase entity.
+                        def directory_scope()
+                            return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignmentSchedules::Item::DirectoryScope::DirectoryScopeRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the principal property of the microsoft.graph.unifiedRoleScheduleBase entity.
+                        def principal()
+                            return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignmentSchedules::Item::Principal::PrincipalRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the roleDefinition property of the microsoft.graph.unifiedRoleScheduleBase entity.
+                        def role_definition()
+                            return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignmentSchedules::Item::RoleDefinition::RoleDefinitionRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new UnifiedRoleAssignmentScheduleItemRequestBuilder and sets the default values.

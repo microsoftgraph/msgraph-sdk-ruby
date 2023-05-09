@@ -5,6 +5,7 @@ require_relative '../../models/sign_in'
 require_relative '../../models/sign_in_collection_response'
 require_relative '../audit_logs'
 require_relative './count/count_request_builder'
+require_relative './item/sign_in_item_request_builder'
 require_relative './sign_ins'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::AuditLogs::SignIns::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
+                ## @param sign_in_id Unique identifier of the item
+                ## @return a sign_in_item_request_builder
+                ## 
+                def by_sign_in_id(sign_in_id)
+                    raise StandardError, 'sign_in_id cannot be null' if sign_in_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["signIn%2Did"] = sign_in_id
+                    return MicrosoftGraph::AuditLogs::SignIns::Item::SignInItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new SignInsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/auditLogs/signIns{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve the Azure AD user sign-ins for your tenant. Sign-ins that are interactive in nature (where a username/password is passed as part of auth token) and successful federated sign-ins are currently included in the sign-in logs.  The maximum and default page size is 1,000 objects and by default, the most recent sign-ins are returned first. Only sign-in events that occurred within the Azure Active Directory (Azure AD) default retention period are available.
+                ## Get signIns from auditLogs
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of sign_in_collection_response
                 ## 
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SignIn.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve the Azure AD user sign-ins for your tenant. Sign-ins that are interactive in nature (where a username/password is passed as part of auth token) and successful federated sign-ins are currently included in the sign-in logs.  The maximum and default page size is 1,000 objects and by default, the most recent sign-ins are returned first. Only sign-in events that occurred within the Azure Active Directory (Azure AD) default retention period are available.
+                ## Get signIns from auditLogs
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve the Azure AD user sign-ins for your tenant. Sign-ins that are interactive in nature (where a username/password is passed as part of auth token) and successful federated sign-ins are currently included in the sign-in logs.  The maximum and default page size is 1,000 objects and by default, the most recent sign-ins are returned first. Only sign-in events that occurred within the Azure Active Directory (Azure AD) default retention period are available.
+                # Get signIns from auditLogs
                 class SignInsRequestBuilderGetQueryParameters
                     
                     ## 

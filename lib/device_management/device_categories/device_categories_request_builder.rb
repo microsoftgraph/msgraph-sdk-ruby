@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
 require_relative './device_categories'
+require_relative './item/device_category_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceManagement::DeviceCategories::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the deviceCategories property of the microsoft.graph.deviceManagement entity.
+                ## @param device_category_id Unique identifier of the item
+                ## @return a device_category_item_request_builder
+                ## 
+                def by_device_category_id(device_category_id)
+                    raise StandardError, 'device_category_id cannot be null' if device_category_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["deviceCategory%2Did"] = device_category_id
+                    return MicrosoftGraph::DeviceManagement::DeviceCategories::Item::DeviceCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new DeviceCategoriesRequestBuilder and sets the default values.

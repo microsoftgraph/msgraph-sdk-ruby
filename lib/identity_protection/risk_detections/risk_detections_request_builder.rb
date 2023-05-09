@@ -5,6 +5,7 @@ require_relative '../../models/risk_detection'
 require_relative '../../models/risk_detection_collection_response'
 require_relative '../identity_protection'
 require_relative './count/count_request_builder'
+require_relative './item/risk_detection_item_request_builder'
 require_relative './risk_detections'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::IdentityProtection::RiskDetections::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.
+                ## @param risk_detection_id Unique identifier of the item
+                ## @return a risk_detection_item_request_builder
+                ## 
+                def by_risk_detection_id(risk_detection_id)
+                    raise StandardError, 'risk_detection_id cannot be null' if risk_detection_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["riskDetection%2Did"] = risk_detection_id
+                    return MicrosoftGraph::IdentityProtection::RiskDetections::Item::RiskDetectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new RiskDetectionsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/identityProtection/riskDetections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Get a list of the riskDetection objects and their properties.
+                ## Risk detection in Azure AD Identity Protection and the associated information about the detection.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of risk_detection_collection_response
                 ## 
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RiskDetection.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get a list of the riskDetection objects and their properties.
+                ## Risk detection in Azure AD Identity Protection and the associated information about the detection.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get a list of the riskDetection objects and their properties.
+                # Risk detection in Azure AD Identity Protection and the associated information about the detection.
                 class RiskDetectionsRequestBuilderGetQueryParameters
                     
                     ## 

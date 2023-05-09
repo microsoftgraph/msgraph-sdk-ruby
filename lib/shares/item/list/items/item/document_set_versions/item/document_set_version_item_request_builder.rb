@@ -8,6 +8,7 @@ require_relative '../../../../list'
 require_relative '../../../items'
 require_relative '../../item'
 require_relative '../document_set_versions'
+require_relative './fields/fields_request_builder'
 require_relative './item'
 require_relative './restore/restore_request_builder'
 
@@ -23,6 +24,11 @@ module MicrosoftGraph
                                 # Provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
                                 class DocumentSetVersionItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                                     
+                                    ## 
+                                    # Provides operations to manage the fields property of the microsoft.graph.listItemVersion entity.
+                                    def fields()
+                                        return MicrosoftGraph::Shares::Item::List::Items::Item::DocumentSetVersions::Item::Fields::FieldsRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
                                     ## 
                                     # Provides operations to call the restore method.
                                     def restore()

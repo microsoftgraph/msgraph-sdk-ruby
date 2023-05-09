@@ -7,6 +7,7 @@ require_relative '../../item'
 require_relative '../authentication'
 require_relative './count/count_request_builder'
 require_relative './fido2_methods'
+require_relative './item/fido2_authentication_method_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Users::Item::Authentication::Fido2Methods::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
+                        ## @param fido2_authentication_method_id Unique identifier of the item
+                        ## @return a fido2_authentication_method_item_request_builder
+                        ## 
+                        def by_fido2_authentication_method_id(fido2_authentication_method_id)
+                            raise StandardError, 'fido2_authentication_method_id cannot be null' if fido2_authentication_method_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["fido2AuthenticationMethod%2Did"] = fido2_authentication_method_id
+                            return MicrosoftGraph::Users::Item::Authentication::Fido2Methods::Item::Fido2AuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new Fido2MethodsRequestBuilder and sets the default values.

@@ -9,6 +9,7 @@ require_relative '../../agreements'
 require_relative '../item'
 require_relative './acceptances'
 require_relative './count/count_request_builder'
+require_relative './item/agreement_acceptance_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::IdentityGovernance::TermsOfUse::Agreements::Item::Acceptances::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
+                            ## @param agreement_acceptance_id Unique identifier of the item
+                            ## @return a agreement_acceptance_item_request_builder
+                            ## 
+                            def by_agreement_acceptance_id(agreement_acceptance_id)
+                                raise StandardError, 'agreement_acceptance_id cannot be null' if agreement_acceptance_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["agreementAcceptance%2Did"] = agreement_acceptance_id
+                                return MicrosoftGraph::IdentityGovernance::TermsOfUse::Agreements::Item::Acceptances::Item::AgreementAcceptanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new AcceptancesRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/termsOfUse/agreements/{agreement%2Did}/acceptances{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Get the details about the acceptance records for a specific agreement.
+                            ## Read-only. Information about acceptances of this agreement.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of agreement_acceptance_collection_response
                             ## 
@@ -65,7 +77,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AgreementAcceptance.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Get the details about the acceptance records for a specific agreement.
+                            ## Read-only. Information about acceptances of this agreement.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -104,7 +116,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get the details about the acceptance records for a specific agreement.
+                            # Read-only. Information about acceptances of this agreement.
                             class AcceptancesRequestBuilderGetQueryParameters
                                 
                                 ## 

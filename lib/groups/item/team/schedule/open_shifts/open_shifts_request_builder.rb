@@ -8,6 +8,7 @@ require_relative '../../../item'
 require_relative '../../team'
 require_relative '../schedule'
 require_relative './count/count_request_builder'
+require_relative './item/open_shift_item_request_builder'
 require_relative './open_shifts'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Groups::Item::Team::Schedule::OpenShifts::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the openShifts property of the microsoft.graph.schedule entity.
+                            ## @param open_shift_id Unique identifier of the item
+                            ## @return a open_shift_item_request_builder
+                            ## 
+                            def by_open_shift_id(open_shift_id)
+                                raise StandardError, 'open_shift_id cannot be null' if open_shift_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["openShift%2Did"] = open_shift_id
+                                return MicrosoftGraph::Groups::Item::Team::Schedule::OpenShifts::Item::OpenShiftItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new OpenShiftsRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/team/schedule/openShifts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## List openShift objects in a team.
+                            ## The set of open shifts in a scheduling group in the schedule.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of open_shift_collection_response
                             ## 
@@ -65,7 +77,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OpenShift.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## List openShift objects in a team.
+                            ## The set of open shifts in a scheduling group in the schedule.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -104,7 +116,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # List openShift objects in a team.
+                            # The set of open shifts in a scheduling group in the schedule.
                             class OpenShiftsRequestBuilderGetQueryParameters
                                 
                                 ## 

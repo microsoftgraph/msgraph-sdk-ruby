@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Indicates whether the default user role can create security groups.
             @allowed_to_create_security_groups
             ## 
-            # The allowedToReadBitlockerKeysForOwnedDevice property
+            # Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
             @allowed_to_read_bitlocker_keys_for_owned_device
             ## 
             # Indicates whether the default user role can read other users.
@@ -73,14 +73,14 @@ module MicrosoftGraph
                 @allowed_to_create_security_groups = value
             end
             ## 
-            ## Gets the allowedToReadBitlockerKeysForOwnedDevice property value. The allowedToReadBitlockerKeysForOwnedDevice property
+            ## Gets the allowedToReadBitlockerKeysForOwnedDevice property value. Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
             ## @return a boolean
             ## 
             def allowed_to_read_bitlocker_keys_for_owned_device
                 return @allowed_to_read_bitlocker_keys_for_owned_device
             end
             ## 
-            ## Sets the allowedToReadBitlockerKeysForOwnedDevice property value. The allowedToReadBitlockerKeysForOwnedDevice property
+            ## Sets the allowedToReadBitlockerKeysForOwnedDevice property value. Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
             ## @param value Value to set for the allowed_to_read_bitlocker_keys_for_owned_device property.
             ## @return a void
             ## 

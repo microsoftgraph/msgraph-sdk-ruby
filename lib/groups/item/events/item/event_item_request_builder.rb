@@ -7,21 +7,14 @@ require_relative '../../item'
 require_relative '../events'
 require_relative './accept/accept_request_builder'
 require_relative './attachments/attachments_request_builder'
-require_relative './attachments/item/attachment_item_request_builder'
 require_relative './calendar/calendar_request_builder'
 require_relative './cancel/cancel_request_builder'
 require_relative './decline/decline_request_builder'
 require_relative './dismiss_reminder/dismiss_reminder_request_builder'
 require_relative './extensions/extensions_request_builder'
-require_relative './extensions/item/extension_item_request_builder'
 require_relative './forward/forward_request_builder'
 require_relative './instances/instances_request_builder'
-require_relative './instances/item/event_item_request_builder'
 require_relative './item'
-require_relative './multi_value_extended_properties/item/multi_value_legacy_extended_property_item_request_builder'
-require_relative './multi_value_extended_properties/multi_value_extended_properties_request_builder'
-require_relative './single_value_extended_properties/item/single_value_legacy_extended_property_item_request_builder'
-require_relative './single_value_extended_properties/single_value_extended_properties_request_builder'
 require_relative './snooze_reminder/snooze_reminder_request_builder'
 require_relative './tentatively_accept/tentatively_accept_request_builder'
 
@@ -80,16 +73,6 @@ module MicrosoftGraph
                             return MicrosoftGraph::Groups::Item::Events::Item::Instances::InstancesRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        # Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
-                        def multi_value_extended_properties()
-                            return MicrosoftGraph::Groups::Item::Events::Item::MultiValueExtendedProperties::MultiValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        # Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
-                        def single_value_extended_properties()
-                            return MicrosoftGraph::Groups::Item::Events::Item::SingleValueExtendedProperties::SingleValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
                         # Provides operations to call the snoozeReminder method.
                         def snooze_reminder()
                             return MicrosoftGraph::Groups::Item::Events::Item::SnoozeReminder::SnoozeReminderRequestBuilder.new(@path_parameters, @request_adapter)
@@ -98,17 +81,6 @@ module MicrosoftGraph
                         # Provides operations to call the tentativelyAccept method.
                         def tentatively_accept()
                             return MicrosoftGraph::Groups::Item::Events::Item::TentativelyAccept::TentativelyAcceptRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the attachments property of the microsoft.graph.event entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a attachment_item_request_builder
-                        ## 
-                        def attachments_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["attachment%2Did"] = id
-                            return MicrosoftGraph::Groups::Item::Events::Item::Attachments::Item::AttachmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new EventItemRequestBuilder and sets the default values.
@@ -134,17 +106,6 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Provides operations to manage the extensions property of the microsoft.graph.event entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a extension_item_request_builder
-                        ## 
-                        def extensions_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["extension%2Did"] = id
-                            return MicrosoftGraph::Groups::Item::Events::Item::Extensions::Item::ExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
                         ## The group's calendar events.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of event
@@ -157,28 +118,6 @@ module MicrosoftGraph
                             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Event.create_from_discriminator_value(pn) }, error_mapping)
-                        end
-                        ## 
-                        ## Provides operations to manage the instances property of the microsoft.graph.event entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a event_item_request_builder
-                        ## 
-                        def instances_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["event%2Did1"] = id
-                            return MicrosoftGraph::Groups::Item::Events::Item::Instances::Item::EventItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a multi_value_legacy_extended_property_item_request_builder
-                        ## 
-                        def multi_value_extended_properties_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["multiValueLegacyExtendedProperty%2Did"] = id
-                            return MicrosoftGraph::Groups::Item::Events::Item::MultiValueExtendedProperties::Item::MultiValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Update the navigation property events in groups
@@ -195,17 +134,6 @@ module MicrosoftGraph
                             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Event.create_from_discriminator_value(pn) }, error_mapping)
-                        end
-                        ## 
-                        ## Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a single_value_legacy_extended_property_item_request_builder
-                        ## 
-                        def single_value_extended_properties_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["singleValueLegacyExtendedProperty%2Did"] = id
-                            return MicrosoftGraph::Groups::Item::Events::Item::SingleValueExtendedProperties::Item::SingleValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Delete navigation property events for groups

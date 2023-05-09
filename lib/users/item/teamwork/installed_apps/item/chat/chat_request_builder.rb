@@ -30,7 +30,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/teamwork/installedApps/{userScopeTeamsAppInstallation%2Did}/chat{?%24select,%24expand}")
                                 end
                                 ## 
-                                ## Retrieve the chat of the specified user and Teams app.
+                                ## The chat between the user and Teams app.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of chat
                                 ## 
@@ -44,7 +44,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Chat.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Retrieve the chat of the specified user and Teams app.
+                                ## The chat between the user and Teams app.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -63,7 +63,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Retrieve the chat of the specified user and Teams app.
+                                # The chat between the user and Teams app.
                                 class ChatRequestBuilderGetQueryParameters
                                     
                                     ## 

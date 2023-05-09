@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../tenant_relationships'
 require_relative './count/count_request_builder'
 require_relative './delegated_admin_customers'
+require_relative './item/delegated_admin_customer_item_request_builder'
 
 module MicrosoftGraph
     module TenantRelationships
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::TenantRelationships::DelegatedAdminCustomers::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.
+                ## @param delegated_admin_customer_id Unique identifier of the item
+                ## @return a delegated_admin_customer_item_request_builder
+                ## 
+                def by_delegated_admin_customer_id(delegated_admin_customer_id)
+                    raise StandardError, 'delegated_admin_customer_id cannot be null' if delegated_admin_customer_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["delegatedAdminCustomer%2Did"] = delegated_admin_customer_id
+                    return MicrosoftGraph::TenantRelationships::DelegatedAdminCustomers::Item::DelegatedAdminCustomerItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new DelegatedAdminCustomersRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/tenantRelationships/delegatedAdminCustomers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Get a list of the delegatedAdminCustomer objects and their properties.
+                ## The customer who has a delegated admin relationship with a Microsoft partner.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of delegated_admin_customer_collection_response
                 ## 
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DelegatedAdminCustomer.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get a list of the delegatedAdminCustomer objects and their properties.
+                ## The customer who has a delegated admin relationship with a Microsoft partner.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get a list of the delegatedAdminCustomer objects and their properties.
+                # The customer who has a delegated admin relationship with a Microsoft partner.
                 class DelegatedAdminCustomersRequestBuilderGetQueryParameters
                     
                     ## 

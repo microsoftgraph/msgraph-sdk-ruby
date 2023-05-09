@@ -30,7 +30,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/manager{?%24select,%24expand}")
                     end
                     ## 
-                    ## Returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
+                    ## The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of directory_object
                     ## 
@@ -44,7 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
+                    ## The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -63,7 +63,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Returns the user or organizational contact assigned as the user's manager. Optionally, you can expand the manager's chain up to the root node.
+                    # The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.
                     class ManagerRequestBuilderGetQueryParameters
                         
                         ## 

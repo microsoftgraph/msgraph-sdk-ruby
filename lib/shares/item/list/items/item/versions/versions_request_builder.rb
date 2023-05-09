@@ -9,6 +9,7 @@ require_relative '../../../list'
 require_relative '../../items'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/list_item_version_item_request_builder'
 require_relative './versions'
 
 module MicrosoftGraph
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Shares::Item::List::Items::Item::Versions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                ## Provides operations to manage the versions property of the microsoft.graph.listItem entity.
+                                ## @param list_item_version_id Unique identifier of the item
+                                ## @return a list_item_version_item_request_builder
+                                ## 
+                                def by_list_item_version_id(list_item_version_id)
+                                    raise StandardError, 'list_item_version_id cannot be null' if list_item_version_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["listItemVersion%2Did"] = list_item_version_id
+                                    return MicrosoftGraph::Shares::Item::List::Items::Item::Versions::Item::ListItemVersionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                end
+                                ## 
                                 ## Instantiates a new VersionsRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -37,7 +49,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/items/{listItem%2Did}/versions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                 end
                                 ## 
-                                ## SharePoint can be configured to retain the history for list items. Previous versions may be retained for a finite period of time depending on admin settings which may be unique per user or location.
+                                ## The list of previous versions of the list item.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of list_item_version_collection_response
                                 ## 
@@ -67,7 +79,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ListItemVersion.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## SharePoint can be configured to retain the history for list items. Previous versions may be retained for a finite period of time depending on admin settings which may be unique per user or location.
+                                ## The list of previous versions of the list item.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -106,7 +118,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # SharePoint can be configured to retain the history for list items. Previous versions may be retained for a finite period of time depending on admin settings which may be unique per user or location.
+                                # The list of previous versions of the list item.
                                 class VersionsRequestBuilderGetQueryParameters
                                     
                                     ## 

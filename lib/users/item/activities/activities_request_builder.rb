@@ -7,6 +7,7 @@ require_relative '../../users'
 require_relative '../item'
 require_relative './activities'
 require_relative './count/count_request_builder'
+require_relative './item/user_activity_item_request_builder'
 require_relative './recent/recent_request_builder'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                     # Provides operations to call the recent method.
                     def recent()
                         return MicrosoftGraph::Users::Item::Activities::Recent::RecentRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the activities property of the microsoft.graph.user entity.
+                    ## @param user_activity_id Unique identifier of the item
+                    ## @return a user_activity_item_request_builder
+                    ## 
+                    def by_user_activity_id(user_activity_id)
+                        raise StandardError, 'user_activity_id cannot be null' if user_activity_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["userActivity%2Did"] = user_activity_id
+                        return MicrosoftGraph::Users::Item::Activities::Item::UserActivityItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new ActivitiesRequestBuilder and sets the default values.

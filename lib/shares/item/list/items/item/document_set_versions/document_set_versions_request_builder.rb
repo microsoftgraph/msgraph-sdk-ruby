@@ -10,6 +10,7 @@ require_relative '../../items'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './document_set_versions'
+require_relative './item/document_set_version_item_request_builder'
 
 module MicrosoftGraph
     module Shares
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Shares::Item::List::Items::Item::DocumentSetVersions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                ## Provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.
+                                ## @param document_set_version_id Unique identifier of the item
+                                ## @return a document_set_version_item_request_builder
+                                ## 
+                                def by_document_set_version_id(document_set_version_id)
+                                    raise StandardError, 'document_set_version_id cannot be null' if document_set_version_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["documentSetVersion%2Did"] = document_set_version_id
+                                    return MicrosoftGraph::Shares::Item::List::Items::Item::DocumentSetVersions::Item::DocumentSetVersionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                end
+                                ## 
                                 ## Instantiates a new DocumentSetVersionsRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -37,7 +49,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/items/{listItem%2Did}/documentSetVersions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                 end
                                 ## 
-                                ## Get a list of the versions of a document set item in a list.
+                                ## Version information for a document set version created by a user.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of document_set_version_collection_response
                                 ## 
@@ -51,7 +63,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DocumentSetVersionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Create a new version of a document set item in a list.
+                                ## Create new navigation property to documentSetVersions for shares
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of document_set_version
@@ -67,7 +79,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DocumentSetVersion.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Get a list of the versions of a document set item in a list.
+                                ## Version information for a document set version created by a user.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -85,7 +97,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Create a new version of a document set item in a list.
+                                ## Create new navigation property to documentSetVersions for shares
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
@@ -106,7 +118,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Get a list of the versions of a document set item in a list.
+                                # Version information for a document set version created by a user.
                                 class DocumentSetVersionsRequestBuilderGetQueryParameters
                                     
                                     ## 

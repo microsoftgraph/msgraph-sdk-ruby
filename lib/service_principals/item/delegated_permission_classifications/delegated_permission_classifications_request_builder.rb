@@ -7,6 +7,7 @@ require_relative '../../service_principals'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './delegated_permission_classifications'
+require_relative './item/delegated_permission_classification_item_request_builder'
 
 module MicrosoftGraph
     module ServicePrincipals
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::ServicePrincipals::Item::DelegatedPermissionClassifications::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the delegatedPermissionClassifications property of the microsoft.graph.servicePrincipal entity.
+                    ## @param delegated_permission_classification_id Unique identifier of the item
+                    ## @return a delegated_permission_classification_item_request_builder
+                    ## 
+                    def by_delegated_permission_classification_id(delegated_permission_classification_id)
+                        raise StandardError, 'delegated_permission_classification_id cannot be null' if delegated_permission_classification_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["delegatedPermissionClassification%2Did"] = delegated_permission_classification_id
+                        return MicrosoftGraph::ServicePrincipals::Item::DelegatedPermissionClassifications::Item::DelegatedPermissionClassificationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new DelegatedPermissionClassificationsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/delegatedPermissionClassifications{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
+                    ## Get delegatedPermissionClassifications from servicePrincipals
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of delegated_permission_classification_collection_response
                     ## 
@@ -45,7 +57,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DelegatedPermissionClassificationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
+                    ## Create new navigation property to delegatedPermissionClassifications for servicePrincipals
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of delegated_permission_classification
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DelegatedPermissionClassification.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
+                    ## Get delegatedPermissionClassifications from servicePrincipals
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -79,7 +91,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
+                    ## Create new navigation property to delegatedPermissionClassifications for servicePrincipals
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
+                    # Get delegatedPermissionClassifications from servicePrincipals
                     class DelegatedPermissionClassificationsRequestBuilderGetQueryParameters
                         
                         ## 

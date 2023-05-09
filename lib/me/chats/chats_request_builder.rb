@@ -7,6 +7,7 @@ require_relative '../me'
 require_relative './chats'
 require_relative './count/count_request_builder'
 require_relative './get_all_messages/get_all_messages_request_builder'
+require_relative './item/chat_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -26,6 +27,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Me::Chats::GetAllMessages::GetAllMessagesRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the chats property of the microsoft.graph.user entity.
+                ## @param chat_id Unique identifier of the item
+                ## @return a chat_item_request_builder
+                ## 
+                def by_chat_id(chat_id)
+                    raise StandardError, 'chat_id cannot be null' if chat_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["chat%2Did"] = chat_id
+                    return MicrosoftGraph::Me::Chats::Item::ChatItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new ChatsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/me/chats{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.
+                ## Get chats from me
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of chat_collection_response
                 ## 
@@ -65,7 +77,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Chat.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.
+                ## Get chats from me
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -104,7 +116,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.
+                # Get chats from me
                 class ChatsRequestBuilderGetQueryParameters
                     
                     ## 

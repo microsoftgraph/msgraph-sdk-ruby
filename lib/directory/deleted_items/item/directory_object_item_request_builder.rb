@@ -8,8 +8,11 @@ require_relative './check_member_groups/check_member_groups_request_builder'
 require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './get_member_groups/get_member_groups_request_builder'
 require_relative './get_member_objects/get_member_objects_request_builder'
+require_relative './graph_administrative_unit/graph_administrative_unit_request_builder'
 require_relative './graph_application/graph_application_request_builder'
+require_relative './graph_device/graph_device_request_builder'
 require_relative './graph_group/graph_group_request_builder'
+require_relative './graph_service_principal/graph_service_principal_request_builder'
 require_relative './graph_user/graph_user_request_builder'
 require_relative './item'
 require_relative './restore/restore_request_builder'
@@ -43,14 +46,29 @@ module MicrosoftGraph
                         return MicrosoftGraph::Directory::DeletedItems::Item::GetMemberObjects::GetMemberObjectsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Casts the previous resource to administrativeUnit.
+                    def graph_administrative_unit()
+                        return MicrosoftGraph::Directory::DeletedItems::Item::GraphAdministrativeUnit::GraphAdministrativeUnitRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Casts the previous resource to application.
                     def graph_application()
                         return MicrosoftGraph::Directory::DeletedItems::Item::GraphApplication::GraphApplicationRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Casts the previous resource to device.
+                    def graph_device()
+                        return MicrosoftGraph::Directory::DeletedItems::Item::GraphDevice::GraphDeviceRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Casts the previous resource to group.
                     def graph_group()
                         return MicrosoftGraph::Directory::DeletedItems::Item::GraphGroup::GraphGroupRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Casts the previous resource to servicePrincipal.
+                    def graph_service_principal()
+                        return MicrosoftGraph::Directory::DeletedItems::Item::GraphServicePrincipal::GraphServicePrincipalRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Casts the previous resource to user.

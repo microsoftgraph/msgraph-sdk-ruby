@@ -6,7 +6,6 @@ require_relative '../../../admin'
 require_relative '../../service_announcement'
 require_relative '../messages'
 require_relative './attachments/attachments_request_builder'
-require_relative './attachments/item/service_announcement_attachment_item_request_builder'
 require_relative './attachments_archive/attachments_archive_request_builder'
 require_relative './item'
 
@@ -28,17 +27,6 @@ module MicrosoftGraph
                         # Provides operations to manage the media for the admin entity.
                         def attachments_archive()
                             return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Item::AttachmentsArchive::AttachmentsArchiveRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the attachments property of the microsoft.graph.serviceUpdateMessage entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a service_announcement_attachment_item_request_builder
-                        ## 
-                        def attachments_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["serviceAnnouncementAttachment%2Did"] = id
-                            return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Item::Attachments::Item::ServiceAnnouncementAttachmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new ServiceUpdateMessageItemRequestBuilder and sets the default values.

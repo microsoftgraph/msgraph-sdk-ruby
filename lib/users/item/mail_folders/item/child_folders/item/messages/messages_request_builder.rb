@@ -11,6 +11,7 @@ require_relative '../../child_folders'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/message_item_request_builder'
 require_relative './messages'
 
 module MicrosoftGraph
@@ -36,6 +37,17 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::Messages::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
+                                    ## Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.
+                                    ## @param message_id Unique identifier of the item
+                                    ## @return a message_item_request_builder
+                                    ## 
+                                    def by_message_id(message_id)
+                                        raise StandardError, 'message_id cannot be null' if message_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["message%2Did"] = message_id
+                                        return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::Messages::Item::MessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                    end
+                                    ## 
                                     ## Instantiates a new MessagesRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -45,7 +57,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Get all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox.
+                                    ## The collection of messages in the mailFolder.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of message_collection_response
                                     ## 
@@ -59,7 +71,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MessageCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Use this API to create a new Message in a mailfolder.
+                                    ## Create new navigation property to messages for users
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of message
@@ -75,7 +87,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Message.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Get all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox.
+                                    ## The collection of messages in the mailFolder.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -93,7 +105,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Use this API to create a new Message in a mailfolder.
+                                    ## Create new navigation property to messages for users
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
@@ -114,7 +126,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Get all the messages in the specified user's mailbox, or those messages in a specified folder in the mailbox.
+                                    # The collection of messages in the mailFolder.
                                     class MessagesRequestBuilderGetQueryParameters
                                         
                                         ## 

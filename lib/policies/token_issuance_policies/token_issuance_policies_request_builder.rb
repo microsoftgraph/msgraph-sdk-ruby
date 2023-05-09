@@ -5,6 +5,7 @@ require_relative '../../models/token_issuance_policy'
 require_relative '../../models/token_issuance_policy_collection_response'
 require_relative '../policies'
 require_relative './count/count_request_builder'
+require_relative './item/token_issuance_policy_item_request_builder'
 require_relative './token_issuance_policies'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Policies::TokenIssuancePolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.policyRoot entity.
+                ## @param token_issuance_policy_id Unique identifier of the item
+                ## @return a token_issuance_policy_item_request_builder
+                ## 
+                def by_token_issuance_policy_id(token_issuance_policy_id)
+                    raise StandardError, 'token_issuance_policy_id cannot be null' if token_issuance_policy_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["tokenIssuancePolicy%2Did"] = token_issuance_policy_id
+                    return MicrosoftGraph::Policies::TokenIssuancePolicies::Item::TokenIssuancePolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new TokenIssuancePoliciesRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/policies/tokenIssuancePolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Get a list of tokenIssuancePolicy objects.
+                ## The policy that specifies the characteristics of SAML tokens issued by Azure AD.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of token_issuance_policy_collection_response
                 ## 
@@ -43,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TokenIssuancePolicyCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create a new tokenIssuancePolicy object.
+                ## Create new navigation property to tokenIssuancePolicies for policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of token_issuance_policy
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TokenIssuancePolicy.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get a list of tokenIssuancePolicy objects.
+                ## The policy that specifies the characteristics of SAML tokens issued by Azure AD.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create a new tokenIssuancePolicy object.
+                ## Create new navigation property to tokenIssuancePolicies for policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get a list of tokenIssuancePolicy objects.
+                # The policy that specifies the characteristics of SAML tokens issued by Azure AD.
                 class TokenIssuancePoliciesRequestBuilderGetQueryParameters
                     
                     ## 

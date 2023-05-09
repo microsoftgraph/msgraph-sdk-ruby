@@ -6,6 +6,7 @@ require_relative '../../../models/unified_role_assignment_collection_response'
 require_relative '../../role_management'
 require_relative '../entitlement_management'
 require_relative './count/count_request_builder'
+require_relative './item/unified_role_assignment_item_request_builder'
 require_relative './role_assignments'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplication entity.
+                    ## @param unified_role_assignment_id Unique identifier of the item
+                    ## @return a unified_role_assignment_item_request_builder
+                    ## 
+                    def by_unified_role_assignment_id(unified_role_assignment_id)
+                        raise StandardError, 'unified_role_assignment_id cannot be null' if unified_role_assignment_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["unifiedRoleAssignment%2Did"] = unified_role_assignment_id
+                        return MicrosoftGraph::RoleManagement::EntitlementManagement::RoleAssignments::Item::UnifiedRoleAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new RoleAssignmentsRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/roleManagement/entitlementManagement/roleAssignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:- directory (Azure AD)- entitlement management (Azure AD)
+                    ## Resource to grant access to users or groups.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of unified_role_assignment_collection_response
                     ## 
@@ -45,7 +57,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create a new unifiedRoleAssignment object.
+                    ## Create new navigation property to roleAssignments for roleManagement
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of unified_role_assignment
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignment.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:- directory (Azure AD)- entitlement management (Azure AD)
+                    ## Resource to grant access to users or groups.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -79,7 +91,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Create a new unifiedRoleAssignment object.
+                    ## Create new navigation property to roleAssignments for roleManagement
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get a list of unifiedRoleAssignment objects for the RBAC provider. The following RBAC providers are currently supported:- directory (Azure AD)- entitlement management (Azure AD)
+                    # Resource to grant access to users or groups.
                     class RoleAssignmentsRequestBuilderGetQueryParameters
                         
                         ## 

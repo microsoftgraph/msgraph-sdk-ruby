@@ -31,7 +31,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization%2Did}/internalSponsors/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}")
                                 end
                                 ## 
-                                ## Retrieve a list of a connectedOrganization's internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+                                ## Get ref of internalSponsors from identityGovernance
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of string_collection_response
                                 ## 
@@ -61,7 +61,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Retrieve a list of a connectedOrganization's internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+                                ## Get ref of internalSponsors from identityGovernance
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -99,7 +99,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Retrieve a list of a connectedOrganization's internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+                                # Get ref of internalSponsors from identityGovernance
                                 class RefRequestBuilderGetQueryParameters
                                     
                                     ## 

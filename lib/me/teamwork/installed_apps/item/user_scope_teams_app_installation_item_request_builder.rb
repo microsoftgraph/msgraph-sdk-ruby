@@ -7,6 +7,8 @@ require_relative '../../teamwork'
 require_relative '../installed_apps'
 require_relative './chat/chat_request_builder'
 require_relative './item'
+require_relative './teams_app/teams_app_request_builder'
+require_relative './teams_app_definition/teams_app_definition_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -21,6 +23,16 @@ module MicrosoftGraph
                         # Provides operations to manage the chat property of the microsoft.graph.userScopeTeamsAppInstallation entity.
                         def chat()
                             return MicrosoftGraph::Me::Teamwork::InstalledApps::Item::Chat::ChatRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the teamsApp property of the microsoft.graph.teamsAppInstallation entity.
+                        def teams_app()
+                            return MicrosoftGraph::Me::Teamwork::InstalledApps::Item::TeamsApp::TeamsAppRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.
+                        def teams_app_definition()
+                            return MicrosoftGraph::Me::Teamwork::InstalledApps::Item::TeamsAppDefinition::TeamsAppDefinitionRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new UserScopeTeamsAppInstallationItemRequestBuilder and sets the default values.

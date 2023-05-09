@@ -5,6 +5,7 @@ require_relative '../../../../models/o_data_errors/o_data_error'
 require_relative '../../../policies'
 require_relative '../../cross_tenant_access_policy'
 require_relative '../partners'
+require_relative './identity_synchronization/identity_synchronization_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -16,6 +17,11 @@ module MicrosoftGraph
                     # Provides operations to manage the partners property of the microsoft.graph.crossTenantAccessPolicy entity.
                     class CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                         
+                        ## 
+                        # Provides operations to manage the identitySynchronization property of the microsoft.graph.crossTenantAccessPolicyConfigurationPartner entity.
+                        def identity_synchronization()
+                            return MicrosoftGraph::Policies::CrossTenantAccessPolicy::Partners::Item::IdentitySynchronization::IdentitySynchronizationRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
                         ## 
                         ## Instantiates a new CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request

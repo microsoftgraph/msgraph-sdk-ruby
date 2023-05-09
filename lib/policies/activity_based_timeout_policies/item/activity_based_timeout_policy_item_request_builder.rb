@@ -4,6 +4,7 @@ require_relative '../../../models/activity_based_timeout_policy'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../policies'
 require_relative '../activity_based_timeout_policies'
+require_relative './applies_to/applies_to_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -14,6 +15,11 @@ module MicrosoftGraph
                 # Provides operations to manage the activityBasedTimeoutPolicies property of the microsoft.graph.policyRoot entity.
                 class ActivityBasedTimeoutPolicyItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
+                    ## 
+                    # Provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
+                    def applies_to()
+                        return MicrosoftGraph::Policies::ActivityBasedTimeoutPolicies::Item::AppliesTo::AppliesToRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     ## Instantiates a new ActivityBasedTimeoutPolicyItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request

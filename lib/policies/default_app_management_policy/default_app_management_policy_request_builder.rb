@@ -36,7 +36,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Read the properties of a tenantAppManagementPolicy object.
+                ## The tenant-wide policy that enforces app management restrictions for all applications and service principals.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of tenant_app_management_policy
                 ## 
@@ -50,7 +50,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TenantAppManagementPolicy.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Update the properties of a tenantAppManagementPolicy object.
+                ## Update the navigation property defaultAppManagementPolicy in policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of tenant_app_management_policy
@@ -82,7 +82,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Read the properties of a tenantAppManagementPolicy object.
+                ## The tenant-wide policy that enforces app management restrictions for all applications and service principals.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -100,7 +100,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Update the properties of a tenantAppManagementPolicy object.
+                ## Update the navigation property defaultAppManagementPolicy in policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -121,7 +121,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Read the properties of a tenantAppManagementPolicy object.
+                # The tenant-wide policy that enforces app management restrictions for all applications and service principals.
                 class DefaultAppManagementPolicyRequestBuilderGetQueryParameters
                     
                     ## 

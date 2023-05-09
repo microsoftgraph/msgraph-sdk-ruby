@@ -10,7 +10,7 @@ require_relative '../../../review_sets'
 require_relative '../../item'
 require_relative '../queries'
 require_relative './item'
-require_relative './security_apply_tags/security_apply_tags_request_builder'
+require_relative './microsoft_graph_security_apply_tags/microsoft_graph_security_apply_tags_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -27,8 +27,8 @@ module MicrosoftGraph
                                         
                                         ## 
                                         # Provides operations to call the applyTags method.
-                                        def security_apply_tags()
-                                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item::SecurityApplyTags::SecurityApplyTagsRequestBuilder.new(@path_parameters, @request_adapter)
+                                        def microsoft_graph_security_apply_tags()
+                                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item::MicrosoftGraphSecurityApplyTags::MicrosoftGraphSecurityApplyTagsRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
                                         ## Instantiates a new EdiscoveryReviewSetQueryItemRequestBuilder and sets the default values.

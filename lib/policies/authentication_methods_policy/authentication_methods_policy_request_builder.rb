@@ -4,7 +4,6 @@ require_relative '../../models/authentication_methods_policy'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../policies'
 require_relative './authentication_method_configurations/authentication_method_configurations_request_builder'
-require_relative './authentication_method_configurations/item/authentication_method_configuration_item_request_builder'
 require_relative './authentication_methods_policy'
 
 module MicrosoftGraph
@@ -18,17 +17,6 @@ module MicrosoftGraph
                 # Provides operations to manage the authenticationMethodConfigurations property of the microsoft.graph.authenticationMethodsPolicy entity.
                 def authentication_method_configurations()
                     return MicrosoftGraph::Policies::AuthenticationMethodsPolicy::AuthenticationMethodConfigurations::AuthenticationMethodConfigurationsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the authenticationMethodConfigurations property of the microsoft.graph.authenticationMethodsPolicy entity.
-                ## @param id Unique identifier of the item
-                ## @return a authentication_method_configuration_item_request_builder
-                ## 
-                def authentication_method_configurations_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["authenticationMethodConfiguration%2Did"] = id
-                    return MicrosoftGraph::Policies::AuthenticationMethodsPolicy::AuthenticationMethodConfigurations::Item::AuthenticationMethodConfigurationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new AuthenticationMethodsPolicyRequestBuilder and sets the default values.
@@ -54,7 +42,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Read the properties and relationships of an authenticationMethodsPolicy object.
+                ## The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of authentication_methods_policy
                 ## 
@@ -68,7 +56,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AuthenticationMethodsPolicy.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Update the properties of an authenticationMethodsPolicy object.
+                ## Update the navigation property authenticationMethodsPolicy in policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of authentication_methods_policy
@@ -100,7 +88,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Read the properties and relationships of an authenticationMethodsPolicy object.
+                ## The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -118,7 +106,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Update the properties of an authenticationMethodsPolicy object.
+                ## Update the navigation property authenticationMethodsPolicy in policies
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -139,7 +127,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Read the properties and relationships of an authenticationMethodsPolicy object.
+                # The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
                 class AuthenticationMethodsPolicyRequestBuilderGetQueryParameters
                     
                     ## 
