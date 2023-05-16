@@ -5,6 +5,7 @@ require_relative '../../models/on_premises_directory_synchronization'
 require_relative '../../models/on_premises_directory_synchronization_collection_response'
 require_relative '../directory'
 require_relative './count/count_request_builder'
+require_relative './item/on_premises_directory_synchronization_item_request_builder'
 require_relative './on_premises_synchronization'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Directory::OnPremisesSynchronization::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
+                ## @param on_premises_directory_synchronization_id Unique identifier of the item
+                ## @return a on_premises_directory_synchronization_item_request_builder
+                ## 
+                def by_on_premises_directory_synchronization_id(on_premises_directory_synchronization_id)
+                    raise StandardError, 'on_premises_directory_synchronization_id cannot be null' if on_premises_directory_synchronization_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["onPremisesDirectorySynchronization%2Did"] = on_premises_directory_synchronization_id
+                    return MicrosoftGraph::Directory::OnPremisesSynchronization::Item::OnPremisesDirectorySynchronizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new OnPremisesSynchronizationRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/directory/onPremisesSynchronization{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## A container for on-premises directory synchronization functionalities that are available for the organization.
+                ## Read the properties and relationships of an onPremisesDirectorySynchronization object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of on_premises_directory_synchronization_collection_response
                 ## 
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnPremisesDirectorySynchronization.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## A container for on-premises directory synchronization functionalities that are available for the organization.
+                ## Read the properties and relationships of an onPremisesDirectorySynchronization object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # A container for on-premises directory synchronization functionalities that are available for the organization.
+                # Read the properties and relationships of an onPremisesDirectorySynchronization object.
                 class OnPremisesSynchronizationRequestBuilderGetQueryParameters
                     
                     ## 

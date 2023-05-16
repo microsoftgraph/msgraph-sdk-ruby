@@ -9,6 +9,7 @@ require_relative '../item'
 require_relative './attachments'
 require_relative './count/count_request_builder'
 require_relative './create_upload_session/create_upload_session_request_builder'
+require_relative './item/attachment_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -28,6 +29,17 @@ module MicrosoftGraph
                         # Provides operations to call the createUploadSession method.
                         def create_upload_session()
                             return MicrosoftGraph::Me::Messages::Item::Attachments::CreateUploadSession::CreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the attachments property of the microsoft.graph.message entity.
+                        ## @param attachment_id Unique identifier of the item
+                        ## @return a attachment_item_request_builder
+                        ## 
+                        def by_attachment_id(attachment_id)
+                            raise StandardError, 'attachment_id cannot be null' if attachment_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["attachment%2Did"] = attachment_id
+                            return MicrosoftGraph::Me::Messages::Item::Attachments::Item::AttachmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new AttachmentsRequestBuilder and sets the default values.
@@ -53,7 +65,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AttachmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.  You can add an attachment to an existing message by posting to its attachments collection, or you can add an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB.
+                        ## Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of attachment
@@ -87,7 +99,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Use this API to add an attachment to a message.  An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.  You can add an attachment to an existing message by posting to its attachments collection, or you can add an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB.
+                        ## Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

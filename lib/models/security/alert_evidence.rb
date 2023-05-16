@@ -99,8 +99,6 @@ module MicrosoftGraph
                                 return OauthApplicationEvidence.new
                             when "#microsoft.graph.security.processEvidence"
                                 return ProcessEvidence.new
-                            when "#microsoft.graph.security.registryKeyEvidence"
-                                return RegistryKeyEvidence.new
                             when "#microsoft.graph.security.registryValueEvidence"
                                 return RegistryValueEvidence.new
                             when "#microsoft.graph.security.securityGroupEvidence"

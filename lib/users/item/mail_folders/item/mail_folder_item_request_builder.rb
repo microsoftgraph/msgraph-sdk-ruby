@@ -6,18 +6,11 @@ require_relative '../../../users'
 require_relative '../../item'
 require_relative '../mail_folders'
 require_relative './child_folders/child_folders_request_builder'
-require_relative './child_folders/item/mail_folder_item_request_builder'
 require_relative './copy/copy_request_builder'
 require_relative './item'
-require_relative './message_rules/item/message_rule_item_request_builder'
 require_relative './message_rules/message_rules_request_builder'
-require_relative './messages/item/message_item_request_builder'
 require_relative './messages/messages_request_builder'
 require_relative './move/move_request_builder'
-require_relative './multi_value_extended_properties/item/multi_value_legacy_extended_property_item_request_builder'
-require_relative './multi_value_extended_properties/multi_value_extended_properties_request_builder'
-require_relative './single_value_extended_properties/item/single_value_legacy_extended_property_item_request_builder'
-require_relative './single_value_extended_properties/single_value_extended_properties_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -54,37 +47,16 @@ module MicrosoftGraph
                             return MicrosoftGraph::Users::Item::MailFolders::Item::Move::MoveRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        # Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.mailFolder entity.
-                        def multi_value_extended_properties()
-                            return MicrosoftGraph::Users::Item::MailFolders::Item::MultiValueExtendedProperties::MultiValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        # Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.mailFolder entity.
-                        def single_value_extended_properties()
-                            return MicrosoftGraph::Users::Item::MailFolders::Item::SingleValueExtendedProperties::SingleValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the childFolders property of the microsoft.graph.mailFolder entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a mail_folder_item_request_builder
-                        ## 
-                        def child_folders_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["mailFolder%2Did1"] = id
-                            return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::MailFolderItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
                         ## Instantiates a new MailFolderItemRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
                         ## @return a void
                         ## 
                         def initialize(path_parameters, request_adapter)
-                            super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}{?%24select,%24expand}")
+                            super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}{?includeHiddenFolders*,%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property mailFolders for users
+                        ## Delete the specified mailFolder. The folder can be a mailSearchFolder. You can specify a mail folder by its folder ID, or by its well-known folder name, if one exists.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -112,40 +84,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MailFolder.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a message_rule_item_request_builder
-                        ## 
-                        def message_rules_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["messageRule%2Did"] = id
-                            return MicrosoftGraph::Users::Item::MailFolders::Item::MessageRules::Item::MessageRuleItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a message_item_request_builder
-                        ## 
-                        def messages_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["message%2Did"] = id
-                            return MicrosoftGraph::Users::Item::MailFolders::Item::Messages::Item::MessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.mailFolder entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a multi_value_legacy_extended_property_item_request_builder
-                        ## 
-                        def multi_value_extended_properties_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["multiValueLegacyExtendedProperty%2Did"] = id
-                            return MicrosoftGraph::Users::Item::MailFolders::Item::MultiValueExtendedProperties::Item::MultiValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Update the navigation property mailFolders in users
+                        ## Update the properties of mailfolder object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of mail_folder
@@ -161,18 +100,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MailFolder.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.mailFolder entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a single_value_legacy_extended_property_item_request_builder
-                        ## 
-                        def single_value_extended_properties_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["singleValueLegacyExtendedProperty%2Did"] = id
-                            return MicrosoftGraph::Users::Item::MailFolders::Item::SingleValueExtendedProperties::Item::SingleValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Delete navigation property mailFolders for users
+                        ## Delete the specified mailFolder. The folder can be a mailSearchFolder. You can specify a mail folder by its folder ID, or by its well-known folder name, if one exists.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -206,7 +134,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property mailFolders in users
+                        ## Update the properties of mailfolder object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -233,6 +161,9 @@ module MicrosoftGraph
                             ## 
                             # Expand related entities
                             attr_accessor :expand
+                            ## 
+                            # Include Hidden Folders
+                            attr_accessor :include_hidden_folders
                             ## 
                             # Select properties to be returned
                             attr_accessor :select

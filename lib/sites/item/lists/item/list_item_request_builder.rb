@@ -6,16 +6,13 @@ require_relative '../../../sites'
 require_relative '../../item'
 require_relative '../lists'
 require_relative './columns/columns_request_builder'
-require_relative './columns/item/column_definition_item_request_builder'
 require_relative './content_types/content_types_request_builder'
-require_relative './content_types/item/content_type_item_request_builder'
+require_relative './created_by_user/created_by_user_request_builder'
 require_relative './drive/drive_request_builder'
 require_relative './item'
-require_relative './items/item/list_item_item_request_builder'
 require_relative './items/items_request_builder'
-require_relative './operations/item/rich_long_running_operation_item_request_builder'
+require_relative './last_modified_by_user/last_modified_by_user_request_builder'
 require_relative './operations/operations_request_builder'
-require_relative './subscriptions/item/subscription_item_request_builder'
 require_relative './subscriptions/subscriptions_request_builder'
 
 module MicrosoftGraph
@@ -38,6 +35,11 @@ module MicrosoftGraph
                             return MicrosoftGraph::Sites::Item::Lists::Item::ContentTypes::ContentTypesRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        # Provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
+                        def created_by_user()
+                            return MicrosoftGraph::Sites::Item::Lists::Item::CreatedByUser::CreatedByUserRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
                         # Provides operations to manage the drive property of the microsoft.graph.list entity.
                         def drive()
                             return MicrosoftGraph::Sites::Item::Lists::Item::Drive::DriveRequestBuilder.new(@path_parameters, @request_adapter)
@@ -46,6 +48,11 @@ module MicrosoftGraph
                         # Provides operations to manage the items property of the microsoft.graph.list entity.
                         def items()
                             return MicrosoftGraph::Sites::Item::Lists::Item::Items::ItemsRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
+                        def last_modified_by_user()
+                            return MicrosoftGraph::Sites::Item::Lists::Item::LastModifiedByUser::LastModifiedByUserRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Provides operations to manage the operations property of the microsoft.graph.list entity.
@@ -58,17 +65,6 @@ module MicrosoftGraph
                             return MicrosoftGraph::Sites::Item::Lists::Item::Subscriptions::SubscriptionsRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        ## Provides operations to manage the columns property of the microsoft.graph.list entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a column_definition_item_request_builder
-                        ## 
-                        def columns_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["columnDefinition%2Did"] = id
-                            return MicrosoftGraph::Sites::Item::Lists::Item::Columns::Item::ColumnDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
                         ## Instantiates a new ListItemRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -76,17 +72,6 @@ module MicrosoftGraph
                         ## 
                         def initialize(path_parameters, request_adapter)
                             super(path_parameters, request_adapter, "{+baseurl}/sites/{site%2Did}/lists/{list%2Did}{?%24select,%24expand}")
-                        end
-                        ## 
-                        ## Provides operations to manage the contentTypes property of the microsoft.graph.list entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a content_type_item_request_builder
-                        ## 
-                        def content_types_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["contentType%2Did"] = id
-                            return MicrosoftGraph::Sites::Item::Lists::Item::ContentTypes::Item::ContentTypeItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Delete navigation property lists for sites
@@ -103,7 +88,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## The collection of lists under this site.
+                        ## Returns the metadata for a [list][].
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of list
                         ## 
@@ -115,28 +100,6 @@ module MicrosoftGraph
                             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::List.create_from_discriminator_value(pn) }, error_mapping)
-                        end
-                        ## 
-                        ## Provides operations to manage the items property of the microsoft.graph.list entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a list_item_item_request_builder
-                        ## 
-                        def items_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["listItem%2Did"] = id
-                            return MicrosoftGraph::Sites::Item::Lists::Item::Items::Item::ListItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the operations property of the microsoft.graph.list entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a rich_long_running_operation_item_request_builder
-                        ## 
-                        def operations_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["richLongRunningOperation%2Did"] = id
-                            return MicrosoftGraph::Sites::Item::Lists::Item::Operations::Item::RichLongRunningOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Update the navigation property lists in sites
@@ -155,17 +118,6 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::List.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Provides operations to manage the subscriptions property of the microsoft.graph.list entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a subscription_item_request_builder
-                        ## 
-                        def subscriptions_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["subscription%2Did"] = id
-                            return MicrosoftGraph::Sites::Item::Lists::Item::Subscriptions::Item::SubscriptionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
                         ## Delete navigation property lists for sites
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -182,7 +134,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## The collection of lists under this site.
+                        ## Returns the metadata for a [list][].
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -221,7 +173,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The collection of lists under this site.
+                        # Returns the metadata for a [list][].
                         class ListItemRequestBuilderGetQueryParameters
                             
                             ## 

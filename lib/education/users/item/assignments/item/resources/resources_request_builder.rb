@@ -9,6 +9,7 @@ require_relative '../../../item'
 require_relative '../../assignments'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/education_assignment_resource_item_request_builder'
 require_relative './resources'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Education::Users::Item::Assignments::Item::Resources::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.
+                                ## @param education_assignment_resource_id Unique identifier of the item
+                                ## @return a education_assignment_resource_item_request_builder
+                                ## 
+                                def by_education_assignment_resource_id(education_assignment_resource_id)
+                                    raise StandardError, 'education_assignment_resource_id cannot be null' if education_assignment_resource_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["educationAssignmentResource%2Did"] = education_assignment_resource_id
+                                    return MicrosoftGraph::Education::Users::Item::Assignments::Item::Resources::Item::EducationAssignmentResourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new ResourcesRequestBuilder and sets the default values.

@@ -16,10 +16,10 @@ module MicrosoftGraph
             # Indicates whether offer shift requests are enabled for the schedule.
             @offer_shift_requests_enabled
             ## 
-            # The openShiftChangeRequests property
+            # The open shift requests in the schedule.
             @open_shift_change_requests
             ## 
-            # The openShifts property
+            # The set of open shifts in a scheduling group in the schedule.
             @open_shifts
             ## 
             # Indicates whether open shifts are enabled for the schedule.
@@ -152,14 +152,14 @@ module MicrosoftGraph
                 @offer_shift_requests_enabled = value
             end
             ## 
-            ## Gets the openShiftChangeRequests property value. The openShiftChangeRequests property
+            ## Gets the openShiftChangeRequests property value. The open shift requests in the schedule.
             ## @return a open_shift_change_request
             ## 
             def open_shift_change_requests
                 return @open_shift_change_requests
             end
             ## 
-            ## Sets the openShiftChangeRequests property value. The openShiftChangeRequests property
+            ## Sets the openShiftChangeRequests property value. The open shift requests in the schedule.
             ## @param value Value to set for the open_shift_change_requests property.
             ## @return a void
             ## 
@@ -167,14 +167,14 @@ module MicrosoftGraph
                 @open_shift_change_requests = value
             end
             ## 
-            ## Gets the openShifts property value. The openShifts property
+            ## Gets the openShifts property value. The set of open shifts in a scheduling group in the schedule.
             ## @return a open_shift
             ## 
             def open_shifts
                 return @open_shifts
             end
             ## 
-            ## Sets the openShifts property value. The openShifts property
+            ## Sets the openShifts property value. The set of open shifts in a scheduling group in the schedule.
             ## @param value Value to set for the open_shifts property.
             ## @return a void
             ## 

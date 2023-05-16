@@ -23,7 +23,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/domains/{domain%2Did}/promote")
                     end
                     ## 
-                    ## Invoke action promote
+                    ## Promote a verified subdomain to the root domain. A verified domain has its **isVerified** property set to `true`.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of promote_response
                     ## 
@@ -37,7 +37,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Domains::Item::Promote::PromoteResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Invoke action promote
+                    ## Promote a verified subdomain to the root domain. A verified domain has its **isVerified** property set to `true`.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 

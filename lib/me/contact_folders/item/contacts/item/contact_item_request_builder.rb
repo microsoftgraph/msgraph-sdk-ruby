@@ -7,13 +7,8 @@ require_relative '../../../contact_folders'
 require_relative '../../item'
 require_relative '../contacts'
 require_relative './extensions/extensions_request_builder'
-require_relative './extensions/item/extension_item_request_builder'
 require_relative './item'
-require_relative './multi_value_extended_properties/item/multi_value_legacy_extended_property_item_request_builder'
-require_relative './multi_value_extended_properties/multi_value_extended_properties_request_builder'
 require_relative './photo/photo_request_builder'
-require_relative './single_value_extended_properties/item/single_value_legacy_extended_property_item_request_builder'
-require_relative './single_value_extended_properties/single_value_extended_properties_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -31,19 +26,9 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Me::ContactFolders::Item::Contacts::Item::Extensions::ExtensionsRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
-                            # Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contact entity.
-                            def multi_value_extended_properties()
-                                return MicrosoftGraph::Me::ContactFolders::Item::Contacts::Item::MultiValueExtendedProperties::MultiValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
-                            ## 
                             # Provides operations to manage the photo property of the microsoft.graph.contact entity.
                             def photo()
                                 return MicrosoftGraph::Me::ContactFolders::Item::Contacts::Item::Photo::PhotoRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
-                            ## 
-                            # Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contact entity.
-                            def single_value_extended_properties()
-                                return MicrosoftGraph::Me::ContactFolders::Item::Contacts::Item::SingleValueExtendedProperties::SingleValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new ContactItemRequestBuilder and sets the default values.
@@ -69,17 +54,6 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Provides operations to manage the extensions property of the microsoft.graph.contact entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a extension_item_request_builder
-                            ## 
-                            def extensions_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["extension%2Did"] = id
-                                return MicrosoftGraph::Me::ContactFolders::Item::Contacts::Item::Extensions::Item::ExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
                             ## The contacts in the folder. Navigation property. Read-only. Nullable.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of contact
@@ -92,17 +66,6 @@ module MicrosoftGraph
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Contact.create_from_discriminator_value(pn) }, error_mapping)
-                            end
-                            ## 
-                            ## Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contact entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a multi_value_legacy_extended_property_item_request_builder
-                            ## 
-                            def multi_value_extended_properties_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["multiValueLegacyExtendedProperty%2Did"] = id
-                                return MicrosoftGraph::Me::ContactFolders::Item::Contacts::Item::MultiValueExtendedProperties::Item::MultiValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Update the navigation property contacts in me
@@ -119,17 +82,6 @@ module MicrosoftGraph
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Contact.create_from_discriminator_value(pn) }, error_mapping)
-                            end
-                            ## 
-                            ## Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contact entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a single_value_legacy_extended_property_item_request_builder
-                            ## 
-                            def single_value_extended_properties_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["singleValueLegacyExtendedProperty%2Did"] = id
-                                return MicrosoftGraph::Me::ContactFolders::Item::Contacts::Item::SingleValueExtendedProperties::Item::SingleValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Delete navigation property contacts for me

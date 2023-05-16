@@ -38,7 +38,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Represents information about detected at-risk service principals in an Azure AD tenant.
+                    ## Read the properties and relationships of a servicePrincipalRiskDetection object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of service_principal_risk_detection
                     ## 
@@ -84,7 +84,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Represents information about detected at-risk service principals in an Azure AD tenant.
+                    ## Read the properties and relationships of a servicePrincipalRiskDetection object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -123,7 +123,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Represents information about detected at-risk service principals in an Azure AD tenant.
+                    # Read the properties and relationships of a servicePrincipalRiskDetection object.
                     class ServicePrincipalRiskDetectionItemRequestBuilderGetQueryParameters
                         
                         ## 

@@ -6,6 +6,7 @@ require_relative '../../teams'
 require_relative '../item'
 require_relative './all_channels'
 require_relative './count/count_request_builder'
+require_relative './item/channel_item_request_builder'
 
 module MicrosoftGraph
     module Teams
@@ -19,6 +20,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Teams::Item::AllChannels::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the allChannels property of the microsoft.graph.team entity.
+                    ## @param channel_id Unique identifier of the item
+                    ## @return a channel_item_request_builder
+                    ## 
+                    def by_channel_id(channel_id)
+                        raise StandardError, 'channel_id cannot be null' if channel_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["channel%2Did"] = channel_id
+                        return MicrosoftGraph::Teams::Item::AllChannels::Item::ChannelItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AllChannelsRequestBuilder and sets the default values.

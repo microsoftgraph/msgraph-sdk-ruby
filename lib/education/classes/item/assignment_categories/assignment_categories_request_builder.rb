@@ -9,6 +9,7 @@ require_relative '../item'
 require_relative './assignment_categories'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/education_category_item_request_builder'
 
 module MicrosoftGraph
     module Education
@@ -28,6 +29,17 @@ module MicrosoftGraph
                         # Provides operations to call the delta method.
                         def delta()
                             return MicrosoftGraph::Education::Classes::Item::AssignmentCategories::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the assignmentCategories property of the microsoft.graph.educationClass entity.
+                        ## @param education_category_id Unique identifier of the item
+                        ## @return a education_category_item_request_builder
+                        ## 
+                        def by_education_category_id(education_category_id)
+                            raise StandardError, 'education_category_id cannot be null' if education_category_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["educationCategory%2Did"] = education_category_id
+                            return MicrosoftGraph::Education::Classes::Item::AssignmentCategories::Item::EducationCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new AssignmentCategoriesRequestBuilder and sets the default values.

@@ -5,10 +5,8 @@ require_relative '../../../models/targeted_managed_app_configuration'
 require_relative '../../device_app_management'
 require_relative '../targeted_managed_app_configurations'
 require_relative './apps/apps_request_builder'
-require_relative './apps/item/managed_mobile_app_item_request_builder'
 require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
-require_relative './assignments/item/targeted_managed_app_policy_assignment_item_request_builder'
 require_relative './deployment_summary/deployment_summary_request_builder'
 require_relative './item'
 require_relative './target_apps/target_apps_request_builder'
@@ -45,28 +43,6 @@ module MicrosoftGraph
                     # Provides operations to call the targetApps method.
                     def target_apps()
                         return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::TargetApps::TargetAppsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the apps property of the microsoft.graph.targetedManagedAppConfiguration entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a managed_mobile_app_item_request_builder
-                    ## 
-                    def apps_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["managedMobileApp%2Did"] = id
-                        return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::Apps::Item::ManagedMobileAppItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a targeted_managed_app_policy_assignment_item_request_builder
-                    ## 
-                    def assignments_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["targetedManagedAppPolicyAssignment%2Did"] = id
-                        return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::Assignments::Item::TargetedManagedAppPolicyAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new TargetedManagedAppConfigurationItemRequestBuilder and sets the default values.

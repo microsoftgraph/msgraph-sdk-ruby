@@ -48,7 +48,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, nil, error_mapping)
                                         end
                                         ## 
-                                        ## Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
+                                        ## Read the properties and relationships of an accessReviewInstanceDecisionItem object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of access_review_instance_decision_item
                                         ## 
@@ -94,7 +94,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
+                                        ## Read the properties and relationships of an accessReviewInstanceDecisionItem object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -133,7 +133,7 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.
+                                        # Read the properties and relationships of an accessReviewInstanceDecisionItem object.
                                         class AccessReviewInstanceDecisionItemItemRequestBuilderGetQueryParameters
                                             
                                             ## 

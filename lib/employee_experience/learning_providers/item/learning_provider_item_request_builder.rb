@@ -5,7 +5,6 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../employee_experience'
 require_relative '../learning_providers'
 require_relative './item'
-require_relative './learning_contents/item/learning_content_item_request_builder'
 require_relative './learning_contents/learning_contents_request_builder'
 
 module MicrosoftGraph
@@ -31,7 +30,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property learningProviders for employeeExperience
+                    ## Delete a learningProvider resource and remove its registration in Viva Learning for a tenant.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -45,7 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## A collection of learning providers.
+                    ## Read the properties and relationships of a learningProvider object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of learning_provider
                     ## 
@@ -59,18 +58,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::LearningProvider.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the learningContents property of the microsoft.graph.learningProvider entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a learning_content_item_request_builder
-                    ## 
-                    def learning_contents_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["learningContent%2Did"] = id
-                        return MicrosoftGraph::EmployeeExperience::LearningProviders::Item::LearningContents::Item::LearningContentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Update the navigation property learningProviders in employeeExperience
+                    ## Update the properties of a learningProvider object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of learning_provider
@@ -86,7 +74,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::LearningProvider.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property learningProviders for employeeExperience
+                    ## Delete a learningProvider resource and remove its registration in Viva Learning for a tenant.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## A collection of learning providers.
+                    ## Read the properties and relationships of a learningProvider object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -120,7 +108,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property learningProviders in employeeExperience
+                    ## Update the properties of a learningProvider object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -141,7 +129,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # A collection of learning providers.
+                    # Read the properties and relationships of a learningProvider object.
                     class LearningProviderItemRequestBuilderGetQueryParameters
                         
                         ## 

@@ -5,12 +5,10 @@ require_relative '../../../models/printer'
 require_relative '../../print'
 require_relative '../printers'
 require_relative './connectors/connectors_request_builder'
-require_relative './connectors/item/print_connector_item_request_builder'
 require_relative './item'
+require_relative './jobs/jobs_request_builder'
 require_relative './restore_factory_defaults/restore_factory_defaults_request_builder'
-require_relative './shares/item/printer_share_item_request_builder'
 require_relative './shares/shares_request_builder'
-require_relative './task_triggers/item/print_task_trigger_item_request_builder'
 require_relative './task_triggers/task_triggers_request_builder'
 
 module MicrosoftGraph
@@ -25,6 +23,11 @@ module MicrosoftGraph
                     # Provides operations to manage the connectors property of the microsoft.graph.printer entity.
                     def connectors()
                         return MicrosoftGraph::Print::Printers::Item::Connectors::ConnectorsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to manage the jobs property of the microsoft.graph.printerBase entity.
+                    def jobs()
+                        return MicrosoftGraph::Print::Printers::Item::Jobs::JobsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     # Provides operations to call the restoreFactoryDefaults method.
@@ -42,17 +45,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::Print::Printers::Item::TaskTriggers::TaskTriggersRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the connectors property of the microsoft.graph.printer entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a print_connector_item_request_builder
-                    ## 
-                    def connectors_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["printConnector%2Did"] = id
-                        return MicrosoftGraph::Print::Printers::Item::Connectors::Item::PrintConnectorItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new PrinterItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -62,7 +54,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/print/printers/{printer%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property printers for print
+                    ## Delete (unregister) a printer.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -76,7 +68,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The list of printers registered in the tenant.
+                    ## Retrieve the properties and relationships of a printer object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of printer
                     ## 
@@ -90,7 +82,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Printer.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property printers in print
+                    ## Update the properties of a printer object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of printer
@@ -106,29 +98,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Printer.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the shares property of the microsoft.graph.printer entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a printer_share_item_request_builder
-                    ## 
-                    def shares_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["printerShare%2Did"] = id
-                        return MicrosoftGraph::Print::Printers::Item::Shares::Item::PrinterShareItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a print_task_trigger_item_request_builder
-                    ## 
-                    def task_triggers_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["printTaskTrigger%2Did"] = id
-                        return MicrosoftGraph::Print::Printers::Item::TaskTriggers::Item::PrintTaskTriggerItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Delete navigation property printers for print
+                    ## Delete (unregister) a printer.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -144,7 +114,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The list of printers registered in the tenant.
+                    ## Retrieve the properties and relationships of a printer object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -162,7 +132,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property printers in print
+                    ## Update the properties of a printer object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -183,7 +153,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The list of printers registered in the tenant.
+                    # Retrieve the properties and relationships of a printer object.
                     class PrinterItemRequestBuilderGetQueryParameters
                         
                         ## 

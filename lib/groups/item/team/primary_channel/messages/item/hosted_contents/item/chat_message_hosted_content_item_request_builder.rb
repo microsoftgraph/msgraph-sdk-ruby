@@ -54,7 +54,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, nil, error_mapping)
                                         end
                                         ## 
-                                        ## Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+                                        ## Retrieve the properties and relationships of chatMessageHostedContent object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of chat_message_hosted_content
                                         ## 
@@ -100,7 +100,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+                                        ## Retrieve the properties and relationships of chatMessageHostedContent object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -139,7 +139,7 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # Content in a message hosted by Microsoft Teams - for example, images or code snippets.
+                                        # Retrieve the properties and relationships of chatMessageHostedContent object.
                                         class ChatMessageHostedContentItemRequestBuilderGetQueryParameters
                                             
                                             ## 

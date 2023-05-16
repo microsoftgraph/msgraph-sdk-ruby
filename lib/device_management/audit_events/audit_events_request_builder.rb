@@ -8,6 +8,7 @@ require_relative './audit_events'
 require_relative './count/count_request_builder'
 require_relative './get_audit_activity_types_with_category/get_audit_activity_types_with_category_request_builder'
 require_relative './get_audit_categories/get_audit_categories_request_builder'
+require_relative './item/audit_event_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -25,6 +26,17 @@ module MicrosoftGraph
                 # Provides operations to call the getAuditCategories method.
                 def get_audit_categories()
                     return MicrosoftGraph::DeviceManagement::AuditEvents::GetAuditCategories::GetAuditCategoriesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the auditEvents property of the microsoft.graph.deviceManagement entity.
+                ## @param audit_event_id Unique identifier of the item
+                ## @return a audit_event_item_request_builder
+                ## 
+                def by_audit_event_id(audit_event_id)
+                    raise StandardError, 'audit_event_id cannot be null' if audit_event_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["auditEvent%2Did"] = audit_event_id
+                    return MicrosoftGraph::DeviceManagement::AuditEvents::Item::AuditEventItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new AuditEventsRequestBuilder and sets the default values.

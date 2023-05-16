@@ -6,18 +6,13 @@ require_relative '../devices'
 require_relative './check_member_groups/check_member_groups_request_builder'
 require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './extensions/extensions_request_builder'
-require_relative './extensions/item/extension_item_request_builder'
 require_relative './get_member_groups/get_member_groups_request_builder'
 require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
-require_relative './member_of/item/directory_object_item_request_builder'
 require_relative './member_of/member_of_request_builder'
-require_relative './registered_owners/item/directory_object_item_request_builder'
 require_relative './registered_owners/registered_owners_request_builder'
-require_relative './registered_users/item/directory_object_item_request_builder'
 require_relative './registered_users/registered_users_request_builder'
 require_relative './restore/restore_request_builder'
-require_relative './transitive_member_of/item/directory_object_item_request_builder'
 require_relative './transitive_member_of/transitive_member_of_request_builder'
 
 module MicrosoftGraph
@@ -101,17 +96,6 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Provides operations to manage the extensions property of the microsoft.graph.device entity.
-                ## @param id Unique identifier of the item
-                ## @return a extension_item_request_builder
-                ## 
-                def extensions_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["extension%2Did"] = id
-                    return MicrosoftGraph::Devices::Item::Extensions::Item::ExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Get the properties and relationships of a device object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of device
@@ -124,17 +108,6 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Device.create_from_discriminator_value(pn) }, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the memberOf property of the microsoft.graph.device entity.
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def member_of_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Devices::Item::MemberOf::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Update the properties of a registered device. Only certain properties of a device can be updated through approved Mobile Device Managment (MDM) apps.
@@ -151,28 +124,6 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Device.create_from_discriminator_value(pn) }, error_mapping)
-                end
-                ## 
-                ## Gets an item from the MicrosoftGraph.devices.item.registeredOwners.item collection
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def registered_owners_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Devices::Item::RegisteredOwners::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Gets an item from the MicrosoftGraph.devices.item.registeredUsers.item collection
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def registered_users_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Devices::Item::RegisteredUsers::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Delete a registered device.
@@ -227,17 +178,6 @@ module MicrosoftGraph
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
-                end
-                ## 
-                ## Provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def transitive_member_of_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Devices::Item::TransitiveMemberOf::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
 
                 ## 

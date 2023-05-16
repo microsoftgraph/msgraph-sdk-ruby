@@ -8,6 +8,7 @@ require_relative '../../../item'
 require_relative '../../groups'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/identity_item_request_builder'
 require_relative './members'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Connections::Item::Groups::Item::Members::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the members property of the microsoft.graph.externalConnectors.externalGroup entity.
+                            ## @param identity_id Unique identifier of the item
+                            ## @return a identity_item_request_builder
+                            ## 
+                            def by_identity_id(identity_id)
+                                raise StandardError, 'identity_id cannot be null' if identity_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["identity%2Did"] = identity_id
+                                return MicrosoftGraph::Connections::Item::Groups::Item::Members::Item::IdentityItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new MembersRequestBuilder and sets the default values.

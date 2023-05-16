@@ -50,7 +50,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                             end
                                             ## 
-                                            ## The fileAttachment and itemAttachment attachments for the message.
+                                            ## Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of attachment
                                             ## 
@@ -80,7 +80,7 @@ module MicrosoftGraph
                                                 return request_info
                                             end
                                             ## 
-                                            ## The fileAttachment and itemAttachment attachments for the message.
+                                            ## Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -99,7 +99,7 @@ module MicrosoftGraph
                                             end
 
                                             ## 
-                                            # The fileAttachment and itemAttachment attachments for the message.
+                                            # Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
                                             class AttachmentItemRequestBuilderGetQueryParameters
                                                 
                                                 ## 

@@ -7,6 +7,7 @@ require_relative '../../groups'
 require_relative '../item'
 require_relative './conversations'
 require_relative './count/count_request_builder'
+require_relative './item/conversation_item_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Groups::Item::Conversations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the conversations property of the microsoft.graph.group entity.
+                    ## @param conversation_id Unique identifier of the item
+                    ## @return a conversation_item_request_builder
+                    ## 
+                    def by_conversation_id(conversation_id)
+                        raise StandardError, 'conversation_id cannot be null' if conversation_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["conversation%2Did"] = conversation_id
+                        return MicrosoftGraph::Groups::Item::Conversations::Item::ConversationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new ConversationsRequestBuilder and sets the default values.

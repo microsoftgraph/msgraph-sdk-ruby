@@ -8,6 +8,7 @@ require_relative '../../../joined_teams'
 require_relative '../../item'
 require_relative '../schedule'
 require_relative './count/count_request_builder'
+require_relative './item/open_shift_item_request_builder'
 require_relative './open_shifts'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Me::JoinedTeams::Item::Schedule::OpenShifts::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the openShifts property of the microsoft.graph.schedule entity.
+                            ## @param open_shift_id Unique identifier of the item
+                            ## @return a open_shift_item_request_builder
+                            ## 
+                            def by_open_shift_id(open_shift_id)
+                                raise StandardError, 'open_shift_id cannot be null' if open_shift_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["openShift%2Did"] = open_shift_id
+                                return MicrosoftGraph::Me::JoinedTeams::Item::Schedule::OpenShifts::Item::OpenShiftItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new OpenShiftsRequestBuilder and sets the default values.
@@ -49,7 +61,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OpenShiftCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Create new navigation property to openShifts for me
+                            ## Create an instance of an openShift object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of open_shift
@@ -83,7 +95,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Create new navigation property to openShifts for me
+                            ## Create an instance of an openShift object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information

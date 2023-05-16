@@ -9,9 +9,7 @@ require_relative './clean_windows_device/clean_windows_device_request_builder'
 require_relative './delete_user_from_shared_apple_device/delete_user_from_shared_apple_device_request_builder'
 require_relative './device_category/device_category_request_builder'
 require_relative './device_compliance_policy_states/device_compliance_policy_states_request_builder'
-require_relative './device_compliance_policy_states/item/device_compliance_policy_state_item_request_builder'
 require_relative './device_configuration_states/device_configuration_states_request_builder'
-require_relative './device_configuration_states/item/device_configuration_state_item_request_builder'
 require_relative './disable_lost_mode/disable_lost_mode_request_builder'
 require_relative './item'
 require_relative './locate_device/locate_device_request_builder'
@@ -170,28 +168,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the deviceCompliancePolicyStates property of the microsoft.graph.managedDevice entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a device_compliance_policy_state_item_request_builder
-                    ## 
-                    def device_compliance_policy_states_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["deviceCompliancePolicyState%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::ManagedDevices::Item::DeviceCompliancePolicyStates::Item::DeviceCompliancePolicyStateItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a device_configuration_state_item_request_builder
-                    ## 
-                    def device_configuration_states_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["deviceConfigurationState%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::ManagedDevices::Item::DeviceConfigurationStates::Item::DeviceConfigurationStateItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## The list of managed devices.

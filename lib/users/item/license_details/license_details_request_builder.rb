@@ -6,6 +6,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../users'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/license_details_item_request_builder'
 require_relative './license_details'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Users::Item::LicenseDetails::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the licenseDetails property of the microsoft.graph.user entity.
+                    ## @param license_details_id Unique identifier of the item
+                    ## @return a license_details_item_request_builder
+                    ## 
+                    def by_license_details_id(license_details_id)
+                        raise StandardError, 'license_details_id cannot be null' if license_details_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["licenseDetails%2Did"] = license_details_id
+                        return MicrosoftGraph::Users::Item::LicenseDetails::Item::LicenseDetailsItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new LicenseDetailsRequestBuilder and sets the default values.

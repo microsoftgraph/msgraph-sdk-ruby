@@ -8,6 +8,7 @@ require_relative '../../../joined_teams'
 require_relative '../../item'
 require_relative '../schedule'
 require_relative './count/count_request_builder'
+require_relative './item/offer_shift_request_item_request_builder'
 require_relative './offer_shift_requests'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Me::JoinedTeams::Item::Schedule::OfferShiftRequests::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.
+                            ## @param offer_shift_request_id Unique identifier of the item
+                            ## @return a offer_shift_request_item_request_builder
+                            ## 
+                            def by_offer_shift_request_id(offer_shift_request_id)
+                                raise StandardError, 'offer_shift_request_id cannot be null' if offer_shift_request_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["offerShiftRequest%2Did"] = offer_shift_request_id
+                                return MicrosoftGraph::Me::JoinedTeams::Item::Schedule::OfferShiftRequests::Item::OfferShiftRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new OfferShiftRequestsRequestBuilder and sets the default values.

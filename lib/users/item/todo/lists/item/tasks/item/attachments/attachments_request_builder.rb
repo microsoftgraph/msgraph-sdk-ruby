@@ -13,6 +13,7 @@ require_relative '../item'
 require_relative './attachments'
 require_relative './count/count_request_builder'
 require_relative './create_upload_session/create_upload_session_request_builder'
+require_relative './item/attachment_base_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -36,6 +37,17 @@ module MicrosoftGraph
                                         # Provides operations to call the createUploadSession method.
                                         def create_upload_session()
                                             return MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::Attachments::CreateUploadSession::CreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
+                                        ## Provides operations to manage the attachments property of the microsoft.graph.todoTask entity.
+                                        ## @param attachment_base_id Unique identifier of the item
+                                        ## @return a attachment_base_item_request_builder
+                                        ## 
+                                        def by_attachment_base_id(attachment_base_id)
+                                            raise StandardError, 'attachment_base_id cannot be null' if attachment_base_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["attachmentBase%2Did"] = attachment_base_id
+                                            return MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::Attachments::Item::AttachmentBaseItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                         end
                                         ## 
                                         ## Instantiates a new AttachmentsRequestBuilder and sets the default values.

@@ -13,10 +13,10 @@ module MicrosoftGraph
             # Indicates whether the default user role can create applications.
             @allowed_to_create_apps
             ## 
-            # Indicates whether the default user role can create security groups.
+            # Indicates whether the default user role can create security groups. This setting corresponds to the The Users can create security groups in Azure portals, API or PowerShell setting in the group settings menu in the Azure portal.
             @allowed_to_create_security_groups
             ## 
-            # The allowedToReadBitlockerKeysForOwnedDevice property
+            # Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
             @allowed_to_read_bitlocker_keys_for_owned_device
             ## 
             # Indicates whether the default user role can read other users.
@@ -58,14 +58,14 @@ module MicrosoftGraph
                 @allowed_to_create_apps = value
             end
             ## 
-            ## Gets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups.
+            ## Gets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups. This setting corresponds to the The Users can create security groups in Azure portals, API or PowerShell setting in the group settings menu in the Azure portal.
             ## @return a boolean
             ## 
             def allowed_to_create_security_groups
                 return @allowed_to_create_security_groups
             end
             ## 
-            ## Sets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups.
+            ## Sets the allowedToCreateSecurityGroups property value. Indicates whether the default user role can create security groups. This setting corresponds to the The Users can create security groups in Azure portals, API or PowerShell setting in the group settings menu in the Azure portal.
             ## @param value Value to set for the allowed_to_create_security_groups property.
             ## @return a void
             ## 
@@ -73,14 +73,14 @@ module MicrosoftGraph
                 @allowed_to_create_security_groups = value
             end
             ## 
-            ## Gets the allowedToReadBitlockerKeysForOwnedDevice property value. The allowedToReadBitlockerKeysForOwnedDevice property
+            ## Gets the allowedToReadBitlockerKeysForOwnedDevice property value. Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
             ## @return a boolean
             ## 
             def allowed_to_read_bitlocker_keys_for_owned_device
                 return @allowed_to_read_bitlocker_keys_for_owned_device
             end
             ## 
-            ## Sets the allowedToReadBitlockerKeysForOwnedDevice property value. The allowedToReadBitlockerKeysForOwnedDevice property
+            ## Sets the allowedToReadBitlockerKeysForOwnedDevice property value. Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
             ## @param value Value to set for the allowed_to_read_bitlocker_keys_for_owned_device property.
             ## @return a void
             ## 

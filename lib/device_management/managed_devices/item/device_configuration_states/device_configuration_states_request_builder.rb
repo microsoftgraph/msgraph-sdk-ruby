@@ -8,6 +8,7 @@ require_relative '../../managed_devices'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './device_configuration_states'
+require_relative './item/device_configuration_state_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::DeviceManagement::ManagedDevices::Item::DeviceConfigurationStates::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.
+                        ## @param device_configuration_state_id Unique identifier of the item
+                        ## @return a device_configuration_state_item_request_builder
+                        ## 
+                        def by_device_configuration_state_id(device_configuration_state_id)
+                            raise StandardError, 'device_configuration_state_id cannot be null' if device_configuration_state_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["deviceConfigurationState%2Did"] = device_configuration_state_id
+                            return MicrosoftGraph::DeviceManagement::ManagedDevices::Item::DeviceConfigurationStates::Item::DeviceConfigurationStateItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new DeviceConfigurationStatesRequestBuilder and sets the default values.
