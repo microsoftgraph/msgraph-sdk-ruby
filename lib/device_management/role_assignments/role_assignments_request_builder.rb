@@ -5,6 +5,7 @@ require_relative '../../models/device_and_app_management_role_assignment_collect
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
+require_relative './item/device_and_app_management_role_assignment_item_request_builder'
 require_relative './role_assignments'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceManagement::RoleAssignments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the roleAssignments property of the microsoft.graph.deviceManagement entity.
+                ## @param device_and_app_management_role_assignment_id Unique identifier of the item
+                ## @return a device_and_app_management_role_assignment_item_request_builder
+                ## 
+                def by_device_and_app_management_role_assignment_id(device_and_app_management_role_assignment_id)
+                    raise StandardError, 'device_and_app_management_role_assignment_id cannot be null' if device_and_app_management_role_assignment_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["deviceAndAppManagementRoleAssignment%2Did"] = device_and_app_management_role_assignment_id
+                    return MicrosoftGraph::DeviceManagement::RoleAssignments::Item::DeviceAndAppManagementRoleAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new RoleAssignmentsRequestBuilder and sets the default values.

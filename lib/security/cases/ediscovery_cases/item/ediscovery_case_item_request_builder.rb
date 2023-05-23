@@ -6,20 +6,14 @@ require_relative '../../../security'
 require_relative '../../cases'
 require_relative '../ediscovery_cases'
 require_relative './custodians/custodians_request_builder'
-require_relative './custodians/item/ediscovery_custodian_item_request_builder'
 require_relative './item'
-require_relative './noncustodial_data_sources/item/ediscovery_noncustodial_data_source_item_request_builder'
+require_relative './microsoft_graph_security_close/microsoft_graph_security_close_request_builder'
+require_relative './microsoft_graph_security_reopen/microsoft_graph_security_reopen_request_builder'
 require_relative './noncustodial_data_sources/noncustodial_data_sources_request_builder'
-require_relative './operations/item/case_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
-require_relative './review_sets/item/ediscovery_review_set_item_request_builder'
 require_relative './review_sets/review_sets_request_builder'
-require_relative './searches/item/ediscovery_search_item_request_builder'
 require_relative './searches/searches_request_builder'
-require_relative './security_close/security_close_request_builder'
-require_relative './security_reopen/security_reopen_request_builder'
 require_relative './settings/settings_request_builder'
-require_relative './tags/item/ediscovery_review_tag_item_request_builder'
 require_relative './tags/tags_request_builder'
 
 module MicrosoftGraph
@@ -35,6 +29,16 @@ module MicrosoftGraph
                         # Provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.
                         def custodians()
                             return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::CustodiansRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to call the close method.
+                        def microsoft_graph_security_close()
+                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::MicrosoftGraphSecurityClose::MicrosoftGraphSecurityCloseRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to call the reopen method.
+                        def microsoft_graph_security_reopen()
+                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::MicrosoftGraphSecurityReopen::MicrosoftGraphSecurityReopenRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Provides operations to manage the noncustodialDataSources property of the microsoft.graph.security.ediscoveryCase entity.
@@ -57,16 +61,6 @@ module MicrosoftGraph
                             return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::SearchesRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        # Provides operations to call the close method.
-                        def security_close()
-                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::SecurityClose::SecurityCloseRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        # Provides operations to call the reopen method.
-                        def security_reopen()
-                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::SecurityReopen::SecurityReopenRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
                         # Provides operations to manage the settings property of the microsoft.graph.security.ediscoveryCase entity.
                         def settings()
                             return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Settings::SettingsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -86,18 +80,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a ediscovery_custodian_item_request_builder
-                        ## 
-                        def custodians_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["ediscoveryCustodian%2Did"] = id
-                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::EdiscoveryCustodianItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Delete navigation property ediscoveryCases for security
+                        ## Delete an ediscoveryCase object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -111,7 +94,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Get ediscoveryCases from security
+                        ## Read the properties and relationships of an ediscoveryCase object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of ediscovery_case
                         ## 
@@ -125,29 +108,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryCase.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Provides operations to manage the noncustodialDataSources property of the microsoft.graph.security.ediscoveryCase entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a ediscovery_noncustodial_data_source_item_request_builder
-                        ## 
-                        def noncustodial_data_sources_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["ediscoveryNoncustodialDataSource%2Did"] = id
-                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::Item::EdiscoveryNoncustodialDataSourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the operations property of the microsoft.graph.security.ediscoveryCase entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a case_operation_item_request_builder
-                        ## 
-                        def operations_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["caseOperation%2Did"] = id
-                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Operations::Item::CaseOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Update the navigation property ediscoveryCases in security
+                        ## Update the properties of an ediscoveryCase object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of ediscovery_case
@@ -163,40 +124,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryCase.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Provides operations to manage the reviewSets property of the microsoft.graph.security.ediscoveryCase entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a ediscovery_review_set_item_request_builder
-                        ## 
-                        def review_sets_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["ediscoveryReviewSet%2Did"] = id
-                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::EdiscoveryReviewSetItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the searches property of the microsoft.graph.security.ediscoveryCase entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a ediscovery_search_item_request_builder
-                        ## 
-                        def searches_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["ediscoverySearch%2Did"] = id
-                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::EdiscoverySearchItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the tags property of the microsoft.graph.security.ediscoveryCase entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a ediscovery_review_tag_item_request_builder
-                        ## 
-                        def tags_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["ediscoveryReviewTag%2Did"] = id
-                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags::Item::EdiscoveryReviewTagItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Delete navigation property ediscoveryCases for security
+                        ## Delete an ediscoveryCase object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -212,7 +140,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Get ediscoveryCases from security
+                        ## Read the properties and relationships of an ediscoveryCase object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -230,7 +158,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property ediscoveryCases in security
+                        ## Update the properties of an ediscoveryCase object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -251,7 +179,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get ediscoveryCases from security
+                        # Read the properties and relationships of an ediscoveryCase object.
                         class EdiscoveryCaseItemRequestBuilderGetQueryParameters
                             
                             ## 

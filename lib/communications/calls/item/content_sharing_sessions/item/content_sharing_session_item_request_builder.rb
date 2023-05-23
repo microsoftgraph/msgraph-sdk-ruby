@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Get contentSharingSessions from communications
+                            ## Retrieve the properties of a contentSharingSession object in a call.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of content_sharing_session
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Get contentSharingSessions from communications
+                            ## Retrieve the properties of a contentSharingSession object in a call.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get contentSharingSessions from communications
+                            # Retrieve the properties of a contentSharingSession object in a call.
                             class ContentSharingSessionItemRequestBuilderGetQueryParameters
                                 
                                 ## 

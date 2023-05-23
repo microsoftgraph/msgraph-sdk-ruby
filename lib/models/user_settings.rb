@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The shiftPreferences property
             @shift_preferences
             ## 
-            ## Instantiates a new UserSettings and sets the default values.
+            ## Instantiates a new userSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

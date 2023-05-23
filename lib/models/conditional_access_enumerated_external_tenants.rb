@@ -7,7 +7,7 @@ module MicrosoftGraph
         class ConditionalAccessEnumeratedExternalTenants < MicrosoftGraph::Models::ConditionalAccessExternalTenants
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The members property
+            # A collection of tenant IDs that define the scope of a policy targeting conditional access for guests and external users.
             @members
             ## 
             ## Instantiates a new ConditionalAccessEnumeratedExternalTenants and sets the default values.
@@ -36,14 +36,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the members property value. The members property
+            ## Gets the members property value. A collection of tenant IDs that define the scope of a policy targeting conditional access for guests and external users.
             ## @return a string
             ## 
             def members
                 return @members
             end
             ## 
-            ## Sets the members property value. The members property
+            ## Sets the members property value. A collection of tenant IDs that define the scope of a policy targeting conditional access for guests and external users.
             ## @param value Value to set for the members property.
             ## @return a void
             ## 

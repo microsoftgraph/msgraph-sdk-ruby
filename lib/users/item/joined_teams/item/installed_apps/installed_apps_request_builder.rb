@@ -9,6 +9,7 @@ require_relative '../../joined_teams'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './installed_apps'
+require_relative './item/teams_app_installation_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Users::Item::JoinedTeams::Item::InstalledApps::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the installedApps property of the microsoft.graph.team entity.
+                            ## @param teams_app_installation_id Unique identifier of the item
+                            ## @return a teams_app_installation_item_request_builder
+                            ## 
+                            def by_teams_app_installation_id(teams_app_installation_id)
+                                raise StandardError, 'teams_app_installation_id cannot be null' if teams_app_installation_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["teamsAppInstallation%2Did"] = teams_app_installation_id
+                                return MicrosoftGraph::Users::Item::JoinedTeams::Item::InstalledApps::Item::TeamsAppInstallationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new InstalledAppsRequestBuilder and sets the default values.

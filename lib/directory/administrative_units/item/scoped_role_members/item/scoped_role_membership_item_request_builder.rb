@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/scopedRoleMembers/{scopedRoleMembership%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property scopedRoleMembers for directory
+                            ## Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Scoped-role members of this administrative unit.
+                            ## Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of scoped_role_membership
                             ## 
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ScopedRoleMembership.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property scopedRoleMembers for directory
+                            ## Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Scoped-role members of this administrative unit.
+                            ## Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Scoped-role members of this administrative unit.
+                            # Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
                             class ScopedRoleMembershipItemRequestBuilderGetQueryParameters
                                 
                                 ## 

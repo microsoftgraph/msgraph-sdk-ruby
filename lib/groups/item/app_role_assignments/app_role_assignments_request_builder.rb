@@ -7,6 +7,7 @@ require_relative '../../groups'
 require_relative '../item'
 require_relative './app_role_assignments'
 require_relative './count/count_request_builder'
+require_relative './item/app_role_assignment_item_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Groups::Item::AppRoleAssignments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the appRoleAssignments property of the microsoft.graph.group entity.
+                    ## @param app_role_assignment_id Unique identifier of the item
+                    ## @return a app_role_assignment_item_request_builder
+                    ## 
+                    def by_app_role_assignment_id(app_role_assignment_id)
+                        raise StandardError, 'app_role_assignment_id cannot be null' if app_role_assignment_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["appRoleAssignment%2Did"] = app_role_assignment_id
+                        return MicrosoftGraph::Groups::Item::AppRoleAssignments::Item::AppRoleAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AppRoleAssignmentsRequestBuilder and sets the default values.

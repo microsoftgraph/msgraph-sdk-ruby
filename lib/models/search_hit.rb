@@ -16,6 +16,9 @@ module MicrosoftGraph
             # The internal identifier for the item. The format of the identifier varies based on the entity type. For details, see hitId format.
             @hit_id
             ## 
+            # The isCollapsed property
+            @is_collapsed
+            ## 
             # The OdataType property
             @odata_type
             ## 
@@ -84,6 +87,7 @@ module MicrosoftGraph
                 return {
                     "contentSource" => lambda {|n| @content_source = n.get_string_value() },
                     "hitId" => lambda {|n| @hit_id = n.get_string_value() },
+                    "isCollapsed" => lambda {|n| @is_collapsed = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "rank" => lambda {|n| @rank = n.get_number_value() },
                     "resource" => lambda {|n| @resource = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Entity.create_from_discriminator_value(pn) }) },
@@ -105,6 +109,21 @@ module MicrosoftGraph
             ## 
             def hit_id=(value)
                 @hit_id = value
+            end
+            ## 
+            ## Gets the isCollapsed property value. The isCollapsed property
+            ## @return a boolean
+            ## 
+            def is_collapsed
+                return @is_collapsed
+            end
+            ## 
+            ## Sets the isCollapsed property value. The isCollapsed property
+            ## @param value Value to set for the is_collapsed property.
+            ## @return a void
+            ## 
+            def is_collapsed=(value)
+                @is_collapsed = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -175,6 +194,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_string_value("contentSource", @content_source)
                 writer.write_string_value("hitId", @hit_id)
+                writer.write_boolean_value("isCollapsed", @is_collapsed)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_number_value("rank", @rank)
                 writer.write_object_value("resource", @resource)

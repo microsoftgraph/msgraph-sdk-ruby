@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../solutions'
 require_relative './booking_currencies'
 require_relative './count/count_request_builder'
+require_relative './item/booking_currency_item_request_builder'
 
 module MicrosoftGraph
     module Solutions
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Solutions::BookingCurrencies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.
+                ## @param booking_currency_id Unique identifier of the item
+                ## @return a booking_currency_item_request_builder
+                ## 
+                def by_booking_currency_id(booking_currency_id)
+                    raise StandardError, 'booking_currency_id cannot be null' if booking_currency_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["bookingCurrency%2Did"] = booking_currency_id
+                    return MicrosoftGraph::Solutions::BookingCurrencies::Item::BookingCurrencyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new BookingCurrenciesRequestBuilder and sets the default values.

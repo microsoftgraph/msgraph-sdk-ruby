@@ -8,6 +8,7 @@ require_relative '../../../joined_teams'
 require_relative '../../item'
 require_relative '../primary_channel'
 require_relative './count/count_request_builder'
+require_relative './item/teams_tab_item_request_builder'
 require_relative './tabs'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Me::JoinedTeams::Item::PrimaryChannel::Tabs::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the tabs property of the microsoft.graph.channel entity.
+                            ## @param teams_tab_id Unique identifier of the item
+                            ## @return a teams_tab_item_request_builder
+                            ## 
+                            def by_teams_tab_id(teams_tab_id)
+                                raise StandardError, 'teams_tab_id cannot be null' if teams_tab_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["teamsTab%2Did"] = teams_tab_id
+                                return MicrosoftGraph::Me::JoinedTeams::Item::PrimaryChannel::Tabs::Item::TeamsTabItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new TabsRequestBuilder and sets the default values.

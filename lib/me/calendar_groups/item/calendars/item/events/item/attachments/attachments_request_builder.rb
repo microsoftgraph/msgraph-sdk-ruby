@@ -13,6 +13,7 @@ require_relative '../item'
 require_relative './attachments'
 require_relative './count/count_request_builder'
 require_relative './create_upload_session/create_upload_session_request_builder'
+require_relative './item/attachment_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -38,6 +39,17 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Me::CalendarGroups::Item::Calendars::Item::Events::Item::Attachments::CreateUploadSession::CreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
+                                        ## Provides operations to manage the attachments property of the microsoft.graph.event entity.
+                                        ## @param attachment_id Unique identifier of the item
+                                        ## @return a attachment_item_request_builder
+                                        ## 
+                                        def by_attachment_id(attachment_id)
+                                            raise StandardError, 'attachment_id cannot be null' if attachment_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["attachment%2Did"] = attachment_id
+                                            return MicrosoftGraph::Me::CalendarGroups::Item::Calendars::Item::Events::Item::Attachments::Item::AttachmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                        end
+                                        ## 
                                         ## Instantiates a new AttachmentsRequestBuilder and sets the default values.
                                         ## @param path_parameters Path parameters for the request
                                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -61,7 +73,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AttachmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+                                        ## Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of attachment
@@ -95,7 +107,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+                                        ## Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information

@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "6C34C82C91DA48B50657ADBAA14B7EEC6FF731CF8526B6F484CAF7B08839409C08D0B3A8A62DAB326FF7F60EAC1B234731ED64CC2112AF4607AD956730FF4267",
+  "descriptionHash": "18582DB6C5E13E8DE4FDF9AE782EBEE3E5DFE8BE3E1199CFC24BAB6621792FCC8252C99BA8B0D69CBB08251AEC2D4D5CE8A6911AB14DE3EF0C9F993E77D982FC",
   "descriptionLocation": "/mnt/vss/_work/1/s/msgraph-metadata/clean_v10_openapi/openapi.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.1.1",
+  "kiotaVersion": "1.2.1",
   "clientClassName": "GraphBaseServiceClient",
   "clientNamespaceName": "MicrosoftGraph",
   "language": "Ruby",

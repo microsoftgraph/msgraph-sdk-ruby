@@ -5,7 +5,6 @@ require_relative '../../models/security/cases_root'
 require_relative '../security'
 require_relative './cases'
 require_relative './ediscovery_cases/ediscovery_cases_request_builder'
-require_relative './ediscovery_cases/item/ediscovery_case_item_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -41,17 +40,6 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, nil, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the ediscoveryCases property of the microsoft.graph.security.casesRoot entity.
-                ## @param id Unique identifier of the item
-                ## @return a ediscovery_case_item_request_builder
-                ## 
-                def ediscovery_cases_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["ediscoveryCase%2Did"] = id
-                    return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::EdiscoveryCaseItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Get cases from security

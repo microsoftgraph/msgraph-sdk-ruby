@@ -10,6 +10,7 @@ require_relative '../../../item'
 require_relative '../../custodians'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/user_source_item_request_builder'
 require_relative './user_sources'
 
 module MicrosoftGraph
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     # Provides operations to count the resources in the collection.
                                     def count()
                                         return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::UserSources::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to manage the userSources property of the microsoft.graph.security.ediscoveryCustodian entity.
+                                    ## @param user_source_id Unique identifier of the item
+                                    ## @return a user_source_item_request_builder
+                                    ## 
+                                    def by_user_source_id(user_source_id)
+                                        raise StandardError, 'user_source_id cannot be null' if user_source_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["userSource%2Did"] = user_source_id
+                                        return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::UserSources::Item::UserSourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new UserSourcesRequestBuilder and sets the default values.

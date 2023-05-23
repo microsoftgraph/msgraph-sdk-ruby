@@ -30,7 +30,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/admin/edge/internetExplorerMode/siteLists/{browserSiteList%2Did}/publish")
                                 end
                                 ## 
-                                ## Invoke action publish
+                                ## Publish the specified browserSiteList for devices to download.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of browser_site_list
@@ -46,7 +46,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BrowserSiteList.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Invoke action publish
+                                ## Publish the specified browserSiteList for devices to download.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information

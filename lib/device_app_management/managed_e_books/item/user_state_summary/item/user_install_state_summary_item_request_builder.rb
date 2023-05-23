@@ -7,7 +7,6 @@ require_relative '../../../managed_e_books'
 require_relative '../../item'
 require_relative '../user_state_summary'
 require_relative './device_states/device_states_request_builder'
-require_relative './device_states/item/device_install_state_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -47,17 +46,6 @@ module MicrosoftGraph
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
-                            end
-                            ## 
-                            ## Provides operations to manage the deviceStates property of the microsoft.graph.userInstallStateSummary entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a device_install_state_item_request_builder
-                            ## 
-                            def device_states_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["deviceInstallState%2Did"] = id
-                                return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::UserStateSummary::Item::DeviceStates::Item::DeviceInstallStateItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## The list of installation states for this eBook.

@@ -8,6 +8,7 @@ require_relative '../../../cases'
 require_relative '../../ediscovery_cases'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/ediscovery_search_item_request_builder'
 require_relative './searches'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the searches property of the microsoft.graph.security.ediscoveryCase entity.
+                            ## @param ediscovery_search_id Unique identifier of the item
+                            ## @return a ediscovery_search_item_request_builder
+                            ## 
+                            def by_ediscovery_search_id(ediscovery_search_id)
+                                raise StandardError, 'ediscovery_search_id cannot be null' if ediscovery_search_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["ediscoverySearch%2Did"] = ediscovery_search_id
+                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::EdiscoverySearchItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new SearchesRequestBuilder and sets the default values.

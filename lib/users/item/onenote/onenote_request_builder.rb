@@ -4,18 +4,12 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/onenote'
 require_relative '../../users'
 require_relative '../item'
-require_relative './notebooks/item/notebook_item_request_builder'
 require_relative './notebooks/notebooks_request_builder'
 require_relative './onenote'
-require_relative './operations/item/onenote_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
-require_relative './pages/item/onenote_page_item_request_builder'
 require_relative './pages/pages_request_builder'
-require_relative './resources/item/onenote_resource_item_request_builder'
 require_relative './resources/resources_request_builder'
-require_relative './section_groups/item/section_group_item_request_builder'
 require_relative './section_groups/section_groups_request_builder'
-require_relative './sections/item/onenote_section_item_request_builder'
 require_relative './sections/sections_request_builder'
 
 module MicrosoftGraph
@@ -94,39 +88,6 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Onenote.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the notebooks property of the microsoft.graph.onenote entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a notebook_item_request_builder
-                    ## 
-                    def notebooks_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["notebook%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Onenote::Notebooks::Item::NotebookItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the operations property of the microsoft.graph.onenote entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a onenote_operation_item_request_builder
-                    ## 
-                    def operations_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["onenoteOperation%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Onenote::Operations::Item::OnenoteOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the pages property of the microsoft.graph.onenote entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a onenote_page_item_request_builder
-                    ## 
-                    def pages_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["onenotePage%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Onenote::Pages::Item::OnenotePageItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Update the navigation property onenote in users
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
@@ -141,39 +102,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Onenote.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the resources property of the microsoft.graph.onenote entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a onenote_resource_item_request_builder
-                    ## 
-                    def resources_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["onenoteResource%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Onenote::Resources::Item::OnenoteResourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a section_group_item_request_builder
-                    ## 
-                    def section_groups_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["sectionGroup%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Onenote::SectionGroups::Item::SectionGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the sections property of the microsoft.graph.onenote entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a onenote_section_item_request_builder
-                    ## 
-                    def sections_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["onenoteSection%2Did"] = id
-                        return MicrosoftGraph::Users::Item::Onenote::Sections::Item::OnenoteSectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Delete navigation property onenote for users

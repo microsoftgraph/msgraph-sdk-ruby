@@ -8,9 +8,10 @@ require_relative '../../../cases'
 require_relative '../../ediscovery_cases'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/ediscovery_noncustodial_data_source_item_request_builder'
+require_relative './microsoft_graph_security_apply_hold/microsoft_graph_security_apply_hold_request_builder'
+require_relative './microsoft_graph_security_remove_hold/microsoft_graph_security_remove_hold_request_builder'
 require_relative './noncustodial_data_sources'
-require_relative './security_apply_hold/security_apply_hold_request_builder'
-require_relative './security_remove_hold/security_remove_hold_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -29,13 +30,24 @@ module MicrosoftGraph
                             end
                             ## 
                             # Provides operations to call the applyHold method.
-                            def security_apply_hold()
-                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::SecurityApplyHold::SecurityApplyHoldRequestBuilder.new(@path_parameters, @request_adapter)
+                            def microsoft_graph_security_apply_hold()
+                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::MicrosoftGraphSecurityApplyHold::MicrosoftGraphSecurityApplyHoldRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             # Provides operations to call the removeHold method.
-                            def security_remove_hold()
-                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::SecurityRemoveHold::SecurityRemoveHoldRequestBuilder.new(@path_parameters, @request_adapter)
+                            def microsoft_graph_security_remove_hold()
+                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::MicrosoftGraphSecurityRemoveHold::MicrosoftGraphSecurityRemoveHoldRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the noncustodialDataSources property of the microsoft.graph.security.ediscoveryCase entity.
+                            ## @param ediscovery_noncustodial_data_source_id Unique identifier of the item
+                            ## @return a ediscovery_noncustodial_data_source_item_request_builder
+                            ## 
+                            def by_ediscovery_noncustodial_data_source_id(ediscovery_noncustodial_data_source_id)
+                                raise StandardError, 'ediscovery_noncustodial_data_source_id cannot be null' if ediscovery_noncustodial_data_source_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["ediscoveryNoncustodialDataSource%2Did"] = ediscovery_noncustodial_data_source_id
+                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::NoncustodialDataSources::Item::EdiscoveryNoncustodialDataSourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new NoncustodialDataSourcesRequestBuilder and sets the default values.

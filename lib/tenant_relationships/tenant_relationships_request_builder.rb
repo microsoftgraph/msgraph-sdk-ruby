@@ -3,9 +3,7 @@ require_relative '../microsoft_graph'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/tenant_relationship'
 require_relative './delegated_admin_customers/delegated_admin_customers_request_builder'
-require_relative './delegated_admin_customers/item/delegated_admin_customer_item_request_builder'
 require_relative './delegated_admin_relationships/delegated_admin_relationships_request_builder'
-require_relative './delegated_admin_relationships/item/delegated_admin_relationship_item_request_builder'
 require_relative './tenant_relationships'
 
 module MicrosoftGraph
@@ -32,28 +30,6 @@ module MicrosoftGraph
             ## 
             def initialize(path_parameters, request_adapter)
                 super(path_parameters, request_adapter, "{+baseurl}/tenantRelationships{?%24select,%24expand}")
-            end
-            ## 
-            ## Provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.
-            ## @param id Unique identifier of the item
-            ## @return a delegated_admin_customer_item_request_builder
-            ## 
-            def delegated_admin_customers_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["delegatedAdminCustomer%2Did"] = id
-                return MicrosoftGraph::TenantRelationships::DelegatedAdminCustomers::Item::DelegatedAdminCustomerItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.
-            ## @param id Unique identifier of the item
-            ## @return a delegated_admin_relationship_item_request_builder
-            ## 
-            def delegated_admin_relationships_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["delegatedAdminRelationship%2Did"] = id
-                return MicrosoftGraph::TenantRelationships::DelegatedAdminRelationships::Item::DelegatedAdminRelationshipItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Get tenantRelationships
