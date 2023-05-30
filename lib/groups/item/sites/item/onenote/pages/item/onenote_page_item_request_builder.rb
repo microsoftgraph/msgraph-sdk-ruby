@@ -68,7 +68,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/onenote/pages/{onenotePage%2Did}{?%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Delete navigation property pages for groups
+                                    ## Delete a OneNote page.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnenotePage.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Delete navigation property pages for groups
+                                    ## Delete a OneNote page.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 

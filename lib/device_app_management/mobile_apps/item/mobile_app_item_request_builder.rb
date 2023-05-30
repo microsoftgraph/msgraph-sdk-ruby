@@ -6,9 +6,7 @@ require_relative '../../device_app_management'
 require_relative '../mobile_apps'
 require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
-require_relative './assignments/item/mobile_app_assignment_item_request_builder'
 require_relative './categories/categories_request_builder'
-require_relative './categories/item/mobile_app_category_item_request_builder'
 require_relative './graph_managed_mobile_lob_app/graph_managed_mobile_lob_app_request_builder'
 require_relative './graph_mobile_lob_app/graph_mobile_lob_app_request_builder'
 require_relative './item'
@@ -45,28 +43,6 @@ module MicrosoftGraph
                     # Casts the previous resource to mobileLobApp.
                     def graph_mobile_lob_app()
                         return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::GraphMobileLobApp::GraphMobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a mobile_app_assignment_item_request_builder
-                    ## 
-                    def assignments_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["mobileAppAssignment%2Did"] = id
-                        return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::Assignments::Item::MobileAppAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the categories property of the microsoft.graph.mobileApp entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a mobile_app_category_item_request_builder
-                    ## 
-                    def categories_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["mobileAppCategory%2Did"] = id
-                        return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::Categories::Item::MobileAppCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new MobileAppItemRequestBuilder and sets the default values.

@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The search query containing the search terms. Required.
             @query_string
             ## 
-            # The queryTemplate property
+            # Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
             @query_template
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -91,14 +91,14 @@ module MicrosoftGraph
                 @query_string = value
             end
             ## 
-            ## Gets the queryTemplate property value. The queryTemplate property
+            ## Gets the queryTemplate property value. Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
             ## @return a string
             ## 
             def query_template
                 return @query_template
             end
             ## 
-            ## Sets the queryTemplate property value. The queryTemplate property
+            ## Sets the queryTemplate property value. Provides a way to decorate the query string. Supports both KQL and query variables. Optional.
             ## @param value Value to set for the query_template property.
             ## @return a void
             ## 

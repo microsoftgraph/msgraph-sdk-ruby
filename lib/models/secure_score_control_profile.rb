@@ -50,7 +50,7 @@ module MicrosoftGraph
             # Service that owns the control (Exchange, Sharepoint, Azure AD).
             @service
             ## 
-            # List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+            # List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
             @threats
             ## 
             # The tier property
@@ -346,14 +346,14 @@ module MicrosoftGraph
                 @service = value
             end
             ## 
-            ## Gets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+            ## Gets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
             ## @return a string
             ## 
             def threats
                 return @threats
             end
             ## 
-            ## Sets the threats property value. List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,
+            ## Sets the threats property value. List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage,
             ## @param value Value to set for the threats property.
             ## @return a void
             ## 

@@ -13,6 +13,7 @@ require_relative '../../../item'
 require_relative '../../sections'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/onenote_page_item_request_builder'
 require_relative './pages'
 
 module MicrosoftGraph
@@ -34,6 +35,17 @@ module MicrosoftGraph
                                                 # Provides operations to count the resources in the collection.
                                                 def count()
                                                     return MicrosoftGraph::Groups::Item::Onenote::Notebooks::Item::SectionGroups::Item::Sections::Item::Pages::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                ## Provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.
+                                                ## @param onenote_page_id Unique identifier of the item
+                                                ## @return a onenote_page_item_request_builder
+                                                ## 
+                                                def by_onenote_page_id(onenote_page_id)
+                                                    raise StandardError, 'onenote_page_id cannot be null' if onenote_page_id.nil?
+                                                    url_tpl_params = @path_parameters.clone
+                                                    url_tpl_params["onenotePage%2Did"] = onenote_page_id
+                                                    return MicrosoftGraph::Groups::Item::Onenote::Notebooks::Item::SectionGroups::Item::Sections::Item::Pages::Item::OnenotePageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                                 end
                                                 ## 
                                                 ## Instantiates a new PagesRequestBuilder and sets the default values.

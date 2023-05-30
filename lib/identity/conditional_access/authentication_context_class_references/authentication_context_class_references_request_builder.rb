@@ -7,6 +7,7 @@ require_relative '../../identity'
 require_relative '../conditional_access'
 require_relative './authentication_context_class_references'
 require_relative './count/count_request_builder'
+require_relative './item/authentication_context_class_reference_item_request_builder'
 
 module MicrosoftGraph
     module Identity
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Identity::ConditionalAccess::AuthenticationContextClassReferences::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.
+                    ## @param authentication_context_class_reference_id Unique identifier of the item
+                    ## @return a authentication_context_class_reference_item_request_builder
+                    ## 
+                    def by_authentication_context_class_reference_id(authentication_context_class_reference_id)
+                        raise StandardError, 'authentication_context_class_reference_id cannot be null' if authentication_context_class_reference_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["authenticationContextClassReference%2Did"] = authentication_context_class_reference_id
+                        return MicrosoftGraph::Identity::ConditionalAccess::AuthenticationContextClassReferences::Item::AuthenticationContextClassReferenceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AuthenticationContextClassReferencesRequestBuilder and sets the default values.

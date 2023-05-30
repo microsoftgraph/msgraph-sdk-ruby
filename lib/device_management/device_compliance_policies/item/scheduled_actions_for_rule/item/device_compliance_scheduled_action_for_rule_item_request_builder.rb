@@ -7,7 +7,6 @@ require_relative '../../../device_compliance_policies'
 require_relative '../../item'
 require_relative '../scheduled_actions_for_rule'
 require_relative './item'
-require_relative './scheduled_action_configurations/item/device_compliance_action_item_item_request_builder'
 require_relative './scheduled_action_configurations/scheduled_action_configurations_request_builder'
 
 module MicrosoftGraph
@@ -77,17 +76,6 @@ module MicrosoftGraph
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceComplianceScheduledActionForRule.create_from_discriminator_value(pn) }, error_mapping)
-                            end
-                            ## 
-                            ## Provides operations to manage the scheduledActionConfigurations property of the microsoft.graph.deviceComplianceScheduledActionForRule entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a device_compliance_action_item_item_request_builder
-                            ## 
-                            def scheduled_action_configurations_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["deviceComplianceActionItem%2Did"] = id
-                                return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::ScheduledActionsForRule::Item::ScheduledActionConfigurations::Item::DeviceComplianceActionItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Delete navigation property scheduledActionsForRule for deviceManagement

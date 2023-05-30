@@ -66,7 +66,7 @@ module MicrosoftGraph
                                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewInstanceDecisionItem.create_from_discriminator_value(pn) }, error_mapping)
                                                 end
                                                 ## 
-                                                ## Update the navigation property decisions in identityGovernance
+                                                ## Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.
                                                 ## @param body The request body
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a Fiber of access_review_instance_decision_item
@@ -116,7 +116,7 @@ module MicrosoftGraph
                                                     return request_info
                                                 end
                                                 ## 
-                                                ## Update the navigation property decisions in identityGovernance
+                                                ## Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.
                                                 ## @param body The request body
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a request_information

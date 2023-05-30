@@ -5,6 +5,7 @@ require_relative '../../models/mobile_threat_defense_connector_collection_respon
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
+require_relative './item/mobile_threat_defense_connector_item_request_builder'
 require_relative './mobile_threat_defense_connectors'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceManagement::MobileThreatDefenseConnectors::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.
+                ## @param mobile_threat_defense_connector_id Unique identifier of the item
+                ## @return a mobile_threat_defense_connector_item_request_builder
+                ## 
+                def by_mobile_threat_defense_connector_id(mobile_threat_defense_connector_id)
+                    raise StandardError, 'mobile_threat_defense_connector_id cannot be null' if mobile_threat_defense_connector_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["mobileThreatDefenseConnector%2Did"] = mobile_threat_defense_connector_id
+                    return MicrosoftGraph::DeviceManagement::MobileThreatDefenseConnectors::Item::MobileThreatDefenseConnectorItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new MobileThreatDefenseConnectorsRequestBuilder and sets the default values.

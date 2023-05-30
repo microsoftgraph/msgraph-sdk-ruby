@@ -60,7 +60,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, nil, error_mapping)
                                         end
                                         ## 
-                                        ## The list of previous versions of the list item.
+                                        ## Retrieve the metadata for a specific version of a ListItem.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of list_item_version
                                         ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## The list of previous versions of the list item.
+                                        ## Retrieve the metadata for a specific version of a ListItem.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -145,7 +145,7 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # The list of previous versions of the list item.
+                                        # Retrieve the metadata for a specific version of a ListItem.
                                         class ListItemVersionItemRequestBuilderGetQueryParameters
                                             
                                             ## 

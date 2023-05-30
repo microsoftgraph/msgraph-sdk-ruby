@@ -10,7 +10,7 @@ require_relative '../../../review_sets'
 require_relative '../../item'
 require_relative '../queries'
 require_relative './item'
-require_relative './security_apply_tags/security_apply_tags_request_builder'
+require_relative './microsoft_graph_security_apply_tags/microsoft_graph_security_apply_tags_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -27,8 +27,8 @@ module MicrosoftGraph
                                         
                                         ## 
                                         # Provides operations to call the applyTags method.
-                                        def security_apply_tags()
-                                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item::SecurityApplyTags::SecurityApplyTagsRequestBuilder.new(@path_parameters, @request_adapter)
+                                        def microsoft_graph_security_apply_tags()
+                                            return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::Queries::Item::MicrosoftGraphSecurityApplyTags::MicrosoftGraphSecurityApplyTagsRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
                                         ## Instantiates a new EdiscoveryReviewSetQueryItemRequestBuilder and sets the default values.
@@ -40,7 +40,7 @@ module MicrosoftGraph
                                             super(path_parameters, request_adapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/reviewSets/{ediscoveryReviewSet%2Did}/queries/{ediscoveryReviewSetQuery%2Did}{?%24select,%24expand}")
                                         end
                                         ## 
-                                        ## Delete navigation property queries for security
+                                        ## Delete an ediscoveryReviewSetQuery object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of void
                                         ## 
@@ -54,7 +54,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, nil, error_mapping)
                                         end
                                         ## 
-                                        ## Represents queries within the review set.
+                                        ## Read the properties and relationships of an ediscoveryReviewSetQuery object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of ediscovery_review_set_query
                                         ## 
@@ -68,7 +68,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryReviewSetQuery.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Update the navigation property queries in security
+                                        ## Update the properties of an ediscoveryReviewSetQuery object.
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of ediscovery_review_set_query
@@ -84,7 +84,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::EdiscoveryReviewSetQuery.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Delete navigation property queries for security
+                                        ## Delete an ediscoveryReviewSetQuery object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -100,7 +100,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Represents queries within the review set.
+                                        ## Read the properties and relationships of an ediscoveryReviewSetQuery object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -118,7 +118,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Update the navigation property queries in security
+                                        ## Update the properties of an ediscoveryReviewSetQuery object.
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
@@ -139,7 +139,7 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # Represents queries within the review set.
+                                        # Read the properties and relationships of an ediscoveryReviewSetQuery object.
                                         class EdiscoveryReviewSetQueryItemRequestBuilderGetQueryParameters
                                             
                                             ## 

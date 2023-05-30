@@ -4,11 +4,8 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/office_graph_insights'
 require_relative '../me'
 require_relative './insights'
-require_relative './shared/item/shared_insight_item_request_builder'
 require_relative './shared/shared_request_builder'
-require_relative './trending/item/trending_item_request_builder'
 require_relative './trending/trending_request_builder'
-require_relative './used/item/used_insight_item_request_builder'
 require_relative './used/used_request_builder'
 
 module MicrosoftGraph
@@ -87,17 +84,6 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OfficeGraphInsights.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Provides operations to manage the shared property of the microsoft.graph.officeGraphInsights entity.
-                ## @param id Unique identifier of the item
-                ## @return a shared_insight_item_request_builder
-                ## 
-                def shared_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["sharedInsight%2Did"] = id
-                    return MicrosoftGraph::Me::Insights::Shared::Item::SharedInsightItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Delete navigation property insights for me
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -150,28 +136,6 @@ module MicrosoftGraph
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
-                end
-                ## 
-                ## Provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
-                ## @param id Unique identifier of the item
-                ## @return a trending_item_request_builder
-                ## 
-                def trending_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["trending%2Did"] = id
-                    return MicrosoftGraph::Me::Insights::Trending::Item::TrendingItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.
-                ## @param id Unique identifier of the item
-                ## @return a used_insight_item_request_builder
-                ## 
-                def used_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["usedInsight%2Did"] = id
-                    return MicrosoftGraph::Me::Insights::Used::Item::UsedInsightItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
 
                 ## 

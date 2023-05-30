@@ -7,6 +7,7 @@ require_relative '../../shares'
 require_relative '../item'
 require_relative './allowed_users'
 require_relative './count/count_request_builder'
+require_relative './item/user_item_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -27,6 +28,17 @@ module MicrosoftGraph
                         # Provides operations to manage the collection of print entities.
                         def ref()
                             return MicrosoftGraph::Print::Shares::Item::AllowedUsers::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Gets an item from the MicrosoftGraph.print.shares.item.allowedUsers.item collection
+                        ## @param user_id Unique identifier of the item
+                        ## @return a user_item_request_builder
+                        ## 
+                        def by_user_id(user_id)
+                            raise StandardError, 'user_id cannot be null' if user_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["user%2Did"] = user_id
+                            return MicrosoftGraph::Print::Shares::Item::AllowedUsers::Item::UserItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new AllowedUsersRequestBuilder and sets the default values.

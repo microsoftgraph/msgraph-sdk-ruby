@@ -62,7 +62,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                             end
                                             ## 
-                                            ## Collection of PivotTables that are part of the worksheet.
+                                            ## Retrieve the properties and relationships of workbookPivotTable object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of workbook_pivot_table
                                             ## 
@@ -108,7 +108,7 @@ module MicrosoftGraph
                                                 return request_info
                                             end
                                             ## 
-                                            ## Collection of PivotTables that are part of the worksheet.
+                                            ## Retrieve the properties and relationships of workbookPivotTable object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -147,7 +147,7 @@ module MicrosoftGraph
                                             end
 
                                             ## 
-                                            # Collection of PivotTables that are part of the worksheet.
+                                            # Retrieve the properties and relationships of workbookPivotTable object.
                                             class WorkbookPivotTableItemRequestBuilderGetQueryParameters
                                                 
                                                 ## 

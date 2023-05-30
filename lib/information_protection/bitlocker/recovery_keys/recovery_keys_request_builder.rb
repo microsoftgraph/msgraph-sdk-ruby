@@ -5,6 +5,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../information_protection'
 require_relative '../bitlocker'
 require_relative './count/count_request_builder'
+require_relative './item/bitlocker_recovery_key_item_request_builder'
 require_relative './recovery_keys'
 
 module MicrosoftGraph
@@ -19,6 +20,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::InformationProtection::Bitlocker::RecoveryKeys::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
+                    ## @param bitlocker_recovery_key_id Unique identifier of the item
+                    ## @return a bitlocker_recovery_key_item_request_builder
+                    ## 
+                    def by_bitlocker_recovery_key_id(bitlocker_recovery_key_id)
+                        raise StandardError, 'bitlocker_recovery_key_id cannot be null' if bitlocker_recovery_key_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["bitlockerRecoveryKey%2Did"] = bitlocker_recovery_key_id
+                        return MicrosoftGraph::InformationProtection::Bitlocker::RecoveryKeys::Item::BitlockerRecoveryKeyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new RecoveryKeysRequestBuilder and sets the default values.

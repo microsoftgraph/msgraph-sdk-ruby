@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/authentication/softwareOathMethods/{softwareOathAuthenticationMethod%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property softwareOathMethods for users
+                            ## Delete a user's Software OATH token authentication method object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## The software OATH TOTP applications registered to a user for authentication.
+                            ## Retrieve a user's single Software OATH token authentication method object and its properties.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of software_oath_authentication_method
                             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SoftwareOathAuthenticationMethod.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property softwareOathMethods for users
+                            ## Delete a user's Software OATH token authentication method object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## The software OATH TOTP applications registered to a user for authentication.
+                            ## Retrieve a user's single Software OATH token authentication method object and its properties.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -91,7 +91,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # The software OATH TOTP applications registered to a user for authentication.
+                            # Retrieve a user's single Software OATH token authentication method object and its properties.
                             class SoftwareOathAuthenticationMethodItemRequestBuilderGetQueryParameters
                                 
                                 ## 

@@ -9,6 +9,7 @@ require_relative '../../../item'
 require_relative '../../tags'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/teamwork_tag_member_item_request_builder'
 require_relative './members'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Me::JoinedTeams::Item::Tags::Item::Members::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the members property of the microsoft.graph.teamworkTag entity.
+                                ## @param teamwork_tag_member_id Unique identifier of the item
+                                ## @return a teamwork_tag_member_item_request_builder
+                                ## 
+                                def by_teamwork_tag_member_id(teamwork_tag_member_id)
+                                    raise StandardError, 'teamwork_tag_member_id cannot be null' if teamwork_tag_member_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["teamworkTagMember%2Did"] = teamwork_tag_member_id
+                                    return MicrosoftGraph::Me::JoinedTeams::Item::Tags::Item::Members::Item::TeamworkTagMemberItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new MembersRequestBuilder and sets the default values.

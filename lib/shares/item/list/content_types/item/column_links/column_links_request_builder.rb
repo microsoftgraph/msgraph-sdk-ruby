@@ -10,6 +10,7 @@ require_relative '../../content_types'
 require_relative '../item'
 require_relative './column_links'
 require_relative './count/count_request_builder'
+require_relative './item/column_link_item_request_builder'
 
 module MicrosoftGraph
     module Shares
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Shares::Item::List::ContentTypes::Item::ColumnLinks::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.
+                                ## @param column_link_id Unique identifier of the item
+                                ## @return a column_link_item_request_builder
+                                ## 
+                                def by_column_link_id(column_link_id)
+                                    raise StandardError, 'column_link_id cannot be null' if column_link_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["columnLink%2Did"] = column_link_id
+                                    return MicrosoftGraph::Shares::Item::List::ContentTypes::Item::ColumnLinks::Item::ColumnLinkItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new ColumnLinksRequestBuilder and sets the default values.

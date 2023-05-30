@@ -8,6 +8,7 @@ require_relative '../../device_compliance_policies'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './device_setting_state_summaries'
+require_relative './item/setting_state_device_summary_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::DeviceSettingStateSummaries::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceCompliancePolicy entity.
+                        ## @param setting_state_device_summary_id Unique identifier of the item
+                        ## @return a setting_state_device_summary_item_request_builder
+                        ## 
+                        def by_setting_state_device_summary_id(setting_state_device_summary_id)
+                            raise StandardError, 'setting_state_device_summary_id cannot be null' if setting_state_device_summary_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["settingStateDeviceSummary%2Did"] = setting_state_device_summary_id
+                            return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::DeviceSettingStateSummaries::Item::SettingStateDeviceSummaryItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new DeviceSettingStateSummariesRequestBuilder and sets the default values.

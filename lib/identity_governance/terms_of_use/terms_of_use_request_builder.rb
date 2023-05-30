@@ -4,9 +4,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/terms_of_use_container'
 require_relative '../identity_governance'
 require_relative './agreement_acceptances/agreement_acceptances_request_builder'
-require_relative './agreement_acceptances/item/agreement_acceptance_item_request_builder'
 require_relative './agreements/agreements_request_builder'
-require_relative './agreements/item/agreement_item_request_builder'
 require_relative './terms_of_use'
 
 module MicrosoftGraph
@@ -25,28 +23,6 @@ module MicrosoftGraph
                 # Provides operations to manage the agreements property of the microsoft.graph.termsOfUseContainer entity.
                 def agreements()
                     return MicrosoftGraph::IdentityGovernance::TermsOfUse::Agreements::AgreementsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the agreementAcceptances property of the microsoft.graph.termsOfUseContainer entity.
-                ## @param id Unique identifier of the item
-                ## @return a agreement_acceptance_item_request_builder
-                ## 
-                def agreement_acceptances_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["agreementAcceptance%2Did"] = id
-                    return MicrosoftGraph::IdentityGovernance::TermsOfUse::AgreementAcceptances::Item::AgreementAcceptanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the agreements property of the microsoft.graph.termsOfUseContainer entity.
-                ## @param id Unique identifier of the item
-                ## @return a agreement_item_request_builder
-                ## 
-                def agreements_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["agreement%2Did"] = id
-                    return MicrosoftGraph::IdentityGovernance::TermsOfUse::Agreements::Item::AgreementItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new TermsOfUseRequestBuilder and sets the default values.

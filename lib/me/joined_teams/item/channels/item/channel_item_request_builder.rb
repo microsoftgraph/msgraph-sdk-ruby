@@ -10,15 +10,11 @@ require_relative './complete_migration/complete_migration_request_builder'
 require_relative './does_user_have_accessuser_id_user_id_tenant_id_tenant_id_user_principal_name_user_principal_name/732db1068832007d49ec9b451d8ca1cfd0136d0663ec94246815c75150bfdfa9'
 require_relative './files_folder/files_folder_request_builder'
 require_relative './item'
-require_relative './members/item/conversation_member_item_request_builder'
 require_relative './members/members_request_builder'
-require_relative './messages/item/chat_message_item_request_builder'
 require_relative './messages/messages_request_builder'
 require_relative './provision_email/provision_email_request_builder'
 require_relative './remove_email/remove_email_request_builder'
-require_relative './shared_with_teams/item/shared_with_channel_team_info_item_request_builder'
 require_relative './shared_with_teams/shared_with_teams_request_builder'
-require_relative './tabs/item/teams_tab_item_request_builder'
 require_relative './tabs/tabs_request_builder'
 
 module MicrosoftGraph
@@ -86,7 +82,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/me/joinedTeams/{team%2Did}/channels/{channel%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property channels for me
+                            ## Delete the channel.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -100,7 +96,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## The collection of channels and messages associated with the team.
+                            ## Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of channel
                             ## 
@@ -114,29 +110,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Channel.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Provides operations to manage the members property of the microsoft.graph.channel entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a conversation_member_item_request_builder
-                            ## 
-                            def members_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["conversationMember%2Did"] = id
-                                return MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Members::Item::ConversationMemberItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
-                            ## Provides operations to manage the messages property of the microsoft.graph.channel entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a chat_message_item_request_builder
-                            ## 
-                            def messages_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["chatMessage%2Did"] = id
-                                return MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Messages::Item::ChatMessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
-                            ## Update the navigation property channels in me
+                            ## Update the properties of the specified channel.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of channel
@@ -152,29 +126,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Channel.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a shared_with_channel_team_info_item_request_builder
-                            ## 
-                            def shared_with_teams_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["sharedWithChannelTeamInfo%2Did"] = id
-                                return MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::SharedWithTeams::Item::SharedWithChannelTeamInfoItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
-                            ## Provides operations to manage the tabs property of the microsoft.graph.channel entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a teams_tab_item_request_builder
-                            ## 
-                            def tabs_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["teamsTab%2Did"] = id
-                                return MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::Tabs::Item::TeamsTabItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
-                            ## Delete navigation property channels for me
+                            ## Delete the channel.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -190,7 +142,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## The collection of channels and messages associated with the team.
+                            ## Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -208,7 +160,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property channels in me
+                            ## Update the properties of the specified channel.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -229,7 +181,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # The collection of channels and messages associated with the team.
+                            # Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
                             class ChannelItemRequestBuilderGetQueryParameters
                                 
                                 ## 

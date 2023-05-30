@@ -7,6 +7,7 @@ require_relative '../device_app_management'
 require_relative './count/count_request_builder'
 require_relative './graph_managed_mobile_lob_app/graph_managed_mobile_lob_app_request_builder'
 require_relative './graph_mobile_lob_app/graph_mobile_lob_app_request_builder'
+require_relative './item/mobile_app_item_request_builder'
 require_relative './mobile_apps'
 
 module MicrosoftGraph
@@ -30,6 +31,17 @@ module MicrosoftGraph
                 # Casts the previous resource to mobileLobApp.
                 def graph_mobile_lob_app()
                     return MicrosoftGraph::DeviceAppManagement::MobileApps::GraphMobileLobApp::GraphMobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
+                ## @param mobile_app_id Unique identifier of the item
+                ## @return a mobile_app_item_request_builder
+                ## 
+                def by_mobile_app_id(mobile_app_id)
+                    raise StandardError, 'mobile_app_id cannot be null' if mobile_app_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["mobileApp%2Did"] = mobile_app_id
+                    return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::MobileAppItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new MobileAppsRequestBuilder and sets the default values.

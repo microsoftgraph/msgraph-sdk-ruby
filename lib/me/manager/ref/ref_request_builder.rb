@@ -24,7 +24,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/me/manager/$ref")
                     end
                     ## 
-                    ## Delete ref of navigation property manager for me
+                    ## Remove a user's manager.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -52,7 +52,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, string, error_mapping)
                     end
                     ## 
-                    ## Update the ref of navigation property manager in me
+                    ## Assign a user's manager.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
@@ -68,7 +68,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Delete ref of navigation property manager for me
+                    ## Remove a user's manager.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -101,7 +101,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the ref of navigation property manager in me
+                    ## Assign a user's manager.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
