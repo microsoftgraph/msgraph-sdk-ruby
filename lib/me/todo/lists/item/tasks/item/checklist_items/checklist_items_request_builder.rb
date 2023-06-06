@@ -11,6 +11,7 @@ require_relative '../../tasks'
 require_relative '../item'
 require_relative './checklist_items'
 require_relative './count/count_request_builder'
+require_relative './item/checklist_item_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -30,6 +31,17 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Me::Todo::Lists::Item::Tasks::Item::ChecklistItems::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
+                                    ## Provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
+                                    ## @param checklist_item_id Unique identifier of the item
+                                    ## @return a checklist_item_item_request_builder
+                                    ## 
+                                    def by_checklist_item_id(checklist_item_id)
+                                        raise StandardError, 'checklist_item_id cannot be null' if checklist_item_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["checklistItem%2Did"] = checklist_item_id
+                                        return MicrosoftGraph::Me::Todo::Lists::Item::Tasks::Item::ChecklistItems::Item::ChecklistItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                    end
+                                    ## 
                                     ## Instantiates a new ChecklistItemsRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -39,7 +51,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/me/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/checklistItems{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                     end
                                     ## 
-                                    ## A collection of checklistItems linked to a task.
+                                    ## Get the checklistItem resources associated to a todoTask from the checklistItems navigation property.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of checklist_item_collection_response
                                     ## 
@@ -53,7 +65,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChecklistItemCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Create new navigation property to checklistItems for me
+                                    ## Create a new checklistItem object.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of checklist_item
@@ -69,7 +81,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChecklistItem.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## A collection of checklistItems linked to a task.
+                                    ## Get the checklistItem resources associated to a todoTask from the checklistItems navigation property.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -87,7 +99,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Create new navigation property to checklistItems for me
+                                    ## Create a new checklistItem object.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
@@ -108,7 +120,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # A collection of checklistItems linked to a task.
+                                    # Get the checklistItem resources associated to a todoTask from the checklistItems navigation property.
                                     class ChecklistItemsRequestBuilderGetQueryParameters
                                         
                                         ## 

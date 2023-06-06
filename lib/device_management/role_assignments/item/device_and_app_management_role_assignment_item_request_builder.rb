@@ -5,6 +5,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_management'
 require_relative '../role_assignments'
 require_relative './item'
+require_relative './role_definition/role_definition_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -14,6 +15,11 @@ module MicrosoftGraph
                 # Provides operations to manage the roleAssignments property of the microsoft.graph.deviceManagement entity.
                 class DeviceAndAppManagementRoleAssignmentItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
+                    ## 
+                    # Provides operations to manage the roleDefinition property of the microsoft.graph.roleAssignment entity.
+                    def role_definition()
+                        return MicrosoftGraph::DeviceManagement::RoleAssignments::Item::RoleDefinition::RoleDefinitionRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     ## Instantiates a new DeviceAndAppManagementRoleAssignmentItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request

@@ -7,6 +7,7 @@ require_relative '../../../sites'
 require_relative '../../item'
 require_relative '../onenote'
 require_relative './count/count_request_builder'
+require_relative './item/onenote_section_item_request_builder'
 require_relative './sections'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Sites::Item::Onenote::Sections::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the sections property of the microsoft.graph.onenote entity.
+                        ## @param onenote_section_id Unique identifier of the item
+                        ## @return a onenote_section_item_request_builder
+                        ## 
+                        def by_onenote_section_id(onenote_section_id)
+                            raise StandardError, 'onenote_section_id cannot be null' if onenote_section_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["onenoteSection%2Did"] = onenote_section_id
+                            return MicrosoftGraph::Sites::Item::Onenote::Sections::Item::OnenoteSectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new SectionsRequestBuilder and sets the default values.

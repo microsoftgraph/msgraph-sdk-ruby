@@ -8,6 +8,7 @@ require_relative '../../calls'
 require_relative '../item'
 require_relative './audio_routing_groups'
 require_relative './count/count_request_builder'
+require_relative './item/audio_routing_group_item_request_builder'
 
 module MicrosoftGraph
     module Communications
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Communications::Calls::Item::AudioRoutingGroups::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.
+                        ## @param audio_routing_group_id Unique identifier of the item
+                        ## @return a audio_routing_group_item_request_builder
+                        ## 
+                        def by_audio_routing_group_id(audio_routing_group_id)
+                            raise StandardError, 'audio_routing_group_id cannot be null' if audio_routing_group_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["audioRoutingGroup%2Did"] = audio_routing_group_id
+                            return MicrosoftGraph::Communications::Calls::Item::AudioRoutingGroups::Item::AudioRoutingGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new AudioRoutingGroupsRequestBuilder and sets the default values.

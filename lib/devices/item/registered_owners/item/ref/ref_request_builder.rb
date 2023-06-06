@@ -27,7 +27,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/devices/{device%2Did}/registeredOwners/{directoryObject%2Did}/$ref{?%40id*}")
                             end
                             ## 
-                            ## Delete ref of navigation property registeredOwners for devices
+                            ## Remove a user as a registered owner of the device.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -41,7 +41,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Delete ref of navigation property registeredOwners for devices
+                            ## Remove a user as a registered owner of the device.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -59,7 +59,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Delete ref of navigation property registeredOwners for devices
+                            # Remove a user as a registered owner of the device.
                             class RefRequestBuilderDeleteQueryParameters
                                 
                                 ## 

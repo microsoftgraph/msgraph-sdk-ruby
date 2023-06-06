@@ -5,6 +5,7 @@ require_relative '../../../models/person_collection_response'
 require_relative '../../users'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/person_item_request_builder'
 require_relative './people'
 
 module MicrosoftGraph
@@ -19,6 +20,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Users::Item::People::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the people property of the microsoft.graph.user entity.
+                    ## @param person_id Unique identifier of the item
+                    ## @return a person_item_request_builder
+                    ## 
+                    def by_person_id(person_id)
+                        raise StandardError, 'person_id cannot be null' if person_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["person%2Did"] = person_id
+                        return MicrosoftGraph::Users::Item::People::Item::PersonItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new PeopleRequestBuilder and sets the default values.

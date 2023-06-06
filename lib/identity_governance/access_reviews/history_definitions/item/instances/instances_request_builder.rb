@@ -9,6 +9,7 @@ require_relative '../../history_definitions'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './instances'
+require_relative './item/access_review_history_instance_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::IdentityGovernance::AccessReviews::HistoryDefinitions::Item::Instances::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the instances property of the microsoft.graph.accessReviewHistoryDefinition entity.
+                            ## @param access_review_history_instance_id Unique identifier of the item
+                            ## @return a access_review_history_instance_item_request_builder
+                            ## 
+                            def by_access_review_history_instance_id(access_review_history_instance_id)
+                                raise StandardError, 'access_review_history_instance_id cannot be null' if access_review_history_instance_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["accessReviewHistoryInstance%2Did"] = access_review_history_instance_id
+                                return MicrosoftGraph::IdentityGovernance::AccessReviews::HistoryDefinitions::Item::Instances::Item::AccessReviewHistoryInstanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new InstancesRequestBuilder and sets the default values.

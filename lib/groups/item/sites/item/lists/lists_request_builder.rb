@@ -8,6 +8,7 @@ require_relative '../../../item'
 require_relative '../../sites'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/list_item_request_builder'
 require_relative './lists'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the lists property of the microsoft.graph.site entity.
+                            ## @param list_id Unique identifier of the item
+                            ## @return a list_item_request_builder
+                            ## 
+                            def by_list_id(list_id)
+                                raise StandardError, 'list_id cannot be null' if list_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["list%2Did"] = list_id
+                                return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::ListItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new ListsRequestBuilder and sets the default values.

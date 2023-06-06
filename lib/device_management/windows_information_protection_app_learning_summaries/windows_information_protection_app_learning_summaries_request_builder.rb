@@ -5,6 +5,7 @@ require_relative '../../models/windows_information_protection_app_learning_summa
 require_relative '../../models/windows_information_protection_app_learning_summary_collection_response'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
+require_relative './item/windows_information_protection_app_learning_summary_item_request_builder'
 require_relative './windows_information_protection_app_learning_summaries'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceManagement::WindowsInformationProtectionAppLearningSummaries::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the windowsInformationProtectionAppLearningSummaries property of the microsoft.graph.deviceManagement entity.
+                ## @param windows_information_protection_app_learning_summary_id Unique identifier of the item
+                ## @return a windows_information_protection_app_learning_summary_item_request_builder
+                ## 
+                def by_windows_information_protection_app_learning_summary_id(windows_information_protection_app_learning_summary_id)
+                    raise StandardError, 'windows_information_protection_app_learning_summary_id cannot be null' if windows_information_protection_app_learning_summary_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["windowsInformationProtectionAppLearningSummary%2Did"] = windows_information_protection_app_learning_summary_id
+                    return MicrosoftGraph::DeviceManagement::WindowsInformationProtectionAppLearningSummaries::Item::WindowsInformationProtectionAppLearningSummaryItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new WindowsInformationProtectionAppLearningSummariesRequestBuilder and sets the default values.

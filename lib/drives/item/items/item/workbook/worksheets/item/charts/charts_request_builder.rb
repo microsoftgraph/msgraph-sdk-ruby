@@ -13,6 +13,7 @@ require_relative '../item'
 require_relative './add/add_request_builder'
 require_relative './charts'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_chart_item_request_builder'
 require_relative './item_at_with_index/item_at_with_index_request_builder'
 require_relative './item_with_name/item_with_name_request_builder'
 
@@ -38,6 +39,17 @@ module MicrosoftGraph
                                         # Provides operations to call the count method.
                                         def count()
                                             return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
+                                        ## Provides operations to manage the charts property of the microsoft.graph.workbookWorksheet entity.
+                                        ## @param workbook_chart_id Unique identifier of the item
+                                        ## @return a workbook_chart_item_request_builder
+                                        ## 
+                                        def by_workbook_chart_id(workbook_chart_id)
+                                            raise StandardError, 'workbook_chart_id cannot be null' if workbook_chart_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["workbookChart%2Did"] = workbook_chart_id
+                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::WorkbookChartItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                         end
                                         ## 
                                         ## Instantiates a new ChartsRequestBuilder and sets the default values.

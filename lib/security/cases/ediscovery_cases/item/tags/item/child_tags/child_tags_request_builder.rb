@@ -10,6 +10,7 @@ require_relative '../../tags'
 require_relative '../item'
 require_relative './child_tags'
 require_relative './count/count_request_builder'
+require_relative './item/ediscovery_review_tag_item_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -27,6 +28,17 @@ module MicrosoftGraph
                                     # Provides operations to count the resources in the collection.
                                     def count()
                                         return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags::Item::ChildTags::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to manage the childTags property of the microsoft.graph.security.ediscoveryReviewTag entity.
+                                    ## @param ediscovery_review_tag_id1 Unique identifier of the item
+                                    ## @return a ediscovery_review_tag_item_request_builder
+                                    ## 
+                                    def by_ediscovery_review_tag_id1(ediscovery_review_tag_id1)
+                                        raise StandardError, 'ediscovery_review_tag_id1 cannot be null' if ediscovery_review_tag_id1.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["ediscoveryReviewTag%2Did1"] = ediscovery_review_tag_id1
+                                        return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Tags::Item::ChildTags::Item::EdiscoveryReviewTagItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new ChildTagsRequestBuilder and sets the default values.

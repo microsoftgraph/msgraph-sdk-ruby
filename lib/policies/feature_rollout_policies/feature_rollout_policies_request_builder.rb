@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../policies'
 require_relative './count/count_request_builder'
 require_relative './feature_rollout_policies'
+require_relative './item/feature_rollout_policy_item_request_builder'
 
 module MicrosoftGraph
     module Policies
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Policies::FeatureRolloutPolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.policyRoot entity.
+                ## @param feature_rollout_policy_id Unique identifier of the item
+                ## @return a feature_rollout_policy_item_request_builder
+                ## 
+                def by_feature_rollout_policy_id(feature_rollout_policy_id)
+                    raise StandardError, 'feature_rollout_policy_id cannot be null' if feature_rollout_policy_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["featureRolloutPolicy%2Did"] = feature_rollout_policy_id
+                    return MicrosoftGraph::Policies::FeatureRolloutPolicies::Item::FeatureRolloutPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new FeatureRolloutPoliciesRequestBuilder and sets the default values.

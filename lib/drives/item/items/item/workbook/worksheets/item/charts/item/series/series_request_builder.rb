@@ -13,6 +13,7 @@ require_relative '../../../item'
 require_relative '../../charts'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_chart_series_item_request_builder'
 require_relative './item_at_with_index/item_at_with_index_request_builder'
 require_relative './series'
 
@@ -35,6 +36,17 @@ module MicrosoftGraph
                                                 # Provides operations to call the count method.
                                                 def count()
                                                     return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Series::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                ## Provides operations to manage the series property of the microsoft.graph.workbookChart entity.
+                                                ## @param workbook_chart_series_id Unique identifier of the item
+                                                ## @return a workbook_chart_series_item_request_builder
+                                                ## 
+                                                def by_workbook_chart_series_id(workbook_chart_series_id)
+                                                    raise StandardError, 'workbook_chart_series_id cannot be null' if workbook_chart_series_id.nil?
+                                                    url_tpl_params = @path_parameters.clone
+                                                    url_tpl_params["workbookChartSeries%2Did"] = workbook_chart_series_id
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Series::Item::WorkbookChartSeriesItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                                 end
                                                 ## 
                                                 ## Instantiates a new SeriesRequestBuilder and sets the default values.

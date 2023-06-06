@@ -5,6 +5,7 @@ require_relative '../models/external_connectors/external_connection_collection_r
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './connections'
 require_relative './count/count_request_builder'
+require_relative './item/external_connection_item_request_builder'
 
 module MicrosoftGraph
     module Connections
@@ -16,6 +17,17 @@ module MicrosoftGraph
             # Provides operations to count the resources in the collection.
             def count()
                 return MicrosoftGraph::Connections::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            ## Provides operations to manage the collection of externalConnection entities.
+            ## @param external_connection_id Unique identifier of the item
+            ## @return a external_connection_item_request_builder
+            ## 
+            def by_external_connection_id(external_connection_id)
+                raise StandardError, 'external_connection_id cannot be null' if external_connection_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["externalConnection%2Did"] = external_connection_id
+                return MicrosoftGraph::Connections::Item::ExternalConnectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new ConnectionsRequestBuilder and sets the default values.

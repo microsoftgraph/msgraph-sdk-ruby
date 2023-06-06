@@ -44,7 +44,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Returns a list of case caseOperation objects for this case.
+                                ## Read the properties and relationships of a caseOperation object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of case_operation
                                 ## 
@@ -90,7 +90,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Returns a list of case caseOperation objects for this case.
+                                ## Read the properties and relationships of a caseOperation object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -129,7 +129,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Returns a list of case caseOperation objects for this case.
+                                # Read the properties and relationships of a caseOperation object.
                                 class CaseOperationItemRequestBuilderGetQueryParameters
                                     
                                     ## 

@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/authentication/fido2Methods/{fido2AuthenticationMethod%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property fido2Methods for users
+                            ## Deletes a user's FIDO2 Security Key Authentication Method object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Represents the FIDO2 security keys registered to a user for authentication.
+                            ## Retrieve a user's single FIDO2 Security Key Authentication Method object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of fido2_authentication_method
                             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Fido2AuthenticationMethod.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property fido2Methods for users
+                            ## Deletes a user's FIDO2 Security Key Authentication Method object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Represents the FIDO2 security keys registered to a user for authentication.
+                            ## Retrieve a user's single FIDO2 Security Key Authentication Method object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -91,7 +91,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Represents the FIDO2 security keys registered to a user for authentication.
+                            # Retrieve a user's single FIDO2 Security Key Authentication Method object.
                             class Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters
                                 
                                 ## 

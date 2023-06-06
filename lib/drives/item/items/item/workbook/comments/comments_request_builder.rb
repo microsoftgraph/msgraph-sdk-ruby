@@ -10,6 +10,7 @@ require_relative '../../item'
 require_relative '../workbook'
 require_relative './comments'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_comment_item_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Comments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the comments property of the microsoft.graph.workbook entity.
+                                ## @param workbook_comment_id Unique identifier of the item
+                                ## @return a workbook_comment_item_request_builder
+                                ## 
+                                def by_workbook_comment_id(workbook_comment_id)
+                                    raise StandardError, 'workbook_comment_id cannot be null' if workbook_comment_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["workbookComment%2Did"] = workbook_comment_id
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Comments::Item::WorkbookCommentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new CommentsRequestBuilder and sets the default values.

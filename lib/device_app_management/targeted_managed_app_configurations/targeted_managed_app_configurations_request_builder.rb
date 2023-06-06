@@ -5,6 +5,7 @@ require_relative '../../models/targeted_managed_app_configuration'
 require_relative '../../models/targeted_managed_app_configuration_collection_response'
 require_relative '../device_app_management'
 require_relative './count/count_request_builder'
+require_relative './item/targeted_managed_app_configuration_item_request_builder'
 require_relative './targeted_managed_app_configurations'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the targetedManagedAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
+                ## @param targeted_managed_app_configuration_id Unique identifier of the item
+                ## @return a targeted_managed_app_configuration_item_request_builder
+                ## 
+                def by_targeted_managed_app_configuration_id(targeted_managed_app_configuration_id)
+                    raise StandardError, 'targeted_managed_app_configuration_id cannot be null' if targeted_managed_app_configuration_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["targetedManagedAppConfiguration%2Did"] = targeted_managed_app_configuration_id
+                    return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::TargetedManagedAppConfigurationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new TargetedManagedAppConfigurationsRequestBuilder and sets the default values.

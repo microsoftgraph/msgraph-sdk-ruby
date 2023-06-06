@@ -13,6 +13,7 @@ require_relative '../../../sets'
 require_relative '../../item'
 require_relative '../parent_group'
 require_relative './count/count_request_builder'
+require_relative './item/set_item_request_builder'
 require_relative './sets'
 
 module MicrosoftGraph
@@ -34,6 +35,17 @@ module MicrosoftGraph
                                                 # Provides operations to count the resources in the collection.
                                                 def count()
                                                     return MicrosoftGraph::Groups::Item::Sites::Item::TermStores::Item::Sets::Item::ParentGroup::Sets::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                ## Provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
+                                                ## @param set_id1 Unique identifier of the item
+                                                ## @return a set_item_request_builder
+                                                ## 
+                                                def by_set_id1(set_id1)
+                                                    raise StandardError, 'set_id1 cannot be null' if set_id1.nil?
+                                                    url_tpl_params = @path_parameters.clone
+                                                    url_tpl_params["set%2Did1"] = set_id1
+                                                    return MicrosoftGraph::Groups::Item::Sites::Item::TermStores::Item::Sets::Item::ParentGroup::Sets::Item::SetItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                                 end
                                                 ## 
                                                 ## Instantiates a new SetsRequestBuilder and sets the default values.

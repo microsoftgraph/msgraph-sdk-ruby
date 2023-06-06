@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../../microsoft_graph'
-require_relative '../../../../../models/access_package'
 require_relative '../../../../../models/access_package_collection_response'
 require_relative '../../../../../models/o_data_errors/o_data_error'
 require_relative '../../../../identity_governance'
@@ -9,7 +8,7 @@ require_relative '../../catalogs'
 require_relative '../item'
 require_relative './access_packages'
 require_relative './count/count_request_builder'
-require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './item/access_package_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -27,6 +26,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
+                            ## @param access_package_id Unique identifier of the item
+                            ## @return a access_package_item_request_builder
+                            ## 
+                            def by_access_package_id(access_package_id)
+                                raise StandardError, 'access_package_id cannot be null' if access_package_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["accessPackage%2Did"] = access_package_id
+                                return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::AccessPackageItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new AccessPackagesRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -34,15 +44,6 @@ module MicrosoftGraph
                             ## 
                             def initialize(path_parameters, request_adapter)
                                 super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}/accessPackages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
-                            end
-                            ## 
-                            ## Provides operations to call the filterByCurrentUser method.
-                            ## @param on Usage: on='{on}'
-                            ## @return a filter_by_current_user_with_on_request_builder
-                            ## 
-                            def filter_by_current_user_with_on(on)
-                                raise StandardError, 'on cannot be null' if on.nil?
-                                return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
                             end
                             ## 
                             ## The access packages in this catalog. Read-only. Nullable.
@@ -57,22 +58,6 @@ module MicrosoftGraph
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
-                            end
-                            ## 
-                            ## Create new navigation property to accessPackages for identityGovernance
-                            ## @param body The request body
-                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a Fiber of access_package
-                            ## 
-                            def post(body, request_configuration=nil)
-                                raise StandardError, 'body cannot be null' if body.nil?
-                                request_info = self.to_post_request_information(
-                                    body, request_configuration
-                                )
-                                error_mapping = Hash.new
-                                error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                                return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackage.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
                             ## The access packages in this catalog. Read-only. Nullable.
@@ -90,26 +75,6 @@ module MicrosoftGraph
                                     request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                     request_info.add_request_options(request_configuration.options)
                                 end
-                                return request_info
-                            end
-                            ## 
-                            ## Create new navigation property to accessPackages for identityGovernance
-                            ## @param body The request body
-                            ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                            ## @return a request_information
-                            ## 
-                            def to_post_request_information(body, request_configuration=nil)
-                                raise StandardError, 'body cannot be null' if body.nil?
-                                request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                                request_info.url_template = @url_template
-                                request_info.path_parameters = @path_parameters
-                                request_info.http_method = :POST
-                                request_info.headers.add('Accept', 'application/json')
-                                unless request_configuration.nil?
-                                    request_info.add_headers_from_raw_object(request_configuration.headers)
-                                    request_info.add_request_options(request_configuration.options)
-                                end
-                                request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                 return request_info
                             end
 

@@ -7,6 +7,7 @@ require_relative '../me'
 require_relative './chats'
 require_relative './count/count_request_builder'
 require_relative './get_all_messages/get_all_messages_request_builder'
+require_relative './item/chat_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -24,6 +25,17 @@ module MicrosoftGraph
                 # Provides operations to call the getAllMessages method.
                 def get_all_messages()
                     return MicrosoftGraph::Me::Chats::GetAllMessages::GetAllMessagesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the chats property of the microsoft.graph.user entity.
+                ## @param chat_id Unique identifier of the item
+                ## @return a chat_item_request_builder
+                ## 
+                def by_chat_id(chat_id)
+                    raise StandardError, 'chat_id cannot be null' if chat_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["chat%2Did"] = chat_id
+                    return MicrosoftGraph::Me::Chats::Item::ChatItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new ChatsRequestBuilder and sets the default values.

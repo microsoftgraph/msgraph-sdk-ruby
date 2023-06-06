@@ -5,8 +5,8 @@ require_relative '../../../models/online_meeting'
 require_relative '../../communications'
 require_relative '../online_meetings'
 require_relative './attendance_reports/attendance_reports_request_builder'
-require_relative './attendance_reports/item/meeting_attendance_report_item_request_builder'
 require_relative './attendee_report/attendee_report_request_builder'
+require_relative './get_virtual_appointment_join_web_url/get_virtual_appointment_join_web_url_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -28,15 +28,9 @@ module MicrosoftGraph
                         return MicrosoftGraph::Communications::OnlineMeetings::Item::AttendeeReport::AttendeeReportRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a meeting_attendance_report_item_request_builder
-                    ## 
-                    def attendance_reports_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["meetingAttendanceReport%2Did"] = id
-                        return MicrosoftGraph::Communications::OnlineMeetings::Item::AttendanceReports::Item::MeetingAttendanceReportItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    # Provides operations to call the getVirtualAppointmentJoinWebUrl method.
+                    def get_virtual_appointment_join_web_url()
+                        return MicrosoftGraph::Communications::OnlineMeetings::Item::GetVirtualAppointmentJoinWebUrl::GetVirtualAppointmentJoinWebUrlRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new OnlineMeetingItemRequestBuilder and sets the default values.

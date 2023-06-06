@@ -32,7 +32,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/me/authentication/windowsHelloForBusinessMethods/{windowsHelloForBusinessAuthenticationMethod%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property windowsHelloForBusinessMethods for me
+                        ## Deletes a windowsHelloForBusinessAuthenticationMethod object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -46,7 +46,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Represents the Windows Hello for Business authentication method registered to a user for authentication.
+                        ## Read the properties and relationships of a windowsHelloForBusinessAuthenticationMethod object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of windows_hello_for_business_authentication_method
                         ## 
@@ -60,7 +60,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WindowsHelloForBusinessAuthenticationMethod.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property windowsHelloForBusinessMethods for me
+                        ## Deletes a windowsHelloForBusinessAuthenticationMethod object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -76,7 +76,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Represents the Windows Hello for Business authentication method registered to a user for authentication.
+                        ## Read the properties and relationships of a windowsHelloForBusinessAuthenticationMethod object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -95,7 +95,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Represents the Windows Hello for Business authentication method registered to a user for authentication.
+                        # Read the properties and relationships of a windowsHelloForBusinessAuthenticationMethod object.
                         class WindowsHelloForBusinessAuthenticationMethodItemRequestBuilderGetQueryParameters
                             
                             ## 

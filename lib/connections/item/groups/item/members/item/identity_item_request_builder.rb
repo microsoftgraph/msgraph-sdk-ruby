@@ -30,7 +30,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/connections/{externalConnection%2Did}/groups/{externalGroup%2Did}/members/{identity%2Did}{?%24select,%24expand}")
                                 end
                                 ## 
-                                ## Delete navigation property members for connections
+                                ## Delete an identity resource to remove the corresponding member from an externalGroup.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
                                 ## 
@@ -74,7 +74,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::Identity.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Delete navigation property members for connections
+                                ## Delete an identity resource to remove the corresponding member from an externalGroup.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 

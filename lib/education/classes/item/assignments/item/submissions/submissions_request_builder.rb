@@ -9,6 +9,7 @@ require_relative '../../../item'
 require_relative '../../assignments'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/education_submission_item_request_builder'
 require_relative './submissions'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
+                                ## @param education_submission_id Unique identifier of the item
+                                ## @return a education_submission_item_request_builder
+                                ## 
+                                def by_education_submission_id(education_submission_id)
+                                    raise StandardError, 'education_submission_id cannot be null' if education_submission_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["educationSubmission%2Did"] = education_submission_id
+                                    return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::EducationSubmissionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new SubmissionsRequestBuilder and sets the default values.

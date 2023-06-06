@@ -8,6 +8,7 @@ require_relative '../../../item'
 require_relative '../../term_stores'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/set_item_request_builder'
 require_relative './sets'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Sites::Item::TermStores::Item::Sets::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the sets property of the microsoft.graph.termStore.store entity.
+                            ## @param set_id Unique identifier of the item
+                            ## @return a set_item_request_builder
+                            ## 
+                            def by_set_id(set_id)
+                                raise StandardError, 'set_id cannot be null' if set_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["set%2Did"] = set_id
+                                return MicrosoftGraph::Sites::Item::TermStores::Item::Sets::Item::SetItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new SetsRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/sites/{site%2Did}/termStores/{store%2Did}/sets{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+                            ## Read the properties and relationships of a set object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of set_collection_response
                             ## 
@@ -65,7 +77,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Set.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+                            ## Read the properties and relationships of a set object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -104,7 +116,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Collection of all sets available in the term store. This relationship can only be used to load a specific term set.
+                            # Read the properties and relationships of a set object.
                             class SetsRequestBuilderGetQueryParameters
                                 
                                 ## 

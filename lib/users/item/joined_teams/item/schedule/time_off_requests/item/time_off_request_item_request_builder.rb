@@ -32,7 +32,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/schedule/timeOffRequests/{timeOffRequest%2Did}{?%24select}")
                                     end
                                     ## 
-                                    ## Delete navigation property timeOffRequests for users
+                                    ## Delete a timeOffRequest object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -46,7 +46,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Get timeOffRequests from users
+                                    ## Retrieve the properties and relationships of a timeoffrequest object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of time_off_request
                                     ## 
@@ -76,7 +76,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TimeOffRequest.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Delete navigation property timeOffRequests for users
+                                    ## Delete a timeOffRequest object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -92,7 +92,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Get timeOffRequests from users
+                                    ## Retrieve the properties and relationships of a timeoffrequest object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -131,7 +131,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Get timeOffRequests from users
+                                    # Retrieve the properties and relationships of a timeoffrequest object.
                                     class TimeOffRequestItemRequestBuilderGetQueryParameters
                                         
                                         ## 
