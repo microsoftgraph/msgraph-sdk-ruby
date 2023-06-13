@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../me'
 require_relative './count/count_request_builder'
 require_relative './device_management_troubleshooting_events'
+require_relative './item/device_management_troubleshooting_event_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Me::DeviceManagementTroubleshootingEvents::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the deviceManagementTroubleshootingEvents property of the microsoft.graph.user entity.
+                ## @param device_management_troubleshooting_event_id Unique identifier of the item
+                ## @return a device_management_troubleshooting_event_item_request_builder
+                ## 
+                def by_device_management_troubleshooting_event_id(device_management_troubleshooting_event_id)
+                    raise StandardError, 'device_management_troubleshooting_event_id cannot be null' if device_management_troubleshooting_event_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["deviceManagementTroubleshootingEvent%2Did"] = device_management_troubleshooting_event_id
+                    return MicrosoftGraph::Me::DeviceManagementTroubleshootingEvents::Item::DeviceManagementTroubleshootingEventItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new DeviceManagementTroubleshootingEventsRequestBuilder and sets the default values.

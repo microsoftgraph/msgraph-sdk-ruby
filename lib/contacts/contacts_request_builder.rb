@@ -8,6 +8,7 @@ require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
 require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
 require_relative './get_by_ids/get_by_ids_request_builder'
+require_relative './item/org_contact_item_request_builder'
 require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph
@@ -40,6 +41,17 @@ module MicrosoftGraph
             # Provides operations to call the validateProperties method.
             def validate_properties()
                 return MicrosoftGraph::Contacts::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            ## Provides operations to manage the collection of orgContact entities.
+            ## @param org_contact_id Unique identifier of the item
+            ## @return a org_contact_item_request_builder
+            ## 
+            def by_org_contact_id(org_contact_id)
+                raise StandardError, 'org_contact_id cannot be null' if org_contact_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["orgContact%2Did"] = org_contact_id
+                return MicrosoftGraph::Contacts::Item::OrgContactItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new ContactsRequestBuilder and sets the default values.

@@ -8,6 +8,7 @@ require_relative '../entitlement_management'
 require_relative './assignment_requests'
 require_relative './count/count_request_builder'
 require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './item/access_package_assignment_request_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -21,6 +22,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequests::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
+                    ## @param access_package_assignment_request_id Unique identifier of the item
+                    ## @return a access_package_assignment_request_item_request_builder
+                    ## 
+                    def by_access_package_assignment_request_id(access_package_assignment_request_id)
+                        raise StandardError, 'access_package_assignment_request_id cannot be null' if access_package_assignment_request_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["accessPackageAssignmentRequest%2Did"] = access_package_assignment_request_id
+                        return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequests::Item::AccessPackageAssignmentRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AssignmentRequestsRequestBuilder and sets the default values.

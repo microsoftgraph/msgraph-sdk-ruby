@@ -8,7 +8,6 @@ require_relative '../../../agreements'
 require_relative '../../item'
 require_relative '../files'
 require_relative './item'
-require_relative './versions/item/agreement_file_version_item_request_builder'
 require_relative './versions/versions_request_builder'
 
 module MicrosoftGraph
@@ -133,17 +132,6 @@ module MicrosoftGraph
                                     end
                                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                                     return request_info
-                                end
-                                ## 
-                                ## Provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a agreement_file_version_item_request_builder
-                                ## 
-                                def versions_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["agreementFileVersion%2Did"] = id
-                                    return MicrosoftGraph::IdentityGovernance::TermsOfUse::Agreements::Item::Files::Item::Versions::Item::AgreementFileVersionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
 
                                 ## 

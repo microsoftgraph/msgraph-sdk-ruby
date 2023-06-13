@@ -5,6 +5,7 @@ require_relative '../../models/mdm_windows_information_protection_policy_collect
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_app_management'
 require_relative './count/count_request_builder'
+require_relative './item/mdm_windows_information_protection_policy_item_request_builder'
 require_relative './mdm_windows_information_protection_policies'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceAppManagement::MdmWindowsInformationProtectionPolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the mdmWindowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
+                ## @param mdm_windows_information_protection_policy_id Unique identifier of the item
+                ## @return a mdm_windows_information_protection_policy_item_request_builder
+                ## 
+                def by_mdm_windows_information_protection_policy_id(mdm_windows_information_protection_policy_id)
+                    raise StandardError, 'mdm_windows_information_protection_policy_id cannot be null' if mdm_windows_information_protection_policy_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["mdmWindowsInformationProtectionPolicy%2Did"] = mdm_windows_information_protection_policy_id
+                    return MicrosoftGraph::DeviceAppManagement::MdmWindowsInformationProtectionPolicies::Item::MdmWindowsInformationProtectionPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new MdmWindowsInformationProtectionPoliciesRequestBuilder and sets the default values.

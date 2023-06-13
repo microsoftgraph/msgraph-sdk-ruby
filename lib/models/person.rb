@@ -25,7 +25,7 @@ module MicrosoftGraph
             # The instant message voice over IP (VOIP) session initiation protocol (SIP) address for the user. Read-only.
             @im_address
             ## 
-            # true if the user has flagged this person as a favorite.
+            # True if the user has flagged this person as a favorite.
             @is_favorite
             ## 
             # The person's job title.
@@ -197,14 +197,14 @@ module MicrosoftGraph
                 @im_address = value
             end
             ## 
-            ## Gets the isFavorite property value. true if the user has flagged this person as a favorite.
+            ## Gets the isFavorite property value. True if the user has flagged this person as a favorite.
             ## @return a boolean
             ## 
             def is_favorite
                 return @is_favorite
             end
             ## 
-            ## Sets the isFavorite property value. true if the user has flagged this person as a favorite.
+            ## Sets the isFavorite property value. True if the user has flagged this person as a favorite.
             ## @param value Value to set for the is_favorite property.
             ## @return a void
             ## 

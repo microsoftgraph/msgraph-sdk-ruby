@@ -80,6 +80,9 @@ module MicrosoftGraph
             # The video teleconferencing ID. Read-only.
             @video_teleconference_id
             ## 
+            # Specifies whether a watermark should be applied to a content type by the client application.
+            @watermark_protection
+            ## 
             ## Gets the allowAttendeeToEnableCamera property value. Indicates whether attendees can turn on their camera.
             ## @return a boolean
             ## 
@@ -320,6 +323,7 @@ module MicrosoftGraph
                     "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
                     "subject" => lambda {|n| @subject = n.get_string_value() },
                     "videoTeleconferenceId" => lambda {|n| @video_teleconference_id = n.get_string_value() },
+                    "watermarkProtection" => lambda {|n| @watermark_protection = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WatermarkProtectionValues.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -474,6 +478,7 @@ module MicrosoftGraph
                 writer.write_date_time_value("startDateTime", @start_date_time)
                 writer.write_string_value("subject", @subject)
                 writer.write_string_value("videoTeleconferenceId", @video_teleconference_id)
+                writer.write_object_value("watermarkProtection", @watermark_protection)
             end
             ## 
             ## Gets the startDateTime property value. The meeting start time in UTC.
@@ -519,6 +524,21 @@ module MicrosoftGraph
             ## 
             def video_teleconference_id=(value)
                 @video_teleconference_id = value
+            end
+            ## 
+            ## Gets the watermarkProtection property value. Specifies whether a watermark should be applied to a content type by the client application.
+            ## @return a watermark_protection_values
+            ## 
+            def watermark_protection
+                return @watermark_protection
+            end
+            ## 
+            ## Sets the watermarkProtection property value. Specifies whether a watermark should be applied to a content type by the client application.
+            ## @param value Value to set for the watermark_protection property.
+            ## @return a void
+            ## 
+            def watermark_protection=(value)
+                @watermark_protection = value
             end
         end
     end

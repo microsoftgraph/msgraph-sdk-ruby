@@ -8,6 +8,7 @@ require_relative '../../../attack_simulation'
 require_relative '../../simulation_automations'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/simulation_automation_run_item_request_builder'
 require_relative './runs'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Security::AttackSimulation::SimulationAutomations::Item::Runs::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the runs property of the microsoft.graph.simulationAutomation entity.
+                            ## @param simulation_automation_run_id Unique identifier of the item
+                            ## @return a simulation_automation_run_item_request_builder
+                            ## 
+                            def by_simulation_automation_run_id(simulation_automation_run_id)
+                                raise StandardError, 'simulation_automation_run_id cannot be null' if simulation_automation_run_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["simulationAutomationRun%2Did"] = simulation_automation_run_id
+                                return MicrosoftGraph::Security::AttackSimulation::SimulationAutomations::Item::Runs::Item::SimulationAutomationRunItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new RunsRequestBuilder and sets the default values.

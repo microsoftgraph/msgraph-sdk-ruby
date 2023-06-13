@@ -9,7 +9,6 @@ require_relative '../../../item'
 require_relative '../../term_store'
 require_relative '../groups'
 require_relative './item'
-require_relative './sets/item/set_item_request_builder'
 require_relative './sets/sets_request_builder'
 
 module MicrosoftGraph
@@ -39,7 +38,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStore/groups/{group%2Did1}{?%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Delete navigation property groups for groups
+                                    ## Delete a group object in a term [store].
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -53,7 +52,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Collection of all groups available in the term store.
+                                    ## Read the properties and relationships of a term store group object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of group
                                     ## 
@@ -83,18 +82,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Group.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Provides operations to manage the sets property of the microsoft.graph.termStore.group entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a set_item_request_builder
-                                    ## 
-                                    def sets_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["set%2Did"] = id
-                                        return MicrosoftGraph::Groups::Item::Sites::Item::TermStore::Groups::Item::Sets::Item::SetItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                    end
-                                    ## 
-                                    ## Delete navigation property groups for groups
+                                    ## Delete a group object in a term [store].
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -110,7 +98,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Collection of all groups available in the term store.
+                                    ## Read the properties and relationships of a term store group object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -149,7 +137,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Collection of all groups available in the term store.
+                                    # Read the properties and relationships of a term store group object.
                                     class GroupItemRequestBuilderGetQueryParameters
                                         
                                         ## 

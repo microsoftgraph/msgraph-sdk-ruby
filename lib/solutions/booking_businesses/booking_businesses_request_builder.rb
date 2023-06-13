@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../solutions'
 require_relative './booking_businesses'
 require_relative './count/count_request_builder'
+require_relative './item/booking_business_item_request_builder'
 
 module MicrosoftGraph
     module Solutions
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Solutions::BookingBusinesses::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.
+                ## @param booking_business_id Unique identifier of the item
+                ## @return a booking_business_item_request_builder
+                ## 
+                def by_booking_business_id(booking_business_id)
+                    raise StandardError, 'booking_business_id cannot be null' if booking_business_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["bookingBusiness%2Did"] = booking_business_id
+                    return MicrosoftGraph::Solutions::BookingBusinesses::Item::BookingBusinessItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new BookingBusinessesRequestBuilder and sets the default values.

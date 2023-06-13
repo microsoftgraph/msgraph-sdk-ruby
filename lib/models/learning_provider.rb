@@ -10,6 +10,9 @@ module MicrosoftGraph
             # The display name that appears in Viva Learning. Required.
             @display_name
             ## 
+            # Indicates whether a provider can ingest learning course activity records. The default value is false. Set to true to make learningCourseActivities available for this provider.
+            @is_course_activity_sync_enabled
+            ## 
             # Learning catalog items for the provider.
             @learning_contents
             ## 
@@ -65,6 +68,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
+                    "isCourseActivitySyncEnabled" => lambda {|n| @is_course_activity_sync_enabled = n.get_boolean_value() },
                     "learningContents" => lambda {|n| @learning_contents = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::LearningContent.create_from_discriminator_value(pn) }) },
                     "loginWebUrl" => lambda {|n| @login_web_url = n.get_string_value() },
                     "longLogoWebUrlForDarkTheme" => lambda {|n| @long_logo_web_url_for_dark_theme = n.get_string_value() },
@@ -72,6 +76,21 @@ module MicrosoftGraph
                     "squareLogoWebUrlForDarkTheme" => lambda {|n| @square_logo_web_url_for_dark_theme = n.get_string_value() },
                     "squareLogoWebUrlForLightTheme" => lambda {|n| @square_logo_web_url_for_light_theme = n.get_string_value() },
                 })
+            end
+            ## 
+            ## Gets the isCourseActivitySyncEnabled property value. Indicates whether a provider can ingest learning course activity records. The default value is false. Set to true to make learningCourseActivities available for this provider.
+            ## @return a boolean
+            ## 
+            def is_course_activity_sync_enabled
+                return @is_course_activity_sync_enabled
+            end
+            ## 
+            ## Sets the isCourseActivitySyncEnabled property value. Indicates whether a provider can ingest learning course activity records. The default value is false. Set to true to make learningCourseActivities available for this provider.
+            ## @param value Value to set for the is_course_activity_sync_enabled property.
+            ## @return a void
+            ## 
+            def is_course_activity_sync_enabled=(value)
+                @is_course_activity_sync_enabled = value
             end
             ## 
             ## Gets the learningContents property value. Learning catalog items for the provider.
@@ -142,6 +161,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_string_value("displayName", @display_name)
+                writer.write_boolean_value("isCourseActivitySyncEnabled", @is_course_activity_sync_enabled)
                 writer.write_collection_of_object_values("learningContents", @learning_contents)
                 writer.write_string_value("loginWebUrl", @login_web_url)
                 writer.write_string_value("longLogoWebUrlForDarkTheme", @long_logo_web_url_for_dark_theme)

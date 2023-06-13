@@ -6,6 +6,7 @@ require_relative '../../models/print_usage_by_printer_collection_response'
 require_relative '../reports'
 require_relative './count/count_request_builder'
 require_relative './daily_print_usage_by_printer'
+require_relative './item/print_usage_by_printer_item_request_builder'
 
 module MicrosoftGraph
     module Reports
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Reports::DailyPrintUsageByPrinter::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the dailyPrintUsageByPrinter property of the microsoft.graph.reportRoot entity.
+                ## @param print_usage_by_printer_id Unique identifier of the item
+                ## @return a print_usage_by_printer_item_request_builder
+                ## 
+                def by_print_usage_by_printer_id(print_usage_by_printer_id)
+                    raise StandardError, 'print_usage_by_printer_id cannot be null' if print_usage_by_printer_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["printUsageByPrinter%2Did"] = print_usage_by_printer_id
+                    return MicrosoftGraph::Reports::DailyPrintUsageByPrinter::Item::PrintUsageByPrinterItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new DailyPrintUsageByPrinterRequestBuilder and sets the default values.

@@ -54,7 +54,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+                            ## Get details about a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of print_task
                             ## 
@@ -68,7 +68,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintTask.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property tasks in print
+                            ## Update a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of print_task
@@ -100,7 +100,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+                            ## Get details about a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -118,7 +118,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property tasks in print
+                            ## Update a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -139,7 +139,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+                            # Get details about a print task. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
                             class PrintTaskItemRequestBuilderGetQueryParameters
                                 
                                 ## 

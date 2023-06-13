@@ -40,7 +40,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+                        ## Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of group_setting
                         ## 
@@ -54,7 +54,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::GroupSetting.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the navigation property settings in groups
+                        ## Update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of group_setting
@@ -86,7 +86,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+                        ## Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -104,7 +104,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property settings in groups
+                        ## Update the properties of a groupSetting object for tenant-wide group settings or a specific group setting.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -125,7 +125,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Settings that can govern this group's behavior, like whether members can invite guest users to the group. Nullable.
+                        # Retrieve the properties of a specific group setting object. The setting can be a tenant-level or group-specific setting.
                         class GroupSettingItemRequestBuilderGetQueryParameters
                             
                             ## 

@@ -24,7 +24,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/print/connectors/{printConnector%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property connectors for print
+                    ## Delete (unregister) a printConnector.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -38,7 +38,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The list of available print connectors.
+                    ## Retrieve the properties and relationships of a **printConnector** object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of print_connector
                     ## 
@@ -52,7 +52,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintConnector.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property connectors in print
+                    ## Update the properties of a **printConnector** object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of print_connector
@@ -68,7 +68,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintConnector.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property connectors for print
+                    ## Delete (unregister) a printConnector.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -84,7 +84,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The list of available print connectors.
+                    ## Retrieve the properties and relationships of a **printConnector** object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property connectors in print
+                    ## Update the properties of a **printConnector** object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -123,7 +123,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The list of available print connectors.
+                    # Retrieve the properties and relationships of a **printConnector** object.
                     class PrintConnectorItemRequestBuilderGetQueryParameters
                         
                         ## 

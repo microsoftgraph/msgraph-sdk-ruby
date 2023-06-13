@@ -15,6 +15,7 @@ require_relative '../item'
 require_relative './add/add_request_builder'
 require_relative './columns'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_table_column_item_request_builder'
 require_relative './item_at_with_index/item_at_with_index_request_builder'
 
 module MicrosoftGraph
@@ -41,6 +42,17 @@ module MicrosoftGraph
                                                 # Provides operations to call the count method.
                                                 def count()
                                                     return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Columns::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                ## Provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
+                                                ## @param workbook_table_column_id Unique identifier of the item
+                                                ## @return a workbook_table_column_item_request_builder
+                                                ## 
+                                                def by_workbook_table_column_id(workbook_table_column_id)
+                                                    raise StandardError, 'workbook_table_column_id cannot be null' if workbook_table_column_id.nil?
+                                                    url_tpl_params = @path_parameters.clone
+                                                    url_tpl_params["workbookTableColumn%2Did"] = workbook_table_column_id
+                                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::Columns::Item::WorkbookTableColumnItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                                 end
                                                 ## 
                                                 ## Instantiates a new ColumnsRequestBuilder and sets the default values.

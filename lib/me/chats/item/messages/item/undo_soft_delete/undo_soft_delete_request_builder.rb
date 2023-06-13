@@ -29,7 +29,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/me/chats/{chat%2Did}/messages/{chatMessage%2Did}/undoSoftDelete")
                                 end
                                 ## 
-                                ## Invoke action undoSoftDelete
+                                ## Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
                                 ## 
@@ -43,7 +43,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Invoke action undoSoftDelete
+                                ## Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 

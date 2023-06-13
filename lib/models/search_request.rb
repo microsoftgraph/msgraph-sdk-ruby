@@ -16,6 +16,9 @@ module MicrosoftGraph
             # The aggregations property
             @aggregations
             ## 
+            # The collapseProperties property
+            @collapse_properties
+            ## 
             # The contentSources property
             @content_sources
             ## 
@@ -98,6 +101,21 @@ module MicrosoftGraph
             ## 
             def aggregations=(value)
                 @aggregations = value
+            end
+            ## 
+            ## Gets the collapseProperties property value. The collapseProperties property
+            ## @return a collapse_property
+            ## 
+            def collapse_properties
+                return @collapse_properties
+            end
+            ## 
+            ## Sets the collapseProperties property value. The collapseProperties property
+            ## @param value Value to set for the collapse_properties property.
+            ## @return a void
+            ## 
+            def collapse_properties=(value)
+                @collapse_properties = value
             end
             ## 
             ## Instantiates a new searchRequest and sets the default values.
@@ -198,6 +216,7 @@ module MicrosoftGraph
                 return {
                     "aggregationFilters" => lambda {|n| @aggregation_filters = n.get_collection_of_primitive_values(String) },
                     "aggregations" => lambda {|n| @aggregations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AggregationOption.create_from_discriminator_value(pn) }) },
+                    "collapseProperties" => lambda {|n| @collapse_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CollapseProperty.create_from_discriminator_value(pn) }) },
                     "contentSources" => lambda {|n| @content_sources = n.get_collection_of_primitive_values(String) },
                     "enableTopResults" => lambda {|n| @enable_top_results = n.get_boolean_value() },
                     "entityTypes" => lambda {|n| @entity_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::EntityType.create_from_discriminator_value(pn) }) },
@@ -297,6 +316,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_collection_of_primitive_values("aggregationFilters", @aggregation_filters)
                 writer.write_collection_of_object_values("aggregations", @aggregations)
+                writer.write_collection_of_object_values("collapseProperties", @collapse_properties)
                 writer.write_collection_of_primitive_values("contentSources", @content_sources)
                 writer.write_boolean_value("enableTopResults", @enable_top_results)
                 writer.write_collection_of_object_values("entityTypes", @entity_types)

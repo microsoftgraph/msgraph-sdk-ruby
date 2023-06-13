@@ -44,7 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The assignment of a role management policy to a role definition object.
+                    ## Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of unified_role_management_policy_assignment
                     ## 
@@ -90,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The assignment of a role management policy to a role definition object.
+                    ## Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -129,7 +129,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The assignment of a role management policy to a role definition object.
+                    # Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
                     class UnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetQueryParameters
                         
                         ## 

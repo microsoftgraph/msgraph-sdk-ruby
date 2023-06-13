@@ -9,6 +9,7 @@ require_relative '../../../items'
 require_relative '../../item'
 require_relative '../analytics'
 require_relative './count/count_request_builder'
+require_relative './item/item_activity_stat_item_request_builder'
 require_relative './item_activity_stats'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Drives::Item::Items::Item::Analytics::ItemActivityStats::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the itemActivityStats property of the microsoft.graph.itemAnalytics entity.
+                                ## @param item_activity_stat_id Unique identifier of the item
+                                ## @return a item_activity_stat_item_request_builder
+                                ## 
+                                def by_item_activity_stat_id(item_activity_stat_id)
+                                    raise StandardError, 'item_activity_stat_id cannot be null' if item_activity_stat_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["itemActivityStat%2Did"] = item_activity_stat_id
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Analytics::ItemActivityStats::Item::ItemActivityStatItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new ItemActivityStatsRequestBuilder and sets the default values.

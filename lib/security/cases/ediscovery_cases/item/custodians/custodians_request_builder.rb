@@ -9,8 +9,9 @@ require_relative '../../ediscovery_cases'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './custodians'
-require_relative './security_apply_hold/security_apply_hold_request_builder'
-require_relative './security_remove_hold/security_remove_hold_request_builder'
+require_relative './item/ediscovery_custodian_item_request_builder'
+require_relative './microsoft_graph_security_apply_hold/microsoft_graph_security_apply_hold_request_builder'
+require_relative './microsoft_graph_security_remove_hold/microsoft_graph_security_remove_hold_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -29,13 +30,24 @@ module MicrosoftGraph
                             end
                             ## 
                             # Provides operations to call the applyHold method.
-                            def security_apply_hold()
-                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::SecurityApplyHold::SecurityApplyHoldRequestBuilder.new(@path_parameters, @request_adapter)
+                            def microsoft_graph_security_apply_hold()
+                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::MicrosoftGraphSecurityApplyHold::MicrosoftGraphSecurityApplyHoldRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             # Provides operations to call the removeHold method.
-                            def security_remove_hold()
-                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::SecurityRemoveHold::SecurityRemoveHoldRequestBuilder.new(@path_parameters, @request_adapter)
+                            def microsoft_graph_security_remove_hold()
+                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::MicrosoftGraphSecurityRemoveHold::MicrosoftGraphSecurityRemoveHoldRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.
+                            ## @param ediscovery_custodian_id Unique identifier of the item
+                            ## @return a ediscovery_custodian_item_request_builder
+                            ## 
+                            def by_ediscovery_custodian_id(ediscovery_custodian_id)
+                                raise StandardError, 'ediscovery_custodian_id cannot be null' if ediscovery_custodian_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["ediscoveryCustodian%2Did"] = ediscovery_custodian_id
+                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Custodians::Item::EdiscoveryCustodianItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new CustodiansRequestBuilder and sets the default values.

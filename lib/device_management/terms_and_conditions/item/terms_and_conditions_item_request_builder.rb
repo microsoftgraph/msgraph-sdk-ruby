@@ -5,9 +5,7 @@ require_relative '../../../models/terms_and_conditions'
 require_relative '../../device_management'
 require_relative '../terms_and_conditions'
 require_relative './acceptance_statuses/acceptance_statuses_request_builder'
-require_relative './acceptance_statuses/item/terms_and_conditions_acceptance_status_item_request_builder'
 require_relative './assignments/assignments_request_builder'
-require_relative './assignments/item/terms_and_conditions_assignment_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -27,28 +25,6 @@ module MicrosoftGraph
                     # Provides operations to manage the assignments property of the microsoft.graph.termsAndConditions entity.
                     def assignments()
                         return MicrosoftGraph::DeviceManagement::TermsAndConditions::Item::Assignments::AssignmentsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a terms_and_conditions_acceptance_status_item_request_builder
-                    ## 
-                    def acceptance_statuses_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["termsAndConditionsAcceptanceStatus%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::TermsAndConditions::Item::AcceptanceStatuses::Item::TermsAndConditionsAcceptanceStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the assignments property of the microsoft.graph.termsAndConditions entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a terms_and_conditions_assignment_item_request_builder
-                    ## 
-                    def assignments_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["termsAndConditionsAssignment%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::TermsAndConditions::Item::Assignments::Item::TermsAndConditionsAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new TermsAndConditionsItemRequestBuilder and sets the default values.

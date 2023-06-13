@@ -7,6 +7,7 @@ require_relative '../../identity_governance'
 require_relative '../entitlement_management'
 require_relative './connected_organizations'
 require_relative './count/count_request_builder'
+require_relative './item/connected_organization_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
+                    ## @param connected_organization_id Unique identifier of the item
+                    ## @return a connected_organization_item_request_builder
+                    ## 
+                    def by_connected_organization_id(connected_organization_id)
+                        raise StandardError, 'connected_organization_id cannot be null' if connected_organization_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["connectedOrganization%2Did"] = connected_organization_id
+                        return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::ConnectedOrganizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new ConnectedOrganizationsRequestBuilder and sets the default values.

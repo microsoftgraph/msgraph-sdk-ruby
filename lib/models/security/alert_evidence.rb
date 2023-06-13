@@ -13,8 +13,11 @@ module MicrosoftGraph
                 # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                 @additional_data
                 ## 
-                # The time the evidence was created and added to the alert.
+                # The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
                 @created_date_time
+                ## 
+                # The detailedRoles property
+                @detailed_roles
                 ## 
                 # The OdataType property
                 @odata_type
@@ -25,10 +28,10 @@ module MicrosoftGraph
                 # Details about the remediation status.
                 @remediation_status_details
                 ## 
-                # The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role 'Attacker'.
+                # One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.
                 @roles
                 ## 
-                # Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
+                # Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.
                 @tags
                 ## 
                 # The verdict property
@@ -56,14 +59,14 @@ module MicrosoftGraph
                     @additional_data = Hash.new
                 end
                 ## 
-                ## Gets the createdDateTime property value. The time the evidence was created and added to the alert.
+                ## Gets the createdDateTime property value. The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
                 ## @return a date_time
                 ## 
                 def created_date_time
                     return @created_date_time
                 end
                 ## 
-                ## Sets the createdDateTime property value. The time the evidence was created and added to the alert.
+                ## Sets the createdDateTime property value. The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
                 ## @param value Value to set for the created_date_time property.
                 ## @return a void
                 ## 
@@ -81,14 +84,20 @@ module MicrosoftGraph
                     unless mapping_value_node.nil? then
                         mapping_value = mapping_value_node.get_string_value
                         case mapping_value
+                            when "#microsoft.graph.security.amazonResourceEvidence"
+                                return AmazonResourceEvidence.new
                             when "#microsoft.graph.security.analyzedMessageEvidence"
                                 return AnalyzedMessageEvidence.new
+                            when "#microsoft.graph.security.azureResourceEvidence"
+                                return AzureResourceEvidence.new
                             when "#microsoft.graph.security.cloudApplicationEvidence"
                                 return CloudApplicationEvidence.new
                             when "#microsoft.graph.security.deviceEvidence"
                                 return DeviceEvidence.new
                             when "#microsoft.graph.security.fileEvidence"
                                 return FileEvidence.new
+                            when "#microsoft.graph.security.googleCloudResourceEvidence"
+                                return GoogleCloudResourceEvidence.new
                             when "#microsoft.graph.security.ipEvidence"
                                 return IpEvidence.new
                             when "#microsoft.graph.security.mailboxEvidence"
@@ -114,12 +123,28 @@ module MicrosoftGraph
                     return AlertEvidence.new
                 end
                 ## 
+                ## Gets the detailedRoles property value. The detailedRoles property
+                ## @return a string
+                ## 
+                def detailed_roles
+                    return @detailed_roles
+                end
+                ## 
+                ## Sets the detailedRoles property value. The detailedRoles property
+                ## @param value Value to set for the detailed_roles property.
+                ## @return a void
+                ## 
+                def detailed_roles=(value)
+                    @detailed_roles = value
+                end
+                ## 
                 ## The deserialization information for the current model
                 ## @return a i_dictionary
                 ## 
                 def get_field_deserializers()
                     return {
                         "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
+                        "detailedRoles" => lambda {|n| @detailed_roles = n.get_collection_of_primitive_values(String) },
                         "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                         "remediationStatus" => lambda {|n| @remediation_status = n.get_enum_value(MicrosoftGraph::Models::Security::EvidenceRemediationStatus) },
                         "remediationStatusDetails" => lambda {|n| @remediation_status_details = n.get_string_value() },
@@ -174,14 +199,14 @@ module MicrosoftGraph
                     @remediation_status_details = value
                 end
                 ## 
-                ## Gets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role 'Attacker'.
+                ## Gets the roles property value. One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.
                 ## @return a evidence_role
                 ## 
                 def roles
                     return @roles
                 end
                 ## 
-                ## Sets the roles property value. The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role 'Attacker'.
+                ## Sets the roles property value. One or more roles that an evidence entity represents in an alert. For example, an IP address that is associated with an attacker has the evidence role Attacker.
                 ## @param value Value to set for the roles property.
                 ## @return a void
                 ## 
@@ -196,6 +221,7 @@ module MicrosoftGraph
                 def serialize(writer)
                     raise StandardError, 'writer cannot be null' if writer.nil?
                     writer.write_date_time_value("createdDateTime", @created_date_time)
+                    writer.write_collection_of_primitive_values("detailedRoles", @detailed_roles)
                     writer.write_string_value("@odata.type", @odata_type)
                     writer.write_enum_value("remediationStatus", @remediation_status)
                     writer.write_string_value("remediationStatusDetails", @remediation_status_details)
@@ -205,14 +231,14 @@ module MicrosoftGraph
                     writer.write_additional_data(@additional_data)
                 end
                 ## 
-                ## Gets the tags property value. Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
+                ## Gets the tags property value. Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.
                 ## @return a string
                 ## 
                 def tags
                     return @tags
                 end
                 ## 
-                ## Sets the tags property value. Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
+                ## Sets the tags property value. Array of custom tags associated with an evidence instance. For example, to denote a group of devices or high value assets.
                 ## @param value Value to set for the tags property.
                 ## @return a void
                 ## 

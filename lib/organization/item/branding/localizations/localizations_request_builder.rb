@@ -7,6 +7,7 @@ require_relative '../../../organization'
 require_relative '../../item'
 require_relative '../branding'
 require_relative './count/count_request_builder'
+require_relative './item/organizational_branding_localization_item_request_builder'
 require_relative './localizations'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Organization::Item::Branding::Localizations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
+                        ## @param organizational_branding_localization_id Unique identifier of the item
+                        ## @return a organizational_branding_localization_item_request_builder
+                        ## 
+                        def by_organizational_branding_localization_id(organizational_branding_localization_id)
+                            raise StandardError, 'organizational_branding_localization_id cannot be null' if organizational_branding_localization_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["organizationalBrandingLocalization%2Did"] = organizational_branding_localization_id
+                            return MicrosoftGraph::Organization::Item::Branding::Localizations::Item::OrganizationalBrandingLocalizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new LocalizationsRequestBuilder and sets the default values.

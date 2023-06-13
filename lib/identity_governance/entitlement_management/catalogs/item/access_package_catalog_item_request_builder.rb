@@ -6,7 +6,6 @@ require_relative '../../../identity_governance'
 require_relative '../../entitlement_management'
 require_relative '../catalogs'
 require_relative './access_packages/access_packages_request_builder'
-require_relative './access_packages/item/access_package_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -24,17 +23,6 @@ module MicrosoftGraph
                             return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::AccessPackagesRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        ## Provides operations to manage the accessPackages property of the microsoft.graph.accessPackageCatalog entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a access_package_item_request_builder
-                        ## 
-                        def access_packages_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["accessPackage%2Did"] = id
-                            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackages::Item::AccessPackageItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
                         ## Instantiates a new AccessPackageCatalogItemRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -44,7 +32,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/catalogs/{accessPackageCatalog%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property catalogs for identityGovernance
+                        ## Delete an accessPackageCatalog.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -58,7 +46,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## A container for access packages.
+                        ## Retrieve the properties and relationships of an accessPackageCatalog object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of access_package_catalog
                         ## 
@@ -72,7 +60,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageCatalog.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the navigation property catalogs in identityGovernance
+                        ## Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of access_package_catalog
@@ -88,7 +76,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageCatalog.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property catalogs for identityGovernance
+                        ## Delete an accessPackageCatalog.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -104,7 +92,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## A container for access packages.
+                        ## Retrieve the properties and relationships of an accessPackageCatalog object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -122,7 +110,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property catalogs in identityGovernance
+                        ## Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -143,7 +131,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # A container for access packages.
+                        # Retrieve the properties and relationships of an accessPackageCatalog object.
                         class AccessPackageCatalogItemRequestBuilderGetQueryParameters
                             
                             ## 

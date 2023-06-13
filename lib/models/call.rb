@@ -169,7 +169,7 @@ module MicrosoftGraph
                 @chat_info = value
             end
             ## 
-            ## Instantiates a new call and sets the default values.
+            ## Instantiates a new Call and sets the default values.
             ## @return a void
             ## 
             def initialize()

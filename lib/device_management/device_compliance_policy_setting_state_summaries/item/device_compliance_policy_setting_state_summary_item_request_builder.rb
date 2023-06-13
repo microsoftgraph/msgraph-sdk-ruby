@@ -5,7 +5,6 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_management'
 require_relative '../device_compliance_policy_setting_state_summaries'
 require_relative './device_compliance_setting_states/device_compliance_setting_states_request_builder'
-require_relative './device_compliance_setting_states/item/device_compliance_setting_state_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -43,17 +42,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the deviceComplianceSettingStates property of the microsoft.graph.deviceCompliancePolicySettingStateSummary entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a device_compliance_setting_state_item_request_builder
-                    ## 
-                    def device_compliance_setting_states_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["deviceComplianceSettingState%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicySettingStateSummaries::Item::DeviceComplianceSettingStates::Item::DeviceComplianceSettingStateItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## The summary states of compliance policy settings for this account.

@@ -5,6 +5,7 @@ require_relative '../../models/sign_in'
 require_relative '../../models/sign_in_collection_response'
 require_relative '../audit_logs'
 require_relative './count/count_request_builder'
+require_relative './item/sign_in_item_request_builder'
 require_relative './sign_ins'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::AuditLogs::SignIns::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.
+                ## @param sign_in_id Unique identifier of the item
+                ## @return a sign_in_item_request_builder
+                ## 
+                def by_sign_in_id(sign_in_id)
+                    raise StandardError, 'sign_in_id cannot be null' if sign_in_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["signIn%2Did"] = sign_in_id
+                    return MicrosoftGraph::AuditLogs::SignIns::Item::SignInItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new SignInsRequestBuilder and sets the default values.
