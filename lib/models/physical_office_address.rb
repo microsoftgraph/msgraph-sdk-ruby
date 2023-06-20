@@ -61,7 +61,7 @@ module MicrosoftGraph
                 @city = value
             end
             ## 
-            ## Instantiates a new physicalOfficeAddress and sets the default values.
+            ## Instantiates a new PhysicalOfficeAddress and sets the default values.
             ## @return a void
             ## 
             def initialize()

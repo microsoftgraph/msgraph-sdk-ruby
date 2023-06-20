@@ -6,6 +6,7 @@ require_relative '../../models/printer_collection_response'
 require_relative '../print'
 require_relative './count/count_request_builder'
 require_relative './create/create_request_builder'
+require_relative './item/printer_item_request_builder'
 require_relative './printers'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                 # Provides operations to call the create method.
                 def create()
                     return MicrosoftGraph::Print::Printers::Create::CreateRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the printers property of the microsoft.graph.print entity.
+                ## @param printer_id Unique identifier of the item
+                ## @return a printer_item_request_builder
+                ## 
+                def by_printer_id(printer_id)
+                    raise StandardError, 'printer_id cannot be null' if printer_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["printer%2Did"] = printer_id
+                    return MicrosoftGraph::Print::Printers::Item::PrinterItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new PrintersRequestBuilder and sets the default values.

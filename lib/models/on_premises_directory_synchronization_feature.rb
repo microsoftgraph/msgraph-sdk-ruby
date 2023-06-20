@@ -175,7 +175,7 @@ module MicrosoftGraph
                 @concurrent_org_id_provisioning_enabled = value
             end
             ## 
-            ## Instantiates a new onPremisesDirectorySynchronizationFeature and sets the default values.
+            ## Instantiates a new OnPremisesDirectorySynchronizationFeature and sets the default values.
             ## @return a void
             ## 
             def initialize()

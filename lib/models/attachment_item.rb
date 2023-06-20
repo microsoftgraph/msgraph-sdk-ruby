@@ -61,7 +61,7 @@ module MicrosoftGraph
                 @attachment_type = value
             end
             ## 
-            ## Instantiates a new attachmentItem and sets the default values.
+            ## Instantiates a new AttachmentItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

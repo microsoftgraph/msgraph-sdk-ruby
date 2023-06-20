@@ -67,7 +67,7 @@ module MicrosoftGraph
                 @condition = value
             end
             ## 
-            ## Instantiates a new unifiedRolePermission and sets the default values.
+            ## Instantiates a new UnifiedRolePermission and sets the default values.
             ## @return a void
             ## 
             def initialize()

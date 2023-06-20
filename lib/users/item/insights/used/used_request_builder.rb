@@ -7,6 +7,7 @@ require_relative '../../../users'
 require_relative '../../item'
 require_relative '../insights'
 require_relative './count/count_request_builder'
+require_relative './item/used_insight_item_request_builder'
 require_relative './used'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Users::Item::Insights::Used::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.
+                        ## @param used_insight_id Unique identifier of the item
+                        ## @return a used_insight_item_request_builder
+                        ## 
+                        def by_used_insight_id(used_insight_id)
+                            raise StandardError, 'used_insight_id cannot be null' if used_insight_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["usedInsight%2Did"] = used_insight_id
+                            return MicrosoftGraph::Users::Item::Insights::Used::Item::UsedInsightItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new UsedRequestBuilder and sets the default values.

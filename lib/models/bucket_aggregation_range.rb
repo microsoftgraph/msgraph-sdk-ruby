@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new bucketAggregationRange and sets the default values.
+            ## Instantiates a new BucketAggregationRange and sets the default values.
             ## @return a void
             ## 
             def initialize()

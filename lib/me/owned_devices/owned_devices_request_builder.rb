@@ -7,6 +7,7 @@ require_relative './count/count_request_builder'
 require_relative './graph_app_role_assignment/graph_app_role_assignment_request_builder'
 require_relative './graph_device/graph_device_request_builder'
 require_relative './graph_endpoint/graph_endpoint_request_builder'
+require_relative './item/directory_object_item_request_builder'
 require_relative './owned_devices'
 
 module MicrosoftGraph
@@ -35,6 +36,17 @@ module MicrosoftGraph
                 # Casts the previous resource to endpoint.
                 def graph_endpoint()
                     return MicrosoftGraph::Me::OwnedDevices::GraphEndpoint::GraphEndpointRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the ownedDevices property of the microsoft.graph.user entity.
+                ## @param directory_object_id Unique identifier of the item
+                ## @return a directory_object_item_request_builder
+                ## 
+                def by_directory_object_id(directory_object_id)
+                    raise StandardError, 'directory_object_id cannot be null' if directory_object_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["directoryObject%2Did"] = directory_object_id
+                    return MicrosoftGraph::Me::OwnedDevices::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new OwnedDevicesRequestBuilder and sets the default values.

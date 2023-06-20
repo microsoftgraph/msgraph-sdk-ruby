@@ -64,7 +64,7 @@ module MicrosoftGraph
                 @availability = value
             end
             ## 
-            ## Instantiates a new attendeeAvailability and sets the default values.
+            ## Instantiates a new AttendeeAvailability and sets the default values.
             ## @return a void
             ## 
             def initialize()

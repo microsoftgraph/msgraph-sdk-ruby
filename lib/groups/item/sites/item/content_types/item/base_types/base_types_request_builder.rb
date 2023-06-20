@@ -10,6 +10,7 @@ require_relative '../../content_types'
 require_relative '../item'
 require_relative './base_types'
 require_relative './count/count_request_builder'
+require_relative './item/content_type_item_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -27,6 +28,17 @@ module MicrosoftGraph
                                     # Provides operations to count the resources in the collection.
                                     def count()
                                         return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Item::BaseTypes::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.
+                                    ## @param content_type_id1 Unique identifier of the item
+                                    ## @return a content_type_item_request_builder
+                                    ## 
+                                    def by_content_type_id1(content_type_id1)
+                                        raise StandardError, 'content_type_id1 cannot be null' if content_type_id1.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["contentType%2Did1"] = content_type_id1
+                                        return MicrosoftGraph::Groups::Item::Sites::Item::ContentTypes::Item::BaseTypes::Item::ContentTypeItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new BaseTypesRequestBuilder and sets the default values.

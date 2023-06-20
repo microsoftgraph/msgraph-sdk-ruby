@@ -13,6 +13,7 @@ require_relative '../item'
 require_relative './add/add_request_builder'
 require_relative './add_formula_local/add_formula_local_request_builder'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_named_item_item_request_builder'
 require_relative './names'
 
 module MicrosoftGraph
@@ -42,6 +43,17 @@ module MicrosoftGraph
                                         # Provides operations to count the resources in the collection.
                                         def count()
                                             return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Names::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
+                                        ## Provides operations to manage the names property of the microsoft.graph.workbookWorksheet entity.
+                                        ## @param workbook_named_item_id Unique identifier of the item
+                                        ## @return a workbook_named_item_item_request_builder
+                                        ## 
+                                        def by_workbook_named_item_id(workbook_named_item_id)
+                                            raise StandardError, 'workbook_named_item_id cannot be null' if workbook_named_item_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["workbookNamedItem%2Did"] = workbook_named_item_id
+                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Names::Item::WorkbookNamedItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                         end
                                         ## 
                                         ## Instantiates a new NamesRequestBuilder and sets the default values.

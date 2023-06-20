@@ -79,7 +79,7 @@ module MicrosoftGraph
                 @confidence = value
             end
             ## 
-            ## Instantiates a new meetingTimeSuggestion and sets the default values.
+            ## Instantiates a new MeetingTimeSuggestion and sets the default values.
             ## @return a void
             ## 
             def initialize()

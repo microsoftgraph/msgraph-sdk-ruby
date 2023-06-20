@@ -55,7 +55,7 @@ module MicrosoftGraph
                 @applies_to = value
             end
             ## 
-            ## Instantiates a new servicePlanInfo and sets the default values.
+            ## Instantiates a new ServicePlanInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()

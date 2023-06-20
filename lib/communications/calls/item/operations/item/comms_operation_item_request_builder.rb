@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Get operations from communications
+                            ## Get the status of an operation that adds the large gallery view to a call.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of comms_operation
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Get operations from communications
+                            ## Get the status of an operation that adds the large gallery view to a call.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get operations from communications
+                            # Get the status of an operation that adds the large gallery view to a call.
                             class CommsOperationItemRequestBuilderGetQueryParameters
                                 
                                 ## 

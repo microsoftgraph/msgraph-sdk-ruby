@@ -8,6 +8,7 @@ require_relative '../../item'
 require_relative '../todo'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/todo_task_list_item_request_builder'
 require_relative './lists'
 
 module MicrosoftGraph
@@ -28,6 +29,17 @@ module MicrosoftGraph
                         # Provides operations to call the delta method.
                         def delta()
                             return MicrosoftGraph::Users::Item::Todo::Lists::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the lists property of the microsoft.graph.todo entity.
+                        ## @param todo_task_list_id Unique identifier of the item
+                        ## @return a todo_task_list_item_request_builder
+                        ## 
+                        def by_todo_task_list_id(todo_task_list_id)
+                            raise StandardError, 'todo_task_list_id cannot be null' if todo_task_list_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["todoTaskList%2Did"] = todo_task_list_id
+                            return MicrosoftGraph::Users::Item::Todo::Lists::Item::TodoTaskListItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new ListsRequestBuilder and sets the default values.

@@ -10,6 +10,7 @@ require_relative '../item'
 require_relative './attachments'
 require_relative './count/count_request_builder'
 require_relative './create_upload_session/create_upload_session_request_builder'
+require_relative './item/attachment_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -30,6 +31,17 @@ module MicrosoftGraph
                             # Provides operations to call the createUploadSession method.
                             def create_upload_session()
                                 return MicrosoftGraph::Users::Item::CalendarView::Item::Attachments::CreateUploadSession::CreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the attachments property of the microsoft.graph.event entity.
+                            ## @param attachment_id Unique identifier of the item
+                            ## @return a attachment_item_request_builder
+                            ## 
+                            def by_attachment_id(attachment_id)
+                                raise StandardError, 'attachment_id cannot be null' if attachment_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["attachment%2Did"] = attachment_id
+                                return MicrosoftGraph::Users::Item::CalendarView::Item::Attachments::Item::AttachmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new AttachmentsRequestBuilder and sets the default values.

@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/staffMembers/{bookingStaffMemberBase%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property staffMembers for solutions
+                            ## Delete a bookingStaffMember in the specified bookingBusiness.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## All the staff members that provide services in this business. Read-only. Nullable.
+                            ## Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of booking_staff_member_base
                             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BookingStaffMemberBase.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property staffMembers in solutions
+                            ## Update the properties of a bookingStaffMember in the specified bookingBusiness.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of booking_staff_member_base
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BookingStaffMemberBase.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property staffMembers for solutions
+                            ## Delete a bookingStaffMember in the specified bookingBusiness.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## All the staff members that provide services in this business. Read-only. Nullable.
+                            ## Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property staffMembers in solutions
+                            ## Update the properties of a bookingStaffMember in the specified bookingBusiness.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # All the staff members that provide services in this business. Read-only. Nullable.
+                            # Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
                             class BookingStaffMemberBaseItemRequestBuilderGetQueryParameters
                                 
                                 ## 

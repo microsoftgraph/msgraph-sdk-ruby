@@ -50,7 +50,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## A collection of serviceAnnouncementAttachments.
+                                ## Read the properties and relationships of a serviceAnnouncementAttachment object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of service_announcement_attachment
                                 ## 
@@ -96,7 +96,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## A collection of serviceAnnouncementAttachments.
+                                ## Read the properties and relationships of a serviceAnnouncementAttachment object.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -135,7 +135,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # A collection of serviceAnnouncementAttachments.
+                                # Read the properties and relationships of a serviceAnnouncementAttachment object.
                                 class ServiceAnnouncementAttachmentItemRequestBuilderGetQueryParameters
                                     
                                     ## 

@@ -12,6 +12,7 @@ require_relative './graph_group/graph_group_request_builder'
 require_relative './graph_org_contact/graph_org_contact_request_builder'
 require_relative './graph_service_principal/graph_service_principal_request_builder'
 require_relative './graph_user/graph_user_request_builder'
+require_relative './item/directory_object_item_request_builder'
 require_relative './members'
 require_relative './ref/ref_request_builder'
 
@@ -63,6 +64,17 @@ module MicrosoftGraph
                         # Provides operations to manage the collection of directory entities.
                         def ref()
                             return MicrosoftGraph::Directory::AdministrativeUnits::Item::Members::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Gets an item from the MicrosoftGraph.directory.administrativeUnits.item.members.item collection
+                        ## @param directory_object_id Unique identifier of the item
+                        ## @return a directory_object_item_request_builder
+                        ## 
+                        def by_directory_object_id(directory_object_id)
+                            raise StandardError, 'directory_object_id cannot be null' if directory_object_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["directoryObject%2Did"] = directory_object_id
+                            return MicrosoftGraph::Directory::AdministrativeUnits::Item::Members::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new MembersRequestBuilder and sets the default values.

@@ -59,7 +59,7 @@ module MicrosoftGraph
                 @changed_by = value
             end
             ## 
-            ## Instantiates a new subjectRightsRequestHistory and sets the default values.
+            ## Instantiates a new SubjectRightsRequestHistory and sets the default values.
             ## @return a void
             ## 
             def initialize()

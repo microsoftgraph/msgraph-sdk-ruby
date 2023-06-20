@@ -49,7 +49,7 @@ module MicrosoftGraph
                 @app_id = value
             end
             ## 
-            ## Instantiates a new preAuthorizedApplication and sets the default values.
+            ## Instantiates a new PreAuthorizedApplication and sets the default values.
             ## @return a void
             ## 
             def initialize()

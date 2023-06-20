@@ -6,6 +6,7 @@ require_relative '../../applications'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './home_realm_discovery_policies'
+require_relative './item/home_realm_discovery_policy_item_request_builder'
 
 module MicrosoftGraph
     module Applications
@@ -19,6 +20,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Applications::Item::HomeRealmDiscoveryPolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.application entity.
+                    ## @param home_realm_discovery_policy_id Unique identifier of the item
+                    ## @return a home_realm_discovery_policy_item_request_builder
+                    ## 
+                    def by_home_realm_discovery_policy_id(home_realm_discovery_policy_id)
+                        raise StandardError, 'home_realm_discovery_policy_id cannot be null' if home_realm_discovery_policy_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["homeRealmDiscoveryPolicy%2Did"] = home_realm_discovery_policy_id
+                        return MicrosoftGraph::Applications::Item::HomeRealmDiscoveryPolicies::Item::HomeRealmDiscoveryPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new HomeRealmDiscoveryPoliciesRequestBuilder and sets the default values.

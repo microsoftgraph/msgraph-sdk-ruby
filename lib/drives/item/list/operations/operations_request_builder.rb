@@ -7,6 +7,7 @@ require_relative '../../../drives'
 require_relative '../../item'
 require_relative '../list'
 require_relative './count/count_request_builder'
+require_relative './item/rich_long_running_operation_item_request_builder'
 require_relative './operations'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Drives::Item::List::Operations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the operations property of the microsoft.graph.list entity.
+                        ## @param rich_long_running_operation_id Unique identifier of the item
+                        ## @return a rich_long_running_operation_item_request_builder
+                        ## 
+                        def by_rich_long_running_operation_id(rich_long_running_operation_id)
+                            raise StandardError, 'rich_long_running_operation_id cannot be null' if rich_long_running_operation_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["richLongRunningOperation%2Did"] = rich_long_running_operation_id
+                            return MicrosoftGraph::Drives::Item::List::Operations::Item::RichLongRunningOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new OperationsRequestBuilder and sets the default values.

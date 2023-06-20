@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new resourceAccess and sets the default values.
+            ## Instantiates a new ResourceAccess and sets the default values.
             ## @return a void
             ## 
             def initialize()

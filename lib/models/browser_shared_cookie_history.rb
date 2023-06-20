@@ -11,16 +11,16 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The comment of the cookie
+            # The comment for the shared cookie.
             @comment
             ## 
-            # The name of the cookie
+            # The name of the cookie.
             @display_name
             ## 
-            # Boolean attribute that determines whether a cookie is  a host-only or domain cookie
+            # Controls whether a cookie is a host-only or domain cookie.
             @host_only
             ## 
-            # The URL of the cookie
+            # The URL of the cookie.
             @host_or_domain
             ## 
             # The lastModifiedBy property
@@ -29,13 +29,13 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
-            # The path of the cookie
+            # The path of the cookie.
             @path
             ## 
-            # The time the cookie was published
+            # The date and time when the cookie was last published.
             @published_date_time
             ## 
-            # Specifies how the cookies are shared between Microsoft Edge and Internet Explorer
+            # Specifies how the cookies are shared between Microsoft Edge and Internet Explorer. The possible values are: microsoftEdge, internetExplorer11, both, unknownFutureValue.
             @source_environment
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -53,14 +53,14 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Gets the comment property value. The comment of the cookie
+            ## Gets the comment property value. The comment for the shared cookie.
             ## @return a string
             ## 
             def comment
                 return @comment
             end
             ## 
-            ## Sets the comment property value. The comment of the cookie
+            ## Sets the comment property value. The comment for the shared cookie.
             ## @param value Value to set for the comment property.
             ## @return a void
             ## 
@@ -68,7 +68,7 @@ module MicrosoftGraph
                 @comment = value
             end
             ## 
-            ## Instantiates a new browserSharedCookieHistory and sets the default values.
+            ## Instantiates a new BrowserSharedCookieHistory and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -84,14 +84,14 @@ module MicrosoftGraph
                 return BrowserSharedCookieHistory.new
             end
             ## 
-            ## Gets the displayName property value. The name of the cookie
+            ## Gets the displayName property value. The name of the cookie.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. The name of the cookie
+            ## Sets the displayName property value. The name of the cookie.
             ## @param value Value to set for the display_name property.
             ## @return a void
             ## 
@@ -116,14 +116,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the hostOnly property value. Boolean attribute that determines whether a cookie is  a host-only or domain cookie
+            ## Gets the hostOnly property value. Controls whether a cookie is a host-only or domain cookie.
             ## @return a boolean
             ## 
             def host_only
                 return @host_only
             end
             ## 
-            ## Sets the hostOnly property value. Boolean attribute that determines whether a cookie is  a host-only or domain cookie
+            ## Sets the hostOnly property value. Controls whether a cookie is a host-only or domain cookie.
             ## @param value Value to set for the host_only property.
             ## @return a void
             ## 
@@ -131,14 +131,14 @@ module MicrosoftGraph
                 @host_only = value
             end
             ## 
-            ## Gets the hostOrDomain property value. The URL of the cookie
+            ## Gets the hostOrDomain property value. The URL of the cookie.
             ## @return a string
             ## 
             def host_or_domain
                 return @host_or_domain
             end
             ## 
-            ## Sets the hostOrDomain property value. The URL of the cookie
+            ## Sets the hostOrDomain property value. The URL of the cookie.
             ## @param value Value to set for the host_or_domain property.
             ## @return a void
             ## 
@@ -176,14 +176,14 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
-            ## Gets the path property value. The path of the cookie
+            ## Gets the path property value. The path of the cookie.
             ## @return a string
             ## 
             def path
                 return @path
             end
             ## 
-            ## Sets the path property value. The path of the cookie
+            ## Sets the path property value. The path of the cookie.
             ## @param value Value to set for the path property.
             ## @return a void
             ## 
@@ -191,14 +191,14 @@ module MicrosoftGraph
                 @path = value
             end
             ## 
-            ## Gets the publishedDateTime property value. The time the cookie was published
+            ## Gets the publishedDateTime property value. The date and time when the cookie was last published.
             ## @return a date_time
             ## 
             def published_date_time
                 return @published_date_time
             end
             ## 
-            ## Sets the publishedDateTime property value. The time the cookie was published
+            ## Sets the publishedDateTime property value. The date and time when the cookie was last published.
             ## @param value Value to set for the published_date_time property.
             ## @return a void
             ## 
@@ -224,14 +224,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the sourceEnvironment property value. Specifies how the cookies are shared between Microsoft Edge and Internet Explorer
+            ## Gets the sourceEnvironment property value. Specifies how the cookies are shared between Microsoft Edge and Internet Explorer. The possible values are: microsoftEdge, internetExplorer11, both, unknownFutureValue.
             ## @return a browser_shared_cookie_source_environment
             ## 
             def source_environment
                 return @source_environment
             end
             ## 
-            ## Sets the sourceEnvironment property value. Specifies how the cookies are shared between Microsoft Edge and Internet Explorer
+            ## Sets the sourceEnvironment property value. Specifies how the cookies are shared between Microsoft Edge and Internet Explorer. The possible values are: microsoftEdge, internetExplorer11, both, unknownFutureValue.
             ## @param value Value to set for the source_environment property.
             ## @return a void
             ## 

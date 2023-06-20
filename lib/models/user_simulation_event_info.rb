@@ -59,7 +59,7 @@ module MicrosoftGraph
                 @browser = value
             end
             ## 
-            ## Instantiates a new userSimulationEventInfo and sets the default values.
+            ## Instantiates a new UserSimulationEventInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()

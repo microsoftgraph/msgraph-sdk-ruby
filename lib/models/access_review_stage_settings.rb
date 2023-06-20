@@ -49,7 +49,7 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new accessReviewStageSettings and sets the default values.
+            ## Instantiates a new AccessReviewStageSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

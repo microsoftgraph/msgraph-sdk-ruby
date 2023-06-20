@@ -7,6 +7,7 @@ require_relative '../../agreements'
 require_relative '../item'
 require_relative './acceptances'
 require_relative './count/count_request_builder'
+require_relative './item/agreement_acceptance_item_request_builder'
 
 module MicrosoftGraph
     module Agreements
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Agreements::Item::Acceptances::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
+                    ## @param agreement_acceptance_id Unique identifier of the item
+                    ## @return a agreement_acceptance_item_request_builder
+                    ## 
+                    def by_agreement_acceptance_id(agreement_acceptance_id)
+                        raise StandardError, 'agreement_acceptance_id cannot be null' if agreement_acceptance_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["agreementAcceptance%2Did"] = agreement_acceptance_id
+                        return MicrosoftGraph::Agreements::Item::Acceptances::Item::AgreementAcceptanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AcceptancesRequestBuilder and sets the default values.

@@ -103,7 +103,7 @@ module MicrosoftGraph
                 @client_applications = value
             end
             ## 
-            ## Instantiates a new conditionalAccessConditionSet and sets the default values.
+            ## Instantiates a new ConditionalAccessConditionSet and sets the default values.
             ## @return a void
             ## 
             def initialize()

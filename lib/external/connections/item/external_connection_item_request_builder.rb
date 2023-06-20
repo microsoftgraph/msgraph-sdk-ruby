@@ -5,11 +5,8 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../external'
 require_relative '../connections'
 require_relative './groups/groups_request_builder'
-require_relative './groups/item/external_group_item_request_builder'
 require_relative './item'
-require_relative './items/item/external_item_item_request_builder'
 require_relative './items/items_request_builder'
-require_relative './operations/item/connection_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
 require_relative './schema/schema_request_builder'
 
@@ -51,7 +48,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/external/connections/{externalConnection%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property connections for external
+                    ## Deletes an externalConnection object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -65,7 +62,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Get connections from external
+                    ## Read the properties and relationships of an externalConnection object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of external_connection
                     ## 
@@ -79,40 +76,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ExternalConnection.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the groups property of the microsoft.graph.externalConnectors.externalConnection entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a external_group_item_request_builder
-                    ## 
-                    def groups_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["externalGroup%2Did"] = id
-                        return MicrosoftGraph::External::Connections::Item::Groups::Item::ExternalGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the items property of the microsoft.graph.externalConnectors.externalConnection entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a external_item_item_request_builder
-                    ## 
-                    def items_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["externalItem%2Did"] = id
-                        return MicrosoftGraph::External::Connections::Item::Items::Item::ExternalItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the operations property of the microsoft.graph.externalConnectors.externalConnection entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a connection_operation_item_request_builder
-                    ## 
-                    def operations_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["connectionOperation%2Did"] = id
-                        return MicrosoftGraph::External::Connections::Item::Operations::Item::ConnectionOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Update the navigation property connections in external
+                    ## Update the properties of an externalConnection object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of external_connection
@@ -128,7 +92,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ExternalConnection.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property connections for external
+                    ## Deletes an externalConnection object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -144,7 +108,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Get connections from external
+                    ## Read the properties and relationships of an externalConnection object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -162,7 +126,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property connections in external
+                    ## Update the properties of an externalConnection object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -183,7 +147,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get connections from external
+                    # Read the properties and relationships of an externalConnection object.
                     class ExternalConnectionItemRequestBuilderGetQueryParameters
                         
                         ## 

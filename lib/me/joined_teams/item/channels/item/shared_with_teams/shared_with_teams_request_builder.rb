@@ -9,6 +9,7 @@ require_relative '../../../item'
 require_relative '../../channels'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/shared_with_channel_team_info_item_request_builder'
 require_relative './shared_with_teams'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::SharedWithTeams::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
+                                ## @param shared_with_channel_team_info_id Unique identifier of the item
+                                ## @return a shared_with_channel_team_info_item_request_builder
+                                ## 
+                                def by_shared_with_channel_team_info_id(shared_with_channel_team_info_id)
+                                    raise StandardError, 'shared_with_channel_team_info_id cannot be null' if shared_with_channel_team_info_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["sharedWithChannelTeamInfo%2Did"] = shared_with_channel_team_info_id
+                                    return MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::SharedWithTeams::Item::SharedWithChannelTeamInfoItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new SharedWithTeamsRequestBuilder and sets the default values.

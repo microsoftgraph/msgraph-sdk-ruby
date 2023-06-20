@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new accessReviewScope and sets the default values.
+            ## Instantiates a new AccessReviewScope and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -8,6 +8,7 @@ require_relative '../../targeted_managed_app_configurations'
 require_relative '../item'
 require_relative './assignments'
 require_relative './count/count_request_builder'
+require_relative './item/targeted_managed_app_policy_assignment_item_request_builder'
 
 module MicrosoftGraph
     module DeviceAppManagement
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::Assignments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.
+                        ## @param targeted_managed_app_policy_assignment_id Unique identifier of the item
+                        ## @return a targeted_managed_app_policy_assignment_item_request_builder
+                        ## 
+                        def by_targeted_managed_app_policy_assignment_id(targeted_managed_app_policy_assignment_id)
+                            raise StandardError, 'targeted_managed_app_policy_assignment_id cannot be null' if targeted_managed_app_policy_assignment_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["targetedManagedAppPolicyAssignment%2Did"] = targeted_managed_app_policy_assignment_id
+                            return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::Assignments::Item::TargetedManagedAppPolicyAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new AssignmentsRequestBuilder and sets the default values.

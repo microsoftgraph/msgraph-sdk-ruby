@@ -8,6 +8,7 @@ require_relative '../../item'
 require_relative '../term_store'
 require_relative './count/count_request_builder'
 require_relative './groups'
+require_relative './item/group_item_request_builder'
 
 module MicrosoftGraph
     module Sites
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Sites::Item::TermStore::Groups::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
+                        ## @param group_id Unique identifier of the item
+                        ## @return a group_item_request_builder
+                        ## 
+                        def by_group_id(group_id)
+                            raise StandardError, 'group_id cannot be null' if group_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["group%2Did"] = group_id
+                            return MicrosoftGraph::Sites::Item::TermStore::Groups::Item::GroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new GroupsRequestBuilder and sets the default values.
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::GroupCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create a new group object in a term store.
+                        ## Create new navigation property to groups for sites
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of group
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create a new group object in a term store.
+                        ## Create new navigation property to groups for sites
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

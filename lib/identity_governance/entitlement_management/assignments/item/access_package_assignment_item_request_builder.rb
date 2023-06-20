@@ -64,7 +64,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## The assignment of an access package to a subject for a period of time.
+                        ## In Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of access_package_assignment
                         ## 
@@ -110,7 +110,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## The assignment of an access package to a subject for a period of time.
+                        ## In Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -149,7 +149,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The assignment of an access package to a subject for a period of time.
+                        # In Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignment object.
                         class AccessPackageAssignmentItemRequestBuilderGetQueryParameters
                             
                             ## 

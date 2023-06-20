@@ -8,6 +8,7 @@ require_relative '../../../cases'
 require_relative '../../ediscovery_cases'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/ediscovery_review_set_item_request_builder'
 require_relative './review_sets'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the reviewSets property of the microsoft.graph.security.ediscoveryCase entity.
+                            ## @param ediscovery_review_set_id Unique identifier of the item
+                            ## @return a ediscovery_review_set_item_request_builder
+                            ## 
+                            def by_ediscovery_review_set_id(ediscovery_review_set_id)
+                                raise StandardError, 'ediscovery_review_set_id cannot be null' if ediscovery_review_set_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["ediscoveryReviewSet%2Did"] = ediscovery_review_set_id
+                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::ReviewSets::Item::EdiscoveryReviewSetItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new ReviewSetsRequestBuilder and sets the default values.

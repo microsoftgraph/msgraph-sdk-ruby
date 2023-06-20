@@ -64,7 +64,7 @@ module MicrosoftGraph
                 @basis = value
             end
             ## 
-            ## Instantiates a new averageComparativeScore and sets the default values.
+            ## Instantiates a new AverageComparativeScore and sets the default values.
             ## @return a void
             ## 
             def initialize()

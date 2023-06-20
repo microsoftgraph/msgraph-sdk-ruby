@@ -1,0 +1,1 @@
+require_relative 'redirect_post_request_body'

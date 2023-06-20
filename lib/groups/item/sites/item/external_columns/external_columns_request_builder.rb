@@ -8,6 +8,7 @@ require_relative '../../sites'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './external_columns'
+require_relative './item/column_definition_item_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -23,6 +24,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Groups::Item::Sites::Item::ExternalColumns::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the externalColumns property of the microsoft.graph.site entity.
+                            ## @param column_definition_id Unique identifier of the item
+                            ## @return a column_definition_item_request_builder
+                            ## 
+                            def by_column_definition_id(column_definition_id)
+                                raise StandardError, 'column_definition_id cannot be null' if column_definition_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["columnDefinition%2Did"] = column_definition_id
+                                return MicrosoftGraph::Groups::Item::Sites::Item::ExternalColumns::Item::ColumnDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new ExternalColumnsRequestBuilder and sets the default values.

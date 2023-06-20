@@ -42,7 +42,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Get settings from me
+                ## Read the user and organization userSettings object.To learn how to update the properties of the userSettings object, see update user settings.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of user_settings
                 ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Get settings from me
+                ## Read the user and organization userSettings object.To learn how to update the properties of the userSettings object, see update user settings.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -127,7 +127,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get settings from me
+                # Read the user and organization userSettings object.To learn how to update the properties of the userSettings object, see update user settings.
                 class SettingsRequestBuilderGetQueryParameters
                     
                     ## 

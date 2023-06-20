@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_app_management'
 require_relative './count/count_request_builder'
 require_relative './ios_managed_app_protections'
+require_relative './item/ios_managed_app_protection_item_request_builder'
 
 module MicrosoftGraph
     module DeviceAppManagement
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceAppManagement::IosManagedAppProtections::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the iosManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+                ## @param ios_managed_app_protection_id Unique identifier of the item
+                ## @return a ios_managed_app_protection_item_request_builder
+                ## 
+                def by_ios_managed_app_protection_id(ios_managed_app_protection_id)
+                    raise StandardError, 'ios_managed_app_protection_id cannot be null' if ios_managed_app_protection_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["iosManagedAppProtection%2Did"] = ios_managed_app_protection_id
+                    return MicrosoftGraph::DeviceAppManagement::IosManagedAppProtections::Item::IosManagedAppProtectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new IosManagedAppProtectionsRequestBuilder and sets the default values.

@@ -7,6 +7,7 @@ require_relative '../../../device_management'
 require_relative '../../device_compliance_policies'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/device_compliance_scheduled_action_for_rule_item_request_builder'
 require_relative './scheduled_actions_for_rule'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::ScheduledActionsForRule::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceCompliancePolicy entity.
+                        ## @param device_compliance_scheduled_action_for_rule_id Unique identifier of the item
+                        ## @return a device_compliance_scheduled_action_for_rule_item_request_builder
+                        ## 
+                        def by_device_compliance_scheduled_action_for_rule_id(device_compliance_scheduled_action_for_rule_id)
+                            raise StandardError, 'device_compliance_scheduled_action_for_rule_id cannot be null' if device_compliance_scheduled_action_for_rule_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["deviceComplianceScheduledActionForRule%2Did"] = device_compliance_scheduled_action_for_rule_id
+                            return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::ScheduledActionsForRule::Item::DeviceComplianceScheduledActionForRuleItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new ScheduledActionsForRuleRequestBuilder and sets the default values.

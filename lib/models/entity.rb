@@ -108,6 +108,8 @@ module MicrosoftGraph
                             return AgreementFileVersion.new
                         when "#microsoft.graph.alert"
                             return Alert.new
+                        when "#microsoft.graph.allowedValue"
+                            return AllowedValue.new
                         when "#microsoft.graph.androidCompliancePolicy"
                             return AndroidCompliancePolicy.new
                         when "#microsoft.graph.androidCustomConfiguration"
@@ -168,6 +170,10 @@ module MicrosoftGraph
                             return AttackSimulationRoot.new
                         when "#microsoft.graph.attendanceRecord"
                             return AttendanceRecord.new
+                        when "#microsoft.graph.attributeMappingFunctionSchema"
+                            return AttributeMappingFunctionSchema.new
+                        when "#microsoft.graph.attributeSet"
+                            return AttributeSet.new
                         when "#microsoft.graph.audioRoutingGroup"
                             return AudioRoutingGroup.new
                         when "#microsoft.graph.auditEvent"
@@ -176,6 +182,8 @@ module MicrosoftGraph
                             return AuditLogRoot.new
                         when "#microsoft.graph.authentication"
                             return Authentication.new
+                        when "#microsoft.graph.authenticationCombinationConfiguration"
+                            return AuthenticationCombinationConfiguration.new
                         when "#microsoft.graph.authenticationContextClassReference"
                             return AuthenticationContextClassReference.new
                         when "#microsoft.graph.authenticationFlowsPolicy"
@@ -184,10 +192,16 @@ module MicrosoftGraph
                             return AuthenticationMethod.new
                         when "#microsoft.graph.authenticationMethodConfiguration"
                             return AuthenticationMethodConfiguration.new
+                        when "#microsoft.graph.authenticationMethodModeDetail"
+                            return AuthenticationMethodModeDetail.new
                         when "#microsoft.graph.authenticationMethodsPolicy"
                             return AuthenticationMethodsPolicy.new
                         when "#microsoft.graph.authenticationMethodTarget"
                             return AuthenticationMethodTarget.new
+                        when "#microsoft.graph.authenticationStrengthPolicy"
+                            return AuthenticationStrengthPolicy.new
+                        when "#microsoft.graph.authenticationStrengthRoot"
+                            return AuthenticationStrengthRoot.new
                         when "#microsoft.graph.authoredNote"
                             return AuthoredNote.new
                         when "#microsoft.graph.authorizationPolicy"
@@ -260,8 +274,6 @@ module MicrosoftGraph
                             return ChecklistItem.new
                         when "#microsoft.graph.claimsMappingPolicy"
                             return ClaimsMappingPolicy.new
-                        when "#microsoft.graph.cloudCommunications"
-                            return CloudCommunications.new
                         when "#microsoft.graph.columnDefinition"
                             return ColumnDefinition.new
                         when "#microsoft.graph.columnLink"
@@ -300,6 +312,8 @@ module MicrosoftGraph
                             return CrossTenantAccessPolicy.new
                         when "#microsoft.graph.crossTenantAccessPolicyConfigurationDefault"
                             return CrossTenantAccessPolicyConfigurationDefault.new
+                        when "#microsoft.graph.customSecurityAttributeDefinition"
+                            return CustomSecurityAttributeDefinition.new
                         when "#microsoft.graph.dataPolicyOperation"
                             return DataPolicyOperation.new
                         when "#microsoft.graph.defaultManagedAppProtection"
@@ -398,6 +412,8 @@ module MicrosoftGraph
                             return Directory.new
                         when "#microsoft.graph.directoryAudit"
                             return DirectoryAudit.new
+                        when "#microsoft.graph.directoryDefinition"
+                            return DirectoryDefinition.new
                         when "#microsoft.graph.directoryObject"
                             return DirectoryObject.new
                         when "#microsoft.graph.directoryObjectPartnerReference"
@@ -508,12 +524,16 @@ module MicrosoftGraph
                             return Fido2AuthenticationMethod.new
                         when "#microsoft.graph.fido2AuthenticationMethodConfiguration"
                             return Fido2AuthenticationMethodConfiguration.new
+                        when "#microsoft.graph.fido2CombinationConfiguration"
+                            return Fido2CombinationConfiguration.new
                         when "#microsoft.graph.fieldValueSet"
                             return FieldValueSet.new
                         when "#microsoft.graph.fileAssessmentRequest"
                             return FileAssessmentRequest.new
                         when "#microsoft.graph.fileAttachment"
                             return FileAttachment.new
+                        when "#microsoft.graph.filterOperatorSchema"
+                            return FilterOperatorSchema.new
                         when "#microsoft.graph.group"
                             return Group.new
                         when "#microsoft.graph.groupLifecyclePolicy"
@@ -964,6 +984,10 @@ module MicrosoftGraph
                             return SharedPCConfiguration.new
                         when "#microsoft.graph.sharedWithChannelTeamInfo"
                             return SharedWithChannelTeamInfo.new
+                        when "#microsoft.graph.sharepoint"
+                            return Sharepoint.new
+                        when "#microsoft.graph.sharepointSettings"
+                            return SharepointSettings.new
                         when "#microsoft.graph.shift"
                             return Shift.new
                         when "#microsoft.graph.shiftPreferences"
@@ -1012,6 +1036,14 @@ module MicrosoftGraph
                             return Subscription.new
                         when "#microsoft.graph.swapShiftsChangeRequest"
                             return SwapShiftsChangeRequest.new
+                        when "#microsoft.graph.synchronization"
+                            return Synchronization.new
+                        when "#microsoft.graph.synchronizationJob"
+                            return SynchronizationJob.new
+                        when "#microsoft.graph.synchronizationSchema"
+                            return SynchronizationSchema.new
+                        when "#microsoft.graph.synchronizationTemplate"
+                            return SynchronizationTemplate.new
                         when "#microsoft.graph.targetedManagedAppConfiguration"
                             return TargetedManagedAppConfiguration.new
                         when "#microsoft.graph.targetedManagedAppPolicyAssignment"

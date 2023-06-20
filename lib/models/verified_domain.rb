@@ -58,7 +58,7 @@ module MicrosoftGraph
                 @capabilities = value
             end
             ## 
-            ## Instantiates a new verifiedDomain and sets the default values.
+            ## Instantiates a new VerifiedDomain and sets the default values.
             ## @return a void
             ## 
             def initialize()

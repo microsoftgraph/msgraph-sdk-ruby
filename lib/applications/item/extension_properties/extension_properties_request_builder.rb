@@ -7,6 +7,7 @@ require_relative '../../applications'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './extension_properties'
+require_relative './item/extension_property_item_request_builder'
 
 module MicrosoftGraph
     module Applications
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Applications::Item::ExtensionProperties::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the extensionProperties property of the microsoft.graph.application entity.
+                    ## @param extension_property_id Unique identifier of the item
+                    ## @return a extension_property_item_request_builder
+                    ## 
+                    def by_extension_property_id(extension_property_id)
+                        raise StandardError, 'extension_property_id cannot be null' if extension_property_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["extensionProperty%2Did"] = extension_property_id
+                        return MicrosoftGraph::Applications::Item::ExtensionProperties::Item::ExtensionPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new ExtensionPropertiesRequestBuilder and sets the default values.

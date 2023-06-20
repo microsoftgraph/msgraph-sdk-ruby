@@ -32,7 +32,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/sites/{site%2Did}/permissions/{permission%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property permissions for sites
+                        ## Delete a permission object on a site.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -46,7 +46,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## The permissions associated with the site. Nullable.
+                        ## Retrieve the properties and relationships of a permission object on a site.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of permission
                         ## 
@@ -60,7 +60,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Permission.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the navigation property permissions in sites
+                        ## Update an application permission object on a site. 
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of permission
@@ -76,7 +76,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Permission.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property permissions for sites
+                        ## Delete a permission object on a site.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -92,7 +92,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## The permissions associated with the site. Nullable.
+                        ## Retrieve the properties and relationships of a permission object on a site.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -110,7 +110,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property permissions in sites
+                        ## Update an application permission object on a site. 
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -131,7 +131,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The permissions associated with the site. Nullable.
+                        # Retrieve the properties and relationships of a permission object on a site.
                         class PermissionItemRequestBuilderGetQueryParameters
                             
                             ## 

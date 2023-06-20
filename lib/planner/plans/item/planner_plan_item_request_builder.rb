@@ -5,10 +5,8 @@ require_relative '../../../models/planner_plan'
 require_relative '../../planner'
 require_relative '../plans'
 require_relative './buckets/buckets_request_builder'
-require_relative './buckets/item/planner_bucket_item_request_builder'
 require_relative './details/details_request_builder'
 require_relative './item'
-require_relative './tasks/item/planner_task_item_request_builder'
 require_relative './tasks/tasks_request_builder'
 
 module MicrosoftGraph
@@ -35,17 +33,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::Planner::Plans::Item::Tasks::TasksRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a planner_bucket_item_request_builder
-                    ## 
-                    def buckets_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["plannerBucket%2Did"] = id
-                        return MicrosoftGraph::Planner::Plans::Item::Buckets::Item::PlannerBucketItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -55,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/planner/plans/{plannerPlan%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property plans for planner
+                    ## Delete a plannerPlan object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -69,7 +56,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Read-only. Nullable. Returns a collection of the specified plans
+                    ## Retrieve the properties and relationships of a plannerplan object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of planner_plan
                     ## 
@@ -83,7 +70,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PlannerPlan.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property plans in planner
+                    ## Update the properties of a **plannerPlan** object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of planner_plan
@@ -99,18 +86,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PlannerPlan.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a planner_task_item_request_builder
-                    ## 
-                    def tasks_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["plannerTask%2Did"] = id
-                        return MicrosoftGraph::Planner::Plans::Item::Tasks::Item::PlannerTaskItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Delete navigation property plans for planner
+                    ## Delete a plannerPlan object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -126,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Read-only. Nullable. Returns a collection of the specified plans
+                    ## Retrieve the properties and relationships of a plannerplan object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -144,7 +120,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property plans in planner
+                    ## Update the properties of a **plannerPlan** object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -165,7 +141,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Read-only. Nullable. Returns a collection of the specified plans
+                    # Retrieve the properties and relationships of a plannerplan object.
                     class PlannerPlanItemRequestBuilderGetQueryParameters
                         
                         ## 

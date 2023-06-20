@@ -3,6 +3,7 @@ require_relative '../microsoft_graph'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/subscription'
 require_relative '../models/subscription_collection_response'
+require_relative './item/subscription_item_request_builder'
 require_relative './subscriptions'
 
 module MicrosoftGraph
@@ -11,6 +12,17 @@ module MicrosoftGraph
         # Provides operations to manage the collection of subscription entities.
         class SubscriptionsRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
             
+            ## 
+            ## Provides operations to manage the collection of subscription entities.
+            ## @param subscription_id Unique identifier of the item
+            ## @return a subscription_item_request_builder
+            ## 
+            def by_subscription_id(subscription_id)
+                raise StandardError, 'subscription_id cannot be null' if subscription_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["subscription%2Did"] = subscription_id
+                return MicrosoftGraph::Subscriptions::Item::SubscriptionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+            end
             ## 
             ## Instantiates a new SubscriptionsRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request
@@ -35,7 +47,7 @@ module MicrosoftGraph
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SubscriptionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph. See the table in the Permissions section for the list of resources that support subscribing to change notifications.  Some resources support the option to include encrypted resource data in change notifications. These resources include chatMessage, contact, event, message, and presence. For more information, see Set up change notifications that include resource data and Change notifications for Outlook resources in Microsoft Graph.
+            ## Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph. To identify the resources for which you can create subscriptions and the limitations on subscriptions, see Set up notifications for changes in resource data: Supported resources. Some resources support rich notifications, that is, notifications that include resource data. For more information about these resources, see Set up change notifications that include resource data: Supported resources.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of subscription
@@ -69,7 +81,7 @@ module MicrosoftGraph
                 return request_info
             end
             ## 
-            ## Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph. See the table in the Permissions section for the list of resources that support subscribing to change notifications.  Some resources support the option to include encrypted resource data in change notifications. These resources include chatMessage, contact, event, message, and presence. For more information, see Set up change notifications that include resource data and Change notifications for Outlook resources in Microsoft Graph.
+            ## Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph. To identify the resources for which you can create subscriptions and the limitations on subscriptions, see Set up notifications for changes in resource data: Supported resources. Some resources support rich notifications, that is, notifications that include resource data. For more information about these resources, see Set up change notifications that include resource data: Supported resources.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information

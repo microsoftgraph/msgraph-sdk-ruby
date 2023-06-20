@@ -73,7 +73,7 @@ module MicrosoftGraph
                 @background_color = value
             end
             ## 
-            ## Instantiates a new visualInfo and sets the default values.
+            ## Instantiates a new VisualInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()

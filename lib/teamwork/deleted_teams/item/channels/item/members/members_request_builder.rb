@@ -10,6 +10,7 @@ require_relative '../../channels'
 require_relative '../item'
 require_relative './add/add_request_builder'
 require_relative './count/count_request_builder'
+require_relative './item/conversation_member_item_request_builder'
 require_relative './members'
 
 module MicrosoftGraph
@@ -32,6 +33,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Teamwork::DeletedTeams::Item::Channels::Item::Members::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the members property of the microsoft.graph.channel entity.
+                                ## @param conversation_member_id Unique identifier of the item
+                                ## @return a conversation_member_item_request_builder
+                                ## 
+                                def by_conversation_member_id(conversation_member_id)
+                                    raise StandardError, 'conversation_member_id cannot be null' if conversation_member_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["conversationMember%2Did"] = conversation_member_id
+                                    return MicrosoftGraph::Teamwork::DeletedTeams::Item::Channels::Item::Members::Item::ConversationMemberItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new MembersRequestBuilder and sets the default values.
@@ -57,7 +69,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConversationMemberCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Add a conversationMember to a channel.
+                                ## Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of conversation_member
@@ -91,7 +103,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Add a conversationMember to a channel.
+                                ## Add a conversationMember to a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information

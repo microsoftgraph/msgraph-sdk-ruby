@@ -71,7 +71,7 @@ module MicrosoftGraph
                 @connecting_i_p = value
             end
             ## 
-            ## Instantiates a new messageSecurityState and sets the default values.
+            ## Instantiates a new MessageSecurityState and sets the default values.
             ## @return a void
             ## 
             def initialize()
