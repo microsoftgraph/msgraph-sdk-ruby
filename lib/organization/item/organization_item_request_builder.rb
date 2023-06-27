@@ -5,11 +5,9 @@ require_relative '../../models/organization'
 require_relative '../organization'
 require_relative './branding/branding_request_builder'
 require_relative './certificate_based_auth_configuration/certificate_based_auth_configuration_request_builder'
-require_relative './certificate_based_auth_configuration/item/certificate_based_auth_configuration_item_request_builder'
 require_relative './check_member_groups/check_member_groups_request_builder'
 require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './extensions/extensions_request_builder'
-require_relative './extensions/item/extension_item_request_builder'
 require_relative './get_member_groups/get_member_groups_request_builder'
 require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
@@ -69,17 +67,6 @@ module MicrosoftGraph
                     return MicrosoftGraph::Organization::Item::SetMobileDeviceManagementAuthority::SetMobileDeviceManagementAuthorityRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
-                ## Provides operations to manage the certificateBasedAuthConfiguration property of the microsoft.graph.organization entity.
-                ## @param id Unique identifier of the item
-                ## @return a certificate_based_auth_configuration_item_request_builder
-                ## 
-                def certificate_based_auth_configuration_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["certificateBasedAuthConfiguration%2Did"] = id
-                    return MicrosoftGraph::Organization::Item::CertificateBasedAuthConfiguration::Item::CertificateBasedAuthConfigurationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Instantiates a new OrganizationItemRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -103,18 +90,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Provides operations to manage the extensions property of the microsoft.graph.organization entity.
-                ## @param id Unique identifier of the item
-                ## @return a extension_item_request_builder
-                ## 
-                def extensions_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["extension%2Did"] = id
-                    return MicrosoftGraph::Organization::Item::Extensions::Item::ExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Get the properties and relationships of the currently authenticated organization. Since the **organization** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **organization** instance.
+                ## Read properties and relationships of the organization object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of organization
                 ## 
@@ -128,7 +104,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Organization.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Update the properties of the currently authenticated organization. In this case, `organization` is defined as a collection of exactly one record, and so its **ID** must be specified in the request.  The **ID** is also known as the **tenantId** of the organization.
+                ## Update the properties of a organization object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of organization
@@ -160,7 +136,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Get the properties and relationships of the currently authenticated organization. Since the **organization** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **organization** instance.
+                ## Read properties and relationships of the organization object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -178,7 +154,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Update the properties of the currently authenticated organization. In this case, `organization` is defined as a collection of exactly one record, and so its **ID** must be specified in the request.  The **ID** is also known as the **tenantId** of the organization.
+                ## Update the properties of a organization object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -199,7 +175,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get the properties and relationships of the currently authenticated organization. Since the **organization** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **organization** instance.
+                # Read properties and relationships of the organization object.
                 class OrganizationItemRequestBuilderGetQueryParameters
                     
                     ## 

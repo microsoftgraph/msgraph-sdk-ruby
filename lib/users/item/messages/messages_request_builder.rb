@@ -7,6 +7,7 @@ require_relative '../../users'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/message_item_request_builder'
 require_relative './messages'
 
 module MicrosoftGraph
@@ -28,16 +29,27 @@ module MicrosoftGraph
                         return MicrosoftGraph::Users::Item::Messages::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the messages property of the microsoft.graph.user entity.
+                    ## @param message_id Unique identifier of the item
+                    ## @return a message_item_request_builder
+                    ## 
+                    def by_message_id(message_id)
+                        raise StandardError, 'message_id cannot be null' if message_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["message%2Did"] = message_id
+                        return MicrosoftGraph::Users::Item::Messages::Item::MessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new MessagesRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
                     ## @return a void
                     ## 
                     def initialize(path_parameters, request_adapter)
-                        super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/messages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
+                        super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/messages{?includeHiddenMessages*,%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+                    ## The messages in a mailbox or folder. Read-only. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of message_collection_response
                     ## 
@@ -51,7 +63,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MessageCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:- Include an attachment to the **message**.- Update the draft later to add content to the **body** or change other message properties. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
+                    ## Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of message
@@ -67,7 +79,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Message.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+                    ## The messages in a mailbox or folder. Read-only. Nullable.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -85,7 +97,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Create a draft of a new message in either JSON or MIME format. When using JSON format, you can:- Include an attachment to the **message**.- Update the draft later to add content to the **body** or change other message properties. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.- /* Add any attachments and S/MIME properties to the MIME content. By default, this operation saves the draft in the Drafts folder. Send the draft message in a subsequent operation. Alternatively, send a new message in a single operation, or create a draft to forward, reply and reply-all to an existing message.
+                    ## Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -106,7 +118,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+                    # The messages in a mailbox or folder. Read-only. Nullable.
                     class MessagesRequestBuilderGetQueryParameters
                         
                         ## 
@@ -118,6 +130,9 @@ module MicrosoftGraph
                         ## 
                         # Filter items by property values
                         attr_accessor :filter
+                        ## 
+                        # Include Hidden Messages
+                        attr_accessor :include_hidden_messages
                         ## 
                         # Order items by property values
                         attr_accessor :orderby

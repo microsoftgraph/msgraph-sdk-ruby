@@ -51,7 +51,7 @@ module MicrosoftGraph
                 @apps = value
             end
             ## 
-            ## Instantiates a new iosHomeScreenFolderPage and sets the default values.
+            ## Instantiates a new IosHomeScreenFolderPage and sets the default values.
             ## @return a void
             ## 
             def initialize()

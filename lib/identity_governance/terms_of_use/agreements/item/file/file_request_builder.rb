@@ -7,7 +7,6 @@ require_relative '../../../terms_of_use'
 require_relative '../../agreements'
 require_relative '../item'
 require_relative './file'
-require_relative './localizations/item/agreement_file_localization_item_request_builder'
 require_relative './localizations/localizations_request_builder'
 
 module MicrosoftGraph
@@ -61,17 +60,6 @@ module MicrosoftGraph
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AgreementFile.create_from_discriminator_value(pn) }, error_mapping)
-                            end
-                            ## 
-                            ## Provides operations to manage the localizations property of the microsoft.graph.agreementFile entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a agreement_file_localization_item_request_builder
-                            ## 
-                            def localizations_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["agreementFileLocalization%2Did"] = id
-                                return MicrosoftGraph::IdentityGovernance::TermsOfUse::Agreements::Item::File::Localizations::Item::AgreementFileLocalizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Update the navigation property file in identityGovernance

@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration%2Did}/assignments/{managedDeviceMobileAppConfigurationAssignment%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property assignments for deviceAppManagement
+                            ## Deletes a managedDeviceMobileAppConfigurationAssignment.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## The list of group assignemenets for app configration.
+                            ## Read properties and relationships of the managedDeviceMobileAppConfigurationAssignment object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of managed_device_mobile_app_configuration_assignment
                             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedDeviceMobileAppConfigurationAssignment.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property assignments in deviceAppManagement
+                            ## Update the properties of a managedDeviceMobileAppConfigurationAssignment object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of managed_device_mobile_app_configuration_assignment
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedDeviceMobileAppConfigurationAssignment.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property assignments for deviceAppManagement
+                            ## Deletes a managedDeviceMobileAppConfigurationAssignment.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## The list of group assignemenets for app configration.
+                            ## Read properties and relationships of the managedDeviceMobileAppConfigurationAssignment object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property assignments in deviceAppManagement
+                            ## Update the properties of a managedDeviceMobileAppConfigurationAssignment object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # The list of group assignemenets for app configration.
+                            # Read properties and relationships of the managedDeviceMobileAppConfigurationAssignment object.
                             class ManagedDeviceMobileAppConfigurationAssignmentItemRequestBuilderGetQueryParameters
                                 
                                 ## 

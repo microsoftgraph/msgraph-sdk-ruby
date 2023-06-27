@@ -9,6 +9,7 @@ require_relative '../item'
 require_relative './contacts'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/contact_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -28,6 +29,17 @@ module MicrosoftGraph
                         # Provides operations to call the delta method.
                         def delta()
                             return MicrosoftGraph::Me::ContactFolders::Item::Contacts::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
+                        ## @param contact_id Unique identifier of the item
+                        ## @return a contact_item_request_builder
+                        ## 
+                        def by_contact_id(contact_id)
+                            raise StandardError, 'contact_id cannot be null' if contact_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["contact%2Did"] = contact_id
+                            return MicrosoftGraph::Me::ContactFolders::Item::Contacts::Item::ContactItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new ContactsRequestBuilder and sets the default values.

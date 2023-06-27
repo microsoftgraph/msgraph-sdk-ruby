@@ -11,6 +11,7 @@ require_relative '../../searches'
 require_relative '../item'
 require_relative './additional_sources'
 require_relative './count/count_request_builder'
+require_relative './item/data_source_item_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     # Provides operations to count the resources in the collection.
                                     def count()
                                         return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::AdditionalSources::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to manage the additionalSources property of the microsoft.graph.security.ediscoverySearch entity.
+                                    ## @param data_source_id Unique identifier of the item
+                                    ## @return a data_source_item_request_builder
+                                    ## 
+                                    def by_data_source_id(data_source_id)
+                                        raise StandardError, 'data_source_id cannot be null' if data_source_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["dataSource%2Did"] = data_source_id
+                                        return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Searches::Item::AdditionalSources::Item::DataSourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new AdditionalSourcesRequestBuilder and sets the default values.

@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../education'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/education_user_item_request_builder'
 require_relative './users'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                 # Provides operations to call the delta method.
                 def delta()
                     return MicrosoftGraph::Education::Users::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the users property of the microsoft.graph.educationRoot entity.
+                ## @param education_user_id Unique identifier of the item
+                ## @return a education_user_item_request_builder
+                ## 
+                def by_education_user_id(education_user_id)
+                    raise StandardError, 'education_user_id cannot be null' if education_user_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["educationUser%2Did"] = education_user_id
+                    return MicrosoftGraph::Education::Users::Item::EducationUserItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new UsersRequestBuilder and sets the default values.

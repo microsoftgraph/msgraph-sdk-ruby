@@ -7,6 +7,7 @@ require_relative '../identity'
 require_relative './available_provider_types/available_provider_types_request_builder'
 require_relative './count/count_request_builder'
 require_relative './identity_providers'
+require_relative './item/identity_provider_base_item_request_builder'
 
 module MicrosoftGraph
     module Identity
@@ -24,6 +25,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Identity::IdentityProviders::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.
+                ## @param identity_provider_base_id Unique identifier of the item
+                ## @return a identity_provider_base_item_request_builder
+                ## 
+                def by_identity_provider_base_id(identity_provider_base_id)
+                    raise StandardError, 'identity_provider_base_id cannot be null' if identity_provider_base_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["identityProviderBase%2Did"] = identity_provider_base_id
+                    return MicrosoftGraph::Identity::IdentityProviders::Item::IdentityProviderBaseItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new IdentityProvidersRequestBuilder and sets the default values.

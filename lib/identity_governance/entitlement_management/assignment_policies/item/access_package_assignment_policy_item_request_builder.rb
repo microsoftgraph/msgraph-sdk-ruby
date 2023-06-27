@@ -8,7 +8,6 @@ require_relative '../assignment_policies'
 require_relative './access_package/access_package_request_builder'
 require_relative './catalog/catalog_request_builder'
 require_relative './item'
-require_relative './questions/item/access_package_question_item_request_builder'
 require_relative './questions/questions_request_builder'
 
 module MicrosoftGraph
@@ -45,7 +44,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/assignmentPolicies/{accessPackageAssignmentPolicy%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property assignmentPolicies for identityGovernance
+                        ## In Azure AD entitlement management, delete an accessPackageAssignmentPolicy.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -59,7 +58,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
+                        ## In Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of access_package_assignment_policy
                         ## 
@@ -89,18 +88,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageAssignmentPolicy.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Provides operations to manage the questions property of the microsoft.graph.accessPackageAssignmentPolicy entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a access_package_question_item_request_builder
-                        ## 
-                        def questions_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["accessPackageQuestion%2Did"] = id
-                            return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentPolicies::Item::Questions::Item::AccessPackageQuestionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Delete navigation property assignmentPolicies for identityGovernance
+                        ## In Azure AD entitlement management, delete an accessPackageAssignmentPolicy.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -116,7 +104,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
+                        ## In Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -155,7 +143,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.
+                        # In Azure AD entitlement management, retrieve the properties and relationships of an accessPackageAssignmentPolicy object.
                         class AccessPackageAssignmentPolicyItemRequestBuilderGetQueryParameters
                             
                             ## 

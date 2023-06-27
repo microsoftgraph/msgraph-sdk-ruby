@@ -5,6 +5,7 @@ require_relative '../../models/subject_rights_request'
 require_relative '../../models/subject_rights_request_collection_response'
 require_relative '../privacy'
 require_relative './count/count_request_builder'
+require_relative './item/subject_rights_request_item_request_builder'
 require_relative './subject_rights_requests'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Privacy::SubjectRightsRequests::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.
+                ## @param subject_rights_request_id Unique identifier of the item
+                ## @return a subject_rights_request_item_request_builder
+                ## 
+                def by_subject_rights_request_id(subject_rights_request_id)
+                    raise StandardError, 'subject_rights_request_id cannot be null' if subject_rights_request_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["subjectRightsRequest%2Did"] = subject_rights_request_id
+                    return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::SubjectRightsRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new SubjectRightsRequestsRequestBuilder and sets the default values.

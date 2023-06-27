@@ -64,7 +64,7 @@ module MicrosoftGraph
                 @allowed_member_types = value
             end
             ## 
-            ## Instantiates a new appRole and sets the default values.
+            ## Instantiates a new AppRole and sets the default values.
             ## @return a void
             ## 
             def initialize()

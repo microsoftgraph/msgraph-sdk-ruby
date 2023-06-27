@@ -84,7 +84,7 @@ module MicrosoftGraph
                 @app_config_key_value = value
             end
             ## 
-            ## Instantiates a new appConfigurationSettingItem and sets the default values.
+            ## Instantiates a new AppConfigurationSettingItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

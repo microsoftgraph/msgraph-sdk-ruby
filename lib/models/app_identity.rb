@@ -55,7 +55,7 @@ module MicrosoftGraph
                 @app_id = value
             end
             ## 
-            ## Instantiates a new appIdentity and sets the default values.
+            ## Instantiates a new AppIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -8,6 +8,7 @@ require_relative '../../booking_businesses'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './custom_questions'
+require_relative './item/booking_custom_question_item_request_builder'
 
 module MicrosoftGraph
     module Solutions
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Solutions::BookingBusinesses::Item::CustomQuestions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the customQuestions property of the microsoft.graph.bookingBusiness entity.
+                        ## @param booking_custom_question_id Unique identifier of the item
+                        ## @return a booking_custom_question_item_request_builder
+                        ## 
+                        def by_booking_custom_question_id(booking_custom_question_id)
+                            raise StandardError, 'booking_custom_question_id cannot be null' if booking_custom_question_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["bookingCustomQuestion%2Did"] = booking_custom_question_id
+                            return MicrosoftGraph::Solutions::BookingBusinesses::Item::CustomQuestions::Item::BookingCustomQuestionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new CustomQuestionsRequestBuilder and sets the default values.

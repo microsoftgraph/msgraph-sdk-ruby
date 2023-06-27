@@ -40,7 +40,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Navigation property to deployment summary of the configuration.
+                        ## Read properties and relationships of the managedAppPolicyDeploymentSummary object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of managed_app_policy_deployment_summary
                         ## 
@@ -54,7 +54,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedAppPolicyDeploymentSummary.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the navigation property deploymentSummary in deviceAppManagement
+                        ## Update the properties of a managedAppPolicyDeploymentSummary object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of managed_app_policy_deployment_summary
@@ -86,7 +86,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Navigation property to deployment summary of the configuration.
+                        ## Read properties and relationships of the managedAppPolicyDeploymentSummary object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -104,7 +104,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property deploymentSummary in deviceAppManagement
+                        ## Update the properties of a managedAppPolicyDeploymentSummary object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -125,7 +125,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Navigation property to deployment summary of the configuration.
+                        # Read properties and relationships of the managedAppPolicyDeploymentSummary object.
                         class DeploymentSummaryRequestBuilderGetQueryParameters
                             
                             ## 

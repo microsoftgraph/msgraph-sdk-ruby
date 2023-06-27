@@ -36,7 +36,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## The policy that controls Azure AD authorization settings.
+                ## Retrieve the properties of an authorizationPolicy object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of authorization_policy
                 ## 
@@ -82,7 +82,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## The policy that controls Azure AD authorization settings.
+                ## Retrieve the properties of an authorizationPolicy object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -121,7 +121,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # The policy that controls Azure AD authorization settings.
+                # Retrieve the properties of an authorizationPolicy object.
                 class AuthorizationPolicyRequestBuilderGetQueryParameters
                     
                     ## 

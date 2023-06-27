@@ -67,7 +67,7 @@ module MicrosoftGraph
                 @change_key = value
             end
             ## 
-            ## Instantiates a new reminder and sets the default values.
+            ## Instantiates a new Reminder and sets the default values.
             ## @return a void
             ## 
             def initialize()

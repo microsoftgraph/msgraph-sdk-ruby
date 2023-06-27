@@ -19,7 +19,6 @@ require_relative './image_with_width_with_height/image_with_width_with_height_re
 require_relative './image_with_width_with_height_with_fitting_mode/image_with_width_with_height_with_fitting_mode_request_builder'
 require_relative './item'
 require_relative './legend/legend_request_builder'
-require_relative './series/item/workbook_chart_series_item_request_builder'
 require_relative './series/series_request_builder'
 require_relative './set_data/set_data_request_builder'
 require_relative './set_position/set_position_request_builder'
@@ -100,7 +99,7 @@ module MicrosoftGraph
                                                 super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/charts/{workbookChart%2Did}{?%24select,%24expand}")
                                             end
                                             ## 
-                                            ## Delete navigation property charts for drives
+                                            ## Deletes the chart object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of void
                                             ## 
@@ -114,7 +113,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                             end
                                             ## 
-                                            ## Returns collection of charts that are part of the worksheet. Read-only.
+                                            ## Retrieve the properties and relationships of chart object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of workbook_chart
                                             ## 
@@ -161,7 +160,7 @@ module MicrosoftGraph
                                                 return ImageWithWidthWithHeightWithFittingModeRequestBuilder.new(@path_parameters, @request_adapter, fittingMode, height, width)
                                             end
                                             ## 
-                                            ## Update the navigation property charts in drives
+                                            ## Update the properties of chart object.
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of workbook_chart
@@ -177,18 +176,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookChart.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Provides operations to manage the series property of the microsoft.graph.workbookChart entity.
-                                            ## @param id Unique identifier of the item
-                                            ## @return a workbook_chart_series_item_request_builder
-                                            ## 
-                                            def series_by_id(id)
-                                                raise StandardError, 'id cannot be null' if id.nil?
-                                                url_tpl_params = @path_parameters.clone
-                                                url_tpl_params["workbookChartSeries%2Did"] = id
-                                                return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Series::Item::WorkbookChartSeriesItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                            end
-                                            ## 
-                                            ## Delete navigation property charts for drives
+                                            ## Deletes the chart object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -204,7 +192,7 @@ module MicrosoftGraph
                                                 return request_info
                                             end
                                             ## 
-                                            ## Returns collection of charts that are part of the worksheet. Read-only.
+                                            ## Retrieve the properties and relationships of chart object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -222,7 +210,7 @@ module MicrosoftGraph
                                                 return request_info
                                             end
                                             ## 
-                                            ## Update the navigation property charts in drives
+                                            ## Update the properties of chart object.
                                             ## @param body The request body
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
@@ -243,7 +231,7 @@ module MicrosoftGraph
                                             end
 
                                             ## 
-                                            # Returns collection of charts that are part of the worksheet. Read-only.
+                                            # Retrieve the properties and relationships of chart object.
                                             class WorkbookChartItemRequestBuilderGetQueryParameters
                                                 
                                                 ## 

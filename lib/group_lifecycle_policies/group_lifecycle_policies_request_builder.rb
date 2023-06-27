@@ -5,6 +5,7 @@ require_relative '../models/group_lifecycle_policy_collection_response'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './count/count_request_builder'
 require_relative './group_lifecycle_policies'
+require_relative './item/group_lifecycle_policy_item_request_builder'
 
 module MicrosoftGraph
     module GroupLifecyclePolicies
@@ -16,6 +17,17 @@ module MicrosoftGraph
             # Provides operations to count the resources in the collection.
             def count()
                 return MicrosoftGraph::GroupLifecyclePolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            ## Provides operations to manage the collection of groupLifecyclePolicy entities.
+            ## @param group_lifecycle_policy_id Unique identifier of the item
+            ## @return a group_lifecycle_policy_item_request_builder
+            ## 
+            def by_group_lifecycle_policy_id(group_lifecycle_policy_id)
+                raise StandardError, 'group_lifecycle_policy_id cannot be null' if group_lifecycle_policy_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["groupLifecyclePolicy%2Did"] = group_lifecycle_policy_id
+                return MicrosoftGraph::GroupLifecyclePolicies::Item::GroupLifecyclePolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new GroupLifecyclePoliciesRequestBuilder and sets the default values.

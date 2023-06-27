@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The name of the external source this resources was generated from.
             @external_source_detail
             ## 
-            ## Instantiates a new educationOrganization and sets the default values.
+            ## Instantiates a new EducationOrganization and sets the default values.
             ## @return a void
             ## 
             def initialize()

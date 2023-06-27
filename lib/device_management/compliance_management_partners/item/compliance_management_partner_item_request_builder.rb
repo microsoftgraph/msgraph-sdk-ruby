@@ -24,7 +24,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/complianceManagementPartners/{complianceManagementPartner%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property complianceManagementPartners for deviceManagement
+                    ## Deletes a complianceManagementPartner.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -38,7 +38,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The list of Compliance Management Partners configured by the tenant.
+                    ## Read properties and relationships of the complianceManagementPartner object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of compliance_management_partner
                     ## 
@@ -52,7 +52,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ComplianceManagementPartner.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property complianceManagementPartners in deviceManagement
+                    ## Update the properties of a complianceManagementPartner object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of compliance_management_partner
@@ -68,7 +68,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ComplianceManagementPartner.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property complianceManagementPartners for deviceManagement
+                    ## Deletes a complianceManagementPartner.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -84,7 +84,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The list of Compliance Management Partners configured by the tenant.
+                    ## Read properties and relationships of the complianceManagementPartner object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property complianceManagementPartners in deviceManagement
+                    ## Update the properties of a complianceManagementPartner object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -123,7 +123,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The list of Compliance Management Partners configured by the tenant.
+                    # Read properties and relationships of the complianceManagementPartner object.
                     class ComplianceManagementPartnerItemRequestBuilderGetQueryParameters
                         
                         ## 

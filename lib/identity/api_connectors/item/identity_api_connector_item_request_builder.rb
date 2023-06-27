@@ -30,7 +30,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/identity/apiConnectors/{identityApiConnector%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property apiConnectors for identity
+                    ## Delete an identityApiConnector object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -44,7 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Represents entry point for API connectors.
+                    ## Read the properties of an identityApiConnector object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of identity_api_connector
                     ## 
@@ -58,7 +58,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityApiConnector.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property apiConnectors in identity
+                    ## Update the properties of an identityApiConnector object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of identity_api_connector
@@ -74,7 +74,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityApiConnector.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property apiConnectors for identity
+                    ## Delete an identityApiConnector object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -90,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Represents entry point for API connectors.
+                    ## Read the properties of an identityApiConnector object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -108,7 +108,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property apiConnectors in identity
+                    ## Update the properties of an identityApiConnector object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -129,7 +129,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Represents entry point for API connectors.
+                    # Read the properties of an identityApiConnector object.
                     class IdentityApiConnectorItemRequestBuilderGetQueryParameters
                         
                         ## 

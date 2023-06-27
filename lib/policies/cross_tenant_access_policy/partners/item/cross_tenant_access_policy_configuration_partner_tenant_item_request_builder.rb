@@ -5,6 +5,7 @@ require_relative '../../../../models/o_data_errors/o_data_error'
 require_relative '../../../policies'
 require_relative '../../cross_tenant_access_policy'
 require_relative '../partners'
+require_relative './identity_synchronization/identity_synchronization_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -17,6 +18,11 @@ module MicrosoftGraph
                     class CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                         
                         ## 
+                        # Provides operations to manage the identitySynchronization property of the microsoft.graph.crossTenantAccessPolicyConfigurationPartner entity.
+                        def identity_synchronization()
+                            return MicrosoftGraph::Policies::CrossTenantAccessPolicy::Partners::Item::IdentitySynchronization::IdentitySynchronizationRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -26,7 +32,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner%2DtenantId}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property partners for policies
+                        ## Delete a partner-specific configuration in a cross-tenant access policy. If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -40,7 +46,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Defines partner-specific configurations for external Azure Active Directory organizations.
+                        ## Read the properties and relationships of a partner-specific configuration.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of cross_tenant_access_policy_configuration_partner
                         ## 
@@ -54,7 +60,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyConfigurationPartner.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the navigation property partners in policies
+                        ## Update the properties of a partner-specific configuration.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of cross_tenant_access_policy_configuration_partner
@@ -70,7 +76,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyConfigurationPartner.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property partners for policies
+                        ## Delete a partner-specific configuration in a cross-tenant access policy. If a configuration includes a user synchronization policy, you must first delete the user synchronization policy before you can delete the partner-specific configuration.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -86,7 +92,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Defines partner-specific configurations for external Azure Active Directory organizations.
+                        ## Read the properties and relationships of a partner-specific configuration.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -104,7 +110,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property partners in policies
+                        ## Update the properties of a partner-specific configuration.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -125,7 +131,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Defines partner-specific configurations for external Azure Active Directory organizations.
+                        # Read the properties and relationships of a partner-specific configuration.
                         class CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilderGetQueryParameters
                             
                             ## 

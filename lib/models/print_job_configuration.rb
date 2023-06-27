@@ -115,7 +115,7 @@ module MicrosoftGraph
                 @color_mode = value
             end
             ## 
-            ## Instantiates a new printJobConfiguration and sets the default values.
+            ## Instantiates a new PrintJobConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

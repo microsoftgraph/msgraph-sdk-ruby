@@ -10,19 +10,19 @@ module MicrosoftGraph
             # Indicates whether a user can join the tenant by email validation.
             @allow_email_verified_users_to_join_organization
             ## 
-            # Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
+            # Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more details, see allowInvitesFrom values.
             @allow_invites_from
             ## 
-            # The allowUserConsentForRiskyApps property
+            # Indicates whether user consent for risky apps is allowed. We recommend to keep this as false. Default value is false.
             @allow_user_consent_for_risky_apps
             ## 
             # Indicates whether users can sign up for email based subscriptions.
             @allowed_to_sign_up_email_based_subscriptions
             ## 
-            # Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
+            # Indicates whether users can use the Self-Serve Password Reset feature on the tenant.
             @allowed_to_use_s_s_p_r
             ## 
-            # To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+            # To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure Active Directory Connect or Microsoft Graph.
             @block_msol_power_shell
             ## 
             # The defaultUserRolePermissions property
@@ -46,14 +46,14 @@ module MicrosoftGraph
                 @allow_email_verified_users_to_join_organization = value
             end
             ## 
-            ## Gets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
+            ## Gets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more details, see allowInvitesFrom values.
             ## @return a allow_invites_from
             ## 
             def allow_invites_from
                 return @allow_invites_from
             end
             ## 
-            ## Sets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
+            ## Sets the allowInvitesFrom property value. Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more details, see allowInvitesFrom values.
             ## @param value Value to set for the allow_invites_from property.
             ## @return a void
             ## 
@@ -61,14 +61,14 @@ module MicrosoftGraph
                 @allow_invites_from = value
             end
             ## 
-            ## Gets the allowUserConsentForRiskyApps property value. The allowUserConsentForRiskyApps property
+            ## Gets the allowUserConsentForRiskyApps property value. Indicates whether user consent for risky apps is allowed. We recommend to keep this as false. Default value is false.
             ## @return a boolean
             ## 
             def allow_user_consent_for_risky_apps
                 return @allow_user_consent_for_risky_apps
             end
             ## 
-            ## Sets the allowUserConsentForRiskyApps property value. The allowUserConsentForRiskyApps property
+            ## Sets the allowUserConsentForRiskyApps property value. Indicates whether user consent for risky apps is allowed. We recommend to keep this as false. Default value is false.
             ## @param value Value to set for the allow_user_consent_for_risky_apps property.
             ## @return a void
             ## 
@@ -91,14 +91,14 @@ module MicrosoftGraph
                 @allowed_to_sign_up_email_based_subscriptions = value
             end
             ## 
-            ## Gets the allowedToUseSSPR property value. Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
+            ## Gets the allowedToUseSSPR property value. Indicates whether users can use the Self-Serve Password Reset feature on the tenant.
             ## @return a boolean
             ## 
             def allowed_to_use_s_s_p_r
                 return @allowed_to_use_s_s_p_r
             end
             ## 
-            ## Sets the allowedToUseSSPR property value. Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
+            ## Sets the allowedToUseSSPR property value. Indicates whether users can use the Self-Serve Password Reset feature on the tenant.
             ## @param value Value to set for the allowed_to_use_s_s_p_r property.
             ## @return a void
             ## 
@@ -106,14 +106,14 @@ module MicrosoftGraph
                 @allowed_to_use_s_s_p_r = value
             end
             ## 
-            ## Gets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+            ## Gets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure Active Directory Connect or Microsoft Graph.
             ## @return a boolean
             ## 
             def block_msol_power_shell
                 return @block_msol_power_shell
             end
             ## 
-            ## Sets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+            ## Sets the blockMsolPowerShell property value. To disable the use of MSOL PowerShell, set this property to true. This also disables user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure Active Directory Connect or Microsoft Graph.
             ## @param value Value to set for the block_msol_power_shell property.
             ## @return a void
             ## 

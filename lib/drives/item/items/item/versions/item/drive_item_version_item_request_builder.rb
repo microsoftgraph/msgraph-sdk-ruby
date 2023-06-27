@@ -56,7 +56,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+                                ## Retrieve the metadata for a specific version of a DriveItem.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of drive_item_version
                                 ## 
@@ -102,7 +102,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+                                ## Retrieve the metadata for a specific version of a DriveItem.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -141,7 +141,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # The list of previous versions of the item. For more info, see [getting previous versions][]. Read-only. Nullable.
+                                # Retrieve the metadata for a specific version of a DriveItem.
                                 class DriveItemVersionItemRequestBuilderGetQueryParameters
                                     
                                     ## 

@@ -8,7 +8,6 @@ require_relative '../../../plans'
 require_relative '../../item'
 require_relative '../buckets'
 require_relative './item'
-require_relative './tasks/item/planner_task_item_request_builder'
 require_relative './tasks/tasks_request_builder'
 
 module MicrosoftGraph
@@ -79,17 +78,6 @@ module MicrosoftGraph
                                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PlannerBucket.create_from_discriminator_value(pn) }, error_mapping)
-                                end
-                                ## 
-                                ## Provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a planner_task_item_request_builder
-                                ## 
-                                def tasks_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["plannerTask%2Did"] = id
-                                    return MicrosoftGraph::Me::Planner::Plans::Item::Buckets::Item::Tasks::Item::PlannerTaskItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Delete navigation property buckets for me

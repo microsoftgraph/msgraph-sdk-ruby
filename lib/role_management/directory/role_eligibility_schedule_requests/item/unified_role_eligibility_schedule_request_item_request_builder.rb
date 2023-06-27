@@ -76,7 +76,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Requests for role eligibilities for principals through PIM.
+                        ## In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of unified_role_eligibility_schedule_request
                         ## 
@@ -122,7 +122,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Requests for role eligibilities for principals through PIM.
+                        ## In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -161,7 +161,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Requests for role eligibilities for principals through PIM.
+                        # In PIM, read the details of a request for for a role eligibility request made through the unifiedRoleEligibilityScheduleRequest object.
                         class UnifiedRoleEligibilityScheduleRequestItemRequestBuilderGetQueryParameters
                             
                             ## 

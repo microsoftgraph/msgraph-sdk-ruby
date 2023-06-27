@@ -196,7 +196,7 @@ module MicrosoftGraph
                 @channel_index = value
             end
             ## 
-            ## Instantiates a new teleconferenceDeviceMediaQuality and sets the default values.
+            ## Instantiates a new TeleconferenceDeviceMediaQuality and sets the default values.
             ## @return a void
             ## 
             def initialize()

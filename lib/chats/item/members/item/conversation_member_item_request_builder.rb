@@ -26,7 +26,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/chats/{chat%2Did}/members/{conversationMember%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property members for chats
+                        ## Remove a conversationMember from a chat.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -40,7 +40,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## A collection of all the members in the chat. Nullable.
+                        ## Retrieve a conversationMember from a chat.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of conversation_member
                         ## 
@@ -70,7 +70,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConversationMember.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property members for chats
+                        ## Remove a conversationMember from a chat.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -86,7 +86,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## A collection of all the members in the chat. Nullable.
+                        ## Retrieve a conversationMember from a chat.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -125,7 +125,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # A collection of all the members in the chat. Nullable.
+                        # Retrieve a conversationMember from a chat.
                         class ConversationMemberItemRequestBuilderGetQueryParameters
                             
                             ## 

@@ -11,6 +11,7 @@ require_relative '../../../user_consent_requests'
 require_relative '../../item'
 require_relative '../approval'
 require_relative './count/count_request_builder'
+require_relative './item/approval_stage_item_request_builder'
 require_relative './stages'
 
 module MicrosoftGraph
@@ -30,6 +31,17 @@ module MicrosoftGraph
                                         # Provides operations to count the resources in the collection.
                                         def count()
                                             return MicrosoftGraph::IdentityGovernance::AppConsent::AppConsentRequests::Item::UserConsentRequests::Item::Approval::Stages::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
+                                        ## Provides operations to manage the stages property of the microsoft.graph.approval entity.
+                                        ## @param approval_stage_id Unique identifier of the item
+                                        ## @return a approval_stage_item_request_builder
+                                        ## 
+                                        def by_approval_stage_id(approval_stage_id)
+                                            raise StandardError, 'approval_stage_id cannot be null' if approval_stage_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["approvalStage%2Did"] = approval_stage_id
+                                            return MicrosoftGraph::IdentityGovernance::AppConsent::AppConsentRequests::Item::UserConsentRequests::Item::Approval::Stages::Item::ApprovalStageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                         end
                                         ## 
                                         ## Instantiates a new StagesRequestBuilder and sets the default values.

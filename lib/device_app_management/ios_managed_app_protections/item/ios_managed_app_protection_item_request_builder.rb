@@ -5,7 +5,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_app_management'
 require_relative '../ios_managed_app_protections'
 require_relative './apps/apps_request_builder'
-require_relative './apps/item/managed_mobile_app_item_request_builder'
+require_relative './assignments/assignments_request_builder'
 require_relative './deployment_summary/deployment_summary_request_builder'
 require_relative './item'
 
@@ -23,20 +23,14 @@ module MicrosoftGraph
                         return MicrosoftGraph::DeviceAppManagement::IosManagedAppProtections::Item::Apps::AppsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppProtection entity.
+                    def assignments()
+                        return MicrosoftGraph::DeviceAppManagement::IosManagedAppProtections::Item::Assignments::AssignmentsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Provides operations to manage the deploymentSummary property of the microsoft.graph.iosManagedAppProtection entity.
                     def deployment_summary()
                         return MicrosoftGraph::DeviceAppManagement::IosManagedAppProtections::Item::DeploymentSummary::DeploymentSummaryRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the apps property of the microsoft.graph.iosManagedAppProtection entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a managed_mobile_app_item_request_builder
-                    ## 
-                    def apps_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["managedMobileApp%2Did"] = id
-                        return MicrosoftGraph::DeviceAppManagement::IosManagedAppProtections::Item::Apps::Item::ManagedMobileAppItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new IosManagedAppProtectionItemRequestBuilder and sets the default values.
@@ -48,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceAppManagement/iosManagedAppProtections/{iosManagedAppProtection%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property iosManagedAppProtections for deviceAppManagement
+                    ## Deletes a iosManagedAppProtection.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -62,7 +56,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## iOS managed app policies.
+                    ## Read properties and relationships of the iosManagedAppProtection object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of ios_managed_app_protection
                     ## 
@@ -76,7 +70,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IosManagedAppProtection.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property iosManagedAppProtections in deviceAppManagement
+                    ## Update the properties of a iosManagedAppProtection object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of ios_managed_app_protection
@@ -92,7 +86,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IosManagedAppProtection.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property iosManagedAppProtections for deviceAppManagement
+                    ## Deletes a iosManagedAppProtection.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -108,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## iOS managed app policies.
+                    ## Read properties and relationships of the iosManagedAppProtection object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -126,7 +120,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property iosManagedAppProtections in deviceAppManagement
+                    ## Update the properties of a iosManagedAppProtection object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -147,7 +141,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # iOS managed app policies.
+                    # Read properties and relationships of the iosManagedAppProtection object.
                     class IosManagedAppProtectionItemRequestBuilderGetQueryParameters
                         
                         ## 

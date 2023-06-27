@@ -37,6 +37,12 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
+            # The recommendationInsightSettings property
+            @recommendation_insight_settings
+            ## 
+            # The recommendationLookBackDuration property
+            @recommendation_look_back_duration
+            ## 
             # Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
             @recommendations_enabled
             ## 
@@ -166,6 +172,8 @@ module MicrosoftGraph
                     "justificationRequiredOnApproval" => lambda {|n| @justification_required_on_approval = n.get_boolean_value() },
                     "mailNotificationsEnabled" => lambda {|n| @mail_notifications_enabled = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "recommendationInsightSettings" => lambda {|n| @recommendation_insight_settings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessReviewRecommendationInsightSetting.create_from_discriminator_value(pn) }) },
+                    "recommendationLookBackDuration" => lambda {|n| @recommendation_look_back_duration = n.get_duration_value() },
                     "recommendationsEnabled" => lambda {|n| @recommendations_enabled = n.get_boolean_value() },
                     "recurrence" => lambda {|n| @recurrence = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PatternedRecurrence.create_from_discriminator_value(pn) }) },
                     "reminderNotificationsEnabled" => lambda {|n| @reminder_notifications_enabled = n.get_boolean_value() },
@@ -232,6 +240,36 @@ module MicrosoftGraph
                 @odata_type = value
             end
             ## 
+            ## Gets the recommendationInsightSettings property value. The recommendationInsightSettings property
+            ## @return a access_review_recommendation_insight_setting
+            ## 
+            def recommendation_insight_settings
+                return @recommendation_insight_settings
+            end
+            ## 
+            ## Sets the recommendationInsightSettings property value. The recommendationInsightSettings property
+            ## @param value Value to set for the recommendation_insight_settings property.
+            ## @return a void
+            ## 
+            def recommendation_insight_settings=(value)
+                @recommendation_insight_settings = value
+            end
+            ## 
+            ## Gets the recommendationLookBackDuration property value. The recommendationLookBackDuration property
+            ## @return a microsoft_kiota_abstractions::_i_s_o_duration
+            ## 
+            def recommendation_look_back_duration
+                return @recommendation_look_back_duration
+            end
+            ## 
+            ## Sets the recommendationLookBackDuration property value. The recommendationLookBackDuration property
+            ## @param value Value to set for the recommendation_look_back_duration property.
+            ## @return a void
+            ## 
+            def recommendation_look_back_duration=(value)
+                @recommendation_look_back_duration = value
+            end
+            ## 
             ## Gets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
             ## @return a boolean
             ## 
@@ -292,6 +330,8 @@ module MicrosoftGraph
                 writer.write_boolean_value("justificationRequiredOnApproval", @justification_required_on_approval)
                 writer.write_boolean_value("mailNotificationsEnabled", @mail_notifications_enabled)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_collection_of_object_values("recommendationInsightSettings", @recommendation_insight_settings)
+                writer.write_duration_value("recommendationLookBackDuration", @recommendation_look_back_duration)
                 writer.write_boolean_value("recommendationsEnabled", @recommendations_enabled)
                 writer.write_object_value("recurrence", @recurrence)
                 writer.write_boolean_value("reminderNotificationsEnabled", @reminder_notifications_enabled)

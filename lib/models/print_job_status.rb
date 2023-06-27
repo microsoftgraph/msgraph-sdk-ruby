@@ -40,7 +40,7 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new printJobStatus and sets the default values.
+            ## Instantiates a new PrintJobStatus and sets the default values.
             ## @return a void
             ## 
             def initialize()

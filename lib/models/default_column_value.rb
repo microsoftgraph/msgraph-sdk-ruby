@@ -10,13 +10,13 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The formula used to compute the default value for this column.
+            # The formula used to compute the default value for the column.
             @formula
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The direct value to use as the default value for this column.
+            # The direct value to use as the default value for the column.
             @value
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -50,14 +50,14 @@ module MicrosoftGraph
                 return DefaultColumnValue.new
             end
             ## 
-            ## Gets the formula property value. The formula used to compute the default value for this column.
+            ## Gets the formula property value. The formula used to compute the default value for the column.
             ## @return a string
             ## 
             def formula
                 return @formula
             end
             ## 
-            ## Sets the formula property value. The formula used to compute the default value for this column.
+            ## Sets the formula property value. The formula used to compute the default value for the column.
             ## @param value Value to set for the formula property.
             ## @return a void
             ## 
@@ -103,14 +103,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the value property value. The direct value to use as the default value for this column.
+            ## Gets the value property value. The direct value to use as the default value for the column.
             ## @return a string
             ## 
             def value
                 return @value
             end
             ## 
-            ## Sets the value property value. The direct value to use as the default value for this column.
+            ## Sets the value property value. The direct value to use as the default value for the column.
             ## @param value Value to set for the value property.
             ## @return a void
             ## 

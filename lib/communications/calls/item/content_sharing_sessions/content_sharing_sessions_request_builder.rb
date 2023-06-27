@@ -8,6 +8,7 @@ require_relative '../../calls'
 require_relative '../item'
 require_relative './content_sharing_sessions'
 require_relative './count/count_request_builder'
+require_relative './item/content_sharing_session_item_request_builder'
 
 module MicrosoftGraph
     module Communications
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Communications::Calls::Item::ContentSharingSessions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the contentSharingSessions property of the microsoft.graph.call entity.
+                        ## @param content_sharing_session_id Unique identifier of the item
+                        ## @return a content_sharing_session_item_request_builder
+                        ## 
+                        def by_content_sharing_session_id(content_sharing_session_id)
+                            raise StandardError, 'content_sharing_session_id cannot be null' if content_sharing_session_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["contentSharingSession%2Did"] = content_sharing_session_id
+                            return MicrosoftGraph::Communications::Calls::Item::ContentSharingSessions::Item::ContentSharingSessionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new ContentSharingSessionsRequestBuilder and sets the default values.

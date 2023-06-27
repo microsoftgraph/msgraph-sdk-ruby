@@ -52,7 +52,7 @@ module MicrosoftGraph
                 @bucket_definition = value
             end
             ## 
-            ## Instantiates a new aggregationOption and sets the default values.
+            ## Instantiates a new AggregationOption and sets the default values.
             ## @return a void
             ## 
             def initialize()

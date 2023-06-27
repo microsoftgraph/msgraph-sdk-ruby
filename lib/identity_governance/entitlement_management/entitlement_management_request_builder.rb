@@ -4,19 +4,12 @@ require_relative '../../models/entitlement_management'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../identity_governance'
 require_relative './access_package_assignment_approvals/access_package_assignment_approvals_request_builder'
-require_relative './access_package_assignment_approvals/item/approval_item_request_builder'
 require_relative './access_packages/access_packages_request_builder'
-require_relative './access_packages/item/access_package_item_request_builder'
 require_relative './assignment_policies/assignment_policies_request_builder'
-require_relative './assignment_policies/item/access_package_assignment_policy_item_request_builder'
 require_relative './assignment_requests/assignment_requests_request_builder'
-require_relative './assignment_requests/item/access_package_assignment_request_item_request_builder'
 require_relative './assignments/assignments_request_builder'
-require_relative './assignments/item/access_package_assignment_item_request_builder'
 require_relative './catalogs/catalogs_request_builder'
-require_relative './catalogs/item/access_package_catalog_item_request_builder'
 require_relative './connected_organizations/connected_organizations_request_builder'
-require_relative './connected_organizations/item/connected_organization_item_request_builder'
 require_relative './entitlement_management'
 require_relative './settings/settings_request_builder'
 
@@ -66,83 +59,6 @@ module MicrosoftGraph
                 # Provides operations to manage the settings property of the microsoft.graph.entitlementManagement entity.
                 def settings()
                     return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Settings::SettingsRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the accessPackageAssignmentApprovals property of the microsoft.graph.entitlementManagement entity.
-                ## @param id Unique identifier of the item
-                ## @return a approval_item_request_builder
-                ## 
-                def access_package_assignment_approvals_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["approval%2Did"] = id
-                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackageAssignmentApprovals::Item::ApprovalItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.
-                ## @param id Unique identifier of the item
-                ## @return a access_package_item_request_builder
-                ## 
-                def access_packages_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["accessPackage%2Did"] = id
-                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackages::Item::AccessPackageItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the assignmentPolicies property of the microsoft.graph.entitlementManagement entity.
-                ## @param id Unique identifier of the item
-                ## @return a access_package_assignment_policy_item_request_builder
-                ## 
-                def assignment_policies_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["accessPackageAssignmentPolicy%2Did"] = id
-                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentPolicies::Item::AccessPackageAssignmentPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.
-                ## @param id Unique identifier of the item
-                ## @return a access_package_assignment_request_item_request_builder
-                ## 
-                def assignment_requests_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["accessPackageAssignmentRequest%2Did"] = id
-                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentRequests::Item::AccessPackageAssignmentRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the assignments property of the microsoft.graph.entitlementManagement entity.
-                ## @param id Unique identifier of the item
-                ## @return a access_package_assignment_item_request_builder
-                ## 
-                def assignments_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["accessPackageAssignment%2Did"] = id
-                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Assignments::Item::AccessPackageAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the catalogs property of the microsoft.graph.entitlementManagement entity.
-                ## @param id Unique identifier of the item
-                ## @return a access_package_catalog_item_request_builder
-                ## 
-                def catalogs_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["accessPackageCatalog%2Did"] = id
-                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Catalogs::Item::AccessPackageCatalogItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.
-                ## @param id Unique identifier of the item
-                ## @return a connected_organization_item_request_builder
-                ## 
-                def connected_organizations_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["connectedOrganization%2Did"] = id
-                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::ConnectedOrganizations::Item::ConnectedOrganizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new EntitlementManagementRequestBuilder and sets the default values.

@@ -7,7 +7,6 @@ require_relative '../../../managed_e_books'
 require_relative '../../item'
 require_relative '../user_state_summary'
 require_relative './device_states/device_states_request_builder'
-require_relative './device_states/item/device_install_state_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -35,7 +34,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/userStateSummary/{userInstallStateSummary%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property userStateSummary for deviceAppManagement
+                            ## Deletes a userInstallStateSummary.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -49,18 +48,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Provides operations to manage the deviceStates property of the microsoft.graph.userInstallStateSummary entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a device_install_state_item_request_builder
-                            ## 
-                            def device_states_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["deviceInstallState%2Did"] = id
-                                return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::UserStateSummary::Item::DeviceStates::Item::DeviceInstallStateItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
-                            ## The list of installation states for this eBook.
+                            ## Read properties and relationships of the userInstallStateSummary object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of user_install_state_summary
                             ## 
@@ -74,7 +62,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserInstallStateSummary.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property userStateSummary in deviceAppManagement
+                            ## Update the properties of a userInstallStateSummary object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of user_install_state_summary
@@ -90,7 +78,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserInstallStateSummary.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property userStateSummary for deviceAppManagement
+                            ## Deletes a userInstallStateSummary.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,7 +94,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## The list of installation states for this eBook.
+                            ## Read properties and relationships of the userInstallStateSummary object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -124,7 +112,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property userStateSummary in deviceAppManagement
+                            ## Update the properties of a userInstallStateSummary object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -145,7 +133,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # The list of installation states for this eBook.
+                            # Read properties and relationships of the userInstallStateSummary object.
                             class UserInstallStateSummaryItemRequestBuilderGetQueryParameters
                                 
                                 ## 

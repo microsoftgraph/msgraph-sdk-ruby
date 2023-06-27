@@ -7,15 +7,12 @@ require_relative '../../../classes'
 require_relative '../../item'
 require_relative '../assignments'
 require_relative './categories/categories_request_builder'
-require_relative './categories/item/education_category_item_request_builder'
 require_relative './item'
 require_relative './publish/publish_request_builder'
-require_relative './resources/item/education_assignment_resource_item_request_builder'
 require_relative './resources/resources_request_builder'
 require_relative './rubric/rubric_request_builder'
 require_relative './set_up_feedback_resources_folder/set_up_feedback_resources_folder_request_builder'
 require_relative './set_up_resources_folder/set_up_resources_folder_request_builder'
-require_relative './submissions/item/education_submission_item_request_builder'
 require_relative './submissions/submissions_request_builder'
 
 module MicrosoftGraph
@@ -64,17 +61,6 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::SubmissionsRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
-                            ## Gets an item from the MicrosoftGraph.education.classes.item.assignments.item.categories.item collection
-                            ## @param id Unique identifier of the item
-                            ## @return a education_category_item_request_builder
-                            ## 
-                            def categories_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["educationCategory%2Did"] = id
-                                return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Categories::Item::EducationCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
                             ## Instantiates a new EducationAssignmentItemRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -84,7 +70,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property assignments for education
+                            ## Delete an existing assignment. Only teachers within a class can delete assignments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -98,7 +84,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## All assignments associated with this class. Nullable.
+                            ## Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of education_assignment
                             ## 
@@ -112,7 +98,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationAssignment.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property assignments in education
+                            ## Update an educationAssignment object.  Only teachers can perform this action.  Alternatively, request to change the status of an **assignment** with publish action. Don't use a PATCH operation for this purpose.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of education_assignment
@@ -128,29 +114,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationAssignment.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a education_assignment_resource_item_request_builder
-                            ## 
-                            def resources_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["educationAssignmentResource%2Did"] = id
-                                return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Resources::Item::EducationAssignmentResourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
-                            ## Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a education_submission_item_request_builder
-                            ## 
-                            def submissions_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["educationSubmission%2Did"] = id
-                                return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::EducationSubmissionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
-                            ## Delete navigation property assignments for education
+                            ## Delete an existing assignment. Only teachers within a class can delete assignments.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -166,7 +130,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## All assignments associated with this class. Nullable.
+                            ## Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -184,7 +148,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property assignments in education
+                            ## Update an educationAssignment object.  Only teachers can perform this action.  Alternatively, request to change the status of an **assignment** with publish action. Don't use a PATCH operation for this purpose.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -205,7 +169,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # All assignments associated with this class. Nullable.
+                            # Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class.
                             class EducationAssignmentItemRequestBuilderGetQueryParameters
                                 
                                 ## 

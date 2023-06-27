@@ -7,6 +7,7 @@ require_relative '../../../communications'
 require_relative '../../calls'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/comms_operation_item_request_builder'
 require_relative './operations'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Communications::Calls::Item::Operations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the operations property of the microsoft.graph.call entity.
+                        ## @param comms_operation_id Unique identifier of the item
+                        ## @return a comms_operation_item_request_builder
+                        ## 
+                        def by_comms_operation_id(comms_operation_id)
+                            raise StandardError, 'comms_operation_id cannot be null' if comms_operation_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["commsOperation%2Did"] = comms_operation_id
+                            return MicrosoftGraph::Communications::Calls::Item::Operations::Item::CommsOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new OperationsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/communications/calls/{call%2Did}/operations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Get operations from communications
+                        ## Get the status of an operation that adds the large gallery view to a call.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of comms_operation_collection_response
                         ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CommsOperation.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Get operations from communications
+                        ## Get the status of an operation that adds the large gallery view to a call.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get operations from communications
+                        # Get the status of an operation that adds the large gallery view to a call.
                         class OperationsRequestBuilderGetQueryParameters
                             
                             ## 

@@ -52,7 +52,7 @@ module MicrosoftGraph
                 @alias_escaped = value
             end
             ## 
-            ## Instantiates a new driveRecipient and sets the default values.
+            ## Instantiates a new DriveRecipient and sets the default values.
             ## @return a void
             ## 
             def initialize()

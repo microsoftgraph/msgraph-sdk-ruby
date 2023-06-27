@@ -7,6 +7,7 @@ require_relative '../../../information_protection'
 require_relative '../../threat_assessment_requests'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/threat_assessment_result_item_request_builder'
 require_relative './results'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::InformationProtection::ThreatAssessmentRequests::Item::Results::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.
+                        ## @param threat_assessment_result_id Unique identifier of the item
+                        ## @return a threat_assessment_result_item_request_builder
+                        ## 
+                        def by_threat_assessment_result_id(threat_assessment_result_id)
+                            raise StandardError, 'threat_assessment_result_id cannot be null' if threat_assessment_result_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["threatAssessmentResult%2Did"] = threat_assessment_result_id
+                            return MicrosoftGraph::InformationProtection::ThreatAssessmentRequests::Item::Results::Item::ThreatAssessmentResultItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new ResultsRequestBuilder and sets the default values.

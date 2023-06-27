@@ -52,7 +52,7 @@ module MicrosoftGraph
                 @application = value
             end
             ## 
-            ## Instantiates a new identitySet and sets the default values.
+            ## Instantiates a new IdentitySet and sets the default values.
             ## @return a void
             ## 
             def initialize()
