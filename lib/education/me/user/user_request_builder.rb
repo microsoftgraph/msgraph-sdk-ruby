@@ -4,6 +4,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/user'
 require_relative '../../education'
 require_relative '../me'
+require_relative './mailbox_settings/mailbox_settings_request_builder'
 require_relative './user'
 
 module MicrosoftGraph
@@ -14,6 +15,11 @@ module MicrosoftGraph
                 # Provides operations to manage the user property of the microsoft.graph.educationUser entity.
                 class UserRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
+                    ## 
+                    # The mailboxSettings property
+                    def mailbox_settings()
+                        return MicrosoftGraph::Education::Me::User::MailboxSettings::MailboxSettingsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     ## Instantiates a new UserRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request

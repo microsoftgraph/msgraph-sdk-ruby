@@ -5,7 +5,6 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_management'
 require_relative '../device_compliance_policy_setting_state_summaries'
 require_relative './device_compliance_setting_states/device_compliance_setting_states_request_builder'
-require_relative './device_compliance_setting_states/item/device_compliance_setting_state_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -31,7 +30,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
+                    ## Deletes a deviceCompliancePolicySettingStateSummary.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -45,18 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the deviceComplianceSettingStates property of the microsoft.graph.deviceCompliancePolicySettingStateSummary entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a device_compliance_setting_state_item_request_builder
-                    ## 
-                    def device_compliance_setting_states_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["deviceComplianceSettingState%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicySettingStateSummaries::Item::DeviceComplianceSettingStates::Item::DeviceComplianceSettingStateItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## The summary states of compliance policy settings for this account.
+                    ## Read properties and relationships of the deviceCompliancePolicySettingStateSummary object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of device_compliance_policy_setting_state_summary
                     ## 
@@ -70,7 +58,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceCompliancePolicySettingStateSummary.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
+                    ## Update the properties of a deviceCompliancePolicySettingStateSummary object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of device_compliance_policy_setting_state_summary
@@ -86,7 +74,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceCompliancePolicySettingStateSummary.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
+                    ## Deletes a deviceCompliancePolicySettingStateSummary.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The summary states of compliance policy settings for this account.
+                    ## Read properties and relationships of the deviceCompliancePolicySettingStateSummary object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -120,7 +108,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
+                    ## Update the properties of a deviceCompliancePolicySettingStateSummary object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -141,7 +129,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The summary states of compliance policy settings for this account.
+                    # Read properties and relationships of the deviceCompliancePolicySettingStateSummary object.
                     class DeviceCompliancePolicySettingStateSummaryItemRequestBuilderGetQueryParameters
                         
                         ## 

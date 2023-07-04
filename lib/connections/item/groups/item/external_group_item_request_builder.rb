@@ -6,7 +6,6 @@ require_relative '../../../connections'
 require_relative '../../item'
 require_relative '../groups'
 require_relative './item'
-require_relative './members/item/identity_item_request_builder'
 require_relative './members/members_request_builder'
 
 module MicrosoftGraph
@@ -33,7 +32,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/connections/{externalConnection%2Did}/groups/{externalGroup%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property groups for connections
+                        ## Delete an externalGroup object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -47,7 +46,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Get groups from connections
+                        ## Get an externalGroup object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of external_group
                         ## 
@@ -61,18 +60,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ExternalGroup.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Provides operations to manage the members property of the microsoft.graph.externalConnectors.externalGroup entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a identity_item_request_builder
-                        ## 
-                        def members_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["identity%2Did"] = id
-                            return MicrosoftGraph::Connections::Item::Groups::Item::Members::Item::IdentityItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Update the navigation property groups in connections
+                        ## Update the properties of an externalGroup object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of external_group
@@ -88,7 +76,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ExternalGroup.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property groups for connections
+                        ## Delete an externalGroup object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -104,7 +92,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Get groups from connections
+                        ## Get an externalGroup object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -122,7 +110,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property groups in connections
+                        ## Update the properties of an externalGroup object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -143,7 +131,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get groups from connections
+                        # Get an externalGroup object.
                         class ExternalGroupItemRequestBuilderGetQueryParameters
                             
                             ## 

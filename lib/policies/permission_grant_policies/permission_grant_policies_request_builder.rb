@@ -5,6 +5,7 @@ require_relative '../../models/permission_grant_policy'
 require_relative '../../models/permission_grant_policy_collection_response'
 require_relative '../policies'
 require_relative './count/count_request_builder'
+require_relative './item/permission_grant_policy_item_request_builder'
 require_relative './permission_grant_policies'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Policies::PermissionGrantPolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.
+                ## @param permission_grant_policy_id Unique identifier of the item
+                ## @return a permission_grant_policy_item_request_builder
+                ## 
+                def by_permission_grant_policy_id(permission_grant_policy_id)
+                    raise StandardError, 'permission_grant_policy_id cannot be null' if permission_grant_policy_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["permissionGrantPolicy%2Did"] = permission_grant_policy_id
+                    return MicrosoftGraph::Policies::PermissionGrantPolicies::Item::PermissionGrantPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new PermissionGrantPoliciesRequestBuilder and sets the default values.

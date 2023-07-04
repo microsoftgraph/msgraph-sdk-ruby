@@ -4,6 +4,7 @@ require_relative './models'
 require_relative './security/alert'
 require_relative './security/cases_root'
 require_relative './security/incident'
+require_relative './security/threat_intelligence'
 require_relative './security/triggers_root'
 require_relative './security/trigger_types_root'
 
@@ -32,6 +33,9 @@ module MicrosoftGraph
             ## 
             # The secureScores property
             @secure_scores
+            ## 
+            # The threatIntelligence property
+            @threat_intelligence
             ## 
             # The triggerTypes property
             @trigger_types
@@ -127,6 +131,7 @@ module MicrosoftGraph
                     "incidents" => lambda {|n| @incidents = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Security::Incident.create_from_discriminator_value(pn) }) },
                     "secureScoreControlProfiles" => lambda {|n| @secure_score_control_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecureScoreControlProfile.create_from_discriminator_value(pn) }) },
                     "secureScores" => lambda {|n| @secure_scores = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecureScore.create_from_discriminator_value(pn) }) },
+                    "threatIntelligence" => lambda {|n| @threat_intelligence = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Security::ThreatIntelligence.create_from_discriminator_value(pn) }) },
                     "triggerTypes" => lambda {|n| @trigger_types = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Security::TriggerTypesRoot.create_from_discriminator_value(pn) }) },
                     "triggers" => lambda {|n| @triggers = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Security::TriggersRoot.create_from_discriminator_value(pn) }) },
                 })
@@ -191,8 +196,24 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("incidents", @incidents)
                 writer.write_collection_of_object_values("secureScoreControlProfiles", @secure_score_control_profiles)
                 writer.write_collection_of_object_values("secureScores", @secure_scores)
+                writer.write_object_value("threatIntelligence", @threat_intelligence)
                 writer.write_object_value("triggerTypes", @trigger_types)
                 writer.write_object_value("triggers", @triggers)
+            end
+            ## 
+            ## Gets the threatIntelligence property value. The threatIntelligence property
+            ## @return a threat_intelligence
+            ## 
+            def threat_intelligence
+                return @threat_intelligence
+            end
+            ## 
+            ## Sets the threatIntelligence property value. The threatIntelligence property
+            ## @param value Value to set for the threat_intelligence property.
+            ## @return a void
+            ## 
+            def threat_intelligence=(value)
+                @threat_intelligence = value
             end
             ## 
             ## Gets the triggerTypes property value. The triggerTypes property

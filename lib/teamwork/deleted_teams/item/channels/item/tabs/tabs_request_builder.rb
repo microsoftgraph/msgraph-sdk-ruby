@@ -9,6 +9,7 @@ require_relative '../../../item'
 require_relative '../../channels'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/teams_tab_item_request_builder'
 require_relative './tabs'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Teamwork::DeletedTeams::Item::Channels::Item::Tabs::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the tabs property of the microsoft.graph.channel entity.
+                                ## @param teams_tab_id Unique identifier of the item
+                                ## @return a teams_tab_item_request_builder
+                                ## 
+                                def by_teams_tab_id(teams_tab_id)
+                                    raise StandardError, 'teams_tab_id cannot be null' if teams_tab_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["teamsTab%2Did"] = teams_tab_id
+                                    return MicrosoftGraph::Teamwork::DeletedTeams::Item::Channels::Item::Tabs::Item::TeamsTabItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new TabsRequestBuilder and sets the default values.
@@ -51,7 +63,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamsTabCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Create new navigation property to tabs for teamwork
+                                ## Adds (pins) a tab to the specified channel within a team. The corresponding app must already be installed in the team.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of teams_tab
@@ -85,7 +97,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Create new navigation property to tabs for teamwork
+                                ## Adds (pins) a tab to the specified channel within a team. The corresponding app must already be installed in the team.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information

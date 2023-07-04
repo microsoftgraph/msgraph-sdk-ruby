@@ -31,7 +31,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/incompatibleGroups/{group%2Did}/$ref{?%40id*}")
                                     end
                                     ## 
-                                    ## Delete ref of navigation property incompatibleGroups for identityGovernance
+                                    ## Remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -45,7 +45,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Delete ref of navigation property incompatibleGroups for identityGovernance
+                                    ## Remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -63,7 +63,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Delete ref of navigation property incompatibleGroups for identityGovernance
+                                    # Remove a group from the list of groups that have been marked as incompatible on an accessPackage.  
                                     class RefRequestBuilderDeleteQueryParameters
                                         
                                         ## 

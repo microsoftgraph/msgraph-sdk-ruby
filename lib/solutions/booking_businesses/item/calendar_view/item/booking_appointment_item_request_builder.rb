@@ -156,10 +156,14 @@ module MicrosoftGraph
                                 def get_query_parameter(original_name)
                                     raise StandardError, 'original_name cannot be null' if original_name.nil?
                                     case original_name
+                                        when "end_escaped"
+                                            return "end"
                                         when "expand"
                                             return "%24expand"
                                         when "select"
                                             return "%24select"
+                                        when "start"
+                                            return "start"
                                         else
                                             return original_name
                                     end

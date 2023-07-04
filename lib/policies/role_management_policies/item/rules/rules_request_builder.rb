@@ -7,6 +7,7 @@ require_relative '../../../policies'
 require_relative '../../role_management_policies'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/unified_role_management_policy_rule_item_request_builder'
 require_relative './rules'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Policies::RoleManagementPolicies::Item::Rules::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the rules property of the microsoft.graph.unifiedRoleManagementPolicy entity.
+                        ## @param unified_role_management_policy_rule_id Unique identifier of the item
+                        ## @return a unified_role_management_policy_rule_item_request_builder
+                        ## 
+                        def by_unified_role_management_policy_rule_id(unified_role_management_policy_rule_id)
+                            raise StandardError, 'unified_role_management_policy_rule_id cannot be null' if unified_role_management_policy_rule_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["unifiedRoleManagementPolicyRule%2Did"] = unified_role_management_policy_rule_id
+                            return MicrosoftGraph::Policies::RoleManagementPolicies::Item::Rules::Item::UnifiedRoleManagementPolicyRuleItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new RulesRequestBuilder and sets the default values.

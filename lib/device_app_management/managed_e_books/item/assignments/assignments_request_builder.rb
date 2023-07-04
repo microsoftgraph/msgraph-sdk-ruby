@@ -8,6 +8,7 @@ require_relative '../../managed_e_books'
 require_relative '../item'
 require_relative './assignments'
 require_relative './count/count_request_builder'
+require_relative './item/managed_e_book_assignment_item_request_builder'
 
 module MicrosoftGraph
     module DeviceAppManagement
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::Assignments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the assignments property of the microsoft.graph.managedEBook entity.
+                        ## @param managed_e_book_assignment_id Unique identifier of the item
+                        ## @return a managed_e_book_assignment_item_request_builder
+                        ## 
+                        def by_managed_e_book_assignment_id(managed_e_book_assignment_id)
+                            raise StandardError, 'managed_e_book_assignment_id cannot be null' if managed_e_book_assignment_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["managedEBookAssignment%2Did"] = managed_e_book_assignment_id
+                            return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::Assignments::Item::ManagedEBookAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new AssignmentsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/assignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## The list of assignments for this eBook.
+                        ## List properties and relationships of the managedEBookAssignment objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of managed_e_book_assignment_collection_response
                         ## 
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedEBookAssignmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create new navigation property to assignments for deviceAppManagement
+                        ## Create a new iosVppEBookAssignment object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of managed_e_book_assignment
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedEBookAssignment.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## The list of assignments for this eBook.
+                        ## List properties and relationships of the managedEBookAssignment objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create new navigation property to assignments for deviceAppManagement
+                        ## Create a new iosVppEBookAssignment object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The list of assignments for this eBook.
+                        # List properties and relationships of the managedEBookAssignment objects.
                         class AssignmentsRequestBuilderGetQueryParameters
                             
                             ## 

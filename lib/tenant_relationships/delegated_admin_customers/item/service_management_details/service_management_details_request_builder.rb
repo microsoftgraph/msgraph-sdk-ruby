@@ -7,6 +7,7 @@ require_relative '../../../tenant_relationships'
 require_relative '../../delegated_admin_customers'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/delegated_admin_service_management_detail_item_request_builder'
 require_relative './service_management_details'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::TenantRelationships::DelegatedAdminCustomers::Item::ServiceManagementDetails::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the serviceManagementDetails property of the microsoft.graph.delegatedAdminCustomer entity.
+                        ## @param delegated_admin_service_management_detail_id Unique identifier of the item
+                        ## @return a delegated_admin_service_management_detail_item_request_builder
+                        ## 
+                        def by_delegated_admin_service_management_detail_id(delegated_admin_service_management_detail_id)
+                            raise StandardError, 'delegated_admin_service_management_detail_id cannot be null' if delegated_admin_service_management_detail_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["delegatedAdminServiceManagementDetail%2Did"] = delegated_admin_service_management_detail_id
+                            return MicrosoftGraph::TenantRelationships::DelegatedAdminCustomers::Item::ServiceManagementDetails::Item::DelegatedAdminServiceManagementDetailItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new ServiceManagementDetailsRequestBuilder and sets the default values.

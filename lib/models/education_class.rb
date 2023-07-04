@@ -142,7 +142,7 @@ module MicrosoftGraph
                 @class_code = value
             end
             ## 
-            ## Instantiates a new EducationClass and sets the default values.
+            ## Instantiates a new educationClass and sets the default values.
             ## @return a void
             ## 
             def initialize()

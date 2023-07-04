@@ -64,7 +64,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ActivityHistoryItem.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Update the navigation property historyItems in users
+                                ## Create a new or replace an existing history item for an existing user activity.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of activity_history_item
@@ -114,7 +114,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Update the navigation property historyItems in users
+                                ## Create a new or replace an existing history item for an existing user activity.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information

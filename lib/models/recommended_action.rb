@@ -52,7 +52,7 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new recommendedAction and sets the default values.
+            ## Instantiates a new RecommendedAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

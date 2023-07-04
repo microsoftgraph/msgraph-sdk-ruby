@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Devices that are managed or pre-enrolled through Intune
         class ManagedDevice < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -104,6 +106,9 @@ module MicrosoftGraph
             # The date and time that the device last completed a successful sync with Intune. This property is read-only.
             @last_sync_date_time
             ## 
+            # List of log collection requests
+            @log_collection_requests
+            ## 
             # Automatically generated name to identify a device. Can be overwritten to a user friendly name.
             @managed_device_name
             ## 
@@ -178,6 +183,9 @@ module MicrosoftGraph
             ## 
             # Wi-Fi MAC. This property is read-only.
             @wi_fi_mac_address
+            ## 
+            # The device protection status. This property is read-only.
+            @windows_protection_state
             ## 
             ## Gets the activationLockBypassCode property value. The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.
             ## @return a string
@@ -284,7 +292,7 @@ module MicrosoftGraph
                 @configuration_manager_client_enabled_features = value
             end
             ## 
-            ## Instantiates a new ManagedDevice and sets the default values.
+            ## Instantiates a new managedDevice and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -622,6 +630,7 @@ module MicrosoftGraph
                     "isSupervised" => lambda {|n| @is_supervised = n.get_boolean_value() },
                     "jailBroken" => lambda {|n| @jail_broken = n.get_string_value() },
                     "lastSyncDateTime" => lambda {|n| @last_sync_date_time = n.get_date_time_value() },
+                    "logCollectionRequests" => lambda {|n| @log_collection_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeviceLogCollectionResponse.create_from_discriminator_value(pn) }) },
                     "managedDeviceName" => lambda {|n| @managed_device_name = n.get_string_value() },
                     "managedDeviceOwnerType" => lambda {|n| @managed_device_owner_type = n.get_enum_value(MicrosoftGraph::Models::ManagedDeviceOwnerType) },
                     "managementAgent" => lambda {|n| @management_agent = n.get_enum_value(MicrosoftGraph::Models::ManagementAgentType) },
@@ -647,6 +656,7 @@ module MicrosoftGraph
                     "userPrincipalName" => lambda {|n| @user_principal_name = n.get_string_value() },
                     "users" => lambda {|n| @users = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::User.create_from_discriminator_value(pn) }) },
                     "wiFiMacAddress" => lambda {|n| @wi_fi_mac_address = n.get_string_value() },
+                    "windowsProtectionState" => lambda {|n| @windows_protection_state = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WindowsProtectionState.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -738,6 +748,21 @@ module MicrosoftGraph
             ## 
             def last_sync_date_time=(value)
                 @last_sync_date_time = value
+            end
+            ## 
+            ## Gets the logCollectionRequests property value. List of log collection requests
+            ## @return a device_log_collection_response
+            ## 
+            def log_collection_requests
+                return @log_collection_requests
+            end
+            ## 
+            ## Sets the logCollectionRequests property value. List of log collection requests
+            ## @param value Value to set for the log_collection_requests property.
+            ## @return a void
+            ## 
+            def log_collection_requests=(value)
+                @log_collection_requests = value
             end
             ## 
             ## Gets the managedDeviceName property value. Automatically generated name to identify a device. Can be overwritten to a user friendly name.
@@ -1010,12 +1035,14 @@ module MicrosoftGraph
                 writer.write_enum_value("deviceRegistrationState", @device_registration_state)
                 writer.write_enum_value("exchangeAccessState", @exchange_access_state)
                 writer.write_enum_value("exchangeAccessStateReason", @exchange_access_state_reason)
+                writer.write_collection_of_object_values("logCollectionRequests", @log_collection_requests)
                 writer.write_string_value("managedDeviceName", @managed_device_name)
                 writer.write_enum_value("managedDeviceOwnerType", @managed_device_owner_type)
                 writer.write_enum_value("managementAgent", @management_agent)
                 writer.write_string_value("notes", @notes)
                 writer.write_enum_value("partnerReportedThreatState", @partner_reported_threat_state)
                 writer.write_collection_of_object_values("users", @users)
+                writer.write_object_value("windowsProtectionState", @windows_protection_state)
             end
             ## 
             ## Gets the subscriberCarrier property value. Subscriber Carrier. This property is read-only.
@@ -1136,6 +1163,21 @@ module MicrosoftGraph
             ## 
             def wi_fi_mac_address=(value)
                 @wi_fi_mac_address = value
+            end
+            ## 
+            ## Gets the windowsProtectionState property value. The device protection status. This property is read-only.
+            ## @return a windows_protection_state
+            ## 
+            def windows_protection_state
+                return @windows_protection_state
+            end
+            ## 
+            ## Sets the windowsProtectionState property value. The device protection status. This property is read-only.
+            ## @param value Value to set for the windows_protection_state property.
+            ## @return a void
+            ## 
+            def windows_protection_state=(value)
+                @windows_protection_state = value
             end
         end
     end

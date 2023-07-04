@@ -6,7 +6,7 @@ require_relative './models'
 module MicrosoftGraph
     module Models
         ## 
-        # An abstract class containing the base properties for Intune mobile apps.
+        # An abstract class containing the base properties for Intune mobile apps. Note: Listing mobile apps with `$expand=assignments` has been deprecated. Instead get the list of apps without the `$expand` query on `assignments`. Then, perform the expansion on individual applications.
         class MobileApp < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -131,6 +131,8 @@ module MicrosoftGraph
                             return IosVppApp.new
                         when "#microsoft.graph.macOSLobApp"
                             return MacOSLobApp.new
+                        when "#microsoft.graph.macOSMicrosoftDefenderApp"
+                            return MacOSMicrosoftDefenderApp.new
                         when "#microsoft.graph.macOSMicrosoftEdgeApp"
                             return MacOSMicrosoftEdgeApp.new
                         when "#microsoft.graph.macOSOfficeSuiteApp"

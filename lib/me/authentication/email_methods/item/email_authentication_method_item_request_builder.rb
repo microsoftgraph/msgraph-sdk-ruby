@@ -26,7 +26,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/me/authentication/emailMethods/{emailAuthenticationMethod%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property emailMethods for me
+                        ## Deletes a user's emailAuthenticationMethod object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -40,7 +40,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## The email address registered to a user for authentication.
+                        ## Retrieve a user's single email authentication method object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of email_authentication_method
                         ## 
@@ -54,7 +54,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EmailAuthenticationMethod.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the navigation property emailMethods in me
+                        ## Update a user's email address represented by an emailAuthenticationMethod object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of email_authentication_method
@@ -70,7 +70,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EmailAuthenticationMethod.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property emailMethods for me
+                        ## Deletes a user's emailAuthenticationMethod object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -86,7 +86,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## The email address registered to a user for authentication.
+                        ## Retrieve a user's single email authentication method object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -104,7 +104,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property emailMethods in me
+                        ## Update a user's email address represented by an emailAuthenticationMethod object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -125,7 +125,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The email address registered to a user for authentication.
+                        # Retrieve a user's single email authentication method object.
                         class EmailAuthenticationMethodItemRequestBuilderGetQueryParameters
                             
                             ## 

@@ -108,6 +108,8 @@ module MicrosoftGraph
                             return AgreementFileVersion.new
                         when "#microsoft.graph.alert"
                             return Alert.new
+                        when "#microsoft.graph.allowedValue"
+                            return AllowedValue.new
                         when "#microsoft.graph.androidCompliancePolicy"
                             return AndroidCompliancePolicy.new
                         when "#microsoft.graph.androidCustomConfiguration"
@@ -146,6 +148,8 @@ module MicrosoftGraph
                             return Application.new
                         when "#microsoft.graph.applicationTemplate"
                             return ApplicationTemplate.new
+                        when "#microsoft.graph.appLogCollectionRequest"
+                            return AppLogCollectionRequest.new
                         when "#microsoft.graph.appManagementPolicy"
                             return AppManagementPolicy.new
                         when "#microsoft.graph.appRoleAssignment"
@@ -168,6 +172,10 @@ module MicrosoftGraph
                             return AttackSimulationRoot.new
                         when "#microsoft.graph.attendanceRecord"
                             return AttendanceRecord.new
+                        when "#microsoft.graph.attributeMappingFunctionSchema"
+                            return AttributeMappingFunctionSchema.new
+                        when "#microsoft.graph.attributeSet"
+                            return AttributeSet.new
                         when "#microsoft.graph.audioRoutingGroup"
                             return AudioRoutingGroup.new
                         when "#microsoft.graph.auditEvent"
@@ -176,6 +184,8 @@ module MicrosoftGraph
                             return AuditLogRoot.new
                         when "#microsoft.graph.authentication"
                             return Authentication.new
+                        when "#microsoft.graph.authenticationCombinationConfiguration"
+                            return AuthenticationCombinationConfiguration.new
                         when "#microsoft.graph.authenticationContextClassReference"
                             return AuthenticationContextClassReference.new
                         when "#microsoft.graph.authenticationFlowsPolicy"
@@ -184,10 +194,18 @@ module MicrosoftGraph
                             return AuthenticationMethod.new
                         when "#microsoft.graph.authenticationMethodConfiguration"
                             return AuthenticationMethodConfiguration.new
+                        when "#microsoft.graph.authenticationMethodModeDetail"
+                            return AuthenticationMethodModeDetail.new
                         when "#microsoft.graph.authenticationMethodsPolicy"
                             return AuthenticationMethodsPolicy.new
+                        when "#microsoft.graph.authenticationMethodsRoot"
+                            return AuthenticationMethodsRoot.new
                         when "#microsoft.graph.authenticationMethodTarget"
                             return AuthenticationMethodTarget.new
+                        when "#microsoft.graph.authenticationStrengthPolicy"
+                            return AuthenticationStrengthPolicy.new
+                        when "#microsoft.graph.authenticationStrengthRoot"
+                            return AuthenticationStrengthRoot.new
                         when "#microsoft.graph.authoredNote"
                             return AuthoredNote.new
                         when "#microsoft.graph.authorizationPolicy"
@@ -260,8 +278,6 @@ module MicrosoftGraph
                             return ChecklistItem.new
                         when "#microsoft.graph.claimsMappingPolicy"
                             return ClaimsMappingPolicy.new
-                        when "#microsoft.graph.cloudCommunications"
-                            return CloudCommunications.new
                         when "#microsoft.graph.columnDefinition"
                             return ColumnDefinition.new
                         when "#microsoft.graph.columnLink"
@@ -300,6 +316,10 @@ module MicrosoftGraph
                             return CrossTenantAccessPolicy.new
                         when "#microsoft.graph.crossTenantAccessPolicyConfigurationDefault"
                             return CrossTenantAccessPolicyConfigurationDefault.new
+                        when "#microsoft.graph.customCalloutExtension"
+                            return CustomCalloutExtension.new
+                        when "#microsoft.graph.customSecurityAttributeDefinition"
+                            return CustomSecurityAttributeDefinition.new
                         when "#microsoft.graph.dataPolicyOperation"
                             return DataPolicyOperation.new
                         when "#microsoft.graph.defaultManagedAppProtection"
@@ -318,6 +338,8 @@ module MicrosoftGraph
                             return DelegatedAdminServiceManagementDetail.new
                         when "#microsoft.graph.delegatedPermissionClassification"
                             return DelegatedPermissionClassification.new
+                        when "#microsoft.graph.deletedItemContainer"
+                            return DeletedItemContainer.new
                         when "#microsoft.graph.deletedTeam"
                             return DeletedTeam.new
                         when "#microsoft.graph.detectedApp"
@@ -382,6 +404,8 @@ module MicrosoftGraph
                             return DeviceEnrollmentWindowsHelloForBusinessConfiguration.new
                         when "#microsoft.graph.deviceInstallState"
                             return DeviceInstallState.new
+                        when "#microsoft.graph.deviceLogCollectionResponse"
+                            return DeviceLogCollectionResponse.new
                         when "#microsoft.graph.deviceManagement"
                             return DeviceManagement.new
                         when "#microsoft.graph.deviceManagementExchangeConnector"
@@ -398,6 +422,8 @@ module MicrosoftGraph
                             return Directory.new
                         when "#microsoft.graph.directoryAudit"
                             return DirectoryAudit.new
+                        when "#microsoft.graph.directoryDefinition"
+                            return DirectoryDefinition.new
                         when "#microsoft.graph.directoryObject"
                             return DirectoryObject.new
                         when "#microsoft.graph.directoryObjectPartnerReference"
@@ -474,6 +500,8 @@ module MicrosoftGraph
                             return EmailAuthenticationMethodConfiguration.new
                         when "#microsoft.graph.emailFileAssessmentRequest"
                             return EmailFileAssessmentRequest.new
+                        when "#microsoft.graph.employeeExperienceUser"
+                            return EmployeeExperienceUser.new
                         when "#microsoft.graph.endpoint"
                             return Endpoint.new
                         when "#microsoft.graph.enrollmentConfigurationAssignment"
@@ -508,12 +536,18 @@ module MicrosoftGraph
                             return Fido2AuthenticationMethod.new
                         when "#microsoft.graph.fido2AuthenticationMethodConfiguration"
                             return Fido2AuthenticationMethodConfiguration.new
+                        when "#microsoft.graph.fido2CombinationConfiguration"
+                            return Fido2CombinationConfiguration.new
                         when "#microsoft.graph.fieldValueSet"
                             return FieldValueSet.new
                         when "#microsoft.graph.fileAssessmentRequest"
                             return FileAssessmentRequest.new
                         when "#microsoft.graph.fileAttachment"
                             return FileAttachment.new
+                        when "#microsoft.graph.filterOperatorSchema"
+                            return FilterOperatorSchema.new
+                        when "#microsoft.graph.governanceInsight"
+                            return GovernanceInsight.new
                         when "#microsoft.graph.group"
                             return Group.new
                         when "#microsoft.graph.groupLifecyclePolicy"
@@ -604,10 +638,16 @@ module MicrosoftGraph
                             return ItemAnalytics.new
                         when "#microsoft.graph.itemAttachment"
                             return ItemAttachment.new
+                        when "#microsoft.graph.learningAssignment"
+                            return LearningAssignment.new
                         when "#microsoft.graph.learningContent"
                             return LearningContent.new
+                        when "#microsoft.graph.learningCourseActivity"
+                            return LearningCourseActivity.new
                         when "#microsoft.graph.learningProvider"
                             return LearningProvider.new
+                        when "#microsoft.graph.learningSelfInitiatedCourse"
+                            return LearningSelfInitiatedCourse.new
                         when "#microsoft.graph.licenseDetails"
                             return LicenseDetails.new
                         when "#microsoft.graph.linkedResource"
@@ -632,6 +672,8 @@ module MicrosoftGraph
                             return MacOSGeneralDeviceConfiguration.new
                         when "#microsoft.graph.macOSLobApp"
                             return MacOSLobApp.new
+                        when "#microsoft.graph.macOSMicrosoftDefenderApp"
+                            return MacOSMicrosoftDefenderApp.new
                         when "#microsoft.graph.macOSMicrosoftEdgeApp"
                             return MacOSMicrosoftEdgeApp.new
                         when "#microsoft.graph.macOSOfficeSuiteApp"
@@ -642,6 +684,8 @@ module MicrosoftGraph
                             return MailFolder.new
                         when "#microsoft.graph.mailSearchFolder"
                             return MailSearchFolder.new
+                        when "#microsoft.graph.malwareStateForWindowsDevice"
+                            return MalwareStateForWindowsDevice.new
                         when "#microsoft.graph.managedAndroidLobApp"
                             return ManagedAndroidLobApp.new
                         when "#microsoft.graph.managedAndroidStoreApp"
@@ -696,6 +740,8 @@ module MicrosoftGraph
                             return MdmWindowsInformationProtectionPolicy.new
                         when "#microsoft.graph.meetingAttendanceReport"
                             return MeetingAttendanceReport.new
+                        when "#microsoft.graph.membershipOutlierInsight"
+                            return MembershipOutlierInsight.new
                         when "#microsoft.graph.message"
                             return Message.new
                         when "#microsoft.graph.messageRule"
@@ -720,6 +766,8 @@ module MicrosoftGraph
                             return MobileAppContent.new
                         when "#microsoft.graph.mobileAppContentFile"
                             return MobileAppContentFile.new
+                        when "#microsoft.graph.mobileAppTroubleshootingEvent"
+                            return MobileAppTroubleshootingEvent.new
                         when "#microsoft.graph.mobileContainedApp"
                             return MobileContainedApp.new
                         when "#microsoft.graph.mobileLobApp"
@@ -964,6 +1012,10 @@ module MicrosoftGraph
                             return SharedPCConfiguration.new
                         when "#microsoft.graph.sharedWithChannelTeamInfo"
                             return SharedWithChannelTeamInfo.new
+                        when "#microsoft.graph.sharepoint"
+                            return Sharepoint.new
+                        when "#microsoft.graph.sharepointSettings"
+                            return SharepointSettings.new
                         when "#microsoft.graph.shift"
                             return Shift.new
                         when "#microsoft.graph.shiftPreferences"
@@ -1012,6 +1064,14 @@ module MicrosoftGraph
                             return Subscription.new
                         when "#microsoft.graph.swapShiftsChangeRequest"
                             return SwapShiftsChangeRequest.new
+                        when "#microsoft.graph.synchronization"
+                            return Synchronization.new
+                        when "#microsoft.graph.synchronizationJob"
+                            return SynchronizationJob.new
+                        when "#microsoft.graph.synchronizationSchema"
+                            return SynchronizationSchema.new
+                        when "#microsoft.graph.synchronizationTemplate"
+                            return SynchronizationTemplate.new
                         when "#microsoft.graph.targetedManagedAppConfiguration"
                             return TargetedManagedAppConfiguration.new
                         when "#microsoft.graph.targetedManagedAppPolicyAssignment"
@@ -1140,18 +1200,66 @@ module MicrosoftGraph
                             return UserActivity.new
                         when "#microsoft.graph.userConsentRequest"
                             return UserConsentRequest.new
+                        when "#microsoft.graph.userExperienceAnalyticsAppHealthApplicationPerformance"
+                            return UserExperienceAnalyticsAppHealthApplicationPerformance.new
+                        when "#microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails"
+                            return UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails.new
+                        when "#microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId"
+                            return UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.new
+                        when "#microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByOSVersion"
+                            return UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion.new
+                        when "#microsoft.graph.userExperienceAnalyticsAppHealthDeviceModelPerformance"
+                            return UserExperienceAnalyticsAppHealthDeviceModelPerformance.new
+                        when "#microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformance"
+                            return UserExperienceAnalyticsAppHealthDevicePerformance.new
+                        when "#microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformanceDetails"
+                            return UserExperienceAnalyticsAppHealthDevicePerformanceDetails.new
+                        when "#microsoft.graph.userExperienceAnalyticsAppHealthOSVersionPerformance"
+                            return UserExperienceAnalyticsAppHealthOSVersionPerformance.new
+                        when "#microsoft.graph.userExperienceAnalyticsBaseline"
+                            return UserExperienceAnalyticsBaseline.new
+                        when "#microsoft.graph.userExperienceAnalyticsCategory"
+                            return UserExperienceAnalyticsCategory.new
                         when "#microsoft.graph.userExperienceAnalyticsDevicePerformance"
                             return UserExperienceAnalyticsDevicePerformance.new
+                        when "#microsoft.graph.userExperienceAnalyticsDeviceScores"
+                            return UserExperienceAnalyticsDeviceScores.new
+                        when "#microsoft.graph.userExperienceAnalyticsDeviceStartupHistory"
+                            return UserExperienceAnalyticsDeviceStartupHistory.new
+                        when "#microsoft.graph.userExperienceAnalyticsDeviceStartupProcess"
+                            return UserExperienceAnalyticsDeviceStartupProcess.new
+                        when "#microsoft.graph.userExperienceAnalyticsMetric"
+                            return UserExperienceAnalyticsMetric.new
+                        when "#microsoft.graph.userExperienceAnalyticsMetricHistory"
+                            return UserExperienceAnalyticsMetricHistory.new
+                        when "#microsoft.graph.userExperienceAnalyticsModelScores"
+                            return UserExperienceAnalyticsModelScores.new
+                        when "#microsoft.graph.userExperienceAnalyticsOverview"
+                            return UserExperienceAnalyticsOverview.new
+                        when "#microsoft.graph.userExperienceAnalyticsScoreHistory"
+                            return UserExperienceAnalyticsScoreHistory.new
+                        when "#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevice"
+                            return UserExperienceAnalyticsWorkFromAnywhereDevice.new
+                        when "#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric"
+                            return UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.new
+                        when "#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereMetric"
+                            return UserExperienceAnalyticsWorkFromAnywhereMetric.new
+                        when "#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereModelPerformance"
+                            return UserExperienceAnalyticsWorkFromAnywhereModelPerformance.new
                         when "#microsoft.graph.userFlowLanguageConfiguration"
                             return UserFlowLanguageConfiguration.new
                         when "#microsoft.graph.userFlowLanguagePage"
                             return UserFlowLanguagePage.new
                         when "#microsoft.graph.userInstallStateSummary"
                             return UserInstallStateSummary.new
+                        when "#microsoft.graph.userRegistrationDetails"
+                            return UserRegistrationDetails.new
                         when "#microsoft.graph.userScopeTeamsAppInstallation"
                             return UserScopeTeamsAppInstallation.new
                         when "#microsoft.graph.userSettings"
                             return UserSettings.new
+                        when "#microsoft.graph.userSignInInsight"
+                            return UserSignInInsight.new
                         when "#microsoft.graph.userTeamwork"
                             return UserTeamwork.new
                         when "#microsoft.graph.voiceAuthenticationMethodConfiguration"
@@ -1188,6 +1296,8 @@ module MicrosoftGraph
                             return WindowsAutopilotDeviceIdentity.new
                         when "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration"
                             return WindowsDefenderAdvancedThreatProtectionConfiguration.new
+                        when "#microsoft.graph.windowsDeviceMalwareState"
+                            return WindowsDeviceMalwareState.new
                         when "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod"
                             return WindowsHelloForBusinessAuthenticationMethod.new
                         when "#microsoft.graph.windowsInformationProtection"
@@ -1200,6 +1310,8 @@ module MicrosoftGraph
                             return WindowsInformationProtectionNetworkLearningSummary.new
                         when "#microsoft.graph.windowsInformationProtectionPolicy"
                             return WindowsInformationProtectionPolicy.new
+                        when "#microsoft.graph.windowsMalwareInformation"
+                            return WindowsMalwareInformation.new
                         when "#microsoft.graph.windowsMicrosoftEdgeApp"
                             return WindowsMicrosoftEdgeApp.new
                         when "#microsoft.graph.windowsMobileMSI"
@@ -1210,6 +1322,8 @@ module MicrosoftGraph
                             return WindowsPhone81CustomConfiguration.new
                         when "#microsoft.graph.windowsPhone81GeneralConfiguration"
                             return WindowsPhone81GeneralConfiguration.new
+                        when "#microsoft.graph.windowsProtectionState"
+                            return WindowsProtectionState.new
                         when "#microsoft.graph.windowsUniversalAppX"
                             return WindowsUniversalAppX.new
                         when "#microsoft.graph.windowsUniversalAppXContainedApp"

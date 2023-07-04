@@ -46,6 +46,9 @@ module MicrosoftGraph
             # The list of Device Management Partners configured by the tenant.
             @device_management_partners
             ## 
+            # Device protection overview.
+            @device_protection_overview
+            ## 
             # The list of Exchange Connectors configured by the tenant.
             @exchange_connectors
             ## 
@@ -66,6 +69,9 @@ module MicrosoftGraph
             ## 
             # The list of managed devices.
             @managed_devices
+            ## 
+            # The collection property of MobileAppTroubleshootingEvent.
+            @mobile_app_troubleshooting_events
             ## 
             # The list of Mobile threat Defense connectors configured by the tenant.
             @mobile_threat_defense_connectors
@@ -106,6 +112,75 @@ module MicrosoftGraph
             # The list of troubleshooting events for the tenant.
             @troubleshooting_events
             ## 
+            # User experience analytics appHealth Application Performance
+            @user_experience_analytics_app_health_application_performance
+            ## 
+            # User experience analytics appHealth Application Performance by App Version details
+            @user_experience_analytics_app_health_application_performance_by_app_version_details
+            ## 
+            # User experience analytics appHealth Application Performance by App Version Device Id
+            @user_experience_analytics_app_health_application_performance_by_app_version_device_id
+            ## 
+            # User experience analytics appHealth Application Performance by OS Version
+            @user_experience_analytics_app_health_application_performance_by_o_s_version
+            ## 
+            # User experience analytics appHealth Model Performance
+            @user_experience_analytics_app_health_device_model_performance
+            ## 
+            # User experience analytics appHealth Device Performance
+            @user_experience_analytics_app_health_device_performance
+            ## 
+            # User experience analytics device performance details
+            @user_experience_analytics_app_health_device_performance_details
+            ## 
+            # User experience analytics appHealth OS version Performance
+            @user_experience_analytics_app_health_o_s_version_performance
+            ## 
+            # User experience analytics appHealth overview
+            @user_experience_analytics_app_health_overview
+            ## 
+            # User experience analytics baselines
+            @user_experience_analytics_baselines
+            ## 
+            # User experience analytics categories
+            @user_experience_analytics_categories
+            ## 
+            # User experience analytics device performance
+            @user_experience_analytics_device_performance
+            ## 
+            # User experience analytics device scores
+            @user_experience_analytics_device_scores
+            ## 
+            # User experience analytics device Startup History
+            @user_experience_analytics_device_startup_history
+            ## 
+            # User experience analytics device Startup Processes
+            @user_experience_analytics_device_startup_processes
+            ## 
+            # User experience analytics metric history
+            @user_experience_analytics_metric_history
+            ## 
+            # User experience analytics model scores
+            @user_experience_analytics_model_scores
+            ## 
+            # User experience analytics overview
+            @user_experience_analytics_overview
+            ## 
+            # User experience analytics device Startup Score History
+            @user_experience_analytics_score_history
+            ## 
+            # User experience analytics device settings
+            @user_experience_analytics_settings
+            ## 
+            # User experience analytics work from anywhere hardware readiness metrics.
+            @user_experience_analytics_work_from_anywhere_hardware_readiness_metric
+            ## 
+            # User experience analytics work from anywhere metrics.
+            @user_experience_analytics_work_from_anywhere_metrics
+            ## 
+            # The user experience analytics work from anywhere model performance
+            @user_experience_analytics_work_from_anywhere_model_performance
+            ## 
             # The Windows autopilot device identities contained collection.
             @windows_autopilot_device_identities
             ## 
@@ -114,6 +189,12 @@ module MicrosoftGraph
             ## 
             # The windows information protection network learning summaries.
             @windows_information_protection_network_learning_summaries
+            ## 
+            # The list of affected malware in the tenant.
+            @windows_malware_information
+            ## 
+            # Malware overview for windows devices.
+            @windows_malware_overview
             ## 
             ## Gets the applePushNotificationCertificate property value. Apple push notification certificate.
             ## @return a apple_push_notification_certificate
@@ -326,6 +407,21 @@ module MicrosoftGraph
                 @device_management_partners = value
             end
             ## 
+            ## Gets the deviceProtectionOverview property value. Device protection overview.
+            ## @return a device_protection_overview
+            ## 
+            def device_protection_overview
+                return @device_protection_overview
+            end
+            ## 
+            ## Sets the deviceProtectionOverview property value. Device protection overview.
+            ## @param value Value to set for the device_protection_overview property.
+            ## @return a void
+            ## 
+            def device_protection_overview=(value)
+                @device_protection_overview = value
+            end
+            ## 
             ## Gets the exchangeConnectors property value. The list of Exchange Connectors configured by the tenant.
             ## @return a device_management_exchange_connector
             ## 
@@ -359,6 +455,7 @@ module MicrosoftGraph
                     "deviceConfigurations" => lambda {|n| @device_configurations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeviceConfiguration.create_from_discriminator_value(pn) }) },
                     "deviceEnrollmentConfigurations" => lambda {|n| @device_enrollment_configurations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeviceEnrollmentConfiguration.create_from_discriminator_value(pn) }) },
                     "deviceManagementPartners" => lambda {|n| @device_management_partners = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeviceManagementPartner.create_from_discriminator_value(pn) }) },
+                    "deviceProtectionOverview" => lambda {|n| @device_protection_overview = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::DeviceProtectionOverview.create_from_discriminator_value(pn) }) },
                     "exchangeConnectors" => lambda {|n| @exchange_connectors = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeviceManagementExchangeConnector.create_from_discriminator_value(pn) }) },
                     "importedWindowsAutopilotDeviceIdentities" => lambda {|n| @imported_windows_autopilot_device_identities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ImportedWindowsAutopilotDeviceIdentity.create_from_discriminator_value(pn) }) },
                     "intuneAccountId" => lambda {|n| @intune_account_id = n.get_guid_value() },
@@ -366,6 +463,7 @@ module MicrosoftGraph
                     "iosUpdateStatuses" => lambda {|n| @ios_update_statuses = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::IosUpdateDeviceStatus.create_from_discriminator_value(pn) }) },
                     "managedDeviceOverview" => lambda {|n| @managed_device_overview = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ManagedDeviceOverview.create_from_discriminator_value(pn) }) },
                     "managedDevices" => lambda {|n| @managed_devices = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ManagedDevice.create_from_discriminator_value(pn) }) },
+                    "mobileAppTroubleshootingEvents" => lambda {|n| @mobile_app_troubleshooting_events = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::MobileAppTroubleshootingEvent.create_from_discriminator_value(pn) }) },
                     "mobileThreatDefenseConnectors" => lambda {|n| @mobile_threat_defense_connectors = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::MobileThreatDefenseConnector.create_from_discriminator_value(pn) }) },
                     "notificationMessageTemplates" => lambda {|n| @notification_message_templates = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::NotificationMessageTemplate.create_from_discriminator_value(pn) }) },
                     "remoteAssistancePartners" => lambda {|n| @remote_assistance_partners = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::RemoteAssistancePartner.create_from_discriminator_value(pn) }) },
@@ -379,9 +477,34 @@ module MicrosoftGraph
                     "telecomExpenseManagementPartners" => lambda {|n| @telecom_expense_management_partners = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TelecomExpenseManagementPartner.create_from_discriminator_value(pn) }) },
                     "termsAndConditions" => lambda {|n| @terms_and_conditions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TermsAndConditions.create_from_discriminator_value(pn) }) },
                     "troubleshootingEvents" => lambda {|n| @troubleshooting_events = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DeviceManagementTroubleshootingEvent.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsAppHealthApplicationPerformance" => lambda {|n| @user_experience_analytics_app_health_application_performance = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsAppHealthApplicationPerformance.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails" => lambda {|n| @user_experience_analytics_app_health_application_performance_by_app_version_details = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId" => lambda {|n| @user_experience_analytics_app_health_application_performance_by_app_version_device_id = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion" => lambda {|n| @user_experience_analytics_app_health_application_performance_by_o_s_version = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsAppHealthDeviceModelPerformance" => lambda {|n| @user_experience_analytics_app_health_device_model_performance = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsAppHealthDeviceModelPerformance.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsAppHealthDevicePerformance" => lambda {|n| @user_experience_analytics_app_health_device_performance = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsAppHealthDevicePerformance.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsAppHealthDevicePerformanceDetails" => lambda {|n| @user_experience_analytics_app_health_device_performance_details = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsAppHealthDevicePerformanceDetails.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsAppHealthOSVersionPerformance" => lambda {|n| @user_experience_analytics_app_health_o_s_version_performance = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsAppHealthOSVersionPerformance.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsAppHealthOverview" => lambda {|n| @user_experience_analytics_app_health_overview = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsCategory.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsBaselines" => lambda {|n| @user_experience_analytics_baselines = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsBaseline.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsCategories" => lambda {|n| @user_experience_analytics_categories = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsCategory.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsDevicePerformance" => lambda {|n| @user_experience_analytics_device_performance = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsDevicePerformance.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsDeviceScores" => lambda {|n| @user_experience_analytics_device_scores = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsDeviceScores.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsDeviceStartupHistory" => lambda {|n| @user_experience_analytics_device_startup_history = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsDeviceStartupHistory.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsDeviceStartupProcesses" => lambda {|n| @user_experience_analytics_device_startup_processes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsDeviceStartupProcess.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsMetricHistory" => lambda {|n| @user_experience_analytics_metric_history = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsMetricHistory.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsModelScores" => lambda {|n| @user_experience_analytics_model_scores = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsModelScores.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsOverview" => lambda {|n| @user_experience_analytics_overview = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsOverview.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsScoreHistory" => lambda {|n| @user_experience_analytics_score_history = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsScoreHistory.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsSettings" => lambda {|n| @user_experience_analytics_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsSettings.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric" => lambda {|n| @user_experience_analytics_work_from_anywhere_hardware_readiness_metric = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsWorkFromAnywhereMetrics" => lambda {|n| @user_experience_analytics_work_from_anywhere_metrics = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsWorkFromAnywhereMetric.create_from_discriminator_value(pn) }) },
+                    "userExperienceAnalyticsWorkFromAnywhereModelPerformance" => lambda {|n| @user_experience_analytics_work_from_anywhere_model_performance = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::UserExperienceAnalyticsWorkFromAnywhereModelPerformance.create_from_discriminator_value(pn) }) },
                     "windowsAutopilotDeviceIdentities" => lambda {|n| @windows_autopilot_device_identities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsAutopilotDeviceIdentity.create_from_discriminator_value(pn) }) },
                     "windowsInformationProtectionAppLearningSummaries" => lambda {|n| @windows_information_protection_app_learning_summaries = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsInformationProtectionAppLearningSummary.create_from_discriminator_value(pn) }) },
                     "windowsInformationProtectionNetworkLearningSummaries" => lambda {|n| @windows_information_protection_network_learning_summaries = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsInformationProtectionNetworkLearningSummary.create_from_discriminator_value(pn) }) },
+                    "windowsMalwareInformation" => lambda {|n| @windows_malware_information = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::WindowsMalwareInformation.create_from_discriminator_value(pn) }) },
+                    "windowsMalwareOverview" => lambda {|n| @windows_malware_overview = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::WindowsMalwareOverview.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -473,6 +596,21 @@ module MicrosoftGraph
             ## 
             def managed_devices=(value)
                 @managed_devices = value
+            end
+            ## 
+            ## Gets the mobileAppTroubleshootingEvents property value. The collection property of MobileAppTroubleshootingEvent.
+            ## @return a mobile_app_troubleshooting_event
+            ## 
+            def mobile_app_troubleshooting_events
+                return @mobile_app_troubleshooting_events
+            end
+            ## 
+            ## Sets the mobileAppTroubleshootingEvents property value. The collection property of MobileAppTroubleshootingEvent.
+            ## @param value Value to set for the mobile_app_troubleshooting_events property.
+            ## @return a void
+            ## 
+            def mobile_app_troubleshooting_events=(value)
+                @mobile_app_troubleshooting_events = value
             end
             ## 
             ## Gets the mobileThreatDefenseConnectors property value. The list of Mobile threat Defense connectors configured by the tenant.
@@ -600,6 +738,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("deviceConfigurations", @device_configurations)
                 writer.write_collection_of_object_values("deviceEnrollmentConfigurations", @device_enrollment_configurations)
                 writer.write_collection_of_object_values("deviceManagementPartners", @device_management_partners)
+                writer.write_object_value("deviceProtectionOverview", @device_protection_overview)
                 writer.write_collection_of_object_values("exchangeConnectors", @exchange_connectors)
                 writer.write_collection_of_object_values("importedWindowsAutopilotDeviceIdentities", @imported_windows_autopilot_device_identities)
                 writer.write_guid_value("intuneAccountId", @intune_account_id)
@@ -607,6 +746,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("iosUpdateStatuses", @ios_update_statuses)
                 writer.write_object_value("managedDeviceOverview", @managed_device_overview)
                 writer.write_collection_of_object_values("managedDevices", @managed_devices)
+                writer.write_collection_of_object_values("mobileAppTroubleshootingEvents", @mobile_app_troubleshooting_events)
                 writer.write_collection_of_object_values("mobileThreatDefenseConnectors", @mobile_threat_defense_connectors)
                 writer.write_collection_of_object_values("notificationMessageTemplates", @notification_message_templates)
                 writer.write_collection_of_object_values("remoteAssistancePartners", @remote_assistance_partners)
@@ -620,9 +760,34 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("telecomExpenseManagementPartners", @telecom_expense_management_partners)
                 writer.write_collection_of_object_values("termsAndConditions", @terms_and_conditions)
                 writer.write_collection_of_object_values("troubleshootingEvents", @troubleshooting_events)
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthApplicationPerformance", @user_experience_analytics_app_health_application_performance)
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails", @user_experience_analytics_app_health_application_performance_by_app_version_details)
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId", @user_experience_analytics_app_health_application_performance_by_app_version_device_id)
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion", @user_experience_analytics_app_health_application_performance_by_o_s_version)
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthDeviceModelPerformance", @user_experience_analytics_app_health_device_model_performance)
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthDevicePerformance", @user_experience_analytics_app_health_device_performance)
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthDevicePerformanceDetails", @user_experience_analytics_app_health_device_performance_details)
+                writer.write_collection_of_object_values("userExperienceAnalyticsAppHealthOSVersionPerformance", @user_experience_analytics_app_health_o_s_version_performance)
+                writer.write_object_value("userExperienceAnalyticsAppHealthOverview", @user_experience_analytics_app_health_overview)
+                writer.write_collection_of_object_values("userExperienceAnalyticsBaselines", @user_experience_analytics_baselines)
+                writer.write_collection_of_object_values("userExperienceAnalyticsCategories", @user_experience_analytics_categories)
+                writer.write_collection_of_object_values("userExperienceAnalyticsDevicePerformance", @user_experience_analytics_device_performance)
+                writer.write_collection_of_object_values("userExperienceAnalyticsDeviceScores", @user_experience_analytics_device_scores)
+                writer.write_collection_of_object_values("userExperienceAnalyticsDeviceStartupHistory", @user_experience_analytics_device_startup_history)
+                writer.write_collection_of_object_values("userExperienceAnalyticsDeviceStartupProcesses", @user_experience_analytics_device_startup_processes)
+                writer.write_collection_of_object_values("userExperienceAnalyticsMetricHistory", @user_experience_analytics_metric_history)
+                writer.write_collection_of_object_values("userExperienceAnalyticsModelScores", @user_experience_analytics_model_scores)
+                writer.write_object_value("userExperienceAnalyticsOverview", @user_experience_analytics_overview)
+                writer.write_collection_of_object_values("userExperienceAnalyticsScoreHistory", @user_experience_analytics_score_history)
+                writer.write_object_value("userExperienceAnalyticsSettings", @user_experience_analytics_settings)
+                writer.write_object_value("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric", @user_experience_analytics_work_from_anywhere_hardware_readiness_metric)
+                writer.write_collection_of_object_values("userExperienceAnalyticsWorkFromAnywhereMetrics", @user_experience_analytics_work_from_anywhere_metrics)
+                writer.write_collection_of_object_values("userExperienceAnalyticsWorkFromAnywhereModelPerformance", @user_experience_analytics_work_from_anywhere_model_performance)
                 writer.write_collection_of_object_values("windowsAutopilotDeviceIdentities", @windows_autopilot_device_identities)
                 writer.write_collection_of_object_values("windowsInformationProtectionAppLearningSummaries", @windows_information_protection_app_learning_summaries)
                 writer.write_collection_of_object_values("windowsInformationProtectionNetworkLearningSummaries", @windows_information_protection_network_learning_summaries)
+                writer.write_collection_of_object_values("windowsMalwareInformation", @windows_malware_information)
+                writer.write_object_value("windowsMalwareOverview", @windows_malware_overview)
             end
             ## 
             ## Gets the settings property value. Account level settings.
@@ -715,6 +880,351 @@ module MicrosoftGraph
                 @troubleshooting_events = value
             end
             ## 
+            ## Gets the userExperienceAnalyticsAppHealthApplicationPerformance property value. User experience analytics appHealth Application Performance
+            ## @return a user_experience_analytics_app_health_application_performance
+            ## 
+            def user_experience_analytics_app_health_application_performance
+                return @user_experience_analytics_app_health_application_performance
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsAppHealthApplicationPerformance property value. User experience analytics appHealth Application Performance
+            ## @param value Value to set for the user_experience_analytics_app_health_application_performance property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_app_health_application_performance=(value)
+                @user_experience_analytics_app_health_application_performance = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails property value. User experience analytics appHealth Application Performance by App Version details
+            ## @return a user_experience_analytics_app_health_app_performance_by_app_version_details
+            ## 
+            def user_experience_analytics_app_health_application_performance_by_app_version_details
+                return @user_experience_analytics_app_health_application_performance_by_app_version_details
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails property value. User experience analytics appHealth Application Performance by App Version details
+            ## @param value Value to set for the user_experience_analytics_app_health_application_performance_by_app_version_details property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_app_health_application_performance_by_app_version_details=(value)
+                @user_experience_analytics_app_health_application_performance_by_app_version_details = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId property value. User experience analytics appHealth Application Performance by App Version Device Id
+            ## @return a user_experience_analytics_app_health_app_performance_by_app_version_device_id
+            ## 
+            def user_experience_analytics_app_health_application_performance_by_app_version_device_id
+                return @user_experience_analytics_app_health_application_performance_by_app_version_device_id
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId property value. User experience analytics appHealth Application Performance by App Version Device Id
+            ## @param value Value to set for the user_experience_analytics_app_health_application_performance_by_app_version_device_id property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_app_health_application_performance_by_app_version_device_id=(value)
+                @user_experience_analytics_app_health_application_performance_by_app_version_device_id = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion property value. User experience analytics appHealth Application Performance by OS Version
+            ## @return a user_experience_analytics_app_health_app_performance_by_o_s_version
+            ## 
+            def user_experience_analytics_app_health_application_performance_by_o_s_version
+                return @user_experience_analytics_app_health_application_performance_by_o_s_version
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion property value. User experience analytics appHealth Application Performance by OS Version
+            ## @param value Value to set for the user_experience_analytics_app_health_application_performance_by_o_s_version property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_app_health_application_performance_by_o_s_version=(value)
+                @user_experience_analytics_app_health_application_performance_by_o_s_version = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsAppHealthDeviceModelPerformance property value. User experience analytics appHealth Model Performance
+            ## @return a user_experience_analytics_app_health_device_model_performance
+            ## 
+            def user_experience_analytics_app_health_device_model_performance
+                return @user_experience_analytics_app_health_device_model_performance
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsAppHealthDeviceModelPerformance property value. User experience analytics appHealth Model Performance
+            ## @param value Value to set for the user_experience_analytics_app_health_device_model_performance property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_app_health_device_model_performance=(value)
+                @user_experience_analytics_app_health_device_model_performance = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsAppHealthDevicePerformance property value. User experience analytics appHealth Device Performance
+            ## @return a user_experience_analytics_app_health_device_performance
+            ## 
+            def user_experience_analytics_app_health_device_performance
+                return @user_experience_analytics_app_health_device_performance
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsAppHealthDevicePerformance property value. User experience analytics appHealth Device Performance
+            ## @param value Value to set for the user_experience_analytics_app_health_device_performance property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_app_health_device_performance=(value)
+                @user_experience_analytics_app_health_device_performance = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsAppHealthDevicePerformanceDetails property value. User experience analytics device performance details
+            ## @return a user_experience_analytics_app_health_device_performance_details
+            ## 
+            def user_experience_analytics_app_health_device_performance_details
+                return @user_experience_analytics_app_health_device_performance_details
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsAppHealthDevicePerformanceDetails property value. User experience analytics device performance details
+            ## @param value Value to set for the user_experience_analytics_app_health_device_performance_details property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_app_health_device_performance_details=(value)
+                @user_experience_analytics_app_health_device_performance_details = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsAppHealthOSVersionPerformance property value. User experience analytics appHealth OS version Performance
+            ## @return a user_experience_analytics_app_health_o_s_version_performance
+            ## 
+            def user_experience_analytics_app_health_o_s_version_performance
+                return @user_experience_analytics_app_health_o_s_version_performance
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsAppHealthOSVersionPerformance property value. User experience analytics appHealth OS version Performance
+            ## @param value Value to set for the user_experience_analytics_app_health_o_s_version_performance property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_app_health_o_s_version_performance=(value)
+                @user_experience_analytics_app_health_o_s_version_performance = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsAppHealthOverview property value. User experience analytics appHealth overview
+            ## @return a user_experience_analytics_category
+            ## 
+            def user_experience_analytics_app_health_overview
+                return @user_experience_analytics_app_health_overview
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsAppHealthOverview property value. User experience analytics appHealth overview
+            ## @param value Value to set for the user_experience_analytics_app_health_overview property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_app_health_overview=(value)
+                @user_experience_analytics_app_health_overview = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsBaselines property value. User experience analytics baselines
+            ## @return a user_experience_analytics_baseline
+            ## 
+            def user_experience_analytics_baselines
+                return @user_experience_analytics_baselines
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsBaselines property value. User experience analytics baselines
+            ## @param value Value to set for the user_experience_analytics_baselines property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_baselines=(value)
+                @user_experience_analytics_baselines = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsCategories property value. User experience analytics categories
+            ## @return a user_experience_analytics_category
+            ## 
+            def user_experience_analytics_categories
+                return @user_experience_analytics_categories
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsCategories property value. User experience analytics categories
+            ## @param value Value to set for the user_experience_analytics_categories property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_categories=(value)
+                @user_experience_analytics_categories = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsDevicePerformance property value. User experience analytics device performance
+            ## @return a user_experience_analytics_device_performance
+            ## 
+            def user_experience_analytics_device_performance
+                return @user_experience_analytics_device_performance
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsDevicePerformance property value. User experience analytics device performance
+            ## @param value Value to set for the user_experience_analytics_device_performance property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_device_performance=(value)
+                @user_experience_analytics_device_performance = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsDeviceScores property value. User experience analytics device scores
+            ## @return a user_experience_analytics_device_scores
+            ## 
+            def user_experience_analytics_device_scores
+                return @user_experience_analytics_device_scores
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsDeviceScores property value. User experience analytics device scores
+            ## @param value Value to set for the user_experience_analytics_device_scores property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_device_scores=(value)
+                @user_experience_analytics_device_scores = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsDeviceStartupHistory property value. User experience analytics device Startup History
+            ## @return a user_experience_analytics_device_startup_history
+            ## 
+            def user_experience_analytics_device_startup_history
+                return @user_experience_analytics_device_startup_history
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsDeviceStartupHistory property value. User experience analytics device Startup History
+            ## @param value Value to set for the user_experience_analytics_device_startup_history property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_device_startup_history=(value)
+                @user_experience_analytics_device_startup_history = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsDeviceStartupProcesses property value. User experience analytics device Startup Processes
+            ## @return a user_experience_analytics_device_startup_process
+            ## 
+            def user_experience_analytics_device_startup_processes
+                return @user_experience_analytics_device_startup_processes
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsDeviceStartupProcesses property value. User experience analytics device Startup Processes
+            ## @param value Value to set for the user_experience_analytics_device_startup_processes property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_device_startup_processes=(value)
+                @user_experience_analytics_device_startup_processes = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsMetricHistory property value. User experience analytics metric history
+            ## @return a user_experience_analytics_metric_history
+            ## 
+            def user_experience_analytics_metric_history
+                return @user_experience_analytics_metric_history
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsMetricHistory property value. User experience analytics metric history
+            ## @param value Value to set for the user_experience_analytics_metric_history property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_metric_history=(value)
+                @user_experience_analytics_metric_history = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsModelScores property value. User experience analytics model scores
+            ## @return a user_experience_analytics_model_scores
+            ## 
+            def user_experience_analytics_model_scores
+                return @user_experience_analytics_model_scores
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsModelScores property value. User experience analytics model scores
+            ## @param value Value to set for the user_experience_analytics_model_scores property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_model_scores=(value)
+                @user_experience_analytics_model_scores = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsOverview property value. User experience analytics overview
+            ## @return a user_experience_analytics_overview
+            ## 
+            def user_experience_analytics_overview
+                return @user_experience_analytics_overview
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsOverview property value. User experience analytics overview
+            ## @param value Value to set for the user_experience_analytics_overview property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_overview=(value)
+                @user_experience_analytics_overview = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsScoreHistory property value. User experience analytics device Startup Score History
+            ## @return a user_experience_analytics_score_history
+            ## 
+            def user_experience_analytics_score_history
+                return @user_experience_analytics_score_history
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsScoreHistory property value. User experience analytics device Startup Score History
+            ## @param value Value to set for the user_experience_analytics_score_history property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_score_history=(value)
+                @user_experience_analytics_score_history = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsSettings property value. User experience analytics device settings
+            ## @return a user_experience_analytics_settings
+            ## 
+            def user_experience_analytics_settings
+                return @user_experience_analytics_settings
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsSettings property value. User experience analytics device settings
+            ## @param value Value to set for the user_experience_analytics_settings property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_settings=(value)
+                @user_experience_analytics_settings = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric property value. User experience analytics work from anywhere hardware readiness metrics.
+            ## @return a user_experience_analytics_work_from_anywhere_hardware_readiness_metric
+            ## 
+            def user_experience_analytics_work_from_anywhere_hardware_readiness_metric
+                return @user_experience_analytics_work_from_anywhere_hardware_readiness_metric
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric property value. User experience analytics work from anywhere hardware readiness metrics.
+            ## @param value Value to set for the user_experience_analytics_work_from_anywhere_hardware_readiness_metric property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_work_from_anywhere_hardware_readiness_metric=(value)
+                @user_experience_analytics_work_from_anywhere_hardware_readiness_metric = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsWorkFromAnywhereMetrics property value. User experience analytics work from anywhere metrics.
+            ## @return a user_experience_analytics_work_from_anywhere_metric
+            ## 
+            def user_experience_analytics_work_from_anywhere_metrics
+                return @user_experience_analytics_work_from_anywhere_metrics
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsWorkFromAnywhereMetrics property value. User experience analytics work from anywhere metrics.
+            ## @param value Value to set for the user_experience_analytics_work_from_anywhere_metrics property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_work_from_anywhere_metrics=(value)
+                @user_experience_analytics_work_from_anywhere_metrics = value
+            end
+            ## 
+            ## Gets the userExperienceAnalyticsWorkFromAnywhereModelPerformance property value. The user experience analytics work from anywhere model performance
+            ## @return a user_experience_analytics_work_from_anywhere_model_performance
+            ## 
+            def user_experience_analytics_work_from_anywhere_model_performance
+                return @user_experience_analytics_work_from_anywhere_model_performance
+            end
+            ## 
+            ## Sets the userExperienceAnalyticsWorkFromAnywhereModelPerformance property value. The user experience analytics work from anywhere model performance
+            ## @param value Value to set for the user_experience_analytics_work_from_anywhere_model_performance property.
+            ## @return a void
+            ## 
+            def user_experience_analytics_work_from_anywhere_model_performance=(value)
+                @user_experience_analytics_work_from_anywhere_model_performance = value
+            end
+            ## 
             ## Gets the windowsAutopilotDeviceIdentities property value. The Windows autopilot device identities contained collection.
             ## @return a windows_autopilot_device_identity
             ## 
@@ -758,6 +1268,36 @@ module MicrosoftGraph
             ## 
             def windows_information_protection_network_learning_summaries=(value)
                 @windows_information_protection_network_learning_summaries = value
+            end
+            ## 
+            ## Gets the windowsMalwareInformation property value. The list of affected malware in the tenant.
+            ## @return a windows_malware_information
+            ## 
+            def windows_malware_information
+                return @windows_malware_information
+            end
+            ## 
+            ## Sets the windowsMalwareInformation property value. The list of affected malware in the tenant.
+            ## @param value Value to set for the windows_malware_information property.
+            ## @return a void
+            ## 
+            def windows_malware_information=(value)
+                @windows_malware_information = value
+            end
+            ## 
+            ## Gets the windowsMalwareOverview property value. Malware overview for windows devices.
+            ## @return a windows_malware_overview
+            ## 
+            def windows_malware_overview
+                return @windows_malware_overview
+            end
+            ## 
+            ## Sets the windowsMalwareOverview property value. Malware overview for windows devices.
+            ## @param value Value to set for the windows_malware_overview property.
+            ## @return a void
+            ## 
+            def windows_malware_overview=(value)
+                @windows_malware_overview = value
             end
         end
     end

@@ -34,7 +34,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/print/printers/{printer%2Did}/taskTriggers/{printTaskTrigger%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property taskTriggers for print
+                            ## Delete the task trigger of a printer to prevent related print events from triggering tasks on the specified printer.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -48,7 +48,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## A list of task triggers that are associated with the printer.
+                            ## Get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of print_task_trigger
                             ## 
@@ -78,7 +78,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintTaskTrigger.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property taskTriggers for print
+                            ## Delete the task trigger of a printer to prevent related print events from triggering tasks on the specified printer.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -94,7 +94,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## A list of task triggers that are associated with the printer.
+                            ## Get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -133,7 +133,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # A list of task triggers that are associated with the printer.
+                            # Get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
                             class PrintTaskTriggerItemRequestBuilderGetQueryParameters
                                 
                                 ## 

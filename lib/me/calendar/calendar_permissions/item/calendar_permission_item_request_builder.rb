@@ -26,7 +26,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/me/calendar/calendarPermissions/{calendarPermission%2Did}{?%24select}")
                         end
                         ## 
-                        ## Delete navigation property calendarPermissions for me
+                        ## Delete calendarPermission.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -40,7 +40,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## The permissions of the users with whom the calendar is shared.
+                        ## Get the specified permissions object of a user or group calendar that has been shared.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of calendar_permission
                         ## 
@@ -54,7 +54,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CalendarPermission.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the navigation property calendarPermissions in me
+                        ## Update the permissions assigned to an existing sharee or delegate, through the corresponding <b>calendarPermission</b> object for a calendar.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of calendar_permission
@@ -70,7 +70,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CalendarPermission.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property calendarPermissions for me
+                        ## Delete calendarPermission.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -86,7 +86,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## The permissions of the users with whom the calendar is shared.
+                        ## Get the specified permissions object of a user or group calendar that has been shared.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -104,7 +104,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property calendarPermissions in me
+                        ## Update the permissions assigned to an existing sharee or delegate, through the corresponding <b>calendarPermission</b> object for a calendar.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -125,7 +125,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The permissions of the users with whom the calendar is shared.
+                        # Get the specified permissions object of a user or group calendar that has been shared.
                         class CalendarPermissionItemRequestBuilderGetQueryParameters
                             
                             ## 

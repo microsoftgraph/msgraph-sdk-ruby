@@ -8,6 +8,9 @@ module MicrosoftGraph
         class TeamsAppDefinition < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The authorization property
+            @authorization
+            ## 
             # The details of the bot specified in the Teams app manifest.
             @bot
             ## 
@@ -34,6 +37,21 @@ module MicrosoftGraph
             ## 
             # The version number of the application.
             @version
+            ## 
+            ## Gets the authorization property value. The authorization property
+            ## @return a teams_app_authorization
+            ## 
+            def authorization
+                return @authorization
+            end
+            ## 
+            ## Sets the authorization property value. The authorization property
+            ## @param value Value to set for the authorization property.
+            ## @return a void
+            ## 
+            def authorization=(value)
+                @authorization = value
+            end
             ## 
             ## Gets the bot property value. The details of the bot specified in the Teams app manifest.
             ## @return a teamwork_bot
@@ -116,6 +134,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "authorization" => lambda {|n| @authorization = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamsAppAuthorization.create_from_discriminator_value(pn) }) },
                     "bot" => lambda {|n| @bot = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamworkBot.create_from_discriminator_value(pn) }) },
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
@@ -165,6 +184,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("authorization", @authorization)
                 writer.write_object_value("bot", @bot)
                 writer.write_object_value("createdBy", @created_by)
                 writer.write_string_value("description", @description)

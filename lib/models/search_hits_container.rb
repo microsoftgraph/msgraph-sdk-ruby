@@ -55,7 +55,7 @@ module MicrosoftGraph
                 @aggregations = value
             end
             ## 
-            ## Instantiates a new searchHitsContainer and sets the default values.
+            ## Instantiates a new SearchHitsContainer and sets the default values.
             ## @return a void
             ## 
             def initialize()

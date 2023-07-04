@@ -8,6 +8,7 @@ require_relative './delta/delta_request_builder'
 require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
 require_relative './get_by_ids/get_by_ids_request_builder'
 require_relative './groups'
+require_relative './item/group_item_request_builder'
 require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph
@@ -40,6 +41,17 @@ module MicrosoftGraph
             # Provides operations to call the validateProperties method.
             def validate_properties()
                 return MicrosoftGraph::Groups::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            ## Provides operations to manage the collection of group entities.
+            ## @param group_id Unique identifier of the item
+            ## @return a group_item_request_builder
+            ## 
+            def by_group_id(group_id)
+                raise StandardError, 'group_id cannot be null' if group_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["group%2Did"] = group_id
+                return MicrosoftGraph::Groups::Item::GroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new GroupsRequestBuilder and sets the default values.

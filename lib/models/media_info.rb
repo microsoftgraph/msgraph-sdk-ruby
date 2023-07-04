@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new mediaInfo and sets the default values.
+            ## Instantiates a new MediaInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()

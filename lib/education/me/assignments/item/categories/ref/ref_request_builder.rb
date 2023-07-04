@@ -45,7 +45,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::StringCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Create new navigation property ref to categories for education
+                                ## Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
@@ -79,7 +79,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Create new navigation property ref to categories for education
+                                ## Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information

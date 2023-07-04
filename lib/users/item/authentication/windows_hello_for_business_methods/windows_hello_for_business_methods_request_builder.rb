@@ -6,6 +6,7 @@ require_relative '../../../users'
 require_relative '../../item'
 require_relative '../authentication'
 require_relative './count/count_request_builder'
+require_relative './item/windows_hello_for_business_authentication_method_item_request_builder'
 require_relative './windows_hello_for_business_methods'
 
 module MicrosoftGraph
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Users::Item::Authentication::WindowsHelloForBusinessMethods::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the windowsHelloForBusinessMethods property of the microsoft.graph.authentication entity.
+                        ## @param windows_hello_for_business_authentication_method_id Unique identifier of the item
+                        ## @return a windows_hello_for_business_authentication_method_item_request_builder
+                        ## 
+                        def by_windows_hello_for_business_authentication_method_id(windows_hello_for_business_authentication_method_id)
+                            raise StandardError, 'windows_hello_for_business_authentication_method_id cannot be null' if windows_hello_for_business_authentication_method_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["windowsHelloForBusinessAuthenticationMethod%2Did"] = windows_hello_for_business_authentication_method_id
+                            return MicrosoftGraph::Users::Item::Authentication::WindowsHelloForBusinessMethods::Item::WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new WindowsHelloForBusinessMethodsRequestBuilder and sets the default values.

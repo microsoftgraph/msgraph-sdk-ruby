@@ -95,7 +95,7 @@ module MicrosoftGraph
                 @command_line = value
             end
             ## 
-            ## Instantiates a new process and sets the default values.
+            ## Instantiates a new Process and sets the default values.
             ## @return a void
             ## 
             def initialize()

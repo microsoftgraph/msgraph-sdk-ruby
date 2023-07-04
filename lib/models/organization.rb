@@ -68,10 +68,10 @@ module MicrosoftGraph
             # Not nullable.
             @provisioned_plans
             ## 
-            # The securityComplianceNotificationMails property
+            # Not nullable.
             @security_compliance_notification_mails
             ## 
-            # The securityComplianceNotificationPhones property
+            # Not nullable.
             @security_compliance_notification_phones
             ## 
             # State name of the address for the organization.
@@ -441,14 +441,14 @@ module MicrosoftGraph
                 @provisioned_plans = value
             end
             ## 
-            ## Gets the securityComplianceNotificationMails property value. The securityComplianceNotificationMails property
+            ## Gets the securityComplianceNotificationMails property value. Not nullable.
             ## @return a string
             ## 
             def security_compliance_notification_mails
                 return @security_compliance_notification_mails
             end
             ## 
-            ## Sets the securityComplianceNotificationMails property value. The securityComplianceNotificationMails property
+            ## Sets the securityComplianceNotificationMails property value. Not nullable.
             ## @param value Value to set for the security_compliance_notification_mails property.
             ## @return a void
             ## 
@@ -456,14 +456,14 @@ module MicrosoftGraph
                 @security_compliance_notification_mails = value
             end
             ## 
-            ## Gets the securityComplianceNotificationPhones property value. The securityComplianceNotificationPhones property
+            ## Gets the securityComplianceNotificationPhones property value. Not nullable.
             ## @return a string
             ## 
             def security_compliance_notification_phones
                 return @security_compliance_notification_phones
             end
             ## 
-            ## Sets the securityComplianceNotificationPhones property value. The securityComplianceNotificationPhones property
+            ## Sets the securityComplianceNotificationPhones property value. Not nullable.
             ## @param value Value to set for the security_compliance_notification_phones property.
             ## @return a void
             ## 

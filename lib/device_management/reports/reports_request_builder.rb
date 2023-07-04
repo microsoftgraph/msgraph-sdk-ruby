@@ -4,7 +4,6 @@ require_relative '../../models/device_management_reports'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_management'
 require_relative './export_jobs/export_jobs_request_builder'
-require_relative './export_jobs/item/device_management_export_job_item_request_builder'
 require_relative './get_cached_report/get_cached_report_request_builder'
 require_relative './get_compliance_policy_non_compliance_report/get_compliance_policy_non_compliance_report_request_builder'
 require_relative './get_compliance_policy_non_compliance_summary_report/get_compliance_policy_non_compliance_summary_report_request_builder'
@@ -151,18 +150,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Provides operations to manage the exportJobs property of the microsoft.graph.deviceManagementReports entity.
-                ## @param id Unique identifier of the item
-                ## @return a device_management_export_job_item_request_builder
-                ## 
-                def export_jobs_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["deviceManagementExportJob%2Did"] = id
-                    return MicrosoftGraph::DeviceManagement::Reports::ExportJobs::Item::DeviceManagementExportJobItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Reports singleton
+                ## Read properties and relationships of the deviceManagementReports object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of device_management_reports
                 ## 
@@ -176,7 +164,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceManagementReports.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Update the navigation property reports in deviceManagement
+                ## Update the properties of a deviceManagementReports object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of device_management_reports
@@ -208,7 +196,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Reports singleton
+                ## Read properties and relationships of the deviceManagementReports object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -226,7 +214,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Update the navigation property reports in deviceManagement
+                ## Update the properties of a deviceManagementReports object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -247,7 +235,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Reports singleton
+                # Read properties and relationships of the deviceManagementReports object.
                 class ReportsRequestBuilderGetQueryParameters
                     
                     ## 

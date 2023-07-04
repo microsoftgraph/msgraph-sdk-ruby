@@ -79,7 +79,7 @@ module MicrosoftGraph
                 @automatic_replies = value
             end
             ## 
-            ## Instantiates a new mailTips and sets the default values.
+            ## Instantiates a new MailTips and sets the default values.
             ## @return a void
             ## 
             def initialize()

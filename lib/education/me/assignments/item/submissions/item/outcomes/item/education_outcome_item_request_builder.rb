@@ -34,7 +34,7 @@ module MicrosoftGraph
                                             super(path_parameters, request_adapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/submissions/{educationSubmission%2Did}/outcomes/{educationOutcome%2Did}{?%24select,%24expand}")
                                         end
                                         ## 
-                                        ## Delete navigation property outcomes for education
+                                        ## Delete a feedback resource from a submission. This can only be done by a teacher.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of void
                                         ## 
@@ -62,7 +62,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationOutcome.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Update the navigation property outcomes in education
+                                        ## Update the properties of an educationOutcome object. Only teachers can perform this operation.
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of education_outcome
@@ -78,7 +78,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationOutcome.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Delete navigation property outcomes for education
+                                        ## Delete a feedback resource from a submission. This can only be done by a teacher.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Update the navigation property outcomes in education
+                                        ## Update the properties of an educationOutcome object. Only teachers can perform this operation.
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information

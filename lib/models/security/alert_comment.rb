@@ -55,7 +55,7 @@ module MicrosoftGraph
                     @comment = value
                 end
                 ## 
-                ## Instantiates a new alertComment and sets the default values.
+                ## Instantiates a new AlertComment and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

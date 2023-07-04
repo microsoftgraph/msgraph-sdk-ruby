@@ -5,6 +5,7 @@ require_relative '../../models/print_task_definition'
 require_relative '../../models/print_task_definition_collection_response'
 require_relative '../print'
 require_relative './count/count_request_builder'
+require_relative './item/print_task_definition_item_request_builder'
 require_relative './task_definitions'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Print::TaskDefinitions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the taskDefinitions property of the microsoft.graph.print entity.
+                ## @param print_task_definition_id Unique identifier of the item
+                ## @return a print_task_definition_item_request_builder
+                ## 
+                def by_print_task_definition_id(print_task_definition_id)
+                    raise StandardError, 'print_task_definition_id cannot be null' if print_task_definition_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["printTaskDefinition%2Did"] = print_task_definition_id
+                    return MicrosoftGraph::Print::TaskDefinitions::Item::PrintTaskDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new TaskDefinitionsRequestBuilder and sets the default values.

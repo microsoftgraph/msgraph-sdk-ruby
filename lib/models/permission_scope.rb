@@ -85,7 +85,7 @@ module MicrosoftGraph
                 @admin_consent_display_name = value
             end
             ## 
-            ## Instantiates a new permissionScope and sets the default values.
+            ## Instantiates a new PermissionScope and sets the default values.
             ## @return a void
             ## 
             def initialize()

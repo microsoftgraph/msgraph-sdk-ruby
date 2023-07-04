@@ -14,6 +14,7 @@ require_relative '../../sets'
 require_relative '../item'
 require_relative './children'
 require_relative './count/count_request_builder'
+require_relative './item/term_item_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -34,6 +35,17 @@ module MicrosoftGraph
                                                 # Provides operations to count the resources in the collection.
                                                 def count()
                                                     return MicrosoftGraph::Groups::Item::Sites::Item::TermStore::Groups::Item::Sets::Item::Children::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                                end
+                                                ## 
+                                                ## Provides operations to manage the children property of the microsoft.graph.termStore.set entity.
+                                                ## @param term_id Unique identifier of the item
+                                                ## @return a term_item_request_builder
+                                                ## 
+                                                def by_term_id(term_id)
+                                                    raise StandardError, 'term_id cannot be null' if term_id.nil?
+                                                    url_tpl_params = @path_parameters.clone
+                                                    url_tpl_params["term%2Did"] = term_id
+                                                    return MicrosoftGraph::Groups::Item::Sites::Item::TermStore::Groups::Item::Sets::Item::Children::Item::TermItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                                 end
                                                 ## 
                                                 ## Instantiates a new ChildrenRequestBuilder and sets the default values.

@@ -5,7 +5,6 @@ require_relative '../../../models/teams_app'
 require_relative '../../app_catalogs'
 require_relative '../teams_apps'
 require_relative './app_definitions/app_definitions_request_builder'
-require_relative './app_definitions/item/teams_app_definition_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -22,17 +21,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::AppCatalogs::TeamsApps::Item::AppDefinitions::AppDefinitionsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a teams_app_definition_item_request_builder
-                    ## 
-                    def app_definitions_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["teamsAppDefinition%2Did"] = id
-                        return MicrosoftGraph::AppCatalogs::TeamsApps::Item::AppDefinitions::Item::TeamsAppDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new TeamsAppItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -42,7 +30,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property teamsApps for appCatalogs
+                    ## Delete teamsApp
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -86,7 +74,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamsApp.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property teamsApps for appCatalogs
+                    ## Delete teamsApp
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 

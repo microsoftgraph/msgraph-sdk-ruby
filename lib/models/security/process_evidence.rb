@@ -19,7 +19,7 @@ module MicrosoftGraph
                 # A unique identifier assigned to a device by Microsoft Defender for Endpoint.
                 @mde_device_id
                 ## 
-                # Date and time when the parent of the process was created.
+                # Date and time when the parent of the process was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
                 @parent_process_creation_date_time
                 ## 
                 # Process ID (PID) of the parent process that spawned the process.
@@ -31,7 +31,7 @@ module MicrosoftGraph
                 # Command line used to create the new process.
                 @process_command_line
                 ## 
-                # Date and time the process was created.
+                # Date and time when the process was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
                 @process_creation_date_time
                 ## 
                 # Process ID (PID) of the newly created process.
@@ -119,14 +119,14 @@ module MicrosoftGraph
                     @mde_device_id = value
                 end
                 ## 
-                ## Gets the parentProcessCreationDateTime property value. Date and time when the parent of the process was created.
+                ## Gets the parentProcessCreationDateTime property value. Date and time when the parent of the process was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
                 ## @return a date_time
                 ## 
                 def parent_process_creation_date_time
                     return @parent_process_creation_date_time
                 end
                 ## 
-                ## Sets the parentProcessCreationDateTime property value. Date and time when the parent of the process was created.
+                ## Sets the parentProcessCreationDateTime property value. Date and time when the parent of the process was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
                 ## @param value Value to set for the parent_process_creation_date_time property.
                 ## @return a void
                 ## 
@@ -179,14 +179,14 @@ module MicrosoftGraph
                     @process_command_line = value
                 end
                 ## 
-                ## Gets the processCreationDateTime property value. Date and time the process was created.
+                ## Gets the processCreationDateTime property value. Date and time when the process was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
                 ## @return a date_time
                 ## 
                 def process_creation_date_time
                     return @process_creation_date_time
                 end
                 ## 
-                ## Sets the processCreationDateTime property value. Date and time the process was created.
+                ## Sets the processCreationDateTime property value. Date and time when the process was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
                 ## @param value Value to set for the process_creation_date_time property.
                 ## @return a void
                 ## 

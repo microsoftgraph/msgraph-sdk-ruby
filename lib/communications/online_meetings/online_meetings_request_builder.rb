@@ -6,6 +6,7 @@ require_relative '../../models/online_meeting_collection_response'
 require_relative '../communications'
 require_relative './count/count_request_builder'
 require_relative './create_or_get/create_or_get_request_builder'
+require_relative './item/online_meeting_item_request_builder'
 require_relative './online_meetings'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                 # Provides operations to call the createOrGet method.
                 def create_or_get()
                     return MicrosoftGraph::Communications::OnlineMeetings::CreateOrGet::CreateOrGetRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
+                ## @param online_meeting_id Unique identifier of the item
+                ## @return a online_meeting_item_request_builder
+                ## 
+                def by_online_meeting_id(online_meeting_id)
+                    raise StandardError, 'online_meeting_id cannot be null' if online_meeting_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["onlineMeeting%2Did"] = online_meeting_id
+                    return MicrosoftGraph::Communications::OnlineMeetings::Item::OnlineMeetingItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new OnlineMeetingsRequestBuilder and sets the default values.

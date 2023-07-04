@@ -10,6 +10,9 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # The authenticationMethods property
+            @authentication_methods
+            ## 
             # The dailyPrintUsageByPrinter property
             @daily_print_usage_by_printer
             ## 
@@ -41,6 +44,21 @@ module MicrosoftGraph
             ## 
             def additional_data=(value)
                 @additional_data = value
+            end
+            ## 
+            ## Gets the authenticationMethods property value. The authenticationMethods property
+            ## @return a authentication_methods_root
+            ## 
+            def authentication_methods
+                return @authentication_methods
+            end
+            ## 
+            ## Sets the authenticationMethods property value. The authenticationMethods property
+            ## @param value Value to set for the authentication_methods property.
+            ## @return a void
+            ## 
+            def authentication_methods=(value)
+                @authentication_methods = value
             end
             ## 
             ## Instantiates a new ReportRoot and sets the default values.
@@ -94,6 +112,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
+                    "authenticationMethods" => lambda {|n| @authentication_methods = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AuthenticationMethodsRoot.create_from_discriminator_value(pn) }) },
                     "dailyPrintUsageByPrinter" => lambda {|n| @daily_print_usage_by_printer = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PrintUsageByPrinter.create_from_discriminator_value(pn) }) },
                     "dailyPrintUsageByUser" => lambda {|n| @daily_print_usage_by_user = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PrintUsageByUser.create_from_discriminator_value(pn) }) },
                     "monthlyPrintUsageByPrinter" => lambda {|n| @monthly_print_usage_by_printer = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::PrintUsageByPrinter.create_from_discriminator_value(pn) }) },
@@ -169,6 +188,7 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_object_value("authenticationMethods", @authentication_methods)
                 writer.write_collection_of_object_values("dailyPrintUsageByPrinter", @daily_print_usage_by_printer)
                 writer.write_collection_of_object_values("dailyPrintUsageByUser", @daily_print_usage_by_user)
                 writer.write_collection_of_object_values("monthlyPrintUsageByPrinter", @monthly_print_usage_by_printer)

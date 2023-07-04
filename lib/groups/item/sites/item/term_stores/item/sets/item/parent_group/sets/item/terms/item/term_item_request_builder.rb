@@ -15,9 +15,7 @@ require_relative '../../../sets'
 require_relative '../../item'
 require_relative '../terms'
 require_relative './children/children_request_builder'
-require_relative './children/item/term_item_request_builder'
 require_relative './item'
-require_relative './relations/item/relation_item_request_builder'
 require_relative './relations/relations_request_builder'
 require_relative './set/set_request_builder'
 
@@ -55,17 +53,6 @@ module MicrosoftGraph
                                                                 return MicrosoftGraph::Groups::Item::Sites::Item::TermStores::Item::Sets::Item::ParentGroup::Sets::Item::Terms::Item::Set::SetRequestBuilder.new(@path_parameters, @request_adapter)
                                                             end
                                                             ## 
-                                                            ## Provides operations to manage the children property of the microsoft.graph.termStore.term entity.
-                                                            ## @param id Unique identifier of the item
-                                                            ## @return a term_item_request_builder
-                                                            ## 
-                                                            def children_by_id(id)
-                                                                raise StandardError, 'id cannot be null' if id.nil?
-                                                                url_tpl_params = @path_parameters.clone
-                                                                url_tpl_params["term%2Did1"] = id
-                                                                return MicrosoftGraph::Groups::Item::Sites::Item::TermStores::Item::Sets::Item::ParentGroup::Sets::Item::Terms::Item::Children::Item::TermItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                                            end
-                                                            ## 
                                                             ## Instantiates a new TermItemRequestBuilder and sets the default values.
                                                             ## @param path_parameters Path parameters for the request
                                                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -75,7 +62,7 @@ module MicrosoftGraph
                                                                 super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStores/{store%2Did}/sets/{set%2Did}/parentGroup/sets/{set%2Did1}/terms/{term%2Did}{?%24select,%24expand}")
                                                             end
                                                             ## 
-                                                            ## Delete navigation property terms for groups
+                                                            ## Delete a term object.
                                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                             ## @return a Fiber of void
                                                             ## 
@@ -89,7 +76,7 @@ module MicrosoftGraph
                                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                                             end
                                                             ## 
-                                                            ## All the terms under the set.
+                                                            ## Read the properties and relationships of a term object.
                                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                             ## @return a Fiber of term
                                                             ## 
@@ -103,7 +90,7 @@ module MicrosoftGraph
                                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Term.create_from_discriminator_value(pn) }, error_mapping)
                                                             end
                                                             ## 
-                                                            ## Update the navigation property terms in groups
+                                                            ## Update the properties of a term object.
                                                             ## @param body The request body
                                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                             ## @return a Fiber of term
@@ -119,18 +106,7 @@ module MicrosoftGraph
                                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Term.create_from_discriminator_value(pn) }, error_mapping)
                                                             end
                                                             ## 
-                                                            ## Provides operations to manage the relations property of the microsoft.graph.termStore.term entity.
-                                                            ## @param id Unique identifier of the item
-                                                            ## @return a relation_item_request_builder
-                                                            ## 
-                                                            def relations_by_id(id)
-                                                                raise StandardError, 'id cannot be null' if id.nil?
-                                                                url_tpl_params = @path_parameters.clone
-                                                                url_tpl_params["relation%2Did"] = id
-                                                                return MicrosoftGraph::Groups::Item::Sites::Item::TermStores::Item::Sets::Item::ParentGroup::Sets::Item::Terms::Item::Relations::Item::RelationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                                            end
-                                                            ## 
-                                                            ## Delete navigation property terms for groups
+                                                            ## Delete a term object.
                                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                             ## @return a request_information
                                                             ## 
@@ -146,7 +122,7 @@ module MicrosoftGraph
                                                                 return request_info
                                                             end
                                                             ## 
-                                                            ## All the terms under the set.
+                                                            ## Read the properties and relationships of a term object.
                                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                             ## @return a request_information
                                                             ## 
@@ -164,7 +140,7 @@ module MicrosoftGraph
                                                                 return request_info
                                                             end
                                                             ## 
-                                                            ## Update the navigation property terms in groups
+                                                            ## Update the properties of a term object.
                                                             ## @param body The request body
                                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                             ## @return a request_information
@@ -185,7 +161,7 @@ module MicrosoftGraph
                                                             end
 
                                                             ## 
-                                                            # All the terms under the set.
+                                                            # Read the properties and relationships of a term object.
                                                             class TermItemRequestBuilderGetQueryParameters
                                                                 
                                                                 ## 

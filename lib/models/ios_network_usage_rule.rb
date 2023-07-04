@@ -69,7 +69,7 @@ module MicrosoftGraph
                 @cellular_data_blocked = value
             end
             ## 
-            ## Instantiates a new iosNetworkUsageRule and sets the default values.
+            ## Instantiates a new IosNetworkUsageRule and sets the default values.
             ## @return a void
             ## 
             def initialize()

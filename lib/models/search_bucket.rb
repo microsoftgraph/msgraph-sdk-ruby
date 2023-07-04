@@ -52,7 +52,7 @@ module MicrosoftGraph
                 @aggregation_filter_token = value
             end
             ## 
-            ## Instantiates a new searchBucket and sets the default values.
+            ## Instantiates a new SearchBucket and sets the default values.
             ## @return a void
             ## 
             def initialize()

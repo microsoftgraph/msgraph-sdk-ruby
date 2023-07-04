@@ -5,6 +5,7 @@ require_relative '../../../models/user'
 require_relative '../../invitations'
 require_relative '../item'
 require_relative './invited_user'
+require_relative './mailbox_settings/mailbox_settings_request_builder'
 
 module MicrosoftGraph
     module Invitations
@@ -14,6 +15,11 @@ module MicrosoftGraph
                 # Provides operations to manage the invitedUser property of the microsoft.graph.invitation entity.
                 class InvitedUserRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
+                    ## 
+                    # The mailboxSettings property
+                    def mailbox_settings()
+                        return MicrosoftGraph::Invitations::Item::InvitedUser::MailboxSettings::MailboxSettingsRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
                     ## 
                     ## Instantiates a new InvitedUserRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request

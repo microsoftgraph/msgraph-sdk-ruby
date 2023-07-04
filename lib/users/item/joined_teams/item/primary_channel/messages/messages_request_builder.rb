@@ -10,6 +10,7 @@ require_relative '../../item'
 require_relative '../primary_channel'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/chat_message_item_request_builder'
 require_relative './messages'
 
 module MicrosoftGraph
@@ -32,6 +33,17 @@ module MicrosoftGraph
                                 # Provides operations to call the delta method.
                                 def delta()
                                     return MicrosoftGraph::Users::Item::JoinedTeams::Item::PrimaryChannel::Messages::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the messages property of the microsoft.graph.channel entity.
+                                ## @param chat_message_id Unique identifier of the item
+                                ## @return a chat_message_item_request_builder
+                                ## 
+                                def by_chat_message_id(chat_message_id)
+                                    raise StandardError, 'chat_message_id cannot be null' if chat_message_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["chatMessage%2Did"] = chat_message_id
+                                    return MicrosoftGraph::Users::Item::JoinedTeams::Item::PrimaryChannel::Messages::Item::ChatMessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new MessagesRequestBuilder and sets the default values.

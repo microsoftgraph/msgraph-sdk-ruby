@@ -40,7 +40,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Device Configuration devices status overview
+                        ## Read properties and relationships of the deviceConfigurationDeviceOverview object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of device_configuration_device_overview
                         ## 
@@ -54,7 +54,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceConfigurationDeviceOverview.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the navigation property deviceStatusOverview in deviceManagement
+                        ## Update the properties of a deviceConfigurationDeviceOverview object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of device_configuration_device_overview
@@ -86,7 +86,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Device Configuration devices status overview
+                        ## Read properties and relationships of the deviceConfigurationDeviceOverview object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -104,7 +104,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property deviceStatusOverview in deviceManagement
+                        ## Update the properties of a deviceConfigurationDeviceOverview object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -125,7 +125,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Device Configuration devices status overview
+                        # Read properties and relationships of the deviceConfigurationDeviceOverview object.
                         class DeviceStatusOverviewRequestBuilderGetQueryParameters
                             
                             ## 

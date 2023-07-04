@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary%2Did}/deviceComplianceSettingStates/{deviceComplianceSettingState%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property deviceComplianceSettingStates for deviceManagement
+                            ## Deletes a deviceComplianceSettingState.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Not yet documented
+                            ## Read properties and relationships of the deviceComplianceSettingState object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of device_compliance_setting_state
                             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceComplianceSettingState.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property deviceComplianceSettingStates in deviceManagement
+                            ## Update the properties of a deviceComplianceSettingState object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of device_compliance_setting_state
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceComplianceSettingState.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property deviceComplianceSettingStates for deviceManagement
+                            ## Deletes a deviceComplianceSettingState.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Not yet documented
+                            ## Read properties and relationships of the deviceComplianceSettingState object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property deviceComplianceSettingStates in deviceManagement
+                            ## Update the properties of a deviceComplianceSettingState object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Not yet documented
+                            # Read properties and relationships of the deviceComplianceSettingState object.
                             class DeviceComplianceSettingStateItemRequestBuilderGetQueryParameters
                                 
                                 ## 

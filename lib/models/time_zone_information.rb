@@ -49,7 +49,7 @@ module MicrosoftGraph
                 @alias_escaped = value
             end
             ## 
-            ## Instantiates a new timeZoneInformation and sets the default values.
+            ## Instantiates a new TimeZoneInformation and sets the default values.
             ## @return a void
             ## 
             def initialize()

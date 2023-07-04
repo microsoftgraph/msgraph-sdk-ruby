@@ -34,7 +34,7 @@ module MicrosoftGraph
                                             super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messageRules/{messageRule%2Did}{?%24select}")
                                         end
                                         ## 
-                                        ## Delete navigation property messageRules for users
+                                        ## Delete the specified messageRule object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of void
                                         ## 
@@ -48,7 +48,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, nil, error_mapping)
                                         end
                                         ## 
-                                        ## The collection of rules that apply to the user's Inbox folder.
+                                        ## Get the properties and relationships of a messageRule object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of message_rule
                                         ## 
@@ -62,7 +62,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MessageRule.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Update the navigation property messageRules in users
+                                        ## Change writable properties on a messageRule object and save the changes.
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of message_rule
@@ -78,7 +78,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MessageRule.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Delete navigation property messageRules for users
+                                        ## Delete the specified messageRule object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -94,7 +94,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## The collection of rules that apply to the user's Inbox folder.
+                                        ## Get the properties and relationships of a messageRule object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Update the navigation property messageRules in users
+                                        ## Change writable properties on a messageRule object and save the changes.
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
@@ -133,7 +133,7 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # The collection of rules that apply to the user's Inbox folder.
+                                        # Get the properties and relationships of a messageRule object.
                                         class MessageRuleItemRequestBuilderGetQueryParameters
                                             
                                             ## 

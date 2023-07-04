@@ -133,7 +133,7 @@ module MicrosoftGraph
                 @cloud_service_name = value
             end
             ## 
-            ## Instantiates a new teleconferenceDeviceQuality and sets the default values.
+            ## Instantiates a new TeleconferenceDeviceQuality and sets the default values.
             ## @return a void
             ## 
             def initialize()

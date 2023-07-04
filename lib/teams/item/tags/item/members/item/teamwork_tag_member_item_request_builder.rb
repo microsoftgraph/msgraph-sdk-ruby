@@ -30,7 +30,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/teams/{team%2Did}/tags/{teamworkTag%2Did}/members/{teamworkTagMember%2Did}{?%24select,%24expand}")
                                 end
                                 ## 
-                                ## Delete navigation property members for teams
+                                ## Delete a member from a standard tag in a team.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
                                 ## 
@@ -44,7 +44,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## Users assigned to the tag.
+                                ## Get the properties and relationships of a member of a standard tag in a team.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of teamwork_tag_member
                                 ## 
@@ -74,7 +74,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamworkTagMember.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Delete navigation property members for teams
+                                ## Delete a member from a standard tag in a team.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -90,7 +90,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Users assigned to the tag.
+                                ## Get the properties and relationships of a member of a standard tag in a team.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -129,7 +129,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Users assigned to the tag.
+                                # Get the properties and relationships of a member of a standard tag in a team.
                                 class TeamworkTagMemberItemRequestBuilderGetQueryParameters
                                     
                                     ## 

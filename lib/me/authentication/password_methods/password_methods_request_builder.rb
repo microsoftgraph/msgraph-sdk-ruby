@@ -6,6 +6,7 @@ require_relative '../../../models/password_authentication_method_collection_resp
 require_relative '../../me'
 require_relative '../authentication'
 require_relative './count/count_request_builder'
+require_relative './item/password_authentication_method_item_request_builder'
 require_relative './password_methods'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Me::Authentication::PasswordMethods::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.
+                    ## @param password_authentication_method_id Unique identifier of the item
+                    ## @return a password_authentication_method_item_request_builder
+                    ## 
+                    def by_password_authentication_method_id(password_authentication_method_id)
+                        raise StandardError, 'password_authentication_method_id cannot be null' if password_authentication_method_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["passwordAuthenticationMethod%2Did"] = password_authentication_method_id
+                        return MicrosoftGraph::Me::Authentication::PasswordMethods::Item::PasswordAuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new PasswordMethodsRequestBuilder and sets the default values.

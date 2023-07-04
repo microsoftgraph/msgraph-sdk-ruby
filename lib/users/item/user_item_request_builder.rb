@@ -4,48 +4,33 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/user'
 require_relative '../users'
 require_relative './activities/activities_request_builder'
-require_relative './activities/item/user_activity_item_request_builder'
 require_relative './agreement_acceptances/agreement_acceptances_request_builder'
-require_relative './agreement_acceptances/item/agreement_acceptance_item_request_builder'
 require_relative './app_role_assignments/app_role_assignments_request_builder'
-require_relative './app_role_assignments/item/app_role_assignment_item_request_builder'
 require_relative './assign_license/assign_license_request_builder'
 require_relative './authentication/authentication_request_builder'
 require_relative './calendar/calendar_request_builder'
 require_relative './calendar_groups/calendar_groups_request_builder'
-require_relative './calendar_groups/item/calendar_group_item_request_builder'
 require_relative './calendars/calendars_request_builder'
-require_relative './calendars/item/calendar_item_request_builder'
 require_relative './calendar_view/calendar_view_request_builder'
-require_relative './calendar_view/item/event_item_request_builder'
 require_relative './change_password/change_password_request_builder'
 require_relative './chats/chats_request_builder'
-require_relative './chats/item/chat_item_request_builder'
 require_relative './check_member_groups/check_member_groups_request_builder'
 require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './contact_folders/contact_folders_request_builder'
-require_relative './contact_folders/item/contact_folder_item_request_builder'
 require_relative './contacts/contacts_request_builder'
-require_relative './contacts/item/contact_item_request_builder'
 require_relative './created_objects/created_objects_request_builder'
-require_relative './created_objects/item/directory_object_item_request_builder'
 require_relative './device_management_troubleshooting_events/device_management_troubleshooting_events_request_builder'
-require_relative './device_management_troubleshooting_events/item/device_management_troubleshooting_event_item_request_builder'
 require_relative './direct_reports/direct_reports_request_builder'
-require_relative './direct_reports/item/directory_object_item_request_builder'
 require_relative './drive/drive_request_builder'
 require_relative './drives/drives_request_builder'
-require_relative './drives/item/drive_item_request_builder'
+require_relative './employee_experience/employee_experience_request_builder'
 require_relative './events/events_request_builder'
-require_relative './events/item/event_item_request_builder'
 require_relative './export_device_and_app_management_data/export_device_and_app_management_data_request_builder'
 require_relative './export_device_and_app_management_data_with_skip_with_top/export_device_and_app_management_data_with_skip_with_top_request_builder'
 require_relative './export_personal_data/export_personal_data_request_builder'
 require_relative './extensions/extensions_request_builder'
-require_relative './extensions/item/extension_item_request_builder'
 require_relative './find_meeting_times/find_meeting_times_request_builder'
 require_relative './followed_sites/followed_sites_request_builder'
-require_relative './followed_sites/item/site_item_request_builder'
 require_relative './get_mail_tips/get_mail_tips_request_builder'
 require_relative './get_managed_app_diagnostic_statuses/get_managed_app_diagnostic_statuses_request_builder'
 require_relative './get_managed_app_policies/get_managed_app_policies_request_builder'
@@ -55,52 +40,37 @@ require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './inference_classification/inference_classification_request_builder'
 require_relative './insights/insights_request_builder'
 require_relative './item'
-require_relative './joined_teams/item/team_item_request_builder'
 require_relative './joined_teams/joined_teams_request_builder'
-require_relative './license_details/item/license_details_item_request_builder'
 require_relative './license_details/license_details_request_builder'
-require_relative './mail_folders/item/mail_folder_item_request_builder'
+require_relative './mailbox_settings/mailbox_settings_request_builder'
 require_relative './mail_folders/mail_folders_request_builder'
-require_relative './managed_app_registrations/item/managed_app_registration_item_request_builder'
 require_relative './managed_app_registrations/managed_app_registrations_request_builder'
-require_relative './managed_devices/item/managed_device_item_request_builder'
 require_relative './managed_devices/managed_devices_request_builder'
 require_relative './manager/manager_request_builder'
-require_relative './member_of/item/directory_object_item_request_builder'
 require_relative './member_of/member_of_request_builder'
-require_relative './messages/item/message_item_request_builder'
 require_relative './messages/messages_request_builder'
-require_relative './oauth2_permission_grants/item/o_auth2_permission_grant_item_request_builder'
 require_relative './oauth2_permission_grants/oauth2_permission_grants_request_builder'
 require_relative './onenote/onenote_request_builder'
-require_relative './online_meetings/item/online_meeting_item_request_builder'
 require_relative './online_meetings/online_meetings_request_builder'
 require_relative './outlook/outlook_request_builder'
-require_relative './owned_devices/item/directory_object_item_request_builder'
 require_relative './owned_devices/owned_devices_request_builder'
-require_relative './owned_objects/item/directory_object_item_request_builder'
 require_relative './owned_objects/owned_objects_request_builder'
-require_relative './people/item/person_item_request_builder'
 require_relative './people/people_request_builder'
 require_relative './photo/photo_request_builder'
-require_relative './photos/item/profile_photo_item_request_builder'
 require_relative './photos/photos_request_builder'
 require_relative './planner/planner_request_builder'
 require_relative './presence/presence_request_builder'
-require_relative './registered_devices/item/directory_object_item_request_builder'
 require_relative './registered_devices/registered_devices_request_builder'
 require_relative './reminder_view_with_start_date_time_with_end_date_time/reminder_view_with_start_date_time_with_end_date_time_request_builder'
 require_relative './remove_all_devices_from_management/remove_all_devices_from_management_request_builder'
 require_relative './reprocess_license_assignment/reprocess_license_assignment_request_builder'
 require_relative './restore/restore_request_builder'
 require_relative './revoke_sign_in_sessions/revoke_sign_in_sessions_request_builder'
-require_relative './scoped_role_member_of/item/scoped_role_membership_item_request_builder'
 require_relative './scoped_role_member_of/scoped_role_member_of_request_builder'
 require_relative './send_mail/send_mail_request_builder'
 require_relative './settings/settings_request_builder'
 require_relative './teamwork/teamwork_request_builder'
 require_relative './todo/todo_request_builder'
-require_relative './transitive_member_of/item/directory_object_item_request_builder'
 require_relative './transitive_member_of/transitive_member_of_request_builder'
 require_relative './translate_exchange_ids/translate_exchange_ids_request_builder'
 require_relative './wipe_managed_app_registrations_by_device_tag/wipe_managed_app_registrations_by_device_tag_request_builder'
@@ -213,6 +183,11 @@ module MicrosoftGraph
                     return MicrosoftGraph::Users::Item::Drives::DrivesRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to manage the employeeExperience property of the microsoft.graph.user entity.
+                def employee_experience()
+                    return MicrosoftGraph::Users::Item::EmployeeExperience::EmployeeExperienceRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the events property of the microsoft.graph.user entity.
                 def events()
                     return MicrosoftGraph::Users::Item::Events::EventsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -291,6 +266,11 @@ module MicrosoftGraph
                 # Provides operations to manage the licenseDetails property of the microsoft.graph.user entity.
                 def license_details()
                     return MicrosoftGraph::Users::Item::LicenseDetails::LicenseDetailsRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # The mailboxSettings property
+                def mailbox_settings()
+                    return MicrosoftGraph::Users::Item::MailboxSettings::MailboxSettingsRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 # Provides operations to manage the mailFolders property of the microsoft.graph.user entity.
@@ -443,83 +423,6 @@ module MicrosoftGraph
                     return MicrosoftGraph::Users::Item::WipeManagedAppRegistrationsByDeviceTag::WipeManagedAppRegistrationsByDeviceTagRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
-                ## Provides operations to manage the activities property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a user_activity_item_request_builder
-                ## 
-                def activities_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["userActivity%2Did"] = id
-                    return MicrosoftGraph::Users::Item::Activities::Item::UserActivityItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a agreement_acceptance_item_request_builder
-                ## 
-                def agreement_acceptances_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["agreementAcceptance%2Did"] = id
-                    return MicrosoftGraph::Users::Item::AgreementAcceptances::Item::AgreementAcceptanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the appRoleAssignments property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a app_role_assignment_item_request_builder
-                ## 
-                def app_role_assignments_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["appRoleAssignment%2Did"] = id
-                    return MicrosoftGraph::Users::Item::AppRoleAssignments::Item::AppRoleAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the calendarGroups property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a calendar_group_item_request_builder
-                ## 
-                def calendar_groups_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["calendarGroup%2Did"] = id
-                    return MicrosoftGraph::Users::Item::CalendarGroups::Item::CalendarGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the calendars property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a calendar_item_request_builder
-                ## 
-                def calendars_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["calendar%2Did"] = id
-                    return MicrosoftGraph::Users::Item::Calendars::Item::CalendarItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the calendarView property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a event_item_request_builder
-                ## 
-                def calendar_view_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["event%2Did"] = id
-                    return MicrosoftGraph::Users::Item::CalendarView::Item::EventItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the chats property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a chat_item_request_builder
-                ## 
-                def chats_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["chat%2Did"] = id
-                    return MicrosoftGraph::Users::Item::Chats::Item::ChatItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Instantiates a new UserItemRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -529,40 +432,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}{?%24select,%24expand}")
                 end
                 ## 
-                ## Provides operations to manage the contactFolders property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a contact_folder_item_request_builder
-                ## 
-                def contact_folders_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["contactFolder%2Did"] = id
-                    return MicrosoftGraph::Users::Item::ContactFolders::Item::ContactFolderItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the contacts property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a contact_item_request_builder
-                ## 
-                def contacts_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["contact%2Did"] = id
-                    return MicrosoftGraph::Users::Item::Contacts::Item::ContactItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the createdObjects property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def created_objects_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Users::Item::CreatedObjects::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
+                ## Deletes a user.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of void
                 ## 
@@ -576,50 +446,6 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Provides operations to manage the deviceManagementTroubleshootingEvents property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a device_management_troubleshooting_event_item_request_builder
-                ## 
-                def device_management_troubleshooting_events_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["deviceManagementTroubleshootingEvent%2Did"] = id
-                    return MicrosoftGraph::Users::Item::DeviceManagementTroubleshootingEvents::Item::DeviceManagementTroubleshootingEventItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the directReports property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def direct_reports_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Users::Item::DirectReports::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the drives property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a drive_item_request_builder
-                ## 
-                def drives_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["drive%2Did"] = id
-                    return MicrosoftGraph::Users::Item::Drives::Item::DriveItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the events property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a event_item_request_builder
-                ## 
-                def events_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["event%2Did"] = id
-                    return MicrosoftGraph::Users::Item::Events::Item::EventItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Provides operations to call the exportDeviceAndAppManagementData method.
                 ## @param skip Usage: skip={skip}
                 ## @param top Usage: top={top}
@@ -629,28 +455,6 @@ module MicrosoftGraph
                     raise StandardError, 'skip cannot be null' if skip.nil?
                     raise StandardError, 'top cannot be null' if top.nil?
                     return ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder.new(@path_parameters, @request_adapter, skip, top)
-                end
-                ## 
-                ## Provides operations to manage the extensions property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a extension_item_request_builder
-                ## 
-                def extensions_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["extension%2Did"] = id
-                    return MicrosoftGraph::Users::Item::Extensions::Item::ExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the followedSites property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a site_item_request_builder
-                ## 
-                def followed_sites_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["site%2Did"] = id
-                    return MicrosoftGraph::Users::Item::FollowedSites::Item::SiteItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Retrieve the properties and relationships of user object.
@@ -667,128 +471,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::User.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Provides operations to manage the joinedTeams property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a team_item_request_builder
-                ## 
-                def joined_teams_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["team%2Did"] = id
-                    return MicrosoftGraph::Users::Item::JoinedTeams::Item::TeamItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the licenseDetails property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a license_details_item_request_builder
-                ## 
-                def license_details_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["licenseDetails%2Did"] = id
-                    return MicrosoftGraph::Users::Item::LicenseDetails::Item::LicenseDetailsItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the mailFolders property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a mail_folder_item_request_builder
-                ## 
-                def mail_folders_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["mailFolder%2Did"] = id
-                    return MicrosoftGraph::Users::Item::MailFolders::Item::MailFolderItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a managed_app_registration_item_request_builder
-                ## 
-                def managed_app_registrations_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["managedAppRegistration%2Did"] = id
-                    return MicrosoftGraph::Users::Item::ManagedAppRegistrations::Item::ManagedAppRegistrationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the managedDevices property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a managed_device_item_request_builder
-                ## 
-                def managed_devices_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["managedDevice%2Did"] = id
-                    return MicrosoftGraph::Users::Item::ManagedDevices::Item::ManagedDeviceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the memberOf property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def member_of_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Users::Item::MemberOf::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the messages property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a message_item_request_builder
-                ## 
-                def messages_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["message%2Did"] = id
-                    return MicrosoftGraph::Users::Item::Messages::Item::MessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a o_auth2_permission_grant_item_request_builder
-                ## 
-                def oauth2_permission_grants_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["oAuth2PermissionGrant%2Did"] = id
-                    return MicrosoftGraph::Users::Item::Oauth2PermissionGrants::Item::OAuth2PermissionGrantItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a online_meeting_item_request_builder
-                ## 
-                def online_meetings_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["onlineMeeting%2Did"] = id
-                    return MicrosoftGraph::Users::Item::OnlineMeetings::Item::OnlineMeetingItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the ownedDevices property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def owned_devices_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Users::Item::OwnedDevices::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the ownedObjects property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def owned_objects_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Users::Item::OwnedObjects::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
+                ## Update the properties of a user object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of user
@@ -804,39 +487,6 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::User.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Provides operations to manage the people property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a person_item_request_builder
-                ## 
-                def people_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["person%2Did"] = id
-                    return MicrosoftGraph::Users::Item::People::Item::PersonItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the photos property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a profile_photo_item_request_builder
-                ## 
-                def photos_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["profilePhoto%2Did"] = id
-                    return MicrosoftGraph::Users::Item::Photos::Item::ProfilePhotoItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the registeredDevices property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def registered_devices_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Users::Item::RegisteredDevices::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Provides operations to call the reminderView method.
                 ## @param end_date_time Usage: EndDateTime='{EndDateTime}'
                 ## @param start_date_time Usage: StartDateTime='{StartDateTime}'
@@ -848,18 +498,7 @@ module MicrosoftGraph
                     return ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder.new(@path_parameters, @request_adapter, EndDateTime, StartDateTime)
                 end
                 ## 
-                ## Provides operations to manage the scopedRoleMemberOf property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a scoped_role_membership_item_request_builder
-                ## 
-                def scoped_role_member_of_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["scopedRoleMembership%2Did"] = id
-                    return MicrosoftGraph::Users::Item::ScopedRoleMemberOf::Item::ScopedRoleMembershipItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
+                ## Deletes a user.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -893,7 +532,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
+                ## Update the properties of a user object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -911,17 +550,6 @@ module MicrosoftGraph
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
-                end
-                ## 
-                ## Provides operations to manage the transitiveMemberOf property of the microsoft.graph.user entity.
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def transitive_member_of_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Users::Item::TransitiveMemberOf::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
 
                 ## 

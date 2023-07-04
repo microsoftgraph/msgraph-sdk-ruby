@@ -5,7 +5,6 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../me'
 require_relative '../calendar_groups'
 require_relative './calendars/calendars_request_builder'
-require_relative './calendars/item/calendar_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -22,17 +21,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::Me::CalendarGroups::Item::Calendars::CalendarsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a calendar_item_request_builder
-                    ## 
-                    def calendars_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["calendar%2Did"] = id
-                        return MicrosoftGraph::Me::CalendarGroups::Item::Calendars::Item::CalendarItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new CalendarGroupItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -42,7 +30,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/me/calendarGroups/{calendarGroup%2Did}{?%24select}")
                     end
                     ## 
-                    ## Delete navigation property calendarGroups for me
+                    ## Delete a calendar group other than the default calendar group.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -56,7 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The user's calendar groups. Read-only. Nullable.
+                    ## Retrieve the properties and relationships of a calendar group object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of calendar_group
                     ## 
@@ -70,7 +58,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CalendarGroup.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property calendarGroups in me
+                    ## Update the properties of calendargroup object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of calendar_group
@@ -86,7 +74,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CalendarGroup.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property calendarGroups for me
+                    ## Delete a calendar group other than the default calendar group.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The user's calendar groups. Read-only. Nullable.
+                    ## Retrieve the properties and relationships of a calendar group object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -120,7 +108,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property calendarGroups in me
+                    ## Update the properties of calendargroup object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -141,7 +129,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The user's calendar groups. Read-only. Nullable.
+                    # Retrieve the properties and relationships of a calendar group object.
                     class CalendarGroupItemRequestBuilderGetQueryParameters
                         
                         ## 

@@ -5,7 +5,6 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../users'
 require_relative '../item'
 require_relative './inference_classification'
-require_relative './overrides/item/inference_classification_override_item_request_builder'
 require_relative './overrides/overrides_request_builder'
 
 module MicrosoftGraph
@@ -43,17 +42,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::InferenceClassification.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the overrides property of the microsoft.graph.inferenceClassification entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a inference_classification_override_item_request_builder
-                    ## 
-                    def overrides_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["inferenceClassificationOverride%2Did"] = id
-                        return MicrosoftGraph::Users::Item::InferenceClassification::Overrides::Item::InferenceClassificationOverrideItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Update the navigation property inferenceClassification in users

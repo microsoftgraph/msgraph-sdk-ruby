@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new keyValue and sets the default values.
+            ## Instantiates a new KeyValue and sets the default values.
             ## @return a void
             ## 
             def initialize()
