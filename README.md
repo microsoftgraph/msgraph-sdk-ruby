@@ -55,8 +55,7 @@ After you have a **MicrosoftGraphServiceClient** that is authenticated, you can 
 To retrieve the user's drive:
 
 ```ruby
-user_item_req_builder = client.users_by_id '9327b2bb-74b9-4d22-9839-eff4a982f541'
-result = user_item_req_builder.get.resume
+result = client.users_by_id('<user-id>').get.resume
 puts "Found User : " + result.id
 ```
 
