@@ -157,7 +157,7 @@ module MicrosoftGraph
                 @column_index = value
             end
             ## 
-            ## Instantiates a new WorkbookRange and sets the default values.
+            ## Instantiates a new workbookRange and sets the default values.
             ## @return a void
             ## 
             def initialize()

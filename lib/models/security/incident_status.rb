@@ -7,6 +7,7 @@ module MicrosoftGraph
                 InProgress: :InProgress,
                 Redirected: :Redirected,
                 UnknownFutureValue: :UnknownFutureValue,
+                AwaitingAction: :AwaitingAction,
             }
         end
     end

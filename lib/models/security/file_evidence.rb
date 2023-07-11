@@ -18,7 +18,7 @@ module MicrosoftGraph
                 # A unique identifier assigned to a device by Microsoft Defender for Endpoint.
                 @mde_device_id
                 ## 
-                ## Instantiates a new FileEvidence and sets the default values.
+                ## Instantiates a new fileEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

@@ -1,5 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../../../../microsoft_graph'
+require_relative '../../../../models/directory_object'
 require_relative '../../../../models/directory_object_collection_response'
 require_relative '../../../../models/o_data_errors/o_data_error'
 require_relative '../../../directory'
@@ -12,6 +13,7 @@ require_relative './graph_group/graph_group_request_builder'
 require_relative './graph_org_contact/graph_org_contact_request_builder'
 require_relative './graph_service_principal/graph_service_principal_request_builder'
 require_relative './graph_user/graph_user_request_builder'
+require_relative './item/directory_object_item_request_builder'
 require_relative './members'
 require_relative './ref/ref_request_builder'
 
@@ -65,6 +67,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Directory::AdministrativeUnits::Item::Members::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Gets an item from the MicrosoftGraph.directory.administrativeUnits.item.members.item collection
+                        ## @param directory_object_id Unique identifier of the item
+                        ## @return a directory_object_item_request_builder
+                        ## 
+                        def by_directory_object_id(directory_object_id)
+                            raise StandardError, 'directory_object_id cannot be null' if directory_object_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["directoryObject%2Did"] = directory_object_id
+                            return MicrosoftGraph::Directory::AdministrativeUnits::Item::Members::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new MembersRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -88,6 +101,22 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObjectCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
+                        ## Create new navigation property to members for directory
+                        ## @param body The request body
+                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
+                        ## @return a Fiber of directory_object
+                        ## 
+                        def post(body, request_configuration=nil)
+                            raise StandardError, 'body cannot be null' if body.nil?
+                            request_info = self.to_post_request_information(
+                                body, request_configuration
+                            )
+                            error_mapping = Hash.new
+                            error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
+                            return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }, error_mapping)
+                        end
+                        ## 
                         ## Users and groups that are members of this administrative unit. Supports $expand.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -103,6 +132,26 @@ module MicrosoftGraph
                                 request_info.set_query_string_parameters_from_raw_object(request_configuration.query_parameters)
                                 request_info.add_request_options(request_configuration.options)
                             end
+                            return request_info
+                        end
+                        ## 
+                        ## Create new navigation property to members for directory
+                        ## @param body The request body
+                        ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
+                        ## @return a request_information
+                        ## 
+                        def to_post_request_information(body, request_configuration=nil)
+                            raise StandardError, 'body cannot be null' if body.nil?
+                            request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
+                            request_info.url_template = @url_template
+                            request_info.path_parameters = @path_parameters
+                            request_info.http_method = :POST
+                            request_info.headers.add('Accept', 'application/json')
+                            unless request_configuration.nil?
+                                request_info.add_headers_from_raw_object(request_configuration.headers)
+                                request_info.add_request_options(request_configuration.options)
+                            end
+                            request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
                         end
 

@@ -5,6 +5,7 @@ require_relative '../../models/provisioning_object_summary'
 require_relative '../../models/provisioning_object_summary_collection_response'
 require_relative '../audit_logs'
 require_relative './count/count_request_builder'
+require_relative './item/provisioning_object_summary_item_request_builder'
 require_relative './provisioning'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::AuditLogs::Provisioning::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.
+                ## @param provisioning_object_summary_id Unique identifier of the item
+                ## @return a provisioning_object_summary_item_request_builder
+                ## 
+                def by_provisioning_object_summary_id(provisioning_object_summary_id)
+                    raise StandardError, 'provisioning_object_summary_id cannot be null' if provisioning_object_summary_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["provisioningObjectSummary%2Did"] = provisioning_object_summary_id
+                    return MicrosoftGraph::AuditLogs::Provisioning::Item::ProvisioningObjectSummaryItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new ProvisioningRequestBuilder and sets the default values.

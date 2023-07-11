@@ -7,7 +7,7 @@ module MicrosoftGraph
         class EducationAssignmentClassRecipient < MicrosoftGraph::Models::EducationAssignmentRecipient
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new EducationAssignmentClassRecipient and sets the default values.
+            ## Instantiates a new educationAssignmentClassRecipient and sets the default values.
             ## @return a void
             ## 
             def initialize()

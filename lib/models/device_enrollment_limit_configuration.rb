@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Device Enrollment Configuration that restricts the number of devices a user can enroll
         class DeviceEnrollmentLimitConfiguration < MicrosoftGraph::Models::DeviceEnrollmentConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # The maximum number of devices that a user can enroll
             @limit
             ## 
-            ## Instantiates a new DeviceEnrollmentLimitConfiguration and sets the default values.
+            ## Instantiates a new deviceEnrollmentLimitConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

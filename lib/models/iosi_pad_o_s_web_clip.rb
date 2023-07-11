@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for iOS web apps.
         class IosiPadOSWebClip < MicrosoftGraph::Models::MobileApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -28,7 +30,7 @@ module MicrosoftGraph
                 @app_url = value
             end
             ## 
-            ## Instantiates a new IosiPadOSWebClip and sets the default values.
+            ## Instantiates a new iosiPadOSWebClip and sets the default values.
             ## @return a void
             ## 
             def initialize()

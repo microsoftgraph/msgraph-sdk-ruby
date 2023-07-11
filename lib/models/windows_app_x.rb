@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for Windows AppX Line Of Business apps.
         class WindowsAppX < MicrosoftGraph::Models::MobileLobApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -43,7 +45,7 @@ module MicrosoftGraph
                 @applicable_architectures = value
             end
             ## 
-            ## Instantiates a new WindowsAppX and sets the default values.
+            ## Instantiates a new windowsAppX and sets the default values.
             ## @return a void
             ## 
             def initialize()

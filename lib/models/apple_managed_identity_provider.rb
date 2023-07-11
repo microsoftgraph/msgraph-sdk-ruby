@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @certificate_data = value
             end
             ## 
-            ## Instantiates a new AppleManagedIdentityProvider and sets the default values.
+            ## Instantiates a new appleManagedIdentityProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()

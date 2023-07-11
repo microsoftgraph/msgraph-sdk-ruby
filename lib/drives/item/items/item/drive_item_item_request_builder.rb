@@ -6,34 +6,33 @@ require_relative '../../../drives'
 require_relative '../../item'
 require_relative '../items'
 require_relative './analytics/analytics_request_builder'
+require_relative './assign_sensitivity_label/assign_sensitivity_label_request_builder'
 require_relative './checkin/checkin_request_builder'
 require_relative './checkout/checkout_request_builder'
 require_relative './children/children_request_builder'
-require_relative './children/item/drive_item_item_request_builder'
 require_relative './content/content_request_builder'
 require_relative './copy/copy_request_builder'
+require_relative './created_by_user/created_by_user_request_builder'
 require_relative './create_link/create_link_request_builder'
 require_relative './create_upload_session/create_upload_session_request_builder'
 require_relative './delta/delta_request_builder'
 require_relative './delta_with_token/delta_with_token_request_builder'
+require_relative './extract_sensitivity_labels/extract_sensitivity_labels_request_builder'
 require_relative './follow/follow_request_builder'
 require_relative './get_activities_by_interval/get_activities_by_interval_request_builder'
 require_relative './get_activities_by_interval_with_start_date_time_with_end_date_time_with_interval/dab1c2feb9ecf2d349721478e4ff8fe9c46b97a0c44110851b2b17a08d22383e'
 require_relative './invite/invite_request_builder'
 require_relative './item'
+require_relative './last_modified_by_user/last_modified_by_user_request_builder'
 require_relative './list_item/list_item_request_builder'
-require_relative './permissions/item/permission_item_request_builder'
 require_relative './permissions/permissions_request_builder'
 require_relative './preview/preview_request_builder'
 require_relative './restore/restore_request_builder'
 require_relative './search_with_q/search_with_q_request_builder'
-require_relative './subscriptions/item/subscription_item_request_builder'
 require_relative './subscriptions/subscriptions_request_builder'
-require_relative './thumbnails/item/thumbnail_set_item_request_builder'
 require_relative './thumbnails/thumbnails_request_builder'
 require_relative './unfollow/unfollow_request_builder'
 require_relative './validate_permission/validate_permission_request_builder'
-require_relative './versions/item/drive_item_version_item_request_builder'
 require_relative './versions/versions_request_builder'
 require_relative './workbook/workbook_request_builder'
 
@@ -50,6 +49,11 @@ module MicrosoftGraph
                         # Provides operations to manage the analytics property of the microsoft.graph.driveItem entity.
                         def analytics()
                             return MicrosoftGraph::Drives::Item::Items::Item::Analytics::AnalyticsRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to call the assignSensitivityLabel method.
+                        def assign_sensitivity_label()
+                            return MicrosoftGraph::Drives::Item::Items::Item::AssignSensitivityLabel::AssignSensitivityLabelRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Provides operations to call the checkin method.
@@ -77,6 +81,11 @@ module MicrosoftGraph
                             return MicrosoftGraph::Drives::Item::Items::Item::Copy::CopyRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        # Provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.
+                        def created_by_user()
+                            return MicrosoftGraph::Drives::Item::Items::Item::CreatedByUser::CreatedByUserRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
                         # Provides operations to call the createLink method.
                         def create_link()
                             return MicrosoftGraph::Drives::Item::Items::Item::CreateLink::CreateLinkRequestBuilder.new(@path_parameters, @request_adapter)
@@ -92,6 +101,11 @@ module MicrosoftGraph
                             return MicrosoftGraph::Drives::Item::Items::Item::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        # Provides operations to call the extractSensitivityLabels method.
+                        def extract_sensitivity_labels()
+                            return MicrosoftGraph::Drives::Item::Items::Item::ExtractSensitivityLabels::ExtractSensitivityLabelsRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
                         # Provides operations to call the follow method.
                         def follow()
                             return MicrosoftGraph::Drives::Item::Items::Item::Follow::FollowRequestBuilder.new(@path_parameters, @request_adapter)
@@ -105,6 +119,11 @@ module MicrosoftGraph
                         # Provides operations to call the invite method.
                         def invite()
                             return MicrosoftGraph::Drives::Item::Items::Item::Invite::InviteRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.
+                        def last_modified_by_user()
+                            return MicrosoftGraph::Drives::Item::Items::Item::LastModifiedByUser::LastModifiedByUserRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
                         # Provides operations to manage the listItem property of the microsoft.graph.driveItem entity.
@@ -157,17 +176,6 @@ module MicrosoftGraph
                             return MicrosoftGraph::Drives::Item::Items::Item::Workbook::WorkbookRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        ## Provides operations to manage the children property of the microsoft.graph.driveItem entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a drive_item_item_request_builder
-                        ## 
-                        def children_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["driveItem%2Did1"] = id
-                            return MicrosoftGraph::Drives::Item::Items::Item::Children::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
                         ## Instantiates a new DriveItemItemRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -177,7 +185,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property items for drives
+                        ## Delete a DriveItem by using its ID or path.Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -227,7 +235,7 @@ module MicrosoftGraph
                             return GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder.new(@path_parameters, @request_adapter, endDateTime, interval, startDateTime)
                         end
                         ## 
-                        ## Update the navigation property items in drives
+                        ## To move a DriveItem to a new parent item, your app requests to update the **parentReference** of the DriveItem to move. This is a special case of the Update method.Your app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of drive_item
@@ -243,17 +251,6 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DriveItem.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Provides operations to manage the permissions property of the microsoft.graph.driveItem entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a permission_item_request_builder
-                        ## 
-                        def permissions_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["permission%2Did"] = id
-                            return MicrosoftGraph::Drives::Item::Items::Item::Permissions::Item::PermissionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
                         ## Provides operations to call the search method.
                         ## @param q Usage: q='{q}'
                         ## @return a search_with_q_request_builder
@@ -263,29 +260,7 @@ module MicrosoftGraph
                             return SearchWithQRequestBuilder.new(@path_parameters, @request_adapter, q)
                         end
                         ## 
-                        ## Provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a subscription_item_request_builder
-                        ## 
-                        def subscriptions_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["subscription%2Did"] = id
-                            return MicrosoftGraph::Drives::Item::Items::Item::Subscriptions::Item::SubscriptionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a thumbnail_set_item_request_builder
-                        ## 
-                        def thumbnails_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["thumbnailSet%2Did"] = id
-                            return MicrosoftGraph::Drives::Item::Items::Item::Thumbnails::Item::ThumbnailSetItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Delete navigation property items for drives
+                        ## Delete a DriveItem by using its ID or path.Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -319,7 +294,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property items in drives
+                        ## To move a DriveItem to a new parent item, your app requests to update the **parentReference** of the DriveItem to move. This is a special case of the Update method.Your app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -337,17 +312,6 @@ module MicrosoftGraph
                             end
                             request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                             return request_info
-                        end
-                        ## 
-                        ## Provides operations to manage the versions property of the microsoft.graph.driveItem entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a drive_item_version_item_request_builder
-                        ## 
-                        def versions_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["driveItemVersion%2Did"] = id
-                            return MicrosoftGraph::Drives::Item::Items::Item::Versions::Item::DriveItemVersionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
 
                         ## 

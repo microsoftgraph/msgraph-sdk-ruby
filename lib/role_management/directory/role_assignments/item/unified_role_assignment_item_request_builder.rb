@@ -50,7 +50,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/roleManagement/directory/roleAssignments/{unifiedRoleAssignment%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property roleAssignments for roleManagement
+                        ## Delete a unifiedRoleAssignment object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -64,7 +64,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Resource to grant access to users or groups.
+                        ## Retrieve the properties and relationships of a unifiedRoleAssignment object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of unified_role_assignment
                         ## 
@@ -94,7 +94,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleAssignment.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property roleAssignments for roleManagement
+                        ## Delete a unifiedRoleAssignment object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -110,7 +110,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Resource to grant access to users or groups.
+                        ## Retrieve the properties and relationships of a unifiedRoleAssignment object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -149,7 +149,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Resource to grant access to users or groups.
+                        # Retrieve the properties and relationships of a unifiedRoleAssignment object.
                         class UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters
                             
                             ## 

@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The attendee's response (none, accepted, declined, etc.) for the event and date-time that the response was sent.
             @status
             ## 
-            ## Instantiates a new Attendee and sets the default values.
+            ## Instantiates a new attendee and sets the default values.
             ## @return a void
             ## 
             def initialize()

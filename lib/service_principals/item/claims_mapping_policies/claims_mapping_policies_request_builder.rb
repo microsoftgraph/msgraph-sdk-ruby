@@ -6,6 +6,7 @@ require_relative '../../service_principals'
 require_relative '../item'
 require_relative './claims_mapping_policies'
 require_relative './count/count_request_builder'
+require_relative './item/claims_mapping_policy_item_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -25,6 +26,17 @@ module MicrosoftGraph
                     # Provides operations to manage the collection of servicePrincipal entities.
                     def ref()
                         return MicrosoftGraph::ServicePrincipals::Item::ClaimsMappingPolicies::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Gets an item from the MicrosoftGraph.servicePrincipals.item.claimsMappingPolicies.item collection
+                    ## @param claims_mapping_policy_id Unique identifier of the item
+                    ## @return a claims_mapping_policy_item_request_builder
+                    ## 
+                    def by_claims_mapping_policy_id(claims_mapping_policy_id)
+                        raise StandardError, 'claims_mapping_policy_id cannot be null' if claims_mapping_policy_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["claimsMappingPolicy%2Did"] = claims_mapping_policy_id
+                        return MicrosoftGraph::ServicePrincipals::Item::ClaimsMappingPolicies::Item::ClaimsMappingPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new ClaimsMappingPoliciesRequestBuilder and sets the default values.

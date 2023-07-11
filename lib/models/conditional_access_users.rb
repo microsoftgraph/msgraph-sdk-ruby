@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Group IDs excluded from scope of policy.
             @exclude_groups
             ## 
-            # The excludeGuestsOrExternalUsers property
+            # Internal guests or external users excluded from the policy scope. Optionally populated.
             @exclude_guests_or_external_users
             ## 
             # Role IDs excluded from scope of policy.
@@ -25,7 +25,7 @@ module MicrosoftGraph
             # Group IDs in scope of policy unless explicitly excluded.
             @include_groups
             ## 
-            # The includeGuestsOrExternalUsers property
+            # Internal guests or external users included in the policy scope. Optionally populated.
             @include_guests_or_external_users
             ## 
             # Role IDs in scope of policy unless explicitly excluded.
@@ -83,14 +83,14 @@ module MicrosoftGraph
                 @exclude_groups = value
             end
             ## 
-            ## Gets the excludeGuestsOrExternalUsers property value. The excludeGuestsOrExternalUsers property
+            ## Gets the excludeGuestsOrExternalUsers property value. Internal guests or external users excluded from the policy scope. Optionally populated.
             ## @return a conditional_access_guests_or_external_users
             ## 
             def exclude_guests_or_external_users
                 return @exclude_guests_or_external_users
             end
             ## 
-            ## Sets the excludeGuestsOrExternalUsers property value. The excludeGuestsOrExternalUsers property
+            ## Sets the excludeGuestsOrExternalUsers property value. Internal guests or external users excluded from the policy scope. Optionally populated.
             ## @param value Value to set for the exclude_guests_or_external_users property.
             ## @return a void
             ## 
@@ -160,14 +160,14 @@ module MicrosoftGraph
                 @include_groups = value
             end
             ## 
-            ## Gets the includeGuestsOrExternalUsers property value. The includeGuestsOrExternalUsers property
+            ## Gets the includeGuestsOrExternalUsers property value. Internal guests or external users included in the policy scope. Optionally populated.
             ## @return a conditional_access_guests_or_external_users
             ## 
             def include_guests_or_external_users
                 return @include_guests_or_external_users
             end
             ## 
-            ## Sets the includeGuestsOrExternalUsers property value. The includeGuestsOrExternalUsers property
+            ## Sets the includeGuestsOrExternalUsers property value. Internal guests or external users included in the policy scope. Optionally populated.
             ## @param value Value to set for the include_guests_or_external_users property.
             ## @return a void
             ## 

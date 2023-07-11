@@ -38,7 +38,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Risk detection in Azure AD Identity Protection and the associated information about the detection.
+                    ## Read the properties and relationships of a riskDetection object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of risk_detection
                     ## 
@@ -84,7 +84,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Risk detection in Azure AD Identity Protection and the associated information about the detection.
+                    ## Read the properties and relationships of a riskDetection object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -123,7 +123,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Risk detection in Azure AD Identity Protection and the associated information about the detection.
+                    # Read the properties and relationships of a riskDetection object.
                     class RiskDetectionItemRequestBuilderGetQueryParameters
                         
                         ## 

@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The level that the teacher has selected for each quality while grading this assignment.
             @rubric_quality_selected_levels
             ## 
-            ## Instantiates a new EducationRubricOutcome and sets the default values.
+            ## Instantiates a new educationRubricOutcome and sets the default values.
             ## @return a void
             ## 
             def initialize()

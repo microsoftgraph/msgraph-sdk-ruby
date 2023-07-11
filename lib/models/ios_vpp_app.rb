@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for iOS Volume-Purchased Program (VPP) Apps.
         class IosVppApp < MicrosoftGraph::Models::MobileApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -83,7 +85,7 @@ module MicrosoftGraph
                 @bundle_id = value
             end
             ## 
-            ## Instantiates a new IosVppApp and sets the default values.
+            ## Instantiates a new iosVppApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

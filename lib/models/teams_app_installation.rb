@@ -7,11 +7,29 @@ module MicrosoftGraph
         class TeamsAppInstallation < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The set of resource-specific permissions consented to while installing or upgrading the teamsApp.
+            @consented_permission_set
+            ## 
             # The app that is installed.
             @teams_app
             ## 
             # The details of this version of the app.
             @teams_app_definition
+            ## 
+            ## Gets the consentedPermissionSet property value. The set of resource-specific permissions consented to while installing or upgrading the teamsApp.
+            ## @return a teams_app_permission_set
+            ## 
+            def consented_permission_set
+                return @consented_permission_set
+            end
+            ## 
+            ## Sets the consentedPermissionSet property value. The set of resource-specific permissions consented to while installing or upgrading the teamsApp.
+            ## @param value Value to set for the consented_permission_set property.
+            ## @return a void
+            ## 
+            def consented_permission_set=(value)
+                @consented_permission_set = value
+            end
             ## 
             ## Instantiates a new teamsAppInstallation and sets the default values.
             ## @return a void
@@ -42,6 +60,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "consentedPermissionSet" => lambda {|n| @consented_permission_set = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamsAppPermissionSet.create_from_discriminator_value(pn) }) },
                     "teamsApp" => lambda {|n| @teams_app = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamsApp.create_from_discriminator_value(pn) }) },
                     "teamsAppDefinition" => lambda {|n| @teams_app_definition = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamsAppDefinition.create_from_discriminator_value(pn) }) },
                 })
@@ -54,6 +73,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("consentedPermissionSet", @consented_permission_set)
                 writer.write_object_value("teamsApp", @teams_app)
                 writer.write_object_value("teamsAppDefinition", @teams_app_definition)
             end

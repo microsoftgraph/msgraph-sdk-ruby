@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the windows10TeamGeneralConfiguration resource.
         class Windows10TeamGeneralConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -128,7 +130,7 @@ module MicrosoftGraph
                 @connect_app_block_auto_launch = value
             end
             ## 
-            ## Instantiates a new Windows10TeamGeneralConfiguration and sets the default values.
+            ## Instantiates a new windows10TeamGeneralConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

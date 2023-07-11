@@ -10,6 +10,12 @@ module MicrosoftGraph
             # Conceptual container for user and group directory objects.
             @administrative_units
             ## 
+            # Group of related custom security attribute definitions.
+            @attribute_sets
+            ## 
+            # Schema of a custom security attributes (key-value pairs).
+            @custom_security_attribute_definitions
+            ## 
             # Recently deleted items. Read-only. Nullable.
             @deleted_items
             ## 
@@ -34,7 +40,22 @@ module MicrosoftGraph
                 @administrative_units = value
             end
             ## 
-            ## Instantiates a new Directory and sets the default values.
+            ## Gets the attributeSets property value. Group of related custom security attribute definitions.
+            ## @return a attribute_set
+            ## 
+            def attribute_sets
+                return @attribute_sets
+            end
+            ## 
+            ## Sets the attributeSets property value. Group of related custom security attribute definitions.
+            ## @param value Value to set for the attribute_sets property.
+            ## @return a void
+            ## 
+            def attribute_sets=(value)
+                @attribute_sets = value
+            end
+            ## 
+            ## Instantiates a new directory and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -48,6 +69,21 @@ module MicrosoftGraph
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
                 return Directory.new
+            end
+            ## 
+            ## Gets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
+            ## @return a custom_security_attribute_definition
+            ## 
+            def custom_security_attribute_definitions
+                return @custom_security_attribute_definitions
+            end
+            ## 
+            ## Sets the customSecurityAttributeDefinitions property value. Schema of a custom security attributes (key-value pairs).
+            ## @param value Value to set for the custom_security_attribute_definitions property.
+            ## @return a void
+            ## 
+            def custom_security_attribute_definitions=(value)
+                @custom_security_attribute_definitions = value
             end
             ## 
             ## Gets the deletedItems property value. Recently deleted items. Read-only. Nullable.
@@ -86,6 +122,8 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return super.merge({
                     "administrativeUnits" => lambda {|n| @administrative_units = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AdministrativeUnit.create_from_discriminator_value(pn) }) },
+                    "attributeSets" => lambda {|n| @attribute_sets = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AttributeSet.create_from_discriminator_value(pn) }) },
+                    "customSecurityAttributeDefinitions" => lambda {|n| @custom_security_attribute_definitions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CustomSecurityAttributeDefinition.create_from_discriminator_value(pn) }) },
                     "deletedItems" => lambda {|n| @deleted_items = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
                     "federationConfigurations" => lambda {|n| @federation_configurations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::IdentityProviderBase.create_from_discriminator_value(pn) }) },
                     "onPremisesSynchronization" => lambda {|n| @on_premises_synchronization = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::OnPremisesDirectorySynchronization.create_from_discriminator_value(pn) }) },
@@ -115,6 +153,8 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
                 writer.write_collection_of_object_values("administrativeUnits", @administrative_units)
+                writer.write_collection_of_object_values("attributeSets", @attribute_sets)
+                writer.write_collection_of_object_values("customSecurityAttributeDefinitions", @custom_security_attribute_definitions)
                 writer.write_collection_of_object_values("deletedItems", @deleted_items)
                 writer.write_collection_of_object_values("federationConfigurations", @federation_configurations)
                 writer.write_collection_of_object_values("onPremisesSynchronization", @on_premises_synchronization)

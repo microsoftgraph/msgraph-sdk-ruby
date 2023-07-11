@@ -7,6 +7,7 @@ require_relative '../teamwork'
 require_relative './count/count_request_builder'
 require_relative './deleted_teams'
 require_relative './get_all_messages/get_all_messages_request_builder'
+require_relative './item/deleted_team_item_request_builder'
 
 module MicrosoftGraph
     module Teamwork
@@ -24,6 +25,17 @@ module MicrosoftGraph
                 # Provides operations to call the getAllMessages method.
                 def get_all_messages()
                     return MicrosoftGraph::Teamwork::DeletedTeams::GetAllMessages::GetAllMessagesRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.
+                ## @param deleted_team_id Unique identifier of the item
+                ## @return a deleted_team_item_request_builder
+                ## 
+                def by_deleted_team_id(deleted_team_id)
+                    raise StandardError, 'deleted_team_id cannot be null' if deleted_team_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["deletedTeam%2Did"] = deleted_team_id
+                    return MicrosoftGraph::Teamwork::DeletedTeams::Item::DeletedTeamItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new DeletedTeamsRequestBuilder and sets the default values.

@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @authentication_type = value
             end
             ## 
-            ## Instantiates a new SignInFrequencySessionControl and sets the default values.
+            ## Instantiates a new signInFrequencySessionControl and sets the default values.
             ## @return a void
             ## 
             def initialize()

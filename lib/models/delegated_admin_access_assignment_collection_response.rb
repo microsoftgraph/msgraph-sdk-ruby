@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value property
             @value
             ## 
-            ## Instantiates a new DelegatedAdminAccessAssignmentCollectionResponse and sets the default values.
+            ## Instantiates a new delegatedAdminAccessAssignmentCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

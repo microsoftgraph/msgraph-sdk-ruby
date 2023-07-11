@@ -79,7 +79,7 @@ module MicrosoftGraph
                 @average_outbound_frame_rate = value
             end
             ## 
-            ## Instantiates a new TeleconferenceDeviceVideoQuality and sets the default values.
+            ## Instantiates a new teleconferenceDeviceVideoQuality and sets the default values.
             ## @return a void
             ## 
             def initialize()

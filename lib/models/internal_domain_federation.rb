@@ -43,7 +43,7 @@ module MicrosoftGraph
                 @active_sign_in_uri = value
             end
             ## 
-            ## Instantiates a new InternalDomainFederation and sets the default values.
+            ## Instantiates a new internalDomainFederation and sets the default values.
             ## @return a void
             ## 
             def initialize()

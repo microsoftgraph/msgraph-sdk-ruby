@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties used to assign an Win32 LOB mobile app to a group.
         class Win32LobAppAssignmentSettings < MicrosoftGraph::Models::MobileAppAssignmentSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -19,7 +21,7 @@ module MicrosoftGraph
             # The reboot settings to apply for this app assignment.
             @restart_settings
             ## 
-            ## Instantiates a new Win32LobAppAssignmentSettings and sets the default values.
+            ## Instantiates a new win32LobAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

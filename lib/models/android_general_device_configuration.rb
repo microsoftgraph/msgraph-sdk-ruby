@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the androidGeneralDeviceConfiguration resource.
         class AndroidGeneralDeviceConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -361,7 +363,7 @@ module MicrosoftGraph
                 @compliant_apps_list = value
             end
             ## 
-            ## Instantiates a new AndroidGeneralDeviceConfiguration and sets the default values.
+            ## Instantiates a new androidGeneralDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

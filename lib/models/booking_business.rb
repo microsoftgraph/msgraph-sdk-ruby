@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Represents a Microsot Bookings Business.
         class BookingBusiness < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -136,7 +138,7 @@ module MicrosoftGraph
                 @calendar_view = value
             end
             ## 
-            ## Instantiates a new BookingBusiness and sets the default values.
+            ## Instantiates a new bookingBusiness and sets the default values.
             ## @return a void
             ## 
             def initialize()

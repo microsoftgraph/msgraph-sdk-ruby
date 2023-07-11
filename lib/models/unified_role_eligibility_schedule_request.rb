@@ -97,7 +97,7 @@ module MicrosoftGraph
                 @app_scope_id = value
             end
             ## 
-            ## Instantiates a new UnifiedRoleEligibilityScheduleRequest and sets the default values.
+            ## Instantiates a new unifiedRoleEligibilityScheduleRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

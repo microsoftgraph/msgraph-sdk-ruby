@@ -8,8 +8,12 @@ require_relative '../../branding'
 require_relative '../localizations'
 require_relative './background_image/background_image_request_builder'
 require_relative './banner_logo/banner_logo_request_builder'
+require_relative './custom_c_s_s/custom_c_s_s_request_builder'
+require_relative './favicon/favicon_request_builder'
+require_relative './header_logo/header_logo_request_builder'
 require_relative './item'
 require_relative './square_logo/square_logo_request_builder'
+require_relative './square_logo_dark/square_logo_dark_request_builder'
 
 module MicrosoftGraph
     module Organization
@@ -33,8 +37,28 @@ module MicrosoftGraph
                             end
                             ## 
                             # Provides operations to manage the media for the organization entity.
+                            def custom_c_s_s()
+                                return MicrosoftGraph::Organization::Item::Branding::Localizations::Item::CustomCSS::CustomCSSRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # Provides operations to manage the media for the organization entity.
+                            def favicon()
+                                return MicrosoftGraph::Organization::Item::Branding::Localizations::Item::Favicon::FaviconRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # Provides operations to manage the media for the organization entity.
+                            def header_logo()
+                                return MicrosoftGraph::Organization::Item::Branding::Localizations::Item::HeaderLogo::HeaderLogoRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # Provides operations to manage the media for the organization entity.
                             def square_logo()
                                 return MicrosoftGraph::Organization::Item::Branding::Localizations::Item::SquareLogo::SquareLogoRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # Provides operations to manage the media for the organization entity.
+                            def square_logo_dark()
+                                return MicrosoftGraph::Organization::Item::Branding::Localizations::Item::SquareLogoDark::SquareLogoDarkRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new OrganizationalBrandingLocalizationItemRequestBuilder and sets the default values.
@@ -46,7 +70,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/organization/{organization%2Did}/branding/localizations/{organizationalBrandingLocalization%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property localizations for organization
+                            ## Delete a localized branding object. To delete the organizationalBrandingLocalization object, all images (Stream types) must first be removed from the object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -60,7 +84,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Add different branding based on a locale.
+                            ## Read the properties and relationships of an organizationalBrandingLocalization object. To retrieve a localization branding object, specify the value of **id** in the URL.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of organizational_branding_localization
                             ## 
@@ -74,7 +98,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OrganizationalBrandingLocalization.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property localizations in organization
+                            ## Update the properties of an organizationalBrandingLocalization object for a specific localization.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of organizational_branding_localization
@@ -90,7 +114,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OrganizationalBrandingLocalization.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property localizations for organization
+                            ## Delete a localized branding object. To delete the organizationalBrandingLocalization object, all images (Stream types) must first be removed from the object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,7 +130,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Add different branding based on a locale.
+                            ## Read the properties and relationships of an organizationalBrandingLocalization object. To retrieve a localization branding object, specify the value of **id** in the URL.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -124,7 +148,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property localizations in organization
+                            ## Update the properties of an organizationalBrandingLocalization object for a specific localization.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -145,7 +169,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Add different branding based on a locale.
+                            # Read the properties and relationships of an organizationalBrandingLocalization object. To retrieve a localization branding object, specify the value of **id** in the URL.
                             class OrganizationalBrandingLocalizationItemRequestBuilderGetQueryParameters
                                 
                                 ## 

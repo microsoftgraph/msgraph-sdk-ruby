@@ -10,6 +10,7 @@ require_relative './additional_access_with_access_package_id_with_incompatible_a
 require_relative './assignments'
 require_relative './count/count_request_builder'
 require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './item/access_package_assignment_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -39,6 +40,17 @@ module MicrosoftGraph
                         raise StandardError, 'access_package_id cannot be null' if access_package_id.nil?
                         raise StandardError, 'incompatible_access_package_id cannot be null' if incompatible_access_package_id.nil?
                         return AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdRequestBuilder.new(@path_parameters, @request_adapter, accessPackageId, incompatibleAccessPackageId)
+                    end
+                    ## 
+                    ## Provides operations to manage the assignments property of the microsoft.graph.entitlementManagement entity.
+                    ## @param access_package_assignment_id Unique identifier of the item
+                    ## @return a access_package_assignment_item_request_builder
+                    ## 
+                    def by_access_package_assignment_id(access_package_assignment_id)
+                        raise StandardError, 'access_package_assignment_id cannot be null' if access_package_assignment_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["accessPackageAssignment%2Did"] = access_package_assignment_id
+                        return MicrosoftGraph::IdentityGovernance::EntitlementManagement::Assignments::Item::AccessPackageAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AssignmentsRequestBuilder and sets the default values.

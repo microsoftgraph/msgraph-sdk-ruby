@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @channel_id = value
             end
             ## 
-            ## Instantiates a new ChannelUnsetAsFavoriteByDefaultEventMessageDetail and sets the default values.
+            ## Instantiates a new channelUnsetAsFavoriteByDefaultEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -18,7 +18,7 @@ module MicrosoftGraph
                 # The user account of the mailbox.
                 @user_account
                 ## 
-                ## Instantiates a new MailboxEvidence and sets the default values.
+                ## Instantiates a new mailboxEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

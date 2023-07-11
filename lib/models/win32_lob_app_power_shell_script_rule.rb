@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # A complex type to store the PowerShell script rule data for a Win32 LOB app.
         class Win32LobAppPowerShellScriptRule < MicrosoftGraph::Models::Win32LobAppRule
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -46,7 +48,7 @@ module MicrosoftGraph
                 @comparison_value = value
             end
             ## 
-            ## Instantiates a new Win32LobAppPowerShellScriptRule and sets the default values.
+            ## Instantiates a new win32LobAppPowerShellScriptRule and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,7 +7,7 @@ module MicrosoftGraph
         class CancelMediaProcessingOperation < MicrosoftGraph::Models::CommsOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new CancelMediaProcessingOperation and sets the default values.
+            ## Instantiates a new cancelMediaProcessingOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

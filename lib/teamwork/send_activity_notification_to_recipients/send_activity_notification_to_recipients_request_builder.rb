@@ -21,7 +21,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/teamwork/sendActivityNotificationToRecipients")
                 end
                 ## 
-                ## Invoke action sendActivityNotificationToRecipients
+                ## Send activity feed notifications to multiple users, in bulk.  For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of void
@@ -37,7 +37,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Invoke action sendActivityNotificationToRecipients
+                ## Send activity feed notifications to multiple users, in bulk.  For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information

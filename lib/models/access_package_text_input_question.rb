@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The regular expression pattern which any answer to this question must match.
             @regex_pattern
             ## 
-            ## Instantiates a new AccessPackageTextInputQuestion and sets the default values.
+            ## Instantiates a new accessPackageTextInputQuestion and sets the default values.
             ## @return a void
             ## 
             def initialize()

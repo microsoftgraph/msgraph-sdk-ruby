@@ -14,7 +14,7 @@ module MicrosoftGraph
             # Initiator of the event.
             @initiator
             ## 
-            ## Instantiates a new MessagePinnedEventMessageDetail and sets the default values.
+            ## Instantiates a new messagePinnedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

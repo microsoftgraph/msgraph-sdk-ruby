@@ -10,6 +10,7 @@ require_relative '../item'
 require_relative './child_folders'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/mail_folder_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -30,6 +31,17 @@ module MicrosoftGraph
                             # Provides operations to call the delta method.
                             def delta()
                                 return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the childFolders property of the microsoft.graph.mailFolder entity.
+                            ## @param mail_folder_id1 Unique identifier of the item
+                            ## @return a mail_folder_item_request_builder
+                            ## 
+                            def by_mail_folder_id1(mail_folder_id1)
+                                raise StandardError, 'mail_folder_id1 cannot be null' if mail_folder_id1.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["mailFolder%2Did1"] = mail_folder_id1
+                                return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::MailFolderItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new ChildFoldersRequestBuilder and sets the default values.
@@ -55,7 +67,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MailFolderCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+                            ## Create a new mailSearchFolder in the specified user's mailbox.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of mail_folder
@@ -89,7 +101,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+                            ## Create a new mailSearchFolder in the specified user's mailbox.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information

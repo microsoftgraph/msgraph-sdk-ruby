@@ -10,7 +10,7 @@ module MicrosoftGraph
             # ID for the open shift.
             @open_shift_id
             ## 
-            ## Instantiates a new OpenShiftChangeRequest and sets the default values.
+            ## Instantiates a new openShiftChangeRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

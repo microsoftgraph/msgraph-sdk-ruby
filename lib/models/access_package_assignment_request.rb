@@ -23,6 +23,9 @@ module MicrosoftGraph
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter.
             @created_date_time
             ## 
+            # The customExtensionCalloutInstances property
+            @custom_extension_callout_instances
+            ## 
             # The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. A request from the user themselves would have requestType of userAdd, userUpdate or userRemove. This property cannot be changed once set.
             @request_type
             ## 
@@ -129,6 +132,21 @@ module MicrosoftGraph
                 return AccessPackageAssignmentRequest.new
             end
             ## 
+            ## Gets the customExtensionCalloutInstances property value. The customExtensionCalloutInstances property
+            ## @return a custom_extension_callout_instance
+            ## 
+            def custom_extension_callout_instances
+                return @custom_extension_callout_instances
+            end
+            ## 
+            ## Sets the customExtensionCalloutInstances property value. The customExtensionCalloutInstances property
+            ## @param value Value to set for the custom_extension_callout_instances property.
+            ## @return a void
+            ## 
+            def custom_extension_callout_instances=(value)
+                @custom_extension_callout_instances = value
+            end
+            ## 
             ## The deserialization information for the current model
             ## @return a i_dictionary
             ## 
@@ -139,6 +157,7 @@ module MicrosoftGraph
                     "assignment" => lambda {|n| @assignment = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageAssignment.create_from_discriminator_value(pn) }) },
                     "completedDateTime" => lambda {|n| @completed_date_time = n.get_date_time_value() },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
+                    "customExtensionCalloutInstances" => lambda {|n| @custom_extension_callout_instances = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CustomExtensionCalloutInstance.create_from_discriminator_value(pn) }) },
                     "requestType" => lambda {|n| @request_type = n.get_enum_value(MicrosoftGraph::Models::AccessPackageRequestType) },
                     "requestor" => lambda {|n| @requestor = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageSubject.create_from_discriminator_value(pn) }) },
                     "schedule" => lambda {|n| @schedule = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EntitlementManagementSchedule.create_from_discriminator_value(pn) }) },
@@ -204,6 +223,7 @@ module MicrosoftGraph
                 writer.write_object_value("assignment", @assignment)
                 writer.write_date_time_value("completedDateTime", @completed_date_time)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
+                writer.write_collection_of_object_values("customExtensionCalloutInstances", @custom_extension_callout_instances)
                 writer.write_enum_value("requestType", @request_type)
                 writer.write_object_value("requestor", @requestor)
                 writer.write_object_value("schedule", @schedule)

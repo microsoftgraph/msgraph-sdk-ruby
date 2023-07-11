@@ -8,6 +8,7 @@ require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
 require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
 require_relative './get_by_ids/get_by_ids_request_builder'
+require_relative './item/contract_item_request_builder'
 require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph
@@ -40,6 +41,17 @@ module MicrosoftGraph
             # Provides operations to call the validateProperties method.
             def validate_properties()
                 return MicrosoftGraph::Contracts::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            ## Provides operations to manage the collection of contract entities.
+            ## @param contract_id Unique identifier of the item
+            ## @return a contract_item_request_builder
+            ## 
+            def by_contract_id(contract_id)
+                raise StandardError, 'contract_id cannot be null' if contract_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["contract%2Did"] = contract_id
+                return MicrosoftGraph::Contracts::Item::ContractItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new ContractsRequestBuilder and sets the default values.

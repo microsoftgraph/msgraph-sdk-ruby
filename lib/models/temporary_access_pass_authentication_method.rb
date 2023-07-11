@@ -29,7 +29,7 @@ module MicrosoftGraph
             # The Temporary Access Pass used to authenticate. Returned only on creation of a new temporaryAccessPassAuthenticationMethod object; Hidden in subsequent read operations and returned as null with GET.
             @temporary_access_pass
             ## 
-            ## Instantiates a new TemporaryAccessPassAuthenticationMethod and sets the default values.
+            ## Instantiates a new temporaryAccessPassAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()

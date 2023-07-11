@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Indicates the type of query. Types include MicrosoftGraph and ARM.
             @query_type
             ## 
-            ## Instantiates a new AccessReviewQueryScope and sets the default values.
+            ## Instantiates a new accessReviewQueryScope and sets the default values.
             ## @return a void
             ## 
             def initialize()

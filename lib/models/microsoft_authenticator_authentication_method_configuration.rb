@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The isSoftwareOathEnabled property
             @is_software_oath_enabled
             ## 
-            ## Instantiates a new MicrosoftAuthenticatorAuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new microsoftAuthenticatorAuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

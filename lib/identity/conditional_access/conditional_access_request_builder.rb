@@ -4,13 +4,10 @@ require_relative '../../models/conditional_access_root'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../identity'
 require_relative './authentication_context_class_references/authentication_context_class_references_request_builder'
-require_relative './authentication_context_class_references/item/authentication_context_class_reference_item_request_builder'
+require_relative './authentication_strength/authentication_strength_request_builder'
 require_relative './conditional_access'
-require_relative './named_locations/item/named_location_item_request_builder'
 require_relative './named_locations/named_locations_request_builder'
-require_relative './policies/item/conditional_access_policy_item_request_builder'
 require_relative './policies/policies_request_builder'
-require_relative './templates/item/conditional_access_template_item_request_builder'
 require_relative './templates/templates_request_builder'
 
 module MicrosoftGraph
@@ -26,6 +23,11 @@ module MicrosoftGraph
                     return MicrosoftGraph::Identity::ConditionalAccess::AuthenticationContextClassReferences::AuthenticationContextClassReferencesRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to manage the authenticationStrength property of the microsoft.graph.conditionalAccessRoot entity.
+                def authentication_strength()
+                    return MicrosoftGraph::Identity::ConditionalAccess::AuthenticationStrength::AuthenticationStrengthRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.
                 def named_locations()
                     return MicrosoftGraph::Identity::ConditionalAccess::NamedLocations::NamedLocationsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -39,17 +41,6 @@ module MicrosoftGraph
                 # Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
                 def templates()
                     return MicrosoftGraph::Identity::ConditionalAccess::Templates::TemplatesRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.
-                ## @param id Unique identifier of the item
-                ## @return a authentication_context_class_reference_item_request_builder
-                ## 
-                def authentication_context_class_references_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["authenticationContextClassReference%2Did"] = id
-                    return MicrosoftGraph::Identity::ConditionalAccess::AuthenticationContextClassReferences::Item::AuthenticationContextClassReferenceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new ConditionalAccessRequestBuilder and sets the default values.
@@ -89,17 +80,6 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConditionalAccessRoot.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.
-                ## @param id Unique identifier of the item
-                ## @return a named_location_item_request_builder
-                ## 
-                def named_locations_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["namedLocation%2Did"] = id
-                    return MicrosoftGraph::Identity::ConditionalAccess::NamedLocations::Item::NamedLocationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Update the navigation property conditionalAccess in identity
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
@@ -114,28 +94,6 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConditionalAccessRoot.create_from_discriminator_value(pn) }, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.
-                ## @param id Unique identifier of the item
-                ## @return a conditional_access_policy_item_request_builder
-                ## 
-                def policies_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["conditionalAccessPolicy%2Did"] = id
-                    return MicrosoftGraph::Identity::ConditionalAccess::Policies::Item::ConditionalAccessPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
-                ## @param id Unique identifier of the item
-                ## @return a conditional_access_template_item_request_builder
-                ## 
-                def templates_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["conditionalAccessTemplate%2Did"] = id
-                    return MicrosoftGraph::Identity::ConditionalAccess::Templates::Item::ConditionalAccessTemplateItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Delete navigation property conditionalAccess for identity

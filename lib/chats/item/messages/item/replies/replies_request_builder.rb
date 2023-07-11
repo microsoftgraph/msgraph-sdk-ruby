@@ -9,6 +9,7 @@ require_relative '../../messages'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/chat_message_item_request_builder'
 require_relative './replies'
 
 module MicrosoftGraph
@@ -30,6 +31,17 @@ module MicrosoftGraph
                             # Provides operations to call the delta method.
                             def delta()
                                 return MicrosoftGraph::Chats::Item::Messages::Item::Replies::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
+                            ## @param chat_message_id1 Unique identifier of the item
+                            ## @return a chat_message_item_request_builder
+                            ## 
+                            def by_chat_message_id1(chat_message_id1)
+                                raise StandardError, 'chat_message_id1 cannot be null' if chat_message_id1.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["chatMessage%2Did1"] = chat_message_id1
+                                return MicrosoftGraph::Chats::Item::Messages::Item::Replies::Item::ChatMessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new RepliesRequestBuilder and sets the default values.

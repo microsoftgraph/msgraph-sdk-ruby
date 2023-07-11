@@ -38,7 +38,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Get monthlyPrintUsageByUser from reports
+                    ## Retrieve a list of monthly print usage summaries, grouped by user.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of print_usage_by_user
                     ## 
@@ -84,7 +84,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Get monthlyPrintUsageByUser from reports
+                    ## Retrieve a list of monthly print usage summaries, grouped by user.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -123,7 +123,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get monthlyPrintUsageByUser from reports
+                    # Retrieve a list of monthly print usage summaries, grouped by user.
                     class PrintUsageByUserItemRequestBuilderGetQueryParameters
                         
                         ## 

@@ -12,7 +12,7 @@ module MicrosoftGraph
                 # Represents queries within the review set.
                 @queries
                 ## 
-                ## Instantiates a new EdiscoveryReviewSet and sets the default values.
+                ## Instantiates a new ediscoveryReviewSet and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

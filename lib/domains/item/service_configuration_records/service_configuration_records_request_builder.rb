@@ -6,6 +6,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../domains'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/domain_dns_record_item_request_builder'
 require_relative './service_configuration_records'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Domains::Item::ServiceConfigurationRecords::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.
+                    ## @param domain_dns_record_id Unique identifier of the item
+                    ## @return a domain_dns_record_item_request_builder
+                    ## 
+                    def by_domain_dns_record_id(domain_dns_record_id)
+                        raise StandardError, 'domain_dns_record_id cannot be null' if domain_dns_record_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["domainDnsRecord%2Did"] = domain_dns_record_id
+                        return MicrosoftGraph::Domains::Item::ServiceConfigurationRecords::Item::DomainDnsRecordItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new ServiceConfigurationRecordsRequestBuilder and sets the default values.

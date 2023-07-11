@@ -6,6 +6,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../users'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/managed_device_item_request_builder'
 require_relative './managed_devices'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Users::Item::ManagedDevices::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the managedDevices property of the microsoft.graph.user entity.
+                    ## @param managed_device_id Unique identifier of the item
+                    ## @return a managed_device_item_request_builder
+                    ## 
+                    def by_managed_device_id(managed_device_id)
+                        raise StandardError, 'managed_device_id cannot be null' if managed_device_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["managedDevice%2Did"] = managed_device_id
+                        return MicrosoftGraph::Users::Item::ManagedDevices::Item::ManagedDeviceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new ManagedDevicesRequestBuilder and sets the default values.

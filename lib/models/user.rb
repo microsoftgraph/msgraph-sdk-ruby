@@ -107,6 +107,9 @@ module MicrosoftGraph
             # A collection of drives available for this user. Read-only.
             @drives
             ## 
+            # The employeeExperience property
+            @employee_experience
+            ## 
             # The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
             @employee_hire_date
             ## 
@@ -209,7 +212,7 @@ module MicrosoftGraph
             # The messages in a mailbox or folder. Read-only. Nullable.
             @messages
             ## 
-            # The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            # The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
             @mobile_phone
             ## 
             # The URL for the user's personal site. Returned only on $select.
@@ -254,7 +257,7 @@ module MicrosoftGraph
             # The onenote property
             @onenote
             ## 
-            # The onlineMeetings property
+            # Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
             @online_meetings
             ## 
             # A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
@@ -305,6 +308,9 @@ module MicrosoftGraph
             # The presence property
             @presence
             ## 
+            # The print property
+            @print
+            ## 
             # The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
             @provisioned_plans
             ## 
@@ -332,7 +338,7 @@ module MicrosoftGraph
             # Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
             @show_in_address_list
             ## 
-            # Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.When you specify $select=signInActivity or $filter=signInActivity while listing users, the maximum page size is 120 users. Requests with $top set higher than 120 will fail. Requests with $top set higher than 120 will fail.This property is not returned for a user who has never signed in or last signed in before April 2020.
+            # Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
             @sign_in_activity
             ## 
             # Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
@@ -350,7 +356,7 @@ module MicrosoftGraph
             # The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             @surname
             ## 
-            # The teamwork property
+            # A container for Microsoft Teams features available for the user. Read-only. Nullable.
             @teamwork
             ## 
             # Represents the To Do services available to a user.
@@ -668,7 +674,7 @@ module MicrosoftGraph
                 @consent_provided_for_minor = value
             end
             ## 
-            ## Instantiates a new User and sets the default values.
+            ## Instantiates a new user and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -880,6 +886,21 @@ module MicrosoftGraph
                 @drives = value
             end
             ## 
+            ## Gets the employeeExperience property value. The employeeExperience property
+            ## @return a employee_experience_user
+            ## 
+            def employee_experience
+                return @employee_experience
+            end
+            ## 
+            ## Sets the employeeExperience property value. The employeeExperience property
+            ## @param value Value to set for the employee_experience property.
+            ## @return a void
+            ## 
+            def employee_experience=(value)
+                @employee_experience = value
+            end
+            ## 
             ## Gets the employeeHireDate property value. The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
             ## @return a date_time
             ## 
@@ -1083,6 +1104,7 @@ module MicrosoftGraph
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "drive" => lambda {|n| @drive = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Drive.create_from_discriminator_value(pn) }) },
                     "drives" => lambda {|n| @drives = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Drive.create_from_discriminator_value(pn) }) },
+                    "employeeExperience" => lambda {|n| @employee_experience = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EmployeeExperienceUser.create_from_discriminator_value(pn) }) },
                     "employeeHireDate" => lambda {|n| @employee_hire_date = n.get_date_time_value() },
                     "employeeId" => lambda {|n| @employee_id = n.get_string_value() },
                     "employeeLeaveDateTime" => lambda {|n| @employee_leave_date_time = n.get_date_time_value() },
@@ -1149,6 +1171,7 @@ module MicrosoftGraph
                     "preferredLanguage" => lambda {|n| @preferred_language = n.get_string_value() },
                     "preferredName" => lambda {|n| @preferred_name = n.get_string_value() },
                     "presence" => lambda {|n| @presence = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Presence.create_from_discriminator_value(pn) }) },
+                    "print" => lambda {|n| @print = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserPrint.create_from_discriminator_value(pn) }) },
                     "provisionedPlans" => lambda {|n| @provisioned_plans = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ProvisionedPlan.create_from_discriminator_value(pn) }) },
                     "proxyAddresses" => lambda {|n| @proxy_addresses = n.get_collection_of_primitive_values(String) },
                     "registeredDevices" => lambda {|n| @registered_devices = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
@@ -1518,14 +1541,14 @@ module MicrosoftGraph
                 @messages = value
             end
             ## 
-            ## Gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            ## Gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
             ## @return a string
             ## 
             def mobile_phone
                 return @mobile_phone
             end
             ## 
-            ## Sets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            ## Sets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
             ## @param value Value to set for the mobile_phone property.
             ## @return a void
             ## 
@@ -1743,14 +1766,14 @@ module MicrosoftGraph
                 @onenote = value
             end
             ## 
-            ## Gets the onlineMeetings property value. The onlineMeetings property
+            ## Gets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
             ## @return a online_meeting
             ## 
             def online_meetings
                 return @online_meetings
             end
             ## 
-            ## Sets the onlineMeetings property value. The onlineMeetings property
+            ## Sets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
             ## @param value Value to set for the online_meetings property.
             ## @return a void
             ## 
@@ -1998,6 +2021,21 @@ module MicrosoftGraph
                 @presence = value
             end
             ## 
+            ## Gets the print property value. The print property
+            ## @return a user_print
+            ## 
+            def print
+                return @print
+            end
+            ## 
+            ## Sets the print property value. The print property
+            ## @param value Value to set for the print property.
+            ## @return a void
+            ## 
+            def print=(value)
+                @print = value
+            end
+            ## 
             ## Gets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
             ## @return a provisioned_plan
             ## 
@@ -2143,6 +2181,7 @@ module MicrosoftGraph
                 writer.write_string_value("displayName", @display_name)
                 writer.write_object_value("drive", @drive)
                 writer.write_collection_of_object_values("drives", @drives)
+                writer.write_object_value("employeeExperience", @employee_experience)
                 writer.write_date_time_value("employeeHireDate", @employee_hire_date)
                 writer.write_string_value("employeeId", @employee_id)
                 writer.write_date_time_value("employeeLeaveDateTime", @employee_leave_date_time)
@@ -2209,6 +2248,7 @@ module MicrosoftGraph
                 writer.write_string_value("preferredLanguage", @preferred_language)
                 writer.write_string_value("preferredName", @preferred_name)
                 writer.write_object_value("presence", @presence)
+                writer.write_object_value("print", @print)
                 writer.write_collection_of_object_values("provisionedPlans", @provisioned_plans)
                 writer.write_collection_of_primitive_values("proxyAddresses", @proxy_addresses)
                 writer.write_collection_of_object_values("registeredDevices", @registered_devices)
@@ -2262,14 +2302,14 @@ module MicrosoftGraph
                 @show_in_address_list = value
             end
             ## 
-            ## Gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.When you specify $select=signInActivity or $filter=signInActivity while listing users, the maximum page size is 120 users. Requests with $top set higher than 120 will fail. Requests with $top set higher than 120 will fail.This property is not returned for a user who has never signed in or last signed in before April 2020.
+            ## Gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
             ## @return a sign_in_activity
             ## 
             def sign_in_activity
                 return @sign_in_activity
             end
             ## 
-            ## Sets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.When you specify $select=signInActivity or $filter=signInActivity while listing users, the maximum page size is 120 users. Requests with $top set higher than 120 will fail. Requests with $top set higher than 120 will fail.This property is not returned for a user who has never signed in or last signed in before April 2020.
+            ## Sets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
             ## @param value Value to set for the sign_in_activity property.
             ## @return a void
             ## 
@@ -2352,14 +2392,14 @@ module MicrosoftGraph
                 @surname = value
             end
             ## 
-            ## Gets the teamwork property value. The teamwork property
+            ## Gets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
             ## @return a user_teamwork
             ## 
             def teamwork
                 return @teamwork
             end
             ## 
-            ## Sets the teamwork property value. The teamwork property
+            ## Sets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
             ## @param value Value to set for the teamwork property.
             ## @return a void
             ## 

@@ -12,6 +12,7 @@ require_relative '../../item'
 require_relative '../in_reply_to'
 require_relative './count/count_request_builder'
 require_relative './extensions'
+require_relative './item/extension_item_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -32,6 +33,17 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::InReplyTo::Extensions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
+                                        ## Provides operations to manage the extensions property of the microsoft.graph.post entity.
+                                        ## @param extension_id Unique identifier of the item
+                                        ## @return a extension_item_request_builder
+                                        ## 
+                                        def by_extension_id(extension_id)
+                                            raise StandardError, 'extension_id cannot be null' if extension_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["extension%2Did"] = extension_id
+                                            return MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::InReplyTo::Extensions::Item::ExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                        end
+                                        ## 
                                         ## Instantiates a new ExtensionsRequestBuilder and sets the default values.
                                         ## @param path_parameters Path parameters for the request
                                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -41,7 +53,7 @@ module MicrosoftGraph
                                             super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}/posts/{post%2Did}/inReplyTo/extensions{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}")
                                         end
                                         ## 
-                                        ## The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
+                                        ## Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of extension_collection_response
                                         ## 
@@ -71,7 +83,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Extension.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
+                                        ## Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -110,7 +122,7 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # The collection of open extensions defined for the post. Read-only. Nullable. Supports $expand.
+                                        # Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
                                         class ExtensionsRequestBuilderGetQueryParameters
                                             
                                             ## 

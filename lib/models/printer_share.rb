@@ -23,6 +23,9 @@ module MicrosoftGraph
             # The printer that this printer share is related to.
             @printer
             ## 
+            # Additional data for a printer share as viewed by the signed-in user.
+            @view_point
+            ## 
             ## Gets the allowAllUsers property value. If true, all users and groups will be granted access to this printer share. This supersedes the allow lists defined by the allowedUsers and allowedGroups navigation properties.
             ## @return a boolean
             ## 
@@ -110,6 +113,7 @@ module MicrosoftGraph
                     "allowedUsers" => lambda {|n| @allowed_users = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::User.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
                     "printer" => lambda {|n| @printer = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Printer.create_from_discriminator_value(pn) }) },
+                    "viewPoint" => lambda {|n| @view_point = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PrinterShareViewpoint.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -140,6 +144,22 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("allowedUsers", @allowed_users)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
                 writer.write_object_value("printer", @printer)
+                writer.write_object_value("viewPoint", @view_point)
+            end
+            ## 
+            ## Gets the viewPoint property value. Additional data for a printer share as viewed by the signed-in user.
+            ## @return a printer_share_viewpoint
+            ## 
+            def view_point
+                return @view_point
+            end
+            ## 
+            ## Sets the viewPoint property value. Additional data for a printer share as viewed by the signed-in user.
+            ## @param value Value to set for the view_point property.
+            ## @return a void
+            ## 
+            def view_point=(value)
+                @view_point = value
             end
         end
     end

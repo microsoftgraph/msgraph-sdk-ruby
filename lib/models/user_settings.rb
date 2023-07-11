@@ -7,30 +7,30 @@ module MicrosoftGraph
         class UserSettings < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The contributionToContentDiscoveryAsOrganizationDisabled property
+            # Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
             @contribution_to_content_discovery_as_organization_disabled
             ## 
-            # The contributionToContentDiscoveryDisabled property
+            # When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.
             @contribution_to_content_discovery_disabled
             ## 
             # The shiftPreferences property
             @shift_preferences
             ## 
-            ## Instantiates a new UserSettings and sets the default values.
+            ## Instantiates a new userSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
                 super
             end
             ## 
-            ## Gets the contributionToContentDiscoveryAsOrganizationDisabled property value. The contributionToContentDiscoveryAsOrganizationDisabled property
+            ## Gets the contributionToContentDiscoveryAsOrganizationDisabled property value. Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
             ## @return a boolean
             ## 
             def contribution_to_content_discovery_as_organization_disabled
                 return @contribution_to_content_discovery_as_organization_disabled
             end
             ## 
-            ## Sets the contributionToContentDiscoveryAsOrganizationDisabled property value. The contributionToContentDiscoveryAsOrganizationDisabled property
+            ## Sets the contributionToContentDiscoveryAsOrganizationDisabled property value. Reflects the organization level setting controlling delegate access to the trending API. When set to true, the organization doesn't have access to Office Delve. The relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected for the whole organization. This setting is read-only and can only be changed by administrators in the SharePoint admin center.
             ## @param value Value to set for the contribution_to_content_discovery_as_organization_disabled property.
             ## @return a void
             ## 
@@ -38,14 +38,14 @@ module MicrosoftGraph
                 @contribution_to_content_discovery_as_organization_disabled = value
             end
             ## 
-            ## Gets the contributionToContentDiscoveryDisabled property value. The contributionToContentDiscoveryDisabled property
+            ## Gets the contributionToContentDiscoveryDisabled property value. When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.
             ## @return a boolean
             ## 
             def contribution_to_content_discovery_disabled
                 return @contribution_to_content_discovery_disabled
             end
             ## 
-            ## Sets the contributionToContentDiscoveryDisabled property value. The contributionToContentDiscoveryDisabled property
+            ## Sets the contributionToContentDiscoveryDisabled property value. When set to true, the delegate access to the user's trending API is disabled. When set to true, documents in the user's Office Delve are disabled. When set to true, the relevancy of the content displayed in Microsoft 365, for example in Suggested sites in SharePoint Home and the Discover view in OneDrive for Business is affected. Users can control this setting in Office Delve.
             ## @param value Value to set for the contribution_to_content_discovery_disabled property.
             ## @return a void
             ## 

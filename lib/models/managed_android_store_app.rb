@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for Android store apps that you can manage with an Intune app protection policy.
         class ManagedAndroidStoreApp < MicrosoftGraph::Models::ManagedApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -31,7 +33,7 @@ module MicrosoftGraph
                 @app_store_url = value
             end
             ## 
-            ## Instantiates a new ManagedAndroidStoreApp and sets the default values.
+            ## Instantiates a new managedAndroidStoreApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

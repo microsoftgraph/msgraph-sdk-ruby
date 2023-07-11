@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Policy for Windows information protection to configure detailed management settings
         class WindowsInformationProtection < MicrosoftGraph::Models::ManagedAppPolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -112,7 +114,7 @@ module MicrosoftGraph
                 @azure_rights_management_services_allowed = value
             end
             ## 
-            ## Instantiates a new WindowsInformationProtection and sets the default values.
+            ## Instantiates a new windowsInformationProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()

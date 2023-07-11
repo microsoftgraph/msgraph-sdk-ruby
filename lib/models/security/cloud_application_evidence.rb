@@ -39,7 +39,7 @@ module MicrosoftGraph
                     @app_id = value
                 end
                 ## 
-                ## Instantiates a new CloudApplicationEvidence and sets the default values.
+                ## Instantiates a new cloudApplicationEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

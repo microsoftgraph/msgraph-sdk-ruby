@@ -46,7 +46,7 @@ module MicrosoftGraph
                 @call_transcript_i_cal_uid = value
             end
             ## 
-            ## Instantiates a new CallTranscriptEventMessageDetail and sets the default values.
+            ## Instantiates a new callTranscriptEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

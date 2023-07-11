@@ -7,6 +7,7 @@ require_relative '../../../device_app_management'
 require_relative '../../managed_app_registrations'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/managed_app_operation_item_request_builder'
 require_relative './operations'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::Item::Operations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the operations property of the microsoft.graph.managedAppRegistration entity.
+                        ## @param managed_app_operation_id Unique identifier of the item
+                        ## @return a managed_app_operation_item_request_builder
+                        ## 
+                        def by_managed_app_operation_id(managed_app_operation_id)
+                            raise StandardError, 'managed_app_operation_id cannot be null' if managed_app_operation_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["managedAppOperation%2Did"] = managed_app_operation_id
+                            return MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::Item::Operations::Item::ManagedAppOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new OperationsRequestBuilder and sets the default values.

@@ -112,6 +112,8 @@ module MicrosoftGraph
                                 return EdiscoveryAddToReviewSetOperation.new
                             when "#microsoft.graph.security.ediscoveryEstimateOperation"
                                 return EdiscoveryEstimateOperation.new
+                            when "#microsoft.graph.security.ediscoveryExportOperation"
+                                return EdiscoveryExportOperation.new
                             when "#microsoft.graph.security.ediscoveryHoldOperation"
                                 return EdiscoveryHoldOperation.new
                             when "#microsoft.graph.security.ediscoveryIndexOperation"

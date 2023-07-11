@@ -10,25 +10,28 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The aggregationFilters property
+            # Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format '{field}:/'{aggregationFilterToken}/''. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format '{field}:or(/'{aggregationFilterToken1}/',/'{aggregationFilterToken2}/')'. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.
             @aggregation_filters
             ## 
-            # The aggregations property
+            # Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
             @aggregations
             ## 
-            # The contentSources property
+            # Contains the ordered collection of fields and limit to collapse results. Optional.
+            @collapse_properties
+            ## 
+            # Contains the connection to be targeted.
             @content_sources
             ## 
-            # The enableTopResults property
+            # This triggers hybrid sort for messages : the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
             @enable_top_results
             ## 
-            # The entityTypes property
+            # One or more types of resources expected in the response. Possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum:chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
             @entity_types
             ## 
-            # The fields property
+            # Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default; otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from the content that Microsoft Graph connectors bring in. The fields property can use the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax: label_title. Optional.
             @fields
             ## 
-            # The from property
+            # Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
             @from
             ## 
             # The OdataType property
@@ -37,22 +40,22 @@ module MicrosoftGraph
             # The query property
             @query
             ## 
-            # The queryAlterationOptions property
+            # Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.
             @query_alteration_options
             ## 
-            # The region property
+            # The geographic location for the search. Required for searches that use application permissions. For details, see Get the region value.
             @region
             ## 
-            # The resultTemplateOptions property
+            # Provides the search result template options to render search results from connectors.
             @result_template_options
             ## 
-            # The sharePointOneDriveOptions property
+            # Indicates the kind of contents to be searched when a search is performed using application permissions. Optional.
             @share_point_one_drive_options
             ## 
-            # The size property
+            # The size of the page to be retrieved. The maximum value is 500. Optional.
             @size
             ## 
-            # The sortProperties property
+            # Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
             @sort_properties
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -70,14 +73,14 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Gets the aggregationFilters property value. The aggregationFilters property
+            ## Gets the aggregationFilters property value. Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format '{field}:/'{aggregationFilterToken}/''. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format '{field}:or(/'{aggregationFilterToken1}/',/'{aggregationFilterToken2}/')'. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.
             ## @return a string
             ## 
             def aggregation_filters
                 return @aggregation_filters
             end
             ## 
-            ## Sets the aggregationFilters property value. The aggregationFilters property
+            ## Sets the aggregationFilters property value. Contains one or more filters to obtain search results aggregated and filtered to a specific value of a field. Optional.Build this filter based on a prior search that aggregates by the same field. From the response of the prior search, identify the searchBucket that filters results to the specific value of the field, use the string in its aggregationFilterToken property, and build an aggregation filter string in the format '{field}:/'{aggregationFilterToken}/''. If multiple values for the same field need to be provided, use the strings in its aggregationFilterToken property and build an aggregation filter string in the format '{field}:or(/'{aggregationFilterToken1}/',/'{aggregationFilterToken2}/')'. For example, searching and aggregating drive items by file type returns a searchBucket for the file type docx in the response. You can conveniently use the aggregationFilterToken returned for this searchBucket in a subsequent search query and filter matches down to drive items of the docx file type. Example 1 and example 2 show the actual requests and responses.
             ## @param value Value to set for the aggregation_filters property.
             ## @return a void
             ## 
@@ -85,19 +88,34 @@ module MicrosoftGraph
                 @aggregation_filters = value
             end
             ## 
-            ## Gets the aggregations property value. The aggregations property
+            ## Gets the aggregations property value. Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
             ## @return a aggregation_option
             ## 
             def aggregations
                 return @aggregations
             end
             ## 
-            ## Sets the aggregations property value. The aggregations property
+            ## Sets the aggregations property value. Specifies aggregations (also known as refiners) to be returned alongside search results. Optional.
             ## @param value Value to set for the aggregations property.
             ## @return a void
             ## 
             def aggregations=(value)
                 @aggregations = value
+            end
+            ## 
+            ## Gets the collapseProperties property value. Contains the ordered collection of fields and limit to collapse results. Optional.
+            ## @return a collapse_property
+            ## 
+            def collapse_properties
+                return @collapse_properties
+            end
+            ## 
+            ## Sets the collapseProperties property value. Contains the ordered collection of fields and limit to collapse results. Optional.
+            ## @param value Value to set for the collapse_properties property.
+            ## @return a void
+            ## 
+            def collapse_properties=(value)
+                @collapse_properties = value
             end
             ## 
             ## Instantiates a new searchRequest and sets the default values.
@@ -107,14 +125,14 @@ module MicrosoftGraph
                 @additional_data = Hash.new
             end
             ## 
-            ## Gets the contentSources property value. The contentSources property
+            ## Gets the contentSources property value. Contains the connection to be targeted.
             ## @return a string
             ## 
             def content_sources
                 return @content_sources
             end
             ## 
-            ## Sets the contentSources property value. The contentSources property
+            ## Sets the contentSources property value. Contains the connection to be targeted.
             ## @param value Value to set for the content_sources property.
             ## @return a void
             ## 
@@ -131,14 +149,14 @@ module MicrosoftGraph
                 return SearchRequest.new
             end
             ## 
-            ## Gets the enableTopResults property value. The enableTopResults property
+            ## Gets the enableTopResults property value. This triggers hybrid sort for messages : the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
             ## @return a boolean
             ## 
             def enable_top_results
                 return @enable_top_results
             end
             ## 
-            ## Sets the enableTopResults property value. The enableTopResults property
+            ## Sets the enableTopResults property value. This triggers hybrid sort for messages : the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
             ## @param value Value to set for the enable_top_results property.
             ## @return a void
             ## 
@@ -146,14 +164,14 @@ module MicrosoftGraph
                 @enable_top_results = value
             end
             ## 
-            ## Gets the entityTypes property value. The entityTypes property
+            ## Gets the entityTypes property value. One or more types of resources expected in the response. Possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum:chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
             ## @return a entity_type
             ## 
             def entity_types
                 return @entity_types
             end
             ## 
-            ## Sets the entityTypes property value. The entityTypes property
+            ## Sets the entityTypes property value. One or more types of resources expected in the response. Possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum:chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
             ## @param value Value to set for the entity_types property.
             ## @return a void
             ## 
@@ -161,14 +179,14 @@ module MicrosoftGraph
                 @entity_types = value
             end
             ## 
-            ## Gets the fields property value. The fields property
+            ## Gets the fields property value. Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default; otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from the content that Microsoft Graph connectors bring in. The fields property can use the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax: label_title. Optional.
             ## @return a string
             ## 
             def fields
                 return @fields
             end
             ## 
-            ## Sets the fields property value. The fields property
+            ## Sets the fields property value. Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default; otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from the content that Microsoft Graph connectors bring in. The fields property can use the semantic labels applied to properties. For example, if a property is labeled as title, you can retrieve it using the following syntax: label_title. Optional.
             ## @param value Value to set for the fields property.
             ## @return a void
             ## 
@@ -176,14 +194,14 @@ module MicrosoftGraph
                 @fields = value
             end
             ## 
-            ## Gets the from property value. The from property
+            ## Gets the from property value. Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
             ## @return a integer
             ## 
             def from
                 return @from
             end
             ## 
-            ## Sets the from property value. The from property
+            ## Sets the from property value. Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
             ## @param value Value to set for the from property.
             ## @return a void
             ## 
@@ -198,6 +216,7 @@ module MicrosoftGraph
                 return {
                     "aggregationFilters" => lambda {|n| @aggregation_filters = n.get_collection_of_primitive_values(String) },
                     "aggregations" => lambda {|n| @aggregations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AggregationOption.create_from_discriminator_value(pn) }) },
+                    "collapseProperties" => lambda {|n| @collapse_properties = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CollapseProperty.create_from_discriminator_value(pn) }) },
                     "contentSources" => lambda {|n| @content_sources = n.get_collection_of_primitive_values(String) },
                     "enableTopResults" => lambda {|n| @enable_top_results = n.get_boolean_value() },
                     "entityTypes" => lambda {|n| @entity_types = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::EntityType.create_from_discriminator_value(pn) }) },
@@ -244,14 +263,14 @@ module MicrosoftGraph
                 @query = value
             end
             ## 
-            ## Gets the queryAlterationOptions property value. The queryAlterationOptions property
+            ## Gets the queryAlterationOptions property value. Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.
             ## @return a search_alteration_options
             ## 
             def query_alteration_options
                 return @query_alteration_options
             end
             ## 
-            ## Sets the queryAlterationOptions property value. The queryAlterationOptions property
+            ## Sets the queryAlterationOptions property value. Query alteration options formatted in a JSON blob that contains two optional flags related to spelling correction. Optional.
             ## @param value Value to set for the query_alteration_options property.
             ## @return a void
             ## 
@@ -259,14 +278,14 @@ module MicrosoftGraph
                 @query_alteration_options = value
             end
             ## 
-            ## Gets the region property value. The region property
+            ## Gets the region property value. The geographic location for the search. Required for searches that use application permissions. For details, see Get the region value.
             ## @return a string
             ## 
             def region
                 return @region
             end
             ## 
-            ## Sets the region property value. The region property
+            ## Sets the region property value. The geographic location for the search. Required for searches that use application permissions. For details, see Get the region value.
             ## @param value Value to set for the region property.
             ## @return a void
             ## 
@@ -274,14 +293,14 @@ module MicrosoftGraph
                 @region = value
             end
             ## 
-            ## Gets the resultTemplateOptions property value. The resultTemplateOptions property
+            ## Gets the resultTemplateOptions property value. Provides the search result template options to render search results from connectors.
             ## @return a result_template_option
             ## 
             def result_template_options
                 return @result_template_options
             end
             ## 
-            ## Sets the resultTemplateOptions property value. The resultTemplateOptions property
+            ## Sets the resultTemplateOptions property value. Provides the search result template options to render search results from connectors.
             ## @param value Value to set for the result_template_options property.
             ## @return a void
             ## 
@@ -297,6 +316,7 @@ module MicrosoftGraph
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_collection_of_primitive_values("aggregationFilters", @aggregation_filters)
                 writer.write_collection_of_object_values("aggregations", @aggregations)
+                writer.write_collection_of_object_values("collapseProperties", @collapse_properties)
                 writer.write_collection_of_primitive_values("contentSources", @content_sources)
                 writer.write_boolean_value("enableTopResults", @enable_top_results)
                 writer.write_collection_of_object_values("entityTypes", @entity_types)
@@ -313,14 +333,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the sharePointOneDriveOptions property value. The sharePointOneDriveOptions property
+            ## Gets the sharePointOneDriveOptions property value. Indicates the kind of contents to be searched when a search is performed using application permissions. Optional.
             ## @return a share_point_one_drive_options
             ## 
             def share_point_one_drive_options
                 return @share_point_one_drive_options
             end
             ## 
-            ## Sets the sharePointOneDriveOptions property value. The sharePointOneDriveOptions property
+            ## Sets the sharePointOneDriveOptions property value. Indicates the kind of contents to be searched when a search is performed using application permissions. Optional.
             ## @param value Value to set for the share_point_one_drive_options property.
             ## @return a void
             ## 
@@ -328,14 +348,14 @@ module MicrosoftGraph
                 @share_point_one_drive_options = value
             end
             ## 
-            ## Gets the size property value. The size property
+            ## Gets the size property value. The size of the page to be retrieved. The maximum value is 500. Optional.
             ## @return a integer
             ## 
             def size
                 return @size
             end
             ## 
-            ## Sets the size property value. The size property
+            ## Sets the size property value. The size of the page to be retrieved. The maximum value is 500. Optional.
             ## @param value Value to set for the size property.
             ## @return a void
             ## 
@@ -343,14 +363,14 @@ module MicrosoftGraph
                 @size = value
             end
             ## 
-            ## Gets the sortProperties property value. The sortProperties property
+            ## Gets the sortProperties property value. Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
             ## @return a sort_property
             ## 
             def sort_properties
                 return @sort_properties
             end
             ## 
-            ## Sets the sortProperties property value. The sortProperties property
+            ## Sets the sortProperties property value. Contains the ordered collection of fields and direction to sort results. There can be at most 5 sort properties in the collection. Optional.
             ## @param value Value to set for the sort_properties property.
             ## @return a void
             ## 

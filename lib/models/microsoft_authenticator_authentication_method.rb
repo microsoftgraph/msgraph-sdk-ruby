@@ -23,7 +23,7 @@ module MicrosoftGraph
             # Numerical version of this instance of the Authenticator app.
             @phone_app_version
             ## 
-            ## Instantiates a new MicrosoftAuthenticatorAuthenticationMethod and sets the default values.
+            ## Instantiates a new microsoftAuthenticatorAuthenticationMethod and sets the default values.
             ## @return a void
             ## 
             def initialize()

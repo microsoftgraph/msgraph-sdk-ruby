@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @choices = value
             end
             ## 
-            ## Instantiates a new AccessPackageMultipleChoiceQuestion and sets the default values.
+            ## Instantiates a new accessPackageMultipleChoiceQuestion and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the Windows10EndpointProtectionConfiguration resource.
         class Windows10EndpointProtectionConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -340,7 +342,7 @@ module MicrosoftGraph
                 @bit_locker_removable_drive_policy = value
             end
             ## 
-            ## Instantiates a new Windows10EndpointProtectionConfiguration and sets the default values.
+            ## Instantiates a new windows10EndpointProtectionConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

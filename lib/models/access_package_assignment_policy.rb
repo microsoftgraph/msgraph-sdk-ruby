@@ -23,6 +23,9 @@ module MicrosoftGraph
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @created_date_time
             ## 
+            # The customExtensionStageSettings property
+            @custom_extension_stage_settings
+            ## 
             # The description of the policy.
             @description
             ## 
@@ -141,6 +144,21 @@ module MicrosoftGraph
                 return AccessPackageAssignmentPolicy.new
             end
             ## 
+            ## Gets the customExtensionStageSettings property value. The customExtensionStageSettings property
+            ## @return a custom_extension_stage_setting
+            ## 
+            def custom_extension_stage_settings
+                return @custom_extension_stage_settings
+            end
+            ## 
+            ## Sets the customExtensionStageSettings property value. The customExtensionStageSettings property
+            ## @param value Value to set for the custom_extension_stage_settings property.
+            ## @return a void
+            ## 
+            def custom_extension_stage_settings=(value)
+                @custom_extension_stage_settings = value
+            end
+            ## 
             ## Gets the description property value. The description of the policy.
             ## @return a string
             ## 
@@ -196,6 +214,7 @@ module MicrosoftGraph
                     "automaticRequestSettings" => lambda {|n| @automatic_request_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageAutomaticRequestSettings.create_from_discriminator_value(pn) }) },
                     "catalog" => lambda {|n| @catalog = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageCatalog.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
+                    "customExtensionStageSettings" => lambda {|n| @custom_extension_stage_settings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CustomExtensionStageSetting.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "expiration" => lambda {|n| @expiration = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ExpirationPattern.create_from_discriminator_value(pn) }) },
@@ -295,6 +314,7 @@ module MicrosoftGraph
                 writer.write_object_value("automaticRequestSettings", @automatic_request_settings)
                 writer.write_object_value("catalog", @catalog)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
+                writer.write_collection_of_object_values("customExtensionStageSettings", @custom_extension_stage_settings)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_object_value("expiration", @expiration)

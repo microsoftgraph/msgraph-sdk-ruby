@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Windows 10 Edition Upgrade configuration.
         class EditionUpgradeConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -19,7 +21,7 @@ module MicrosoftGraph
             # Windows 10 Edition type.
             @target_edition
             ## 
-            ## Instantiates a new EditionUpgradeConfiguration and sets the default values.
+            ## Instantiates a new editionUpgradeConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

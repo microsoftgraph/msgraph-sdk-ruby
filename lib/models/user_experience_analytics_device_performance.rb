@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # The user experience analytics device performance entity contains device boot performance details.
         class UserExperienceAnalyticsDevicePerformance < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -127,7 +129,7 @@ module MicrosoftGraph
                 @boot_score = value
             end
             ## 
-            ## Instantiates a new UserExperienceAnalyticsDevicePerformance and sets the default values.
+            ## Instantiates a new userExperienceAnalyticsDevicePerformance and sets the default values.
             ## @return a void
             ## 
             def initialize()

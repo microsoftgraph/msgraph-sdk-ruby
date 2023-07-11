@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for Managed Android Line Of Business apps.
         class ManagedAndroidLobApp < MicrosoftGraph::Models::ManagedMobileLobApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -19,7 +21,7 @@ module MicrosoftGraph
             # The version name of managed Android Line of Business (LoB) app.
             @version_name
             ## 
-            ## Instantiates a new ManagedAndroidLobApp and sets the default values.
+            ## Instantiates a new managedAndroidLobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

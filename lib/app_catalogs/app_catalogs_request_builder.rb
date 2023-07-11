@@ -3,7 +3,6 @@ require_relative '../microsoft_graph'
 require_relative '../models/app_catalogs'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './app_catalogs'
-require_relative './teams_apps/item/teams_app_item_request_builder'
 require_relative './teams_apps/teams_apps_request_builder'
 
 module MicrosoftGraph
@@ -55,17 +54,6 @@ module MicrosoftGraph
                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AppCatalogs.create_from_discriminator_value(pn) }, error_mapping)
-            end
-            ## 
-            ## Provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.
-            ## @param id Unique identifier of the item
-            ## @return a teams_app_item_request_builder
-            ## 
-            def teams_apps_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["teamsApp%2Did"] = id
-                return MicrosoftGraph::AppCatalogs::TeamsApps::Item::TeamsAppItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Get appCatalogs

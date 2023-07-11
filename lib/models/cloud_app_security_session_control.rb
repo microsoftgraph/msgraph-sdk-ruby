@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @cloud_app_security_type = value
             end
             ## 
-            ## Instantiates a new CloudAppSecuritySessionControl and sets the default values.
+            ## Instantiates a new cloudAppSecuritySessionControl and sets the default values.
             ## @return a void
             ## 
             def initialize()

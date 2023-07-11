@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the windows10GeneralConfiguration resource.
         class Windows10GeneralConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -836,7 +838,7 @@ module MicrosoftGraph
                 @connected_devices_service_blocked = value
             end
             ## 
-            ## Instantiates a new Windows10GeneralConfiguration and sets the default values.
+            ## Instantiates a new windows10GeneralConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

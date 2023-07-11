@@ -7,6 +7,12 @@ module MicrosoftGraph
         class SubscribedSku < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # The accountId property
+            @account_id
+            ## 
+            # The accountName property
+            @account_name
+            ## 
             # For example, 'User' or 'Company'.
             @applies_to
             ## 
@@ -27,6 +33,39 @@ module MicrosoftGraph
             ## 
             # The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
             @sku_part_number
+            ## 
+            # The subscriptionIds property
+            @subscription_ids
+            ## 
+            ## Gets the accountId property value. The accountId property
+            ## @return a string
+            ## 
+            def account_id
+                return @account_id
+            end
+            ## 
+            ## Sets the accountId property value. The accountId property
+            ## @param value Value to set for the account_id property.
+            ## @return a void
+            ## 
+            def account_id=(value)
+                @account_id = value
+            end
+            ## 
+            ## Gets the accountName property value. The accountName property
+            ## @return a string
+            ## 
+            def account_name
+                return @account_name
+            end
+            ## 
+            ## Sets the accountName property value. The accountName property
+            ## @param value Value to set for the account_name property.
+            ## @return a void
+            ## 
+            def account_name=(value)
+                @account_name = value
+            end
             ## 
             ## Gets the appliesTo property value. For example, 'User' or 'Company'.
             ## @return a string
@@ -58,7 +97,7 @@ module MicrosoftGraph
                 @capability_status = value
             end
             ## 
-            ## Instantiates a new SubscribedSku and sets the default values.
+            ## Instantiates a new subscribedSku and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -94,6 +133,8 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "accountId" => lambda {|n| @account_id = n.get_string_value() },
+                    "accountName" => lambda {|n| @account_name = n.get_string_value() },
                     "appliesTo" => lambda {|n| @applies_to = n.get_string_value() },
                     "capabilityStatus" => lambda {|n| @capability_status = n.get_string_value() },
                     "consumedUnits" => lambda {|n| @consumed_units = n.get_number_value() },
@@ -101,6 +142,7 @@ module MicrosoftGraph
                     "servicePlans" => lambda {|n| @service_plans = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ServicePlanInfo.create_from_discriminator_value(pn) }) },
                     "skuId" => lambda {|n| @sku_id = n.get_guid_value() },
                     "skuPartNumber" => lambda {|n| @sku_part_number = n.get_string_value() },
+                    "subscriptionIds" => lambda {|n| @subscription_ids = n.get_collection_of_primitive_values(String) },
                 })
             end
             ## 
@@ -126,6 +168,8 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_string_value("accountId", @account_id)
+                writer.write_string_value("accountName", @account_name)
                 writer.write_string_value("appliesTo", @applies_to)
                 writer.write_string_value("capabilityStatus", @capability_status)
                 writer.write_number_value("consumedUnits", @consumed_units)
@@ -133,6 +177,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("servicePlans", @service_plans)
                 writer.write_guid_value("skuId", @sku_id)
                 writer.write_string_value("skuPartNumber", @sku_part_number)
+                writer.write_collection_of_primitive_values("subscriptionIds", @subscription_ids)
             end
             ## 
             ## Gets the servicePlans property value. Information about the service plans that are available with the SKU. Not nullable
@@ -178,6 +223,21 @@ module MicrosoftGraph
             ## 
             def sku_part_number=(value)
                 @sku_part_number = value
+            end
+            ## 
+            ## Gets the subscriptionIds property value. The subscriptionIds property
+            ## @return a string
+            ## 
+            def subscription_ids
+                return @subscription_ids
+            end
+            ## 
+            ## Sets the subscriptionIds property value. The subscriptionIds property
+            ## @param value Value to set for the subscription_ids property.
+            ## @return a void
+            ## 
+            def subscription_ids=(value)
+                @subscription_ids = value
             end
         end
     end

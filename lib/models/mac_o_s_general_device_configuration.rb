@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSGeneralDeviceConfiguration resource.
         class MacOSGeneralDeviceConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -73,7 +75,7 @@ module MicrosoftGraph
                 @compliant_apps_list = value
             end
             ## 
-            ## Instantiates a new MacOSGeneralDeviceConfiguration and sets the default values.
+            ## Instantiates a new macOSGeneralDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the windows81GeneralConfiguration resource.
         class Windows81GeneralConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -406,7 +408,7 @@ module MicrosoftGraph
                 @cellular_block_data_roaming = value
             end
             ## 
-            ## Instantiates a new Windows81GeneralConfiguration and sets the default values.
+            ## Instantiates a new windows81GeneralConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

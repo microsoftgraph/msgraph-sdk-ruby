@@ -64,7 +64,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/onenote/pages/{onenotePage%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property pages for groups
+                            ## Delete a OneNote page.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -78,7 +78,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+                            ## Retrieve the properties and relationships of a page object. **Getting page information** Access a page's metadata by page identifier: **Getting page content** You can use the page's `content` endpoint to get the HTML content of a page: The `includeIDs=true` query option is used to update pages.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of onenote_page
                             ## 
@@ -108,7 +108,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnenotePage.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property pages for groups
+                            ## Delete a OneNote page.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -124,7 +124,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+                            ## Retrieve the properties and relationships of a page object. **Getting page information** Access a page's metadata by page identifier: **Getting page content** You can use the page's `content` endpoint to get the HTML content of a page: The `includeIDs=true` query option is used to update pages.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -163,7 +163,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+                            # Retrieve the properties and relationships of a page object. **Getting page information** Access a page's metadata by page identifier: **Getting page content** You can use the page's `content` endpoint to get the HTML content of a page: The `includeIDs=true` query option is used to update pages.
                             class OnenotePageItemRequestBuilderGetQueryParameters
                                 
                                 ## 

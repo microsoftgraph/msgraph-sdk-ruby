@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the iosCustomConfiguration resource.
         class IosCustomConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -16,7 +18,7 @@ module MicrosoftGraph
             # Name that is displayed to the user.
             @payload_name
             ## 
-            ## Instantiates a new IosCustomConfiguration and sets the default values.
+            ## Instantiates a new iosCustomConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

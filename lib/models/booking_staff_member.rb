@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Represents a staff member who provides services in a business.
         class BookingStaffMember < MicrosoftGraph::Models::BookingStaffMemberBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -46,7 +48,7 @@ module MicrosoftGraph
                 @availability_is_affected_by_personal_calendar = value
             end
             ## 
-            ## Instantiates a new BookingStaffMember and sets the default values.
+            ## Instantiates a new bookingStaffMember and sets the default values.
             ## @return a void
             ## 
             def initialize()
