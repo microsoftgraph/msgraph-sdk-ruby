@@ -25,6 +25,9 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
+            # The recommendationInsightSettings property
+            @recommendation_insight_settings
+            ## 
             # Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property will override override the corresponding setting on the accessReviewScheduleDefinition object.
             @recommendations_enabled
             ## 
@@ -135,6 +138,7 @@ module MicrosoftGraph
                     "durationInDays" => lambda {|n| @duration_in_days = n.get_number_value() },
                     "fallbackReviewers" => lambda {|n| @fallback_reviewers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessReviewReviewerScope.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "recommendationInsightSettings" => lambda {|n| @recommendation_insight_settings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessReviewRecommendationInsightSetting.create_from_discriminator_value(pn) }) },
                     "recommendationsEnabled" => lambda {|n| @recommendations_enabled = n.get_boolean_value() },
                     "reviewers" => lambda {|n| @reviewers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessReviewReviewerScope.create_from_discriminator_value(pn) }) },
                     "stageId" => lambda {|n| @stage_id = n.get_string_value() },
@@ -154,6 +158,21 @@ module MicrosoftGraph
             ## 
             def odata_type=(value)
                 @odata_type = value
+            end
+            ## 
+            ## Gets the recommendationInsightSettings property value. The recommendationInsightSettings property
+            ## @return a access_review_recommendation_insight_setting
+            ## 
+            def recommendation_insight_settings
+                return @recommendation_insight_settings
+            end
+            ## 
+            ## Sets the recommendationInsightSettings property value. The recommendationInsightSettings property
+            ## @param value Value to set for the recommendation_insight_settings property.
+            ## @return a void
+            ## 
+            def recommendation_insight_settings=(value)
+                @recommendation_insight_settings = value
             end
             ## 
             ## Gets the recommendationsEnabled property value. Indicates whether showing recommendations to reviewers is enabled. Required. NOTE: The value of this property will override override the corresponding setting on the accessReviewScheduleDefinition object.
@@ -197,6 +216,7 @@ module MicrosoftGraph
                 writer.write_number_value("durationInDays", @duration_in_days)
                 writer.write_collection_of_object_values("fallbackReviewers", @fallback_reviewers)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_collection_of_object_values("recommendationInsightSettings", @recommendation_insight_settings)
                 writer.write_boolean_value("recommendationsEnabled", @recommendations_enabled)
                 writer.write_collection_of_object_values("reviewers", @reviewers)
                 writer.write_string_value("stageId", @stage_id)

@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Singleton entity which represents the Exchange OnPremises Conditional Access Settings for a tenant.
         class OnPremisesConditionalAccessSettings < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 

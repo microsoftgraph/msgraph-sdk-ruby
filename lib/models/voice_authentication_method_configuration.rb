@@ -13,7 +13,7 @@ module MicrosoftGraph
             # true if users can register office phones, otherwise, false.
             @is_office_phone_allowed
             ## 
-            ## Instantiates a new VoiceAuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new voiceAuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

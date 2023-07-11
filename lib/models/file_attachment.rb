@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Do not use this property as it is not supported.
             @content_location
             ## 
-            ## Instantiates a new FileAttachment and sets the default values.
+            ## Instantiates a new fileAttachment and sets the default values.
             ## @return a void
             ## 
             def initialize()

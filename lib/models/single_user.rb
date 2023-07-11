@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The ID of the user in Azure AD.
             @user_id
             ## 
-            ## Instantiates a new SingleUser and sets the default values.
+            ## Instantiates a new singleUser and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -7,7 +7,7 @@ module MicrosoftGraph
         class SubscribeToToneOperation < MicrosoftGraph::Models::CommsOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new SubscribeToToneOperation and sets the default values.
+            ## Instantiates a new subscribeToToneOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

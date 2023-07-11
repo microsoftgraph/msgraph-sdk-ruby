@@ -7,7 +7,7 @@ module MicrosoftGraph
         class ProvisioningServicePrincipal < MicrosoftGraph::Models::Identity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new ProvisioningServicePrincipal and sets the default values.
+            ## Instantiates a new provisioningServicePrincipal and sets the default values.
             ## @return a void
             ## 
             def initialize()

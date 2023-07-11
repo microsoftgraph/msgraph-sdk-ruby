@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Device action result
         class LocateDeviceActionResult < MicrosoftGraph::Models::DeviceActionResult
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # device location
             @device_location
             ## 
-            ## Instantiates a new LocateDeviceActionResult and sets the default values.
+            ## Instantiates a new locateDeviceActionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()

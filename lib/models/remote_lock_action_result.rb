@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Device action result
         class RemoteLockActionResult < MicrosoftGraph::Models::DeviceActionResult
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # Pin to unlock the client
             @unlock_pin
             ## 
-            ## Instantiates a new RemoteLockActionResult and sets the default values.
+            ## Instantiates a new remoteLockActionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()

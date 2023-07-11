@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Windows Hello for Business settings lets users access their devices using a gesture, such as biometric authentication, or a PIN. Configure settings for enrolled Windows 10, Windows 10 Mobile and later.
         class DeviceEnrollmentWindowsHelloForBusinessConfiguration < MicrosoftGraph::Models::DeviceEnrollmentConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -43,7 +45,7 @@ module MicrosoftGraph
             # Controls the use of biometric gestures, such as face and fingerprint, as an alternative to the Windows Hello for Business PIN.  If set to False, biometric gestures are not allowed. Users must still configure a PIN as a backup in case of failures.
             @unlock_with_biometrics_enabled
             ## 
-            ## Instantiates a new DeviceEnrollmentWindowsHelloForBusinessConfiguration and sets the default values.
+            ## Instantiates a new deviceEnrollmentWindowsHelloForBusinessConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

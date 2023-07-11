@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The localized version of the terms of use agreement files attached to the agreement.
             @localizations
             ## 
-            ## Instantiates a new AgreementFile and sets the default values.
+            ## Instantiates a new agreementFile and sets the default values.
             ## @return a void
             ## 
             def initialize()

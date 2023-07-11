@@ -7,7 +7,6 @@ require_relative '../../../call_records'
 require_relative '../../item'
 require_relative '../sessions'
 require_relative './item'
-require_relative './segments/item/segment_item_request_builder'
 require_relative './segments/segments_request_builder'
 
 module MicrosoftGraph
@@ -77,17 +76,6 @@ module MicrosoftGraph
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecords::Session.create_from_discriminator_value(pn) }, error_mapping)
-                            end
-                            ## 
-                            ## Provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a segment_item_request_builder
-                            ## 
-                            def segments_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["segment%2Did"] = id
-                                return MicrosoftGraph::Communications::CallRecords::Item::Sessions::Item::Segments::Item::SegmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Delete navigation property sessions for communications

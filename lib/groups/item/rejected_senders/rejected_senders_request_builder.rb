@@ -5,6 +5,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../groups'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/directory_object_item_request_builder'
 require_relative './ref/ref_request_builder'
 require_relative './rejected_senders'
 
@@ -25,6 +26,17 @@ module MicrosoftGraph
                     # Provides operations to manage the collection of group entities.
                     def ref()
                         return MicrosoftGraph::Groups::Item::RejectedSenders::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Gets an item from the MicrosoftGraph.groups.item.rejectedSenders.item collection
+                    ## @param directory_object_id Unique identifier of the item
+                    ## @return a directory_object_item_request_builder
+                    ## 
+                    def by_directory_object_id(directory_object_id)
+                        raise StandardError, 'directory_object_id cannot be null' if directory_object_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["directoryObject%2Did"] = directory_object_id
+                        return MicrosoftGraph::Groups::Item::RejectedSenders::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new RejectedSendersRequestBuilder and sets the default values.

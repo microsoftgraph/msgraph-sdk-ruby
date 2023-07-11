@@ -15,7 +15,7 @@ module MicrosoftGraph
                 # Unique identifier of the security group.
                 @security_group_id
                 ## 
-                ## Instantiates a new SecurityGroupEvidence and sets the default values.
+                ## Instantiates a new securityGroupEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

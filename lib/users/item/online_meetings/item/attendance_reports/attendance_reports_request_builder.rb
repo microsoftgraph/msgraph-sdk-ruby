@@ -9,6 +9,7 @@ require_relative '../../online_meetings'
 require_relative '../item'
 require_relative './attendance_reports'
 require_relative './count/count_request_builder'
+require_relative './item/meeting_attendance_report_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Users::Item::OnlineMeetings::Item::AttendanceReports::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the attendanceReports property of the microsoft.graph.onlineMeeting entity.
+                            ## @param meeting_attendance_report_id Unique identifier of the item
+                            ## @return a meeting_attendance_report_item_request_builder
+                            ## 
+                            def by_meeting_attendance_report_id(meeting_attendance_report_id)
+                                raise StandardError, 'meeting_attendance_report_id cannot be null' if meeting_attendance_report_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["meetingAttendanceReport%2Did"] = meeting_attendance_report_id
+                                return MicrosoftGraph::Users::Item::OnlineMeetings::Item::AttendanceReports::Item::MeetingAttendanceReportItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new AttendanceReportsRequestBuilder and sets the default values.

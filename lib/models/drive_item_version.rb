@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Indicates the size of the content stream for this version of the item.
             @size
             ## 
-            ## Instantiates a new DriveItemVersion and sets the default values.
+            ## Instantiates a new driveItemVersion and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -3,8 +3,8 @@ require_relative '../microsoft_graph'
 require_relative '../models/drive'
 require_relative '../models/drive_collection_response'
 require_relative '../models/o_data_errors/o_data_error'
-require_relative './count/count_request_builder'
 require_relative './drives'
+require_relative './item/drive_item_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -13,9 +13,15 @@ module MicrosoftGraph
         class DrivesRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
             
             ## 
-            # Provides operations to count the resources in the collection.
-            def count()
-                return MicrosoftGraph::Drives::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+            ## Provides operations to manage the collection of drive entities.
+            ## @param drive_id Unique identifier of the item
+            ## @return a drive_item_request_builder
+            ## 
+            def by_drive_id(drive_id)
+                raise StandardError, 'drive_id cannot be null' if drive_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["drive%2Did"] = drive_id
+                return MicrosoftGraph::Drives::Item::DriveItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new DrivesRequestBuilder and sets the default values.
@@ -24,10 +30,10 @@ module MicrosoftGraph
             ## @return a void
             ## 
             def initialize(path_parameters, request_adapter)
-                super(path_parameters, request_adapter, "{+baseurl}/drives{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
+                super(path_parameters, request_adapter, "{+baseurl}/drives{?%24top,%24skip,%24search,%24filter,%24orderby,%24select,%24expand}")
             end
             ## 
-            ## Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+            ## Get entities from drives
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of drive_collection_response
             ## 
@@ -57,7 +63,7 @@ module MicrosoftGraph
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Drive.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+            ## Get entities from drives
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
             ## 
@@ -96,12 +102,9 @@ module MicrosoftGraph
             end
 
             ## 
-            # Retrieve the properties and relationships of a Drive resource. A Drive is the top-level container for a file system, such as OneDrive or SharePoint document libraries.
+            # Get entities from drives
             class DrivesRequestBuilderGetQueryParameters
                 
-                ## 
-                # Include count of items
-                attr_accessor :count
                 ## 
                 # Expand related entities
                 attr_accessor :expand
@@ -131,8 +134,6 @@ module MicrosoftGraph
                 def get_query_parameter(original_name)
                     raise StandardError, 'original_name cannot be null' if original_name.nil?
                     case original_name
-                        when "count"
-                            return "%24count"
                         when "expand"
                             return "%24expand"
                         when "filter"

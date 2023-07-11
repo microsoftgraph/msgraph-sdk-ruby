@@ -9,7 +9,7 @@ module MicrosoftGraph
             class EdiscoveryTagOperation < MicrosoftGraph::Models::Security::CaseOperation
                 include MicrosoftKiotaAbstractions::Parsable
                 ## 
-                ## Instantiates a new EdiscoveryTagOperation and sets the default values.
+                ## Instantiates a new ediscoveryTagOperation and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

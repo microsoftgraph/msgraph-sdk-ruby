@@ -7,7 +7,6 @@ require_relative '../../../joined_teams'
 require_relative '../../item'
 require_relative '../tags'
 require_relative './item'
-require_relative './members/item/teamwork_tag_member_item_request_builder'
 require_relative './members/members_request_builder'
 
 module MicrosoftGraph
@@ -35,7 +34,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/me/joinedTeams/{team%2Did}/tags/{teamworkTag%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property tags for me
+                            ## Delete a tag object permanently.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -49,7 +48,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## The tags associated with the team.
+                            ## Read the properties and relationships of a tag object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of teamwork_tag
                             ## 
@@ -63,18 +62,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamworkTag.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Provides operations to manage the members property of the microsoft.graph.teamworkTag entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a teamwork_tag_member_item_request_builder
-                            ## 
-                            def members_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["teamworkTagMember%2Did"] = id
-                                return MicrosoftGraph::Me::JoinedTeams::Item::Tags::Item::Members::Item::TeamworkTagMemberItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
-                            ## Update the navigation property tags in me
+                            ## Update the properties of a tag object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of teamwork_tag
@@ -90,7 +78,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamworkTag.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property tags for me
+                            ## Delete a tag object permanently.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,7 +94,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## The tags associated with the team.
+                            ## Read the properties and relationships of a tag object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -124,7 +112,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property tags in me
+                            ## Update the properties of a tag object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -145,7 +133,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # The tags associated with the team.
+                            # Read the properties and relationships of a tag object.
                             class TeamworkTagItemRequestBuilderGetQueryParameters
                                 
                                 ## 

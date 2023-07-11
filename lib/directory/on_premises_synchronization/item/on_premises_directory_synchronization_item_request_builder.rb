@@ -38,7 +38,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## A container for on-premises directory synchronization functionalities that are available for the organization.
+                    ## Read the properties and relationships of an onPremisesDirectorySynchronization object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of on_premises_directory_synchronization
                     ## 
@@ -52,7 +52,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnPremisesDirectorySynchronization.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property onPremisesSynchronization in directory
+                    ## Update the properties of an onPremisesDirectorySynchronization object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of on_premises_directory_synchronization
@@ -84,7 +84,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## A container for on-premises directory synchronization functionalities that are available for the organization.
+                    ## Read the properties and relationships of an onPremisesDirectorySynchronization object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property onPremisesSynchronization in directory
+                    ## Update the properties of an onPremisesDirectorySynchronization object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -123,7 +123,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # A container for on-premises directory synchronization functionalities that are available for the organization.
+                    # Read the properties and relationships of an onPremisesDirectorySynchronization object.
                     class OnPremisesDirectorySynchronizationItemRequestBuilderGetQueryParameters
                         
                         ## 

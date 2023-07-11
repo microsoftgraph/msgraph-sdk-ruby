@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Base type for assignment targets.
         class GroupAssignmentTarget < MicrosoftGraph::Models::DeviceAndAppManagementAssignmentTarget
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # The group Id that is the target of the assignment.
             @group_id
             ## 
-            ## Instantiates a new GroupAssignmentTarget and sets the default values.
+            ## Instantiates a new groupAssignmentTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()

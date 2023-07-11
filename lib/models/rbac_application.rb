@@ -34,7 +34,7 @@ module MicrosoftGraph
             # Schedules for role eligibility operations.
             @role_eligibility_schedules
             ## 
-            ## Instantiates a new RbacApplication and sets the default values.
+            ## Instantiates a new rbacApplication and sets the default values.
             ## @return a void
             ## 
             def initialize()

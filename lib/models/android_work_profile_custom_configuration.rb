@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Android Work Profile custom configuration
         class AndroidWorkProfileCustomConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # OMA settings. This collection can contain a maximum of 500 elements.
             @oma_settings
             ## 
-            ## Instantiates a new AndroidWorkProfileCustomConfiguration and sets the default values.
+            ## Instantiates a new androidWorkProfileCustomConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

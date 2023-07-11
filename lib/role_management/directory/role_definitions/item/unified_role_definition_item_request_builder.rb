@@ -6,7 +6,6 @@ require_relative '../../../role_management'
 require_relative '../../directory'
 require_relative '../role_definitions'
 require_relative './inherits_permissions_from/inherits_permissions_from_request_builder'
-require_relative './inherits_permissions_from/item/unified_role_definition_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -33,7 +32,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/roleManagement/directory/roleDefinitions/{unifiedRoleDefinition%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property roleDefinitions for roleManagement
+                        ## Delete a unifiedRoleDefinition object. You cannot delete built-in roles. This feature requires an Azure AD Premium P1 or P2 license.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -47,7 +46,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+                        ## Read the properties and relationships of a unifiedRoleDefinition object. The following role-based access control (RBAC) providers are currently supported:
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of unified_role_definition
                         ## 
@@ -61,18 +60,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleDefinition.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a unified_role_definition_item_request_builder
-                        ## 
-                        def inherits_permissions_from_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["unifiedRoleDefinition%2Did1"] = id
-                            return MicrosoftGraph::RoleManagement::Directory::RoleDefinitions::Item::InheritsPermissionsFrom::Item::UnifiedRoleDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Update the navigation property roleDefinitions in roleManagement
+                        ## Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires an Azure AD Premium P1 or P2 license.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of unified_role_definition
@@ -88,7 +76,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UnifiedRoleDefinition.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property roleDefinitions for roleManagement
+                        ## Delete a unifiedRoleDefinition object. You cannot delete built-in roles. This feature requires an Azure AD Premium P1 or P2 license.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -104,7 +92,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+                        ## Read the properties and relationships of a unifiedRoleDefinition object. The following role-based access control (RBAC) providers are currently supported:
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -122,7 +110,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property roleDefinitions in roleManagement
+                        ## Update the properties of a unifiedRoleDefinition object. You cannot update built-in roles. This feature requires an Azure AD Premium P1 or P2 license.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -143,7 +131,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+                        # Read the properties and relationships of a unifiedRoleDefinition object. The following role-based access control (RBAC) providers are currently supported:
                         class UnifiedRoleDefinitionItemRequestBuilderGetQueryParameters
                             
                             ## 

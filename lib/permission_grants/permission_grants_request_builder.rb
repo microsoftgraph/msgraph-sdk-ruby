@@ -6,6 +6,7 @@ require_relative '../models/resource_specific_permission_grant_collection_respon
 require_relative './delta/delta_request_builder'
 require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
 require_relative './get_by_ids/get_by_ids_request_builder'
+require_relative './item/resource_specific_permission_grant_item_request_builder'
 require_relative './permission_grants'
 require_relative './validate_properties/validate_properties_request_builder'
 
@@ -34,6 +35,17 @@ module MicrosoftGraph
             # Provides operations to call the validateProperties method.
             def validate_properties()
                 return MicrosoftGraph::PermissionGrants::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            ## Provides operations to manage the collection of resourceSpecificPermissionGrant entities.
+            ## @param resource_specific_permission_grant_id Unique identifier of the item
+            ## @return a resource_specific_permission_grant_item_request_builder
+            ## 
+            def by_resource_specific_permission_grant_id(resource_specific_permission_grant_id)
+                raise StandardError, 'resource_specific_permission_grant_id cannot be null' if resource_specific_permission_grant_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["resourceSpecificPermissionGrant%2Did"] = resource_specific_permission_grant_id
+                return MicrosoftGraph::PermissionGrants::Item::ResourceSpecificPermissionGrantItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new PermissionGrantsRequestBuilder and sets the default values.

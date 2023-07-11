@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @allowed_cloud_endpoints = value
             end
             ## 
-            ## Instantiates a new CrossTenantAccessPolicy and sets the default values.
+            ## Instantiates a new crossTenantAccessPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

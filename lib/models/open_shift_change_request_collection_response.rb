@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value property
             @value
             ## 
-            ## Instantiates a new OpenShiftChangeRequestCollectionResponse and sets the default values.
+            ## Instantiates a new openShiftChangeRequestCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

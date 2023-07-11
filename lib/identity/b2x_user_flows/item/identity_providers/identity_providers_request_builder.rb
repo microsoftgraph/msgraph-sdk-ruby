@@ -7,6 +7,7 @@ require_relative '../../b2x_user_flows'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './identity_providers'
+require_relative './item/identity_provider_item_request_builder'
 
 module MicrosoftGraph
     module Identity
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Identity::B2xUserFlows::Item::IdentityProviders::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the identityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.
+                        ## @param identity_provider_id Unique identifier of the item
+                        ## @return a identity_provider_item_request_builder
+                        ## 
+                        def by_identity_provider_id(identity_provider_id)
+                            raise StandardError, 'identity_provider_id cannot be null' if identity_provider_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["identityProvider%2Did"] = identity_provider_id
+                            return MicrosoftGraph::Identity::B2xUserFlows::Item::IdentityProviders::Item::IdentityProviderItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new IdentityProvidersRequestBuilder and sets the default values.

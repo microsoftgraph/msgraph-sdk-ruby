@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # A base complex type to store the detection or requirement rule data for a Win32 LOB app.
         class Win32LobAppFileSystemRule < MicrosoftGraph::Models::Win32LobAppRule
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -55,7 +57,7 @@ module MicrosoftGraph
                 @comparison_value = value
             end
             ## 
-            ## Instantiates a new Win32LobAppFileSystemRule and sets the default values.
+            ## Instantiates a new win32LobAppFileSystemRule and sets the default values.
             ## @return a void
             ## 
             def initialize()

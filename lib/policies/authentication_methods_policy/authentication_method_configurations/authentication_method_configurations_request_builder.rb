@@ -7,6 +7,7 @@ require_relative '../../policies'
 require_relative '../authentication_methods_policy'
 require_relative './authentication_method_configurations'
 require_relative './count/count_request_builder'
+require_relative './item/authentication_method_configuration_item_request_builder'
 
 module MicrosoftGraph
     module Policies
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Policies::AuthenticationMethodsPolicy::AuthenticationMethodConfigurations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the authenticationMethodConfigurations property of the microsoft.graph.authenticationMethodsPolicy entity.
+                    ## @param authentication_method_configuration_id Unique identifier of the item
+                    ## @return a authentication_method_configuration_item_request_builder
+                    ## 
+                    def by_authentication_method_configuration_id(authentication_method_configuration_id)
+                        raise StandardError, 'authentication_method_configuration_id cannot be null' if authentication_method_configuration_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["authenticationMethodConfiguration%2Did"] = authentication_method_configuration_id
+                        return MicrosoftGraph::Policies::AuthenticationMethodsPolicy::AuthenticationMethodConfigurations::Item::AuthenticationMethodConfigurationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AuthenticationMethodConfigurationsRequestBuilder and sets the default values.

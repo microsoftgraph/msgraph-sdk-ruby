@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties, inherited properties and actions for iOS mobile app configurations.
         class IosMobileAppConfiguration < MicrosoftGraph::Models::ManagedDeviceMobileAppConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -13,7 +15,7 @@ module MicrosoftGraph
             # app configuration setting items.
             @settings
             ## 
-            ## Instantiates a new IosMobileAppConfiguration and sets the default values.
+            ## Instantiates a new iosMobileAppConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

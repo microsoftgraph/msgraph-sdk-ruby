@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # OMA Settings definition.
         class OmaSettingStringXml < MicrosoftGraph::Models::OmaSetting
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -13,7 +15,7 @@ module MicrosoftGraph
             # Value. (UTF8 encoded byte array)
             @value
             ## 
-            ## Instantiates a new OmaSettingStringXml and sets the default values.
+            ## Instantiates a new omaSettingStringXml and sets the default values.
             ## @return a void
             ## 
             def initialize()

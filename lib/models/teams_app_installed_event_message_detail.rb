@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Unique identifier of the teamsApp.
             @teams_app_id
             ## 
-            ## Instantiates a new TeamsAppInstalledEventMessageDetail and sets the default values.
+            ## Instantiates a new teamsAppInstalledEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

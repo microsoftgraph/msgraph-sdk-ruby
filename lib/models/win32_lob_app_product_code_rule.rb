@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # A base complex type to store the detection or requirement rule data for a Win32 LOB app.
         class Win32LobAppProductCodeRule < MicrosoftGraph::Models::Win32LobAppRule
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -16,7 +18,7 @@ module MicrosoftGraph
             # Contains properties for detection operator.
             @product_version_operator
             ## 
-            ## Instantiates a new Win32LobAppProductCodeRule and sets the default values.
+            ## Instantiates a new win32LobAppProductCodeRule and sets the default values.
             ## @return a void
             ## 
             def initialize()

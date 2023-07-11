@@ -6,6 +6,7 @@ require_relative '../../models/print_connector_collection_response'
 require_relative '../print'
 require_relative './connectors'
 require_relative './count/count_request_builder'
+require_relative './item/print_connector_item_request_builder'
 
 module MicrosoftGraph
     module Print
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Print::Connectors::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the connectors property of the microsoft.graph.print entity.
+                ## @param print_connector_id Unique identifier of the item
+                ## @return a print_connector_item_request_builder
+                ## 
+                def by_print_connector_id(print_connector_id)
+                    raise StandardError, 'print_connector_id cannot be null' if print_connector_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["printConnector%2Did"] = print_connector_id
+                    return MicrosoftGraph::Print::Connectors::Item::PrintConnectorItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new ConnectorsRequestBuilder and sets the default values.

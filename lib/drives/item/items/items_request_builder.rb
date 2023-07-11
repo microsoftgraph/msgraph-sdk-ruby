@@ -6,6 +6,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../drives'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/drive_item_item_request_builder'
 require_relative './items'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Drives::Item::Items::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the items property of the microsoft.graph.drive entity.
+                    ## @param drive_item_id Unique identifier of the item
+                    ## @return a drive_item_item_request_builder
+                    ## 
+                    def by_drive_item_id(drive_item_id)
+                        raise StandardError, 'drive_item_id cannot be null' if drive_item_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["driveItem%2Did"] = drive_item_id
+                        return MicrosoftGraph::Drives::Item::Items::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new ItemsRequestBuilder and sets the default values.

@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Abstract class to contain properties used to assign a mobile app to a group.
         class WindowsUniversalAppXAppAssignmentSettings < MicrosoftGraph::Models::MobileAppAssignmentSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # If true, uses device execution context for Windows Universal AppX mobile app. Device-context install is not allowed when this type of app is targeted with Available intent. Defaults to false.
             @use_device_context
             ## 
-            ## Instantiates a new WindowsUniversalAppXAppAssignmentSettings and sets the default values.
+            ## Instantiates a new windowsUniversalAppXAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -55,7 +55,7 @@ module MicrosoftGraph
                 @classes = value
             end
             ## 
-            ## Instantiates a new EducationRoot and sets the default values.
+            ## Instantiates a new educationRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()

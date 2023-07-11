@@ -3,7 +3,6 @@ require_relative '../microsoft_graph'
 require_relative '../models/external_connectors/external'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './connections/connections_request_builder'
-require_relative './connections/item/external_connection_item_request_builder'
 require_relative './external'
 
 module MicrosoftGraph
@@ -16,17 +15,6 @@ module MicrosoftGraph
             # Provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.
             def connections()
                 return MicrosoftGraph::External::Connections::ConnectionsRequestBuilder.new(@path_parameters, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.
-            ## @param id Unique identifier of the item
-            ## @return a external_connection_item_request_builder
-            ## 
-            def connections_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["externalConnection%2Did"] = id
-                return MicrosoftGraph::External::Connections::Item::ExternalConnectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new ExternalRequestBuilder and sets the default values.

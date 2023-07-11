@@ -16,7 +16,7 @@ module MicrosoftGraph
             # true if IP addresses that don't map to a country or region should be included in the named location. Optional. Default value is false.
             @include_unknown_countries_and_regions
             ## 
-            ## Instantiates a new CountryNamedLocation and sets the default values.
+            ## Instantiates a new countryNamedLocation and sets the default values.
             ## @return a void
             ## 
             def initialize()

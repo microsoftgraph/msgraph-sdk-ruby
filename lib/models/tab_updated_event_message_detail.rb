@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Unique identifier of the tab.
             @tab_id
             ## 
-            ## Instantiates a new TabUpdatedEventMessageDetail and sets the default values.
+            ## Instantiates a new tabUpdatedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

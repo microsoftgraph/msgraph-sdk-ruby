@@ -20,6 +20,7 @@ module MicrosoftGraph
                 AppGovernancePolicy: :AppGovernancePolicy,
                 AppGovernanceDetection: :AppGovernanceDetection,
                 UnknownFutureValue: :UnknownFutureValue,
+                MicrosoftDefenderForCloud: :MicrosoftDefenderForCloud,
             }
         end
     end

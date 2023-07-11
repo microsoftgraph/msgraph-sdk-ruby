@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The id of the content type.
+            # The ID of the content type.
             @id
             ## 
             # The name of the content type.
@@ -61,14 +61,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the id property value. The id of the content type.
+            ## Gets the id property value. The ID of the content type.
             ## @return a string
             ## 
             def id
                 return @id
             end
             ## 
-            ## Sets the id property value. The id of the content type.
+            ## Sets the id property value. The ID of the content type.
             ## @param value Value to set for the id property.
             ## @return a void
             ## 

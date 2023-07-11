@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The workforceIntegrations property
             @workforce_integrations
             ## 
-            ## Instantiates a new Teamwork and sets the default values.
+            ## Instantiates a new teamwork and sets the default values.
             ## @return a void
             ## 
             def initialize()

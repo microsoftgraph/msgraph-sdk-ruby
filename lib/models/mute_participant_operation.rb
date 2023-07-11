@@ -7,7 +7,7 @@ module MicrosoftGraph
         class MuteParticipantOperation < MicrosoftGraph::Models::CommsOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new MuteParticipantOperation and sets the default values.
+            ## Instantiates a new muteParticipantOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

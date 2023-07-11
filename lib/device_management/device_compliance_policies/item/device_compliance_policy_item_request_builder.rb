@@ -6,17 +6,12 @@ require_relative '../../device_management'
 require_relative '../device_compliance_policies'
 require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
-require_relative './assignments/item/device_compliance_policy_assignment_item_request_builder'
 require_relative './device_setting_state_summaries/device_setting_state_summaries_request_builder'
-require_relative './device_setting_state_summaries/item/setting_state_device_summary_item_request_builder'
 require_relative './device_statuses/device_statuses_request_builder'
-require_relative './device_statuses/item/device_compliance_device_status_item_request_builder'
 require_relative './device_status_overview/device_status_overview_request_builder'
 require_relative './item'
 require_relative './schedule_actions_for_rules/schedule_actions_for_rules_request_builder'
-require_relative './scheduled_actions_for_rule/item/device_compliance_scheduled_action_for_rule_item_request_builder'
 require_relative './scheduled_actions_for_rule/scheduled_actions_for_rule_request_builder'
-require_relative './user_statuses/item/device_compliance_user_status_item_request_builder'
 require_relative './user_statuses/user_statuses_request_builder'
 require_relative './user_status_overview/user_status_overview_request_builder'
 
@@ -74,17 +69,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::UserStatusOverview::UserStatusOverviewRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the assignments property of the microsoft.graph.deviceCompliancePolicy entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a device_compliance_policy_assignment_item_request_builder
-                    ## 
-                    def assignments_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["deviceCompliancePolicyAssignment%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::Assignments::Item::DeviceCompliancePolicyAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new DeviceCompliancePolicyItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -106,28 +90,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceCompliancePolicy entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a setting_state_device_summary_item_request_builder
-                    ## 
-                    def device_setting_state_summaries_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["settingStateDeviceSummary%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::DeviceSettingStateSummaries::Item::SettingStateDeviceSummaryItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the deviceStatuses property of the microsoft.graph.deviceCompliancePolicy entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a device_compliance_device_status_item_request_builder
-                    ## 
-                    def device_statuses_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["deviceComplianceDeviceStatus%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::DeviceStatuses::Item::DeviceComplianceDeviceStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## The device compliance policies.
@@ -158,17 +120,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceCompliancePolicy.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceCompliancePolicy entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a device_compliance_scheduled_action_for_rule_item_request_builder
-                    ## 
-                    def scheduled_actions_for_rule_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["deviceComplianceScheduledActionForRule%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::ScheduledActionsForRule::Item::DeviceComplianceScheduledActionForRuleItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Delete navigation property deviceCompliancePolicies for deviceManagement
@@ -223,17 +174,6 @@ module MicrosoftGraph
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
-                    end
-                    ## 
-                    ## Provides operations to manage the userStatuses property of the microsoft.graph.deviceCompliancePolicy entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a device_compliance_user_status_item_request_builder
-                    ## 
-                    def user_statuses_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["deviceComplianceUserStatus%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::UserStatuses::Item::DeviceComplianceUserStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
 
                     ## 

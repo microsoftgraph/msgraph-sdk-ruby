@@ -5,8 +5,12 @@ require_relative '../../models/organizational_branding_localization'
 require_relative '../localizations'
 require_relative './background_image/background_image_request_builder'
 require_relative './banner_logo/banner_logo_request_builder'
+require_relative './custom_c_s_s/custom_c_s_s_request_builder'
+require_relative './favicon/favicon_request_builder'
+require_relative './header_logo/header_logo_request_builder'
 require_relative './item'
 require_relative './square_logo/square_logo_request_builder'
+require_relative './square_logo_dark/square_logo_dark_request_builder'
 
 module MicrosoftGraph
     module Localizations
@@ -27,8 +31,28 @@ module MicrosoftGraph
                 end
                 ## 
                 # Provides operations to manage the media for the organizationalBrandingLocalization entity.
+                def custom_c_s_s()
+                    return MicrosoftGraph::Localizations::Item::CustomCSS::CustomCSSRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to manage the media for the organizationalBrandingLocalization entity.
+                def favicon()
+                    return MicrosoftGraph::Localizations::Item::Favicon::FaviconRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to manage the media for the organizationalBrandingLocalization entity.
+                def header_logo()
+                    return MicrosoftGraph::Localizations::Item::HeaderLogo::HeaderLogoRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to manage the media for the organizationalBrandingLocalization entity.
                 def square_logo()
                     return MicrosoftGraph::Localizations::Item::SquareLogo::SquareLogoRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Provides operations to manage the media for the organizationalBrandingLocalization entity.
+                def square_logo_dark()
+                    return MicrosoftGraph::Localizations::Item::SquareLogoDark::SquareLogoDarkRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new OrganizationalBrandingLocalizationItemRequestBuilder and sets the default values.

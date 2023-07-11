@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Abstract class to contain properties used to assign a mobile app to a group.
         class IosLobAppAssignmentSettings < MicrosoftGraph::Models::MobileAppAssignmentSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -16,7 +18,7 @@ module MicrosoftGraph
             # This is the unique identifier (Id) of the VPN Configuration to apply to the app.
             @vpn_configuration_id
             ## 
-            ## Instantiates a new IosLobAppAssignmentSettings and sets the default values.
+            ## Instantiates a new iosLobAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

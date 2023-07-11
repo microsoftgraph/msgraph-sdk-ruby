@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Android Work Profile general device configuration.
         class AndroidWorkProfileGeneralDeviceConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -109,7 +111,7 @@ module MicrosoftGraph
             # Password is required or not for work profile
             @work_profile_require_password
             ## 
-            ## Instantiates a new AndroidWorkProfileGeneralDeviceConfiguration and sets the default values.
+            ## Instantiates a new androidWorkProfileGeneralDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

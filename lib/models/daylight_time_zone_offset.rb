@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The time offset from Coordinated Universal Time (UTC) for daylight saving time. This value is in minutes.
             @daylight_bias
             ## 
-            ## Instantiates a new DaylightTimeZoneOffset and sets the default values.
+            ## Instantiates a new daylightTimeZoneOffset and sets the default values.
             ## @return a void
             ## 
             def initialize()

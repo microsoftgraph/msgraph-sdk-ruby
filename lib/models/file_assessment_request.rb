@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The file name.
             @file_name
             ## 
-            ## Instantiates a new FileAssessmentRequest and sets the default values.
+            ## Instantiates a new fileAssessmentRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

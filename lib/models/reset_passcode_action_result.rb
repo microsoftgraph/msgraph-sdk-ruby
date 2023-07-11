@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Device action result
         class ResetPasscodeActionResult < MicrosoftGraph::Models::DeviceActionResult
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # Newly generated passcode for the device
             @passcode
             ## 
-            ## Instantiates a new ResetPasscodeActionResult and sets the default values.
+            ## Instantiates a new resetPasscodeActionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()

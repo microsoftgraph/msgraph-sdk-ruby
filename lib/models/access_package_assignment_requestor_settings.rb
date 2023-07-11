@@ -10,25 +10,25 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # If false, the requestor is not permitted to include a schedule in their request.
+            # False indicates that the requestor is not permitted to include a schedule in their request.
             @allow_custom_assignment_schedule
             ## 
-            # If true, allows on-behalf-of requestors to create a request to add access for another principal.
+            # True allows on-behalf-of requestors to create a request to add access for another principal.
             @enable_on_behalf_requestors_to_add_access
             ## 
-            # If true, allows on-behalf-of requestors to create a request to remove access for another principal.
+            # True allows on-behalf-of requestors to create a request to remove access for another principal.
             @enable_on_behalf_requestors_to_remove_access
             ## 
-            # If true, allows on-behalf-of requestors to create a request to update access for another principal.
+            # True allows on-behalf-of requestors to create a request to update access for another principal.
             @enable_on_behalf_requestors_to_update_access
             ## 
-            # If true, allows requestors to create a request to add access for themselves.
+            # True allows requestors to create a request to add access for themselves.
             @enable_targets_to_self_add_access
             ## 
-            # If true, allows requestors to create a request to remove their access.
+            # True allows requestors to create a request to remove their access.
             @enable_targets_to_self_remove_access
             ## 
-            # If true, allows requestors to create a request to update their access.
+            # True allows requestors to create a request to update their access.
             @enable_targets_to_self_update_access
             ## 
             # The OdataType property
@@ -52,14 +52,14 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Gets the allowCustomAssignmentSchedule property value. If false, the requestor is not permitted to include a schedule in their request.
+            ## Gets the allowCustomAssignmentSchedule property value. False indicates that the requestor is not permitted to include a schedule in their request.
             ## @return a boolean
             ## 
             def allow_custom_assignment_schedule
                 return @allow_custom_assignment_schedule
             end
             ## 
-            ## Sets the allowCustomAssignmentSchedule property value. If false, the requestor is not permitted to include a schedule in their request.
+            ## Sets the allowCustomAssignmentSchedule property value. False indicates that the requestor is not permitted to include a schedule in their request.
             ## @param value Value to set for the allow_custom_assignment_schedule property.
             ## @return a void
             ## 
@@ -83,14 +83,14 @@ module MicrosoftGraph
                 return AccessPackageAssignmentRequestorSettings.new
             end
             ## 
-            ## Gets the enableOnBehalfRequestorsToAddAccess property value. If true, allows on-behalf-of requestors to create a request to add access for another principal.
+            ## Gets the enableOnBehalfRequestorsToAddAccess property value. True allows on-behalf-of requestors to create a request to add access for another principal.
             ## @return a boolean
             ## 
             def enable_on_behalf_requestors_to_add_access
                 return @enable_on_behalf_requestors_to_add_access
             end
             ## 
-            ## Sets the enableOnBehalfRequestorsToAddAccess property value. If true, allows on-behalf-of requestors to create a request to add access for another principal.
+            ## Sets the enableOnBehalfRequestorsToAddAccess property value. True allows on-behalf-of requestors to create a request to add access for another principal.
             ## @param value Value to set for the enable_on_behalf_requestors_to_add_access property.
             ## @return a void
             ## 
@@ -98,14 +98,14 @@ module MicrosoftGraph
                 @enable_on_behalf_requestors_to_add_access = value
             end
             ## 
-            ## Gets the enableOnBehalfRequestorsToRemoveAccess property value. If true, allows on-behalf-of requestors to create a request to remove access for another principal.
+            ## Gets the enableOnBehalfRequestorsToRemoveAccess property value. True allows on-behalf-of requestors to create a request to remove access for another principal.
             ## @return a boolean
             ## 
             def enable_on_behalf_requestors_to_remove_access
                 return @enable_on_behalf_requestors_to_remove_access
             end
             ## 
-            ## Sets the enableOnBehalfRequestorsToRemoveAccess property value. If true, allows on-behalf-of requestors to create a request to remove access for another principal.
+            ## Sets the enableOnBehalfRequestorsToRemoveAccess property value. True allows on-behalf-of requestors to create a request to remove access for another principal.
             ## @param value Value to set for the enable_on_behalf_requestors_to_remove_access property.
             ## @return a void
             ## 
@@ -113,14 +113,14 @@ module MicrosoftGraph
                 @enable_on_behalf_requestors_to_remove_access = value
             end
             ## 
-            ## Gets the enableOnBehalfRequestorsToUpdateAccess property value. If true, allows on-behalf-of requestors to create a request to update access for another principal.
+            ## Gets the enableOnBehalfRequestorsToUpdateAccess property value. True allows on-behalf-of requestors to create a request to update access for another principal.
             ## @return a boolean
             ## 
             def enable_on_behalf_requestors_to_update_access
                 return @enable_on_behalf_requestors_to_update_access
             end
             ## 
-            ## Sets the enableOnBehalfRequestorsToUpdateAccess property value. If true, allows on-behalf-of requestors to create a request to update access for another principal.
+            ## Sets the enableOnBehalfRequestorsToUpdateAccess property value. True allows on-behalf-of requestors to create a request to update access for another principal.
             ## @param value Value to set for the enable_on_behalf_requestors_to_update_access property.
             ## @return a void
             ## 
@@ -128,14 +128,14 @@ module MicrosoftGraph
                 @enable_on_behalf_requestors_to_update_access = value
             end
             ## 
-            ## Gets the enableTargetsToSelfAddAccess property value. If true, allows requestors to create a request to add access for themselves.
+            ## Gets the enableTargetsToSelfAddAccess property value. True allows requestors to create a request to add access for themselves.
             ## @return a boolean
             ## 
             def enable_targets_to_self_add_access
                 return @enable_targets_to_self_add_access
             end
             ## 
-            ## Sets the enableTargetsToSelfAddAccess property value. If true, allows requestors to create a request to add access for themselves.
+            ## Sets the enableTargetsToSelfAddAccess property value. True allows requestors to create a request to add access for themselves.
             ## @param value Value to set for the enable_targets_to_self_add_access property.
             ## @return a void
             ## 
@@ -143,14 +143,14 @@ module MicrosoftGraph
                 @enable_targets_to_self_add_access = value
             end
             ## 
-            ## Gets the enableTargetsToSelfRemoveAccess property value. If true, allows requestors to create a request to remove their access.
+            ## Gets the enableTargetsToSelfRemoveAccess property value. True allows requestors to create a request to remove their access.
             ## @return a boolean
             ## 
             def enable_targets_to_self_remove_access
                 return @enable_targets_to_self_remove_access
             end
             ## 
-            ## Sets the enableTargetsToSelfRemoveAccess property value. If true, allows requestors to create a request to remove their access.
+            ## Sets the enableTargetsToSelfRemoveAccess property value. True allows requestors to create a request to remove their access.
             ## @param value Value to set for the enable_targets_to_self_remove_access property.
             ## @return a void
             ## 
@@ -158,14 +158,14 @@ module MicrosoftGraph
                 @enable_targets_to_self_remove_access = value
             end
             ## 
-            ## Gets the enableTargetsToSelfUpdateAccess property value. If true, allows requestors to create a request to update their access.
+            ## Gets the enableTargetsToSelfUpdateAccess property value. True allows requestors to create a request to update their access.
             ## @return a boolean
             ## 
             def enable_targets_to_self_update_access
                 return @enable_targets_to_self_update_access
             end
             ## 
-            ## Sets the enableTargetsToSelfUpdateAccess property value. If true, allows requestors to create a request to update their access.
+            ## Sets the enableTargetsToSelfUpdateAccess property value. True allows requestors to create a request to update their access.
             ## @param value Value to set for the enable_targets_to_self_update_access property.
             ## @return a void
             ## 

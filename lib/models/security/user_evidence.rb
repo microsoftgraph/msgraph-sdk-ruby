@@ -12,7 +12,7 @@ module MicrosoftGraph
                 # The user account details.
                 @user_account
                 ## 
-                ## Instantiates a new UserEvidence and sets the default values.
+                ## Instantiates a new userEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

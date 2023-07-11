@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Manager level, between 1 and 4. The direct manager is 1.
             @manager_level
             ## 
-            ## Instantiates a new TargetManager and sets the default values.
+            ## Instantiates a new targetManager and sets the default values.
             ## @return a void
             ## 
             def initialize()

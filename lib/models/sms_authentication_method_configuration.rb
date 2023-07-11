@@ -10,7 +10,7 @@ module MicrosoftGraph
             # A collection of groups that are enabled to use the authentication method.
             @include_targets
             ## 
-            ## Instantiates a new SmsAuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new smsAuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

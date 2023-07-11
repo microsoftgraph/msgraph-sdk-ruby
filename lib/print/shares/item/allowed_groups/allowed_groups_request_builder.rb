@@ -7,6 +7,7 @@ require_relative '../../shares'
 require_relative '../item'
 require_relative './allowed_groups'
 require_relative './count/count_request_builder'
+require_relative './item/group_item_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -27,6 +28,17 @@ module MicrosoftGraph
                         # Provides operations to manage the collection of print entities.
                         def ref()
                             return MicrosoftGraph::Print::Shares::Item::AllowedGroups::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Gets an item from the MicrosoftGraph.print.shares.item.allowedGroups.item collection
+                        ## @param group_id Unique identifier of the item
+                        ## @return a group_item_request_builder
+                        ## 
+                        def by_group_id(group_id)
+                            raise StandardError, 'group_id cannot be null' if group_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["group%2Did"] = group_id
+                            return MicrosoftGraph::Print::Shares::Item::AllowedGroups::Item::GroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new AllowedGroupsRequestBuilder and sets the default values.

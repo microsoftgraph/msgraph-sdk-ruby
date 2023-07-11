@@ -49,7 +49,7 @@ module MicrosoftGraph
                 @classification = value
             end
             ## 
-            ## Instantiates a new ServiceHealthIssue and sets the default values.
+            ## Instantiates a new serviceHealthIssue and sets the default values.
             ## @return a void
             ## 
             def initialize()

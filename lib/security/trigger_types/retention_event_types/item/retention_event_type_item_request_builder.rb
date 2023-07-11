@@ -26,7 +26,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/security/triggerTypes/retentionEventTypes/{retentionEventType%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property retentionEventTypes for security
+                        ## Delete a retentionEventType object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -40,7 +40,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Get retentionEventTypes from security
+                        ## Read the properties and relationships of a retentionEventType object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of retention_event_type
                         ## 
@@ -70,7 +70,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::RetentionEventType.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property retentionEventTypes for security
+                        ## Delete a retentionEventType object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -86,7 +86,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Get retentionEventTypes from security
+                        ## Read the properties and relationships of a retentionEventType object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -125,7 +125,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get retentionEventTypes from security
+                        # Read the properties and relationships of a retentionEventType object.
                         class RetentionEventTypeItemRequestBuilderGetQueryParameters
                             
                             ## 

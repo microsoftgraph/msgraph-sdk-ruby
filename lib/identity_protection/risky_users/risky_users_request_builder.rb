@@ -7,6 +7,7 @@ require_relative '../identity_protection'
 require_relative './confirm_compromised/confirm_compromised_request_builder'
 require_relative './count/count_request_builder'
 require_relative './dismiss/dismiss_request_builder'
+require_relative './item/risky_user_item_request_builder'
 require_relative './risky_users'
 
 module MicrosoftGraph
@@ -30,6 +31,17 @@ module MicrosoftGraph
                 # Provides operations to call the dismiss method.
                 def dismiss()
                     return MicrosoftGraph::IdentityProtection::RiskyUsers::Dismiss::DismissRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
+                ## @param risky_user_id Unique identifier of the item
+                ## @return a risky_user_item_request_builder
+                ## 
+                def by_risky_user_id(risky_user_id)
+                    raise StandardError, 'risky_user_id cannot be null' if risky_user_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["riskyUser%2Did"] = risky_user_id
+                    return MicrosoftGraph::IdentityProtection::RiskyUsers::Item::RiskyUserItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new RiskyUsersRequestBuilder and sets the default values.

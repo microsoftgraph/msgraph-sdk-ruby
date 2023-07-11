@@ -10,7 +10,7 @@ module MicrosoftGraph
             # URL to the resource.
             @link
             ## 
-            ## Instantiates a new EducationLinkResource and sets the default values.
+            ## Instantiates a new educationLinkResource and sets the default values.
             ## @return a void
             ## 
             def initialize()

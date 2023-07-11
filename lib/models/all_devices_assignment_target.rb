@@ -4,10 +4,12 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Base type for assignment targets.
         class AllDevicesAssignmentTarget < MicrosoftGraph::Models::DeviceAndAppManagementAssignmentTarget
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new AllDevicesAssignmentTarget and sets the default values.
+            ## Instantiates a new allDevicesAssignmentTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,6 +10,7 @@ require_relative '../../languages'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './default_pages'
+require_relative './item/user_flow_language_page_item_request_builder'
 
 module MicrosoftGraph
     module Identity
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Identity::B2xUserFlows::Item::Languages::Item::DefaultPages::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the defaultPages property of the microsoft.graph.userFlowLanguageConfiguration entity.
+                                ## @param user_flow_language_page_id Unique identifier of the item
+                                ## @return a user_flow_language_page_item_request_builder
+                                ## 
+                                def by_user_flow_language_page_id(user_flow_language_page_id)
+                                    raise StandardError, 'user_flow_language_page_id cannot be null' if user_flow_language_page_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["userFlowLanguagePage%2Did"] = user_flow_language_page_id
+                                    return MicrosoftGraph::Identity::B2xUserFlows::Item::Languages::Item::DefaultPages::Item::UserFlowLanguagePageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new DefaultPagesRequestBuilder and sets the default values.

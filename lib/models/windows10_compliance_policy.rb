@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This class contains compliance settings for Windows 10.
         class Windows10CompliancePolicy < MicrosoftGraph::Models::DeviceCompliancePolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -94,7 +96,7 @@ module MicrosoftGraph
                 @code_integrity_enabled = value
             end
             ## 
-            ## Instantiates a new Windows10CompliancePolicy and sets the default values.
+            ## Instantiates a new windows10CompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

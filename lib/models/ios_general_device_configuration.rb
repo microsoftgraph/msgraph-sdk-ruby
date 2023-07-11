@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the iosGeneralDeviceConfiguration resource.
         class IosGeneralDeviceConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -835,7 +837,7 @@ module MicrosoftGraph
                 @configuration_profile_block_changes = value
             end
             ## 
-            ## Instantiates a new IosGeneralDeviceConfiguration and sets the default values.
+            ## Instantiates a new iosGeneralDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

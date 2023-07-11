@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # A class containing the properties used for Group Assignment of an iOS LOB App Provisioning and Configuration.
         class IosLobAppProvisioningConfigurationAssignment < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # The target group assignment defined by the admin.
             @target
             ## 
-            ## Instantiates a new IosLobAppProvisioningConfigurationAssignment and sets the default values.
+            ## Instantiates a new iosLobAppProvisioningConfigurationAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

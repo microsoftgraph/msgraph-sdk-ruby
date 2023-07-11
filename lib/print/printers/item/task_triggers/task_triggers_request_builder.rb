@@ -7,6 +7,7 @@ require_relative '../../../print'
 require_relative '../../printers'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/print_task_trigger_item_request_builder'
 require_relative './task_triggers'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Print::Printers::Item::TaskTriggers::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.
+                        ## @param print_task_trigger_id Unique identifier of the item
+                        ## @return a print_task_trigger_item_request_builder
+                        ## 
+                        def by_print_task_trigger_id(print_task_trigger_id)
+                            raise StandardError, 'print_task_trigger_id cannot be null' if print_task_trigger_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["printTaskTrigger%2Did"] = print_task_trigger_id
+                            return MicrosoftGraph::Print::Printers::Item::TaskTriggers::Item::PrintTaskTriggerItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new TaskTriggersRequestBuilder and sets the default values.

@@ -6,6 +6,7 @@ require_relative '../../../education'
 require_relative '../../users'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/education_school_item_request_builder'
 require_relative './schools'
 
 module MicrosoftGraph
@@ -21,6 +22,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Education::Users::Item::Schools::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the schools property of the microsoft.graph.educationUser entity.
+                        ## @param education_school_id Unique identifier of the item
+                        ## @return a education_school_item_request_builder
+                        ## 
+                        def by_education_school_id(education_school_id)
+                            raise StandardError, 'education_school_id cannot be null' if education_school_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["educationSchool%2Did"] = education_school_id
+                            return MicrosoftGraph::Education::Users::Item::Schools::Item::EducationSchoolItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new SchoolsRequestBuilder and sets the default values.

@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Device Enrollment Configuration that restricts the types of devices a user can enroll
         class DeviceEnrollmentPlatformRestrictionsConfiguration < MicrosoftGraph::Models::DeviceEnrollmentConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -37,7 +39,7 @@ module MicrosoftGraph
                 @android_restriction = value
             end
             ## 
-            ## Instantiates a new DeviceEnrollmentPlatformRestrictionsConfiguration and sets the default values.
+            ## Instantiates a new deviceEnrollmentPlatformRestrictionsConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

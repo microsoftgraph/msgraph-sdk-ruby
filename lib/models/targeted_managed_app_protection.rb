@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Policy used to configure detailed management settings targeted to specific security groups
         class TargetedManagedAppProtection < MicrosoftGraph::Models::ManagedAppProtection
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -28,7 +30,7 @@ module MicrosoftGraph
                 @assignments = value
             end
             ## 
-            ## Instantiates a new TargetedManagedAppProtection and sets the default values.
+            ## Instantiates a new targetedManagedAppProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()

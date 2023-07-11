@@ -9,6 +9,7 @@ require_relative '../../../items'
 require_relative '../../item'
 require_relative '../workbook'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_operation_item_request_builder'
 require_relative './operations'
 
 module MicrosoftGraph
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Operations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                ## Provides operations to manage the operations property of the microsoft.graph.workbook entity.
+                                ## @param workbook_operation_id Unique identifier of the item
+                                ## @return a workbook_operation_item_request_builder
+                                ## 
+                                def by_workbook_operation_id(workbook_operation_id)
+                                    raise StandardError, 'workbook_operation_id cannot be null' if workbook_operation_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["workbookOperation%2Did"] = workbook_operation_id
+                                    return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Operations::Item::WorkbookOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                end
+                                ## 
                                 ## Instantiates a new OperationsRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -37,7 +49,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/operations{?%24search,%24orderby,%24select,%24expand}")
                                 end
                                 ## 
-                                ## The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
+                                ## Meaningless if this url is called independently. This request is part of all async requests for excel. This is used to retrieve the status of a workbookOperation object. Currently not all requests support async. Take Create session request as an example. Issue an async Create session request, follow the documentation and you may get status code `202 Accepted`, async operation starts from here and you can find the url this document required from the response header, from the **location** part.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of workbook_operation_collection_response
                                 ## 
@@ -67,7 +79,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookOperation.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
+                                ## Meaningless if this url is called independently. This request is part of all async requests for excel. This is used to retrieve the status of a workbookOperation object. Currently not all requests support async. Take Create session request as an example. Issue an async Create session request, follow the documentation and you may get status code `202 Accepted`, async operation starts from here and you can find the url this document required from the response header, from the **location** part.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -106,7 +118,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # The status of workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only.
+                                # Meaningless if this url is called independently. This request is part of all async requests for excel. This is used to retrieve the status of a workbookOperation object. Currently not all requests support async. Take Create session request as an example. Issue an async Create session request, follow the documentation and you may get status code `202 Accepted`, async operation starts from here and you can find the url this document required from the response header, from the **location** part.
                                 class OperationsRequestBuilderGetQueryParameters
                                     
                                     ## 

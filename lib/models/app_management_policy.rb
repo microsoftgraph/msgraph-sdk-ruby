@@ -7,23 +7,23 @@ module MicrosoftGraph
         class AppManagementPolicy < MicrosoftGraph::Models::PolicyBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The appliesTo property
+            # Collection of applications and service principals to which the policy is applied.
             @applies_to
             ## 
-            # The isEnabled property
+            # Denotes whether the policy is enabled.
             @is_enabled
             ## 
-            # The restrictions property
+            # Restrictions that apply to an application or service principal object.
             @restrictions
             ## 
-            ## Gets the appliesTo property value. The appliesTo property
+            ## Gets the appliesTo property value. Collection of applications and service principals to which the policy is applied.
             ## @return a directory_object
             ## 
             def applies_to
                 return @applies_to
             end
             ## 
-            ## Sets the appliesTo property value. The appliesTo property
+            ## Sets the appliesTo property value. Collection of applications and service principals to which the policy is applied.
             ## @param value Value to set for the applies_to property.
             ## @return a void
             ## 
@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @applies_to = value
             end
             ## 
-            ## Instantiates a new AppManagementPolicy and sets the default values.
+            ## Instantiates a new appManagementPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -59,14 +59,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the isEnabled property value. The isEnabled property
+            ## Gets the isEnabled property value. Denotes whether the policy is enabled.
             ## @return a boolean
             ## 
             def is_enabled
                 return @is_enabled
             end
             ## 
-            ## Sets the isEnabled property value. The isEnabled property
+            ## Sets the isEnabled property value. Denotes whether the policy is enabled.
             ## @param value Value to set for the is_enabled property.
             ## @return a void
             ## 
@@ -74,14 +74,14 @@ module MicrosoftGraph
                 @is_enabled = value
             end
             ## 
-            ## Gets the restrictions property value. The restrictions property
+            ## Gets the restrictions property value. Restrictions that apply to an application or service principal object.
             ## @return a app_management_configuration
             ## 
             def restrictions
                 return @restrictions
             end
             ## 
-            ## Sets the restrictions property value. The restrictions property
+            ## Sets the restrictions property value. Restrictions that apply to an application or service principal object.
             ## @param value Value to set for the restrictions property.
             ## @return a void
             ## 

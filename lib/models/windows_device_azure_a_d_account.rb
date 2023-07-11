@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Not yet documented
             @user_principal_name
             ## 
-            ## Instantiates a new WindowsDeviceAzureADAccount and sets the default values.
+            ## Instantiates a new windowsDeviceAzureADAccount and sets the default values.
             ## @return a void
             ## 
             def initialize()

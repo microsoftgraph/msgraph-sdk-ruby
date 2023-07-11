@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The type of the referenced object in the partner tenant. Read-only.
             @object_type
             ## 
-            ## Instantiates a new DirectoryObjectPartnerReference and sets the default values.
+            ## Instantiates a new directoryObjectPartnerReference and sets the default values.
             ## @return a void
             ## 
             def initialize()

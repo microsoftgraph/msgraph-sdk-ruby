@@ -17,6 +17,9 @@ module MicrosoftGraph
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @created_date_time
             ## 
+            # The customWorkflowExtensions property
+            @custom_workflow_extensions
+            ## 
             # The description of the access package catalog.
             @description
             ## 
@@ -28,6 +31,15 @@ module MicrosoftGraph
             ## 
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @modified_date_time
+            ## 
+            # The resourceRoles property
+            @resource_roles
+            ## 
+            # The resourceScopes property
+            @resource_scopes
+            ## 
+            # The resources property
+            @resources
             ## 
             # Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.
             @state
@@ -93,6 +105,21 @@ module MicrosoftGraph
                 return AccessPackageCatalog.new
             end
             ## 
+            ## Gets the customWorkflowExtensions property value. The customWorkflowExtensions property
+            ## @return a custom_callout_extension
+            ## 
+            def custom_workflow_extensions
+                return @custom_workflow_extensions
+            end
+            ## 
+            ## Sets the customWorkflowExtensions property value. The customWorkflowExtensions property
+            ## @param value Value to set for the custom_workflow_extensions property.
+            ## @return a void
+            ## 
+            def custom_workflow_extensions=(value)
+                @custom_workflow_extensions = value
+            end
+            ## 
             ## Gets the description property value. The description of the access package catalog.
             ## @return a string
             ## 
@@ -131,10 +158,14 @@ module MicrosoftGraph
                     "accessPackages" => lambda {|n| @access_packages = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackage.create_from_discriminator_value(pn) }) },
                     "catalogType" => lambda {|n| @catalog_type = n.get_enum_value(MicrosoftGraph::Models::AccessPackageCatalogType) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
+                    "customWorkflowExtensions" => lambda {|n| @custom_workflow_extensions = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CustomCalloutExtension.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "isExternallyVisible" => lambda {|n| @is_externally_visible = n.get_boolean_value() },
                     "modifiedDateTime" => lambda {|n| @modified_date_time = n.get_date_time_value() },
+                    "resourceRoles" => lambda {|n| @resource_roles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageResourceRole.create_from_discriminator_value(pn) }) },
+                    "resourceScopes" => lambda {|n| @resource_scopes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageResourceScope.create_from_discriminator_value(pn) }) },
+                    "resources" => lambda {|n| @resources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageResource.create_from_discriminator_value(pn) }) },
                     "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraph::Models::AccessPackageCatalogState) },
                 })
             end
@@ -169,6 +200,51 @@ module MicrosoftGraph
                 @modified_date_time = value
             end
             ## 
+            ## Gets the resourceRoles property value. The resourceRoles property
+            ## @return a access_package_resource_role
+            ## 
+            def resource_roles
+                return @resource_roles
+            end
+            ## 
+            ## Sets the resourceRoles property value. The resourceRoles property
+            ## @param value Value to set for the resource_roles property.
+            ## @return a void
+            ## 
+            def resource_roles=(value)
+                @resource_roles = value
+            end
+            ## 
+            ## Gets the resourceScopes property value. The resourceScopes property
+            ## @return a access_package_resource_scope
+            ## 
+            def resource_scopes
+                return @resource_scopes
+            end
+            ## 
+            ## Sets the resourceScopes property value. The resourceScopes property
+            ## @param value Value to set for the resource_scopes property.
+            ## @return a void
+            ## 
+            def resource_scopes=(value)
+                @resource_scopes = value
+            end
+            ## 
+            ## Gets the resources property value. The resources property
+            ## @return a access_package_resource
+            ## 
+            def resources
+                return @resources
+            end
+            ## 
+            ## Sets the resources property value. The resources property
+            ## @param value Value to set for the resources property.
+            ## @return a void
+            ## 
+            def resources=(value)
+                @resources = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -179,10 +255,14 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("accessPackages", @access_packages)
                 writer.write_enum_value("catalogType", @catalog_type)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
+                writer.write_collection_of_object_values("customWorkflowExtensions", @custom_workflow_extensions)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_boolean_value("isExternallyVisible", @is_externally_visible)
                 writer.write_date_time_value("modifiedDateTime", @modified_date_time)
+                writer.write_collection_of_object_values("resourceRoles", @resource_roles)
+                writer.write_collection_of_object_values("resourceScopes", @resource_scopes)
+                writer.write_collection_of_object_values("resources", @resources)
                 writer.write_enum_value("state", @state)
             end
             ## 

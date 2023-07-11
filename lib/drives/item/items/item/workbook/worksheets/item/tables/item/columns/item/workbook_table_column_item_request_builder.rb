@@ -70,7 +70,7 @@ module MicrosoftGraph
                                                         super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/tables/{workbookTable%2Did}/columns/{workbookTableColumn%2Did}{?%24select,%24expand}")
                                                     end
                                                     ## 
-                                                    ## Delete navigation property columns for drives
+                                                    ## Deletes the column from the table.
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a Fiber of void
                                                     ## 
@@ -84,7 +84,7 @@ module MicrosoftGraph
                                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                                     end
                                                     ## 
-                                                    ## Represents a collection of all the columns in the table. Read-only.
+                                                    ## Retrieve the properties and relationships of tablecolumn object.
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a Fiber of workbook_table_column
                                                     ## 
@@ -98,7 +98,7 @@ module MicrosoftGraph
                                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookTableColumn.create_from_discriminator_value(pn) }, error_mapping)
                                                     end
                                                     ## 
-                                                    ## Update the navigation property columns in drives
+                                                    ## Update the properties of tablecolumn object.
                                                     ## @param body The request body
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a Fiber of workbook_table_column
@@ -114,7 +114,7 @@ module MicrosoftGraph
                                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookTableColumn.create_from_discriminator_value(pn) }, error_mapping)
                                                     end
                                                     ## 
-                                                    ## Delete navigation property columns for drives
+                                                    ## Deletes the column from the table.
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a request_information
                                                     ## 
@@ -130,7 +130,7 @@ module MicrosoftGraph
                                                         return request_info
                                                     end
                                                     ## 
-                                                    ## Represents a collection of all the columns in the table. Read-only.
+                                                    ## Retrieve the properties and relationships of tablecolumn object.
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a request_information
                                                     ## 
@@ -148,7 +148,7 @@ module MicrosoftGraph
                                                         return request_info
                                                     end
                                                     ## 
-                                                    ## Update the navigation property columns in drives
+                                                    ## Update the properties of tablecolumn object.
                                                     ## @param body The request body
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a request_information
@@ -169,7 +169,7 @@ module MicrosoftGraph
                                                     end
 
                                                     ## 
-                                                    # Represents a collection of all the columns in the table. Read-only.
+                                                    # Retrieve the properties and relationships of tablecolumn object.
                                                     class WorkbookTableColumnItemRequestBuilderGetQueryParameters
                                                         
                                                         ## 

@@ -9,6 +9,7 @@ require_relative '../item'
 require_relative './channels'
 require_relative './count/count_request_builder'
 require_relative './get_all_messages/get_all_messages_request_builder'
+require_relative './item/channel_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -28,6 +29,17 @@ module MicrosoftGraph
                         # Provides operations to call the getAllMessages method.
                         def get_all_messages()
                             return MicrosoftGraph::Me::JoinedTeams::Item::Channels::GetAllMessages::GetAllMessagesRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the channels property of the microsoft.graph.team entity.
+                        ## @param channel_id Unique identifier of the item
+                        ## @return a channel_item_request_builder
+                        ## 
+                        def by_channel_id(channel_id)
+                            raise StandardError, 'channel_id cannot be null' if channel_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["channel%2Did"] = channel_id
+                            return MicrosoftGraph::Me::JoinedTeams::Item::Channels::Item::ChannelItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new ChannelsRequestBuilder and sets the default values.

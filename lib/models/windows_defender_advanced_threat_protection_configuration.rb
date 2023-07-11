@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Windows Defender AdvancedThreatProtection Configuration.
         class WindowsDefenderAdvancedThreatProtectionConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -28,7 +30,7 @@ module MicrosoftGraph
                 @allow_sample_sharing = value
             end
             ## 
-            ## Instantiates a new WindowsDefenderAdvancedThreatProtectionConfiguration and sets the default values.
+            ## Instantiates a new windowsDefenderAdvancedThreatProtectionConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

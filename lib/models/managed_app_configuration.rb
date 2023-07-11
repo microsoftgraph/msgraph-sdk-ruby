@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Configuration used to deliver a set of custom settings as-is to apps for users to whom the configuration is scoped
         class ManagedAppConfiguration < MicrosoftGraph::Models::ManagedAppPolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service
             @custom_settings
             ## 
-            ## Instantiates a new ManagedAppConfiguration and sets the default values.
+            ## Instantiates a new managedAppConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

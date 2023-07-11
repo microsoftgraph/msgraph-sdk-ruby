@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for Win32 apps.
         class Win32LobApp < MicrosoftGraph::Models::MobileLobApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -61,7 +63,7 @@ module MicrosoftGraph
                 @applicable_architectures = value
             end
             ## 
-            ## Instantiates a new Win32LobApp and sets the default values.
+            ## Instantiates a new win32LobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

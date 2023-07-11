@@ -15,7 +15,7 @@ module MicrosoftGraph
                 # The value of the IP Address, can be either in V4 address or V6 address format.
                 @ip_address
                 ## 
-                ## Instantiates a new IpEvidence and sets the default values.
+                ## Instantiates a new ipEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

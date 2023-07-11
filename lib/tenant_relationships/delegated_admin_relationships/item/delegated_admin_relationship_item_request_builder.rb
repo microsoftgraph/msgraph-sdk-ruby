@@ -5,11 +5,8 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../tenant_relationships'
 require_relative '../delegated_admin_relationships'
 require_relative './access_assignments/access_assignments_request_builder'
-require_relative './access_assignments/item/delegated_admin_access_assignment_item_request_builder'
 require_relative './item'
-require_relative './operations/item/delegated_admin_relationship_operation_item_request_builder'
 require_relative './operations/operations_request_builder'
-require_relative './requests/item/delegated_admin_relationship_request_item_request_builder'
 require_relative './requests/requests_request_builder'
 
 module MicrosoftGraph
@@ -36,17 +33,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::TenantRelationships::DelegatedAdminRelationships::Item::Requests::RequestsRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the accessAssignments property of the microsoft.graph.delegatedAdminRelationship entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a delegated_admin_access_assignment_item_request_builder
-                    ## 
-                    def access_assignments_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["delegatedAdminAccessAssignment%2Did"] = id
-                        return MicrosoftGraph::TenantRelationships::DelegatedAdminRelationships::Item::AccessAssignments::Item::DelegatedAdminAccessAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new DelegatedAdminRelationshipItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -56,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property delegatedAdminRelationships for tenantRelationships
+                    ## Delete a delegatedAdminRelationship object. A relationship can only be deleted if it's in the 'created' status. 
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -70,7 +56,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
+                    ## Read the properties of a delegatedAdminRelationship object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of delegated_admin_relationship
                     ## 
@@ -84,18 +70,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DelegatedAdminRelationship.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the operations property of the microsoft.graph.delegatedAdminRelationship entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a delegated_admin_relationship_operation_item_request_builder
-                    ## 
-                    def operations_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["delegatedAdminRelationshipOperation%2Did"] = id
-                        return MicrosoftGraph::TenantRelationships::DelegatedAdminRelationships::Item::Operations::Item::DelegatedAdminRelationshipOperationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Update the navigation property delegatedAdminRelationships in tenantRelationships
+                    ## Update the properties of a delegatedAdminRelationship object. A relationship can only be updated if it's in the `created` **status**.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of delegated_admin_relationship
@@ -111,18 +86,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DelegatedAdminRelationship.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the requests property of the microsoft.graph.delegatedAdminRelationship entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a delegated_admin_relationship_request_item_request_builder
-                    ## 
-                    def requests_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["delegatedAdminRelationshipRequest%2Did"] = id
-                        return MicrosoftGraph::TenantRelationships::DelegatedAdminRelationships::Item::Requests::Item::DelegatedAdminRelationshipRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Delete navigation property delegatedAdminRelationships for tenantRelationships
+                    ## Delete a delegatedAdminRelationship object. A relationship can only be deleted if it's in the 'created' status. 
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -138,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
+                    ## Read the properties of a delegatedAdminRelationship object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -156,7 +120,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property delegatedAdminRelationships in tenantRelationships
+                    ## Update the properties of a delegatedAdminRelationship object. A relationship can only be updated if it's in the `created` **status**.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -177,7 +141,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
+                    # Read the properties of a delegatedAdminRelationship object.
                     class DelegatedAdminRelationshipItemRequestBuilderGetQueryParameters
                         
                         ## 

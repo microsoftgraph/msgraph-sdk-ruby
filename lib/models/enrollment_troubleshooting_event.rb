@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Event representing an enrollment failure.
         class EnrollmentTroubleshootingEvent < MicrosoftGraph::Models::DeviceManagementTroubleshootingEvent
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -31,7 +33,7 @@ module MicrosoftGraph
             # Identifier for the user that tried to enroll the device.
             @user_id
             ## 
-            ## Instantiates a new EnrollmentTroubleshootingEvent and sets the default values.
+            ## Instantiates a new enrollmentTroubleshootingEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()

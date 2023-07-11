@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This class contains compliance settings for Windows 8.1.
         class Windows81CompliancePolicy < MicrosoftGraph::Models::DeviceCompliancePolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -40,7 +42,7 @@ module MicrosoftGraph
             # Indicates whether or not to require encryption on a windows 8.1 device.
             @storage_require_encryption
             ## 
-            ## Instantiates a new Windows81CompliancePolicy and sets the default values.
+            ## Instantiates a new windows81CompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

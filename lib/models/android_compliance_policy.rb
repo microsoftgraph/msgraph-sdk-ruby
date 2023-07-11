@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This class contains compliance settings for Android.
         class AndroidCompliancePolicy < MicrosoftGraph::Models::DeviceCompliancePolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -70,7 +72,7 @@ module MicrosoftGraph
             # Require encryption on Android devices.
             @storage_require_encryption
             ## 
-            ## Instantiates a new AndroidCompliancePolicy and sets the default values.
+            ## Instantiates a new androidCompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

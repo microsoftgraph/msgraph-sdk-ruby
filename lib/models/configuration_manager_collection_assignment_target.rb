@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Base type for assignment targets.
         class ConfigurationManagerCollectionAssignmentTarget < MicrosoftGraph::Models::DeviceAndAppManagementAssignmentTarget
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -25,7 +27,7 @@ module MicrosoftGraph
                 @collection_id = value
             end
             ## 
-            ## Instantiates a new ConfigurationManagerCollectionAssignmentTarget and sets the default values.
+            ## Instantiates a new configurationManagerCollectionAssignmentTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()

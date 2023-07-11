@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # A class containing the properties for iOS Vpp eBook.
         class IosVppEBook < MicrosoftGraph::Models::ManagedEBook
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -46,7 +48,7 @@ module MicrosoftGraph
                 @apple_id = value
             end
             ## 
-            ## Instantiates a new IosVppEBook and sets the default values.
+            ## Instantiates a new iosVppEBook and sets the default values.
             ## @return a void
             ## 
             def initialize()

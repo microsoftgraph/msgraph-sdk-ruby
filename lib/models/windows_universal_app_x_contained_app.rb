@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # A class that represents a contained app of a WindowsUniversalAppX app.
         class WindowsUniversalAppXContainedApp < MicrosoftGraph::Models::MobileContainedApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -25,7 +27,7 @@ module MicrosoftGraph
                 @app_user_model_id = value
             end
             ## 
-            ## Instantiates a new WindowsUniversalAppXContainedApp and sets the default values.
+            ## Instantiates a new windowsUniversalAppXContainedApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

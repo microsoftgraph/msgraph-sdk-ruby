@@ -12,6 +12,7 @@ module MicrosoftGraph
                 MicrosoftAppGovernance: :MicrosoftAppGovernance,
                 DataLossPrevention: :DataLossPrevention,
                 UnknownFutureValue: :UnknownFutureValue,
+                MicrosoftDefenderForCloud: :MicrosoftDefenderForCloud,
             }
         end
     end

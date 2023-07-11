@@ -5,6 +5,7 @@ require_relative '../../models/secure_score'
 require_relative '../../models/secure_score_collection_response'
 require_relative '../security'
 require_relative './count/count_request_builder'
+require_relative './item/secure_score_item_request_builder'
 require_relative './secure_scores'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Security::SecureScores::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the secureScores property of the microsoft.graph.security entity.
+                ## @param secure_score_id Unique identifier of the item
+                ## @return a secure_score_item_request_builder
+                ## 
+                def by_secure_score_id(secure_score_id)
+                    raise StandardError, 'secure_score_id cannot be null' if secure_score_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["secureScore%2Did"] = secure_score_id
+                    return MicrosoftGraph::Security::SecureScores::Item::SecureScoreItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new SecureScoresRequestBuilder and sets the default values.

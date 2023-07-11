@@ -64,7 +64,7 @@ module MicrosoftGraph
                                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                                             end
                                                             ## 
-                                                            ## Represents a collection of all points in the series. Read-only.
+                                                            ## Retrieve the properties and relationships of chartpoint object.
                                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                             ## @return a Fiber of workbook_chart_point
                                                             ## 
@@ -110,7 +110,7 @@ module MicrosoftGraph
                                                                 return request_info
                                                             end
                                                             ## 
-                                                            ## Represents a collection of all points in the series. Read-only.
+                                                            ## Retrieve the properties and relationships of chartpoint object.
                                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                             ## @return a request_information
                                                             ## 
@@ -149,7 +149,7 @@ module MicrosoftGraph
                                                             end
 
                                                             ## 
-                                                            # Represents a collection of all points in the series. Read-only.
+                                                            # Retrieve the properties and relationships of chartpoint object.
                                                             class WorkbookChartPointItemRequestBuilderGetQueryParameters
                                                                 
                                                                 ## 

@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # The identifier for a mobile app.
         class IosMobileAppIdentifier < MicrosoftGraph::Models::MobileAppIdentifier
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -25,7 +27,7 @@ module MicrosoftGraph
                 @bundle_id = value
             end
             ## 
-            ## Instantiates a new IosMobileAppIdentifier and sets the default values.
+            ## Instantiates a new iosMobileAppIdentifier and sets the default values.
             ## @return a void
             ## 
             def initialize()

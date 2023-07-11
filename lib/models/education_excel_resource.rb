@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Pointer to the Excel file object.
             @file_url
             ## 
-            ## Instantiates a new EducationExcelResource and sets the default values.
+            ## Instantiates a new educationExcelResource and sets the default values.
             ## @return a void
             ## 
             def initialize()

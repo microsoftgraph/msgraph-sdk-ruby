@@ -10,16 +10,16 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # For internal use only
+            # For internal use only.
             @identity_provider
             ## 
-            # For internal use only
+            # For internal use only.
             @key
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # For internal use only
+            # For internal use only.
             @type
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -65,14 +65,14 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the identityProvider property value. For internal use only
+            ## Gets the identityProvider property value. For internal use only.
             ## @return a string
             ## 
             def identity_provider
                 return @identity_provider
             end
             ## 
-            ## Sets the identityProvider property value. For internal use only
+            ## Sets the identityProvider property value. For internal use only.
             ## @param value Value to set for the identity_provider property.
             ## @return a void
             ## 
@@ -80,14 +80,14 @@ module MicrosoftGraph
                 @identity_provider = value
             end
             ## 
-            ## Gets the key property value. For internal use only
+            ## Gets the key property value. For internal use only.
             ## @return a base64url
             ## 
             def key
                 return @key
             end
             ## 
-            ## Sets the key property value. For internal use only
+            ## Sets the key property value. For internal use only.
             ## @param value Value to set for the key property.
             ## @return a void
             ## 
@@ -123,14 +123,14 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the type property value. For internal use only
+            ## Gets the type property value. For internal use only.
             ## @return a integer
             ## 
             def type
                 return @type
             end
             ## 
-            ## Sets the type property value. For internal use only
+            ## Sets the type property value. For internal use only.
             ## @param value Value to set for the type property.
             ## @return a void
             ## 

@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for iOS Line Of Business apps.
         class IosLobApp < MicrosoftGraph::Models::MobileLobApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -71,7 +73,7 @@ module MicrosoftGraph
                 @bundle_id = value
             end
             ## 
-            ## Instantiates a new IosLobApp and sets the default values.
+            ## Instantiates a new iosLobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

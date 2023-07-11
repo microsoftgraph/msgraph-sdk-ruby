@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # An abstract base class containing properties for all mobile line of business apps.
         class MobileLobApp < MicrosoftGraph::Models::MobileApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -34,7 +36,7 @@ module MicrosoftGraph
                 @committed_content_version = value
             end
             ## 
-            ## Instantiates a new MobileLobApp and sets the default values.
+            ## Instantiates a new mobileLobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

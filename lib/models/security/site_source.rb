@@ -12,7 +12,7 @@ module MicrosoftGraph
                 # The site property
                 @site
                 ## 
-                ## Instantiates a new SiteSource and sets the default values.
+                ## Instantiates a new siteSource and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

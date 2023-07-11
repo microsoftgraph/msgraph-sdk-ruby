@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @application_identity_type = value
             end
             ## 
-            ## Instantiates a new TeamworkApplicationIdentity and sets the default values.
+            ## Instantiates a new teamworkApplicationIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

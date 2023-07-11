@@ -9,6 +9,9 @@ module MicrosoftGraph
             class RegistryValueEvidence < MicrosoftGraph::Models::Security::AlertEvidence
                 include MicrosoftKiotaAbstractions::Parsable
                 ## 
+                # The mdeDeviceId property
+                @mde_device_id
+                ## 
                 # Registry hive of the key that the recorded action was applied to.
                 @registry_hive
                 ## 
@@ -24,7 +27,7 @@ module MicrosoftGraph
                 # Data type, such as binary or string, of the registry value that the recorded action was applied to.
                 @registry_value_type
                 ## 
-                ## Instantiates a new RegistryValueEvidence and sets the default values.
+                ## Instantiates a new registryValueEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()
@@ -45,12 +48,28 @@ module MicrosoftGraph
                 ## 
                 def get_field_deserializers()
                     return super.merge({
+                        "mdeDeviceId" => lambda {|n| @mde_device_id = n.get_string_value() },
                         "registryHive" => lambda {|n| @registry_hive = n.get_string_value() },
                         "registryKey" => lambda {|n| @registry_key = n.get_string_value() },
                         "registryValue" => lambda {|n| @registry_value = n.get_string_value() },
                         "registryValueName" => lambda {|n| @registry_value_name = n.get_string_value() },
                         "registryValueType" => lambda {|n| @registry_value_type = n.get_string_value() },
                     })
+                end
+                ## 
+                ## Gets the mdeDeviceId property value. The mdeDeviceId property
+                ## @return a string
+                ## 
+                def mde_device_id
+                    return @mde_device_id
+                end
+                ## 
+                ## Sets the mdeDeviceId property value. The mdeDeviceId property
+                ## @param value Value to set for the mde_device_id property.
+                ## @return a void
+                ## 
+                def mde_device_id=(value)
+                    @mde_device_id = value
                 end
                 ## 
                 ## Gets the registryHive property value. Registry hive of the key that the recorded action was applied to.
@@ -135,6 +154,7 @@ module MicrosoftGraph
                 def serialize(writer)
                     raise StandardError, 'writer cannot be null' if writer.nil?
                     super
+                    writer.write_string_value("mdeDeviceId", @mde_device_id)
                     writer.write_string_value("registryHive", @registry_hive)
                     writer.write_string_value("registryKey", @registry_key)
                     writer.write_string_value("registryValue", @registry_value)

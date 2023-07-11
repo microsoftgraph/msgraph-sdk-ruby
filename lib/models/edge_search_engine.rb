@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Allows IT admins to set a default search engine for MDM-Controlled devices. Users can override this and change their default search engine provided the AllowSearchEngineCustomization policy is not set.
         class EdgeSearchEngine < MicrosoftGraph::Models::EdgeSearchEngineBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # Allows IT admind to set a predefined default search engine for MDM-Controlled devices
             @edge_search_engine_type
             ## 
-            ## Instantiates a new EdgeSearchEngine and sets the default values.
+            ## Instantiates a new edgeSearchEngine and sets the default values.
             ## @return a void
             ## 
             def initialize()

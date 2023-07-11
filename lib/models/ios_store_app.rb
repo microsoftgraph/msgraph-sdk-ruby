@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for iOS store apps.
         class IosStoreApp < MicrosoftGraph::Models::MobileApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -64,7 +66,7 @@ module MicrosoftGraph
                 @bundle_id = value
             end
             ## 
-            ## Instantiates a new IosStoreApp and sets the default values.
+            ## Instantiates a new iosStoreApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

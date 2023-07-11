@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the sharedPCConfiguration resource.
         class SharedPCConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -89,7 +91,7 @@ module MicrosoftGraph
                 @allowed_accounts = value
             end
             ## 
-            ## Instantiates a new SharedPCConfiguration and sets the default values.
+            ## Instantiates a new sharedPCConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

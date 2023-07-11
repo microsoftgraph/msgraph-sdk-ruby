@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/policies/permissionGrantPolicies/{permissionGrantPolicy%2Did}/includes/{permissionGrantConditionSet%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property includes for policies
+                            ## Deletes a permissionGrantConditionSet from the **includes** collection of a permissionGrantPolicy.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PermissionGrantConditionSet.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property includes for policies
+                            ## Deletes a permissionGrantConditionSet from the **includes** collection of a permissionGrantPolicy.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 

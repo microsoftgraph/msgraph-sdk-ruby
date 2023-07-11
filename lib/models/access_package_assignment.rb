@@ -14,6 +14,9 @@ module MicrosoftGraph
             # Read-only. Supports $filter (eq) on the id property and $expand query parameters.
             @assignment_policy
             ## 
+            # The customExtensionCalloutInstances property
+            @custom_extension_callout_instances
+            ## 
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @expired_date_time
             ## 
@@ -75,6 +78,21 @@ module MicrosoftGraph
                 return AccessPackageAssignment.new
             end
             ## 
+            ## Gets the customExtensionCalloutInstances property value. The customExtensionCalloutInstances property
+            ## @return a custom_extension_callout_instance
+            ## 
+            def custom_extension_callout_instances
+                return @custom_extension_callout_instances
+            end
+            ## 
+            ## Sets the customExtensionCalloutInstances property value. The customExtensionCalloutInstances property
+            ## @param value Value to set for the custom_extension_callout_instances property.
+            ## @return a void
+            ## 
+            def custom_extension_callout_instances=(value)
+                @custom_extension_callout_instances = value
+            end
+            ## 
             ## Gets the expiredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             ## @return a date_time
             ## 
@@ -97,6 +115,7 @@ module MicrosoftGraph
                 return super.merge({
                     "accessPackage" => lambda {|n| @access_package = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackage.create_from_discriminator_value(pn) }) },
                     "assignmentPolicy" => lambda {|n| @assignment_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageAssignmentPolicy.create_from_discriminator_value(pn) }) },
+                    "customExtensionCalloutInstances" => lambda {|n| @custom_extension_callout_instances = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CustomExtensionCalloutInstance.create_from_discriminator_value(pn) }) },
                     "expiredDateTime" => lambda {|n| @expired_date_time = n.get_date_time_value() },
                     "schedule" => lambda {|n| @schedule = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EntitlementManagementSchedule.create_from_discriminator_value(pn) }) },
                     "state" => lambda {|n| @state = n.get_enum_value(MicrosoftGraph::Models::AccessPackageAssignmentState) },
@@ -129,6 +148,7 @@ module MicrosoftGraph
                 super
                 writer.write_object_value("accessPackage", @access_package)
                 writer.write_object_value("assignmentPolicy", @assignment_policy)
+                writer.write_collection_of_object_values("customExtensionCalloutInstances", @custom_extension_callout_instances)
                 writer.write_date_time_value("expiredDateTime", @expired_date_time)
                 writer.write_object_value("schedule", @schedule)
                 writer.write_enum_value("state", @state)

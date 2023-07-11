@@ -7,6 +7,7 @@ require_relative '../../../identity'
 require_relative '../../b2x_user_flows'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/user_flow_language_configuration_item_request_builder'
 require_relative './languages'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Identity::B2xUserFlows::Item::Languages::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the languages property of the microsoft.graph.b2xIdentityUserFlow entity.
+                        ## @param user_flow_language_configuration_id Unique identifier of the item
+                        ## @return a user_flow_language_configuration_item_request_builder
+                        ## 
+                        def by_user_flow_language_configuration_id(user_flow_language_configuration_id)
+                            raise StandardError, 'user_flow_language_configuration_id cannot be null' if user_flow_language_configuration_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["userFlowLanguageConfiguration%2Did"] = user_flow_language_configuration_id
+                            return MicrosoftGraph::Identity::B2xUserFlows::Item::Languages::Item::UserFlowLanguageConfigurationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new LanguagesRequestBuilder and sets the default values.

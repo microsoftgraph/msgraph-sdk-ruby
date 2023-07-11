@@ -5,13 +5,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # OMA Settings definition.
         class OmaSettingDateTime < MicrosoftGraph::Models::OmaSetting
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # Value.
             @value
             ## 
-            ## Instantiates a new OmaSettingDateTime and sets the default values.
+            ## Instantiates a new omaSettingDateTime and sets the default values.
             ## @return a void
             ## 
             def initialize()

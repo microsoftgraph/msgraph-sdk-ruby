@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The ID of the group in Azure AD.
             @group_id
             ## 
-            ## Instantiates a new GroupMembers and sets the default values.
+            ## Instantiates a new groupMembers and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Location of the file on shared point folder. Required
             @file_url
             ## 
-            ## Instantiates a new EducationMediaResource and sets the default values.
+            ## Instantiates a new educationMediaResource and sets the default values.
             ## @return a void
             ## 
             def initialize()

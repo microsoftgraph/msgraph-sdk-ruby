@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Summary data for managed devices
         class ManagedDeviceOverview < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 

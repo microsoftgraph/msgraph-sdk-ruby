@@ -8,6 +8,7 @@ require_relative '../../../item'
 require_relative '../../team'
 require_relative '../schedule'
 require_relative './count/count_request_builder'
+require_relative './item/shift_item_request_builder'
 require_relative './shifts'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Groups::Item::Team::Schedule::Shifts::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the shifts property of the microsoft.graph.schedule entity.
+                            ## @param shift_id Unique identifier of the item
+                            ## @return a shift_item_request_builder
+                            ## 
+                            def by_shift_id(shift_id)
+                                raise StandardError, 'shift_id cannot be null' if shift_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["shift%2Did"] = shift_id
+                                return MicrosoftGraph::Groups::Item::Team::Schedule::Shifts::Item::ShiftItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new ShiftsRequestBuilder and sets the default values.
