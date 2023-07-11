@@ -32,7 +32,7 @@ require "microsoft_graph_core"
 
 context = MicrosoftKiotaAuthenticationOAuth::ClientCredentialContext.new("<the tenant id from your app registration>", "<the client id from your app registration>", "<the client secret from your app registration>")
 
-authentication_provider = MicrosoftGraphCore::Authentication::OAuthAuthenticationProvider.new(context, nil, ["Files.Read"])
+authentication_provider = MicrosoftGraphCore::Authentication::OAuthAuthenticationProvider.new(context, nil, ["https://graph.microsoft.com/.default"])
 ```
 
 ### 2.3 Get a Graph Service Client and Adapter object
@@ -55,8 +55,9 @@ After you have a **MicrosoftGraphServiceClient** that is authenticated, you can 
 To retrieve the user's drive:
 
 ```ruby
-result = client.me.drive.get.resume
-puts "Found Drive : " + result.id
+user_item_req_builder = client.users_by_id '9327b2bb-74b9-4d22-9839-eff4a982f541'
+result = user_item_req_builder.get.resume
+puts "Found User : " + result.id
 ```
 
 ## 4. Getting results that span across multiple pages
