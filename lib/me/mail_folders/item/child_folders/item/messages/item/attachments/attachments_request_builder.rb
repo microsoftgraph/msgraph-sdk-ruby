@@ -13,6 +13,7 @@ require_relative '../item'
 require_relative './attachments'
 require_relative './count/count_request_builder'
 require_relative './create_upload_session/create_upload_session_request_builder'
+require_relative './item/attachment_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -38,13 +39,24 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::Attachments::CreateUploadSession::CreateUploadSessionRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
+                                        ## Provides operations to manage the attachments property of the microsoft.graph.message entity.
+                                        ## @param attachment_id Unique identifier of the item
+                                        ## @return a attachment_item_request_builder
+                                        ## 
+                                        def by_attachment_id(attachment_id)
+                                            raise StandardError, 'attachment_id cannot be null' if attachment_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["attachment%2Did"] = attachment_id
+                                            return MicrosoftGraph::Me::MailFolders::Item::ChildFolders::Item::Messages::Item::Attachments::Item::AttachmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                        end
+                                        ## 
                                         ## Instantiates a new AttachmentsRequestBuilder and sets the default values.
                                         ## @param path_parameters Path parameters for the request
                                         ## @param request_adapter The request adapter to use to execute the requests.
                                         ## @return a void
                                         ## 
                                         def initialize(path_parameters, request_adapter)
-                                            super(path_parameters, request_adapter, "{+baseurl}/me/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}/attachments{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}")
+                                            super(path_parameters, request_adapter, "{+baseurl}/me/mailFolders/{mailFolder%2Did}/childFolders/{mailFolder%2Did1}/messages/{message%2Did}/attachments{?%24filter,%24count,%24orderby,%24select,%24expand}")
                                         end
                                         ## 
                                         ## Retrieve a list of attachment objects.
@@ -135,12 +147,6 @@ module MicrosoftGraph
                                             # Select properties to be returned
                                             attr_accessor :select
                                             ## 
-                                            # Skip the first n items
-                                            attr_accessor :skip
-                                            ## 
-                                            # Show only the first n items
-                                            attr_accessor :top
-                                            ## 
                                             ## Maps the query parameters names to their encoded names for the URI template parsing.
                                             ## @param original_name The original query parameter name in the class.
                                             ## @return a string
@@ -158,10 +164,6 @@ module MicrosoftGraph
                                                         return "%24orderby"
                                                     when "select"
                                                         return "%24select"
-                                                    when "skip"
-                                                        return "%24skip"
-                                                    when "top"
-                                                        return "%24top"
                                                     else
                                                         return original_name
                                                 end

@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # iOS Device Features Configuration Profile.
         class IosDeviceFeaturesConfiguration < MicrosoftGraph::Models::AppleDeviceFeaturesConfigurationBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -37,7 +39,7 @@ module MicrosoftGraph
                 @asset_tag_template = value
             end
             ## 
-            ## Instantiates a new IosDeviceFeaturesConfiguration and sets the default values.
+            ## Instantiates a new iosDeviceFeaturesConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

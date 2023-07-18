@@ -3,12 +3,9 @@ require_relative '../microsoft_graph'
 require_relative '../models/education_root'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './classes/classes_request_builder'
-require_relative './classes/item/education_class_item_request_builder'
 require_relative './education'
 require_relative './me/me_request_builder'
-require_relative './schools/item/education_school_item_request_builder'
 require_relative './schools/schools_request_builder'
-require_relative './users/item/education_user_item_request_builder'
 require_relative './users/users_request_builder'
 
 module MicrosoftGraph
@@ -36,17 +33,6 @@ module MicrosoftGraph
             # Provides operations to manage the users property of the microsoft.graph.educationRoot entity.
             def users()
                 return MicrosoftGraph::Education::Users::UsersRequestBuilder.new(@path_parameters, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the classes property of the microsoft.graph.educationRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a education_class_item_request_builder
-            ## 
-            def classes_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["educationClass%2Did"] = id
-                return MicrosoftGraph::Education::Classes::Item::EducationClassItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new EducationRequestBuilder and sets the default values.
@@ -88,17 +74,6 @@ module MicrosoftGraph
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationRoot.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Provides operations to manage the schools property of the microsoft.graph.educationRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a education_school_item_request_builder
-            ## 
-            def schools_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["educationSchool%2Did"] = id
-                return MicrosoftGraph::Education::Schools::Item::EducationSchoolItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
             ## Get education
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
@@ -135,17 +110,6 @@ module MicrosoftGraph
                 end
                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                 return request_info
-            end
-            ## 
-            ## Provides operations to manage the users property of the microsoft.graph.educationRoot entity.
-            ## @param id Unique identifier of the item
-            ## @return a education_user_item_request_builder
-            ## 
-            def users_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["educationUser%2Did"] = id
-                return MicrosoftGraph::Education::Users::Item::EducationUserItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
 
             ## 

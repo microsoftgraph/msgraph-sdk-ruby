@@ -4,10 +4,12 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Device Configuration.
         class IosCertificateProfile < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new IosCertificateProfile and sets the default values.
+            ## Instantiates a new iosCertificateProfile and sets the default values.
             ## @return a void
             ## 
             def initialize()

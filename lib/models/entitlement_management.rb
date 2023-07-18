@@ -28,6 +28,18 @@ module MicrosoftGraph
             # References to a directory or domain of another organization whose users can request access.
             @connected_organizations
             ## 
+            # The resourceEnvironments property
+            @resource_environments
+            ## 
+            # The resourceRequests property
+            @resource_requests
+            ## 
+            # The resourceRoleScopes property
+            @resource_role_scopes
+            ## 
+            # The resources property
+            @resources
+            ## 
             # The settings that control the behavior of Azure AD entitlement management.
             @settings
             ## 
@@ -136,7 +148,7 @@ module MicrosoftGraph
                 @connected_organizations = value
             end
             ## 
-            ## Instantiates a new EntitlementManagement and sets the default values.
+            ## Instantiates a new entitlementManagement and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -164,8 +176,72 @@ module MicrosoftGraph
                     "assignments" => lambda {|n| @assignments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageAssignment.create_from_discriminator_value(pn) }) },
                     "catalogs" => lambda {|n| @catalogs = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageCatalog.create_from_discriminator_value(pn) }) },
                     "connectedOrganizations" => lambda {|n| @connected_organizations = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ConnectedOrganization.create_from_discriminator_value(pn) }) },
+                    "resourceEnvironments" => lambda {|n| @resource_environments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageResourceEnvironment.create_from_discriminator_value(pn) }) },
+                    "resourceRequests" => lambda {|n| @resource_requests = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageResourceRequest.create_from_discriminator_value(pn) }) },
+                    "resourceRoleScopes" => lambda {|n| @resource_role_scopes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageResourceRoleScope.create_from_discriminator_value(pn) }) },
+                    "resources" => lambda {|n| @resources = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageResource.create_from_discriminator_value(pn) }) },
                     "settings" => lambda {|n| @settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EntitlementManagementSettings.create_from_discriminator_value(pn) }) },
                 })
+            end
+            ## 
+            ## Gets the resourceEnvironments property value. The resourceEnvironments property
+            ## @return a access_package_resource_environment
+            ## 
+            def resource_environments
+                return @resource_environments
+            end
+            ## 
+            ## Sets the resourceEnvironments property value. The resourceEnvironments property
+            ## @param value Value to set for the resource_environments property.
+            ## @return a void
+            ## 
+            def resource_environments=(value)
+                @resource_environments = value
+            end
+            ## 
+            ## Gets the resourceRequests property value. The resourceRequests property
+            ## @return a access_package_resource_request
+            ## 
+            def resource_requests
+                return @resource_requests
+            end
+            ## 
+            ## Sets the resourceRequests property value. The resourceRequests property
+            ## @param value Value to set for the resource_requests property.
+            ## @return a void
+            ## 
+            def resource_requests=(value)
+                @resource_requests = value
+            end
+            ## 
+            ## Gets the resourceRoleScopes property value. The resourceRoleScopes property
+            ## @return a access_package_resource_role_scope
+            ## 
+            def resource_role_scopes
+                return @resource_role_scopes
+            end
+            ## 
+            ## Sets the resourceRoleScopes property value. The resourceRoleScopes property
+            ## @param value Value to set for the resource_role_scopes property.
+            ## @return a void
+            ## 
+            def resource_role_scopes=(value)
+                @resource_role_scopes = value
+            end
+            ## 
+            ## Gets the resources property value. The resources property
+            ## @return a access_package_resource
+            ## 
+            def resources
+                return @resources
+            end
+            ## 
+            ## Sets the resources property value. The resources property
+            ## @param value Value to set for the resources property.
+            ## @return a void
+            ## 
+            def resources=(value)
+                @resources = value
             end
             ## 
             ## Serializes information the current object
@@ -182,6 +258,10 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("assignments", @assignments)
                 writer.write_collection_of_object_values("catalogs", @catalogs)
                 writer.write_collection_of_object_values("connectedOrganizations", @connected_organizations)
+                writer.write_collection_of_object_values("resourceEnvironments", @resource_environments)
+                writer.write_collection_of_object_values("resourceRequests", @resource_requests)
+                writer.write_collection_of_object_values("resourceRoleScopes", @resource_role_scopes)
+                writer.write_collection_of_object_values("resources", @resources)
                 writer.write_object_value("settings", @settings)
             end
             ## 

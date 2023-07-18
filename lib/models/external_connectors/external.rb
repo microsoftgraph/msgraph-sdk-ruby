@@ -48,7 +48,7 @@ module MicrosoftGraph
                     @connections = value
                 end
                 ## 
-                ## Instantiates a new External and sets the default values.
+                ## Instantiates a new external and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

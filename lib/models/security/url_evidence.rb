@@ -12,7 +12,7 @@ module MicrosoftGraph
                 # The Unique Resource Locator (URL).
                 @url
                 ## 
-                ## Instantiates a new UrlEvidence and sets the default values.
+                ## Instantiates a new urlEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

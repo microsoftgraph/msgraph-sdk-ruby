@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @allow_external_id_to_use_email_otp = value
             end
             ## 
-            ## Instantiates a new EmailAuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new emailAuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

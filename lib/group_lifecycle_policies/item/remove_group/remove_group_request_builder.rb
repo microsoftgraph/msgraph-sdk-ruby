@@ -23,7 +23,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/groupLifecyclePolicies/{groupLifecyclePolicy%2Did}/removeGroup")
                     end
                     ## 
-                    ## Invoke action removeGroup
+                    ## Removes a group from a lifecycle policy.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of remove_group_response
@@ -39,7 +39,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::GroupLifecyclePolicies::Item::RemoveGroup::RemoveGroupResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Invoke action removeGroup
+                    ## Removes a group from a lifecycle policy.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information

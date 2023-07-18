@@ -6,6 +6,7 @@ require_relative '../../../models/temporary_access_pass_authentication_method_co
 require_relative '../../me'
 require_relative '../authentication'
 require_relative './count/count_request_builder'
+require_relative './item/temporary_access_pass_authentication_method_item_request_builder'
 require_relative './temporary_access_pass_methods'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Me::Authentication::TemporaryAccessPassMethods::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the temporaryAccessPassMethods property of the microsoft.graph.authentication entity.
+                    ## @param temporary_access_pass_authentication_method_id Unique identifier of the item
+                    ## @return a temporary_access_pass_authentication_method_item_request_builder
+                    ## 
+                    def by_temporary_access_pass_authentication_method_id(temporary_access_pass_authentication_method_id)
+                        raise StandardError, 'temporary_access_pass_authentication_method_id cannot be null' if temporary_access_pass_authentication_method_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["temporaryAccessPassAuthenticationMethod%2Did"] = temporary_access_pass_authentication_method_id
+                        return MicrosoftGraph::Me::Authentication::TemporaryAccessPassMethods::Item::TemporaryAccessPassAuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new TemporaryAccessPassMethodsRequestBuilder and sets the default values.

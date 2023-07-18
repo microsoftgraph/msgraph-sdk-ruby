@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../audit_logs'
 require_relative './count/count_request_builder'
 require_relative './directory_audits'
+require_relative './item/directory_audit_item_request_builder'
 
 module MicrosoftGraph
     module AuditLogs
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::AuditLogs::DirectoryAudits::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.
+                ## @param directory_audit_id Unique identifier of the item
+                ## @return a directory_audit_item_request_builder
+                ## 
+                def by_directory_audit_id(directory_audit_id)
+                    raise StandardError, 'directory_audit_id cannot be null' if directory_audit_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["directoryAudit%2Did"] = directory_audit_id
+                    return MicrosoftGraph::AuditLogs::DirectoryAudits::Item::DirectoryAuditItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new DirectoryAuditsRequestBuilder and sets the default values.

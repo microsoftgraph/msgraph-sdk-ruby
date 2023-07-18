@@ -7,7 +7,7 @@ module MicrosoftGraph
         class TeleconferenceDeviceAudioQuality < MicrosoftGraph::Models::TeleconferenceDeviceMediaQuality
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new TeleconferenceDeviceAudioQuality and sets the default values.
+            ## Instantiates a new teleconferenceDeviceAudioQuality and sets the default values.
             ## @return a void
             ## 
             def initialize()

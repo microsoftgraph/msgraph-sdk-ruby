@@ -8,6 +8,7 @@ require_relative '../entitlement_management'
 require_relative './access_package_assignment_approvals'
 require_relative './count/count_request_builder'
 require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './item/approval_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -21,6 +22,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackageAssignmentApprovals::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the accessPackageAssignmentApprovals property of the microsoft.graph.entitlementManagement entity.
+                    ## @param approval_id Unique identifier of the item
+                    ## @return a approval_item_request_builder
+                    ## 
+                    def by_approval_id(approval_id)
+                        raise StandardError, 'approval_id cannot be null' if approval_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["approval%2Did"] = approval_id
+                        return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackageAssignmentApprovals::Item::ApprovalItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AccessPackageAssignmentApprovalsRequestBuilder and sets the default values.
@@ -41,7 +53,7 @@ module MicrosoftGraph
                         return FilterByCurrentUserWithOnRequestBuilder.new(@path_parameters, @request_adapter, on)
                     end
                     ## 
-                    ## Approval stages for decisions associated with access package assignment requests.
+                    ## In Azure AD entitlement management, retrieve the properties of an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of approval_collection_response
                     ## 
@@ -71,7 +83,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Approval.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Approval stages for decisions associated with access package assignment requests.
+                    ## In Azure AD entitlement management, retrieve the properties of an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -110,7 +122,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Approval stages for decisions associated with access package assignment requests.
+                    # In Azure AD entitlement management, retrieve the properties of an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
                     class AccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters
                         
                         ## 

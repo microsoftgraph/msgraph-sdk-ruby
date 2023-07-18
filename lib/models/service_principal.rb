@@ -115,7 +115,7 @@ module MicrosoftGraph
             # Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
             @preferred_single_sign_on_mode
             ## 
-            # Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+            # This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
             @preferred_token_signing_key_thumbprint
             ## 
             # The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
@@ -133,8 +133,11 @@ module MicrosoftGraph
             # Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.
             @service_principal_type
             ## 
-            # Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+            # Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
             @sign_in_audience
+            ## 
+            # Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+            @synchronization
             ## 
             # Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
             @tags
@@ -364,7 +367,7 @@ module MicrosoftGraph
                 @claims_mapping_policies = value
             end
             ## 
-            ## Instantiates a new ServicePrincipal and sets the default values.
+            ## Instantiates a new servicePrincipal and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -534,6 +537,7 @@ module MicrosoftGraph
                     "servicePrincipalNames" => lambda {|n| @service_principal_names = n.get_collection_of_primitive_values(String) },
                     "servicePrincipalType" => lambda {|n| @service_principal_type = n.get_string_value() },
                     "signInAudience" => lambda {|n| @sign_in_audience = n.get_string_value() },
+                    "synchronization" => lambda {|n| @synchronization = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Synchronization.create_from_discriminator_value(pn) }) },
                     "tags" => lambda {|n| @tags = n.get_collection_of_primitive_values(String) },
                     "tokenEncryptionKeyId" => lambda {|n| @token_encryption_key_id = n.get_guid_value() },
                     "tokenIssuancePolicies" => lambda {|n| @token_issuance_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TokenIssuancePolicy.create_from_discriminator_value(pn) }) },
@@ -768,14 +772,14 @@ module MicrosoftGraph
                 @preferred_single_sign_on_mode = value
             end
             ## 
-            ## Gets the preferredTokenSigningKeyThumbprint property value. Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+            ## Gets the preferredTokenSigningKeyThumbprint property value. This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
             ## @return a string
             ## 
             def preferred_token_signing_key_thumbprint
                 return @preferred_token_signing_key_thumbprint
             end
             ## 
-            ## Sets the preferredTokenSigningKeyThumbprint property value. Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+            ## Sets the preferredTokenSigningKeyThumbprint property value. This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
             ## @param value Value to set for the preferred_token_signing_key_thumbprint property.
             ## @return a void
             ## 
@@ -878,6 +882,7 @@ module MicrosoftGraph
                 writer.write_collection_of_primitive_values("servicePrincipalNames", @service_principal_names)
                 writer.write_string_value("servicePrincipalType", @service_principal_type)
                 writer.write_string_value("signInAudience", @sign_in_audience)
+                writer.write_object_value("synchronization", @synchronization)
                 writer.write_collection_of_primitive_values("tags", @tags)
                 writer.write_guid_value("tokenEncryptionKeyId", @token_encryption_key_id)
                 writer.write_collection_of_object_values("tokenIssuancePolicies", @token_issuance_policies)
@@ -916,19 +921,34 @@ module MicrosoftGraph
                 @service_principal_type = value
             end
             ## 
-            ## Gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+            ## Gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
             ## @return a string
             ## 
             def sign_in_audience
                 return @sign_in_audience
             end
             ## 
-            ## Sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+            ## Sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
             ## @param value Value to set for the sign_in_audience property.
             ## @return a void
             ## 
             def sign_in_audience=(value)
                 @sign_in_audience = value
+            end
+            ## 
+            ## Gets the synchronization property value. Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+            ## @return a synchronization
+            ## 
+            def synchronization
+                return @synchronization
+            end
+            ## 
+            ## Sets the synchronization property value. Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+            ## @param value Value to set for the synchronization property.
+            ## @return a void
+            ## 
+            def synchronization=(value)
+                @synchronization = value
             end
             ## 
             ## Gets the tags property value. Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).

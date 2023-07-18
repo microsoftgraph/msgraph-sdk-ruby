@@ -11,13 +11,13 @@ module MicrosoftGraph
             # Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @activity_date_time
             ## 
-            # Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
+            # Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities.
             @activity_display_name
             ## 
             # Indicates additional details on the activity.
             @additional_details
             ## 
-            # Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.
+            # Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Azure AD audit log categories and activities.
             @category
             ## 
             # Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
@@ -56,14 +56,14 @@ module MicrosoftGraph
                 @activity_date_time = value
             end
             ## 
-            ## Gets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
+            ## Gets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities.
             ## @return a string
             ## 
             def activity_display_name
                 return @activity_display_name
             end
             ## 
-            ## Sets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For full list, see Azure AD activity list.
+            ## Sets the activityDisplayName property value. Indicates the activity name or the operation name (examples: 'Create User' and 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities.
             ## @param value Value to set for the activity_display_name property.
             ## @return a void
             ## 
@@ -86,14 +86,14 @@ module MicrosoftGraph
                 @additional_details = value
             end
             ## 
-            ## Gets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.
+            ## Gets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Azure AD audit log categories and activities.
             ## @return a string
             ## 
             def category
                 return @category
             end
             ## 
-            ## Sets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.
+            ## Sets the category property value. Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Azure AD audit log categories and activities.
             ## @param value Value to set for the category property.
             ## @return a void
             ## 

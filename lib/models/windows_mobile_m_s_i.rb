@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for Windows Mobile MSI Line Of Business apps.
         class WindowsMobileMSI < MicrosoftGraph::Models::MobileLobApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -34,7 +36,7 @@ module MicrosoftGraph
                 @command_line = value
             end
             ## 
-            ## Instantiates a new WindowsMobileMSI and sets the default values.
+            ## Instantiates a new windowsMobileMSI and sets the default values.
             ## @return a void
             ## 
             def initialize()

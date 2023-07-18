@@ -32,7 +32,7 @@ module MicrosoftGraph
                 @author = value
             end
             ## 
-            ## Instantiates a new AuthoredNote and sets the default values.
+            ## Instantiates a new authoredNote and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -46,7 +46,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/me/chats/{chat%2Did}/installedApps/{teamsAppInstallation%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property installedApps for me
+                            ## Uninstall an app installed within a chat.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -60,7 +60,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## A collection of all the apps in the chat. Nullable.
+                            ## Get an app installed in a chat.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of teams_app_installation
                             ## 
@@ -90,7 +90,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamsAppInstallation.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property installedApps for me
+                            ## Uninstall an app installed within a chat.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## A collection of all the apps in the chat. Nullable.
+                            ## Get an app installed in a chat.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -145,7 +145,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # A collection of all the apps in the chat. Nullable.
+                            # Get an app installed in a chat.
                             class TeamsAppInstallationItemRequestBuilderGetQueryParameters
                                 
                                 ## 

@@ -38,7 +38,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}/columns/{columnDefinition%2Did}{?%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Delete navigation property columns for shares
+                                    ## Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -52,7 +52,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## The collection of column definitions for this contentType.
+                                    ## Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of column_definition
                                     ## 
@@ -66,7 +66,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ColumnDefinition.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Update the navigation property columns in shares
+                                    ## Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of column_definition
@@ -82,7 +82,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ColumnDefinition.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Delete navigation property columns for shares
+                                    ## Remove a [column][columndefinition] from a [site][], a [list][], or a [content type][contentType].
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -98,7 +98,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## The collection of column definitions for this contentType.
+                                    ## Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -116,7 +116,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Update the navigation property columns in shares
+                                    ## Update a [site][], a [list][], or a [content type][contentType] [column][columnDefinition].
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
@@ -137,7 +137,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # The collection of column definitions for this contentType.
+                                    # Retrieve the metadata for a [site][], a [list][], or a [contentType][] [column][columnDefinition].
                                     class ColumnDefinitionItemRequestBuilderGetQueryParameters
                                         
                                         ## 

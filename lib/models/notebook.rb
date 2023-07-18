@@ -31,7 +31,7 @@ module MicrosoftGraph
             # Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.
             @user_role
             ## 
-            ## Instantiates a new Notebook and sets the default values.
+            ## Instantiates a new notebook and sets the default values.
             ## @return a void
             ## 
             def initialize()

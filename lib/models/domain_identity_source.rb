@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The domain name. Read only.
             @domain_name
             ## 
-            ## Instantiates a new DomainIdentitySource and sets the default values.
+            ## Instantiates a new domainIdentitySource and sets the default values.
             ## @return a void
             ## 
             def initialize()

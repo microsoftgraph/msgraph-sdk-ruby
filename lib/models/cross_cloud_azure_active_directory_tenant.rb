@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @cloud_instance = value
             end
             ## 
-            ## Instantiates a new CrossCloudAzureActiveDirectoryTenant and sets the default values.
+            ## Instantiates a new crossCloudAzureActiveDirectoryTenant and sets the default values.
             ## @return a void
             ## 
             def initialize()

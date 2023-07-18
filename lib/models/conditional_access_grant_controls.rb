@@ -10,6 +10,9 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # The authenticationStrength property
+            @authentication_strength
+            ## 
             # List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
             @built_in_controls
             ## 
@@ -38,6 +41,21 @@ module MicrosoftGraph
             ## 
             def additional_data=(value)
                 @additional_data = value
+            end
+            ## 
+            ## Gets the authenticationStrength property value. The authenticationStrength property
+            ## @return a authentication_strength_policy
+            ## 
+            def authentication_strength
+                return @authentication_strength
+            end
+            ## 
+            ## Sets the authenticationStrength property value. The authenticationStrength property
+            ## @param value Value to set for the authentication_strength property.
+            ## @return a void
+            ## 
+            def authentication_strength=(value)
+                @authentication_strength = value
             end
             ## 
             ## Gets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
@@ -91,6 +109,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
+                    "authenticationStrength" => lambda {|n| @authentication_strength = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AuthenticationStrengthPolicy.create_from_discriminator_value(pn) }) },
                     "builtInControls" => lambda {|n| @built_in_controls = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessGrantControl.create_from_discriminator_value(pn) }) },
                     "customAuthenticationFactors" => lambda {|n| @custom_authentication_factors = n.get_collection_of_primitive_values(String) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
@@ -135,6 +154,7 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_object_value("authenticationStrength", @authentication_strength)
                 writer.write_collection_of_object_values("builtInControls", @built_in_controls)
                 writer.write_collection_of_primitive_values("customAuthenticationFactors", @custom_authentication_factors)
                 writer.write_string_value("@odata.type", @odata_type)

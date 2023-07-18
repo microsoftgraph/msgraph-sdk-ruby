@@ -4,10 +4,8 @@ require_relative '../../models/agreement'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../agreements'
 require_relative './acceptances/acceptances_request_builder'
-require_relative './acceptances/item/agreement_acceptance_item_request_builder'
 require_relative './file/file_request_builder'
 require_relative './files/files_request_builder'
-require_relative './files/item/agreement_file_localization_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -33,17 +31,6 @@ module MicrosoftGraph
                     return MicrosoftGraph::Agreements::Item::Files::FilesRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
-                ## Provides operations to manage the acceptances property of the microsoft.graph.agreement entity.
-                ## @param id Unique identifier of the item
-                ## @return a agreement_acceptance_item_request_builder
-                ## 
-                def acceptances_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["agreementAcceptance%2Did"] = id
-                    return MicrosoftGraph::Agreements::Item::Acceptances::Item::AgreementAcceptanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Instantiates a new AgreementItemRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -65,17 +52,6 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, nil, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the files property of the microsoft.graph.agreement entity.
-                ## @param id Unique identifier of the item
-                ## @return a agreement_file_localization_item_request_builder
-                ## 
-                def files_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["agreementFileLocalization%2Did"] = id
-                    return MicrosoftGraph::Agreements::Item::Files::Item::AgreementFileLocalizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Get entity from agreements by key

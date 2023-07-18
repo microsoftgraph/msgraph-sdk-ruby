@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
             @locked
             ## 
-            ## Instantiates a new WorkbookFormatProtection and sets the default values.
+            ## Instantiates a new workbookFormatProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()

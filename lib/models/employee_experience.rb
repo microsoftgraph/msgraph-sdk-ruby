@@ -10,6 +10,9 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # The learningCourseActivities property
+            @learning_course_activities
+            ## 
             # A collection of learning providers.
             @learning_providers
             ## 
@@ -31,7 +34,7 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new EmployeeExperience and sets the default values.
+            ## Instantiates a new employeeExperience and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -52,9 +55,25 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
+                    "learningCourseActivities" => lambda {|n| @learning_course_activities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::LearningCourseActivity.create_from_discriminator_value(pn) }) },
                     "learningProviders" => lambda {|n| @learning_providers = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::LearningProvider.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
+            end
+            ## 
+            ## Gets the learningCourseActivities property value. The learningCourseActivities property
+            ## @return a learning_course_activity
+            ## 
+            def learning_course_activities
+                return @learning_course_activities
+            end
+            ## 
+            ## Sets the learningCourseActivities property value. The learningCourseActivities property
+            ## @param value Value to set for the learning_course_activities property.
+            ## @return a void
+            ## 
+            def learning_course_activities=(value)
+                @learning_course_activities = value
             end
             ## 
             ## Gets the learningProviders property value. A collection of learning providers.
@@ -93,6 +112,7 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_collection_of_object_values("learningCourseActivities", @learning_course_activities)
                 writer.write_collection_of_object_values("learningProviders", @learning_providers)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_additional_data(@additional_data)

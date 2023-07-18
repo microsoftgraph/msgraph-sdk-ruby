@@ -5,7 +5,6 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../admin'
 require_relative '../edge'
 require_relative './internet_explorer_mode'
-require_relative './site_lists/item/browser_site_list_item_request_builder'
 require_relative './site_lists/site_lists_request_builder'
 
 module MicrosoftGraph
@@ -45,7 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Get internetExplorerMode from admin
+                    ## A container for Internet Explorer mode resources.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of internet_explorer_mode
                     ## 
@@ -75,17 +74,6 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::InternetExplorerMode.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the siteLists property of the microsoft.graph.internetExplorerMode entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a browser_site_list_item_request_builder
-                    ## 
-                    def site_lists_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["browserSiteList%2Did"] = id
-                        return MicrosoftGraph::Admin::Edge::InternetExplorerMode::SiteLists::Item::BrowserSiteListItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Delete navigation property internetExplorerMode for admin
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -102,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Get internetExplorerMode from admin
+                    ## A container for Internet Explorer mode resources.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -141,7 +129,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get internetExplorerMode from admin
+                    # A container for Internet Explorer mode resources.
                     class InternetExplorerModeRequestBuilderGetQueryParameters
                         
                         ## 

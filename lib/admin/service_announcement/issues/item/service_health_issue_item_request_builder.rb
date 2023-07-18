@@ -46,7 +46,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+                        ## Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of service_health_issue
                         ## 
@@ -92,7 +92,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+                        ## Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -131,7 +131,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+                        # Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
                         class ServiceHealthIssueItemRequestBuilderGetQueryParameters
                             
                             ## 

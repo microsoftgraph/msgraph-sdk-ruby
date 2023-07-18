@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This class contains compliance settings for Mac OS.
         class MacOSCompliancePolicy < MicrosoftGraph::Models::DeviceCompliancePolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -58,7 +60,7 @@ module MicrosoftGraph
             # Require that devices have enabled system integrity protection.
             @system_integrity_protection_enabled
             ## 
-            ## Instantiates a new MacOSCompliancePolicy and sets the default values.
+            ## Instantiates a new macOSCompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The guid of the user.
             @user_id
             ## 
-            ## Instantiates a new AadUserConversationMember and sets the default values.
+            ## Instantiates a new aadUserConversationMember and sets the default values.
             ## @return a void
             ## 
             def initialize()

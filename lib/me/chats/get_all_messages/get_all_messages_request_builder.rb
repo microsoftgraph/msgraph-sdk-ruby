@@ -20,7 +20,7 @@ module MicrosoftGraph
                     ## @return a void
                     ## 
                     def initialize(path_parameters, request_adapter)
-                        super(path_parameters, request_adapter, "{+baseurl}/me/chats/getAllMessages(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}")
+                        super(path_parameters, request_adapter, "{+baseurl}/me/chats/getAllMessages(){?model*,%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}")
                     end
                     ## 
                     ## Invoke function getAllMessages
@@ -66,6 +66,9 @@ module MicrosoftGraph
                         # Filter items by property values
                         attr_accessor :filter
                         ## 
+                        # The payment model for the API
+                        attr_accessor :model
+                        ## 
                         # Order items by property values
                         attr_accessor :orderby
                         ## 
@@ -92,6 +95,8 @@ module MicrosoftGraph
                                     return "%24count"
                                 when "filter"
                                     return "%24filter"
+                                when "model"
+                                    return "model"
                                 when "orderby"
                                     return "%24orderby"
                                 when "search"

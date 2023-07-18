@@ -9,7 +9,7 @@ module MicrosoftGraph
             class EdiscoveryReviewSetQuery < MicrosoftGraph::Models::Security::Search
                 include MicrosoftKiotaAbstractions::Parsable
                 ## 
-                ## Instantiates a new EdiscoveryReviewSetQuery and sets the default values.
+                ## Instantiates a new ediscoveryReviewSetQuery and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

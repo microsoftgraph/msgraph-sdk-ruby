@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The ID of the Azure Active Directory tenant. Read only.
             @tenant_id
             ## 
-            ## Instantiates a new AzureActiveDirectoryTenant and sets the default values.
+            ## Instantiates a new azureActiveDirectoryTenant and sets the default values.
             ## @return a void
             ## 
             def initialize()

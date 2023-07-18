@@ -3,14 +3,10 @@ require_relative '../microsoft_graph'
 require_relative '../models/cloud_communications'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './call_records/call_records_request_builder'
-require_relative './call_records/item/call_record_item_request_builder'
 require_relative './calls/calls_request_builder'
-require_relative './calls/item/call_item_request_builder'
 require_relative './communications'
 require_relative './get_presences_by_user_id/get_presences_by_user_id_request_builder'
-require_relative './online_meetings/item/online_meeting_item_request_builder'
 require_relative './online_meetings/online_meetings_request_builder'
-require_relative './presences/item/presence_item_request_builder'
 require_relative './presences/presences_request_builder'
 
 module MicrosoftGraph
@@ -45,28 +41,6 @@ module MicrosoftGraph
                 return MicrosoftGraph::Communications::Presences::PresencesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
-            ## Provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
-            ## @param id Unique identifier of the item
-            ## @return a call_record_item_request_builder
-            ## 
-            def call_records_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["callRecord%2Did"] = id
-                return MicrosoftGraph::Communications::CallRecords::Item::CallRecordItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
-            ## @param id Unique identifier of the item
-            ## @return a call_item_request_builder
-            ## 
-            def calls_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["call%2Did"] = id
-                return MicrosoftGraph::Communications::Calls::Item::CallItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
             ## Instantiates a new CommunicationsRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request
             ## @param request_adapter The request adapter to use to execute the requests.
@@ -90,17 +64,6 @@ module MicrosoftGraph
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CloudCommunications.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
-            ## @param id Unique identifier of the item
-            ## @return a online_meeting_item_request_builder
-            ## 
-            def online_meetings_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["onlineMeeting%2Did"] = id
-                return MicrosoftGraph::Communications::OnlineMeetings::Item::OnlineMeetingItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
             ## Update communications
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
@@ -115,17 +78,6 @@ module MicrosoftGraph
                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CloudCommunications.create_from_discriminator_value(pn) }, error_mapping)
-            end
-            ## 
-            ## Provides operations to manage the presences property of the microsoft.graph.cloudCommunications entity.
-            ## @param id Unique identifier of the item
-            ## @return a presence_item_request_builder
-            ## 
-            def presences_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["presence%2Did"] = id
-                return MicrosoftGraph::Communications::Presences::Item::PresenceItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Get communications

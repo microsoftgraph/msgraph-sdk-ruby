@@ -46,7 +46,7 @@ module MicrosoftGraph
                 @channel_id = value
             end
             ## 
-            ## Instantiates a new ChannelAddedEventMessageDetail and sets the default values.
+            ## Instantiates a new channelAddedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

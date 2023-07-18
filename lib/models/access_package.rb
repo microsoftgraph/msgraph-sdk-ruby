@@ -38,6 +38,9 @@ module MicrosoftGraph
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @modified_date_time
             ## 
+            # The resourceRoleScopes property
+            @resource_role_scopes
+            ## 
             ## Gets the accessPackagesIncompatibleWith property value. The access packages that are incompatible with this package. Read-only.
             ## @return a access_package
             ## 
@@ -159,6 +162,7 @@ module MicrosoftGraph
                     "incompatibleGroups" => lambda {|n| @incompatible_groups = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Group.create_from_discriminator_value(pn) }) },
                     "isHidden" => lambda {|n| @is_hidden = n.get_boolean_value() },
                     "modifiedDateTime" => lambda {|n| @modified_date_time = n.get_date_time_value() },
+                    "resourceRoleScopes" => lambda {|n| @resource_role_scopes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageResourceRoleScope.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -222,6 +226,21 @@ module MicrosoftGraph
                 @modified_date_time = value
             end
             ## 
+            ## Gets the resourceRoleScopes property value. The resourceRoleScopes property
+            ## @return a access_package_resource_role_scope
+            ## 
+            def resource_role_scopes
+                return @resource_role_scopes
+            end
+            ## 
+            ## Sets the resourceRoleScopes property value. The resourceRoleScopes property
+            ## @param value Value to set for the resource_role_scopes property.
+            ## @return a void
+            ## 
+            def resource_role_scopes=(value)
+                @resource_role_scopes = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -239,6 +258,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("incompatibleGroups", @incompatible_groups)
                 writer.write_boolean_value("isHidden", @is_hidden)
                 writer.write_date_time_value("modifiedDateTime", @modified_date_time)
+                writer.write_collection_of_object_values("resourceRoleScopes", @resource_role_scopes)
             end
         end
     end

@@ -7,6 +7,7 @@ require_relative '../../../users'
 require_relative '../../item'
 require_relative '../inference_classification'
 require_relative './count/count_request_builder'
+require_relative './item/inference_classification_override_item_request_builder'
 require_relative './overrides'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Users::Item::InferenceClassification::Overrides::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the overrides property of the microsoft.graph.inferenceClassification entity.
+                        ## @param inference_classification_override_id Unique identifier of the item
+                        ## @return a inference_classification_override_item_request_builder
+                        ## 
+                        def by_inference_classification_override_id(inference_classification_override_id)
+                            raise StandardError, 'inference_classification_override_id cannot be null' if inference_classification_override_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["inferenceClassificationOverride%2Did"] = inference_classification_override_id
+                            return MicrosoftGraph::Users::Item::InferenceClassification::Overrides::Item::InferenceClassificationOverrideItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new OverridesRequestBuilder and sets the default values.

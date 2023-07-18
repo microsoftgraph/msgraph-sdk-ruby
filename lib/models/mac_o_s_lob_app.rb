@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for the macOS LOB App.
         class MacOSLobApp < MicrosoftGraph::Models::MobileLobApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -79,7 +81,7 @@ module MicrosoftGraph
                 @child_apps = value
             end
             ## 
-            ## Instantiates a new MacOSLobApp and sets the default values.
+            ## Instantiates a new macOSLobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

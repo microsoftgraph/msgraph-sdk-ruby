@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
 require_relative './device_management_partners'
+require_relative './item/device_management_partner_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceManagement::DeviceManagementPartners::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the deviceManagementPartners property of the microsoft.graph.deviceManagement entity.
+                ## @param device_management_partner_id Unique identifier of the item
+                ## @return a device_management_partner_item_request_builder
+                ## 
+                def by_device_management_partner_id(device_management_partner_id)
+                    raise StandardError, 'device_management_partner_id cannot be null' if device_management_partner_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["deviceManagementPartner%2Did"] = device_management_partner_id
+                    return MicrosoftGraph::DeviceManagement::DeviceManagementPartners::Item::DeviceManagementPartnerItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new DeviceManagementPartnersRequestBuilder and sets the default values.

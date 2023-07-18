@@ -5,6 +5,7 @@ require_relative '../../models/notification_message_template_collection_response
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
+require_relative './item/notification_message_template_item_request_builder'
 require_relative './notification_message_templates'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the notificationMessageTemplates property of the microsoft.graph.deviceManagement entity.
+                ## @param notification_message_template_id Unique identifier of the item
+                ## @return a notification_message_template_item_request_builder
+                ## 
+                def by_notification_message_template_id(notification_message_template_id)
+                    raise StandardError, 'notification_message_template_id cannot be null' if notification_message_template_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["notificationMessageTemplate%2Did"] = notification_message_template_id
+                    return MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item::NotificationMessageTemplateItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new NotificationMessageTemplatesRequestBuilder and sets the default values.

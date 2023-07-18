@@ -5,6 +5,7 @@ require_relative '../../models/terms_and_conditions'
 require_relative '../../models/terms_and_conditions_collection_response'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
+require_relative './item/terms_and_conditions_item_request_builder'
 require_relative './terms_and_conditions'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceManagement::TermsAndConditions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the termsAndConditions property of the microsoft.graph.deviceManagement entity.
+                ## @param terms_and_conditions_id Unique identifier of the item
+                ## @return a terms_and_conditions_item_request_builder
+                ## 
+                def by_terms_and_conditions_id(terms_and_conditions_id)
+                    raise StandardError, 'terms_and_conditions_id cannot be null' if terms_and_conditions_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["termsAndConditions%2Did"] = terms_and_conditions_id
+                    return MicrosoftGraph::DeviceManagement::TermsAndConditions::Item::TermsAndConditionsItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new TermsAndConditionsRequestBuilder and sets the default values.

@@ -6,7 +6,6 @@ require_relative '../../../identity_governance'
 require_relative '../../access_reviews'
 require_relative '../definitions'
 require_relative './instances/instances_request_builder'
-require_relative './instances/item/access_review_instance_item_request_builder'
 require_relative './item'
 require_relative './stop/stop_request_builder'
 
@@ -39,7 +38,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/accessReviews/definitions/{accessReviewScheduleDefinition%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property definitions for identityGovernance
+                        ## Deletes an accessReviewScheduleDefinition object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -53,7 +52,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Represents the template and scheduling for an access review.
+                        ## Read the properties and relationships of an accessReviewScheduleDefinition object. To retrieve the instances of the access review series, use the list accessReviewInstance API.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of access_review_schedule_definition
                         ## 
@@ -67,18 +66,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewScheduleDefinition.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Provides operations to manage the instances property of the microsoft.graph.accessReviewScheduleDefinition entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a access_review_instance_item_request_builder
-                        ## 
-                        def instances_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["accessReviewInstance%2Did"] = id
-                            return MicrosoftGraph::IdentityGovernance::AccessReviews::Definitions::Item::Instances::Item::AccessReviewInstanceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Update the navigation property definitions in identityGovernance
+                        ## Update an existing accessReviewScheduleDefinition object to change one or more of its properties.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of access_review_schedule_definition
@@ -94,7 +82,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessReviewScheduleDefinition.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property definitions for identityGovernance
+                        ## Deletes an accessReviewScheduleDefinition object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -110,7 +98,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Represents the template and scheduling for an access review.
+                        ## Read the properties and relationships of an accessReviewScheduleDefinition object. To retrieve the instances of the access review series, use the list accessReviewInstance API.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -128,7 +116,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property definitions in identityGovernance
+                        ## Update an existing accessReviewScheduleDefinition object to change one or more of its properties.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -149,7 +137,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Represents the template and scheduling for an access review.
+                        # Read the properties and relationships of an accessReviewScheduleDefinition object. To retrieve the instances of the access review series, use the list accessReviewInstance API.
                         class AccessReviewScheduleDefinitionItemRequestBuilderGetQueryParameters
                             
                             ## 

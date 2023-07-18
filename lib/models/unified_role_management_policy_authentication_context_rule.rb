@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @claim_value = value
             end
             ## 
-            ## Instantiates a new UnifiedRoleManagementPolicyAuthenticationContextRule and sets the default values.
+            ## Instantiates a new unifiedRoleManagementPolicyAuthenticationContextRule and sets the default values.
             ## @return a void
             ## 
             def initialize()

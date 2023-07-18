@@ -8,6 +8,7 @@ require_relative '../../b2x_user_flows'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './get_order/get_order_request_builder'
+require_relative './item/identity_user_flow_attribute_assignment_item_request_builder'
 require_relative './set_order/set_order_request_builder'
 require_relative './user_attribute_assignments'
 
@@ -34,6 +35,17 @@ module MicrosoftGraph
                         # Provides operations to call the setOrder method.
                         def set_order()
                             return MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments::SetOrder::SetOrderRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.
+                        ## @param identity_user_flow_attribute_assignment_id Unique identifier of the item
+                        ## @return a identity_user_flow_attribute_assignment_item_request_builder
+                        ## 
+                        def by_identity_user_flow_attribute_assignment_id(identity_user_flow_attribute_assignment_id)
+                            raise StandardError, 'identity_user_flow_attribute_assignment_id cannot be null' if identity_user_flow_attribute_assignment_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["identityUserFlowAttributeAssignment%2Did"] = identity_user_flow_attribute_assignment_id
+                            return MicrosoftGraph::Identity::B2xUserFlows::Item::UserAttributeAssignments::Item::IdentityUserFlowAttributeAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new UserAttributeAssignmentsRequestBuilder and sets the default values.

@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for the Microsoft Edge app on Windows.
         class WindowsMicrosoftEdgeApp < MicrosoftGraph::Models::MobileApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -28,7 +30,7 @@ module MicrosoftGraph
                 @channel = value
             end
             ## 
-            ## Instantiates a new WindowsMicrosoftEdgeApp and sets the default values.
+            ## Instantiates a new windowsMicrosoftEdgeApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

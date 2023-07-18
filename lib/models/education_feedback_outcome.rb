@@ -13,7 +13,7 @@ module MicrosoftGraph
             # A copy of the feedback property that is made when the grade is released to the student.
             @published_feedback
             ## 
-            ## Instantiates a new EducationFeedbackOutcome and sets the default values.
+            ## Instantiates a new educationFeedbackOutcome and sets the default values.
             ## @return a void
             ## 
             def initialize()

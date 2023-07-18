@@ -6,9 +6,7 @@ require_relative '../../education'
 require_relative '../schools'
 require_relative './administrative_unit/administrative_unit_request_builder'
 require_relative './classes/classes_request_builder'
-require_relative './classes/item/education_class_item_request_builder'
 require_relative './item'
-require_relative './users/item/education_user_item_request_builder'
 require_relative './users/users_request_builder'
 
 module MicrosoftGraph
@@ -35,17 +33,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::Education::Schools::Item::Users::UsersRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Gets an item from the MicrosoftGraph.education.schools.item.classes.item collection
-                    ## @param id Unique identifier of the item
-                    ## @return a education_class_item_request_builder
-                    ## 
-                    def classes_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["educationClass%2Did"] = id
-                        return MicrosoftGraph::Education::Schools::Item::Classes::Item::EducationClassItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new EducationSchoolItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -55,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/education/schools/{educationSchool%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property schools for education
+                    ## Delete a school.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -69,7 +56,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Get schools from education
+                    ## Read the properties and relationships of an educationSchool object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of education_school
                     ## 
@@ -83,7 +70,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationSchool.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property schools in education
+                    ## Update the properties of an educationSchool object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of education_school
@@ -99,7 +86,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationSchool.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property schools for education
+                    ## Delete a school.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -115,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Get schools from education
+                    ## Read the properties and relationships of an educationSchool object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -133,7 +120,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property schools in education
+                    ## Update the properties of an educationSchool object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -152,20 +139,9 @@ module MicrosoftGraph
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
                     end
-                    ## 
-                    ## Gets an item from the MicrosoftGraph.education.schools.item.users.item collection
-                    ## @param id Unique identifier of the item
-                    ## @return a education_user_item_request_builder
-                    ## 
-                    def users_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["educationUser%2Did"] = id
-                        return MicrosoftGraph::Education::Schools::Item::Users::Item::EducationUserItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
 
                     ## 
-                    # Get schools from education
+                    # Read the properties and relationships of an educationSchool object.
                     class EducationSchoolItemRequestBuilderGetQueryParameters
                         
                         ## 

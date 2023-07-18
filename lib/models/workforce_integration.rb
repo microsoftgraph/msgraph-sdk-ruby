@@ -40,7 +40,7 @@ module MicrosoftGraph
                 @api_version = value
             end
             ## 
-            ## Instantiates a new WorkforceIntegration and sets the default values.
+            ## Instantiates a new workforceIntegration and sets the default values.
             ## @return a void
             ## 
             def initialize()

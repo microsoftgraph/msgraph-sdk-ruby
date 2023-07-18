@@ -6,12 +6,9 @@ require_relative '../../device_app_management'
 require_relative '../mobile_app_configurations'
 require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
-require_relative './assignments/item/managed_device_mobile_app_configuration_assignment_item_request_builder'
 require_relative './device_statuses/device_statuses_request_builder'
-require_relative './device_statuses/item/managed_device_mobile_app_configuration_device_status_item_request_builder'
 require_relative './device_status_summary/device_status_summary_request_builder'
 require_relative './item'
-require_relative './user_statuses/item/managed_device_mobile_app_configuration_user_status_item_request_builder'
 require_relative './user_statuses/user_statuses_request_builder'
 require_relative './user_status_summary/user_status_summary_request_builder'
 
@@ -54,17 +51,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Item::UserStatusSummary::UserStatusSummaryRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the assignments property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a managed_device_mobile_app_configuration_assignment_item_request_builder
-                    ## 
-                    def assignments_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["managedDeviceMobileAppConfigurationAssignment%2Did"] = id
-                        return MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Item::Assignments::Item::ManagedDeviceMobileAppConfigurationAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new ManagedDeviceMobileAppConfigurationItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -86,17 +72,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, nil, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the deviceStatuses property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a managed_device_mobile_app_configuration_device_status_item_request_builder
-                    ## 
-                    def device_statuses_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["managedDeviceMobileAppConfigurationDeviceStatus%2Did"] = id
-                        return MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Item::DeviceStatuses::Item::ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## The Managed Device Mobile Application Configurations.
@@ -181,17 +156,6 @@ module MicrosoftGraph
                         end
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
-                    end
-                    ## 
-                    ## Provides operations to manage the userStatuses property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a managed_device_mobile_app_configuration_user_status_item_request_builder
-                    ## 
-                    def user_statuses_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["managedDeviceMobileAppConfigurationUserStatus%2Did"] = id
-                        return MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Item::UserStatuses::Item::ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
 
                     ## 

@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## The long running operations associated with the delegated admin relationship.
+                            ## Read the properties of a delegatedAdminRelationshipOperation object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of delegated_admin_relationship_operation
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## The long running operations associated with the delegated admin relationship.
+                            ## Read the properties of a delegatedAdminRelationshipOperation object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # The long running operations associated with the delegated admin relationship.
+                            # Read the properties of a delegatedAdminRelationshipOperation object.
                             class DelegatedAdminRelationshipOperationItemRequestBuilderGetQueryParameters
                                 
                                 ## 

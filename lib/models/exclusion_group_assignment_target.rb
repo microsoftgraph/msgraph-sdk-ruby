@@ -4,10 +4,12 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Represents a group that should be excluded from an assignment.
         class ExclusionGroupAssignmentTarget < MicrosoftGraph::Models::GroupAssignmentTarget
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new ExclusionGroupAssignmentTarget and sets the default values.
+            ## Instantiates a new exclusionGroupAssignmentTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()

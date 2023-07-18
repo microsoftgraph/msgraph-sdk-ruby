@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for an iOS store app that you can manage with an Intune app protection policy.
         class ManagedIOSStoreApp < MicrosoftGraph::Models::ManagedApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -64,7 +66,7 @@ module MicrosoftGraph
                 @bundle_id = value
             end
             ## 
-            ## Instantiates a new ManagedIOSStoreApp and sets the default values.
+            ## Instantiates a new managedIOSStoreApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

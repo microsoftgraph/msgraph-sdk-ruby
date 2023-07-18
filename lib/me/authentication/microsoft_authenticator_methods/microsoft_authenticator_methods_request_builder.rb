@@ -5,6 +5,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../me'
 require_relative '../authentication'
 require_relative './count/count_request_builder'
+require_relative './item/microsoft_authenticator_authentication_method_item_request_builder'
 require_relative './microsoft_authenticator_methods'
 
 module MicrosoftGraph
@@ -19,6 +20,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Me::Authentication::MicrosoftAuthenticatorMethods::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
+                    ## @param microsoft_authenticator_authentication_method_id Unique identifier of the item
+                    ## @return a microsoft_authenticator_authentication_method_item_request_builder
+                    ## 
+                    def by_microsoft_authenticator_authentication_method_id(microsoft_authenticator_authentication_method_id)
+                        raise StandardError, 'microsoft_authenticator_authentication_method_id cannot be null' if microsoft_authenticator_authentication_method_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["microsoftAuthenticatorAuthenticationMethod%2Did"] = microsoft_authenticator_authentication_method_id
+                        return MicrosoftGraph::Me::Authentication::MicrosoftAuthenticatorMethods::Item::MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new MicrosoftAuthenticatorMethodsRequestBuilder and sets the default values.

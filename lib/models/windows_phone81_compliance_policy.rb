@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This class contains compliance settings for Windows 8.1 Mobile.
         class WindowsPhone81CompliancePolicy < MicrosoftGraph::Models::DeviceCompliancePolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -40,7 +42,7 @@ module MicrosoftGraph
             # Require encryption on windows phone devices.
             @storage_require_encryption
             ## 
-            ## Instantiates a new WindowsPhone81CompliancePolicy and sets the default values.
+            ## Instantiates a new windowsPhone81CompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

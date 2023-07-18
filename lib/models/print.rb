@@ -64,7 +64,7 @@ module MicrosoftGraph
                 @connectors = value
             end
             ## 
-            ## Instantiates a new Print and sets the default values.
+            ## Instantiates a new print and sets the default values.
             ## @return a void
             ## 
             def initialize()

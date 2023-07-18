@@ -9,7 +9,6 @@ require_relative '../../../item'
 require_relative '../../analytics'
 require_relative '../item_activity_stats'
 require_relative './activities/activities_request_builder'
-require_relative './activities/item/item_activity_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -28,17 +27,6 @@ module MicrosoftGraph
                                     # Provides operations to manage the activities property of the microsoft.graph.itemActivityStat entity.
                                     def activities()
                                         return MicrosoftGraph::Drives::Item::Items::Item::Analytics::ItemActivityStats::Item::Activities::ActivitiesRequestBuilder.new(@path_parameters, @request_adapter)
-                                    end
-                                    ## 
-                                    ## Provides operations to manage the activities property of the microsoft.graph.itemActivityStat entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a item_activity_item_request_builder
-                                    ## 
-                                    def activities_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["itemActivity%2Did"] = id
-                                        return MicrosoftGraph::Drives::Item::Items::Item::Analytics::ItemActivityStats::Item::Activities::Item::ItemActivityItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new ItemActivityStatItemRequestBuilder and sets the default values.

@@ -10,6 +10,7 @@ require_relative '../../../item'
 require_relative '../../section_groups'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/section_group_item_request_builder'
 require_relative './section_groups'
 
 module MicrosoftGraph
@@ -29,6 +30,17 @@ module MicrosoftGraph
                                         # Provides operations to count the resources in the collection.
                                         def count()
                                             return MicrosoftGraph::Groups::Item::Onenote::Notebooks::Item::SectionGroups::Item::SectionGroups::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
+                                        ## Provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
+                                        ## @param section_group_id1 Unique identifier of the item
+                                        ## @return a section_group_item_request_builder
+                                        ## 
+                                        def by_section_group_id1(section_group_id1)
+                                            raise StandardError, 'section_group_id1 cannot be null' if section_group_id1.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["sectionGroup%2Did1"] = section_group_id1
+                                            return MicrosoftGraph::Groups::Item::Onenote::Notebooks::Item::SectionGroups::Item::SectionGroups::Item::SectionGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                         end
                                         ## 
                                         ## Instantiates a new SectionGroupsRequestBuilder and sets the default values.

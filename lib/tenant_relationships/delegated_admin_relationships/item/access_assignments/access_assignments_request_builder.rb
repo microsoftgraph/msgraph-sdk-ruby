@@ -8,6 +8,7 @@ require_relative '../../delegated_admin_relationships'
 require_relative '../item'
 require_relative './access_assignments'
 require_relative './count/count_request_builder'
+require_relative './item/delegated_admin_access_assignment_item_request_builder'
 
 module MicrosoftGraph
     module TenantRelationships
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::TenantRelationships::DelegatedAdminRelationships::Item::AccessAssignments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the accessAssignments property of the microsoft.graph.delegatedAdminRelationship entity.
+                        ## @param delegated_admin_access_assignment_id Unique identifier of the item
+                        ## @return a delegated_admin_access_assignment_item_request_builder
+                        ## 
+                        def by_delegated_admin_access_assignment_id(delegated_admin_access_assignment_id)
+                            raise StandardError, 'delegated_admin_access_assignment_id cannot be null' if delegated_admin_access_assignment_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["delegatedAdminAccessAssignment%2Did"] = delegated_admin_access_assignment_id
+                            return MicrosoftGraph::TenantRelationships::DelegatedAdminRelationships::Item::AccessAssignments::Item::DelegatedAdminAccessAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new AccessAssignmentsRequestBuilder and sets the default values.

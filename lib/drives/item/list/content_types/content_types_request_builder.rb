@@ -11,6 +11,7 @@ require_relative './add_copy_from_content_type_hub/add_copy_from_content_type_hu
 require_relative './content_types'
 require_relative './count/count_request_builder'
 require_relative './get_compatible_hub_content_types/get_compatible_hub_content_types_request_builder'
+require_relative './item/content_type_item_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -40,6 +41,17 @@ module MicrosoftGraph
                         # Provides operations to call the getCompatibleHubContentTypes method.
                         def get_compatible_hub_content_types()
                             return MicrosoftGraph::Drives::Item::List::ContentTypes::GetCompatibleHubContentTypes::GetCompatibleHubContentTypesRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the contentTypes property of the microsoft.graph.list entity.
+                        ## @param content_type_id Unique identifier of the item
+                        ## @return a content_type_item_request_builder
+                        ## 
+                        def by_content_type_id(content_type_id)
+                            raise StandardError, 'content_type_id cannot be null' if content_type_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["contentType%2Did"] = content_type_id
+                            return MicrosoftGraph::Drives::Item::List::ContentTypes::Item::ContentTypeItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new ContentTypesRequestBuilder and sets the default values.

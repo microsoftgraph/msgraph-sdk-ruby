@@ -25,6 +25,9 @@ module MicrosoftGraph
             # Information about whether the participant has recording capability.
             @recording_info
             ## 
+            # Indicates the reason or reasons media content from this participant is restricted.
+            @restricted_experience
+            ## 
             ## Instantiates a new participant and sets the default values.
             ## @return a void
             ## 
@@ -52,6 +55,7 @@ module MicrosoftGraph
                     "mediaStreams" => lambda {|n| @media_streams = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::MediaStream.create_from_discriminator_value(pn) }) },
                     "metadata" => lambda {|n| @metadata = n.get_string_value() },
                     "recordingInfo" => lambda {|n| @recording_info = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::RecordingInfo.create_from_discriminator_value(pn) }) },
+                    "restrictedExperience" => lambda {|n| @restricted_experience = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::OnlineMeetingRestricted.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -145,6 +149,21 @@ module MicrosoftGraph
                 @recording_info = value
             end
             ## 
+            ## Gets the restrictedExperience property value. Indicates the reason or reasons media content from this participant is restricted.
+            ## @return a online_meeting_restricted
+            ## 
+            def restricted_experience
+                return @restricted_experience
+            end
+            ## 
+            ## Sets the restrictedExperience property value. Indicates the reason or reasons media content from this participant is restricted.
+            ## @param value Value to set for the restricted_experience property.
+            ## @return a void
+            ## 
+            def restricted_experience=(value)
+                @restricted_experience = value
+            end
+            ## 
             ## Serializes information the current object
             ## @param writer Serialization writer to use to serialize this model
             ## @return a void
@@ -158,6 +177,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("mediaStreams", @media_streams)
                 writer.write_string_value("metadata", @metadata)
                 writer.write_object_value("recordingInfo", @recording_info)
+                writer.write_object_value("restrictedExperience", @restricted_experience)
             end
         end
     end

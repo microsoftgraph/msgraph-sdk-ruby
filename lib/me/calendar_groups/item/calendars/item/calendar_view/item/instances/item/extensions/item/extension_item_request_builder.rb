@@ -54,7 +54,7 @@ module MicrosoftGraph
                                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                                     end
                                                     ## 
-                                                    ## The collection of open extensions defined for the event. Nullable.
+                                                    ## Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a Fiber of extension
                                                     ## 
@@ -100,7 +100,7 @@ module MicrosoftGraph
                                                         return request_info
                                                     end
                                                     ## 
-                                                    ## The collection of open extensions defined for the event. Nullable.
+                                                    ## Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
                                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                     ## @return a request_information
                                                     ## 
@@ -139,7 +139,7 @@ module MicrosoftGraph
                                                     end
 
                                                     ## 
-                                                    # The collection of open extensions defined for the event. Nullable.
+                                                    # Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
                                                     class ExtensionItemRequestBuilderGetQueryParameters
                                                         
                                                         ## 

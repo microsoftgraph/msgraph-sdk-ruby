@@ -64,7 +64,7 @@ module MicrosoftGraph
                 @booking_currencies = value
             end
             ## 
-            ## Instantiates a new SolutionsRoot and sets the default values.
+            ## Instantiates a new solutionsRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()

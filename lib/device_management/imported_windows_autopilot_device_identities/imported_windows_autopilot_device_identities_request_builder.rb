@@ -7,6 +7,7 @@ require_relative '../device_management'
 require_relative './count/count_request_builder'
 require_relative './import/import_request_builder'
 require_relative './imported_windows_autopilot_device_identities'
+require_relative './item/imported_windows_autopilot_device_identity_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -24,6 +25,17 @@ module MicrosoftGraph
                 # Provides operations to call the import method.
                 def import()
                     return MicrosoftGraph::DeviceManagement::ImportedWindowsAutopilotDeviceIdentities::Import::ImportRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the importedWindowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
+                ## @param imported_windows_autopilot_device_identity_id Unique identifier of the item
+                ## @return a imported_windows_autopilot_device_identity_item_request_builder
+                ## 
+                def by_imported_windows_autopilot_device_identity_id(imported_windows_autopilot_device_identity_id)
+                    raise StandardError, 'imported_windows_autopilot_device_identity_id cannot be null' if imported_windows_autopilot_device_identity_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["importedWindowsAutopilotDeviceIdentity%2Did"] = imported_windows_autopilot_device_identity_id
+                    return MicrosoftGraph::DeviceManagement::ImportedWindowsAutopilotDeviceIdentities::Item::ImportedWindowsAutopilotDeviceIdentityItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder and sets the default values.

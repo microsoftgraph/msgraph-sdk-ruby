@@ -8,6 +8,7 @@ require_relative '../../item'
 require_relative '../authentication'
 require_relative './count/count_request_builder'
 require_relative './email_methods'
+require_relative './item/email_authentication_method_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Users::Item::Authentication::EmailMethods::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the emailMethods property of the microsoft.graph.authentication entity.
+                        ## @param email_authentication_method_id Unique identifier of the item
+                        ## @return a email_authentication_method_item_request_builder
+                        ## 
+                        def by_email_authentication_method_id(email_authentication_method_id)
+                            raise StandardError, 'email_authentication_method_id cannot be null' if email_authentication_method_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["emailAuthenticationMethod%2Did"] = email_authentication_method_id
+                            return MicrosoftGraph::Users::Item::Authentication::EmailMethods::Item::EmailAuthenticationMethodItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new EmailMethodsRequestBuilder and sets the default values.

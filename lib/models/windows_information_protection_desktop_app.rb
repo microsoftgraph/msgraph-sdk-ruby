@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Desktop App for Windows information protection
         class WindowsInformationProtectionDesktopApp < MicrosoftGraph::Models::WindowsInformationProtectionApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -61,7 +63,7 @@ module MicrosoftGraph
                 @binary_version_low = value
             end
             ## 
-            ## Instantiates a new WindowsInformationProtectionDesktopApp and sets the default values.
+            ## Instantiates a new windowsInformationProtectionDesktopApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

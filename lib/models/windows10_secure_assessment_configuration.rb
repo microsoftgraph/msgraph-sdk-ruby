@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the secureAssessment resource.
         class Windows10SecureAssessmentConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -82,7 +84,7 @@ module MicrosoftGraph
                 @configuration_account = value
             end
             ## 
-            ## Instantiates a new Windows10SecureAssessmentConfiguration and sets the default values.
+            ## Instantiates a new windows10SecureAssessmentConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -6,29 +6,23 @@ require_relative '../applications'
 require_relative './add_key/add_key_request_builder'
 require_relative './add_password/add_password_request_builder'
 require_relative './app_management_policies/app_management_policies_request_builder'
-require_relative './app_management_policies/item/app_management_policy_item_request_builder'
 require_relative './check_member_groups/check_member_groups_request_builder'
 require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './created_on_behalf_of/created_on_behalf_of_request_builder'
 require_relative './extension_properties/extension_properties_request_builder'
-require_relative './extension_properties/item/extension_property_item_request_builder'
 require_relative './federated_identity_credentials/federated_identity_credentials_request_builder'
-require_relative './federated_identity_credentials/item/federated_identity_credential_item_request_builder'
 require_relative './get_member_groups/get_member_groups_request_builder'
 require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './home_realm_discovery_policies/home_realm_discovery_policies_request_builder'
-require_relative './home_realm_discovery_policies/item/home_realm_discovery_policy_item_request_builder'
 require_relative './item'
 require_relative './logo/logo_request_builder'
-require_relative './owners/item/directory_object_item_request_builder'
 require_relative './owners/owners_request_builder'
 require_relative './remove_key/remove_key_request_builder'
 require_relative './remove_password/remove_password_request_builder'
 require_relative './restore/restore_request_builder'
 require_relative './set_verified_publisher/set_verified_publisher_request_builder'
-require_relative './token_issuance_policies/item/token_issuance_policy_item_request_builder'
+require_relative './synchronization/synchronization_request_builder'
 require_relative './token_issuance_policies/token_issuance_policies_request_builder'
-require_relative './token_lifetime_policies/item/token_lifetime_policy_item_request_builder'
 require_relative './token_lifetime_policies/token_lifetime_policies_request_builder'
 require_relative './unset_verified_publisher/unset_verified_publisher_request_builder'
 
@@ -125,6 +119,11 @@ module MicrosoftGraph
                     return MicrosoftGraph::Applications::Item::SetVerifiedPublisher::SetVerifiedPublisherRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                # Provides operations to manage the synchronization property of the microsoft.graph.application entity.
+                def synchronization()
+                    return MicrosoftGraph::Applications::Item::Synchronization::SynchronizationRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
                 # Provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.application entity.
                 def token_issuance_policies()
                     return MicrosoftGraph::Applications::Item::TokenIssuancePolicies::TokenIssuancePoliciesRequestBuilder.new(@path_parameters, @request_adapter)
@@ -138,17 +137,6 @@ module MicrosoftGraph
                 # Provides operations to call the unsetVerifiedPublisher method.
                 def unset_verified_publisher()
                     return MicrosoftGraph::Applications::Item::UnsetVerifiedPublisher::UnsetVerifiedPublisherRequestBuilder.new(@path_parameters, @request_adapter)
-                end
-                ## 
-                ## Gets an item from the MicrosoftGraph.applications.item.appManagementPolicies.item collection
-                ## @param id Unique identifier of the item
-                ## @return a app_management_policy_item_request_builder
-                ## 
-                def app_management_policies_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["appManagementPolicy%2Did"] = id
-                    return MicrosoftGraph::Applications::Item::AppManagementPolicies::Item::AppManagementPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new ApplicationItemRequestBuilder and sets the default values.
@@ -174,28 +162,6 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Provides operations to manage the extensionProperties property of the microsoft.graph.application entity.
-                ## @param id Unique identifier of the item
-                ## @return a extension_property_item_request_builder
-                ## 
-                def extension_properties_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["extensionProperty%2Did"] = id
-                    return MicrosoftGraph::Applications::Item::ExtensionProperties::Item::ExtensionPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
-                ## @param id Unique identifier of the item
-                ## @return a federated_identity_credential_item_request_builder
-                ## 
-                def federated_identity_credentials_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["federatedIdentityCredential%2Did"] = id
-                    return MicrosoftGraph::Applications::Item::FederatedIdentityCredentials::Item::FederatedIdentityCredentialItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Get the properties and relationships of an application object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of application
@@ -208,28 +174,6 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Application.create_from_discriminator_value(pn) }, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.application entity.
-                ## @param id Unique identifier of the item
-                ## @return a home_realm_discovery_policy_item_request_builder
-                ## 
-                def home_realm_discovery_policies_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["homeRealmDiscoveryPolicy%2Did"] = id
-                    return MicrosoftGraph::Applications::Item::HomeRealmDiscoveryPolicies::Item::HomeRealmDiscoveryPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Gets an item from the MicrosoftGraph.applications.item.owners.item collection
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def owners_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Applications::Item::Owners::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Update the properties of an application object.
@@ -280,28 +224,6 @@ module MicrosoftGraph
                         request_info.add_request_options(request_configuration.options)
                     end
                     return request_info
-                end
-                ## 
-                ## Gets an item from the MicrosoftGraph.applications.item.tokenIssuancePolicies.item collection
-                ## @param id Unique identifier of the item
-                ## @return a token_issuance_policy_item_request_builder
-                ## 
-                def token_issuance_policies_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["tokenIssuancePolicy%2Did"] = id
-                    return MicrosoftGraph::Applications::Item::TokenIssuancePolicies::Item::TokenIssuancePolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
-                ## Gets an item from the MicrosoftGraph.applications.item.tokenLifetimePolicies.item collection
-                ## @param id Unique identifier of the item
-                ## @return a token_lifetime_policy_item_request_builder
-                ## 
-                def token_lifetime_policies_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["tokenLifetimePolicy%2Did"] = id
-                    return MicrosoftGraph::Applications::Item::TokenLifetimePolicies::Item::TokenLifetimePolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Update the properties of an application object.

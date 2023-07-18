@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Azure Active Directory ID of the user.
             @user_id
             ## 
-            ## Instantiates a new SkypeForBusinessUserConversationMember and sets the default values.
+            ## Instantiates a new skypeForBusinessUserConversationMember and sets the default values.
             ## @return a void
             ## 
             def initialize()

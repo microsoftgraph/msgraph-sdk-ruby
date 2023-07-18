@@ -24,7 +24,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/identity/userFlowAttributes/{identityUserFlowAttribute%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property userFlowAttributes for identity
+                    ## Delete an identityUserFlowAttribute. Only custom user flow attributes can be deleted.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -38,7 +38,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Represents entry point for identity userflow attributes.
+                    ## Retrieve the properties and relationships of a identityUserFlowAttribute object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of identity_user_flow_attribute
                     ## 
@@ -52,7 +52,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityUserFlowAttribute.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property userFlowAttributes in identity
+                    ## Update the properties of a identityUserFlowAttribute object. Only custom user flow attributes can be updated.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of identity_user_flow_attribute
@@ -68,7 +68,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityUserFlowAttribute.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property userFlowAttributes for identity
+                    ## Delete an identityUserFlowAttribute. Only custom user flow attributes can be deleted.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -84,7 +84,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Represents entry point for identity userflow attributes.
+                    ## Retrieve the properties and relationships of a identityUserFlowAttribute object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property userFlowAttributes in identity
+                    ## Update the properties of a identityUserFlowAttribute object. Only custom user flow attributes can be updated.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -123,7 +123,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Represents entry point for identity userflow attributes.
+                    # Retrieve the properties and relationships of a identityUserFlowAttribute object.
                     class IdentityUserFlowAttributeItemRequestBuilderGetQueryParameters
                         
                         ## 

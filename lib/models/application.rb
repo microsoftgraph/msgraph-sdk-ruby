@@ -119,7 +119,10 @@ module MicrosoftGraph
             # Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.
             @spa
             ## 
-            # Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith).
+            # Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+            @synchronization
+            ## 
+            # Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.
             @tags
             ## 
             # Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD encrypts all the tokens it emits by using the key this property points to. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
@@ -242,7 +245,7 @@ module MicrosoftGraph
                 @certification = value
             end
             ## 
-            ## Instantiates a new Application and sets the default values.
+            ## Instantiates a new application and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -421,6 +424,7 @@ module MicrosoftGraph
                     "serviceManagementReference" => lambda {|n| @service_management_reference = n.get_string_value() },
                     "signInAudience" => lambda {|n| @sign_in_audience = n.get_string_value() },
                     "spa" => lambda {|n| @spa = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SpaApplication.create_from_discriminator_value(pn) }) },
+                    "synchronization" => lambda {|n| @synchronization = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Synchronization.create_from_discriminator_value(pn) }) },
                     "tags" => lambda {|n| @tags = n.get_collection_of_primitive_values(String) },
                     "tokenEncryptionKeyId" => lambda {|n| @token_encryption_key_id = n.get_guid_value() },
                     "tokenIssuancePolicies" => lambda {|n| @token_issuance_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TokenIssuancePolicy.create_from_discriminator_value(pn) }) },
@@ -759,6 +763,7 @@ module MicrosoftGraph
                 writer.write_string_value("serviceManagementReference", @service_management_reference)
                 writer.write_string_value("signInAudience", @sign_in_audience)
                 writer.write_object_value("spa", @spa)
+                writer.write_object_value("synchronization", @synchronization)
                 writer.write_collection_of_primitive_values("tags", @tags)
                 writer.write_guid_value("tokenEncryptionKeyId", @token_encryption_key_id)
                 writer.write_collection_of_object_values("tokenIssuancePolicies", @token_issuance_policies)
@@ -812,14 +817,29 @@ module MicrosoftGraph
                 @spa = value
             end
             ## 
-            ## Gets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith).
+            ## Gets the synchronization property value. Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+            ## @return a synchronization
+            ## 
+            def synchronization
+                return @synchronization
+            end
+            ## 
+            ## Sets the synchronization property value. Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+            ## @param value Value to set for the synchronization property.
+            ## @return a void
+            ## 
+            def synchronization=(value)
+                @synchronization = value
+            end
+            ## 
+            ## Gets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.
             ## @return a string
             ## 
             def tags
                 return @tags
             end
             ## 
-            ## Sets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith).
+            ## Sets the tags property value. Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.
             ## @param value Value to set for the tags property.
             ## @return a void
             ## 

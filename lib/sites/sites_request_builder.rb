@@ -4,6 +4,8 @@ require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/site_collection_response'
 require_relative './add/add_request_builder'
 require_relative './count/count_request_builder'
+require_relative './get_all_sites/get_all_sites_request_builder'
+require_relative './item/site_item_request_builder'
 require_relative './remove/remove_request_builder'
 require_relative './sites'
 
@@ -24,9 +26,25 @@ module MicrosoftGraph
                 return MicrosoftGraph::Sites::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            # Provides operations to call the getAllSites method.
+            def get_all_sites()
+                return MicrosoftGraph::Sites::GetAllSites::GetAllSitesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
             # Provides operations to call the remove method.
             def remove()
                 return MicrosoftGraph::Sites::Remove::RemoveRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            ## Provides operations to manage the collection of site entities.
+            ## @param site_id Unique identifier of the item
+            ## @return a site_item_request_builder
+            ## 
+            def by_site_id(site_id)
+                raise StandardError, 'site_id cannot be null' if site_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["site%2Did"] = site_id
+                return MicrosoftGraph::Sites::Item::SiteItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new SitesRequestBuilder and sets the default values.

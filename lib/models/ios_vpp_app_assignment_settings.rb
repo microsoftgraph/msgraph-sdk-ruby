@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties used to assign an iOS VPP mobile app to a group.
         class IosVppAppAssignmentSettings < MicrosoftGraph::Models::MobileAppAssignmentSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -13,7 +15,7 @@ module MicrosoftGraph
             # The VPN Configuration Id to apply for this app.
             @vpn_configuration_id
             ## 
-            ## Instantiates a new IosVppAppAssignmentSettings and sets the default values.
+            ## Instantiates a new iosVppAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -56,7 +56,7 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new SelfSignedCertificate and sets the default values.
+            ## Instantiates a new selfSignedCertificate and sets the default values.
             ## @return a void
             ## 
             def initialize()

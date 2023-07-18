@@ -8,6 +8,7 @@ require_relative '../service_announcement'
 require_relative './archive/archive_request_builder'
 require_relative './count/count_request_builder'
 require_relative './favorite/favorite_request_builder'
+require_relative './item/service_update_message_item_request_builder'
 require_relative './mark_read/mark_read_request_builder'
 require_relative './mark_unread/mark_unread_request_builder'
 require_relative './messages'
@@ -56,6 +57,17 @@ module MicrosoftGraph
                     # Provides operations to call the unfavorite method.
                     def unfavorite()
                         return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Unfavorite::UnfavoriteRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.
+                    ## @param service_update_message_id Unique identifier of the item
+                    ## @return a service_update_message_item_request_builder
+                    ## 
+                    def by_service_update_message_id(service_update_message_id)
+                        raise StandardError, 'service_update_message_id cannot be null' if service_update_message_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["serviceUpdateMessage%2Did"] = service_update_message_id
+                        return MicrosoftGraph::Admin::ServiceAnnouncement::Messages::Item::ServiceUpdateMessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new MessagesRequestBuilder and sets the default values.

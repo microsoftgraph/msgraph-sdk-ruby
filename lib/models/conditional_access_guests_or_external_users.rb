@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The externalTenants property
+            # The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes is not null or an empty String.
             @external_tenants
             ## 
             # The guestOrExternalUserTypes property
@@ -50,14 +50,14 @@ module MicrosoftGraph
                 return ConditionalAccessGuestsOrExternalUsers.new
             end
             ## 
-            ## Gets the externalTenants property value. The externalTenants property
+            ## Gets the externalTenants property value. The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes is not null or an empty String.
             ## @return a conditional_access_external_tenants
             ## 
             def external_tenants
                 return @external_tenants
             end
             ## 
-            ## Sets the externalTenants property value. The externalTenants property
+            ## Sets the externalTenants property value. The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes is not null or an empty String.
             ## @param value Value to set for the external_tenants property.
             ## @return a void
             ## 

@@ -23,6 +23,9 @@ module MicrosoftGraph
             # Result of the review. Possible values: Approve, Deny, NotReviewed, or DontKnow. Supports $select, $orderby, and $filter (eq only).
             @decision
             ## 
+            # Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
+            @insights
+            ## 
             # Justification left by the reviewer when they made the decision.
             @justification
             ## 
@@ -148,6 +151,7 @@ module MicrosoftGraph
                     "appliedDateTime" => lambda {|n| @applied_date_time = n.get_date_time_value() },
                     "applyResult" => lambda {|n| @apply_result = n.get_string_value() },
                     "decision" => lambda {|n| @decision = n.get_string_value() },
+                    "insights" => lambda {|n| @insights = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::GovernanceInsight.create_from_discriminator_value(pn) }) },
                     "justification" => lambda {|n| @justification = n.get_string_value() },
                     "principal" => lambda {|n| @principal = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Identity.create_from_discriminator_value(pn) }) },
                     "principalLink" => lambda {|n| @principal_link = n.get_string_value() },
@@ -157,6 +161,21 @@ module MicrosoftGraph
                     "reviewedBy" => lambda {|n| @reviewed_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserIdentity.create_from_discriminator_value(pn) }) },
                     "reviewedDateTime" => lambda {|n| @reviewed_date_time = n.get_date_time_value() },
                 })
+            end
+            ## 
+            ## Gets the insights property value. Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
+            ## @return a governance_insight
+            ## 
+            def insights
+                return @insights
+            end
+            ## 
+            ## Sets the insights property value. Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
+            ## @param value Value to set for the insights property.
+            ## @return a void
+            ## 
+            def insights=(value)
+                @insights = value
             end
             ## 
             ## Gets the justification property value. Justification left by the reviewer when they made the decision.
@@ -291,6 +310,7 @@ module MicrosoftGraph
                 writer.write_date_time_value("appliedDateTime", @applied_date_time)
                 writer.write_string_value("applyResult", @apply_result)
                 writer.write_string_value("decision", @decision)
+                writer.write_collection_of_object_values("insights", @insights)
                 writer.write_string_value("justification", @justification)
                 writer.write_object_value("principal", @principal)
                 writer.write_string_value("principalLink", @principal_link)

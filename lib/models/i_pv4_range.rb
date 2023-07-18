@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # IPv4 Range definition.
         class IPv4Range < MicrosoftGraph::Models::IpRange
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -13,7 +15,7 @@ module MicrosoftGraph
             # Upper address.
             @upper_address
             ## 
-            ## Instantiates a new IPv4Range and sets the default values.
+            ## Instantiates a new iPv4Range and sets the default values.
             ## @return a void
             ## 
             def initialize()

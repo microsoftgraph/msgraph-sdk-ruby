@@ -9,6 +9,7 @@ require_relative '../../../item'
 require_relative '../../sessions'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/segment_item_request_builder'
 require_relative './segments'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Communications::CallRecords::Item::Sessions::Item::Segments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.
+                                ## @param segment_id Unique identifier of the item
+                                ## @return a segment_item_request_builder
+                                ## 
+                                def by_segment_id(segment_id)
+                                    raise StandardError, 'segment_id cannot be null' if segment_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["segment%2Did"] = segment_id
+                                    return MicrosoftGraph::Communications::CallRecords::Item::Sessions::Item::Segments::Item::SegmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new SegmentsRequestBuilder and sets the default values.

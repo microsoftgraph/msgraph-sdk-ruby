@@ -31,7 +31,7 @@ module MicrosoftGraph
             # The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
             @time_zone
             ## 
-            ## Instantiates a new BookingCustomerInformation and sets the default values.
+            ## Instantiates a new bookingCustomerInformation and sets the default values.
             ## @return a void
             ## 
             def initialize()

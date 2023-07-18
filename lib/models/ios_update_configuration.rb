@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # IOS Update Configuration, allows you to configure time window within week to install iOS updates
         class IosUpdateConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -50,7 +52,7 @@ module MicrosoftGraph
                 @active_hours_start = value
             end
             ## 
-            ## Instantiates a new IosUpdateConfiguration and sets the default values.
+            ## Instantiates a new iosUpdateConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

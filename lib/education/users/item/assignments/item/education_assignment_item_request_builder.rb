@@ -7,15 +7,12 @@ require_relative '../../../users'
 require_relative '../../item'
 require_relative '../assignments'
 require_relative './categories/categories_request_builder'
-require_relative './categories/item/education_category_item_request_builder'
 require_relative './item'
 require_relative './publish/publish_request_builder'
-require_relative './resources/item/education_assignment_resource_item_request_builder'
 require_relative './resources/resources_request_builder'
 require_relative './rubric/rubric_request_builder'
 require_relative './set_up_feedback_resources_folder/set_up_feedback_resources_folder_request_builder'
 require_relative './set_up_resources_folder/set_up_resources_folder_request_builder'
-require_relative './submissions/item/education_submission_item_request_builder'
 require_relative './submissions/submissions_request_builder'
 
 module MicrosoftGraph
@@ -62,17 +59,6 @@ module MicrosoftGraph
                             # Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
                             def submissions()
                                 return MicrosoftGraph::Education::Users::Item::Assignments::Item::Submissions::SubmissionsRequestBuilder.new(@path_parameters, @request_adapter)
-                            end
-                            ## 
-                            ## Gets an item from the MicrosoftGraph.education.users.item.assignments.item.categories.item collection
-                            ## @param id Unique identifier of the item
-                            ## @return a education_category_item_request_builder
-                            ## 
-                            def categories_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["educationCategory%2Did"] = id
-                                return MicrosoftGraph::Education::Users::Item::Assignments::Item::Categories::Item::EducationCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new EducationAssignmentItemRequestBuilder and sets the default values.
@@ -126,28 +112,6 @@ module MicrosoftGraph
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationAssignment.create_from_discriminator_value(pn) }, error_mapping)
-                            end
-                            ## 
-                            ## Provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a education_assignment_resource_item_request_builder
-                            ## 
-                            def resources_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["educationAssignmentResource%2Did"] = id
-                                return MicrosoftGraph::Education::Users::Item::Assignments::Item::Resources::Item::EducationAssignmentResourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
-                            ## Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a education_submission_item_request_builder
-                            ## 
-                            def submissions_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["educationSubmission%2Did"] = id
-                                return MicrosoftGraph::Education::Users::Item::Assignments::Item::Submissions::Item::EducationSubmissionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Delete navigation property assignments for education

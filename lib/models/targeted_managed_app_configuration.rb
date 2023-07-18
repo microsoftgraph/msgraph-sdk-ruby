@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Configuration used to deliver a set of custom settings as-is to all users in the targeted security group
         class TargetedManagedAppConfiguration < MicrosoftGraph::Models::ManagedAppConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -52,7 +54,7 @@ module MicrosoftGraph
                 @assignments = value
             end
             ## 
-            ## Instantiates a new TargetedManagedAppConfiguration and sets the default values.
+            ## Instantiates a new targetedManagedAppConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

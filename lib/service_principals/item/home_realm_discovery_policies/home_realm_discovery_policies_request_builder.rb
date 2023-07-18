@@ -6,6 +6,7 @@ require_relative '../../service_principals'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './home_realm_discovery_policies'
+require_relative './item/home_realm_discovery_policy_item_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -25,6 +26,17 @@ module MicrosoftGraph
                     # Provides operations to manage the collection of servicePrincipal entities.
                     def ref()
                         return MicrosoftGraph::ServicePrincipals::Item::HomeRealmDiscoveryPolicies::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Gets an item from the MicrosoftGraph.servicePrincipals.item.homeRealmDiscoveryPolicies.item collection
+                    ## @param home_realm_discovery_policy_id Unique identifier of the item
+                    ## @return a home_realm_discovery_policy_item_request_builder
+                    ## 
+                    def by_home_realm_discovery_policy_id(home_realm_discovery_policy_id)
+                        raise StandardError, 'home_realm_discovery_policy_id cannot be null' if home_realm_discovery_policy_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["homeRealmDiscoveryPolicy%2Did"] = home_realm_discovery_policy_id
+                        return MicrosoftGraph::ServicePrincipals::Item::HomeRealmDiscoveryPolicies::Item::HomeRealmDiscoveryPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new HomeRealmDiscoveryPoliciesRequestBuilder and sets the default values.

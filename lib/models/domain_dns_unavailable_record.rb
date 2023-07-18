@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Provides the reason why the DomainDnsUnavailableRecord entity is returned.
             @description
             ## 
-            ## Instantiates a new DomainDnsUnavailableRecord and sets the default values.
+            ## Instantiates a new domainDnsUnavailableRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()

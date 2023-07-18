@@ -3,34 +3,20 @@ require_relative '../microsoft_graph'
 require_relative '../models/device_app_management'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './android_managed_app_protections/android_managed_app_protections_request_builder'
-require_relative './android_managed_app_protections/item/android_managed_app_protection_item_request_builder'
 require_relative './default_managed_app_protections/default_managed_app_protections_request_builder'
-require_relative './default_managed_app_protections/item/default_managed_app_protection_item_request_builder'
 require_relative './device_app_management'
 require_relative './ios_managed_app_protections/ios_managed_app_protections_request_builder'
-require_relative './ios_managed_app_protections/item/ios_managed_app_protection_item_request_builder'
-require_relative './managed_app_policies/item/managed_app_policy_item_request_builder'
 require_relative './managed_app_policies/managed_app_policies_request_builder'
-require_relative './managed_app_registrations/item/managed_app_registration_item_request_builder'
 require_relative './managed_app_registrations/managed_app_registrations_request_builder'
-require_relative './managed_app_statuses/item/managed_app_status_item_request_builder'
 require_relative './managed_app_statuses/managed_app_statuses_request_builder'
-require_relative './managed_e_books/item/managed_e_book_item_request_builder'
 require_relative './managed_e_books/managed_e_books_request_builder'
-require_relative './mdm_windows_information_protection_policies/item/mdm_windows_information_protection_policy_item_request_builder'
 require_relative './mdm_windows_information_protection_policies/mdm_windows_information_protection_policies_request_builder'
-require_relative './mobile_app_categories/item/mobile_app_category_item_request_builder'
 require_relative './mobile_app_categories/mobile_app_categories_request_builder'
-require_relative './mobile_app_configurations/item/managed_device_mobile_app_configuration_item_request_builder'
 require_relative './mobile_app_configurations/mobile_app_configurations_request_builder'
-require_relative './mobile_apps/item/mobile_app_item_request_builder'
 require_relative './mobile_apps/mobile_apps_request_builder'
 require_relative './sync_microsoft_store_for_business_apps/sync_microsoft_store_for_business_apps_request_builder'
-require_relative './targeted_managed_app_configurations/item/targeted_managed_app_configuration_item_request_builder'
 require_relative './targeted_managed_app_configurations/targeted_managed_app_configurations_request_builder'
-require_relative './vpp_tokens/item/vpp_token_item_request_builder'
 require_relative './vpp_tokens/vpp_tokens_request_builder'
-require_relative './windows_information_protection_policies/item/windows_information_protection_policy_item_request_builder'
 require_relative './windows_information_protection_policies/windows_information_protection_policies_request_builder'
 
 module MicrosoftGraph
@@ -115,17 +101,6 @@ module MicrosoftGraph
                 return MicrosoftGraph::DeviceAppManagement::WindowsInformationProtectionPolicies::WindowsInformationProtectionPoliciesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
-            ## Provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a android_managed_app_protection_item_request_builder
-            ## 
-            def android_managed_app_protections_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["androidManagedAppProtection%2Did"] = id
-                return MicrosoftGraph::DeviceAppManagement::AndroidManagedAppProtections::Item::AndroidManagedAppProtectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
             ## Instantiates a new DeviceAppManagementRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request
             ## @param request_adapter The request adapter to use to execute the requests.
@@ -135,18 +110,7 @@ module MicrosoftGraph
                 super(path_parameters, request_adapter, "{+baseurl}/deviceAppManagement{?%24select,%24expand}")
             end
             ## 
-            ## Provides operations to manage the defaultManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a default_managed_app_protection_item_request_builder
-            ## 
-            def default_managed_app_protections_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["defaultManagedAppProtection%2Did"] = id
-                return MicrosoftGraph::DeviceAppManagement::DefaultManagedAppProtections::Item::DefaultManagedAppProtectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Get deviceAppManagement
+            ## Read properties and relationships of the deviceAppManagement object.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of device_app_management
             ## 
@@ -160,106 +124,7 @@ module MicrosoftGraph
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceAppManagement.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Provides operations to manage the iosManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a ios_managed_app_protection_item_request_builder
-            ## 
-            def ios_managed_app_protections_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["iosManagedAppProtection%2Did"] = id
-                return MicrosoftGraph::DeviceAppManagement::IosManagedAppProtections::Item::IosManagedAppProtectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a managed_app_policy_item_request_builder
-            ## 
-            def managed_app_policies_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["managedAppPolicy%2Did"] = id
-                return MicrosoftGraph::DeviceAppManagement::ManagedAppPolicies::Item::ManagedAppPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the managedAppRegistrations property of the microsoft.graph.deviceAppManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a managed_app_registration_item_request_builder
-            ## 
-            def managed_app_registrations_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["managedAppRegistration%2Did"] = id
-                return MicrosoftGraph::DeviceAppManagement::ManagedAppRegistrations::Item::ManagedAppRegistrationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the managedAppStatuses property of the microsoft.graph.deviceAppManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a managed_app_status_item_request_builder
-            ## 
-            def managed_app_statuses_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["managedAppStatus%2Did"] = id
-                return MicrosoftGraph::DeviceAppManagement::ManagedAppStatuses::Item::ManagedAppStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the managedEBooks property of the microsoft.graph.deviceAppManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a managed_e_book_item_request_builder
-            ## 
-            def managed_e_books_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["managedEBook%2Did"] = id
-                return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::ManagedEBookItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the mdmWindowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a mdm_windows_information_protection_policy_item_request_builder
-            ## 
-            def mdm_windows_information_protection_policies_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["mdmWindowsInformationProtectionPolicy%2Did"] = id
-                return MicrosoftGraph::DeviceAppManagement::MdmWindowsInformationProtectionPolicies::Item::MdmWindowsInformationProtectionPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the mobileAppCategories property of the microsoft.graph.deviceAppManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a mobile_app_category_item_request_builder
-            ## 
-            def mobile_app_categories_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["mobileAppCategory%2Did"] = id
-                return MicrosoftGraph::DeviceAppManagement::MobileAppCategories::Item::MobileAppCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the mobileAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a managed_device_mobile_app_configuration_item_request_builder
-            ## 
-            def mobile_app_configurations_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["managedDeviceMobileAppConfiguration%2Did"] = id
-                return MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Item::ManagedDeviceMobileAppConfigurationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a mobile_app_item_request_builder
-            ## 
-            def mobile_apps_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["mobileApp%2Did"] = id
-                return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::MobileAppItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Update deviceAppManagement
+            ## Update the properties of a deviceAppManagement object.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of device_app_management
@@ -275,18 +140,7 @@ module MicrosoftGraph
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceAppManagement.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Provides operations to manage the targetedManagedAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a targeted_managed_app_configuration_item_request_builder
-            ## 
-            def targeted_managed_app_configurations_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["targetedManagedAppConfiguration%2Did"] = id
-                return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::TargetedManagedAppConfigurationItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Get deviceAppManagement
+            ## Read properties and relationships of the deviceAppManagement object.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
             ## 
@@ -304,7 +158,7 @@ module MicrosoftGraph
                 return request_info
             end
             ## 
-            ## Update deviceAppManagement
+            ## Update the properties of a deviceAppManagement object.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
@@ -323,31 +177,9 @@ module MicrosoftGraph
                 request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                 return request_info
             end
-            ## 
-            ## Provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a vpp_token_item_request_builder
-            ## 
-            def vpp_tokens_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["vppToken%2Did"] = id
-                return MicrosoftGraph::DeviceAppManagement::VppTokens::Item::VppTokenItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
-            ## 
-            ## Provides operations to manage the windowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
-            ## @param id Unique identifier of the item
-            ## @return a windows_information_protection_policy_item_request_builder
-            ## 
-            def windows_information_protection_policies_by_id(id)
-                raise StandardError, 'id cannot be null' if id.nil?
-                url_tpl_params = @path_parameters.clone
-                url_tpl_params["windowsInformationProtectionPolicy%2Did"] = id
-                return MicrosoftGraph::DeviceAppManagement::WindowsInformationProtectionPolicies::Item::WindowsInformationProtectionPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-            end
 
             ## 
-            # Get deviceAppManagement
+            # Read properties and relationships of the deviceAppManagement object.
             class DeviceAppManagementRequestBuilderGetQueryParameters
                 
                 ## 

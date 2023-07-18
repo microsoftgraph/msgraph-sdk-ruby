@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
         class ManagedAppPolicyDeploymentSummary < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 

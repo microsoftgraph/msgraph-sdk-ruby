@@ -7,7 +7,7 @@ module MicrosoftGraph
         class DisableAndDeleteUserApplyAction < MicrosoftGraph::Models::AccessReviewApplyAction
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new DisableAndDeleteUserApplyAction and sets the default values.
+            ## Instantiates a new disableAndDeleteUserApplyAction and sets the default values.
             ## @return a void
             ## 
             def initialize()

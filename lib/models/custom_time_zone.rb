@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @bias = value
             end
             ## 
-            ## Instantiates a new CustomTimeZone and sets the default values.
+            ## Instantiates a new customTimeZone and sets the default values.
             ## @return a void
             ## 
             def initialize()

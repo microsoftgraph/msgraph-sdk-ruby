@@ -25,7 +25,7 @@ module MicrosoftGraph
                 @azure_communication_services_id = value
             end
             ## 
-            ## Instantiates a new AzureCommunicationServicesUserConversationMember and sets the default values.
+            ## Instantiates a new azureCommunicationServicesUserConversationMember and sets the default values.
             ## @return a void
             ## 
             def initialize()

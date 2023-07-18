@@ -13,7 +13,7 @@ module MicrosoftGraph
             # true if this location is explicitly trusted. Optional. Default value is false.
             @is_trusted
             ## 
-            ## Instantiates a new IpNamedLocation and sets the default values.
+            ## Instantiates a new ipNamedLocation and sets the default values.
             ## @return a void
             ## 
             def initialize()

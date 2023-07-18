@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties, inherited properties and actions for an MDM mobile app configuration device status summary.
         class ManagedDeviceMobileAppConfigurationDeviceSummary < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 

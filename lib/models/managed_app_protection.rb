@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Policy used to configure detailed management settings for a specified set of apps
         class ManagedAppProtection < MicrosoftGraph::Models::ManagedAppPolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -148,7 +150,7 @@ module MicrosoftGraph
                 @allowed_outbound_data_transfer_destinations = value
             end
             ## 
-            ## Instantiates a new ManagedAppProtection and sets the default values.
+            ## Instantiates a new managedAppProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()

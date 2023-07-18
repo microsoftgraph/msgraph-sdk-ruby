@@ -13,6 +13,9 @@ module MicrosoftGraph
             # The number of units that are enabled for the active subscription of the service SKU.
             @enabled
             ## 
+            # The lockedOut property
+            @locked_out
+            ## 
             # The OdataType property
             @odata_type
             ## 
@@ -74,10 +77,26 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "enabled" => lambda {|n| @enabled = n.get_number_value() },
+                    "lockedOut" => lambda {|n| @locked_out = n.get_number_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "suspended" => lambda {|n| @suspended = n.get_number_value() },
                     "warning" => lambda {|n| @warning = n.get_number_value() },
                 }
+            end
+            ## 
+            ## Gets the lockedOut property value. The lockedOut property
+            ## @return a integer
+            ## 
+            def locked_out
+                return @locked_out
+            end
+            ## 
+            ## Sets the lockedOut property value. The lockedOut property
+            ## @param value Value to set for the locked_out property.
+            ## @return a void
+            ## 
+            def locked_out=(value)
+                @locked_out = value
             end
             ## 
             ## Gets the @odata.type property value. The OdataType property
@@ -102,6 +121,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_number_value("enabled", @enabled)
+                writer.write_number_value("lockedOut", @locked_out)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_number_value("suspended", @suspended)
                 writer.write_number_value("warning", @warning)

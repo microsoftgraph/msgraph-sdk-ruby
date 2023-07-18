@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the windowsPhone81CustomConfiguration resource.
         class WindowsPhone81CustomConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # OMA settings. This collection can contain a maximum of 1000 elements.
             @oma_settings
             ## 
-            ## Instantiates a new WindowsPhone81CustomConfiguration and sets the default values.
+            ## Instantiates a new windowsPhone81CustomConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

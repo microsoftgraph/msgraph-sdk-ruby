@@ -15,7 +15,7 @@ module MicrosoftGraph
                 # Specifies which sources are included in this group. Possible values are: mailbox, site.
                 @included_sources
                 ## 
-                ## Instantiates a new UnifiedGroupSource and sets the default values.
+                ## Instantiates a new unifiedGroupSource and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

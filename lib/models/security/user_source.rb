@@ -18,7 +18,7 @@ module MicrosoftGraph
                 # The URL of the user's OneDrive for Business site. Read-only.
                 @site_web_url
                 ## 
-                ## Instantiates a new UserSource and sets the default values.
+                ## Instantiates a new userSource and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

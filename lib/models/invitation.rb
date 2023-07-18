@@ -37,7 +37,7 @@ module MicrosoftGraph
             # The status of the invitation. Possible values are: PendingAcceptance, Completed, InProgress, and Error.
             @status
             ## 
-            ## Instantiates a new Invitation and sets the default values.
+            ## Instantiates a new invitation and sets the default values.
             ## @return a void
             ## 
             def initialize()

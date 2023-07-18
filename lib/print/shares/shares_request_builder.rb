@@ -5,6 +5,7 @@ require_relative '../../models/printer_share'
 require_relative '../../models/printer_share_collection_response'
 require_relative '../print'
 require_relative './count/count_request_builder'
+require_relative './item/printer_share_item_request_builder'
 require_relative './shares'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Print::Shares::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the shares property of the microsoft.graph.print entity.
+                ## @param printer_share_id Unique identifier of the item
+                ## @return a printer_share_item_request_builder
+                ## 
+                def by_printer_share_id(printer_share_id)
+                    raise StandardError, 'printer_share_id cannot be null' if printer_share_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["printerShare%2Did"] = printer_share_id
+                    return MicrosoftGraph::Print::Shares::Item::PrinterShareItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new SharesRequestBuilder and sets the default values.

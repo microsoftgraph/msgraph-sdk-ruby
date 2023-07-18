@@ -4,10 +4,12 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Policy for Windows information protection with MDM
         class MdmWindowsInformationProtectionPolicy < MicrosoftGraph::Models::WindowsInformationProtection
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new MdmWindowsInformationProtectionPolicy and sets the default values.
+            ## Instantiates a new mdmWindowsInformationProtectionPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

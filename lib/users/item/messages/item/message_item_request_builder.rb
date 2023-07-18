@@ -6,23 +6,17 @@ require_relative '../../../users'
 require_relative '../../item'
 require_relative '../messages'
 require_relative './attachments/attachments_request_builder'
-require_relative './attachments/item/attachment_item_request_builder'
 require_relative './copy/copy_request_builder'
 require_relative './create_forward/create_forward_request_builder'
 require_relative './create_reply/create_reply_request_builder'
 require_relative './create_reply_all/create_reply_all_request_builder'
 require_relative './extensions/extensions_request_builder'
-require_relative './extensions/item/extension_item_request_builder'
 require_relative './forward/forward_request_builder'
 require_relative './item'
 require_relative './move/move_request_builder'
-require_relative './multi_value_extended_properties/item/multi_value_legacy_extended_property_item_request_builder'
-require_relative './multi_value_extended_properties/multi_value_extended_properties_request_builder'
 require_relative './reply/reply_request_builder'
 require_relative './reply_all/reply_all_request_builder'
 require_relative './send/send_request_builder'
-require_relative './single_value_extended_properties/item/single_value_legacy_extended_property_item_request_builder'
-require_relative './single_value_extended_properties/single_value_extended_properties_request_builder'
 require_relative './value/content_request_builder'
 
 module MicrosoftGraph
@@ -80,11 +74,6 @@ module MicrosoftGraph
                             return MicrosoftGraph::Users::Item::Messages::Item::Move::MoveRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        # Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.message entity.
-                        def multi_value_extended_properties()
-                            return MicrosoftGraph::Users::Item::Messages::Item::MultiValueExtendedProperties::MultiValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
                         # Provides operations to call the reply method.
                         def reply()
                             return MicrosoftGraph::Users::Item::Messages::Item::Reply::ReplyRequestBuilder.new(@path_parameters, @request_adapter)
@@ -100,32 +89,16 @@ module MicrosoftGraph
                             return MicrosoftGraph::Users::Item::Messages::Item::Send::SendRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        # Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.message entity.
-                        def single_value_extended_properties()
-                            return MicrosoftGraph::Users::Item::Messages::Item::SingleValueExtendedProperties::SingleValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the attachments property of the microsoft.graph.message entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a attachment_item_request_builder
-                        ## 
-                        def attachments_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["attachment%2Did"] = id
-                            return MicrosoftGraph::Users::Item::Messages::Item::Attachments::Item::AttachmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
                         ## Instantiates a new MessageItemRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
                         ## @return a void
                         ## 
                         def initialize(path_parameters, request_adapter)
-                            super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/messages/{message%2Did}{?%24select,%24expand}")
+                            super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/messages/{message%2Did}{?includeHiddenMessages*,%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property messages for users
+                        ## Delete a message in the specified user's mailbox, or delete a relationship of the message.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -137,17 +110,6 @@ module MicrosoftGraph
                             error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                             return @request_adapter.send_async(request_info, nil, error_mapping)
-                        end
-                        ## 
-                        ## Provides operations to manage the extensions property of the microsoft.graph.message entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a extension_item_request_builder
-                        ## 
-                        def extensions_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["extension%2Did"] = id
-                            return MicrosoftGraph::Users::Item::Messages::Item::Extensions::Item::ExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## The messages in a mailbox or folder. Read-only. Nullable.
@@ -164,18 +126,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Message.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.message entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a multi_value_legacy_extended_property_item_request_builder
-                        ## 
-                        def multi_value_extended_properties_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["multiValueLegacyExtendedProperty%2Did"] = id
-                            return MicrosoftGraph::Users::Item::Messages::Item::MultiValueExtendedProperties::Item::MultiValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Update the navigation property messages in users
+                        ## Update the properties of an eventMessage object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of message
@@ -191,18 +142,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Message.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.message entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a single_value_legacy_extended_property_item_request_builder
-                        ## 
-                        def single_value_extended_properties_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["singleValueLegacyExtendedProperty%2Did"] = id
-                            return MicrosoftGraph::Users::Item::Messages::Item::SingleValueExtendedProperties::Item::SingleValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Delete navigation property messages for users
+                        ## Delete a message in the specified user's mailbox, or delete a relationship of the message.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -236,7 +176,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property messages in users
+                        ## Update the properties of an eventMessage object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -264,6 +204,9 @@ module MicrosoftGraph
                             # Expand related entities
                             attr_accessor :expand
                             ## 
+                            # Include Hidden Messages
+                            attr_accessor :include_hidden_messages
+                            ## 
                             # Select properties to be returned
                             attr_accessor :select
                             ## 
@@ -276,6 +219,8 @@ module MicrosoftGraph
                                 case original_name
                                     when "expand"
                                         return "%24expand"
+                                    when "include_hidden_messages"
+                                        return "includeHiddenMessages"
                                     when "select"
                                         return "%24select"
                                     else

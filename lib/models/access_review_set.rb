@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Represents a collection of access review history data and the scopes used to collect that data.
             @history_definitions
             ## 
-            ## Instantiates a new AccessReviewSet and sets the default values.
+            ## Instantiates a new accessReviewSet and sets the default values.
             ## @return a void
             ## 
             def initialize()

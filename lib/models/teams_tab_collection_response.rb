@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value property
             @value
             ## 
-            ## Instantiates a new TeamsTabCollectionResponse and sets the default values.
+            ## Instantiates a new teamsTabCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

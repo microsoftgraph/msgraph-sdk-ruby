@@ -46,7 +46,7 @@ module MicrosoftGraph
                 @certificate_user_bindings = value
             end
             ## 
-            ## Instantiates a new X509CertificateAuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new x509CertificateAuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @can_accept = value
             end
             ## 
-            ## Instantiates a new CalendarSharingMessage and sets the default values.
+            ## Instantiates a new calendarSharingMessage and sets the default values.
             ## @return a void
             ## 
             def initialize()

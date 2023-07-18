@@ -7,6 +7,7 @@ require_relative '../../../shares'
 require_relative '../../item'
 require_relative '../list'
 require_relative './count/count_request_builder'
+require_relative './item/subscription_item_request_builder'
 require_relative './subscriptions'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Shares::Item::List::Subscriptions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the subscriptions property of the microsoft.graph.list entity.
+                        ## @param subscription_id Unique identifier of the item
+                        ## @return a subscription_item_request_builder
+                        ## 
+                        def by_subscription_id(subscription_id)
+                            raise StandardError, 'subscription_id cannot be null' if subscription_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["subscription%2Did"] = subscription_id
+                            return MicrosoftGraph::Shares::Item::List::Subscriptions::Item::SubscriptionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new SubscriptionsRequestBuilder and sets the default values.

@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Represents a customer of the business.
         class BookingCustomer < MicrosoftGraph::Models::BookingCustomerBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -34,7 +36,7 @@ module MicrosoftGraph
                 @addresses = value
             end
             ## 
-            ## Instantiates a new BookingCustomer and sets the default values.
+            ## Instantiates a new bookingCustomer and sets the default values.
             ## @return a void
             ## 
             def initialize()

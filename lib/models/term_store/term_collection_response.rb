@@ -12,7 +12,7 @@ module MicrosoftGraph
                 # The value property
                 @value
                 ## 
-                ## Instantiates a new TermCollectionResponse and sets the default values.
+                ## Instantiates a new termCollectionResponse and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

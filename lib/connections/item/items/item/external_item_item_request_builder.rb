@@ -5,7 +5,9 @@ require_relative '../../../../models/o_data_errors/o_data_error'
 require_relative '../../../connections'
 require_relative '../../item'
 require_relative '../items'
+require_relative './activities/activities_request_builder'
 require_relative './item'
+require_relative './microsoft_graph_external_connectors_add_activities/microsoft_graph_external_connectors_add_activities_request_builder'
 
 module MicrosoftGraph
     module Connections
@@ -17,6 +19,16 @@ module MicrosoftGraph
                     class ExternalItemItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                         
                         ## 
+                        # Provides operations to manage the activities property of the microsoft.graph.externalConnectors.externalItem entity.
+                        def activities()
+                            return MicrosoftGraph::Connections::Item::Items::Item::Activities::ActivitiesRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        # Provides operations to call the addActivities method.
+                        def microsoft_graph_external_connectors_add_activities()
+                            return MicrosoftGraph::Connections::Item::Items::Item::MicrosoftGraphExternalConnectorsAddActivities::MicrosoftGraphExternalConnectorsAddActivitiesRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new ExternalItemItemRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -26,7 +38,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/connections/{externalConnection%2Did}/items/{externalItem%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property items for connections
+                        ## Delete an externalItem object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -40,7 +52,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Get items from connections
+                        ## Read the properties and relationships of an externalItem object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of external_item
                         ## 
@@ -70,7 +82,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ExternalItem.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property items for connections
+                        ## Delete an externalItem object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -86,7 +98,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Get items from connections
+                        ## Read the properties and relationships of an externalItem object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -125,7 +137,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Get items from connections
+                        # Read the properties and relationships of an externalItem object.
                         class ExternalItemItemRequestBuilderGetQueryParameters
                             
                             ## 

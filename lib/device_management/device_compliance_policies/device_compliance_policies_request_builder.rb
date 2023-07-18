@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
 require_relative './device_compliance_policies'
+require_relative './item/device_compliance_policy_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.
+                ## @param device_compliance_policy_id Unique identifier of the item
+                ## @return a device_compliance_policy_item_request_builder
+                ## 
+                def by_device_compliance_policy_id(device_compliance_policy_id)
+                    raise StandardError, 'device_compliance_policy_id cannot be null' if device_compliance_policy_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["deviceCompliancePolicy%2Did"] = device_compliance_policy_id
+                    return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::DeviceCompliancePolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new DeviceCompliancePoliciesRequestBuilder and sets the default values.

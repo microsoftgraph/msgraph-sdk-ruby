@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value property
             @value
             ## 
-            ## Instantiates a new MobileLobAppCollectionResponse and sets the default values.
+            ## Instantiates a new mobileLobAppCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

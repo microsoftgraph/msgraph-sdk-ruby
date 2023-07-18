@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, unknownFutureValue.
             @resource_status
             ## 
-            ## Instantiates a new EducationFeedbackResourceOutcome and sets the default values.
+            ## Instantiates a new educationFeedbackResourceOutcome and sets the default values.
             ## @return a void
             ## 
             def initialize()

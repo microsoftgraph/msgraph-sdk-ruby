@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../identity'
 require_relative './api_connectors'
 require_relative './count/count_request_builder'
+require_relative './item/identity_api_connector_item_request_builder'
 
 module MicrosoftGraph
     module Identity
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Identity::ApiConnectors::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.
+                ## @param identity_api_connector_id Unique identifier of the item
+                ## @return a identity_api_connector_item_request_builder
+                ## 
+                def by_identity_api_connector_id(identity_api_connector_id)
+                    raise StandardError, 'identity_api_connector_id cannot be null' if identity_api_connector_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["identityApiConnector%2Did"] = identity_api_connector_id
+                    return MicrosoftGraph::Identity::ApiConnectors::Item::IdentityApiConnectorItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new ApiConnectorsRequestBuilder and sets the default values.
