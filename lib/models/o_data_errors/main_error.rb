@@ -18,8 +18,8 @@ module MicrosoftGraph
                 # The details property
                 @details
                 ## 
-                # The innererror property
-                @innererror
+                # The innerError property
+                @inner_error
                 ## 
                 # The message property
                 @message
@@ -35,7 +35,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                ## @param value Value to set for the AdditionalData property.
+                ## @param value Value to set for the additionalData property.
                 ## @return a void
                 ## 
                 def additional_data=(value)
@@ -95,25 +95,25 @@ module MicrosoftGraph
                     return {
                         "code" => lambda {|n| @code = n.get_string_value() },
                         "details" => lambda {|n| @details = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ODataErrors::ErrorDetails.create_from_discriminator_value(pn) }) },
-                        "innererror" => lambda {|n| @innererror = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ODataErrors::InnerError.create_from_discriminator_value(pn) }) },
+                        "innerError" => lambda {|n| @inner_error = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ODataErrors::InnerError.create_from_discriminator_value(pn) }) },
                         "message" => lambda {|n| @message = n.get_string_value() },
                         "target" => lambda {|n| @target = n.get_string_value() },
                     }
                 end
                 ## 
-                ## Gets the innererror property value. The innererror property
+                ## Gets the innerError property value. The innerError property
                 ## @return a inner_error
                 ## 
-                def innererror
-                    return @innererror
+                def inner_error
+                    return @inner_error
                 end
                 ## 
-                ## Sets the innererror property value. The innererror property
-                ## @param value Value to set for the innererror property.
+                ## Sets the innerError property value. The innerError property
+                ## @param value Value to set for the innerError property.
                 ## @return a void
                 ## 
-                def innererror=(value)
-                    @innererror = value
+                def inner_error=(value)
+                    @inner_error = value
                 end
                 ## 
                 ## Gets the message property value. The message property
@@ -139,7 +139,7 @@ module MicrosoftGraph
                     raise StandardError, 'writer cannot be null' if writer.nil?
                     writer.write_string_value("code", @code)
                     writer.write_collection_of_object_values("details", @details)
-                    writer.write_object_value("innererror", @innererror)
+                    writer.write_object_value("innerError", @inner_error)
                     writer.write_string_value("message", @message)
                     writer.write_string_value("target", @target)
                     writer.write_additional_data(@additional_data)

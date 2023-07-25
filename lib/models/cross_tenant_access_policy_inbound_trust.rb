@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isCompliantDeviceAccepted property value. Specifies whether compliant devices from external Azure AD organizations are trusted.
-            ## @param value Value to set for the is_compliant_device_accepted property.
+            ## @param value Value to set for the isCompliantDeviceAccepted property.
             ## @return a void
             ## 
             def is_compliant_device_accepted=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isHybridAzureADJoinedDeviceAccepted property value. Specifies whether hybrid Azure AD joined devices from external Azure AD organizations are trusted.
-            ## @param value Value to set for the is_hybrid_azure_a_d_joined_device_accepted property.
+            ## @param value Value to set for the isHybridAzureADJoinedDeviceAccepted property.
             ## @return a void
             ## 
             def is_hybrid_azure_a_d_joined_device_accepted=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isMfaAccepted property value. Specifies whether MFA from external Azure AD organizations is trusted.
-            ## @param value Value to set for the is_mfa_accepted property.
+            ## @param value Value to set for the isMfaAccepted property.
             ## @return a void
             ## 
             def is_mfa_accepted=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

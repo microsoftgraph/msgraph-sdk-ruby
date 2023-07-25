@@ -45,7 +45,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the defaultLanguageTag property value. Default language of the term store.
-                ## @param value Value to set for the default_language_tag property.
+                ## @param value Value to set for the defaultLanguageTag property.
                 ## @return a void
                 ## 
                 def default_language_tag=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the languageTags property value. List of languages for the term store.
-                ## @param value Value to set for the language_tags property.
+                ## @param value Value to set for the languageTags property.
                 ## @return a void
                 ## 
                 def language_tags=(value)

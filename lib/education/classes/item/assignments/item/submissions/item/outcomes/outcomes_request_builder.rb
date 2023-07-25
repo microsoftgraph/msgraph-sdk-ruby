@@ -11,6 +11,7 @@ require_relative '../../../item'
 require_relative '../../submissions'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/education_outcome_item_request_builder'
 require_relative './outcomes'
 
 module MicrosoftGraph
@@ -30,6 +31,17 @@ module MicrosoftGraph
                                         # Provides operations to count the resources in the collection.
                                         def count()
                                             return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::Outcomes::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
+                                        ## Provides operations to manage the outcomes property of the microsoft.graph.educationSubmission entity.
+                                        ## @param education_outcome_id Unique identifier of the item
+                                        ## @return a education_outcome_item_request_builder
+                                        ## 
+                                        def by_education_outcome_id(education_outcome_id)
+                                            raise StandardError, 'education_outcome_id cannot be null' if education_outcome_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["educationOutcome%2Did"] = education_outcome_id
+                                            return MicrosoftGraph::Education::Classes::Item::Assignments::Item::Submissions::Item::Outcomes::Item::EducationOutcomeItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                         end
                                         ## 
                                         ## Instantiates a new OutcomesRequestBuilder and sets the default values.

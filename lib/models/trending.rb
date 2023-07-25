@@ -60,7 +60,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceReference property value. Reference properties of the trending document, such as the url and type of the document.
-            ## @param value Value to set for the resource_reference property.
+            ## @param value Value to set for the resourceReference property.
             ## @return a void
             ## 
             def resource_reference=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceVisualization property value. Properties that you can use to visualize the document in your experience.
-            ## @param value Value to set for the resource_visualization property.
+            ## @param value Value to set for the resourceVisualization property.
             ## @return a void
             ## 
             def resource_visualization=(value)

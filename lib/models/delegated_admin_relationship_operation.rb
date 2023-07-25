@@ -38,7 +38,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. The time in ISO 8601 format and in UTC time when the long-running operation was last modified. Read-only.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the operationType property value. The operationType property
-            ## @param value Value to set for the operation_type property.
+            ## @param value Value to set for the operationType property.
             ## @return a void
             ## 
             def operation_type=(value)

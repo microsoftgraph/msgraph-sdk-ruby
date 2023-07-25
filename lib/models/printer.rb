@@ -44,7 +44,7 @@ module MicrosoftGraph
                 @connectors = value
             end
             ## 
-            ## Instantiates a new Printer and sets the default values.
+            ## Instantiates a new printer and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hasPhysicalDevice property value. True if the printer has a physical device for printing. Read-only.
-            ## @param value Value to set for the has_physical_device property.
+            ## @param value Value to set for the hasPhysicalDevice property.
             ## @return a void
             ## 
             def has_physical_device=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isShared property value. True if the printer is shared; false otherwise. Read-only.
-            ## @param value Value to set for the is_shared property.
+            ## @param value Value to set for the isShared property.
             ## @return a void
             ## 
             def is_shared=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastSeenDateTime property value. The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
-            ## @param value Value to set for the last_seen_date_time property.
+            ## @param value Value to set for the lastSeenDateTime property.
             ## @return a void
             ## 
             def last_seen_date_time=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the registeredDateTime property value. The DateTimeOffset when the printer was registered. Read-only.
-            ## @param value Value to set for the registered_date_time property.
+            ## @param value Value to set for the registeredDateTime property.
             ## @return a void
             ## 
             def registered_date_time=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the taskTriggers property value. A list of task triggers that are associated with the printer.
-            ## @param value Value to set for the task_triggers property.
+            ## @param value Value to set for the taskTriggers property.
             ## @return a void
             ## 
             def task_triggers=(value)

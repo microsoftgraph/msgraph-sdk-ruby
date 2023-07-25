@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Windows Defender last scan result
         class WindowsDefenderScanActionResult < MicrosoftGraph::Models::DeviceActionResult
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # Scan type either full scan or quick scan
             @scan_type
             ## 
-            ## Instantiates a new WindowsDefenderScanActionResult and sets the default values.
+            ## Instantiates a new windowsDefenderScanActionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -43,7 +45,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scanType property value. Scan type either full scan or quick scan
-            ## @param value Value to set for the scan_type property.
+            ## @param value Value to set for the scanType property.
             ## @return a void
             ## 
             def scan_type=(value)

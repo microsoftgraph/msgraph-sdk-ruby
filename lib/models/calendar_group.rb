@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the changeKey property value. Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
-            ## @param value Value to set for the change_key property.
+            ## @param value Value to set for the changeKey property.
             ## @return a void
             ## 
             def change_key=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the classId property value. The class identifier. Read-only.
-            ## @param value Value to set for the class_id property.
+            ## @param value Value to set for the classId property.
             ## @return a void
             ## 
             def class_id=(value)

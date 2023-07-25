@@ -36,7 +36,7 @@ module MicrosoftGraph
                                                 super(path_parameters, request_adapter, "{+baseurl}/me/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}/attachments/{attachment%2Did}{?%24select,%24expand}")
                                             end
                                             ## 
-                                            ## Delete navigation property attachments for me
+                                            ## Delete an attachment from a user calendar event, mail message, or group post.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of void
                                             ## 
@@ -64,7 +64,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Attachment.create_from_discriminator_value(pn) }, error_mapping)
                                             end
                                             ## 
-                                            ## Delete navigation property attachments for me
+                                            ## Delete an attachment from a user calendar event, mail message, or group post.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 

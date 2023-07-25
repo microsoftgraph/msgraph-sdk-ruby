@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the clientApplicationIds property value. A list of appId values for the client applications to match with, or a list with the single value all to match any client application. Default is the single value all.
-            ## @param value Value to set for the client_application_ids property.
+            ## @param value Value to set for the clientApplicationIds property.
             ## @return a void
             ## 
             def client_application_ids=(value)
@@ -54,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the clientApplicationPublisherIds property value. A list of Microsoft Partner Network (MPN) IDs for verified publishers of the client application, or a list with the single value all to match with client apps from any publisher. Default is the single value all.
-            ## @param value Value to set for the client_application_publisher_ids property.
+            ## @param value Value to set for the clientApplicationPublisherIds property.
             ## @return a void
             ## 
             def client_application_publisher_ids=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the clientApplicationTenantIds property value. A list of Azure Active Directory tenant IDs in which the client application is registered, or a list with the single value all to match with client apps registered in any tenant. Default is the single value all.
-            ## @param value Value to set for the client_application_tenant_ids property.
+            ## @param value Value to set for the clientApplicationTenantIds property.
             ## @return a void
             ## 
             def client_application_tenant_ids=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the clientApplicationsFromVerifiedPublisherOnly property value. Set to true to only match on client applications with a verified publisher. Set to false to match on any client app, even if it does not have a verified publisher. Default is false.
-            ## @param value Value to set for the client_applications_from_verified_publisher_only property.
+            ## @param value Value to set for the clientApplicationsFromVerifiedPublisherOnly property.
             ## @return a void
             ## 
             def client_applications_from_verified_publisher_only=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the permissionClassification property value. The permission classification for the permission being granted, or all to match with any permission classification (including permissions which are not classified). Default is all.
-            ## @param value Value to set for the permission_classification property.
+            ## @param value Value to set for the permissionClassification property.
             ## @return a void
             ## 
             def permission_classification=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the permissionType property value. The permission type of the permission being granted. Possible values: application for application permissions (e.g. app roles), or delegated for delegated permissions. The value delegatedUserConsentable indicates delegated permissions which have not been configured by the API publisher to require admin consent—this value may be used in built-in permission grant policies, but cannot be used in custom permission grant policies. Required.
-            ## @param value Value to set for the permission_type property.
+            ## @param value Value to set for the permissionType property.
             ## @return a void
             ## 
             def permission_type=(value)
@@ -176,7 +176,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceApplication property value. The appId of the resource application (e.g. the API) for which a permission is being granted, or any to match with any resource application or API. Default is any.
-            ## @param value Value to set for the resource_application property.
+            ## @param value Value to set for the resourceApplication property.
             ## @return a void
             ## 
             def resource_application=(value)

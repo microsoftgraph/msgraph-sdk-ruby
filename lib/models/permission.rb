@@ -65,7 +65,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the expirationDateTime property value. A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.
-            ## @param value Value to set for the expiration_date_time property.
+            ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
             def expiration_date_time=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the grantedTo property value. The grantedTo property
-            ## @param value Value to set for the granted_to property.
+            ## @param value Value to set for the grantedTo property.
             ## @return a void
             ## 
             def granted_to=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the grantedToIdentities property value. The grantedToIdentities property
-            ## @param value Value to set for the granted_to_identities property.
+            ## @param value Value to set for the grantedToIdentities property.
             ## @return a void
             ## 
             def granted_to_identities=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the grantedToIdentitiesV2 property value. For link type permissions, the details of the users to whom permission was granted. Read-only.
-            ## @param value Value to set for the granted_to_identities_v2 property.
+            ## @param value Value to set for the grantedToIdentitiesV2 property.
             ## @return a void
             ## 
             def granted_to_identities_v2=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the grantedToV2 property value. For user type permissions, the details of the users and applications for this permission. Read-only.
-            ## @param value Value to set for the granted_to_v2 property.
+            ## @param value Value to set for the grantedToV2 property.
             ## @return a void
             ## 
             def granted_to_v2=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hasPassword property value. Indicates whether the password is set for this permission. This property only appears in the response. Optional. Read-only. For OneDrive Personal only..
-            ## @param value Value to set for the has_password property.
+            ## @param value Value to set for the hasPassword property.
             ## @return a void
             ## 
             def has_password=(value)
@@ -174,7 +174,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the inheritedFrom property value. Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.
-            ## @param value Value to set for the inherited_from property.
+            ## @param value Value to set for the inheritedFrom property.
             ## @return a void
             ## 
             def inherited_from=(value)
@@ -254,7 +254,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the shareId property value. A unique token that can be used to access this shared item via the **shares** API. Read-only.
-            ## @param value Value to set for the share_id property.
+            ## @param value Value to set for the shareId property.
             ## @return a void
             ## 
             def share_id=(value)

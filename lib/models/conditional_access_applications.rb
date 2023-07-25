@@ -10,6 +10,9 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # The applicationFilter property
+            @application_filter
+            ## 
             # Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
             @exclude_applications
             ## 
@@ -33,11 +36,26 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
+            end
+            ## 
+            ## Gets the applicationFilter property value. The applicationFilter property
+            ## @return a conditional_access_filter
+            ## 
+            def application_filter
+                return @application_filter
+            end
+            ## 
+            ## Sets the applicationFilter property value. The applicationFilter property
+            ## @param value Value to set for the applicationFilter property.
+            ## @return a void
+            ## 
+            def application_filter=(value)
+                @application_filter = value
             end
             ## 
             ## Instantiates a new conditionalAccessApplications and sets the default values.
@@ -64,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the excludeApplications property value. Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
-            ## @param value Value to set for the exclude_applications property.
+            ## @param value Value to set for the excludeApplications property.
             ## @return a void
             ## 
             def exclude_applications=(value)
@@ -76,6 +94,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
+                    "applicationFilter" => lambda {|n| @application_filter = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessFilter.create_from_discriminator_value(pn) }) },
                     "excludeApplications" => lambda {|n| @exclude_applications = n.get_collection_of_primitive_values(String) },
                     "includeApplications" => lambda {|n| @include_applications = n.get_collection_of_primitive_values(String) },
                     "includeAuthenticationContextClassReferences" => lambda {|n| @include_authentication_context_class_references = n.get_collection_of_primitive_values(String) },
@@ -92,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the includeApplications property value. Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
-            ## @param value Value to set for the include_applications property.
+            ## @param value Value to set for the includeApplications property.
             ## @return a void
             ## 
             def include_applications=(value)
@@ -107,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the includeAuthenticationContextClassReferences property value. The includeAuthenticationContextClassReferences property
-            ## @param value Value to set for the include_authentication_context_class_references property.
+            ## @param value Value to set for the includeAuthenticationContextClassReferences property.
             ## @return a void
             ## 
             def include_authentication_context_class_references=(value)
@@ -122,7 +141,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the includeUserActions property value. User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice
-            ## @param value Value to set for the include_user_actions property.
+            ## @param value Value to set for the includeUserActions property.
             ## @return a void
             ## 
             def include_user_actions=(value)
@@ -137,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -150,6 +169,7 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_object_value("applicationFilter", @application_filter)
                 writer.write_collection_of_primitive_values("excludeApplications", @exclude_applications)
                 writer.write_collection_of_primitive_values("includeApplications", @include_applications)
                 writer.write_collection_of_primitive_values("includeAuthenticationContextClassReferences", @include_authentication_context_class_references)

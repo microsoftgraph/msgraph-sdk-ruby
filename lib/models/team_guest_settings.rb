@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowCreateUpdateChannels property value. If set to true, guests can add and update channels.
-            ## @param value Value to set for the allow_create_update_channels property.
+            ## @param value Value to set for the allowCreateUpdateChannels property.
             ## @return a void
             ## 
             def allow_create_update_channels=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowDeleteChannels property value. If set to true, guests can delete channels.
-            ## @param value Value to set for the allow_delete_channels property.
+            ## @param value Value to set for the allowDeleteChannels property.
             ## @return a void
             ## 
             def allow_delete_channels=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

@@ -156,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the columnGroup property value. For site columns, the name of the group this column belongs to. Helps organize related columns.
-            ## @param value Value to set for the column_group property.
+            ## @param value Value to set for the columnGroup property.
             ## @return a void
             ## 
             def column_group=(value)
@@ -178,7 +178,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentApprovalStatus property value. This column stores content approval status.
-            ## @param value Value to set for the content_approval_status property.
+            ## @param value Value to set for the contentApprovalStatus property.
             ## @return a void
             ## 
             def content_approval_status=(value)
@@ -217,7 +217,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the dateTime property value. This column stores DateTime values.
-            ## @param value Value to set for the date_time property.
+            ## @param value Value to set for the dateTime property.
             ## @return a void
             ## 
             def date_time=(value)
@@ -232,7 +232,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defaultValue property value. The default value for this column.
-            ## @param value Value to set for the default_value property.
+            ## @param value Value to set for the defaultValue property.
             ## @return a void
             ## 
             def default_value=(value)
@@ -262,7 +262,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The user-facing name of the column.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -277,7 +277,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enforceUniqueValues property value. If true, no two list items may have the same value for this column.
-            ## @param value Value to set for the enforce_unique_values property.
+            ## @param value Value to set for the enforceUniqueValues property.
             ## @return a void
             ## 
             def enforce_unique_values=(value)
@@ -362,7 +362,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hyperlinkOrPicture property value. This column stores hyperlink or picture values.
-            ## @param value Value to set for the hyperlink_or_picture property.
+            ## @param value Value to set for the hyperlinkOrPicture property.
             ## @return a void
             ## 
             def hyperlink_or_picture=(value)
@@ -392,7 +392,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isDeletable property value. Indicates whether this column can be deleted.
-            ## @param value Value to set for the is_deletable property.
+            ## @param value Value to set for the isDeletable property.
             ## @return a void
             ## 
             def is_deletable=(value)
@@ -407,7 +407,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isReorderable property value. Indicates whether values in the column can be reordered. Read-only.
-            ## @param value Value to set for the is_reorderable property.
+            ## @param value Value to set for the isReorderable property.
             ## @return a void
             ## 
             def is_reorderable=(value)
@@ -422,7 +422,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isSealed property value. Specifies whether the column can be changed.
-            ## @param value Value to set for the is_sealed property.
+            ## @param value Value to set for the isSealed property.
             ## @return a void
             ## 
             def is_sealed=(value)
@@ -482,7 +482,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the personOrGroup property value. This column stores Person or Group values.
-            ## @param value Value to set for the person_or_group property.
+            ## @param value Value to set for the personOrGroup property.
             ## @return a void
             ## 
             def person_or_group=(value)
@@ -497,7 +497,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the propagateChanges property value. If 'true', changes to this column will be propagated to lists that implement the column.
-            ## @param value Value to set for the propagate_changes property.
+            ## @param value Value to set for the propagateChanges property.
             ## @return a void
             ## 
             def propagate_changes=(value)
@@ -512,7 +512,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the readOnly property value. Specifies whether the column values can be modified.
-            ## @param value Value to set for the read_only property.
+            ## @param value Value to set for the readOnly property.
             ## @return a void
             ## 
             def read_only=(value)
@@ -583,7 +583,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sourceColumn property value. The source column for the content type column.
-            ## @param value Value to set for the source_column property.
+            ## @param value Value to set for the sourceColumn property.
             ## @return a void
             ## 
             def source_column=(value)
@@ -598,7 +598,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sourceContentType property value. ContentType from which this column is inherited from. Present only in contentTypes columns response. Read-only.
-            ## @param value Value to set for the source_content_type property.
+            ## @param value Value to set for the sourceContentType property.
             ## @return a void
             ## 
             def source_content_type=(value)

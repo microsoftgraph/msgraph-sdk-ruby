@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the actionName property value. Action name
-            ## @param value Value to set for the action_name property.
+            ## @param value Value to set for the actionName property.
             ## @return a void
             ## 
             def action_name=(value)
@@ -51,7 +51,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the actionState property value. State of the action on the device
-            ## @param value Value to set for the action_state property.
+            ## @param value Value to set for the actionState property.
             ## @return a void
             ## 
             def action_state=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastUpdatedDateTime property value. Time the action state was last updated
-            ## @param value Value to set for the last_updated_date_time property.
+            ## @param value Value to set for the lastUpdatedDateTime property.
             ## @return a void
             ## 
             def last_updated_date_time=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startDateTime property value. Time the action was initiated
-            ## @param value Value to set for the start_date_time property.
+            ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
             def start_date_time=(value)

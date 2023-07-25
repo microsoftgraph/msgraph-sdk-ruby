@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for iOS Volume-Purchased Program (VPP) Apps.
         class IosVppApp < MicrosoftGraph::Models::MobileApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -46,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appStoreUrl property value. The store URL.
-            ## @param value Value to set for the app_store_url property.
+            ## @param value Value to set for the appStoreUrl property.
             ## @return a void
             ## 
             def app_store_url=(value)
@@ -61,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicableDeviceType property value. The applicable iOS Device Type.
-            ## @param value Value to set for the applicable_device_type property.
+            ## @param value Value to set for the applicableDeviceType property.
             ## @return a void
             ## 
             def applicable_device_type=(value)
@@ -76,14 +78,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bundleId property value. The Identity Name.
-            ## @param value Value to set for the bundle_id property.
+            ## @param value Value to set for the bundleId property.
             ## @return a void
             ## 
             def bundle_id=(value)
                 @bundle_id = value
             end
             ## 
-            ## Instantiates a new IosVppApp and sets the default values.
+            ## Instantiates a new iosVppApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -126,7 +128,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the licensingType property value. The supported License Type.
-            ## @param value Value to set for the licensing_type property.
+            ## @param value Value to set for the licensingType property.
             ## @return a void
             ## 
             def licensing_type=(value)
@@ -141,7 +143,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the releaseDateTime property value. The VPP application release date and time.
-            ## @param value Value to set for the release_date_time property.
+            ## @param value Value to set for the releaseDateTime property.
             ## @return a void
             ## 
             def release_date_time=(value)
@@ -175,7 +177,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the totalLicenseCount property value. The total number of VPP licenses.
-            ## @param value Value to set for the total_license_count property.
+            ## @param value Value to set for the totalLicenseCount property.
             ## @return a void
             ## 
             def total_license_count=(value)
@@ -190,7 +192,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the usedLicenseCount property value. The number of VPP licenses in use.
-            ## @param value Value to set for the used_license_count property.
+            ## @param value Value to set for the usedLicenseCount property.
             ## @return a void
             ## 
             def used_license_count=(value)
@@ -205,7 +207,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the vppTokenAccountType property value. Possible types of an Apple Volume Purchase Program token.
-            ## @param value Value to set for the vpp_token_account_type property.
+            ## @param value Value to set for the vppTokenAccountType property.
             ## @return a void
             ## 
             def vpp_token_account_type=(value)
@@ -220,7 +222,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the vppTokenAppleId property value. The Apple Id associated with the given Apple Volume Purchase Program Token.
-            ## @param value Value to set for the vpp_token_apple_id property.
+            ## @param value Value to set for the vppTokenAppleId property.
             ## @return a void
             ## 
             def vpp_token_apple_id=(value)
@@ -235,7 +237,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the vppTokenOrganizationName property value. The organization associated with the Apple Volume Purchase Program Token
-            ## @param value Value to set for the vpp_token_organization_name property.
+            ## @param value Value to set for the vppTokenOrganizationName property.
             ## @return a void
             ## 
             def vpp_token_organization_name=(value)

@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accessType property value. Defines whether access is allowed or blocked. The possible values are: allowed, blocked, unknownFutureValue.
-            ## @param value Value to set for the access_type property.
+            ## @param value Value to set for the accessType property.
             ## @return a void
             ## 
             def access_type=(value)
@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

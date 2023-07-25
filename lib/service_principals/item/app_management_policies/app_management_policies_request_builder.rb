@@ -6,6 +6,7 @@ require_relative '../../service_principals'
 require_relative '../item'
 require_relative './app_management_policies'
 require_relative './count/count_request_builder'
+require_relative './item/app_management_policy_item_request_builder'
 
 module MicrosoftGraph
     module ServicePrincipals
@@ -19,6 +20,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::ServicePrincipals::Item::AppManagementPolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.
+                    ## @param app_management_policy_id Unique identifier of the item
+                    ## @return a app_management_policy_item_request_builder
+                    ## 
+                    def by_app_management_policy_id(app_management_policy_id)
+                        raise StandardError, 'app_management_policy_id cannot be null' if app_management_policy_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["appManagementPolicy%2Did"] = app_management_policy_id
+                        return MicrosoftGraph::ServicePrincipals::Item::AppManagementPolicies::Item::AppManagementPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new AppManagementPoliciesRequestBuilder and sets the default values.

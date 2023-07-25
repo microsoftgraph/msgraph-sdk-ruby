@@ -7,6 +7,7 @@ require_relative '../device_app_management'
 require_relative './count/count_request_builder'
 require_relative './graph_managed_mobile_lob_app/graph_managed_mobile_lob_app_request_builder'
 require_relative './graph_mobile_lob_app/graph_mobile_lob_app_request_builder'
+require_relative './item/mobile_app_item_request_builder'
 require_relative './mobile_apps'
 
 module MicrosoftGraph
@@ -32,6 +33,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::DeviceAppManagement::MobileApps::GraphMobileLobApp::GraphMobileLobAppRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.
+                ## @param mobile_app_id Unique identifier of the item
+                ## @return a mobile_app_item_request_builder
+                ## 
+                def by_mobile_app_id(mobile_app_id)
+                    raise StandardError, 'mobile_app_id cannot be null' if mobile_app_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["mobileApp%2Did"] = mobile_app_id
+                    return MicrosoftGraph::DeviceAppManagement::MobileApps::Item::MobileAppItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new MobileAppsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -41,7 +53,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceAppManagement/mobileApps{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## The mobile apps.
+                ## List properties and relationships of the managedMobileLobApp objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of mobile_app_collection_response
                 ## 
@@ -55,7 +67,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MobileAppCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create new navigation property to mobileApps for deviceAppManagement
+                ## Create a new iosLobApp object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of mobile_app
@@ -71,7 +83,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MobileApp.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## The mobile apps.
+                ## List properties and relationships of the managedMobileLobApp objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -89,7 +101,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create new navigation property to mobileApps for deviceAppManagement
+                ## Create a new iosLobApp object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -110,7 +122,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # The mobile apps.
+                # List properties and relationships of the managedMobileLobApp objects.
                 class MobileAppsRequestBuilderGetQueryParameters
                     
                     ## 

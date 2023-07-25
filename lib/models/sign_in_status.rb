@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -45,7 +45,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalDetails property value. Provides additional details on the sign-in activity
-            ## @param value Value to set for the additional_details property.
+            ## @param value Value to set for the additionalDetails property.
             ## @return a void
             ## 
             def additional_details=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the errorCode property value. Provides the 5-6 digit error code that's generated during a sign-in failure. Check out the list of error codes and messages.
-            ## @param value Value to set for the error_code property.
+            ## @param value Value to set for the errorCode property.
             ## @return a void
             ## 
             def error_code=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the failureReason property value. Provides the error message or the reason for failure for the corresponding sign-in activity. Check out the list of error codes and messages.
-            ## @param value Value to set for the failure_reason property.
+            ## @param value Value to set for the failureReason property.
             ## @return a void
             ## 
             def failure_reason=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

@@ -40,14 +40,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the authenticationMethodConfigurations property value. Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
-            ## @param value Value to set for the authentication_method_configurations property.
+            ## @param value Value to set for the authenticationMethodConfigurations property.
             ## @return a void
             ## 
             def authentication_method_configurations=(value)
                 @authentication_method_configurations = value
             end
             ## 
-            ## Instantiates a new AuthenticationMethodsPolicy and sets the default values.
+            ## Instantiates a new authenticationMethodsPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -86,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name of the policy. Read-only.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. The date and time of the last update to the policy. Read-only.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the policyMigrationState property value. The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authentication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
-            ## @param value Value to set for the policy_migration_state property.
+            ## @param value Value to set for the policyMigrationState property.
             ## @return a void
             ## 
             def policy_migration_state=(value)
@@ -147,7 +147,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the policyVersion property value. The version of the policy in use. Read-only.
-            ## @param value Value to set for the policy_version property.
+            ## @param value Value to set for the policyVersion property.
             ## @return a void
             ## 
             def policy_version=(value)
@@ -162,7 +162,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the reconfirmationInDays property value. The reconfirmationInDays property
-            ## @param value Value to set for the reconfirmation_in_days property.
+            ## @param value Value to set for the reconfirmationInDays property.
             ## @return a void
             ## 
             def reconfirmation_in_days=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the registrationEnforcement property value. Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.
-            ## @param value Value to set for the registration_enforcement property.
+            ## @param value Value to set for the registrationEnforcement property.
             ## @return a void
             ## 
             def registration_enforcement=(value)

@@ -7,6 +7,7 @@ require_relative '../../../users'
 require_relative '../../item'
 require_relative '../outlook'
 require_relative './count/count_request_builder'
+require_relative './item/outlook_category_item_request_builder'
 require_relative './master_categories'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Users::Item::Outlook::MasterCategories::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.
+                        ## @param outlook_category_id Unique identifier of the item
+                        ## @return a outlook_category_item_request_builder
+                        ## 
+                        def by_outlook_category_id(outlook_category_id)
+                            raise StandardError, 'outlook_category_id cannot be null' if outlook_category_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["outlookCategory%2Did"] = outlook_category_id
+                            return MicrosoftGraph::Users::Item::Outlook::MasterCategories::Item::OutlookCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new MasterCategoriesRequestBuilder and sets the default values.

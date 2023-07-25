@@ -26,7 +26,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/users{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## The primary users associated with the managed device.
+                        ## List properties and relationships of the user objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of user_collection_response
                         ## 
@@ -40,7 +40,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## The primary users associated with the managed device.
+                        ## List properties and relationships of the user objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -59,7 +59,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The primary users associated with the managed device.
+                        # List properties and relationships of the user objects.
                         class UsersRequestBuilderGetQueryParameters
                             
                             ## 

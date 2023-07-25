@@ -38,7 +38,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Get dailyPrintUsageByUser from reports
+                    ## Retrieve a user's usage summary for a particular time period. For descriptions of each endpoint, see printUsageByUser.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of print_usage_by_user
                     ## 
@@ -84,7 +84,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Get dailyPrintUsageByUser from reports
+                    ## Retrieve a user's usage summary for a particular time period. For descriptions of each endpoint, see printUsageByUser.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -123,7 +123,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get dailyPrintUsageByUser from reports
+                    # Retrieve a user's usage summary for a particular time period. For descriptions of each endpoint, see printUsageByUser.
                     class PrintUsageByUserItemRequestBuilderGetQueryParameters
                         
                         ## 

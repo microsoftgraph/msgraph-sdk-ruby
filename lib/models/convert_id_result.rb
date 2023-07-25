@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the errorDetails property value. An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.
-            ## @param value Value to set for the error_details property.
+            ## @param value Value to set for the errorDetails property.
             ## @return a void
             ## 
             def error_details=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -116,7 +116,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sourceId property value. The identifier that was converted. This value is the original, un-converted identifier.
-            ## @param value Value to set for the source_id property.
+            ## @param value Value to set for the sourceId property.
             ## @return a void
             ## 
             def source_id=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the targetId property value. The converted identifier. This value is not present if the conversion failed.
-            ## @param value Value to set for the target_id property.
+            ## @param value Value to set for the targetId property.
             ## @return a void
             ## 
             def target_id=(value)

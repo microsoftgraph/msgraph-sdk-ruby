@@ -43,7 +43,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the lookupValue property value. The lookupValue property
-                                    ## @param value Value to set for the lookup_value property.
+                                    ## @param value Value to set for the lookupValue property.
                                     ## @return a void
                                     ## 
                                     def lookup_value=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the rangeLookup property value. The rangeLookup property
-                                    ## @param value Value to set for the range_lookup property.
+                                    ## @param value Value to set for the rangeLookup property.
                                     ## @return a void
                                     ## 
                                     def range_lookup=(value)
@@ -116,7 +116,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the rowIndexNum property value. The rowIndexNum property
-                                    ## @param value Value to set for the row_index_num property.
+                                    ## @param value Value to set for the rowIndexNum property.
                                     ## @return a void
                                     ## 
                                     def row_index_num=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the tableArray property value. The tableArray property
-                                    ## @param value Value to set for the table_array property.
+                                    ## @param value Value to set for the tableArray property.
                                     ## @return a void
                                     ## 
                                     def table_array=(value)

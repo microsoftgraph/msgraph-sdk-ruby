@@ -74,7 +74,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the policyId property value. The id of the policy. Inherited from entity.
-            ## @param value Value to set for the policy_id property.
+            ## @param value Value to set for the policyId property.
             ## @return a void
             ## 
             def policy_id=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleDefinitionId property value. The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (eq).
-            ## @param value Value to set for the role_definition_id property.
+            ## @param value Value to set for the roleDefinitionId property.
             ## @return a void
             ## 
             def role_definition_id=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scopeId property value. The identifier of the scope where the policy is assigned.  Can be / for the tenant or a group ID. Required.
-            ## @param value Value to set for the scope_id property.
+            ## @param value Value to set for the scopeId property.
             ## @return a void
             ## 
             def scope_id=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scopeType property value. The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.
-            ## @param value Value to set for the scope_type property.
+            ## @param value Value to set for the scopeType property.
             ## @return a void
             ## 
             def scope_type=(value)

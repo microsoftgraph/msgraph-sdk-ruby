@@ -25,7 +25,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/syncDevice")
                         end
                         ## 
-                        ## Invoke action syncDevice
+                        ## Not yet documented
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -39,7 +39,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Invoke action syncDevice
+                        ## Not yet documented
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 

@@ -10,7 +10,7 @@ module MicrosoftGraph
             # If set to true and the specified resource is busy, findMeetingTimes looks for another resource that is free. If set to false and the specified resource is busy, findMeetingTimes returns the resource best ranked in the user's cache without checking if it's free. Default is true.
             @resolve_availability
             ## 
-            ## Instantiates a new LocationConstraintItem and sets the default values.
+            ## Instantiates a new locationConstraintItem and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resolveAvailability property value. If set to true and the specified resource is busy, findMeetingTimes looks for another resource that is free. If set to false and the specified resource is busy, findMeetingTimes returns the resource best ranked in the user's cache without checking if it's free. Default is true.
-            ## @param value Value to set for the resolve_availability property.
+            ## @param value Value to set for the resolveAvailability property.
             ## @return a void
             ## 
             def resolve_availability=(value)

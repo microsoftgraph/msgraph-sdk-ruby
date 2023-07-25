@@ -29,7 +29,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iPad property value. Whether the app should run on iPads.
-            ## @param value Value to set for the i_pad property.
+            ## @param value Value to set for the iPad property.
             ## @return a void
             ## 
             def i_pad=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iPhoneAndIPod property value. Whether the app should run on iPhones and iPods.
-            ## @param value Value to set for the i_phone_and_i_pod property.
+            ## @param value Value to set for the iPhoneAndIPod property.
             ## @return a void
             ## 
             def i_phone_and_i_pod=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

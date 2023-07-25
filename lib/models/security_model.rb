@@ -4,6 +4,7 @@ require_relative './models'
 require_relative './security/alert'
 require_relative './security/cases_root'
 require_relative './security/incident'
+require_relative './security/threat_intelligence'
 require_relative './security/triggers_root'
 require_relative './security/trigger_types_root'
 
@@ -32,6 +33,9 @@ module MicrosoftGraph
             ## 
             # The secureScores property
             @secure_scores
+            ## 
+            # The threatIntelligence property
+            @threat_intelligence
             ## 
             # The triggerTypes property
             @trigger_types
@@ -77,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the attackSimulation property value. The attackSimulation property
-            ## @param value Value to set for the attack_simulation property.
+            ## @param value Value to set for the attackSimulation property.
             ## @return a void
             ## 
             def attack_simulation=(value)
@@ -99,7 +103,7 @@ module MicrosoftGraph
                 @cases = value
             end
             ## 
-            ## Instantiates a new SecurityModel and sets the default values.
+            ## Instantiates a new securityModel and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -127,6 +131,7 @@ module MicrosoftGraph
                     "incidents" => lambda {|n| @incidents = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Security::Incident.create_from_discriminator_value(pn) }) },
                     "secureScoreControlProfiles" => lambda {|n| @secure_score_control_profiles = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecureScoreControlProfile.create_from_discriminator_value(pn) }) },
                     "secureScores" => lambda {|n| @secure_scores = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::SecureScore.create_from_discriminator_value(pn) }) },
+                    "threatIntelligence" => lambda {|n| @threat_intelligence = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Security::ThreatIntelligence.create_from_discriminator_value(pn) }) },
                     "triggerTypes" => lambda {|n| @trigger_types = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Security::TriggerTypesRoot.create_from_discriminator_value(pn) }) },
                     "triggers" => lambda {|n| @triggers = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Security::TriggersRoot.create_from_discriminator_value(pn) }) },
                 })
@@ -155,7 +160,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the secureScoreControlProfiles property value. The secureScoreControlProfiles property
-            ## @param value Value to set for the secure_score_control_profiles property.
+            ## @param value Value to set for the secureScoreControlProfiles property.
             ## @return a void
             ## 
             def secure_score_control_profiles=(value)
@@ -170,7 +175,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the secureScores property value. The secureScores property
-            ## @param value Value to set for the secure_scores property.
+            ## @param value Value to set for the secureScores property.
             ## @return a void
             ## 
             def secure_scores=(value)
@@ -191,8 +196,24 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("incidents", @incidents)
                 writer.write_collection_of_object_values("secureScoreControlProfiles", @secure_score_control_profiles)
                 writer.write_collection_of_object_values("secureScores", @secure_scores)
+                writer.write_object_value("threatIntelligence", @threat_intelligence)
                 writer.write_object_value("triggerTypes", @trigger_types)
                 writer.write_object_value("triggers", @triggers)
+            end
+            ## 
+            ## Gets the threatIntelligence property value. The threatIntelligence property
+            ## @return a threat_intelligence
+            ## 
+            def threat_intelligence
+                return @threat_intelligence
+            end
+            ## 
+            ## Sets the threatIntelligence property value. The threatIntelligence property
+            ## @param value Value to set for the threatIntelligence property.
+            ## @return a void
+            ## 
+            def threat_intelligence=(value)
+                @threat_intelligence = value
             end
             ## 
             ## Gets the triggerTypes property value. The triggerTypes property
@@ -203,7 +224,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the triggerTypes property value. The triggerTypes property
-            ## @param value Value to set for the trigger_types property.
+            ## @param value Value to set for the triggerTypes property.
             ## @return a void
             ## 
             def trigger_types=(value)

@@ -34,7 +34,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the createdBy property value. The createdBy property
-                ## @param value Value to set for the created_by property.
+                ## @param value Value to set for the createdBy property.
                 ## @return a void
                 ## 
                 def created_by=(value)
@@ -49,7 +49,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the createdDateTime property value. The createdDateTime property
-                ## @param value Value to set for the created_date_time property.
+                ## @param value Value to set for the createdDateTime property.
                 ## @return a void
                 ## 
                 def created_date_time=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the displayName property value. The displayName property
-                ## @param value Value to set for the display_name property.
+                ## @param value Value to set for the displayName property.
                 ## @return a void
                 ## 
                 def display_name=(value)

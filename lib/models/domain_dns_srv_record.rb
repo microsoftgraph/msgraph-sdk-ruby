@@ -25,7 +25,7 @@ module MicrosoftGraph
             # Value to use when configuring the weight property of the SRV record at the DNS host.
             @weight
             ## 
-            ## Instantiates a new DomainDnsSrvRecord and sets the default values.
+            ## Instantiates a new domainDnsSrvRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the nameTarget property value. Value to use when configuring the Target property of the SRV record at the DNS host.
-            ## @param value Value to set for the name_target property.
+            ## @param value Value to set for the nameTarget property.
             ## @return a void
             ## 
             def name_target=(value)

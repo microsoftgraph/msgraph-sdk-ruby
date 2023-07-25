@@ -11,6 +11,7 @@ require_relative '../../../workbook'
 require_relative '../../worksheets'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_pivot_table_item_request_builder'
 require_relative './pivot_tables'
 require_relative './refresh_all/refresh_all_request_builder'
 
@@ -36,6 +37,17 @@ module MicrosoftGraph
                                         # Provides operations to call the refreshAll method.
                                         def refresh_all()
                                             return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::PivotTables::RefreshAll::RefreshAllRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
+                                        ## Provides operations to manage the pivotTables property of the microsoft.graph.workbookWorksheet entity.
+                                        ## @param workbook_pivot_table_id Unique identifier of the item
+                                        ## @return a workbook_pivot_table_item_request_builder
+                                        ## 
+                                        def by_workbook_pivot_table_id(workbook_pivot_table_id)
+                                            raise StandardError, 'workbook_pivot_table_id cannot be null' if workbook_pivot_table_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["workbookPivotTable%2Did"] = workbook_pivot_table_id
+                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::PivotTables::Item::WorkbookPivotTableItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                         end
                                         ## 
                                         ## Instantiates a new PivotTablesRequestBuilder and sets the default values.

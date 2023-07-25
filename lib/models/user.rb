@@ -107,6 +107,9 @@ module MicrosoftGraph
             # A collection of drives available for this user. Read-only.
             @drives
             ## 
+            # The employeeExperience property
+            @employee_experience
+            ## 
             # The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
             @employee_hire_date
             ## 
@@ -209,7 +212,7 @@ module MicrosoftGraph
             # The messages in a mailbox or folder. Read-only. Nullable.
             @messages
             ## 
-            # The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            # The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
             @mobile_phone
             ## 
             # The URL for the user's personal site. Returned only on $select.
@@ -254,7 +257,7 @@ module MicrosoftGraph
             # The onenote property
             @onenote
             ## 
-            # The onlineMeetings property
+            # Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
             @online_meetings
             ## 
             # A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
@@ -305,6 +308,9 @@ module MicrosoftGraph
             # The presence property
             @presence
             ## 
+            # The print property
+            @print
+            ## 
             # The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
             @provisioned_plans
             ## 
@@ -332,7 +338,7 @@ module MicrosoftGraph
             # Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
             @show_in_address_list
             ## 
-            # Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.When you specify $select=signInActivity or $filter=signInActivity while listing users, the maximum page size is 120 users. Requests with $top set higher than 120 will fail. Requests with $top set higher than 120 will fail.This property is not returned for a user who has never signed in or last signed in before April 2020.
+            # Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
             @sign_in_activity
             ## 
             # Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
@@ -350,7 +356,7 @@ module MicrosoftGraph
             # The user's surname (family name or last name). Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
             @surname
             ## 
-            # The teamwork property
+            # A container for Microsoft Teams features available for the user. Read-only. Nullable.
             @teamwork
             ## 
             # Represents the To Do services available to a user.
@@ -376,7 +382,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the aboutMe property value. A freeform text entry field for the user to describe themselves. Returned only on $select.
-            ## @param value Value to set for the about_me property.
+            ## @param value Value to set for the aboutMe property.
             ## @return a void
             ## 
             def about_me=(value)
@@ -391,7 +397,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accountEnabled property value. true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter (eq, ne, not, and in).
-            ## @param value Value to set for the account_enabled property.
+            ## @param value Value to set for the accountEnabled property.
             ## @return a void
             ## 
             def account_enabled=(value)
@@ -421,7 +427,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the ageGroup property value. Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).
-            ## @param value Value to set for the age_group property.
+            ## @param value Value to set for the ageGroup property.
             ## @return a void
             ## 
             def age_group=(value)
@@ -436,7 +442,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the agreementAcceptances property value. The user's terms of use acceptance statuses. Read-only. Nullable.
-            ## @param value Value to set for the agreement_acceptances property.
+            ## @param value Value to set for the agreementAcceptances property.
             ## @return a void
             ## 
             def agreement_acceptances=(value)
@@ -451,7 +457,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appRoleAssignments property value. Represents the app roles a user has been granted for an application. Supports $expand.
-            ## @param value Value to set for the app_role_assignments property.
+            ## @param value Value to set for the appRoleAssignments property.
             ## @return a void
             ## 
             def app_role_assignments=(value)
@@ -466,7 +472,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignedLicenses property value. The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses.  Not nullable. Returned only on $select. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
-            ## @param value Value to set for the assigned_licenses property.
+            ## @param value Value to set for the assignedLicenses property.
             ## @return a void
             ## 
             def assigned_licenses=(value)
@@ -481,7 +487,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignedPlans property value. The plans that are assigned to the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq and not).
-            ## @param value Value to set for the assigned_plans property.
+            ## @param value Value to set for the assignedPlans property.
             ## @return a void
             ## 
             def assigned_plans=(value)
@@ -511,7 +517,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the authorizationInfo property value. The authorizationInfo property
-            ## @param value Value to set for the authorization_info property.
+            ## @param value Value to set for the authorizationInfo property.
             ## @return a void
             ## 
             def authorization_info=(value)
@@ -541,7 +547,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the businessPhones property value. The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default. Supports $filter (eq, not, ge, le, startsWith).
-            ## @param value Value to set for the business_phones property.
+            ## @param value Value to set for the businessPhones property.
             ## @return a void
             ## 
             def business_phones=(value)
@@ -571,7 +577,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the calendarGroups property value. The user's calendar groups. Read-only. Nullable.
-            ## @param value Value to set for the calendar_groups property.
+            ## @param value Value to set for the calendarGroups property.
             ## @return a void
             ## 
             def calendar_groups=(value)
@@ -586,7 +592,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the calendarView property value. The calendar view for the calendar. Read-only. Nullable.
-            ## @param value Value to set for the calendar_view property.
+            ## @param value Value to set for the calendarView property.
             ## @return a void
             ## 
             def calendar_view=(value)
@@ -646,7 +652,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the companyName property value. The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-            ## @param value Value to set for the company_name property.
+            ## @param value Value to set for the companyName property.
             ## @return a void
             ## 
             def company_name=(value)
@@ -661,14 +667,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the consentProvidedForMinor property value. Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Returned only on $select. Supports $filter (eq, ne, not, and in).
-            ## @param value Value to set for the consent_provided_for_minor property.
+            ## @param value Value to set for the consentProvidedForMinor property.
             ## @return a void
             ## 
             def consent_provided_for_minor=(value)
                 @consent_provided_for_minor = value
             end
             ## 
-            ## Instantiates a new User and sets the default values.
+            ## Instantiates a new user and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -684,7 +690,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contactFolders property value. The user's contacts folders. Read-only. Nullable.
-            ## @param value Value to set for the contact_folders property.
+            ## @param value Value to set for the contactFolders property.
             ## @return a void
             ## 
             def contact_folders=(value)
@@ -729,7 +735,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -744,7 +750,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdObjects property value. Directory objects that were created by the user. Read-only. Nullable.
-            ## @param value Value to set for the created_objects property.
+            ## @param value Value to set for the createdObjects property.
             ## @return a void
             ## 
             def created_objects=(value)
@@ -768,7 +774,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the creationType property value. Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp). Read-only.Returned only on $select. Supports $filter (eq, ne, not, in).
-            ## @param value Value to set for the creation_type property.
+            ## @param value Value to set for the creationType property.
             ## @return a void
             ## 
             def creation_type=(value)
@@ -798,7 +804,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceEnrollmentLimit property value. The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.
-            ## @param value Value to set for the device_enrollment_limit property.
+            ## @param value Value to set for the deviceEnrollmentLimit property.
             ## @return a void
             ## 
             def device_enrollment_limit=(value)
@@ -813,7 +819,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceManagementTroubleshootingEvents property value. The list of troubleshooting events for this user.
-            ## @param value Value to set for the device_management_troubleshooting_events property.
+            ## @param value Value to set for the deviceManagementTroubleshootingEvents property.
             ## @return a void
             ## 
             def device_management_troubleshooting_events=(value)
@@ -828,7 +834,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the directReports property value. The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
-            ## @param value Value to set for the direct_reports property.
+            ## @param value Value to set for the directReports property.
             ## @return a void
             ## 
             def direct_reports=(value)
@@ -843,7 +849,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -880,6 +886,21 @@ module MicrosoftGraph
                 @drives = value
             end
             ## 
+            ## Gets the employeeExperience property value. The employeeExperience property
+            ## @return a employee_experience_user
+            ## 
+            def employee_experience
+                return @employee_experience
+            end
+            ## 
+            ## Sets the employeeExperience property value. The employeeExperience property
+            ## @param value Value to set for the employeeExperience property.
+            ## @return a void
+            ## 
+            def employee_experience=(value)
+                @employee_experience = value
+            end
+            ## 
             ## Gets the employeeHireDate property value. The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
             ## @return a date_time
             ## 
@@ -888,7 +909,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the employeeHireDate property value. The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
-            ## @param value Value to set for the employee_hire_date property.
+            ## @param value Value to set for the employeeHireDate property.
             ## @return a void
             ## 
             def employee_hire_date=(value)
@@ -903,7 +924,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the employeeId property value. The employee identifier assigned to the user by the organization. The maximum length is 16 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-            ## @param value Value to set for the employee_id property.
+            ## @param value Value to set for the employeeId property.
             ## @return a void
             ## 
             def employee_id=(value)
@@ -918,7 +939,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the employeeLeaveDateTime property value. The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
-            ## @param value Value to set for the employee_leave_date_time property.
+            ## @param value Value to set for the employeeLeaveDateTime property.
             ## @return a void
             ## 
             def employee_leave_date_time=(value)
@@ -933,7 +954,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the employeeOrgData property value. Represents organization data (e.g. division and costCenter) associated with a user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in).
-            ## @param value Value to set for the employee_org_data property.
+            ## @param value Value to set for the employeeOrgData property.
             ## @return a void
             ## 
             def employee_org_data=(value)
@@ -948,7 +969,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the employeeType property value. Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith).
-            ## @param value Value to set for the employee_type property.
+            ## @param value Value to set for the employeeType property.
             ## @return a void
             ## 
             def employee_type=(value)
@@ -993,7 +1014,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalUserState property value. For an external user invited to the tenant using the invitation API, this property represents the invited user's invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Returned only on $select. Supports $filter (eq, ne, not , in).
-            ## @param value Value to set for the external_user_state property.
+            ## @param value Value to set for the externalUserState property.
             ## @return a void
             ## 
             def external_user_state=(value)
@@ -1008,7 +1029,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalUserStateChangeDateTime property value. Shows the timestamp for the latest change to the externalUserState property. Returned only on $select. Supports $filter (eq, ne, not , in).
-            ## @param value Value to set for the external_user_state_change_date_time property.
+            ## @param value Value to set for the externalUserStateChangeDateTime property.
             ## @return a void
             ## 
             def external_user_state_change_date_time=(value)
@@ -1023,7 +1044,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the faxNumber property value. The fax number of the user. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-            ## @param value Value to set for the fax_number property.
+            ## @param value Value to set for the faxNumber property.
             ## @return a void
             ## 
             def fax_number=(value)
@@ -1038,7 +1059,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the followedSites property value. The followedSites property
-            ## @param value Value to set for the followed_sites property.
+            ## @param value Value to set for the followedSites property.
             ## @return a void
             ## 
             def followed_sites=(value)
@@ -1083,6 +1104,7 @@ module MicrosoftGraph
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "drive" => lambda {|n| @drive = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Drive.create_from_discriminator_value(pn) }) },
                     "drives" => lambda {|n| @drives = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Drive.create_from_discriminator_value(pn) }) },
+                    "employeeExperience" => lambda {|n| @employee_experience = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::EmployeeExperienceUser.create_from_discriminator_value(pn) }) },
                     "employeeHireDate" => lambda {|n| @employee_hire_date = n.get_date_time_value() },
                     "employeeId" => lambda {|n| @employee_id = n.get_string_value() },
                     "employeeLeaveDateTime" => lambda {|n| @employee_leave_date_time = n.get_date_time_value() },
@@ -1149,6 +1171,7 @@ module MicrosoftGraph
                     "preferredLanguage" => lambda {|n| @preferred_language = n.get_string_value() },
                     "preferredName" => lambda {|n| @preferred_name = n.get_string_value() },
                     "presence" => lambda {|n| @presence = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Presence.create_from_discriminator_value(pn) }) },
+                    "print" => lambda {|n| @print = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::UserPrint.create_from_discriminator_value(pn) }) },
                     "provisionedPlans" => lambda {|n| @provisioned_plans = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ProvisionedPlan.create_from_discriminator_value(pn) }) },
                     "proxyAddresses" => lambda {|n| @proxy_addresses = n.get_collection_of_primitive_values(String) },
                     "registeredDevices" => lambda {|n| @registered_devices = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::DirectoryObject.create_from_discriminator_value(pn) }) },
@@ -1181,7 +1204,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the givenName property value. The given name (first name) of the user. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-            ## @param value Value to set for the given_name property.
+            ## @param value Value to set for the givenName property.
             ## @return a void
             ## 
             def given_name=(value)
@@ -1196,7 +1219,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hireDate property value. The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
-            ## @param value Value to set for the hire_date property.
+            ## @param value Value to set for the hireDate property.
             ## @return a void
             ## 
             def hire_date=(value)
@@ -1226,7 +1249,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the imAddresses property value. The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).
-            ## @param value Value to set for the im_addresses property.
+            ## @param value Value to set for the imAddresses property.
             ## @return a void
             ## 
             def im_addresses=(value)
@@ -1241,7 +1264,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the inferenceClassification property value. Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
-            ## @param value Value to set for the inference_classification property.
+            ## @param value Value to set for the inferenceClassification property.
             ## @return a void
             ## 
             def inference_classification=(value)
@@ -1286,7 +1309,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isResourceAccount property value. Do not use – reserved for future use.
-            ## @param value Value to set for the is_resource_account property.
+            ## @param value Value to set for the isResourceAccount property.
             ## @return a void
             ## 
             def is_resource_account=(value)
@@ -1301,7 +1324,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the jobTitle property value. The user's job title. Maximum length is 128 characters. Returned by default. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).
-            ## @param value Value to set for the job_title property.
+            ## @param value Value to set for the jobTitle property.
             ## @return a void
             ## 
             def job_title=(value)
@@ -1316,7 +1339,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the joinedTeams property value. The joinedTeams property
-            ## @param value Value to set for the joined_teams property.
+            ## @param value Value to set for the joinedTeams property.
             ## @return a void
             ## 
             def joined_teams=(value)
@@ -1331,7 +1354,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastPasswordChangeDateTime property value. The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned only on $select.
-            ## @param value Value to set for the last_password_change_date_time property.
+            ## @param value Value to set for the lastPasswordChangeDateTime property.
             ## @return a void
             ## 
             def last_password_change_date_time=(value)
@@ -1346,7 +1369,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the legalAgeGroupClassification property value. Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.
-            ## @param value Value to set for the legal_age_group_classification property.
+            ## @param value Value to set for the legalAgeGroupClassification property.
             ## @return a void
             ## 
             def legal_age_group_classification=(value)
@@ -1361,7 +1384,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the licenseAssignmentStates property value. State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
-            ## @param value Value to set for the license_assignment_states property.
+            ## @param value Value to set for the licenseAssignmentStates property.
             ## @return a void
             ## 
             def license_assignment_states=(value)
@@ -1376,7 +1399,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the licenseDetails property value. A collection of this user's license details. Read-only.
-            ## @param value Value to set for the license_details property.
+            ## @param value Value to set for the licenseDetails property.
             ## @return a void
             ## 
             def license_details=(value)
@@ -1406,7 +1429,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mailFolders property value. The user's mail folders. Read-only. Nullable.
-            ## @param value Value to set for the mail_folders property.
+            ## @param value Value to set for the mailFolders property.
             ## @return a void
             ## 
             def mail_folders=(value)
@@ -1421,7 +1444,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mailNickname property value. The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-            ## @param value Value to set for the mail_nickname property.
+            ## @param value Value to set for the mailNickname property.
             ## @return a void
             ## 
             def mail_nickname=(value)
@@ -1436,7 +1459,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mailboxSettings property value. Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale and time zone. Returned only on $select.
-            ## @param value Value to set for the mailbox_settings property.
+            ## @param value Value to set for the mailboxSettings property.
             ## @return a void
             ## 
             def mailbox_settings=(value)
@@ -1451,7 +1474,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the managedAppRegistrations property value. Zero or more managed app registrations that belong to the user.
-            ## @param value Value to set for the managed_app_registrations property.
+            ## @param value Value to set for the managedAppRegistrations property.
             ## @return a void
             ## 
             def managed_app_registrations=(value)
@@ -1466,7 +1489,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the managedDevices property value. The managed devices associated with the user.
-            ## @param value Value to set for the managed_devices property.
+            ## @param value Value to set for the managedDevices property.
             ## @return a void
             ## 
             def managed_devices=(value)
@@ -1496,7 +1519,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the memberOf property value. The groups and directory roles that the user is a member of. Read-only. Nullable. Supports $expand.
-            ## @param value Value to set for the member_of property.
+            ## @param value Value to set for the memberOf property.
             ## @return a void
             ## 
             def member_of=(value)
@@ -1518,15 +1541,15 @@ module MicrosoftGraph
                 @messages = value
             end
             ## 
-            ## Gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+            ## Gets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
             ## @return a string
             ## 
             def mobile_phone
                 return @mobile_phone
             end
             ## 
-            ## Sets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-            ## @param value Value to set for the mobile_phone property.
+            ## Sets the mobilePhone property value. The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Maximum length is 64 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
+            ## @param value Value to set for the mobilePhone property.
             ## @return a void
             ## 
             def mobile_phone=(value)
@@ -1541,7 +1564,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mySite property value. The URL for the user's personal site. Returned only on $select.
-            ## @param value Value to set for the my_site property.
+            ## @param value Value to set for the mySite property.
             ## @return a void
             ## 
             def my_site=(value)
@@ -1556,7 +1579,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the oauth2PermissionGrants property value. The oauth2PermissionGrants property
-            ## @param value Value to set for the oauth2_permission_grants property.
+            ## @param value Value to set for the oauth2PermissionGrants property.
             ## @return a void
             ## 
             def oauth2_permission_grants=(value)
@@ -1571,7 +1594,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the officeLocation property value. The office location in the user's place of business. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-            ## @param value Value to set for the office_location property.
+            ## @param value Value to set for the officeLocation property.
             ## @return a void
             ## 
             def office_location=(value)
@@ -1586,7 +1609,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesDistinguishedName property value. Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
-            ## @param value Value to set for the on_premises_distinguished_name property.
+            ## @param value Value to set for the onPremisesDistinguishedName property.
             ## @return a void
             ## 
             def on_premises_distinguished_name=(value)
@@ -1601,7 +1624,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesDomainName property value. Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select.
-            ## @param value Value to set for the on_premises_domain_name property.
+            ## @param value Value to set for the onPremisesDomainName property.
             ## @return a void
             ## 
             def on_premises_domain_name=(value)
@@ -1616,7 +1639,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesExtensionAttributes property value. Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Returned only on $select. Supports $filter (eq, ne, not, in).
-            ## @param value Value to set for the on_premises_extension_attributes property.
+            ## @param value Value to set for the onPremisesExtensionAttributes property.
             ## @return a void
             ## 
             def on_premises_extension_attributes=(value)
@@ -1631,7 +1654,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesImmutableId property value. This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. NOTE: The $ and _ characters cannot be used when specifying this property. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in)..
-            ## @param value Value to set for the on_premises_immutable_id property.
+            ## @param value Value to set for the onPremisesImmutableId property.
             ## @return a void
             ## 
             def on_premises_immutable_id=(value)
@@ -1646,7 +1669,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesLastSyncDateTime property value. Indicates the last time at which the object was synced with the on-premises directory; for example: 2013-02-16T03:04:54Z. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in).
-            ## @param value Value to set for the on_premises_last_sync_date_time property.
+            ## @param value Value to set for the onPremisesLastSyncDateTime property.
             ## @return a void
             ## 
             def on_premises_last_sync_date_time=(value)
@@ -1661,7 +1684,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning. Returned only on $select. Supports $filter (eq, not, ge, le).
-            ## @param value Value to set for the on_premises_provisioning_errors property.
+            ## @param value Value to set for the onPremisesProvisioningErrors property.
             ## @return a void
             ## 
             def on_premises_provisioning_errors=(value)
@@ -1676,7 +1699,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesSamAccountName property value. Contains the on-premises samAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-            ## @param value Value to set for the on_premises_sam_account_name property.
+            ## @param value Value to set for the onPremisesSamAccountName property.
             ## @return a void
             ## 
             def on_premises_sam_account_name=(value)
@@ -1691,7 +1714,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Returned only on $select.  Supports $filter (eq including on null values).
-            ## @param value Value to set for the on_premises_security_identifier property.
+            ## @param value Value to set for the onPremisesSecurityIdentifier property.
             ## @return a void
             ## 
             def on_premises_security_identifier=(value)
@@ -1706,7 +1729,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesSyncEnabled property value. true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
-            ## @param value Value to set for the on_premises_sync_enabled property.
+            ## @param value Value to set for the onPremisesSyncEnabled property.
             ## @return a void
             ## 
             def on_premises_sync_enabled=(value)
@@ -1721,7 +1744,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesUserPrincipalName property value. Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith).
-            ## @param value Value to set for the on_premises_user_principal_name property.
+            ## @param value Value to set for the onPremisesUserPrincipalName property.
             ## @return a void
             ## 
             def on_premises_user_principal_name=(value)
@@ -1743,15 +1766,15 @@ module MicrosoftGraph
                 @onenote = value
             end
             ## 
-            ## Gets the onlineMeetings property value. The onlineMeetings property
+            ## Gets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
             ## @return a online_meeting
             ## 
             def online_meetings
                 return @online_meetings
             end
             ## 
-            ## Sets the onlineMeetings property value. The onlineMeetings property
-            ## @param value Value to set for the online_meetings property.
+            ## Sets the onlineMeetings property value. Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
+            ## @param value Value to set for the onlineMeetings property.
             ## @return a void
             ## 
             def online_meetings=(value)
@@ -1766,7 +1789,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the otherMails property value. A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com']. NOTE: This property cannot contain accent characters. Returned only on $select. Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
-            ## @param value Value to set for the other_mails property.
+            ## @param value Value to set for the otherMails property.
             ## @return a void
             ## 
             def other_mails=(value)
@@ -1796,7 +1819,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the ownedDevices property value. Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
-            ## @param value Value to set for the owned_devices property.
+            ## @param value Value to set for the ownedDevices property.
             ## @return a void
             ## 
             def owned_devices=(value)
@@ -1811,7 +1834,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the ownedObjects property value. Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
-            ## @param value Value to set for the owned_objects property.
+            ## @param value Value to set for the ownedObjects property.
             ## @return a void
             ## 
             def owned_objects=(value)
@@ -1826,7 +1849,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordPolicies property value. Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. Returned only on $select. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).
-            ## @param value Value to set for the password_policies property.
+            ## @param value Value to set for the passwordPolicies property.
             ## @return a void
             ## 
             def password_policies=(value)
@@ -1841,7 +1864,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordProfile property value. Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).
-            ## @param value Value to set for the password_profile property.
+            ## @param value Value to set for the passwordProfile property.
             ## @return a void
             ## 
             def password_profile=(value)
@@ -1856,7 +1879,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the pastProjects property value. A list for the user to enumerate their past projects. Returned only on $select.
-            ## @param value Value to set for the past_projects property.
+            ## @param value Value to set for the pastProjects property.
             ## @return a void
             ## 
             def past_projects=(value)
@@ -1931,7 +1954,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the postalCode property value. The postal code for the user's postal address. The postal code is specific to the user's country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-            ## @param value Value to set for the postal_code property.
+            ## @param value Value to set for the postalCode property.
             ## @return a void
             ## 
             def postal_code=(value)
@@ -1946,7 +1969,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the preferredDataLocation property value. The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.
-            ## @param value Value to set for the preferred_data_location property.
+            ## @param value Value to set for the preferredDataLocation property.
             ## @return a void
             ## 
             def preferred_data_location=(value)
@@ -1961,7 +1984,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the preferredLanguage property value. The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
-            ## @param value Value to set for the preferred_language property.
+            ## @param value Value to set for the preferredLanguage property.
             ## @return a void
             ## 
             def preferred_language=(value)
@@ -1976,7 +1999,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the preferredName property value. The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.
-            ## @param value Value to set for the preferred_name property.
+            ## @param value Value to set for the preferredName property.
             ## @return a void
             ## 
             def preferred_name=(value)
@@ -1998,6 +2021,21 @@ module MicrosoftGraph
                 @presence = value
             end
             ## 
+            ## Gets the print property value. The print property
+            ## @return a user_print
+            ## 
+            def print
+                return @print
+            end
+            ## 
+            ## Sets the print property value. The print property
+            ## @param value Value to set for the print property.
+            ## @return a void
+            ## 
+            def print=(value)
+                @print = value
+            end
+            ## 
             ## Gets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
             ## @return a provisioned_plan
             ## 
@@ -2006,7 +2044,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the provisionedPlans property value. The plans that are provisioned for the user. Read-only. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le).
-            ## @param value Value to set for the provisioned_plans property.
+            ## @param value Value to set for the provisionedPlans property.
             ## @return a void
             ## 
             def provisioned_plans=(value)
@@ -2021,7 +2059,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the proxyAddresses property value. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
-            ## @param value Value to set for the proxy_addresses property.
+            ## @param value Value to set for the proxyAddresses property.
             ## @return a void
             ## 
             def proxy_addresses=(value)
@@ -2036,7 +2074,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the registeredDevices property value. Devices that are registered for the user. Read-only. Nullable. Supports $expand.
-            ## @param value Value to set for the registered_devices property.
+            ## @param value Value to set for the registeredDevices property.
             ## @return a void
             ## 
             def registered_devices=(value)
@@ -2081,7 +2119,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scopedRoleMemberOf property value. The scopedRoleMemberOf property
-            ## @param value Value to set for the scoped_role_member_of property.
+            ## @param value Value to set for the scopedRoleMemberOf property.
             ## @return a void
             ## 
             def scoped_role_member_of=(value)
@@ -2096,7 +2134,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the securityIdentifier property value. Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).
-            ## @param value Value to set for the security_identifier property.
+            ## @param value Value to set for the securityIdentifier property.
             ## @return a void
             ## 
             def security_identifier=(value)
@@ -2143,6 +2181,7 @@ module MicrosoftGraph
                 writer.write_string_value("displayName", @display_name)
                 writer.write_object_value("drive", @drive)
                 writer.write_collection_of_object_values("drives", @drives)
+                writer.write_object_value("employeeExperience", @employee_experience)
                 writer.write_date_time_value("employeeHireDate", @employee_hire_date)
                 writer.write_string_value("employeeId", @employee_id)
                 writer.write_date_time_value("employeeLeaveDateTime", @employee_leave_date_time)
@@ -2209,6 +2248,7 @@ module MicrosoftGraph
                 writer.write_string_value("preferredLanguage", @preferred_language)
                 writer.write_string_value("preferredName", @preferred_name)
                 writer.write_object_value("presence", @presence)
+                writer.write_object_value("print", @print)
                 writer.write_collection_of_object_values("provisionedPlans", @provisioned_plans)
                 writer.write_collection_of_primitive_values("proxyAddresses", @proxy_addresses)
                 writer.write_collection_of_object_values("registeredDevices", @registered_devices)
@@ -2255,22 +2295,22 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showInAddressList property value. Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.
-            ## @param value Value to set for the show_in_address_list property.
+            ## @param value Value to set for the showInAddressList property.
             ## @return a void
             ## 
             def show_in_address_list=(value)
                 @show_in_address_list = value
             end
             ## 
-            ## Gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.When you specify $select=signInActivity or $filter=signInActivity while listing users, the maximum page size is 120 users. Requests with $top set higher than 120 will fail. Requests with $top set higher than 120 will fail.This property is not returned for a user who has never signed in or last signed in before April 2020.
+            ## Gets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
             ## @return a sign_in_activity
             ## 
             def sign_in_activity
                 return @sign_in_activity
             end
             ## 
-            ## Sets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.When you specify $select=signInActivity or $filter=signInActivity while listing users, the maximum page size is 120 users. Requests with $top set higher than 120 will fail. Requests with $top set higher than 120 will fail.This property is not returned for a user who has never signed in or last signed in before April 2020.
-            ## @param value Value to set for the sign_in_activity property.
+            ## Sets the signInActivity property value. Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
+            ## @param value Value to set for the signInActivity property.
             ## @return a void
             ## 
             def sign_in_activity=(value)
@@ -2285,7 +2325,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the signInSessionsValidFromDateTime property value. Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset. Returned only on $select.
-            ## @param value Value to set for the sign_in_sessions_valid_from_date_time property.
+            ## @param value Value to set for the signInSessionsValidFromDateTime property.
             ## @return a void
             ## 
             def sign_in_sessions_valid_from_date_time=(value)
@@ -2330,7 +2370,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the streetAddress property value. The street address of the user's place of business. Maximum length is 1024 characters. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-            ## @param value Value to set for the street_address property.
+            ## @param value Value to set for the streetAddress property.
             ## @return a void
             ## 
             def street_address=(value)
@@ -2352,14 +2392,14 @@ module MicrosoftGraph
                 @surname = value
             end
             ## 
-            ## Gets the teamwork property value. The teamwork property
+            ## Gets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
             ## @return a user_teamwork
             ## 
             def teamwork
                 return @teamwork
             end
             ## 
-            ## Sets the teamwork property value. The teamwork property
+            ## Sets the teamwork property value. A container for Microsoft Teams features available for the user. Read-only. Nullable.
             ## @param value Value to set for the teamwork property.
             ## @return a void
             ## 
@@ -2390,7 +2430,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the transitiveMemberOf property value. The groups, including nested groups, and directory roles that a user is a member of. Nullable.
-            ## @param value Value to set for the transitive_member_of property.
+            ## @param value Value to set for the transitiveMemberOf property.
             ## @return a void
             ## 
             def transitive_member_of=(value)
@@ -2405,7 +2445,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the usageLocation property value. A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-            ## @param value Value to set for the usage_location property.
+            ## @param value Value to set for the usageLocation property.
             ## @return a void
             ## 
             def usage_location=(value)
@@ -2420,7 +2460,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userPrincipalName property value. The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.
-            ## @param value Value to set for the user_principal_name property.
+            ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 
             def user_principal_name=(value)
@@ -2435,7 +2475,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userType property value. A string value that can be used to classify user types in your directory, such as Member and Guest. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?
-            ## @param value Value to set for the user_type property.
+            ## @param value Value to set for the userType property.
             ## @return a void
             ## 
             def user_type=(value)

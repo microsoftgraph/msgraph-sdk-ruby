@@ -38,7 +38,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignedUserPrincipalName property value. UPN of the user the device will be assigned
-            ## @param value Value to set for the assigned_user_principal_name property.
+            ## @param value Value to set for the assignedUserPrincipalName property.
             ## @return a void
             ## 
             def assigned_user_principal_name=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the groupTag property value. Group Tag of the Windows autopilot device.
-            ## @param value Value to set for the group_tag property.
+            ## @param value Value to set for the groupTag property.
             ## @return a void
             ## 
             def group_tag=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hardwareIdentifier property value. Hardware Blob of the Windows autopilot device.
-            ## @param value Value to set for the hardware_identifier property.
+            ## @param value Value to set for the hardwareIdentifier property.
             ## @return a void
             ## 
             def hardware_identifier=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the importId property value. The Import Id of the Windows autopilot device.
-            ## @param value Value to set for the import_id property.
+            ## @param value Value to set for the importId property.
             ## @return a void
             ## 
             def import_id=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the productKey property value. Product Key of the Windows autopilot device.
-            ## @param value Value to set for the product_key property.
+            ## @param value Value to set for the productKey property.
             ## @return a void
             ## 
             def product_key=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the serialNumber property value. Serial number of the Windows autopilot device.
-            ## @param value Value to set for the serial_number property.
+            ## @param value Value to set for the serialNumber property.
             ## @return a void
             ## 
             def serial_number=(value)

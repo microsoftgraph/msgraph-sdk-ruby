@@ -35,7 +35,7 @@ module MicrosoftGraph
                                                 super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/team/primaryChannel/messages/{chatMessage%2Did}/replies/{chatMessage%2Did1}/softDelete")
                                             end
                                             ## 
-                                            ## Invoke action softDelete
+                                            ## Delete a single chatMessage or a chat message reply in a channel or a chat.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of void
                                             ## 
@@ -49,7 +49,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                             end
                                             ## 
-                                            ## Invoke action softDelete
+                                            ## Delete a single chatMessage or a chat message reply in a channel or a chat.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 

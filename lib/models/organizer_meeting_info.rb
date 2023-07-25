@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The organizer property
             @organizer
             ## 
-            ## Instantiates a new OrganizerMeetingInfo and sets the default values.
+            ## Instantiates a new organizerMeetingInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()

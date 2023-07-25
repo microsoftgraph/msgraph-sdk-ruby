@@ -40,7 +40,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -55,7 +55,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignedByGroup property value. The assignedByGroup property
-            ## @param value Value to set for the assigned_by_group property.
+            ## @param value Value to set for the assignedByGroup property.
             ## @return a void
             ## 
             def assigned_by_group=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the disabledPlans property value. The disabledPlans property
-            ## @param value Value to set for the disabled_plans property.
+            ## @param value Value to set for the disabledPlans property.
             ## @return a void
             ## 
             def disabled_plans=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastUpdatedDateTime property value. The lastUpdatedDateTime property
-            ## @param value Value to set for the last_updated_date_time property.
+            ## @param value Value to set for the lastUpdatedDateTime property.
             ## @return a void
             ## 
             def last_updated_date_time=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the skuId property value. The skuId property
-            ## @param value Value to set for the sku_id property.
+            ## @param value Value to set for the skuId property.
             ## @return a void
             ## 
             def sku_id=(value)

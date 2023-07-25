@@ -49,7 +49,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the ruleName property value. Name of the rule which this scheduled action applies to. Currently scheduled actions are created per policy instead of per rule, thus RuleName is always set to default value PasswordRequired.
-            ## @param value Value to set for the rule_name property.
+            ## @param value Value to set for the ruleName property.
             ## @return a void
             ## 
             def rule_name=(value)
@@ -64,7 +64,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scheduledActionConfigurations property value. The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
-            ## @param value Value to set for the scheduled_action_configurations property.
+            ## @param value Value to set for the scheduledActionConfigurations property.
             ## @return a void
             ## 
             def scheduled_action_configurations=(value)

@@ -6,6 +6,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../groups'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/group_setting_item_request_builder'
 require_relative './settings'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Groups::Item::Settings::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the settings property of the microsoft.graph.group entity.
+                    ## @param group_setting_id Unique identifier of the item
+                    ## @return a group_setting_item_request_builder
+                    ## 
+                    def by_group_setting_id(group_setting_id)
+                        raise StandardError, 'group_setting_id cannot be null' if group_setting_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["groupSetting%2Did"] = group_setting_id
+                        return MicrosoftGraph::Groups::Item::Settings::Item::GroupSettingItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new SettingsRequestBuilder and sets the default values.

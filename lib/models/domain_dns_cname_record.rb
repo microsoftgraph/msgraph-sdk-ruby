@@ -18,14 +18,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the canonicalName property value. The canonical name of the CNAME record. Used to configure the CNAME record at the DNS host.
-            ## @param value Value to set for the canonical_name property.
+            ## @param value Value to set for the canonicalName property.
             ## @return a void
             ## 
             def canonical_name=(value)
                 @canonical_name = value
             end
             ## 
-            ## Instantiates a new DomainDnsCnameRecord and sets the default values.
+            ## Instantiates a new domainDnsCnameRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()

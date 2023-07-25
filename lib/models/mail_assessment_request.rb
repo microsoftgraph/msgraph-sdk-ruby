@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The mail recipient whose policies are used to assess the mail.
             @recipient_email
             ## 
-            ## Instantiates a new MailAssessmentRequest and sets the default values.
+            ## Instantiates a new mailAssessmentRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -41,7 +41,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
-            ## @param value Value to set for the destination_routing_reason property.
+            ## @param value Value to set for the destinationRoutingReason property.
             ## @return a void
             ## 
             def destination_routing_reason=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the messageUri property value. The resource URI of the mail message for assessment.
-            ## @param value Value to set for the message_uri property.
+            ## @param value Value to set for the messageUri property.
             ## @return a void
             ## 
             def message_uri=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the recipientEmail property value. The mail recipient whose policies are used to assess the mail.
-            ## @param value Value to set for the recipient_email property.
+            ## @param value Value to set for the recipientEmail property.
             ## @return a void
             ## 
             def recipient_email=(value)

@@ -47,7 +47,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                ## @param value Value to set for the AdditionalData property.
+                ## @param value Value to set for the additionalData property.
                 ## @return a void
                 ## 
                 def additional_data=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the isQueryable property value. Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.
-                ## @param value Value to set for the is_queryable property.
+                ## @param value Value to set for the isQueryable property.
                 ## @return a void
                 ## 
                 def is_queryable=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the isRefinable property value. Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.
-                ## @param value Value to set for the is_refinable property.
+                ## @param value Value to set for the isRefinable property.
                 ## @return a void
                 ## 
                 def is_refinable=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the isRetrievable property value. Specifies if the property is retrievable. Retrievable properties are returned in the result set when items are returned by the search API. Retrievable properties are also available to add to the display template used to render search results. Optional.
-                ## @param value Value to set for the is_retrievable property.
+                ## @param value Value to set for the isRetrievable property.
                 ## @return a void
                 ## 
                 def is_retrievable=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the isSearchable property value. Specifies if the property is searchable. Only properties of type String or StringCollection can be searchable. Non-searchable properties are not added to the search index. Optional.
-                ## @param value Value to set for the is_searchable property.
+                ## @param value Value to set for the isSearchable property.
                 ## @return a void
                 ## 
                 def is_searchable=(value)
@@ -200,7 +200,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the @odata.type property value. The OdataType property
-                ## @param value Value to set for the odata_type property.
+                ## @param value Value to set for the @odata.type property.
                 ## @return a void
                 ## 
                 def odata_type=(value)

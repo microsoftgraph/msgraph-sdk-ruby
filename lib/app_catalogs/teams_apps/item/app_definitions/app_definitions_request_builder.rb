@@ -8,6 +8,7 @@ require_relative '../../teams_apps'
 require_relative '../item'
 require_relative './app_definitions'
 require_relative './count/count_request_builder'
+require_relative './item/teams_app_definition_item_request_builder'
 
 module MicrosoftGraph
     module AppCatalogs
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::AppCatalogs::TeamsApps::Item::AppDefinitions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.
+                        ## @param teams_app_definition_id Unique identifier of the item
+                        ## @return a teams_app_definition_item_request_builder
+                        ## 
+                        def by_teams_app_definition_id(teams_app_definition_id)
+                            raise StandardError, 'teams_app_definition_id cannot be null' if teams_app_definition_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["teamsAppDefinition%2Did"] = teams_app_definition_id
+                            return MicrosoftGraph::AppCatalogs::TeamsApps::Item::AppDefinitions::Item::TeamsAppDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new AppDefinitionsRequestBuilder and sets the default values.

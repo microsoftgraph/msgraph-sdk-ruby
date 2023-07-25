@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceStates property value. The install state of the eBook.
-            ## @param value Value to set for the device_states property.
+            ## @param value Value to set for the deviceStates property.
             ## @return a void
             ## 
             def device_states=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the failedDeviceCount property value. Failed Device Count.
-            ## @param value Value to set for the failed_device_count property.
+            ## @param value Value to set for the failedDeviceCount property.
             ## @return a void
             ## 
             def failed_device_count=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the installedDeviceCount property value. Installed Device Count.
-            ## @param value Value to set for the installed_device_count property.
+            ## @param value Value to set for the installedDeviceCount property.
             ## @return a void
             ## 
             def installed_device_count=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notInstalledDeviceCount property value. Not installed device count.
-            ## @param value Value to set for the not_installed_device_count property.
+            ## @param value Value to set for the notInstalledDeviceCount property.
             ## @return a void
             ## 
             def not_installed_device_count=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userName property value. User name.
-            ## @param value Value to set for the user_name property.
+            ## @param value Value to set for the userName property.
             ## @return a void
             ## 
             def user_name=(value)

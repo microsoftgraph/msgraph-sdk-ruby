@@ -23,7 +23,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the baseType property value. Must be set to microsoft.graph.externalConnector.externalItem. Required.
-                ## @param value Value to set for the base_type property.
+                ## @param value Value to set for the baseType property.
                 ## @return a void
                 ## 
                 def base_type=(value)

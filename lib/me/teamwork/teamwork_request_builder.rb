@@ -4,9 +4,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/user_teamwork'
 require_relative '../me'
 require_relative './associated_teams/associated_teams_request_builder'
-require_relative './associated_teams/item/associated_team_info_item_request_builder'
 require_relative './installed_apps/installed_apps_request_builder'
-require_relative './installed_apps/item/user_scope_teams_app_installation_item_request_builder'
 require_relative './send_activity_notification/send_activity_notification_request_builder'
 require_relative './teamwork'
 
@@ -33,17 +31,6 @@ module MicrosoftGraph
                     return MicrosoftGraph::Me::Teamwork::SendActivityNotification::SendActivityNotificationRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
-                ## Provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.
-                ## @param id Unique identifier of the item
-                ## @return a associated_team_info_item_request_builder
-                ## 
-                def associated_teams_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["associatedTeamInfo%2Did"] = id
-                    return MicrosoftGraph::Me::Teamwork::AssociatedTeams::Item::AssociatedTeamInfoItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Instantiates a new TeamworkRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -67,7 +54,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Get teamwork from me
+                ## A container for Microsoft Teams features available for the user. Read-only. Nullable.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of user_teamwork
                 ## 
@@ -79,17 +66,6 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserTeamwork.create_from_discriminator_value(pn) }, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
-                ## @param id Unique identifier of the item
-                ## @return a user_scope_teams_app_installation_item_request_builder
-                ## 
-                def installed_apps_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["userScopeTeamsAppInstallation%2Did"] = id
-                    return MicrosoftGraph::Me::Teamwork::InstalledApps::Item::UserScopeTeamsAppInstallationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Update the navigation property teamwork in me
@@ -124,7 +100,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Get teamwork from me
+                ## A container for Microsoft Teams features available for the user. Read-only. Nullable.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -163,7 +139,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get teamwork from me
+                # A container for Microsoft Teams features available for the user. Read-only. Nullable.
                 class TeamworkRequestBuilderGetQueryParameters
                     
                     ## 

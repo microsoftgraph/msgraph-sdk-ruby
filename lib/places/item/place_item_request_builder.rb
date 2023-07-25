@@ -4,6 +4,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../../models/place'
 require_relative '../places'
 require_relative './graph_room/graph_room_request_builder'
+require_relative './graph_room_list/graph_room_list_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -17,6 +18,11 @@ module MicrosoftGraph
                 # Casts the previous resource to room.
                 def graph_room()
                     return MicrosoftGraph::Places::Item::GraphRoom::GraphRoomRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                # Casts the previous resource to roomList.
+                def graph_room_list()
+                    return MicrosoftGraph::Places::Item::GraphRoomList::GraphRoomListRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new PlaceItemRequestBuilder and sets the default values.

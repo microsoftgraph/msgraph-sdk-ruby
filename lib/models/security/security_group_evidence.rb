@@ -15,11 +15,12 @@ module MicrosoftGraph
                 # Unique identifier of the security group.
                 @security_group_id
                 ## 
-                ## Instantiates a new SecurityGroupEvidence and sets the default values.
+                ## Instantiates a new securityGroupEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()
                     super
+                    @odata_type = "#microsoft.graph.security.securityGroupEvidence"
                 end
                 ## 
                 ## Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +40,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the displayName property value. The name of the security group.
-                ## @param value Value to set for the display_name property.
+                ## @param value Value to set for the displayName property.
                 ## @return a void
                 ## 
                 def display_name=(value)
@@ -64,7 +65,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the securityGroupId property value. Unique identifier of the security group.
-                ## @param value Value to set for the security_group_id property.
+                ## @param value Value to set for the securityGroupId property.
                 ## @return a void
                 ## 
                 def security_group_id=(value)

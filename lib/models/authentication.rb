@@ -37,7 +37,7 @@ module MicrosoftGraph
             # Represents the Windows Hello for Business authentication method registered to a user for authentication.
             @windows_hello_for_business_methods
             ## 
-            ## Instantiates a new Authentication and sets the default values.
+            ## Instantiates a new authentication and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -61,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the emailMethods property value. The email address registered to a user for authentication.
-            ## @param value Value to set for the email_methods property.
+            ## @param value Value to set for the emailMethods property.
             ## @return a void
             ## 
             def email_methods=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fido2Methods property value. Represents the FIDO2 security keys registered to a user for authentication.
-            ## @param value Value to set for the fido2_methods property.
+            ## @param value Value to set for the fido2Methods property.
             ## @return a void
             ## 
             def fido2_methods=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the microsoftAuthenticatorMethods property value. The details of the Microsoft Authenticator app registered to a user for authentication.
-            ## @param value Value to set for the microsoft_authenticator_methods property.
+            ## @param value Value to set for the microsoftAuthenticatorMethods property.
             ## @return a void
             ## 
             def microsoft_authenticator_methods=(value)
@@ -154,7 +154,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMethods property value. Represents the password that's registered to a user for authentication. For security, the password itself will never be returned in the object, but action can be taken to reset a password.
-            ## @param value Value to set for the password_methods property.
+            ## @param value Value to set for the passwordMethods property.
             ## @return a void
             ## 
             def password_methods=(value)
@@ -169,7 +169,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the phoneMethods property value. The phone numbers registered to a user for authentication.
-            ## @param value Value to set for the phone_methods property.
+            ## @param value Value to set for the phoneMethods property.
             ## @return a void
             ## 
             def phone_methods=(value)
@@ -203,7 +203,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the softwareOathMethods property value. The software OATH TOTP applications registered to a user for authentication.
-            ## @param value Value to set for the software_oath_methods property.
+            ## @param value Value to set for the softwareOathMethods property.
             ## @return a void
             ## 
             def software_oath_methods=(value)
@@ -218,7 +218,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the temporaryAccessPassMethods property value. Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
-            ## @param value Value to set for the temporary_access_pass_methods property.
+            ## @param value Value to set for the temporaryAccessPassMethods property.
             ## @return a void
             ## 
             def temporary_access_pass_methods=(value)
@@ -233,7 +233,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsHelloForBusinessMethods property value. Represents the Windows Hello for Business authentication method registered to a user for authentication.
-            ## @param value Value to set for the windows_hello_for_business_methods property.
+            ## @param value Value to set for the windowsHelloForBusinessMethods property.
             ## @return a void
             ## 
             def windows_hello_for_business_methods=(value)

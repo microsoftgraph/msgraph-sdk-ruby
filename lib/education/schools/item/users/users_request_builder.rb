@@ -6,6 +6,7 @@ require_relative '../../../education'
 require_relative '../../schools'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/education_user_item_request_builder'
 require_relative './ref/ref_request_builder'
 require_relative './users'
 
@@ -27,6 +28,17 @@ module MicrosoftGraph
                         # Provides operations to manage the collection of educationRoot entities.
                         def ref()
                             return MicrosoftGraph::Education::Schools::Item::Users::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Gets an item from the MicrosoftGraph.education.schools.item.users.item collection
+                        ## @param education_user_id Unique identifier of the item
+                        ## @return a education_user_item_request_builder
+                        ## 
+                        def by_education_user_id(education_user_id)
+                            raise StandardError, 'education_user_id cannot be null' if education_user_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["educationUser%2Did"] = education_user_id
+                            return MicrosoftGraph::Education::Schools::Item::Users::Item::EducationUserItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new UsersRequestBuilder and sets the default values.

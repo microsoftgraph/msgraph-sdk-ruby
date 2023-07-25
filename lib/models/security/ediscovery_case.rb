@@ -48,7 +48,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the closedBy property value. The user who closed the case.
-                ## @param value Value to set for the closed_by property.
+                ## @param value Value to set for the closedBy property.
                 ## @return a void
                 ## 
                 def closed_by=(value)
@@ -63,14 +63,14 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the closedDateTime property value. The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-                ## @param value Value to set for the closed_date_time property.
+                ## @param value Value to set for the closedDateTime property.
                 ## @return a void
                 ## 
                 def closed_date_time=(value)
                     @closed_date_time = value
                 end
                 ## 
-                ## Instantiates a new EdiscoveryCase and sets the default values.
+                ## Instantiates a new ediscoveryCase and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()
@@ -110,7 +110,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the externalId property value. The external case number for customer reference.
-                ## @param value Value to set for the external_id property.
+                ## @param value Value to set for the externalId property.
                 ## @return a void
                 ## 
                 def external_id=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the noncustodialDataSources property value. Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
-                ## @param value Value to set for the noncustodial_data_sources property.
+                ## @param value Value to set for the noncustodialDataSources property.
                 ## @return a void
                 ## 
                 def noncustodial_data_sources=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the reviewSets property value. Returns a list of eDiscoveryReviewSet objects in the case.
-                ## @param value Value to set for the review_sets property.
+                ## @param value Value to set for the reviewSets property.
                 ## @return a void
                 ## 
                 def review_sets=(value)

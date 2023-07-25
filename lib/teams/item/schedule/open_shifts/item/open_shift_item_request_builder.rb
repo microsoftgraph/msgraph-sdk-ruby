@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/teams/{team%2Did}/schedule/openShifts/{openShift%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property openShifts for teams
+                            ## Delete an openShift object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Get openShifts from teams
+                            ## Retrieve the properties and relationships of an openshift object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of open_shift
                             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OpenShift.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property openShifts in teams
+                            ## Update the properties of an openShift object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of open_shift
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OpenShift.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property openShifts for teams
+                            ## Delete an openShift object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Get openShifts from teams
+                            ## Retrieve the properties and relationships of an openshift object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property openShifts in teams
+                            ## Update the properties of an openShift object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get openShifts from teams
+                            # Retrieve the properties and relationships of an openshift object.
                             class OpenShiftItemRequestBuilderGetQueryParameters
                                 
                                 ## 

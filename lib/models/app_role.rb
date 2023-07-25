@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowedMemberTypes property value. Specifies whether this app role can be assigned to users and groups (by setting to ['User']), to other application's (by setting to ['Application'], or both (by setting to ['User', 'Application']). App roles supporting assignment to other applications' service principals are also known as application permissions. The 'Application' value is only supported for app roles defined on application entities.
-            ## @param value Value to set for the allowed_member_types property.
+            ## @param value Value to set for the allowedMemberTypes property.
             ## @return a void
             ## 
             def allowed_member_types=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Display name for the permission that appears in the app role assignment and consent experiences.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -149,7 +149,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isEnabled property value. When creating or updating an app role, this must be set to true (which is the default). To delete a role, this must first be set to false.  At that point, in a subsequent call, this role may be removed.
-            ## @param value Value to set for the is_enabled property.
+            ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 
             def is_enabled=(value)
@@ -164,7 +164,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

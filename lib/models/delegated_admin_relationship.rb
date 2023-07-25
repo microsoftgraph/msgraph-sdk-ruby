@@ -52,7 +52,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accessAssignments property value. The access assignments associated with the delegated admin relationship.
-            ## @param value Value to set for the access_assignments property.
+            ## @param value Value to set for the accessAssignments property.
             ## @return a void
             ## 
             def access_assignments=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accessDetails property value. The accessDetails property
-            ## @param value Value to set for the access_details property.
+            ## @param value Value to set for the accessDetails property.
             ## @return a void
             ## 
             def access_details=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activatedDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship became active. Read-only.
-            ## @param value Value to set for the activated_date_time property.
+            ## @param value Value to set for the activatedDateTime property.
             ## @return a void
             ## 
             def activated_date_time=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship was created. Read-only.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and cannot be changed by the customer.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the endDateTime property value. The date and time in ISO 8601 format and in UTC time when the status of relationship changes to either terminated or expired. Calculated as endDateTime = activatedDateTime + duration. Read-only.
-            ## @param value Value to set for the end_date_time property.
+            ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 
             def end_date_time=(value)
@@ -208,7 +208,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. The date and time in ISO 8601 format and in UTC time when the relationship was last modified. Read-only.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)

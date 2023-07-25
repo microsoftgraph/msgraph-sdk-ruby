@@ -65,7 +65,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the endDateTime property value. The date and time in ISO 8601 format and UTC time when the review stage is scheduled to end. This property is the cumulative total of the durationInDays for all stages. Read-only.
-            ## @param value Value to set for the end_date_time property.
+            ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 
             def end_date_time=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fallbackReviewers property value. This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user's manager does not exist.
-            ## @param value Value to set for the fallback_reviewers property.
+            ## @param value Value to set for the fallbackReviewers property.
             ## @return a void
             ## 
             def fallback_reviewers=(value)
@@ -139,7 +139,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startDateTime property value. The date and time in ISO 8601 format and UTC time when the review stage is scheduled to start. Read-only.
-            ## @param value Value to set for the start_date_time property.
+            ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
             def start_date_time=(value)

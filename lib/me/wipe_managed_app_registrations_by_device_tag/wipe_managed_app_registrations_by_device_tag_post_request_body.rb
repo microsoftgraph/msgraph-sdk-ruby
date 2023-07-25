@@ -23,7 +23,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                ## @param value Value to set for the AdditionalData property.
+                ## @param value Value to set for the additionalData property.
                 ## @return a void
                 ## 
                 def additional_data=(value)
@@ -54,7 +54,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the deviceTag property value. The deviceTag property
-                ## @param value Value to set for the device_tag property.
+                ## @param value Value to set for the deviceTag property.
                 ## @return a void
                 ## 
                 def device_tag=(value)

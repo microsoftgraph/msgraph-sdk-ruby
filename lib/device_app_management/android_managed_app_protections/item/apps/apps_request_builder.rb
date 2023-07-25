@@ -8,6 +8,7 @@ require_relative '../../android_managed_app_protections'
 require_relative '../item'
 require_relative './apps'
 require_relative './count/count_request_builder'
+require_relative './item/managed_mobile_app_item_request_builder'
 
 module MicrosoftGraph
     module DeviceAppManagement
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::DeviceAppManagement::AndroidManagedAppProtections::Item::Apps::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the apps property of the microsoft.graph.androidManagedAppProtection entity.
+                        ## @param managed_mobile_app_id Unique identifier of the item
+                        ## @return a managed_mobile_app_item_request_builder
+                        ## 
+                        def by_managed_mobile_app_id(managed_mobile_app_id)
+                            raise StandardError, 'managed_mobile_app_id cannot be null' if managed_mobile_app_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["managedMobileApp%2Did"] = managed_mobile_app_id
+                            return MicrosoftGraph::DeviceAppManagement::AndroidManagedAppProtections::Item::Apps::Item::ManagedMobileAppItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new AppsRequestBuilder and sets the default values.

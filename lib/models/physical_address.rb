@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the countryOrRegion property value. The country or region. It's a free-format string value, for example, 'United States'.
-            ## @param value Value to set for the country_or_region property.
+            ## @param value Value to set for the countryOrRegion property.
             ## @return a void
             ## 
             def country_or_region=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the postalCode property value. The postal code.
-            ## @param value Value to set for the postal_code property.
+            ## @param value Value to set for the postalCode property.
             ## @return a void
             ## 
             def postal_code=(value)

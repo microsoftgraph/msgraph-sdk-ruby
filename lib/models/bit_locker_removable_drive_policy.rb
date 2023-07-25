@@ -32,7 +32,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -47,7 +47,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the blockCrossOrganizationWriteAccess property value. This policy setting determines whether BitLocker protection is required for removable data drives to be writable on a computer.
-            ## @param value Value to set for the block_cross_organization_write_access property.
+            ## @param value Value to set for the blockCrossOrganizationWriteAccess property.
             ## @return a void
             ## 
             def block_cross_organization_write_access=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the encryptionMethod property value. Select the encryption method for removable  drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.
-            ## @param value Value to set for the encryption_method property.
+            ## @param value Value to set for the encryptionMethod property.
             ## @return a void
             ## 
             def encryption_method=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the requireEncryptionForWriteAccess property value. Indicates whether to block write access to devices configured in another organization.  If requireEncryptionForWriteAccess is false, this value does not affect.
-            ## @param value Value to set for the require_encryption_for_write_access property.
+            ## @param value Value to set for the requireEncryptionForWriteAccess property.
             ## @return a void
             ## 
             def require_encryption_for_write_access=(value)

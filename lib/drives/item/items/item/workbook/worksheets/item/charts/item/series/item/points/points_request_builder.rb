@@ -15,6 +15,7 @@ require_relative '../../../item'
 require_relative '../../series'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_chart_point_item_request_builder'
 require_relative './item_at_with_index/item_at_with_index_request_builder'
 require_relative './points'
 
@@ -39,6 +40,17 @@ module MicrosoftGraph
                                                         # Provides operations to call the count method.
                                                         def count()
                                                             return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Series::Item::Points::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                                        end
+                                                        ## 
+                                                        ## Provides operations to manage the points property of the microsoft.graph.workbookChartSeries entity.
+                                                        ## @param workbook_chart_point_id Unique identifier of the item
+                                                        ## @return a workbook_chart_point_item_request_builder
+                                                        ## 
+                                                        def by_workbook_chart_point_id(workbook_chart_point_id)
+                                                            raise StandardError, 'workbook_chart_point_id cannot be null' if workbook_chart_point_id.nil?
+                                                            url_tpl_params = @path_parameters.clone
+                                                            url_tpl_params["workbookChartPoint%2Did"] = workbook_chart_point_id
+                                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Charts::Item::Series::Item::Points::Item::WorkbookChartPointItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                                         end
                                                         ## 
                                                         ## Instantiates a new PointsRequestBuilder and sets the default values.

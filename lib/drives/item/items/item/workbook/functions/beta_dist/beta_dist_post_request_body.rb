@@ -41,14 +41,14 @@ module MicrosoftGraph
                                     # The x property
                                     @x
                                     ## 
-                                    ## Gets the a property value. The A property
+                                    ## Gets the A property value. The A property
                                     ## @return a json
                                     ## 
                                     def a
                                         return @a
                                     end
                                     ## 
-                                    ## Sets the a property value. The A property
+                                    ## Sets the A property value. The A property
                                     ## @param value Value to set for the A property.
                                     ## @return a void
                                     ## 
@@ -64,7 +64,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -86,14 +86,14 @@ module MicrosoftGraph
                                         @alpha = value
                                     end
                                     ## 
-                                    ## Gets the b property value. The B property
+                                    ## Gets the B property value. The B property
                                     ## @return a json
                                     ## 
                                     def b
                                         return @b
                                     end
                                     ## 
-                                    ## Sets the b property value. The B property
+                                    ## Sets the B property value. The B property
                                     ## @param value Value to set for the B property.
                                     ## @return a void
                                     ## 

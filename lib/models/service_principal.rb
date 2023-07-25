@@ -115,7 +115,7 @@ module MicrosoftGraph
             # Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
             @preferred_single_sign_on_mode
             ## 
-            # Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+            # This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
             @preferred_token_signing_key_thumbprint
             ## 
             # The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
@@ -133,8 +133,11 @@ module MicrosoftGraph
             # Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.
             @service_principal_type
             ## 
-            # Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+            # Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
             @sign_in_audience
+            ## 
+            # Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+            @synchronization
             ## 
             # Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
             @tags
@@ -162,7 +165,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accountEnabled property value. true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).
-            ## @param value Value to set for the account_enabled property.
+            ## @param value Value to set for the accountEnabled property.
             ## @return a void
             ## 
             def account_enabled=(value)
@@ -177,7 +180,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the addIns property value. Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
-            ## @param value Value to set for the add_ins property.
+            ## @param value Value to set for the addIns property.
             ## @return a void
             ## 
             def add_ins=(value)
@@ -192,7 +195,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the alternativeNames property value. Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).
-            ## @param value Value to set for the alternative_names property.
+            ## @param value Value to set for the alternativeNames property.
             ## @return a void
             ## 
             def alternative_names=(value)
@@ -207,7 +210,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appDescription property value. The description exposed by the associated application.
-            ## @param value Value to set for the app_description property.
+            ## @param value Value to set for the appDescription property.
             ## @return a void
             ## 
             def app_description=(value)
@@ -222,7 +225,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appDisplayName property value. The display name exposed by the associated application.
-            ## @param value Value to set for the app_display_name property.
+            ## @param value Value to set for the appDisplayName property.
             ## @return a void
             ## 
             def app_display_name=(value)
@@ -237,7 +240,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appId property value. The unique identifier for the associated application (its appId property). Supports $filter (eq, ne, not, in, startsWith).
-            ## @param value Value to set for the app_id property.
+            ## @param value Value to set for the appId property.
             ## @return a void
             ## 
             def app_id=(value)
@@ -252,7 +255,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appManagementPolicies property value. The appManagementPolicy applied to this application.
-            ## @param value Value to set for the app_management_policies property.
+            ## @param value Value to set for the appManagementPolicies property.
             ## @return a void
             ## 
             def app_management_policies=(value)
@@ -267,7 +270,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appOwnerOrganizationId property value. Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).
-            ## @param value Value to set for the app_owner_organization_id property.
+            ## @param value Value to set for the appOwnerOrganizationId property.
             ## @return a void
             ## 
             def app_owner_organization_id=(value)
@@ -282,7 +285,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appRoleAssignedTo property value. App role assignments for this app or service, granted to users, groups, and other service principals. Supports $expand.
-            ## @param value Value to set for the app_role_assigned_to property.
+            ## @param value Value to set for the appRoleAssignedTo property.
             ## @return a void
             ## 
             def app_role_assigned_to=(value)
@@ -297,7 +300,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appRoleAssignmentRequired property value. Specifies whether users or other service principals need to be granted an app role assignment for this service principal before users can sign in or apps can get tokens. The default value is false. Not nullable. Supports $filter (eq, ne, NOT).
-            ## @param value Value to set for the app_role_assignment_required property.
+            ## @param value Value to set for the appRoleAssignmentRequired property.
             ## @return a void
             ## 
             def app_role_assignment_required=(value)
@@ -312,7 +315,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appRoleAssignments property value. App role assignment for another app or service, granted to this service principal. Supports $expand.
-            ## @param value Value to set for the app_role_assignments property.
+            ## @param value Value to set for the appRoleAssignments property.
             ## @return a void
             ## 
             def app_role_assignments=(value)
@@ -327,7 +330,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appRoles property value. The roles exposed by the application which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.
-            ## @param value Value to set for the app_roles property.
+            ## @param value Value to set for the appRoles property.
             ## @return a void
             ## 
             def app_roles=(value)
@@ -342,7 +345,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicationTemplateId property value. Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports $filter (eq, ne, NOT, startsWith).
-            ## @param value Value to set for the application_template_id property.
+            ## @param value Value to set for the applicationTemplateId property.
             ## @return a void
             ## 
             def application_template_id=(value)
@@ -357,14 +360,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the claimsMappingPolicies property value. The claimsMappingPolicies assigned to this service principal. Supports $expand.
-            ## @param value Value to set for the claims_mapping_policies property.
+            ## @param value Value to set for the claimsMappingPolicies property.
             ## @return a void
             ## 
             def claims_mapping_policies=(value)
                 @claims_mapping_policies = value
             end
             ## 
-            ## Instantiates a new ServicePrincipal and sets the default values.
+            ## Instantiates a new servicePrincipal and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -380,7 +383,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdObjects property value. Directory objects created by this service principal. Read-only. Nullable.
-            ## @param value Value to set for the created_objects property.
+            ## @param value Value to set for the createdObjects property.
             ## @return a void
             ## 
             def created_objects=(value)
@@ -404,7 +407,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the delegatedPermissionClassifications property value. The delegatedPermissionClassifications property
-            ## @param value Value to set for the delegated_permission_classifications property.
+            ## @param value Value to set for the delegatedPermissionClassifications property.
             ## @return a void
             ## 
             def delegated_permission_classifications=(value)
@@ -434,7 +437,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the disabledByMicrosoftStatus property value. Specifies whether Microsoft has disabled the registered application. Possible values are: null (default value), NotDisabled, and DisabledDueToViolationOfServicesAgreement (reasons may include suspicious, abusive, or malicious activity, or a violation of the Microsoft Services Agreement).  Supports $filter (eq, ne, not).
-            ## @param value Value to set for the disabled_by_microsoft_status property.
+            ## @param value Value to set for the disabledByMicrosoftStatus property.
             ## @return a void
             ## 
             def disabled_by_microsoft_status=(value)
@@ -449,7 +452,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -479,7 +482,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the federatedIdentityCredentials property value. Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (/$count eq 0, /$count ne 0).
-            ## @param value Value to set for the federated_identity_credentials property.
+            ## @param value Value to set for the federatedIdentityCredentials property.
             ## @return a void
             ## 
             def federated_identity_credentials=(value)
@@ -534,6 +537,7 @@ module MicrosoftGraph
                     "servicePrincipalNames" => lambda {|n| @service_principal_names = n.get_collection_of_primitive_values(String) },
                     "servicePrincipalType" => lambda {|n| @service_principal_type = n.get_string_value() },
                     "signInAudience" => lambda {|n| @sign_in_audience = n.get_string_value() },
+                    "synchronization" => lambda {|n| @synchronization = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Synchronization.create_from_discriminator_value(pn) }) },
                     "tags" => lambda {|n| @tags = n.get_collection_of_primitive_values(String) },
                     "tokenEncryptionKeyId" => lambda {|n| @token_encryption_key_id = n.get_guid_value() },
                     "tokenIssuancePolicies" => lambda {|n| @token_issuance_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::TokenIssuancePolicy.create_from_discriminator_value(pn) }) },
@@ -551,7 +555,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the homeRealmDiscoveryPolicies property value. The homeRealmDiscoveryPolicies assigned to this service principal. Supports $expand.
-            ## @param value Value to set for the home_realm_discovery_policies property.
+            ## @param value Value to set for the homeRealmDiscoveryPolicies property.
             ## @return a void
             ## 
             def home_realm_discovery_policies=(value)
@@ -596,7 +600,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the keyCredentials property value. The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).
-            ## @param value Value to set for the key_credentials property.
+            ## @param value Value to set for the keyCredentials property.
             ## @return a void
             ## 
             def key_credentials=(value)
@@ -611,7 +615,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the loginUrl property value. Specifies the URL where the service provider redirects the user to Azure AD to authenticate. Azure AD uses the URL to launch the application from Microsoft 365 or the Azure AD My Apps. When blank, Azure AD performs IdP-initiated sign-on for applications configured with SAML-based single sign-on. The user launches the application from Microsoft 365, the Azure AD My Apps, or the Azure AD SSO URL.
-            ## @param value Value to set for the login_url property.
+            ## @param value Value to set for the loginUrl property.
             ## @return a void
             ## 
             def login_url=(value)
@@ -626,7 +630,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the logoutUrl property value. Specifies the URL that will be used by Microsoft's authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.
-            ## @param value Value to set for the logout_url property.
+            ## @param value Value to set for the logoutUrl property.
             ## @return a void
             ## 
             def logout_url=(value)
@@ -641,7 +645,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the memberOf property value. Roles that this service principal is a member of. HTTP Methods: GET Read-only. Nullable. Supports $expand.
-            ## @param value Value to set for the member_of property.
+            ## @param value Value to set for the memberOf property.
             ## @return a void
             ## 
             def member_of=(value)
@@ -671,7 +675,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notificationEmailAddresses property value. Specifies the list of email addresses where Azure AD sends a notification when the active certificate is near the expiration date. This is only for the certificates used to sign the SAML token issued for Azure AD Gallery applications.
-            ## @param value Value to set for the notification_email_addresses property.
+            ## @param value Value to set for the notificationEmailAddresses property.
             ## @return a void
             ## 
             def notification_email_addresses=(value)
@@ -686,7 +690,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the oauth2PermissionGrants property value. Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
-            ## @param value Value to set for the oauth2_permission_grants property.
+            ## @param value Value to set for the oauth2PermissionGrants property.
             ## @return a void
             ## 
             def oauth2_permission_grants=(value)
@@ -701,7 +705,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the oauth2PermissionScopes property value. The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity's api property. Not nullable.
-            ## @param value Value to set for the oauth2_permission_scopes property.
+            ## @param value Value to set for the oauth2PermissionScopes property.
             ## @return a void
             ## 
             def oauth2_permission_scopes=(value)
@@ -716,7 +720,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the ownedObjects property value. Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
-            ## @param value Value to set for the owned_objects property.
+            ## @param value Value to set for the ownedObjects property.
             ## @return a void
             ## 
             def owned_objects=(value)
@@ -746,7 +750,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordCredentials property value. The collection of password credentials associated with the application. Not nullable.
-            ## @param value Value to set for the password_credentials property.
+            ## @param value Value to set for the passwordCredentials property.
             ## @return a void
             ## 
             def password_credentials=(value)
@@ -761,22 +765,22 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the preferredSingleSignOnMode property value. Specifies the single sign-on mode configured for this application. Azure AD uses the preferred single sign-on mode to launch the application from Microsoft 365 or the Azure AD My Apps. The supported values are password, saml, notSupported, and oidc.
-            ## @param value Value to set for the preferred_single_sign_on_mode property.
+            ## @param value Value to set for the preferredSingleSignOnMode property.
             ## @return a void
             ## 
             def preferred_single_sign_on_mode=(value)
                 @preferred_single_sign_on_mode = value
             end
             ## 
-            ## Gets the preferredTokenSigningKeyThumbprint property value. Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+            ## Gets the preferredTokenSigningKeyThumbprint property value. This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
             ## @return a string
             ## 
             def preferred_token_signing_key_thumbprint
                 return @preferred_token_signing_key_thumbprint
             end
             ## 
-            ## Sets the preferredTokenSigningKeyThumbprint property value. Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
-            ## @param value Value to set for the preferred_token_signing_key_thumbprint property.
+            ## Sets the preferredTokenSigningKeyThumbprint property value. This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
+            ## @param value Value to set for the preferredTokenSigningKeyThumbprint property.
             ## @return a void
             ## 
             def preferred_token_signing_key_thumbprint=(value)
@@ -791,7 +795,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the replyUrls property value. The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.
-            ## @param value Value to set for the reply_urls property.
+            ## @param value Value to set for the replyUrls property.
             ## @return a void
             ## 
             def reply_urls=(value)
@@ -806,7 +810,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceSpecificApplicationPermissions property value. The resource-specific application permissions exposed by this application. Currently, resource-specific permissions are only supported for Teams apps accessing to specific chats and teams using Microsoft Graph. Read-only.
-            ## @param value Value to set for the resource_specific_application_permissions property.
+            ## @param value Value to set for the resourceSpecificApplicationPermissions property.
             ## @return a void
             ## 
             def resource_specific_application_permissions=(value)
@@ -821,7 +825,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the samlSingleSignOnSettings property value. The collection for settings related to saml single sign-on.
-            ## @param value Value to set for the saml_single_sign_on_settings property.
+            ## @param value Value to set for the samlSingleSignOnSettings property.
             ## @return a void
             ## 
             def saml_single_sign_on_settings=(value)
@@ -878,6 +882,7 @@ module MicrosoftGraph
                 writer.write_collection_of_primitive_values("servicePrincipalNames", @service_principal_names)
                 writer.write_string_value("servicePrincipalType", @service_principal_type)
                 writer.write_string_value("signInAudience", @sign_in_audience)
+                writer.write_object_value("synchronization", @synchronization)
                 writer.write_collection_of_primitive_values("tags", @tags)
                 writer.write_guid_value("tokenEncryptionKeyId", @token_encryption_key_id)
                 writer.write_collection_of_object_values("tokenIssuancePolicies", @token_issuance_policies)
@@ -894,7 +899,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the servicePrincipalNames property value. Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Azure AD. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the 'aud' claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).
-            ## @param value Value to set for the service_principal_names property.
+            ## @param value Value to set for the servicePrincipalNames property.
             ## @return a void
             ## 
             def service_principal_names=(value)
@@ -909,26 +914,41 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the servicePrincipalType property value. Identifies whether the service principal represents an application, a managed identity, or a legacy application. This is set by Azure AD internally. The servicePrincipalType property can be set to three different values: __Application - A service principal that represents an application or service. The appId property identifies the associated app registration, and matches the appId of an application, possibly from a different tenant. If the associated app registration is missing, tokens are not issued for the service principal.__ManagedIdentity - A service principal that represents a managed identity. Service principals representing managed identities can be granted access and permissions, but cannot be updated or modified directly.__Legacy - A service principal that represents an app created before app registrations, or through legacy experiences. Legacy service principal can have credentials, service principal names, reply URLs, and other properties which are editable by an authorized user, but does not have an associated app registration. The appId value does not associate the service principal with an app registration. The service principal can only be used in the tenant where it was created.__SocialIdp - For internal use.
-            ## @param value Value to set for the service_principal_type property.
+            ## @param value Value to set for the servicePrincipalType property.
             ## @return a void
             ## 
             def service_principal_type=(value)
                 @service_principal_type = value
             end
             ## 
-            ## Gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+            ## Gets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
             ## @return a string
             ## 
             def sign_in_audience
                 return @sign_in_audience
             end
             ## 
-            ## Sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
-            ## @param value Value to set for the sign_in_audience property.
+            ## Sets the signInAudience property value. Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+            ## @param value Value to set for the signInAudience property.
             ## @return a void
             ## 
             def sign_in_audience=(value)
                 @sign_in_audience = value
+            end
+            ## 
+            ## Gets the synchronization property value. Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+            ## @return a synchronization
+            ## 
+            def synchronization
+                return @synchronization
+            end
+            ## 
+            ## Sets the synchronization property value. Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
+            ## @param value Value to set for the synchronization property.
+            ## @return a void
+            ## 
+            def synchronization=(value)
+                @synchronization = value
             end
             ## 
             ## Gets the tags property value. Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
@@ -954,7 +974,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tokenEncryptionKeyId property value. Specifies the keyId of a public key from the keyCredentials collection. When configured, Azure AD issues tokens for this application encrypted using the key specified by this property. The application code that receives the encrypted token must use the matching private key to decrypt the token before it can be used for the signed-in user.
-            ## @param value Value to set for the token_encryption_key_id property.
+            ## @param value Value to set for the tokenEncryptionKeyId property.
             ## @return a void
             ## 
             def token_encryption_key_id=(value)
@@ -969,7 +989,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tokenIssuancePolicies property value. The tokenIssuancePolicies assigned to this service principal.
-            ## @param value Value to set for the token_issuance_policies property.
+            ## @param value Value to set for the tokenIssuancePolicies property.
             ## @return a void
             ## 
             def token_issuance_policies=(value)
@@ -984,7 +1004,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tokenLifetimePolicies property value. The tokenLifetimePolicies assigned to this service principal.
-            ## @param value Value to set for the token_lifetime_policies property.
+            ## @param value Value to set for the tokenLifetimePolicies property.
             ## @return a void
             ## 
             def token_lifetime_policies=(value)
@@ -999,7 +1019,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the transitiveMemberOf property value. The transitiveMemberOf property
-            ## @param value Value to set for the transitive_member_of property.
+            ## @param value Value to set for the transitiveMemberOf property.
             ## @return a void
             ## 
             def transitive_member_of=(value)
@@ -1014,7 +1034,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the verifiedPublisher property value. Specifies the verified publisher of the application which this service principal represents.
-            ## @param value Value to set for the verified_publisher property.
+            ## @param value Value to set for the verifiedPublisher property.
             ## @return a void
             ## 
             def verified_publisher=(value)

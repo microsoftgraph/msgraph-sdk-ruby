@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the apiConnectors property value. Represents entry point for API connectors.
-            ## @param value Value to set for the api_connectors property.
+            ## @param value Value to set for the apiConnectors property.
             ## @return a void
             ## 
             def api_connectors=(value)
@@ -45,7 +45,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the b2xUserFlows property value. Represents entry point for B2X/self-service sign-up identity userflows.
-            ## @param value Value to set for the b2x_user_flows property.
+            ## @param value Value to set for the b2xUserFlows property.
             ## @return a void
             ## 
             def b2x_user_flows=(value)
@@ -60,14 +60,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the conditionalAccess property value. the entry point for the Conditional Access (CA) object model.
-            ## @param value Value to set for the conditional_access property.
+            ## @param value Value to set for the conditionalAccess property.
             ## @return a void
             ## 
             def conditional_access=(value)
                 @conditional_access = value
             end
             ## 
-            ## Instantiates a new IdentityContainer and sets the default values.
+            ## Instantiates a new identityContainer and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the identityProviders property value. The identityProviders property
-            ## @param value Value to set for the identity_providers property.
+            ## @param value Value to set for the identityProviders property.
             ## @return a void
             ## 
             def identity_providers=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userFlowAttributes property value. Represents entry point for identity userflow attributes.
-            ## @param value Value to set for the user_flow_attributes property.
+            ## @param value Value to set for the userFlowAttributes property.
             ## @return a void
             ## 
             def user_flow_attributes=(value)

@@ -21,14 +21,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the channelId property value. Unique identifier of the channel.
-            ## @param value Value to set for the channel_id property.
+            ## @param value Value to set for the channelId property.
             ## @return a void
             ## 
             def channel_id=(value)
                 @channel_id = value
             end
             ## 
-            ## Instantiates a new ChannelUnsetAsFavoriteByDefaultEventMessageDetail and sets the default values.
+            ## Instantiates a new channelUnsetAsFavoriteByDefaultEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -54,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the conferenceId property value. The conference id of the online meeting.
-            ## @param value Value to set for the conference_id property.
+            ## @param value Value to set for the conferenceId property.
             ## @return a void
             ## 
             def conference_id=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the dialinUrl property value. A URL to the externally-accessible web page that contains dial-in information.
-            ## @param value Value to set for the dialin_url property.
+            ## @param value Value to set for the dialinUrl property.
             ## @return a void
             ## 
             def dialin_url=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tollFreeNumber property value. The tollFreeNumber property
-            ## @param value Value to set for the toll_free_number property.
+            ## @param value Value to set for the tollFreeNumber property.
             ## @return a void
             ## 
             def toll_free_number=(value)
@@ -161,7 +161,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tollFreeNumbers property value. List of toll-free numbers that are displayed in the meeting invite.
-            ## @param value Value to set for the toll_free_numbers property.
+            ## @param value Value to set for the tollFreeNumbers property.
             ## @return a void
             ## 
             def toll_free_numbers=(value)
@@ -176,7 +176,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tollNumber property value. The tollNumber property
-            ## @param value Value to set for the toll_number property.
+            ## @param value Value to set for the tollNumber property.
             ## @return a void
             ## 
             def toll_number=(value)
@@ -191,7 +191,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tollNumbers property value. List of toll numbers that are displayed in the meeting invite.
-            ## @param value Value to set for the toll_numbers property.
+            ## @param value Value to set for the tollNumbers property.
             ## @return a void
             ## 
             def toll_numbers=(value)

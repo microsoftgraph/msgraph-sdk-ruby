@@ -9,16 +9,16 @@ module MicrosoftGraph
             class UserAccount
                 include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
                 ## 
-                # The user account's displayed name.
+                # The displayed name of the user account.
                 @account_name
                 ## 
                 # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
                 @additional_data
                 ## 
-                # The user object identifier in Azure AD.
+                # The user object identifier in Azure Active Directory (Azure AD).
                 @azure_ad_user_id
                 ## 
-                # The displayName property
+                # The user display name in Azure AD.
                 @display_name
                 ## 
                 # The name of the Active Directory domain of which the user is a member.
@@ -33,15 +33,15 @@ module MicrosoftGraph
                 # The local security identifier of the user account.
                 @user_sid
                 ## 
-                ## Gets the accountName property value. The user account's displayed name.
+                ## Gets the accountName property value. The displayed name of the user account.
                 ## @return a string
                 ## 
                 def account_name
                     return @account_name
                 end
                 ## 
-                ## Sets the accountName property value. The user account's displayed name.
-                ## @param value Value to set for the account_name property.
+                ## Sets the accountName property value. The displayed name of the user account.
+                ## @param value Value to set for the accountName property.
                 ## @return a void
                 ## 
                 def account_name=(value)
@@ -56,22 +56,22 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                ## @param value Value to set for the AdditionalData property.
+                ## @param value Value to set for the additionalData property.
                 ## @return a void
                 ## 
                 def additional_data=(value)
                     @additional_data = value
                 end
                 ## 
-                ## Gets the azureAdUserId property value. The user object identifier in Azure AD.
+                ## Gets the azureAdUserId property value. The user object identifier in Azure Active Directory (Azure AD).
                 ## @return a string
                 ## 
                 def azure_ad_user_id
                     return @azure_ad_user_id
                 end
                 ## 
-                ## Sets the azureAdUserId property value. The user object identifier in Azure AD.
-                ## @param value Value to set for the azure_ad_user_id property.
+                ## Sets the azureAdUserId property value. The user object identifier in Azure Active Directory (Azure AD).
+                ## @param value Value to set for the azureAdUserId property.
                 ## @return a void
                 ## 
                 def azure_ad_user_id=(value)
@@ -94,15 +94,15 @@ module MicrosoftGraph
                     return UserAccount.new
                 end
                 ## 
-                ## Gets the displayName property value. The displayName property
+                ## Gets the displayName property value. The user display name in Azure AD.
                 ## @return a string
                 ## 
                 def display_name
                     return @display_name
                 end
                 ## 
-                ## Sets the displayName property value. The displayName property
-                ## @param value Value to set for the display_name property.
+                ## Sets the displayName property value. The user display name in Azure AD.
+                ## @param value Value to set for the displayName property.
                 ## @return a void
                 ## 
                 def display_name=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the domainName property value. The name of the Active Directory domain of which the user is a member.
-                ## @param value Value to set for the domain_name property.
+                ## @param value Value to set for the domainName property.
                 ## @return a void
                 ## 
                 def domain_name=(value)
@@ -147,7 +147,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the @odata.type property value. The OdataType property
-                ## @param value Value to set for the odata_type property.
+                ## @param value Value to set for the @odata.type property.
                 ## @return a void
                 ## 
                 def odata_type=(value)
@@ -178,7 +178,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the userPrincipalName property value. The user principal name of the account in Azure AD.
-                ## @param value Value to set for the user_principal_name property.
+                ## @param value Value to set for the userPrincipalName property.
                 ## @return a void
                 ## 
                 def user_principal_name=(value)
@@ -193,7 +193,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the userSid property value. The local security identifier of the user account.
-                ## @param value Value to set for the user_sid property.
+                ## @param value Value to set for the userSid property.
                 ## @return a void
                 ## 
                 def user_sid=(value)

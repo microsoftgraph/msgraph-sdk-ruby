@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The rooms property
             @rooms
             ## 
-            ## Instantiates a new RoomList and sets the default values.
+            ## Instantiates a new roomList and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -38,7 +38,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the emailAddress property value. The email address of the room list.
-            ## @param value Value to set for the email_address property.
+            ## @param value Value to set for the emailAddress property.
             ## @return a void
             ## 
             def email_address=(value)

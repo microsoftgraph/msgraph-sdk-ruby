@@ -18,14 +18,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the chatId property value. The unique identifier for the chat whose members should receive the notifications.
-            ## @param value Value to set for the chat_id property.
+            ## @param value Value to set for the chatId property.
             ## @return a void
             ## 
             def chat_id=(value)
                 @chat_id = value
             end
             ## 
-            ## Instantiates a new ChatMembersNotificationRecipient and sets the default values.
+            ## Instantiates a new chatMembersNotificationRecipient and sets the default values.
             ## @return a void
             ## 
             def initialize()

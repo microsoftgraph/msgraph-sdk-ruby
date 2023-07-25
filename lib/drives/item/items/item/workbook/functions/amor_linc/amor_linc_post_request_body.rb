@@ -52,7 +52,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the datePurchased property value. The datePurchased property
-                                    ## @param value Value to set for the date_purchased property.
+                                    ## @param value Value to set for the datePurchased property.
                                     ## @return a void
                                     ## 
                                     def date_purchased=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the firstPeriod property value. The firstPeriod property
-                                    ## @param value Value to set for the first_period property.
+                                    ## @param value Value to set for the firstPeriod property.
                                     ## @return a void
                                     ## 
                                     def first_period=(value)

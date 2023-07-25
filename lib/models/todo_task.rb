@@ -76,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the attachmentSessions property value. The attachmentSessions property
-            ## @param value Value to set for the attachment_sessions property.
+            ## @param value Value to set for the attachmentSessions property.
             ## @return a void
             ## 
             def attachment_sessions=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bodyLastModifiedDateTime property value. The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
-            ## @param value Value to set for the body_last_modified_date_time property.
+            ## @param value Value to set for the bodyLastModifiedDateTime property.
             ## @return a void
             ## 
             def body_last_modified_date_time=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the checklistItems property value. A collection of checklistItems linked to a task.
-            ## @param value Value to set for the checklist_items property.
+            ## @param value Value to set for the checklistItems property.
             ## @return a void
             ## 
             def checklist_items=(value)
@@ -166,7 +166,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the completedDateTime property value. The date and time in the specified time zone that the task was finished.
-            ## @param value Value to set for the completed_date_time property.
+            ## @param value Value to set for the completedDateTime property.
             ## @return a void
             ## 
             def completed_date_time=(value)
@@ -188,7 +188,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -212,7 +212,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the dueDateTime property value. The date and time in the specified time zone that the task is to be finished.
-            ## @param value Value to set for the due_date_time property.
+            ## @param value Value to set for the dueDateTime property.
             ## @return a void
             ## 
             def due_date_time=(value)
@@ -270,7 +270,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hasAttachments property value. Indicates whether the task has attachments.
-            ## @param value Value to set for the has_attachments property.
+            ## @param value Value to set for the hasAttachments property.
             ## @return a void
             ## 
             def has_attachments=(value)
@@ -300,7 +300,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isReminderOn property value. Set to true if an alert is set to remind the user of the task.
-            ## @param value Value to set for the is_reminder_on property.
+            ## @param value Value to set for the isReminderOn property.
             ## @return a void
             ## 
             def is_reminder_on=(value)
@@ -315,7 +315,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. The date and time when the task was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: '2020-01-01T00:00:00Z'.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -330,7 +330,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the linkedResources property value. A collection of resources linked to the task.
-            ## @param value Value to set for the linked_resources property.
+            ## @param value Value to set for the linkedResources property.
             ## @return a void
             ## 
             def linked_resources=(value)
@@ -360,7 +360,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the reminderDateTime property value. The date and time in the specified time zone for a reminder alert of the task to occur.
-            ## @param value Value to set for the reminder_date_time property.
+            ## @param value Value to set for the reminderDateTime property.
             ## @return a void
             ## 
             def reminder_date_time=(value)
@@ -404,7 +404,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startDateTime property value. The date and time in the specified time zone at which the task is scheduled to start.
-            ## @param value Value to set for the start_date_time property.
+            ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
             def start_date_time=(value)

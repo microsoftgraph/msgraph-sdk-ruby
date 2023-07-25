@@ -7,7 +7,7 @@ module MicrosoftGraph
         class InternalSponsors < MicrosoftGraph::Models::SubjectSet
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new InternalSponsors and sets the default values.
+            ## Instantiates a new internalSponsors and sets the default values.
             ## @return a void
             ## 
             def initialize()

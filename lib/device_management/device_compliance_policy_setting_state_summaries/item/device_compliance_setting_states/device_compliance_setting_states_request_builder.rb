@@ -8,6 +8,7 @@ require_relative '../../device_compliance_policy_setting_state_summaries'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './device_compliance_setting_states'
+require_relative './item/device_compliance_setting_state_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicySettingStateSummaries::Item::DeviceComplianceSettingStates::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the deviceComplianceSettingStates property of the microsoft.graph.deviceCompliancePolicySettingStateSummary entity.
+                        ## @param device_compliance_setting_state_id Unique identifier of the item
+                        ## @return a device_compliance_setting_state_item_request_builder
+                        ## 
+                        def by_device_compliance_setting_state_id(device_compliance_setting_state_id)
+                            raise StandardError, 'device_compliance_setting_state_id cannot be null' if device_compliance_setting_state_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["deviceComplianceSettingState%2Did"] = device_compliance_setting_state_id
+                            return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicySettingStateSummaries::Item::DeviceComplianceSettingStates::Item::DeviceComplianceSettingStateItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new DeviceComplianceSettingStatesRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary%2Did}/deviceComplianceSettingStates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Not yet documented
+                        ## List properties and relationships of the deviceComplianceSettingState objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of device_compliance_setting_state_collection_response
                         ## 
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceComplianceSettingStateCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create new navigation property to deviceComplianceSettingStates for deviceManagement
+                        ## Create a new deviceComplianceSettingState object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of device_compliance_setting_state
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceComplianceSettingState.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Not yet documented
+                        ## List properties and relationships of the deviceComplianceSettingState objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create new navigation property to deviceComplianceSettingStates for deviceManagement
+                        ## Create a new deviceComplianceSettingState object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Not yet documented
+                        # List properties and relationships of the deviceComplianceSettingState objects.
                         class DeviceComplianceSettingStatesRequestBuilderGetQueryParameters
                             
                             ## 

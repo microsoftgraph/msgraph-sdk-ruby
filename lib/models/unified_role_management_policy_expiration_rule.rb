@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.
             @maximum_duration
             ## 
-            ## Instantiates a new UnifiedRoleManagementPolicyExpirationRule and sets the default values.
+            ## Instantiates a new unifiedRoleManagementPolicyExpirationRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isExpirationRequired property value. Indicates whether expiration is required or if it's a permanently active assignment or eligibility.
-            ## @param value Value to set for the is_expiration_required property.
+            ## @param value Value to set for the isExpirationRequired property.
             ## @return a void
             ## 
             def is_expiration_required=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maximumDuration property value. The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.
-            ## @param value Value to set for the maximum_duration property.
+            ## @param value Value to set for the maximumDuration property.
             ## @return a void
             ## 
             def maximum_duration=(value)

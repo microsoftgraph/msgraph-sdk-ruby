@@ -14,7 +14,7 @@ module MicrosoftGraph
             # Scheduled Install Time during day
             @scheduled_install_time
             ## 
-            ## Instantiates a new WindowsUpdateScheduledInstall and sets the default values.
+            ## Instantiates a new windowsUpdateScheduledInstall and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -49,7 +49,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scheduledInstallDay property value. Possible values for a weekly schedule.
-            ## @param value Value to set for the scheduled_install_day property.
+            ## @param value Value to set for the scheduledInstallDay property.
             ## @return a void
             ## 
             def scheduled_install_day=(value)
@@ -64,7 +64,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scheduledInstallTime property value. Scheduled Install Time during day
-            ## @param value Value to set for the scheduled_install_time property.
+            ## @param value Value to set for the scheduledInstallTime property.
             ## @return a void
             ## 
             def scheduled_install_time=(value)

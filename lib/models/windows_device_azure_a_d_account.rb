@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Not yet documented
             @user_principal_name
             ## 
-            ## Instantiates a new WindowsDeviceAzureADAccount and sets the default values.
+            ## Instantiates a new windowsDeviceAzureADAccount and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -54,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userPrincipalName property value. Not yet documented
-            ## @param value Value to set for the user_principal_name property.
+            ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 
             def user_principal_name=(value)

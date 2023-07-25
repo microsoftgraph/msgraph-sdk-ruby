@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The membershipKind property
+            # The membership kind. Possible values are: all, enumerated, unknownFutureValue. The enumerated member references an conditionalAccessEnumeratedExternalTenants object.
             @membership_kind
             ## 
             # The OdataType property
@@ -24,7 +24,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -67,15 +67,15 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the membershipKind property value. The membershipKind property
+            ## Gets the membershipKind property value. The membership kind. Possible values are: all, enumerated, unknownFutureValue. The enumerated member references an conditionalAccessEnumeratedExternalTenants object.
             ## @return a conditional_access_external_tenants_membership_kind
             ## 
             def membership_kind
                 return @membership_kind
             end
             ## 
-            ## Sets the membershipKind property value. The membershipKind property
-            ## @param value Value to set for the membership_kind property.
+            ## Sets the membershipKind property value. The membership kind. Possible values are: all, enumerated, unknownFutureValue. The enumerated member references an conditionalAccessEnumeratedExternalTenants object.
+            ## @param value Value to set for the membershipKind property.
             ## @return a void
             ## 
             def membership_kind=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

@@ -97,7 +97,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allChannels property value. List of channels either hosted in or shared with the team (incoming channels).
-            ## @param value Value to set for the all_channels property.
+            ## @param value Value to set for the allChannels property.
             ## @return a void
             ## 
             def all_channels=(value)
@@ -149,7 +149,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. Timestamp at which the team was created.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -188,7 +188,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name of the team.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -203,7 +203,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the funSettings property value. Settings to configure use of Giphy, memes, and stickers in the team.
-            ## @param value Value to set for the fun_settings property.
+            ## @param value Value to set for the funSettings property.
             ## @return a void
             ## 
             def fun_settings=(value)
@@ -268,7 +268,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the guestSettings property value. Settings to configure whether guests can create, update, or delete channels in the team.
-            ## @param value Value to set for the guest_settings property.
+            ## @param value Value to set for the guestSettings property.
             ## @return a void
             ## 
             def guest_settings=(value)
@@ -283,7 +283,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the incomingChannels property value. List of channels shared with the team.
-            ## @param value Value to set for the incoming_channels property.
+            ## @param value Value to set for the incomingChannels property.
             ## @return a void
             ## 
             def incoming_channels=(value)
@@ -298,7 +298,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the installedApps property value. The apps installed in this team.
-            ## @param value Value to set for the installed_apps property.
+            ## @param value Value to set for the installedApps property.
             ## @return a void
             ## 
             def installed_apps=(value)
@@ -313,7 +313,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the internalId property value. A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.
-            ## @param value Value to set for the internal_id property.
+            ## @param value Value to set for the internalId property.
             ## @return a void
             ## 
             def internal_id=(value)
@@ -328,7 +328,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isArchived property value. Whether this team is in read-only mode.
-            ## @param value Value to set for the is_archived property.
+            ## @param value Value to set for the isArchived property.
             ## @return a void
             ## 
             def is_archived=(value)
@@ -343,7 +343,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the memberSettings property value. Settings to configure whether members can perform certain actions, for example, create channels and add bots, in the team.
-            ## @param value Value to set for the member_settings property.
+            ## @param value Value to set for the memberSettings property.
             ## @return a void
             ## 
             def member_settings=(value)
@@ -373,7 +373,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the messagingSettings property value. Settings to configure messaging and mentions in the team.
-            ## @param value Value to set for the messaging_settings property.
+            ## @param value Value to set for the messagingSettings property.
             ## @return a void
             ## 
             def messaging_settings=(value)
@@ -418,7 +418,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the primaryChannel property value. The general channel for the team.
-            ## @param value Value to set for the primary_channel property.
+            ## @param value Value to set for the primaryChannel property.
             ## @return a void
             ## 
             def primary_channel=(value)
@@ -544,7 +544,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tenantId property value. The ID of the Azure Active Directory tenant.
-            ## @param value Value to set for the tenant_id property.
+            ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
             def tenant_id=(value)
@@ -574,7 +574,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webUrl property value. A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.
-            ## @param value Value to set for the web_url property.
+            ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 
             def web_url=(value)

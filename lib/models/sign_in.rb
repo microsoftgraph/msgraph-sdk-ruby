@@ -85,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appDisplayName property value. App name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
-            ## @param value Value to set for the app_display_name property.
+            ## @param value Value to set for the appDisplayName property.
             ## @return a void
             ## 
             def app_display_name=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appId property value. Unique GUID representing the app ID in the Azure Active Directory. Supports $filter (eq operator only).
-            ## @param value Value to set for the app_id property.
+            ## @param value Value to set for the appId property.
             ## @return a void
             ## 
             def app_id=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appliedConditionalAccessPolicies property value. Provides a list of conditional access policies that are triggered by the corresponding sign-in activity.
-            ## @param value Value to set for the applied_conditional_access_policies property.
+            ## @param value Value to set for the appliedConditionalAccessPolicies property.
             ## @return a void
             ## 
             def applied_conditional_access_policies=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the clientAppUsed property value. Identifies the client used for the sign-in activity. Modern authentication clients include Browser and modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients. Supports $filter (eq operator only).
-            ## @param value Value to set for the client_app_used property.
+            ## @param value Value to set for the clientAppUsed property.
             ## @return a void
             ## 
             def client_app_used=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the conditionalAccessStatus property value. Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue. Supports $filter (eq operator only).
-            ## @param value Value to set for the conditional_access_status property.
+            ## @param value Value to set for the conditionalAccessStatus property.
             ## @return a void
             ## 
             def conditional_access_status=(value)
@@ -167,7 +167,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the correlationId property value. The request ID sent from the client when the sign-in is initiated; used to troubleshoot sign-in activity. Supports $filter (eq operator only).
-            ## @param value Value to set for the correlation_id property.
+            ## @param value Value to set for the correlationId property.
             ## @return a void
             ## 
             def correlation_id=(value)
@@ -182,7 +182,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. Date and time (UTC) the sign-in was initiated. Example: midnight on Jan 1, 2014 is reported as 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -206,7 +206,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceDetail property value. Device information from where the sign-in occurred; includes device ID, operating system, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSytem properties.
-            ## @param value Value to set for the device_detail property.
+            ## @param value Value to set for the deviceDetail property.
             ## @return a void
             ## 
             def device_detail=(value)
@@ -252,7 +252,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the ipAddress property value. IP address of the client used to sign in. Supports $filter (eq and startsWith operators only).
-            ## @param value Value to set for the ip_address property.
+            ## @param value Value to set for the ipAddress property.
             ## @return a void
             ## 
             def ip_address=(value)
@@ -267,7 +267,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isInteractive property value. Indicates if a sign-in is interactive or not.
-            ## @param value Value to set for the is_interactive property.
+            ## @param value Value to set for the isInteractive property.
             ## @return a void
             ## 
             def is_interactive=(value)
@@ -297,7 +297,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceDisplayName property value. Name of the resource the user signed into. Supports $filter (eq operator only).
-            ## @param value Value to set for the resource_display_name property.
+            ## @param value Value to set for the resourceDisplayName property.
             ## @return a void
             ## 
             def resource_display_name=(value)
@@ -312,7 +312,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceId property value. ID of the resource that the user signed into. Supports $filter (eq operator only).
-            ## @param value Value to set for the resource_id property.
+            ## @param value Value to set for the resourceId property.
             ## @return a void
             ## 
             def resource_id=(value)
@@ -327,7 +327,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskDetail property value. Provides the 'reason' behind a specific state of a risky user, sign-in or a risk event. The possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq operator only).Note: Details for this property require an Azure AD Premium P2 license. Other licenses return the value hidden.
-            ## @param value Value to set for the risk_detail property.
+            ## @param value Value to set for the riskDetail property.
             ## @return a void
             ## 
             def risk_detail=(value)
@@ -342,7 +342,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskEventTypes property value. Risk event types associated with the sign-in. The possible values are: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, and unknownFutureValue. Supports $filter (eq operator only).
-            ## @param value Value to set for the risk_event_types property.
+            ## @param value Value to set for the riskEventTypes property.
             ## @return a void
             ## 
             def risk_event_types=(value)
@@ -357,7 +357,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskEventTypes_v2 property value. The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
-            ## @param value Value to set for the risk_event_types_v2 property.
+            ## @param value Value to set for the riskEventTypes_v2 property.
             ## @return a void
             ## 
             def risk_event_types_v2=(value)
@@ -372,7 +372,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskLevelAggregated property value. Aggregated risk level. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only).  Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
-            ## @param value Value to set for the risk_level_aggregated property.
+            ## @param value Value to set for the riskLevelAggregated property.
             ## @return a void
             ## 
             def risk_level_aggregated=(value)
@@ -387,7 +387,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskLevelDuringSignIn property value. Risk level during sign-in. The possible values are: none, low, medium, high, hidden, and unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers will be returned hidden.
-            ## @param value Value to set for the risk_level_during_sign_in property.
+            ## @param value Value to set for the riskLevelDuringSignIn property.
             ## @return a void
             ## 
             def risk_level_during_sign_in=(value)
@@ -402,7 +402,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskState property value. Reports status of the risky user, sign-in, or a risk event. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue. Supports $filter (eq operator only).
-            ## @param value Value to set for the risk_state property.
+            ## @param value Value to set for the riskState property.
             ## @return a void
             ## 
             def risk_state=(value)
@@ -464,7 +464,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userDisplayName property value. Display name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
-            ## @param value Value to set for the user_display_name property.
+            ## @param value Value to set for the userDisplayName property.
             ## @return a void
             ## 
             def user_display_name=(value)
@@ -479,7 +479,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userId property value. ID of the user that initiated the sign-in. Supports $filter (eq operator only).
-            ## @param value Value to set for the user_id property.
+            ## @param value Value to set for the userId property.
             ## @return a void
             ## 
             def user_id=(value)
@@ -494,7 +494,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userPrincipalName property value. User principal name of the user that initiated the sign-in. Supports $filter (eq and startsWith operators only).
-            ## @param value Value to set for the user_principal_name property.
+            ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 
             def user_principal_name=(value)

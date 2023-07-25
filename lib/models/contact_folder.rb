@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the childFolders property value. The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-            ## @param value Value to set for the child_folders property.
+            ## @param value Value to set for the childFolders property.
             ## @return a void
             ## 
             def child_folders=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The folder's display name.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the contactFolder. Read-only. Nullable.
-            ## @param value Value to set for the multi_value_extended_properties property.
+            ## @param value Value to set for the multiValueExtendedProperties property.
             ## @return a void
             ## 
             def multi_value_extended_properties=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the parentFolderId property value. The ID of the folder's parent folder.
-            ## @param value Value to set for the parent_folder_id property.
+            ## @param value Value to set for the parentFolderId property.
             ## @return a void
             ## 
             def parent_folder_id=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the contactFolder. Read-only. Nullable.
-            ## @param value Value to set for the single_value_extended_properties property.
+            ## @param value Value to set for the singleValueExtendedProperties property.
             ## @return a void
             ## 
             def single_value_extended_properties=(value)

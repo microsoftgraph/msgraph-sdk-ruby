@@ -45,7 +45,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the fromTerm property value. The from [term] of the relation. The term from which the relationship is defined. A null value would indicate the relation is directly with the [set].
-                ## @param value Value to set for the from_term property.
+                ## @param value Value to set for the fromTerm property.
                 ## @return a void
                 ## 
                 def from_term=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the toTerm property value. The to [term] of the relation. The term to which the relationship is defined.
-                ## @param value Value to set for the to_term property.
+                ## @param value Value to set for the toTerm property.
                 ## @return a void
                 ## 
                 def to_term=(value)

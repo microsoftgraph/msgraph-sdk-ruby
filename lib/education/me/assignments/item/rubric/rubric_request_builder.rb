@@ -34,7 +34,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/rubric{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property rubric for education
+                            ## Remove an educationRubric from an educationAssignment. This method does not delete the rubric itself and can only be performed by teachers.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -62,7 +62,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationRubric.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property rubric in education
+                            ## Attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of education_rubric
@@ -78,7 +78,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationRubric.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property rubric for education
+                            ## Remove an educationRubric from an educationAssignment. This method does not delete the rubric itself and can only be performed by teachers.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property rubric in education
+                            ## Attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information

@@ -35,7 +35,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentType property value. The MIME type.
-            ## @param value Value to set for the content_type property.
+            ## @param value Value to set for the contentType property.
             ## @return a void
             ## 
             def content_type=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)

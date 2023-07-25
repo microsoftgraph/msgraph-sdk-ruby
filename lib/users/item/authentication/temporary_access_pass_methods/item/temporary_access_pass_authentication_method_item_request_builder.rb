@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/authentication/temporaryAccessPassMethods/{temporaryAccessPassAuthenticationMethod%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property temporaryAccessPassMethods for users
+                            ## Delete a users's temporaryAccessPassAuthenticationMethod object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+                            ## Retrieve a user's single temporaryAccessPassAuthenticationMethod object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of temporary_access_pass_authentication_method
                             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TemporaryAccessPassAuthenticationMethod.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property temporaryAccessPassMethods for users
+                            ## Delete a users's temporaryAccessPassAuthenticationMethod object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+                            ## Retrieve a user's single temporaryAccessPassAuthenticationMethod object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -91,7 +91,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.
+                            # Retrieve a user's single temporaryAccessPassAuthenticationMethod object.
                             class TemporaryAccessPassAuthenticationMethodItemRequestBuilderGetQueryParameters
                                 
                                 ## 

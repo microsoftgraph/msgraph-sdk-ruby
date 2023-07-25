@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The printerId property
             @printer_id
             ## 
-            ## Instantiates a new PrintUsageByPrinter and sets the default values.
+            ## Instantiates a new printUsageByPrinter and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the printerId property value. The printerId property
-            ## @param value Value to set for the printer_id property.
+            ## @param value Value to set for the printerId property.
             ## @return a void
             ## 
             def printer_id=(value)

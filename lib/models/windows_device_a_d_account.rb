@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Not yet documented
             @user_name
             ## 
-            ## Instantiates a new WindowsDeviceADAccount and sets the default values.
+            ## Instantiates a new windowsDeviceADAccount and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -38,7 +38,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the domainName property value. Not yet documented
-            ## @param value Value to set for the domain_name property.
+            ## @param value Value to set for the domainName property.
             ## @return a void
             ## 
             def domain_name=(value)
@@ -74,7 +74,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userName property value. Not yet documented
-            ## @param value Value to set for the user_name property.
+            ## @param value Value to set for the userName property.
             ## @return a void
             ## 
             def user_name=(value)

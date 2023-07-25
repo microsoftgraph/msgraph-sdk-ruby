@@ -10,10 +10,10 @@ module MicrosoftGraph
             # List of time periods between joining and leaving a meeting.
             @attendance_intervals
             ## 
-            # Email address of the user associated with this atttendance record.
+            # Email address of the user associated with this attendance record.
             @email_address
             ## 
-            # Identity of the user associated with this atttendance record.
+            # Identity of the user associated with this attendance record.
             @identity
             ## 
             # Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.
@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the attendanceIntervals property value. List of time periods between joining and leaving a meeting.
-            ## @param value Value to set for the attendance_intervals property.
+            ## @param value Value to set for the attendanceIntervals property.
             ## @return a void
             ## 
             def attendance_intervals=(value)
@@ -53,15 +53,15 @@ module MicrosoftGraph
                 return AttendanceRecord.new
             end
             ## 
-            ## Gets the emailAddress property value. Email address of the user associated with this atttendance record.
+            ## Gets the emailAddress property value. Email address of the user associated with this attendance record.
             ## @return a string
             ## 
             def email_address
                 return @email_address
             end
             ## 
-            ## Sets the emailAddress property value. Email address of the user associated with this atttendance record.
-            ## @param value Value to set for the email_address property.
+            ## Sets the emailAddress property value. Email address of the user associated with this attendance record.
+            ## @param value Value to set for the emailAddress property.
             ## @return a void
             ## 
             def email_address=(value)
@@ -81,14 +81,14 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the identity property value. Identity of the user associated with this atttendance record.
+            ## Gets the identity property value. Identity of the user associated with this attendance record.
             ## @return a identity
             ## 
             def identity
                 return @identity
             end
             ## 
-            ## Sets the identity property value. Identity of the user associated with this atttendance record.
+            ## Sets the identity property value. Identity of the user associated with this attendance record.
             ## @param value Value to set for the identity property.
             ## @return a void
             ## 
@@ -133,7 +133,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the totalAttendanceInSeconds property value. Total duration of the attendances in seconds.
-            ## @param value Value to set for the total_attendance_in_seconds property.
+            ## @param value Value to set for the totalAttendanceInSeconds property.
             ## @return a void
             ## 
             def total_attendance_in_seconds=(value)

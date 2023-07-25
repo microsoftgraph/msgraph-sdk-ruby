@@ -8,6 +8,7 @@ require_relative '../../permission_grant_policies'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './excludes'
+require_relative './item/permission_grant_condition_set_item_request_builder'
 
 module MicrosoftGraph
     module Policies
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Policies::PermissionGrantPolicies::Item::Excludes::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the excludes property of the microsoft.graph.permissionGrantPolicy entity.
+                        ## @param permission_grant_condition_set_id Unique identifier of the item
+                        ## @return a permission_grant_condition_set_item_request_builder
+                        ## 
+                        def by_permission_grant_condition_set_id(permission_grant_condition_set_id)
+                            raise StandardError, 'permission_grant_condition_set_id cannot be null' if permission_grant_condition_set_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["permissionGrantConditionSet%2Did"] = permission_grant_condition_set_id
+                            return MicrosoftGraph::Policies::PermissionGrantPolicies::Item::Excludes::Item::PermissionGrantConditionSetItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new ExcludesRequestBuilder and sets the default values.

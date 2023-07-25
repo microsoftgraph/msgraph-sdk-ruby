@@ -12,11 +12,12 @@ module MicrosoftGraph
                 # The user account details.
                 @user_account
                 ## 
-                ## Instantiates a new UserEvidence and sets the default values.
+                ## Instantiates a new userEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()
                     super
+                    @odata_type = "#microsoft.graph.security.userEvidence"
                 end
                 ## 
                 ## Creates a new instance of the appropriate class based on discriminator value
@@ -55,7 +56,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the userAccount property value. The user account details.
-                ## @param value Value to set for the user_account property.
+                ## @param value Value to set for the userAccount property.
                 ## @return a void
                 ## 
                 def user_account=(value)

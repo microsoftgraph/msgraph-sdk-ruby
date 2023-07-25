@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_app_management'
 require_relative './android_managed_app_protections'
 require_relative './count/count_request_builder'
+require_relative './item/android_managed_app_protection_item_request_builder'
 
 module MicrosoftGraph
     module DeviceAppManagement
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::DeviceAppManagement::AndroidManagedAppProtections::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+                ## @param android_managed_app_protection_id Unique identifier of the item
+                ## @return a android_managed_app_protection_item_request_builder
+                ## 
+                def by_android_managed_app_protection_id(android_managed_app_protection_id)
+                    raise StandardError, 'android_managed_app_protection_id cannot be null' if android_managed_app_protection_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["androidManagedAppProtection%2Did"] = android_managed_app_protection_id
+                    return MicrosoftGraph::DeviceAppManagement::AndroidManagedAppProtections::Item::AndroidManagedAppProtectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new AndroidManagedAppProtectionsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceAppManagement/androidManagedAppProtections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Android managed app policies.
+                ## List properties and relationships of the androidManagedAppProtection objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of android_managed_app_protection_collection_response
                 ## 
@@ -43,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AndroidManagedAppProtectionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create new navigation property to androidManagedAppProtections for deviceAppManagement
+                ## Create a new androidManagedAppProtection object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of android_managed_app_protection
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AndroidManagedAppProtection.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Android managed app policies.
+                ## List properties and relationships of the androidManagedAppProtection objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create new navigation property to androidManagedAppProtections for deviceAppManagement
+                ## Create a new androidManagedAppProtection object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Android managed app policies.
+                # List properties and relationships of the androidManagedAppProtection objects.
                 class AndroidManagedAppProtectionsRequestBuilderGetQueryParameters
                     
                     ## 

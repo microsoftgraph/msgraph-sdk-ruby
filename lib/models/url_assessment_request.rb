@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The URL string.
             @url
             ## 
-            ## Instantiates a new UrlAssessmentRequest and sets the default values.
+            ## Instantiates a new urlAssessmentRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

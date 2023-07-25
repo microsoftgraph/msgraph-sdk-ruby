@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/termsAndConditions/{termsAndConditions%2Did}/assignments/{termsAndConditionsAssignment%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property assignments for deviceManagement
+                            ## Deletes a termsAndConditionsAssignment.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## The list of assignments for this T&C policy.
+                            ## Read properties and relationships of the termsAndConditionsAssignment object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of terms_and_conditions_assignment
                             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermsAndConditionsAssignment.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property assignments in deviceManagement
+                            ## Update the properties of a termsAndConditionsAssignment object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of terms_and_conditions_assignment
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermsAndConditionsAssignment.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property assignments for deviceManagement
+                            ## Deletes a termsAndConditionsAssignment.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## The list of assignments for this T&C policy.
+                            ## Read properties and relationships of the termsAndConditionsAssignment object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property assignments in deviceManagement
+                            ## Update the properties of a termsAndConditionsAssignment object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # The list of assignments for this T&C policy.
+                            # Read properties and relationships of the termsAndConditionsAssignment object.
                             class TermsAndConditionsAssignmentItemRequestBuilderGetQueryParameters
                                 
                                 ## 

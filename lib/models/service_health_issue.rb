@@ -49,7 +49,7 @@ module MicrosoftGraph
                 @classification = value
             end
             ## 
-            ## Instantiates a new ServiceHealthIssue and sets the default values.
+            ## Instantiates a new serviceHealthIssue and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -89,7 +89,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the featureGroup property value. The feature group name of the service issue.
-            ## @param value Value to set for the feature_group property.
+            ## @param value Value to set for the featureGroup property.
             ## @return a void
             ## 
             def feature_group=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the impactDescription property value. The description of the service issue impact.
-            ## @param value Value to set for the impact_description property.
+            ## @param value Value to set for the impactDescription property.
             ## @return a void
             ## 
             def impact_description=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isResolved property value. Indicates whether the issue is resolved.
-            ## @param value Value to set for the is_resolved property.
+            ## @param value Value to set for the isResolved property.
             ## @return a void
             ## 
             def is_resolved=(value)

@@ -26,7 +26,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the childSelectability property value. Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.
-                ## @param value Value to set for the child_selectability property.
+                ## @param value Value to set for the childSelectability property.
                 ## @return a void
                 ## 
                 def child_selectability=(value)
@@ -41,14 +41,14 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the childTags property value. Returns the tags that are a child of a tag.
-                ## @param value Value to set for the child_tags property.
+                ## @param value Value to set for the childTags property.
                 ## @return a void
                 ## 
                 def child_tags=(value)
                     @child_tags = value
                 end
                 ## 
-                ## Instantiates a new EdiscoveryReviewTag and sets the default values.
+                ## Instantiates a new ediscoveryReviewTag and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

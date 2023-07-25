@@ -25,6 +25,9 @@ module MicrosoftGraph
                 # The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
                 @health_status
                 ## 
+                # The ipInterfaces property
+                @ip_interfaces
+                ## 
                 # Users that were logged on the machine during the time of the alert.
                 @logged_on_users
                 ## 
@@ -63,18 +66,19 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the azureAdDeviceId property value. A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.
-                ## @param value Value to set for the azure_ad_device_id property.
+                ## @param value Value to set for the azureAdDeviceId property.
                 ## @return a void
                 ## 
                 def azure_ad_device_id=(value)
                     @azure_ad_device_id = value
                 end
                 ## 
-                ## Instantiates a new DeviceEvidence and sets the default values.
+                ## Instantiates a new deviceEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()
                     super
+                    @odata_type = "#microsoft.graph.security.deviceEvidence"
                 end
                 ## 
                 ## Creates a new instance of the appropriate class based on discriminator value
@@ -94,7 +98,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the defenderAvStatus property value. State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.
-                ## @param value Value to set for the defender_av_status property.
+                ## @param value Value to set for the defenderAvStatus property.
                 ## @return a void
                 ## 
                 def defender_av_status=(value)
@@ -109,7 +113,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the deviceDnsName property value. The fully qualified domain name (FQDN) for the device.
-                ## @param value Value to set for the device_dns_name property.
+                ## @param value Value to set for the deviceDnsName property.
                 ## @return a void
                 ## 
                 def device_dns_name=(value)
@@ -124,7 +128,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the firstSeenDateTime property value. The date and time when the device was first seen.
-                ## @param value Value to set for the first_seen_date_time property.
+                ## @param value Value to set for the firstSeenDateTime property.
                 ## @return a void
                 ## 
                 def first_seen_date_time=(value)
@@ -141,6 +145,7 @@ module MicrosoftGraph
                         "deviceDnsName" => lambda {|n| @device_dns_name = n.get_string_value() },
                         "firstSeenDateTime" => lambda {|n| @first_seen_date_time = n.get_date_time_value() },
                         "healthStatus" => lambda {|n| @health_status = n.get_enum_value(MicrosoftGraph::Models::Security::DeviceHealthStatus) },
+                        "ipInterfaces" => lambda {|n| @ip_interfaces = n.get_collection_of_primitive_values(String) },
                         "loggedOnUsers" => lambda {|n| @logged_on_users = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Security::LoggedOnUser.create_from_discriminator_value(pn) }) },
                         "mdeDeviceId" => lambda {|n| @mde_device_id = n.get_string_value() },
                         "onboardingStatus" => lambda {|n| @onboarding_status = n.get_enum_value(MicrosoftGraph::Models::Security::OnboardingStatus) },
@@ -162,11 +167,26 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the healthStatus property value. The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.
-                ## @param value Value to set for the health_status property.
+                ## @param value Value to set for the healthStatus property.
                 ## @return a void
                 ## 
                 def health_status=(value)
                     @health_status = value
+                end
+                ## 
+                ## Gets the ipInterfaces property value. The ipInterfaces property
+                ## @return a string
+                ## 
+                def ip_interfaces
+                    return @ip_interfaces
+                end
+                ## 
+                ## Sets the ipInterfaces property value. The ipInterfaces property
+                ## @param value Value to set for the ipInterfaces property.
+                ## @return a void
+                ## 
+                def ip_interfaces=(value)
+                    @ip_interfaces = value
                 end
                 ## 
                 ## Gets the loggedOnUsers property value. Users that were logged on the machine during the time of the alert.
@@ -177,7 +197,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the loggedOnUsers property value. Users that were logged on the machine during the time of the alert.
-                ## @param value Value to set for the logged_on_users property.
+                ## @param value Value to set for the loggedOnUsers property.
                 ## @return a void
                 ## 
                 def logged_on_users=(value)
@@ -192,7 +212,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
-                ## @param value Value to set for the mde_device_id property.
+                ## @param value Value to set for the mdeDeviceId property.
                 ## @return a void
                 ## 
                 def mde_device_id=(value)
@@ -207,7 +227,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the onboardingStatus property value. The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.
-                ## @param value Value to set for the onboarding_status property.
+                ## @param value Value to set for the onboardingStatus property.
                 ## @return a void
                 ## 
                 def onboarding_status=(value)
@@ -222,7 +242,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the osBuild property value. The build version for the operating system the device is running.
-                ## @param value Value to set for the os_build property.
+                ## @param value Value to set for the osBuild property.
                 ## @return a void
                 ## 
                 def os_build=(value)
@@ -237,7 +257,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the osPlatform property value. The operating system platform the device is running.
-                ## @param value Value to set for the os_platform property.
+                ## @param value Value to set for the osPlatform property.
                 ## @return a void
                 ## 
                 def os_platform=(value)
@@ -252,7 +272,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the rbacGroupId property value. The ID of the role-based access control (RBAC) device group.
-                ## @param value Value to set for the rbac_group_id property.
+                ## @param value Value to set for the rbacGroupId property.
                 ## @return a void
                 ## 
                 def rbac_group_id=(value)
@@ -267,7 +287,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the rbacGroupName property value. The name of the RBAC device group.
-                ## @param value Value to set for the rbac_group_name property.
+                ## @param value Value to set for the rbacGroupName property.
                 ## @return a void
                 ## 
                 def rbac_group_name=(value)
@@ -282,7 +302,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the riskScore property value. Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.
-                ## @param value Value to set for the risk_score property.
+                ## @param value Value to set for the riskScore property.
                 ## @return a void
                 ## 
                 def risk_score=(value)
@@ -301,6 +321,7 @@ module MicrosoftGraph
                     writer.write_string_value("deviceDnsName", @device_dns_name)
                     writer.write_date_time_value("firstSeenDateTime", @first_seen_date_time)
                     writer.write_enum_value("healthStatus", @health_status)
+                    writer.write_collection_of_primitive_values("ipInterfaces", @ip_interfaces)
                     writer.write_collection_of_object_values("loggedOnUsers", @logged_on_users)
                     writer.write_string_value("mdeDeviceId", @mde_device_id)
                     writer.write_enum_value("onboardingStatus", @onboarding_status)
@@ -336,7 +357,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the vmMetadata property value. Metadata of the virtual machine (VM) on which Microsoft Defender for Endpoint is running.
-                ## @param value Value to set for the vm_metadata property.
+                ## @param value Value to set for the vmMetadata property.
                 ## @return a void
                 ## 
                 def vm_metadata=(value)

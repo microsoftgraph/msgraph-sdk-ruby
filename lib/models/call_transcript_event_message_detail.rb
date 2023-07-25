@@ -24,7 +24,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the callId property value. Unique identifier of the call.
-            ## @param value Value to set for the call_id property.
+            ## @param value Value to set for the callId property.
             ## @return a void
             ## 
             def call_id=(value)
@@ -39,14 +39,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the callTranscriptICalUid property value. Unique identifier for a call transcript.
-            ## @param value Value to set for the call_transcript_i_cal_uid property.
+            ## @param value Value to set for the callTranscriptICalUid property.
             ## @return a void
             ## 
             def call_transcript_i_cal_uid=(value)
                 @call_transcript_i_cal_uid = value
             end
             ## 
-            ## Instantiates a new CallTranscriptEventMessageDetail and sets the default values.
+            ## Instantiates a new callTranscriptEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the meetingOrganizer property value. The organizer of the meeting.
-            ## @param value Value to set for the meeting_organizer property.
+            ## @param value Value to set for the meetingOrganizer property.
             ## @return a void
             ## 
             def meeting_organizer=(value)

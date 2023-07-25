@@ -7,6 +7,7 @@ require_relative '../../../groups'
 require_relative '../../item'
 require_relative '../onenote'
 require_relative './count/count_request_builder'
+require_relative './item/onenote_page_item_request_builder'
 require_relative './pages'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Groups::Item::Onenote::Pages::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the pages property of the microsoft.graph.onenote entity.
+                        ## @param onenote_page_id Unique identifier of the item
+                        ## @return a onenote_page_item_request_builder
+                        ## 
+                        def by_onenote_page_id(onenote_page_id)
+                            raise StandardError, 'onenote_page_id cannot be null' if onenote_page_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["onenotePage%2Did"] = onenote_page_id
+                            return MicrosoftGraph::Groups::Item::Onenote::Pages::Item::OnenotePageItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new PagesRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/onenote/pages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+                        ## Retrieve a list of page objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of onenote_page_collection_response
                         ## 
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnenotePageCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create new navigation property to pages for groups
+                        ## Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the `sectionName` query parameter.  Example: `../onenote/pages?sectionName=My%20section` The `POST /onenote/pages` operation is used only to create pages in the current user's default notebook. If you're targeting other notebooks, you can create pages in a specified section.  
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of onenote_page
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnenotePage.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+                        ## Retrieve a list of page objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create new navigation property to pages for groups
+                        ## Create a new OneNote page in the default section of the default notebook. To create a page in a different section in the default notebook, you can use the `sectionName` query parameter.  Example: `../onenote/pages?sectionName=My%20section` The `POST /onenote/pages` operation is used only to create pages in the current user's default notebook. If you're targeting other notebooks, you can create pages in a specified section.  
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+                        # Retrieve a list of page objects.
                         class PagesRequestBuilderGetQueryParameters
                             
                             ## 

@@ -34,7 +34,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/tabs/{teamsTab%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property tabs for teams
+                            ## Removes (unpins) a tab from the specified channel within a team. 
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -48,7 +48,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## A collection of all the tabs in the channel. A navigation property.
+                            ## Retrieve the properties and relationships of the specified tab in a channel within a team. 
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of teams_tab
                             ## 
@@ -62,7 +62,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamsTab.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property tabs in teams
+                            ## Update the properties of the specified tab.This can be used to configure the content of the tab.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of teams_tab
@@ -78,7 +78,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TeamsTab.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property tabs for teams
+                            ## Removes (unpins) a tab from the specified channel within a team. 
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -94,7 +94,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## A collection of all the tabs in the channel. A navigation property.
+                            ## Retrieve the properties and relationships of the specified tab in a channel within a team. 
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -112,7 +112,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property tabs in teams
+                            ## Update the properties of the specified tab.This can be used to configure the content of the tab.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -133,7 +133,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # A collection of all the tabs in the channel. A navigation property.
+                            # Retrieve the properties and relationships of the specified tab in a channel within a team. 
                             class TeamsTabItemRequestBuilderGetQueryParameters
                                 
                                 ## 

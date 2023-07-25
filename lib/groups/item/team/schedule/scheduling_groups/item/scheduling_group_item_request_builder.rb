@@ -30,7 +30,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/team/schedule/schedulingGroups/{schedulingGroup%2Did}{?%24select}")
                                 end
                                 ## 
-                                ## Delete navigation property schedulingGroups for groups
+                                ## Mark a schedulingGroup as inactive by setting its **isActive** property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of void
                                 ## 
@@ -44,7 +44,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, nil, error_mapping)
                                 end
                                 ## 
-                                ## The logical grouping of users in the schedule (usually by role).
+                                ## Retrieve the properties and relationships of a schedulingGroup by ID.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of scheduling_group
                                 ## 
@@ -58,7 +58,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SchedulingGroup.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Update the navigation property schedulingGroups in groups
+                                ## Replace an existing schedulingGroup. If the specified schedulingGroup doesn't exist, this method returns `404 Not found`.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of scheduling_group
@@ -74,7 +74,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SchedulingGroup.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Delete navigation property schedulingGroups for groups
+                                ## Mark a schedulingGroup as inactive by setting its **isActive** property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -90,7 +90,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## The logical grouping of users in the schedule (usually by role).
+                                ## Retrieve the properties and relationships of a schedulingGroup by ID.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -108,7 +108,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Update the navigation property schedulingGroups in groups
+                                ## Replace an existing schedulingGroup. If the specified schedulingGroup doesn't exist, this method returns `404 Not found`.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
@@ -129,7 +129,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # The logical grouping of users in the schedule (usually by role).
+                                # Retrieve the properties and relationships of a schedulingGroup by ID.
                                 class SchedulingGroupItemRequestBuilderGetQueryParameters
                                     
                                     ## 

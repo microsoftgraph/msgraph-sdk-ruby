@@ -5,8 +5,11 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
-        class CloudCommunications < MicrosoftGraph::Models::Entity
-            include MicrosoftKiotaAbstractions::Parsable
+        class CloudCommunications
+            include MicrosoftKiotaAbstractions::AdditionalDataHolder, MicrosoftKiotaAbstractions::Parsable
+            ## 
+            # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            @additional_data
             ## 
             # The callRecords property
             @call_records
@@ -14,11 +17,29 @@ module MicrosoftGraph
             # The calls property
             @calls
             ## 
+            # The OdataType property
+            @odata_type
+            ## 
             # The onlineMeetings property
             @online_meetings
             ## 
             # The presences property
             @presences
+            ## 
+            ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @return a i_dictionary
+            ## 
+            def additional_data
+                return @additional_data
+            end
+            ## 
+            ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
+            ## @param value Value to set for the additionalData property.
+            ## @return a void
+            ## 
+            def additional_data=(value)
+                @additional_data = value
+            end
             ## 
             ## Gets the callRecords property value. The callRecords property
             ## @return a call_record
@@ -28,7 +49,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the callRecords property value. The callRecords property
-            ## @param value Value to set for the call_records property.
+            ## @param value Value to set for the callRecords property.
             ## @return a void
             ## 
             def call_records=(value)
@@ -50,11 +71,11 @@ module MicrosoftGraph
                 @calls = value
             end
             ## 
-            ## Instantiates a new CloudCommunications and sets the default values.
+            ## Instantiates a new cloudCommunications and sets the default values.
             ## @return a void
             ## 
             def initialize()
-                super
+                @additional_data = Hash.new
             end
             ## 
             ## Creates a new instance of the appropriate class based on discriminator value
@@ -70,12 +91,28 @@ module MicrosoftGraph
             ## @return a i_dictionary
             ## 
             def get_field_deserializers()
-                return super.merge({
+                return {
                     "callRecords" => lambda {|n| @call_records = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CallRecords::CallRecord.create_from_discriminator_value(pn) }) },
                     "calls" => lambda {|n| @calls = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Call.create_from_discriminator_value(pn) }) },
+                    "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "onlineMeetings" => lambda {|n| @online_meetings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::OnlineMeeting.create_from_discriminator_value(pn) }) },
                     "presences" => lambda {|n| @presences = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Presence.create_from_discriminator_value(pn) }) },
-                })
+                }
+            end
+            ## 
+            ## Gets the @odata.type property value. The OdataType property
+            ## @return a string
+            ## 
+            def odata_type
+                return @odata_type
+            end
+            ## 
+            ## Sets the @odata.type property value. The OdataType property
+            ## @param value Value to set for the @odata.type property.
+            ## @return a void
+            ## 
+            def odata_type=(value)
+                @odata_type = value
             end
             ## 
             ## Gets the onlineMeetings property value. The onlineMeetings property
@@ -86,7 +123,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onlineMeetings property value. The onlineMeetings property
-            ## @param value Value to set for the online_meetings property.
+            ## @param value Value to set for the onlineMeetings property.
             ## @return a void
             ## 
             def online_meetings=(value)
@@ -114,11 +151,12 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
-                super
                 writer.write_collection_of_object_values("callRecords", @call_records)
                 writer.write_collection_of_object_values("calls", @calls)
+                writer.write_string_value("@odata.type", @odata_type)
                 writer.write_collection_of_object_values("onlineMeetings", @online_meetings)
                 writer.write_collection_of_object_values("presences", @presences)
+                writer.write_additional_data(@additional_data)
             end
         end
     end

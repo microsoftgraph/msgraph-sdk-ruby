@@ -41,7 +41,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -56,7 +56,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the compliancePolicy property value. Whether compliance policy is managed by Intune
-            ## @param value Value to set for the compliance_policy property.
+            ## @param value Value to set for the compliancePolicy property.
             ## @return a void
             ## 
             def compliance_policy=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceConfiguration property value. Whether device configuration is managed by Intune
-            ## @param value Value to set for the device_configuration property.
+            ## @param value Value to set for the deviceConfiguration property.
             ## @return a void
             ## 
             def device_configuration=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the modernApps property value. Whether modern application is managed by Intune
-            ## @param value Value to set for the modern_apps property.
+            ## @param value Value to set for the modernApps property.
             ## @return a void
             ## 
             def modern_apps=(value)
@@ -147,7 +147,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -162,7 +162,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceAccess property value. Whether resource access is managed by Intune
-            ## @param value Value to set for the resource_access property.
+            ## @param value Value to set for the resourceAccess property.
             ## @return a void
             ## 
             def resource_access=(value)
@@ -193,7 +193,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsUpdateForBusiness property value. Whether Windows Update for Business is managed by Intune
-            ## @param value Value to set for the windows_update_for_business property.
+            ## @param value Value to set for the windowsUpdateForBusiness property.
             ## @return a void
             ## 
             def windows_update_for_business=(value)

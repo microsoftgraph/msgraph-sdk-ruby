@@ -43,7 +43,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the createdDateTime property value. Date and time of the group creation. Read-only.
-                ## @param value Value to set for the created_date_time property.
+                ## @param value Value to set for the createdDateTime property.
                 ## @return a void
                 ## 
                 def created_date_time=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the displayName property value. Name of the group.
-                ## @param value Value to set for the display_name property.
+                ## @param value Value to set for the displayName property.
                 ## @return a void
                 ## 
                 def display_name=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the parentSiteId property value. ID of the parent site of this group.
-                ## @param value Value to set for the parent_site_id property.
+                ## @param value Value to set for the parentSiteId property.
                 ## @return a void
                 ## 
                 def parent_site_id=(value)

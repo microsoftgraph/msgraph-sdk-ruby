@@ -6,6 +6,7 @@ require_relative '../../../models/permission_collection_response'
 require_relative '../../sites'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/permission_item_request_builder'
 require_relative './permissions'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Sites::Item::Permissions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the permissions property of the microsoft.graph.site entity.
+                    ## @param permission_id Unique identifier of the item
+                    ## @return a permission_item_request_builder
+                    ## 
+                    def by_permission_id(permission_id)
+                        raise StandardError, 'permission_id cannot be null' if permission_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["permission%2Did"] = permission_id
+                        return MicrosoftGraph::Sites::Item::Permissions::Item::PermissionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new PermissionsRequestBuilder and sets the default values.

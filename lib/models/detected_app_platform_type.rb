@@ -14,6 +14,7 @@ module MicrosoftGraph
             AndroidDeviceAdministrator: :AndroidDeviceAdministrator,
             AndroidWorkProfile: :AndroidWorkProfile,
             AndroidDedicatedAndFullyManaged: :AndroidDedicatedAndFullyManaged,
+            UnknownFutureValue: :UnknownFutureValue,
         }
     end
 end

@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the secureAssessment resource.
         class Windows10SecureAssessmentConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -30,7 +32,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowPrinting property value. Indicates whether or not to allow the app from printing during the test.
-            ## @param value Value to set for the allow_printing property.
+            ## @param value Value to set for the allowPrinting property.
             ## @return a void
             ## 
             def allow_printing=(value)
@@ -45,7 +47,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowScreenCapture property value. Indicates whether or not to allow screen capture capability during a test.
-            ## @param value Value to set for the allow_screen_capture property.
+            ## @param value Value to set for the allowScreenCapture property.
             ## @return a void
             ## 
             def allow_screen_capture=(value)
@@ -60,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowTextSuggestion property value. Indicates whether or not to allow text suggestions during the test.
-            ## @param value Value to set for the allow_text_suggestion property.
+            ## @param value Value to set for the allowTextSuggestion property.
             ## @return a void
             ## 
             def allow_text_suggestion=(value)
@@ -75,14 +77,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the configurationAccount property value. The account used to configure the Windows device for taking the test. The user can be a domain account (domain/user), an AAD account (username@tenant.com) or a local account (username).
-            ## @param value Value to set for the configuration_account property.
+            ## @param value Value to set for the configurationAccount property.
             ## @return a void
             ## 
             def configuration_account=(value)
                 @configuration_account = value
             end
             ## 
-            ## Instantiates a new Windows10SecureAssessmentConfiguration and sets the default values.
+            ## Instantiates a new windows10SecureAssessmentConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -120,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the launchUri property value. Url link to an assessment that's automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).
-            ## @param value Value to set for the launch_uri property.
+            ## @param value Value to set for the launchUri property.
             ## @return a void
             ## 
             def launch_uri=(value)

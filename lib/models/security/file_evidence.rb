@@ -18,11 +18,12 @@ module MicrosoftGraph
                 # A unique identifier assigned to a device by Microsoft Defender for Endpoint.
                 @mde_device_id
                 ## 
-                ## Instantiates a new FileEvidence and sets the default values.
+                ## Instantiates a new fileEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()
                     super
+                    @odata_type = "#microsoft.graph.security.fileEvidence"
                 end
                 ## 
                 ## Creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +43,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the detectionStatus property value. The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
-                ## @param value Value to set for the detection_status property.
+                ## @param value Value to set for the detectionStatus property.
                 ## @return a void
                 ## 
                 def detection_status=(value)
@@ -57,7 +58,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the fileDetails property value. The file details.
-                ## @param value Value to set for the file_details property.
+                ## @param value Value to set for the fileDetails property.
                 ## @return a void
                 ## 
                 def file_details=(value)
@@ -83,7 +84,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the mdeDeviceId property value. A unique identifier assigned to a device by Microsoft Defender for Endpoint.
-                ## @param value Value to set for the mde_device_id property.
+                ## @param value Value to set for the mdeDeviceId property.
                 ## @return a void
                 ## 
                 def mde_device_id=(value)

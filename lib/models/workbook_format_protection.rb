@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Indicates if Excel locks the cells in the object. A null value indicates that the entire range doesn't have uniform lock setting.
             @locked
             ## 
-            ## Instantiates a new WorkbookFormatProtection and sets the default values.
+            ## Instantiates a new workbookFormatProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -37,7 +37,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the formulaHidden property value. Indicates if Excel hides the formula for the cells in the range. A null value indicates that the entire range doesn't have uniform formula hidden setting.
-            ## @param value Value to set for the formula_hidden property.
+            ## @param value Value to set for the formulaHidden property.
             ## @return a void
             ## 
             def formula_hidden=(value)

@@ -82,7 +82,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## Requests for active role assignments to principals through PIM.
+                        ## In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of unified_role_assignment_schedule_request
                         ## 
@@ -128,7 +128,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Requests for active role assignments to principals through PIM.
+                        ## In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -167,7 +167,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Requests for active role assignments to principals through PIM.
+                        # In PIM, read the details of a request for an active and persistent role assignment made through the unifiedRoleAssignmentScheduleRequest object.
                         class UnifiedRoleAssignmentScheduleRequestItemRequestBuilderGetQueryParameters
                             
                             ## 

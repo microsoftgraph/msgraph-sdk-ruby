@@ -23,6 +23,9 @@ module MicrosoftGraph
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
             @created_date_time
             ## 
+            # The customExtensionStageSettings property
+            @custom_extension_stage_settings
+            ## 
             # The description of the policy.
             @description
             ## 
@@ -58,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accessPackage property value. Access package containing this policy. Read-only.
-            ## @param value Value to set for the access_package property.
+            ## @param value Value to set for the accessPackage property.
             ## @return a void
             ## 
             def access_package=(value)
@@ -73,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowedTargetScope property value. Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.
-            ## @param value Value to set for the allowed_target_scope property.
+            ## @param value Value to set for the allowedTargetScope property.
             ## @return a void
             ## 
             def allowed_target_scope=(value)
@@ -88,7 +91,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the automaticRequestSettings property value. This property is only present for an auto assignment policy; if absent, this is a request-based policy.
-            ## @param value Value to set for the automatic_request_settings property.
+            ## @param value Value to set for the automaticRequestSettings property.
             ## @return a void
             ## 
             def automatic_request_settings=(value)
@@ -125,7 +128,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -139,6 +142,21 @@ module MicrosoftGraph
             def self.create_from_discriminator_value(parse_node)
                 raise StandardError, 'parse_node cannot be null' if parse_node.nil?
                 return AccessPackageAssignmentPolicy.new
+            end
+            ## 
+            ## Gets the customExtensionStageSettings property value. The customExtensionStageSettings property
+            ## @return a custom_extension_stage_setting
+            ## 
+            def custom_extension_stage_settings
+                return @custom_extension_stage_settings
+            end
+            ## 
+            ## Sets the customExtensionStageSettings property value. The customExtensionStageSettings property
+            ## @param value Value to set for the customExtensionStageSettings property.
+            ## @return a void
+            ## 
+            def custom_extension_stage_settings=(value)
+                @custom_extension_stage_settings = value
             end
             ## 
             ## Gets the description property value. The description of the policy.
@@ -164,7 +182,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The display name of the policy.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -196,6 +214,7 @@ module MicrosoftGraph
                     "automaticRequestSettings" => lambda {|n| @automatic_request_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageAutomaticRequestSettings.create_from_discriminator_value(pn) }) },
                     "catalog" => lambda {|n| @catalog = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AccessPackageCatalog.create_from_discriminator_value(pn) }) },
                     "createdDateTime" => lambda {|n| @created_date_time = n.get_date_time_value() },
+                    "customExtensionStageSettings" => lambda {|n| @custom_extension_stage_settings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CustomExtensionStageSetting.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "expiration" => lambda {|n| @expiration = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ExpirationPattern.create_from_discriminator_value(pn) }) },
@@ -216,7 +235,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
-            ## @param value Value to set for the modified_date_time property.
+            ## @param value Value to set for the modifiedDateTime property.
             ## @return a void
             ## 
             def modified_date_time=(value)
@@ -246,7 +265,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the requestApprovalSettings property value. Specifies the settings for approval of requests for an access package assignment through this policy. For example, if approval is required for new requests.
-            ## @param value Value to set for the request_approval_settings property.
+            ## @param value Value to set for the requestApprovalSettings property.
             ## @return a void
             ## 
             def request_approval_settings=(value)
@@ -261,7 +280,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the requestorSettings property value. Provides additional settings to select who can create a request for an access package assignment through this policy, and what they can include in their request.
-            ## @param value Value to set for the requestor_settings property.
+            ## @param value Value to set for the requestorSettings property.
             ## @return a void
             ## 
             def requestor_settings=(value)
@@ -276,7 +295,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the reviewSettings property value. Settings for access reviews of assignments through this policy.
-            ## @param value Value to set for the review_settings property.
+            ## @param value Value to set for the reviewSettings property.
             ## @return a void
             ## 
             def review_settings=(value)
@@ -295,6 +314,7 @@ module MicrosoftGraph
                 writer.write_object_value("automaticRequestSettings", @automatic_request_settings)
                 writer.write_object_value("catalog", @catalog)
                 writer.write_date_time_value("createdDateTime", @created_date_time)
+                writer.write_collection_of_object_values("customExtensionStageSettings", @custom_extension_stage_settings)
                 writer.write_string_value("description", @description)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_object_value("expiration", @expiration)
@@ -314,7 +334,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the specificAllowedTargets property value. The principals that can be assigned access from an access package through this policy.
-            ## @param value Value to set for the specific_allowed_targets property.
+            ## @param value Value to set for the specificAllowedTargets property.
             ## @return a void
             ## 
             def specific_allowed_targets=(value)

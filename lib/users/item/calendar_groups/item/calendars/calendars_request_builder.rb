@@ -9,6 +9,7 @@ require_relative '../../calendar_groups'
 require_relative '../item'
 require_relative './calendars'
 require_relative './count/count_request_builder'
+require_relative './item/calendar_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.
+                            ## @param calendar_id Unique identifier of the item
+                            ## @return a calendar_item_request_builder
+                            ## 
+                            def by_calendar_id(calendar_id)
+                                raise StandardError, 'calendar_id cannot be null' if calendar_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["calendar%2Did"] = calendar_id
+                                return MicrosoftGraph::Users::Item::CalendarGroups::Item::Calendars::Item::CalendarItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new CalendarsRequestBuilder and sets the default values.

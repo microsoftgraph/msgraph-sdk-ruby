@@ -29,18 +29,19 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the appId property value. Unique identifier of the application.
-                ## @param value Value to set for the app_id property.
+                ## @param value Value to set for the appId property.
                 ## @return a void
                 ## 
                 def app_id=(value)
                     @app_id = value
                 end
                 ## 
-                ## Instantiates a new OauthApplicationEvidence and sets the default values.
+                ## Instantiates a new oauthApplicationEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()
                     super
+                    @odata_type = "#microsoft.graph.security.oauthApplicationEvidence"
                 end
                 ## 
                 ## Creates a new instance of the appropriate class based on discriminator value
@@ -60,7 +61,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the displayName property value. Name of the application.
-                ## @param value Value to set for the display_name property.
+                ## @param value Value to set for the displayName property.
                 ## @return a void
                 ## 
                 def display_name=(value)
@@ -87,7 +88,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the objectId property value. The unique identifier of the application object in Azure AD.
-                ## @param value Value to set for the object_id property.
+                ## @param value Value to set for the objectId property.
                 ## @return a void
                 ## 
                 def object_id=(value)

@@ -56,7 +56,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. Date time object representing the time at which message was created.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the eventDetail property value. Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property will be set to systemEventMessage.
-            ## @param value Value to set for the event_detail property.
+            ## @param value Value to set for the eventDetail property.
             ## @return a void
             ## 
             def event_detail=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isDeleted property value. If set to true, the original message has been deleted.
-            ## @param value Value to set for the is_deleted property.
+            ## @param value Value to set for the isDeleted property.
             ## @return a void
             ## 
             def is_deleted=(value)
@@ -139,7 +139,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the messageType property value. The messageType property
-            ## @param value Value to set for the message_type property.
+            ## @param value Value to set for the messageType property.
             ## @return a void
             ## 
             def message_type=(value)

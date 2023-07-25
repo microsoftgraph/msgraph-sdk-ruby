@@ -6,15 +6,12 @@ require_relative '../contacts'
 require_relative './check_member_groups/check_member_groups_request_builder'
 require_relative './check_member_objects/check_member_objects_request_builder'
 require_relative './direct_reports/direct_reports_request_builder'
-require_relative './direct_reports/item/directory_object_item_request_builder'
 require_relative './get_member_groups/get_member_groups_request_builder'
 require_relative './get_member_objects/get_member_objects_request_builder'
 require_relative './item'
 require_relative './manager/manager_request_builder'
-require_relative './member_of/item/directory_object_item_request_builder'
 require_relative './member_of/member_of_request_builder'
 require_relative './restore/restore_request_builder'
-require_relative './transitive_member_of/item/directory_object_item_request_builder'
 require_relative './transitive_member_of/transitive_member_of_request_builder'
 
 module MicrosoftGraph
@@ -93,17 +90,6 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Provides operations to manage the directReports property of the microsoft.graph.orgContact entity.
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def direct_reports_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Contacts::Item::DirectReports::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                end
-                ## 
                 ## Get the properties and relationships of an organizational contact.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of org_contact
@@ -116,17 +102,6 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OrgContact.create_from_discriminator_value(pn) }, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the memberOf property of the microsoft.graph.orgContact entity.
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def member_of_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Contacts::Item::MemberOf::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Update entity in contacts
@@ -197,17 +172,6 @@ module MicrosoftGraph
                     end
                     request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                     return request_info
-                end
-                ## 
-                ## Provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.
-                ## @param id Unique identifier of the item
-                ## @return a directory_object_item_request_builder
-                ## 
-                def transitive_member_of_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["directoryObject%2Did"] = id
-                    return MicrosoftGraph::Contacts::Item::TransitiveMemberOf::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
 
                 ## 

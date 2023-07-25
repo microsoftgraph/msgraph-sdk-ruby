@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -54,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the approvalStageTimeOutInDays property value. The number of days that a request can be pending a response before it is automatically denied.
-            ## @param value Value to set for the approval_stage_time_out_in_days property.
+            ## @param value Value to set for the approvalStageTimeOutInDays property.
             ## @return a void
             ## 
             def approval_stage_time_out_in_days=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the escalationApprovers property value. The escalation approvers for this stage when the primary approvers don't respond.
-            ## @param value Value to set for the escalation_approvers property.
+            ## @param value Value to set for the escalationApprovers property.
             ## @return a void
             ## 
             def escalation_approvers=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the escalationTimeInMinutes property value. The time a request can be pending a response from a primary approver before it can be escalated to the escalation approvers.
-            ## @param value Value to set for the escalation_time_in_minutes property.
+            ## @param value Value to set for the escalationTimeInMinutes property.
             ## @return a void
             ## 
             def escalation_time_in_minutes=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isApproverJustificationRequired property value. Indicates whether the approver must provide justification for their reponse.
-            ## @param value Value to set for the is_approver_justification_required property.
+            ## @param value Value to set for the isApproverJustificationRequired property.
             ## @return a void
             ## 
             def is_approver_justification_required=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isEscalationEnabled property value. Indicates whether escalation if enabled.
-            ## @param value Value to set for the is_escalation_enabled property.
+            ## @param value Value to set for the isEscalationEnabled property.
             ## @return a void
             ## 
             def is_escalation_enabled=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the primaryApprovers property value. The primary approvers of this stage.
-            ## @param value Value to set for the primary_approvers property.
+            ## @param value Value to set for the primaryApprovers property.
             ## @return a void
             ## 
             def primary_approvers=(value)

@@ -45,7 +45,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the retentionEvents property value. The retentionEvents property
-                ## @param value Value to set for the retention_events property.
+                ## @param value Value to set for the retentionEvents property.
                 ## @return a void
                 ## 
                 def retention_events=(value)

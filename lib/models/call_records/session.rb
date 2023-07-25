@@ -22,6 +22,9 @@ module MicrosoftGraph
                 # Failure information associated with the session if the session failed.
                 @failure_info
                 ## 
+                # Specifies whether the session is a test.
+                @is_test
+                ## 
                 # List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
                 @modalities
                 ## 
@@ -85,7 +88,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the endDateTime property value. UTC time when the last user left the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-                ## @param value Value to set for the end_date_time property.
+                ## @param value Value to set for the endDateTime property.
                 ## @return a void
                 ## 
                 def end_date_time=(value)
@@ -100,7 +103,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the failureInfo property value. Failure information associated with the session if the session failed.
-                ## @param value Value to set for the failure_info property.
+                ## @param value Value to set for the failureInfo property.
                 ## @return a void
                 ## 
                 def failure_info=(value)
@@ -116,10 +119,26 @@ module MicrosoftGraph
                         "caller" => lambda {|n| @caller = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CallRecords::Endpoint.create_from_discriminator_value(pn) }) },
                         "endDateTime" => lambda {|n| @end_date_time = n.get_date_time_value() },
                         "failureInfo" => lambda {|n| @failure_info = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CallRecords::FailureInfo.create_from_discriminator_value(pn) }) },
+                        "isTest" => lambda {|n| @is_test = n.get_boolean_value() },
                         "modalities" => lambda {|n| @modalities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CallRecords::Modality.create_from_discriminator_value(pn) }) },
                         "segments" => lambda {|n| @segments = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::CallRecords::Segment.create_from_discriminator_value(pn) }) },
                         "startDateTime" => lambda {|n| @start_date_time = n.get_date_time_value() },
                     })
+                end
+                ## 
+                ## Gets the isTest property value. Specifies whether the session is a test.
+                ## @return a boolean
+                ## 
+                def is_test
+                    return @is_test
+                end
+                ## 
+                ## Sets the isTest property value. Specifies whether the session is a test.
+                ## @param value Value to set for the isTest property.
+                ## @return a void
+                ## 
+                def is_test=(value)
+                    @is_test = value
                 end
                 ## 
                 ## Gets the modalities property value. List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
@@ -163,6 +182,7 @@ module MicrosoftGraph
                     writer.write_object_value("caller", @caller)
                     writer.write_date_time_value("endDateTime", @end_date_time)
                     writer.write_object_value("failureInfo", @failure_info)
+                    writer.write_boolean_value("isTest", @is_test)
                     writer.write_collection_of_object_values("modalities", @modalities)
                     writer.write_collection_of_object_values("segments", @segments)
                     writer.write_date_time_value("startDateTime", @start_date_time)
@@ -176,7 +196,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the startDateTime property value. UTC time when the first user joined the session. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-                ## @param value Value to set for the start_date_time property.
+                ## @param value Value to set for the startDateTime property.
                 ## @return a void
                 ## 
                 def start_date_time=(value)

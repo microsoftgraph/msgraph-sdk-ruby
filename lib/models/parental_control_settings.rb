@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -49,7 +49,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the countriesBlockedForMinors property value. Specifies the two-letter ISO country codes. Access to the application will be blocked for minors from the countries specified in this list.
-            ## @param value Value to set for the countries_blocked_for_minors property.
+            ## @param value Value to set for the countriesBlockedForMinors property.
             ## @return a void
             ## 
             def countries_blocked_for_minors=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the legalAgeGroupRule property value. Specifies the legal age group rule that applies to users of the app. Can be set to one of the following values: ValueDescriptionAllowDefault. Enforces the legal minimum. This means parental consent is required for minors in the European Union and Korea.RequireConsentForPrivacyServicesEnforces the user to specify date of birth to comply with COPPA rules. RequireConsentForMinorsRequires parental consent for ages below 18, regardless of country minor rules.RequireConsentForKidsRequires parental consent for ages below 14, regardless of country minor rules.BlockMinorsBlocks minors from using the app.
-            ## @param value Value to set for the legal_age_group_rule property.
+            ## @param value Value to set for the legalAgeGroupRule property.
             ## @return a void
             ## 
             def legal_age_group_rule=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

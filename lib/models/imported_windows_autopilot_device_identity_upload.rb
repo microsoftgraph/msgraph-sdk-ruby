@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Import windows autopilot devices using upload.
         class ImportedWindowsAutopilotDeviceIdentityUpload < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -17,7 +19,7 @@ module MicrosoftGraph
             # The status property
             @status
             ## 
-            ## Instantiates a new ImportedWindowsAutopilotDeviceIdentityUpload and sets the default values.
+            ## Instantiates a new importedWindowsAutopilotDeviceIdentityUpload and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,7 +34,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTimeUtc property value. DateTime when the entity is created.
-            ## @param value Value to set for the created_date_time_utc property.
+            ## @param value Value to set for the createdDateTimeUtc property.
             ## @return a void
             ## 
             def created_date_time_utc=(value)
@@ -56,7 +58,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceIdentities property value. Collection of all Autopilot devices as a part of this upload.
-            ## @param value Value to set for the device_identities property.
+            ## @param value Value to set for the deviceIdentities property.
             ## @return a void
             ## 
             def device_identities=(value)

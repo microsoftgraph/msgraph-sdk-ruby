@@ -75,7 +75,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the assignedTo property value. Owner of the incident, or null if no owner is assigned. Free editable text.
-                ## @param value Value to set for the assigned_to property.
+                ## @param value Value to set for the assignedTo property.
                 ## @return a void
                 ## 
                 def assigned_to=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the createdDateTime property value. Time when the incident was first created.
-                ## @param value Value to set for the created_date_time property.
+                ## @param value Value to set for the createdDateTime property.
                 ## @return a void
                 ## 
                 def created_date_time=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the customTags property value. Array of custom tags associated with an incident.
-                ## @param value Value to set for the custom_tags property.
+                ## @param value Value to set for the customTags property.
                 ## @return a void
                 ## 
                 def custom_tags=(value)
@@ -181,7 +181,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the displayName property value. The incident name.
-                ## @param value Value to set for the display_name property.
+                ## @param value Value to set for the displayName property.
                 ## @return a void
                 ## 
                 def display_name=(value)
@@ -218,7 +218,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the incidentWebUrl property value. The URL for the incident page in the Microsoft 365 Defender portal.
-                ## @param value Value to set for the incident_web_url property.
+                ## @param value Value to set for the incidentWebUrl property.
                 ## @return a void
                 ## 
                 def incident_web_url=(value)
@@ -233,7 +233,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the lastUpdateDateTime property value. Time when the incident was last updated.
-                ## @param value Value to set for the last_update_date_time property.
+                ## @param value Value to set for the lastUpdateDateTime property.
                 ## @return a void
                 ## 
                 def last_update_date_time=(value)
@@ -248,7 +248,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the redirectIncidentId property value. Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
-                ## @param value Value to set for the redirect_incident_id property.
+                ## @param value Value to set for the redirectIncidentId property.
                 ## @return a void
                 ## 
                 def redirect_incident_id=(value)
@@ -316,7 +316,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the tenantId property value. The Azure Active Directory tenant in which the alert was created.
-                ## @param value Value to set for the tenant_id property.
+                ## @param value Value to set for the tenantId property.
                 ## @return a void
                 ## 
                 def tenant_id=(value)

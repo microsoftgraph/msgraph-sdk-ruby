@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The list of media to pre-fetch.
             @pre_fetch_media
             ## 
-            ## Instantiates a new ServiceHostedMediaConfig and sets the default values.
+            ## Instantiates a new serviceHostedMediaConfig and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the preFetchMedia property value. The list of media to pre-fetch.
-            ## @param value Value to set for the pre_fetch_media property.
+            ## @param value Value to set for the preFetchMedia property.
             ## @return a void
             ## 
             def pre_fetch_media=(value)

@@ -8,6 +8,9 @@ module MicrosoftGraph
         class TeamsAppDefinition < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # Authorization requirements specified in the Teams app manifest.
+            @authorization
+            ## 
             # The details of the bot specified in the Teams app manifest.
             @bot
             ## 
@@ -34,6 +37,21 @@ module MicrosoftGraph
             ## 
             # The version number of the application.
             @version
+            ## 
+            ## Gets the authorization property value. Authorization requirements specified in the Teams app manifest.
+            ## @return a teams_app_authorization
+            ## 
+            def authorization
+                return @authorization
+            end
+            ## 
+            ## Sets the authorization property value. Authorization requirements specified in the Teams app manifest.
+            ## @param value Value to set for the authorization property.
+            ## @return a void
+            ## 
+            def authorization=(value)
+                @authorization = value
+            end
             ## 
             ## Gets the bot property value. The details of the bot specified in the Teams app manifest.
             ## @return a teamwork_bot
@@ -65,7 +83,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdBy property value. The createdBy property
-            ## @param value Value to set for the created_by property.
+            ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
             def created_by=(value)
@@ -104,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name of the app provided by the app developer.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -116,6 +134,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "authorization" => lambda {|n| @authorization = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamsAppAuthorization.create_from_discriminator_value(pn) }) },
                     "bot" => lambda {|n| @bot = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::TeamworkBot.create_from_discriminator_value(pn) }) },
                     "createdBy" => lambda {|n| @created_by = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::IdentitySet.create_from_discriminator_value(pn) }) },
                     "description" => lambda {|n| @description = n.get_string_value() },
@@ -136,7 +155,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. The lastModifiedDateTime property
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -151,7 +170,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the publishingState property value. The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.
-            ## @param value Value to set for the publishing_state property.
+            ## @param value Value to set for the publishingState property.
             ## @return a void
             ## 
             def publishing_state=(value)
@@ -165,6 +184,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("authorization", @authorization)
                 writer.write_object_value("bot", @bot)
                 writer.write_object_value("createdBy", @created_by)
                 writer.write_string_value("description", @description)
@@ -184,7 +204,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the shortDescription property value. Short description of the application.
-            ## @param value Value to set for the short_description property.
+            ## @param value Value to set for the shortDescription property.
             ## @return a void
             ## 
             def short_description=(value)
@@ -199,7 +219,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the teamsAppId property value. The ID from the Teams app manifest.
-            ## @param value Value to set for the teams_app_id property.
+            ## @param value Value to set for the teamsAppId property.
             ## @return a void
             ## 
             def teams_app_id=(value)

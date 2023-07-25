@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -51,7 +51,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the approvalMode property value. One of SingleStage, Serial, Parallel, NoApproval (default). NoApproval is used when isApprovalRequired is false.
-            ## @param value Value to set for the approval_mode property.
+            ## @param value Value to set for the approvalMode property.
             ## @return a void
             ## 
             def approval_mode=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the approvalStages property value. If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.
-            ## @param value Value to set for the approval_stages property.
+            ## @param value Value to set for the approvalStages property.
             ## @return a void
             ## 
             def approval_stages=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isApprovalRequired property value. Indicates whether approval is required for requests in this policy.
-            ## @param value Value to set for the is_approval_required property.
+            ## @param value Value to set for the isApprovalRequired property.
             ## @return a void
             ## 
             def is_approval_required=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isApprovalRequiredForExtension property value. Indicates whether approval is required for a user to extend their assignment.
-            ## @param value Value to set for the is_approval_required_for_extension property.
+            ## @param value Value to set for the isApprovalRequiredForExtension property.
             ## @return a void
             ## 
             def is_approval_required_for_extension=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isRequestorJustificationRequired property value. Indicates whether the requestor is required to supply a justification in their request.
-            ## @param value Value to set for the is_requestor_justification_required property.
+            ## @param value Value to set for the isRequestorJustificationRequired property.
             ## @return a void
             ## 
             def is_requestor_justification_required=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

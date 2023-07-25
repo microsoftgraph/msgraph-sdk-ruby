@@ -22,7 +22,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/managedDeviceOverview{?%24select,%24expand}")
                 end
                 ## 
-                ## Device overview
+                ## Read properties and relationships of the managedDeviceOverview object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of managed_device_overview
                 ## 
@@ -36,7 +36,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedDeviceOverview.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Device overview
+                ## Read properties and relationships of the managedDeviceOverview object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -55,7 +55,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Device overview
+                # Read properties and relationships of the managedDeviceOverview object.
                 class ManagedDeviceOverviewRequestBuilderGetQueryParameters
                     
                     ## 

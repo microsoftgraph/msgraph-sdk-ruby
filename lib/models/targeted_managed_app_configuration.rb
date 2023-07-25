@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Configuration used to deliver a set of custom settings as-is to all users in the targeted security group
         class TargetedManagedAppConfiguration < MicrosoftGraph::Models::ManagedAppConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -52,7 +54,7 @@ module MicrosoftGraph
                 @assignments = value
             end
             ## 
-            ## Instantiates a new TargetedManagedAppConfiguration and sets the default values.
+            ## Instantiates a new targetedManagedAppConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -77,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deployedAppCount property value. Count of apps to which the current policy is deployed.
-            ## @param value Value to set for the deployed_app_count property.
+            ## @param value Value to set for the deployedAppCount property.
             ## @return a void
             ## 
             def deployed_app_count=(value)
@@ -92,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deploymentSummary property value. Navigation property to deployment summary of the configuration.
-            ## @param value Value to set for the deployment_summary property.
+            ## @param value Value to set for the deploymentSummary property.
             ## @return a void
             ## 
             def deployment_summary=(value)
@@ -120,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isAssigned property value. Indicates if the policy is deployed to any inclusion groups or not.
-            ## @param value Value to set for the is_assigned property.
+            ## @param value Value to set for the isAssigned property.
             ## @return a void
             ## 
             def is_assigned=(value)

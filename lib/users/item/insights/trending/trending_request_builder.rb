@@ -7,6 +7,7 @@ require_relative '../../../users'
 require_relative '../../item'
 require_relative '../insights'
 require_relative './count/count_request_builder'
+require_relative './item/trending_item_request_builder'
 require_relative './trending'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Users::Item::Insights::Trending::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the trending property of the microsoft.graph.officeGraphInsights entity.
+                        ## @param trending_id Unique identifier of the item
+                        ## @return a trending_item_request_builder
+                        ## 
+                        def by_trending_id(trending_id)
+                            raise StandardError, 'trending_id cannot be null' if trending_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["trending%2Did"] = trending_id
+                            return MicrosoftGraph::Users::Item::Insights::Trending::Item::TrendingItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new TrendingRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/insights/trending{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
+                        ## Calculated insight that includes a list of documents trending around the user.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of trending_collection_response
                         ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Trending.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
+                        ## Calculated insight that includes a list of documents trending around the user.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # Calculated relationship identifying documents trending around a user. Trending documents are calculated based on activity of the user's closest network of people and include files stored in OneDrive for Business and SharePoint. Trending insights help the user to discover potentially useful content that the user has access to, but has never viewed before.
+                        # Calculated insight that includes a list of documents trending around the user.
                         class TrendingRequestBuilderGetQueryParameters
                             
                             ## 

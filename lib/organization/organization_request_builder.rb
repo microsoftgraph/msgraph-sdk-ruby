@@ -7,6 +7,7 @@ require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
 require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
 require_relative './get_by_ids/get_by_ids_request_builder'
+require_relative './item/organization_item_request_builder'
 require_relative './organization'
 require_relative './validate_properties/validate_properties_request_builder'
 
@@ -42,6 +43,17 @@ module MicrosoftGraph
                 return MicrosoftGraph::Organization::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            ## Provides operations to manage the collection of organization entities.
+            ## @param organization_id Unique identifier of the item
+            ## @return a organization_item_request_builder
+            ## 
+            def by_organization_id(organization_id)
+                raise StandardError, 'organization_id cannot be null' if organization_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["organization%2Did"] = organization_id
+                return MicrosoftGraph::Organization::Item::OrganizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+            end
+            ## 
             ## Instantiates a new OrganizationRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request
             ## @param request_adapter The request adapter to use to execute the requests.
@@ -51,7 +63,7 @@ module MicrosoftGraph
                 super(path_parameters, request_adapter, "{+baseurl}/organization{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
             end
             ## 
-            ## Retrieve a list of organization objects.
+            ## List properties and relationships of the organization objects.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of organization_collection_response
             ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Organization.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Retrieve a list of organization objects.
+            ## List properties and relationships of the organization objects.
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
             ## 
@@ -120,7 +132,7 @@ module MicrosoftGraph
             end
 
             ## 
-            # Retrieve a list of organization objects.
+            # List properties and relationships of the organization objects.
             class OrganizationRequestBuilderGetQueryParameters
                 
                 ## 

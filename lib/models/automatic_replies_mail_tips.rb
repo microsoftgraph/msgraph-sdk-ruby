@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the messageLanguage property value. The language that the automatic reply message is in.
-            ## @param value Value to set for the message_language property.
+            ## @param value Value to set for the messageLanguage property.
             ## @return a void
             ## 
             def message_language=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scheduledEndTime property value. The date and time that automatic replies are set to end.
-            ## @param value Value to set for the scheduled_end_time property.
+            ## @param value Value to set for the scheduledEndTime property.
             ## @return a void
             ## 
             def scheduled_end_time=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scheduledStartTime property value. The date and time that automatic replies are set to begin.
-            ## @param value Value to set for the scheduled_start_time property.
+            ## @param value Value to set for the scheduledStartTime property.
             ## @return a void
             ## 
             def scheduled_start_time=(value)

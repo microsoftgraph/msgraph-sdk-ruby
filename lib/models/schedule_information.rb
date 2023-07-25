@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -51,7 +51,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the availabilityView property value. Represents a merged view of availability of all the items in scheduleItems. The view consists of time slots. Availability during each time slot is indicated with: 0= free, 1= tentative, 2= busy, 3= out of office, 4= working elsewhere.
-            ## @param value Value to set for the availability_view property.
+            ## @param value Value to set for the availabilityView property.
             ## @return a void
             ## 
             def availability_view=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scheduleId property value. An SMTP address of the user, distribution list, or resource, identifying an instance of scheduleInformation.
-            ## @param value Value to set for the schedule_id property.
+            ## @param value Value to set for the scheduleId property.
             ## @return a void
             ## 
             def schedule_id=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the scheduleItems property value. Contains the items that describe the availability of the user or resource.
-            ## @param value Value to set for the schedule_items property.
+            ## @param value Value to set for the scheduleItems property.
             ## @return a void
             ## 
             def schedule_items=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the workingHours property value. The days of the week and hours in a specific time zone that the user works. These are set as part of the user's mailboxSettings.
-            ## @param value Value to set for the working_hours property.
+            ## @param value Value to set for the workingHours property.
             ## @return a void
             ## 
             def working_hours=(value)

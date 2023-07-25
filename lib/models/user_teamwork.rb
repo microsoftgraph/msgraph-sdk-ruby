@@ -21,14 +21,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the associatedTeams property value. The list of associatedTeamInfo objects that a user is associated with.
-            ## @param value Value to set for the associated_teams property.
+            ## @param value Value to set for the associatedTeams property.
             ## @return a void
             ## 
             def associated_teams=(value)
                 @associated_teams = value
             end
             ## 
-            ## Instantiates a new UserTeamwork and sets the default values.
+            ## Instantiates a new userTeamwork and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the installedApps property value. The apps installed in the personal scope of this user.
-            ## @param value Value to set for the installed_apps property.
+            ## @param value Value to set for the installedApps property.
             ## @return a void
             ## 
             def installed_apps=(value)

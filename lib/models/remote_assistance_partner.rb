@@ -46,7 +46,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Display name of the partner.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastConnectionDateTime property value. Timestamp of the last request sent to Intune by the TEM partner.
-            ## @param value Value to set for the last_connection_date_time property.
+            ## @param value Value to set for the lastConnectionDateTime property.
             ## @return a void
             ## 
             def last_connection_date_time=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onboardingStatus property value. The current TeamViewer connector status
-            ## @param value Value to set for the onboarding_status property.
+            ## @param value Value to set for the onboardingStatus property.
             ## @return a void
             ## 
             def onboarding_status=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onboardingUrl property value. URL of the partner's onboarding portal, where an administrator can configure their Remote Assistance service.
-            ## @param value Value to set for the onboarding_url property.
+            ## @param value Value to set for the onboardingUrl property.
             ## @return a void
             ## 
             def onboarding_url=(value)

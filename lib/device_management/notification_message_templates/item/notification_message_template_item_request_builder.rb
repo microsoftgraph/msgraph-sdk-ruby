@@ -5,7 +5,6 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_management'
 require_relative '../notification_message_templates'
 require_relative './item'
-require_relative './localized_notification_messages/item/localized_notification_message_item_request_builder'
 require_relative './localized_notification_messages/localized_notification_messages_request_builder'
 require_relative './send_test_message/send_test_message_request_builder'
 
@@ -37,7 +36,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/notificationMessageTemplates/{notificationMessageTemplate%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property notificationMessageTemplates for deviceManagement
+                    ## Deletes a notificationMessageTemplate.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -51,7 +50,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The Notification Message Templates.
+                    ## Read properties and relationships of the notificationMessageTemplate object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of notification_message_template
                     ## 
@@ -65,18 +64,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::NotificationMessageTemplate.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the localizedNotificationMessages property of the microsoft.graph.notificationMessageTemplate entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a localized_notification_message_item_request_builder
-                    ## 
-                    def localized_notification_messages_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["localizedNotificationMessage%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::NotificationMessageTemplates::Item::LocalizedNotificationMessages::Item::LocalizedNotificationMessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Update the navigation property notificationMessageTemplates in deviceManagement
+                    ## Update the properties of a notificationMessageTemplate object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of notification_message_template
@@ -92,7 +80,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::NotificationMessageTemplate.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property notificationMessageTemplates for deviceManagement
+                    ## Deletes a notificationMessageTemplate.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -108,7 +96,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The Notification Message Templates.
+                    ## Read properties and relationships of the notificationMessageTemplate object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -126,7 +114,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property notificationMessageTemplates in deviceManagement
+                    ## Update the properties of a notificationMessageTemplate object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -147,7 +135,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The Notification Message Templates.
+                    # Read properties and relationships of the notificationMessageTemplate object.
                     class NotificationMessageTemplateItemRequestBuilderGetQueryParameters
                         
                         ## 

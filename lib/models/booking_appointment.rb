@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Represents a booked appointment of a service by a customer in a business.
         class BookingAppointment < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -87,7 +89,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalInformation property value. Additional information that is sent to the customer when an appointment is confirmed.
-            ## @param value Value to set for the additional_information property.
+            ## @param value Value to set for the additionalInformation property.
             ## @return a void
             ## 
             def additional_information=(value)
@@ -102,14 +104,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the anonymousJoinWebUrl property value. The URL of the meeting to join anonymously.
-            ## @param value Value to set for the anonymous_join_web_url property.
+            ## @param value Value to set for the anonymousJoinWebUrl property.
             ## @return a void
             ## 
             def anonymous_join_web_url=(value)
                 @anonymous_join_web_url = value
             end
             ## 
-            ## Instantiates a new BookingAppointment and sets the default values.
+            ## Instantiates a new bookingAppointment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -133,7 +135,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the customerTimeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
-            ## @param value Value to set for the customer_time_zone property.
+            ## @param value Value to set for the customerTimeZone property.
             ## @return a void
             ## 
             def customer_time_zone=(value)
@@ -178,7 +180,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the endDateTime property value. The endDateTime property
-            ## @param value Value to set for the end_date_time property.
+            ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 
             def end_date_time=(value)
@@ -193,7 +195,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the filledAttendeesCount property value. The current number of customers in the appointment
-            ## @param value Value to set for the filled_attendees_count property.
+            ## @param value Value to set for the filledAttendeesCount property.
             ## @return a void
             ## 
             def filled_attendees_count=(value)
@@ -240,7 +242,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isLocationOnline property value. If true, indicates that the appointment will be held online. Default value is false.
-            ## @param value Value to set for the is_location_online property.
+            ## @param value Value to set for the isLocationOnline property.
             ## @return a void
             ## 
             def is_location_online=(value)
@@ -255,7 +257,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the joinWebUrl property value. The URL of the online meeting for the appointment.
-            ## @param value Value to set for the join_web_url property.
+            ## @param value Value to set for the joinWebUrl property.
             ## @return a void
             ## 
             def join_web_url=(value)
@@ -270,7 +272,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maximumAttendeesCount property value. The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.
-            ## @param value Value to set for the maximum_attendees_count property.
+            ## @param value Value to set for the maximumAttendeesCount property.
             ## @return a void
             ## 
             def maximum_attendees_count=(value)
@@ -285,7 +287,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the optOutOfCustomerEmail property value. If true indicates that the bookingCustomer for this appointment does not wish to receive a confirmation for this appointment.
-            ## @param value Value to set for the opt_out_of_customer_email property.
+            ## @param value Value to set for the optOutOfCustomerEmail property.
             ## @return a void
             ## 
             def opt_out_of_customer_email=(value)
@@ -300,7 +302,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the postBuffer property value. The amount of time to reserve after the appointment ends, for cleaning up, as an example. The value is expressed in ISO8601 format.
-            ## @param value Value to set for the post_buffer property.
+            ## @param value Value to set for the postBuffer property.
             ## @return a void
             ## 
             def post_buffer=(value)
@@ -315,7 +317,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the preBuffer property value. The amount of time to reserve before the appointment begins, for preparation, as an example. The value is expressed in ISO8601 format.
-            ## @param value Value to set for the pre_buffer property.
+            ## @param value Value to set for the preBuffer property.
             ## @return a void
             ## 
             def pre_buffer=(value)
@@ -345,7 +347,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the priceType property value. Represents the type of pricing of a booking service.
-            ## @param value Value to set for the price_type property.
+            ## @param value Value to set for the priceType property.
             ## @return a void
             ## 
             def price_type=(value)
@@ -375,7 +377,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the selfServiceAppointmentId property value. An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer. Only supported for appointment if maxAttendeeCount is 1.
-            ## @param value Value to set for the self_service_appointment_id property.
+            ## @param value Value to set for the selfServiceAppointmentId property.
             ## @return a void
             ## 
             def self_service_appointment_id=(value)
@@ -421,7 +423,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the serviceId property value. The ID of the bookingService associated with this appointment.
-            ## @param value Value to set for the service_id property.
+            ## @param value Value to set for the serviceId property.
             ## @return a void
             ## 
             def service_id=(value)
@@ -436,7 +438,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the serviceLocation property value. The location where the service is delivered.
-            ## @param value Value to set for the service_location property.
+            ## @param value Value to set for the serviceLocation property.
             ## @return a void
             ## 
             def service_location=(value)
@@ -451,7 +453,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the serviceName property value. The name of the bookingService associated with this appointment.This property is optional when creating a new appointment. If not specified, it is computed from the service associated with the appointment by the serviceId property.
-            ## @param value Value to set for the service_name property.
+            ## @param value Value to set for the serviceName property.
             ## @return a void
             ## 
             def service_name=(value)
@@ -466,7 +468,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the serviceNotes property value. Notes from a bookingStaffMember. The value of this property is available only when reading this bookingAppointment by its ID.
-            ## @param value Value to set for the service_notes property.
+            ## @param value Value to set for the serviceNotes property.
             ## @return a void
             ## 
             def service_notes=(value)
@@ -481,7 +483,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the smsNotificationsEnabled property value. If true, indicates SMS notifications will be sent to the customers for the appointment. Default value is false.
-            ## @param value Value to set for the sms_notifications_enabled property.
+            ## @param value Value to set for the smsNotificationsEnabled property.
             ## @return a void
             ## 
             def sms_notifications_enabled=(value)
@@ -496,7 +498,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the staffMemberIds property value. The ID of each bookingStaffMember who is scheduled in this appointment.
-            ## @param value Value to set for the staff_member_ids property.
+            ## @param value Value to set for the staffMemberIds property.
             ## @return a void
             ## 
             def staff_member_ids=(value)
@@ -511,7 +513,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startDateTime property value. The startDateTime property
-            ## @param value Value to set for the start_date_time property.
+            ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
             def start_date_time=(value)

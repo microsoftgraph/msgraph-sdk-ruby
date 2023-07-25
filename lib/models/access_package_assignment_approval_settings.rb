@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isApprovalRequiredForAdd property value. If false, then approval is not required for new requests in this policy.
-            ## @param value Value to set for the is_approval_required_for_add property.
+            ## @param value Value to set for the isApprovalRequiredForAdd property.
             ## @return a void
             ## 
             def is_approval_required_for_add=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isApprovalRequiredForUpdate property value. If false, then approval is not required for updates to requests in this policy.
-            ## @param value Value to set for the is_approval_required_for_update property.
+            ## @param value Value to set for the isApprovalRequiredForUpdate property.
             ## @return a void
             ## 
             def is_approval_required_for_update=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

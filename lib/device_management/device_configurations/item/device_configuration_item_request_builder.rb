@@ -6,15 +6,11 @@ require_relative '../../device_management'
 require_relative '../device_configurations'
 require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
-require_relative './assignments/item/device_configuration_assignment_item_request_builder'
 require_relative './device_setting_state_summaries/device_setting_state_summaries_request_builder'
-require_relative './device_setting_state_summaries/item/setting_state_device_summary_item_request_builder'
 require_relative './device_statuses/device_statuses_request_builder'
-require_relative './device_statuses/item/device_configuration_device_status_item_request_builder'
 require_relative './device_status_overview/device_status_overview_request_builder'
 require_relative './get_oma_setting_plain_text_value_with_secret_reference_value_id/get_oma_setting_plain_text_value_with_secret_reference_value_id_request_builder'
 require_relative './item'
-require_relative './user_statuses/item/device_configuration_user_status_item_request_builder'
 require_relative './user_statuses/user_statuses_request_builder'
 require_relative './user_status_overview/user_status_overview_request_builder'
 
@@ -62,17 +58,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item::UserStatusOverview::UserStatusOverviewRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the assignments property of the microsoft.graph.deviceConfiguration entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a device_configuration_assignment_item_request_builder
-                    ## 
-                    def assignments_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["deviceConfigurationAssignment%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item::Assignments::Item::DeviceConfigurationAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new DeviceConfigurationItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -82,7 +67,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property deviceConfigurations for deviceManagement
+                    ## Deletes a iosCustomConfiguration.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -96,29 +81,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceConfiguration entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a setting_state_device_summary_item_request_builder
-                    ## 
-                    def device_setting_state_summaries_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["settingStateDeviceSummary%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item::DeviceSettingStateSummaries::Item::SettingStateDeviceSummaryItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the deviceStatuses property of the microsoft.graph.deviceConfiguration entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a device_configuration_device_status_item_request_builder
-                    ## 
-                    def device_statuses_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["deviceConfigurationDeviceStatus%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item::DeviceStatuses::Item::DeviceConfigurationDeviceStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## The device configurations.
+                    ## Read properties and relationships of the macOSGeneralDeviceConfiguration object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of device_configuration
                     ## 
@@ -141,7 +104,7 @@ module MicrosoftGraph
                         return GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder.new(@path_parameters, @request_adapter, secretReferenceValueId)
                     end
                     ## 
-                    ## Update the navigation property deviceConfigurations in deviceManagement
+                    ## Update the properties of a macOSCustomConfiguration object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of device_configuration
@@ -157,7 +120,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceConfiguration.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property deviceConfigurations for deviceManagement
+                    ## Deletes a iosCustomConfiguration.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -173,7 +136,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The device configurations.
+                    ## Read properties and relationships of the macOSGeneralDeviceConfiguration object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -191,7 +154,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property deviceConfigurations in deviceManagement
+                    ## Update the properties of a macOSCustomConfiguration object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -210,20 +173,9 @@ module MicrosoftGraph
                         request_info.set_content_from_parsable(@request_adapter, "application/json", body)
                         return request_info
                     end
-                    ## 
-                    ## Provides operations to manage the userStatuses property of the microsoft.graph.deviceConfiguration entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a device_configuration_user_status_item_request_builder
-                    ## 
-                    def user_statuses_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["deviceConfigurationUserStatus%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::DeviceConfigurations::Item::UserStatuses::Item::DeviceConfigurationUserStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
 
                     ## 
-                    # The device configurations.
+                    # Read properties and relationships of the macOSGeneralDeviceConfiguration object.
                     class DeviceConfigurationItemRequestBuilderGetQueryParameters
                         
                         ## 

@@ -33,14 +33,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the apiVersion property value. API version for the call back URL. Start with 1.
-            ## @param value Value to set for the api_version property.
+            ## @param value Value to set for the apiVersion property.
             ## @return a void
             ## 
             def api_version=(value)
                 @api_version = value
             end
             ## 
-            ## Instantiates a new WorkforceIntegration and sets the default values.
+            ## Instantiates a new workforceIntegration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -65,7 +65,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Name of the workforce integration.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isActive property value. Indicates whether this workforce integration is currently active and available.
-            ## @param value Value to set for the is_active property.
+            ## @param value Value to set for the isActive property.
             ## @return a void
             ## 
             def is_active=(value)
@@ -139,7 +139,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the supportedEntities property value. The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openshift, openShiftRequest, offerShiftRequest, unknownFutureValue.
-            ## @param value Value to set for the supported_entities property.
+            ## @param value Value to set for the supportedEntities property.
             ## @return a void
             ## 
             def supported_entities=(value)

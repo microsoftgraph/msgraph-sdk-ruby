@@ -64,7 +64,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activityDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the activity_date_time property.
+            ## @param value Value to set for the activityDateTime property.
             ## @return a void
             ## 
             def activity_date_time=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the changeId property value. Unique ID of this change in this cycle.
-            ## @param value Value to set for the change_id property.
+            ## @param value Value to set for the changeId property.
             ## @return a void
             ## 
             def change_id=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cycleId property value. Unique ID per job iteration.
-            ## @param value Value to set for the cycle_id property.
+            ## @param value Value to set for the cycleId property.
             ## @return a void
             ## 
             def cycle_id=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the durationInMilliseconds property value. Indicates how long this provisioning action took to finish. Measured in milliseconds.
-            ## @param value Value to set for the duration_in_milliseconds property.
+            ## @param value Value to set for the durationInMilliseconds property.
             ## @return a void
             ## 
             def duration_in_milliseconds=(value)
@@ -164,7 +164,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the initiatedBy property value. Details of who initiated this provisioning.
-            ## @param value Value to set for the initiated_by property.
+            ## @param value Value to set for the initiatedBy property.
             ## @return a void
             ## 
             def initiated_by=(value)
@@ -179,7 +179,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the jobId property value. The unique ID for the whole provisioning job.
-            ## @param value Value to set for the job_id property.
+            ## @param value Value to set for the jobId property.
             ## @return a void
             ## 
             def job_id=(value)
@@ -194,7 +194,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the modifiedProperties property value. Details of each property that was modified in this provisioning action on this object.
-            ## @param value Value to set for the modified_properties property.
+            ## @param value Value to set for the modifiedProperties property.
             ## @return a void
             ## 
             def modified_properties=(value)
@@ -209,7 +209,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
-            ## @param value Value to set for the provisioning_action property.
+            ## @param value Value to set for the provisioningAction property.
             ## @return a void
             ## 
             def provisioning_action=(value)
@@ -224,7 +224,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the provisioningStatusInfo property value. Details of provisioning status.
-            ## @param value Value to set for the provisioning_status_info property.
+            ## @param value Value to set for the provisioningStatusInfo property.
             ## @return a void
             ## 
             def provisioning_status_info=(value)
@@ -239,7 +239,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the provisioningSteps property value. Details of each step in provisioning.
-            ## @param value Value to set for the provisioning_steps property.
+            ## @param value Value to set for the provisioningSteps property.
             ## @return a void
             ## 
             def provisioning_steps=(value)
@@ -279,7 +279,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the servicePrincipal property value. Represents the service principal used for provisioning.
-            ## @param value Value to set for the service_principal property.
+            ## @param value Value to set for the servicePrincipal property.
             ## @return a void
             ## 
             def service_principal=(value)
@@ -294,7 +294,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sourceIdentity property value. Details of source object being provisioned.
-            ## @param value Value to set for the source_identity property.
+            ## @param value Value to set for the sourceIdentity property.
             ## @return a void
             ## 
             def source_identity=(value)
@@ -309,7 +309,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sourceSystem property value. Details of source system of the object being provisioned.
-            ## @param value Value to set for the source_system property.
+            ## @param value Value to set for the sourceSystem property.
             ## @return a void
             ## 
             def source_system=(value)
@@ -324,7 +324,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the targetIdentity property value. Details of target object being provisioned.
-            ## @param value Value to set for the target_identity property.
+            ## @param value Value to set for the targetIdentity property.
             ## @return a void
             ## 
             def target_identity=(value)
@@ -339,7 +339,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the targetSystem property value. Details of target system of the object being provisioned.
-            ## @param value Value to set for the target_system property.
+            ## @param value Value to set for the targetSystem property.
             ## @return a void
             ## 
             def target_system=(value)
@@ -354,7 +354,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tenantId property value. Unique Azure AD tenant ID.
-            ## @param value Value to set for the tenant_id property.
+            ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
             def tenant_id=(value)

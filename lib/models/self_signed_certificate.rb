@@ -49,14 +49,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new SelfSignedCertificate and sets the default values.
+            ## Instantiates a new selfSignedCertificate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the customKeyIdentifier property value. The customKeyIdentifier property
-            ## @param value Value to set for the custom_key_identifier property.
+            ## @param value Value to set for the customKeyIdentifier property.
             ## @return a void
             ## 
             def custom_key_identifier=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The displayName property
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the endDateTime property value. The endDateTime property
-            ## @param value Value to set for the end_date_time property.
+            ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 
             def end_date_time=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the keyId property value. The keyId property
-            ## @param value Value to set for the key_id property.
+            ## @param value Value to set for the keyId property.
             ## @return a void
             ## 
             def key_id=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -207,7 +207,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startDateTime property value. The startDateTime property
-            ## @param value Value to set for the start_date_time property.
+            ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
             def start_date_time=(value)

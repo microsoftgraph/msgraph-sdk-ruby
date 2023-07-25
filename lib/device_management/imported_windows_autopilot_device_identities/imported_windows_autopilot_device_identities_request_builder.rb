@@ -7,6 +7,7 @@ require_relative '../device_management'
 require_relative './count/count_request_builder'
 require_relative './import/import_request_builder'
 require_relative './imported_windows_autopilot_device_identities'
+require_relative './item/imported_windows_autopilot_device_identity_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -26,6 +27,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::DeviceManagement::ImportedWindowsAutopilotDeviceIdentities::Import::ImportRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the importedWindowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.
+                ## @param imported_windows_autopilot_device_identity_id Unique identifier of the item
+                ## @return a imported_windows_autopilot_device_identity_item_request_builder
+                ## 
+                def by_imported_windows_autopilot_device_identity_id(imported_windows_autopilot_device_identity_id)
+                    raise StandardError, 'imported_windows_autopilot_device_identity_id cannot be null' if imported_windows_autopilot_device_identity_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["importedWindowsAutopilotDeviceIdentity%2Did"] = imported_windows_autopilot_device_identity_id
+                    return MicrosoftGraph::DeviceManagement::ImportedWindowsAutopilotDeviceIdentities::Item::ImportedWindowsAutopilotDeviceIdentityItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new ImportedWindowsAutopilotDeviceIdentitiesRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/importedWindowsAutopilotDeviceIdentities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Collection of imported Windows autopilot devices.
+                ## List properties and relationships of the importedWindowsAutopilotDeviceIdentity objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of imported_windows_autopilot_device_identity_collection_response
                 ## 
@@ -49,7 +61,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ImportedWindowsAutopilotDeviceIdentityCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
+                ## Create a new importedWindowsAutopilotDeviceIdentity object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of imported_windows_autopilot_device_identity
@@ -65,7 +77,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ImportedWindowsAutopilotDeviceIdentity.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Collection of imported Windows autopilot devices.
+                ## List properties and relationships of the importedWindowsAutopilotDeviceIdentity objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -83,7 +95,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create new navigation property to importedWindowsAutopilotDeviceIdentities for deviceManagement
+                ## Create a new importedWindowsAutopilotDeviceIdentity object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -104,7 +116,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Collection of imported Windows autopilot devices.
+                # List properties and relationships of the importedWindowsAutopilotDeviceIdentity objects.
                 class ImportedWindowsAutopilotDeviceIdentitiesRequestBuilderGetQueryParameters
                     
                     ## 

@@ -123,7 +123,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sectionGroups property value. The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
-            ## @param value Value to set for the section_groups property.
+            ## @param value Value to set for the sectionGroups property.
             ## @return a void
             ## 
             def section_groups=(value)

@@ -38,6 +38,9 @@ module MicrosoftGraph
             # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @modified_date_time
             ## 
+            # The resourceRoleScopes property
+            @resource_role_scopes
+            ## 
             ## Gets the accessPackagesIncompatibleWith property value. The access packages that are incompatible with this package. Read-only.
             ## @return a access_package
             ## 
@@ -46,7 +49,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accessPackagesIncompatibleWith property value. The access packages that are incompatible with this package. Read-only.
-            ## @param value Value to set for the access_packages_incompatible_with property.
+            ## @param value Value to set for the accessPackagesIncompatibleWith property.
             ## @return a void
             ## 
             def access_packages_incompatible_with=(value)
@@ -61,7 +64,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignmentPolicies property value. The assignmentPolicies property
-            ## @param value Value to set for the assignment_policies property.
+            ## @param value Value to set for the assignmentPolicies property.
             ## @return a void
             ## 
             def assignment_policies=(value)
@@ -98,7 +101,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -137,7 +140,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The display name of the access package. Supports $filter (eq, contains).
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -159,6 +162,7 @@ module MicrosoftGraph
                     "incompatibleGroups" => lambda {|n| @incompatible_groups = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::Group.create_from_discriminator_value(pn) }) },
                     "isHidden" => lambda {|n| @is_hidden = n.get_boolean_value() },
                     "modifiedDateTime" => lambda {|n| @modified_date_time = n.get_date_time_value() },
+                    "resourceRoleScopes" => lambda {|n| @resource_role_scopes = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessPackageResourceRoleScope.create_from_discriminator_value(pn) }) },
                 })
             end
             ## 
@@ -170,7 +174,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the incompatibleAccessPackages property value. The access packages whose assigned users are ineligible to be assigned this access package.
-            ## @param value Value to set for the incompatible_access_packages property.
+            ## @param value Value to set for the incompatibleAccessPackages property.
             ## @return a void
             ## 
             def incompatible_access_packages=(value)
@@ -185,7 +189,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the incompatibleGroups property value. The groups whose members are ineligible to be assigned this access package.
-            ## @param value Value to set for the incompatible_groups property.
+            ## @param value Value to set for the incompatibleGroups property.
             ## @return a void
             ## 
             def incompatible_groups=(value)
@@ -200,7 +204,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isHidden property value. Whether the access package is hidden from the requestor.
-            ## @param value Value to set for the is_hidden property.
+            ## @param value Value to set for the isHidden property.
             ## @return a void
             ## 
             def is_hidden=(value)
@@ -215,11 +219,26 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the modifiedDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-            ## @param value Value to set for the modified_date_time property.
+            ## @param value Value to set for the modifiedDateTime property.
             ## @return a void
             ## 
             def modified_date_time=(value)
                 @modified_date_time = value
+            end
+            ## 
+            ## Gets the resourceRoleScopes property value. The resourceRoleScopes property
+            ## @return a access_package_resource_role_scope
+            ## 
+            def resource_role_scopes
+                return @resource_role_scopes
+            end
+            ## 
+            ## Sets the resourceRoleScopes property value. The resourceRoleScopes property
+            ## @param value Value to set for the resourceRoleScopes property.
+            ## @return a void
+            ## 
+            def resource_role_scopes=(value)
+                @resource_role_scopes = value
             end
             ## 
             ## Serializes information the current object
@@ -239,6 +258,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("incompatibleGroups", @incompatible_groups)
                 writer.write_boolean_value("isHidden", @is_hidden)
                 writer.write_date_time_value("modifiedDateTime", @modified_date_time)
+                writer.write_collection_of_object_values("resourceRoleScopes", @resource_role_scopes)
             end
         end
     end

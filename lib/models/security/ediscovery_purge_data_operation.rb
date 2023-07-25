@@ -9,7 +9,7 @@ module MicrosoftGraph
             class EdiscoveryPurgeDataOperation < MicrosoftGraph::Models::Security::CaseOperation
                 include MicrosoftKiotaAbstractions::Parsable
                 ## 
-                ## Instantiates a new EdiscoveryPurgeDataOperation and sets the default values.
+                ## Instantiates a new ediscoveryPurgeDataOperation and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

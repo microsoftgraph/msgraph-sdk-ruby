@@ -53,7 +53,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the teamsApps property value. The teamsApps property
-            ## @param value Value to set for the teams_apps property.
+            ## @param value Value to set for the teamsApps property.
             ## @return a void
             ## 
             def teams_apps=(value)

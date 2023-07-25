@@ -24,7 +24,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/iosUpdateStatuses/{iosUpdateDeviceStatus%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property iosUpdateStatuses for deviceManagement
+                    ## Deletes a iosUpdateDeviceStatus.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -38,7 +38,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The IOS software update installation statuses for this account.
+                    ## Read properties and relationships of the iosUpdateDeviceStatus object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of ios_update_device_status
                     ## 
@@ -52,7 +52,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IosUpdateDeviceStatus.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property iosUpdateStatuses in deviceManagement
+                    ## Update the properties of a iosUpdateDeviceStatus object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of ios_update_device_status
@@ -68,7 +68,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IosUpdateDeviceStatus.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property iosUpdateStatuses for deviceManagement
+                    ## Deletes a iosUpdateDeviceStatus.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -84,7 +84,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The IOS software update installation statuses for this account.
+                    ## Read properties and relationships of the iosUpdateDeviceStatus object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property iosUpdateStatuses in deviceManagement
+                    ## Update the properties of a iosUpdateDeviceStatus object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -123,7 +123,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The IOS software update installation statuses for this account.
+                    # Read properties and relationships of the iosUpdateDeviceStatus object.
                     class IosUpdateDeviceStatusItemRequestBuilderGetQueryParameters
                         
                         ## 

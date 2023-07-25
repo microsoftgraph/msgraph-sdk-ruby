@@ -29,7 +29,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the azureADAppId property value. The unique identifier of the Azure AD application used by this endpoint.
-                ## @param value Value to set for the azure_a_d_app_id property.
+                ## @param value Value to set for the azureADAppId property.
                 ## @return a void
                 ## 
                 def azure_a_d_app_id=(value)
@@ -44,14 +44,14 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the communicationServiceId property value. Immutable resource identifier of the Azure Communication Service associated with this endpoint based on Communication Services APIs.
-                ## @param value Value to set for the communication_service_id property.
+                ## @param value Value to set for the communicationServiceId property.
                 ## @return a void
                 ## 
                 def communication_service_id=(value)
                     @communication_service_id = value
                 end
                 ## 
-                ## Instantiates a new ClientUserAgent and sets the default values.
+                ## Instantiates a new clientUserAgent and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()
@@ -103,7 +103,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the productFamily property value. The productFamily property
-                ## @param value Value to set for the product_family property.
+                ## @param value Value to set for the productFamily property.
                 ## @return a void
                 ## 
                 def product_family=(value)

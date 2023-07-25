@@ -7,6 +7,7 @@ require_relative '../../admin'
 require_relative '../service_announcement'
 require_relative './count/count_request_builder'
 require_relative './issues'
+require_relative './item/service_health_issue_item_request_builder'
 
 module MicrosoftGraph
     module Admin
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Admin::ServiceAnnouncement::Issues::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the issues property of the microsoft.graph.serviceAnnouncement entity.
+                    ## @param service_health_issue_id Unique identifier of the item
+                    ## @return a service_health_issue_item_request_builder
+                    ## 
+                    def by_service_health_issue_id(service_health_issue_id)
+                        raise StandardError, 'service_health_issue_id cannot be null' if service_health_issue_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["serviceHealthIssue%2Did"] = service_health_issue_id
+                        return MicrosoftGraph::Admin::ServiceAnnouncement::Issues::Item::ServiceHealthIssueItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new IssuesRequestBuilder and sets the default values.

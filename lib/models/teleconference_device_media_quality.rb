@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the averageInboundJitter property value. The average inbound stream network jitter.
-            ## @param value Value to set for the average_inbound_jitter property.
+            ## @param value Value to set for the averageInboundJitter property.
             ## @return a void
             ## 
             def average_inbound_jitter=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the averageInboundPacketLossRateInPercentage property value. The average inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-            ## @param value Value to set for the average_inbound_packet_loss_rate_in_percentage property.
+            ## @param value Value to set for the averageInboundPacketLossRateInPercentage property.
             ## @return a void
             ## 
             def average_inbound_packet_loss_rate_in_percentage=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the averageInboundRoundTripDelay property value. The average inbound stream network round trip delay.
-            ## @param value Value to set for the average_inbound_round_trip_delay property.
+            ## @param value Value to set for the averageInboundRoundTripDelay property.
             ## @return a void
             ## 
             def average_inbound_round_trip_delay=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the averageOutboundJitter property value. The average outbound stream network jitter.
-            ## @param value Value to set for the average_outbound_jitter property.
+            ## @param value Value to set for the averageOutboundJitter property.
             ## @return a void
             ## 
             def average_outbound_jitter=(value)
@@ -159,7 +159,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the averageOutboundPacketLossRateInPercentage property value. The average outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-            ## @param value Value to set for the average_outbound_packet_loss_rate_in_percentage property.
+            ## @param value Value to set for the averageOutboundPacketLossRateInPercentage property.
             ## @return a void
             ## 
             def average_outbound_packet_loss_rate_in_percentage=(value)
@@ -174,7 +174,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the averageOutboundRoundTripDelay property value. The average outbound stream network round trip delay.
-            ## @param value Value to set for the average_outbound_round_trip_delay property.
+            ## @param value Value to set for the averageOutboundRoundTripDelay property.
             ## @return a void
             ## 
             def average_outbound_round_trip_delay=(value)
@@ -189,7 +189,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the channelIndex property value. The channel index of media. Indexing begins with 1.  If a media session contains 3 video modalities, channel indexes will be 1, 2, and 3.
-            ## @param value Value to set for the channel_index property.
+            ## @param value Value to set for the channelIndex property.
             ## @return a void
             ## 
             def channel_index=(value)
@@ -262,7 +262,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the inboundPackets property value. The total number of the inbound packets.
-            ## @param value Value to set for the inbound_packets property.
+            ## @param value Value to set for the inboundPackets property.
             ## @return a void
             ## 
             def inbound_packets=(value)
@@ -277,7 +277,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the localIPAddress property value. the local IP address for the media session.
-            ## @param value Value to set for the local_i_p_address property.
+            ## @param value Value to set for the localIPAddress property.
             ## @return a void
             ## 
             def local_i_p_address=(value)
@@ -292,7 +292,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the localPort property value. The local media port.
-            ## @param value Value to set for the local_port property.
+            ## @param value Value to set for the localPort property.
             ## @return a void
             ## 
             def local_port=(value)
@@ -307,7 +307,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maximumInboundJitter property value. The maximum inbound stream network jitter.
-            ## @param value Value to set for the maximum_inbound_jitter property.
+            ## @param value Value to set for the maximumInboundJitter property.
             ## @return a void
             ## 
             def maximum_inbound_jitter=(value)
@@ -322,7 +322,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maximumInboundPacketLossRateInPercentage property value. The maximum inbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-            ## @param value Value to set for the maximum_inbound_packet_loss_rate_in_percentage property.
+            ## @param value Value to set for the maximumInboundPacketLossRateInPercentage property.
             ## @return a void
             ## 
             def maximum_inbound_packet_loss_rate_in_percentage=(value)
@@ -337,7 +337,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maximumInboundRoundTripDelay property value. The maximum inbound stream network round trip delay.
-            ## @param value Value to set for the maximum_inbound_round_trip_delay property.
+            ## @param value Value to set for the maximumInboundRoundTripDelay property.
             ## @return a void
             ## 
             def maximum_inbound_round_trip_delay=(value)
@@ -352,7 +352,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maximumOutboundJitter property value. The maximum outbound stream network jitter.
-            ## @param value Value to set for the maximum_outbound_jitter property.
+            ## @param value Value to set for the maximumOutboundJitter property.
             ## @return a void
             ## 
             def maximum_outbound_jitter=(value)
@@ -367,7 +367,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maximumOutboundPacketLossRateInPercentage property value. The maximum outbound stream packet loss rate in percentage (0-100). For example, 0.01 means 0.01%.
-            ## @param value Value to set for the maximum_outbound_packet_loss_rate_in_percentage property.
+            ## @param value Value to set for the maximumOutboundPacketLossRateInPercentage property.
             ## @return a void
             ## 
             def maximum_outbound_packet_loss_rate_in_percentage=(value)
@@ -382,7 +382,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maximumOutboundRoundTripDelay property value. The maximum outbound stream network round trip delay.
-            ## @param value Value to set for the maximum_outbound_round_trip_delay property.
+            ## @param value Value to set for the maximumOutboundRoundTripDelay property.
             ## @return a void
             ## 
             def maximum_outbound_round_trip_delay=(value)
@@ -397,7 +397,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaDuration property value. The total modality duration. If the media enabled and disabled multiple times, MediaDuration will the summation of all of the durations.
-            ## @param value Value to set for the media_duration property.
+            ## @param value Value to set for the mediaDuration property.
             ## @return a void
             ## 
             def media_duration=(value)
@@ -412,7 +412,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the networkLinkSpeedInBytes property value. The network link speed in bytes
-            ## @param value Value to set for the network_link_speed_in_bytes property.
+            ## @param value Value to set for the networkLinkSpeedInBytes property.
             ## @return a void
             ## 
             def network_link_speed_in_bytes=(value)
@@ -427,7 +427,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -442,7 +442,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the outboundPackets property value. The total number of the outbound packets.
-            ## @param value Value to set for the outbound_packets property.
+            ## @param value Value to set for the outboundPackets property.
             ## @return a void
             ## 
             def outbound_packets=(value)
@@ -457,7 +457,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the remoteIPAddress property value. The remote IP address for the media session.
-            ## @param value Value to set for the remote_i_p_address property.
+            ## @param value Value to set for the remoteIPAddress property.
             ## @return a void
             ## 
             def remote_i_p_address=(value)
@@ -472,7 +472,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the remotePort property value. The remote media port.
-            ## @param value Value to set for the remote_port property.
+            ## @param value Value to set for the remotePort property.
             ## @return a void
             ## 
             def remote_port=(value)

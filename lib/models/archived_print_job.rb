@@ -49,7 +49,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the acquiredByPrinter property value. True if the job was acquired by a printer; false otherwise. Read-only.
-            ## @param value Value to set for the acquired_by_printer property.
+            ## @param value Value to set for the acquiredByPrinter property.
             ## @return a void
             ## 
             def acquired_by_printer=(value)
@@ -64,7 +64,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the acquiredDateTime property value. The dateTimeOffset when the job was acquired by the printer, if any. Read-only.
-            ## @param value Value to set for the acquired_date_time property.
+            ## @param value Value to set for the acquiredDateTime property.
             ## @return a void
             ## 
             def acquired_date_time=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the completionDateTime property value. The dateTimeOffset when the job was completed, canceled or aborted. Read-only.
-            ## @param value Value to set for the completion_date_time property.
+            ## @param value Value to set for the completionDateTime property.
             ## @return a void
             ## 
             def completion_date_time=(value)
@@ -116,7 +116,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the copiesPrinted property value. The number of copies that were printed. Read-only.
-            ## @param value Value to set for the copies_printed property.
+            ## @param value Value to set for the copiesPrinted property.
             ## @return a void
             ## 
             def copies_printed=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdBy property value. The user who created the print job. Read-only.
-            ## @param value Value to set for the created_by property.
+            ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
             def created_by=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The dateTimeOffset when the job was created. Read-only.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -203,7 +203,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -218,7 +218,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the printerId property value. The printer ID that the job was queued for. Read-only.
-            ## @param value Value to set for the printer_id property.
+            ## @param value Value to set for the printerId property.
             ## @return a void
             ## 
             def printer_id=(value)
@@ -233,7 +233,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the processingState property value. The processingState property
-            ## @param value Value to set for the processing_state property.
+            ## @param value Value to set for the processingState property.
             ## @return a void
             ## 
             def processing_state=(value)

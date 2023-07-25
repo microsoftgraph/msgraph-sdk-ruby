@@ -24,7 +24,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the includeContent property value. The type of search content. The possible values are: sharedContent, privateContent, unknownFutureValue. Read-only.
-            ## @param value Value to set for the include_content property.
+            ## @param value Value to set for the includeContent property.
             ## @return a void
             ## 
             def include_content=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

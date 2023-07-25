@@ -13,7 +13,7 @@ module MicrosoftGraph
             # true if this location is explicitly trusted. Optional. Default value is false.
             @is_trusted
             ## 
-            ## Instantiates a new IpNamedLocation and sets the default values.
+            ## Instantiates a new ipNamedLocation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -47,7 +47,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the ipRanges property value. List of IP address ranges in IPv4 CIDR format (e.g. 1.2.3.4/32) or any allowable IPv6 format from IETF RFC5969. Required.
-            ## @param value Value to set for the ip_ranges property.
+            ## @param value Value to set for the ipRanges property.
             ## @return a void
             ## 
             def ip_ranges=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isTrusted property value. true if this location is explicitly trusted. Optional. Default value is false.
-            ## @param value Value to set for the is_trusted property.
+            ## @param value Value to set for the isTrusted property.
             ## @return a void
             ## 
             def is_trusted=(value)

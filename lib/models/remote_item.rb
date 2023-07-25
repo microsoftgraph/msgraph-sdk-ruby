@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.
-            ## @param value Value to set for the created_by property.
+            ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
             def created_by=(value)
@@ -116,7 +116,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. Date and time of item creation. Read-only.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fileSystemInfo property value. Information about the remote item from the local file system. Read-only.
-            ## @param value Value to set for the file_system_info property.
+            ## @param value Value to set for the fileSystemInfo property.
             ## @return a void
             ## 
             def file_system_info=(value)
@@ -243,7 +243,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
-            ## @param value Value to set for the last_modified_by property.
+            ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
             def last_modified_by=(value)
@@ -258,7 +258,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. Date and time the item was last modified. Read-only.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -288,7 +288,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -318,7 +318,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the parentReference property value. Properties of the parent of the remote item. Read-only.
-            ## @param value Value to set for the parent_reference property.
+            ## @param value Value to set for the parentReference property.
             ## @return a void
             ## 
             def parent_reference=(value)
@@ -377,7 +377,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sharepointIds property value. Provides interop between items in OneDrive for Business and SharePoint with the full set of item identifiers. Read-only.
-            ## @param value Value to set for the sharepoint_ids property.
+            ## @param value Value to set for the sharepointIds property.
             ## @return a void
             ## 
             def sharepoint_ids=(value)
@@ -407,7 +407,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the specialFolder property value. If the current item is also available as a special folder, this facet is returned. Read-only.
-            ## @param value Value to set for the special_folder property.
+            ## @param value Value to set for the specialFolder property.
             ## @return a void
             ## 
             def special_folder=(value)
@@ -437,7 +437,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webDavUrl property value. DAV compatible URL for the item.
-            ## @param value Value to set for the web_dav_url property.
+            ## @param value Value to set for the webDavUrl property.
             ## @return a void
             ## 
             def web_dav_url=(value)
@@ -452,7 +452,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webUrl property value. URL that displays the resource in the browser. Read-only.
-            ## @param value Value to set for the web_url property.
+            ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 
             def web_url=(value)

@@ -6,6 +6,7 @@ require_relative '../../models/security/incident_collection_response'
 require_relative '../security'
 require_relative './count/count_request_builder'
 require_relative './incidents'
+require_relative './item/incident_item_request_builder'
 
 module MicrosoftGraph
     module Security
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::Security::Incidents::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the incidents property of the microsoft.graph.security entity.
+                ## @param incident_id Unique identifier of the item
+                ## @return a incident_item_request_builder
+                ## 
+                def by_incident_id(incident_id)
+                    raise StandardError, 'incident_id cannot be null' if incident_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["incident%2Did"] = incident_id
+                    return MicrosoftGraph::Security::Incidents::Item::IncidentItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new IncidentsRequestBuilder and sets the default values.

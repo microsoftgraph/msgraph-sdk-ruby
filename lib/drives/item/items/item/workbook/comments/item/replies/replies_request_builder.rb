@@ -11,6 +11,7 @@ require_relative '../../../workbook'
 require_relative '../../comments'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_comment_reply_item_request_builder'
 require_relative './replies'
 
 module MicrosoftGraph
@@ -32,6 +33,17 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Comments::Item::Replies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
+                                        ## Provides operations to manage the replies property of the microsoft.graph.workbookComment entity.
+                                        ## @param workbook_comment_reply_id Unique identifier of the item
+                                        ## @return a workbook_comment_reply_item_request_builder
+                                        ## 
+                                        def by_workbook_comment_reply_id(workbook_comment_reply_id)
+                                            raise StandardError, 'workbook_comment_reply_id cannot be null' if workbook_comment_reply_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["workbookCommentReply%2Did"] = workbook_comment_reply_id
+                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Comments::Item::Replies::Item::WorkbookCommentReplyItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                        end
+                                        ## 
                                         ## Instantiates a new RepliesRequestBuilder and sets the default values.
                                         ## @param path_parameters Path parameters for the request
                                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -41,7 +53,7 @@ module MicrosoftGraph
                                             super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/comments/{workbookComment%2Did}/replies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                         end
                                         ## 
-                                        ## Get replies from drives
+                                        ## Retrieve the properties and relationships of workbookCommentReply object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of workbook_comment_reply_collection_response
                                         ## 
@@ -71,7 +83,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookCommentReply.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Get replies from drives
+                                        ## Retrieve the properties and relationships of workbookCommentReply object.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -110,7 +122,7 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # Get replies from drives
+                                        # Retrieve the properties and relationships of workbookCommentReply object.
                                         class RepliesRequestBuilderGetQueryParameters
                                             
                                             ## 

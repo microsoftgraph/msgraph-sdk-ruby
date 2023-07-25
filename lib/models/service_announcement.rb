@@ -51,7 +51,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the healthOverviews property value. A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
-            ## @param value Value to set for the health_overviews property.
+            ## @param value Value to set for the healthOverviews property.
             ## @return a void
             ## 
             def health_overviews=(value)

@@ -10,6 +10,9 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
+            # The authenticationStrength property
+            @authentication_strength
+            ## 
             # List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
             @built_in_controls
             ## 
@@ -33,11 +36,26 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
+            end
+            ## 
+            ## Gets the authenticationStrength property value. The authenticationStrength property
+            ## @return a authentication_strength_policy
+            ## 
+            def authentication_strength
+                return @authentication_strength
+            end
+            ## 
+            ## Sets the authenticationStrength property value. The authenticationStrength property
+            ## @param value Value to set for the authenticationStrength property.
+            ## @return a void
+            ## 
+            def authentication_strength=(value)
+                @authentication_strength = value
             end
             ## 
             ## Gets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
@@ -48,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the builtInControls property value. List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.
-            ## @param value Value to set for the built_in_controls property.
+            ## @param value Value to set for the builtInControls property.
             ## @return a void
             ## 
             def built_in_controls=(value)
@@ -79,7 +97,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the customAuthenticationFactors property value. List of custom controls IDs required by the policy. For more information, see Custom controls.
-            ## @param value Value to set for the custom_authentication_factors property.
+            ## @param value Value to set for the customAuthenticationFactors property.
             ## @return a void
             ## 
             def custom_authentication_factors=(value)
@@ -91,6 +109,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return {
+                    "authenticationStrength" => lambda {|n| @authentication_strength = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AuthenticationStrengthPolicy.create_from_discriminator_value(pn) }) },
                     "builtInControls" => lambda {|n| @built_in_controls = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessGrantControl.create_from_discriminator_value(pn) }) },
                     "customAuthenticationFactors" => lambda {|n| @custom_authentication_factors = n.get_collection_of_primitive_values(String) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
@@ -107,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -135,6 +154,7 @@ module MicrosoftGraph
             ## 
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
+                writer.write_object_value("authenticationStrength", @authentication_strength)
                 writer.write_collection_of_object_values("builtInControls", @built_in_controls)
                 writer.write_collection_of_primitive_values("customAuthenticationFactors", @custom_authentication_factors)
                 writer.write_string_value("@odata.type", @odata_type)
@@ -151,7 +171,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the termsOfUse property value. List of terms of use IDs required by the policy.
-            ## @param value Value to set for the terms_of_use property.
+            ## @param value Value to set for the termsOfUse property.
             ## @return a void
             ## 
             def terms_of_use=(value)

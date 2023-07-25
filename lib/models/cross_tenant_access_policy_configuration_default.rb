@@ -7,6 +7,9 @@ module MicrosoftGraph
         class CrossTenantAccessPolicyConfigurationDefault < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
+            # Determines the default configuration for automatic user consent settings. The inboundAllowed and outboundAllowed properties are always false and cannot be updated in the default configuration. Read-only.
+            @automatic_user_consent_settings
+            ## 
             # Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
             @b2b_collaboration_inbound
             ## 
@@ -25,6 +28,21 @@ module MicrosoftGraph
             # If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
             @is_service_default
             ## 
+            ## Gets the automaticUserConsentSettings property value. Determines the default configuration for automatic user consent settings. The inboundAllowed and outboundAllowed properties are always false and cannot be updated in the default configuration. Read-only.
+            ## @return a inbound_outbound_policy_configuration
+            ## 
+            def automatic_user_consent_settings
+                return @automatic_user_consent_settings
+            end
+            ## 
+            ## Sets the automaticUserConsentSettings property value. Determines the default configuration for automatic user consent settings. The inboundAllowed and outboundAllowed properties are always false and cannot be updated in the default configuration. Read-only.
+            ## @param value Value to set for the automaticUserConsentSettings property.
+            ## @return a void
+            ## 
+            def automatic_user_consent_settings=(value)
+                @automatic_user_consent_settings = value
+            end
+            ## 
             ## Gets the b2bCollaborationInbound property value. Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
             ## @return a cross_tenant_access_policy_b2_b_setting
             ## 
@@ -33,7 +51,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the b2bCollaborationInbound property value. Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.
-            ## @param value Value to set for the b2b_collaboration_inbound property.
+            ## @param value Value to set for the b2bCollaborationInbound property.
             ## @return a void
             ## 
             def b2b_collaboration_inbound=(value)
@@ -48,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the b2bCollaborationOutbound property value. Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.
-            ## @param value Value to set for the b2b_collaboration_outbound property.
+            ## @param value Value to set for the b2bCollaborationOutbound property.
             ## @return a void
             ## 
             def b2b_collaboration_outbound=(value)
@@ -63,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the b2bDirectConnectInbound property value. Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B direct connect.
-            ## @param value Value to set for the b2b_direct_connect_inbound property.
+            ## @param value Value to set for the b2bDirectConnectInbound property.
             ## @return a void
             ## 
             def b2b_direct_connect_inbound=(value)
@@ -78,7 +96,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the b2bDirectConnectOutbound property value. Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.
-            ## @param value Value to set for the b2b_direct_connect_outbound property.
+            ## @param value Value to set for the b2bDirectConnectOutbound property.
             ## @return a void
             ## 
             def b2b_direct_connect_outbound=(value)
@@ -106,6 +124,7 @@ module MicrosoftGraph
             ## 
             def get_field_deserializers()
                 return super.merge({
+                    "automaticUserConsentSettings" => lambda {|n| @automatic_user_consent_settings = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::InboundOutboundPolicyConfiguration.create_from_discriminator_value(pn) }) },
                     "b2bCollaborationInbound" => lambda {|n| @b2b_collaboration_inbound = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
                     "b2bCollaborationOutbound" => lambda {|n| @b2b_collaboration_outbound = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
                     "b2bDirectConnectInbound" => lambda {|n| @b2b_direct_connect_inbound = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::CrossTenantAccessPolicyB2BSetting.create_from_discriminator_value(pn) }) },
@@ -123,7 +142,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the inboundTrust property value. Determines the default configuration for trusting other Conditional Access claims from external Azure AD organizations.
-            ## @param value Value to set for the inbound_trust property.
+            ## @param value Value to set for the inboundTrust property.
             ## @return a void
             ## 
             def inbound_trust=(value)
@@ -138,7 +157,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isServiceDefault property value. If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.
-            ## @param value Value to set for the is_service_default property.
+            ## @param value Value to set for the isServiceDefault property.
             ## @return a void
             ## 
             def is_service_default=(value)
@@ -152,6 +171,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 super
+                writer.write_object_value("automaticUserConsentSettings", @automatic_user_consent_settings)
                 writer.write_object_value("b2bCollaborationInbound", @b2b_collaboration_inbound)
                 writer.write_object_value("b2bCollaborationOutbound", @b2b_collaboration_outbound)
                 writer.write_object_value("b2bDirectConnectInbound", @b2b_direct_connect_inbound)

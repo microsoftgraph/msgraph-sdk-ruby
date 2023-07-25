@@ -40,7 +40,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the dataSource property value. User source or SharePoint site data source as non-custodial data source.
-                ## @param value Value to set for the data_source property.
+                ## @param value Value to set for the dataSource property.
                 ## @return a void
                 ## 
                 def data_source=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the lastIndexOperation property value. Operation entity that represents the latest indexing for the non-custodial data source.
-                ## @param value Value to set for the last_index_operation property.
+                ## @param value Value to set for the lastIndexOperation property.
                 ## @return a void
                 ## 
                 def last_index_operation=(value)

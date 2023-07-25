@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -58,7 +58,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enableAccessTokenIssuance property value. Specifies whether this web application can request an access token using the OAuth 2.0 implicit flow.
-            ## @param value Value to set for the enable_access_token_issuance property.
+            ## @param value Value to set for the enableAccessTokenIssuance property.
             ## @return a void
             ## 
             def enable_access_token_issuance=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enableIdTokenIssuance property value. Specifies whether this web application can request an ID token using the OAuth 2.0 implicit flow.
-            ## @param value Value to set for the enable_id_token_issuance property.
+            ## @param value Value to set for the enableIdTokenIssuance property.
             ## @return a void
             ## 
             def enable_id_token_issuance=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

@@ -32,7 +32,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                ## @param value Value to set for the AdditionalData property.
+                ## @param value Value to set for the additionalData property.
                 ## @return a void
                 ## 
                 def additional_data=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the isEnabled property value. Indicates whether or not OCR is enabled for the case.
-                ## @param value Value to set for the is_enabled property.
+                ## @param value Value to set for the isEnabled property.
                 ## @return a void
                 ## 
                 def is_enabled=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the maxImageSize property value. Maximum image size that will be processed in KB).
-                ## @param value Value to set for the max_image_size property.
+                ## @param value Value to set for the maxImageSize property.
                 ## @return a void
                 ## 
                 def max_image_size=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the @odata.type property value. The OdataType property
-                ## @param value Value to set for the odata_type property.
+                ## @param value Value to set for the @odata.type property.
                 ## @return a void
                 ## 
                 def odata_type=(value)

@@ -9,8 +9,8 @@ require_relative '../../item'
 require_relative '../assignment_policies'
 require_relative './access_package/access_package_request_builder'
 require_relative './catalog/catalog_request_builder'
+require_relative './custom_extension_stage_settings/custom_extension_stage_settings_request_builder'
 require_relative './item'
-require_relative './questions/item/access_package_question_item_request_builder'
 require_relative './questions/questions_request_builder'
 
 module MicrosoftGraph
@@ -33,6 +33,11 @@ module MicrosoftGraph
                                 # Provides operations to manage the catalog property of the microsoft.graph.accessPackageAssignmentPolicy entity.
                                 def catalog()
                                     return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackages::Item::AssignmentPolicies::Item::Catalog::CatalogRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                # Provides operations to manage the customExtensionStageSettings property of the microsoft.graph.accessPackageAssignmentPolicy entity.
+                                def custom_extension_stage_settings()
+                                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackages::Item::AssignmentPolicies::Item::CustomExtensionStageSettings::CustomExtensionStageSettingsRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
                                 # Provides operations to manage the questions property of the microsoft.graph.accessPackageAssignmentPolicy entity.
@@ -91,17 +96,6 @@ module MicrosoftGraph
                                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageAssignmentPolicy.create_from_discriminator_value(pn) }, error_mapping)
-                                end
-                                ## 
-                                ## Provides operations to manage the questions property of the microsoft.graph.accessPackageAssignmentPolicy entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a access_package_question_item_request_builder
-                                ## 
-                                def questions_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["accessPackageQuestion%2Did"] = id
-                                    return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AccessPackages::Item::AssignmentPolicies::Item::Questions::Item::AccessPackageQuestionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Delete navigation property assignmentPolicies for identityGovernance

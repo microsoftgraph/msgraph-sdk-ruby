@@ -32,18 +32,19 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the appId property value. Unique identifier of the application.
-                ## @param value Value to set for the app_id property.
+                ## @param value Value to set for the appId property.
                 ## @return a void
                 ## 
                 def app_id=(value)
                     @app_id = value
                 end
                 ## 
-                ## Instantiates a new CloudApplicationEvidence and sets the default values.
+                ## Instantiates a new cloudApplicationEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()
                     super
+                    @odata_type = "#microsoft.graph.security.cloudApplicationEvidence"
                 end
                 ## 
                 ## Creates a new instance of the appropriate class based on discriminator value
@@ -63,7 +64,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the displayName property value. Name of the application.
-                ## @param value Value to set for the display_name property.
+                ## @param value Value to set for the displayName property.
                 ## @return a void
                 ## 
                 def display_name=(value)
@@ -91,7 +92,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the instanceId property value. Identifier of the instance of the Software as a Service (SaaS) application.
-                ## @param value Value to set for the instance_id property.
+                ## @param value Value to set for the instanceId property.
                 ## @return a void
                 ## 
                 def instance_id=(value)
@@ -106,7 +107,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the instanceName property value. Name of the instance of the SaaS application.
-                ## @param value Value to set for the instance_name property.
+                ## @param value Value to set for the instanceName property.
                 ## @return a void
                 ## 
                 def instance_name=(value)
@@ -121,7 +122,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the saasAppId property value. The identifier of the SaaS application.
-                ## @param value Value to set for the saas_app_id property.
+                ## @param value Value to set for the saasAppId property.
                 ## @return a void
                 ## 
                 def saas_app_id=(value)

@@ -18,7 +18,7 @@ module MicrosoftGraph
                 # The URL of the user's OneDrive for Business site. Read-only.
                 @site_web_url
                 ## 
-                ## Instantiates a new UserSource and sets the default values.
+                ## Instantiates a new userSource and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()
@@ -69,7 +69,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the includedSources property value. Specifies which sources are included in this group. Possible values are: mailbox, site.
-                ## @param value Value to set for the included_sources property.
+                ## @param value Value to set for the includedSources property.
                 ## @return a void
                 ## 
                 def included_sources=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the siteWebUrl property value. The URL of the user's OneDrive for Business site. Read-only.
-                ## @param value Value to set for the site_web_url property.
+                ## @param value Value to set for the siteWebUrl property.
                 ## @return a void
                 ## 
                 def site_web_url=(value)

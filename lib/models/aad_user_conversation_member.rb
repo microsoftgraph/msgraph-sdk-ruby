@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The guid of the user.
             @user_id
             ## 
-            ## Instantiates a new AadUserConversationMember and sets the default values.
+            ## Instantiates a new aadUserConversationMember and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tenantId property value. TenantId which the Azure AD user belongs to.
-            ## @param value Value to set for the tenant_id property.
+            ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
             def tenant_id=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userId property value. The guid of the user.
-            ## @param value Value to set for the user_id property.
+            ## @param value Value to set for the userId property.
             ## @return a void
             ## 
             def user_id=(value)

@@ -7,6 +7,7 @@ require_relative '../../../agreements'
 require_relative '../../item'
 require_relative '../file'
 require_relative './count/count_request_builder'
+require_relative './item/agreement_file_localization_item_request_builder'
 require_relative './localizations'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Agreements::Item::File::Localizations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the localizations property of the microsoft.graph.agreementFile entity.
+                        ## @param agreement_file_localization_id Unique identifier of the item
+                        ## @return a agreement_file_localization_item_request_builder
+                        ## 
+                        def by_agreement_file_localization_id(agreement_file_localization_id)
+                            raise StandardError, 'agreement_file_localization_id cannot be null' if agreement_file_localization_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["agreementFileLocalization%2Did"] = agreement_file_localization_id
+                            return MicrosoftGraph::Agreements::Item::File::Localizations::Item::AgreementFileLocalizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new LocalizationsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/agreements/{agreement%2Did}/file/localizations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## The localized version of the terms of use agreement files attached to the agreement.
+                        ## Get a list of the default and localized agreement files.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of agreement_file_localization_collection_response
                         ## 
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AgreementFileLocalization.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## The localized version of the terms of use agreement files attached to the agreement.
+                        ## Get a list of the default and localized agreement files.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The localized version of the terms of use agreement files attached to the agreement.
+                        # Get a list of the default and localized agreement files.
                         class LocalizationsRequestBuilderGetQueryParameters
                             
                             ## 

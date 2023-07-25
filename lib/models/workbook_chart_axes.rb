@@ -24,7 +24,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the categoryAxis property value. Represents the category axis in a chart. Read-only.
-            ## @param value Value to set for the category_axis property.
+            ## @param value Value to set for the categoryAxis property.
             ## @return a void
             ## 
             def category_axis=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the seriesAxis property value. Represents the series axis of a 3-dimensional chart. Read-only.
-            ## @param value Value to set for the series_axis property.
+            ## @param value Value to set for the seriesAxis property.
             ## @return a void
             ## 
             def series_axis=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the valueAxis property value. Represents the value axis in an axis. Read-only.
-            ## @param value Value to set for the value_axis property.
+            ## @param value Value to set for the valueAxis property.
             ## @return a void
             ## 
             def value_axis=(value)

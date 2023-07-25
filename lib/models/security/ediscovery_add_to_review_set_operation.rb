@@ -15,7 +15,7 @@ module MicrosoftGraph
                 # eDiscovery search that gets added to review set.
                 @search
                 ## 
-                ## Instantiates a new EdiscoveryAddToReviewSetOperation and sets the default values.
+                ## Instantiates a new ediscoveryAddToReviewSetOperation and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()
@@ -49,7 +49,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the reviewSet property value. eDiscovery review set to which items matching source collection query gets added.
-                ## @param value Value to set for the review_set property.
+                ## @param value Value to set for the reviewSet property.
                 ## @return a void
                 ## 
                 def review_set=(value)

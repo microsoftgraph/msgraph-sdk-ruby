@@ -5,6 +5,7 @@ require_relative '../../models/managed_e_book_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_app_management'
 require_relative './count/count_request_builder'
+require_relative './item/managed_e_book_item_request_builder'
 require_relative './managed_e_books'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the managedEBooks property of the microsoft.graph.deviceAppManagement entity.
+                ## @param managed_e_book_id Unique identifier of the item
+                ## @return a managed_e_book_item_request_builder
+                ## 
+                def by_managed_e_book_id(managed_e_book_id)
+                    raise StandardError, 'managed_e_book_id cannot be null' if managed_e_book_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["managedEBook%2Did"] = managed_e_book_id
+                    return MicrosoftGraph::DeviceAppManagement::ManagedEBooks::Item::ManagedEBookItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new ManagedEBooksRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceAppManagement/managedEBooks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## The Managed eBook.
+                ## List properties and relationships of the managedEBook objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of managed_e_book_collection_response
                 ## 
@@ -43,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedEBookCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create new navigation property to managedEBooks for deviceAppManagement
+                ## Create a new iosVppEBook object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of managed_e_book
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedEBook.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## The Managed eBook.
+                ## List properties and relationships of the managedEBook objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create new navigation property to managedEBooks for deviceAppManagement
+                ## Create a new iosVppEBook object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # The Managed eBook.
+                # List properties and relationships of the managedEBook objects.
                 class ManagedEBooksRequestBuilderGetQueryParameters
                     
                     ## 

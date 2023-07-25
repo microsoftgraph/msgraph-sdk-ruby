@@ -24,7 +24,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the administrativeUnitId property value. Unique identifier for the administrative unit that the directory role is scoped to
-            ## @param value Value to set for the administrative_unit_id property.
+            ## @param value Value to set for the administrativeUnitId property.
             ## @return a void
             ## 
             def administrative_unit_id=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleId property value. Unique identifier for the directory role that the member is in.
-            ## @param value Value to set for the role_id property.
+            ## @param value Value to set for the roleId property.
             ## @return a void
             ## 
             def role_id=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleMemberInfo property value. The roleMemberInfo property
-            ## @param value Value to set for the role_member_info property.
+            ## @param value Value to set for the roleMemberInfo property.
             ## @return a void
             ## 
             def role_member_info=(value)

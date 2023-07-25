@@ -7,6 +7,7 @@ require_relative '../../../privacy'
 require_relative '../../subject_rights_requests'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/authored_note_item_request_builder'
 require_relative './notes'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::Notes::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.
+                        ## @param authored_note_id Unique identifier of the item
+                        ## @return a authored_note_item_request_builder
+                        ## 
+                        def by_authored_note_id(authored_note_id)
+                            raise StandardError, 'authored_note_id cannot be null' if authored_note_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["authoredNote%2Did"] = authored_note_id
+                            return MicrosoftGraph::Privacy::SubjectRightsRequests::Item::Notes::Item::AuthoredNoteItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new NotesRequestBuilder and sets the default values.

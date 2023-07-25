@@ -58,7 +58,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the chatType property value. The chatType property
-            ## @param value Value to set for the chat_type property.
+            ## @param value Value to set for the chatType property.
             ## @return a void
             ## 
             def chat_type=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. Date and time at which the chat was created. Read-only.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the installedApps property value. A collection of all the apps in the chat. Nullable.
-            ## @param value Value to set for the installed_apps property.
+            ## @param value Value to set for the installedApps property.
             ## @return a void
             ## 
             def installed_apps=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastMessagePreview property value. Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.
-            ## @param value Value to set for the last_message_preview property.
+            ## @param value Value to set for the lastMessagePreview property.
             ## @return a void
             ## 
             def last_message_preview=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastUpdatedDateTime property value. Date and time at which the chat was renamed or list of members were last changed. Read-only.
-            ## @param value Value to set for the last_updated_date_time property.
+            ## @param value Value to set for the lastUpdatedDateTime property.
             ## @return a void
             ## 
             def last_updated_date_time=(value)
@@ -201,7 +201,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onlineMeetingInfo property value. Represents details about an online meeting. If the chat isn't associated with an online meeting, the property is empty. Read-only.
-            ## @param value Value to set for the online_meeting_info property.
+            ## @param value Value to set for the onlineMeetingInfo property.
             ## @return a void
             ## 
             def online_meeting_info=(value)
@@ -216,7 +216,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the pinnedMessages property value. A collection of all the pinned messages in the chat. Nullable.
-            ## @param value Value to set for the pinned_messages property.
+            ## @param value Value to set for the pinnedMessages property.
             ## @return a void
             ## 
             def pinned_messages=(value)
@@ -269,7 +269,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tenantId property value. The identifier of the tenant in which the chat was created. Read-only.
-            ## @param value Value to set for the tenant_id property.
+            ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
             def tenant_id=(value)
@@ -314,7 +314,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webUrl property value. The URL for the chat in Microsoft Teams. The URL should be treated as an opaque blob, and not parsed. Read-only.
-            ## @param value Value to set for the web_url property.
+            ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 
             def web_url=(value)

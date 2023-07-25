@@ -93,7 +93,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                ## @param value Value to set for the AdditionalData property.
+                ## @param value Value to set for the additionalData property.
                 ## @return a void
                 ## 
                 def additional_data=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the callDurationSource property value. The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.
-                ## @param value Value to set for the call_duration_source property.
+                ## @param value Value to set for the callDurationSource property.
                 ## @return a void
                 ## 
                 def call_duration_source=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the callId property value. Call identifier. Not guaranteed to be unique.
-                ## @param value Value to set for the call_id property.
+                ## @param value Value to set for the callId property.
                 ## @return a void
                 ## 
                 def call_id=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the callType property value. Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
-                ## @param value Value to set for the call_type property.
+                ## @param value Value to set for the callType property.
                 ## @return a void
                 ## 
                 def call_type=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the calleeNumber property value. Number dialed in E.164 format.
-                ## @param value Value to set for the callee_number property.
+                ## @param value Value to set for the calleeNumber property.
                 ## @return a void
                 ## 
                 def callee_number=(value)
@@ -168,7 +168,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the callerNumber property value. Number that received the call for inbound calls or the number dialed for outbound calls. E.164 format.
-                ## @param value Value to set for the caller_number property.
+                ## @param value Value to set for the callerNumber property.
                 ## @return a void
                 ## 
                 def caller_number=(value)
@@ -198,7 +198,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the conferenceId property value. ID of the audio conference.
-                ## @param value Value to set for the conference_id property.
+                ## @param value Value to set for the conferenceId property.
                 ## @return a void
                 ## 
                 def conference_id=(value)
@@ -213,7 +213,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the connectionCharge property value. Connection fee price.
-                ## @param value Value to set for the connection_charge property.
+                ## @param value Value to set for the connectionCharge property.
                 ## @return a void
                 ## 
                 def connection_charge=(value)
@@ -259,7 +259,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the destinationContext property value. Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user's location.
-                ## @param value Value to set for the destination_context property.
+                ## @param value Value to set for the destinationContext property.
                 ## @return a void
                 ## 
                 def destination_context=(value)
@@ -274,7 +274,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the destinationName property value. Country or region dialed.
-                ## @param value Value to set for the destination_name property.
+                ## @param value Value to set for the destinationName property.
                 ## @return a void
                 ## 
                 def destination_name=(value)
@@ -304,7 +304,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the endDateTime property value. Call end time.
-                ## @param value Value to set for the end_date_time property.
+                ## @param value Value to set for the endDateTime property.
                 ## @return a void
                 ## 
                 def end_date_time=(value)
@@ -366,7 +366,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the inventoryType property value. User's phone number type, such as a service of toll-free number.
-                ## @param value Value to set for the inventory_type property.
+                ## @param value Value to set for the inventoryType property.
                 ## @return a void
                 ## 
                 def inventory_type=(value)
@@ -381,7 +381,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the licenseCapability property value. The license used for the call.
-                ## @param value Value to set for the license_capability property.
+                ## @param value Value to set for the licenseCapability property.
                 ## @return a void
                 ## 
                 def license_capability=(value)
@@ -396,7 +396,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the @odata.type property value. The OdataType property
-                ## @param value Value to set for the odata_type property.
+                ## @param value Value to set for the @odata.type property.
                 ## @return a void
                 ## 
                 def odata_type=(value)
@@ -459,7 +459,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the startDateTime property value. Call start time.
-                ## @param value Value to set for the start_date_time property.
+                ## @param value Value to set for the startDateTime property.
                 ## @return a void
                 ## 
                 def start_date_time=(value)
@@ -474,7 +474,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the tenantCountryCode property value. Country code of the tenant. For details, see ISO 3166-1 alpha-2.
-                ## @param value Value to set for the tenant_country_code property.
+                ## @param value Value to set for the tenantCountryCode property.
                 ## @return a void
                 ## 
                 def tenant_country_code=(value)
@@ -489,7 +489,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the usageCountryCode property value. Country code of the user. For details, see ISO 3166-1 alpha-2.
-                ## @param value Value to set for the usage_country_code property.
+                ## @param value Value to set for the usageCountryCode property.
                 ## @return a void
                 ## 
                 def usage_country_code=(value)
@@ -504,7 +504,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the userDisplayName property value. Display name of the user.
-                ## @param value Value to set for the user_display_name property.
+                ## @param value Value to set for the userDisplayName property.
                 ## @return a void
                 ## 
                 def user_display_name=(value)
@@ -519,7 +519,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the userId property value. Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).
-                ## @param value Value to set for the user_id property.
+                ## @param value Value to set for the userId property.
                 ## @return a void
                 ## 
                 def user_id=(value)
@@ -534,7 +534,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the userPrincipalName property value. The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
-                ## @param value Value to set for the user_principal_name property.
+                ## @param value Value to set for the userPrincipalName property.
                 ## @return a void
                 ## 
                 def user_principal_name=(value)

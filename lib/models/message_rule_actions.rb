@@ -54,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignCategories property value. A list of categories to be assigned to a message.
-            ## @param value Value to set for the assign_categories property.
+            ## @param value Value to set for the assignCategories property.
             ## @return a void
             ## 
             def assign_categories=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the copyToFolder property value. The ID of a folder that a message is to be copied to.
-            ## @param value Value to set for the copy_to_folder property.
+            ## @param value Value to set for the copyToFolder property.
             ## @return a void
             ## 
             def copy_to_folder=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the forwardAsAttachmentTo property value. The email addresses of the recipients to which a message should be forwarded as an attachment.
-            ## @param value Value to set for the forward_as_attachment_to property.
+            ## @param value Value to set for the forwardAsAttachmentTo property.
             ## @return a void
             ## 
             def forward_as_attachment_to=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the forwardTo property value. The email addresses of the recipients to which a message should be forwarded.
-            ## @param value Value to set for the forward_to property.
+            ## @param value Value to set for the forwardTo property.
             ## @return a void
             ## 
             def forward_to=(value)
@@ -180,7 +180,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the markAsRead property value. Indicates whether a message should be marked as read.
-            ## @param value Value to set for the mark_as_read property.
+            ## @param value Value to set for the markAsRead property.
             ## @return a void
             ## 
             def mark_as_read=(value)
@@ -195,7 +195,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the markImportance property value. Sets the importance of the message, which can be: low, normal, high.
-            ## @param value Value to set for the mark_importance property.
+            ## @param value Value to set for the markImportance property.
             ## @return a void
             ## 
             def mark_importance=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the moveToFolder property value. The ID of the folder that a message will be moved to.
-            ## @param value Value to set for the move_to_folder property.
+            ## @param value Value to set for the moveToFolder property.
             ## @return a void
             ## 
             def move_to_folder=(value)
@@ -225,7 +225,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -240,7 +240,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the permanentDelete property value. Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.
-            ## @param value Value to set for the permanent_delete property.
+            ## @param value Value to set for the permanentDelete property.
             ## @return a void
             ## 
             def permanent_delete=(value)
@@ -255,7 +255,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the redirectTo property value. The email addresses to which a message should be redirected.
-            ## @param value Value to set for the redirect_to property.
+            ## @param value Value to set for the redirectTo property.
             ## @return a void
             ## 
             def redirect_to=(value)
@@ -291,7 +291,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the stopProcessingRules property value. Indicates whether subsequent rules should be evaluated.
-            ## @param value Value to set for the stop_processing_rules property.
+            ## @param value Value to set for the stopProcessingRules property.
             ## @return a void
             ## 
             def stop_processing_rules=(value)
