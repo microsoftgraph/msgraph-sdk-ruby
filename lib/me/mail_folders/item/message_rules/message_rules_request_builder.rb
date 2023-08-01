@@ -7,6 +7,7 @@ require_relative '../../../me'
 require_relative '../../mail_folders'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/message_rule_item_request_builder'
 require_relative './message_rules'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Me::MailFolders::Item::MessageRules::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.
+                        ## @param message_rule_id Unique identifier of the item
+                        ## @return a message_rule_item_request_builder
+                        ## 
+                        def by_message_rule_id(message_rule_id)
+                            raise StandardError, 'message_rule_id cannot be null' if message_rule_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["messageRule%2Did"] = message_rule_id
+                            return MicrosoftGraph::Me::MailFolders::Item::MessageRules::Item::MessageRuleItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new MessageRulesRequestBuilder and sets the default values.

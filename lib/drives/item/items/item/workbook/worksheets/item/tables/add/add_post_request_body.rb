@@ -40,7 +40,7 @@ module MicrosoftGraph
                                             end
                                             ## 
                                             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                            ## @param value Value to set for the AdditionalData property.
+                                            ## @param value Value to set for the additionalData property.
                                             ## @return a void
                                             ## 
                                             def additional_data=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph
                                             end
                                             ## 
                                             ## Sets the hasHeaders property value. The hasHeaders property
-                                            ## @param value Value to set for the has_headers property.
+                                            ## @param value Value to set for the hasHeaders property.
                                             ## @return a void
                                             ## 
                                             def has_headers=(value)

@@ -54,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceCount property value. The number of devices that have installed this application
-            ## @param value Value to set for the device_count property.
+            ## @param value Value to set for the deviceCount property.
             ## @return a void
             ## 
             def device_count=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Name of the discovered application. Read-only
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the managedDevices property value. The devices that have the discovered application installed
-            ## @param value Value to set for the managed_devices property.
+            ## @param value Value to set for the managedDevices property.
             ## @return a void
             ## 
             def managed_devices=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sizeInByte property value. Discovered application size in bytes. Read-only
-            ## @param value Value to set for the size_in_byte property.
+            ## @param value Value to set for the sizeInByte property.
             ## @return a void
             ## 
             def size_in_byte=(value)

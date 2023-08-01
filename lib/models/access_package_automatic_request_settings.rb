@@ -10,13 +10,13 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The gracePeriodBeforeAccessRemoval property
+            # The duration for which access must be retained before the target's access is revoked once they leave the allowed target scope.
             @grace_period_before_access_removal
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The removeAccessWhenTargetLeavesAllowedTargets property
+            # Indicates whether automatic assignment must be removed for targets who move out of the allowed target scope.
             @remove_access_when_target_leaves_allowed_targets
             ## 
             # If set to true, automatic assignments will be created for targets in the allowed target scope.
@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -65,15 +65,15 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the gracePeriodBeforeAccessRemoval property value. The gracePeriodBeforeAccessRemoval property
+            ## Gets the gracePeriodBeforeAccessRemoval property value. The duration for which access must be retained before the target's access is revoked once they leave the allowed target scope.
             ## @return a microsoft_kiota_abstractions::_i_s_o_duration
             ## 
             def grace_period_before_access_removal
                 return @grace_period_before_access_removal
             end
             ## 
-            ## Sets the gracePeriodBeforeAccessRemoval property value. The gracePeriodBeforeAccessRemoval property
-            ## @param value Value to set for the grace_period_before_access_removal property.
+            ## Sets the gracePeriodBeforeAccessRemoval property value. The duration for which access must be retained before the target's access is revoked once they leave the allowed target scope.
+            ## @param value Value to set for the gracePeriodBeforeAccessRemoval property.
             ## @return a void
             ## 
             def grace_period_before_access_removal=(value)
@@ -88,22 +88,22 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
                 @odata_type = value
             end
             ## 
-            ## Gets the removeAccessWhenTargetLeavesAllowedTargets property value. The removeAccessWhenTargetLeavesAllowedTargets property
+            ## Gets the removeAccessWhenTargetLeavesAllowedTargets property value. Indicates whether automatic assignment must be removed for targets who move out of the allowed target scope.
             ## @return a boolean
             ## 
             def remove_access_when_target_leaves_allowed_targets
                 return @remove_access_when_target_leaves_allowed_targets
             end
             ## 
-            ## Sets the removeAccessWhenTargetLeavesAllowedTargets property value. The removeAccessWhenTargetLeavesAllowedTargets property
-            ## @param value Value to set for the remove_access_when_target_leaves_allowed_targets property.
+            ## Sets the removeAccessWhenTargetLeavesAllowedTargets property value. Indicates whether automatic assignment must be removed for targets who move out of the allowed target scope.
+            ## @param value Value to set for the removeAccessWhenTargetLeavesAllowedTargets property.
             ## @return a void
             ## 
             def remove_access_when_target_leaves_allowed_targets=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the requestAccessForAllowedTargets property value. If set to true, automatic assignments will be created for targets in the allowed target scope.
-            ## @param value Value to set for the request_access_for_allowed_targets property.
+            ## @param value Value to set for the requestAccessForAllowedTargets property.
             ## @return a void
             ## 
             def request_access_for_allowed_targets=(value)

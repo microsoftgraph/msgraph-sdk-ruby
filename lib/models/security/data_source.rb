@@ -37,7 +37,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the createdBy property value. The user who created the dataSource.
-                ## @param value Value to set for the created_by property.
+                ## @param value Value to set for the createdBy property.
                 ## @return a void
                 ## 
                 def created_by=(value)
@@ -52,7 +52,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the createdDateTime property value. The date and time the dataSource was created.
-                ## @param value Value to set for the created_date_time property.
+                ## @param value Value to set for the createdDateTime property.
                 ## @return a void
                 ## 
                 def created_date_time=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the displayName property value. The display name of the dataSource. This will be the name of the SharePoint site.
-                ## @param value Value to set for the display_name property.
+                ## @param value Value to set for the displayName property.
                 ## @return a void
                 ## 
                 def display_name=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the holdStatus property value. The hold status of the dataSource.The possible values are: notApplied, applied, applying, removing, partial
-                ## @param value Value to set for the hold_status property.
+                ## @param value Value to set for the holdStatus property.
                 ## @return a void
                 ## 
                 def hold_status=(value)

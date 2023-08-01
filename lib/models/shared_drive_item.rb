@@ -31,7 +31,7 @@ module MicrosoftGraph
             # Used to access the underlying site
             @site
             ## 
-            ## Instantiates a new SharedDriveItem and sets the default values.
+            ## Instantiates a new sharedDriveItem and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,7 +56,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the driveItem property value. Used to access the underlying driveItem
-            ## @param value Value to set for the drive_item property.
+            ## @param value Value to set for the driveItem property.
             ## @return a void
             ## 
             def drive_item=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the listItem property value. Used to access the underlying listItem
-            ## @param value Value to set for the list_item property.
+            ## @param value Value to set for the listItem property.
             ## @return a void
             ## 
             def list_item=(value)

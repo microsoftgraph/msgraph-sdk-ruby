@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # OMA Settings Base64 definition.
         class OmaSettingBase64 < MicrosoftGraph::Models::OmaSetting
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -13,7 +15,7 @@ module MicrosoftGraph
             # Value. (Base64 encoded string)
             @value
             ## 
-            ## Instantiates a new OmaSettingBase64 and sets the default values.
+            ## Instantiates a new omaSettingBase64 and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -38,7 +40,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fileName property value. File name associated with the Value property (.cer
-            ## @param value Value to set for the file_name property.
+            ## @param value Value to set for the fileName property.
             ## @return a void
             ## 
             def file_name=(value)

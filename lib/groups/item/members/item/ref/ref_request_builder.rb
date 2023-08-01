@@ -27,7 +27,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/members/{directoryObject%2Did}/$ref{?%40id*}")
                             end
                             ## 
-                            ## Delete ref of navigation property members for groups
+                            ## Remove a member from a group via the members navigation property. You can't remove a member from groups with dynamic memberships.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -41,7 +41,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Delete ref of navigation property members for groups
+                            ## Remove a member from a group via the members navigation property. You can't remove a member from groups with dynamic memberships.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -59,7 +59,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Delete ref of navigation property members for groups
+                            # Remove a member from a group via the members navigation property. You can't remove a member from groups with dynamic memberships.
                             class RefRequestBuilderDeleteQueryParameters
                                 
                                 ## 

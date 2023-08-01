@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the servicePlans property value. Information about the service plans assigned with the license. Read-only, Not nullable
-            ## @param value Value to set for the service_plans property.
+            ## @param value Value to set for the servicePlans property.
             ## @return a void
             ## 
             def service_plans=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the skuId property value. Unique identifier (GUID) for the service SKU. Equal to the skuId property on the related SubscribedSku object. Read-only
-            ## @param value Value to set for the sku_id property.
+            ## @param value Value to set for the skuId property.
             ## @return a void
             ## 
             def sku_id=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the skuPartNumber property value. Unique SKU display name. Equal to the skuPartNumber on the related SubscribedSku object; for example: 'AAD_Premium'. Read-only
-            ## @param value Value to set for the sku_part_number property.
+            ## @param value Value to set for the skuPartNumber property.
             ## @return a void
             ## 
             def sku_part_number=(value)

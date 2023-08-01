@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the completedDateTime property value. The date and time that the follow-up was finished.
-            ## @param value Value to set for the completed_date_time property.
+            ## @param value Value to set for the completedDateTime property.
             ## @return a void
             ## 
             def completed_date_time=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the dueDateTime property value. The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.
-            ## @param value Value to set for the due_date_time property.
+            ## @param value Value to set for the dueDateTime property.
             ## @return a void
             ## 
             def due_date_time=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the flagStatus property value. The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.
-            ## @param value Value to set for the flag_status property.
+            ## @param value Value to set for the flagStatus property.
             ## @return a void
             ## 
             def flag_status=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startDateTime property value. The date and time that the follow-up is to begin.
-            ## @param value Value to set for the start_date_time property.
+            ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
             def start_date_time=(value)

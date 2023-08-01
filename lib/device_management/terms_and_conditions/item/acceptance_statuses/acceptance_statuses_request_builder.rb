@@ -8,6 +8,7 @@ require_relative '../../terms_and_conditions'
 require_relative '../item'
 require_relative './acceptance_statuses'
 require_relative './count/count_request_builder'
+require_relative './item/terms_and_conditions_acceptance_status_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::DeviceManagement::TermsAndConditions::Item::AcceptanceStatuses::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the acceptanceStatuses property of the microsoft.graph.termsAndConditions entity.
+                        ## @param terms_and_conditions_acceptance_status_id Unique identifier of the item
+                        ## @return a terms_and_conditions_acceptance_status_item_request_builder
+                        ## 
+                        def by_terms_and_conditions_acceptance_status_id(terms_and_conditions_acceptance_status_id)
+                            raise StandardError, 'terms_and_conditions_acceptance_status_id cannot be null' if terms_and_conditions_acceptance_status_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["termsAndConditionsAcceptanceStatus%2Did"] = terms_and_conditions_acceptance_status_id
+                            return MicrosoftGraph::DeviceManagement::TermsAndConditions::Item::AcceptanceStatuses::Item::TermsAndConditionsAcceptanceStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new AcceptanceStatusesRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/termsAndConditions/{termsAndConditions%2Did}/acceptanceStatuses{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## The list of acceptance statuses for this T&C policy.
+                        ## List properties and relationships of the termsAndConditionsAcceptanceStatus objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of terms_and_conditions_acceptance_status_collection_response
                         ## 
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermsAndConditionsAcceptanceStatusCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create new navigation property to acceptanceStatuses for deviceManagement
+                        ## Create a new termsAndConditionsAcceptanceStatus object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of terms_and_conditions_acceptance_status
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermsAndConditionsAcceptanceStatus.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## The list of acceptance statuses for this T&C policy.
+                        ## List properties and relationships of the termsAndConditionsAcceptanceStatus objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create new navigation property to acceptanceStatuses for deviceManagement
+                        ## Create a new termsAndConditionsAcceptanceStatus object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The list of acceptance statuses for this T&C policy.
+                        # List properties and relationships of the termsAndConditionsAcceptanceStatus objects.
                         class AcceptanceStatusesRequestBuilderGetQueryParameters
                             
                             ## 

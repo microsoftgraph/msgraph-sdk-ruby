@@ -10,6 +10,7 @@ require_relative '../../plans'
 require_relative '../item'
 require_relative './buckets'
 require_relative './count/count_request_builder'
+require_relative './item/planner_bucket_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 # Provides operations to count the resources in the collection.
                                 def count()
                                     return MicrosoftGraph::Users::Item::Planner::Plans::Item::Buckets::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                end
+                                ## 
+                                ## Provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.
+                                ## @param planner_bucket_id Unique identifier of the item
+                                ## @return a planner_bucket_item_request_builder
+                                ## 
+                                def by_planner_bucket_id(planner_bucket_id)
+                                    raise StandardError, 'planner_bucket_id cannot be null' if planner_bucket_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["plannerBucket%2Did"] = planner_bucket_id
+                                    return MicrosoftGraph::Users::Item::Planner::Plans::Item::Buckets::Item::PlannerBucketItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## Instantiates a new BucketsRequestBuilder and sets the default values.

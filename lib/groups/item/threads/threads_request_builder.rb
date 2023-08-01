@@ -6,6 +6,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../groups'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/conversation_thread_item_request_builder'
 require_relative './threads'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Groups::Item::Threads::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the threads property of the microsoft.graph.group entity.
+                    ## @param conversation_thread_id Unique identifier of the item
+                    ## @return a conversation_thread_item_request_builder
+                    ## 
+                    def by_conversation_thread_id(conversation_thread_id)
+                        raise StandardError, 'conversation_thread_id cannot be null' if conversation_thread_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["conversationThread%2Did"] = conversation_thread_id
+                        return MicrosoftGraph::Groups::Item::Threads::Item::ConversationThreadItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new ThreadsRequestBuilder and sets the default values.

@@ -64,7 +64,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hasAttachments property value. Indicates whether any of the posts within this Conversation has at least one attachment. Supports $filter (eq, ne) and $search.
-            ## @param value Value to set for the has_attachments property.
+            ## @param value Value to set for the hasAttachments property.
             ## @return a void
             ## 
             def has_attachments=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastDeliveredDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the last_delivered_date_time property.
+            ## @param value Value to set for the lastDeliveredDateTime property.
             ## @return a void
             ## 
             def last_delivered_date_time=(value)
@@ -154,7 +154,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the uniqueSenders property value. All the users that sent a message to this Conversation.
-            ## @param value Value to set for the unique_senders property.
+            ## @param value Value to set for the uniqueSenders property.
             ## @return a void
             ## 
             def unique_senders=(value)

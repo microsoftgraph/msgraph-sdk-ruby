@@ -5,7 +5,6 @@ require_relative '../../../models/role_definition'
 require_relative '../../device_management'
 require_relative '../role_definitions'
 require_relative './item'
-require_relative './role_assignments/item/role_assignment_item_request_builder'
 require_relative './role_assignments/role_assignments_request_builder'
 
 module MicrosoftGraph
@@ -31,7 +30,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/roleDefinitions/{roleDefinition%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property roleDefinitions for deviceManagement
+                    ## Deletes a roleDefinition.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -45,7 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The Role Definitions.
+                    ## Read properties and relationships of the roleDefinition object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of role_definition
                     ## 
@@ -59,7 +58,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RoleDefinition.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property roleDefinitions in deviceManagement
+                    ## Update the properties of a deviceAndAppManagementRoleDefinition object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of role_definition
@@ -75,18 +74,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RoleDefinition.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the roleAssignments property of the microsoft.graph.roleDefinition entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a role_assignment_item_request_builder
-                    ## 
-                    def role_assignments_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["roleAssignment%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::RoleDefinitions::Item::RoleAssignments::Item::RoleAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Delete navigation property roleDefinitions for deviceManagement
+                    ## Deletes a roleDefinition.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The Role Definitions.
+                    ## Read properties and relationships of the roleDefinition object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -120,7 +108,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property roleDefinitions in deviceManagement
+                    ## Update the properties of a deviceAndAppManagementRoleDefinition object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -141,7 +129,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The Role Definitions.
+                    # Read properties and relationships of the roleDefinition object.
                     class RoleDefinitionItemRequestBuilderGetQueryParameters
                         
                         ## 

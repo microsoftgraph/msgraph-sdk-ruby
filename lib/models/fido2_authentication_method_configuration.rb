@@ -19,7 +19,7 @@ module MicrosoftGraph
             # Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (e.g. make and model) of the authenticator.
             @key_restrictions
             ## 
-            ## Instantiates a new Fido2AuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new fido2AuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,7 +56,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
-            ## @param value Value to set for the include_targets property.
+            ## @param value Value to set for the includeTargets property.
             ## @return a void
             ## 
             def include_targets=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isAttestationEnforced property value. Determines whether attestation must be enforced for FIDO2 security key registration.
-            ## @param value Value to set for the is_attestation_enforced property.
+            ## @param value Value to set for the isAttestationEnforced property.
             ## @return a void
             ## 
             def is_attestation_enforced=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isSelfServiceRegistrationAllowed property value. Determines if users can register new FIDO2 security keys.
-            ## @param value Value to set for the is_self_service_registration_allowed property.
+            ## @param value Value to set for the isSelfServiceRegistrationAllowed property.
             ## @return a void
             ## 
             def is_self_service_registration_allowed=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the keyRestrictions property value. Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (e.g. make and model) of the authenticator.
-            ## @param value Value to set for the key_restrictions property.
+            ## @param value Value to set for the keyRestrictions property.
             ## @return a void
             ## 
             def key_restrictions=(value)

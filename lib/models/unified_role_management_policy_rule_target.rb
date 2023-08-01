@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enforcedSettings property value. The list of role settings that are enforced and cannot be overridden by child scopes. Use All for all settings.
-            ## @param value Value to set for the enforced_settings property.
+            ## @param value Value to set for the enforcedSettings property.
             ## @return a void
             ## 
             def enforced_settings=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the inheritableSettings property value. The list of role settings that can be inherited by child scopes. Use All for all settings.
-            ## @param value Value to set for the inheritable_settings property.
+            ## @param value Value to set for the inheritableSettings property.
             ## @return a void
             ## 
             def inheritable_settings=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -191,7 +191,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the targetObjects property value. The targetObjects property
-            ## @param value Value to set for the target_objects property.
+            ## @param value Value to set for the targetObjects property.
             ## @return a void
             ## 
             def target_objects=(value)

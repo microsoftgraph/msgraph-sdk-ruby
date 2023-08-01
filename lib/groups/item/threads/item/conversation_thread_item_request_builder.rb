@@ -6,7 +6,6 @@ require_relative '../../../groups'
 require_relative '../../item'
 require_relative '../threads'
 require_relative './item'
-require_relative './posts/item/post_item_request_builder'
 require_relative './posts/posts_request_builder'
 require_relative './reply/reply_request_builder'
 
@@ -39,7 +38,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}{?%24select}")
                         end
                         ## 
-                        ## Delete navigation property threads for groups
+                        ## Delete conversationThread.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -53,7 +52,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## The group's conversation threads. Nullable.
+                        ## Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of conversation_thread
                         ## 
@@ -67,7 +66,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConversationThread.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the navigation property threads in groups
+                        ## Update conversation thread
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of conversation_thread
@@ -83,18 +82,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ConversationThread.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Provides operations to manage the posts property of the microsoft.graph.conversationThread entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a post_item_request_builder
-                        ## 
-                        def posts_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["post%2Did"] = id
-                            return MicrosoftGraph::Groups::Item::Threads::Item::Posts::Item::PostItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Delete navigation property threads for groups
+                        ## Delete conversationThread.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -110,7 +98,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## The group's conversation threads. Nullable.
+                        ## Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -128,7 +116,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property threads in groups
+                        ## Update conversation thread
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -149,7 +137,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The group's conversation threads. Nullable.
+                        # Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
                         class ConversationThreadItemRequestBuilderGetQueryParameters
                             
                             ## 

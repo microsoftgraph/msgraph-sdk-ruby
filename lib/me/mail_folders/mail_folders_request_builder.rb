@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../me'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/mail_folder_item_request_builder'
 require_relative './mail_folders'
 
 module MicrosoftGraph
@@ -26,16 +27,27 @@ module MicrosoftGraph
                     return MicrosoftGraph::Me::MailFolders::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the mailFolders property of the microsoft.graph.user entity.
+                ## @param mail_folder_id Unique identifier of the item
+                ## @return a mail_folder_item_request_builder
+                ## 
+                def by_mail_folder_id(mail_folder_id)
+                    raise StandardError, 'mail_folder_id cannot be null' if mail_folder_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["mailFolder%2Did"] = mail_folder_id
+                    return MicrosoftGraph::Me::MailFolders::Item::MailFolderItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new MailFoldersRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
                 ## @return a void
                 ## 
                 def initialize(path_parameters, request_adapter)
-                    super(path_parameters, request_adapter, "{+baseurl}/me/mailFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}")
+                    super(path_parameters, request_adapter, "{+baseurl}/me/mailFolders{?includeHiddenFolders*,%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Get the mail folder collection directly under the root folder of the signed-in user. The returned collection includes any mail search folders directly under the root. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
+                ## The user's mail folders. Read-only. Nullable.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of mail_folder_collection_response
                 ## 
@@ -49,7 +61,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MailFolderCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Use this API to create a new mail folder in the root folder of the user's mailbox. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+                ## Use this API to create a new mail folder in the root folder of the user's mailbox. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of mail_folder
@@ -65,7 +77,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MailFolder.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get the mail folder collection directly under the root folder of the signed-in user. The returned collection includes any mail search folders directly under the root. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
+                ## The user's mail folders. Read-only. Nullable.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -83,7 +95,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Use this API to create a new mail folder in the root folder of the user's mailbox. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+                ## Use this API to create a new mail folder in the root folder of the user's mailbox. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -104,7 +116,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get the mail folder collection directly under the root folder of the signed-in user. The returned collection includes any mail search folders directly under the root. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
+                # The user's mail folders. Read-only. Nullable.
                 class MailFoldersRequestBuilderGetQueryParameters
                     
                     ## 
@@ -116,6 +128,9 @@ module MicrosoftGraph
                     ## 
                     # Filter items by property values
                     attr_accessor :filter
+                    ## 
+                    # Include Hidden Folders
+                    attr_accessor :include_hidden_folders
                     ## 
                     # Order items by property values
                     attr_accessor :orderby
@@ -142,6 +157,8 @@ module MicrosoftGraph
                                 return "%24expand"
                             when "filter"
                                 return "%24filter"
+                            when "include_hidden_folders"
+                                return "includeHiddenFolders"
                             when "orderby"
                                 return "%24orderby"
                             when "select"

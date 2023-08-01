@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Delete user from shared apple device action result
         class DeleteUserFromSharedAppleDeviceActionResult < MicrosoftGraph::Models::DeviceActionResult
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # User principal name of the user to be deleted
             @user_principal_name
             ## 
-            ## Instantiates a new DeleteUserFromSharedAppleDeviceActionResult and sets the default values.
+            ## Instantiates a new deleteUserFromSharedAppleDeviceActionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -53,7 +55,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userPrincipalName property value. User principal name of the user to be deleted
-            ## @param value Value to set for the user_principal_name property.
+            ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 
             def user_principal_name=(value)

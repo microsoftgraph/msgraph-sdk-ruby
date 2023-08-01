@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This class contains compliance settings for Mac OS.
         class MacOSCompliancePolicy < MicrosoftGraph::Models::DeviceCompliancePolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -58,7 +60,7 @@ module MicrosoftGraph
             # Require that devices have enabled system integrity protection.
             @system_integrity_protection_enabled
             ## 
-            ## Instantiates a new MacOSCompliancePolicy and sets the default values.
+            ## Instantiates a new macOSCompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -83,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceThreatProtectionEnabled property value. Require that devices have enabled device threat protection.
-            ## @param value Value to set for the device_threat_protection_enabled property.
+            ## @param value Value to set for the deviceThreatProtectionEnabled property.
             ## @return a void
             ## 
             def device_threat_protection_enabled=(value)
@@ -98,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceThreatProtectionRequiredSecurityLevel property value. Device threat protection levels for the Device Threat Protection API.
-            ## @param value Value to set for the device_threat_protection_required_security_level property.
+            ## @param value Value to set for the deviceThreatProtectionRequiredSecurityLevel property.
             ## @return a void
             ## 
             def device_threat_protection_required_security_level=(value)
@@ -113,7 +115,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallBlockAllIncoming property value. Corresponds to the 'Block all incoming connections' option.
-            ## @param value Value to set for the firewall_block_all_incoming property.
+            ## @param value Value to set for the firewallBlockAllIncoming property.
             ## @return a void
             ## 
             def firewall_block_all_incoming=(value)
@@ -128,7 +130,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallEnableStealthMode property value. Corresponds to 'Enable stealth mode.'
-            ## @param value Value to set for the firewall_enable_stealth_mode property.
+            ## @param value Value to set for the firewallEnableStealthMode property.
             ## @return a void
             ## 
             def firewall_enable_stealth_mode=(value)
@@ -143,7 +145,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallEnabled property value. Whether the firewall should be enabled or not.
-            ## @param value Value to set for the firewall_enabled property.
+            ## @param value Value to set for the firewallEnabled property.
             ## @return a void
             ## 
             def firewall_enabled=(value)
@@ -183,7 +185,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the osMaximumVersion property value. Maximum MacOS version.
-            ## @param value Value to set for the os_maximum_version property.
+            ## @param value Value to set for the osMaximumVersion property.
             ## @return a void
             ## 
             def os_maximum_version=(value)
@@ -198,7 +200,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the osMinimumVersion property value. Minimum MacOS version.
-            ## @param value Value to set for the os_minimum_version property.
+            ## @param value Value to set for the osMinimumVersion property.
             ## @return a void
             ## 
             def os_minimum_version=(value)
@@ -213,7 +215,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordBlockSimple property value. Indicates whether or not to block simple passwords.
-            ## @param value Value to set for the password_block_simple property.
+            ## @param value Value to set for the passwordBlockSimple property.
             ## @return a void
             ## 
             def password_block_simple=(value)
@@ -228,7 +230,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordExpirationDays property value. Number of days before the password expires. Valid values 1 to 65535
-            ## @param value Value to set for the password_expiration_days property.
+            ## @param value Value to set for the passwordExpirationDays property.
             ## @return a void
             ## 
             def password_expiration_days=(value)
@@ -243,7 +245,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
-            ## @param value Value to set for the password_minimum_character_set_count property.
+            ## @param value Value to set for the passwordMinimumCharacterSetCount property.
             ## @return a void
             ## 
             def password_minimum_character_set_count=(value)
@@ -258,7 +260,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinimumLength property value. Minimum length of password. Valid values 4 to 14
-            ## @param value Value to set for the password_minimum_length property.
+            ## @param value Value to set for the passwordMinimumLength property.
             ## @return a void
             ## 
             def password_minimum_length=(value)
@@ -273,7 +275,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
-            ## @param value Value to set for the password_minutes_of_inactivity_before_lock property.
+            ## @param value Value to set for the passwordMinutesOfInactivityBeforeLock property.
             ## @return a void
             ## 
             def password_minutes_of_inactivity_before_lock=(value)
@@ -288,7 +290,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 1 to 24
-            ## @param value Value to set for the password_previous_password_block_count property.
+            ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
             ## @return a void
             ## 
             def password_previous_password_block_count=(value)
@@ -303,7 +305,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordRequired property value. Whether or not to require a password.
-            ## @param value Value to set for the password_required property.
+            ## @param value Value to set for the passwordRequired property.
             ## @return a void
             ## 
             def password_required=(value)
@@ -318,7 +320,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordRequiredType property value. Possible values of required passwords.
-            ## @param value Value to set for the password_required_type property.
+            ## @param value Value to set for the passwordRequiredType property.
             ## @return a void
             ## 
             def password_required_type=(value)
@@ -359,7 +361,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the storageRequireEncryption property value. Require encryption on Mac OS devices.
-            ## @param value Value to set for the storage_require_encryption property.
+            ## @param value Value to set for the storageRequireEncryption property.
             ## @return a void
             ## 
             def storage_require_encryption=(value)
@@ -374,7 +376,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the systemIntegrityProtectionEnabled property value. Require that devices have enabled system integrity protection.
-            ## @param value Value to set for the system_integrity_protection_enabled property.
+            ## @param value Value to set for the systemIntegrityProtectionEnabled property.
             ## @return a void
             ## 
             def system_integrity_protection_enabled=(value)

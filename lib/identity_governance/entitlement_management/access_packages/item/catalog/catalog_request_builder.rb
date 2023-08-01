@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/catalog{?%24select,%24expand}")
                             end
                             ## 
-                            ## Get catalog from identityGovernance
+                            ## Required when creating the access package. Read-only. Nullable.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of access_package_catalog
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageCatalog.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Get catalog from identityGovernance
+                            ## Required when creating the access package. Read-only. Nullable.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -61,7 +61,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get catalog from identityGovernance
+                            # Required when creating the access package. Read-only. Nullable.
                             class CatalogRequestBuilderGetQueryParameters
                                 
                                 ## 

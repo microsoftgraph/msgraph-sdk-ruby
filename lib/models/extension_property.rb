@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appDisplayName property value. Display name of the application object on which this extension property is defined. Read-only.
-            ## @param value Value to set for the app_display_name property.
+            ## @param value Value to set for the appDisplayName property.
             ## @return a void
             ## 
             def app_display_name=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the dataType property value. Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum
-            ## @param value Value to set for the data_type property.
+            ## @param value Value to set for the dataType property.
             ## @return a void
             ## 
             def data_type=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isSyncedFromOnPremises property value. Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.
-            ## @param value Value to set for the is_synced_from_on_premises property.
+            ## @param value Value to set for the isSyncedFromOnPremises property.
             ## @return a void
             ## 
             def is_synced_from_on_premises=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the targetObjects property value. Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization
-            ## @param value Value to set for the target_objects property.
+            ## @param value Value to set for the targetObjects property.
             ## @return a void
             ## 
             def target_objects=(value)

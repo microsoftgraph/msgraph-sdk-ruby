@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration%2Did}/userStatuses/{managedDeviceMobileAppConfigurationUserStatus%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property userStatuses for deviceAppManagement
+                            ## Deletes a managedDeviceMobileAppConfigurationUserStatus.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## List of ManagedDeviceMobileAppConfigurationUserStatus.
+                            ## Read properties and relationships of the managedDeviceMobileAppConfigurationUserStatus object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of managed_device_mobile_app_configuration_user_status
                             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedDeviceMobileAppConfigurationUserStatus.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property userStatuses in deviceAppManagement
+                            ## Update the properties of a managedDeviceMobileAppConfigurationUserStatus object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of managed_device_mobile_app_configuration_user_status
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedDeviceMobileAppConfigurationUserStatus.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property userStatuses for deviceAppManagement
+                            ## Deletes a managedDeviceMobileAppConfigurationUserStatus.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## List of ManagedDeviceMobileAppConfigurationUserStatus.
+                            ## Read properties and relationships of the managedDeviceMobileAppConfigurationUserStatus object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property userStatuses in deviceAppManagement
+                            ## Update the properties of a managedDeviceMobileAppConfigurationUserStatus object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # List of ManagedDeviceMobileAppConfigurationUserStatus.
+                            # Read properties and relationships of the managedDeviceMobileAppConfigurationUserStatus object.
                             class ManagedDeviceMobileAppConfigurationUserStatusItemRequestBuilderGetQueryParameters
                                 
                                 ## 

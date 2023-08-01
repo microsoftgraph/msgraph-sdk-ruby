@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bookingBusinesses property value. The bookingBusinesses property
-            ## @param value Value to set for the booking_businesses property.
+            ## @param value Value to set for the bookingBusinesses property.
             ## @return a void
             ## 
             def booking_businesses=(value)
@@ -57,14 +57,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bookingCurrencies property value. The bookingCurrencies property
-            ## @param value Value to set for the booking_currencies property.
+            ## @param value Value to set for the bookingCurrencies property.
             ## @return a void
             ## 
             def booking_currencies=(value)
                 @booking_currencies = value
             end
             ## 
-            ## Instantiates a new SolutionsRoot and sets the default values.
+            ## Instantiates a new solutionsRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

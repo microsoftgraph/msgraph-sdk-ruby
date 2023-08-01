@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -51,7 +51,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowMultipleLines property value. Whether to allow multiple lines of text.
-            ## @param value Value to set for the allow_multiple_lines property.
+            ## @param value Value to set for the allowMultipleLines property.
             ## @return a void
             ## 
             def allow_multiple_lines=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appendChangesToExistingText property value. Whether updates to this column should replace existing text, or append to it.
-            ## @param value Value to set for the append_changes_to_existing_text property.
+            ## @param value Value to set for the appendChangesToExistingText property.
             ## @return a void
             ## 
             def append_changes_to_existing_text=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the linesForEditing property value. The size of the text box.
-            ## @param value Value to set for the lines_for_editing property.
+            ## @param value Value to set for the linesForEditing property.
             ## @return a void
             ## 
             def lines_for_editing=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maxLength property value. The maximum number of characters for the value.
-            ## @param value Value to set for the max_length property.
+            ## @param value Value to set for the maxLength property.
             ## @return a void
             ## 
             def max_length=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the textType property value. The type of text being stored. Must be one of plain or richText
-            ## @param value Value to set for the text_type property.
+            ## @param value Value to set for the textType property.
             ## @return a void
             ## 
             def text_type=(value)

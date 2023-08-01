@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the homePageUrl property value. Home page or landing page of the application.
-            ## @param value Value to set for the home_page_url property.
+            ## @param value Value to set for the homePageUrl property.
             ## @return a void
             ## 
             def home_page_url=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the implicitGrantSettings property value. Specifies whether this web application can request tokens using the OAuth 2.0 implicit flow.
-            ## @param value Value to set for the implicit_grant_settings property.
+            ## @param value Value to set for the implicitGrantSettings property.
             ## @return a void
             ## 
             def implicit_grant_settings=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the logoutUrl property value. Specifies the URL that will be used by Microsoft's authorization service to logout an user using front-channel, back-channel or SAML logout protocols.
-            ## @param value Value to set for the logout_url property.
+            ## @param value Value to set for the logoutUrl property.
             ## @return a void
             ## 
             def logout_url=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the redirectUriSettings property value. The redirectUriSettings property
-            ## @param value Value to set for the redirect_uri_settings property.
+            ## @param value Value to set for the redirectUriSettings property.
             ## @return a void
             ## 
             def redirect_uri_settings=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the redirectUris property value. Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
-            ## @param value Value to set for the redirect_uris property.
+            ## @param value Value to set for the redirectUris property.
             ## @return a void
             ## 
             def redirect_uris=(value)

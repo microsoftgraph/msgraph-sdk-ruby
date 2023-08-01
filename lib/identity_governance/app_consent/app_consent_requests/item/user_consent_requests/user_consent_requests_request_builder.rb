@@ -9,6 +9,7 @@ require_relative '../../app_consent_requests'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './filter_by_current_user_with_on/filter_by_current_user_with_on_request_builder'
+require_relative './item/user_consent_request_item_request_builder'
 require_relative './user_consent_requests'
 
 module MicrosoftGraph
@@ -25,6 +26,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::IdentityGovernance::AppConsent::AppConsentRequests::Item::UserConsentRequests::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.
+                            ## @param user_consent_request_id Unique identifier of the item
+                            ## @return a user_consent_request_item_request_builder
+                            ## 
+                            def by_user_consent_request_id(user_consent_request_id)
+                                raise StandardError, 'user_consent_request_id cannot be null' if user_consent_request_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["userConsentRequest%2Did"] = user_consent_request_id
+                                return MicrosoftGraph::IdentityGovernance::AppConsent::AppConsentRequests::Item::UserConsentRequests::Item::UserConsentRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new UserConsentRequestsRequestBuilder and sets the default values.

@@ -12,7 +12,7 @@ module MicrosoftGraph
                 # The role property
                 @role
                 ## 
-                ## Instantiates a new ServiceUserAgent and sets the default values.
+                ## Instantiates a new serviceUserAgent and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

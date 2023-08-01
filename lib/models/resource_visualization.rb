@@ -45,7 +45,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the containerDisplayName property value. A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.
-            ## @param value Value to set for the container_display_name property.
+            ## @param value Value to set for the containerDisplayName property.
             ## @return a void
             ## 
             def container_display_name=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the containerType property value. Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.
-            ## @param value Value to set for the container_type property.
+            ## @param value Value to set for the containerType property.
             ## @return a void
             ## 
             def container_type=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the containerWebUrl property value. A path leading to the folder in which the item is stored.
-            ## @param value Value to set for the container_web_url property.
+            ## @param value Value to set for the containerWebUrl property.
             ## @return a void
             ## 
             def container_web_url=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaType property value. The item's media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.
-            ## @param value Value to set for the media_type property.
+            ## @param value Value to set for the mediaType property.
             ## @return a void
             ## 
             def media_type=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -168,7 +168,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the previewImageUrl property value. A URL leading to the preview image for the item.
-            ## @param value Value to set for the preview_image_url property.
+            ## @param value Value to set for the previewImageUrl property.
             ## @return a void
             ## 
             def preview_image_url=(value)
@@ -183,7 +183,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the previewText property value. A preview text for the item.
-            ## @param value Value to set for the preview_text property.
+            ## @param value Value to set for the previewText property.
             ## @return a void
             ## 
             def preview_text=(value)

@@ -10,13 +10,13 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Whether this is the default Content Type
+            # Indicates whether this is the default content type
             @default
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # Specifies the position in which the Content Type appears in the selection UI.
+            # Specifies the position in which the content type appears in the selection UI.
             @position
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -50,14 +50,14 @@ module MicrosoftGraph
                 return ContentTypeOrder.new
             end
             ## 
-            ## Gets the default property value. Whether this is the default Content Type
+            ## Gets the default property value. Indicates whether this is the default content type
             ## @return a boolean
             ## 
             def default
                 return @default
             end
             ## 
-            ## Sets the default property value. Whether this is the default Content Type
+            ## Sets the default property value. Indicates whether this is the default content type
             ## @param value Value to set for the default property.
             ## @return a void
             ## 
@@ -84,21 +84,21 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
                 @odata_type = value
             end
             ## 
-            ## Gets the position property value. Specifies the position in which the Content Type appears in the selection UI.
+            ## Gets the position property value. Specifies the position in which the content type appears in the selection UI.
             ## @return a integer
             ## 
             def position
                 return @position
             end
             ## 
-            ## Sets the position property value. Specifies the position in which the Content Type appears in the selection UI.
+            ## Sets the position property value. Specifies the position in which the content type appears in the selection UI.
             ## @param value Value to set for the position property.
             ## @return a void
             ## 

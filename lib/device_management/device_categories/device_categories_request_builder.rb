@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../device_management'
 require_relative './count/count_request_builder'
 require_relative './device_categories'
+require_relative './item/device_category_item_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::DeviceManagement::DeviceCategories::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the deviceCategories property of the microsoft.graph.deviceManagement entity.
+                ## @param device_category_id Unique identifier of the item
+                ## @return a device_category_item_request_builder
+                ## 
+                def by_device_category_id(device_category_id)
+                    raise StandardError, 'device_category_id cannot be null' if device_category_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["deviceCategory%2Did"] = device_category_id
+                    return MicrosoftGraph::DeviceManagement::DeviceCategories::Item::DeviceCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new DeviceCategoriesRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/deviceCategories{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## The list of device categories with the tenant.
+                ## List properties and relationships of the deviceCategory objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of device_category_collection_response
                 ## 
@@ -43,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceCategoryCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create new navigation property to deviceCategories for deviceManagement
+                ## Create a new deviceCategory object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of device_category
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceCategory.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## The list of device categories with the tenant.
+                ## List properties and relationships of the deviceCategory objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create new navigation property to deviceCategories for deviceManagement
+                ## Create a new deviceCategory object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # The list of device categories with the tenant.
+                # List properties and relationships of the deviceCategory objects.
                 class DeviceCategoriesRequestBuilderGetQueryParameters
                     
                     ## 

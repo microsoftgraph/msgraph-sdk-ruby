@@ -47,7 +47,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the devicesCount property value. Devices count for that user.
-            ## @param value Value to set for the devices_count property.
+            ## @param value Value to set for the devicesCount property.
             ## @return a void
             ## 
             def devices_count=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastReportedDateTime property value. Last modified date time of the policy report.
-            ## @param value Value to set for the last_reported_date_time property.
+            ## @param value Value to set for the lastReportedDateTime property.
             ## @return a void
             ## 
             def last_reported_date_time=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userDisplayName property value. User name of the DevicePolicyStatus.
-            ## @param value Value to set for the user_display_name property.
+            ## @param value Value to set for the userDisplayName property.
             ## @return a void
             ## 
             def user_display_name=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userPrincipalName property value. UserPrincipalName.
-            ## @param value Value to set for the user_principal_name property.
+            ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 
             def user_principal_name=(value)

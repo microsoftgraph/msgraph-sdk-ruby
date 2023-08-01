@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the postAttributeCollection property value. The postAttributeCollection property
-            ## @param value Value to set for the post_attribute_collection property.
+            ## @param value Value to set for the postAttributeCollection property.
             ## @return a void
             ## 
             def post_attribute_collection=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the postFederationSignup property value. The postFederationSignup property
-            ## @param value Value to set for the post_federation_signup property.
+            ## @param value Value to set for the postFederationSignup property.
             ## @return a void
             ## 
             def post_federation_signup=(value)

@@ -7,6 +7,7 @@ require_relative '../../../planner'
 require_relative '../../plans'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/planner_task_item_request_builder'
 require_relative './tasks'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Planner::Plans::Item::Tasks::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.
+                        ## @param planner_task_id Unique identifier of the item
+                        ## @return a planner_task_item_request_builder
+                        ## 
+                        def by_planner_task_id(planner_task_id)
+                            raise StandardError, 'planner_task_id cannot be null' if planner_task_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["plannerTask%2Did"] = planner_task_id
+                            return MicrosoftGraph::Planner::Plans::Item::Tasks::Item::PlannerTaskItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new TasksRequestBuilder and sets the default values.

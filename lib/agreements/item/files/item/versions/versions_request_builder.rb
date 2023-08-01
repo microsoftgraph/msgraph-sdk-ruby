@@ -8,6 +8,7 @@ require_relative '../../../item'
 require_relative '../../files'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/agreement_file_version_item_request_builder'
 require_relative './versions'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Agreements::Item::Files::Item::Versions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.
+                            ## @param agreement_file_version_id Unique identifier of the item
+                            ## @return a agreement_file_version_item_request_builder
+                            ## 
+                            def by_agreement_file_version_id(agreement_file_version_id)
+                                raise StandardError, 'agreement_file_version_id cannot be null' if agreement_file_version_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["agreementFileVersion%2Did"] = agreement_file_version_id
+                                return MicrosoftGraph::Agreements::Item::Files::Item::Versions::Item::AgreementFileVersionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new VersionsRequestBuilder and sets the default values.

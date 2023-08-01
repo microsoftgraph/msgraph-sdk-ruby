@@ -61,7 +61,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the createdBy property value. The user who created the retentionEvent.
-                ## @param value Value to set for the created_by property.
+                ## @param value Value to set for the createdBy property.
                 ## @return a void
                 ## 
                 def created_by=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the createdDateTime property value. The date time when the retentionEvent was created.
-                ## @param value Value to set for the created_date_time property.
+                ## @param value Value to set for the createdDateTime property.
                 ## @return a void
                 ## 
                 def created_date_time=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the displayName property value. Name of the event.
-                ## @param value Value to set for the display_name property.
+                ## @param value Value to set for the displayName property.
                 ## @return a void
                 ## 
                 def display_name=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the eventPropagationResults property value. The eventPropagationResults property
-                ## @param value Value to set for the event_propagation_results property.
+                ## @param value Value to set for the eventPropagationResults property.
                 ## @return a void
                 ## 
                 def event_propagation_results=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the eventQueries property value. Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.
-                ## @param value Value to set for the event_queries property.
+                ## @param value Value to set for the eventQueries property.
                 ## @return a void
                 ## 
                 def event_queries=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the eventStatus property value. The eventStatus property
-                ## @param value Value to set for the event_status property.
+                ## @param value Value to set for the eventStatus property.
                 ## @return a void
                 ## 
                 def event_status=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the eventTriggerDateTime property value. Optional time when the event should be triggered.
-                ## @param value Value to set for the event_trigger_date_time property.
+                ## @param value Value to set for the eventTriggerDateTime property.
                 ## @return a void
                 ## 
                 def event_trigger_date_time=(value)
@@ -210,7 +210,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the lastModifiedBy property value. The user who last modified the retentionEvent.
-                ## @param value Value to set for the last_modified_by property.
+                ## @param value Value to set for the lastModifiedBy property.
                 ## @return a void
                 ## 
                 def last_modified_by=(value)
@@ -225,7 +225,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the lastModifiedDateTime property value. The latest date time when the retentionEvent was modified.
-                ## @param value Value to set for the last_modified_date_time property.
+                ## @param value Value to set for the lastModifiedDateTime property.
                 ## @return a void
                 ## 
                 def last_modified_date_time=(value)
@@ -240,7 +240,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the lastStatusUpdateDateTime property value. Last time the status of the event was updated.
-                ## @param value Value to set for the last_status_update_date_time property.
+                ## @param value Value to set for the lastStatusUpdateDateTime property.
                 ## @return a void
                 ## 
                 def last_status_update_date_time=(value)
@@ -255,7 +255,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the retentionEventType property value. Specifies the event that will start the retention period for labels that use this event type when an event is created.
-                ## @param value Value to set for the retention_event_type property.
+                ## @param value Value to set for the retentionEventType property.
                 ## @return a void
                 ## 
                 def retention_event_type=(value)

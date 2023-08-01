@@ -34,7 +34,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the daysOfWeek property value. The days of the week on which the user works.
-            ## @param value Value to set for the days_of_week property.
+            ## @param value Value to set for the daysOfWeek property.
             ## @return a void
             ## 
             def days_of_week=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the endTime property value. The time of the day that the user stops working.
-            ## @param value Value to set for the end_time property.
+            ## @param value Value to set for the endTime property.
             ## @return a void
             ## 
             def end_time=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startTime property value. The time of the day that the user starts working.
-            ## @param value Value to set for the start_time property.
+            ## @param value Value to set for the startTime property.
             ## @return a void
             ## 
             def start_time=(value)
@@ -152,7 +152,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the timeZone property value. The time zone to which the working hours apply.
-            ## @param value Value to set for the time_zone property.
+            ## @param value Value to set for the timeZone property.
             ## @return a void
             ## 
             def time_zone=(value)

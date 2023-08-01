@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This class contains compliance settings for Windows 8.1 Mobile.
         class WindowsPhone81CompliancePolicy < MicrosoftGraph::Models::DeviceCompliancePolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -40,7 +42,7 @@ module MicrosoftGraph
             # Require encryption on windows phone devices.
             @storage_require_encryption
             ## 
-            ## Instantiates a new WindowsPhone81CompliancePolicy and sets the default values.
+            ## Instantiates a new windowsPhone81CompliancePolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -84,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the osMaximumVersion property value. Maximum Windows Phone version.
-            ## @param value Value to set for the os_maximum_version property.
+            ## @param value Value to set for the osMaximumVersion property.
             ## @return a void
             ## 
             def os_maximum_version=(value)
@@ -99,7 +101,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the osMinimumVersion property value. Minimum Windows Phone version.
-            ## @param value Value to set for the os_minimum_version property.
+            ## @param value Value to set for the osMinimumVersion property.
             ## @return a void
             ## 
             def os_minimum_version=(value)
@@ -114,7 +116,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordBlockSimple property value. Whether or not to block syncing the calendar.
-            ## @param value Value to set for the password_block_simple property.
+            ## @param value Value to set for the passwordBlockSimple property.
             ## @return a void
             ## 
             def password_block_simple=(value)
@@ -129,7 +131,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordExpirationDays property value. Number of days before the password expires.
-            ## @param value Value to set for the password_expiration_days property.
+            ## @param value Value to set for the passwordExpirationDays property.
             ## @return a void
             ## 
             def password_expiration_days=(value)
@@ -144,7 +146,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
-            ## @param value Value to set for the password_minimum_character_set_count property.
+            ## @param value Value to set for the passwordMinimumCharacterSetCount property.
             ## @return a void
             ## 
             def password_minimum_character_set_count=(value)
@@ -159,7 +161,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinimumLength property value. Minimum length of passwords.
-            ## @param value Value to set for the password_minimum_length property.
+            ## @param value Value to set for the passwordMinimumLength property.
             ## @return a void
             ## 
             def password_minimum_length=(value)
@@ -174,7 +176,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a password is required.
-            ## @param value Value to set for the password_minutes_of_inactivity_before_lock property.
+            ## @param value Value to set for the passwordMinutesOfInactivityBeforeLock property.
             ## @return a void
             ## 
             def password_minutes_of_inactivity_before_lock=(value)
@@ -189,7 +191,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordPreviousPasswordBlockCount property value. Number of previous passwords to block. Valid values 0 to 24
-            ## @param value Value to set for the password_previous_password_block_count property.
+            ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
             ## @return a void
             ## 
             def password_previous_password_block_count=(value)
@@ -204,7 +206,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordRequired property value. Whether or not to require a password.
-            ## @param value Value to set for the password_required property.
+            ## @param value Value to set for the passwordRequired property.
             ## @return a void
             ## 
             def password_required=(value)
@@ -219,7 +221,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordRequiredType property value. Possible values of required passwords.
-            ## @param value Value to set for the password_required_type property.
+            ## @param value Value to set for the passwordRequiredType property.
             ## @return a void
             ## 
             def password_required_type=(value)
@@ -254,7 +256,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the storageRequireEncryption property value. Require encryption on windows phone devices.
-            ## @param value Value to set for the storage_require_encryption property.
+            ## @param value Value to set for the storageRequireEncryption property.
             ## @return a void
             ## 
             def storage_require_encryption=(value)

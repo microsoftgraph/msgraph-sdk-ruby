@@ -29,7 +29,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -60,7 +60,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceRestartBehavior property value. Indicates the type of restart action.
-            ## @param value Value to set for the device_restart_behavior property.
+            ## @param value Value to set for the deviceRestartBehavior property.
             ## @return a void
             ## 
             def device_restart_behavior=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the runAsAccount property value. Indicates the type of execution context the app runs in.
-            ## @param value Value to set for the run_as_account property.
+            ## @param value Value to set for the runAsAccount property.
             ## @return a void
             ## 
             def run_as_account=(value)

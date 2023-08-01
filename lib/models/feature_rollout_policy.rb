@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appliesTo property value. Nullable. Specifies a list of directoryObjects that feature is enabled for.
-            ## @param value Value to set for the applies_to property.
+            ## @param value Value to set for the appliesTo property.
             ## @return a void
             ## 
             def applies_to=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The display name for this  feature rollout policy.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isAppliedToOrganization property value. Indicates whether this feature rollout policy should be applied to the entire organization.
-            ## @param value Value to set for the is_applied_to_organization property.
+            ## @param value Value to set for the isAppliedToOrganization property.
             ## @return a void
             ## 
             def is_applied_to_organization=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isEnabled property value. Indicates whether the feature rollout is enabled.
-            ## @param value Value to set for the is_enabled property.
+            ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 
             def is_enabled=(value)

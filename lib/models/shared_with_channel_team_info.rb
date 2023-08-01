@@ -21,14 +21,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowedMembers property value. A collection of team members who have access to the shared channel.
-            ## @param value Value to set for the allowed_members property.
+            ## @param value Value to set for the allowedMembers property.
             ## @return a void
             ## 
             def allowed_members=(value)
                 @allowed_members = value
             end
             ## 
-            ## Instantiates a new SharedWithChannelTeamInfo and sets the default values.
+            ## Instantiates a new sharedWithChannelTeamInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isHostTeam property value. Indicates whether the team is the host of the channel.
-            ## @param value Value to set for the is_host_team property.
+            ## @param value Value to set for the isHostTeam property.
             ## @return a void
             ## 
             def is_host_team=(value)

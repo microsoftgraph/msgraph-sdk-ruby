@@ -6,6 +6,7 @@ require_relative '../../models/user_activity_collection_response'
 require_relative '../me'
 require_relative './activities'
 require_relative './count/count_request_builder'
+require_relative './item/user_activity_item_request_builder'
 require_relative './recent/recent_request_builder'
 
 module MicrosoftGraph
@@ -26,6 +27,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::Me::Activities::Recent::RecentRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the activities property of the microsoft.graph.user entity.
+                ## @param user_activity_id Unique identifier of the item
+                ## @return a user_activity_item_request_builder
+                ## 
+                def by_user_activity_id(user_activity_id)
+                    raise StandardError, 'user_activity_id cannot be null' if user_activity_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["userActivity%2Did"] = user_activity_id
+                    return MicrosoftGraph::Me::Activities::Item::UserActivityItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new ActivitiesRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/me/activities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## The user's activities across devices. Read-only. Nullable.
+                ## Get activities for a given user. Unlike the recent OData function, activities without histories will be returned. The permission UserActivity.ReadWrite.CreatedByApp will apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities. To get your application's activities, use the nextLink property to paginate.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of user_activity_collection_response
                 ## 
@@ -65,7 +77,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::UserActivity.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## The user's activities across devices. Read-only. Nullable.
+                ## Get activities for a given user. Unlike the recent OData function, activities without histories will be returned. The permission UserActivity.ReadWrite.CreatedByApp will apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities. To get your application's activities, use the nextLink property to paginate.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -104,7 +116,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # The user's activities across devices. Read-only. Nullable.
+                # Get activities for a given user. Unlike the recent OData function, activities without histories will be returned. The permission UserActivity.ReadWrite.CreatedByApp will apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is particularly active and other applications have created more recent activities. To get your application's activities, use the nextLink property to paginate.
                 class ActivitiesRequestBuilderGetQueryParameters
                     
                     ## 

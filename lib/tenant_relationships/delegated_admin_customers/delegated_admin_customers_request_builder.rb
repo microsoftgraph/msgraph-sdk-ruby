@@ -6,6 +6,7 @@ require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../tenant_relationships'
 require_relative './count/count_request_builder'
 require_relative './delegated_admin_customers'
+require_relative './item/delegated_admin_customer_item_request_builder'
 
 module MicrosoftGraph
     module TenantRelationships
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::TenantRelationships::DelegatedAdminCustomers::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.
+                ## @param delegated_admin_customer_id Unique identifier of the item
+                ## @return a delegated_admin_customer_item_request_builder
+                ## 
+                def by_delegated_admin_customer_id(delegated_admin_customer_id)
+                    raise StandardError, 'delegated_admin_customer_id cannot be null' if delegated_admin_customer_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["delegatedAdminCustomer%2Did"] = delegated_admin_customer_id
+                    return MicrosoftGraph::TenantRelationships::DelegatedAdminCustomers::Item::DelegatedAdminCustomerItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new DelegatedAdminCustomersRequestBuilder and sets the default values.

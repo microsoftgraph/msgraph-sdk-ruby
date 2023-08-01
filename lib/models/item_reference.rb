@@ -45,7 +45,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the driveId property value. Unique identifier of the drive instance that contains the driveItem. Only returned if the item is located in a [drive][]. Read-only.
-            ## @param value Value to set for the drive_id property.
+            ## @param value Value to set for the driveId property.
             ## @return a void
             ## 
             def drive_id=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the driveType property value. Identifies the type of drive. Only returned if the item is located in a [drive][]. See [drive][] resource for values.
-            ## @param value Value to set for the drive_type property.
+            ## @param value Value to set for the driveType property.
             ## @return a void
             ## 
             def drive_type=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -201,7 +201,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the shareId property value. A unique identifier for a shared resource that can be accessed via the [Shares][] API.
-            ## @param value Value to set for the share_id property.
+            ## @param value Value to set for the shareId property.
             ## @return a void
             ## 
             def share_id=(value)
@@ -216,7 +216,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
-            ## @param value Value to set for the sharepoint_ids property.
+            ## @param value Value to set for the sharepointIds property.
             ## @return a void
             ## 
             def sharepoint_ids=(value)
@@ -231,7 +231,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the siteId property value. For OneDrive for Business and SharePoint, this property represents the ID of the site that contains the parent document library of the driveItem resource or the parent list of the listItem resource. The value is the same as the id property of that [site][] resource. It is an opaque string that consists of three identifiers of the site. For OneDrive, this property is not populated.
-            ## @param value Value to set for the site_id property.
+            ## @param value Value to set for the siteId property.
             ## @return a void
             ## 
             def site_id=(value)

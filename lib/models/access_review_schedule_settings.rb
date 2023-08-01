@@ -37,6 +37,12 @@ module MicrosoftGraph
             # The OdataType property
             @odata_type
             ## 
+            # Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
+            @recommendation_insight_settings
+            ## 
+            # Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
+            @recommendation_look_back_duration
+            ## 
             # Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
             @recommendations_enabled
             ## 
@@ -54,7 +60,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -69,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applyActions property value. Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.
-            ## @param value Value to set for the apply_actions property.
+            ## @param value Value to set for the applyActions property.
             ## @return a void
             ## 
             def apply_actions=(value)
@@ -84,7 +90,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the autoApplyDecisionsEnabled property value. Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.
-            ## @param value Value to set for the auto_apply_decisions_enabled property.
+            ## @param value Value to set for the autoApplyDecisionsEnabled property.
             ## @return a void
             ## 
             def auto_apply_decisions_enabled=(value)
@@ -115,7 +121,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the decisionHistoriesForReviewersEnabled property value. Indicates whether decisions on previous access review stages are available for reviewers on an accessReviewInstance with multiple subsequent stages. If not provided, the default is disabled (false).
-            ## @param value Value to set for the decision_histories_for_reviewers_enabled property.
+            ## @param value Value to set for the decisionHistoriesForReviewersEnabled property.
             ## @return a void
             ## 
             def decision_histories_for_reviewers_enabled=(value)
@@ -130,7 +136,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defaultDecision property value. Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.
-            ## @param value Value to set for the default_decision property.
+            ## @param value Value to set for the defaultDecision property.
             ## @return a void
             ## 
             def default_decision=(value)
@@ -145,7 +151,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defaultDecisionEnabled property value. Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.  CAUTION: If both autoApplyDecisionsEnabled and defaultDecisionEnabled are true, all access for the principals to the resource risks being revoked if the reviewers fail to respond.
-            ## @param value Value to set for the default_decision_enabled property.
+            ## @param value Value to set for the defaultDecisionEnabled property.
             ## @return a void
             ## 
             def default_decision_enabled=(value)
@@ -166,6 +172,8 @@ module MicrosoftGraph
                     "justificationRequiredOnApproval" => lambda {|n| @justification_required_on_approval = n.get_boolean_value() },
                     "mailNotificationsEnabled" => lambda {|n| @mail_notifications_enabled = n.get_boolean_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
+                    "recommendationInsightSettings" => lambda {|n| @recommendation_insight_settings = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AccessReviewRecommendationInsightSetting.create_from_discriminator_value(pn) }) },
+                    "recommendationLookBackDuration" => lambda {|n| @recommendation_look_back_duration = n.get_duration_value() },
                     "recommendationsEnabled" => lambda {|n| @recommendations_enabled = n.get_boolean_value() },
                     "recurrence" => lambda {|n| @recurrence = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::PatternedRecurrence.create_from_discriminator_value(pn) }) },
                     "reminderNotificationsEnabled" => lambda {|n| @reminder_notifications_enabled = n.get_boolean_value() },
@@ -180,7 +188,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the instanceDurationInDays property value. Duration of an access review instance in days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its durationInDays setting will be used instead of the value of this property.
-            ## @param value Value to set for the instance_duration_in_days property.
+            ## @param value Value to set for the instanceDurationInDays property.
             ## @return a void
             ## 
             def instance_duration_in_days=(value)
@@ -195,7 +203,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the justificationRequiredOnApproval property value. Indicates whether reviewers are required to provide justification with their decision. Default value is false.
-            ## @param value Value to set for the justification_required_on_approval property.
+            ## @param value Value to set for the justificationRequiredOnApproval property.
             ## @return a void
             ## 
             def justification_required_on_approval=(value)
@@ -210,7 +218,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mailNotificationsEnabled property value. Indicates whether emails are enabled or disabled. Default value is false.
-            ## @param value Value to set for the mail_notifications_enabled property.
+            ## @param value Value to set for the mailNotificationsEnabled property.
             ## @return a void
             ## 
             def mail_notifications_enabled=(value)
@@ -225,11 +233,41 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
                 @odata_type = value
+            end
+            ## 
+            ## Gets the recommendationInsightSettings property value. Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
+            ## @return a access_review_recommendation_insight_setting
+            ## 
+            def recommendation_insight_settings
+                return @recommendation_insight_settings
+            end
+            ## 
+            ## Sets the recommendationInsightSettings property value. Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.
+            ## @param value Value to set for the recommendationInsightSettings property.
+            ## @return a void
+            ## 
+            def recommendation_insight_settings=(value)
+                @recommendation_insight_settings = value
+            end
+            ## 
+            ## Gets the recommendationLookBackDuration property value. Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
+            ## @return a microsoft_kiota_abstractions::_i_s_o_duration
+            ## 
+            def recommendation_look_back_duration
+                return @recommendation_look_back_duration
+            end
+            ## 
+            ## Sets the recommendationLookBackDuration property value. Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.
+            ## @param value Value to set for the recommendationLookBackDuration property.
+            ## @return a void
+            ## 
+            def recommendation_look_back_duration=(value)
+                @recommendation_look_back_duration = value
             end
             ## 
             ## Gets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
@@ -240,7 +278,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the recommendationsEnabled property value. Indicates whether decision recommendations are enabled or disabled. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationsEnabled setting will be used instead of the value of this property.
-            ## @param value Value to set for the recommendations_enabled property.
+            ## @param value Value to set for the recommendationsEnabled property.
             ## @return a void
             ## 
             def recommendations_enabled=(value)
@@ -270,7 +308,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the reminderNotificationsEnabled property value. Indicates whether reminders are enabled or disabled. Default value is false.
-            ## @param value Value to set for the reminder_notifications_enabled property.
+            ## @param value Value to set for the reminderNotificationsEnabled property.
             ## @return a void
             ## 
             def reminder_notifications_enabled=(value)
@@ -292,6 +330,8 @@ module MicrosoftGraph
                 writer.write_boolean_value("justificationRequiredOnApproval", @justification_required_on_approval)
                 writer.write_boolean_value("mailNotificationsEnabled", @mail_notifications_enabled)
                 writer.write_string_value("@odata.type", @odata_type)
+                writer.write_collection_of_object_values("recommendationInsightSettings", @recommendation_insight_settings)
+                writer.write_duration_value("recommendationLookBackDuration", @recommendation_look_back_duration)
                 writer.write_boolean_value("recommendationsEnabled", @recommendations_enabled)
                 writer.write_object_value("recurrence", @recurrence)
                 writer.write_boolean_value("reminderNotificationsEnabled", @reminder_notifications_enabled)

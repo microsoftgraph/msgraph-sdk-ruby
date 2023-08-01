@@ -10,7 +10,7 @@ module MicrosoftGraph
             # A collection of groups that are enabled to use the authentication method.
             @include_targets
             ## 
-            ## Instantiates a new SmsAuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new smsAuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the includeTargets property value. A collection of groups that are enabled to use the authentication method.
-            ## @param value Value to set for the include_targets property.
+            ## @param value Value to set for the includeTargets property.
             ## @return a void
             ## 
             def include_targets=(value)

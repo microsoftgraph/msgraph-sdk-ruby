@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/teams/{team%2Did}/schedule/timesOff/{timeOff%2Did}{?%24select}")
                             end
                             ## 
-                            ## Delete navigation property timesOff for teams
+                            ## Delete a timeOff instance from a schedule.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## The instances of times off in the schedule.
+                            ## Retrieve the properties and relationships of a timeOff object by ID.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of time_off
                             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TimeOff.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property timesOff in teams
+                            ## Replace an existing timeOff object. If the specified timeOff object doesn't exist, this method returns 404 Not found.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of time_off
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TimeOff.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property timesOff for teams
+                            ## Delete a timeOff instance from a schedule.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## The instances of times off in the schedule.
+                            ## Retrieve the properties and relationships of a timeOff object by ID.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property timesOff in teams
+                            ## Replace an existing timeOff object. If the specified timeOff object doesn't exist, this method returns 404 Not found.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # The instances of times off in the schedule.
+                            # Retrieve the properties and relationships of a timeOff object by ID.
                             class TimeOffItemRequestBuilderGetQueryParameters
                                 
                                 ## 

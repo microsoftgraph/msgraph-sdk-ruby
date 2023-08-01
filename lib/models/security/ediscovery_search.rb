@@ -35,7 +35,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the addToReviewSetOperation property value. Adds the results of the eDiscovery search to the specified reviewSet.
-                ## @param value Value to set for the add_to_review_set_operation property.
+                ## @param value Value to set for the addToReviewSetOperation property.
                 ## @return a void
                 ## 
                 def add_to_review_set_operation=(value)
@@ -50,14 +50,14 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalSources property value. Adds an additional source to the eDiscovery search.
-                ## @param value Value to set for the additional_sources property.
+                ## @param value Value to set for the additionalSources property.
                 ## @return a void
                 ## 
                 def additional_sources=(value)
                     @additional_sources = value
                 end
                 ## 
-                ## Instantiates a new EdiscoverySearch and sets the default values.
+                ## Instantiates a new ediscoverySearch and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()
@@ -82,7 +82,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the custodianSources property value. Custodian sources that are included in the eDiscovery search.
-                ## @param value Value to set for the custodian_sources property.
+                ## @param value Value to set for the custodianSources property.
                 ## @return a void
                 ## 
                 def custodian_sources=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the dataSourceScopes property value. When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.
-                ## @param value Value to set for the data_source_scopes property.
+                ## @param value Value to set for the dataSourceScopes property.
                 ## @return a void
                 ## 
                 def data_source_scopes=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the lastEstimateStatisticsOperation property value. The last estimate operation associated with the eDiscovery search.
-                ## @param value Value to set for the last_estimate_statistics_operation property.
+                ## @param value Value to set for the lastEstimateStatisticsOperation property.
                 ## @return a void
                 ## 
                 def last_estimate_statistics_operation=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the noncustodialSources property value. noncustodialDataSource sources that are included in the eDiscovery search
-                ## @param value Value to set for the noncustodial_sources property.
+                ## @param value Value to set for the noncustodialSources property.
                 ## @return a void
                 ## 
                 def noncustodial_sources=(value)

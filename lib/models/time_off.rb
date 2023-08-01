@@ -16,7 +16,7 @@ module MicrosoftGraph
             # ID of the user assigned to the timeOff. Required.
             @user_id
             ## 
-            ## Instantiates a new TimeOff and sets the default values.
+            ## Instantiates a new timeOff and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -41,7 +41,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the draftTimeOff property value. The draft version of this timeOff that is viewable by managers. Required.
-            ## @param value Value to set for the draft_time_off property.
+            ## @param value Value to set for the draftTimeOff property.
             ## @return a void
             ## 
             def draft_time_off=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sharedTimeOff property value. The shared version of this timeOff that is viewable by both employees and managers. Required.
-            ## @param value Value to set for the shared_time_off property.
+            ## @param value Value to set for the sharedTimeOff property.
             ## @return a void
             ## 
             def shared_time_off=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userId property value. ID of the user assigned to the timeOff. Required.
-            ## @param value Value to set for the user_id property.
+            ## @param value Value to set for the userId property.
             ## @return a void
             ## 
             def user_id=(value)

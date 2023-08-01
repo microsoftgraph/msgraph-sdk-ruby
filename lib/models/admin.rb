@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # The edge property
+            # A container for Microsoft Edge resources. Read-only.
             @edge
             ## 
             # The OdataType property
@@ -18,6 +18,9 @@ module MicrosoftGraph
             ## 
             # A container for service communications resources. Read-only.
             @service_announcement
+            ## 
+            # The sharepoint property
+            @sharepoint
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             ## @return a i_dictionary
@@ -27,14 +30,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new Admin and sets the default values.
+            ## Instantiates a new admin and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -50,14 +53,14 @@ module MicrosoftGraph
                 return Admin.new
             end
             ## 
-            ## Gets the edge property value. The edge property
+            ## Gets the edge property value. A container for Microsoft Edge resources. Read-only.
             ## @return a edge
             ## 
             def edge
                 return @edge
             end
             ## 
-            ## Sets the edge property value. The edge property
+            ## Sets the edge property value. A container for Microsoft Edge resources. Read-only.
             ## @param value Value to set for the edge property.
             ## @return a void
             ## 
@@ -73,6 +76,7 @@ module MicrosoftGraph
                     "edge" => lambda {|n| @edge = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Edge.create_from_discriminator_value(pn) }) },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                     "serviceAnnouncement" => lambda {|n| @service_announcement = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ServiceAnnouncement.create_from_discriminator_value(pn) }) },
+                    "sharepoint" => lambda {|n| @sharepoint = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::Sharepoint.create_from_discriminator_value(pn) }) },
                 }
             end
             ## 
@@ -84,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -100,6 +104,7 @@ module MicrosoftGraph
                 writer.write_object_value("edge", @edge)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_object_value("serviceAnnouncement", @service_announcement)
+                writer.write_object_value("sharepoint", @sharepoint)
                 writer.write_additional_data(@additional_data)
             end
             ## 
@@ -111,11 +116,26 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the serviceAnnouncement property value. A container for service communications resources. Read-only.
-            ## @param value Value to set for the service_announcement property.
+            ## @param value Value to set for the serviceAnnouncement property.
             ## @return a void
             ## 
             def service_announcement=(value)
                 @service_announcement = value
+            end
+            ## 
+            ## Gets the sharepoint property value. The sharepoint property
+            ## @return a sharepoint
+            ## 
+            def sharepoint
+                return @sharepoint
+            end
+            ## 
+            ## Sets the sharepoint property value. The sharepoint property
+            ## @param value Value to set for the sharepoint property.
+            ## @return a void
+            ## 
+            def sharepoint=(value)
+                @sharepoint = value
             end
         end
     end

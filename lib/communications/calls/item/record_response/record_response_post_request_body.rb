@@ -49,7 +49,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the AdditionalData property.
+                        ## @param value Value to set for the additionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -64,7 +64,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the bargeInAllowed property value. The bargeInAllowed property
-                        ## @param value Value to set for the barge_in_allowed property.
+                        ## @param value Value to set for the bargeInAllowed property.
                         ## @return a void
                         ## 
                         def barge_in_allowed=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the clientContext property value. The clientContext property
-                        ## @param value Value to set for the client_context property.
+                        ## @param value Value to set for the clientContext property.
                         ## @return a void
                         ## 
                         def client_context=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the initialSilenceTimeoutInSeconds property value. The initialSilenceTimeoutInSeconds property
-                        ## @param value Value to set for the initial_silence_timeout_in_seconds property.
+                        ## @param value Value to set for the initialSilenceTimeoutInSeconds property.
                         ## @return a void
                         ## 
                         def initial_silence_timeout_in_seconds=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the maxRecordDurationInSeconds property value. The maxRecordDurationInSeconds property
-                        ## @param value Value to set for the max_record_duration_in_seconds property.
+                        ## @param value Value to set for the maxRecordDurationInSeconds property.
                         ## @return a void
                         ## 
                         def max_record_duration_in_seconds=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the maxSilenceTimeoutInSeconds property value. The maxSilenceTimeoutInSeconds property
-                        ## @param value Value to set for the max_silence_timeout_in_seconds property.
+                        ## @param value Value to set for the maxSilenceTimeoutInSeconds property.
                         ## @return a void
                         ## 
                         def max_silence_timeout_in_seconds=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the playBeep property value. The playBeep property
-                        ## @param value Value to set for the play_beep property.
+                        ## @param value Value to set for the playBeep property.
                         ## @return a void
                         ## 
                         def play_beep=(value)
@@ -218,7 +218,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the stopTones property value. The stopTones property
-                        ## @param value Value to set for the stop_tones property.
+                        ## @param value Value to set for the stopTones property.
                         ## @return a void
                         ## 
                         def stop_tones=(value)

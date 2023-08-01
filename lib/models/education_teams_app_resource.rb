@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appIconWebUrl property value. URL that points to the icon of the app.
-            ## @param value Value to set for the app_icon_web_url property.
+            ## @param value Value to set for the appIconWebUrl property.
             ## @return a void
             ## 
             def app_icon_web_url=(value)
@@ -42,14 +42,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appId property value. Teams app ID of the application.
-            ## @param value Value to set for the app_id property.
+            ## @param value Value to set for the appId property.
             ## @return a void
             ## 
             def app_id=(value)
                 @app_id = value
             end
             ## 
-            ## Instantiates a new EducationTeamsAppResource and sets the default values.
+            ## Instantiates a new educationTeamsAppResource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the teamsEmbeddedContentUrl property value. URL for the app resource that will be opened by Teams.
-            ## @param value Value to set for the teams_embedded_content_url property.
+            ## @param value Value to set for the teamsEmbeddedContentUrl property.
             ## @return a void
             ## 
             def teams_embedded_content_url=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webUrl property value. URL for the app resource that can be opened in the browser.
-            ## @param value Value to set for the web_url property.
+            ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 
             def web_url=(value)

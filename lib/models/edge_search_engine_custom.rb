@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Allows IT admins to set a custom default search engine for MDM-Controlled devices.
         class EdgeSearchEngineCustom < MicrosoftGraph::Models::EdgeSearchEngineBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # Points to a https link containing the OpenSearch xml file that contains, at minimum, the short name and the URL to the search Engine.
             @edge_search_engine_open_search_xml_url
             ## 
-            ## Instantiates a new EdgeSearchEngineCustom and sets the default values.
+            ## Instantiates a new edgeSearchEngineCustom and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -35,7 +37,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeSearchEngineOpenSearchXmlUrl property value. Points to a https link containing the OpenSearch xml file that contains, at minimum, the short name and the URL to the search Engine.
-            ## @param value Value to set for the edge_search_engine_open_search_xml_url property.
+            ## @param value Value to set for the edgeSearchEngineOpenSearchXmlUrl property.
             ## @return a void
             ## 
             def edge_search_engine_open_search_xml_url=(value)

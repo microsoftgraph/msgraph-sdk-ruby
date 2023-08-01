@@ -38,7 +38,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## A collection of alerts in Microsoft 365 Defender.
+                    ## Get the properties and relationships of an alert in an organization based on the specified alert id property.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of alert
                     ## 
@@ -52,7 +52,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::Alert.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property alerts_v2 in security
+                    ## Update the properties of an alert object in an organization based on the specified alert id property.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of alert
@@ -84,7 +84,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## A collection of alerts in Microsoft 365 Defender.
+                    ## Get the properties and relationships of an alert in an organization based on the specified alert id property.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property alerts_v2 in security
+                    ## Update the properties of an alert object in an organization based on the specified alert id property.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -123,7 +123,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # A collection of alerts in Microsoft 365 Defender.
+                    # Get the properties and relationships of an alert in an organization based on the specified alert id property.
                     class AlertItemRequestBuilderGetQueryParameters
                         
                         ## 

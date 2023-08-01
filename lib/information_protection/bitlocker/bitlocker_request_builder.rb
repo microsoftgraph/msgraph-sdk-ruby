@@ -4,7 +4,6 @@ require_relative '../../models/bitlocker'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../information_protection'
 require_relative './bitlocker'
-require_relative './recovery_keys/item/bitlocker_recovery_key_item_request_builder'
 require_relative './recovery_keys/recovery_keys_request_builder'
 
 module MicrosoftGraph
@@ -41,17 +40,6 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Bitlocker.create_from_discriminator_value(pn) }, error_mapping)
-                end
-                ## 
-                ## Provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.
-                ## @param id Unique identifier of the item
-                ## @return a bitlocker_recovery_key_item_request_builder
-                ## 
-                def recovery_keys_by_id(id)
-                    raise StandardError, 'id cannot be null' if id.nil?
-                    url_tpl_params = @path_parameters.clone
-                    url_tpl_params["bitlockerRecoveryKey%2Did"] = id
-                    return MicrosoftGraph::InformationProtection::Bitlocker::RecoveryKeys::Item::BitlockerRecoveryKeyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Get bitlocker from informationProtection

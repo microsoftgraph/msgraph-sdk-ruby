@@ -12,6 +12,7 @@ require_relative '../../worksheets'
 require_relative '../item'
 require_relative './add/add_request_builder'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_table_item_request_builder'
 require_relative './item_at_with_index/item_at_with_index_request_builder'
 require_relative './tables'
 
@@ -37,6 +38,17 @@ module MicrosoftGraph
                                         # Provides operations to call the count method.
                                         def count()
                                             return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
+                                        ## Provides operations to manage the tables property of the microsoft.graph.workbookWorksheet entity.
+                                        ## @param workbook_table_id Unique identifier of the item
+                                        ## @return a workbook_table_item_request_builder
+                                        ## 
+                                        def by_workbook_table_id(workbook_table_id)
+                                            raise StandardError, 'workbook_table_id cannot be null' if workbook_table_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["workbookTable%2Did"] = workbook_table_id
+                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Worksheets::Item::Tables::Item::WorkbookTableItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                         end
                                         ## 
                                         ## Instantiates a new TablesRequestBuilder and sets the default values.

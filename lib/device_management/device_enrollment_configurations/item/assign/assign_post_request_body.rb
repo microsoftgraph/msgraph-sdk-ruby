@@ -28,7 +28,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the AdditionalData property.
+                        ## @param value Value to set for the additionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -59,7 +59,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the enrollmentConfigurationAssignments property value. The enrollmentConfigurationAssignments property
-                        ## @param value Value to set for the enrollment_configuration_assignments property.
+                        ## @param value Value to set for the enrollmentConfigurationAssignments property.
                         ## @return a void
                         ## 
                         def enrollment_configuration_assignments=(value)

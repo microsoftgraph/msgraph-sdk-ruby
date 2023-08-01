@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The URL for downloading the content
             @content_url
             ## 
-            ## Instantiates a new OnenoteResource and sets the default values.
+            ## Instantiates a new onenoteResource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentUrl property value. The URL for downloading the content
-            ## @param value Value to set for the content_url property.
+            ## @param value Value to set for the contentUrl property.
             ## @return a void
             ## 
             def content_url=(value)

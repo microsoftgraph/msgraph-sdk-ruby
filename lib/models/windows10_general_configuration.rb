@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the windows10GeneralConfiguration resource.
         class Windows10GeneralConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -619,7 +621,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accountsBlockAddingNonMicrosoftAccountEmail property value. Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.
-            ## @param value Value to set for the accounts_block_adding_non_microsoft_account_email property.
+            ## @param value Value to set for the accountsBlockAddingNonMicrosoftAccountEmail property.
             ## @return a void
             ## 
             def accounts_block_adding_non_microsoft_account_email=(value)
@@ -634,7 +636,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the antiTheftModeBlocked property value. Indicates whether or not to block the user from selecting an AntiTheft mode preference (Windows 10 Mobile only).
-            ## @param value Value to set for the anti_theft_mode_blocked property.
+            ## @param value Value to set for the antiTheftModeBlocked property.
             ## @return a void
             ## 
             def anti_theft_mode_blocked=(value)
@@ -649,7 +651,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appsAllowTrustedAppsSideloading property value. State Management Setting.
-            ## @param value Value to set for the apps_allow_trusted_apps_sideloading property.
+            ## @param value Value to set for the appsAllowTrustedAppsSideloading property.
             ## @return a void
             ## 
             def apps_allow_trusted_apps_sideloading=(value)
@@ -664,7 +666,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appsBlockWindowsStoreOriginatedApps property value. Indicates whether or not to disable the launch of all apps from Windows Store that came pre-installed or were downloaded.
-            ## @param value Value to set for the apps_block_windows_store_originated_apps property.
+            ## @param value Value to set for the appsBlockWindowsStoreOriginatedApps property.
             ## @return a void
             ## 
             def apps_block_windows_store_originated_apps=(value)
@@ -679,7 +681,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bluetoothAllowedServices property value. Specify a list of allowed Bluetooth services and profiles in hex formatted strings.
-            ## @param value Value to set for the bluetooth_allowed_services property.
+            ## @param value Value to set for the bluetoothAllowedServices property.
             ## @return a void
             ## 
             def bluetooth_allowed_services=(value)
@@ -694,7 +696,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bluetoothBlockAdvertising property value. Whether or not to Block the user from using bluetooth advertising.
-            ## @param value Value to set for the bluetooth_block_advertising property.
+            ## @param value Value to set for the bluetoothBlockAdvertising property.
             ## @return a void
             ## 
             def bluetooth_block_advertising=(value)
@@ -709,7 +711,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bluetoothBlockDiscoverableMode property value. Whether or not to Block the user from using bluetooth discoverable mode.
-            ## @param value Value to set for the bluetooth_block_discoverable_mode property.
+            ## @param value Value to set for the bluetoothBlockDiscoverableMode property.
             ## @return a void
             ## 
             def bluetooth_block_discoverable_mode=(value)
@@ -724,7 +726,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bluetoothBlockPrePairing property value. Whether or not to block specific bundled Bluetooth peripherals to automatically pair with the host device.
-            ## @param value Value to set for the bluetooth_block_pre_pairing property.
+            ## @param value Value to set for the bluetoothBlockPrePairing property.
             ## @return a void
             ## 
             def bluetooth_block_pre_pairing=(value)
@@ -739,7 +741,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bluetoothBlocked property value. Whether or not to Block the user from using bluetooth.
-            ## @param value Value to set for the bluetooth_blocked property.
+            ## @param value Value to set for the bluetoothBlocked property.
             ## @return a void
             ## 
             def bluetooth_blocked=(value)
@@ -754,7 +756,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cameraBlocked property value. Whether or not to Block the user from accessing the camera of the device.
-            ## @param value Value to set for the camera_blocked property.
+            ## @param value Value to set for the cameraBlocked property.
             ## @return a void
             ## 
             def camera_blocked=(value)
@@ -769,7 +771,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cellularBlockDataWhenRoaming property value. Whether or not to Block the user from using data over cellular while roaming.
-            ## @param value Value to set for the cellular_block_data_when_roaming property.
+            ## @param value Value to set for the cellularBlockDataWhenRoaming property.
             ## @return a void
             ## 
             def cellular_block_data_when_roaming=(value)
@@ -784,7 +786,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cellularBlockVpn property value. Whether or not to Block the user from using VPN over cellular.
-            ## @param value Value to set for the cellular_block_vpn property.
+            ## @param value Value to set for the cellularBlockVpn property.
             ## @return a void
             ## 
             def cellular_block_vpn=(value)
@@ -799,7 +801,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cellularBlockVpnWhenRoaming property value. Whether or not to Block the user from using VPN when roaming over cellular.
-            ## @param value Value to set for the cellular_block_vpn_when_roaming property.
+            ## @param value Value to set for the cellularBlockVpnWhenRoaming property.
             ## @return a void
             ## 
             def cellular_block_vpn_when_roaming=(value)
@@ -814,7 +816,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the certificatesBlockManualRootCertificateInstallation property value. Whether or not to Block the user from doing manual root certificate installation.
-            ## @param value Value to set for the certificates_block_manual_root_certificate_installation property.
+            ## @param value Value to set for the certificatesBlockManualRootCertificateInstallation property.
             ## @return a void
             ## 
             def certificates_block_manual_root_certificate_installation=(value)
@@ -829,14 +831,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the connectedDevicesServiceBlocked property value. Whether or not to block Connected Devices Service which enables discovery and connection to other devices, remote messaging, remote app sessions and other cross-device experiences.
-            ## @param value Value to set for the connected_devices_service_blocked property.
+            ## @param value Value to set for the connectedDevicesServiceBlocked property.
             ## @return a void
             ## 
             def connected_devices_service_blocked=(value)
                 @connected_devices_service_blocked = value
             end
             ## 
-            ## Instantiates a new Windows10GeneralConfiguration and sets the default values.
+            ## Instantiates a new windows10GeneralConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -852,7 +854,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the copyPasteBlocked property value. Whether or not to Block the user from using copy paste.
-            ## @param value Value to set for the copy_paste_blocked property.
+            ## @param value Value to set for the copyPasteBlocked property.
             ## @return a void
             ## 
             def copy_paste_blocked=(value)
@@ -867,7 +869,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cortanaBlocked property value. Whether or not to Block the user from using Cortana.
-            ## @param value Value to set for the cortana_blocked property.
+            ## @param value Value to set for the cortanaBlocked property.
             ## @return a void
             ## 
             def cortana_blocked=(value)
@@ -891,7 +893,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderBlockEndUserAccess property value. Whether or not to block end user access to Defender.
-            ## @param value Value to set for the defender_block_end_user_access property.
+            ## @param value Value to set for the defenderBlockEndUserAccess property.
             ## @return a void
             ## 
             def defender_block_end_user_access=(value)
@@ -906,7 +908,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderCloudBlockLevel property value. Possible values of Cloud Block Level
-            ## @param value Value to set for the defender_cloud_block_level property.
+            ## @param value Value to set for the defenderCloudBlockLevel property.
             ## @return a void
             ## 
             def defender_cloud_block_level=(value)
@@ -921,7 +923,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderDaysBeforeDeletingQuarantinedMalware property value. Number of days before deleting quarantined malware. Valid values 0 to 90
-            ## @param value Value to set for the defender_days_before_deleting_quarantined_malware property.
+            ## @param value Value to set for the defenderDaysBeforeDeletingQuarantinedMalware property.
             ## @return a void
             ## 
             def defender_days_before_deleting_quarantined_malware=(value)
@@ -936,7 +938,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderDetectedMalwareActions property value. Gets or sets Defender’s actions to take on detected Malware per threat level.
-            ## @param value Value to set for the defender_detected_malware_actions property.
+            ## @param value Value to set for the defenderDetectedMalwareActions property.
             ## @return a void
             ## 
             def defender_detected_malware_actions=(value)
@@ -951,7 +953,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderFileExtensionsToExclude property value. File extensions to exclude from scans and real time protection.
-            ## @param value Value to set for the defender_file_extensions_to_exclude property.
+            ## @param value Value to set for the defenderFileExtensionsToExclude property.
             ## @return a void
             ## 
             def defender_file_extensions_to_exclude=(value)
@@ -966,7 +968,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderFilesAndFoldersToExclude property value. Files and folder to exclude from scans and real time protection.
-            ## @param value Value to set for the defender_files_and_folders_to_exclude property.
+            ## @param value Value to set for the defenderFilesAndFoldersToExclude property.
             ## @return a void
             ## 
             def defender_files_and_folders_to_exclude=(value)
@@ -981,7 +983,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderMonitorFileActivity property value. Possible values for monitoring file activity.
-            ## @param value Value to set for the defender_monitor_file_activity property.
+            ## @param value Value to set for the defenderMonitorFileActivity property.
             ## @return a void
             ## 
             def defender_monitor_file_activity=(value)
@@ -996,7 +998,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderProcessesToExclude property value. Processes to exclude from scans and real time protection.
-            ## @param value Value to set for the defender_processes_to_exclude property.
+            ## @param value Value to set for the defenderProcessesToExclude property.
             ## @return a void
             ## 
             def defender_processes_to_exclude=(value)
@@ -1011,7 +1013,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderPromptForSampleSubmission property value. Possible values for prompting user for samples submission.
-            ## @param value Value to set for the defender_prompt_for_sample_submission property.
+            ## @param value Value to set for the defenderPromptForSampleSubmission property.
             ## @return a void
             ## 
             def defender_prompt_for_sample_submission=(value)
@@ -1026,7 +1028,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderRequireBehaviorMonitoring property value. Indicates whether or not to require behavior monitoring.
-            ## @param value Value to set for the defender_require_behavior_monitoring property.
+            ## @param value Value to set for the defenderRequireBehaviorMonitoring property.
             ## @return a void
             ## 
             def defender_require_behavior_monitoring=(value)
@@ -1041,7 +1043,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderRequireCloudProtection property value. Indicates whether or not to require cloud protection.
-            ## @param value Value to set for the defender_require_cloud_protection property.
+            ## @param value Value to set for the defenderRequireCloudProtection property.
             ## @return a void
             ## 
             def defender_require_cloud_protection=(value)
@@ -1056,7 +1058,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderRequireNetworkInspectionSystem property value. Indicates whether or not to require network inspection system.
-            ## @param value Value to set for the defender_require_network_inspection_system property.
+            ## @param value Value to set for the defenderRequireNetworkInspectionSystem property.
             ## @return a void
             ## 
             def defender_require_network_inspection_system=(value)
@@ -1071,7 +1073,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderRequireRealTimeMonitoring property value. Indicates whether or not to require real time monitoring.
-            ## @param value Value to set for the defender_require_real_time_monitoring property.
+            ## @param value Value to set for the defenderRequireRealTimeMonitoring property.
             ## @return a void
             ## 
             def defender_require_real_time_monitoring=(value)
@@ -1086,7 +1088,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderScanArchiveFiles property value. Indicates whether or not to scan archive files.
-            ## @param value Value to set for the defender_scan_archive_files property.
+            ## @param value Value to set for the defenderScanArchiveFiles property.
             ## @return a void
             ## 
             def defender_scan_archive_files=(value)
@@ -1101,7 +1103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderScanDownloads property value. Indicates whether or not to scan downloads.
-            ## @param value Value to set for the defender_scan_downloads property.
+            ## @param value Value to set for the defenderScanDownloads property.
             ## @return a void
             ## 
             def defender_scan_downloads=(value)
@@ -1116,7 +1118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderScanIncomingMail property value. Indicates whether or not to scan incoming mail messages.
-            ## @param value Value to set for the defender_scan_incoming_mail property.
+            ## @param value Value to set for the defenderScanIncomingMail property.
             ## @return a void
             ## 
             def defender_scan_incoming_mail=(value)
@@ -1131,7 +1133,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderScanMappedNetworkDrivesDuringFullScan property value. Indicates whether or not to scan mapped network drives during full scan.
-            ## @param value Value to set for the defender_scan_mapped_network_drives_during_full_scan property.
+            ## @param value Value to set for the defenderScanMappedNetworkDrivesDuringFullScan property.
             ## @return a void
             ## 
             def defender_scan_mapped_network_drives_during_full_scan=(value)
@@ -1146,7 +1148,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderScanMaxCpu property value. Max CPU usage percentage during scan. Valid values 0 to 100
-            ## @param value Value to set for the defender_scan_max_cpu property.
+            ## @param value Value to set for the defenderScanMaxCpu property.
             ## @return a void
             ## 
             def defender_scan_max_cpu=(value)
@@ -1161,7 +1163,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderScanNetworkFiles property value. Indicates whether or not to scan files opened from a network folder.
-            ## @param value Value to set for the defender_scan_network_files property.
+            ## @param value Value to set for the defenderScanNetworkFiles property.
             ## @return a void
             ## 
             def defender_scan_network_files=(value)
@@ -1176,7 +1178,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderScanRemovableDrivesDuringFullScan property value. Indicates whether or not to scan removable drives during full scan.
-            ## @param value Value to set for the defender_scan_removable_drives_during_full_scan property.
+            ## @param value Value to set for the defenderScanRemovableDrivesDuringFullScan property.
             ## @return a void
             ## 
             def defender_scan_removable_drives_during_full_scan=(value)
@@ -1191,7 +1193,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderScanScriptsLoadedInInternetExplorer property value. Indicates whether or not to scan scripts loaded in Internet Explorer browser.
-            ## @param value Value to set for the defender_scan_scripts_loaded_in_internet_explorer property.
+            ## @param value Value to set for the defenderScanScriptsLoadedInInternetExplorer property.
             ## @return a void
             ## 
             def defender_scan_scripts_loaded_in_internet_explorer=(value)
@@ -1206,7 +1208,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderScanType property value. Possible values for system scan type.
-            ## @param value Value to set for the defender_scan_type property.
+            ## @param value Value to set for the defenderScanType property.
             ## @return a void
             ## 
             def defender_scan_type=(value)
@@ -1221,7 +1223,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderScheduledQuickScanTime property value. The time to perform a daily quick scan.
-            ## @param value Value to set for the defender_scheduled_quick_scan_time property.
+            ## @param value Value to set for the defenderScheduledQuickScanTime property.
             ## @return a void
             ## 
             def defender_scheduled_quick_scan_time=(value)
@@ -1236,7 +1238,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderScheduledScanTime property value. The defender time for the system scan.
-            ## @param value Value to set for the defender_scheduled_scan_time property.
+            ## @param value Value to set for the defenderScheduledScanTime property.
             ## @return a void
             ## 
             def defender_scheduled_scan_time=(value)
@@ -1251,7 +1253,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderSignatureUpdateIntervalInHours property value. The signature update interval in hours. Specify 0 not to check. Valid values 0 to 24
-            ## @param value Value to set for the defender_signature_update_interval_in_hours property.
+            ## @param value Value to set for the defenderSignatureUpdateIntervalInHours property.
             ## @return a void
             ## 
             def defender_signature_update_interval_in_hours=(value)
@@ -1266,7 +1268,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderSystemScanSchedule property value. Possible values for a weekly schedule.
-            ## @param value Value to set for the defender_system_scan_schedule property.
+            ## @param value Value to set for the defenderSystemScanSchedule property.
             ## @return a void
             ## 
             def defender_system_scan_schedule=(value)
@@ -1281,7 +1283,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the developerUnlockSetting property value. State Management Setting.
-            ## @param value Value to set for the developer_unlock_setting property.
+            ## @param value Value to set for the developerUnlockSetting property.
             ## @return a void
             ## 
             def developer_unlock_setting=(value)
@@ -1296,7 +1298,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceManagementBlockFactoryResetOnMobile property value. Indicates whether or not to Block the user from resetting their phone.
-            ## @param value Value to set for the device_management_block_factory_reset_on_mobile property.
+            ## @param value Value to set for the deviceManagementBlockFactoryResetOnMobile property.
             ## @return a void
             ## 
             def device_management_block_factory_reset_on_mobile=(value)
@@ -1311,7 +1313,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceManagementBlockManualUnenroll property value. Indicates whether or not to Block the user from doing manual un-enrollment from device management.
-            ## @param value Value to set for the device_management_block_manual_unenroll property.
+            ## @param value Value to set for the deviceManagementBlockManualUnenroll property.
             ## @return a void
             ## 
             def device_management_block_manual_unenroll=(value)
@@ -1326,7 +1328,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the diagnosticsDataSubmissionMode property value. Allow the device to send diagnostic and usage telemetry data, such as Watson.
-            ## @param value Value to set for the diagnostics_data_submission_mode property.
+            ## @param value Value to set for the diagnosticsDataSubmissionMode property.
             ## @return a void
             ## 
             def diagnostics_data_submission_mode=(value)
@@ -1341,7 +1343,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeAllowStartPagesModification property value. Allow users to change Start pages on Edge. Use the EdgeHomepageUrls to specify the Start pages that the user would see by default when they open Edge.
-            ## @param value Value to set for the edge_allow_start_pages_modification property.
+            ## @param value Value to set for the edgeAllowStartPagesModification property.
             ## @return a void
             ## 
             def edge_allow_start_pages_modification=(value)
@@ -1356,7 +1358,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeBlockAccessToAboutFlags property value. Indicates whether or not to prevent access to about flags on Edge browser.
-            ## @param value Value to set for the edge_block_access_to_about_flags property.
+            ## @param value Value to set for the edgeBlockAccessToAboutFlags property.
             ## @return a void
             ## 
             def edge_block_access_to_about_flags=(value)
@@ -1371,7 +1373,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeBlockAddressBarDropdown property value. Block the address bar dropdown functionality in Microsoft Edge. Disable this settings to minimize network connections from Microsoft Edge to Microsoft services.
-            ## @param value Value to set for the edge_block_address_bar_dropdown property.
+            ## @param value Value to set for the edgeBlockAddressBarDropdown property.
             ## @return a void
             ## 
             def edge_block_address_bar_dropdown=(value)
@@ -1386,7 +1388,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeBlockAutofill property value. Indicates whether or not to block auto fill.
-            ## @param value Value to set for the edge_block_autofill property.
+            ## @param value Value to set for the edgeBlockAutofill property.
             ## @return a void
             ## 
             def edge_block_autofill=(value)
@@ -1401,7 +1403,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeBlockCompatibilityList property value. Block Microsoft compatibility list in Microsoft Edge. This list from Microsoft helps Edge properly display sites with known compatibility issues.
-            ## @param value Value to set for the edge_block_compatibility_list property.
+            ## @param value Value to set for the edgeBlockCompatibilityList property.
             ## @return a void
             ## 
             def edge_block_compatibility_list=(value)
@@ -1416,7 +1418,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeBlockDeveloperTools property value. Indicates whether or not to block developer tools in the Edge browser.
-            ## @param value Value to set for the edge_block_developer_tools property.
+            ## @param value Value to set for the edgeBlockDeveloperTools property.
             ## @return a void
             ## 
             def edge_block_developer_tools=(value)
@@ -1431,7 +1433,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeBlockExtensions property value. Indicates whether or not to block extensions in the Edge browser.
-            ## @param value Value to set for the edge_block_extensions property.
+            ## @param value Value to set for the edgeBlockExtensions property.
             ## @return a void
             ## 
             def edge_block_extensions=(value)
@@ -1446,7 +1448,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeBlockInPrivateBrowsing property value. Indicates whether or not to block InPrivate browsing on corporate networks, in the Edge browser.
-            ## @param value Value to set for the edge_block_in_private_browsing property.
+            ## @param value Value to set for the edgeBlockInPrivateBrowsing property.
             ## @return a void
             ## 
             def edge_block_in_private_browsing=(value)
@@ -1461,7 +1463,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeBlockJavaScript property value. Indicates whether or not to Block the user from using JavaScript.
-            ## @param value Value to set for the edge_block_java_script property.
+            ## @param value Value to set for the edgeBlockJavaScript property.
             ## @return a void
             ## 
             def edge_block_java_script=(value)
@@ -1476,7 +1478,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeBlockLiveTileDataCollection property value. Block the collection of information by Microsoft for live tile creation when users pin a site to Start from Microsoft Edge.
-            ## @param value Value to set for the edge_block_live_tile_data_collection property.
+            ## @param value Value to set for the edgeBlockLiveTileDataCollection property.
             ## @return a void
             ## 
             def edge_block_live_tile_data_collection=(value)
@@ -1491,7 +1493,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeBlockPasswordManager property value. Indicates whether or not to Block password manager.
-            ## @param value Value to set for the edge_block_password_manager property.
+            ## @param value Value to set for the edgeBlockPasswordManager property.
             ## @return a void
             ## 
             def edge_block_password_manager=(value)
@@ -1506,7 +1508,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeBlockPopups property value. Indicates whether or not to block popups.
-            ## @param value Value to set for the edge_block_popups property.
+            ## @param value Value to set for the edgeBlockPopups property.
             ## @return a void
             ## 
             def edge_block_popups=(value)
@@ -1521,7 +1523,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeBlockSearchSuggestions property value. Indicates whether or not to block the user from using the search suggestions in the address bar.
-            ## @param value Value to set for the edge_block_search_suggestions property.
+            ## @param value Value to set for the edgeBlockSearchSuggestions property.
             ## @return a void
             ## 
             def edge_block_search_suggestions=(value)
@@ -1536,7 +1538,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeBlockSendingDoNotTrackHeader property value. Indicates whether or not to Block the user from sending the do not track header.
-            ## @param value Value to set for the edge_block_sending_do_not_track_header property.
+            ## @param value Value to set for the edgeBlockSendingDoNotTrackHeader property.
             ## @return a void
             ## 
             def edge_block_sending_do_not_track_header=(value)
@@ -1551,7 +1553,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeBlockSendingIntranetTrafficToInternetExplorer property value. Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer. Note: the name of this property is misleading; the property is obsolete, use EdgeSendIntranetTrafficToInternetExplorer instead.
-            ## @param value Value to set for the edge_block_sending_intranet_traffic_to_internet_explorer property.
+            ## @param value Value to set for the edgeBlockSendingIntranetTrafficToInternetExplorer property.
             ## @return a void
             ## 
             def edge_block_sending_intranet_traffic_to_internet_explorer=(value)
@@ -1566,7 +1568,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeBlocked property value. Indicates whether or not to Block the user from using the Edge browser.
-            ## @param value Value to set for the edge_blocked property.
+            ## @param value Value to set for the edgeBlocked property.
             ## @return a void
             ## 
             def edge_blocked=(value)
@@ -1581,7 +1583,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeClearBrowsingDataOnExit property value. Clear browsing data on exiting Microsoft Edge.
-            ## @param value Value to set for the edge_clear_browsing_data_on_exit property.
+            ## @param value Value to set for the edgeClearBrowsingDataOnExit property.
             ## @return a void
             ## 
             def edge_clear_browsing_data_on_exit=(value)
@@ -1596,7 +1598,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeCookiePolicy property value. Possible values to specify which cookies are allowed in Microsoft Edge.
-            ## @param value Value to set for the edge_cookie_policy property.
+            ## @param value Value to set for the edgeCookiePolicy property.
             ## @return a void
             ## 
             def edge_cookie_policy=(value)
@@ -1611,7 +1613,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeDisableFirstRunPage property value. Block the Microsoft web page that opens on the first use of Microsoft Edge. This policy allows enterprises, like those enrolled in zero emissions configurations, to block this page.
-            ## @param value Value to set for the edge_disable_first_run_page property.
+            ## @param value Value to set for the edgeDisableFirstRunPage property.
             ## @return a void
             ## 
             def edge_disable_first_run_page=(value)
@@ -1626,7 +1628,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeEnterpriseModeSiteListLocation property value. Indicates the enterprise mode site list location. Could be a local file, local network or http location.
-            ## @param value Value to set for the edge_enterprise_mode_site_list_location property.
+            ## @param value Value to set for the edgeEnterpriseModeSiteListLocation property.
             ## @return a void
             ## 
             def edge_enterprise_mode_site_list_location=(value)
@@ -1641,7 +1643,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeFirstRunUrl property value. The first run URL for when Edge browser is opened for the first time.
-            ## @param value Value to set for the edge_first_run_url property.
+            ## @param value Value to set for the edgeFirstRunUrl property.
             ## @return a void
             ## 
             def edge_first_run_url=(value)
@@ -1656,7 +1658,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeHomepageUrls property value. The list of URLs for homepages shodwn on MDM-enrolled devices on Edge browser.
-            ## @param value Value to set for the edge_homepage_urls property.
+            ## @param value Value to set for the edgeHomepageUrls property.
             ## @return a void
             ## 
             def edge_homepage_urls=(value)
@@ -1671,7 +1673,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeRequireSmartScreen property value. Indicates whether or not to Require the user to use the smart screen filter.
-            ## @param value Value to set for the edge_require_smart_screen property.
+            ## @param value Value to set for the edgeRequireSmartScreen property.
             ## @return a void
             ## 
             def edge_require_smart_screen=(value)
@@ -1686,7 +1688,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeSearchEngine property value. Allows IT admins to set a default search engine for MDM-Controlled devices. Users can override this and change their default search engine provided the AllowSearchEngineCustomization policy is not set.
-            ## @param value Value to set for the edge_search_engine property.
+            ## @param value Value to set for the edgeSearchEngine property.
             ## @return a void
             ## 
             def edge_search_engine=(value)
@@ -1701,7 +1703,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeSendIntranetTrafficToInternetExplorer property value. Indicates whether or not to switch the intranet traffic from Edge to Internet Explorer.
-            ## @param value Value to set for the edge_send_intranet_traffic_to_internet_explorer property.
+            ## @param value Value to set for the edgeSendIntranetTrafficToInternetExplorer property.
             ## @return a void
             ## 
             def edge_send_intranet_traffic_to_internet_explorer=(value)
@@ -1716,7 +1718,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeSyncFavoritesWithInternetExplorer property value. Enable favorites sync between Internet Explorer and Microsoft Edge. Additions, deletions, modifications and order changes to favorites are shared between browsers.
-            ## @param value Value to set for the edge_sync_favorites_with_internet_explorer property.
+            ## @param value Value to set for the edgeSyncFavoritesWithInternetExplorer property.
             ## @return a void
             ## 
             def edge_sync_favorites_with_internet_explorer=(value)
@@ -1731,7 +1733,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enterpriseCloudPrintDiscoveryEndPoint property value. Endpoint for discovering cloud printers.
-            ## @param value Value to set for the enterprise_cloud_print_discovery_end_point property.
+            ## @param value Value to set for the enterpriseCloudPrintDiscoveryEndPoint property.
             ## @return a void
             ## 
             def enterprise_cloud_print_discovery_end_point=(value)
@@ -1746,7 +1748,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enterpriseCloudPrintDiscoveryMaxLimit property value. Maximum number of printers that should be queried from a discovery endpoint. This is a mobile only setting. Valid values 1 to 65535
-            ## @param value Value to set for the enterprise_cloud_print_discovery_max_limit property.
+            ## @param value Value to set for the enterpriseCloudPrintDiscoveryMaxLimit property.
             ## @return a void
             ## 
             def enterprise_cloud_print_discovery_max_limit=(value)
@@ -1761,7 +1763,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enterpriseCloudPrintMopriaDiscoveryResourceIdentifier property value. OAuth resource URI for printer discovery service as configured in Azure portal.
-            ## @param value Value to set for the enterprise_cloud_print_mopria_discovery_resource_identifier property.
+            ## @param value Value to set for the enterpriseCloudPrintMopriaDiscoveryResourceIdentifier property.
             ## @return a void
             ## 
             def enterprise_cloud_print_mopria_discovery_resource_identifier=(value)
@@ -1776,7 +1778,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enterpriseCloudPrintOAuthAuthority property value. Authentication endpoint for acquiring OAuth tokens.
-            ## @param value Value to set for the enterprise_cloud_print_o_auth_authority property.
+            ## @param value Value to set for the enterpriseCloudPrintOAuthAuthority property.
             ## @return a void
             ## 
             def enterprise_cloud_print_o_auth_authority=(value)
@@ -1791,7 +1793,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enterpriseCloudPrintOAuthClientIdentifier property value. GUID of a client application authorized to retrieve OAuth tokens from the OAuth Authority.
-            ## @param value Value to set for the enterprise_cloud_print_o_auth_client_identifier property.
+            ## @param value Value to set for the enterpriseCloudPrintOAuthClientIdentifier property.
             ## @return a void
             ## 
             def enterprise_cloud_print_o_auth_client_identifier=(value)
@@ -1806,7 +1808,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enterpriseCloudPrintResourceIdentifier property value. OAuth resource URI for print service as configured in the Azure portal.
-            ## @param value Value to set for the enterprise_cloud_print_resource_identifier property.
+            ## @param value Value to set for the enterpriseCloudPrintResourceIdentifier property.
             ## @return a void
             ## 
             def enterprise_cloud_print_resource_identifier=(value)
@@ -1821,7 +1823,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the experienceBlockDeviceDiscovery property value. Indicates whether or not to enable device discovery UX.
-            ## @param value Value to set for the experience_block_device_discovery property.
+            ## @param value Value to set for the experienceBlockDeviceDiscovery property.
             ## @return a void
             ## 
             def experience_block_device_discovery=(value)
@@ -1836,7 +1838,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the experienceBlockErrorDialogWhenNoSIM property value. Indicates whether or not to allow the error dialog from displaying if no SIM card is detected.
-            ## @param value Value to set for the experience_block_error_dialog_when_no_s_i_m property.
+            ## @param value Value to set for the experienceBlockErrorDialogWhenNoSIM property.
             ## @return a void
             ## 
             def experience_block_error_dialog_when_no_s_i_m=(value)
@@ -1851,7 +1853,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the experienceBlockTaskSwitcher property value. Indicates whether or not to enable task switching on the device.
-            ## @param value Value to set for the experience_block_task_switcher property.
+            ## @param value Value to set for the experienceBlockTaskSwitcher property.
             ## @return a void
             ## 
             def experience_block_task_switcher=(value)
@@ -1866,7 +1868,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the gameDvrBlocked property value. Indicates whether or not to block DVR and broadcasting.
-            ## @param value Value to set for the game_dvr_blocked property.
+            ## @param value Value to set for the gameDvrBlocked property.
             ## @return a void
             ## 
             def game_dvr_blocked=(value)
@@ -2090,7 +2092,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the internetSharingBlocked property value. Indicates whether or not to Block the user from using internet sharing.
-            ## @param value Value to set for the internet_sharing_blocked property.
+            ## @param value Value to set for the internetSharingBlocked property.
             ## @return a void
             ## 
             def internet_sharing_blocked=(value)
@@ -2105,7 +2107,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the locationServicesBlocked property value. Indicates whether or not to Block the user from location services.
-            ## @param value Value to set for the location_services_blocked property.
+            ## @param value Value to set for the locationServicesBlocked property.
             ## @return a void
             ## 
             def location_services_blocked=(value)
@@ -2120,7 +2122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lockScreenAllowTimeoutConfiguration property value. Specify whether to show a user-configurable setting to control the screen timeout while on the lock screen of Windows 10 Mobile devices. If this policy is set to Allow, the value set by lockScreenTimeoutInSeconds is ignored.
-            ## @param value Value to set for the lock_screen_allow_timeout_configuration property.
+            ## @param value Value to set for the lockScreenAllowTimeoutConfiguration property.
             ## @return a void
             ## 
             def lock_screen_allow_timeout_configuration=(value)
@@ -2135,7 +2137,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lockScreenBlockActionCenterNotifications property value. Indicates whether or not to block action center notifications over lock screen.
-            ## @param value Value to set for the lock_screen_block_action_center_notifications property.
+            ## @param value Value to set for the lockScreenBlockActionCenterNotifications property.
             ## @return a void
             ## 
             def lock_screen_block_action_center_notifications=(value)
@@ -2150,7 +2152,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lockScreenBlockCortana property value. Indicates whether or not the user can interact with Cortana using speech while the system is locked.
-            ## @param value Value to set for the lock_screen_block_cortana property.
+            ## @param value Value to set for the lockScreenBlockCortana property.
             ## @return a void
             ## 
             def lock_screen_block_cortana=(value)
@@ -2165,7 +2167,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lockScreenBlockToastNotifications property value. Indicates whether to allow toast notifications above the device lock screen.
-            ## @param value Value to set for the lock_screen_block_toast_notifications property.
+            ## @param value Value to set for the lockScreenBlockToastNotifications property.
             ## @return a void
             ## 
             def lock_screen_block_toast_notifications=(value)
@@ -2180,7 +2182,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lockScreenTimeoutInSeconds property value. Set the duration (in seconds) from the screen locking to the screen turning off for Windows 10 Mobile devices. Supported values are 11-1800. Valid values 11 to 1800
-            ## @param value Value to set for the lock_screen_timeout_in_seconds property.
+            ## @param value Value to set for the lockScreenTimeoutInSeconds property.
             ## @return a void
             ## 
             def lock_screen_timeout_in_seconds=(value)
@@ -2195,7 +2197,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the logonBlockFastUserSwitching property value. Disables the ability to quickly switch between users that are logged on simultaneously without logging off.
-            ## @param value Value to set for the logon_block_fast_user_switching property.
+            ## @param value Value to set for the logonBlockFastUserSwitching property.
             ## @return a void
             ## 
             def logon_block_fast_user_switching=(value)
@@ -2210,7 +2212,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the microsoftAccountBlockSettingsSync property value. Indicates whether or not to Block Microsoft account settings sync.
-            ## @param value Value to set for the microsoft_account_block_settings_sync property.
+            ## @param value Value to set for the microsoftAccountBlockSettingsSync property.
             ## @return a void
             ## 
             def microsoft_account_block_settings_sync=(value)
@@ -2225,7 +2227,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the microsoftAccountBlocked property value. Indicates whether or not to Block a Microsoft account.
-            ## @param value Value to set for the microsoft_account_blocked property.
+            ## @param value Value to set for the microsoftAccountBlocked property.
             ## @return a void
             ## 
             def microsoft_account_blocked=(value)
@@ -2240,7 +2242,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the networkProxyApplySettingsDeviceWide property value. If set, proxy settings will be applied to all processes and accounts in the device. Otherwise, it will be applied to the user account that’s enrolled into MDM.
-            ## @param value Value to set for the network_proxy_apply_settings_device_wide property.
+            ## @param value Value to set for the networkProxyApplySettingsDeviceWide property.
             ## @return a void
             ## 
             def network_proxy_apply_settings_device_wide=(value)
@@ -2255,7 +2257,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the networkProxyAutomaticConfigurationUrl property value. Address to the proxy auto-config (PAC) script you want to use.
-            ## @param value Value to set for the network_proxy_automatic_configuration_url property.
+            ## @param value Value to set for the networkProxyAutomaticConfigurationUrl property.
             ## @return a void
             ## 
             def network_proxy_automatic_configuration_url=(value)
@@ -2270,7 +2272,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the networkProxyDisableAutoDetect property value. Disable automatic detection of settings. If enabled, the system will try to find the path to a proxy auto-config (PAC) script.
-            ## @param value Value to set for the network_proxy_disable_auto_detect property.
+            ## @param value Value to set for the networkProxyDisableAutoDetect property.
             ## @return a void
             ## 
             def network_proxy_disable_auto_detect=(value)
@@ -2285,7 +2287,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the networkProxyServer property value. Specifies manual proxy server settings.
-            ## @param value Value to set for the network_proxy_server property.
+            ## @param value Value to set for the networkProxyServer property.
             ## @return a void
             ## 
             def network_proxy_server=(value)
@@ -2300,7 +2302,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the nfcBlocked property value. Indicates whether or not to Block the user from using near field communication.
-            ## @param value Value to set for the nfc_blocked property.
+            ## @param value Value to set for the nfcBlocked property.
             ## @return a void
             ## 
             def nfc_blocked=(value)
@@ -2315,7 +2317,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the oneDriveDisableFileSync property value. Gets or sets a value allowing IT admins to prevent apps and features from working with files on OneDrive.
-            ## @param value Value to set for the one_drive_disable_file_sync property.
+            ## @param value Value to set for the oneDriveDisableFileSync property.
             ## @return a void
             ## 
             def one_drive_disable_file_sync=(value)
@@ -2330,7 +2332,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordBlockSimple property value. Specify whether PINs or passwords such as '1111' or '1234' are allowed. For Windows 10 desktops, it also controls the use of picture passwords.
-            ## @param value Value to set for the password_block_simple property.
+            ## @param value Value to set for the passwordBlockSimple property.
             ## @return a void
             ## 
             def password_block_simple=(value)
@@ -2345,7 +2347,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordExpirationDays property value. The password expiration in days. Valid values 0 to 730
-            ## @param value Value to set for the password_expiration_days property.
+            ## @param value Value to set for the passwordExpirationDays property.
             ## @return a void
             ## 
             def password_expiration_days=(value)
@@ -2360,7 +2362,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
-            ## @param value Value to set for the password_minimum_character_set_count property.
+            ## @param value Value to set for the passwordMinimumCharacterSetCount property.
             ## @return a void
             ## 
             def password_minimum_character_set_count=(value)
@@ -2375,7 +2377,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinimumLength property value. The minimum password length. Valid values 4 to 16
-            ## @param value Value to set for the password_minimum_length property.
+            ## @param value Value to set for the passwordMinimumLength property.
             ## @return a void
             ## 
             def password_minimum_length=(value)
@@ -2390,7 +2392,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. The minutes of inactivity before the screen times out.
-            ## @param value Value to set for the password_minutes_of_inactivity_before_screen_timeout property.
+            ## @param value Value to set for the passwordMinutesOfInactivityBeforeScreenTimeout property.
             ## @return a void
             ## 
             def password_minutes_of_inactivity_before_screen_timeout=(value)
@@ -2405,7 +2407,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordPreviousPasswordBlockCount property value. The number of previous passwords to prevent reuse of. Valid values 0 to 50
-            ## @param value Value to set for the password_previous_password_block_count property.
+            ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
             ## @return a void
             ## 
             def password_previous_password_block_count=(value)
@@ -2420,7 +2422,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordRequireWhenResumeFromIdleState property value. Indicates whether or not to require a password upon resuming from an idle state.
-            ## @param value Value to set for the password_require_when_resume_from_idle_state property.
+            ## @param value Value to set for the passwordRequireWhenResumeFromIdleState property.
             ## @return a void
             ## 
             def password_require_when_resume_from_idle_state=(value)
@@ -2435,7 +2437,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordRequired property value. Indicates whether or not to require the user to have a password.
-            ## @param value Value to set for the password_required property.
+            ## @param value Value to set for the passwordRequired property.
             ## @return a void
             ## 
             def password_required=(value)
@@ -2450,7 +2452,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordRequiredType property value. Possible values of required passwords.
-            ## @param value Value to set for the password_required_type property.
+            ## @param value Value to set for the passwordRequiredType property.
             ## @return a void
             ## 
             def password_required_type=(value)
@@ -2465,7 +2467,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordSignInFailureCountBeforeFactoryReset property value. The number of sign in failures before factory reset. Valid values 0 to 999
-            ## @param value Value to set for the password_sign_in_failure_count_before_factory_reset property.
+            ## @param value Value to set for the passwordSignInFailureCountBeforeFactoryReset property.
             ## @return a void
             ## 
             def password_sign_in_failure_count_before_factory_reset=(value)
@@ -2480,7 +2482,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the personalizationDesktopImageUrl property value. A http or https Url to a jpg, jpeg or png image that needs to be downloaded and used as the Desktop Image or a file Url to a local image on the file system that needs to used as the Desktop Image.
-            ## @param value Value to set for the personalization_desktop_image_url property.
+            ## @param value Value to set for the personalizationDesktopImageUrl property.
             ## @return a void
             ## 
             def personalization_desktop_image_url=(value)
@@ -2495,7 +2497,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the personalizationLockScreenImageUrl property value. A http or https Url to a jpg, jpeg or png image that neeeds to be downloaded and used as the Lock Screen Image or a file Url to a local image on the file system that needs to be used as the Lock Screen Image.
-            ## @param value Value to set for the personalization_lock_screen_image_url property.
+            ## @param value Value to set for the personalizationLockScreenImageUrl property.
             ## @return a void
             ## 
             def personalization_lock_screen_image_url=(value)
@@ -2510,7 +2512,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the privacyAdvertisingId property value. State Management Setting.
-            ## @param value Value to set for the privacy_advertising_id property.
+            ## @param value Value to set for the privacyAdvertisingId property.
             ## @return a void
             ## 
             def privacy_advertising_id=(value)
@@ -2525,7 +2527,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the privacyAutoAcceptPairingAndConsentPrompts property value. Indicates whether or not to allow the automatic acceptance of the pairing and privacy user consent dialog when launching apps.
-            ## @param value Value to set for the privacy_auto_accept_pairing_and_consent_prompts property.
+            ## @param value Value to set for the privacyAutoAcceptPairingAndConsentPrompts property.
             ## @return a void
             ## 
             def privacy_auto_accept_pairing_and_consent_prompts=(value)
@@ -2540,7 +2542,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the privacyBlockInputPersonalization property value. Indicates whether or not to block the usage of cloud based speech services for Cortana, Dictation, or Store applications.
-            ## @param value Value to set for the privacy_block_input_personalization property.
+            ## @param value Value to set for the privacyBlockInputPersonalization property.
             ## @return a void
             ## 
             def privacy_block_input_personalization=(value)
@@ -2555,7 +2557,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resetProtectionModeBlocked property value. Indicates whether or not to Block the user from reset protection mode.
-            ## @param value Value to set for the reset_protection_mode_blocked property.
+            ## @param value Value to set for the resetProtectionModeBlocked property.
             ## @return a void
             ## 
             def reset_protection_mode_blocked=(value)
@@ -2570,7 +2572,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the safeSearchFilter property value. Specifies what level of safe search (filtering adult content) is required
-            ## @param value Value to set for the safe_search_filter property.
+            ## @param value Value to set for the safeSearchFilter property.
             ## @return a void
             ## 
             def safe_search_filter=(value)
@@ -2585,7 +2587,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the screenCaptureBlocked property value. Indicates whether or not to Block the user from taking Screenshots.
-            ## @param value Value to set for the screen_capture_blocked property.
+            ## @param value Value to set for the screenCaptureBlocked property.
             ## @return a void
             ## 
             def screen_capture_blocked=(value)
@@ -2600,7 +2602,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the searchBlockDiacritics property value. Specifies if search can use diacritics.
-            ## @param value Value to set for the search_block_diacritics property.
+            ## @param value Value to set for the searchBlockDiacritics property.
             ## @return a void
             ## 
             def search_block_diacritics=(value)
@@ -2615,7 +2617,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the searchDisableAutoLanguageDetection property value. Specifies whether to use automatic language detection when indexing content and properties.
-            ## @param value Value to set for the search_disable_auto_language_detection property.
+            ## @param value Value to set for the searchDisableAutoLanguageDetection property.
             ## @return a void
             ## 
             def search_disable_auto_language_detection=(value)
@@ -2630,7 +2632,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the searchDisableIndexerBackoff property value. Indicates whether or not to disable the search indexer backoff feature.
-            ## @param value Value to set for the search_disable_indexer_backoff property.
+            ## @param value Value to set for the searchDisableIndexerBackoff property.
             ## @return a void
             ## 
             def search_disable_indexer_backoff=(value)
@@ -2645,7 +2647,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the searchDisableIndexingEncryptedItems property value. Indicates whether or not to block indexing of WIP-protected items to prevent them from appearing in search results for Cortana or Explorer.
-            ## @param value Value to set for the search_disable_indexing_encrypted_items property.
+            ## @param value Value to set for the searchDisableIndexingEncryptedItems property.
             ## @return a void
             ## 
             def search_disable_indexing_encrypted_items=(value)
@@ -2660,7 +2662,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the searchDisableIndexingRemovableDrive property value. Indicates whether or not to allow users to add locations on removable drives to libraries and to be indexed.
-            ## @param value Value to set for the search_disable_indexing_removable_drive property.
+            ## @param value Value to set for the searchDisableIndexingRemovableDrive property.
             ## @return a void
             ## 
             def search_disable_indexing_removable_drive=(value)
@@ -2675,7 +2677,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the searchEnableAutomaticIndexSizeManangement property value. Specifies minimum amount of hard drive space on the same drive as the index location before indexing stops.
-            ## @param value Value to set for the search_enable_automatic_index_size_manangement property.
+            ## @param value Value to set for the searchEnableAutomaticIndexSizeManangement property.
             ## @return a void
             ## 
             def search_enable_automatic_index_size_manangement=(value)
@@ -2690,7 +2692,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the searchEnableRemoteQueries property value. Indicates whether or not to block remote queries of this computer’s index.
-            ## @param value Value to set for the search_enable_remote_queries property.
+            ## @param value Value to set for the searchEnableRemoteQueries property.
             ## @return a void
             ## 
             def search_enable_remote_queries=(value)
@@ -2915,7 +2917,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockAccountsPage property value. Indicates whether or not to block access to Accounts in Settings app.
-            ## @param value Value to set for the settings_block_accounts_page property.
+            ## @param value Value to set for the settingsBlockAccountsPage property.
             ## @return a void
             ## 
             def settings_block_accounts_page=(value)
@@ -2930,7 +2932,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockAddProvisioningPackage property value. Indicates whether or not to block the user from installing provisioning packages.
-            ## @param value Value to set for the settings_block_add_provisioning_package property.
+            ## @param value Value to set for the settingsBlockAddProvisioningPackage property.
             ## @return a void
             ## 
             def settings_block_add_provisioning_package=(value)
@@ -2945,7 +2947,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockAppsPage property value. Indicates whether or not to block access to Apps in Settings app.
-            ## @param value Value to set for the settings_block_apps_page property.
+            ## @param value Value to set for the settingsBlockAppsPage property.
             ## @return a void
             ## 
             def settings_block_apps_page=(value)
@@ -2960,7 +2962,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockChangeLanguage property value. Indicates whether or not to block the user from changing the language settings.
-            ## @param value Value to set for the settings_block_change_language property.
+            ## @param value Value to set for the settingsBlockChangeLanguage property.
             ## @return a void
             ## 
             def settings_block_change_language=(value)
@@ -2975,7 +2977,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockChangePowerSleep property value. Indicates whether or not to block the user from changing power and sleep settings.
-            ## @param value Value to set for the settings_block_change_power_sleep property.
+            ## @param value Value to set for the settingsBlockChangePowerSleep property.
             ## @return a void
             ## 
             def settings_block_change_power_sleep=(value)
@@ -2990,7 +2992,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockChangeRegion property value. Indicates whether or not to block the user from changing the region settings.
-            ## @param value Value to set for the settings_block_change_region property.
+            ## @param value Value to set for the settingsBlockChangeRegion property.
             ## @return a void
             ## 
             def settings_block_change_region=(value)
@@ -3005,7 +3007,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockChangeSystemTime property value. Indicates whether or not to block the user from changing date and time settings.
-            ## @param value Value to set for the settings_block_change_system_time property.
+            ## @param value Value to set for the settingsBlockChangeSystemTime property.
             ## @return a void
             ## 
             def settings_block_change_system_time=(value)
@@ -3020,7 +3022,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockDevicesPage property value. Indicates whether or not to block access to Devices in Settings app.
-            ## @param value Value to set for the settings_block_devices_page property.
+            ## @param value Value to set for the settingsBlockDevicesPage property.
             ## @return a void
             ## 
             def settings_block_devices_page=(value)
@@ -3035,7 +3037,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockEaseOfAccessPage property value. Indicates whether or not to block access to Ease of Access in Settings app.
-            ## @param value Value to set for the settings_block_ease_of_access_page property.
+            ## @param value Value to set for the settingsBlockEaseOfAccessPage property.
             ## @return a void
             ## 
             def settings_block_ease_of_access_page=(value)
@@ -3050,7 +3052,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockEditDeviceName property value. Indicates whether or not to block the user from editing the device name.
-            ## @param value Value to set for the settings_block_edit_device_name property.
+            ## @param value Value to set for the settingsBlockEditDeviceName property.
             ## @return a void
             ## 
             def settings_block_edit_device_name=(value)
@@ -3065,7 +3067,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockGamingPage property value. Indicates whether or not to block access to Gaming in Settings app.
-            ## @param value Value to set for the settings_block_gaming_page property.
+            ## @param value Value to set for the settingsBlockGamingPage property.
             ## @return a void
             ## 
             def settings_block_gaming_page=(value)
@@ -3080,7 +3082,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockNetworkInternetPage property value. Indicates whether or not to block access to Network & Internet in Settings app.
-            ## @param value Value to set for the settings_block_network_internet_page property.
+            ## @param value Value to set for the settingsBlockNetworkInternetPage property.
             ## @return a void
             ## 
             def settings_block_network_internet_page=(value)
@@ -3095,7 +3097,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockPersonalizationPage property value. Indicates whether or not to block access to Personalization in Settings app.
-            ## @param value Value to set for the settings_block_personalization_page property.
+            ## @param value Value to set for the settingsBlockPersonalizationPage property.
             ## @return a void
             ## 
             def settings_block_personalization_page=(value)
@@ -3110,7 +3112,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockPrivacyPage property value. Indicates whether or not to block access to Privacy in Settings app.
-            ## @param value Value to set for the settings_block_privacy_page property.
+            ## @param value Value to set for the settingsBlockPrivacyPage property.
             ## @return a void
             ## 
             def settings_block_privacy_page=(value)
@@ -3125,7 +3127,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockRemoveProvisioningPackage property value. Indicates whether or not to block the runtime configuration agent from removing provisioning packages.
-            ## @param value Value to set for the settings_block_remove_provisioning_package property.
+            ## @param value Value to set for the settingsBlockRemoveProvisioningPackage property.
             ## @return a void
             ## 
             def settings_block_remove_provisioning_package=(value)
@@ -3140,7 +3142,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockSettingsApp property value. Indicates whether or not to block access to Settings app.
-            ## @param value Value to set for the settings_block_settings_app property.
+            ## @param value Value to set for the settingsBlockSettingsApp property.
             ## @return a void
             ## 
             def settings_block_settings_app=(value)
@@ -3155,7 +3157,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockSystemPage property value. Indicates whether or not to block access to System in Settings app.
-            ## @param value Value to set for the settings_block_system_page property.
+            ## @param value Value to set for the settingsBlockSystemPage property.
             ## @return a void
             ## 
             def settings_block_system_page=(value)
@@ -3170,7 +3172,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockTimeLanguagePage property value. Indicates whether or not to block access to Time & Language in Settings app.
-            ## @param value Value to set for the settings_block_time_language_page property.
+            ## @param value Value to set for the settingsBlockTimeLanguagePage property.
             ## @return a void
             ## 
             def settings_block_time_language_page=(value)
@@ -3185,7 +3187,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockUpdateSecurityPage property value. Indicates whether or not to block access to Update & Security in Settings app.
-            ## @param value Value to set for the settings_block_update_security_page property.
+            ## @param value Value to set for the settingsBlockUpdateSecurityPage property.
             ## @return a void
             ## 
             def settings_block_update_security_page=(value)
@@ -3200,7 +3202,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sharedUserAppDataAllowed property value. Indicates whether or not to block multiple users of the same app to share data.
-            ## @param value Value to set for the shared_user_app_data_allowed property.
+            ## @param value Value to set for the sharedUserAppDataAllowed property.
             ## @return a void
             ## 
             def shared_user_app_data_allowed=(value)
@@ -3215,7 +3217,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the smartScreenBlockPromptOverride property value. Indicates whether or not users can override SmartScreen Filter warnings about potentially malicious websites.
-            ## @param value Value to set for the smart_screen_block_prompt_override property.
+            ## @param value Value to set for the smartScreenBlockPromptOverride property.
             ## @return a void
             ## 
             def smart_screen_block_prompt_override=(value)
@@ -3230,7 +3232,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the smartScreenBlockPromptOverrideForFiles property value. Indicates whether or not users can override the SmartScreen Filter warnings about downloading unverified files
-            ## @param value Value to set for the smart_screen_block_prompt_override_for_files property.
+            ## @param value Value to set for the smartScreenBlockPromptOverrideForFiles property.
             ## @return a void
             ## 
             def smart_screen_block_prompt_override_for_files=(value)
@@ -3245,7 +3247,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the smartScreenEnableAppInstallControl property value. This property will be deprecated in July 2019 and will be replaced by property SmartScreenAppInstallControl. Allows IT Admins to control whether users are allowed to install apps from places other than the Store.
-            ## @param value Value to set for the smart_screen_enable_app_install_control property.
+            ## @param value Value to set for the smartScreenEnableAppInstallControl property.
             ## @return a void
             ## 
             def smart_screen_enable_app_install_control=(value)
@@ -3260,7 +3262,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startBlockUnpinningAppsFromTaskbar property value. Indicates whether or not to block the user from unpinning apps from taskbar.
-            ## @param value Value to set for the start_block_unpinning_apps_from_taskbar property.
+            ## @param value Value to set for the startBlockUnpinningAppsFromTaskbar property.
             ## @return a void
             ## 
             def start_block_unpinning_apps_from_taskbar=(value)
@@ -3275,7 +3277,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuAppListVisibility property value. Type of start menu app list visibility.
-            ## @param value Value to set for the start_menu_app_list_visibility property.
+            ## @param value Value to set for the startMenuAppListVisibility property.
             ## @return a void
             ## 
             def start_menu_app_list_visibility=(value)
@@ -3290,7 +3292,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuHideChangeAccountSettings property value. Enabling this policy hides the change account setting from appearing in the user tile in the start menu.
-            ## @param value Value to set for the start_menu_hide_change_account_settings property.
+            ## @param value Value to set for the startMenuHideChangeAccountSettings property.
             ## @return a void
             ## 
             def start_menu_hide_change_account_settings=(value)
@@ -3305,7 +3307,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuHideFrequentlyUsedApps property value. Enabling this policy hides the most used apps from appearing on the start menu and disables the corresponding toggle in the Settings app.
-            ## @param value Value to set for the start_menu_hide_frequently_used_apps property.
+            ## @param value Value to set for the startMenuHideFrequentlyUsedApps property.
             ## @return a void
             ## 
             def start_menu_hide_frequently_used_apps=(value)
@@ -3320,7 +3322,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuHideHibernate property value. Enabling this policy hides hibernate from appearing in the power button in the start menu.
-            ## @param value Value to set for the start_menu_hide_hibernate property.
+            ## @param value Value to set for the startMenuHideHibernate property.
             ## @return a void
             ## 
             def start_menu_hide_hibernate=(value)
@@ -3335,7 +3337,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuHideLock property value. Enabling this policy hides lock from appearing in the user tile in the start menu.
-            ## @param value Value to set for the start_menu_hide_lock property.
+            ## @param value Value to set for the startMenuHideLock property.
             ## @return a void
             ## 
             def start_menu_hide_lock=(value)
@@ -3350,7 +3352,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuHidePowerButton property value. Enabling this policy hides the power button from appearing in the start menu.
-            ## @param value Value to set for the start_menu_hide_power_button property.
+            ## @param value Value to set for the startMenuHidePowerButton property.
             ## @return a void
             ## 
             def start_menu_hide_power_button=(value)
@@ -3365,7 +3367,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuHideRecentJumpLists property value. Enabling this policy hides recent jump lists from appearing on the start menu/taskbar and disables the corresponding toggle in the Settings app.
-            ## @param value Value to set for the start_menu_hide_recent_jump_lists property.
+            ## @param value Value to set for the startMenuHideRecentJumpLists property.
             ## @return a void
             ## 
             def start_menu_hide_recent_jump_lists=(value)
@@ -3380,7 +3382,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuHideRecentlyAddedApps property value. Enabling this policy hides recently added apps from appearing on the start menu and disables the corresponding toggle in the Settings app.
-            ## @param value Value to set for the start_menu_hide_recently_added_apps property.
+            ## @param value Value to set for the startMenuHideRecentlyAddedApps property.
             ## @return a void
             ## 
             def start_menu_hide_recently_added_apps=(value)
@@ -3395,7 +3397,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuHideRestartOptions property value. Enabling this policy hides 'Restart/Update and Restart' from appearing in the power button in the start menu.
-            ## @param value Value to set for the start_menu_hide_restart_options property.
+            ## @param value Value to set for the startMenuHideRestartOptions property.
             ## @return a void
             ## 
             def start_menu_hide_restart_options=(value)
@@ -3410,7 +3412,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuHideShutDown property value. Enabling this policy hides shut down/update and shut down from appearing in the power button in the start menu.
-            ## @param value Value to set for the start_menu_hide_shut_down property.
+            ## @param value Value to set for the startMenuHideShutDown property.
             ## @return a void
             ## 
             def start_menu_hide_shut_down=(value)
@@ -3425,7 +3427,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuHideSignOut property value. Enabling this policy hides sign out from appearing in the user tile in the start menu.
-            ## @param value Value to set for the start_menu_hide_sign_out property.
+            ## @param value Value to set for the startMenuHideSignOut property.
             ## @return a void
             ## 
             def start_menu_hide_sign_out=(value)
@@ -3440,7 +3442,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuHideSleep property value. Enabling this policy hides sleep from appearing in the power button in the start menu.
-            ## @param value Value to set for the start_menu_hide_sleep property.
+            ## @param value Value to set for the startMenuHideSleep property.
             ## @return a void
             ## 
             def start_menu_hide_sleep=(value)
@@ -3455,7 +3457,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuHideSwitchAccount property value. Enabling this policy hides switch account from appearing in the user tile in the start menu.
-            ## @param value Value to set for the start_menu_hide_switch_account property.
+            ## @param value Value to set for the startMenuHideSwitchAccount property.
             ## @return a void
             ## 
             def start_menu_hide_switch_account=(value)
@@ -3470,7 +3472,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuHideUserTile property value. Enabling this policy hides the user tile from appearing in the start menu.
-            ## @param value Value to set for the start_menu_hide_user_tile property.
+            ## @param value Value to set for the startMenuHideUserTile property.
             ## @return a void
             ## 
             def start_menu_hide_user_tile=(value)
@@ -3485,7 +3487,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuLayoutEdgeAssetsXml property value. This policy setting allows you to import Edge assets to be used with startMenuLayoutXml policy. Start layout can contain secondary tile from Edge app which looks for Edge local asset file. Edge local asset would not exist and cause Edge secondary tile to appear empty in this case. This policy only gets applied when startMenuLayoutXml policy is modified. The value should be a UTF-8 Base64 encoded byte array.
-            ## @param value Value to set for the start_menu_layout_edge_assets_xml property.
+            ## @param value Value to set for the startMenuLayoutEdgeAssetsXml property.
             ## @return a void
             ## 
             def start_menu_layout_edge_assets_xml=(value)
@@ -3500,7 +3502,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuLayoutXml property value. Allows admins to override the default Start menu layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in a UTF8 encoded byte array format.
-            ## @param value Value to set for the start_menu_layout_xml property.
+            ## @param value Value to set for the startMenuLayoutXml property.
             ## @return a void
             ## 
             def start_menu_layout_xml=(value)
@@ -3515,7 +3517,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuMode property value. Type of display modes for the start menu.
-            ## @param value Value to set for the start_menu_mode property.
+            ## @param value Value to set for the startMenuMode property.
             ## @return a void
             ## 
             def start_menu_mode=(value)
@@ -3530,7 +3532,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuPinnedFolderDocuments property value. Generic visibility state.
-            ## @param value Value to set for the start_menu_pinned_folder_documents property.
+            ## @param value Value to set for the startMenuPinnedFolderDocuments property.
             ## @return a void
             ## 
             def start_menu_pinned_folder_documents=(value)
@@ -3545,7 +3547,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuPinnedFolderDownloads property value. Generic visibility state.
-            ## @param value Value to set for the start_menu_pinned_folder_downloads property.
+            ## @param value Value to set for the startMenuPinnedFolderDownloads property.
             ## @return a void
             ## 
             def start_menu_pinned_folder_downloads=(value)
@@ -3560,7 +3562,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuPinnedFolderFileExplorer property value. Generic visibility state.
-            ## @param value Value to set for the start_menu_pinned_folder_file_explorer property.
+            ## @param value Value to set for the startMenuPinnedFolderFileExplorer property.
             ## @return a void
             ## 
             def start_menu_pinned_folder_file_explorer=(value)
@@ -3575,7 +3577,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuPinnedFolderHomeGroup property value. Generic visibility state.
-            ## @param value Value to set for the start_menu_pinned_folder_home_group property.
+            ## @param value Value to set for the startMenuPinnedFolderHomeGroup property.
             ## @return a void
             ## 
             def start_menu_pinned_folder_home_group=(value)
@@ -3590,7 +3592,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuPinnedFolderMusic property value. Generic visibility state.
-            ## @param value Value to set for the start_menu_pinned_folder_music property.
+            ## @param value Value to set for the startMenuPinnedFolderMusic property.
             ## @return a void
             ## 
             def start_menu_pinned_folder_music=(value)
@@ -3605,7 +3607,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuPinnedFolderNetwork property value. Generic visibility state.
-            ## @param value Value to set for the start_menu_pinned_folder_network property.
+            ## @param value Value to set for the startMenuPinnedFolderNetwork property.
             ## @return a void
             ## 
             def start_menu_pinned_folder_network=(value)
@@ -3620,7 +3622,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuPinnedFolderPersonalFolder property value. Generic visibility state.
-            ## @param value Value to set for the start_menu_pinned_folder_personal_folder property.
+            ## @param value Value to set for the startMenuPinnedFolderPersonalFolder property.
             ## @return a void
             ## 
             def start_menu_pinned_folder_personal_folder=(value)
@@ -3635,7 +3637,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuPinnedFolderPictures property value. Generic visibility state.
-            ## @param value Value to set for the start_menu_pinned_folder_pictures property.
+            ## @param value Value to set for the startMenuPinnedFolderPictures property.
             ## @return a void
             ## 
             def start_menu_pinned_folder_pictures=(value)
@@ -3650,7 +3652,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuPinnedFolderSettings property value. Generic visibility state.
-            ## @param value Value to set for the start_menu_pinned_folder_settings property.
+            ## @param value Value to set for the startMenuPinnedFolderSettings property.
             ## @return a void
             ## 
             def start_menu_pinned_folder_settings=(value)
@@ -3665,7 +3667,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startMenuPinnedFolderVideos property value. Generic visibility state.
-            ## @param value Value to set for the start_menu_pinned_folder_videos property.
+            ## @param value Value to set for the startMenuPinnedFolderVideos property.
             ## @return a void
             ## 
             def start_menu_pinned_folder_videos=(value)
@@ -3680,7 +3682,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the storageBlockRemovableStorage property value. Indicates whether or not to Block the user from using removable storage.
-            ## @param value Value to set for the storage_block_removable_storage property.
+            ## @param value Value to set for the storageBlockRemovableStorage property.
             ## @return a void
             ## 
             def storage_block_removable_storage=(value)
@@ -3695,7 +3697,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the storageRequireMobileDeviceEncryption property value. Indicating whether or not to require encryption on a mobile device.
-            ## @param value Value to set for the storage_require_mobile_device_encryption property.
+            ## @param value Value to set for the storageRequireMobileDeviceEncryption property.
             ## @return a void
             ## 
             def storage_require_mobile_device_encryption=(value)
@@ -3710,7 +3712,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the storageRestrictAppDataToSystemVolume property value. Indicates whether application data is restricted to the system drive.
-            ## @param value Value to set for the storage_restrict_app_data_to_system_volume property.
+            ## @param value Value to set for the storageRestrictAppDataToSystemVolume property.
             ## @return a void
             ## 
             def storage_restrict_app_data_to_system_volume=(value)
@@ -3725,7 +3727,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the storageRestrictAppInstallToSystemVolume property value. Indicates whether the installation of applications is restricted to the system drive.
-            ## @param value Value to set for the storage_restrict_app_install_to_system_volume property.
+            ## @param value Value to set for the storageRestrictAppInstallToSystemVolume property.
             ## @return a void
             ## 
             def storage_restrict_app_install_to_system_volume=(value)
@@ -3740,7 +3742,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tenantLockdownRequireNetworkDuringOutOfBoxExperience property value. Whether the device is required to connect to the network.
-            ## @param value Value to set for the tenant_lockdown_require_network_during_out_of_box_experience property.
+            ## @param value Value to set for the tenantLockdownRequireNetworkDuringOutOfBoxExperience property.
             ## @return a void
             ## 
             def tenant_lockdown_require_network_during_out_of_box_experience=(value)
@@ -3755,7 +3757,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the usbBlocked property value. Indicates whether or not to Block the user from USB connection.
-            ## @param value Value to set for the usb_blocked property.
+            ## @param value Value to set for the usbBlocked property.
             ## @return a void
             ## 
             def usb_blocked=(value)
@@ -3770,7 +3772,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the voiceRecordingBlocked property value. Indicates whether or not to Block the user from voice recording.
-            ## @param value Value to set for the voice_recording_blocked property.
+            ## @param value Value to set for the voiceRecordingBlocked property.
             ## @return a void
             ## 
             def voice_recording_blocked=(value)
@@ -3785,7 +3787,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webRtcBlockLocalhostIpAddress property value. Indicates whether or not user's localhost IP address is displayed while making phone calls using the WebRTC
-            ## @param value Value to set for the web_rtc_block_localhost_ip_address property.
+            ## @param value Value to set for the webRtcBlockLocalhostIpAddress property.
             ## @return a void
             ## 
             def web_rtc_block_localhost_ip_address=(value)
@@ -3800,7 +3802,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the wiFiBlockAutomaticConnectHotspots property value. Indicating whether or not to block automatically connecting to Wi-Fi hotspots. Has no impact if Wi-Fi is blocked.
-            ## @param value Value to set for the wi_fi_block_automatic_connect_hotspots property.
+            ## @param value Value to set for the wiFiBlockAutomaticConnectHotspots property.
             ## @return a void
             ## 
             def wi_fi_block_automatic_connect_hotspots=(value)
@@ -3815,7 +3817,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the wiFiBlockManualConfiguration property value. Indicates whether or not to Block the user from using Wi-Fi manual configuration.
-            ## @param value Value to set for the wi_fi_block_manual_configuration property.
+            ## @param value Value to set for the wiFiBlockManualConfiguration property.
             ## @return a void
             ## 
             def wi_fi_block_manual_configuration=(value)
@@ -3830,7 +3832,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the wiFiBlocked property value. Indicates whether or not to Block the user from using Wi-Fi.
-            ## @param value Value to set for the wi_fi_blocked property.
+            ## @param value Value to set for the wiFiBlocked property.
             ## @return a void
             ## 
             def wi_fi_blocked=(value)
@@ -3845,7 +3847,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the wiFiScanInterval property value. Specify how often devices scan for Wi-Fi networks. Supported values are 1-500, where 100 = default, and 500 = low frequency. Valid values 1 to 500
-            ## @param value Value to set for the wi_fi_scan_interval property.
+            ## @param value Value to set for the wiFiScanInterval property.
             ## @return a void
             ## 
             def wi_fi_scan_interval=(value)
@@ -3860,7 +3862,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsSpotlightBlockConsumerSpecificFeatures property value. Allows IT admins to block experiences that are typically for consumers only, such as Start suggestions, Membership notifications, Post-OOBE app install and redirect tiles.
-            ## @param value Value to set for the windows_spotlight_block_consumer_specific_features property.
+            ## @param value Value to set for the windowsSpotlightBlockConsumerSpecificFeatures property.
             ## @return a void
             ## 
             def windows_spotlight_block_consumer_specific_features=(value)
@@ -3875,7 +3877,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsSpotlightBlockOnActionCenter property value. Block suggestions from Microsoft that show after each OS clean install, upgrade or in an on-going basis to introduce users to what is new or changed
-            ## @param value Value to set for the windows_spotlight_block_on_action_center property.
+            ## @param value Value to set for the windowsSpotlightBlockOnActionCenter property.
             ## @return a void
             ## 
             def windows_spotlight_block_on_action_center=(value)
@@ -3890,7 +3892,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsSpotlightBlockTailoredExperiences property value. Block personalized content in Windows spotlight based on user’s device usage.
-            ## @param value Value to set for the windows_spotlight_block_tailored_experiences property.
+            ## @param value Value to set for the windowsSpotlightBlockTailoredExperiences property.
             ## @return a void
             ## 
             def windows_spotlight_block_tailored_experiences=(value)
@@ -3905,7 +3907,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsSpotlightBlockThirdPartyNotifications property value. Block third party content delivered via Windows Spotlight
-            ## @param value Value to set for the windows_spotlight_block_third_party_notifications property.
+            ## @param value Value to set for the windowsSpotlightBlockThirdPartyNotifications property.
             ## @return a void
             ## 
             def windows_spotlight_block_third_party_notifications=(value)
@@ -3920,7 +3922,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsSpotlightBlockWelcomeExperience property value. Block Windows Spotlight Windows welcome experience
-            ## @param value Value to set for the windows_spotlight_block_welcome_experience property.
+            ## @param value Value to set for the windowsSpotlightBlockWelcomeExperience property.
             ## @return a void
             ## 
             def windows_spotlight_block_welcome_experience=(value)
@@ -3935,7 +3937,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsSpotlightBlockWindowsTips property value. Allows IT admins to turn off the popup of Windows Tips.
-            ## @param value Value to set for the windows_spotlight_block_windows_tips property.
+            ## @param value Value to set for the windowsSpotlightBlockWindowsTips property.
             ## @return a void
             ## 
             def windows_spotlight_block_windows_tips=(value)
@@ -3950,7 +3952,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsSpotlightBlocked property value. Allows IT admins to turn off all Windows Spotlight features
-            ## @param value Value to set for the windows_spotlight_blocked property.
+            ## @param value Value to set for the windowsSpotlightBlocked property.
             ## @return a void
             ## 
             def windows_spotlight_blocked=(value)
@@ -3965,7 +3967,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsSpotlightConfigureOnLockScreen property value. Allows IT admind to set a predefined default search engine for MDM-Controlled devices
-            ## @param value Value to set for the windows_spotlight_configure_on_lock_screen property.
+            ## @param value Value to set for the windowsSpotlightConfigureOnLockScreen property.
             ## @return a void
             ## 
             def windows_spotlight_configure_on_lock_screen=(value)
@@ -3980,7 +3982,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsStoreBlockAutoUpdate property value. Indicates whether or not to block automatic update of apps from Windows Store.
-            ## @param value Value to set for the windows_store_block_auto_update property.
+            ## @param value Value to set for the windowsStoreBlockAutoUpdate property.
             ## @return a void
             ## 
             def windows_store_block_auto_update=(value)
@@ -3995,7 +3997,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsStoreBlocked property value. Indicates whether or not to Block the user from using the Windows store.
-            ## @param value Value to set for the windows_store_blocked property.
+            ## @param value Value to set for the windowsStoreBlocked property.
             ## @return a void
             ## 
             def windows_store_blocked=(value)
@@ -4010,7 +4012,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsStoreEnablePrivateStoreOnly property value. Indicates whether or not to enable Private Store Only.
-            ## @param value Value to set for the windows_store_enable_private_store_only property.
+            ## @param value Value to set for the windowsStoreEnablePrivateStoreOnly property.
             ## @return a void
             ## 
             def windows_store_enable_private_store_only=(value)
@@ -4025,7 +4027,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the wirelessDisplayBlockProjectionToThisDevice property value. Indicates whether or not to allow other devices from discovering this PC for projection.
-            ## @param value Value to set for the wireless_display_block_projection_to_this_device property.
+            ## @param value Value to set for the wirelessDisplayBlockProjectionToThisDevice property.
             ## @return a void
             ## 
             def wireless_display_block_projection_to_this_device=(value)
@@ -4040,7 +4042,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the wirelessDisplayBlockUserInputFromReceiver property value. Indicates whether or not to allow user input from wireless display receiver.
-            ## @param value Value to set for the wireless_display_block_user_input_from_receiver property.
+            ## @param value Value to set for the wirelessDisplayBlockUserInputFromReceiver property.
             ## @return a void
             ## 
             def wireless_display_block_user_input_from_receiver=(value)
@@ -4055,7 +4057,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the wirelessDisplayRequirePinForPairing property value. Indicates whether or not to require a PIN for new devices to initiate pairing.
-            ## @param value Value to set for the wireless_display_require_pin_for_pairing property.
+            ## @param value Value to set for the wirelessDisplayRequirePinForPairing property.
             ## @return a void
             ## 
             def wireless_display_require_pin_for_pairing=(value)

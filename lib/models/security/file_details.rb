@@ -47,7 +47,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                ## @param value Value to set for the AdditionalData property.
+                ## @param value Value to set for the additionalData property.
                 ## @return a void
                 ## 
                 def additional_data=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the fileName property value. The name of the file.
-                ## @param value Value to set for the file_name property.
+                ## @param value Value to set for the fileName property.
                 ## @return a void
                 ## 
                 def file_name=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the filePath property value. The file path (location) of the file instance.
-                ## @param value Value to set for the file_path property.
+                ## @param value Value to set for the filePath property.
                 ## @return a void
                 ## 
                 def file_path=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the filePublisher property value. The publisher of the file.
-                ## @param value Value to set for the file_publisher property.
+                ## @param value Value to set for the filePublisher property.
                 ## @return a void
                 ## 
                 def file_publisher=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the fileSize property value. The size of the file in bytes.
-                ## @param value Value to set for the file_size property.
+                ## @param value Value to set for the fileSize property.
                 ## @return a void
                 ## 
                 def file_size=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the @odata.type property value. The OdataType property
-                ## @param value Value to set for the odata_type property.
+                ## @param value Value to set for the @odata.type property.
                 ## @return a void
                 ## 
                 def odata_type=(value)

@@ -56,7 +56,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdBy property value. Identity of the user, device, or application which created the item. Read-only.
-            ## @param value Value to set for the created_by property.
+            ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
             def created_by=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdByUser property value. Identity of the user who created the item. Read-only.
-            ## @param value Value to set for the created_by_user property.
+            ## @param value Value to set for the createdByUser property.
             ## @return a void
             ## 
             def created_by_user=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. Date and time of item creation. Read-only.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the eTag property value. ETag for the item. Read-only.
-            ## @param value Value to set for the e_tag property.
+            ## @param value Value to set for the eTag property.
             ## @return a void
             ## 
             def e_tag=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedBy property value. Identity of the user, device, and application which last modified the item. Read-only.
-            ## @param value Value to set for the last_modified_by property.
+            ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
             def last_modified_by=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedByUser property value. Identity of the user who last modified the item. Read-only.
-            ## @param value Value to set for the last_modified_by_user property.
+            ## @param value Value to set for the lastModifiedByUser property.
             ## @return a void
             ## 
             def last_modified_by_user=(value)
@@ -207,7 +207,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. Date and time the item was last modified. Read-only.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -237,7 +237,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the parentReference property value. Parent information, if the item has a parent. Read-write.
-            ## @param value Value to set for the parent_reference property.
+            ## @param value Value to set for the parentReference property.
             ## @return a void
             ## 
             def parent_reference=(value)
@@ -272,7 +272,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webUrl property value. URL that displays the resource in the browser. Read-only.
-            ## @param value Value to set for the web_url property.
+            ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 
             def web_url=(value)

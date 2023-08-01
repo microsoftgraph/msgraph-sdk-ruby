@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for Android store apps that you can manage with an Intune app protection policy.
         class ManagedAndroidStoreApp < MicrosoftGraph::Models::ManagedApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -24,14 +26,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appStoreUrl property value. The Android AppStoreUrl.
-            ## @param value Value to set for the app_store_url property.
+            ## @param value Value to set for the appStoreUrl property.
             ## @return a void
             ## 
             def app_store_url=(value)
                 @app_store_url = value
             end
             ## 
-            ## Instantiates a new ManagedAndroidStoreApp and sets the default values.
+            ## Instantiates a new managedAndroidStoreApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -67,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumSupportedOperatingSystem property value. Contains properties for the minimum operating system required for an Android mobile app.
-            ## @param value Value to set for the minimum_supported_operating_system property.
+            ## @param value Value to set for the minimumSupportedOperatingSystem property.
             ## @return a void
             ## 
             def minimum_supported_operating_system=(value)
@@ -82,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the packageId property value. The app's package ID.
-            ## @param value Value to set for the package_id property.
+            ## @param value Value to set for the packageId property.
             ## @return a void
             ## 
             def package_id=(value)

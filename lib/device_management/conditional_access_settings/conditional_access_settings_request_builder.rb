@@ -36,7 +36,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
+                ## Read properties and relationships of the onPremisesConditionalAccessSettings object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of on_premises_conditional_access_settings
                 ## 
@@ -50,7 +50,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OnPremisesConditionalAccessSettings.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Update the navigation property conditionalAccessSettings in deviceManagement
+                ## Update the properties of a onPremisesConditionalAccessSettings object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of on_premises_conditional_access_settings
@@ -82,7 +82,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
+                ## Read properties and relationships of the onPremisesConditionalAccessSettings object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -100,7 +100,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Update the navigation property conditionalAccessSettings in deviceManagement
+                ## Update the properties of a onPremisesConditionalAccessSettings object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -121,7 +121,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
+                # Read properties and relationships of the onPremisesConditionalAccessSettings object.
                 class ConditionalAccessSettingsRequestBuilderGetQueryParameters
                     
                     ## 

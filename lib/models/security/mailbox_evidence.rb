@@ -18,11 +18,12 @@ module MicrosoftGraph
                 # The user account of the mailbox.
                 @user_account
                 ## 
-                ## Instantiates a new MailboxEvidence and sets the default values.
+                ## Instantiates a new mailboxEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()
                     super
+                    @odata_type = "#microsoft.graph.security.mailboxEvidence"
                 end
                 ## 
                 ## Creates a new instance of the appropriate class based on discriminator value
@@ -42,7 +43,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the displayName property value. The name associated with the mailbox.
-                ## @param value Value to set for the display_name property.
+                ## @param value Value to set for the displayName property.
                 ## @return a void
                 ## 
                 def display_name=(value)
@@ -68,7 +69,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the primaryAddress property value. The primary email address of the mailbox.
-                ## @param value Value to set for the primary_address property.
+                ## @param value Value to set for the primaryAddress property.
                 ## @return a void
                 ## 
                 def primary_address=(value)
@@ -95,7 +96,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the userAccount property value. The user account of the mailbox.
-                ## @param value Value to set for the user_account property.
+                ## @param value Value to set for the userAccount property.
                 ## @return a void
                 ## 
                 def user_account=(value)

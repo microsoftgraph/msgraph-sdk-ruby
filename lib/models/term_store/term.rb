@@ -64,7 +64,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the createdDateTime property value. Date and time of term creation. Read-only.
-                ## @param value Value to set for the created_date_time property.
+                ## @param value Value to set for the createdDateTime property.
                 ## @return a void
                 ## 
                 def created_date_time=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the lastModifiedDateTime property value. Last date and time of term modification. Read-only.
-                ## @param value Value to set for the last_modified_date_time property.
+                ## @param value Value to set for the lastModifiedDateTime property.
                 ## @return a void
                 ## 
                 def last_modified_date_time=(value)

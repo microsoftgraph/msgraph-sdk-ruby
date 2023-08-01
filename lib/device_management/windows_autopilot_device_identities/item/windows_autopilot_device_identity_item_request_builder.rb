@@ -42,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/windowsAutopilotDeviceIdentities/{windowsAutopilotDeviceIdentity%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
+                    ## Deletes a windowsAutopilotDeviceIdentity.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -56,7 +56,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The Windows autopilot device identities contained collection.
+                    ## Read properties and relationships of the windowsAutopilotDeviceIdentity object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of windows_autopilot_device_identity
                     ## 
@@ -86,7 +86,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WindowsAutopilotDeviceIdentity.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property windowsAutopilotDeviceIdentities for deviceManagement
+                    ## Deletes a windowsAutopilotDeviceIdentity.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The Windows autopilot device identities contained collection.
+                    ## Read properties and relationships of the windowsAutopilotDeviceIdentity object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -141,7 +141,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The Windows autopilot device identities contained collection.
+                    # Read properties and relationships of the windowsAutopilotDeviceIdentity object.
                     class WindowsAutopilotDeviceIdentityItemRequestBuilderGetQueryParameters
                         
                         ## 

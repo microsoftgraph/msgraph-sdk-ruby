@@ -8,6 +8,7 @@ require_relative '../../services'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './endpoints'
+require_relative './item/print_service_endpoint_item_request_builder'
 
 module MicrosoftGraph
     module Print
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Print::Services::Item::Endpoints::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the endpoints property of the microsoft.graph.printService entity.
+                        ## @param print_service_endpoint_id Unique identifier of the item
+                        ## @return a print_service_endpoint_item_request_builder
+                        ## 
+                        def by_print_service_endpoint_id(print_service_endpoint_id)
+                            raise StandardError, 'print_service_endpoint_id cannot be null' if print_service_endpoint_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["printServiceEndpoint%2Did"] = print_service_endpoint_id
+                            return MicrosoftGraph::Print::Services::Item::Endpoints::Item::PrintServiceEndpointItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new EndpointsRequestBuilder and sets the default values.

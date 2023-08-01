@@ -9,21 +9,14 @@ require_relative '../../item'
 require_relative '../calendar_view'
 require_relative './accept/accept_request_builder'
 require_relative './attachments/attachments_request_builder'
-require_relative './attachments/item/attachment_item_request_builder'
 require_relative './calendar/calendar_request_builder'
 require_relative './cancel/cancel_request_builder'
 require_relative './decline/decline_request_builder'
 require_relative './dismiss_reminder/dismiss_reminder_request_builder'
 require_relative './extensions/extensions_request_builder'
-require_relative './extensions/item/extension_item_request_builder'
 require_relative './forward/forward_request_builder'
 require_relative './instances/instances_request_builder'
-require_relative './instances/item/event_item_request_builder'
 require_relative './item'
-require_relative './multi_value_extended_properties/item/multi_value_legacy_extended_property_item_request_builder'
-require_relative './multi_value_extended_properties/multi_value_extended_properties_request_builder'
-require_relative './single_value_extended_properties/item/single_value_legacy_extended_property_item_request_builder'
-require_relative './single_value_extended_properties/single_value_extended_properties_request_builder'
 require_relative './snooze_reminder/snooze_reminder_request_builder'
 require_relative './tentatively_accept/tentatively_accept_request_builder'
 
@@ -84,16 +77,6 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Users::Item::Calendars::Item::CalendarView::Item::Instances::InstancesRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
-                                # Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
-                                def multi_value_extended_properties()
-                                    return MicrosoftGraph::Users::Item::Calendars::Item::CalendarView::Item::MultiValueExtendedProperties::MultiValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
-                                # Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
-                                def single_value_extended_properties()
-                                    return MicrosoftGraph::Users::Item::Calendars::Item::CalendarView::Item::SingleValueExtendedProperties::SingleValueExtendedPropertiesRequestBuilder.new(@path_parameters, @request_adapter)
-                                end
-                                ## 
                                 # Provides operations to call the snoozeReminder method.
                                 def snooze_reminder()
                                     return MicrosoftGraph::Users::Item::Calendars::Item::CalendarView::Item::SnoozeReminder::SnoozeReminderRequestBuilder.new(@path_parameters, @request_adapter)
@@ -104,17 +87,6 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Users::Item::Calendars::Item::CalendarView::Item::TentativelyAccept::TentativelyAcceptRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
-                                ## Provides operations to manage the attachments property of the microsoft.graph.event entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a attachment_item_request_builder
-                                ## 
-                                def attachments_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["attachment%2Did"] = id
-                                    return MicrosoftGraph::Users::Item::Calendars::Item::CalendarView::Item::Attachments::Item::AttachmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
                                 ## Instantiates a new EventItemRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -122,17 +94,6 @@ module MicrosoftGraph
                                 ## 
                                 def initialize(path_parameters, request_adapter)
                                     super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarView/{event%2Did}{?startDateTime*,endDateTime*,%24select}")
-                                end
-                                ## 
-                                ## Provides operations to manage the extensions property of the microsoft.graph.event entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a extension_item_request_builder
-                                ## 
-                                def extensions_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["extension%2Did"] = id
-                                    return MicrosoftGraph::Users::Item::Calendars::Item::CalendarView::Item::Extensions::Item::ExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## The calendar view for the calendar. Navigation property. Read-only.
@@ -147,39 +108,6 @@ module MicrosoftGraph
                                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Event.create_from_discriminator_value(pn) }, error_mapping)
-                                end
-                                ## 
-                                ## Provides operations to manage the instances property of the microsoft.graph.event entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a event_item_request_builder
-                                ## 
-                                def instances_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["event%2Did1"] = id
-                                    return MicrosoftGraph::Users::Item::Calendars::Item::CalendarView::Item::Instances::Item::EventItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
-                                ## Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a multi_value_legacy_extended_property_item_request_builder
-                                ## 
-                                def multi_value_extended_properties_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["multiValueLegacyExtendedProperty%2Did"] = id
-                                    return MicrosoftGraph::Users::Item::Calendars::Item::CalendarView::Item::MultiValueExtendedProperties::Item::MultiValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                end
-                                ## 
-                                ## Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.
-                                ## @param id Unique identifier of the item
-                                ## @return a single_value_legacy_extended_property_item_request_builder
-                                ## 
-                                def single_value_extended_properties_by_id(id)
-                                    raise StandardError, 'id cannot be null' if id.nil?
-                                    url_tpl_params = @path_parameters.clone
-                                    url_tpl_params["singleValueLegacyExtendedProperty%2Did"] = id
-                                    return MicrosoftGraph::Users::Item::Calendars::Item::CalendarView::Item::SingleValueExtendedProperties::Item::SingleValueLegacyExtendedPropertyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                 end
                                 ## 
                                 ## The calendar view for the calendar. Navigation property. Read-only.
@@ -221,8 +149,12 @@ module MicrosoftGraph
                                     def get_query_parameter(original_name)
                                         raise StandardError, 'original_name cannot be null' if original_name.nil?
                                         case original_name
+                                            when "end_date_time"
+                                                return "endDateTime"
                                             when "select"
                                                 return "%24select"
+                                            when "start_date_time"
+                                                return "startDateTime"
                                             else
                                                 return original_name
                                         end

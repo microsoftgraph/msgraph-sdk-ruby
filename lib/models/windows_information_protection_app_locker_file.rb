@@ -45,7 +45,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The friendly name
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fileHash property value. SHA256 hash of the file
-            ## @param value Value to set for the file_hash property.
+            ## @param value Value to set for the fileHash property.
             ## @return a void
             ## 
             def file_hash=(value)

@@ -51,7 +51,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the clientAppTypes property value. Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
-            ## @param value Value to set for the client_app_types property.
+            ## @param value Value to set for the clientAppTypes property.
             ## @return a void
             ## 
             def client_app_types=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the clientApplications property value. Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.
-            ## @param value Value to set for the client_applications property.
+            ## @param value Value to set for the clientApplications property.
             ## @return a void
             ## 
             def client_applications=(value)
@@ -176,7 +176,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -226,7 +226,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the servicePrincipalRiskLevels property value. Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.
-            ## @param value Value to set for the service_principal_risk_levels property.
+            ## @param value Value to set for the servicePrincipalRiskLevels property.
             ## @return a void
             ## 
             def service_principal_risk_levels=(value)
@@ -241,7 +241,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the signInRiskLevels property value. Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-            ## @param value Value to set for the sign_in_risk_levels property.
+            ## @param value Value to set for the signInRiskLevels property.
             ## @return a void
             ## 
             def sign_in_risk_levels=(value)
@@ -256,7 +256,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userRiskLevels property value. User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.
-            ## @param value Value to set for the user_risk_levels property.
+            ## @param value Value to set for the userRiskLevels property.
             ## @return a void
             ## 
             def user_risk_levels=(value)

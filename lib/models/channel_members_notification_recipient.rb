@@ -21,14 +21,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the channelId property value. The unique identifier for the channel whose members should receive the notification.
-            ## @param value Value to set for the channel_id property.
+            ## @param value Value to set for the channelId property.
             ## @return a void
             ## 
             def channel_id=(value)
                 @channel_id = value
             end
             ## 
-            ## Instantiates a new ChannelMembersNotificationRecipient and sets the default values.
+            ## Instantiates a new channelMembersNotificationRecipient and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -74,7 +74,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the teamId property value. The unique identifier for the team under which the channel resides.
-            ## @param value Value to set for the team_id property.
+            ## @param value Value to set for the teamId property.
             ## @return a void
             ## 
             def team_id=(value)

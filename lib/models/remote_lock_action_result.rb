@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Lock action result with a pin to unlock
         class RemoteLockActionResult < MicrosoftGraph::Models::DeviceActionResult
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # Pin to unlock the client
             @unlock_pin
             ## 
-            ## Instantiates a new RemoteLockActionResult and sets the default values.
+            ## Instantiates a new remoteLockActionResult and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -53,7 +55,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the unlockPin property value. Pin to unlock the client
-            ## @param value Value to set for the unlock_pin property.
+            ## @param value Value to set for the unlockPin property.
             ## @return a void
             ## 
             def unlock_pin=(value)

@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the originalQueryString property value. Defines the original user query string.
-            ## @param value Value to set for the original_query_string property.
+            ## @param value Value to set for the originalQueryString property.
             ## @return a void
             ## 
             def original_query_string=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the queryAlteration property value. Defines the details of the alteration information for the spelling correction.
-            ## @param value Value to set for the query_alteration property.
+            ## @param value Value to set for the queryAlteration property.
             ## @return a void
             ## 
             def query_alteration=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the queryAlterationType property value. Defines the type of the spelling correction. Possible values are: suggestion, modification.
-            ## @param value Value to set for the query_alteration_type property.
+            ## @param value Value to set for the queryAlterationType property.
             ## @return a void
             ## 
             def query_alteration_type=(value)

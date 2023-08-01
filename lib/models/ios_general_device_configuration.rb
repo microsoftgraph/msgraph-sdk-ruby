@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the iosGeneralDeviceConfiguration resource.
         class IosGeneralDeviceConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -408,7 +410,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accountBlockModification property value. Indicates whether or not to allow account modification when the device is in supervised mode.
-            ## @param value Value to set for the account_block_modification property.
+            ## @param value Value to set for the accountBlockModification property.
             ## @return a void
             ## 
             def account_block_modification=(value)
@@ -423,7 +425,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activationLockAllowWhenSupervised property value. Indicates whether or not to allow activation lock when the device is in the supervised mode.
-            ## @param value Value to set for the activation_lock_allow_when_supervised property.
+            ## @param value Value to set for the activationLockAllowWhenSupervised property.
             ## @return a void
             ## 
             def activation_lock_allow_when_supervised=(value)
@@ -438,7 +440,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the airDropBlocked property value. Indicates whether or not to allow AirDrop when the device is in supervised mode.
-            ## @param value Value to set for the air_drop_blocked property.
+            ## @param value Value to set for the airDropBlocked property.
             ## @return a void
             ## 
             def air_drop_blocked=(value)
@@ -453,7 +455,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the airDropForceUnmanagedDropTarget property value. Indicates whether or not to cause AirDrop to be considered an unmanaged drop target (iOS 9.0 and later).
-            ## @param value Value to set for the air_drop_force_unmanaged_drop_target property.
+            ## @param value Value to set for the airDropForceUnmanagedDropTarget property.
             ## @return a void
             ## 
             def air_drop_force_unmanaged_drop_target=(value)
@@ -468,7 +470,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the airPlayForcePairingPasswordForOutgoingRequests property value. Indicates whether or not to enforce all devices receiving AirPlay requests from this device to use a pairing password.
-            ## @param value Value to set for the air_play_force_pairing_password_for_outgoing_requests property.
+            ## @param value Value to set for the airPlayForcePairingPasswordForOutgoingRequests property.
             ## @return a void
             ## 
             def air_play_force_pairing_password_for_outgoing_requests=(value)
@@ -483,7 +485,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appStoreBlockAutomaticDownloads property value. Indicates whether or not to block the automatic downloading of apps purchased on other devices when the device is in supervised mode (iOS 9.0 and later).
-            ## @param value Value to set for the app_store_block_automatic_downloads property.
+            ## @param value Value to set for the appStoreBlockAutomaticDownloads property.
             ## @return a void
             ## 
             def app_store_block_automatic_downloads=(value)
@@ -498,7 +500,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appStoreBlockInAppPurchases property value. Indicates whether or not to block the user from making in app purchases.
-            ## @param value Value to set for the app_store_block_in_app_purchases property.
+            ## @param value Value to set for the appStoreBlockInAppPurchases property.
             ## @return a void
             ## 
             def app_store_block_in_app_purchases=(value)
@@ -513,7 +515,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appStoreBlockUIAppInstallation property value. Indicates whether or not to block the App Store app, not restricting installation through Host apps. Applies to supervised mode only (iOS 9.0 and later).
-            ## @param value Value to set for the app_store_block_u_i_app_installation property.
+            ## @param value Value to set for the appStoreBlockUIAppInstallation property.
             ## @return a void
             ## 
             def app_store_block_u_i_app_installation=(value)
@@ -528,7 +530,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appStoreBlocked property value. Indicates whether or not to block the user from using the App Store. Requires a supervised device for iOS 13 and later.
-            ## @param value Value to set for the app_store_blocked property.
+            ## @param value Value to set for the appStoreBlocked property.
             ## @return a void
             ## 
             def app_store_blocked=(value)
@@ -543,7 +545,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appStoreRequirePassword property value. Indicates whether or not to require a password when using the app store.
-            ## @param value Value to set for the app_store_require_password property.
+            ## @param value Value to set for the appStoreRequirePassword property.
             ## @return a void
             ## 
             def app_store_require_password=(value)
@@ -558,7 +560,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appleNewsBlocked property value. Indicates whether or not to block the user from using News when the device is in supervised mode (iOS 9.0 and later).
-            ## @param value Value to set for the apple_news_blocked property.
+            ## @param value Value to set for the appleNewsBlocked property.
             ## @return a void
             ## 
             def apple_news_blocked=(value)
@@ -573,7 +575,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appleWatchBlockPairing property value. Indicates whether or not to allow Apple Watch pairing when the device is in supervised mode (iOS 9.0 and later).
-            ## @param value Value to set for the apple_watch_block_pairing property.
+            ## @param value Value to set for the appleWatchBlockPairing property.
             ## @return a void
             ## 
             def apple_watch_block_pairing=(value)
@@ -588,7 +590,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appleWatchForceWristDetection property value. Indicates whether or not to force a paired Apple Watch to use Wrist Detection (iOS 8.2 and later).
-            ## @param value Value to set for the apple_watch_force_wrist_detection property.
+            ## @param value Value to set for the appleWatchForceWristDetection property.
             ## @return a void
             ## 
             def apple_watch_force_wrist_detection=(value)
@@ -603,7 +605,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appsSingleAppModeList property value. Gets or sets the list of iOS apps allowed to autonomously enter Single App Mode. Supervised only. iOS 7.0 and later. This collection can contain a maximum of 500 elements.
-            ## @param value Value to set for the apps_single_app_mode_list property.
+            ## @param value Value to set for the appsSingleAppModeList property.
             ## @return a void
             ## 
             def apps_single_app_mode_list=(value)
@@ -618,7 +620,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appsVisibilityList property value. List of apps in the visibility list (either visible/launchable apps list or hidden/unlaunchable apps list, controlled by AppsVisibilityListType) (iOS 9.3 and later). This collection can contain a maximum of 10000 elements.
-            ## @param value Value to set for the apps_visibility_list property.
+            ## @param value Value to set for the appsVisibilityList property.
             ## @return a void
             ## 
             def apps_visibility_list=(value)
@@ -633,7 +635,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appsVisibilityListType property value. Possible values of the compliance app list.
-            ## @param value Value to set for the apps_visibility_list_type property.
+            ## @param value Value to set for the appsVisibilityListType property.
             ## @return a void
             ## 
             def apps_visibility_list_type=(value)
@@ -648,7 +650,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bluetoothBlockModification property value. Indicates whether or not to allow modification of Bluetooth settings when the device is in supervised mode (iOS 10.0 and later).
-            ## @param value Value to set for the bluetooth_block_modification property.
+            ## @param value Value to set for the bluetoothBlockModification property.
             ## @return a void
             ## 
             def bluetooth_block_modification=(value)
@@ -663,7 +665,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cameraBlocked property value. Indicates whether or not to block the user from accessing the camera of the device. Requires a supervised device for iOS 13 and later.
-            ## @param value Value to set for the camera_blocked property.
+            ## @param value Value to set for the cameraBlocked property.
             ## @return a void
             ## 
             def camera_blocked=(value)
@@ -678,7 +680,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cellularBlockDataRoaming property value. Indicates whether or not to block data roaming.
-            ## @param value Value to set for the cellular_block_data_roaming property.
+            ## @param value Value to set for the cellularBlockDataRoaming property.
             ## @return a void
             ## 
             def cellular_block_data_roaming=(value)
@@ -693,7 +695,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cellularBlockGlobalBackgroundFetchWhileRoaming property value. Indicates whether or not to block global background fetch while roaming.
-            ## @param value Value to set for the cellular_block_global_background_fetch_while_roaming property.
+            ## @param value Value to set for the cellularBlockGlobalBackgroundFetchWhileRoaming property.
             ## @return a void
             ## 
             def cellular_block_global_background_fetch_while_roaming=(value)
@@ -708,7 +710,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cellularBlockPerAppDataModification property value. Indicates whether or not to allow changes to cellular app data usage settings when the device is in supervised mode.
-            ## @param value Value to set for the cellular_block_per_app_data_modification property.
+            ## @param value Value to set for the cellularBlockPerAppDataModification property.
             ## @return a void
             ## 
             def cellular_block_per_app_data_modification=(value)
@@ -723,7 +725,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cellularBlockPersonalHotspot property value. Indicates whether or not to block Personal Hotspot.
-            ## @param value Value to set for the cellular_block_personal_hotspot property.
+            ## @param value Value to set for the cellularBlockPersonalHotspot property.
             ## @return a void
             ## 
             def cellular_block_personal_hotspot=(value)
@@ -738,7 +740,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cellularBlockVoiceRoaming property value. Indicates whether or not to block voice roaming.
-            ## @param value Value to set for the cellular_block_voice_roaming property.
+            ## @param value Value to set for the cellularBlockVoiceRoaming property.
             ## @return a void
             ## 
             def cellular_block_voice_roaming=(value)
@@ -753,7 +755,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the certificatesBlockUntrustedTlsCertificates property value. Indicates whether or not to block untrusted TLS certificates.
-            ## @param value Value to set for the certificates_block_untrusted_tls_certificates property.
+            ## @param value Value to set for the certificatesBlockUntrustedTlsCertificates property.
             ## @return a void
             ## 
             def certificates_block_untrusted_tls_certificates=(value)
@@ -768,7 +770,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the classroomAppBlockRemoteScreenObservation property value. Indicates whether or not to allow remote screen observation by Classroom app when the device is in supervised mode (iOS 9.3 and later).
-            ## @param value Value to set for the classroom_app_block_remote_screen_observation property.
+            ## @param value Value to set for the classroomAppBlockRemoteScreenObservation property.
             ## @return a void
             ## 
             def classroom_app_block_remote_screen_observation=(value)
@@ -783,7 +785,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the classroomAppForceUnpromptedScreenObservation property value. Indicates whether or not to automatically give permission to the teacher of a managed course on the Classroom app to view a student's screen without prompting when the device is in supervised mode.
-            ## @param value Value to set for the classroom_app_force_unprompted_screen_observation property.
+            ## @param value Value to set for the classroomAppForceUnpromptedScreenObservation property.
             ## @return a void
             ## 
             def classroom_app_force_unprompted_screen_observation=(value)
@@ -798,7 +800,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the compliantAppListType property value. Possible values of the compliance app list.
-            ## @param value Value to set for the compliant_app_list_type property.
+            ## @param value Value to set for the compliantAppListType property.
             ## @return a void
             ## 
             def compliant_app_list_type=(value)
@@ -813,7 +815,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the compliantAppsList property value. List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.
-            ## @param value Value to set for the compliant_apps_list property.
+            ## @param value Value to set for the compliantAppsList property.
             ## @return a void
             ## 
             def compliant_apps_list=(value)
@@ -828,14 +830,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the configurationProfileBlockChanges property value. Indicates whether or not to block the user from installing configuration profiles and certificates interactively when the device is in supervised mode.
-            ## @param value Value to set for the configuration_profile_block_changes property.
+            ## @param value Value to set for the configurationProfileBlockChanges property.
             ## @return a void
             ## 
             def configuration_profile_block_changes=(value)
                 @configuration_profile_block_changes = value
             end
             ## 
-            ## Instantiates a new IosGeneralDeviceConfiguration and sets the default values.
+            ## Instantiates a new iosGeneralDeviceConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -860,7 +862,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the definitionLookupBlocked property value. Indicates whether or not to block definition lookup when the device is in supervised mode (iOS 8.1.3 and later ).
-            ## @param value Value to set for the definition_lookup_blocked property.
+            ## @param value Value to set for the definitionLookupBlocked property.
             ## @return a void
             ## 
             def definition_lookup_blocked=(value)
@@ -875,7 +877,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceBlockEnableRestrictions property value. Indicates whether or not to allow the user to enables restrictions in the device settings when the device is in supervised mode.
-            ## @param value Value to set for the device_block_enable_restrictions property.
+            ## @param value Value to set for the deviceBlockEnableRestrictions property.
             ## @return a void
             ## 
             def device_block_enable_restrictions=(value)
@@ -890,7 +892,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceBlockEraseContentAndSettings property value. Indicates whether or not to allow the use of the 'Erase all content and settings' option on the device when the device is in supervised mode.
-            ## @param value Value to set for the device_block_erase_content_and_settings property.
+            ## @param value Value to set for the deviceBlockEraseContentAndSettings property.
             ## @return a void
             ## 
             def device_block_erase_content_and_settings=(value)
@@ -905,7 +907,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceBlockNameModification property value. Indicates whether or not to allow device name modification when the device is in supervised mode (iOS 9.0 and later).
-            ## @param value Value to set for the device_block_name_modification property.
+            ## @param value Value to set for the deviceBlockNameModification property.
             ## @return a void
             ## 
             def device_block_name_modification=(value)
@@ -920,7 +922,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the diagnosticDataBlockSubmission property value. Indicates whether or not to block diagnostic data submission.
-            ## @param value Value to set for the diagnostic_data_block_submission property.
+            ## @param value Value to set for the diagnosticDataBlockSubmission property.
             ## @return a void
             ## 
             def diagnostic_data_block_submission=(value)
@@ -935,7 +937,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the diagnosticDataBlockSubmissionModification property value. Indicates whether or not to allow diagnostics submission settings modification when the device is in supervised mode (iOS 9.3.2 and later).
-            ## @param value Value to set for the diagnostic_data_block_submission_modification property.
+            ## @param value Value to set for the diagnosticDataBlockSubmissionModification property.
             ## @return a void
             ## 
             def diagnostic_data_block_submission_modification=(value)
@@ -950,7 +952,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the documentsBlockManagedDocumentsInUnmanagedApps property value. Indicates whether or not to block the user from viewing managed documents in unmanaged apps.
-            ## @param value Value to set for the documents_block_managed_documents_in_unmanaged_apps property.
+            ## @param value Value to set for the documentsBlockManagedDocumentsInUnmanagedApps property.
             ## @return a void
             ## 
             def documents_block_managed_documents_in_unmanaged_apps=(value)
@@ -965,7 +967,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the documentsBlockUnmanagedDocumentsInManagedApps property value. Indicates whether or not to block the user from viewing unmanaged documents in managed apps.
-            ## @param value Value to set for the documents_block_unmanaged_documents_in_managed_apps property.
+            ## @param value Value to set for the documentsBlockUnmanagedDocumentsInManagedApps property.
             ## @return a void
             ## 
             def documents_block_unmanaged_documents_in_managed_apps=(value)
@@ -980,7 +982,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the emailInDomainSuffixes property value. An email address lacking a suffix that matches any of these strings will be considered out-of-domain.
-            ## @param value Value to set for the email_in_domain_suffixes property.
+            ## @param value Value to set for the emailInDomainSuffixes property.
             ## @return a void
             ## 
             def email_in_domain_suffixes=(value)
@@ -995,7 +997,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enterpriseAppBlockTrust property value. Indicates whether or not to block the user from trusting an enterprise app.
-            ## @param value Value to set for the enterprise_app_block_trust property.
+            ## @param value Value to set for the enterpriseAppBlockTrust property.
             ## @return a void
             ## 
             def enterprise_app_block_trust=(value)
@@ -1010,7 +1012,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enterpriseAppBlockTrustModification property value. [Deprecated] Configuring this setting and setting the value to 'true' has no effect on the device.
-            ## @param value Value to set for the enterprise_app_block_trust_modification property.
+            ## @param value Value to set for the enterpriseAppBlockTrustModification property.
             ## @return a void
             ## 
             def enterprise_app_block_trust_modification=(value)
@@ -1025,7 +1027,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the faceTimeBlocked property value. Indicates whether or not to block the user from using FaceTime. Requires a supervised device for iOS 13 and later.
-            ## @param value Value to set for the face_time_blocked property.
+            ## @param value Value to set for the faceTimeBlocked property.
             ## @return a void
             ## 
             def face_time_blocked=(value)
@@ -1040,7 +1042,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the findMyFriendsBlocked property value. Indicates whether or not to block changes to Find My Friends when the device is in supervised mode.
-            ## @param value Value to set for the find_my_friends_blocked property.
+            ## @param value Value to set for the findMyFriendsBlocked property.
             ## @return a void
             ## 
             def find_my_friends_blocked=(value)
@@ -1055,7 +1057,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the gameCenterBlocked property value. Indicates whether or not to block the user from using Game Center when the device is in supervised mode.
-            ## @param value Value to set for the game_center_blocked property.
+            ## @param value Value to set for the gameCenterBlocked property.
             ## @return a void
             ## 
             def game_center_blocked=(value)
@@ -1070,7 +1072,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the gamingBlockGameCenterFriends property value. Indicates whether or not to block the user from having friends in Game Center. Requires a supervised device for iOS 13 and later.
-            ## @param value Value to set for the gaming_block_game_center_friends property.
+            ## @param value Value to set for the gamingBlockGameCenterFriends property.
             ## @return a void
             ## 
             def gaming_block_game_center_friends=(value)
@@ -1085,7 +1087,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the gamingBlockMultiplayer property value. Indicates whether or not to block the user from using multiplayer gaming. Requires a supervised device for iOS 13 and later.
-            ## @param value Value to set for the gaming_block_multiplayer property.
+            ## @param value Value to set for the gamingBlockMultiplayer property.
             ## @return a void
             ## 
             def gaming_block_multiplayer=(value)
@@ -1239,7 +1241,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hostPairingBlocked property value. indicates whether or not to allow host pairing to control the devices an iOS device can pair with when the iOS device is in supervised mode.
-            ## @param value Value to set for the host_pairing_blocked property.
+            ## @param value Value to set for the hostPairingBlocked property.
             ## @return a void
             ## 
             def host_pairing_blocked=(value)
@@ -1254,7 +1256,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iBooksStoreBlockErotica property value. Indicates whether or not to block the user from downloading media from the iBookstore that has been tagged as erotica.
-            ## @param value Value to set for the i_books_store_block_erotica property.
+            ## @param value Value to set for the iBooksStoreBlockErotica property.
             ## @return a void
             ## 
             def i_books_store_block_erotica=(value)
@@ -1269,7 +1271,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iBooksStoreBlocked property value. Indicates whether or not to block the user from using the iBooks Store when the device is in supervised mode.
-            ## @param value Value to set for the i_books_store_blocked property.
+            ## @param value Value to set for the iBooksStoreBlocked property.
             ## @return a void
             ## 
             def i_books_store_blocked=(value)
@@ -1284,7 +1286,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iCloudBlockActivityContinuation property value. Indicates whether or not to block the user from continuing work they started on iOS device to another iOS or macOS device.
-            ## @param value Value to set for the i_cloud_block_activity_continuation property.
+            ## @param value Value to set for the iCloudBlockActivityContinuation property.
             ## @return a void
             ## 
             def i_cloud_block_activity_continuation=(value)
@@ -1299,7 +1301,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iCloudBlockBackup property value. Indicates whether or not to block iCloud backup. Requires a supervised device for iOS 13 and later.
-            ## @param value Value to set for the i_cloud_block_backup property.
+            ## @param value Value to set for the iCloudBlockBackup property.
             ## @return a void
             ## 
             def i_cloud_block_backup=(value)
@@ -1314,7 +1316,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iCloudBlockDocumentSync property value. Indicates whether or not to block iCloud document sync. Requires a supervised device for iOS 13 and later.
-            ## @param value Value to set for the i_cloud_block_document_sync property.
+            ## @param value Value to set for the iCloudBlockDocumentSync property.
             ## @return a void
             ## 
             def i_cloud_block_document_sync=(value)
@@ -1329,7 +1331,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iCloudBlockManagedAppsSync property value. Indicates whether or not to block Managed Apps Cloud Sync.
-            ## @param value Value to set for the i_cloud_block_managed_apps_sync property.
+            ## @param value Value to set for the iCloudBlockManagedAppsSync property.
             ## @return a void
             ## 
             def i_cloud_block_managed_apps_sync=(value)
@@ -1344,7 +1346,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iCloudBlockPhotoLibrary property value. Indicates whether or not to block iCloud Photo Library.
-            ## @param value Value to set for the i_cloud_block_photo_library property.
+            ## @param value Value to set for the iCloudBlockPhotoLibrary property.
             ## @return a void
             ## 
             def i_cloud_block_photo_library=(value)
@@ -1359,7 +1361,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iCloudBlockPhotoStreamSync property value. Indicates whether or not to block iCloud Photo Stream Sync.
-            ## @param value Value to set for the i_cloud_block_photo_stream_sync property.
+            ## @param value Value to set for the iCloudBlockPhotoStreamSync property.
             ## @return a void
             ## 
             def i_cloud_block_photo_stream_sync=(value)
@@ -1374,7 +1376,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iCloudBlockSharedPhotoStream property value. Indicates whether or not to block Shared Photo Stream.
-            ## @param value Value to set for the i_cloud_block_shared_photo_stream property.
+            ## @param value Value to set for the iCloudBlockSharedPhotoStream property.
             ## @return a void
             ## 
             def i_cloud_block_shared_photo_stream=(value)
@@ -1389,7 +1391,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iCloudRequireEncryptedBackup property value. Indicates whether or not to require backups to iCloud be encrypted.
-            ## @param value Value to set for the i_cloud_require_encrypted_backup property.
+            ## @param value Value to set for the iCloudRequireEncryptedBackup property.
             ## @return a void
             ## 
             def i_cloud_require_encrypted_backup=(value)
@@ -1404,7 +1406,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iTunesBlockExplicitContent property value. Indicates whether or not to block the user from accessing explicit content in iTunes and the App Store. Requires a supervised device for iOS 13 and later.
-            ## @param value Value to set for the i_tunes_block_explicit_content property.
+            ## @param value Value to set for the iTunesBlockExplicitContent property.
             ## @return a void
             ## 
             def i_tunes_block_explicit_content=(value)
@@ -1419,7 +1421,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iTunesBlockMusicService property value. Indicates whether or not to block Music service and revert Music app to classic mode when the device is in supervised mode (iOS 9.3 and later and macOS 10.12 and later).
-            ## @param value Value to set for the i_tunes_block_music_service property.
+            ## @param value Value to set for the iTunesBlockMusicService property.
             ## @return a void
             ## 
             def i_tunes_block_music_service=(value)
@@ -1434,7 +1436,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iTunesBlockRadio property value. Indicates whether or not to block the user from using iTunes Radio when the device is in supervised mode (iOS 9.3 and later).
-            ## @param value Value to set for the i_tunes_block_radio property.
+            ## @param value Value to set for the iTunesBlockRadio property.
             ## @return a void
             ## 
             def i_tunes_block_radio=(value)
@@ -1449,7 +1451,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the keyboardBlockAutoCorrect property value. Indicates whether or not to block keyboard auto-correction when the device is in supervised mode (iOS 8.1.3 and later).
-            ## @param value Value to set for the keyboard_block_auto_correct property.
+            ## @param value Value to set for the keyboardBlockAutoCorrect property.
             ## @return a void
             ## 
             def keyboard_block_auto_correct=(value)
@@ -1464,7 +1466,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the keyboardBlockDictation property value. Indicates whether or not to block the user from using dictation input when the device is in supervised mode.
-            ## @param value Value to set for the keyboard_block_dictation property.
+            ## @param value Value to set for the keyboardBlockDictation property.
             ## @return a void
             ## 
             def keyboard_block_dictation=(value)
@@ -1479,7 +1481,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the keyboardBlockPredictive property value. Indicates whether or not to block predictive keyboards when device is in supervised mode (iOS 8.1.3 and later).
-            ## @param value Value to set for the keyboard_block_predictive property.
+            ## @param value Value to set for the keyboardBlockPredictive property.
             ## @return a void
             ## 
             def keyboard_block_predictive=(value)
@@ -1494,7 +1496,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the keyboardBlockShortcuts property value. Indicates whether or not to block keyboard shortcuts when the device is in supervised mode (iOS 9.0 and later).
-            ## @param value Value to set for the keyboard_block_shortcuts property.
+            ## @param value Value to set for the keyboardBlockShortcuts property.
             ## @return a void
             ## 
             def keyboard_block_shortcuts=(value)
@@ -1509,7 +1511,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the keyboardBlockSpellCheck property value. Indicates whether or not to block keyboard spell-checking when the device is in supervised mode (iOS 8.1.3 and later).
-            ## @param value Value to set for the keyboard_block_spell_check property.
+            ## @param value Value to set for the keyboardBlockSpellCheck property.
             ## @return a void
             ## 
             def keyboard_block_spell_check=(value)
@@ -1524,7 +1526,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeAllowAssistiveSpeak property value. Indicates whether or not to allow assistive speak while in kiosk mode.
-            ## @param value Value to set for the kiosk_mode_allow_assistive_speak property.
+            ## @param value Value to set for the kioskModeAllowAssistiveSpeak property.
             ## @return a void
             ## 
             def kiosk_mode_allow_assistive_speak=(value)
@@ -1539,7 +1541,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeAllowAssistiveTouchSettings property value. Indicates whether or not to allow access to the Assistive Touch Settings while in kiosk mode.
-            ## @param value Value to set for the kiosk_mode_allow_assistive_touch_settings property.
+            ## @param value Value to set for the kioskModeAllowAssistiveTouchSettings property.
             ## @return a void
             ## 
             def kiosk_mode_allow_assistive_touch_settings=(value)
@@ -1554,7 +1556,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeAllowAutoLock property value. Indicates whether or not to allow device auto lock while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockAutoLock instead.
-            ## @param value Value to set for the kiosk_mode_allow_auto_lock property.
+            ## @param value Value to set for the kioskModeAllowAutoLock property.
             ## @return a void
             ## 
             def kiosk_mode_allow_auto_lock=(value)
@@ -1569,7 +1571,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeAllowColorInversionSettings property value. Indicates whether or not to allow access to the Color Inversion Settings while in kiosk mode.
-            ## @param value Value to set for the kiosk_mode_allow_color_inversion_settings property.
+            ## @param value Value to set for the kioskModeAllowColorInversionSettings property.
             ## @return a void
             ## 
             def kiosk_mode_allow_color_inversion_settings=(value)
@@ -1584,7 +1586,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeAllowRingerSwitch property value. Indicates whether or not to allow use of the ringer switch while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockRingerSwitch instead.
-            ## @param value Value to set for the kiosk_mode_allow_ringer_switch property.
+            ## @param value Value to set for the kioskModeAllowRingerSwitch property.
             ## @return a void
             ## 
             def kiosk_mode_allow_ringer_switch=(value)
@@ -1599,7 +1601,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeAllowScreenRotation property value. Indicates whether or not to allow screen rotation while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockScreenRotation instead.
-            ## @param value Value to set for the kiosk_mode_allow_screen_rotation property.
+            ## @param value Value to set for the kioskModeAllowScreenRotation property.
             ## @return a void
             ## 
             def kiosk_mode_allow_screen_rotation=(value)
@@ -1614,7 +1616,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeAllowSleepButton property value. Indicates whether or not to allow use of the sleep button while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockSleepButton instead.
-            ## @param value Value to set for the kiosk_mode_allow_sleep_button property.
+            ## @param value Value to set for the kioskModeAllowSleepButton property.
             ## @return a void
             ## 
             def kiosk_mode_allow_sleep_button=(value)
@@ -1629,7 +1631,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeAllowTouchscreen property value. Indicates whether or not to allow use of the touchscreen while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockTouchscreen instead.
-            ## @param value Value to set for the kiosk_mode_allow_touchscreen property.
+            ## @param value Value to set for the kioskModeAllowTouchscreen property.
             ## @return a void
             ## 
             def kiosk_mode_allow_touchscreen=(value)
@@ -1644,7 +1646,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeAllowVoiceOverSettings property value. Indicates whether or not to allow access to the voice over settings while in kiosk mode.
-            ## @param value Value to set for the kiosk_mode_allow_voice_over_settings property.
+            ## @param value Value to set for the kioskModeAllowVoiceOverSettings property.
             ## @return a void
             ## 
             def kiosk_mode_allow_voice_over_settings=(value)
@@ -1659,7 +1661,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeAllowVolumeButtons property value. Indicates whether or not to allow use of the volume buttons while in kiosk mode. This property's functionality is redundant with the OS default and is deprecated. Use KioskModeBlockVolumeButtons instead.
-            ## @param value Value to set for the kiosk_mode_allow_volume_buttons property.
+            ## @param value Value to set for the kioskModeAllowVolumeButtons property.
             ## @return a void
             ## 
             def kiosk_mode_allow_volume_buttons=(value)
@@ -1674,7 +1676,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeAllowZoomSettings property value. Indicates whether or not to allow access to the zoom settings while in kiosk mode.
-            ## @param value Value to set for the kiosk_mode_allow_zoom_settings property.
+            ## @param value Value to set for the kioskModeAllowZoomSettings property.
             ## @return a void
             ## 
             def kiosk_mode_allow_zoom_settings=(value)
@@ -1689,7 +1691,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeAppStoreUrl property value. URL in the app store to the app to use for kiosk mode. Use if KioskModeManagedAppId is not known.
-            ## @param value Value to set for the kiosk_mode_app_store_url property.
+            ## @param value Value to set for the kioskModeAppStoreUrl property.
             ## @return a void
             ## 
             def kiosk_mode_app_store_url=(value)
@@ -1704,7 +1706,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeBuiltInAppId property value. ID for built-in apps to use for kiosk mode. Used when KioskModeManagedAppId and KioskModeAppStoreUrl are not set.
-            ## @param value Value to set for the kiosk_mode_built_in_app_id property.
+            ## @param value Value to set for the kioskModeBuiltInAppId property.
             ## @return a void
             ## 
             def kiosk_mode_built_in_app_id=(value)
@@ -1719,7 +1721,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeManagedAppId property value. Managed app id of the app to use for kiosk mode. If KioskModeManagedAppId is specified then KioskModeAppStoreUrl will be ignored.
-            ## @param value Value to set for the kiosk_mode_managed_app_id property.
+            ## @param value Value to set for the kioskModeManagedAppId property.
             ## @return a void
             ## 
             def kiosk_mode_managed_app_id=(value)
@@ -1734,7 +1736,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeRequireAssistiveTouch property value. Indicates whether or not to require assistive touch while in kiosk mode.
-            ## @param value Value to set for the kiosk_mode_require_assistive_touch property.
+            ## @param value Value to set for the kioskModeRequireAssistiveTouch property.
             ## @return a void
             ## 
             def kiosk_mode_require_assistive_touch=(value)
@@ -1749,7 +1751,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeRequireColorInversion property value. Indicates whether or not to require color inversion while in kiosk mode.
-            ## @param value Value to set for the kiosk_mode_require_color_inversion property.
+            ## @param value Value to set for the kioskModeRequireColorInversion property.
             ## @return a void
             ## 
             def kiosk_mode_require_color_inversion=(value)
@@ -1764,7 +1766,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeRequireMonoAudio property value. Indicates whether or not to require mono audio while in kiosk mode.
-            ## @param value Value to set for the kiosk_mode_require_mono_audio property.
+            ## @param value Value to set for the kioskModeRequireMonoAudio property.
             ## @return a void
             ## 
             def kiosk_mode_require_mono_audio=(value)
@@ -1779,7 +1781,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeRequireVoiceOver property value. Indicates whether or not to require voice over while in kiosk mode.
-            ## @param value Value to set for the kiosk_mode_require_voice_over property.
+            ## @param value Value to set for the kioskModeRequireVoiceOver property.
             ## @return a void
             ## 
             def kiosk_mode_require_voice_over=(value)
@@ -1794,7 +1796,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the kioskModeRequireZoom property value. Indicates whether or not to require zoom while in kiosk mode.
-            ## @param value Value to set for the kiosk_mode_require_zoom property.
+            ## @param value Value to set for the kioskModeRequireZoom property.
             ## @return a void
             ## 
             def kiosk_mode_require_zoom=(value)
@@ -1809,7 +1811,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lockScreenBlockControlCenter property value. Indicates whether or not to block the user from using control center on the lock screen.
-            ## @param value Value to set for the lock_screen_block_control_center property.
+            ## @param value Value to set for the lockScreenBlockControlCenter property.
             ## @return a void
             ## 
             def lock_screen_block_control_center=(value)
@@ -1824,7 +1826,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lockScreenBlockNotificationView property value. Indicates whether or not to block the user from using the notification view on the lock screen.
-            ## @param value Value to set for the lock_screen_block_notification_view property.
+            ## @param value Value to set for the lockScreenBlockNotificationView property.
             ## @return a void
             ## 
             def lock_screen_block_notification_view=(value)
@@ -1839,7 +1841,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lockScreenBlockPassbook property value. Indicates whether or not to block the user from using passbook when the device is locked.
-            ## @param value Value to set for the lock_screen_block_passbook property.
+            ## @param value Value to set for the lockScreenBlockPassbook property.
             ## @return a void
             ## 
             def lock_screen_block_passbook=(value)
@@ -1854,7 +1856,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lockScreenBlockTodayView property value. Indicates whether or not to block the user from using the Today View on the lock screen.
-            ## @param value Value to set for the lock_screen_block_today_view property.
+            ## @param value Value to set for the lockScreenBlockTodayView property.
             ## @return a void
             ## 
             def lock_screen_block_today_view=(value)
@@ -1869,7 +1871,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaContentRatingApps property value. Apps rating as in media content
-            ## @param value Value to set for the media_content_rating_apps property.
+            ## @param value Value to set for the mediaContentRatingApps property.
             ## @return a void
             ## 
             def media_content_rating_apps=(value)
@@ -1884,7 +1886,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaContentRatingAustralia property value. Media content rating settings for Australia
-            ## @param value Value to set for the media_content_rating_australia property.
+            ## @param value Value to set for the mediaContentRatingAustralia property.
             ## @return a void
             ## 
             def media_content_rating_australia=(value)
@@ -1899,7 +1901,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaContentRatingCanada property value. Media content rating settings for Canada
-            ## @param value Value to set for the media_content_rating_canada property.
+            ## @param value Value to set for the mediaContentRatingCanada property.
             ## @return a void
             ## 
             def media_content_rating_canada=(value)
@@ -1914,7 +1916,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaContentRatingFrance property value. Media content rating settings for France
-            ## @param value Value to set for the media_content_rating_france property.
+            ## @param value Value to set for the mediaContentRatingFrance property.
             ## @return a void
             ## 
             def media_content_rating_france=(value)
@@ -1929,7 +1931,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaContentRatingGermany property value. Media content rating settings for Germany
-            ## @param value Value to set for the media_content_rating_germany property.
+            ## @param value Value to set for the mediaContentRatingGermany property.
             ## @return a void
             ## 
             def media_content_rating_germany=(value)
@@ -1944,7 +1946,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaContentRatingIreland property value. Media content rating settings for Ireland
-            ## @param value Value to set for the media_content_rating_ireland property.
+            ## @param value Value to set for the mediaContentRatingIreland property.
             ## @return a void
             ## 
             def media_content_rating_ireland=(value)
@@ -1959,7 +1961,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaContentRatingJapan property value. Media content rating settings for Japan
-            ## @param value Value to set for the media_content_rating_japan property.
+            ## @param value Value to set for the mediaContentRatingJapan property.
             ## @return a void
             ## 
             def media_content_rating_japan=(value)
@@ -1974,7 +1976,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaContentRatingNewZealand property value. Media content rating settings for New Zealand
-            ## @param value Value to set for the media_content_rating_new_zealand property.
+            ## @param value Value to set for the mediaContentRatingNewZealand property.
             ## @return a void
             ## 
             def media_content_rating_new_zealand=(value)
@@ -1989,7 +1991,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaContentRatingUnitedKingdom property value. Media content rating settings for United Kingdom
-            ## @param value Value to set for the media_content_rating_united_kingdom property.
+            ## @param value Value to set for the mediaContentRatingUnitedKingdom property.
             ## @return a void
             ## 
             def media_content_rating_united_kingdom=(value)
@@ -2004,7 +2006,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaContentRatingUnitedStates property value. Media content rating settings for United States
-            ## @param value Value to set for the media_content_rating_united_states property.
+            ## @param value Value to set for the mediaContentRatingUnitedStates property.
             ## @return a void
             ## 
             def media_content_rating_united_states=(value)
@@ -2019,7 +2021,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the messagesBlocked property value. Indicates whether or not to block the user from using the Messages app on the supervised device.
-            ## @param value Value to set for the messages_blocked property.
+            ## @param value Value to set for the messagesBlocked property.
             ## @return a void
             ## 
             def messages_blocked=(value)
@@ -2034,7 +2036,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the networkUsageRules property value. List of managed apps and the network rules that applies to them. This collection can contain a maximum of 1000 elements.
-            ## @param value Value to set for the network_usage_rules property.
+            ## @param value Value to set for the networkUsageRules property.
             ## @return a void
             ## 
             def network_usage_rules=(value)
@@ -2049,7 +2051,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notificationsBlockSettingsModification property value. Indicates whether or not to allow notifications settings modification (iOS 9.3 and later).
-            ## @param value Value to set for the notifications_block_settings_modification property.
+            ## @param value Value to set for the notificationsBlockSettingsModification property.
             ## @return a void
             ## 
             def notifications_block_settings_modification=(value)
@@ -2064,7 +2066,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passcodeBlockFingerprintModification property value. Block modification of registered Touch ID fingerprints when in supervised mode.
-            ## @param value Value to set for the passcode_block_fingerprint_modification property.
+            ## @param value Value to set for the passcodeBlockFingerprintModification property.
             ## @return a void
             ## 
             def passcode_block_fingerprint_modification=(value)
@@ -2079,7 +2081,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passcodeBlockFingerprintUnlock property value. Indicates whether or not to block fingerprint unlock.
-            ## @param value Value to set for the passcode_block_fingerprint_unlock property.
+            ## @param value Value to set for the passcodeBlockFingerprintUnlock property.
             ## @return a void
             ## 
             def passcode_block_fingerprint_unlock=(value)
@@ -2094,7 +2096,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passcodeBlockModification property value. Indicates whether or not to allow passcode modification on the supervised device (iOS 9.0 and later).
-            ## @param value Value to set for the passcode_block_modification property.
+            ## @param value Value to set for the passcodeBlockModification property.
             ## @return a void
             ## 
             def passcode_block_modification=(value)
@@ -2109,7 +2111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passcodeBlockSimple property value. Indicates whether or not to block simple passcodes.
-            ## @param value Value to set for the passcode_block_simple property.
+            ## @param value Value to set for the passcodeBlockSimple property.
             ## @return a void
             ## 
             def passcode_block_simple=(value)
@@ -2124,7 +2126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passcodeExpirationDays property value. Number of days before the passcode expires. Valid values 1 to 65535
-            ## @param value Value to set for the passcode_expiration_days property.
+            ## @param value Value to set for the passcodeExpirationDays property.
             ## @return a void
             ## 
             def passcode_expiration_days=(value)
@@ -2139,7 +2141,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passcodeMinimumCharacterSetCount property value. Number of character sets a passcode must contain. Valid values 0 to 4
-            ## @param value Value to set for the passcode_minimum_character_set_count property.
+            ## @param value Value to set for the passcodeMinimumCharacterSetCount property.
             ## @return a void
             ## 
             def passcode_minimum_character_set_count=(value)
@@ -2154,7 +2156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passcodeMinimumLength property value. Minimum length of passcode. Valid values 4 to 14
-            ## @param value Value to set for the passcode_minimum_length property.
+            ## @param value Value to set for the passcodeMinimumLength property.
             ## @return a void
             ## 
             def passcode_minimum_length=(value)
@@ -2169,7 +2171,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passcodeMinutesOfInactivityBeforeLock property value. Minutes of inactivity before a passcode is required.
-            ## @param value Value to set for the passcode_minutes_of_inactivity_before_lock property.
+            ## @param value Value to set for the passcodeMinutesOfInactivityBeforeLock property.
             ## @return a void
             ## 
             def passcode_minutes_of_inactivity_before_lock=(value)
@@ -2184,7 +2186,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passcodeMinutesOfInactivityBeforeScreenTimeout property value. Minutes of inactivity before the screen times out.
-            ## @param value Value to set for the passcode_minutes_of_inactivity_before_screen_timeout property.
+            ## @param value Value to set for the passcodeMinutesOfInactivityBeforeScreenTimeout property.
             ## @return a void
             ## 
             def passcode_minutes_of_inactivity_before_screen_timeout=(value)
@@ -2199,7 +2201,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passcodePreviousPasscodeBlockCount property value. Number of previous passcodes to block. Valid values 1 to 24
-            ## @param value Value to set for the passcode_previous_passcode_block_count property.
+            ## @param value Value to set for the passcodePreviousPasscodeBlockCount property.
             ## @return a void
             ## 
             def passcode_previous_passcode_block_count=(value)
@@ -2214,7 +2216,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passcodeRequired property value. Indicates whether or not to require a passcode.
-            ## @param value Value to set for the passcode_required property.
+            ## @param value Value to set for the passcodeRequired property.
             ## @return a void
             ## 
             def passcode_required=(value)
@@ -2229,7 +2231,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passcodeRequiredType property value. Possible values of required passwords.
-            ## @param value Value to set for the passcode_required_type property.
+            ## @param value Value to set for the passcodeRequiredType property.
             ## @return a void
             ## 
             def passcode_required_type=(value)
@@ -2244,7 +2246,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passcodeSignInFailureCountBeforeWipe property value. Number of sign in failures allowed before wiping the device. Valid values 2 to 11
-            ## @param value Value to set for the passcode_sign_in_failure_count_before_wipe property.
+            ## @param value Value to set for the passcodeSignInFailureCountBeforeWipe property.
             ## @return a void
             ## 
             def passcode_sign_in_failure_count_before_wipe=(value)
@@ -2259,7 +2261,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the podcastsBlocked property value. Indicates whether or not to block the user from using podcasts on the supervised device (iOS 8.0 and later).
-            ## @param value Value to set for the podcasts_blocked property.
+            ## @param value Value to set for the podcastsBlocked property.
             ## @return a void
             ## 
             def podcasts_blocked=(value)
@@ -2274,7 +2276,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the safariBlockAutofill property value. Indicates whether or not to block the user from using Auto fill in Safari. Requires a supervised device for iOS 13 and later.
-            ## @param value Value to set for the safari_block_autofill property.
+            ## @param value Value to set for the safariBlockAutofill property.
             ## @return a void
             ## 
             def safari_block_autofill=(value)
@@ -2289,7 +2291,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the safariBlockJavaScript property value. Indicates whether or not to block JavaScript in Safari.
-            ## @param value Value to set for the safari_block_java_script property.
+            ## @param value Value to set for the safariBlockJavaScript property.
             ## @return a void
             ## 
             def safari_block_java_script=(value)
@@ -2304,7 +2306,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the safariBlockPopups property value. Indicates whether or not to block popups in Safari.
-            ## @param value Value to set for the safari_block_popups property.
+            ## @param value Value to set for the safariBlockPopups property.
             ## @return a void
             ## 
             def safari_block_popups=(value)
@@ -2319,7 +2321,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the safariBlocked property value. Indicates whether or not to block the user from using Safari. Requires a supervised device for iOS 13 and later.
-            ## @param value Value to set for the safari_blocked property.
+            ## @param value Value to set for the safariBlocked property.
             ## @return a void
             ## 
             def safari_blocked=(value)
@@ -2334,7 +2336,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the safariCookieSettings property value. Web Browser Cookie Settings.
-            ## @param value Value to set for the safari_cookie_settings property.
+            ## @param value Value to set for the safariCookieSettings property.
             ## @return a void
             ## 
             def safari_cookie_settings=(value)
@@ -2349,7 +2351,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the safariManagedDomains property value. URLs matching the patterns listed here will be considered managed.
-            ## @param value Value to set for the safari_managed_domains property.
+            ## @param value Value to set for the safariManagedDomains property.
             ## @return a void
             ## 
             def safari_managed_domains=(value)
@@ -2364,7 +2366,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the safariPasswordAutoFillDomains property value. Users can save passwords in Safari only from URLs matching the patterns listed here. Applies to devices in supervised mode (iOS 9.3 and later).
-            ## @param value Value to set for the safari_password_auto_fill_domains property.
+            ## @param value Value to set for the safariPasswordAutoFillDomains property.
             ## @return a void
             ## 
             def safari_password_auto_fill_domains=(value)
@@ -2379,7 +2381,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the safariRequireFraudWarning property value. Indicates whether or not to require fraud warning in Safari.
-            ## @param value Value to set for the safari_require_fraud_warning property.
+            ## @param value Value to set for the safariRequireFraudWarning property.
             ## @return a void
             ## 
             def safari_require_fraud_warning=(value)
@@ -2394,7 +2396,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the screenCaptureBlocked property value. Indicates whether or not to block the user from taking Screenshots.
-            ## @param value Value to set for the screen_capture_blocked property.
+            ## @param value Value to set for the screenCaptureBlocked property.
             ## @return a void
             ## 
             def screen_capture_blocked=(value)
@@ -2549,7 +2551,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the siriBlockUserGeneratedContent property value. Indicates whether or not to block Siri from querying user-generated content when used on a supervised device.
-            ## @param value Value to set for the siri_block_user_generated_content property.
+            ## @param value Value to set for the siriBlockUserGeneratedContent property.
             ## @return a void
             ## 
             def siri_block_user_generated_content=(value)
@@ -2564,7 +2566,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the siriBlocked property value. Indicates whether or not to block the user from using Siri.
-            ## @param value Value to set for the siri_blocked property.
+            ## @param value Value to set for the siriBlocked property.
             ## @return a void
             ## 
             def siri_blocked=(value)
@@ -2579,7 +2581,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the siriBlockedWhenLocked property value. Indicates whether or not to block the user from using Siri when locked.
-            ## @param value Value to set for the siri_blocked_when_locked property.
+            ## @param value Value to set for the siriBlockedWhenLocked property.
             ## @return a void
             ## 
             def siri_blocked_when_locked=(value)
@@ -2594,7 +2596,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the siriRequireProfanityFilter property value. Indicates whether or not to prevent Siri from dictating, or speaking profane language on supervised device.
-            ## @param value Value to set for the siri_require_profanity_filter property.
+            ## @param value Value to set for the siriRequireProfanityFilter property.
             ## @return a void
             ## 
             def siri_require_profanity_filter=(value)
@@ -2609,7 +2611,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the spotlightBlockInternetResults property value. Indicates whether or not to block Spotlight search from returning internet results on supervised device.
-            ## @param value Value to set for the spotlight_block_internet_results property.
+            ## @param value Value to set for the spotlightBlockInternetResults property.
             ## @return a void
             ## 
             def spotlight_block_internet_results=(value)
@@ -2624,7 +2626,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the voiceDialingBlocked property value. Indicates whether or not to block voice dialing.
-            ## @param value Value to set for the voice_dialing_blocked property.
+            ## @param value Value to set for the voiceDialingBlocked property.
             ## @return a void
             ## 
             def voice_dialing_blocked=(value)
@@ -2639,7 +2641,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the wallpaperBlockModification property value. Indicates whether or not to allow wallpaper modification on supervised device (iOS 9.0 and later) .
-            ## @param value Value to set for the wallpaper_block_modification property.
+            ## @param value Value to set for the wallpaperBlockModification property.
             ## @return a void
             ## 
             def wallpaper_block_modification=(value)
@@ -2654,7 +2656,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the wiFiConnectOnlyToConfiguredNetworks property value. Indicates whether or not to force the device to use only Wi-Fi networks from configuration profiles when the device is in supervised mode. Available for devices running iOS and iPadOS versions 14.4 and earlier. Devices running 14.5+ should use the setting, 'WiFiConnectToAllowedNetworksOnlyForced.
-            ## @param value Value to set for the wi_fi_connect_only_to_configured_networks property.
+            ## @param value Value to set for the wiFiConnectOnlyToConfiguredNetworks property.
             ## @return a void
             ## 
             def wi_fi_connect_only_to_configured_networks=(value)

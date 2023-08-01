@@ -4,6 +4,7 @@ require_relative '../models/o_data_errors/o_data_error'
 require_relative '../models/schema_extension'
 require_relative '../models/schema_extension_collection_response'
 require_relative './count/count_request_builder'
+require_relative './item/schema_extension_item_request_builder'
 require_relative './schema_extensions'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 return MicrosoftGraph::SchemaExtensions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
             end
             ## 
+            ## Provides operations to manage the collection of schemaExtension entities.
+            ## @param schema_extension_id Unique identifier of the item
+            ## @return a schema_extension_item_request_builder
+            ## 
+            def by_schema_extension_id(schema_extension_id)
+                raise StandardError, 'schema_extension_id cannot be null' if schema_extension_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["schemaExtension%2Did"] = schema_extension_id
+                return MicrosoftGraph::SchemaExtensions::Item::SchemaExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+            end
+            ## 
             ## Instantiates a new SchemaExtensionsRequestBuilder and sets the default values.
             ## @param path_parameters Path parameters for the request
             ## @param request_adapter The request adapter to use to execute the requests.
@@ -27,7 +39,7 @@ module MicrosoftGraph
                 super(path_parameters, request_adapter, "{+baseurl}/schemaExtensions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
             end
             ## 
-            ## Get a list of schemaExtension objects in your tenant. The schema extensions can be `InDevelopment`, `Available`, or `Deprecated` and includes schema extensions:+ Created by any apps you own in the current tenant.+ Owned by other apps that are marked as `Available`.+ Created by other developers from other tenants and marked as `Available`. This is different from other APIs that only return tenant-specific data. Extension data created based on schema extension definitions is tenant-specific and can only be accessed by apps explicitly granted permission. 
+            ## Get a list of schemaExtension objects in your tenant. The schema extensions can be InDevelopment, Available, or Deprecated and includes schema extensions:+ Created by any apps you own in the current tenant.+ Owned by other apps that are marked as Available.+ Created by other developers from other tenants and marked as Available. This is different from other APIs that only return tenant-specific data. Extension data created based on schema extension definitions is tenant-specific and can only be accessed by apps explicitly granted permission. 
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of schema_extension_collection_response
             ## 
@@ -57,7 +69,7 @@ module MicrosoftGraph
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SchemaExtension.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Get a list of schemaExtension objects in your tenant. The schema extensions can be `InDevelopment`, `Available`, or `Deprecated` and includes schema extensions:+ Created by any apps you own in the current tenant.+ Owned by other apps that are marked as `Available`.+ Created by other developers from other tenants and marked as `Available`. This is different from other APIs that only return tenant-specific data. Extension data created based on schema extension definitions is tenant-specific and can only be accessed by apps explicitly granted permission. 
+            ## Get a list of schemaExtension objects in your tenant. The schema extensions can be InDevelopment, Available, or Deprecated and includes schema extensions:+ Created by any apps you own in the current tenant.+ Owned by other apps that are marked as Available.+ Created by other developers from other tenants and marked as Available. This is different from other APIs that only return tenant-specific data. Extension data created based on schema extension definitions is tenant-specific and can only be accessed by apps explicitly granted permission. 
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information
             ## 
@@ -96,7 +108,7 @@ module MicrosoftGraph
             end
 
             ## 
-            # Get a list of schemaExtension objects in your tenant. The schema extensions can be `InDevelopment`, `Available`, or `Deprecated` and includes schema extensions:+ Created by any apps you own in the current tenant.+ Owned by other apps that are marked as `Available`.+ Created by other developers from other tenants and marked as `Available`. This is different from other APIs that only return tenant-specific data. Extension data created based on schema extension definitions is tenant-specific and can only be accessed by apps explicitly granted permission. 
+            # Get a list of schemaExtension objects in your tenant. The schema extensions can be InDevelopment, Available, or Deprecated and includes schema extensions:+ Created by any apps you own in the current tenant.+ Owned by other apps that are marked as Available.+ Created by other developers from other tenants and marked as Available. This is different from other APIs that only return tenant-specific data. Extension data created based on schema extension definitions is tenant-specific and can only be accessed by apps explicitly granted permission. 
             class SchemaExtensionsRequestBuilderGetQueryParameters
                 
                 ## 

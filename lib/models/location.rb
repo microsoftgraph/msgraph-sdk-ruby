@@ -45,7 +45,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name associated with the location.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the locationEmailAddress property value. Optional email address of the location.
-            ## @param value Value to set for the location_email_address property.
+            ## @param value Value to set for the locationEmailAddress property.
             ## @return a void
             ## 
             def location_email_address=(value)
@@ -161,7 +161,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the locationType property value. The type of location. The possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.
-            ## @param value Value to set for the location_type property.
+            ## @param value Value to set for the locationType property.
             ## @return a void
             ## 
             def location_type=(value)
@@ -176,7 +176,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the locationUri property value. Optional URI representing the location.
-            ## @param value Value to set for the location_uri property.
+            ## @param value Value to set for the locationUri property.
             ## @return a void
             ## 
             def location_uri=(value)
@@ -191,7 +191,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -224,7 +224,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the uniqueId property value. For internal use only.
-            ## @param value Value to set for the unique_id property.
+            ## @param value Value to set for the uniqueId property.
             ## @return a void
             ## 
             def unique_id=(value)
@@ -239,7 +239,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the uniqueIdType property value. For internal use only.
-            ## @param value Value to set for the unique_id_type property.
+            ## @param value Value to set for the uniqueIdType property.
             ## @return a void
             ## 
             def unique_id_type=(value)

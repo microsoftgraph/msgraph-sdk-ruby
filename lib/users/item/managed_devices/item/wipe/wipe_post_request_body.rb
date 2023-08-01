@@ -38,7 +38,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                            ## @param value Value to set for the AdditionalData property.
+                            ## @param value Value to set for the additionalData property.
                             ## @return a void
                             ## 
                             def additional_data=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the keepEnrollmentData property value. The keepEnrollmentData property
-                            ## @param value Value to set for the keep_enrollment_data property.
+                            ## @param value Value to set for the keepEnrollmentData property.
                             ## @return a void
                             ## 
                             def keep_enrollment_data=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the keepUserData property value. The keepUserData property
-                            ## @param value Value to set for the keep_user_data property.
+                            ## @param value Value to set for the keepUserData property.
                             ## @return a void
                             ## 
                             def keep_user_data=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the macOsUnlockCode property value. The macOsUnlockCode property
-                            ## @param value Value to set for the mac_os_unlock_code property.
+                            ## @param value Value to set for the macOsUnlockCode property.
                             ## @return a void
                             ## 
                             def mac_os_unlock_code=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
                             end
                             ## 
                             ## Sets the persistEsimDataPlan property value. The persistEsimDataPlan property
-                            ## @param value Value to set for the persist_esim_data_plan property.
+                            ## @param value Value to set for the persistEsimDataPlan property.
                             ## @return a void
                             ## 
                             def persist_esim_data_plan=(value)

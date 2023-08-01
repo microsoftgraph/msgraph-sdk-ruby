@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Determines if users can use this authentication method to sign in to Azure AD. true if users can use this method for primary authentication, otherwise false.
             @is_usable_for_sign_in
             ## 
-            ## Instantiates a new SmsAuthenticationMethodTarget and sets the default values.
+            ## Instantiates a new smsAuthenticationMethodTarget and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -43,7 +43,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isUsableForSignIn property value. Determines if users can use this authentication method to sign in to Azure AD. true if users can use this method for primary authentication, otherwise false.
-            ## @param value Value to set for the is_usable_for_sign_in property.
+            ## @param value Value to set for the isUsableForSignIn property.
             ## @return a void
             ## 
             def is_usable_for_sign_in=(value)

@@ -7,7 +7,7 @@ module MicrosoftGraph
         class IncomingCallOptions < MicrosoftGraph::Models::CallOptions
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new IncomingCallOptions and sets the default values.
+            ## Instantiates a new incomingCallOptions and sets the default values.
             ## @return a void
             ## 
             def initialize()

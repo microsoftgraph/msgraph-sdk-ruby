@@ -30,14 +30,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the apiConnectorConfiguration property value. Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
-            ## @param value Value to set for the api_connector_configuration property.
+            ## @param value Value to set for the apiConnectorConfiguration property.
             ## @return a void
             ## 
             def api_connector_configuration=(value)
                 @api_connector_configuration = value
             end
             ## 
-            ## Instantiates a new B2xIdentityUserFlow and sets the default values.
+            ## Instantiates a new b2xIdentityUserFlow and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -74,7 +74,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the identityProviders property value. The identity providers included in the user flow.
-            ## @param value Value to set for the identity_providers property.
+            ## @param value Value to set for the identityProviders property.
             ## @return a void
             ## 
             def identity_providers=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userAttributeAssignments property value. The user attribute assignments included in the user flow.
-            ## @param value Value to set for the user_attribute_assignments property.
+            ## @param value Value to set for the userAttributeAssignments property.
             ## @return a void
             ## 
             def user_attribute_assignments=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userFlowIdentityProviders property value. The userFlowIdentityProviders property
-            ## @param value Value to set for the user_flow_identity_providers property.
+            ## @param value Value to set for the userFlowIdentityProviders property.
             ## @return a void
             ## 
             def user_flow_identity_providers=(value)

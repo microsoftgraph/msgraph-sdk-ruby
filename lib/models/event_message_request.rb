@@ -33,14 +33,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowNewTimeProposals property value. True if the meeting organizer allows invitees to propose a new time when responding, false otherwise. Optional. Default is true.
-            ## @param value Value to set for the allow_new_time_proposals property.
+            ## @param value Value to set for the allowNewTimeProposals property.
             ## @return a void
             ## 
             def allow_new_time_proposals=(value)
                 @allow_new_time_proposals = value
             end
             ## 
-            ## Instantiates a new EventMessageRequest and sets the default values.
+            ## Instantiates a new eventMessageRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the meetingRequestType property value. The meetingRequestType property
-            ## @param value Value to set for the meeting_request_type property.
+            ## @param value Value to set for the meetingRequestType property.
             ## @return a void
             ## 
             def meeting_request_type=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the previousEndDateTime property value. If the meeting update changes the meeting end time, this property specifies the previous meeting end time.
-            ## @param value Value to set for the previous_end_date_time property.
+            ## @param value Value to set for the previousEndDateTime property.
             ## @return a void
             ## 
             def previous_end_date_time=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the previousLocation property value. If the meeting update changes the meeting location, this property specifies the previous meeting location.
-            ## @param value Value to set for the previous_location property.
+            ## @param value Value to set for the previousLocation property.
             ## @return a void
             ## 
             def previous_location=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the previousStartDateTime property value. If the meeting update changes the meeting start time, this property specifies the previous meeting start time.
-            ## @param value Value to set for the previous_start_date_time property.
+            ## @param value Value to set for the previousStartDateTime property.
             ## @return a void
             ## 
             def previous_start_date_time=(value)
@@ -139,7 +139,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the responseRequested property value. Set to true if the sender would like the invitee to send a response to the requested meeting.
-            ## @param value Value to set for the response_requested property.
+            ## @param value Value to set for the responseRequested property.
             ## @return a void
             ## 
             def response_requested=(value)

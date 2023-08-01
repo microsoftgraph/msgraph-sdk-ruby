@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the callId property value. Unique identifier of the call.
-            ## @param value Value to set for the call_id property.
+            ## @param value Value to set for the callId property.
             ## @return a void
             ## 
             def call_id=(value)
@@ -51,7 +51,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the callRecordingDisplayName property value. Display name for the call recording.
-            ## @param value Value to set for the call_recording_display_name property.
+            ## @param value Value to set for the callRecordingDisplayName property.
             ## @return a void
             ## 
             def call_recording_display_name=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the callRecordingDuration property value. Duration of the call recording.
-            ## @param value Value to set for the call_recording_duration property.
+            ## @param value Value to set for the callRecordingDuration property.
             ## @return a void
             ## 
             def call_recording_duration=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the callRecordingStatus property value. Status of the call recording. Possible values are: success, failure, initial, chunkFinished, unknownFutureValue.
-            ## @param value Value to set for the call_recording_status property.
+            ## @param value Value to set for the callRecordingStatus property.
             ## @return a void
             ## 
             def call_recording_status=(value)
@@ -96,14 +96,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the callRecordingUrl property value. Call recording URL.
-            ## @param value Value to set for the call_recording_url property.
+            ## @param value Value to set for the callRecordingUrl property.
             ## @return a void
             ## 
             def call_recording_url=(value)
                 @call_recording_url = value
             end
             ## 
-            ## Instantiates a new CallRecordingEventMessageDetail and sets the default values.
+            ## Instantiates a new callRecordingEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -158,7 +158,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the meetingOrganizer property value. Organizer of the meeting.
-            ## @param value Value to set for the meeting_organizer property.
+            ## @param value Value to set for the meetingOrganizer property.
             ## @return a void
             ## 
             def meeting_organizer=(value)

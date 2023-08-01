@@ -36,7 +36,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the ediscoveryCases property value. The ediscoveryCases property
-                ## @param value Value to set for the ediscovery_cases property.
+                ## @param value Value to set for the ediscoveryCases property.
                 ## @return a void
                 ## 
                 def ediscovery_cases=(value)

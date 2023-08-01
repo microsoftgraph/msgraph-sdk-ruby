@@ -138,7 +138,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showBubbleSize property value. Boolean value representing if the data label bubble size is visible or not.
-            ## @param value Value to set for the show_bubble_size property.
+            ## @param value Value to set for the showBubbleSize property.
             ## @return a void
             ## 
             def show_bubble_size=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showCategoryName property value. Boolean value representing if the data label category name is visible or not.
-            ## @param value Value to set for the show_category_name property.
+            ## @param value Value to set for the showCategoryName property.
             ## @return a void
             ## 
             def show_category_name=(value)
@@ -168,7 +168,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showLegendKey property value. Boolean value representing if the data label legend key is visible or not.
-            ## @param value Value to set for the show_legend_key property.
+            ## @param value Value to set for the showLegendKey property.
             ## @return a void
             ## 
             def show_legend_key=(value)
@@ -183,7 +183,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showPercentage property value. Boolean value representing if the data label percentage is visible or not.
-            ## @param value Value to set for the show_percentage property.
+            ## @param value Value to set for the showPercentage property.
             ## @return a void
             ## 
             def show_percentage=(value)
@@ -198,7 +198,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showSeriesName property value. Boolean value representing if the data label series name is visible or not.
-            ## @param value Value to set for the show_series_name property.
+            ## @param value Value to set for the showSeriesName property.
             ## @return a void
             ## 
             def show_series_name=(value)
@@ -213,7 +213,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showValue property value. Boolean value representing if the data label value is visible or not.
-            ## @param value Value to set for the show_value property.
+            ## @param value Value to set for the showValue property.
             ## @return a void
             ## 
             def show_value=(value)

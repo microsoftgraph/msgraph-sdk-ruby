@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hideBotAfterEscalation property value. Indicates whether to hide the app after the call is escalated.
-            ## @param value Value to set for the hide_bot_after_escalation property.
+            ## @param value Value to set for the hideBotAfterEscalation property.
             ## @return a void
             ## 
             def hide_bot_after_escalation=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isContentSharingNotificationEnabled property value. Indicates whether content sharing notifications should be enabled for the call.
-            ## @param value Value to set for the is_content_sharing_notification_enabled property.
+            ## @param value Value to set for the isContentSharingNotificationEnabled property.
             ## @return a void
             ## 
             def is_content_sharing_notification_enabled=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

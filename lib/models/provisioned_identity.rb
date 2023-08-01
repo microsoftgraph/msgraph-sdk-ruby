@@ -10,10 +10,10 @@ module MicrosoftGraph
             # Details of the identity.
             @details
             ## 
-            # Type of identity that has been provisioned, such as 'user' or 'group'.
+            # Type of identity that has been provisioned, such as 'user' or 'group'. Supports $filter (eq, contains).
             @identity_type
             ## 
-            ## Instantiates a new ProvisionedIdentity and sets the default values.
+            ## Instantiates a new provisionedIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -55,15 +55,15 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the identityType property value. Type of identity that has been provisioned, such as 'user' or 'group'.
+            ## Gets the identityType property value. Type of identity that has been provisioned, such as 'user' or 'group'. Supports $filter (eq, contains).
             ## @return a string
             ## 
             def identity_type
                 return @identity_type
             end
             ## 
-            ## Sets the identityType property value. Type of identity that has been provisioned, such as 'user' or 'group'.
-            ## @param value Value to set for the identity_type property.
+            ## Sets the identityType property value. Type of identity that has been provisioned, such as 'user' or 'group'. Supports $filter (eq, contains).
+            ## @param value Value to set for the identityType property.
             ## @return a void
             ## 
             def identity_type=(value)

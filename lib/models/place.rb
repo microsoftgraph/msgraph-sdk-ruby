@@ -34,7 +34,7 @@ module MicrosoftGraph
                 @address = value
             end
             ## 
-            ## Instantiates a new Place and sets the default values.
+            ## Instantiates a new place and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -68,7 +68,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name associated with the place.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the geoCoordinates property value. Specifies the place location in latitude, longitude and (optionally) altitude coordinates.
-            ## @param value Value to set for the geo_coordinates property.
+            ## @param value Value to set for the geoCoordinates property.
             ## @return a void
             ## 
             def geo_coordinates=(value)

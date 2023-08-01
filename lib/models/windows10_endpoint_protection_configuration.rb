@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the Windows10EndpointProtectionConfiguration resource.
         class Windows10EndpointProtectionConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -123,7 +125,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appLockerApplicationControl property value. Possible values of AppLocker Application Control Types
-            ## @param value Value to set for the app_locker_application_control property.
+            ## @param value Value to set for the appLockerApplicationControl property.
             ## @return a void
             ## 
             def app_locker_application_control=(value)
@@ -138,7 +140,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicationGuardAllowPersistence property value. Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)
-            ## @param value Value to set for the application_guard_allow_persistence property.
+            ## @param value Value to set for the applicationGuardAllowPersistence property.
             ## @return a void
             ## 
             def application_guard_allow_persistence=(value)
@@ -153,7 +155,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicationGuardAllowPrintToLocalPrinters property value. Allow printing to Local Printers from Container
-            ## @param value Value to set for the application_guard_allow_print_to_local_printers property.
+            ## @param value Value to set for the applicationGuardAllowPrintToLocalPrinters property.
             ## @return a void
             ## 
             def application_guard_allow_print_to_local_printers=(value)
@@ -168,7 +170,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicationGuardAllowPrintToNetworkPrinters property value. Allow printing to Network Printers from Container
-            ## @param value Value to set for the application_guard_allow_print_to_network_printers property.
+            ## @param value Value to set for the applicationGuardAllowPrintToNetworkPrinters property.
             ## @return a void
             ## 
             def application_guard_allow_print_to_network_printers=(value)
@@ -183,7 +185,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicationGuardAllowPrintToPDF property value. Allow printing to PDF from Container
-            ## @param value Value to set for the application_guard_allow_print_to_p_d_f property.
+            ## @param value Value to set for the applicationGuardAllowPrintToPDF property.
             ## @return a void
             ## 
             def application_guard_allow_print_to_p_d_f=(value)
@@ -198,7 +200,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicationGuardAllowPrintToXPS property value. Allow printing to XPS from Container
-            ## @param value Value to set for the application_guard_allow_print_to_x_p_s property.
+            ## @param value Value to set for the applicationGuardAllowPrintToXPS property.
             ## @return a void
             ## 
             def application_guard_allow_print_to_x_p_s=(value)
@@ -213,7 +215,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicationGuardBlockClipboardSharing property value. Possible values for applicationGuardBlockClipboardSharingType
-            ## @param value Value to set for the application_guard_block_clipboard_sharing property.
+            ## @param value Value to set for the applicationGuardBlockClipboardSharing property.
             ## @return a void
             ## 
             def application_guard_block_clipboard_sharing=(value)
@@ -228,7 +230,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicationGuardBlockFileTransfer property value. Possible values for applicationGuardBlockFileTransfer
-            ## @param value Value to set for the application_guard_block_file_transfer property.
+            ## @param value Value to set for the applicationGuardBlockFileTransfer property.
             ## @return a void
             ## 
             def application_guard_block_file_transfer=(value)
@@ -243,7 +245,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicationGuardBlockNonEnterpriseContent property value. Block enterprise sites to load non-enterprise content, such as third party plug-ins
-            ## @param value Value to set for the application_guard_block_non_enterprise_content property.
+            ## @param value Value to set for the applicationGuardBlockNonEnterpriseContent property.
             ## @return a void
             ## 
             def application_guard_block_non_enterprise_content=(value)
@@ -258,7 +260,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicationGuardEnabled property value. Enable Windows Defender Application Guard
-            ## @param value Value to set for the application_guard_enabled property.
+            ## @param value Value to set for the applicationGuardEnabled property.
             ## @return a void
             ## 
             def application_guard_enabled=(value)
@@ -273,7 +275,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicationGuardForceAuditing property value. Force auditing will persist Windows logs and events to meet security/compliance criteria (sample events are user login-logoff, use of privilege rights, software installation, system changes, etc.)
-            ## @param value Value to set for the application_guard_force_auditing property.
+            ## @param value Value to set for the applicationGuardForceAuditing property.
             ## @return a void
             ## 
             def application_guard_force_auditing=(value)
@@ -288,7 +290,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bitLockerDisableWarningForOtherDiskEncryption property value. Allows the Admin to disable the warning prompt for other disk encryption on the user machines.
-            ## @param value Value to set for the bit_locker_disable_warning_for_other_disk_encryption property.
+            ## @param value Value to set for the bitLockerDisableWarningForOtherDiskEncryption property.
             ## @return a void
             ## 
             def bit_locker_disable_warning_for_other_disk_encryption=(value)
@@ -303,7 +305,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bitLockerEnableStorageCardEncryptionOnMobile property value. Allows the admin to require encryption to be turned on using BitLocker. This policy is valid only for a mobile SKU.
-            ## @param value Value to set for the bit_locker_enable_storage_card_encryption_on_mobile property.
+            ## @param value Value to set for the bitLockerEnableStorageCardEncryptionOnMobile property.
             ## @return a void
             ## 
             def bit_locker_enable_storage_card_encryption_on_mobile=(value)
@@ -318,7 +320,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bitLockerEncryptDevice property value. Allows the admin to require encryption to be turned on using BitLocker.
-            ## @param value Value to set for the bit_locker_encrypt_device property.
+            ## @param value Value to set for the bitLockerEncryptDevice property.
             ## @return a void
             ## 
             def bit_locker_encrypt_device=(value)
@@ -333,14 +335,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bitLockerRemovableDrivePolicy property value. BitLocker Removable Drive Policy.
-            ## @param value Value to set for the bit_locker_removable_drive_policy property.
+            ## @param value Value to set for the bitLockerRemovableDrivePolicy property.
             ## @return a void
             ## 
             def bit_locker_removable_drive_policy=(value)
                 @bit_locker_removable_drive_policy = value
             end
             ## 
-            ## Instantiates a new Windows10EndpointProtectionConfiguration and sets the default values.
+            ## Instantiates a new windows10EndpointProtectionConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -365,7 +367,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderAdditionalGuardedFolders property value. List of folder paths to be added to the list of protected folders
-            ## @param value Value to set for the defender_additional_guarded_folders property.
+            ## @param value Value to set for the defenderAdditionalGuardedFolders property.
             ## @return a void
             ## 
             def defender_additional_guarded_folders=(value)
@@ -380,7 +382,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderAttackSurfaceReductionExcludedPaths property value. List of exe files and folders to be excluded from attack surface reduction rules
-            ## @param value Value to set for the defender_attack_surface_reduction_excluded_paths property.
+            ## @param value Value to set for the defenderAttackSurfaceReductionExcludedPaths property.
             ## @return a void
             ## 
             def defender_attack_surface_reduction_excluded_paths=(value)
@@ -395,7 +397,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderExploitProtectionXml property value. Xml content containing information regarding exploit protection details.
-            ## @param value Value to set for the defender_exploit_protection_xml property.
+            ## @param value Value to set for the defenderExploitProtectionXml property.
             ## @return a void
             ## 
             def defender_exploit_protection_xml=(value)
@@ -410,7 +412,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderExploitProtectionXmlFileName property value. Name of the file from which DefenderExploitProtectionXml was obtained.
-            ## @param value Value to set for the defender_exploit_protection_xml_file_name property.
+            ## @param value Value to set for the defenderExploitProtectionXmlFileName property.
             ## @return a void
             ## 
             def defender_exploit_protection_xml_file_name=(value)
@@ -425,7 +427,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderGuardedFoldersAllowedAppPaths property value. List of paths to exe that are allowed to access protected folders
-            ## @param value Value to set for the defender_guarded_folders_allowed_app_paths property.
+            ## @param value Value to set for the defenderGuardedFoldersAllowedAppPaths property.
             ## @return a void
             ## 
             def defender_guarded_folders_allowed_app_paths=(value)
@@ -440,7 +442,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defenderSecurityCenterBlockExploitProtectionOverride property value. Indicates whether or not to block user from overriding Exploit Protection settings.
-            ## @param value Value to set for the defender_security_center_block_exploit_protection_override property.
+            ## @param value Value to set for the defenderSecurityCenterBlockExploitProtectionOverride property.
             ## @return a void
             ## 
             def defender_security_center_block_exploit_protection_override=(value)
@@ -455,7 +457,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallBlockStatefulFTP property value. Blocks stateful FTP connections to the device
-            ## @param value Value to set for the firewall_block_stateful_f_t_p property.
+            ## @param value Value to set for the firewallBlockStatefulFTP property.
             ## @return a void
             ## 
             def firewall_block_stateful_f_t_p=(value)
@@ -470,7 +472,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallCertificateRevocationListCheckMethod property value. Possible values for firewallCertificateRevocationListCheckMethod
-            ## @param value Value to set for the firewall_certificate_revocation_list_check_method property.
+            ## @param value Value to set for the firewallCertificateRevocationListCheckMethod property.
             ## @return a void
             ## 
             def firewall_certificate_revocation_list_check_method=(value)
@@ -485,7 +487,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallIPSecExemptionsAllowDHCP property value. Configures IPSec exemptions to allow both IPv4 and IPv6 DHCP traffic
-            ## @param value Value to set for the firewall_i_p_sec_exemptions_allow_d_h_c_p property.
+            ## @param value Value to set for the firewallIPSecExemptionsAllowDHCP property.
             ## @return a void
             ## 
             def firewall_i_p_sec_exemptions_allow_d_h_c_p=(value)
@@ -500,7 +502,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallIPSecExemptionsAllowICMP property value. Configures IPSec exemptions to allow ICMP
-            ## @param value Value to set for the firewall_i_p_sec_exemptions_allow_i_c_m_p property.
+            ## @param value Value to set for the firewallIPSecExemptionsAllowICMP property.
             ## @return a void
             ## 
             def firewall_i_p_sec_exemptions_allow_i_c_m_p=(value)
@@ -515,7 +517,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallIPSecExemptionsAllowNeighborDiscovery property value. Configures IPSec exemptions to allow neighbor discovery IPv6 ICMP type-codes
-            ## @param value Value to set for the firewall_i_p_sec_exemptions_allow_neighbor_discovery property.
+            ## @param value Value to set for the firewallIPSecExemptionsAllowNeighborDiscovery property.
             ## @return a void
             ## 
             def firewall_i_p_sec_exemptions_allow_neighbor_discovery=(value)
@@ -530,7 +532,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallIPSecExemptionsAllowRouterDiscovery property value. Configures IPSec exemptions to allow router discovery IPv6 ICMP type-codes
-            ## @param value Value to set for the firewall_i_p_sec_exemptions_allow_router_discovery property.
+            ## @param value Value to set for the firewallIPSecExemptionsAllowRouterDiscovery property.
             ## @return a void
             ## 
             def firewall_i_p_sec_exemptions_allow_router_discovery=(value)
@@ -545,7 +547,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallIdleTimeoutForSecurityAssociationInSeconds property value. Configures the idle timeout for security associations, in seconds, from 300 to 3600 inclusive. This is the period after which security associations will expire and be deleted. Valid values 300 to 3600
-            ## @param value Value to set for the firewall_idle_timeout_for_security_association_in_seconds property.
+            ## @param value Value to set for the firewallIdleTimeoutForSecurityAssociationInSeconds property.
             ## @return a void
             ## 
             def firewall_idle_timeout_for_security_association_in_seconds=(value)
@@ -560,7 +562,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallMergeKeyingModuleSettings property value. If an authentication set is not fully supported by a keying module, direct the module to ignore only unsupported authentication suites rather than the entire set
-            ## @param value Value to set for the firewall_merge_keying_module_settings property.
+            ## @param value Value to set for the firewallMergeKeyingModuleSettings property.
             ## @return a void
             ## 
             def firewall_merge_keying_module_settings=(value)
@@ -575,7 +577,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallPacketQueueingMethod property value. Possible values for firewallPacketQueueingMethod
-            ## @param value Value to set for the firewall_packet_queueing_method property.
+            ## @param value Value to set for the firewallPacketQueueingMethod property.
             ## @return a void
             ## 
             def firewall_packet_queueing_method=(value)
@@ -590,7 +592,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallPreSharedKeyEncodingMethod property value. Possible values for firewallPreSharedKeyEncodingMethod
-            ## @param value Value to set for the firewall_pre_shared_key_encoding_method property.
+            ## @param value Value to set for the firewallPreSharedKeyEncodingMethod property.
             ## @return a void
             ## 
             def firewall_pre_shared_key_encoding_method=(value)
@@ -605,7 +607,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallProfileDomain property value. Configures the firewall profile settings for domain networks
-            ## @param value Value to set for the firewall_profile_domain property.
+            ## @param value Value to set for the firewallProfileDomain property.
             ## @return a void
             ## 
             def firewall_profile_domain=(value)
@@ -620,7 +622,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallProfilePrivate property value. Configures the firewall profile settings for private networks
-            ## @param value Value to set for the firewall_profile_private property.
+            ## @param value Value to set for the firewallProfilePrivate property.
             ## @return a void
             ## 
             def firewall_profile_private=(value)
@@ -635,7 +637,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the firewallProfilePublic property value. Configures the firewall profile settings for public networks
-            ## @param value Value to set for the firewall_profile_public property.
+            ## @param value Value to set for the firewallProfilePublic property.
             ## @return a void
             ## 
             def firewall_profile_public=(value)
@@ -739,7 +741,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the smartScreenBlockOverrideForFiles property value. Allows IT Admins to control whether users can can ignore SmartScreen warnings and run malicious files.
-            ## @param value Value to set for the smart_screen_block_override_for_files property.
+            ## @param value Value to set for the smartScreenBlockOverrideForFiles property.
             ## @return a void
             ## 
             def smart_screen_block_override_for_files=(value)
@@ -754,7 +756,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the smartScreenEnableInShell property value. Allows IT Admins to configure SmartScreen for Windows.
-            ## @param value Value to set for the smart_screen_enable_in_shell property.
+            ## @param value Value to set for the smartScreenEnableInShell property.
             ## @return a void
             ## 
             def smart_screen_enable_in_shell=(value)

@@ -16,7 +16,7 @@ module MicrosoftGraph
             # A published open shift.
             @shared_open_shift
             ## 
-            ## Instantiates a new OpenShift and sets the default values.
+            ## Instantiates a new openShift and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -41,7 +41,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the draftOpenShift property value. An unpublished open shift.
-            ## @param value Value to set for the draft_open_shift property.
+            ## @param value Value to set for the draftOpenShift property.
             ## @return a void
             ## 
             def draft_open_shift=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the schedulingGroupId property value. ID for the scheduling group that the open shift belongs to.
-            ## @param value Value to set for the scheduling_group_id property.
+            ## @param value Value to set for the schedulingGroupId property.
             ## @return a void
             ## 
             def scheduling_group_id=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sharedOpenShift property value. A published open shift.
-            ## @param value Value to set for the shared_open_shift property.
+            ## @param value Value to set for the sharedOpenShift property.
             ## @return a void
             ## 
             def shared_open_shift=(value)

@@ -37,7 +37,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -52,7 +52,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the attackSimulationUser property value. User in an attack simulation and training campaign.
-            ## @param value Value to set for the attack_simulation_user property.
+            ## @param value Value to set for the attackSimulationUser property.
             ## @return a void
             ## 
             def attack_simulation_user=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the clickCount property value. Number of link clicks in the received payloads by the user in attack simulation and training campaigns.
-            ## @param value Value to set for the click_count property.
+            ## @param value Value to set for the clickCount property.
             ## @return a void
             ## 
             def click_count=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the compromisedCount property value. Number of compromising actions by the user in attack simulation and training campaigns.
-            ## @param value Value to set for the compromised_count property.
+            ## @param value Value to set for the compromisedCount property.
             ## @return a void
             ## 
             def compromised_count=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the latestSimulationDateTime property value. Date and time of the latest attack simulation and training campaign that the user was included in.
-            ## @param value Value to set for the latest_simulation_date_time property.
+            ## @param value Value to set for the latestSimulationDateTime property.
             ## @return a void
             ## 
             def latest_simulation_date_time=(value)
@@ -142,7 +142,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -172,7 +172,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the simulationCount property value. Number of attack simulation and training campaigns that the user was included in.
-            ## @param value Value to set for the simulation_count property.
+            ## @param value Value to set for the simulationCount property.
             ## @return a void
             ## 
             def simulation_count=(value)

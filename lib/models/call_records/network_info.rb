@@ -101,7 +101,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                ## @param value Value to set for the AdditionalData property.
+                ## @param value Value to set for the additionalData property.
                 ## @return a void
                 ## 
                 def additional_data=(value)
@@ -116,7 +116,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the bandwidthLowEventRatio property value. Fraction of the call that the media endpoint detected the available bandwidth or bandwidth policy was low enough to cause poor quality of the audio sent.
-                ## @param value Value to set for the bandwidth_low_event_ratio property.
+                ## @param value Value to set for the bandwidthLowEventRatio property.
                 ## @return a void
                 ## 
                 def bandwidth_low_event_ratio=(value)
@@ -131,7 +131,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the basicServiceSetIdentifier property value. The wireless LAN basic service set identifier of the media endpoint used to connect to the network.
-                ## @param value Value to set for the basic_service_set_identifier property.
+                ## @param value Value to set for the basicServiceSetIdentifier property.
                 ## @return a void
                 ## 
                 def basic_service_set_identifier=(value)
@@ -146,7 +146,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the connectionType property value. The connectionType property
-                ## @param value Value to set for the connection_type property.
+                ## @param value Value to set for the connectionType property.
                 ## @return a void
                 ## 
                 def connection_type=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the delayEventRatio property value. Fraction of the call that the media endpoint detected the network delay was significant enough to impact the ability to have real-time two-way communication.
-                ## @param value Value to set for the delay_event_ratio property.
+                ## @param value Value to set for the delayEventRatio property.
                 ## @return a void
                 ## 
                 def delay_event_ratio=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the dnsSuffix property value. DNS suffix associated with the network adapter of the media endpoint.
-                ## @param value Value to set for the dns_suffix property.
+                ## @param value Value to set for the dnsSuffix property.
                 ## @return a void
                 ## 
                 def dns_suffix=(value)
@@ -242,7 +242,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the ipAddress property value. IP address of the media endpoint.
-                ## @param value Value to set for the ip_address property.
+                ## @param value Value to set for the ipAddress property.
                 ## @return a void
                 ## 
                 def ip_address=(value)
@@ -257,7 +257,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the linkSpeed property value. Link speed in bits per second reported by the network adapter used by the media endpoint.
-                ## @param value Value to set for the link_speed property.
+                ## @param value Value to set for the linkSpeed property.
                 ## @return a void
                 ## 
                 def link_speed=(value)
@@ -272,7 +272,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the macAddress property value. The media access control (MAC) address of the media endpoint's network device.
-                ## @param value Value to set for the mac_address property.
+                ## @param value Value to set for the macAddress property.
                 ## @return a void
                 ## 
                 def mac_address=(value)
@@ -287,7 +287,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the networkTransportProtocol property value. The networkTransportProtocol property
-                ## @param value Value to set for the network_transport_protocol property.
+                ## @param value Value to set for the networkTransportProtocol property.
                 ## @return a void
                 ## 
                 def network_transport_protocol=(value)
@@ -302,7 +302,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the @odata.type property value. The OdataType property
-                ## @param value Value to set for the odata_type property.
+                ## @param value Value to set for the @odata.type property.
                 ## @return a void
                 ## 
                 def odata_type=(value)
@@ -332,7 +332,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the receivedQualityEventRatio property value. Fraction of the call that the media endpoint detected the network was causing poor quality of the audio received.
-                ## @param value Value to set for the received_quality_event_ratio property.
+                ## @param value Value to set for the receivedQualityEventRatio property.
                 ## @return a void
                 ## 
                 def received_quality_event_ratio=(value)
@@ -347,7 +347,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the reflexiveIPAddress property value. IP address of the media endpoint as seen by the media relay server. This is typically the public internet IP address associated to the endpoint.
-                ## @param value Value to set for the reflexive_i_p_address property.
+                ## @param value Value to set for the reflexiveIPAddress property.
                 ## @return a void
                 ## 
                 def reflexive_i_p_address=(value)
@@ -362,7 +362,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the relayIPAddress property value. IP address of the media relay server allocated by the media endpoint.
-                ## @param value Value to set for the relay_i_p_address property.
+                ## @param value Value to set for the relayIPAddress property.
                 ## @return a void
                 ## 
                 def relay_i_p_address=(value)
@@ -377,7 +377,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the relayPort property value. Network port number allocated on the media relay server by the media endpoint.
-                ## @param value Value to set for the relay_port property.
+                ## @param value Value to set for the relayPort property.
                 ## @return a void
                 ## 
                 def relay_port=(value)
@@ -392,7 +392,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the sentQualityEventRatio property value. Fraction of the call that the media endpoint detected the network was causing poor quality of the audio sent.
-                ## @param value Value to set for the sent_quality_event_ratio property.
+                ## @param value Value to set for the sentQualityEventRatio property.
                 ## @return a void
                 ## 
                 def sent_quality_event_ratio=(value)
@@ -458,7 +458,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the traceRouteHops property value. List of network trace route hops collected for this media stream.*
-                ## @param value Value to set for the trace_route_hops property.
+                ## @param value Value to set for the traceRouteHops property.
                 ## @return a void
                 ## 
                 def trace_route_hops=(value)
@@ -473,7 +473,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the wifiBand property value. The wifiBand property
-                ## @param value Value to set for the wifi_band property.
+                ## @param value Value to set for the wifiBand property.
                 ## @return a void
                 ## 
                 def wifi_band=(value)
@@ -488,7 +488,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the wifiBatteryCharge property value. Estimated remaining battery charge in percentage reported by the media endpoint.
-                ## @param value Value to set for the wifi_battery_charge property.
+                ## @param value Value to set for the wifiBatteryCharge property.
                 ## @return a void
                 ## 
                 def wifi_battery_charge=(value)
@@ -503,7 +503,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the wifiChannel property value. WiFi channel used by the media endpoint.
-                ## @param value Value to set for the wifi_channel property.
+                ## @param value Value to set for the wifiChannel property.
                 ## @return a void
                 ## 
                 def wifi_channel=(value)
@@ -518,7 +518,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the wifiMicrosoftDriver property value. Name of the Microsoft WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
-                ## @param value Value to set for the wifi_microsoft_driver property.
+                ## @param value Value to set for the wifiMicrosoftDriver property.
                 ## @return a void
                 ## 
                 def wifi_microsoft_driver=(value)
@@ -533,7 +533,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the wifiMicrosoftDriverVersion property value. Version of the Microsoft WiFi driver used by the media endpoint.
-                ## @param value Value to set for the wifi_microsoft_driver_version property.
+                ## @param value Value to set for the wifiMicrosoftDriverVersion property.
                 ## @return a void
                 ## 
                 def wifi_microsoft_driver_version=(value)
@@ -548,7 +548,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the wifiRadioType property value. The wifiRadioType property
-                ## @param value Value to set for the wifi_radio_type property.
+                ## @param value Value to set for the wifiRadioType property.
                 ## @return a void
                 ## 
                 def wifi_radio_type=(value)
@@ -563,7 +563,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the wifiSignalStrength property value. WiFi signal strength in percentage reported by the media endpoint.
-                ## @param value Value to set for the wifi_signal_strength property.
+                ## @param value Value to set for the wifiSignalStrength property.
                 ## @return a void
                 ## 
                 def wifi_signal_strength=(value)
@@ -578,7 +578,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the wifiVendorDriver property value. Name of the WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.
-                ## @param value Value to set for the wifi_vendor_driver property.
+                ## @param value Value to set for the wifiVendorDriver property.
                 ## @return a void
                 ## 
                 def wifi_vendor_driver=(value)
@@ -593,7 +593,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the wifiVendorDriverVersion property value. Version of the WiFi driver used by the media endpoint.
-                ## @param value Value to set for the wifi_vendor_driver_version property.
+                ## @param value Value to set for the wifiVendorDriverVersion property.
                 ## @return a void
                 ## 
                 def wifi_vendor_driver_version=(value)

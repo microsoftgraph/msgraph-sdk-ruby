@@ -4,25 +4,16 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../../models/schedule'
 require_relative '../../teams'
 require_relative '../item'
-require_relative './offer_shift_requests/item/offer_shift_request_item_request_builder'
 require_relative './offer_shift_requests/offer_shift_requests_request_builder'
-require_relative './open_shift_change_requests/item/open_shift_change_request_item_request_builder'
 require_relative './open_shift_change_requests/open_shift_change_requests_request_builder'
-require_relative './open_shifts/item/open_shift_item_request_builder'
 require_relative './open_shifts/open_shifts_request_builder'
 require_relative './schedule'
-require_relative './scheduling_groups/item/scheduling_group_item_request_builder'
 require_relative './scheduling_groups/scheduling_groups_request_builder'
 require_relative './share/share_request_builder'
-require_relative './shifts/item/shift_item_request_builder'
 require_relative './shifts/shifts_request_builder'
-require_relative './swap_shifts_change_requests/item/swap_shifts_change_request_item_request_builder'
 require_relative './swap_shifts_change_requests/swap_shifts_change_requests_request_builder'
-require_relative './time_off_reasons/item/time_off_reason_item_request_builder'
 require_relative './time_off_reasons/time_off_reasons_request_builder'
-require_relative './time_off_requests/item/time_off_request_item_request_builder'
 require_relative './time_off_requests/time_off_requests_request_builder'
-require_relative './times_off/item/time_off_item_request_builder'
 require_relative './times_off/times_off_request_builder'
 
 module MicrosoftGraph
@@ -107,7 +98,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).When clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the `provisionStatusCode` property. Clients can also inspect the configuration of the schedule.
+                    ## Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).When clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the provisionStatus property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the provisionStatusCode property. Clients can also inspect the configuration of the schedule.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of schedule
                     ## 
@@ -119,39 +110,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Schedule.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a offer_shift_request_item_request_builder
-                    ## 
-                    def offer_shift_requests_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["offerShiftRequest%2Did"] = id
-                        return MicrosoftGraph::Teams::Item::Schedule::OfferShiftRequests::Item::OfferShiftRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the openShiftChangeRequests property of the microsoft.graph.schedule entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a open_shift_change_request_item_request_builder
-                    ## 
-                    def open_shift_change_requests_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["openShiftChangeRequest%2Did"] = id
-                        return MicrosoftGraph::Teams::Item::Schedule::OpenShiftChangeRequests::Item::OpenShiftChangeRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the openShifts property of the microsoft.graph.schedule entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a open_shift_item_request_builder
-                    ## 
-                    def open_shifts_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["openShift%2Did"] = id
-                        return MicrosoftGraph::Teams::Item::Schedule::OpenShifts::Item::OpenShiftItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Update the navigation property schedule in teams
@@ -170,72 +128,6 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Schedule.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a scheduling_group_item_request_builder
-                    ## 
-                    def scheduling_groups_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["schedulingGroup%2Did"] = id
-                        return MicrosoftGraph::Teams::Item::Schedule::SchedulingGroups::Item::SchedulingGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the shifts property of the microsoft.graph.schedule entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a shift_item_request_builder
-                    ## 
-                    def shifts_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["shift%2Did"] = id
-                        return MicrosoftGraph::Teams::Item::Schedule::Shifts::Item::ShiftItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the swapShiftsChangeRequests property of the microsoft.graph.schedule entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a swap_shifts_change_request_item_request_builder
-                    ## 
-                    def swap_shifts_change_requests_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["swapShiftsChangeRequest%2Did"] = id
-                        return MicrosoftGraph::Teams::Item::Schedule::SwapShiftsChangeRequests::Item::SwapShiftsChangeRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the timeOffReasons property of the microsoft.graph.schedule entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a time_off_reason_item_request_builder
-                    ## 
-                    def time_off_reasons_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["timeOffReason%2Did"] = id
-                        return MicrosoftGraph::Teams::Item::Schedule::TimeOffReasons::Item::TimeOffReasonItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the timeOffRequests property of the microsoft.graph.schedule entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a time_off_request_item_request_builder
-                    ## 
-                    def time_off_requests_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["timeOffRequest%2Did"] = id
-                        return MicrosoftGraph::Teams::Item::Schedule::TimeOffRequests::Item::TimeOffRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the timesOff property of the microsoft.graph.schedule entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a time_off_item_request_builder
-                    ## 
-                    def times_off_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["timeOff%2Did"] = id
-                        return MicrosoftGraph::Teams::Item::Schedule::TimesOff::Item::TimeOffItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Delete navigation property schedule for teams
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -252,7 +144,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).When clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the `provisionStatusCode` property. Clients can also inspect the configuration of the schedule.
+                    ## Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).When clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the provisionStatus property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the provisionStatusCode property. Clients can also inspect the configuration of the schedule.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -291,7 +183,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).When clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the `provisionStatusCode` property. Clients can also inspect the configuration of the schedule.
+                    # Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).When clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the provisionStatus property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the provisionStatusCode property. Clients can also inspect the configuration of the schedule.
                     class ScheduleRequestBuilderGetQueryParameters
                         
                         ## 

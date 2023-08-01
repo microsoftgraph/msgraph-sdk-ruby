@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the aaGuids property value. A collection of Authenticator Attestation GUIDs. AADGUIDs define key types and manufacturers.
-            ## @param value Value to set for the aa_guids property.
+            ## @param value Value to set for the aaGuids property.
             ## @return a void
             ## 
             def aa_guids=(value)
@@ -45,7 +45,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enforcementType property value. Enforcement type. Possible values are: allow, block.
-            ## @param value Value to set for the enforcement_type property.
+            ## @param value Value to set for the enforcementType property.
             ## @return a void
             ## 
             def enforcement_type=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isEnforced property value. Determines if the configured key enforcement is enabled.
-            ## @param value Value to set for the is_enforced property.
+            ## @param value Value to set for the isEnforced property.
             ## @return a void
             ## 
             def is_enforced=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

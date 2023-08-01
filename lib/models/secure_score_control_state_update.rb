@@ -37,7 +37,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -52,7 +52,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignedTo property value. Assigns the control to the user who will take the action.
-            ## @param value Value to set for the assigned_to property.
+            ## @param value Value to set for the assignedTo property.
             ## @return a void
             ## 
             def assigned_to=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the updatedBy property value. ID of the user who updated tenant state.
-            ## @param value Value to set for the updated_by property.
+            ## @param value Value to set for the updatedBy property.
             ## @return a void
             ## 
             def updated_by=(value)
@@ -172,7 +172,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the updatedDateTime property value. Time at which the control state was updated.
-            ## @param value Value to set for the updated_date_time property.
+            ## @param value Value to set for the updatedDateTime property.
             ## @return a void
             ## 
             def updated_date_time=(value)

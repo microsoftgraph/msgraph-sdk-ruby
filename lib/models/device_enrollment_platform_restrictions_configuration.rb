@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Device Enrollment Configuration that restricts the types of devices a user can enroll
         class DeviceEnrollmentPlatformRestrictionsConfiguration < MicrosoftGraph::Models::DeviceEnrollmentConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -30,14 +32,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the androidRestriction property value. Android restrictions based on platform, platform operating system version, and device ownership
-            ## @param value Value to set for the android_restriction property.
+            ## @param value Value to set for the androidRestriction property.
             ## @return a void
             ## 
             def android_restriction=(value)
                 @android_restriction = value
             end
             ## 
-            ## Instantiates a new DeviceEnrollmentPlatformRestrictionsConfiguration and sets the default values.
+            ## Instantiates a new deviceEnrollmentPlatformRestrictionsConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -75,7 +77,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iosRestriction property value. Ios restrictions based on platform, platform operating system version, and device ownership
-            ## @param value Value to set for the ios_restriction property.
+            ## @param value Value to set for the iosRestriction property.
             ## @return a void
             ## 
             def ios_restriction=(value)
@@ -90,7 +92,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the macOSRestriction property value. Mac restrictions based on platform, platform operating system version, and device ownership
-            ## @param value Value to set for the mac_o_s_restriction property.
+            ## @param value Value to set for the macOSRestriction property.
             ## @return a void
             ## 
             def mac_o_s_restriction=(value)
@@ -119,7 +121,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsMobileRestriction property value. Windows mobile restrictions based on platform, platform operating system version, and device ownership
-            ## @param value Value to set for the windows_mobile_restriction property.
+            ## @param value Value to set for the windowsMobileRestriction property.
             ## @return a void
             ## 
             def windows_mobile_restriction=(value)
@@ -134,7 +136,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsRestriction property value. Windows restrictions based on platform, platform operating system version, and device ownership
-            ## @param value Value to set for the windows_restriction property.
+            ## @param value Value to set for the windowsRestriction property.
             ## @return a void
             ## 
             def windows_restriction=(value)

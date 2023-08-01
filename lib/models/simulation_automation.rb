@@ -53,7 +53,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdBy property value. Identity of the user who created the attack simulation automation.
-            ## @param value Value to set for the created_by property.
+            ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
             def created_by=(value)
@@ -68,7 +68,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. Date and time when the attack simulation automation was created.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Display name of the attack simulation automation. Supports $filter and $orderby.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -140,7 +140,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedBy property value. Identity of the user who most recently modified the attack simulation automation.
-            ## @param value Value to set for the last_modified_by property.
+            ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
             def last_modified_by=(value)
@@ -155,7 +155,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. Date and time when the attack simulation automation was most recently modified.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastRunDateTime property value. Date and time of the latest run of the attack simulation automation.
-            ## @param value Value to set for the last_run_date_time property.
+            ## @param value Value to set for the lastRunDateTime property.
             ## @return a void
             ## 
             def last_run_date_time=(value)
@@ -185,7 +185,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the nextRunDateTime property value. Date and time of the upcoming run of the attack simulation automation.
-            ## @param value Value to set for the next_run_date_time property.
+            ## @param value Value to set for the nextRunDateTime property.
             ## @return a void
             ## 
             def next_run_date_time=(value)

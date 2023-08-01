@@ -10,7 +10,7 @@ module MicrosoftGraph
             # ShiftId for the recipient user with whom the request is to swap.
             @recipient_shift_id
             ## 
-            ## Instantiates a new SwapShiftsChangeRequest and sets the default values.
+            ## Instantiates a new swapShiftsChangeRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the recipientShiftId property value. ShiftId for the recipient user with whom the request is to swap.
-            ## @param value Value to set for the recipient_shift_id property.
+            ## @param value Value to set for the recipientShiftId property.
             ## @return a void
             ## 
             def recipient_shift_id=(value)

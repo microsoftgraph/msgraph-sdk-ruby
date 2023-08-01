@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Event representing an general failure.
         class DeviceManagementTroubleshootingEvent < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -14,7 +16,7 @@ module MicrosoftGraph
             # Time when the event occurred .
             @event_date_time
             ## 
-            ## Instantiates a new DeviceManagementTroubleshootingEvent and sets the default values.
+            ## Instantiates a new deviceManagementTroubleshootingEvent and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -29,7 +31,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the correlationId property value. Id used for tracing the failure in the service.
-            ## @param value Value to set for the correlation_id property.
+            ## @param value Value to set for the correlationId property.
             ## @return a void
             ## 
             def correlation_id=(value)
@@ -61,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the eventDateTime property value. Time when the event occurred .
-            ## @param value Value to set for the event_date_time property.
+            ## @param value Value to set for the eventDateTime property.
             ## @return a void
             ## 
             def event_date_time=(value)

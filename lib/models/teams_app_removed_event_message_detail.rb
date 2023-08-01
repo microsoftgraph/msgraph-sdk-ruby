@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Unique identifier of the teamsApp.
             @teams_app_id
             ## 
-            ## Instantiates a new TeamsAppRemovedEventMessageDetail and sets the default values.
+            ## Instantiates a new teamsAppRemovedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the teamsAppDisplayName property value. Display name of the teamsApp.
-            ## @param value Value to set for the teams_app_display_name property.
+            ## @param value Value to set for the teamsAppDisplayName property.
             ## @return a void
             ## 
             def teams_app_display_name=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the teamsAppId property value. Unique identifier of the teamsApp.
-            ## @param value Value to set for the teams_app_id property.
+            ## @param value Value to set for the teamsAppId property.
             ## @return a void
             ## 
             def teams_app_id=(value)

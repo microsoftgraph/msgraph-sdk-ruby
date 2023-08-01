@@ -5,6 +5,7 @@ require_relative '../../../models/profile_photo_collection_response'
 require_relative '../../users'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/profile_photo_item_request_builder'
 require_relative './photos'
 
 module MicrosoftGraph
@@ -19,6 +20,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Users::Item::Photos::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the photos property of the microsoft.graph.user entity.
+                    ## @param profile_photo_id Unique identifier of the item
+                    ## @return a profile_photo_item_request_builder
+                    ## 
+                    def by_profile_photo_id(profile_photo_id)
+                        raise StandardError, 'profile_photo_id cannot be null' if profile_photo_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["profilePhoto%2Did"] = profile_photo_id
+                        return MicrosoftGraph::Users::Item::Photos::Item::ProfilePhotoItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new PhotosRequestBuilder and sets the default values.

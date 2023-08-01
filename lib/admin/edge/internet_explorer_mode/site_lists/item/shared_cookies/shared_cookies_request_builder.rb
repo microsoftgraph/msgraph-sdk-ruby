@@ -9,6 +9,7 @@ require_relative '../../../internet_explorer_mode'
 require_relative '../../site_lists'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/browser_shared_cookie_item_request_builder'
 require_relative './shared_cookies'
 
 module MicrosoftGraph
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Admin::Edge::InternetExplorerMode::SiteLists::Item::SharedCookies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                ## Provides operations to manage the sharedCookies property of the microsoft.graph.browserSiteList entity.
+                                ## @param browser_shared_cookie_id Unique identifier of the item
+                                ## @return a browser_shared_cookie_item_request_builder
+                                ## 
+                                def by_browser_shared_cookie_id(browser_shared_cookie_id)
+                                    raise StandardError, 'browser_shared_cookie_id cannot be null' if browser_shared_cookie_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["browserSharedCookie%2Did"] = browser_shared_cookie_id
+                                    return MicrosoftGraph::Admin::Edge::InternetExplorerMode::SiteLists::Item::SharedCookies::Item::BrowserSharedCookieItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                end
+                                ## 
                                 ## Instantiates a new SharedCookiesRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -37,7 +49,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/admin/edge/internetExplorerMode/siteLists/{browserSiteList%2Did}/sharedCookies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                 end
                                 ## 
-                                ## Get sharedCookies from admin
+                                ## Get a list of the browserSharedCookie objects and their properties.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of browser_shared_cookie_collection_response
                                 ## 
@@ -51,7 +63,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BrowserSharedCookieCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Create new navigation property to sharedCookies for admin
+                                ## Create a new browserSharedCookie object in a browserSiteList.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of browser_shared_cookie
@@ -67,7 +79,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BrowserSharedCookie.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Get sharedCookies from admin
+                                ## Get a list of the browserSharedCookie objects and their properties.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -85,7 +97,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Create new navigation property to sharedCookies for admin
+                                ## Create a new browserSharedCookie object in a browserSiteList.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
@@ -106,7 +118,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Get sharedCookies from admin
+                                # Get a list of the browserSharedCookie objects and their properties.
                                 class SharedCookiesRequestBuilderGetQueryParameters
                                     
                                     ## 

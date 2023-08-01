@@ -10,31 +10,31 @@ module MicrosoftGraph
         class BrowserSiteList < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # Description for the site list
+            # The description of the site list.
             @description
             ## 
-            # Display name of this site list
+            # The name of the site list.
             @display_name
             ## 
-            # Name of the admin who made the last update on the site list
+            # The user who last modified the site list.
             @last_modified_by
             ## 
-            # The datetime that the admin last updated the site list.
+            # The date and time when the site list was last modified.
             @last_modified_date_time
             ## 
-            # Name of the admin who published the site list
+            # The user who published the site list.
             @published_by
             ## 
-            # The datetime that admin published the site list to users in their organization.
+            # The date and time when the site list was published.
             @published_date_time
             ## 
-            # Admin can have multiple revisions of the site list and the revision is generated whenever admin create/update the site list.
+            # The current revision of the site list.
             @revision
             ## 
-            # The sharedCookies property
+            # A collection of shared cookies defined for the site list.
             @shared_cookies
             ## 
-            # The sites property
+            # A collection of sites defined for the site list.
             @sites
             ## 
             # The status property
@@ -56,14 +56,14 @@ module MicrosoftGraph
                 return BrowserSiteList.new
             end
             ## 
-            ## Gets the description property value. Description for the site list
+            ## Gets the description property value. The description of the site list.
             ## @return a string
             ## 
             def description
                 return @description
             end
             ## 
-            ## Sets the description property value. Description for the site list
+            ## Sets the description property value. The description of the site list.
             ## @param value Value to set for the description property.
             ## @return a void
             ## 
@@ -71,15 +71,15 @@ module MicrosoftGraph
                 @description = value
             end
             ## 
-            ## Gets the displayName property value. Display name of this site list
+            ## Gets the displayName property value. The name of the site list.
             ## @return a string
             ## 
             def display_name
                 return @display_name
             end
             ## 
-            ## Sets the displayName property value. Display name of this site list
-            ## @param value Value to set for the display_name property.
+            ## Sets the displayName property value. The name of the site list.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -104,74 +104,74 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the lastModifiedBy property value. Name of the admin who made the last update on the site list
+            ## Gets the lastModifiedBy property value. The user who last modified the site list.
             ## @return a identity_set
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. Name of the admin who made the last update on the site list
-            ## @param value Value to set for the last_modified_by property.
+            ## Sets the lastModifiedBy property value. The user who last modified the site list.
+            ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
             def last_modified_by=(value)
                 @last_modified_by = value
             end
             ## 
-            ## Gets the lastModifiedDateTime property value. The datetime that the admin last updated the site list.
+            ## Gets the lastModifiedDateTime property value. The date and time when the site list was last modified.
             ## @return a date_time
             ## 
             def last_modified_date_time
                 return @last_modified_date_time
             end
             ## 
-            ## Sets the lastModifiedDateTime property value. The datetime that the admin last updated the site list.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## Sets the lastModifiedDateTime property value. The date and time when the site list was last modified.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
                 @last_modified_date_time = value
             end
             ## 
-            ## Gets the publishedBy property value. Name of the admin who published the site list
+            ## Gets the publishedBy property value. The user who published the site list.
             ## @return a identity_set
             ## 
             def published_by
                 return @published_by
             end
             ## 
-            ## Sets the publishedBy property value. Name of the admin who published the site list
-            ## @param value Value to set for the published_by property.
+            ## Sets the publishedBy property value. The user who published the site list.
+            ## @param value Value to set for the publishedBy property.
             ## @return a void
             ## 
             def published_by=(value)
                 @published_by = value
             end
             ## 
-            ## Gets the publishedDateTime property value. The datetime that admin published the site list to users in their organization.
+            ## Gets the publishedDateTime property value. The date and time when the site list was published.
             ## @return a date_time
             ## 
             def published_date_time
                 return @published_date_time
             end
             ## 
-            ## Sets the publishedDateTime property value. The datetime that admin published the site list to users in their organization.
-            ## @param value Value to set for the published_date_time property.
+            ## Sets the publishedDateTime property value. The date and time when the site list was published.
+            ## @param value Value to set for the publishedDateTime property.
             ## @return a void
             ## 
             def published_date_time=(value)
                 @published_date_time = value
             end
             ## 
-            ## Gets the revision property value. Admin can have multiple revisions of the site list and the revision is generated whenever admin create/update the site list.
+            ## Gets the revision property value. The current revision of the site list.
             ## @return a string
             ## 
             def revision
                 return @revision
             end
             ## 
-            ## Sets the revision property value. Admin can have multiple revisions of the site list and the revision is generated whenever admin create/update the site list.
+            ## Sets the revision property value. The current revision of the site list.
             ## @param value Value to set for the revision property.
             ## @return a void
             ## 
@@ -198,29 +198,29 @@ module MicrosoftGraph
                 writer.write_enum_value("status", @status)
             end
             ## 
-            ## Gets the sharedCookies property value. The sharedCookies property
+            ## Gets the sharedCookies property value. A collection of shared cookies defined for the site list.
             ## @return a browser_shared_cookie
             ## 
             def shared_cookies
                 return @shared_cookies
             end
             ## 
-            ## Sets the sharedCookies property value. The sharedCookies property
-            ## @param value Value to set for the shared_cookies property.
+            ## Sets the sharedCookies property value. A collection of shared cookies defined for the site list.
+            ## @param value Value to set for the sharedCookies property.
             ## @return a void
             ## 
             def shared_cookies=(value)
                 @shared_cookies = value
             end
             ## 
-            ## Gets the sites property value. The sites property
+            ## Gets the sites property value. A collection of sites defined for the site list.
             ## @return a browser_site
             ## 
             def sites
                 return @sites
             end
             ## 
-            ## Sets the sites property value. The sites property
+            ## Sets the sites property value. A collection of sites defined for the site list.
             ## @param value Value to set for the sites property.
             ## @return a void
             ## 

@@ -49,7 +49,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the actionRequiredByDateTime property value. The expected deadline of the action for the message.
-            ## @param value Value to set for the action_required_by_date_time property.
+            ## @param value Value to set for the actionRequiredByDateTime property.
             ## @return a void
             ## 
             def action_required_by_date_time=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the attachmentsArchive property value. The zip file that contains all attachments for a message.
-            ## @param value Value to set for the attachments_archive property.
+            ## @param value Value to set for the attachmentsArchive property.
             ## @return a void
             ## 
             def attachments_archive=(value)
@@ -116,7 +116,7 @@ module MicrosoftGraph
                 @category = value
             end
             ## 
-            ## Instantiates a new ServiceUpdateMessage and sets the default values.
+            ## Instantiates a new serviceUpdateMessage and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -160,7 +160,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hasAttachments property value. Indicates whether the message has any attachment.
-            ## @param value Value to set for the has_attachments property.
+            ## @param value Value to set for the hasAttachments property.
             ## @return a void
             ## 
             def has_attachments=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isMajorChange property value. Indicates whether the message describes a major update for the service.
-            ## @param value Value to set for the is_major_change property.
+            ## @param value Value to set for the isMajorChange property.
             ## @return a void
             ## 
             def is_major_change=(value)
@@ -255,7 +255,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the viewPoint property value. Represents user viewpoints data of the service message. This data includes message status such as whether the user has archived, read, or marked the message as favorite. This property is null when accessed with application permissions.
-            ## @param value Value to set for the view_point property.
+            ## @param value Value to set for the viewPoint property.
             ## @return a void
             ## 
             def view_point=(value)

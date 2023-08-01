@@ -32,7 +32,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                ## @param value Value to set for the AdditionalData property.
+                ## @param value Value to set for the additionalData property.
                 ## @return a void
                 ## 
                 def additional_data=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the hopCount property value. The network path count of this hop that was used to compute the RTT.
-                ## @param value Value to set for the hop_count property.
+                ## @param value Value to set for the hopCount property.
                 ## @return a void
                 ## 
                 def hop_count=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the ipAddress property value. IP address used for this hop in the network trace.
-                ## @param value Value to set for the ip_address property.
+                ## @param value Value to set for the ipAddress property.
                 ## @return a void
                 ## 
                 def ip_address=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the @odata.type property value. The OdataType property
-                ## @param value Value to set for the odata_type property.
+                ## @param value Value to set for the @odata.type property.
                 ## @return a void
                 ## 
                 def odata_type=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the roundTripTime property value. The time from when the trace route packet was sent from the client to this hop and back to the client, denoted in [ISO 8601][] format. For example, 1 second is denoted as PT1S, where P is the duration designator, T is the time designator, and S is the second designator.
-                ## @param value Value to set for the round_trip_time property.
+                ## @param value Value to set for the roundTripTime property.
                 ## @return a void
                 ## 
                 def round_trip_time=(value)

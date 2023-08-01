@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -45,7 +45,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the capabilityStatus property value. For example, 'Enabled'.
-            ## @param value Value to set for the capability_status property.
+            ## @param value Value to set for the capabilityStatus property.
             ## @return a void
             ## 
             def capability_status=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the provisioningStatus property value. For example, 'Success'.
-            ## @param value Value to set for the provisioning_status property.
+            ## @param value Value to set for the provisioningStatus property.
             ## @return a void
             ## 
             def provisioning_status=(value)

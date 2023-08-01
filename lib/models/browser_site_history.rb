@@ -13,28 +13,28 @@ module MicrosoftGraph
             # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
             @additional_data
             ## 
-            # Boolean attribute that controls the behavior of redirected sites
+            # Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
             @allow_redirect
             ## 
-            # The content for the site
+            # The comment for the site.
             @comment
             ## 
-            # Controls what compatibility setting is used for specific sites or domains
+            # Controls what compatibility setting is used for specific sites or domains. The possible values are: default, internetExplorer8Enterprise, internetExplorer7Enterprise, internetExplorer11, internetExplorer10, internetExplorer9, internetExplorer8, internetExplorer7, internetExplorer5, unknownFutureValue.
             @compatibility_mode
             ## 
-            # The user who modified the site
+            # The user who last modified the site.
             @last_modified_by
             ## 
-            # The merge type of the site
+            # The merge type of the site. The possible values are: noMerge, default, unknownFutureValue.
             @merge_type
             ## 
             # The OdataType property
             @odata_type
             ## 
-            # The time the site was last published
+            # The date and time when the site was last published.
             @published_date_time
             ## 
-            # The render mode in Edge client that the site is supposed to open in
+            # The target environment that the site should open in. The possible values are: internetExplorerMode, internetExplorer11, microsoftEdge, configurable, none, unknownFutureValue.Prior to June 15, 2022, the internetExplorer11 option would allow opening a site in the Internet Explorer 11 (IE11) desktop application. Following the retirement of IE11 on June 15, 2022, the internetExplorer11 option will no longer open an IE11 window and will instead behave the same as the internetExplorerMode option.
             @target_environment
             ## 
             ## Gets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
@@ -45,36 +45,36 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Gets the allowRedirect property value. Boolean attribute that controls the behavior of redirected sites
+            ## Gets the allowRedirect property value. Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
             ## @return a boolean
             ## 
             def allow_redirect
                 return @allow_redirect
             end
             ## 
-            ## Sets the allowRedirect property value. Boolean attribute that controls the behavior of redirected sites
-            ## @param value Value to set for the allow_redirect property.
+            ## Sets the allowRedirect property value. Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.
+            ## @param value Value to set for the allowRedirect property.
             ## @return a void
             ## 
             def allow_redirect=(value)
                 @allow_redirect = value
             end
             ## 
-            ## Gets the comment property value. The content for the site
+            ## Gets the comment property value. The comment for the site.
             ## @return a string
             ## 
             def comment
                 return @comment
             end
             ## 
-            ## Sets the comment property value. The content for the site
+            ## Sets the comment property value. The comment for the site.
             ## @param value Value to set for the comment property.
             ## @return a void
             ## 
@@ -82,15 +82,15 @@ module MicrosoftGraph
                 @comment = value
             end
             ## 
-            ## Gets the compatibilityMode property value. Controls what compatibility setting is used for specific sites or domains
+            ## Gets the compatibilityMode property value. Controls what compatibility setting is used for specific sites or domains. The possible values are: default, internetExplorer8Enterprise, internetExplorer7Enterprise, internetExplorer11, internetExplorer10, internetExplorer9, internetExplorer8, internetExplorer7, internetExplorer5, unknownFutureValue.
             ## @return a browser_site_compatibility_mode
             ## 
             def compatibility_mode
                 return @compatibility_mode
             end
             ## 
-            ## Sets the compatibilityMode property value. Controls what compatibility setting is used for specific sites or domains
-            ## @param value Value to set for the compatibility_mode property.
+            ## Sets the compatibilityMode property value. Controls what compatibility setting is used for specific sites or domains. The possible values are: default, internetExplorer8Enterprise, internetExplorer7Enterprise, internetExplorer11, internetExplorer10, internetExplorer9, internetExplorer8, internetExplorer7, internetExplorer5, unknownFutureValue.
+            ## @param value Value to set for the compatibilityMode property.
             ## @return a void
             ## 
             def compatibility_mode=(value)
@@ -129,30 +129,30 @@ module MicrosoftGraph
                 }
             end
             ## 
-            ## Gets the lastModifiedBy property value. The user who modified the site
+            ## Gets the lastModifiedBy property value. The user who last modified the site.
             ## @return a identity_set
             ## 
             def last_modified_by
                 return @last_modified_by
             end
             ## 
-            ## Sets the lastModifiedBy property value. The user who modified the site
-            ## @param value Value to set for the last_modified_by property.
+            ## Sets the lastModifiedBy property value. The user who last modified the site.
+            ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
             def last_modified_by=(value)
                 @last_modified_by = value
             end
             ## 
-            ## Gets the mergeType property value. The merge type of the site
+            ## Gets the mergeType property value. The merge type of the site. The possible values are: noMerge, default, unknownFutureValue.
             ## @return a browser_site_merge_type
             ## 
             def merge_type
                 return @merge_type
             end
             ## 
-            ## Sets the mergeType property value. The merge type of the site
-            ## @param value Value to set for the merge_type property.
+            ## Sets the mergeType property value. The merge type of the site. The possible values are: noMerge, default, unknownFutureValue.
+            ## @param value Value to set for the mergeType property.
             ## @return a void
             ## 
             def merge_type=(value)
@@ -167,22 +167,22 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
                 @odata_type = value
             end
             ## 
-            ## Gets the publishedDateTime property value. The time the site was last published
+            ## Gets the publishedDateTime property value. The date and time when the site was last published.
             ## @return a date_time
             ## 
             def published_date_time
                 return @published_date_time
             end
             ## 
-            ## Sets the publishedDateTime property value. The time the site was last published
-            ## @param value Value to set for the published_date_time property.
+            ## Sets the publishedDateTime property value. The date and time when the site was last published.
+            ## @param value Value to set for the publishedDateTime property.
             ## @return a void
             ## 
             def published_date_time=(value)
@@ -206,15 +206,15 @@ module MicrosoftGraph
                 writer.write_additional_data(@additional_data)
             end
             ## 
-            ## Gets the targetEnvironment property value. The render mode in Edge client that the site is supposed to open in
+            ## Gets the targetEnvironment property value. The target environment that the site should open in. The possible values are: internetExplorerMode, internetExplorer11, microsoftEdge, configurable, none, unknownFutureValue.Prior to June 15, 2022, the internetExplorer11 option would allow opening a site in the Internet Explorer 11 (IE11) desktop application. Following the retirement of IE11 on June 15, 2022, the internetExplorer11 option will no longer open an IE11 window and will instead behave the same as the internetExplorerMode option.
             ## @return a browser_site_target_environment
             ## 
             def target_environment
                 return @target_environment
             end
             ## 
-            ## Sets the targetEnvironment property value. The render mode in Edge client that the site is supposed to open in
-            ## @param value Value to set for the target_environment property.
+            ## Sets the targetEnvironment property value. The target environment that the site should open in. The possible values are: internetExplorerMode, internetExplorer11, microsoftEdge, configurable, none, unknownFutureValue.Prior to June 15, 2022, the internetExplorer11 option would allow opening a site in the Internet Explorer 11 (IE11) desktop application. Following the retirement of IE11 on June 15, 2022, the internetExplorer11 option will no longer open an IE11 window and will instead behave the same as the internetExplorerMode option.
+            ## @param value Value to set for the targetEnvironment property.
             ## @return a void
             ## 
             def target_environment=(value)

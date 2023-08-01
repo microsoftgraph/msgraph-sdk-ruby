@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the colorMode property value. The color mode the printer should use to print the job. Valid values are described in the table below. Read-only.
-            ## @param value Value to set for the color_mode property.
+            ## @param value Value to set for the colorMode property.
             ## @return a void
             ## 
             def color_mode=(value)
@@ -169,7 +169,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the duplexMode property value. The duplex mode the printer should use when printing the job. Valid values are described in the table below. Read-only.
-            ## @param value Value to set for the duplex_mode property.
+            ## @param value Value to set for the duplexMode property.
             ## @return a void
             ## 
             def duplex_mode=(value)
@@ -184,7 +184,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the feedOrientation property value. The orientation to use when feeding media into the printer. Valid values are described in the following table. Read-only.
-            ## @param value Value to set for the feed_orientation property.
+            ## @param value Value to set for the feedOrientation property.
             ## @return a void
             ## 
             def feed_orientation=(value)
@@ -214,7 +214,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fitPdfToPage property value. The fitPdfToPage property
-            ## @param value Value to set for the fit_pdf_to_page property.
+            ## @param value Value to set for the fitPdfToPage property.
             ## @return a void
             ## 
             def fit_pdf_to_page=(value)
@@ -257,7 +257,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the inputBin property value. The input bin (tray) to use when printing. See the printer's capabilities for a list of supported input bins.
-            ## @param value Value to set for the input_bin property.
+            ## @param value Value to set for the inputBin property.
             ## @return a void
             ## 
             def input_bin=(value)
@@ -287,7 +287,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaSize property value. The media size to use when printing. Supports standard size names for ISO and ANSI media sizes.
-            ## @param value Value to set for the media_size property.
+            ## @param value Value to set for the mediaSize property.
             ## @return a void
             ## 
             def media_size=(value)
@@ -302,7 +302,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaType property value. The mediaType property
-            ## @param value Value to set for the media_type property.
+            ## @param value Value to set for the mediaType property.
             ## @return a void
             ## 
             def media_type=(value)
@@ -317,7 +317,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the multipageLayout property value. The multipageLayout property
-            ## @param value Value to set for the multipage_layout property.
+            ## @param value Value to set for the multipageLayout property.
             ## @return a void
             ## 
             def multipage_layout=(value)
@@ -332,7 +332,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -362,7 +362,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the outputBin property value. The outputBin property
-            ## @param value Value to set for the output_bin property.
+            ## @param value Value to set for the outputBin property.
             ## @return a void
             ## 
             def output_bin=(value)
@@ -377,7 +377,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the pageRanges property value. The pageRanges property
-            ## @param value Value to set for the page_ranges property.
+            ## @param value Value to set for the pageRanges property.
             ## @return a void
             ## 
             def page_ranges=(value)
@@ -392,7 +392,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the pagesPerSheet property value. The pagesPerSheet property
-            ## @param value Value to set for the pages_per_sheet property.
+            ## @param value Value to set for the pagesPerSheet property.
             ## @return a void
             ## 
             def pages_per_sheet=(value)

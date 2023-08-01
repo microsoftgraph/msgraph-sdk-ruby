@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -55,7 +55,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentUrl property value. Url used for rendering tab contents in Teams. Required.
-            ## @param value Value to set for the content_url property.
+            ## @param value Value to set for the contentUrl property.
             ## @return a void
             ## 
             def content_url=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the entityId property value. Identifier for the entity hosted by the tab provider.
-            ## @param value Value to set for the entity_id property.
+            ## @param value Value to set for the entityId property.
             ## @return a void
             ## 
             def entity_id=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the removeUrl property value. Url called by Teams client when a Tab is removed using the Teams Client.
-            ## @param value Value to set for the remove_url property.
+            ## @param value Value to set for the removeUrl property.
             ## @return a void
             ## 
             def remove_url=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the websiteUrl property value. Url for showing tab contents outside of Teams.
-            ## @param value Value to set for the website_url property.
+            ## @param value Value to set for the websiteUrl property.
             ## @return a void
             ## 
             def website_url=(value)

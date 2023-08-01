@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowCustomMemes property value. If set to true, enables users to include custom memes.
-            ## @param value Value to set for the allow_custom_memes property.
+            ## @param value Value to set for the allowCustomMemes property.
             ## @return a void
             ## 
             def allow_custom_memes=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowGiphy property value. If set to true, enables Giphy use.
-            ## @param value Value to set for the allow_giphy property.
+            ## @param value Value to set for the allowGiphy property.
             ## @return a void
             ## 
             def allow_giphy=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowStickersAndMemes property value. If set to true, enables users to include stickers and memes.
-            ## @param value Value to set for the allow_stickers_and_memes property.
+            ## @param value Value to set for the allowStickersAndMemes property.
             ## @return a void
             ## 
             def allow_stickers_and_memes=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the giphyContentRating property value. Giphy content rating. Possible values are: moderate, strict.
-            ## @param value Value to set for the giphy_content_rating property.
+            ## @param value Value to set for the giphyContentRating property.
             ## @return a void
             ## 
             def giphy_content_rating=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

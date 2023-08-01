@@ -36,7 +36,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the AdditionalData property.
+                        ## @param value Value to set for the additionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
@@ -51,7 +51,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the addressableUserName property value. The addressableUserName property
-                        ## @param value Value to set for the addressable_user_name property.
+                        ## @param value Value to set for the addressableUserName property.
                         ## @return a void
                         ## 
                         def addressable_user_name=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the displayName property value. The displayName property
-                        ## @param value Value to set for the display_name property.
+                        ## @param value Value to set for the displayName property.
                         ## @return a void
                         ## 
                         def display_name=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the groupTag property value. The groupTag property
-                        ## @param value Value to set for the group_tag property.
+                        ## @param value Value to set for the groupTag property.
                         ## @return a void
                         ## 
                         def group_tag=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the userPrincipalName property value. The userPrincipalName property
-                        ## @param value Value to set for the user_principal_name property.
+                        ## @param value Value to set for the userPrincipalName property.
                         ## @return a void
                         ## 
                         def user_principal_name=(value)

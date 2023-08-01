@@ -9,7 +9,7 @@ module MicrosoftGraph
             class ServiceEndpoint < MicrosoftGraph::Models::CallRecords::Endpoint
                 include MicrosoftKiotaAbstractions::Parsable
                 ## 
-                ## Instantiates a new ServiceEndpoint and sets the default values.
+                ## Instantiates a new serviceEndpoint and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

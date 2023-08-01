@@ -57,7 +57,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the installIntent property value. Possible values for the install intent chosen by the admin.
-            ## @param value Value to set for the install_intent property.
+            ## @param value Value to set for the installIntent property.
             ## @return a void
             ## 
             def install_intent=(value)

@@ -7,6 +7,7 @@ require_relative '../../../device_management'
 require_relative '../../role_definitions'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/role_assignment_item_request_builder'
 require_relative './role_assignments'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::DeviceManagement::RoleDefinitions::Item::RoleAssignments::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the roleAssignments property of the microsoft.graph.roleDefinition entity.
+                        ## @param role_assignment_id Unique identifier of the item
+                        ## @return a role_assignment_item_request_builder
+                        ## 
+                        def by_role_assignment_id(role_assignment_id)
+                            raise StandardError, 'role_assignment_id cannot be null' if role_assignment_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["roleAssignment%2Did"] = role_assignment_id
+                            return MicrosoftGraph::DeviceManagement::RoleDefinitions::Item::RoleAssignments::Item::RoleAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new RoleAssignmentsRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/roleDefinitions/{roleDefinition%2Did}/roleAssignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## List of Role assignments for this role definition.
+                        ## List properties and relationships of the roleAssignment objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of role_assignment_collection_response
                         ## 
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RoleAssignmentCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create new navigation property to roleAssignments for deviceManagement
+                        ## Create a new roleAssignment object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of role_assignment
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::RoleAssignment.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## List of Role assignments for this role definition.
+                        ## List properties and relationships of the roleAssignment objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create new navigation property to roleAssignments for deviceManagement
+                        ## Create a new roleAssignment object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # List of Role assignments for this role definition.
+                        # List properties and relationships of the roleAssignment objects.
                         class RoleAssignmentsRequestBuilderGetQueryParameters
                             
                             ## 

@@ -6,6 +6,7 @@ require_relative '../../../models/unified_rbac_resource_namespace_collection_res
 require_relative '../../role_management'
 require_relative '../entitlement_management'
 require_relative './count/count_request_builder'
+require_relative './item/unified_rbac_resource_namespace_item_request_builder'
 require_relative './resource_namespaces'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::RoleManagement::EntitlementManagement::ResourceNamespaces::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.
+                    ## @param unified_rbac_resource_namespace_id Unique identifier of the item
+                    ## @return a unified_rbac_resource_namespace_item_request_builder
+                    ## 
+                    def by_unified_rbac_resource_namespace_id(unified_rbac_resource_namespace_id)
+                        raise StandardError, 'unified_rbac_resource_namespace_id cannot be null' if unified_rbac_resource_namespace_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["unifiedRbacResourceNamespace%2Did"] = unified_rbac_resource_namespace_id
+                        return MicrosoftGraph::RoleManagement::EntitlementManagement::ResourceNamespaces::Item::UnifiedRbacResourceNamespaceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new ResourceNamespacesRequestBuilder and sets the default values.

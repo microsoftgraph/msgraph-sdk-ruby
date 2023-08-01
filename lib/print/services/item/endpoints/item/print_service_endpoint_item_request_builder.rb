@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Endpoints that can be used to access the service. Read-only. Nullable.
+                            ## Retrieve the properties and relationships of a print service endpoint.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of print_service_endpoint
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Endpoints that can be used to access the service. Read-only. Nullable.
+                            ## Retrieve the properties and relationships of a print service endpoint.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Endpoints that can be used to access the service. Read-only. Nullable.
+                            # Retrieve the properties and relationships of a print service endpoint.
                             class PrintServiceEndpointItemRequestBuilderGetQueryParameters
                                 
                                 ## 

@@ -57,7 +57,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isRegistrationRequired property value. Determines if the user is enforced to register the authentication method.
-            ## @param value Value to set for the is_registration_required property.
+            ## @param value Value to set for the isRegistrationRequired property.
             ## @return a void
             ## 
             def is_registration_required=(value)
@@ -83,7 +83,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the targetType property value. The targetType property
-            ## @param value Value to set for the target_type property.
+            ## @param value Value to set for the targetType property.
             ## @return a void
             ## 
             def target_type=(value)

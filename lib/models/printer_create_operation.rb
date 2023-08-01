@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @certificate = value
             end
             ## 
-            ## Instantiates a new PrinterCreateOperation and sets the default values.
+            ## Instantiates a new printerCreateOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

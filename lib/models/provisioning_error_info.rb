@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -51,7 +51,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalDetails property value. Additional details in case of error.
-            ## @param value Value to set for the additional_details property.
+            ## @param value Value to set for the additionalDetails property.
             ## @return a void
             ## 
             def additional_details=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the errorCategory property value. Categorizes the error code. Possible values are failure, nonServiceFailure, success, unknownFutureValue
-            ## @param value Value to set for the error_category property.
+            ## @param value Value to set for the errorCategory property.
             ## @return a void
             ## 
             def error_category=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the errorCode property value. Unique error code if any occurred. Learn more
-            ## @param value Value to set for the error_code property.
+            ## @param value Value to set for the errorCode property.
             ## @return a void
             ## 
             def error_code=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the recommendedAction property value. Provides the resolution for the corresponding error.
-            ## @param value Value to set for the recommended_action property.
+            ## @param value Value to set for the recommendedAction property.
             ## @return a void
             ## 
             def recommended_action=(value)

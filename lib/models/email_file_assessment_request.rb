@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The mail recipient whose policies are used to assess the mail.
             @recipient_email
             ## 
-            ## Instantiates a new EmailFileAssessmentRequest and sets the default values.
+            ## Instantiates a new emailFileAssessmentRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -32,7 +32,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentData property value. Base64 encoded .eml email file content. The file content cannot fetch back because it isn't stored.
-            ## @param value Value to set for the content_data property.
+            ## @param value Value to set for the contentData property.
             ## @return a void
             ## 
             def content_data=(value)
@@ -56,7 +56,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the destinationRoutingReason property value. The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.
-            ## @param value Value to set for the destination_routing_reason property.
+            ## @param value Value to set for the destinationRoutingReason property.
             ## @return a void
             ## 
             def destination_routing_reason=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the recipientEmail property value. The mail recipient whose policies are used to assess the mail.
-            ## @param value Value to set for the recipient_email property.
+            ## @param value Value to set for the recipientEmail property.
             ## @return a void
             ## 
             def recipient_email=(value)

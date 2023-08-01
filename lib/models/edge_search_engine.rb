@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Allows IT admins to set a predefined default search engine for MDM-Controlled devices.
         class EdgeSearchEngine < MicrosoftGraph::Models::EdgeSearchEngineBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # Allows IT admind to set a predefined default search engine for MDM-Controlled devices
             @edge_search_engine_type
             ## 
-            ## Instantiates a new EdgeSearchEngine and sets the default values.
+            ## Instantiates a new edgeSearchEngine and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -35,7 +37,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the edgeSearchEngineType property value. Allows IT admind to set a predefined default search engine for MDM-Controlled devices
-            ## @param value Value to set for the edge_search_engine_type property.
+            ## @param value Value to set for the edgeSearchEngineType property.
             ## @return a void
             ## 
             def edge_search_engine_type=(value)

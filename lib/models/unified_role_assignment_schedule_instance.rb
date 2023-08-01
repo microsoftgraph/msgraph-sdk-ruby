@@ -37,7 +37,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activatedUsing property value. If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it is null. Supports $expand.
-            ## @param value Value to set for the activated_using property.
+            ## @param value Value to set for the activatedUsing property.
             ## @return a void
             ## 
             def activated_using=(value)
@@ -52,14 +52,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignmentType property value. Type of the assignment which can either be Assigned or Activated. Supports $filter (eq, ne).
-            ## @param value Value to set for the assignment_type property.
+            ## @param value Value to set for the assignmentType property.
             ## @return a void
             ## 
             def assignment_type=(value)
                 @assignment_type = value
             end
             ## 
-            ## Instantiates a new UnifiedRoleAssignmentScheduleInstance and sets the default values.
+            ## Instantiates a new unifiedRoleAssignmentScheduleInstance and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -83,7 +83,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the endDateTime property value. The end date of the schedule instance.
-            ## @param value Value to set for the end_date_time property.
+            ## @param value Value to set for the endDateTime property.
             ## @return a void
             ## 
             def end_date_time=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the memberType property value. How the assignments is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleAssignmentSchedule can be managed by the caller. Supports $filter (eq, ne).
-            ## @param value Value to set for the member_type property.
+            ## @param value Value to set for the memberType property.
             ## @return a void
             ## 
             def member_type=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleAssignmentOriginId property value. The identifier of the role assignment in Azure AD. Supports $filter (eq, ne).
-            ## @param value Value to set for the role_assignment_origin_id property.
+            ## @param value Value to set for the roleAssignmentOriginId property.
             ## @return a void
             ## 
             def role_assignment_origin_id=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleAssignmentScheduleId property value. The identifier of the unifiedRoleAssignmentSchedule object from which this instance was created. Supports $filter (eq, ne).
-            ## @param value Value to set for the role_assignment_schedule_id property.
+            ## @param value Value to set for the roleAssignmentScheduleId property.
             ## @return a void
             ## 
             def role_assignment_schedule_id=(value)
@@ -174,7 +174,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startDateTime property value. When this instance starts.
-            ## @param value Value to set for the start_date_time property.
+            ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
             def start_date_time=(value)

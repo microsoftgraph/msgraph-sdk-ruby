@@ -10,7 +10,7 @@ module MicrosoftGraph
             # ID of the timeOffReason for this timeOffItem. Required.
             @time_off_reason_id
             ## 
-            ## Instantiates a new TimeOffItem and sets the default values.
+            ## Instantiates a new timeOffItem and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -53,7 +53,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the timeOffReasonId property value. ID of the timeOffReason for this timeOffItem. Required.
-            ## @param value Value to set for the time_off_reason_id property.
+            ## @param value Value to set for the timeOffReasonId property.
             ## @return a void
             ## 
             def time_off_reason_id=(value)

@@ -15,11 +15,12 @@ module MicrosoftGraph
                 # Registry key that the recorded action was applied to.
                 @registry_key
                 ## 
-                ## Instantiates a new RegistryKeyEvidence and sets the default values.
+                ## Instantiates a new registryKeyEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()
                     super
+                    @odata_type = "#microsoft.graph.security.registryKeyEvidence"
                 end
                 ## 
                 ## Creates a new instance of the appropriate class based on discriminator value
@@ -49,7 +50,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the registryHive property value. Registry hive of the key that the recorded action was applied to.
-                ## @param value Value to set for the registry_hive property.
+                ## @param value Value to set for the registryHive property.
                 ## @return a void
                 ## 
                 def registry_hive=(value)
@@ -64,7 +65,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the registryKey property value. Registry key that the recorded action was applied to.
-                ## @param value Value to set for the registry_key property.
+                ## @param value Value to set for the registryKey property.
                 ## @return a void
                 ## 
                 def registry_key=(value)

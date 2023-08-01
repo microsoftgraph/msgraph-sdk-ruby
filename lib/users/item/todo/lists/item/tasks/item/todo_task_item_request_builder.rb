@@ -9,15 +9,10 @@ require_relative '../../../lists'
 require_relative '../../item'
 require_relative '../tasks'
 require_relative './attachments/attachments_request_builder'
-require_relative './attachments/item/attachment_base_item_request_builder'
 require_relative './attachment_sessions/attachment_sessions_request_builder'
-require_relative './attachment_sessions/item/attachment_session_item_request_builder'
 require_relative './checklist_items/checklist_items_request_builder'
-require_relative './checklist_items/item/checklist_item_item_request_builder'
 require_relative './extensions/extensions_request_builder'
-require_relative './extensions/item/extension_item_request_builder'
 require_relative './item'
-require_relative './linked_resources/item/linked_resource_item_request_builder'
 require_relative './linked_resources/linked_resources_request_builder'
 
 module MicrosoftGraph
@@ -58,39 +53,6 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::LinkedResources::LinkedResourcesRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
-                                    ## Provides operations to manage the attachments property of the microsoft.graph.todoTask entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a attachment_base_item_request_builder
-                                    ## 
-                                    def attachments_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["attachmentBase%2Did"] = id
-                                        return MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::Attachments::Item::AttachmentBaseItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                    end
-                                    ## 
-                                    ## Provides operations to manage the attachmentSessions property of the microsoft.graph.todoTask entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a attachment_session_item_request_builder
-                                    ## 
-                                    def attachment_sessions_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["attachmentSession%2Did"] = id
-                                        return MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::AttachmentSessions::Item::AttachmentSessionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                    end
-                                    ## 
-                                    ## Provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a checklist_item_item_request_builder
-                                    ## 
-                                    def checklist_items_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["checklistItem%2Did"] = id
-                                        return MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::ChecklistItems::Item::ChecklistItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                    end
-                                    ## 
                                     ## Instantiates a new TodoTaskItemRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -100,7 +62,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}{?%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Delete navigation property tasks for users
+                                    ## Deletes a todoTask object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -114,18 +76,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Provides operations to manage the extensions property of the microsoft.graph.todoTask entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a extension_item_request_builder
-                                    ## 
-                                    def extensions_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["extension%2Did"] = id
-                                        return MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::Extensions::Item::ExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                    end
-                                    ## 
-                                    ## The tasks in this task list. Read-only. Nullable.
+                                    ## Read the properties and relationships of a todoTask object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of todo_task
                                     ## 
@@ -139,18 +90,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TodoTask.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a linked_resource_item_request_builder
-                                    ## 
-                                    def linked_resources_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["linkedResource%2Did"] = id
-                                        return MicrosoftGraph::Users::Item::Todo::Lists::Item::Tasks::Item::LinkedResources::Item::LinkedResourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                    end
-                                    ## 
-                                    ## Update the navigation property tasks in users
+                                    ## Update the properties of a todoTask object.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of todo_task
@@ -166,7 +106,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TodoTask.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Delete navigation property tasks for users
+                                    ## Deletes a todoTask object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -182,7 +122,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## The tasks in this task list. Read-only. Nullable.
+                                    ## Read the properties and relationships of a todoTask object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -200,7 +140,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Update the navigation property tasks in users
+                                    ## Update the properties of a todoTask object.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
@@ -221,7 +161,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # The tasks in this task list. Read-only. Nullable.
+                                    # Read the properties and relationships of a todoTask object.
                                     class TodoTaskItemRequestBuilderGetQueryParameters
                                         
                                         ## 

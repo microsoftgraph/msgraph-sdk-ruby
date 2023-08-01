@@ -10,6 +10,7 @@ require_relative '../../../item'
 require_relative '../../tasks'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/linked_resource_item_request_builder'
 require_relative './linked_resources'
 
 module MicrosoftGraph
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     # Provides operations to count the resources in the collection.
                                     def count()
                                         return MicrosoftGraph::Me::Todo::Lists::Item::Tasks::Item::LinkedResources::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                    end
+                                    ## 
+                                    ## Provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.
+                                    ## @param linked_resource_id Unique identifier of the item
+                                    ## @return a linked_resource_item_request_builder
+                                    ## 
+                                    def by_linked_resource_id(linked_resource_id)
+                                        raise StandardError, 'linked_resource_id cannot be null' if linked_resource_id.nil?
+                                        url_tpl_params = @path_parameters.clone
+                                        url_tpl_params["linkedResource%2Did"] = linked_resource_id
+                                        return MicrosoftGraph::Me::Todo::Lists::Item::Tasks::Item::LinkedResources::Item::LinkedResourceItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                     end
                                     ## 
                                     ## Instantiates a new LinkedResourcesRequestBuilder and sets the default values.
@@ -53,7 +65,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::LinkedResourceCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a **linkedResource** object to track its association. You can also create a **linkedResource** object while creating a task.
+                                    ## Create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a linkedResource object to track its association. You can also create a linkedResource object while creating a task.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of linked_resource
@@ -87,7 +99,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a **linkedResource** object to track its association. You can also create a **linkedResource** object while creating a task.
+                                    ## Create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a linkedResource object to track its association. You can also create a linkedResource object while creating a task.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information

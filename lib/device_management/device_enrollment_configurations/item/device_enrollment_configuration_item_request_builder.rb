@@ -6,7 +6,6 @@ require_relative '../../device_management'
 require_relative '../device_enrollment_configurations'
 require_relative './assign/assign_request_builder'
 require_relative './assignments/assignments_request_builder'
-require_relative './assignments/item/enrollment_configuration_assignment_item_request_builder'
 require_relative './item'
 require_relative './set_priority/set_priority_request_builder'
 
@@ -34,17 +33,6 @@ module MicrosoftGraph
                         return MicrosoftGraph::DeviceManagement::DeviceEnrollmentConfigurations::Item::SetPriority::SetPriorityRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
-                    ## Provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a enrollment_configuration_assignment_item_request_builder
-                    ## 
-                    def assignments_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["enrollmentConfigurationAssignment%2Did"] = id
-                        return MicrosoftGraph::DeviceManagement::DeviceEnrollmentConfigurations::Item::Assignments::Item::EnrollmentConfigurationAssignmentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
                     ## Instantiates a new DeviceEnrollmentConfigurationItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -54,7 +42,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property deviceEnrollmentConfigurations for deviceManagement
+                    ## Deletes a deviceEnrollmentWindowsHelloForBusinessConfiguration.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -68,7 +56,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The list of device enrollment configurations
+                    ## Read properties and relationships of the deviceEnrollmentConfiguration object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of device_enrollment_configuration
                     ## 
@@ -82,7 +70,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceEnrollmentConfiguration.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property deviceEnrollmentConfigurations in deviceManagement
+                    ## Update the properties of a deviceEnrollmentPlatformRestrictionsConfiguration object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of device_enrollment_configuration
@@ -98,7 +86,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceEnrollmentConfiguration.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property deviceEnrollmentConfigurations for deviceManagement
+                    ## Deletes a deviceEnrollmentWindowsHelloForBusinessConfiguration.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -114,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The list of device enrollment configurations
+                    ## Read properties and relationships of the deviceEnrollmentConfiguration object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -132,7 +120,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property deviceEnrollmentConfigurations in deviceManagement
+                    ## Update the properties of a deviceEnrollmentPlatformRestrictionsConfiguration object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -153,7 +141,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The list of device enrollment configurations
+                    # Read properties and relationships of the deviceEnrollmentConfiguration object.
                     class DeviceEnrollmentConfigurationItemRequestBuilderGetQueryParameters
                         
                         ## 

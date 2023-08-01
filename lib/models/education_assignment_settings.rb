@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
             @submission_animation_disabled
             ## 
-            ## Instantiates a new EducationAssignmentSettings and sets the default values.
+            ## Instantiates a new educationAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -53,7 +53,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the submissionAnimationDisabled property value. Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
-            ## @param value Value to set for the submission_animation_disabled property.
+            ## @param value Value to set for the submissionAnimationDisabled property.
             ## @return a void
             ## 
             def submission_animation_disabled=(value)

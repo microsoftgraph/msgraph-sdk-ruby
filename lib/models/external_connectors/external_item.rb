@@ -12,6 +12,9 @@ module MicrosoftGraph
                 # An array of access control entries. Each entry specifies the access granted to a user or group. Required.
                 @acl
                 ## 
+                # Returns a list of activities performed on the item. Write-only.
+                @activities
+                ## 
                 # A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
                 @content
                 ## 
@@ -31,6 +34,21 @@ module MicrosoftGraph
                 ## 
                 def acl=(value)
                     @acl = value
+                end
+                ## 
+                ## Gets the activities property value. Returns a list of activities performed on the item. Write-only.
+                ## @return a external_activity
+                ## 
+                def activities
+                    return @activities
+                end
+                ## 
+                ## Sets the activities property value. Returns a list of activities performed on the item. Write-only.
+                ## @param value Value to set for the activities property.
+                ## @return a void
+                ## 
+                def activities=(value)
+                    @activities = value
                 end
                 ## 
                 ## Instantiates a new externalItem and sets the default values.
@@ -70,6 +88,7 @@ module MicrosoftGraph
                 def get_field_deserializers()
                     return super.merge({
                         "acl" => lambda {|n| @acl = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::Acl.create_from_discriminator_value(pn) }) },
+                        "activities" => lambda {|n| @activities = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ExternalActivity.create_from_discriminator_value(pn) }) },
                         "content" => lambda {|n| @content = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::ExternalItemContent.create_from_discriminator_value(pn) }) },
                         "properties" => lambda {|n| @properties = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ExternalConnectors::Properties.create_from_discriminator_value(pn) }) },
                     })
@@ -98,6 +117,7 @@ module MicrosoftGraph
                     raise StandardError, 'writer cannot be null' if writer.nil?
                     super
                     writer.write_collection_of_object_values("acl", @acl)
+                    writer.write_collection_of_object_values("activities", @activities)
                     writer.write_object_value("content", @content)
                     writer.write_object_value("properties", @properties)
                 end

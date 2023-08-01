@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
             @is_active
             ## 
-            ## Instantiates a new TimeOffReason and sets the default values.
+            ## Instantiates a new timeOffReason and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -41,7 +41,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name of the timeOffReason. Required.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iconType property value. Supported icon types are: none, car, calendar, running, plane, firstAid, doctor, notWorking, clock, juryDuty, globe, cup, phone, weather, umbrella, piggyBank, dog, cake, trafficCone, pin, sunny. Required.
-            ## @param value Value to set for the icon_type property.
+            ## @param value Value to set for the iconType property.
             ## @return a void
             ## 
             def icon_type=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isActive property value. Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.
-            ## @param value Value to set for the is_active property.
+            ## @param value Value to set for the isActive property.
             ## @return a void
             ## 
             def is_active=(value)

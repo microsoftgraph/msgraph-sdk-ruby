@@ -4,10 +4,12 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Store App for Windows information protection
         class WindowsInformationProtectionStoreApp < MicrosoftGraph::Models::WindowsInformationProtectionApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new WindowsInformationProtectionStoreApp and sets the default values.
+            ## Instantiates a new windowsInformationProtectionStoreApp and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -51,7 +51,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cellAddresses property value. Represents the cell addresses
-            ## @param value Value to set for the cell_addresses property.
+            ## @param value Value to set for the cellAddresses property.
             ## @return a void
             ## 
             def cell_addresses=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the columnCount property value. Returns the number of visible columns. Read-only.
-            ## @param value Value to set for the column_count property.
+            ## @param value Value to set for the columnCount property.
             ## @return a void
             ## 
             def column_count=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the formulasLocal property value. Represents the formula in A1-style notation, in the user's language and number-formatting locale. For example, the English '=SUM(A1, 1.5)' formula would become '=SUMME(A1; 1,5)' in German.
-            ## @param value Value to set for the formulas_local property.
+            ## @param value Value to set for the formulasLocal property.
             ## @return a void
             ## 
             def formulas_local=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the formulasR1C1 property value. Represents the formula in R1C1-style notation.
-            ## @param value Value to set for the formulas_r1_c1 property.
+            ## @param value Value to set for the formulasR1C1 property.
             ## @return a void
             ## 
             def formulas_r1_c1=(value)
@@ -177,7 +177,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the numberFormat property value. Represents Excel's number format code for the given cell. Read-only.
-            ## @param value Value to set for the number_format property.
+            ## @param value Value to set for the numberFormat property.
             ## @return a void
             ## 
             def number_format=(value)
@@ -192,7 +192,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the rowCount property value. Returns the number of visible rows. Read-only.
-            ## @param value Value to set for the row_count property.
+            ## @param value Value to set for the rowCount property.
             ## @return a void
             ## 
             def row_count=(value)
@@ -258,7 +258,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the valueTypes property value. Represents the type of data of each cell. Read-only. The possible values are: Unknown, Empty, String, Integer, Double, Boolean, Error.
-            ## @param value Value to set for the value_types property.
+            ## @param value Value to set for the valueTypes property.
             ## @return a void
             ## 
             def value_types=(value)

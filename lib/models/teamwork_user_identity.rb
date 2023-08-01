@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.
             @user_identity_type
             ## 
-            ## Instantiates a new TeamworkUserIdentity and sets the default values.
+            ## Instantiates a new teamworkUserIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -54,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userIdentityType property value. Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.
-            ## @param value Value to set for the user_identity_type property.
+            ## @param value Value to set for the userIdentityType property.
             ## @return a void
             ## 
             def user_identity_type=(value)

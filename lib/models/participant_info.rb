@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the countryCode property value. The ISO 3166-1 Alpha-2 country code of the participant's best estimated physical location at the start of the call. Read-only.
-            ## @param value Value to set for the country_code property.
+            ## @param value Value to set for the countryCode property.
             ## @return a void
             ## 
             def country_code=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the endpointType property value. The type of endpoint the participant is using. Possible values are: default, skypeForBusiness, or skypeForBusinessVoipPhone. Read-only.
-            ## @param value Value to set for the endpoint_type property.
+            ## @param value Value to set for the endpointType property.
             ## @return a void
             ## 
             def endpoint_type=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the languageId property value. The language culture string. Read-only.
-            ## @param value Value to set for the language_id property.
+            ## @param value Value to set for the languageId property.
             ## @return a void
             ## 
             def language_id=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the participantId property value. The participant ID of the participant. Read-only.
-            ## @param value Value to set for the participant_id property.
+            ## @param value Value to set for the participantId property.
             ## @return a void
             ## 
             def participant_id=(value)

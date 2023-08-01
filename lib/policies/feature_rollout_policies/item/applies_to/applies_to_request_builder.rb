@@ -11,6 +11,7 @@ require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
 require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
 require_relative './get_by_ids/get_by_ids_request_builder'
+require_relative './item/directory_object_item_request_builder'
 require_relative './ref/ref_request_builder'
 require_relative './validate_properties/validate_properties_request_builder'
 
@@ -54,6 +55,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::Policies::FeatureRolloutPolicies::Item::AppliesTo::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Gets an item from the MicrosoftGraph.policies.featureRolloutPolicies.item.appliesTo.item collection
+                        ## @param directory_object_id Unique identifier of the item
+                        ## @return a directory_object_item_request_builder
+                        ## 
+                        def by_directory_object_id(directory_object_id)
+                            raise StandardError, 'directory_object_id cannot be null' if directory_object_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["directoryObject%2Did"] = directory_object_id
+                            return MicrosoftGraph::Policies::FeatureRolloutPolicies::Item::AppliesTo::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new AppliesToRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -77,7 +89,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DirectoryObjectCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create new navigation property to appliesTo for policies
+                        ## Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of directory_object
@@ -111,7 +123,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create new navigation property to appliesTo for policies
+                        ## Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

@@ -41,7 +41,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                ## @param value Value to set for the AdditionalData property.
+                ## @param value Value to set for the additionalData property.
                 ## @return a void
                 ## 
                 def additional_data=(value)
@@ -56,7 +56,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the calleeDevice property value. Device information associated with the callee endpoint of this media.
-                ## @param value Value to set for the callee_device property.
+                ## @param value Value to set for the calleeDevice property.
                 ## @return a void
                 ## 
                 def callee_device=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the calleeNetwork property value. Network information associated with the callee endpoint of this media.
-                ## @param value Value to set for the callee_network property.
+                ## @param value Value to set for the calleeNetwork property.
                 ## @return a void
                 ## 
                 def callee_network=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the callerDevice property value. Device information associated with the caller endpoint of this media.
-                ## @param value Value to set for the caller_device property.
+                ## @param value Value to set for the callerDevice property.
                 ## @return a void
                 ## 
                 def caller_device=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the callerNetwork property value. Network information associated with the caller endpoint of this media.
-                ## @param value Value to set for the caller_network property.
+                ## @param value Value to set for the callerNetwork property.
                 ## @return a void
                 ## 
                 def caller_network=(value)
@@ -162,7 +162,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the @odata.type property value. The OdataType property
-                ## @param value Value to set for the odata_type property.
+                ## @param value Value to set for the @odata.type property.
                 ## @return a void
                 ## 
                 def odata_type=(value)

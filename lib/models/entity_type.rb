@@ -10,6 +10,8 @@ module MicrosoftGraph
             ListItem: :ListItem,
             Drive: :Drive,
             UnknownFutureValue: :UnknownFutureValue,
+            Acronym: :Acronym,
+            Bookmark: :Bookmark,
             ChatMessage: :ChatMessage,
             Person: :Person,
         }

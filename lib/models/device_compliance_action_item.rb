@@ -29,7 +29,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the actionType property value. Scheduled Action Type Enum
-            ## @param value Value to set for the action_type property.
+            ## @param value Value to set for the actionType property.
             ## @return a void
             ## 
             def action_type=(value)
@@ -72,7 +72,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the gracePeriodHours property value. Number of hours to wait till the action will be enforced. Valid values 0 to 8760
-            ## @param value Value to set for the grace_period_hours property.
+            ## @param value Value to set for the gracePeriodHours property.
             ## @return a void
             ## 
             def grace_period_hours=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notificationMessageCCList property value. A list of group IDs to speicify who to CC this notification message to.
-            ## @param value Value to set for the notification_message_c_c_list property.
+            ## @param value Value to set for the notificationMessageCCList property.
             ## @return a void
             ## 
             def notification_message_c_c_list=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notificationTemplateId property value. What notification Message template to use
-            ## @param value Value to set for the notification_template_id property.
+            ## @param value Value to set for the notificationTemplateId property.
             ## @return a void
             ## 
             def notification_template_id=(value)

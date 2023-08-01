@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # The Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
         class DeviceAndAppManagementRoleAssignment < MicrosoftGraph::Models::RoleAssignment
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # The list of ids of role member security groups. These are IDs from Azure Active Directory.
             @members
             ## 
-            ## Instantiates a new DeviceAndAppManagementRoleAssignment and sets the default values.
+            ## Instantiates a new deviceAndAppManagementRoleAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()

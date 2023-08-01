@@ -5,6 +5,7 @@ require_relative '../../models/learning_provider_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../employee_experience'
 require_relative './count/count_request_builder'
+require_relative './item/learning_provider_item_request_builder'
 require_relative './learning_providers'
 
 module MicrosoftGraph
@@ -18,6 +19,17 @@ module MicrosoftGraph
                 # Provides operations to count the resources in the collection.
                 def count()
                     return MicrosoftGraph::EmployeeExperience::LearningProviders::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                end
+                ## 
+                ## Provides operations to manage the learningProviders property of the microsoft.graph.employeeExperience entity.
+                ## @param learning_provider_id Unique identifier of the item
+                ## @return a learning_provider_item_request_builder
+                ## 
+                def by_learning_provider_id(learning_provider_id)
+                    raise StandardError, 'learning_provider_id cannot be null' if learning_provider_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["learningProvider%2Did"] = learning_provider_id
+                    return MicrosoftGraph::EmployeeExperience::LearningProviders::Item::LearningProviderItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new LearningProvidersRequestBuilder and sets the default values.

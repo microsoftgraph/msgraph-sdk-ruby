@@ -21,7 +21,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the classifyAs property value. Specifies how incoming messages from a specific sender should always be classified as. The possible values are: focused, other.
-            ## @param value Value to set for the classify_as property.
+            ## @param value Value to set for the classifyAs property.
             ## @return a void
             ## 
             def classify_as=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the senderEmailAddress property value. The email address information of the sender for whom the override is created.
-            ## @param value Value to set for the sender_email_address property.
+            ## @param value Value to set for the senderEmailAddress property.
             ## @return a void
             ## 
             def sender_email_address=(value)

@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # iOS Device Features Configuration Profile.
         class IosDeviceFeaturesConfiguration < MicrosoftGraph::Models::AppleDeviceFeaturesConfigurationBase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -30,14 +32,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assetTagTemplate property value. Asset tag information for the device, displayed on the login window and lock screen.
-            ## @param value Value to set for the asset_tag_template property.
+            ## @param value Value to set for the assetTagTemplate property.
             ## @return a void
             ## 
             def asset_tag_template=(value)
                 @asset_tag_template = value
             end
             ## 
-            ## Instantiates a new IosDeviceFeaturesConfiguration and sets the default values.
+            ## Instantiates a new iosDeviceFeaturesConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -75,7 +77,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the homeScreenDockIcons property value. A list of app and folders to appear on the Home Screen Dock. This collection can contain a maximum of 500 elements.
-            ## @param value Value to set for the home_screen_dock_icons property.
+            ## @param value Value to set for the homeScreenDockIcons property.
             ## @return a void
             ## 
             def home_screen_dock_icons=(value)
@@ -90,7 +92,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the homeScreenPages property value. A list of pages on the Home Screen. This collection can contain a maximum of 500 elements.
-            ## @param value Value to set for the home_screen_pages property.
+            ## @param value Value to set for the homeScreenPages property.
             ## @return a void
             ## 
             def home_screen_pages=(value)
@@ -105,7 +107,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lockScreenFootnote property value. A footnote displayed on the login window and lock screen. Available in iOS 9.3.1 and later.
-            ## @param value Value to set for the lock_screen_footnote property.
+            ## @param value Value to set for the lockScreenFootnote property.
             ## @return a void
             ## 
             def lock_screen_footnote=(value)
@@ -120,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notificationSettings property value. Notification settings for each bundle id. Applicable to devices in supervised mode only (iOS 9.3 and later). This collection can contain a maximum of 500 elements.
-            ## @param value Value to set for the notification_settings property.
+            ## @param value Value to set for the notificationSettings property.
             ## @return a void
             ## 
             def notification_settings=(value)

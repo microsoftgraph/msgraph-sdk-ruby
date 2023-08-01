@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The identity provider type. For a B2B scenario, possible values: AADSignup, MicrosoftAccount, EmailOTP. Required.
             @identity_provider_type
             ## 
-            ## Instantiates a new BuiltInIdentityProvider and sets the default values.
+            ## Instantiates a new builtInIdentityProvider and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the identityProviderType property value. The identity provider type. For a B2B scenario, possible values: AADSignup, MicrosoftAccount, EmailOTP. Required.
-            ## @param value Value to set for the identity_provider_type property.
+            ## @param value Value to set for the identityProviderType property.
             ## @return a void
             ## 
             def identity_provider_type=(value)

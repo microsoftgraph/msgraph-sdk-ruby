@@ -7,12 +7,12 @@ require_relative '../../../item'
 require_relative '../../primary_channel'
 require_relative '../messages'
 require_relative './hosted_contents/hosted_contents_request_builder'
-require_relative './hosted_contents/item/chat_message_hosted_content_item_request_builder'
 require_relative './item'
-require_relative './replies/item/chat_message_item_request_builder'
 require_relative './replies/replies_request_builder'
+require_relative './set_reaction/set_reaction_request_builder'
 require_relative './soft_delete/soft_delete_request_builder'
 require_relative './undo_soft_delete/undo_soft_delete_request_builder'
+require_relative './unset_reaction/unset_reaction_request_builder'
 
 module MicrosoftGraph
     module Teams
@@ -35,6 +35,11 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Teams::Item::PrimaryChannel::Messages::Item::Replies::RepliesRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            # Provides operations to call the setReaction method.
+                            def set_reaction()
+                                return MicrosoftGraph::Teams::Item::PrimaryChannel::Messages::Item::SetReaction::SetReactionRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
                             # Provides operations to call the softDelete method.
                             def soft_delete()
                                 return MicrosoftGraph::Teams::Item::PrimaryChannel::Messages::Item::SoftDelete::SoftDeleteRequestBuilder.new(@path_parameters, @request_adapter)
@@ -43,6 +48,11 @@ module MicrosoftGraph
                             # Provides operations to call the undoSoftDelete method.
                             def undo_soft_delete()
                                 return MicrosoftGraph::Teams::Item::PrimaryChannel::Messages::Item::UndoSoftDelete::UndoSoftDeleteRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            # Provides operations to call the unsetReaction method.
+                            def unset_reaction()
+                                return MicrosoftGraph::Teams::Item::PrimaryChannel::Messages::Item::UnsetReaction::UnsetReactionRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new ChatMessageItemRequestBuilder and sets the default values.
@@ -68,7 +78,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## A collection of all the messages in the channel. A navigation property. Nullable.
+                            ## Retrieve a single message or a message reply in a channel or a chat.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of chat_message
                             ## 
@@ -82,18 +92,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatMessage.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a chat_message_hosted_content_item_request_builder
-                            ## 
-                            def hosted_contents_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["chatMessageHostedContent%2Did"] = id
-                                return MicrosoftGraph::Teams::Item::PrimaryChannel::Messages::Item::HostedContents::Item::ChatMessageHostedContentItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
-                            ## Update the navigation property messages in teams
+                            ## Update a chatMessage object. With the exception of the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.Only the policyViolation property of a chatMessage can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of chat_message
@@ -107,17 +106,6 @@ module MicrosoftGraph
                                 error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ChatMessage.create_from_discriminator_value(pn) }, error_mapping)
-                            end
-                            ## 
-                            ## Provides operations to manage the replies property of the microsoft.graph.chatMessage entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a chat_message_item_request_builder
-                            ## 
-                            def replies_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["chatMessage%2Did1"] = id
-                                return MicrosoftGraph::Teams::Item::PrimaryChannel::Messages::Item::Replies::Item::ChatMessageItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Delete navigation property messages for teams
@@ -136,7 +124,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## A collection of all the messages in the channel. A navigation property. Nullable.
+                            ## Retrieve a single message or a message reply in a channel or a chat.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -154,7 +142,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property messages in teams
+                            ## Update a chatMessage object. With the exception of the policyViolation property, all properties of a chatMessage can be updated in delegated permissions scenarios.Only the policyViolation property of a chatMessage can be updated in application permissions scenarios. The update only works for chats where members are Microsoft Teams users. If one of the participants is using Skype, the operation will fail. This method does not support federation. Only the user in the tenant who sent the message can perform data loss prevention (DLP) updates on the specified chat message.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -175,7 +163,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # A collection of all the messages in the channel. A navigation property. Nullable.
+                            # Retrieve a single message or a message reply in a channel or a chat.
                             class ChatMessageItemRequestBuilderGetQueryParameters
                                 
                                 ## 
