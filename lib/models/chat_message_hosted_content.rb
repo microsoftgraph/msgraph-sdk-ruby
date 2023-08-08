@@ -7,7 +7,7 @@ module MicrosoftGraph
         class ChatMessageHostedContent < MicrosoftGraph::Models::TeamworkHostedContent
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new ChatMessageHostedContent and sets the default values.
+            ## Instantiates a new chatMessageHostedContent and sets the default values.
             ## @return a void
             ## 
             def initialize()

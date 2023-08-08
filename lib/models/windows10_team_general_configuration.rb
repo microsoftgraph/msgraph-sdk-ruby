@@ -5,6 +5,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the windows10TeamGeneralConfiguration resource.
         class Windows10TeamGeneralConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -76,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the azureOperationalInsightsBlockTelemetry property value. Indicates whether or not to Block Azure Operational Insights.
-            ## @param value Value to set for the azure_operational_insights_block_telemetry property.
+            ## @param value Value to set for the azureOperationalInsightsBlockTelemetry property.
             ## @return a void
             ## 
             def azure_operational_insights_block_telemetry=(value)
@@ -91,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the azureOperationalInsightsWorkspaceId property value. The Azure Operational Insights workspace id.
-            ## @param value Value to set for the azure_operational_insights_workspace_id property.
+            ## @param value Value to set for the azureOperationalInsightsWorkspaceId property.
             ## @return a void
             ## 
             def azure_operational_insights_workspace_id=(value)
@@ -106,7 +108,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the azureOperationalInsightsWorkspaceKey property value. The Azure Operational Insights Workspace key.
-            ## @param value Value to set for the azure_operational_insights_workspace_key property.
+            ## @param value Value to set for the azureOperationalInsightsWorkspaceKey property.
             ## @return a void
             ## 
             def azure_operational_insights_workspace_key=(value)
@@ -121,14 +123,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the connectAppBlockAutoLaunch property value. Specifies whether to automatically launch the Connect app whenever a projection is initiated.
-            ## @param value Value to set for the connect_app_block_auto_launch property.
+            ## @param value Value to set for the connectAppBlockAutoLaunch property.
             ## @return a void
             ## 
             def connect_app_block_auto_launch=(value)
                 @connect_app_block_auto_launch = value
             end
             ## 
-            ## Instantiates a new Windows10TeamGeneralConfiguration and sets the default values.
+            ## Instantiates a new windows10TeamGeneralConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -181,7 +183,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maintenanceWindowBlocked property value. Indicates whether or not to Block setting a maintenance window for device updates.
-            ## @param value Value to set for the maintenance_window_blocked property.
+            ## @param value Value to set for the maintenanceWindowBlocked property.
             ## @return a void
             ## 
             def maintenance_window_blocked=(value)
@@ -196,7 +198,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maintenanceWindowDurationInHours property value. Maintenance window duration for device updates. Valid values 0 to 5
-            ## @param value Value to set for the maintenance_window_duration_in_hours property.
+            ## @param value Value to set for the maintenanceWindowDurationInHours property.
             ## @return a void
             ## 
             def maintenance_window_duration_in_hours=(value)
@@ -211,7 +213,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maintenanceWindowStartTime property value. Maintenance window start time for device updates.
-            ## @param value Value to set for the maintenance_window_start_time property.
+            ## @param value Value to set for the maintenanceWindowStartTime property.
             ## @return a void
             ## 
             def maintenance_window_start_time=(value)
@@ -226,7 +228,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the miracastBlocked property value. Indicates whether or not to Block wireless projection.
-            ## @param value Value to set for the miracast_blocked property.
+            ## @param value Value to set for the miracastBlocked property.
             ## @return a void
             ## 
             def miracast_blocked=(value)
@@ -241,7 +243,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the miracastChannel property value. Possible values for Miracast channel.
-            ## @param value Value to set for the miracast_channel property.
+            ## @param value Value to set for the miracastChannel property.
             ## @return a void
             ## 
             def miracast_channel=(value)
@@ -256,7 +258,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the miracastRequirePin property value. Indicates whether or not to require a pin for wireless projection.
-            ## @param value Value to set for the miracast_require_pin property.
+            ## @param value Value to set for the miracastRequirePin property.
             ## @return a void
             ## 
             def miracast_require_pin=(value)
@@ -300,7 +302,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockMyMeetingsAndFiles property value. Specifies whether to disable the 'My meetings and files' feature in the Start menu, which shows the signed-in user's meetings and files from Office 365.
-            ## @param value Value to set for the settings_block_my_meetings_and_files property.
+            ## @param value Value to set for the settingsBlockMyMeetingsAndFiles property.
             ## @return a void
             ## 
             def settings_block_my_meetings_and_files=(value)
@@ -315,7 +317,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockSessionResume property value. Specifies whether to allow the ability to resume a session when the session times out.
-            ## @param value Value to set for the settings_block_session_resume property.
+            ## @param value Value to set for the settingsBlockSessionResume property.
             ## @return a void
             ## 
             def settings_block_session_resume=(value)
@@ -330,7 +332,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsBlockSigninSuggestions property value. Specifies whether to disable auto-populating of the sign-in dialog with invitees from scheduled meetings.
-            ## @param value Value to set for the settings_block_signin_suggestions property.
+            ## @param value Value to set for the settingsBlockSigninSuggestions property.
             ## @return a void
             ## 
             def settings_block_signin_suggestions=(value)
@@ -345,7 +347,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsDefaultVolume property value. Specifies the default volume value for a new session. Permitted values are 0-100. The default is 45. Valid values 0 to 100
-            ## @param value Value to set for the settings_default_volume property.
+            ## @param value Value to set for the settingsDefaultVolume property.
             ## @return a void
             ## 
             def settings_default_volume=(value)
@@ -360,7 +362,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsScreenTimeoutInMinutes property value. Specifies the number of minutes until the Hub screen turns off.
-            ## @param value Value to set for the settings_screen_timeout_in_minutes property.
+            ## @param value Value to set for the settingsScreenTimeoutInMinutes property.
             ## @return a void
             ## 
             def settings_screen_timeout_in_minutes=(value)
@@ -375,7 +377,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsSessionTimeoutInMinutes property value. Specifies the number of minutes until the session times out.
-            ## @param value Value to set for the settings_session_timeout_in_minutes property.
+            ## @param value Value to set for the settingsSessionTimeoutInMinutes property.
             ## @return a void
             ## 
             def settings_session_timeout_in_minutes=(value)
@@ -390,7 +392,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the settingsSleepTimeoutInMinutes property value. Specifies the number of minutes until the Hub enters sleep mode.
-            ## @param value Value to set for the settings_sleep_timeout_in_minutes property.
+            ## @param value Value to set for the settingsSleepTimeoutInMinutes property.
             ## @return a void
             ## 
             def settings_sleep_timeout_in_minutes=(value)
@@ -405,7 +407,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the welcomeScreenBackgroundImageUrl property value. The welcome screen background image URL. The URL must use the HTTPS protocol and return a PNG image.
-            ## @param value Value to set for the welcome_screen_background_image_url property.
+            ## @param value Value to set for the welcomeScreenBackgroundImageUrl property.
             ## @return a void
             ## 
             def welcome_screen_background_image_url=(value)
@@ -420,7 +422,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the welcomeScreenBlockAutomaticWakeUp property value. Indicates whether or not to Block the welcome screen from waking up automatically when someone enters the room.
-            ## @param value Value to set for the welcome_screen_block_automatic_wake_up property.
+            ## @param value Value to set for the welcomeScreenBlockAutomaticWakeUp property.
             ## @return a void
             ## 
             def welcome_screen_block_automatic_wake_up=(value)
@@ -435,7 +437,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the welcomeScreenMeetingInformation property value. Possible values for welcome screen meeting information.
-            ## @param value Value to set for the welcome_screen_meeting_information property.
+            ## @param value Value to set for the welcomeScreenMeetingInformation property.
             ## @return a void
             ## 
             def welcome_screen_meeting_information=(value)

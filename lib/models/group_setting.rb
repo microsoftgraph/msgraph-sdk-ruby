@@ -40,7 +40,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Display name of this group of settings, which comes from the associated template.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the templateId property value. Unique identifier for the tenant-level groupSettingTemplates object that's been customized for this group-level settings object. Read-only.
-            ## @param value Value to set for the template_id property.
+            ## @param value Value to set for the templateId property.
             ## @return a void
             ## 
             def template_id=(value)

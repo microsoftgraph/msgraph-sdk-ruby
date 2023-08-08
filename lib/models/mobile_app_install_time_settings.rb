@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -64,7 +64,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deadlineDateTime property value. The time at which the app should be installed.
-            ## @param value Value to set for the deadline_date_time property.
+            ## @param value Value to set for the deadlineDateTime property.
             ## @return a void
             ## 
             def deadline_date_time=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startDateTime property value. The time at which the app should be available for installation.
-            ## @param value Value to set for the start_date_time property.
+            ## @param value Value to set for the startDateTime property.
             ## @return a void
             ## 
             def start_date_time=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the useLocalTime property value. Whether the local device time or UTC time should be used when determining the available and deadline times.
-            ## @param value Value to set for the use_local_time property.
+            ## @param value Value to set for the useLocalTime property.
             ## @return a void
             ## 
             def use_local_time=(value)

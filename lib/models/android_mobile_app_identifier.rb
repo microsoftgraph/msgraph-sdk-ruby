@@ -4,13 +4,15 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # The identifier for an Android app.
         class AndroidMobileAppIdentifier < MicrosoftGraph::Models::MobileAppIdentifier
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # The identifier for an app, as specified in the play store.
             @package_id
             ## 
-            ## Instantiates a new AndroidMobileAppIdentifier and sets the default values.
+            ## Instantiates a new androidMobileAppIdentifier and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,7 +46,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the packageId property value. The identifier for an app, as specified in the play store.
-            ## @param value Value to set for the package_id property.
+            ## @param value Value to set for the packageId property.
             ## @return a void
             ## 
             def package_id=(value)

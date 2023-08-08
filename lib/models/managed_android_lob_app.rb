@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for Managed Android Line Of Business apps.
         class ManagedAndroidLobApp < MicrosoftGraph::Models::ManagedMobileLobApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -19,7 +21,7 @@ module MicrosoftGraph
             # The version name of managed Android Line of Business (LoB) app.
             @version_name
             ## 
-            ## Instantiates a new ManagedAndroidLobApp and sets the default values.
+            ## Instantiates a new managedAndroidLobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,7 +58,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumSupportedOperatingSystem property value. The value for the minimum applicable operating system.
-            ## @param value Value to set for the minimum_supported_operating_system property.
+            ## @param value Value to set for the minimumSupportedOperatingSystem property.
             ## @return a void
             ## 
             def minimum_supported_operating_system=(value)
@@ -71,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the packageId property value. The package identifier.
-            ## @param value Value to set for the package_id property.
+            ## @param value Value to set for the packageId property.
             ## @return a void
             ## 
             def package_id=(value)
@@ -99,7 +101,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the versionCode property value. The version code of managed Android Line of Business (LoB) app.
-            ## @param value Value to set for the version_code property.
+            ## @param value Value to set for the versionCode property.
             ## @return a void
             ## 
             def version_code=(value)
@@ -114,7 +116,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the versionName property value. The version name of managed Android Line of Business (LoB) app.
-            ## @param value Value to set for the version_name property.
+            ## @param value Value to set for the versionName property.
             ## @return a void
             ## 
             def version_name=(value)

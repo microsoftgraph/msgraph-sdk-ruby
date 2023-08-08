@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the blockCloudObjectTakeoverThroughHardMatchEnabled property value. Used to block cloud object takeover via source anchor hard match if enabled.
-            ## @param value Value to set for the block_cloud_object_takeover_through_hard_match_enabled property.
+            ## @param value Value to set for the blockCloudObjectTakeoverThroughHardMatchEnabled property.
             ## @return a void
             ## 
             def block_cloud_object_takeover_through_hard_match_enabled=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the blockSoftMatchEnabled property value. Use to block soft match for all objects if enabled for the  tenant. Customers are encouraged to enable this feature and keep it enabled until soft matching is required again for their tenancy. This flag should be enabled again after any soft matching has been completed and is no longer needed.
-            ## @param value Value to set for the block_soft_match_enabled property.
+            ## @param value Value to set for the blockSoftMatchEnabled property.
             ## @return a void
             ## 
             def block_soft_match_enabled=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bypassDirSyncOverridesEnabled property value. When true, persists the values of Mobile and OtherMobile in on-premises AD during sync cycles instead of values of MobilePhone or AlternateMobilePhones in Azure AD.
-            ## @param value Value to set for the bypass_dir_sync_overrides_enabled property.
+            ## @param value Value to set for the bypassDirSyncOverridesEnabled property.
             ## @return a void
             ## 
             def bypass_dir_sync_overrides_enabled=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cloudPasswordPolicyForPasswordSyncedUsersEnabled property value. Used to indicate that cloud password policy applies to users whose passwords are synchronized from on-premises.
-            ## @param value Value to set for the cloud_password_policy_for_password_synced_users_enabled property.
+            ## @param value Value to set for the cloudPasswordPolicyForPasswordSyncedUsersEnabled property.
             ## @return a void
             ## 
             def cloud_password_policy_for_password_synced_users_enabled=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the concurrentCredentialUpdateEnabled property value. Used to enable concurrent user credentials update in OrgId.
-            ## @param value Value to set for the concurrent_credential_update_enabled property.
+            ## @param value Value to set for the concurrentCredentialUpdateEnabled property.
             ## @return a void
             ## 
             def concurrent_credential_update_enabled=(value)
@@ -168,7 +168,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the concurrentOrgIdProvisioningEnabled property value. Used to enable concurrent user creation in OrgId.
-            ## @param value Value to set for the concurrent_org_id_provisioning_enabled property.
+            ## @param value Value to set for the concurrentOrgIdProvisioningEnabled property.
             ## @return a void
             ## 
             def concurrent_org_id_provisioning_enabled=(value)
@@ -199,7 +199,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceWritebackEnabled property value. Used to indicate that device write-back is enabled.
-            ## @param value Value to set for the device_writeback_enabled property.
+            ## @param value Value to set for the deviceWritebackEnabled property.
             ## @return a void
             ## 
             def device_writeback_enabled=(value)
@@ -214,7 +214,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the directoryExtensionsEnabled property value. Used to indicate that directory extensions are being synced from on-premises AD to Azure AD.
-            ## @param value Value to set for the directory_extensions_enabled property.
+            ## @param value Value to set for the directoryExtensionsEnabled property.
             ## @return a void
             ## 
             def directory_extensions_enabled=(value)
@@ -229,7 +229,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fopeConflictResolutionEnabled property value. Used to indicate that for a Microsoft Forefront Online Protection for Exchange (FOPE) migrated tenant, the conflicting proxy address should be migrated over.
-            ## @param value Value to set for the fope_conflict_resolution_enabled property.
+            ## @param value Value to set for the fopeConflictResolutionEnabled property.
             ## @return a void
             ## 
             def fope_conflict_resolution_enabled=(value)
@@ -272,7 +272,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the groupWriteBackEnabled property value. Used to enable object-level group writeback feature for additional group types.
-            ## @param value Value to set for the group_write_back_enabled property.
+            ## @param value Value to set for the groupWriteBackEnabled property.
             ## @return a void
             ## 
             def group_write_back_enabled=(value)
@@ -287,7 +287,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -302,7 +302,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordSyncEnabled property value. Used to indicate on-premise password synchronization is enabled.
-            ## @param value Value to set for the password_sync_enabled property.
+            ## @param value Value to set for the passwordSyncEnabled property.
             ## @return a void
             ## 
             def password_sync_enabled=(value)
@@ -317,7 +317,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordWritebackEnabled property value. Used to indicate that writeback of password resets from Azure AD to on-premises AD is enabled.
-            ## @param value Value to set for the password_writeback_enabled property.
+            ## @param value Value to set for the passwordWritebackEnabled property.
             ## @return a void
             ## 
             def password_writeback_enabled=(value)
@@ -332,7 +332,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the quarantineUponProxyAddressesConflictEnabled property value. Used to indicate that we should quarantine objects with conflicting proxy address.
-            ## @param value Value to set for the quarantine_upon_proxy_addresses_conflict_enabled property.
+            ## @param value Value to set for the quarantineUponProxyAddressesConflictEnabled property.
             ## @return a void
             ## 
             def quarantine_upon_proxy_addresses_conflict_enabled=(value)
@@ -347,7 +347,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the quarantineUponUpnConflictEnabled property value. Used to indicate that we should quarantine objects conflicting with duplicate userPrincipalName.
-            ## @param value Value to set for the quarantine_upon_upn_conflict_enabled property.
+            ## @param value Value to set for the quarantineUponUpnConflictEnabled property.
             ## @return a void
             ## 
             def quarantine_upon_upn_conflict_enabled=(value)
@@ -391,7 +391,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the softMatchOnUpnEnabled property value. Used to indicate that we should soft match objects based on userPrincipalName.
-            ## @param value Value to set for the soft_match_on_upn_enabled property.
+            ## @param value Value to set for the softMatchOnUpnEnabled property.
             ## @return a void
             ## 
             def soft_match_on_upn_enabled=(value)
@@ -406,7 +406,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the synchronizeUpnForManagedUsersEnabled property value. Used to indicate that we should synchronize userPrincipalName objects for managed users with licenses.
-            ## @param value Value to set for the synchronize_upn_for_managed_users_enabled property.
+            ## @param value Value to set for the synchronizeUpnForManagedUsersEnabled property.
             ## @return a void
             ## 
             def synchronize_upn_for_managed_users_enabled=(value)
@@ -421,7 +421,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the unifiedGroupWritebackEnabled property value. Used to indicate that Microsoft 365 Group write-back is enabled.
-            ## @param value Value to set for the unified_group_writeback_enabled property.
+            ## @param value Value to set for the unifiedGroupWritebackEnabled property.
             ## @return a void
             ## 
             def unified_group_writeback_enabled=(value)
@@ -436,7 +436,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userForcePasswordChangeOnLogonEnabled property value. Used to indicate that feature to force password change for a user on logon is enabled while synchronizing on-premise credentials.
-            ## @param value Value to set for the user_force_password_change_on_logon_enabled property.
+            ## @param value Value to set for the userForcePasswordChangeOnLogonEnabled property.
             ## @return a void
             ## 
             def user_force_password_change_on_logon_enabled=(value)
@@ -451,7 +451,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userWritebackEnabled property value. Used to indicate that user writeback is enabled.
-            ## @param value Value to set for the user_writeback_enabled property.
+            ## @param value Value to set for the userWritebackEnabled property.
             ## @return a void
             ## 
             def user_writeback_enabled=(value)

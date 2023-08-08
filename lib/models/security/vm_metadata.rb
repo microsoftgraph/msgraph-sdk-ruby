@@ -35,7 +35,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                ## @param value Value to set for the AdditionalData property.
+                ## @param value Value to set for the additionalData property.
                 ## @return a void
                 ## 
                 def additional_data=(value)
@@ -50,7 +50,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the cloudProvider property value. The cloudProvider property
-                ## @param value Value to set for the cloud_provider property.
+                ## @param value Value to set for the cloudProvider property.
                 ## @return a void
                 ## 
                 def cloud_provider=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the @odata.type property value. The OdataType property
-                ## @param value Value to set for the odata_type property.
+                ## @param value Value to set for the @odata.type property.
                 ## @return a void
                 ## 
                 def odata_type=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the resourceId property value. Unique identifier of the Azure resource.
-                ## @param value Value to set for the resource_id property.
+                ## @param value Value to set for the resourceId property.
                 ## @return a void
                 ## 
                 def resource_id=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the subscriptionId property value. Unique identifier of the Azure subscription the customer tenant belongs to.
-                ## @param value Value to set for the subscription_id property.
+                ## @param value Value to set for the subscriptionId property.
                 ## @return a void
                 ## 
                 def subscription_id=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the vmId property value. Unique identifier of the virtual machine instance.
-                ## @param value Value to set for the vm_id property.
+                ## @param value Value to set for the vmId property.
                 ## @return a void
                 ## 
                 def vm_id=(value)

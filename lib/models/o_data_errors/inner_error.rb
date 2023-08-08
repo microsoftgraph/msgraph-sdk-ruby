@@ -33,7 +33,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                ## @param value Value to set for the AdditionalData property.
+                ## @param value Value to set for the additionalData property.
                 ## @return a void
                 ## 
                 def additional_data=(value)
@@ -48,7 +48,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the client-request-id property value. Client request Id as sent by the client application.
-                ## @param value Value to set for the client_request_id property.
+                ## @param value Value to set for the client-request-id property.
                 ## @return a void
                 ## 
                 def client_request_id=(value)
@@ -71,14 +71,14 @@ module MicrosoftGraph
                     return InnerError.new
                 end
                 ## 
-                ## Gets the date property value. Date when the error occured.
+                ## Gets the Date property value. Date when the error occured.
                 ## @return a date_time
                 ## 
                 def date
                     return @date
                 end
                 ## 
-                ## Sets the date property value. Date when the error occured.
+                ## Sets the Date property value. Date when the error occured.
                 ## @param value Value to set for the Date property.
                 ## @return a void
                 ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the @odata.type property value. The OdataType property
-                ## @param value Value to set for the odata_type property.
+                ## @param value Value to set for the @odata.type property.
                 ## @return a void
                 ## 
                 def odata_type=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the request-id property value. Request Id as tracked internally by the service
-                ## @param value Value to set for the request_id property.
+                ## @param value Value to set for the request-id property.
                 ## @return a void
                 ## 
                 def request_id=(value)

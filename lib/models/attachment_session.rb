@@ -56,7 +56,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the expirationDateTime property value. The date and time in UTC when the upload session will expire. The complete file must be uploaded before this expiration time is reached.
-            ## @param value Value to set for the expiration_date_time property.
+            ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
             def expiration_date_time=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the nextExpectedRanges property value. Indicates a single value {start} that represents the location in the file where the next upload should begin.
-            ## @param value Value to set for the next_expected_ranges property.
+            ## @param value Value to set for the nextExpectedRanges property.
             ## @return a void
             ## 
             def next_expected_ranges=(value)

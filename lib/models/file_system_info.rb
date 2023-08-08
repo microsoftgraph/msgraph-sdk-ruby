@@ -31,7 +31,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -53,7 +53,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The UTC date and time the file was created on a client.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastAccessedDateTime property value. The UTC date and time the file was last accessed. Available for the recent file list only.
-            ## @param value Value to set for the last_accessed_date_time property.
+            ## @param value Value to set for the lastAccessedDateTime property.
             ## @return a void
             ## 
             def last_accessed_date_time=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. The UTC date and time the file was last modified on a client.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

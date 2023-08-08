@@ -25,7 +25,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/admin/serviceAnnouncement/messages/markRead")
                         end
                         ## 
-                        ## Mark a list of serviceUpdateMessages as **read** for the signed in user.
+                        ## Mark a list of serviceUpdateMessages as read for the signed in user.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of mark_read_response
@@ -41,7 +41,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Admin::ServiceAnnouncement::Messages::MarkRead::MarkReadResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Mark a list of serviceUpdateMessages as **read** for the signed in user.
+                        ## Mark a list of serviceUpdateMessages as read for the signed in user.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

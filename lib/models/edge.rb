@@ -7,7 +7,7 @@ module MicrosoftGraph
         class Edge < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The internetExplorerMode property
+            # A container for Internet Explorer mode resources.
             @internet_explorer_mode
             ## 
             ## Instantiates a new edge and sets the default values.
@@ -35,15 +35,15 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the internetExplorerMode property value. The internetExplorerMode property
+            ## Gets the internetExplorerMode property value. A container for Internet Explorer mode resources.
             ## @return a internet_explorer_mode
             ## 
             def internet_explorer_mode
                 return @internet_explorer_mode
             end
             ## 
-            ## Sets the internetExplorerMode property value. The internetExplorerMode property
-            ## @param value Value to set for the internet_explorer_mode property.
+            ## Sets the internetExplorerMode property value. A container for Internet Explorer mode resources.
+            ## @param value Value to set for the internetExplorerMode property.
             ## @return a void
             ## 
             def internet_explorer_mode=(value)

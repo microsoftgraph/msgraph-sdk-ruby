@@ -37,7 +37,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignedToMe property value. Indicates whether the stage is assigned to the calling user to review. Read-only.
-            ## @param value Value to set for the assigned_to_me property.
+            ## @param value Value to set for the assignedToMe property.
             ## @return a void
             ## 
             def assigned_to_me=(value)
@@ -68,7 +68,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The label provided by the policy creator to identify an approval stage. Read-only.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the reviewResult property value. The result of this approval record. Possible values include: NotReviewed, Approved, Denied.
-            ## @param value Value to set for the review_result property.
+            ## @param value Value to set for the reviewResult property.
             ## @return a void
             ## 
             def review_result=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the reviewedBy property value. The identifier of the reviewer. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't reviewed. Read-only.
-            ## @param value Value to set for the reviewed_by property.
+            ## @param value Value to set for the reviewedBy property.
             ## @return a void
             ## 
             def reviewed_by=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the reviewedDateTime property value. The date and time when a decision was recorded. The date and time information uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-            ## @param value Value to set for the reviewed_date_time property.
+            ## @param value Value to set for the reviewedDateTime property.
             ## @return a void
             ## 
             def reviewed_date_time=(value)

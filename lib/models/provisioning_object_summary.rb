@@ -8,28 +8,28 @@ module MicrosoftGraph
         class ProvisioningObjectSummary < MicrosoftGraph::Models::Entity
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            # The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            # Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  SUpports $filter (eq, gt, lt) and orderby.
             @activity_date_time
             ## 
-            # Unique ID of this change in this cycle.
+            # Unique ID of this change in this cycle. Supports $filter (eq, contains).
             @change_id
             ## 
-            # Unique ID per job iteration.
+            # Unique ID per job iteration. Supports $filter (eq, contains).
             @cycle_id
             ## 
             # Indicates how long this provisioning action took to finish. Measured in milliseconds.
             @duration_in_milliseconds
             ## 
-            # Details of who initiated this provisioning.
+            # Details of who initiated this provisioning. Supports $filter (eq, contains).
             @initiated_by
             ## 
-            # The unique ID for the whole provisioning job.
+            # The unique ID for the whole provisioning job. Supports $filter (eq, contains).
             @job_id
             ## 
             # Details of each property that was modified in this provisioning action on this object.
             @modified_properties
             ## 
-            # Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
+            # Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list. Supports $filter (eq, contains).
             @provisioning_action
             ## 
             # Details of provisioning status.
@@ -38,48 +38,48 @@ module MicrosoftGraph
             # Details of each step in provisioning.
             @provisioning_steps
             ## 
-            # Represents the service principal used for provisioning.
+            # Represents the service principal used for provisioning. Supports $filter (eq) for id and name.
             @service_principal
             ## 
-            # Details of source object being provisioned.
+            # Details of source object being provisioned. Supports $filter (eq, contains) for identityType, id, and displayName.
             @source_identity
             ## 
-            # Details of source system of the object being provisioned.
+            # Details of source system of the object being provisioned. Supports $filter (eq, contains) for displayName.
             @source_system
             ## 
-            # Details of target object being provisioned.
+            # Details of target object being provisioned. Supports $filter (eq, contains) for identityType, id, and displayName.
             @target_identity
             ## 
-            # Details of target system of the object being provisioned.
+            # Details of target system of the object being provisioned. Supports $filter (eq, contains) for displayName.
             @target_system
             ## 
-            # Unique Azure AD tenant ID.
+            # Unique Azure AD tenant ID. Supports $filter (eq, contains).
             @tenant_id
             ## 
-            ## Gets the activityDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+            ## Gets the activityDateTime property value. Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  SUpports $filter (eq, gt, lt) and orderby.
             ## @return a date_time
             ## 
             def activity_date_time
                 return @activity_date_time
             end
             ## 
-            ## Sets the activityDateTime property value. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the activity_date_time property.
+            ## Sets the activityDateTime property value. Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  SUpports $filter (eq, gt, lt) and orderby.
+            ## @param value Value to set for the activityDateTime property.
             ## @return a void
             ## 
             def activity_date_time=(value)
                 @activity_date_time = value
             end
             ## 
-            ## Gets the changeId property value. Unique ID of this change in this cycle.
+            ## Gets the changeId property value. Unique ID of this change in this cycle. Supports $filter (eq, contains).
             ## @return a string
             ## 
             def change_id
                 return @change_id
             end
             ## 
-            ## Sets the changeId property value. Unique ID of this change in this cycle.
-            ## @param value Value to set for the change_id property.
+            ## Sets the changeId property value. Unique ID of this change in this cycle. Supports $filter (eq, contains).
+            ## @param value Value to set for the changeId property.
             ## @return a void
             ## 
             def change_id=(value)
@@ -102,15 +102,15 @@ module MicrosoftGraph
                 return ProvisioningObjectSummary.new
             end
             ## 
-            ## Gets the cycleId property value. Unique ID per job iteration.
+            ## Gets the cycleId property value. Unique ID per job iteration. Supports $filter (eq, contains).
             ## @return a string
             ## 
             def cycle_id
                 return @cycle_id
             end
             ## 
-            ## Sets the cycleId property value. Unique ID per job iteration.
-            ## @param value Value to set for the cycle_id property.
+            ## Sets the cycleId property value. Unique ID per job iteration. Supports $filter (eq, contains).
+            ## @param value Value to set for the cycleId property.
             ## @return a void
             ## 
             def cycle_id=(value)
@@ -125,7 +125,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the durationInMilliseconds property value. Indicates how long this provisioning action took to finish. Measured in milliseconds.
-            ## @param value Value to set for the duration_in_milliseconds property.
+            ## @param value Value to set for the durationInMilliseconds property.
             ## @return a void
             ## 
             def duration_in_milliseconds=(value)
@@ -156,30 +156,30 @@ module MicrosoftGraph
                 })
             end
             ## 
-            ## Gets the initiatedBy property value. Details of who initiated this provisioning.
+            ## Gets the initiatedBy property value. Details of who initiated this provisioning. Supports $filter (eq, contains).
             ## @return a initiator
             ## 
             def initiated_by
                 return @initiated_by
             end
             ## 
-            ## Sets the initiatedBy property value. Details of who initiated this provisioning.
-            ## @param value Value to set for the initiated_by property.
+            ## Sets the initiatedBy property value. Details of who initiated this provisioning. Supports $filter (eq, contains).
+            ## @param value Value to set for the initiatedBy property.
             ## @return a void
             ## 
             def initiated_by=(value)
                 @initiated_by = value
             end
             ## 
-            ## Gets the jobId property value. The unique ID for the whole provisioning job.
+            ## Gets the jobId property value. The unique ID for the whole provisioning job. Supports $filter (eq, contains).
             ## @return a string
             ## 
             def job_id
                 return @job_id
             end
             ## 
-            ## Sets the jobId property value. The unique ID for the whole provisioning job.
-            ## @param value Value to set for the job_id property.
+            ## Sets the jobId property value. The unique ID for the whole provisioning job. Supports $filter (eq, contains).
+            ## @param value Value to set for the jobId property.
             ## @return a void
             ## 
             def job_id=(value)
@@ -194,22 +194,22 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the modifiedProperties property value. Details of each property that was modified in this provisioning action on this object.
-            ## @param value Value to set for the modified_properties property.
+            ## @param value Value to set for the modifiedProperties property.
             ## @return a void
             ## 
             def modified_properties=(value)
                 @modified_properties = value
             end
             ## 
-            ## Gets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
+            ## Gets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list. Supports $filter (eq, contains).
             ## @return a provisioning_action
             ## 
             def provisioning_action
                 return @provisioning_action
             end
             ## 
-            ## Sets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
-            ## @param value Value to set for the provisioning_action property.
+            ## Sets the provisioningAction property value. Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list. Supports $filter (eq, contains).
+            ## @param value Value to set for the provisioningAction property.
             ## @return a void
             ## 
             def provisioning_action=(value)
@@ -224,7 +224,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the provisioningStatusInfo property value. Details of provisioning status.
-            ## @param value Value to set for the provisioning_status_info property.
+            ## @param value Value to set for the provisioningStatusInfo property.
             ## @return a void
             ## 
             def provisioning_status_info=(value)
@@ -239,7 +239,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the provisioningSteps property value. Details of each step in provisioning.
-            ## @param value Value to set for the provisioning_steps property.
+            ## @param value Value to set for the provisioningSteps property.
             ## @return a void
             ## 
             def provisioning_steps=(value)
@@ -271,90 +271,90 @@ module MicrosoftGraph
                 writer.write_string_value("tenantId", @tenant_id)
             end
             ## 
-            ## Gets the servicePrincipal property value. Represents the service principal used for provisioning.
+            ## Gets the servicePrincipal property value. Represents the service principal used for provisioning. Supports $filter (eq) for id and name.
             ## @return a provisioning_service_principal
             ## 
             def service_principal
                 return @service_principal
             end
             ## 
-            ## Sets the servicePrincipal property value. Represents the service principal used for provisioning.
-            ## @param value Value to set for the service_principal property.
+            ## Sets the servicePrincipal property value. Represents the service principal used for provisioning. Supports $filter (eq) for id and name.
+            ## @param value Value to set for the servicePrincipal property.
             ## @return a void
             ## 
             def service_principal=(value)
                 @service_principal = value
             end
             ## 
-            ## Gets the sourceIdentity property value. Details of source object being provisioned.
+            ## Gets the sourceIdentity property value. Details of source object being provisioned. Supports $filter (eq, contains) for identityType, id, and displayName.
             ## @return a provisioned_identity
             ## 
             def source_identity
                 return @source_identity
             end
             ## 
-            ## Sets the sourceIdentity property value. Details of source object being provisioned.
-            ## @param value Value to set for the source_identity property.
+            ## Sets the sourceIdentity property value. Details of source object being provisioned. Supports $filter (eq, contains) for identityType, id, and displayName.
+            ## @param value Value to set for the sourceIdentity property.
             ## @return a void
             ## 
             def source_identity=(value)
                 @source_identity = value
             end
             ## 
-            ## Gets the sourceSystem property value. Details of source system of the object being provisioned.
+            ## Gets the sourceSystem property value. Details of source system of the object being provisioned. Supports $filter (eq, contains) for displayName.
             ## @return a provisioning_system
             ## 
             def source_system
                 return @source_system
             end
             ## 
-            ## Sets the sourceSystem property value. Details of source system of the object being provisioned.
-            ## @param value Value to set for the source_system property.
+            ## Sets the sourceSystem property value. Details of source system of the object being provisioned. Supports $filter (eq, contains) for displayName.
+            ## @param value Value to set for the sourceSystem property.
             ## @return a void
             ## 
             def source_system=(value)
                 @source_system = value
             end
             ## 
-            ## Gets the targetIdentity property value. Details of target object being provisioned.
+            ## Gets the targetIdentity property value. Details of target object being provisioned. Supports $filter (eq, contains) for identityType, id, and displayName.
             ## @return a provisioned_identity
             ## 
             def target_identity
                 return @target_identity
             end
             ## 
-            ## Sets the targetIdentity property value. Details of target object being provisioned.
-            ## @param value Value to set for the target_identity property.
+            ## Sets the targetIdentity property value. Details of target object being provisioned. Supports $filter (eq, contains) for identityType, id, and displayName.
+            ## @param value Value to set for the targetIdentity property.
             ## @return a void
             ## 
             def target_identity=(value)
                 @target_identity = value
             end
             ## 
-            ## Gets the targetSystem property value. Details of target system of the object being provisioned.
+            ## Gets the targetSystem property value. Details of target system of the object being provisioned. Supports $filter (eq, contains) for displayName.
             ## @return a provisioning_system
             ## 
             def target_system
                 return @target_system
             end
             ## 
-            ## Sets the targetSystem property value. Details of target system of the object being provisioned.
-            ## @param value Value to set for the target_system property.
+            ## Sets the targetSystem property value. Details of target system of the object being provisioned. Supports $filter (eq, contains) for displayName.
+            ## @param value Value to set for the targetSystem property.
             ## @return a void
             ## 
             def target_system=(value)
                 @target_system = value
             end
             ## 
-            ## Gets the tenantId property value. Unique Azure AD tenant ID.
+            ## Gets the tenantId property value. Unique Azure AD tenant ID. Supports $filter (eq, contains).
             ## @return a string
             ## 
             def tenant_id
                 return @tenant_id
             end
             ## 
-            ## Sets the tenantId property value. Unique Azure AD tenant ID.
-            ## @param value Value to set for the tenant_id property.
+            ## Sets the tenantId property value. Unique Azure AD tenant ID. Supports $filter (eq, contains).
+            ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
             def tenant_id=(value)

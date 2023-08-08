@@ -19,8 +19,11 @@ module MicrosoftGraph
             # The policy configuration of the self-service sign-up experience of external users.
             @authentication_flows_policy
             ## 
-            # The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+            # The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
             @authentication_methods_policy
+            ## 
+            # The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+            @authentication_strength_policies
             ## 
             # The policy that controls Azure AD authorization settings.
             @authorization_policy
@@ -69,7 +72,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the activityBasedTimeoutPolicies property value. The policy that controls the idle time out for web sessions for applications.
-            ## @param value Value to set for the activity_based_timeout_policies property.
+            ## @param value Value to set for the activityBasedTimeoutPolicies property.
             ## @return a void
             ## 
             def activity_based_timeout_policies=(value)
@@ -84,7 +87,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the adminConsentRequestPolicy property value. The policy by which consent requests are created and managed for the entire tenant.
-            ## @param value Value to set for the admin_consent_request_policy property.
+            ## @param value Value to set for the adminConsentRequestPolicy property.
             ## @return a void
             ## 
             def admin_consent_request_policy=(value)
@@ -99,7 +102,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appManagementPolicies property value. The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
-            ## @param value Value to set for the app_management_policies property.
+            ## @param value Value to set for the appManagementPolicies property.
             ## @return a void
             ## 
             def app_management_policies=(value)
@@ -114,26 +117,41 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the authenticationFlowsPolicy property value. The policy configuration of the self-service sign-up experience of external users.
-            ## @param value Value to set for the authentication_flows_policy property.
+            ## @param value Value to set for the authenticationFlowsPolicy property.
             ## @return a void
             ## 
             def authentication_flows_policy=(value)
                 @authentication_flows_policy = value
             end
             ## 
-            ## Gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
+            ## Gets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
             ## @return a authentication_methods_policy
             ## 
             def authentication_methods_policy
                 return @authentication_methods_policy
             end
             ## 
-            ## Sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).
-            ## @param value Value to set for the authentication_methods_policy property.
+            ## Sets the authenticationMethodsPolicy property value. The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).
+            ## @param value Value to set for the authenticationMethodsPolicy property.
             ## @return a void
             ## 
             def authentication_methods_policy=(value)
                 @authentication_methods_policy = value
+            end
+            ## 
+            ## Gets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+            ## @return a authentication_strength_policy
+            ## 
+            def authentication_strength_policies
+                return @authentication_strength_policies
+            end
+            ## 
+            ## Sets the authenticationStrengthPolicies property value. The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+            ## @param value Value to set for the authenticationStrengthPolicies property.
+            ## @return a void
+            ## 
+            def authentication_strength_policies=(value)
+                @authentication_strength_policies = value
             end
             ## 
             ## Gets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
@@ -144,7 +162,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the authorizationPolicy property value. The policy that controls Azure AD authorization settings.
-            ## @param value Value to set for the authorization_policy property.
+            ## @param value Value to set for the authorizationPolicy property.
             ## @return a void
             ## 
             def authorization_policy=(value)
@@ -159,7 +177,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the claimsMappingPolicies property value. The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.
-            ## @param value Value to set for the claims_mapping_policies property.
+            ## @param value Value to set for the claimsMappingPolicies property.
             ## @return a void
             ## 
             def claims_mapping_policies=(value)
@@ -174,14 +192,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the conditionalAccessPolicies property value. The custom rules that define an access scenario.
-            ## @param value Value to set for the conditional_access_policies property.
+            ## @param value Value to set for the conditionalAccessPolicies property.
             ## @return a void
             ## 
             def conditional_access_policies=(value)
                 @conditional_access_policies = value
             end
             ## 
-            ## Instantiates a new PolicyRoot and sets the default values.
+            ## Instantiates a new policyRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -205,7 +223,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the crossTenantAccessPolicy property value. The custom rules that define an access scenario when interacting with external Azure AD tenants.
-            ## @param value Value to set for the cross_tenant_access_policy property.
+            ## @param value Value to set for the crossTenantAccessPolicy property.
             ## @return a void
             ## 
             def cross_tenant_access_policy=(value)
@@ -220,7 +238,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defaultAppManagementPolicy property value. The tenant-wide policy that enforces app management restrictions for all applications and service principals.
-            ## @param value Value to set for the default_app_management_policy property.
+            ## @param value Value to set for the defaultAppManagementPolicy property.
             ## @return a void
             ## 
             def default_app_management_policy=(value)
@@ -235,7 +253,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the featureRolloutPolicies property value. The feature rollout policy associated with a directory object.
-            ## @param value Value to set for the feature_rollout_policies property.
+            ## @param value Value to set for the featureRolloutPolicies property.
             ## @return a void
             ## 
             def feature_rollout_policies=(value)
@@ -252,6 +270,7 @@ module MicrosoftGraph
                     "appManagementPolicies" => lambda {|n| @app_management_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AppManagementPolicy.create_from_discriminator_value(pn) }) },
                     "authenticationFlowsPolicy" => lambda {|n| @authentication_flows_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AuthenticationFlowsPolicy.create_from_discriminator_value(pn) }) },
                     "authenticationMethodsPolicy" => lambda {|n| @authentication_methods_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AuthenticationMethodsPolicy.create_from_discriminator_value(pn) }) },
+                    "authenticationStrengthPolicies" => lambda {|n| @authentication_strength_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::AuthenticationStrengthPolicy.create_from_discriminator_value(pn) }) },
                     "authorizationPolicy" => lambda {|n| @authorization_policy = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::AuthorizationPolicy.create_from_discriminator_value(pn) }) },
                     "claimsMappingPolicies" => lambda {|n| @claims_mapping_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ClaimsMappingPolicy.create_from_discriminator_value(pn) }) },
                     "conditionalAccessPolicies" => lambda {|n| @conditional_access_policies = n.get_collection_of_object_values(lambda {|pn| MicrosoftGraph::Models::ConditionalAccessPolicy.create_from_discriminator_value(pn) }) },
@@ -276,7 +295,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the homeRealmDiscoveryPolicies property value. The policy to control Azure AD authentication behavior for federated users.
-            ## @param value Value to set for the home_realm_discovery_policies property.
+            ## @param value Value to set for the homeRealmDiscoveryPolicies property.
             ## @return a void
             ## 
             def home_realm_discovery_policies=(value)
@@ -291,7 +310,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the identitySecurityDefaultsEnforcementPolicy property value. The policy that represents the security defaults that protect against common attacks.
-            ## @param value Value to set for the identity_security_defaults_enforcement_policy property.
+            ## @param value Value to set for the identitySecurityDefaultsEnforcementPolicy property.
             ## @return a void
             ## 
             def identity_security_defaults_enforcement_policy=(value)
@@ -306,7 +325,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the permissionGrantPolicies property value. The policy that specifies the conditions under which consent can be granted.
-            ## @param value Value to set for the permission_grant_policies property.
+            ## @param value Value to set for the permissionGrantPolicies property.
             ## @return a void
             ## 
             def permission_grant_policies=(value)
@@ -321,7 +340,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleManagementPolicies property value. Specifies the various policies associated with scopes and roles.
-            ## @param value Value to set for the role_management_policies property.
+            ## @param value Value to set for the roleManagementPolicies property.
             ## @return a void
             ## 
             def role_management_policies=(value)
@@ -336,7 +355,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleManagementPolicyAssignments property value. The assignment of a role management policy to a role definition object.
-            ## @param value Value to set for the role_management_policy_assignments property.
+            ## @param value Value to set for the roleManagementPolicyAssignments property.
             ## @return a void
             ## 
             def role_management_policy_assignments=(value)
@@ -355,6 +374,7 @@ module MicrosoftGraph
                 writer.write_collection_of_object_values("appManagementPolicies", @app_management_policies)
                 writer.write_object_value("authenticationFlowsPolicy", @authentication_flows_policy)
                 writer.write_object_value("authenticationMethodsPolicy", @authentication_methods_policy)
+                writer.write_collection_of_object_values("authenticationStrengthPolicies", @authentication_strength_policies)
                 writer.write_object_value("authorizationPolicy", @authorization_policy)
                 writer.write_collection_of_object_values("claimsMappingPolicies", @claims_mapping_policies)
                 writer.write_collection_of_object_values("conditionalAccessPolicies", @conditional_access_policies)
@@ -378,7 +398,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tokenIssuancePolicies property value. The policy that specifies the characteristics of SAML tokens issued by Azure AD.
-            ## @param value Value to set for the token_issuance_policies property.
+            ## @param value Value to set for the tokenIssuancePolicies property.
             ## @return a void
             ## 
             def token_issuance_policies=(value)
@@ -393,7 +413,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tokenLifetimePolicies property value. The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
-            ## @param value Value to set for the token_lifetime_policies property.
+            ## @param value Value to set for the tokenLifetimePolicies property.
             ## @return a void
             ## 
             def token_lifetime_policies=(value)

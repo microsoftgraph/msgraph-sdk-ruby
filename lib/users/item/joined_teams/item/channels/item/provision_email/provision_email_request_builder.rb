@@ -32,7 +32,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/joinedTeams/{team%2Did}/channels/{channel%2Did}/provisionEmail")
                                     end
                                     ## 
-                                    ## Provision an email address for a channel. Microsoft Teams doesn't automatically provision an email address for a **channel** by default. To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a **channel**, use the removeEmail method.
+                                    ## Provision an email address for a channel. Microsoft Teams doesn't automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of provision_channel_email_result
                                     ## 
@@ -46,7 +46,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ProvisionChannelEmailResult.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Provision an email address for a channel. Microsoft Teams doesn't automatically provision an email address for a **channel** by default. To have Teams provision an email address, you can call **provisionEmail**, or through the Teams user interface, select **Get email address**, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a **channel**, use the removeEmail method.
+                                    ## Provision an email address for a channel. Microsoft Teams doesn't automatically provision an email address for a channel by default. To have Teams provision an email address, you can call provisionEmail, or through the Teams user interface, select Get email address, which triggers Teams to generate an email address if it has not already provisioned one. To remove the email address of a channel, use the removeEmail method.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 

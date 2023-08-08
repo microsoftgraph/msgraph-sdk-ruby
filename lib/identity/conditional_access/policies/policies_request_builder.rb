@@ -6,6 +6,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../identity'
 require_relative '../conditional_access'
 require_relative './count/count_request_builder'
+require_relative './item/conditional_access_policy_item_request_builder'
 require_relative './policies'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     # Provides operations to count the resources in the collection.
                     def count()
                         return MicrosoftGraph::Identity::ConditionalAccess::Policies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.
+                    ## @param conditional_access_policy_id Unique identifier of the item
+                    ## @return a conditional_access_policy_item_request_builder
+                    ## 
+                    def by_conditional_access_policy_id(conditional_access_policy_id)
+                        raise StandardError, 'conditional_access_policy_id cannot be null' if conditional_access_policy_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["conditionalAccessPolicy%2Did"] = conditional_access_policy_id
+                        return MicrosoftGraph::Identity::ConditionalAccess::Policies::Item::ConditionalAccessPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new PoliciesRequestBuilder and sets the default values.

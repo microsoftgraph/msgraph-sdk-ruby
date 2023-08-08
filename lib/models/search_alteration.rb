@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -45,7 +45,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the alteredHighlightedQueryString property value. Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is: /ue000, /ue001.
-            ## @param value Value to set for the altered_highlighted_query_string property.
+            ## @param value Value to set for the alteredHighlightedQueryString property.
             ## @return a void
             ## 
             def altered_highlighted_query_string=(value)
@@ -60,7 +60,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the alteredQueryString property value. Defines the altered query string with spelling correction.
-            ## @param value Value to set for the altered_query_string property.
+            ## @param value Value to set for the alteredQueryString property.
             ## @return a void
             ## 
             def altered_query_string=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the alteredQueryTokens property value. Represents changed segments related to an original user query.
-            ## @param value Value to set for the altered_query_tokens property.
+            ## @param value Value to set for the alteredQueryTokens property.
             ## @return a void
             ## 
             def altered_query_tokens=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

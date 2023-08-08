@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/deviceConfigurations/{deviceConfiguration%2Did}/userStatuses/{deviceConfigurationUserStatus%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property userStatuses for deviceManagement
+                            ## Deletes a deviceConfigurationUserStatus.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Device configuration installation status by user.
+                            ## Read properties and relationships of the deviceConfigurationUserStatus object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of device_configuration_user_status
                             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceConfigurationUserStatus.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property userStatuses in deviceManagement
+                            ## Update the properties of a deviceConfigurationUserStatus object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of device_configuration_user_status
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceConfigurationUserStatus.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property userStatuses for deviceManagement
+                            ## Deletes a deviceConfigurationUserStatus.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Device configuration installation status by user.
+                            ## Read properties and relationships of the deviceConfigurationUserStatus object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property userStatuses in deviceManagement
+                            ## Update the properties of a deviceConfigurationUserStatus object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Device configuration installation status by user.
+                            # Read properties and relationships of the deviceConfigurationUserStatus object.
                             class DeviceConfigurationUserStatusItemRequestBuilderGetQueryParameters
                                 
                                 ## 

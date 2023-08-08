@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Policy for Windows information protection without MDM
         class WindowsInformationProtectionPolicy < MicrosoftGraph::Models::WindowsInformationProtection
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -43,7 +45,7 @@ module MicrosoftGraph
             # Boolean value that sets Windows Hello for Business as a method for signing into Windows.
             @windows_hello_for_business_blocked
             ## 
-            ## Instantiates a new WindowsInformationProtectionPolicy and sets the default values.
+            ## Instantiates a new windowsInformationProtectionPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -68,7 +70,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the daysWithoutContactBeforeUnenroll property value. Offline interval before app data is wiped (days)
-            ## @param value Value to set for the days_without_contact_before_unenroll property.
+            ## @param value Value to set for the daysWithoutContactBeforeUnenroll property.
             ## @return a void
             ## 
             def days_without_contact_before_unenroll=(value)
@@ -103,7 +105,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mdmEnrollmentUrl property value. Enrollment url for the MDM
-            ## @param value Value to set for the mdm_enrollment_url property.
+            ## @param value Value to set for the mdmEnrollmentUrl property.
             ## @return a void
             ## 
             def mdm_enrollment_url=(value)
@@ -118,7 +120,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minutesOfInactivityBeforeDeviceLock property value. Specifies the maximum amount of time (in minutes) allowed after the device is idle that will cause the device to become PIN or password locked.   Range is an integer X where 0 <= X <= 999.
-            ## @param value Value to set for the minutes_of_inactivity_before_device_lock property.
+            ## @param value Value to set for the minutesOfInactivityBeforeDeviceLock property.
             ## @return a void
             ## 
             def minutes_of_inactivity_before_device_lock=(value)
@@ -133,7 +135,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the numberOfPastPinsRemembered property value. Integer value that specifies the number of past PINs that can be associated to a user account that can't be reused. The largest number you can configure for this policy setting is 50. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then storage of previous PINs is not required. This node was added in Windows 10, version 1511. Default is 0.
-            ## @param value Value to set for the number_of_past_pins_remembered property.
+            ## @param value Value to set for the numberOfPastPinsRemembered property.
             ## @return a void
             ## 
             def number_of_past_pins_remembered=(value)
@@ -148,7 +150,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMaximumAttemptCount property value. The number of authentication failures allowed before the device will be wiped. A value of 0 disables device wipe functionality. Range is an integer X where 4 <= X <= 16 for desktop and 0 <= X <= 999 for mobile devices.
-            ## @param value Value to set for the password_maximum_attempt_count property.
+            ## @param value Value to set for the passwordMaximumAttemptCount property.
             ## @return a void
             ## 
             def password_maximum_attempt_count=(value)
@@ -163,7 +165,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the pinExpirationDays property value. Integer value specifies the period of time (in days) that a PIN can be used before the system requires the user to change it. The largest number you can configure for this policy setting is 730. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then the user's PIN will never expire. This node was added in Windows 10, version 1511. Default is 0.
-            ## @param value Value to set for the pin_expiration_days property.
+            ## @param value Value to set for the pinExpirationDays property.
             ## @return a void
             ## 
             def pin_expiration_days=(value)
@@ -178,7 +180,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the pinLowercaseLetters property value. Pin Character Requirements
-            ## @param value Value to set for the pin_lowercase_letters property.
+            ## @param value Value to set for the pinLowercaseLetters property.
             ## @return a void
             ## 
             def pin_lowercase_letters=(value)
@@ -193,7 +195,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the pinMinimumLength property value. Integer value that sets the minimum number of characters required for the PIN. Default value is 4. The lowest number you can configure for this policy setting is 4. The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest.
-            ## @param value Value to set for the pin_minimum_length property.
+            ## @param value Value to set for the pinMinimumLength property.
             ## @return a void
             ## 
             def pin_minimum_length=(value)
@@ -208,7 +210,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the pinSpecialCharacters property value. Pin Character Requirements
-            ## @param value Value to set for the pin_special_characters property.
+            ## @param value Value to set for the pinSpecialCharacters property.
             ## @return a void
             ## 
             def pin_special_characters=(value)
@@ -223,7 +225,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the pinUppercaseLetters property value. Pin Character Requirements
-            ## @param value Value to set for the pin_uppercase_letters property.
+            ## @param value Value to set for the pinUppercaseLetters property.
             ## @return a void
             ## 
             def pin_uppercase_letters=(value)
@@ -238,7 +240,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the revokeOnMdmHandoffDisabled property value. New property in RS2, pending documentation
-            ## @param value Value to set for the revoke_on_mdm_handoff_disabled property.
+            ## @param value Value to set for the revokeOnMdmHandoffDisabled property.
             ## @return a void
             ## 
             def revoke_on_mdm_handoff_disabled=(value)
@@ -274,7 +276,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsHelloForBusinessBlocked property value. Boolean value that sets Windows Hello for Business as a method for signing into Windows.
-            ## @param value Value to set for the windows_hello_for_business_blocked property.
+            ## @param value Value to set for the windowsHelloForBusinessBlocked property.
             ## @return a void
             ## 
             def windows_hello_for_business_blocked=(value)

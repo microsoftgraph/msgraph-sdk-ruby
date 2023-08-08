@@ -5,6 +5,7 @@ require_relative '../../../models/token_lifetime_policy_collection_response'
 require_relative '../../applications'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/token_lifetime_policy_item_request_builder'
 require_relative './ref/ref_request_builder'
 require_relative './token_lifetime_policies'
 
@@ -27,6 +28,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::Applications::Item::TokenLifetimePolicies::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Gets an item from the MicrosoftGraph.applications.item.tokenLifetimePolicies.item collection
+                    ## @param token_lifetime_policy_id Unique identifier of the item
+                    ## @return a token_lifetime_policy_item_request_builder
+                    ## 
+                    def by_token_lifetime_policy_id(token_lifetime_policy_id)
+                        raise StandardError, 'token_lifetime_policy_id cannot be null' if token_lifetime_policy_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["tokenLifetimePolicy%2Did"] = token_lifetime_policy_id
+                        return MicrosoftGraph::Applications::Item::TokenLifetimePolicies::Item::TokenLifetimePolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new TokenLifetimePoliciesRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -36,7 +48,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/applications/{application%2Did}/tokenLifetimePolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## List the tokenLifetimePolicy objects that are assigned to an application.
+                    ## List the tokenLifetimePolicy objects that are assigned to an application. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of token_lifetime_policy_collection_response
                     ## 
@@ -50,7 +62,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TokenLifetimePolicyCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## List the tokenLifetimePolicy objects that are assigned to an application.
+                    ## List the tokenLifetimePolicy objects that are assigned to an application. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -69,7 +81,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # List the tokenLifetimePolicy objects that are assigned to an application.
+                    # List the tokenLifetimePolicy objects that are assigned to an application. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
                     class TokenLifetimePoliciesRequestBuilderGetQueryParameters
                         
                         ## 

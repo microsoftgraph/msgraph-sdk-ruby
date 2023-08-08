@@ -21,7 +21,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accessPackageDisplayName property value. Display name of the access package to which access has been granted.
-            ## @param value Value to set for the access_package_display_name property.
+            ## @param value Value to set for the accessPackageDisplayName property.
             ## @return a void
             ## 
             def access_package_display_name=(value)
@@ -36,14 +36,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accessPackageId property value. Identifier of the access package to which access has been granted.
-            ## @param value Value to set for the access_package_id property.
+            ## @param value Value to set for the accessPackageId property.
             ## @return a void
             ## 
             def access_package_id=(value)
                 @access_package_id = value
             end
             ## 
-            ## Instantiates a new AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource and sets the default values.
+            ## Instantiates a new accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource and sets the default values.
             ## @return a void
             ## 
             def initialize()

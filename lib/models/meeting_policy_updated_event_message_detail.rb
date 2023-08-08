@@ -16,7 +16,7 @@ module MicrosoftGraph
             # Unique identifier of the meeting chat.
             @meeting_chat_id
             ## 
-            ## Instantiates a new MeetingPolicyUpdatedEventMessageDetail and sets the default values.
+            ## Instantiates a new meetingPolicyUpdatedEventMessageDetail and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the meetingChatEnabled property value. Represents whether the meeting chat is enabled or not.
-            ## @param value Value to set for the meeting_chat_enabled property.
+            ## @param value Value to set for the meetingChatEnabled property.
             ## @return a void
             ## 
             def meeting_chat_enabled=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the meetingChatId property value. Unique identifier of the meeting chat.
-            ## @param value Value to set for the meeting_chat_id property.
+            ## @param value Value to set for the meetingChatId property.
             ## @return a void
             ## 
             def meeting_chat_id=(value)

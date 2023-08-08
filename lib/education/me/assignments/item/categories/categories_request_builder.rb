@@ -10,6 +10,7 @@ require_relative '../item'
 require_relative './categories'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/education_category_item_request_builder'
 require_relative './ref/ref_request_builder'
 
 module MicrosoftGraph
@@ -38,6 +39,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Education::Me::Assignments::Item::Categories::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Gets an item from the MicrosoftGraph.education.me.assignments.item.categories.item collection
+                            ## @param education_category_id Unique identifier of the item
+                            ## @return a education_category_item_request_builder
+                            ## 
+                            def by_education_category_id(education_category_id)
+                                raise StandardError, 'education_category_id cannot be null' if education_category_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["educationCategory%2Did"] = education_category_id
+                                return MicrosoftGraph::Education::Me::Assignments::Item::Categories::Item::EducationCategoryItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new CategoriesRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -61,7 +73,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::EducationCategoryCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Create new navigation property to categories for education
+                            ## Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of education_category
@@ -95,7 +107,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Create new navigation property to categories for education
+                            ## Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information

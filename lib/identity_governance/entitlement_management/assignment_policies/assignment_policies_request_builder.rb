@@ -7,6 +7,7 @@ require_relative '../../identity_governance'
 require_relative '../entitlement_management'
 require_relative './assignment_policies'
 require_relative './count/count_request_builder'
+require_relative './item/access_package_assignment_policy_item_request_builder'
 
 module MicrosoftGraph
     module IdentityGovernance
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentPolicies::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    ## Provides operations to manage the assignmentPolicies property of the microsoft.graph.entitlementManagement entity.
+                    ## @param access_package_assignment_policy_id Unique identifier of the item
+                    ## @return a access_package_assignment_policy_item_request_builder
+                    ## 
+                    def by_access_package_assignment_policy_id(access_package_assignment_policy_id)
+                        raise StandardError, 'access_package_assignment_policy_id cannot be null' if access_package_assignment_policy_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["accessPackageAssignmentPolicy%2Did"] = access_package_assignment_policy_id
+                        return MicrosoftGraph::IdentityGovernance::EntitlementManagement::AssignmentPolicies::Item::AccessPackageAssignmentPolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new AssignmentPoliciesRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -31,7 +43,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/assignmentPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                     end
                     ## 
-                    ## In Azure AD entitlement management, retrieve a list of accessPackageAssignmentPolicy objects. If the delegated user is in a directory role, the resulting list includes all the assignment policies that the caller has access to read, across all catalogs and access packages. If the delegated user is an access package manager or catalog owner, they should instead retrieve the policies for the access packages they can read with list accessPackages by including `$expand=accessPackageAssignmentPolicies` as a query parameter.
+                    ## In Azure AD entitlement management, retrieve a list of accessPackageAssignmentPolicy objects. If the delegated user is in a directory role, the resulting list includes all the assignment policies that the caller has access to read, across all catalogs and access packages. If the delegated user is an access package manager or catalog owner, they should instead retrieve the policies for the access packages they can read with list accessPackages by including $expand=accessPackageAssignmentPolicies as a query parameter.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of access_package_assignment_policy_collection_response
                     ## 
@@ -61,7 +73,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackageAssignmentPolicy.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## In Azure AD entitlement management, retrieve a list of accessPackageAssignmentPolicy objects. If the delegated user is in a directory role, the resulting list includes all the assignment policies that the caller has access to read, across all catalogs and access packages. If the delegated user is an access package manager or catalog owner, they should instead retrieve the policies for the access packages they can read with list accessPackages by including `$expand=accessPackageAssignmentPolicies` as a query parameter.
+                    ## In Azure AD entitlement management, retrieve a list of accessPackageAssignmentPolicy objects. If the delegated user is in a directory role, the resulting list includes all the assignment policies that the caller has access to read, across all catalogs and access packages. If the delegated user is an access package manager or catalog owner, they should instead retrieve the policies for the access packages they can read with list accessPackages by including $expand=accessPackageAssignmentPolicies as a query parameter.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -100,7 +112,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # In Azure AD entitlement management, retrieve a list of accessPackageAssignmentPolicy objects. If the delegated user is in a directory role, the resulting list includes all the assignment policies that the caller has access to read, across all catalogs and access packages. If the delegated user is an access package manager or catalog owner, they should instead retrieve the policies for the access packages they can read with list accessPackages by including `$expand=accessPackageAssignmentPolicies` as a query parameter.
+                    # In Azure AD entitlement management, retrieve a list of accessPackageAssignmentPolicy objects. If the delegated user is in a directory role, the resulting list includes all the assignment policies that the caller has access to read, across all catalogs and access packages. If the delegated user is an access package manager or catalog owner, they should instead retrieve the policies for the access packages they can read with list accessPackages by including $expand=accessPackageAssignmentPolicies as a query parameter.
                     class AssignmentPoliciesRequestBuilderGetQueryParameters
                         
                         ## 

@@ -32,7 +32,7 @@ module MicrosoftGraph
             # The date time of CodeSigning Cert when it is uploaded (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
             @upload_date_time
             ## 
-            ## Instantiates a new EnterpriseCodeSigningCertificate and sets the default values.
+            ## Instantiates a new enterpriseCodeSigningCertificate and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -71,7 +71,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the expirationDateTime property value. The cert expiration date and time (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
-            ## @param value Value to set for the expiration_date_time property.
+            ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
             def expiration_date_time=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the issuerName property value. The issuer name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
-            ## @param value Value to set for the issuer_name property.
+            ## @param value Value to set for the issuerName property.
             ## @return a void
             ## 
             def issuer_name=(value)
@@ -179,7 +179,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the subjectName property value. The subject name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
-            ## @param value Value to set for the subject_name property.
+            ## @param value Value to set for the subjectName property.
             ## @return a void
             ## 
             def subject_name=(value)
@@ -194,7 +194,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the uploadDateTime property value. The date time of CodeSigning Cert when it is uploaded (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
-            ## @param value Value to set for the upload_date_time property.
+            ## @param value Value to set for the uploadDateTime property.
             ## @return a void
             ## 
             def upload_date_time=(value)

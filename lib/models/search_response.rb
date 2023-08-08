@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hitsContainers property value. A collection of search results.
-            ## @param value Value to set for the hits_containers property.
+            ## @param value Value to set for the hitsContainers property.
             ## @return a void
             ## 
             def hits_containers=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the queryAlterationResponse property value. Provides information related to spelling corrections in the alteration response.
-            ## @param value Value to set for the query_alteration_response property.
+            ## @param value Value to set for the queryAlterationResponse property.
             ## @return a void
             ## 
             def query_alteration_response=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resultTemplates property value. A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.
-            ## @param value Value to set for the result_templates property.
+            ## @param value Value to set for the resultTemplates property.
             ## @return a void
             ## 
             def result_templates=(value)
@@ -137,7 +137,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the searchTerms property value. Contains the search terms sent in the initial search query.
-            ## @param value Value to set for the search_terms property.
+            ## @param value Value to set for the searchTerms property.
             ## @return a void
             ## 
             def search_terms=(value)

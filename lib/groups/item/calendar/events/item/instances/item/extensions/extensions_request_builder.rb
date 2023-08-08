@@ -12,6 +12,7 @@ require_relative '../../instances'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './extensions'
+require_relative './item/extension_item_request_builder'
 
 module MicrosoftGraph
     module Groups
@@ -32,6 +33,17 @@ module MicrosoftGraph
                                             return MicrosoftGraph::Groups::Item::Calendar::Events::Item::Instances::Item::Extensions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                         end
                                         ## 
+                                        ## Provides operations to manage the extensions property of the microsoft.graph.event entity.
+                                        ## @param extension_id Unique identifier of the item
+                                        ## @return a extension_item_request_builder
+                                        ## 
+                                        def by_extension_id(extension_id)
+                                            raise StandardError, 'extension_id cannot be null' if extension_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["extension%2Did"] = extension_id
+                                            return MicrosoftGraph::Groups::Item::Calendar::Events::Item::Instances::Item::Extensions::Item::ExtensionItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                        end
+                                        ## 
                                         ## Instantiates a new ExtensionsRequestBuilder and sets the default values.
                                         ## @param path_parameters Path parameters for the request
                                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -41,7 +53,7 @@ module MicrosoftGraph
                                             super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/calendar/events/{event%2Did}/instances/{event%2Did1}/extensions{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}")
                                         end
                                         ## 
-                                        ## The collection of open extensions defined for the event. Nullable.
+                                        ## Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of extension_collection_response
                                         ## 
@@ -55,7 +67,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ExtensionCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
+                                        ## Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of extension
@@ -71,7 +83,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Extension.create_from_discriminator_value(pn) }, error_mapping)
                                         end
                                         ## 
-                                        ## The collection of open extensions defined for the event. Nullable.
+                                        ## Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -89,7 +101,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. See known limitations of open extensions for more information. The table in the Permissions section lists the resources that support open extensions.
+                                        ## Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
@@ -110,7 +122,7 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # The collection of open extensions defined for the event. Nullable.
+                                        # Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
                                         class ExtensionsRequestBuilderGetQueryParameters
                                             
                                             ## 

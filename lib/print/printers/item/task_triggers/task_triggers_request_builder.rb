@@ -7,6 +7,7 @@ require_relative '../../../print'
 require_relative '../../printers'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/print_task_trigger_item_request_builder'
 require_relative './task_triggers'
 
 module MicrosoftGraph
@@ -22,6 +23,17 @@ module MicrosoftGraph
                         # Provides operations to count the resources in the collection.
                         def count()
                             return MicrosoftGraph::Print::Printers::Item::TaskTriggers::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.
+                        ## @param print_task_trigger_id Unique identifier of the item
+                        ## @return a print_task_trigger_item_request_builder
+                        ## 
+                        def by_print_task_trigger_id(print_task_trigger_id)
+                            raise StandardError, 'print_task_trigger_id cannot be null' if print_task_trigger_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["printTaskTrigger%2Did"] = print_task_trigger_id
+                            return MicrosoftGraph::Print::Printers::Item::TaskTriggers::Item::PrintTaskTriggerItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new TaskTriggersRequestBuilder and sets the default values.
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintTaskTriggerCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create a new task trigger on the specified printer. Currently, only **one** task trigger can be specified per printer, but this limit might be removed in the future. 
+                        ## Create a new task trigger on the specified printer. Currently, only one task trigger can be specified per printer, but this limit might be removed in the future. 
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of print_task_trigger
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create a new task trigger on the specified printer. Currently, only **one** task trigger can be specified per printer, but this limit might be removed in the future. 
+                        ## Create a new task trigger on the specified printer. Currently, only one task trigger can be specified per printer, but this limit might be removed in the future. 
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

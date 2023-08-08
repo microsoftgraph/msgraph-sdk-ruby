@@ -87,7 +87,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                ## @param value Value to set for the AdditionalData property.
+                ## @param value Value to set for the additionalData property.
                 ## @return a void
                 ## 
                 def additional_data=(value)
@@ -102,7 +102,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the callEndSubReason property value. In addition to the SIP codes, Microsoft has own subcodes that indicate the specific issue.
-                ## @param value Value to set for the call_end_sub_reason property.
+                ## @param value Value to set for the callEndSubReason property.
                 ## @return a void
                 ## 
                 def call_end_sub_reason=(value)
@@ -117,7 +117,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the callType property value. Call type and direction.
-                ## @param value Value to set for the call_type property.
+                ## @param value Value to set for the callType property.
                 ## @return a void
                 ## 
                 def call_type=(value)
@@ -132,7 +132,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the calleeNumber property value. Number of the user or bot who received the call. E.164 format, but may include additional data.
-                ## @param value Value to set for the callee_number property.
+                ## @param value Value to set for the calleeNumber property.
                 ## @return a void
                 ## 
                 def callee_number=(value)
@@ -147,7 +147,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the callerNumber property value. Number of the user or bot who made the call. E.164 format, but may include additional data.
-                ## @param value Value to set for the caller_number property.
+                ## @param value Value to set for the callerNumber property.
                 ## @return a void
                 ## 
                 def caller_number=(value)
@@ -169,7 +169,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the correlationId property value. Identifier for the call that you can use when calling Microsoft Support. GUID.
-                ## @param value Value to set for the correlation_id property.
+                ## @param value Value to set for the correlationId property.
                 ## @return a void
                 ## 
                 def correlation_id=(value)
@@ -208,7 +208,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the endDateTime property value. Only exists for successful (fully established) calls. Time when call ended.
-                ## @param value Value to set for the end_date_time property.
+                ## @param value Value to set for the endDateTime property.
                 ## @return a void
                 ## 
                 def end_date_time=(value)
@@ -223,7 +223,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the failureDateTime property value. Only exists for failed (not fully established) calls.
-                ## @param value Value to set for the failure_date_time property.
+                ## @param value Value to set for the failureDateTime property.
                 ## @return a void
                 ## 
                 def failure_date_time=(value)
@@ -238,7 +238,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the finalSipCode property value. The code with which the call ended, RFC 3261.
-                ## @param value Value to set for the final_sip_code property.
+                ## @param value Value to set for the finalSipCode property.
                 ## @return a void
                 ## 
                 def final_sip_code=(value)
@@ -253,7 +253,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the finalSipCodePhrase property value. Description of the SIP code and Microsoft subcode.
-                ## @param value Value to set for the final_sip_code_phrase property.
+                ## @param value Value to set for the finalSipCodePhrase property.
                 ## @return a void
                 ## 
                 def final_sip_code_phrase=(value)
@@ -313,7 +313,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the inviteDateTime property value. When the initial invite was sent.
-                ## @param value Value to set for the invite_date_time property.
+                ## @param value Value to set for the inviteDateTime property.
                 ## @return a void
                 ## 
                 def invite_date_time=(value)
@@ -328,7 +328,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the mediaBypassEnabled property value. Indicates if the trunk was enabled for media bypass or not.
-                ## @param value Value to set for the media_bypass_enabled property.
+                ## @param value Value to set for the mediaBypassEnabled property.
                 ## @return a void
                 ## 
                 def media_bypass_enabled=(value)
@@ -343,7 +343,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the mediaPathLocation property value. The datacenter used for media path in non-bypass call.
-                ## @param value Value to set for the media_path_location property.
+                ## @param value Value to set for the mediaPathLocation property.
                 ## @return a void
                 ## 
                 def media_path_location=(value)
@@ -358,7 +358,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the @odata.type property value. The OdataType property
-                ## @param value Value to set for the odata_type property.
+                ## @param value Value to set for the @odata.type property.
                 ## @return a void
                 ## 
                 def odata_type=(value)
@@ -404,7 +404,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the signalingLocation property value. The datacenter used for signaling for both bypass and non-bypass calls.
-                ## @param value Value to set for the signaling_location property.
+                ## @param value Value to set for the signalingLocation property.
                 ## @return a void
                 ## 
                 def signaling_location=(value)
@@ -419,7 +419,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the startDateTime property value. Call start time.For failed and unanswered calls, this can be equal to invite or failure time.
-                ## @param value Value to set for the start_date_time property.
+                ## @param value Value to set for the startDateTime property.
                 ## @return a void
                 ## 
                 def start_date_time=(value)
@@ -434,7 +434,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the successfulCall property value. Success or attempt.
-                ## @param value Value to set for the successful_call property.
+                ## @param value Value to set for the successfulCall property.
                 ## @return a void
                 ## 
                 def successful_call=(value)
@@ -449,7 +449,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the trunkFullyQualifiedDomainName property value. Fully qualified domain name of the session border controller.
-                ## @param value Value to set for the trunk_fully_qualified_domain_name property.
+                ## @param value Value to set for the trunkFullyQualifiedDomainName property.
                 ## @return a void
                 ## 
                 def trunk_fully_qualified_domain_name=(value)
@@ -464,7 +464,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the userDisplayName property value. Display name of the user.
-                ## @param value Value to set for the user_display_name property.
+                ## @param value Value to set for the userDisplayName property.
                 ## @return a void
                 ## 
                 def user_display_name=(value)
@@ -479,7 +479,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the userId property value. Calling user's ID in Graph. This and other user info will be null/empty for bot call types. GUID.
-                ## @param value Value to set for the user_id property.
+                ## @param value Value to set for the userId property.
                 ## @return a void
                 ## 
                 def user_id=(value)
@@ -494,7 +494,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the userPrincipalName property value. UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
-                ## @param value Value to set for the user_principal_name property.
+                ## @param value Value to set for the userPrincipalName property.
                 ## @return a void
                 ## 
                 def user_principal_name=(value)

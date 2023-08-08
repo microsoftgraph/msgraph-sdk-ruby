@@ -40,7 +40,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the degFreedom1 property value. The degFreedom1 property
-                                    ## @param value Value to set for the deg_freedom1 property.
+                                    ## @param value Value to set for the degFreedom1 property.
                                     ## @return a void
                                     ## 
                                     def deg_freedom1=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the degFreedom2 property value. The degFreedom2 property
-                                    ## @param value Value to set for the deg_freedom2 property.
+                                    ## @param value Value to set for the degFreedom2 property.
                                     ## @return a void
                                     ## 
                                     def deg_freedom2=(value)

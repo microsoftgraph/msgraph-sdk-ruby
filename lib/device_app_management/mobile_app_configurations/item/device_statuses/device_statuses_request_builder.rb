@@ -8,6 +8,7 @@ require_relative '../../mobile_app_configurations'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './device_statuses'
+require_relative './item/managed_device_mobile_app_configuration_device_status_item_request_builder'
 
 module MicrosoftGraph
     module DeviceAppManagement
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             return MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Item::DeviceStatuses::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
+                        ## Provides operations to manage the deviceStatuses property of the microsoft.graph.managedDeviceMobileAppConfiguration entity.
+                        ## @param managed_device_mobile_app_configuration_device_status_id Unique identifier of the item
+                        ## @return a managed_device_mobile_app_configuration_device_status_item_request_builder
+                        ## 
+                        def by_managed_device_mobile_app_configuration_device_status_id(managed_device_mobile_app_configuration_device_status_id)
+                            raise StandardError, 'managed_device_mobile_app_configuration_device_status_id cannot be null' if managed_device_mobile_app_configuration_device_status_id.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["managedDeviceMobileAppConfigurationDeviceStatus%2Did"] = managed_device_mobile_app_configuration_device_status_id
+                            return MicrosoftGraph::DeviceAppManagement::MobileAppConfigurations::Item::DeviceStatuses::Item::ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                        end
+                        ## 
                         ## Instantiates a new DeviceStatusesRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -33,7 +45,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/deviceAppManagement/mobileAppConfigurations/{managedDeviceMobileAppConfiguration%2Did}/deviceStatuses{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                         end
                         ## 
-                        ## List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+                        ## List properties and relationships of the managedDeviceMobileAppConfigurationDeviceStatus objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of managed_device_mobile_app_configuration_device_status_collection_response
                         ## 
@@ -47,7 +59,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedDeviceMobileAppConfigurationDeviceStatusCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Create new navigation property to deviceStatuses for deviceAppManagement
+                        ## Create a new managedDeviceMobileAppConfigurationDeviceStatus object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of managed_device_mobile_app_configuration_device_status
@@ -63,7 +75,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ManagedDeviceMobileAppConfigurationDeviceStatus.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+                        ## List properties and relationships of the managedDeviceMobileAppConfigurationDeviceStatus objects.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -81,7 +93,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Create new navigation property to deviceStatuses for deviceAppManagement
+                        ## Create a new managedDeviceMobileAppConfigurationDeviceStatus object.
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -102,7 +114,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # List of ManagedDeviceMobileAppConfigurationDeviceStatus.
+                        # List properties and relationships of the managedDeviceMobileAppConfigurationDeviceStatus objects.
                         class DeviceStatusesRequestBuilderGetQueryParameters
                             
                             ## 

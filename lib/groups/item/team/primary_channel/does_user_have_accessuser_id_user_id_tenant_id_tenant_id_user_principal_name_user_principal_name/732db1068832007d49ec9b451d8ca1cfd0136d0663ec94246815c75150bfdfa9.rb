@@ -72,6 +72,24 @@ module MicrosoftGraph
                                 ## 
                                 # Usage: userPrincipalName='@userPrincipalName'
                                 attr_accessor :user_principal_name
+                                ## 
+                                ## Maps the query parameters names to their encoded names for the URI template parsing.
+                                ## @param original_name The original query parameter name in the class.
+                                ## @return a string
+                                ## 
+                                def get_query_parameter(original_name)
+                                    raise StandardError, 'original_name cannot be null' if original_name.nil?
+                                    case original_name
+                                        when "tenant_id"
+                                            return "tenantId"
+                                        when "user_id"
+                                            return "userId"
+                                        when "user_principal_name"
+                                            return "userPrincipalName"
+                                        else
+                                            return original_name
+                                    end
+                                end
                             end
                         end
                     end

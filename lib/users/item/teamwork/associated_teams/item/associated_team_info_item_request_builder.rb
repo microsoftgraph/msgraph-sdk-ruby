@@ -7,6 +7,7 @@ require_relative '../../../item'
 require_relative '../../teamwork'
 require_relative '../associated_teams'
 require_relative './item'
+require_relative './team/team_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -18,6 +19,11 @@ module MicrosoftGraph
                         # Provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.
                         class AssociatedTeamInfoItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                             
+                            ## 
+                            # Provides operations to manage the team property of the microsoft.graph.teamInfo entity.
+                            def team()
+                                return MicrosoftGraph::Users::Item::Teamwork::AssociatedTeams::Item::Team::TeamRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
                             ## 
                             ## Instantiates a new AssociatedTeamInfoItemRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request

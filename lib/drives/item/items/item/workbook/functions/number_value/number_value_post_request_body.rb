@@ -40,7 +40,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the decimalSeparator property value. The decimalSeparator property
-                                    ## @param value Value to set for the decimal_separator property.
+                                    ## @param value Value to set for the decimalSeparator property.
                                     ## @return a void
                                     ## 
                                     def decimal_separator=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the groupSeparator property value. The groupSeparator property
-                                    ## @param value Value to set for the group_separator property.
+                                    ## @param value Value to set for the groupSeparator property.
                                     ## @return a void
                                     ## 
                                     def group_separator=(value)

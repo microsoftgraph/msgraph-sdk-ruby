@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for an iOS store app that you can manage with an Intune app protection policy.
         class ManagedIOSStoreApp < MicrosoftGraph::Models::ManagedApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -27,7 +29,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appStoreUrl property value. The Apple AppStoreUrl.
-            ## @param value Value to set for the app_store_url property.
+            ## @param value Value to set for the appStoreUrl property.
             ## @return a void
             ## 
             def app_store_url=(value)
@@ -42,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicableDeviceType property value. Contains properties of the possible iOS device types the mobile app can run on.
-            ## @param value Value to set for the applicable_device_type property.
+            ## @param value Value to set for the applicableDeviceType property.
             ## @return a void
             ## 
             def applicable_device_type=(value)
@@ -57,14 +59,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bundleId property value. The app's Bundle ID.
-            ## @param value Value to set for the bundle_id property.
+            ## @param value Value to set for the bundleId property.
             ## @return a void
             ## 
             def bundle_id=(value)
                 @bundle_id = value
             end
             ## 
-            ## Instantiates a new ManagedIOSStoreApp and sets the default values.
+            ## Instantiates a new managedIOSStoreApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -101,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumSupportedOperatingSystem property value. Contains properties of the minimum operating system required for an iOS mobile app.
-            ## @param value Value to set for the minimum_supported_operating_system property.
+            ## @param value Value to set for the minimumSupportedOperatingSystem property.
             ## @return a void
             ## 
             def minimum_supported_operating_system=(value)

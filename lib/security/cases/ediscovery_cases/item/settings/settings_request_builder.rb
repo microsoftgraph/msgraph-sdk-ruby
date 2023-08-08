@@ -6,7 +6,7 @@ require_relative '../../../../security'
 require_relative '../../../cases'
 require_relative '../../ediscovery_cases'
 require_relative '../item'
-require_relative './security_reset_to_default/security_reset_to_default_request_builder'
+require_relative './microsoft_graph_security_reset_to_default/microsoft_graph_security_reset_to_default_request_builder'
 require_relative './settings'
 
 module MicrosoftGraph
@@ -21,8 +21,8 @@ module MicrosoftGraph
                             
                             ## 
                             # Provides operations to call the resetToDefault method.
-                            def security_reset_to_default()
-                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Settings::SecurityResetToDefault::SecurityResetToDefaultRequestBuilder.new(@path_parameters, @request_adapter)
+                            def microsoft_graph_security_reset_to_default()
+                                return MicrosoftGraph::Security::Cases::EdiscoveryCases::Item::Settings::MicrosoftGraphSecurityResetToDefault::MicrosoftGraphSecurityResetToDefaultRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new SettingsRequestBuilder and sets the default values.

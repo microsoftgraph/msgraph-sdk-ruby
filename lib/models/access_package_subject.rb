@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the connectedOrganization property value. The connected organization of the subject. Read-only. Nullable.
-            ## @param value Value to set for the connected_organization property.
+            ## @param value Value to set for the connectedOrganization property.
             ## @return a void
             ## 
             def connected_organization=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The display name of the subject.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -112,7 +112,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
-            ## @param value Value to set for the object_id property.
+            ## @param value Value to set for the objectId property.
             ## @return a void
             ## 
             def object_id=(value)
@@ -127,7 +127,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
-            ## @param value Value to set for the on_premises_security_identifier property.
+            ## @param value Value to set for the onPremisesSecurityIdentifier property.
             ## @return a void
             ## 
             def on_premises_security_identifier=(value)
@@ -142,7 +142,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the principalName property value. The principal name, if known, of the subject.
-            ## @param value Value to set for the principal_name property.
+            ## @param value Value to set for the principalName property.
             ## @return a void
             ## 
             def principal_name=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the subjectType property value. The resource type of the subject. The possible values are: notSpecified, user, servicePrincipal, unknownFutureValue.
-            ## @param value Value to set for the subject_type property.
+            ## @param value Value to set for the subjectType property.
             ## @return a void
             ## 
             def subject_type=(value)

@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Policy used to configure detailed management settings for a specified set of apps
         class ManagedAppProtection < MicrosoftGraph::Models::ManagedAppPolicy
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -96,7 +98,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowedDataStorageLocations property value. Data storage locations where a user may store managed data.
-            ## @param value Value to set for the allowed_data_storage_locations property.
+            ## @param value Value to set for the allowedDataStorageLocations property.
             ## @return a void
             ## 
             def allowed_data_storage_locations=(value)
@@ -111,7 +113,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowedInboundDataTransferSources property value. Data can be transferred from/to these classes of apps
-            ## @param value Value to set for the allowed_inbound_data_transfer_sources property.
+            ## @param value Value to set for the allowedInboundDataTransferSources property.
             ## @return a void
             ## 
             def allowed_inbound_data_transfer_sources=(value)
@@ -126,7 +128,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowedOutboundClipboardSharingLevel property value. Represents the level to which the device's clipboard may be shared between apps
-            ## @param value Value to set for the allowed_outbound_clipboard_sharing_level property.
+            ## @param value Value to set for the allowedOutboundClipboardSharingLevel property.
             ## @return a void
             ## 
             def allowed_outbound_clipboard_sharing_level=(value)
@@ -141,14 +143,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowedOutboundDataTransferDestinations property value. Data can be transferred from/to these classes of apps
-            ## @param value Value to set for the allowed_outbound_data_transfer_destinations property.
+            ## @param value Value to set for the allowedOutboundDataTransferDestinations property.
             ## @return a void
             ## 
             def allowed_outbound_data_transfer_destinations=(value)
                 @allowed_outbound_data_transfer_destinations = value
             end
             ## 
-            ## Instantiates a new ManagedAppProtection and sets the default values.
+            ## Instantiates a new managedAppProtection and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -164,7 +166,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contactSyncBlocked property value. Indicates whether contacts can be synced to the user's device.
-            ## @param value Value to set for the contact_sync_blocked property.
+            ## @param value Value to set for the contactSyncBlocked property.
             ## @return a void
             ## 
             def contact_sync_blocked=(value)
@@ -202,7 +204,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the dataBackupBlocked property value. Indicates whether the backup of a managed app's data is blocked.
-            ## @param value Value to set for the data_backup_blocked property.
+            ## @param value Value to set for the dataBackupBlocked property.
             ## @return a void
             ## 
             def data_backup_blocked=(value)
@@ -217,7 +219,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceComplianceRequired property value. Indicates whether device compliance is required.
-            ## @param value Value to set for the device_compliance_required property.
+            ## @param value Value to set for the deviceComplianceRequired property.
             ## @return a void
             ## 
             def device_compliance_required=(value)
@@ -232,7 +234,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the disableAppPinIfDevicePinIsSet property value. Indicates whether use of the app pin is required if the device pin is set.
-            ## @param value Value to set for the disable_app_pin_if_device_pin_is_set property.
+            ## @param value Value to set for the disableAppPinIfDevicePinIsSet property.
             ## @return a void
             ## 
             def disable_app_pin_if_device_pin_is_set=(value)
@@ -247,7 +249,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fingerprintBlocked property value. Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.
-            ## @param value Value to set for the fingerprint_blocked property.
+            ## @param value Value to set for the fingerprintBlocked property.
             ## @return a void
             ## 
             def fingerprint_blocked=(value)
@@ -297,7 +299,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the managedBrowser property value. Type of managed browser
-            ## @param value Value to set for the managed_browser property.
+            ## @param value Value to set for the managedBrowser property.
             ## @return a void
             ## 
             def managed_browser=(value)
@@ -312,7 +314,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the managedBrowserToOpenLinksRequired property value. Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)
-            ## @param value Value to set for the managed_browser_to_open_links_required property.
+            ## @param value Value to set for the managedBrowserToOpenLinksRequired property.
             ## @return a void
             ## 
             def managed_browser_to_open_links_required=(value)
@@ -327,7 +329,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the maximumPinRetries property value. Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.
-            ## @param value Value to set for the maximum_pin_retries property.
+            ## @param value Value to set for the maximumPinRetries property.
             ## @return a void
             ## 
             def maximum_pin_retries=(value)
@@ -342,7 +344,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumPinLength property value. Minimum pin length required for an app-level pin if PinRequired is set to True
-            ## @param value Value to set for the minimum_pin_length property.
+            ## @param value Value to set for the minimumPinLength property.
             ## @return a void
             ## 
             def minimum_pin_length=(value)
@@ -357,7 +359,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumRequiredAppVersion property value. Versions less than the specified version will block the managed app from accessing company data.
-            ## @param value Value to set for the minimum_required_app_version property.
+            ## @param value Value to set for the minimumRequiredAppVersion property.
             ## @return a void
             ## 
             def minimum_required_app_version=(value)
@@ -372,7 +374,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumRequiredOsVersion property value. Versions less than the specified version will block the managed app from accessing company data.
-            ## @param value Value to set for the minimum_required_os_version property.
+            ## @param value Value to set for the minimumRequiredOsVersion property.
             ## @return a void
             ## 
             def minimum_required_os_version=(value)
@@ -387,7 +389,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumWarningAppVersion property value. Versions less than the specified version will result in warning message on the managed app.
-            ## @param value Value to set for the minimum_warning_app_version property.
+            ## @param value Value to set for the minimumWarningAppVersion property.
             ## @return a void
             ## 
             def minimum_warning_app_version=(value)
@@ -402,7 +404,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumWarningOsVersion property value. Versions less than the specified version will result in warning message on the managed app from accessing company data.
-            ## @param value Value to set for the minimum_warning_os_version property.
+            ## @param value Value to set for the minimumWarningOsVersion property.
             ## @return a void
             ## 
             def minimum_warning_os_version=(value)
@@ -417,7 +419,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the organizationalCredentialsRequired property value. Indicates whether organizational credentials are required for app use.
-            ## @param value Value to set for the organizational_credentials_required property.
+            ## @param value Value to set for the organizationalCredentialsRequired property.
             ## @return a void
             ## 
             def organizational_credentials_required=(value)
@@ -432,7 +434,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the periodBeforePinReset property value. TimePeriod before the all-level pin must be reset if PinRequired is set to True.
-            ## @param value Value to set for the period_before_pin_reset property.
+            ## @param value Value to set for the periodBeforePinReset property.
             ## @return a void
             ## 
             def period_before_pin_reset=(value)
@@ -447,7 +449,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the periodOfflineBeforeAccessCheck property value. The period after which access is checked when the device is not connected to the internet.
-            ## @param value Value to set for the period_offline_before_access_check property.
+            ## @param value Value to set for the periodOfflineBeforeAccessCheck property.
             ## @return a void
             ## 
             def period_offline_before_access_check=(value)
@@ -462,7 +464,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the periodOfflineBeforeWipeIsEnforced property value. The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.
-            ## @param value Value to set for the period_offline_before_wipe_is_enforced property.
+            ## @param value Value to set for the periodOfflineBeforeWipeIsEnforced property.
             ## @return a void
             ## 
             def period_offline_before_wipe_is_enforced=(value)
@@ -477,7 +479,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the periodOnlineBeforeAccessCheck property value. The period after which access is checked when the device is connected to the internet.
-            ## @param value Value to set for the period_online_before_access_check property.
+            ## @param value Value to set for the periodOnlineBeforeAccessCheck property.
             ## @return a void
             ## 
             def period_online_before_access_check=(value)
@@ -492,7 +494,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the pinCharacterSet property value. Character set which is to be used for a user's app PIN
-            ## @param value Value to set for the pin_character_set property.
+            ## @param value Value to set for the pinCharacterSet property.
             ## @return a void
             ## 
             def pin_character_set=(value)
@@ -507,7 +509,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the pinRequired property value. Indicates whether an app-level pin is required.
-            ## @param value Value to set for the pin_required property.
+            ## @param value Value to set for the pinRequired property.
             ## @return a void
             ## 
             def pin_required=(value)
@@ -522,7 +524,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the printBlocked property value. Indicates whether printing is allowed from managed apps.
-            ## @param value Value to set for the print_blocked property.
+            ## @param value Value to set for the printBlocked property.
             ## @return a void
             ## 
             def print_blocked=(value)
@@ -537,7 +539,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the saveAsBlocked property value. Indicates whether users may use the 'Save As' menu item to save a copy of protected files.
-            ## @param value Value to set for the save_as_blocked property.
+            ## @param value Value to set for the saveAsBlocked property.
             ## @return a void
             ## 
             def save_as_blocked=(value)
@@ -588,7 +590,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the simplePinBlocked property value. Indicates whether simplePin is blocked.
-            ## @param value Value to set for the simple_pin_blocked property.
+            ## @param value Value to set for the simplePinBlocked property.
             ## @return a void
             ## 
             def simple_pin_blocked=(value)

@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the versionId property value. The unique identifier for the version that is visible to the current caller. Read-only.
-            ## @param value Value to set for the version_id property.
+            ## @param value Value to set for the versionId property.
             ## @return a void
             ## 
             def version_id=(value)

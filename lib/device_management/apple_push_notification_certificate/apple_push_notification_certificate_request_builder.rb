@@ -42,7 +42,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## Apple push notification certificate.
+                ## Read properties and relationships of the applePushNotificationCertificate object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of apple_push_notification_certificate
                 ## 
@@ -56,7 +56,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ApplePushNotificationCertificate.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Update the navigation property applePushNotificationCertificate in deviceManagement
+                ## Update the properties of a applePushNotificationCertificate object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of apple_push_notification_certificate
@@ -88,7 +88,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Apple push notification certificate.
+                ## Read properties and relationships of the applePushNotificationCertificate object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Update the navigation property applePushNotificationCertificate in deviceManagement
+                ## Update the properties of a applePushNotificationCertificate object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -127,7 +127,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Apple push notification certificate.
+                # Read properties and relationships of the applePushNotificationCertificate object.
                 class ApplePushNotificationCertificateRequestBuilderGetQueryParameters
                     
                     ## 

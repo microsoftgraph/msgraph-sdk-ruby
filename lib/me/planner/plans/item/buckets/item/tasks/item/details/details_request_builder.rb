@@ -50,7 +50,7 @@ module MicrosoftGraph
                                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                                             end
                                             ## 
-                                            ## Retrieve the properties and relationships of a **plannerTaskDetails** object.
+                                            ## Retrieve the properties and relationships of a plannerTaskDetails object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a Fiber of planner_task_details
                                             ## 
@@ -96,7 +96,7 @@ module MicrosoftGraph
                                                 return request_info
                                             end
                                             ## 
-                                            ## Retrieve the properties and relationships of a **plannerTaskDetails** object.
+                                            ## Retrieve the properties and relationships of a plannerTaskDetails object.
                                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                             ## @return a request_information
                                             ## 
@@ -135,7 +135,7 @@ module MicrosoftGraph
                                             end
 
                                             ## 
-                                            # Retrieve the properties and relationships of a **plannerTaskDetails** object.
+                                            # Retrieve the properties and relationships of a plannerTaskDetails object.
                                             class DetailsRequestBuilderGetQueryParameters
                                                 
                                                 ## 

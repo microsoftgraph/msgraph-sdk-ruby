@@ -24,7 +24,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/security/alerts/{alert%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Get alerts from security
+                    ## Retrieve the properties and relationships of an alert object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of alert
                     ## 
@@ -38,7 +38,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Alert.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property alerts in security
+                    ## Update an editable alert property within any integrated solution to keep alert status and assignments in sync across solutions. This method updates any solution that has a record of the referenced alert ID.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of alert
@@ -54,7 +54,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Alert.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Get alerts from security
+                    ## Retrieve the properties and relationships of an alert object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -72,7 +72,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property alerts in security
+                    ## Update an editable alert property within any integrated solution to keep alert status and assignments in sync across solutions. This method updates any solution that has a record of the referenced alert ID.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -93,7 +93,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Get alerts from security
+                    # Retrieve the properties and relationships of an alert object.
                     class AlertItemRequestBuilderGetQueryParameters
                         
                         ## 

@@ -16,7 +16,7 @@ module MicrosoftGraph
             # The Azure AD-assigned tenant ID of the customer. Read-only.
             @tenant_id
             ## 
-            ## Instantiates a new DelegatedAdminCustomer and sets the default values.
+            ## Instantiates a new delegatedAdminCustomer and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -40,7 +40,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the serviceManagementDetails property value. Contains the management details of a service in the customer tenant that's managed by delegated administration.
-            ## @param value Value to set for the service_management_details property.
+            ## @param value Value to set for the serviceManagementDetails property.
             ## @return a void
             ## 
             def service_management_details=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tenantId property value. The Azure AD-assigned tenant ID of the customer. Read-only.
-            ## @param value Value to set for the tenant_id property.
+            ## @param value Value to set for the tenantId property.
             ## @return a void
             ## 
             def tenant_id=(value)

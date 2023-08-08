@@ -43,7 +43,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                    ## @param value Value to set for the AdditionalData property.
+                    ## @param value Value to set for the additionalData property.
                     ## @return a void
                     ## 
                     def additional_data=(value)
@@ -58,7 +58,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the chatInfo property value. The chatInfo property
-                    ## @param value Value to set for the chat_info property.
+                    ## @param value Value to set for the chatInfo property.
                     ## @return a void
                     ## 
                     def chat_info=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the endDateTime property value. The endDateTime property
-                    ## @param value Value to set for the end_date_time property.
+                    ## @param value Value to set for the endDateTime property.
                     ## @return a void
                     ## 
                     def end_date_time=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the externalId property value. The externalId property
-                    ## @param value Value to set for the external_id property.
+                    ## @param value Value to set for the externalId property.
                     ## @return a void
                     ## 
                     def external_id=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the startDateTime property value. The startDateTime property
-                    ## @param value Value to set for the start_date_time property.
+                    ## @param value Value to set for the startDateTime property.
                     ## @return a void
                     ## 
                     def start_date_time=(value)

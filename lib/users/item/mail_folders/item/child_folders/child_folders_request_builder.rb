@@ -10,6 +10,7 @@ require_relative '../item'
 require_relative './child_folders'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
+require_relative './item/mail_folder_item_request_builder'
 
 module MicrosoftGraph
     module Users
@@ -32,16 +33,27 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the childFolders property of the microsoft.graph.mailFolder entity.
+                            ## @param mail_folder_id1 Unique identifier of the item
+                            ## @return a mail_folder_item_request_builder
+                            ## 
+                            def by_mail_folder_id1(mail_folder_id1)
+                                raise StandardError, 'mail_folder_id1 cannot be null' if mail_folder_id1.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["mailFolder%2Did1"] = mail_folder_id1
+                                return MicrosoftGraph::Users::Item::MailFolders::Item::ChildFolders::Item::MailFolderItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new ChildFoldersRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
                             ## @return a void
                             ## 
                             def initialize(path_parameters, request_adapter)
-                                super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}")
+                                super(path_parameters, request_adapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/childFolders{?includeHiddenFolders*,%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Get the folder collection under the specified folder. You can use the `.../me/mailFolders` shortcut to get the top-level folder collection and navigate to another folder. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
+                            ## The collection of child folders in the mailFolder.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of mail_folder_collection_response
                             ## 
@@ -55,7 +67,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MailFolderCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+                            ## Create a new mailSearchFolder in the specified user's mailbox.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of mail_folder
@@ -71,7 +83,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::MailFolder.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Get the folder collection under the specified folder. You can use the `.../me/mailFolders` shortcut to get the top-level folder collection and navigate to another folder. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
+                            ## The collection of child folders in the mailFolder.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -89,7 +101,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the **isHidden** property to `true` on creation.
+                            ## Create a new mailSearchFolder in the specified user's mailbox.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -110,7 +122,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get the folder collection under the specified folder. You can use the `.../me/mailFolders` shortcut to get the top-level folder collection and navigate to another folder. By default, this operation does not return hidden folders. Use a query parameter _includeHiddenFolders_ to include them in the response.
+                            # The collection of child folders in the mailFolder.
                             class ChildFoldersRequestBuilderGetQueryParameters
                                 
                                 ## 
@@ -122,6 +134,9 @@ module MicrosoftGraph
                                 ## 
                                 # Filter items by property values
                                 attr_accessor :filter
+                                ## 
+                                # Include Hidden Folders
+                                attr_accessor :include_hidden_folders
                                 ## 
                                 # Order items by property values
                                 attr_accessor :orderby
@@ -148,6 +163,8 @@ module MicrosoftGraph
                                             return "%24expand"
                                         when "filter"
                                             return "%24filter"
+                                        when "include_hidden_folders"
+                                            return "includeHiddenFolders"
                                         when "orderby"
                                             return "%24orderby"
                                         when "select"

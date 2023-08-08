@@ -23,7 +23,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/identityProtection/riskyServicePrincipals/confirmCompromised")
                     end
                     ## 
-                    ## Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to `high`.
+                    ## Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to high.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
@@ -39,7 +39,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to `high`.
+                    ## Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account's risk level to high.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information

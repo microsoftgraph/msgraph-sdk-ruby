@@ -28,7 +28,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the gradedBy property value. User who did the grading.
-            ## @param value Value to set for the graded_by property.
+            ## @param value Value to set for the gradedBy property.
             ## @return a void
             ## 
             def graded_by=(value)
@@ -93,7 +93,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the gradedDateTime property value. Moment in time when the grade was applied to this submission object. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the graded_date_time property.
+            ## @param value Value to set for the gradedDateTime property.
             ## @return a void
             ## 
             def graded_date_time=(value)
@@ -108,7 +108,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

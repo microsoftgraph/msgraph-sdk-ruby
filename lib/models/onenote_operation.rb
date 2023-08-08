@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The resource URI for the object. For example, the resource URI for a copied page or section.
             @resource_location
             ## 
-            ## Instantiates a new OnenoteOperation and sets the default values.
+            ## Instantiates a new onenoteOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -70,7 +70,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the percentComplete property value. The operation percent complete if the operation is still in running status.
-            ## @param value Value to set for the percent_complete property.
+            ## @param value Value to set for the percentComplete property.
             ## @return a void
             ## 
             def percent_complete=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceId property value. The resource id.
-            ## @param value Value to set for the resource_id property.
+            ## @param value Value to set for the resourceId property.
             ## @return a void
             ## 
             def resource_id=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceLocation property value. The resource URI for the object. For example, the resource URI for a copied page or section.
-            ## @param value Value to set for the resource_location property.
+            ## @param value Value to set for the resourceLocation property.
             ## @return a void
             ## 
             def resource_location=(value)

@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The mailbox folders that should be mined.
             @source_folder_ids
             ## 
-            ## Instantiates a new MailSearchFolder and sets the default values.
+            ## Instantiates a new mailSearchFolder and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the filterQuery property value. The OData query to filter the messages.
-            ## @param value Value to set for the filter_query property.
+            ## @param value Value to set for the filterQuery property.
             ## @return a void
             ## 
             def filter_query=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the includeNestedFolders property value. Indicates how the mailbox folder hierarchy should be traversed in the search. true means that a deep search should be done to include child folders in the hierarchy of each folder explicitly specified in sourceFolderIds. false means a shallow search of only each of the folders explicitly specified in sourceFolderIds.
-            ## @param value Value to set for the include_nested_folders property.
+            ## @param value Value to set for the includeNestedFolders property.
             ## @return a void
             ## 
             def include_nested_folders=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isSupported property value. Indicates whether a search folder is editable using REST APIs.
-            ## @param value Value to set for the is_supported property.
+            ## @param value Value to set for the isSupported property.
             ## @return a void
             ## 
             def is_supported=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sourceFolderIds property value. The mailbox folders that should be mined.
-            ## @param value Value to set for the source_folder_ids property.
+            ## @param value Value to set for the sourceFolderIds property.
             ## @return a void
             ## 
             def source_folder_ids=(value)

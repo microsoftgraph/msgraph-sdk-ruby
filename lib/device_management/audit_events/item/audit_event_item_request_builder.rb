@@ -24,7 +24,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/auditEvents/{auditEvent%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property auditEvents for deviceManagement
+                    ## Deletes a auditEvent.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -38,7 +38,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The Audit Events
+                    ## Read properties and relationships of the auditEvent object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of audit_event
                     ## 
@@ -52,7 +52,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AuditEvent.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property auditEvents in deviceManagement
+                    ## Update the properties of a auditEvent object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of audit_event
@@ -68,7 +68,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AuditEvent.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property auditEvents for deviceManagement
+                    ## Deletes a auditEvent.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -84,7 +84,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The Audit Events
+                    ## Read properties and relationships of the auditEvent object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +102,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property auditEvents in deviceManagement
+                    ## Update the properties of a auditEvent object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -123,7 +123,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The Audit Events
+                    # Read properties and relationships of the auditEvent object.
                     class AuditEventItemRequestBuilderGetQueryParameters
                         
                         ## 

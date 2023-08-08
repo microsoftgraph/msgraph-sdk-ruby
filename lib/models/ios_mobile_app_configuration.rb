@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties, inherited properties and actions for iOS mobile app configurations.
         class IosMobileAppConfiguration < MicrosoftGraph::Models::ManagedDeviceMobileAppConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -13,7 +15,7 @@ module MicrosoftGraph
             # app configuration setting items.
             @settings
             ## 
-            ## Instantiates a new IosMobileAppConfiguration and sets the default values.
+            ## Instantiates a new iosMobileAppConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -38,7 +40,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the encodedSettingXml property value. mdm app configuration Base64 binary.
-            ## @param value Value to set for the encoded_setting_xml property.
+            ## @param value Value to set for the encodedSettingXml property.
             ## @return a void
             ## 
             def encoded_setting_xml=(value)

@@ -8,6 +8,7 @@ require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
 require_relative './instances'
+require_relative './item/event_item_request_builder'
 
 module MicrosoftGraph
     module Me
@@ -27,6 +28,17 @@ module MicrosoftGraph
                         # Provides operations to call the delta method.
                         def delta()
                             return MicrosoftGraph::Me::Events::Item::Instances::Delta::DeltaRequestBuilder.new(@path_parameters, @request_adapter)
+                        end
+                        ## 
+                        ## Provides operations to manage the instances property of the microsoft.graph.event entity.
+                        ## @param event_id1 Unique identifier of the item
+                        ## @return a event_item_request_builder
+                        ## 
+                        def by_event_id1(event_id1)
+                            raise StandardError, 'event_id1 cannot be null' if event_id1.nil?
+                            url_tpl_params = @path_parameters.clone
+                            url_tpl_params["event%2Did1"] = event_id1
+                            return MicrosoftGraph::Me::Events::Item::Instances::Item::EventItemRequestBuilder.new(url_tpl_params, @request_adapter)
                         end
                         ## 
                         ## Instantiates a new InstancesRequestBuilder and sets the default values.
@@ -108,6 +120,8 @@ module MicrosoftGraph
                                 case original_name
                                     when "count"
                                         return "%24count"
+                                    when "end_date_time"
+                                        return "endDateTime"
                                     when "filter"
                                         return "%24filter"
                                     when "orderby"
@@ -116,6 +130,8 @@ module MicrosoftGraph
                                         return "%24select"
                                     when "skip"
                                         return "%24skip"
+                                    when "start_date_time"
+                                        return "startDateTime"
                                     when "top"
                                         return "%24top"
                                     else

@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -57,7 +57,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowedContentTypes property value. Content types allowed in document set.
-            ## @param value Value to set for the allowed_content_types property.
+            ## @param value Value to set for the allowedContentTypes property.
             ## @return a void
             ## 
             def allowed_content_types=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the defaultContents property value. Default contents of document set.
-            ## @param value Value to set for the default_contents property.
+            ## @param value Value to set for the defaultContents property.
             ## @return a void
             ## 
             def default_contents=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the propagateWelcomePageChanges property value. Specifies whether to push welcome page changes to inherited content types.
-            ## @param value Value to set for the propagate_welcome_page_changes property.
+            ## @param value Value to set for the propagateWelcomePageChanges property.
             ## @return a void
             ## 
             def propagate_welcome_page_changes=(value)
@@ -166,7 +166,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sharedColumns property value. The sharedColumns property
-            ## @param value Value to set for the shared_columns property.
+            ## @param value Value to set for the sharedColumns property.
             ## @return a void
             ## 
             def shared_columns=(value)
@@ -181,7 +181,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the shouldPrefixNameToFile property value. Indicates whether to add the name of the document set to each file name.
-            ## @param value Value to set for the should_prefix_name_to_file property.
+            ## @param value Value to set for the shouldPrefixNameToFile property.
             ## @return a void
             ## 
             def should_prefix_name_to_file=(value)
@@ -196,7 +196,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the welcomePageColumns property value. The welcomePageColumns property
-            ## @param value Value to set for the welcome_page_columns property.
+            ## @param value Value to set for the welcomePageColumns property.
             ## @return a void
             ## 
             def welcome_page_columns=(value)
@@ -211,7 +211,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the welcomePageUrl property value. Welcome page absolute URL.
-            ## @param value Value to set for the welcome_page_url property.
+            ## @param value Value to set for the welcomePageUrl property.
             ## @return a void
             ## 
             def welcome_page_url=(value)

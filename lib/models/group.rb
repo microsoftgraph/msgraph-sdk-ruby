@@ -59,7 +59,7 @@ module MicrosoftGraph
             # The group's calendar events.
             @events
             ## 
-            # Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+            # Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
             @expiration_date_time
             ## 
             # The collection of open extensions defined for the group. Read-only. Nullable.
@@ -211,7 +211,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the acceptedSenders property value. The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
-            ## @param value Value to set for the accepted_senders property.
+            ## @param value Value to set for the acceptedSenders property.
             ## @return a void
             ## 
             def accepted_senders=(value)
@@ -226,7 +226,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowExternalSenders property value. Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-            ## @param value Value to set for the allow_external_senders property.
+            ## @param value Value to set for the allowExternalSenders property.
             ## @return a void
             ## 
             def allow_external_senders=(value)
@@ -241,7 +241,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appRoleAssignments property value. Represents the app roles a group has been granted for an application. Supports $expand.
-            ## @param value Value to set for the app_role_assignments property.
+            ## @param value Value to set for the appRoleAssignments property.
             ## @return a void
             ## 
             def app_role_assignments=(value)
@@ -256,7 +256,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignedLabels property value. The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select.
-            ## @param value Value to set for the assigned_labels property.
+            ## @param value Value to set for the assignedLabels property.
             ## @return a void
             ## 
             def assigned_labels=(value)
@@ -271,7 +271,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignedLicenses property value. The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq).Read-only.
-            ## @param value Value to set for the assigned_licenses property.
+            ## @param value Value to set for the assignedLicenses property.
             ## @return a void
             ## 
             def assigned_licenses=(value)
@@ -286,7 +286,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the autoSubscribeNewMembers property value. Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-            ## @param value Value to set for the auto_subscribe_new_members property.
+            ## @param value Value to set for the autoSubscribeNewMembers property.
             ## @return a void
             ## 
             def auto_subscribe_new_members=(value)
@@ -316,7 +316,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the calendarView property value. The calendar view for the calendar. Read-only.
-            ## @param value Value to set for the calendar_view property.
+            ## @param value Value to set for the calendarView property.
             ## @return a void
             ## 
             def calendar_view=(value)
@@ -338,7 +338,7 @@ module MicrosoftGraph
                 @classification = value
             end
             ## 
-            ## Instantiates a new Group and sets the default values.
+            ## Instantiates a new group and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -369,7 +369,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -384,7 +384,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdOnBehalfOf property value. The user (or application) that created the group. NOTE: This is not set if the user is an administrator. Read-only.
-            ## @param value Value to set for the created_on_behalf_of property.
+            ## @param value Value to set for the createdOnBehalfOf property.
             ## @return a void
             ## 
             def created_on_behalf_of=(value)
@@ -423,7 +423,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The display name for the group. This property is required when a group is created and cannot be cleared during updates. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -475,15 +475,15 @@ module MicrosoftGraph
                 @events = value
             end
             ## 
-            ## Gets the expirationDateTime property value. Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+            ## Gets the expirationDateTime property value. Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
             ## @return a date_time
             ## 
             def expiration_date_time
                 return @expiration_date_time
             end
             ## 
-            ## Sets the expirationDateTime property value. Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
-            ## @param value Value to set for the expiration_date_time property.
+            ## Sets the expirationDateTime property value. Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+            ## @param value Value to set for the expirationDateTime property.
             ## @return a void
             ## 
             def expiration_date_time=(value)
@@ -586,7 +586,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the groupLifecyclePolicies property value. The collection of lifecycle policies for this group. Read-only. Nullable.
-            ## @param value Value to set for the group_lifecycle_policies property.
+            ## @param value Value to set for the groupLifecyclePolicies property.
             ## @return a void
             ## 
             def group_lifecycle_policies=(value)
@@ -601,7 +601,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the groupTypes property value. Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it's either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).
-            ## @param value Value to set for the group_types property.
+            ## @param value Value to set for the groupTypes property.
             ## @return a void
             ## 
             def group_types=(value)
@@ -616,7 +616,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hasMembersWithLicenseErrors property value. Indicates whether there are members in this group that have license errors from its group-based license assignment. This property is never returned on a GET operation. You can use it as a $filter argument to get groups that have members with license errors (that is, filter for this property being true). See an example. Supports $filter (eq).
-            ## @param value Value to set for the has_members_with_license_errors property.
+            ## @param value Value to set for the hasMembersWithLicenseErrors property.
             ## @return a void
             ## 
             def has_members_with_license_errors=(value)
@@ -631,7 +631,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hideFromAddressLists property value. True if the group is not displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-            ## @param value Value to set for the hide_from_address_lists property.
+            ## @param value Value to set for the hideFromAddressLists property.
             ## @return a void
             ## 
             def hide_from_address_lists=(value)
@@ -646,7 +646,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hideFromOutlookClients property value. True if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-            ## @param value Value to set for the hide_from_outlook_clients property.
+            ## @param value Value to set for the hideFromOutlookClients property.
             ## @return a void
             ## 
             def hide_from_outlook_clients=(value)
@@ -661,7 +661,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isArchived property value. When a group is associated with a team this property determines whether the team is in read-only mode.To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.
-            ## @param value Value to set for the is_archived property.
+            ## @param value Value to set for the isArchived property.
             ## @return a void
             ## 
             def is_archived=(value)
@@ -676,7 +676,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isAssignableToRole property value. Indicates whether this group can be assigned to an Azure Active Directory role or not. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true, visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Azure AD role assignmentsUsing this feature requires a Azure AD Premium P1 license. Returned by default. Supports $filter (eq, ne, not).
-            ## @param value Value to set for the is_assignable_to_role property.
+            ## @param value Value to set for the isAssignableToRole property.
             ## @return a void
             ## 
             def is_assignable_to_role=(value)
@@ -691,7 +691,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isSubscribedByMail property value. Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-            ## @param value Value to set for the is_subscribed_by_mail property.
+            ## @param value Value to set for the isSubscribedByMail property.
             ## @return a void
             ## 
             def is_subscribed_by_mail=(value)
@@ -706,7 +706,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the licenseProcessingState property value. Indicates status of the group license assignment to all members of the group. Default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.
-            ## @param value Value to set for the license_processing_state property.
+            ## @param value Value to set for the licenseProcessingState property.
             ## @return a void
             ## 
             def license_processing_state=(value)
@@ -736,7 +736,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mailEnabled property value. Specifies whether the group is mail-enabled. Required. Returned by default. Supports $filter (eq, ne, not).
-            ## @param value Value to set for the mail_enabled property.
+            ## @param value Value to set for the mailEnabled property.
             ## @return a void
             ## 
             def mail_enabled=(value)
@@ -751,7 +751,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mailNickname property value. The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : <> , SPACE. Required. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-            ## @param value Value to set for the mail_nickname property.
+            ## @param value Value to set for the mailNickname property.
             ## @return a void
             ## 
             def mail_nickname=(value)
@@ -766,7 +766,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the memberOf property value. Groups that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
-            ## @param value Value to set for the member_of property.
+            ## @param value Value to set for the memberOf property.
             ## @return a void
             ## 
             def member_of=(value)
@@ -796,7 +796,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the membersWithLicenseErrors property value. A list of group members with license errors from this group-based license assignment. Read-only.
-            ## @param value Value to set for the members_with_license_errors property.
+            ## @param value Value to set for the membersWithLicenseErrors property.
             ## @return a void
             ## 
             def members_with_license_errors=(value)
@@ -811,7 +811,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the membershipRule property value. The rule that determines members for this group if the group is a dynamic group (groupTypes contains DynamicMembership). For more information about the syntax of the membership rule, see Membership Rules syntax. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith).
-            ## @param value Value to set for the membership_rule property.
+            ## @param value Value to set for the membershipRule property.
             ## @return a void
             ## 
             def membership_rule=(value)
@@ -826,7 +826,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the membershipRuleProcessingState property value. Indicates whether the dynamic membership processing is on or paused. Possible values are On or Paused. Returned by default. Supports $filter (eq, ne, not, in).
-            ## @param value Value to set for the membership_rule_processing_state property.
+            ## @param value Value to set for the membershipRuleProcessingState property.
             ## @return a void
             ## 
             def membership_rule_processing_state=(value)
@@ -841,7 +841,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesDomainName property value. The onPremisesDomainName property
-            ## @param value Value to set for the on_premises_domain_name property.
+            ## @param value Value to set for the onPremisesDomainName property.
             ## @return a void
             ## 
             def on_premises_domain_name=(value)
@@ -856,7 +856,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesLastSyncDateTime property value. Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).
-            ## @param value Value to set for the on_premises_last_sync_date_time property.
+            ## @param value Value to set for the onPremisesLastSyncDateTime property.
             ## @return a void
             ## 
             def on_premises_last_sync_date_time=(value)
@@ -871,7 +871,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesNetBiosName property value. The onPremisesNetBiosName property
-            ## @param value Value to set for the on_premises_net_bios_name property.
+            ## @param value Value to set for the onPremisesNetBiosName property.
             ## @return a void
             ## 
             def on_premises_net_bios_name=(value)
@@ -886,7 +886,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesProvisioningErrors property value. Errors when using Microsoft synchronization product during provisioning. Returned by default. Supports $filter (eq, not).
-            ## @param value Value to set for the on_premises_provisioning_errors property.
+            ## @param value Value to set for the onPremisesProvisioningErrors property.
             ## @return a void
             ## 
             def on_premises_provisioning_errors=(value)
@@ -901,7 +901,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesSamAccountName property value. Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.
-            ## @param value Value to set for the on_premises_sam_account_name property.
+            ## @param value Value to set for the onPremisesSamAccountName property.
             ## @return a void
             ## 
             def on_premises_sam_account_name=(value)
@@ -916,7 +916,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesSecurityIdentifier property value. Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.
-            ## @param value Value to set for the on_premises_security_identifier property.
+            ## @param value Value to set for the onPremisesSecurityIdentifier property.
             ## @return a void
             ## 
             def on_premises_security_identifier=(value)
@@ -931,7 +931,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onPremisesSyncEnabled property value. true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
-            ## @param value Value to set for the on_premises_sync_enabled property.
+            ## @param value Value to set for the onPremisesSyncEnabled property.
             ## @return a void
             ## 
             def on_premises_sync_enabled=(value)
@@ -976,7 +976,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the permissionGrants property value. The permission that has been granted for a group to a specific application. Supports $expand.
-            ## @param value Value to set for the permission_grants property.
+            ## @param value Value to set for the permissionGrants property.
             ## @return a void
             ## 
             def permission_grants=(value)
@@ -1036,7 +1036,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the preferredDataLocation property value. The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator's preferred data location. To set this property, the calling user must be assigned one of the following Azure AD roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo. Nullable. Returned by default.
-            ## @param value Value to set for the preferred_data_location property.
+            ## @param value Value to set for the preferredDataLocation property.
             ## @return a void
             ## 
             def preferred_data_location=(value)
@@ -1051,7 +1051,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the preferredLanguage property value. The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
-            ## @param value Value to set for the preferred_language property.
+            ## @param value Value to set for the preferredLanguage property.
             ## @return a void
             ## 
             def preferred_language=(value)
@@ -1066,7 +1066,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the proxyAddresses property value. Email addresses for the group that direct to the same group mailbox. For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. The any operator is required to filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
-            ## @param value Value to set for the proxy_addresses property.
+            ## @param value Value to set for the proxyAddresses property.
             ## @return a void
             ## 
             def proxy_addresses=(value)
@@ -1081,7 +1081,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the rejectedSenders property value. The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
-            ## @param value Value to set for the rejected_senders property.
+            ## @param value Value to set for the rejectedSenders property.
             ## @return a void
             ## 
             def rejected_senders=(value)
@@ -1096,7 +1096,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the renewedDateTime property value. Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
-            ## @param value Value to set for the renewed_date_time property.
+            ## @param value Value to set for the renewedDateTime property.
             ## @return a void
             ## 
             def renewed_date_time=(value)
@@ -1111,7 +1111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the securityEnabled property value. Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in).
-            ## @param value Value to set for the security_enabled property.
+            ## @param value Value to set for the securityEnabled property.
             ## @return a void
             ## 
             def security_enabled=(value)
@@ -1126,7 +1126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the securityIdentifier property value. Security identifier of the group, used in Windows scenarios. Returned by default.
-            ## @param value Value to set for the security_identifier property.
+            ## @param value Value to set for the securityIdentifier property.
             ## @return a void
             ## 
             def security_identifier=(value)
@@ -1290,7 +1290,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the transitiveMemberOf property value. The groups that a group is a member of, either directly and through nested membership. Nullable.
-            ## @param value Value to set for the transitive_member_of property.
+            ## @param value Value to set for the transitiveMemberOf property.
             ## @return a void
             ## 
             def transitive_member_of=(value)
@@ -1305,7 +1305,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the transitiveMembers property value. The direct and transitive members of a group. Nullable.
-            ## @param value Value to set for the transitive_members property.
+            ## @param value Value to set for the transitiveMembers property.
             ## @return a void
             ## 
             def transitive_members=(value)
@@ -1320,7 +1320,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the unseenCount property value. Count of conversations that have received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).
-            ## @param value Value to set for the unseen_count property.
+            ## @param value Value to set for the unseenCount property.
             ## @return a void
             ## 
             def unseen_count=(value)

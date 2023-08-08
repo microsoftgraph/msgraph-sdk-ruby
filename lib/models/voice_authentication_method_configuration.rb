@@ -13,7 +13,7 @@ module MicrosoftGraph
             # true if users can register office phones, otherwise, false.
             @is_office_phone_allowed
             ## 
-            ## Instantiates a new VoiceAuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new voiceAuthenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the includeTargets property value. A collection of groups that are enabled to use the authentication method. Expanded by default.
-            ## @param value Value to set for the include_targets property.
+            ## @param value Value to set for the includeTargets property.
             ## @return a void
             ## 
             def include_targets=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isOfficePhoneAllowed property value. true if users can register office phones, otherwise, false.
-            ## @param value Value to set for the is_office_phone_allowed property.
+            ## @param value Value to set for the isOfficePhoneAllowed property.
             ## @return a void
             ## 
             def is_office_phone_allowed=(value)

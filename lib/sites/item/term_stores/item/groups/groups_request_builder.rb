@@ -9,6 +9,7 @@ require_relative '../../term_stores'
 require_relative '../item'
 require_relative './count/count_request_builder'
 require_relative './groups'
+require_relative './item/group_item_request_builder'
 
 module MicrosoftGraph
     module Sites
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Sites::Item::TermStores::Item::Groups::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the groups property of the microsoft.graph.termStore.store entity.
+                            ## @param group_id Unique identifier of the item
+                            ## @return a group_item_request_builder
+                            ## 
+                            def by_group_id(group_id)
+                                raise StandardError, 'group_id cannot be null' if group_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["group%2Did"] = group_id
+                                return MicrosoftGraph::Sites::Item::TermStores::Item::Groups::Item::GroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new GroupsRequestBuilder and sets the default values.

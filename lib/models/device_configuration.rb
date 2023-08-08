@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. DateTime the object was created.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -170,7 +170,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceSettingStateSummaries property value. Device Configuration Setting State Device Summary
-            ## @param value Value to set for the device_setting_state_summaries property.
+            ## @param value Value to set for the deviceSettingStateSummaries property.
             ## @return a void
             ## 
             def device_setting_state_summaries=(value)
@@ -185,7 +185,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceStatusOverview property value. Device Configuration devices status overview
-            ## @param value Value to set for the device_status_overview property.
+            ## @param value Value to set for the deviceStatusOverview property.
             ## @return a void
             ## 
             def device_status_overview=(value)
@@ -200,7 +200,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceStatuses property value. Device configuration installation status by device.
-            ## @param value Value to set for the device_statuses property.
+            ## @param value Value to set for the deviceStatuses property.
             ## @return a void
             ## 
             def device_statuses=(value)
@@ -215,7 +215,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Admin provided name of the device configuration.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -249,7 +249,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. DateTime the object was last modified.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -284,7 +284,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userStatusOverview property value. Device Configuration users status overview
-            ## @param value Value to set for the user_status_overview property.
+            ## @param value Value to set for the userStatusOverview property.
             ## @return a void
             ## 
             def user_status_overview=(value)
@@ -299,7 +299,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userStatuses property value. Device configuration installation status by user.
-            ## @param value Value to set for the user_statuses property.
+            ## @param value Value to set for the userStatuses property.
             ## @return a void
             ## 
             def user_statuses=(value)

@@ -118,7 +118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the attestationIdentityKey property value. TWhen an Attestation Identity Key (AIK) is present on a device, it indicates that the device has an endorsement key (EK) certificate.
-            ## @param value Value to set for the attestation_identity_key property.
+            ## @param value Value to set for the attestationIdentityKey property.
             ## @return a void
             ## 
             def attestation_identity_key=(value)
@@ -148,7 +148,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bitLockerStatus property value. On or Off of BitLocker Drive Encryption
-            ## @param value Value to set for the bit_locker_status property.
+            ## @param value Value to set for the bitLockerStatus property.
             ## @return a void
             ## 
             def bit_locker_status=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bootAppSecurityVersion property value. The security version number of the Boot Application
-            ## @param value Value to set for the boot_app_security_version property.
+            ## @param value Value to set for the bootAppSecurityVersion property.
             ## @return a void
             ## 
             def boot_app_security_version=(value)
@@ -178,7 +178,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bootDebugging property value. When bootDebugging is enabled, the device is used in development and testing
-            ## @param value Value to set for the boot_debugging property.
+            ## @param value Value to set for the bootDebugging property.
             ## @return a void
             ## 
             def boot_debugging=(value)
@@ -193,7 +193,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bootManagerSecurityVersion property value. The security version number of the Boot Application
-            ## @param value Value to set for the boot_manager_security_version property.
+            ## @param value Value to set for the bootManagerSecurityVersion property.
             ## @return a void
             ## 
             def boot_manager_security_version=(value)
@@ -208,7 +208,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bootManagerVersion property value. The version of the Boot Manager
-            ## @param value Value to set for the boot_manager_version property.
+            ## @param value Value to set for the bootManagerVersion property.
             ## @return a void
             ## 
             def boot_manager_version=(value)
@@ -223,7 +223,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bootRevisionListInfo property value. The Boot Revision List that was loaded during initial boot on the attested device
-            ## @param value Value to set for the boot_revision_list_info property.
+            ## @param value Value to set for the bootRevisionListInfo property.
             ## @return a void
             ## 
             def boot_revision_list_info=(value)
@@ -238,7 +238,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the codeIntegrity property value. When code integrity is enabled, code execution is restricted to integrity verified code
-            ## @param value Value to set for the code_integrity property.
+            ## @param value Value to set for the codeIntegrity property.
             ## @return a void
             ## 
             def code_integrity=(value)
@@ -253,7 +253,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the codeIntegrityCheckVersion property value. The version of the Boot Manager
-            ## @param value Value to set for the code_integrity_check_version property.
+            ## @param value Value to set for the codeIntegrityCheckVersion property.
             ## @return a void
             ## 
             def code_integrity_check_version=(value)
@@ -268,7 +268,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the codeIntegrityPolicy property value. The Code Integrity policy that is controlling the security of the boot environment
-            ## @param value Value to set for the code_integrity_policy property.
+            ## @param value Value to set for the codeIntegrityPolicy property.
             ## @return a void
             ## 
             def code_integrity_policy=(value)
@@ -290,7 +290,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentNamespaceUrl property value. The DHA report version. (Namespace version)
-            ## @param value Value to set for the content_namespace_url property.
+            ## @param value Value to set for the contentNamespaceUrl property.
             ## @return a void
             ## 
             def content_namespace_url=(value)
@@ -305,7 +305,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentVersion property value. The HealthAttestation state schema version
-            ## @param value Value to set for the content_version property.
+            ## @param value Value to set for the contentVersion property.
             ## @return a void
             ## 
             def content_version=(value)
@@ -329,7 +329,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the dataExcutionPolicy property value. DEP Policy defines a set of hardware and software technologies that perform additional checks on memory
-            ## @param value Value to set for the data_excution_policy property.
+            ## @param value Value to set for the dataExcutionPolicy property.
             ## @return a void
             ## 
             def data_excution_policy=(value)
@@ -344,7 +344,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceHealthAttestationStatus property value. The DHA report version. (Namespace version)
-            ## @param value Value to set for the device_health_attestation_status property.
+            ## @param value Value to set for the deviceHealthAttestationStatus property.
             ## @return a void
             ## 
             def device_health_attestation_status=(value)
@@ -359,7 +359,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the earlyLaunchAntiMalwareDriverProtection property value. ELAM provides protection for the computers in your network when they start up
-            ## @param value Value to set for the early_launch_anti_malware_driver_protection property.
+            ## @param value Value to set for the earlyLaunchAntiMalwareDriverProtection property.
             ## @return a void
             ## 
             def early_launch_anti_malware_driver_protection=(value)
@@ -415,7 +415,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the healthAttestationSupportedStatus property value. This attribute indicates if DHA is supported for the device
-            ## @param value Value to set for the health_attestation_supported_status property.
+            ## @param value Value to set for the healthAttestationSupportedStatus property.
             ## @return a void
             ## 
             def health_attestation_supported_status=(value)
@@ -430,7 +430,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the healthStatusMismatchInfo property value. This attribute appears if DHA-Service detects an integrity issue
-            ## @param value Value to set for the health_status_mismatch_info property.
+            ## @param value Value to set for the healthStatusMismatchInfo property.
             ## @return a void
             ## 
             def health_status_mismatch_info=(value)
@@ -445,7 +445,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the issuedDateTime property value. The DateTime when device was evaluated or issued to MDM
-            ## @param value Value to set for the issued_date_time property.
+            ## @param value Value to set for the issuedDateTime property.
             ## @return a void
             ## 
             def issued_date_time=(value)
@@ -460,7 +460,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastUpdateDateTime property value. The Timestamp of the last update.
-            ## @param value Value to set for the last_update_date_time property.
+            ## @param value Value to set for the lastUpdateDateTime property.
             ## @return a void
             ## 
             def last_update_date_time=(value)
@@ -475,7 +475,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -490,7 +490,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the operatingSystemKernelDebugging property value. When operatingSystemKernelDebugging is enabled, the device is used in development and testing
-            ## @param value Value to set for the operating_system_kernel_debugging property.
+            ## @param value Value to set for the operatingSystemKernelDebugging property.
             ## @return a void
             ## 
             def operating_system_kernel_debugging=(value)
@@ -505,7 +505,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the operatingSystemRevListInfo property value. The Operating System Revision List that was loaded during initial boot on the attested device
-            ## @param value Value to set for the operating_system_rev_list_info property.
+            ## @param value Value to set for the operatingSystemRevListInfo property.
             ## @return a void
             ## 
             def operating_system_rev_list_info=(value)
@@ -520,7 +520,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the pcrHashAlgorithm property value. Informational attribute that identifies the HASH algorithm that was used by TPM
-            ## @param value Value to set for the pcr_hash_algorithm property.
+            ## @param value Value to set for the pcrHashAlgorithm property.
             ## @return a void
             ## 
             def pcr_hash_algorithm=(value)
@@ -550,7 +550,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resetCount property value. The number of times a PC device has hibernated or resumed
-            ## @param value Value to set for the reset_count property.
+            ## @param value Value to set for the resetCount property.
             ## @return a void
             ## 
             def reset_count=(value)
@@ -565,7 +565,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the restartCount property value. The number of times a PC device has rebooted
-            ## @param value Value to set for the restart_count property.
+            ## @param value Value to set for the restartCount property.
             ## @return a void
             ## 
             def restart_count=(value)
@@ -580,7 +580,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the safeMode property value. Safe mode is a troubleshooting option for Windows that starts your computer in a limited state
-            ## @param value Value to set for the safe_mode property.
+            ## @param value Value to set for the safeMode property.
             ## @return a void
             ## 
             def safe_mode=(value)
@@ -595,7 +595,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the secureBoot property value. When Secure Boot is enabled, the core components must have the correct cryptographic signatures
-            ## @param value Value to set for the secure_boot property.
+            ## @param value Value to set for the secureBoot property.
             ## @return a void
             ## 
             def secure_boot=(value)
@@ -610,7 +610,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the secureBootConfigurationPolicyFingerPrint property value. Fingerprint of the Custom Secure Boot Configuration Policy
-            ## @param value Value to set for the secure_boot_configuration_policy_finger_print property.
+            ## @param value Value to set for the secureBootConfigurationPolicyFingerPrint property.
             ## @return a void
             ## 
             def secure_boot_configuration_policy_finger_print=(value)
@@ -667,7 +667,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the testSigning property value. When test signing is allowed, the device does not enforce signature validation during boot
-            ## @param value Value to set for the test_signing property.
+            ## @param value Value to set for the testSigning property.
             ## @return a void
             ## 
             def test_signing=(value)
@@ -682,7 +682,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the tpmVersion property value. The security version number of the Boot Application
-            ## @param value Value to set for the tpm_version property.
+            ## @param value Value to set for the tpmVersion property.
             ## @return a void
             ## 
             def tpm_version=(value)
@@ -697,7 +697,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the virtualSecureMode property value. VSM is a container that protects high value assets from a compromised kernel
-            ## @param value Value to set for the virtual_secure_mode property.
+            ## @param value Value to set for the virtualSecureMode property.
             ## @return a void
             ## 
             def virtual_secure_mode=(value)
@@ -712,7 +712,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the windowsPE property value. Operating system running with limited services that is used to prepare a computer for Windows
-            ## @param value Value to set for the windows_p_e property.
+            ## @param value Value to set for the windowsPE property.
             ## @return a void
             ## 
             def windows_p_e=(value)

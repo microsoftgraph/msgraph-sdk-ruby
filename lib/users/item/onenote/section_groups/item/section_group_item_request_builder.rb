@@ -9,9 +9,7 @@ require_relative '../section_groups'
 require_relative './item'
 require_relative './parent_notebook/parent_notebook_request_builder'
 require_relative './parent_section_group/parent_section_group_request_builder'
-require_relative './section_groups/item/section_group_item_request_builder'
 require_relative './section_groups/section_groups_request_builder'
-require_relative './sections/item/onenote_section_item_request_builder'
 require_relative './sections/sections_request_builder'
 
 module MicrosoftGraph
@@ -68,7 +66,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+                            ## Retrieve the properties and relationships of a sectionGroup object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of section_group
                             ## 
@@ -98,28 +96,6 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SectionGroup.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a section_group_item_request_builder
-                            ## 
-                            def section_groups_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["sectionGroup%2Did1"] = id
-                                return MicrosoftGraph::Users::Item::Onenote::SectionGroups::Item::SectionGroups::Item::SectionGroupItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
-                            ## Provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.
-                            ## @param id Unique identifier of the item
-                            ## @return a onenote_section_item_request_builder
-                            ## 
-                            def sections_by_id(id)
-                                raise StandardError, 'id cannot be null' if id.nil?
-                                url_tpl_params = @path_parameters.clone
-                                url_tpl_params["onenoteSection%2Did"] = id
-                                return MicrosoftGraph::Users::Item::Onenote::SectionGroups::Item::Sections::Item::OnenoteSectionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                            end
-                            ## 
                             ## Delete navigation property sectionGroups for users
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -136,7 +112,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+                            ## Retrieve the properties and relationships of a sectionGroup object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -175,7 +151,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.
+                            # Retrieve the properties and relationships of a sectionGroup object.
                             class SectionGroupItemRequestBuilderGetQueryParameters
                                 
                                 ## 

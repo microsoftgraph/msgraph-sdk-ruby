@@ -9,6 +9,7 @@ require_relative '../../../item'
 require_relative '../../scheduled_actions_for_rule'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/device_compliance_action_item_item_request_builder'
 require_relative './scheduled_action_configurations'
 
 module MicrosoftGraph
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::ScheduledActionsForRule::Item::ScheduledActionConfigurations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                ## Provides operations to manage the scheduledActionConfigurations property of the microsoft.graph.deviceComplianceScheduledActionForRule entity.
+                                ## @param device_compliance_action_item_id Unique identifier of the item
+                                ## @return a device_compliance_action_item_item_request_builder
+                                ## 
+                                def by_device_compliance_action_item_id(device_compliance_action_item_id)
+                                    raise StandardError, 'device_compliance_action_item_id cannot be null' if device_compliance_action_item_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["deviceComplianceActionItem%2Did"] = device_compliance_action_item_id
+                                    return MicrosoftGraph::DeviceManagement::DeviceCompliancePolicies::Item::ScheduledActionsForRule::Item::ScheduledActionConfigurations::Item::DeviceComplianceActionItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                end
+                                ## 
                                 ## Instantiates a new ScheduledActionConfigurationsRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -37,7 +49,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/deviceCompliancePolicies/{deviceCompliancePolicy%2Did}/scheduledActionsForRule/{deviceComplianceScheduledActionForRule%2Did}/scheduledActionConfigurations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                 end
                                 ## 
-                                ## The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+                                ## List properties and relationships of the deviceComplianceActionItem objects.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of device_compliance_action_item_collection_response
                                 ## 
@@ -51,7 +63,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceComplianceActionItemCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Create new navigation property to scheduledActionConfigurations for deviceManagement
+                                ## Create a new deviceComplianceActionItem object.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of device_compliance_action_item
@@ -67,7 +79,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceComplianceActionItem.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+                                ## List properties and relationships of the deviceComplianceActionItem objects.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -85,7 +97,7 @@ module MicrosoftGraph
                                     return request_info
                                 end
                                 ## 
-                                ## Create new navigation property to scheduledActionConfigurations for deviceManagement
+                                ## Create a new deviceComplianceActionItem object.
                                 ## @param body The request body
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
@@ -106,7 +118,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # The list of scheduled action configurations for this compliance policy. Compliance policy must have one and only one block scheduled action.
+                                # List properties and relationships of the deviceComplianceActionItem objects.
                                 class ScheduledActionConfigurationsRequestBuilderGetQueryParameters
                                     
                                     ## 

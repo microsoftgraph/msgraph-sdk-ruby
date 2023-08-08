@@ -13,6 +13,7 @@ require_relative '../../../item'
 require_relative '../../sets'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/term_item_request_builder'
 require_relative './terms'
 
 module MicrosoftGraph
@@ -36,6 +37,17 @@ module MicrosoftGraph
                                                     return MicrosoftGraph::Groups::Item::Sites::Item::TermStore::Groups::Item::Sets::Item::Terms::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                                 end
                                                 ## 
+                                                ## Provides operations to manage the terms property of the microsoft.graph.termStore.set entity.
+                                                ## @param term_id Unique identifier of the item
+                                                ## @return a term_item_request_builder
+                                                ## 
+                                                def by_term_id(term_id)
+                                                    raise StandardError, 'term_id cannot be null' if term_id.nil?
+                                                    url_tpl_params = @path_parameters.clone
+                                                    url_tpl_params["term%2Did"] = term_id
+                                                    return MicrosoftGraph::Groups::Item::Sites::Item::TermStore::Groups::Item::Sets::Item::Terms::Item::TermItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                                end
+                                                ## 
                                                 ## Instantiates a new TermsRequestBuilder and sets the default values.
                                                 ## @param path_parameters Path parameters for the request
                                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -45,7 +57,7 @@ module MicrosoftGraph
                                                     super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/termStore/groups/{group%2Did1}/sets/{set%2Did}/terms{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                                 end
                                                 ## 
-                                                ## All the terms under the set.
+                                                ## Read the properties and relationships of a term object.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a Fiber of term_collection_response
                                                 ## 
@@ -75,7 +87,7 @@ module MicrosoftGraph
                                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TermStore::Term.create_from_discriminator_value(pn) }, error_mapping)
                                                 end
                                                 ## 
-                                                ## All the terms under the set.
+                                                ## Read the properties and relationships of a term object.
                                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                                 ## @return a request_information
                                                 ## 
@@ -114,7 +126,7 @@ module MicrosoftGraph
                                                 end
 
                                                 ## 
-                                                # All the terms under the set.
+                                                # Read the properties and relationships of a term object.
                                                 class TermsRequestBuilderGetQueryParameters
                                                     
                                                     ## 

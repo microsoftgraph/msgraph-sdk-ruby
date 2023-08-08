@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the alertThreshold property value. Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.
-            ## @param value Value to set for the alert_threshold property.
+            ## @param value Value to set for the alertThreshold property.
             ## @return a void
             ## 
             def alert_threshold=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the synchronizationPreventionType property value. The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage, unknownFutureValue.
-            ## @param value Value to set for the synchronization_prevention_type property.
+            ## @param value Value to set for the synchronizationPreventionType property.
             ## @return a void
             ## 
             def synchronization_prevention_type=(value)

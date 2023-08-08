@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/customQuestions/{bookingCustomQuestion%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property customQuestions for solutions
+                            ## Delete a bookingCustomQuestion object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## All the custom questions of this business. Read-only. Nullable.
+                            ## Read the properties and relationships of a bookingCustomQuestion object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of booking_custom_question
                             ## 
@@ -56,7 +56,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BookingCustomQuestion.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Update the navigation property customQuestions in solutions
+                            ## Update the properties of a bookingCustomQuestion object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of booking_custom_question
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::BookingCustomQuestion.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property customQuestions for solutions
+                            ## Delete a bookingCustomQuestion object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## All the custom questions of this business. Read-only. Nullable.
+                            ## Read the properties and relationships of a bookingCustomQuestion object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -106,7 +106,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Update the navigation property customQuestions in solutions
+                            ## Update the properties of a bookingCustomQuestion object.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # All the custom questions of this business. Read-only. Nullable.
+                            # Read the properties and relationships of a bookingCustomQuestion object.
                             class BookingCustomQuestionItemRequestBuilderGetQueryParameters
                                 
                                 ## 

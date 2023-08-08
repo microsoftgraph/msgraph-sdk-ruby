@@ -4,6 +4,7 @@ require_relative '../../../models/activity_based_timeout_policy'
 require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../policies'
 require_relative '../activity_based_timeout_policies'
+require_relative './applies_to/applies_to_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -15,6 +16,11 @@ module MicrosoftGraph
                 class ActivityBasedTimeoutPolicyItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
                     ## 
+                    # Provides operations to manage the appliesTo property of the microsoft.graph.stsPolicy entity.
+                    def applies_to()
+                        return MicrosoftGraph::Policies::ActivityBasedTimeoutPolicies::Item::AppliesTo::AppliesToRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new ActivityBasedTimeoutPolicyItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -24,7 +30,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/policies/activityBasedTimeoutPolicies/{activityBasedTimeoutPolicy%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property activityBasedTimeoutPolicies for policies
+                    ## Delete an activityBasedTimeoutPolicy object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -38,7 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The policy that controls the idle time out for web sessions for applications.
+                    ## Get the properties of an activityBasedTimeoutPolicy object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of activity_based_timeout_policy
                     ## 
@@ -52,7 +58,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ActivityBasedTimeoutPolicy.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property activityBasedTimeoutPolicies in policies
+                    ## Update the properties of an activityBasedTimeoutPolicy object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of activity_based_timeout_policy
@@ -68,7 +74,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ActivityBasedTimeoutPolicy.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property activityBasedTimeoutPolicies for policies
+                    ## Delete an activityBasedTimeoutPolicy object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -84,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The policy that controls the idle time out for web sessions for applications.
+                    ## Get the properties of an activityBasedTimeoutPolicy object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +108,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property activityBasedTimeoutPolicies in policies
+                    ## Update the properties of an activityBasedTimeoutPolicy object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -123,7 +129,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The policy that controls the idle time out for web sessions for applications.
+                    # Get the properties of an activityBasedTimeoutPolicy object.
                     class ActivityBasedTimeoutPolicyItemRequestBuilderGetQueryParameters
                         
                         ## 

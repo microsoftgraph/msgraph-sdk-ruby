@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Group IDs excluded from scope of policy.
             @exclude_groups
             ## 
-            # The excludeGuestsOrExternalUsers property
+            # Internal guests or external users excluded from the policy scope. Optionally populated.
             @exclude_guests_or_external_users
             ## 
             # Role IDs excluded from scope of policy.
@@ -25,7 +25,7 @@ module MicrosoftGraph
             # Group IDs in scope of policy unless explicitly excluded.
             @include_groups
             ## 
-            # The includeGuestsOrExternalUsers property
+            # Internal guests or external users included in the policy scope. Optionally populated.
             @include_guests_or_external_users
             ## 
             # Role IDs in scope of policy unless explicitly excluded.
@@ -45,7 +45,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -76,22 +76,22 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the excludeGroups property value. Group IDs excluded from scope of policy.
-            ## @param value Value to set for the exclude_groups property.
+            ## @param value Value to set for the excludeGroups property.
             ## @return a void
             ## 
             def exclude_groups=(value)
                 @exclude_groups = value
             end
             ## 
-            ## Gets the excludeGuestsOrExternalUsers property value. The excludeGuestsOrExternalUsers property
+            ## Gets the excludeGuestsOrExternalUsers property value. Internal guests or external users excluded from the policy scope. Optionally populated.
             ## @return a conditional_access_guests_or_external_users
             ## 
             def exclude_guests_or_external_users
                 return @exclude_guests_or_external_users
             end
             ## 
-            ## Sets the excludeGuestsOrExternalUsers property value. The excludeGuestsOrExternalUsers property
-            ## @param value Value to set for the exclude_guests_or_external_users property.
+            ## Sets the excludeGuestsOrExternalUsers property value. Internal guests or external users excluded from the policy scope. Optionally populated.
+            ## @param value Value to set for the excludeGuestsOrExternalUsers property.
             ## @return a void
             ## 
             def exclude_guests_or_external_users=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the excludeRoles property value. Role IDs excluded from scope of policy.
-            ## @param value Value to set for the exclude_roles property.
+            ## @param value Value to set for the excludeRoles property.
             ## @return a void
             ## 
             def exclude_roles=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the excludeUsers property value. User IDs excluded from scope of policy and/or GuestsOrExternalUsers.
-            ## @param value Value to set for the exclude_users property.
+            ## @param value Value to set for the excludeUsers property.
             ## @return a void
             ## 
             def exclude_users=(value)
@@ -153,22 +153,22 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the includeGroups property value. Group IDs in scope of policy unless explicitly excluded.
-            ## @param value Value to set for the include_groups property.
+            ## @param value Value to set for the includeGroups property.
             ## @return a void
             ## 
             def include_groups=(value)
                 @include_groups = value
             end
             ## 
-            ## Gets the includeGuestsOrExternalUsers property value. The includeGuestsOrExternalUsers property
+            ## Gets the includeGuestsOrExternalUsers property value. Internal guests or external users included in the policy scope. Optionally populated.
             ## @return a conditional_access_guests_or_external_users
             ## 
             def include_guests_or_external_users
                 return @include_guests_or_external_users
             end
             ## 
-            ## Sets the includeGuestsOrExternalUsers property value. The includeGuestsOrExternalUsers property
-            ## @param value Value to set for the include_guests_or_external_users property.
+            ## Sets the includeGuestsOrExternalUsers property value. Internal guests or external users included in the policy scope. Optionally populated.
+            ## @param value Value to set for the includeGuestsOrExternalUsers property.
             ## @return a void
             ## 
             def include_guests_or_external_users=(value)
@@ -183,7 +183,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the includeRoles property value. Role IDs in scope of policy unless explicitly excluded.
-            ## @param value Value to set for the include_roles property.
+            ## @param value Value to set for the includeRoles property.
             ## @return a void
             ## 
             def include_roles=(value)
@@ -198,7 +198,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the includeUsers property value. User IDs in scope of policy unless explicitly excluded, None, All, or GuestsOrExternalUsers.
-            ## @param value Value to set for the include_users property.
+            ## @param value Value to set for the includeUsers property.
             ## @return a void
             ## 
             def include_users=(value)
@@ -213,7 +213,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

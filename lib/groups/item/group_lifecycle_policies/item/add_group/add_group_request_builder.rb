@@ -27,7 +27,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/groups/{group%2Did}/groupLifecyclePolicies/{groupLifecyclePolicy%2Did}/addGroup")
                             end
                             ## 
-                            ## Invoke action addGroup
+                            ## Adds specific groups to a lifecycle policy. This action limits the group lifecycle policy to a set of groups only if the managedGroupTypes property of groupLifecyclePolicy is set to Selected.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of add_group_response
@@ -43,7 +43,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Groups::Item::GroupLifecyclePolicies::Item::AddGroup::AddGroupResponse.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Invoke action addGroup
+                            ## Adds specific groups to a lifecycle policy. This action limits the group lifecycle policy to a set of groups only if the managedGroupTypes property of groupLifecyclePolicy is set to Selected.
                             ## @param body The request body
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information

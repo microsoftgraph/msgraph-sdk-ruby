@@ -142,7 +142,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowNewTimeProposals property value. true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.
-            ## @param value Value to set for the allow_new_time_proposals property.
+            ## @param value Value to set for the allowNewTimeProposals property.
             ## @return a void
             ## 
             def allow_new_time_proposals=(value)
@@ -202,7 +202,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bodyPreview property value. The preview of the message associated with the event. It is in text format.
-            ## @param value Value to set for the body_preview property.
+            ## @param value Value to set for the bodyPreview property.
             ## @return a void
             ## 
             def body_preview=(value)
@@ -224,7 +224,7 @@ module MicrosoftGraph
                 @calendar = value
             end
             ## 
-            ## Instantiates a new Event and sets the default values.
+            ## Instantiates a new event and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -329,7 +329,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hasAttachments property value. Set to true if the event has attachments.
-            ## @param value Value to set for the has_attachments property.
+            ## @param value Value to set for the hasAttachments property.
             ## @return a void
             ## 
             def has_attachments=(value)
@@ -344,7 +344,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the hideAttendees property value. When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
-            ## @param value Value to set for the hide_attendees property.
+            ## @param value Value to set for the hideAttendees property.
             ## @return a void
             ## 
             def hide_attendees=(value)
@@ -359,7 +359,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the iCalUId property value. A unique identifier for an event across calendars. This ID is different for each occurrence in a recurring series. Read-only.
-            ## @param value Value to set for the i_cal_u_id property.
+            ## @param value Value to set for the iCalUId property.
             ## @return a void
             ## 
             def i_cal_u_id=(value)
@@ -404,7 +404,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isAllDay property value. The isAllDay property
-            ## @param value Value to set for the is_all_day property.
+            ## @param value Value to set for the isAllDay property.
             ## @return a void
             ## 
             def is_all_day=(value)
@@ -419,7 +419,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isCancelled property value. The isCancelled property
-            ## @param value Value to set for the is_cancelled property.
+            ## @param value Value to set for the isCancelled property.
             ## @return a void
             ## 
             def is_cancelled=(value)
@@ -434,7 +434,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isDraft property value. The isDraft property
-            ## @param value Value to set for the is_draft property.
+            ## @param value Value to set for the isDraft property.
             ## @return a void
             ## 
             def is_draft=(value)
@@ -449,7 +449,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isOnlineMeeting property value. The isOnlineMeeting property
-            ## @param value Value to set for the is_online_meeting property.
+            ## @param value Value to set for the isOnlineMeeting property.
             ## @return a void
             ## 
             def is_online_meeting=(value)
@@ -464,7 +464,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isOrganizer property value. The isOrganizer property
-            ## @param value Value to set for the is_organizer property.
+            ## @param value Value to set for the isOrganizer property.
             ## @return a void
             ## 
             def is_organizer=(value)
@@ -479,7 +479,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isReminderOn property value. The isReminderOn property
-            ## @param value Value to set for the is_reminder_on property.
+            ## @param value Value to set for the isReminderOn property.
             ## @return a void
             ## 
             def is_reminder_on=(value)
@@ -524,7 +524,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the multiValueExtendedProperties property value. The collection of multi-value extended properties defined for the event. Read-only. Nullable.
-            ## @param value Value to set for the multi_value_extended_properties property.
+            ## @param value Value to set for the multiValueExtendedProperties property.
             ## @return a void
             ## 
             def multi_value_extended_properties=(value)
@@ -539,7 +539,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onlineMeeting property value. The onlineMeeting property
-            ## @param value Value to set for the online_meeting property.
+            ## @param value Value to set for the onlineMeeting property.
             ## @return a void
             ## 
             def online_meeting=(value)
@@ -554,7 +554,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onlineMeetingProvider property value. The onlineMeetingProvider property
-            ## @param value Value to set for the online_meeting_provider property.
+            ## @param value Value to set for the onlineMeetingProvider property.
             ## @return a void
             ## 
             def online_meeting_provider=(value)
@@ -569,7 +569,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the onlineMeetingUrl property value. The onlineMeetingUrl property
-            ## @param value Value to set for the online_meeting_url property.
+            ## @param value Value to set for the onlineMeetingUrl property.
             ## @return a void
             ## 
             def online_meeting_url=(value)
@@ -599,7 +599,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the originalEndTimeZone property value. The originalEndTimeZone property
-            ## @param value Value to set for the original_end_time_zone property.
+            ## @param value Value to set for the originalEndTimeZone property.
             ## @return a void
             ## 
             def original_end_time_zone=(value)
@@ -614,7 +614,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the originalStart property value. The originalStart property
-            ## @param value Value to set for the original_start property.
+            ## @param value Value to set for the originalStart property.
             ## @return a void
             ## 
             def original_start=(value)
@@ -629,7 +629,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the originalStartTimeZone property value. The originalStartTimeZone property
-            ## @param value Value to set for the original_start_time_zone property.
+            ## @param value Value to set for the originalStartTimeZone property.
             ## @return a void
             ## 
             def original_start_time_zone=(value)
@@ -659,7 +659,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the reminderMinutesBeforeStart property value. The reminderMinutesBeforeStart property
-            ## @param value Value to set for the reminder_minutes_before_start property.
+            ## @param value Value to set for the reminderMinutesBeforeStart property.
             ## @return a void
             ## 
             def reminder_minutes_before_start=(value)
@@ -674,7 +674,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the responseRequested property value. The responseRequested property
-            ## @param value Value to set for the response_requested property.
+            ## @param value Value to set for the responseRequested property.
             ## @return a void
             ## 
             def response_requested=(value)
@@ -689,7 +689,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the responseStatus property value. The responseStatus property
-            ## @param value Value to set for the response_status property.
+            ## @param value Value to set for the responseStatus property.
             ## @return a void
             ## 
             def response_status=(value)
@@ -770,7 +770,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the seriesMasterId property value. The seriesMasterId property
-            ## @param value Value to set for the series_master_id property.
+            ## @param value Value to set for the seriesMasterId property.
             ## @return a void
             ## 
             def series_master_id=(value)
@@ -785,7 +785,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showAs property value. The showAs property
-            ## @param value Value to set for the show_as property.
+            ## @param value Value to set for the showAs property.
             ## @return a void
             ## 
             def show_as=(value)
@@ -800,7 +800,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the singleValueExtendedProperties property value. The collection of single-value extended properties defined for the event. Read-only. Nullable.
-            ## @param value Value to set for the single_value_extended_properties property.
+            ## @param value Value to set for the singleValueExtendedProperties property.
             ## @return a void
             ## 
             def single_value_extended_properties=(value)
@@ -845,7 +845,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the transactionId property value. The transactionId property
-            ## @param value Value to set for the transaction_id property.
+            ## @param value Value to set for the transactionId property.
             ## @return a void
             ## 
             def transaction_id=(value)
@@ -875,7 +875,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webLink property value. The webLink property
-            ## @param value Value to set for the web_link property.
+            ## @param value Value to set for the webLink property.
             ## @return a void
             ## 
             def web_link=(value)

@@ -26,7 +26,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                    ## @param value Value to set for the AdditionalData property.
+                    ## @param value Value to set for the additionalData property.
                     ## @return a void
                     ## 
                     def additional_data=(value)
@@ -66,7 +66,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the importedWindowsAutopilotDeviceIdentities property value. The importedWindowsAutopilotDeviceIdentities property
-                    ## @param value Value to set for the imported_windows_autopilot_device_identities property.
+                    ## @param value Value to set for the importedWindowsAutopilotDeviceIdentities property.
                     ## @return a void
                     ## 
                     def imported_windows_autopilot_device_identities=(value)

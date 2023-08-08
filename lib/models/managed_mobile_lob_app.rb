@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # An abstract base class containing properties for all managed mobile line of business apps.
         class ManagedMobileLobApp < MicrosoftGraph::Models::ManagedApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -27,14 +29,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the committedContentVersion property value. The internal committed content version.
-            ## @param value Value to set for the committed_content_version property.
+            ## @param value Value to set for the committedContentVersion property.
             ## @return a void
             ## 
             def committed_content_version=(value)
                 @committed_content_version = value
             end
             ## 
-            ## Instantiates a new ManagedMobileLobApp and sets the default values.
+            ## Instantiates a new managedMobileLobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -50,7 +52,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentVersions property value. The list of content versions for this app.
-            ## @param value Value to set for the content_versions property.
+            ## @param value Value to set for the contentVersions property.
             ## @return a void
             ## 
             def content_versions=(value)
@@ -84,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fileName property value. The name of the main Lob application file.
-            ## @param value Value to set for the file_name property.
+            ## @param value Value to set for the fileName property.
             ## @return a void
             ## 
             def file_name=(value)

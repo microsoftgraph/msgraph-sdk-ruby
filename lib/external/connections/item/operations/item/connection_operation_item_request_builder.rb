@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Get operations from external
+                            ## Read the properties and relationships of a connectionOperation object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of connection_operation
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Get operations from external
+                            ## Read the properties and relationships of a connectionOperation object.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Get operations from external
+                            # Read the properties and relationships of a connectionOperation object.
                             class ConnectionOperationItemRequestBuilderGetQueryParameters
                                 
                                 ## 

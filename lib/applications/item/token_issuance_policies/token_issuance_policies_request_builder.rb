@@ -5,6 +5,7 @@ require_relative '../../../models/token_issuance_policy_collection_response'
 require_relative '../../applications'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/token_issuance_policy_item_request_builder'
 require_relative './ref/ref_request_builder'
 require_relative './token_issuance_policies'
 
@@ -25,6 +26,17 @@ module MicrosoftGraph
                     # Provides operations to manage the collection of application entities.
                     def ref()
                         return MicrosoftGraph::Applications::Item::TokenIssuancePolicies::Ref::RefRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Gets an item from the MicrosoftGraph.applications.item.tokenIssuancePolicies.item collection
+                    ## @param token_issuance_policy_id Unique identifier of the item
+                    ## @return a token_issuance_policy_item_request_builder
+                    ## 
+                    def by_token_issuance_policy_id(token_issuance_policy_id)
+                        raise StandardError, 'token_issuance_policy_id cannot be null' if token_issuance_policy_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["tokenIssuancePolicy%2Did"] = token_issuance_policy_id
+                        return MicrosoftGraph::Applications::Item::TokenIssuancePolicies::Item::TokenIssuancePolicyItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new TokenIssuancePoliciesRequestBuilder and sets the default values.

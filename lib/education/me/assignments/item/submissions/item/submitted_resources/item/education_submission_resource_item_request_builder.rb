@@ -48,7 +48,7 @@ module MicrosoftGraph
                                             return @request_adapter.send_async(request_info, nil, error_mapping)
                                         end
                                         ## 
-                                        ## Get submittedResources from education
+                                        ## Retrieve a submitted resource. Only teachers, students, and applications with application permissions can perform this operation. Resources are available to a teacher or an application with application permissions after a student submits it, and are available to the student after the teacher returns the submission. Note that teachers can leave notes in some resources.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of education_submission_resource
                                         ## 
@@ -94,7 +94,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Get submittedResources from education
+                                        ## Retrieve a submitted resource. Only teachers, students, and applications with application permissions can perform this operation. Resources are available to a teacher or an application with application permissions after a student submits it, and are available to the student after the teacher returns the submission. Note that teachers can leave notes in some resources.
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information
                                         ## 
@@ -133,7 +133,7 @@ module MicrosoftGraph
                                         end
 
                                         ## 
-                                        # Get submittedResources from education
+                                        # Retrieve a submitted resource. Only teachers, students, and applications with application permissions can perform this operation. Resources are available to a teacher or an application with application permissions after a student submits it, and are available to the student after the teacher returns the submission. Note that teachers can leave notes in some resources.
                                         class EducationSubmissionResourceItemRequestBuilderGetQueryParameters
                                             
                                             ## 

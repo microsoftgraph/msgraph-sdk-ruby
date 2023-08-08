@@ -8,6 +8,7 @@ require_relative './count/count_request_builder'
 require_relative './delta/delta_request_builder'
 require_relative './get_available_extension_properties/get_available_extension_properties_request_builder'
 require_relative './get_by_ids/get_by_ids_request_builder'
+require_relative './item/application_item_request_builder'
 require_relative './validate_properties/validate_properties_request_builder'
 
 module MicrosoftGraph
@@ -40,6 +41,17 @@ module MicrosoftGraph
             # Provides operations to call the validateProperties method.
             def validate_properties()
                 return MicrosoftGraph::Applications::ValidateProperties::ValidatePropertiesRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            ## Provides operations to manage the collection of application entities.
+            ## @param application_id Unique identifier of the item
+            ## @return a application_item_request_builder
+            ## 
+            def by_application_id(application_id)
+                raise StandardError, 'application_id cannot be null' if application_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["application%2Did"] = application_id
+                return MicrosoftGraph::Applications::Item::ApplicationItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new ApplicationsRequestBuilder and sets the default values.

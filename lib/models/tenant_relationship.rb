@@ -27,14 +27,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new TenantRelationship and sets the default values.
+            ## Instantiates a new tenantRelationship and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -58,7 +58,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the delegatedAdminCustomers property value. The customer who has a delegated admin relationship with a Microsoft partner.
-            ## @param value Value to set for the delegated_admin_customers property.
+            ## @param value Value to set for the delegatedAdminCustomers property.
             ## @return a void
             ## 
             def delegated_admin_customers=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the delegatedAdminRelationships property value. The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
-            ## @param value Value to set for the delegated_admin_relationships property.
+            ## @param value Value to set for the delegatedAdminRelationships property.
             ## @return a void
             ## 
             def delegated_admin_relationships=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

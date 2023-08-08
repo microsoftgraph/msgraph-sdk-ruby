@@ -43,7 +43,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the newText property value. The newText property
-                                    ## @param value Value to set for the new_text property.
+                                    ## @param value Value to set for the newText property.
                                     ## @return a void
                                     ## 
                                     def new_text=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the numChars property value. The numChars property
-                                    ## @param value Value to set for the num_chars property.
+                                    ## @param value Value to set for the numChars property.
                                     ## @return a void
                                     ## 
                                     def num_chars=(value)
@@ -116,7 +116,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the oldText property value. The oldText property
-                                    ## @param value Value to set for the old_text property.
+                                    ## @param value Value to set for the oldText property.
                                     ## @return a void
                                     ## 
                                     def old_text=(value)
@@ -144,7 +144,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the startNum property value. The startNum property
-                                    ## @param value Value to set for the start_num property.
+                                    ## @param value Value to set for the startNum property.
                                     ## @return a void
                                     ## 
                                     def start_num=(value)

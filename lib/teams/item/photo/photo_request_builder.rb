@@ -30,21 +30,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/teams/{team%2Did}/photo{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property photo for teams
-                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                    ## @return a Fiber of void
-                    ## 
-                    def delete(request_configuration=nil)
-                        request_info = self.to_delete_request_information(
-                            request_configuration
-                        )
-                        error_mapping = Hash.new
-                        error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
-                        return @request_adapter.send_async(request_info, nil, error_mapping)
-                    end
-                    ## 
-                    ## The profile photo for the team.
+                    ## Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they are stored in Azure Active Directory. You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.If the size you request is not available, you can still get a smaller size that the user has uploaded and made available.For example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of profile_photo
                     ## 
@@ -74,23 +60,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ProfilePhoto.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property photo for teams
-                    ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
-                    ## @return a request_information
-                    ## 
-                    def to_delete_request_information(request_configuration=nil)
-                        request_info = MicrosoftKiotaAbstractions::RequestInformation.new()
-                        request_info.url_template = @url_template
-                        request_info.path_parameters = @path_parameters
-                        request_info.http_method = :DELETE
-                        unless request_configuration.nil?
-                            request_info.add_headers_from_raw_object(request_configuration.headers)
-                            request_info.add_request_options(request_configuration.options)
-                        end
-                        return request_info
-                    end
-                    ## 
-                    ## The profile photo for the team.
+                    ## Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they are stored in Azure Active Directory. You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.If the size you request is not available, you can still get a smaller size that the user has uploaded and made available.For example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -129,7 +99,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The profile photo for the team.
+                    # Get the specified profilePhoto or its metadata (profilePhoto properties). The supported sizes of HD photos on Microsoft 365 are as follows: 48x48, 64x64, 96x96, 120x120, 240x240,360x360, 432x432, 504x504, and 648x648. Photos can be any dimension if they are stored in Azure Active Directory. You can get the metadata of the largest available photo, or specify a size to get the metadata for that photo size.If the size you request is not available, you can still get a smaller size that the user has uploaded and made available.For example, if the user uploads a photo that is 504x504 pixels, all but the 648x648 size of photo will be available for download.
                     class PhotoRequestBuilderGetQueryParameters
                         
                         ## 

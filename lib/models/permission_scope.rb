@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the adminConsentDescription property value. A description of the delegated permissions, intended to be read by an administrator granting the permission on behalf of all users. This text appears in tenant-wide admin consent experiences.
-            ## @param value Value to set for the admin_consent_description property.
+            ## @param value Value to set for the adminConsentDescription property.
             ## @return a void
             ## 
             def admin_consent_description=(value)
@@ -78,7 +78,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the adminConsentDisplayName property value. The permission's title, intended to be read by an administrator granting the permission on behalf of all users.
-            ## @param value Value to set for the admin_consent_display_name property.
+            ## @param value Value to set for the adminConsentDisplayName property.
             ## @return a void
             ## 
             def admin_consent_display_name=(value)
@@ -142,7 +142,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isEnabled property value. When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.
-            ## @param value Value to set for the is_enabled property.
+            ## @param value Value to set for the isEnabled property.
             ## @return a void
             ## 
             def is_enabled=(value)
@@ -157,7 +157,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -221,7 +221,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userConsentDescription property value. A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
-            ## @param value Value to set for the user_consent_description property.
+            ## @param value Value to set for the userConsentDescription property.
             ## @return a void
             ## 
             def user_consent_description=(value)
@@ -236,7 +236,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userConsentDisplayName property value. A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.
-            ## @param value Value to set for the user_consent_display_name property.
+            ## @param value Value to set for the userConsentDisplayName property.
             ## @return a void
             ## 
             def user_consent_display_name=(value)

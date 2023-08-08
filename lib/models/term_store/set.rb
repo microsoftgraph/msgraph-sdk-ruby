@@ -64,7 +64,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the createdDateTime property value. Date and time of set creation. Read-only.
-                ## @param value Value to set for the created_date_time property.
+                ## @param value Value to set for the createdDateTime property.
                 ## @return a void
                 ## 
                 def created_date_time=(value)
@@ -119,7 +119,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the localizedNames property value. Name of the set for each languageTag.
-                ## @param value Value to set for the localized_names property.
+                ## @param value Value to set for the localizedNames property.
                 ## @return a void
                 ## 
                 def localized_names=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the parentGroup property value. The parentGroup property
-                ## @param value Value to set for the parent_group property.
+                ## @param value Value to set for the parentGroup property.
                 ## @return a void
                 ## 
                 def parent_group=(value)

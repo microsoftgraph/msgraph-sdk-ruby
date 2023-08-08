@@ -27,7 +27,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                ## @param value Value to set for the AdditionalData property.
+                ## @param value Value to set for the additionalData property.
                 ## @return a void
                 ## 
                 def additional_data=(value)
@@ -50,15 +50,15 @@ module MicrosoftGraph
                     return GetMailTipsPostRequestBody.new
                 end
                 ## 
-                ## Gets the emailAddresses property value. The EmailAddresses property
+                ## Gets the EmailAddresses property value. The EmailAddresses property
                 ## @return a string
                 ## 
                 def email_addresses
                     return @email_addresses
                 end
                 ## 
-                ## Sets the emailAddresses property value. The EmailAddresses property
-                ## @param value Value to set for the email_addresses property.
+                ## Sets the EmailAddresses property value. The EmailAddresses property
+                ## @param value Value to set for the EmailAddresses property.
                 ## @return a void
                 ## 
                 def email_addresses=(value)
@@ -75,15 +75,15 @@ module MicrosoftGraph
                     }
                 end
                 ## 
-                ## Gets the mailTipsOptions property value. The MailTipsOptions property
+                ## Gets the MailTipsOptions property value. The MailTipsOptions property
                 ## @return a mail_tips_type
                 ## 
                 def mail_tips_options
                     return @mail_tips_options
                 end
                 ## 
-                ## Sets the mailTipsOptions property value. The MailTipsOptions property
-                ## @param value Value to set for the mail_tips_options property.
+                ## Sets the MailTipsOptions property value. The MailTipsOptions property
+                ## @param value Value to set for the MailTipsOptions property.
                 ## @return a void
                 ## 
                 def mail_tips_options=(value)

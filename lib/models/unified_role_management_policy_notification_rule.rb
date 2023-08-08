@@ -22,7 +22,7 @@ module MicrosoftGraph
             # The type of recipient of the notification. The possible values are Requestor, Approver, Admin.
             @recipient_type
             ## 
-            ## Instantiates a new UnifiedRoleManagementPolicyNotificationRule and sets the default values.
+            ## Instantiates a new unifiedRoleManagementPolicyNotificationRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -60,7 +60,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isDefaultRecipientsEnabled property value. Indicates whether a default recipient will receive the notification email.
-            ## @param value Value to set for the is_default_recipients_enabled property.
+            ## @param value Value to set for the isDefaultRecipientsEnabled property.
             ## @return a void
             ## 
             def is_default_recipients_enabled=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notificationLevel property value. The level of notification. The possible values are None, Critical, All.
-            ## @param value Value to set for the notification_level property.
+            ## @param value Value to set for the notificationLevel property.
             ## @return a void
             ## 
             def notification_level=(value)
@@ -90,7 +90,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notificationRecipients property value. The list of recipients of the email notifications.
-            ## @param value Value to set for the notification_recipients property.
+            ## @param value Value to set for the notificationRecipients property.
             ## @return a void
             ## 
             def notification_recipients=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notificationType property value. The type of notification. Only Email is supported.
-            ## @param value Value to set for the notification_type property.
+            ## @param value Value to set for the notificationType property.
             ## @return a void
             ## 
             def notification_type=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the recipientType property value. The type of recipient of the notification. The possible values are Requestor, Approver, Admin.
-            ## @param value Value to set for the recipient_type property.
+            ## @param value Value to set for the recipientType property.
             ## @return a void
             ## 
             def recipient_type=(value)

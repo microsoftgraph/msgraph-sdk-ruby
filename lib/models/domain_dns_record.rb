@@ -75,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isOptional property value. If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.
-            ## @param value Value to set for the is_optional property.
+            ## @param value Value to set for the isOptional property.
             ## @return a void
             ## 
             def is_optional=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the recordType property value. Indicates what type of DNS record this entity represents.The value can be one of the following: CName, Mx, Srv, Txt.
-            ## @param value Value to set for the record_type property.
+            ## @param value Value to set for the recordType property.
             ## @return a void
             ## 
             def record_type=(value)
@@ -134,7 +134,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the supportedService property value. Microsoft Online Service or feature that has a dependency on this DNS record.Can be one of the following values: null, Email, Sharepoint, EmailInternalRelayOnly, OfficeCommunicationsOnline, SharePointDefaultDomain, FullRedelegation, SharePointPublic, OrgIdAuthentication, Yammer, Intune.
-            ## @param value Value to set for the supported_service property.
+            ## @param value Value to set for the supportedService property.
             ## @return a void
             ## 
             def supported_service=(value)

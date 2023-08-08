@@ -24,14 +24,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appliesTo property value. The appliesTo property
-            ## @param value Value to set for the applies_to property.
+            ## @param value Value to set for the appliesTo property.
             ## @return a void
             ## 
             def applies_to=(value)
                 @applies_to = value
             end
             ## 
-            ## Instantiates a new StsPolicy and sets the default values.
+            ## Instantiates a new stsPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -98,7 +98,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isOrganizationDefault property value. If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.
-            ## @param value Value to set for the is_organization_default property.
+            ## @param value Value to set for the isOrganizationDefault property.
             ## @return a void
             ## 
             def is_organization_default=(value)

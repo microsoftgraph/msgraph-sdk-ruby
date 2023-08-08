@@ -44,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the packageType property value. Indicates the package type of an MSI Win32LobApp.
-            ## @param value Value to set for the package_type property.
+            ## @param value Value to set for the packageType property.
             ## @return a void
             ## 
             def package_type=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the productCode property value. The MSI product code.
-            ## @param value Value to set for the product_code property.
+            ## @param value Value to set for the productCode property.
             ## @return a void
             ## 
             def product_code=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the productName property value. The MSI product name.
-            ## @param value Value to set for the product_name property.
+            ## @param value Value to set for the productName property.
             ## @return a void
             ## 
             def product_name=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the productVersion property value. The MSI product version.
-            ## @param value Value to set for the product_version property.
+            ## @param value Value to set for the productVersion property.
             ## @return a void
             ## 
             def product_version=(value)
@@ -181,7 +181,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the requiresReboot property value. Whether the MSI app requires the machine to reboot to complete installation.
-            ## @param value Value to set for the requires_reboot property.
+            ## @param value Value to set for the requiresReboot property.
             ## @return a void
             ## 
             def requires_reboot=(value)
@@ -213,7 +213,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the upgradeCode property value. The MSI upgrade code.
-            ## @param value Value to set for the upgrade_code property.
+            ## @param value Value to set for the upgradeCode property.
             ## @return a void
             ## 
             def upgrade_code=(value)

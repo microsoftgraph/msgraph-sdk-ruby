@@ -5,10 +5,11 @@ require_relative '../../models/call_records/call_record'
 require_relative '../../models/call_records/call_record_collection_response'
 require_relative '../../models/o_data_errors/o_data_error'
 require_relative '../communications'
-require_relative './call_records_get_direct_routing_calls_with_from_date_time_with_to_date_time/call_records_get_direct_routing_calls_with_from_date_time_with_to_date_time_request_builder'
-require_relative './call_records_get_pstn_calls_with_from_date_time_with_to_date_time/call_records_get_pstn_calls_with_from_date_time_with_to_date_time_request_builder'
 require_relative './call_records'
 require_relative './count/count_request_builder'
+require_relative './item/call_record_item_request_builder'
+require_relative './microsoft_graph_call_records_get_direct_routing_calls_with_from_date_time_with_to_date_time/0b4f001d2cd1a7e58f5621cb93199ac931951ed45d61c42860726e4f516f11f4'
+require_relative './microsoft_graph_call_records_get_pstn_calls_with_from_date_time_with_to_date_time/2ff200d164cec84baf5b570e76631427bf3cd3168578fa5068b156783f678b22'
 
 module MicrosoftGraph
     module Communications
@@ -23,26 +24,15 @@ module MicrosoftGraph
                     return MicrosoftGraph::Communications::CallRecords::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
-                ## Provides operations to call the getDirectRoutingCalls method.
-                ## @param from_date_time Usage: fromDateTime={fromDateTime}
-                ## @param to_date_time Usage: toDateTime={toDateTime}
-                ## @return a call_records_get_direct_routing_calls_with_from_date_time_with_to_date_time_request_builder
+                ## Provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.
+                ## @param call_record_id Unique identifier of the item
+                ## @return a call_record_item_request_builder
                 ## 
-                def call_records_get_direct_routing_calls_with_from_date_time_with_to_date_time(from_date_time, to_date_time)
-                    raise StandardError, 'from_date_time cannot be null' if from_date_time.nil?
-                    raise StandardError, 'to_date_time cannot be null' if to_date_time.nil?
-                    return CallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder.new(@path_parameters, @request_adapter, fromDateTime, toDateTime)
-                end
-                ## 
-                ## Provides operations to call the getPstnCalls method.
-                ## @param from_date_time Usage: fromDateTime={fromDateTime}
-                ## @param to_date_time Usage: toDateTime={toDateTime}
-                ## @return a call_records_get_pstn_calls_with_from_date_time_with_to_date_time_request_builder
-                ## 
-                def call_records_get_pstn_calls_with_from_date_time_with_to_date_time(from_date_time, to_date_time)
-                    raise StandardError, 'from_date_time cannot be null' if from_date_time.nil?
-                    raise StandardError, 'to_date_time cannot be null' if to_date_time.nil?
-                    return CallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder.new(@path_parameters, @request_adapter, fromDateTime, toDateTime)
+                def by_call_record_id(call_record_id)
+                    raise StandardError, 'call_record_id cannot be null' if call_record_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["callRecord%2Did"] = call_record_id
+                    return MicrosoftGraph::Communications::CallRecords::Item::CallRecordItemRequestBuilder.new(url_tpl_params, @request_adapter)
                 end
                 ## 
                 ## Instantiates a new CallRecordsRequestBuilder and sets the default values.
@@ -54,7 +44,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/communications/callRecords{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Get callRecords from communications
+                ## Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of call_record_collection_response
                 ## 
@@ -66,6 +56,28 @@ module MicrosoftGraph
                     error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecords::CallRecordCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
+                end
+                ## 
+                ## Provides operations to call the getDirectRoutingCalls method.
+                ## @param from_date_time Usage: fromDateTime={fromDateTime}
+                ## @param to_date_time Usage: toDateTime={toDateTime}
+                ## @return a microsoft_graph_call_records_get_direct_routing_calls_with_from_date_time_with_to_date_time_request_builder
+                ## 
+                def microsoft_graph_call_records_get_direct_routing_calls_with_from_date_time_with_to_date_time(from_date_time, to_date_time)
+                    raise StandardError, 'from_date_time cannot be null' if from_date_time.nil?
+                    raise StandardError, 'to_date_time cannot be null' if to_date_time.nil?
+                    return MicrosoftGraphCallRecordsGetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder.new(@path_parameters, @request_adapter, fromDateTime, toDateTime)
+                end
+                ## 
+                ## Provides operations to call the getPstnCalls method.
+                ## @param from_date_time Usage: fromDateTime={fromDateTime}
+                ## @param to_date_time Usage: toDateTime={toDateTime}
+                ## @return a microsoft_graph_call_records_get_pstn_calls_with_from_date_time_with_to_date_time_request_builder
+                ## 
+                def microsoft_graph_call_records_get_pstn_calls_with_from_date_time_with_to_date_time(from_date_time, to_date_time)
+                    raise StandardError, 'from_date_time cannot be null' if from_date_time.nil?
+                    raise StandardError, 'to_date_time cannot be null' if to_date_time.nil?
+                    return MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTimeRequestBuilder.new(@path_parameters, @request_adapter, fromDateTime, toDateTime)
                 end
                 ## 
                 ## Create new navigation property to callRecords for communications
@@ -84,7 +96,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::CallRecords::CallRecord.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Get callRecords from communications
+                ## Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -123,7 +135,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Get callRecords from communications
+                # Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions.
                 class CallRecordsRequestBuilderGetQueryParameters
                     
                     ## 

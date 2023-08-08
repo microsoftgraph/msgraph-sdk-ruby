@@ -52,7 +52,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appScope property value. Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app. Nullable.
-            ## @param value Value to set for the app_scope property.
+            ## @param value Value to set for the appScope property.
             ## @return a void
             ## 
             def app_scope=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appScopeId property value. Identifier of the app-specific scope when the assignment or eligibility is scoped to an app. The scope of an assignment or eligibility determines the set of resources for which the principal has been granted access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units.
-            ## @param value Value to set for the app_scope_id property.
+            ## @param value Value to set for the appScopeId property.
             ## @return a void
             ## 
             def app_scope_id=(value)
@@ -89,7 +89,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. When the schedule was created.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -104,7 +104,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdUsing property value. Identifier of the object through which this schedule was created.
-            ## @param value Value to set for the created_using property.
+            ## @param value Value to set for the createdUsing property.
             ## @return a void
             ## 
             def created_using=(value)
@@ -138,7 +138,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the directoryScope property value. The directory object that is the scope of the role eligibility or assignment. Read-only.
-            ## @param value Value to set for the directory_scope property.
+            ## @param value Value to set for the directoryScope property.
             ## @return a void
             ## 
             def directory_scope=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the directoryScopeId property value. Identifier of the directory object representing the scope of the assignment or eligibility. The scope of an assignment or eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only.
-            ## @param value Value to set for the directory_scope_id property.
+            ## @param value Value to set for the directoryScopeId property.
             ## @return a void
             ## 
             def directory_scope_id=(value)
@@ -188,7 +188,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the modifiedDateTime property value. When the schedule was last modified.
-            ## @param value Value to set for the modified_date_time property.
+            ## @param value Value to set for the modifiedDateTime property.
             ## @return a void
             ## 
             def modified_date_time=(value)
@@ -218,7 +218,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the principalId property value. Identifier of the principal that has been granted the role assignment or eligibility.
-            ## @param value Value to set for the principal_id property.
+            ## @param value Value to set for the principalId property.
             ## @return a void
             ## 
             def principal_id=(value)
@@ -233,7 +233,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleDefinition property value. Detailed information for the roleDefinition object that is referenced through the roleDefinitionId property.
-            ## @param value Value to set for the role_definition property.
+            ## @param value Value to set for the roleDefinition property.
             ## @return a void
             ## 
             def role_definition=(value)
@@ -248,7 +248,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the roleDefinitionId property value. Identifier of the unifiedRoleDefinition object that is being assigned to the principal or that a principal is eligible for.
-            ## @param value Value to set for the role_definition_id property.
+            ## @param value Value to set for the roleDefinitionId property.
             ## @return a void
             ## 
             def role_definition_id=(value)

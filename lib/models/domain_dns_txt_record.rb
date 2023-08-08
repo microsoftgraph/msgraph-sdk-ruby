@@ -10,7 +10,7 @@ module MicrosoftGraph
             # Value used when configuring the text property at the DNS host.
             @text
             ## 
-            ## Instantiates a new DomainDnsTxtRecord and sets the default values.
+            ## Instantiates a new domainDnsTxtRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()

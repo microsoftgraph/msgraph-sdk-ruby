@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The value property
             @value
             ## 
-            ## Instantiates a new SharedDriveItemCollectionResponse and sets the default values.
+            ## Instantiates a new sharedDriveItemCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

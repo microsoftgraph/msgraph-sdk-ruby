@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The state of the policy. Possible values are: enabled, disabled.
             @state
             ## 
-            ## Instantiates a new AuthenticationMethodConfiguration and sets the default values.
+            ## Instantiates a new authenticationMethodConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -59,7 +59,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the excludeTargets property value. Groups of users that are excluded from a policy.
-            ## @param value Value to set for the exclude_targets property.
+            ## @param value Value to set for the excludeTargets property.
             ## @return a void
             ## 
             def exclude_targets=(value)

@@ -50,7 +50,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the alertType property value. Notification Settings Alert Type.
-            ## @param value Value to set for the alert_type property.
+            ## @param value Value to set for the alertType property.
             ## @return a void
             ## 
             def alert_type=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appName property value. Application name to be associated with the bundleID.
-            ## @param value Value to set for the app_name property.
+            ## @param value Value to set for the appName property.
             ## @return a void
             ## 
             def app_name=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the badgesEnabled property value. Indicates whether badges are allowed for this app.
-            ## @param value Value to set for the badges_enabled property.
+            ## @param value Value to set for the badgesEnabled property.
             ## @return a void
             ## 
             def badges_enabled=(value)
@@ -110,7 +110,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bundleID property value. Bundle id of app to which to apply these notification settings.
-            ## @param value Value to set for the bundle_i_d property.
+            ## @param value Value to set for the bundleID property.
             ## @return a void
             ## 
             def bundle_i_d=(value)
@@ -174,7 +174,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -223,7 +223,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showInNotificationCenter property value. Indicates whether notifications can be shown in notification center.
-            ## @param value Value to set for the show_in_notification_center property.
+            ## @param value Value to set for the showInNotificationCenter property.
             ## @return a void
             ## 
             def show_in_notification_center=(value)
@@ -238,7 +238,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the showOnLockScreen property value. Indicates whether notifications can be shown on the lock screen.
-            ## @param value Value to set for the show_on_lock_screen property.
+            ## @param value Value to set for the showOnLockScreen property.
             ## @return a void
             ## 
             def show_on_lock_screen=(value)
@@ -253,7 +253,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the soundsEnabled property value. Indicates whether sounds are allowed for this app.
-            ## @param value Value to set for the sounds_enabled property.
+            ## @param value Value to set for the soundsEnabled property.
             ## @return a void
             ## 
             def sounds_enabled=(value)

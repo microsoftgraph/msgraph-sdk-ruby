@@ -19,7 +19,7 @@ module MicrosoftGraph
             # The level that the teacher has selected for each quality while grading this assignment.
             @rubric_quality_selected_levels
             ## 
-            ## Instantiates a new EducationRubricOutcome and sets the default values.
+            ## Instantiates a new educationRubricOutcome and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,7 +56,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the publishedRubricQualityFeedback property value. A copy of the rubricQualityFeedback property that is made when the grade is released to the student.
-            ## @param value Value to set for the published_rubric_quality_feedback property.
+            ## @param value Value to set for the publishedRubricQualityFeedback property.
             ## @return a void
             ## 
             def published_rubric_quality_feedback=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the publishedRubricQualitySelectedLevels property value. A copy of the rubricQualitySelectedLevels property that is made when the grade is released to the student.
-            ## @param value Value to set for the published_rubric_quality_selected_levels property.
+            ## @param value Value to set for the publishedRubricQualitySelectedLevels property.
             ## @return a void
             ## 
             def published_rubric_quality_selected_levels=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the rubricQualityFeedback property value. A collection of specific feedback for each quality of this rubric.
-            ## @param value Value to set for the rubric_quality_feedback property.
+            ## @param value Value to set for the rubricQualityFeedback property.
             ## @return a void
             ## 
             def rubric_quality_feedback=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the rubricQualitySelectedLevels property value. The level that the teacher has selected for each quality while grading this assignment.
-            ## @param value Value to set for the rubric_quality_selected_levels property.
+            ## @param value Value to set for the rubricQualitySelectedLevels property.
             ## @return a void
             ## 
             def rubric_quality_selected_levels=(value)

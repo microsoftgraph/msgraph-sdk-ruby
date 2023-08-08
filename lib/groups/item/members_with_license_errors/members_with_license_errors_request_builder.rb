@@ -11,6 +11,7 @@ require_relative './graph_group/graph_group_request_builder'
 require_relative './graph_org_contact/graph_org_contact_request_builder'
 require_relative './graph_service_principal/graph_service_principal_request_builder'
 require_relative './graph_user/graph_user_request_builder'
+require_relative './item/directory_object_item_request_builder'
 require_relative './members_with_license_errors'
 
 module MicrosoftGraph
@@ -55,6 +56,17 @@ module MicrosoftGraph
                     # Casts the previous resource to user.
                     def graph_user()
                         return MicrosoftGraph::Groups::Item::MembersWithLicenseErrors::GraphUser::GraphUserRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    ## Provides operations to manage the membersWithLicenseErrors property of the microsoft.graph.group entity.
+                    ## @param directory_object_id Unique identifier of the item
+                    ## @return a directory_object_item_request_builder
+                    ## 
+                    def by_directory_object_id(directory_object_id)
+                        raise StandardError, 'directory_object_id cannot be null' if directory_object_id.nil?
+                        url_tpl_params = @path_parameters.clone
+                        url_tpl_params["directoryObject%2Did"] = directory_object_id
+                        return MicrosoftGraph::Groups::Item::MembersWithLicenseErrors::Item::DirectoryObjectItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new MembersWithLicenseErrorsRequestBuilder and sets the default values.

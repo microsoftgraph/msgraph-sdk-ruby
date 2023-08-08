@@ -38,7 +38,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -53,7 +53,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowedDeviceCount property value. Total count of devices with Exchange Access State: Allowed.
-            ## @param value Value to set for the allowed_device_count property.
+            ## @param value Value to set for the allowedDeviceCount property.
             ## @return a void
             ## 
             def allowed_device_count=(value)
@@ -68,7 +68,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the blockedDeviceCount property value. Total count of devices with Exchange Access State: Blocked.
-            ## @param value Value to set for the blocked_device_count property.
+            ## @param value Value to set for the blockedDeviceCount property.
             ## @return a void
             ## 
             def blocked_device_count=(value)
@@ -113,7 +113,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -128,7 +128,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the quarantinedDeviceCount property value. Total count of devices with Exchange Access State: Quarantined.
-            ## @param value Value to set for the quarantined_device_count property.
+            ## @param value Value to set for the quarantinedDeviceCount property.
             ## @return a void
             ## 
             def quarantined_device_count=(value)
@@ -158,7 +158,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the unavailableDeviceCount property value. Total count of devices for which no Exchange Access State could be found.
-            ## @param value Value to set for the unavailable_device_count property.
+            ## @param value Value to set for the unavailableDeviceCount property.
             ## @return a void
             ## 
             def unavailable_device_count=(value)
@@ -173,7 +173,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the unknownDeviceCount property value. Total count of devices with Exchange Access State: Unknown.
-            ## @param value Value to set for the unknown_device_count property.
+            ## @param value Value to set for the unknownDeviceCount property.
             ## @return a void
             ## 
             def unknown_device_count=(value)

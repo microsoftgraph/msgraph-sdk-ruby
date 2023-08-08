@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties used to assign an iOS LOB mobile app to a group.
         class IosLobAppAssignmentSettings < MicrosoftGraph::Models::MobileAppAssignmentSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -16,7 +18,7 @@ module MicrosoftGraph
             # This is the unique identifier (Id) of the VPN Configuration to apply to the app.
             @vpn_configuration_id
             ## 
-            ## Instantiates a new IosLobAppAssignmentSettings and sets the default values.
+            ## Instantiates a new iosLobAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -52,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isRemovable property value. When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
-            ## @param value Value to set for the is_removable property.
+            ## @param value Value to set for the isRemovable property.
             ## @return a void
             ## 
             def is_removable=(value)
@@ -79,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the uninstallOnDeviceRemoval property value. When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune. By default, property is set to null which internally is treated as TRUE.
-            ## @param value Value to set for the uninstall_on_device_removal property.
+            ## @param value Value to set for the uninstallOnDeviceRemoval property.
             ## @return a void
             ## 
             def uninstall_on_device_removal=(value)
@@ -94,7 +96,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the vpnConfigurationId property value. This is the unique identifier (Id) of the VPN Configuration to apply to the app.
-            ## @param value Value to set for the vpn_configuration_id property.
+            ## @param value Value to set for the vpnConfigurationId property.
             ## @return a void
             ## 
             def vpn_configuration_id=(value)

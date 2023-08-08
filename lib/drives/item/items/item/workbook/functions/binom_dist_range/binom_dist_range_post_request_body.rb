@@ -43,7 +43,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the numberS property value. The numberS property
-                                    ## @param value Value to set for the number_s property.
+                                    ## @param value Value to set for the numberS property.
                                     ## @return a void
                                     ## 
                                     def number_s=(value)
@@ -101,7 +101,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the numberS2 property value. The numberS2 property
-                                    ## @param value Value to set for the number_s2 property.
+                                    ## @param value Value to set for the numberS2 property.
                                     ## @return a void
                                     ## 
                                     def number_s2=(value)
@@ -116,7 +116,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the probabilityS property value. The probabilityS property
-                                    ## @param value Value to set for the probability_s property.
+                                    ## @param value Value to set for the probabilityS property.
                                     ## @return a void
                                     ## 
                                     def probability_s=(value)

@@ -39,21 +39,21 @@ module MicrosoftGraph
                                         end
                                         ## 
                                         ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                        ## @param value Value to set for the AdditionalData property.
+                                        ## @param value Value to set for the additionalData property.
                                         ## @return a void
                                         ## 
                                         def additional_data=(value)
                                             @additional_data = value
                                         end
                                         ## 
-                                        ## Gets the comment property value. The Comment property
+                                        ## Gets the Comment property value. The Comment property
                                         ## @return a string
                                         ## 
                                         def comment
                                             return @comment
                                         end
                                         ## 
-                                        ## Sets the comment property value. The Comment property
+                                        ## Sets the Comment property value. The Comment property
                                         ## @param value Value to set for the Comment property.
                                         ## @return a void
                                         ## 
@@ -98,15 +98,15 @@ module MicrosoftGraph
                                             writer.write_additional_data(@additional_data)
                                         end
                                         ## 
-                                        ## Gets the toRecipients property value. The ToRecipients property
+                                        ## Gets the ToRecipients property value. The ToRecipients property
                                         ## @return a recipient
                                         ## 
                                         def to_recipients
                                             return @to_recipients
                                         end
                                         ## 
-                                        ## Sets the toRecipients property value. The ToRecipients property
-                                        ## @param value Value to set for the to_recipients property.
+                                        ## Sets the ToRecipients property value. The ToRecipients property
+                                        ## @param value Value to set for the ToRecipients property.
                                         ## @return a void
                                         ## 
                                         def to_recipients=(value)

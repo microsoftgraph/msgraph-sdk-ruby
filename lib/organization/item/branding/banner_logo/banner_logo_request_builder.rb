@@ -25,7 +25,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/organization/{organization%2Did}/branding/bannerLogo")
                         end
                         ## 
-                        ## A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+                        ## A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of binary
                         ## 
@@ -39,7 +39,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, Binary, error_mapping)
                         end
                         ## 
-                        ## A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+                        ## A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
                         ## @param body Binary request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of binary
@@ -55,7 +55,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, Binary, error_mapping)
                         end
                         ## 
-                        ## A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+                        ## A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -71,7 +71,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG no larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+                        ## A banner version of your company logo that appears on the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
                         ## @param body Binary request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information

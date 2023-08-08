@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -67,7 +67,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Refers to the Name of the conditional access policy (example: 'Require MFA for Salesforce').
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enforcedGrantControls property value. Refers to the grant controls enforced by the conditional access policy (example: 'Require multi-factor authentication').
-            ## @param value Value to set for the enforced_grant_controls property.
+            ## @param value Value to set for the enforcedGrantControls property.
             ## @return a void
             ## 
             def enforced_grant_controls=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the enforcedSessionControls property value. Refers to the session controls enforced by the conditional access policy (example: 'Require app enforced controls').
-            ## @param value Value to set for the enforced_session_controls property.
+            ## @param value Value to set for the enforcedSessionControls property.
             ## @return a void
             ## 
             def enforced_session_controls=(value)
@@ -141,7 +141,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the preventsDownload property value. If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.
-            ## @param value Value to set for the prevents_download property.
+            ## @param value Value to set for the preventsDownload property.
             ## @return a void
             ## 
             def prevents_download=(value)
@@ -176,7 +176,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webHtml property value. For embed links, this property contains the HTML code for an <iframe> element that will embed the item in a webpage.
-            ## @param value Value to set for the web_html property.
+            ## @param value Value to set for the webHtml property.
             ## @return a void
             ## 
             def web_html=(value)
@@ -191,7 +191,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webUrl property value. A URL that opens the item in the browser on the OneDrive website.
-            ## @param value Value to set for the web_url property.
+            ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 
             def web_url=(value)

@@ -54,7 +54,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the completedDateTime property value. The date and time the operation was completed.
-                ## @param value Value to set for the completed_date_time property.
+                ## @param value Value to set for the completedDateTime property.
                 ## @return a void
                 ## 
                 def completed_date_time=(value)
@@ -76,7 +76,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the createdBy property value. The user that created the operation.
-                ## @param value Value to set for the created_by property.
+                ## @param value Value to set for the createdBy property.
                 ## @return a void
                 ## 
                 def created_by=(value)
@@ -91,7 +91,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the createdDateTime property value. The date and time the operation was created.
-                ## @param value Value to set for the created_date_time property.
+                ## @param value Value to set for the createdDateTime property.
                 ## @return a void
                 ## 
                 def created_date_time=(value)
@@ -112,6 +112,8 @@ module MicrosoftGraph
                                 return EdiscoveryAddToReviewSetOperation.new
                             when "#microsoft.graph.security.ediscoveryEstimateOperation"
                                 return EdiscoveryEstimateOperation.new
+                            when "#microsoft.graph.security.ediscoveryExportOperation"
+                                return EdiscoveryExportOperation.new
                             when "#microsoft.graph.security.ediscoveryHoldOperation"
                                 return EdiscoveryHoldOperation.new
                             when "#microsoft.graph.security.ediscoveryIndexOperation"
@@ -148,7 +150,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the percentProgress property value. The progress of the operation.
-                ## @param value Value to set for the percent_progress property.
+                ## @param value Value to set for the percentProgress property.
                 ## @return a void
                 ## 
                 def percent_progress=(value)
@@ -163,7 +165,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the resultInfo property value. Contains success and failure-specific result information.
-                ## @param value Value to set for the result_info property.
+                ## @param value Value to set for the resultInfo property.
                 ## @return a void
                 ## 
                 def result_info=(value)

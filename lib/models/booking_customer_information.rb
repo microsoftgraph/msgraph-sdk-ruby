@@ -31,7 +31,7 @@ module MicrosoftGraph
             # The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
             @time_zone
             ## 
-            ## Instantiates a new BookingCustomerInformation and sets the default values.
+            ## Instantiates a new bookingCustomerInformation and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,7 +56,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the customQuestionAnswers property value. It consists of the list of custom questions and answers given by the customer as part of the appointment
-            ## @param value Value to set for the custom_question_answers property.
+            ## @param value Value to set for the customQuestionAnswers property.
             ## @return a void
             ## 
             def custom_question_answers=(value)
@@ -71,7 +71,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the customerId property value. The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.
-            ## @param value Value to set for the customer_id property.
+            ## @param value Value to set for the customerId property.
             ## @return a void
             ## 
             def customer_id=(value)
@@ -86,7 +86,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the emailAddress property value. The SMTP address of the bookingCustomer who is booking the appointment
-            ## @param value Value to set for the email_address property.
+            ## @param value Value to set for the emailAddress property.
             ## @return a void
             ## 
             def email_address=(value)
@@ -194,7 +194,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the timeZone property value. The time zone of the customer. For a list of possible values, see dateTimeTimeZone.
-            ## @param value Value to set for the time_zone property.
+            ## @param value Value to set for the timeZone property.
             ## @return a void
             ## 
             def time_zone=(value)

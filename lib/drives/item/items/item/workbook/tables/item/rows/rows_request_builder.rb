@@ -12,6 +12,7 @@ require_relative '../../tables'
 require_relative '../item'
 require_relative './add/add_request_builder'
 require_relative './count/count_request_builder'
+require_relative './item/workbook_table_row_item_request_builder'
 require_relative './item_at_with_index/item_at_with_index_request_builder'
 require_relative './rows'
 
@@ -37,6 +38,17 @@ module MicrosoftGraph
                                         # Provides operations to call the count method.
                                         def count()
                                             return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Rows::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                        end
+                                        ## 
+                                        ## Provides operations to manage the rows property of the microsoft.graph.workbookTable entity.
+                                        ## @param workbook_table_row_id Unique identifier of the item
+                                        ## @return a workbook_table_row_item_request_builder
+                                        ## 
+                                        def by_workbook_table_row_id(workbook_table_row_id)
+                                            raise StandardError, 'workbook_table_row_id cannot be null' if workbook_table_row_id.nil?
+                                            url_tpl_params = @path_parameters.clone
+                                            url_tpl_params["workbookTableRow%2Did"] = workbook_table_row_id
+                                            return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Rows::Item::WorkbookTableRowItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                         end
                                         ## 
                                         ## Instantiates a new RowsRequestBuilder and sets the default values.
@@ -71,7 +83,7 @@ module MicrosoftGraph
                                             return ItemAtWithIndexRequestBuilder.new(@path_parameters, @request_adapter, index)
                                         end
                                         ## 
-                                        ## Adds rows to the end of a table.  Note that this API can accept multiple rows of data. Adding one row at a time can affect performance. The recommended approach is to batch the rows together in a single call rather than inserting single rows. For best results, collect the rows to be inserted on the application side and perform a single row add operation. Experiment with the number of rows to determine the ideal number of rows to use in a single API call.  This request might occasionally result in a `504 HTTP` error. The appropriate response to this error is to repeat the request.
+                                        ## Adds rows to the end of a table.  Note that this API can accept multiple rows of data. Adding one row at a time can affect performance. The recommended approach is to batch the rows together in a single call rather than inserting single rows. For best results, collect the rows to be inserted on the application side and perform a single row add operation. Experiment with the number of rows to determine the ideal number of rows to use in a single API call.  This request might occasionally result in a 504 HTTP error. The appropriate response to this error is to repeat the request.
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a Fiber of workbook_table_row
@@ -105,7 +117,7 @@ module MicrosoftGraph
                                             return request_info
                                         end
                                         ## 
-                                        ## Adds rows to the end of a table.  Note that this API can accept multiple rows of data. Adding one row at a time can affect performance. The recommended approach is to batch the rows together in a single call rather than inserting single rows. For best results, collect the rows to be inserted on the application side and perform a single row add operation. Experiment with the number of rows to determine the ideal number of rows to use in a single API call.  This request might occasionally result in a `504 HTTP` error. The appropriate response to this error is to repeat the request.
+                                        ## Adds rows to the end of a table.  Note that this API can accept multiple rows of data. Adding one row at a time can affect performance. The recommended approach is to batch the rows together in a single call rather than inserting single rows. For best results, collect the rows to be inserted on the application side and perform a single row add operation. Experiment with the number of rows to determine the ideal number of rows to use in a single API call.  This request might occasionally result in a 504 HTTP error. The appropriate response to this error is to repeat the request.
                                         ## @param body The request body
                                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                         ## @return a request_information

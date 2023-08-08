@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notificationRecipientScope property value. Determines the recipient of the notification email.
-            ## @param value Value to set for the notification_recipient_scope property.
+            ## @param value Value to set for the notificationRecipientScope property.
             ## @return a void
             ## 
             def notification_recipient_scope=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notificationTemplateType property value. Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients, which sends review completion notifications to the recipients.
-            ## @param value Value to set for the notification_template_type property.
+            ## @param value Value to set for the notificationTemplateType property.
             ## @return a void
             ## 
             def notification_template_type=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

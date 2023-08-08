@@ -9,7 +9,7 @@ module MicrosoftGraph
             class EdiscoveryHoldOperation < MicrosoftGraph::Models::Security::CaseOperation
                 include MicrosoftKiotaAbstractions::Parsable
                 ## 
-                ## Instantiates a new EdiscoveryHoldOperation and sets the default values.
+                ## Instantiates a new ediscoveryHoldOperation and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()

@@ -8,13 +8,9 @@ require_relative '../content_types'
 require_relative './associate_with_hub_sites/associate_with_hub_sites_request_builder'
 require_relative './base/base_request_builder_escaped'
 require_relative './base_types/base_types_request_builder'
-require_relative './base_types/item/content_type_item_request_builder'
 require_relative './column_links/column_links_request_builder'
-require_relative './column_links/item/column_link_item_request_builder'
 require_relative './column_positions/column_positions_request_builder'
-require_relative './column_positions/item/column_definition_item_request_builder'
 require_relative './columns/columns_request_builder'
-require_relative './columns/item/column_definition_item_request_builder'
 require_relative './copy_to_default_content_location/copy_to_default_content_location_request_builder'
 require_relative './is_published/is_published_request_builder'
 require_relative './item'
@@ -81,50 +77,6 @@ module MicrosoftGraph
                             return MicrosoftGraph::Sites::Item::ContentTypes::Item::Unpublish::UnpublishRequestBuilder.new(@path_parameters, @request_adapter)
                         end
                         ## 
-                        ## Provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a content_type_item_request_builder
-                        ## 
-                        def base_types_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["contentType%2Did1"] = id
-                            return MicrosoftGraph::Sites::Item::ContentTypes::Item::BaseTypes::Item::ContentTypeItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a column_link_item_request_builder
-                        ## 
-                        def column_links_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["columnLink%2Did"] = id
-                            return MicrosoftGraph::Sites::Item::ContentTypes::Item::ColumnLinks::Item::ColumnLinkItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the columnPositions property of the microsoft.graph.contentType entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a column_definition_item_request_builder
-                        ## 
-                        def column_positions_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["columnDefinition%2Did"] = id
-                            return MicrosoftGraph::Sites::Item::ContentTypes::Item::ColumnPositions::Item::ColumnDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
-                        ## Provides operations to manage the columns property of the microsoft.graph.contentType entity.
-                        ## @param id Unique identifier of the item
-                        ## @return a column_definition_item_request_builder
-                        ## 
-                        def columns_by_id(id)
-                            raise StandardError, 'id cannot be null' if id.nil?
-                            url_tpl_params = @path_parameters.clone
-                            url_tpl_params["columnDefinition%2Did"] = id
-                            return MicrosoftGraph::Sites::Item::ContentTypes::Item::Columns::Item::ColumnDefinitionItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                        end
-                        ## 
                         ## Instantiates a new ContentTypeItemRequestBuilder and sets the default values.
                         ## @param path_parameters Path parameters for the request
                         ## @param request_adapter The request adapter to use to execute the requests.
@@ -134,7 +86,7 @@ module MicrosoftGraph
                             super(path_parameters, request_adapter, "{+baseurl}/sites/{site%2Did}/contentTypes/{contentType%2Did}{?%24select,%24expand}")
                         end
                         ## 
-                        ## Delete navigation property contentTypes for sites
+                        ## Remove a [content type][contentType] from a [list][] or a [site][].
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of void
                         ## 
@@ -148,7 +100,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, nil, error_mapping)
                         end
                         ## 
-                        ## The collection of content types defined for this site.
+                        ## Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of content_type
                         ## 
@@ -162,7 +114,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ContentType.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Update the navigation property contentTypes in sites
+                        ## Update a [content type][contentType].
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a Fiber of content_type
@@ -178,7 +130,7 @@ module MicrosoftGraph
                             return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::ContentType.create_from_discriminator_value(pn) }, error_mapping)
                         end
                         ## 
-                        ## Delete navigation property contentTypes for sites
+                        ## Remove a [content type][contentType] from a [list][] or a [site][].
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -194,7 +146,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## The collection of content types defined for this site.
+                        ## Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
                         ## 
@@ -212,7 +164,7 @@ module MicrosoftGraph
                             return request_info
                         end
                         ## 
-                        ## Update the navigation property contentTypes in sites
+                        ## Update a [content type][contentType].
                         ## @param body The request body
                         ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                         ## @return a request_information
@@ -233,7 +185,7 @@ module MicrosoftGraph
                         end
 
                         ## 
-                        # The collection of content types defined for this site.
+                        # Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
                         class ContentTypeItemRequestBuilderGetQueryParameters
                             
                             ## 

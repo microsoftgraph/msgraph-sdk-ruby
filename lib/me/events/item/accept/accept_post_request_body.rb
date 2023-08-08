@@ -30,21 +30,21 @@ module MicrosoftGraph
                         end
                         ## 
                         ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                        ## @param value Value to set for the AdditionalData property.
+                        ## @param value Value to set for the additionalData property.
                         ## @return a void
                         ## 
                         def additional_data=(value)
                             @additional_data = value
                         end
                         ## 
-                        ## Gets the comment property value. The Comment property
+                        ## Gets the Comment property value. The Comment property
                         ## @return a string
                         ## 
                         def comment
                             return @comment
                         end
                         ## 
-                        ## Sets the comment property value. The Comment property
+                        ## Sets the Comment property value. The Comment property
                         ## @param value Value to set for the Comment property.
                         ## @return a void
                         ## 
@@ -78,15 +78,15 @@ module MicrosoftGraph
                             }
                         end
                         ## 
-                        ## Gets the sendResponse property value. The SendResponse property
+                        ## Gets the SendResponse property value. The SendResponse property
                         ## @return a boolean
                         ## 
                         def send_response
                             return @send_response
                         end
                         ## 
-                        ## Sets the sendResponse property value. The SendResponse property
-                        ## @param value Value to set for the send_response property.
+                        ## Sets the SendResponse property value. The SendResponse property
+                        ## @param value Value to set for the SendResponse property.
                         ## @return a void
                         ## 
                         def send_response=(value)

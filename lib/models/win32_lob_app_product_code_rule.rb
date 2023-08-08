@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # A complex type to store the product code and version rule data for a Win32 LOB app. This rule is not supported as a requirement rule.
         class Win32LobAppProductCodeRule < MicrosoftGraph::Models::Win32LobAppRule
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -16,7 +18,7 @@ module MicrosoftGraph
             # Contains properties for detection operator.
             @product_version_operator
             ## 
-            ## Instantiates a new Win32LobAppProductCodeRule and sets the default values.
+            ## Instantiates a new win32LobAppProductCodeRule and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -52,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the productCode property value. The product code of the app.
-            ## @param value Value to set for the product_code property.
+            ## @param value Value to set for the productCode property.
             ## @return a void
             ## 
             def product_code=(value)
@@ -67,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the productVersion property value. The product version comparison value.
-            ## @param value Value to set for the product_version property.
+            ## @param value Value to set for the productVersion property.
             ## @return a void
             ## 
             def product_version=(value)
@@ -82,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the productVersionOperator property value. Contains properties for detection operator.
-            ## @param value Value to set for the product_version_operator property.
+            ## @param value Value to set for the productVersionOperator property.
             ## @return a void
             ## 
             def product_version_operator=(value)

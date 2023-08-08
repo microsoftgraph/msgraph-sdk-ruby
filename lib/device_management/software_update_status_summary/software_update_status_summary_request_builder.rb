@@ -22,7 +22,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/softwareUpdateStatusSummary{?%24select,%24expand}")
                 end
                 ## 
-                ## The software update status summary.
+                ## Read properties and relationships of the softwareUpdateStatusSummary object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of software_update_status_summary
                 ## 
@@ -36,7 +36,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SoftwareUpdateStatusSummary.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## The software update status summary.
+                ## Read properties and relationships of the softwareUpdateStatusSummary object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -55,7 +55,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # The software update status summary.
+                # Read properties and relationships of the softwareUpdateStatusSummary object.
                 class SoftwareUpdateStatusSummaryRequestBuilderGetQueryParameters
                     
                     ## 

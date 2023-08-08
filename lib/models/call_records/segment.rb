@@ -82,7 +82,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the endDateTime property value. UTC time when the segment ended. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-                ## @param value Value to set for the end_date_time property.
+                ## @param value Value to set for the endDateTime property.
                 ## @return a void
                 ## 
                 def end_date_time=(value)
@@ -97,7 +97,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the failureInfo property value. Failure information associated with the segment if it failed.
-                ## @param value Value to set for the failure_info property.
+                ## @param value Value to set for the failureInfo property.
                 ## @return a void
                 ## 
                 def failure_info=(value)
@@ -156,7 +156,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the startDateTime property value. UTC time when the segment started. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-                ## @param value Value to set for the start_date_time property.
+                ## @param value Value to set for the startDateTime property.
                 ## @return a void
                 ## 
                 def start_date_time=(value)

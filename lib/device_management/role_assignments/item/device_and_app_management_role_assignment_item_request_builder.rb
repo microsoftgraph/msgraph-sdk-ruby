@@ -5,6 +5,7 @@ require_relative '../../../models/o_data_errors/o_data_error'
 require_relative '../../device_management'
 require_relative '../role_assignments'
 require_relative './item'
+require_relative './role_definition/role_definition_request_builder'
 
 module MicrosoftGraph
     module DeviceManagement
@@ -15,6 +16,11 @@ module MicrosoftGraph
                 class DeviceAndAppManagementRoleAssignmentItemRequestBuilder < MicrosoftKiotaAbstractions::BaseRequestBuilder
                     
                     ## 
+                    # Provides operations to manage the roleDefinition property of the microsoft.graph.roleAssignment entity.
+                    def role_definition()
+                        return MicrosoftGraph::DeviceManagement::RoleAssignments::Item::RoleDefinition::RoleDefinitionRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     ## Instantiates a new DeviceAndAppManagementRoleAssignmentItemRequestBuilder and sets the default values.
                     ## @param path_parameters Path parameters for the request
                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -24,7 +30,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property roleAssignments for deviceManagement
+                    ## Deletes a deviceAndAppManagementRoleAssignment.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -38,7 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The Role Assignments.
+                    ## Read properties and relationships of the deviceAndAppManagementRoleAssignment object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of device_and_app_management_role_assignment
                     ## 
@@ -52,7 +58,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceAndAppManagementRoleAssignment.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property roleAssignments in deviceManagement
+                    ## Update the properties of a deviceAndAppManagementRoleAssignment object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of device_and_app_management_role_assignment
@@ -68,7 +74,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceAndAppManagementRoleAssignment.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property roleAssignments for deviceManagement
+                    ## Deletes a deviceAndAppManagementRoleAssignment.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -84,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The Role Assignments.
+                    ## Read properties and relationships of the deviceAndAppManagementRoleAssignment object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +108,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property roleAssignments in deviceManagement
+                    ## Update the properties of a deviceAndAppManagementRoleAssignment object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -123,7 +129,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The Role Assignments.
+                    # Read properties and relationships of the deviceAndAppManagementRoleAssignment object.
                     class DeviceAndAppManagementRoleAssignmentItemRequestBuilderGetQueryParameters
                         
                         ## 

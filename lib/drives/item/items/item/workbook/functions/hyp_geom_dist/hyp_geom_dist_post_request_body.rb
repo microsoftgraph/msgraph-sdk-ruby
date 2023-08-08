@@ -46,7 +46,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the numberPop property value. The numberPop property
-                                    ## @param value Value to set for the number_pop property.
+                                    ## @param value Value to set for the numberPop property.
                                     ## @return a void
                                     ## 
                                     def number_pop=(value)
@@ -120,7 +120,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the numberSample property value. The numberSample property
-                                    ## @param value Value to set for the number_sample property.
+                                    ## @param value Value to set for the numberSample property.
                                     ## @return a void
                                     ## 
                                     def number_sample=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the populationS property value. The populationS property
-                                    ## @param value Value to set for the population_s property.
+                                    ## @param value Value to set for the populationS property.
                                     ## @return a void
                                     ## 
                                     def population_s=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the sampleS property value. The sampleS property
-                                    ## @param value Value to set for the sample_s property.
+                                    ## @param value Value to set for the sampleS property.
                                     ## @return a void
                                     ## 
                                     def sample_s=(value)

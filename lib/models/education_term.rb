@@ -34,7 +34,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Display name of the term.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the endDate property value. End of the term.
-            ## @param value Value to set for the end_date property.
+            ## @param value Value to set for the endDate property.
             ## @return a void
             ## 
             def end_date=(value)
@@ -95,7 +95,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalId property value. ID of term in the syncing system.
-            ## @param value Value to set for the external_id property.
+            ## @param value Value to set for the externalId property.
             ## @return a void
             ## 
             def external_id=(value)
@@ -123,7 +123,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -152,7 +152,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the startDate property value. Start of the term.
-            ## @param value Value to set for the start_date property.
+            ## @param value Value to set for the startDate property.
             ## @return a void
             ## 
             def start_date=(value)

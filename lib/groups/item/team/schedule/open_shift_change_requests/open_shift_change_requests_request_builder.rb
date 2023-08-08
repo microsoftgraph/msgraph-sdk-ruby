@@ -8,6 +8,7 @@ require_relative '../../../item'
 require_relative '../../team'
 require_relative '../schedule'
 require_relative './count/count_request_builder'
+require_relative './item/open_shift_change_request_item_request_builder'
 require_relative './open_shift_change_requests'
 
 module MicrosoftGraph
@@ -24,6 +25,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Groups::Item::Team::Schedule::OpenShiftChangeRequests::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the openShiftChangeRequests property of the microsoft.graph.schedule entity.
+                            ## @param open_shift_change_request_id Unique identifier of the item
+                            ## @return a open_shift_change_request_item_request_builder
+                            ## 
+                            def by_open_shift_change_request_id(open_shift_change_request_id)
+                                raise StandardError, 'open_shift_change_request_id cannot be null' if open_shift_change_request_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["openShiftChangeRequest%2Did"] = open_shift_change_request_id
+                                return MicrosoftGraph::Groups::Item::Team::Schedule::OpenShiftChangeRequests::Item::OpenShiftChangeRequestItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new OpenShiftChangeRequestsRequestBuilder and sets the default values.

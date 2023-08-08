@@ -18,14 +18,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cidrAddress property value. IPv6 address in CIDR notation. Not nullable.
-            ## @param value Value to set for the cidr_address property.
+            ## @param value Value to set for the cidrAddress property.
             ## @return a void
             ## 
             def cidr_address=(value)
                 @cidr_address = value
             end
             ## 
-            ## Instantiates a new IPv6CidrRange and sets the default values.
+            ## Instantiates a new iPv6CidrRange and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -38,7 +38,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## The list of print long running operations.
+                    ## Retrieve the properties and relationships of a printOperation object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of print_operation
                     ## 
@@ -84,7 +84,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## The list of print long running operations.
+                    ## Retrieve the properties and relationships of a printOperation object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -123,7 +123,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # The list of print long running operations.
+                    # Retrieve the properties and relationships of a printOperation object.
                     class PrintOperationItemRequestBuilderGetQueryParameters
                         
                         ## 

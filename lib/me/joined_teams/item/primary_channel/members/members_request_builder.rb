@@ -9,6 +9,7 @@ require_relative '../../item'
 require_relative '../primary_channel'
 require_relative './add/add_request_builder'
 require_relative './count/count_request_builder'
+require_relative './item/conversation_member_item_request_builder'
 require_relative './members'
 
 module MicrosoftGraph
@@ -30,6 +31,17 @@ module MicrosoftGraph
                             # Provides operations to count the resources in the collection.
                             def count()
                                 return MicrosoftGraph::Me::JoinedTeams::Item::PrimaryChannel::Members::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                            end
+                            ## 
+                            ## Provides operations to manage the members property of the microsoft.graph.channel entity.
+                            ## @param conversation_member_id Unique identifier of the item
+                            ## @return a conversation_member_item_request_builder
+                            ## 
+                            def by_conversation_member_id(conversation_member_id)
+                                raise StandardError, 'conversation_member_id cannot be null' if conversation_member_id.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["conversationMember%2Did"] = conversation_member_id
+                                return MicrosoftGraph::Me::JoinedTeams::Item::PrimaryChannel::Members::Item::ConversationMemberItemRequestBuilder.new(url_tpl_params, @request_adapter)
                             end
                             ## 
                             ## Instantiates a new MembersRequestBuilder and sets the default values.

@@ -20,7 +20,7 @@ module MicrosoftGraph
             # The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
             @last_modified_date_time
             ## 
-            ## Instantiates a new OnenoteEntityHierarchyModel and sets the default values.
+            ## Instantiates a new onenoteEntityHierarchyModel and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdBy property value. Identity of the user, device, and application which created the item. Read-only.
-            ## @param value Value to set for the created_by property.
+            ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
             def created_by=(value)
@@ -72,7 +72,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name of the notebook.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedBy property value. Identity of the user, device, and application which created the item. Read-only.
-            ## @param value Value to set for the last_modified_by property.
+            ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
             def last_modified_by=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)

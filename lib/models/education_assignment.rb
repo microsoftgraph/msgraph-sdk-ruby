@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the addToCalendarAction property value. Optional field to control the assignment behavior  for adding assignments to students' and teachers' calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.
-            ## @param value Value to set for the add_to_calendar_action property.
+            ## @param value Value to set for the addToCalendarAction property.
             ## @return a void
             ## 
             def add_to_calendar_action=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the addedStudentAction property value. Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.
-            ## @param value Value to set for the added_student_action property.
+            ## @param value Value to set for the addedStudentAction property.
             ## @return a void
             ## 
             def added_student_action=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowLateSubmissions property value. Identifies whether students can submit after the due date. If this property isn't specified during create, it defaults to true.
-            ## @param value Value to set for the allow_late_submissions property.
+            ## @param value Value to set for the allowLateSubmissions property.
             ## @return a void
             ## 
             def allow_late_submissions=(value)
@@ -139,7 +139,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowStudentsToAddResourcesToSubmission property value. Identifies whether students can add their own resources to a submission or if they can only modify resources added by the teacher.
-            ## @param value Value to set for the allow_students_to_add_resources_to_submission property.
+            ## @param value Value to set for the allowStudentsToAddResourcesToSubmission property.
             ## @return a void
             ## 
             def allow_students_to_add_resources_to_submission=(value)
@@ -154,7 +154,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignDateTime property value. The date when the assignment should become active.  If in the future, the assignment isn't shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the assign_date_time property.
+            ## @param value Value to set for the assignDateTime property.
             ## @return a void
             ## 
             def assign_date_time=(value)
@@ -169,7 +169,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignTo property value. Which users, or whole class should receive a submission object once the assignment is published.
-            ## @param value Value to set for the assign_to property.
+            ## @param value Value to set for the assignTo property.
             ## @return a void
             ## 
             def assign_to=(value)
@@ -184,7 +184,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignedDateTime property value. The moment that the assignment was published to students and the assignment shows up on the students timeline.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the assigned_date_time property.
+            ## @param value Value to set for the assignedDateTime property.
             ## @return a void
             ## 
             def assigned_date_time=(value)
@@ -214,7 +214,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the classId property value. Class which this assignment belongs.
-            ## @param value Value to set for the class_id property.
+            ## @param value Value to set for the classId property.
             ## @return a void
             ## 
             def class_id=(value)
@@ -229,14 +229,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the closeDateTime property value. Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the close_date_time property.
+            ## @param value Value to set for the closeDateTime property.
             ## @return a void
             ## 
             def close_date_time=(value)
                 @close_date_time = value
             end
             ## 
-            ## Instantiates a new EducationAssignment and sets the default values.
+            ## Instantiates a new educationAssignment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -251,7 +251,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdBy property value. Who created the assignment.
-            ## @param value Value to set for the created_by property.
+            ## @param value Value to set for the createdBy property.
             ## @return a void
             ## 
             def created_by=(value)
@@ -266,7 +266,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. Moment when the assignment was created.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -290,7 +290,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. Name of the assignment.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -305,7 +305,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the dueDateTime property value. Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the due_date_time property.
+            ## @param value Value to set for the dueDateTime property.
             ## @return a void
             ## 
             def due_date_time=(value)
@@ -320,7 +320,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the feedbackResourcesFolderUrl property value. Folder URL where all the feedback file resources for this assignment are stored.
-            ## @param value Value to set for the feedback_resources_folder_url property.
+            ## @param value Value to set for the feedbackResourcesFolderUrl property.
             ## @return a void
             ## 
             def feedback_resources_folder_url=(value)
@@ -399,7 +399,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedBy property value. Who last modified the assignment.
-            ## @param value Value to set for the last_modified_by property.
+            ## @param value Value to set for the lastModifiedBy property.
             ## @return a void
             ## 
             def last_modified_by=(value)
@@ -414,7 +414,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastModifiedDateTime property value. Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
-            ## @param value Value to set for the last_modified_date_time property.
+            ## @param value Value to set for the lastModifiedDateTime property.
             ## @return a void
             ## 
             def last_modified_date_time=(value)
@@ -429,7 +429,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notificationChannelUrl property value. Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn't allowed after the assignment has been published.
-            ## @param value Value to set for the notification_channel_url property.
+            ## @param value Value to set for the notificationChannelUrl property.
             ## @return a void
             ## 
             def notification_channel_url=(value)
@@ -459,7 +459,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourcesFolderUrl property value. Folder URL where all the file resources for this assignment are stored.
-            ## @param value Value to set for the resources_folder_url property.
+            ## @param value Value to set for the resourcesFolderUrl property.
             ## @return a void
             ## 
             def resources_folder_url=(value)
@@ -544,7 +544,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the webUrl property value. The deep link URL for the given assignment.
-            ## @param value Value to set for the web_url property.
+            ## @param value Value to set for the webUrl property.
             ## @return a void
             ## 
             def web_url=(value)

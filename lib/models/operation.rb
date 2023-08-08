@@ -32,7 +32,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the createdDateTime property value. The start time of the operation.
-            ## @param value Value to set for the created_date_time property.
+            ## @param value Value to set for the createdDateTime property.
             ## @return a void
             ## 
             def created_date_time=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastActionDateTime property value. The time of the last action of the operation.
-            ## @param value Value to set for the last_action_date_time property.
+            ## @param value Value to set for the lastActionDateTime property.
             ## @return a void
             ## 
             def last_action_date_time=(value)

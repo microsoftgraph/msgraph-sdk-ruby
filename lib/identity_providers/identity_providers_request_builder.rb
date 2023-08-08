@@ -6,6 +6,7 @@ require_relative '../models/o_data_errors/o_data_error'
 require_relative './available_provider_types/available_provider_types_request_builder'
 require_relative './count/count_request_builder'
 require_relative './identity_providers'
+require_relative './item/identity_provider_item_request_builder'
 
 module MicrosoftGraph
     module IdentityProviders
@@ -22,6 +23,17 @@ module MicrosoftGraph
             # Provides operations to count the resources in the collection.
             def count()
                 return MicrosoftGraph::IdentityProviders::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            ## Provides operations to manage the collection of identityProvider entities.
+            ## @param identity_provider_id Unique identifier of the item
+            ## @return a identity_provider_item_request_builder
+            ## 
+            def by_identity_provider_id(identity_provider_id)
+                raise StandardError, 'identity_provider_id cannot be null' if identity_provider_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["identityProvider%2Did"] = identity_provider_id
+                return MicrosoftGraph::IdentityProviders::Item::IdentityProviderItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new IdentityProvidersRequestBuilder and sets the default values.
@@ -47,7 +59,7 @@ module MicrosoftGraph
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::IdentityProviderCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Add new entity to identityProviders
+            ## Create a new identityProvider by specifying display name, identityProvider type, client ID, and client secret.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of identity_provider
@@ -81,7 +93,7 @@ module MicrosoftGraph
                 return request_info
             end
             ## 
-            ## Add new entity to identityProviders
+            ## Create a new identityProvider by specifying display name, identityProvider type, client ID, and client secret.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information

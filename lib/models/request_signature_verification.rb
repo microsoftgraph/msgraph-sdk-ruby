@@ -27,7 +27,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -42,7 +42,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowedWeakAlgorithms property value. Specifies which weak algorithms are allowed.  The possible values are: rsaSha1, unknownFutureValue.
-            ## @param value Value to set for the allowed_weak_algorithms property.
+            ## @param value Value to set for the allowedWeakAlgorithms property.
             ## @return a void
             ## 
             def allowed_weak_algorithms=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isSignedRequestRequired property value. Specifies whether signed authentication requests for this application should be required.
-            ## @param value Value to set for the is_signed_request_required property.
+            ## @param value Value to set for the isSignedRequestRequired property.
             ## @return a void
             ## 
             def is_signed_request_required=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

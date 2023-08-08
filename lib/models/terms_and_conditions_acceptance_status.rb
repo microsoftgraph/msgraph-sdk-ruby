@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the acceptedDateTime property value. DateTime when the terms were last accepted by the user.
-            ## @param value Value to set for the accepted_date_time property.
+            ## @param value Value to set for the acceptedDateTime property.
             ## @return a void
             ## 
             def accepted_date_time=(value)
@@ -48,7 +48,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the acceptedVersion property value. Most recent version number of the T&C accepted by the user.
-            ## @param value Value to set for the accepted_version property.
+            ## @param value Value to set for the acceptedVersion property.
             ## @return a void
             ## 
             def accepted_version=(value)
@@ -106,7 +106,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the termsAndConditions property value. Navigation link to the terms and conditions that are assigned.
-            ## @param value Value to set for the terms_and_conditions property.
+            ## @param value Value to set for the termsAndConditions property.
             ## @return a void
             ## 
             def terms_and_conditions=(value)
@@ -121,7 +121,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userDisplayName property value. Display name of the user whose acceptance the entity represents.
-            ## @param value Value to set for the user_display_name property.
+            ## @param value Value to set for the userDisplayName property.
             ## @return a void
             ## 
             def user_display_name=(value)
@@ -136,7 +136,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userPrincipalName property value. The userPrincipalName of the User that accepted the term.
-            ## @param value Value to set for the user_principal_name property.
+            ## @param value Value to set for the userPrincipalName property.
             ## @return a void
             ## 
             def user_principal_name=(value)

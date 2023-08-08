@@ -35,7 +35,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                ## @param value Value to set for the AdditionalData property.
+                ## @param value Value to set for the additionalData property.
                 ## @return a void
                 ## 
                 def additional_data=(value)
@@ -79,7 +79,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the isEnabled property value. Indicates whether email threading and near duplicate detection are enabled.
-                ## @param value Value to set for the is_enabled property.
+                ## @param value Value to set for the isEnabled property.
                 ## @return a void
                 ## 
                 def is_enabled=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the maxWords property value. Specifies the maximum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
-                ## @param value Value to set for the max_words property.
+                ## @param value Value to set for the maxWords property.
                 ## @return a void
                 ## 
                 def max_words=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the minWords property value. Specifies the minimum number of words used for email threading and near duplicate detection. To learn more, see Minimum/maximum number of words.
-                ## @param value Value to set for the min_words property.
+                ## @param value Value to set for the minWords property.
                 ## @return a void
                 ## 
                 def min_words=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the @odata.type property value. The OdataType property
-                ## @param value Value to set for the odata_type property.
+                ## @param value Value to set for the @odata.type property.
                 ## @return a void
                 ## 
                 def odata_type=(value)
@@ -153,7 +153,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the similarityThreshold property value. Specifies the similarity level for documents to be put in the same near duplicate set. To learn more, see Document and email similarity threshold.
-                ## @param value Value to set for the similarity_threshold property.
+                ## @param value Value to set for the similarityThreshold property.
                 ## @return a void
                 ## 
                 def similarity_threshold=(value)

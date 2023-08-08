@@ -36,7 +36,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -81,7 +81,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isDescending property value. True to specify the sort order as descending. The default is false, with the sort order as ascending. Optional.
-            ## @param value Value to set for the is_descending property.
+            ## @param value Value to set for the isDescending property.
             ## @return a void
             ## 
             def is_descending=(value)
@@ -96,7 +96,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumCount property value. The minimum number of items that should be present in the aggregation to be returned in a bucket. Optional.
-            ## @param value Value to set for the minimum_count property.
+            ## @param value Value to set for the minimumCount property.
             ## @return a void
             ## 
             def minimum_count=(value)
@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -126,7 +126,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the prefixFilter property value. A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.
-            ## @param value Value to set for the prefix_filter property.
+            ## @param value Value to set for the prefixFilter property.
             ## @return a void
             ## 
             def prefix_filter=(value)
@@ -171,7 +171,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sortBy property value. The sortBy property
-            ## @param value Value to set for the sort_by property.
+            ## @param value Value to set for the sortBy property.
             ## @return a void
             ## 
             def sort_by=(value)

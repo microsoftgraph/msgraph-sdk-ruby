@@ -10,14 +10,12 @@ require_relative '../../workbook'
 require_relative '../tables'
 require_relative './clear_filters/clear_filters_request_builder'
 require_relative './columns/columns_request_builder'
-require_relative './columns/item/workbook_table_column_item_request_builder'
 require_relative './convert_to_range/convert_to_range_request_builder'
 require_relative './data_body_range/data_body_range_request_builder'
 require_relative './header_row_range/header_row_range_request_builder'
 require_relative './item'
 require_relative './range/range_request_builder'
 require_relative './reapply_filters/reapply_filters_request_builder'
-require_relative './rows/item/workbook_table_row_item_request_builder'
 require_relative './rows/rows_request_builder'
 require_relative './sort/sort_request_builder'
 require_relative './total_row_range/total_row_range_request_builder'
@@ -91,17 +89,6 @@ module MicrosoftGraph
                                         return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Worksheet::WorksheetRequestBuilder.new(@path_parameters, @request_adapter)
                                     end
                                     ## 
-                                    ## Provides operations to manage the columns property of the microsoft.graph.workbookTable entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a workbook_table_column_item_request_builder
-                                    ## 
-                                    def columns_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["workbookTableColumn%2Did"] = id
-                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Columns::Item::WorkbookTableColumnItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                    end
-                                    ## 
                                     ## Instantiates a new WorkbookTableItemRequestBuilder and sets the default values.
                                     ## @param path_parameters Path parameters for the request
                                     ## @param request_adapter The request adapter to use to execute the requests.
@@ -111,7 +98,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/tables/{workbookTable%2Did}{?%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Delete navigation property tables for drives
+                                    ## Deletes the table.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of void
                                     ## 
@@ -125,7 +112,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, nil, error_mapping)
                                     end
                                     ## 
-                                    ## Represents a collection of tables associated with the workbook. Read-only.
+                                    ## Retrieve the properties and relationships of table object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of workbook_table
                                     ## 
@@ -139,7 +126,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookTable.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Update the navigation property tables in drives
+                                    ## Update the properties of table object.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of workbook_table
@@ -155,18 +142,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::WorkbookTable.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Provides operations to manage the rows property of the microsoft.graph.workbookTable entity.
-                                    ## @param id Unique identifier of the item
-                                    ## @return a workbook_table_row_item_request_builder
-                                    ## 
-                                    def rows_by_id(id)
-                                        raise StandardError, 'id cannot be null' if id.nil?
-                                        url_tpl_params = @path_parameters.clone
-                                        url_tpl_params["workbookTableRow%2Did"] = id
-                                        return MicrosoftGraph::Drives::Item::Items::Item::Workbook::Tables::Item::Rows::Item::WorkbookTableRowItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                                    end
-                                    ## 
-                                    ## Delete navigation property tables for drives
+                                    ## Deletes the table.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -182,7 +158,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Represents a collection of tables associated with the workbook. Read-only.
+                                    ## Retrieve the properties and relationships of table object.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -200,7 +176,7 @@ module MicrosoftGraph
                                         return request_info
                                     end
                                     ## 
-                                    ## Update the navigation property tables in drives
+                                    ## Update the properties of table object.
                                     ## @param body The request body
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
@@ -221,7 +197,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Represents a collection of tables associated with the workbook. Read-only.
+                                    # Retrieve the properties and relationships of table object.
                                     class WorkbookTableItemRequestBuilderGetQueryParameters
                                         
                                         ## 

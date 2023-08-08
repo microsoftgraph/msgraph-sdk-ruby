@@ -7,9 +7,12 @@ require_relative '../item'
 require_relative './background_image/background_image_request_builder'
 require_relative './banner_logo/banner_logo_request_builder'
 require_relative './branding'
-require_relative './localizations/item/organizational_branding_localization_item_request_builder'
+require_relative './custom_c_s_s/custom_c_s_s_request_builder'
+require_relative './favicon/favicon_request_builder'
+require_relative './header_logo/header_logo_request_builder'
 require_relative './localizations/localizations_request_builder'
 require_relative './square_logo/square_logo_request_builder'
+require_relative './square_logo_dark/square_logo_dark_request_builder'
 
 module MicrosoftGraph
     module Organization
@@ -30,6 +33,21 @@ module MicrosoftGraph
                         return MicrosoftGraph::Organization::Item::Branding::BannerLogo::BannerLogoRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
+                    # Provides operations to manage the media for the organization entity.
+                    def custom_c_s_s()
+                        return MicrosoftGraph::Organization::Item::Branding::CustomCSS::CustomCSSRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to manage the media for the organization entity.
+                    def favicon()
+                        return MicrosoftGraph::Organization::Item::Branding::Favicon::FaviconRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to manage the media for the organization entity.
+                    def header_logo()
+                        return MicrosoftGraph::Organization::Item::Branding::HeaderLogo::HeaderLogoRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
                     # Provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
                     def localizations()
                         return MicrosoftGraph::Organization::Item::Branding::Localizations::LocalizationsRequestBuilder.new(@path_parameters, @request_adapter)
@@ -38,6 +56,11 @@ module MicrosoftGraph
                     # Provides operations to manage the media for the organization entity.
                     def square_logo()
                         return MicrosoftGraph::Organization::Item::Branding::SquareLogo::SquareLogoRequestBuilder.new(@path_parameters, @request_adapter)
+                    end
+                    ## 
+                    # Provides operations to manage the media for the organization entity.
+                    def square_logo_dark()
+                        return MicrosoftGraph::Organization::Item::Branding::SquareLogoDark::SquareLogoDarkRequestBuilder.new(@path_parameters, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new BrandingRequestBuilder and sets the default values.
@@ -63,7 +86,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Retrieve the default organizational branding object, if the **Accept-Language** header is set to `0` or `default`. If no default organizational branding object exists, this method returns a `404 Not Found` error. If the **Accept-Language** header is set to an existing locale identified by the value of its **id**, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, **usernameHintText** and **signInPageText**. To retrieve Stream types of the default branding, for example, **bannerLogo** and **backgroundImage**, use the GET organizationalBrandingLocalization method.
+                    ## Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default. If no default organizational branding object exists, this method returns a 404 Not Found error. If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText. To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of organizational_branding
                     ## 
@@ -75,17 +98,6 @@ module MicrosoftGraph
                         error_mapping["4XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         error_mapping["5XX"] = lambda {|pn| MicrosoftGraph::Models::ODataErrors::ODataError.create_from_discriminator_value(pn) }
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::OrganizationalBranding.create_from_discriminator_value(pn) }, error_mapping)
-                    end
-                    ## 
-                    ## Provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a organizational_branding_localization_item_request_builder
-                    ## 
-                    def localizations_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["organizationalBrandingLocalization%2Did"] = id
-                        return MicrosoftGraph::Organization::Item::Branding::Localizations::Item::OrganizationalBrandingLocalizationItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Update the properties of the default branding object specified by the organizationalBranding resource.
@@ -120,7 +132,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Retrieve the default organizational branding object, if the **Accept-Language** header is set to `0` or `default`. If no default organizational branding object exists, this method returns a `404 Not Found` error. If the **Accept-Language** header is set to an existing locale identified by the value of its **id**, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, **usernameHintText** and **signInPageText**. To retrieve Stream types of the default branding, for example, **bannerLogo** and **backgroundImage**, use the GET organizationalBrandingLocalization method.
+                    ## Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default. If no default organizational branding object exists, this method returns a 404 Not Found error. If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText. To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -159,7 +171,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Retrieve the default organizational branding object, if the **Accept-Language** header is set to `0` or `default`. If no default organizational branding object exists, this method returns a `404 Not Found` error. If the **Accept-Language** header is set to an existing locale identified by the value of its **id**, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, **usernameHintText** and **signInPageText**. To retrieve Stream types of the default branding, for example, **bannerLogo** and **backgroundImage**, use the GET organizationalBrandingLocalization method.
+                    # Retrieve the default organizational branding object, if the Accept-Language header is set to 0 or default. If no default organizational branding object exists, this method returns a 404 Not Found error. If the Accept-Language header is set to an existing locale identified by the value of its id, this method retrieves the branding for the specified locale. This method retrieves only non-Stream properties, for example, usernameHintText and signInPageText. To retrieve Stream types of the default branding, for example, bannerLogo and backgroundImage, use the GET organizationalBrandingLocalization method.
                     class BrandingRequestBuilderGetQueryParameters
                         
                         ## 

@@ -5,6 +5,7 @@ require_relative '../../models/targeted_managed_app_configuration'
 require_relative '../../models/targeted_managed_app_configuration_collection_response'
 require_relative '../device_app_management'
 require_relative './count/count_request_builder'
+require_relative './item/targeted_managed_app_configuration_item_request_builder'
 require_relative './targeted_managed_app_configurations'
 
 module MicrosoftGraph
@@ -20,6 +21,17 @@ module MicrosoftGraph
                     return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                 end
                 ## 
+                ## Provides operations to manage the targetedManagedAppConfigurations property of the microsoft.graph.deviceAppManagement entity.
+                ## @param targeted_managed_app_configuration_id Unique identifier of the item
+                ## @return a targeted_managed_app_configuration_item_request_builder
+                ## 
+                def by_targeted_managed_app_configuration_id(targeted_managed_app_configuration_id)
+                    raise StandardError, 'targeted_managed_app_configuration_id cannot be null' if targeted_managed_app_configuration_id.nil?
+                    url_tpl_params = @path_parameters.clone
+                    url_tpl_params["targetedManagedAppConfiguration%2Did"] = targeted_managed_app_configuration_id
+                    return MicrosoftGraph::DeviceAppManagement::TargetedManagedAppConfigurations::Item::TargetedManagedAppConfigurationItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                end
+                ## 
                 ## Instantiates a new TargetedManagedAppConfigurationsRequestBuilder and sets the default values.
                 ## @param path_parameters Path parameters for the request
                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -29,7 +41,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/deviceAppManagement/targetedManagedAppConfigurations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                 end
                 ## 
-                ## Targeted managed app configurations.
+                ## List properties and relationships of the targetedManagedAppConfiguration objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of targeted_managed_app_configuration_collection_response
                 ## 
@@ -43,7 +55,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TargetedManagedAppConfigurationCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+                ## Create a new targetedManagedAppConfiguration object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of targeted_managed_app_configuration
@@ -59,7 +71,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::TargetedManagedAppConfiguration.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Targeted managed app configurations.
+                ## List properties and relationships of the targetedManagedAppConfiguration objects.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -77,7 +89,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Create new navigation property to targetedManagedAppConfigurations for deviceAppManagement
+                ## Create a new targetedManagedAppConfiguration object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -98,7 +110,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # Targeted managed app configurations.
+                # List properties and relationships of the targetedManagedAppConfiguration objects.
                 class TargetedManagedAppConfigurationsRequestBuilderGetQueryParameters
                     
                     ## 

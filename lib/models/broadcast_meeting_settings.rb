@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -54,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowedAudience property value. Defines who can join the Teams live event. Possible values are listed in the following table.
-            ## @param value Value to set for the allowed_audience property.
+            ## @param value Value to set for the allowedAudience property.
             ## @return a void
             ## 
             def allowed_audience=(value)
@@ -115,7 +115,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isAttendeeReportEnabled property value. Indicates whether attendee report is enabled for this Teams live event. Default value is false.
-            ## @param value Value to set for the is_attendee_report_enabled property.
+            ## @param value Value to set for the isAttendeeReportEnabled property.
             ## @return a void
             ## 
             def is_attendee_report_enabled=(value)
@@ -130,7 +130,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isQuestionAndAnswerEnabled property value. Indicates whether Q&A is enabled for this Teams live event. Default value is false.
-            ## @param value Value to set for the is_question_and_answer_enabled property.
+            ## @param value Value to set for the isQuestionAndAnswerEnabled property.
             ## @return a void
             ## 
             def is_question_and_answer_enabled=(value)
@@ -145,7 +145,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isRecordingEnabled property value. Indicates whether recording is enabled for this Teams live event. Default value is false.
-            ## @param value Value to set for the is_recording_enabled property.
+            ## @param value Value to set for the isRecordingEnabled property.
             ## @return a void
             ## 
             def is_recording_enabled=(value)
@@ -160,7 +160,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isVideoOnDemandEnabled property value. Indicates whether video on demand is enabled for this Teams live event. Default value is false.
-            ## @param value Value to set for the is_video_on_demand_enabled property.
+            ## @param value Value to set for the isVideoOnDemandEnabled property.
             ## @return a void
             ## 
             def is_video_on_demand_enabled=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

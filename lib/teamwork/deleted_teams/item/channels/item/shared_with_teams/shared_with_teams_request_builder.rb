@@ -9,6 +9,7 @@ require_relative '../../../item'
 require_relative '../../channels'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/shared_with_channel_team_info_item_request_builder'
 require_relative './shared_with_teams'
 
 module MicrosoftGraph
@@ -28,6 +29,17 @@ module MicrosoftGraph
                                     return MicrosoftGraph::Teamwork::DeletedTeams::Item::Channels::Item::SharedWithTeams::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                                 end
                                 ## 
+                                ## Provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.
+                                ## @param shared_with_channel_team_info_id Unique identifier of the item
+                                ## @return a shared_with_channel_team_info_item_request_builder
+                                ## 
+                                def by_shared_with_channel_team_info_id(shared_with_channel_team_info_id)
+                                    raise StandardError, 'shared_with_channel_team_info_id cannot be null' if shared_with_channel_team_info_id.nil?
+                                    url_tpl_params = @path_parameters.clone
+                                    url_tpl_params["sharedWithChannelTeamInfo%2Did"] = shared_with_channel_team_info_id
+                                    return MicrosoftGraph::Teamwork::DeletedTeams::Item::Channels::Item::SharedWithTeams::Item::SharedWithChannelTeamInfoItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                                end
+                                ## 
                                 ## Instantiates a new SharedWithTeamsRequestBuilder and sets the default values.
                                 ## @param path_parameters Path parameters for the request
                                 ## @param request_adapter The request adapter to use to execute the requests.
@@ -37,7 +49,7 @@ module MicrosoftGraph
                                     super(path_parameters, request_adapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/sharedWithTeams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                                 end
                                 ## 
-                                ## Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
+                                ## Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a Fiber of shared_with_channel_team_info_collection_response
                                 ## 
@@ -67,7 +79,7 @@ module MicrosoftGraph
                                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::SharedWithChannelTeamInfo.create_from_discriminator_value(pn) }, error_mapping)
                                 end
                                 ## 
-                                ## Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
+                                ## Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared.
                                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                 ## @return a request_information
                                 ## 
@@ -106,7 +118,7 @@ module MicrosoftGraph
                                 end
 
                                 ## 
-                                # Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a **membershipType** value of `shared`.
+                                # Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared.
                                 class SharedWithTeamsRequestBuilderGetQueryParameters
                                     
                                     ## 

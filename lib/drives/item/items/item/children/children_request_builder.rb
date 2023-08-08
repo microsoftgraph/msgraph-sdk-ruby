@@ -9,6 +9,7 @@ require_relative '../../items'
 require_relative '../item'
 require_relative './children'
 require_relative './count/count_request_builder'
+require_relative './item/drive_item_item_request_builder'
 
 module MicrosoftGraph
     module Drives
@@ -26,6 +27,17 @@ module MicrosoftGraph
                                 return MicrosoftGraph::Drives::Item::Items::Item::Children::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
                             end
                             ## 
+                            ## Provides operations to manage the children property of the microsoft.graph.driveItem entity.
+                            ## @param drive_item_id1 Unique identifier of the item
+                            ## @return a drive_item_item_request_builder
+                            ## 
+                            def by_drive_item_id1(drive_item_id1)
+                                raise StandardError, 'drive_item_id1 cannot be null' if drive_item_id1.nil?
+                                url_tpl_params = @path_parameters.clone
+                                url_tpl_params["driveItem%2Did1"] = drive_item_id1
+                                return MicrosoftGraph::Drives::Item::Items::Item::Children::Item::DriveItemItemRequestBuilder.new(url_tpl_params, @request_adapter)
+                            end
+                            ## 
                             ## Instantiates a new ChildrenRequestBuilder and sets the default values.
                             ## @param path_parameters Path parameters for the request
                             ## @param request_adapter The request adapter to use to execute the requests.
@@ -35,7 +47,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/children{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}")
                             end
                             ## 
-                            ## Return a collection of DriveItems in the **children** relationship of a DriveItem. DriveItems with a non-null **folder** or **package** facet can have one or more child DriveItems.
+                            ## Return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of drive_item_collection_response
                             ## 
@@ -65,7 +77,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DriveItem.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Return a collection of DriveItems in the **children** relationship of a DriveItem. DriveItems with a non-null **folder** or **package** facet can have one or more child DriveItems.
+                            ## Return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -104,7 +116,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Return a collection of DriveItems in the **children** relationship of a DriveItem. DriveItems with a non-null **folder** or **package** facet can have one or more child DriveItems.
+                            # Return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
                             class ChildrenRequestBuilderGetQueryParameters
                                 
                                 ## 

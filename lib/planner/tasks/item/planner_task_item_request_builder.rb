@@ -48,7 +48,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/planner/tasks/{plannerTask%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property tasks for planner
+                    ## Delete a plannerTask object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -62,7 +62,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## Read-only. Nullable. Returns a collection of the specified tasks
+                    ## Retrieve the properties and relationships of plannerTask object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of planner_task
                     ## 
@@ -92,7 +92,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PlannerTask.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Delete navigation property tasks for planner
+                    ## Delete a plannerTask object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -108,7 +108,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Read-only. Nullable. Returns a collection of the specified tasks
+                    ## Retrieve the properties and relationships of plannerTask object.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -147,7 +147,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # Read-only. Nullable. Returns a collection of the specified tasks
+                    # Retrieve the properties and relationships of plannerTask object.
                     class PlannerTaskItemRequestBuilderGetQueryParameters
                         
                         ## 

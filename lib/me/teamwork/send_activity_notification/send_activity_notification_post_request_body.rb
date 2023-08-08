@@ -40,7 +40,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the activityType property value. The activityType property
-                    ## @param value Value to set for the activity_type property.
+                    ## @param value Value to set for the activityType property.
                     ## @return a void
                     ## 
                     def activity_type=(value)
@@ -55,7 +55,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                    ## @param value Value to set for the AdditionalData property.
+                    ## @param value Value to set for the additionalData property.
                     ## @return a void
                     ## 
                     def additional_data=(value)
@@ -70,7 +70,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the chainId property value. The chainId property
-                    ## @param value Value to set for the chain_id property.
+                    ## @param value Value to set for the chainId property.
                     ## @return a void
                     ## 
                     def chain_id=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the previewText property value. The previewText property
-                    ## @param value Value to set for the preview_text property.
+                    ## @param value Value to set for the previewText property.
                     ## @return a void
                     ## 
                     def preview_text=(value)
@@ -143,7 +143,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the templateParameters property value. The templateParameters property
-                    ## @param value Value to set for the template_parameters property.
+                    ## @param value Value to set for the templateParameters property.
                     ## @return a void
                     ## 
                     def template_parameters=(value)

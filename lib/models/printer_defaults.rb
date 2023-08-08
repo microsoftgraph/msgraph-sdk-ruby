@@ -72,7 +72,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -87,7 +87,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the colorMode property value. The default color mode to use when printing the document. Valid values are described in the following table.
-            ## @param value Value to set for the color_mode property.
+            ## @param value Value to set for the colorMode property.
             ## @return a void
             ## 
             def color_mode=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentType property value. The default content (MIME) type to use when processing documents.
-            ## @param value Value to set for the content_type property.
+            ## @param value Value to set for the contentType property.
             ## @return a void
             ## 
             def content_type=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the copiesPerJob property value. The default number of copies printed per job.
-            ## @param value Value to set for the copies_per_job property.
+            ## @param value Value to set for the copiesPerJob property.
             ## @return a void
             ## 
             def copies_per_job=(value)
@@ -163,7 +163,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the duplexMode property value. The default duplex (double-sided) configuration to use when printing a document. Valid values are described in the following table.
-            ## @param value Value to set for the duplex_mode property.
+            ## @param value Value to set for the duplexMode property.
             ## @return a void
             ## 
             def duplex_mode=(value)
@@ -193,7 +193,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the fitPdfToPage property value. The default fitPdfToPage setting. True to fit each page of a PDF document to a physical sheet of media; false to let the printer decide how to lay out impressions.
-            ## @param value Value to set for the fit_pdf_to_page property.
+            ## @param value Value to set for the fitPdfToPage property.
             ## @return a void
             ## 
             def fit_pdf_to_page=(value)
@@ -234,7 +234,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the inputBin property value. The inputBin property
-            ## @param value Value to set for the input_bin property.
+            ## @param value Value to set for the inputBin property.
             ## @return a void
             ## 
             def input_bin=(value)
@@ -249,7 +249,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaColor property value. The default media (such as paper) color to print the document on.
-            ## @param value Value to set for the media_color property.
+            ## @param value Value to set for the mediaColor property.
             ## @return a void
             ## 
             def media_color=(value)
@@ -264,7 +264,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaSize property value. The default media size to use. Supports standard size names for ISO and ANSI media sizes. Valid values are listed in the printerCapabilities topic.
-            ## @param value Value to set for the media_size property.
+            ## @param value Value to set for the mediaSize property.
             ## @return a void
             ## 
             def media_size=(value)
@@ -279,7 +279,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the mediaType property value. The default media (such as paper) type to print the document on.
-            ## @param value Value to set for the media_type property.
+            ## @param value Value to set for the mediaType property.
             ## @return a void
             ## 
             def media_type=(value)
@@ -294,7 +294,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the multipageLayout property value. The default direction to lay out pages when multiple pages are being printed per sheet. Valid values are described in the following table.
-            ## @param value Value to set for the multipage_layout property.
+            ## @param value Value to set for the multipageLayout property.
             ## @return a void
             ## 
             def multipage_layout=(value)
@@ -309,7 +309,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -339,7 +339,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the outputBin property value. The default output bin to place completed prints into. See the printer's capabilities for a list of supported output bins.
-            ## @param value Value to set for the output_bin property.
+            ## @param value Value to set for the outputBin property.
             ## @return a void
             ## 
             def output_bin=(value)
@@ -354,7 +354,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the pagesPerSheet property value. The default number of document pages to print on each sheet.
-            ## @param value Value to set for the pages_per_sheet property.
+            ## @param value Value to set for the pagesPerSheet property.
             ## @return a void
             ## 
             def pages_per_sheet=(value)

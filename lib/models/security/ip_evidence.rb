@@ -15,11 +15,12 @@ module MicrosoftGraph
                 # The value of the IP Address, can be either in V4 address or V6 address format.
                 @ip_address
                 ## 
-                ## Instantiates a new IpEvidence and sets the default values.
+                ## Instantiates a new ipEvidence and sets the default values.
                 ## @return a void
                 ## 
                 def initialize()
                     super
+                    @odata_type = "#microsoft.graph.security.ipEvidence"
                 end
                 ## 
                 ## Gets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
@@ -30,7 +31,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the countryLetterCode property value. The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
-                ## @param value Value to set for the country_letter_code property.
+                ## @param value Value to set for the countryLetterCode property.
                 ## @return a void
                 ## 
                 def country_letter_code=(value)
@@ -64,7 +65,7 @@ module MicrosoftGraph
                 end
                 ## 
                 ## Sets the ipAddress property value. The value of the IP Address, can be either in V4 address or V6 address format.
-                ## @param value Value to set for the ip_address property.
+                ## @param value Value to set for the ipAddress property.
                 ## @return a void
                 ## 
                 def ip_address=(value)

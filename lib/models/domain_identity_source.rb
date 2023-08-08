@@ -13,7 +13,7 @@ module MicrosoftGraph
             # The domain name. Read only.
             @domain_name
             ## 
-            ## Instantiates a new DomainIdentitySource and sets the default values.
+            ## Instantiates a new domainIdentitySource and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -38,7 +38,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The name of the identity source, typically also the domain name. Read only.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -53,7 +53,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the domainName property value. The domain name. Read only.
-            ## @param value Value to set for the domain_name property.
+            ## @param value Value to set for the domainName property.
             ## @return a void
             ## 
             def domain_name=(value)

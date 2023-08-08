@@ -43,7 +43,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -58,7 +58,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the appId property value. The appId property
-            ## @param value Value to set for the app_id property.
+            ## @param value Value to set for the appId property.
             ## @return a void
             ## 
             def app_id=(value)
@@ -73,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the assignedTo property value. The assignedTo property
-            ## @param value Value to set for the assigned_to property.
+            ## @param value Value to set for the assignedTo property.
             ## @return a void
             ## 
             def assigned_to=(value)
@@ -150,7 +150,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -197,7 +197,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the updatedDateTime property value. The updatedDateTime property
-            ## @param value Value to set for the updated_date_time property.
+            ## @param value Value to set for the updatedDateTime property.
             ## @return a void
             ## 
             def updated_date_time=(value)

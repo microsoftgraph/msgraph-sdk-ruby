@@ -21,7 +21,7 @@ module MicrosoftGraph
                     super(path_parameters, request_adapter, "{+baseurl}/users/getByIds")
                 end
                 ## 
-                ## Return the directory objects specified in a list of IDs. Some common uses for this function are to:
+                ## Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of get_by_ids_response
@@ -37,7 +37,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Users::GetByIds::GetByIdsResponse.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Return the directory objects specified in a list of IDs. Some common uses for this function are to:
+                ## Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information

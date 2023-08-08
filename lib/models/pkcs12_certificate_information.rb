@@ -33,7 +33,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -77,7 +77,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isActive property value. Represents whether the certificate is the active certificate to be used for calling the API connector. The active certificate is the most recently uploaded certificate which is not yet expired but whose notBefore time is in the past.
-            ## @param value Value to set for the is_active property.
+            ## @param value Value to set for the isActive property.
             ## @return a void
             ## 
             def is_active=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notAfter property value. The certificate's expiry. This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
-            ## @param value Value to set for the not_after property.
+            ## @param value Value to set for the notAfter property.
             ## @return a void
             ## 
             def not_after=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the notBefore property value. The certificate's issue time (not before). This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)
-            ## @param value Value to set for the not_before property.
+            ## @param value Value to set for the notBefore property.
             ## @return a void
             ## 
             def not_before=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

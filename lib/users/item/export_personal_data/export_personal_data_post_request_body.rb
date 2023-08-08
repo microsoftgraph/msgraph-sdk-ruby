@@ -25,7 +25,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                    ## @param value Value to set for the AdditionalData property.
+                    ## @param value Value to set for the additionalData property.
                     ## @return a void
                     ## 
                     def additional_data=(value)
@@ -75,7 +75,7 @@ module MicrosoftGraph
                     end
                     ## 
                     ## Sets the storageLocation property value. The storageLocation property
-                    ## @param value Value to set for the storage_location property.
+                    ## @param value Value to set for the storageLocation property.
                     ## @return a void
                     ## 
                     def storage_location=(value)

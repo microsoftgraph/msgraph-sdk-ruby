@@ -5,7 +5,6 @@ require_relative '../../../models/security/incident'
 require_relative '../../security'
 require_relative '../incidents'
 require_relative './alerts/alerts_request_builder'
-require_relative './alerts/item/alert_item_request_builder'
 require_relative './item'
 
 module MicrosoftGraph
@@ -20,17 +19,6 @@ module MicrosoftGraph
                     # Provides operations to manage the alerts property of the microsoft.graph.security.incident entity.
                     def alerts()
                         return MicrosoftGraph::Security::Incidents::Item::Alerts::AlertsRequestBuilder.new(@path_parameters, @request_adapter)
-                    end
-                    ## 
-                    ## Provides operations to manage the alerts property of the microsoft.graph.security.incident entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a alert_item_request_builder
-                    ## 
-                    def alerts_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["alert%2Did"] = id
-                        return MicrosoftGraph::Security::Incidents::Item::Alerts::Item::AlertItemRequestBuilder.new(url_tpl_params, @request_adapter)
                     end
                     ## 
                     ## Instantiates a new IncidentItemRequestBuilder and sets the default values.
@@ -56,7 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.
+                    ## Retrieve the properties and relationships of an incident object. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident. 
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of incident
                     ## 
@@ -70,7 +58,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::Security::Incident.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property incidents in security
+                    ## Update the properties of an incident object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of incident
@@ -102,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.
+                    ## Retrieve the properties and relationships of an incident object. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident. 
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -120,7 +108,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property incidents in security
+                    ## Update the properties of an incident object.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -141,7 +129,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.
+                    # Retrieve the properties and relationships of an incident object. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident. 
                     class IncidentItemRequestBuilderGetQueryParameters
                         
                         ## 

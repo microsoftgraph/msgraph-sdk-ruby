@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @bias = value
             end
             ## 
-            ## Instantiates a new CustomTimeZone and sets the default values.
+            ## Instantiates a new customTimeZone and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -56,7 +56,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the daylightOffset property value. Specifies when the time zone switches from standard time to daylight saving time.
-            ## @param value Value to set for the daylight_offset property.
+            ## @param value Value to set for the daylightOffset property.
             ## @return a void
             ## 
             def daylight_offset=(value)
@@ -94,7 +94,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the standardOffset property value. Specifies when the time zone switches from daylight saving time to standard time.
-            ## @param value Value to set for the standard_offset property.
+            ## @param value Value to set for the standardOffset property.
             ## @return a void
             ## 
             def standard_offset=(value)

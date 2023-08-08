@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for Windows AppX Line Of Business apps.
         class WindowsAppX < MicrosoftGraph::Models::MobileLobApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -36,14 +38,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applicableArchitectures property value. Contains properties for Windows architecture.
-            ## @param value Value to set for the applicable_architectures property.
+            ## @param value Value to set for the applicableArchitectures property.
             ## @return a void
             ## 
             def applicable_architectures=(value)
                 @applicable_architectures = value
             end
             ## 
-            ## Instantiates a new WindowsAppX and sets the default values.
+            ## Instantiates a new windowsAppX and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -83,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the identityName property value. The identity name of the uploaded app package. For example: 'Contoso.DemoApp'.
-            ## @param value Value to set for the identity_name property.
+            ## @param value Value to set for the identityName property.
             ## @return a void
             ## 
             def identity_name=(value)
@@ -98,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the identityPublisherHash property value. The identity publisher hash of the uploaded app package. This is the hash of the publisher from the manifest. For example: 'AB82CD0XYZ'.
-            ## @param value Value to set for the identity_publisher_hash property.
+            ## @param value Value to set for the identityPublisherHash property.
             ## @return a void
             ## 
             def identity_publisher_hash=(value)
@@ -113,7 +115,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the identityResourceIdentifier property value. The identity resource identifier of the uploaded app package. For example: 'TestResourceId'.
-            ## @param value Value to set for the identity_resource_identifier property.
+            ## @param value Value to set for the identityResourceIdentifier property.
             ## @return a void
             ## 
             def identity_resource_identifier=(value)
@@ -128,7 +130,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the identityVersion property value. The identity version of the uploaded app package. For example: '1.0.0.0'.
-            ## @param value Value to set for the identity_version property.
+            ## @param value Value to set for the identityVersion property.
             ## @return a void
             ## 
             def identity_version=(value)
@@ -143,7 +145,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isBundle property value. When TRUE, indicates that the app is a bundle. When FALSE, indicates that the app is not a bundle. By default, property is set to FALSE.
-            ## @param value Value to set for the is_bundle property.
+            ## @param value Value to set for the isBundle property.
             ## @return a void
             ## 
             def is_bundle=(value)
@@ -158,7 +160,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumSupportedOperatingSystem property value. The minimum operating system required for a Windows mobile app.
-            ## @param value Value to set for the minimum_supported_operating_system property.
+            ## @param value Value to set for the minimumSupportedOperatingSystem property.
             ## @return a void
             ## 
             def minimum_supported_operating_system=(value)

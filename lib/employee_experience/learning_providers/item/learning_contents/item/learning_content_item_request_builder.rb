@@ -28,7 +28,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningContents/{learningContent%2Did}{?%24select,%24expand}")
                             end
                             ## 
-                            ## Delete navigation property learningContents for employeeExperience
+                            ## Delete the specified learningContent resource that represents the metadata of the specified provider's ingested content.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -42,7 +42,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Learning catalog items for the provider.
+                            ## Get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of learning_content
                             ## 
@@ -72,7 +72,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::LearningContent.create_from_discriminator_value(pn) }, error_mapping)
                             end
                             ## 
-                            ## Delete navigation property learningContents for employeeExperience
+                            ## Delete the specified learningContent resource that represents the metadata of the specified provider's ingested content.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -88,7 +88,7 @@ module MicrosoftGraph
                                 return request_info
                             end
                             ## 
-                            ## Learning catalog items for the provider.
+                            ## Get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -127,7 +127,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Learning catalog items for the provider.
+                            # Get the specified learningContent resource which represents the metadata of the specified provider's ingested content.
                             class LearningContentItemRequestBuilderGetQueryParameters
                                 
                                 ## 

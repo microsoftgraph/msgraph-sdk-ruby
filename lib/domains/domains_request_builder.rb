@@ -5,6 +5,7 @@ require_relative '../models/domain_collection_response'
 require_relative '../models/o_data_errors/o_data_error'
 require_relative './count/count_request_builder'
 require_relative './domains'
+require_relative './item/domain_item_request_builder'
 
 module MicrosoftGraph
     module Domains
@@ -16,6 +17,17 @@ module MicrosoftGraph
             # Provides operations to count the resources in the collection.
             def count()
                 return MicrosoftGraph::Domains::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+            end
+            ## 
+            ## Provides operations to manage the collection of domain entities.
+            ## @param domain_id Unique identifier of the item
+            ## @return a domain_item_request_builder
+            ## 
+            def by_domain_id(domain_id)
+                raise StandardError, 'domain_id cannot be null' if domain_id.nil?
+                url_tpl_params = @path_parameters.clone
+                url_tpl_params["domain%2Did"] = domain_id
+                return MicrosoftGraph::Domains::Item::DomainItemRequestBuilder.new(url_tpl_params, @request_adapter)
             end
             ## 
             ## Instantiates a new DomainsRequestBuilder and sets the default values.
@@ -41,7 +53,7 @@ module MicrosoftGraph
                 return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DomainCollectionResponse.create_from_discriminator_value(pn) }, error_mapping)
             end
             ## 
-            ## Adds a domain to the tenant. **Important**: You cannot use an associated domain with your Azure AD tenant until ownership is verified. See List verificationDnsRecords for details. Root domains require verification. For example, contoso.com requires verification. If a root domain is verified, subdomains of the root domain are automatically verified. For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.
+            ## Adds a domain to the tenant. Important: You cannot use an associated domain with your Azure AD tenant until ownership is verified. See List verificationDnsRecords for details. Root domains require verification. For example, contoso.com requires verification. If a root domain is verified, subdomains of the root domain are automatically verified. For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a Fiber of domain
@@ -75,7 +87,7 @@ module MicrosoftGraph
                 return request_info
             end
             ## 
-            ## Adds a domain to the tenant. **Important**: You cannot use an associated domain with your Azure AD tenant until ownership is verified. See List verificationDnsRecords for details. Root domains require verification. For example, contoso.com requires verification. If a root domain is verified, subdomains of the root domain are automatically verified. For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.
+            ## Adds a domain to the tenant. Important: You cannot use an associated domain with your Azure AD tenant until ownership is verified. See List verificationDnsRecords for details. Root domains require verification. For example, contoso.com requires verification. If a root domain is verified, subdomains of the root domain are automatically verified. For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.
             ## @param body The request body
             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
             ## @return a request_information

@@ -39,7 +39,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -54,7 +54,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowAddRemoveApps property value. If set to true, members can add and remove apps.
-            ## @param value Value to set for the allow_add_remove_apps property.
+            ## @param value Value to set for the allowAddRemoveApps property.
             ## @return a void
             ## 
             def allow_add_remove_apps=(value)
@@ -69,7 +69,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowCreatePrivateChannels property value. If set to true, members can add and update private channels.
-            ## @param value Value to set for the allow_create_private_channels property.
+            ## @param value Value to set for the allowCreatePrivateChannels property.
             ## @return a void
             ## 
             def allow_create_private_channels=(value)
@@ -84,7 +84,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowCreateUpdateChannels property value. If set to true, members can add and update channels.
-            ## @param value Value to set for the allow_create_update_channels property.
+            ## @param value Value to set for the allowCreateUpdateChannels property.
             ## @return a void
             ## 
             def allow_create_update_channels=(value)
@@ -99,7 +99,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowCreateUpdateRemoveConnectors property value. If set to true, members can add, update, and remove connectors.
-            ## @param value Value to set for the allow_create_update_remove_connectors property.
+            ## @param value Value to set for the allowCreateUpdateRemoveConnectors property.
             ## @return a void
             ## 
             def allow_create_update_remove_connectors=(value)
@@ -114,7 +114,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowCreateUpdateRemoveTabs property value. If set to true, members can add, update, and remove tabs.
-            ## @param value Value to set for the allow_create_update_remove_tabs property.
+            ## @param value Value to set for the allowCreateUpdateRemoveTabs property.
             ## @return a void
             ## 
             def allow_create_update_remove_tabs=(value)
@@ -129,7 +129,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the allowDeleteChannels property value. If set to true, members can delete channels.
-            ## @param value Value to set for the allow_delete_channels property.
+            ## @param value Value to set for the allowDeleteChannels property.
             ## @return a void
             ## 
             def allow_delete_channels=(value)
@@ -175,7 +175,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

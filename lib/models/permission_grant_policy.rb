@@ -13,7 +13,7 @@ module MicrosoftGraph
             # Condition sets which are included in this permission grant policy. Automatically expanded on GET.
             @includes
             ## 
-            ## Instantiates a new PermissionGrantPolicy and sets the default values.
+            ## Instantiates a new permissionGrantPolicy and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -32,7 +32,7 @@ module MicrosoftGraph
                                         super(path_parameters, request_adapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackages/{accessPackage%2Did}/assignmentPolicies/{accessPackageAssignmentPolicy%2Did}/accessPackage{?%24select,%24expand}")
                                     end
                                     ## 
-                                    ## Access package containing this policy. Read-only.
+                                    ## Access package containing this policy. Read-only.  Supports $expand.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a Fiber of access_package
                                     ## 
@@ -46,7 +46,7 @@ module MicrosoftGraph
                                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::AccessPackage.create_from_discriminator_value(pn) }, error_mapping)
                                     end
                                     ## 
-                                    ## Access package containing this policy. Read-only.
+                                    ## Access package containing this policy. Read-only.  Supports $expand.
                                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                                     ## @return a request_information
                                     ## 
@@ -65,7 +65,7 @@ module MicrosoftGraph
                                     end
 
                                     ## 
-                                    # Access package containing this policy. Read-only.
+                                    # Access package containing this policy. Read-only.  Supports $expand.
                                     class AccessPackageRequestBuilderGetQueryParameters
                                         
                                         ## 

@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # This topic provides descriptions of the declared methods, properties and relationships exposed by the windows81GeneralConfiguration resource.
         class Windows81GeneralConfiguration < MicrosoftGraph::Models::DeviceConfiguration
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -114,7 +116,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the accountsBlockAddingNonMicrosoftAccountEmail property value. Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.
-            ## @param value Value to set for the accounts_block_adding_non_microsoft_account_email property.
+            ## @param value Value to set for the accountsBlockAddingNonMicrosoftAccountEmail property.
             ## @return a void
             ## 
             def accounts_block_adding_non_microsoft_account_email=(value)
@@ -129,7 +131,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the applyOnlyToWindows81 property value. Value indicating whether this policy only applies to Windows 8.1. This property is read-only.
-            ## @param value Value to set for the apply_only_to_windows81 property.
+            ## @param value Value to set for the applyOnlyToWindows81 property.
             ## @return a void
             ## 
             def apply_only_to_windows81=(value)
@@ -144,7 +146,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserBlockAutofill property value. Indicates whether or not to block auto fill.
-            ## @param value Value to set for the browser_block_autofill property.
+            ## @param value Value to set for the browserBlockAutofill property.
             ## @return a void
             ## 
             def browser_block_autofill=(value)
@@ -159,7 +161,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserBlockAutomaticDetectionOfIntranetSites property value. Indicates whether or not to block automatic detection of Intranet sites.
-            ## @param value Value to set for the browser_block_automatic_detection_of_intranet_sites property.
+            ## @param value Value to set for the browserBlockAutomaticDetectionOfIntranetSites property.
             ## @return a void
             ## 
             def browser_block_automatic_detection_of_intranet_sites=(value)
@@ -174,7 +176,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserBlockEnterpriseModeAccess property value. Indicates whether or not to block enterprise mode access.
-            ## @param value Value to set for the browser_block_enterprise_mode_access property.
+            ## @param value Value to set for the browserBlockEnterpriseModeAccess property.
             ## @return a void
             ## 
             def browser_block_enterprise_mode_access=(value)
@@ -189,7 +191,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserBlockJavaScript property value. Indicates whether or not to Block the user from using JavaScript.
-            ## @param value Value to set for the browser_block_java_script property.
+            ## @param value Value to set for the browserBlockJavaScript property.
             ## @return a void
             ## 
             def browser_block_java_script=(value)
@@ -204,7 +206,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserBlockPlugins property value. Indicates whether or not to block plug-ins.
-            ## @param value Value to set for the browser_block_plugins property.
+            ## @param value Value to set for the browserBlockPlugins property.
             ## @return a void
             ## 
             def browser_block_plugins=(value)
@@ -219,7 +221,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserBlockPopups property value. Indicates whether or not to block popups.
-            ## @param value Value to set for the browser_block_popups property.
+            ## @param value Value to set for the browserBlockPopups property.
             ## @return a void
             ## 
             def browser_block_popups=(value)
@@ -234,7 +236,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserBlockSendingDoNotTrackHeader property value. Indicates whether or not to Block the user from sending the do not track header.
-            ## @param value Value to set for the browser_block_sending_do_not_track_header property.
+            ## @param value Value to set for the browserBlockSendingDoNotTrackHeader property.
             ## @return a void
             ## 
             def browser_block_sending_do_not_track_header=(value)
@@ -249,7 +251,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserBlockSingleWordEntryOnIntranetSites property value. Indicates whether or not to block a single word entry on Intranet sites.
-            ## @param value Value to set for the browser_block_single_word_entry_on_intranet_sites property.
+            ## @param value Value to set for the browserBlockSingleWordEntryOnIntranetSites property.
             ## @return a void
             ## 
             def browser_block_single_word_entry_on_intranet_sites=(value)
@@ -264,7 +266,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserEnterpriseModeSiteListLocation property value. The enterprise mode site list location. Could be a local file, local network or http location.
-            ## @param value Value to set for the browser_enterprise_mode_site_list_location property.
+            ## @param value Value to set for the browserEnterpriseModeSiteListLocation property.
             ## @return a void
             ## 
             def browser_enterprise_mode_site_list_location=(value)
@@ -279,7 +281,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserInternetSecurityLevel property value. Possible values for internet site security level.
-            ## @param value Value to set for the browser_internet_security_level property.
+            ## @param value Value to set for the browserInternetSecurityLevel property.
             ## @return a void
             ## 
             def browser_internet_security_level=(value)
@@ -294,7 +296,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserIntranetSecurityLevel property value. Possible values for site security level.
-            ## @param value Value to set for the browser_intranet_security_level property.
+            ## @param value Value to set for the browserIntranetSecurityLevel property.
             ## @return a void
             ## 
             def browser_intranet_security_level=(value)
@@ -309,7 +311,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserLoggingReportLocation property value. The logging report location.
-            ## @param value Value to set for the browser_logging_report_location property.
+            ## @param value Value to set for the browserLoggingReportLocation property.
             ## @return a void
             ## 
             def browser_logging_report_location=(value)
@@ -324,7 +326,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserRequireFirewall property value. Indicates whether or not to require a firewall.
-            ## @param value Value to set for the browser_require_firewall property.
+            ## @param value Value to set for the browserRequireFirewall property.
             ## @return a void
             ## 
             def browser_require_firewall=(value)
@@ -339,7 +341,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserRequireFraudWarning property value. Indicates whether or not to require fraud warning.
-            ## @param value Value to set for the browser_require_fraud_warning property.
+            ## @param value Value to set for the browserRequireFraudWarning property.
             ## @return a void
             ## 
             def browser_require_fraud_warning=(value)
@@ -354,7 +356,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserRequireHighSecurityForRestrictedSites property value. Indicates whether or not to require high security for restricted sites.
-            ## @param value Value to set for the browser_require_high_security_for_restricted_sites property.
+            ## @param value Value to set for the browserRequireHighSecurityForRestrictedSites property.
             ## @return a void
             ## 
             def browser_require_high_security_for_restricted_sites=(value)
@@ -369,7 +371,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserRequireSmartScreen property value. Indicates whether or not to require the user to use the smart screen filter.
-            ## @param value Value to set for the browser_require_smart_screen property.
+            ## @param value Value to set for the browserRequireSmartScreen property.
             ## @return a void
             ## 
             def browser_require_smart_screen=(value)
@@ -384,7 +386,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the browserTrustedSitesSecurityLevel property value. Possible values for site security level.
-            ## @param value Value to set for the browser_trusted_sites_security_level property.
+            ## @param value Value to set for the browserTrustedSitesSecurityLevel property.
             ## @return a void
             ## 
             def browser_trusted_sites_security_level=(value)
@@ -399,14 +401,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the cellularBlockDataRoaming property value. Indicates whether or not to block data roaming.
-            ## @param value Value to set for the cellular_block_data_roaming property.
+            ## @param value Value to set for the cellularBlockDataRoaming property.
             ## @return a void
             ## 
             def cellular_block_data_roaming=(value)
                 @cellular_block_data_roaming = value
             end
             ## 
-            ## Instantiates a new Windows81GeneralConfiguration and sets the default values.
+            ## Instantiates a new windows81GeneralConfiguration and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -431,7 +433,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the diagnosticsBlockDataSubmission property value. Indicates whether or not to block diagnostic data submission.
-            ## @param value Value to set for the diagnostics_block_data_submission property.
+            ## @param value Value to set for the diagnosticsBlockDataSubmission property.
             ## @return a void
             ## 
             def diagnostics_block_data_submission=(value)
@@ -487,7 +489,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordBlockPicturePasswordAndPin property value. Indicates whether or not to Block the user from using a pictures password and pin.
-            ## @param value Value to set for the password_block_picture_password_and_pin property.
+            ## @param value Value to set for the passwordBlockPicturePasswordAndPin property.
             ## @return a void
             ## 
             def password_block_picture_password_and_pin=(value)
@@ -502,7 +504,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordExpirationDays property value. Password expiration in days.
-            ## @param value Value to set for the password_expiration_days property.
+            ## @param value Value to set for the passwordExpirationDays property.
             ## @return a void
             ## 
             def password_expiration_days=(value)
@@ -517,7 +519,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinimumCharacterSetCount property value. The number of character sets required in the password.
-            ## @param value Value to set for the password_minimum_character_set_count property.
+            ## @param value Value to set for the passwordMinimumCharacterSetCount property.
             ## @return a void
             ## 
             def password_minimum_character_set_count=(value)
@@ -532,7 +534,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinimumLength property value. The minimum password length.
-            ## @param value Value to set for the password_minimum_length property.
+            ## @param value Value to set for the passwordMinimumLength property.
             ## @return a void
             ## 
             def password_minimum_length=(value)
@@ -547,7 +549,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordMinutesOfInactivityBeforeScreenTimeout property value. The minutes of inactivity before the screen times out.
-            ## @param value Value to set for the password_minutes_of_inactivity_before_screen_timeout property.
+            ## @param value Value to set for the passwordMinutesOfInactivityBeforeScreenTimeout property.
             ## @return a void
             ## 
             def password_minutes_of_inactivity_before_screen_timeout=(value)
@@ -562,7 +564,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordPreviousPasswordBlockCount property value. The number of previous passwords to prevent re-use of. Valid values 0 to 24
-            ## @param value Value to set for the password_previous_password_block_count property.
+            ## @param value Value to set for the passwordPreviousPasswordBlockCount property.
             ## @return a void
             ## 
             def password_previous_password_block_count=(value)
@@ -577,7 +579,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordRequiredType property value. Possible values of required passwords.
-            ## @param value Value to set for the password_required_type property.
+            ## @param value Value to set for the passwordRequiredType property.
             ## @return a void
             ## 
             def password_required_type=(value)
@@ -592,7 +594,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the passwordSignInFailureCountBeforeFactoryReset property value. The number of sign in failures before factory reset.
-            ## @param value Value to set for the password_sign_in_failure_count_before_factory_reset property.
+            ## @param value Value to set for the passwordSignInFailureCountBeforeFactoryReset property.
             ## @return a void
             ## 
             def password_sign_in_failure_count_before_factory_reset=(value)
@@ -648,7 +650,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the storageRequireDeviceEncryption property value. Indicates whether or not to require encryption on a mobile device.
-            ## @param value Value to set for the storage_require_device_encryption property.
+            ## @param value Value to set for the storageRequireDeviceEncryption property.
             ## @return a void
             ## 
             def storage_require_device_encryption=(value)
@@ -663,7 +665,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the updatesRequireAutomaticUpdates property value. Indicates whether or not to require automatic updates.
-            ## @param value Value to set for the updates_require_automatic_updates property.
+            ## @param value Value to set for the updatesRequireAutomaticUpdates property.
             ## @return a void
             ## 
             def updates_require_automatic_updates=(value)
@@ -678,7 +680,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the userAccountControlSettings property value. Possible values for Windows user account control settings.
-            ## @param value Value to set for the user_account_control_settings property.
+            ## @param value Value to set for the userAccountControlSettings property.
             ## @return a void
             ## 
             def user_account_control_settings=(value)
@@ -693,7 +695,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the workFoldersUrl property value. The work folders url.
-            ## @param value Value to set for the work_folders_url property.
+            ## @param value Value to set for the workFoldersUrl property.
             ## @return a void
             ## 
             def work_folders_url=(value)

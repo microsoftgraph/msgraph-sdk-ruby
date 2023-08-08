@@ -33,14 +33,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new IdentityProtectionRoot and sets the default values.
+            ## Instantiates a new identityProtectionRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -77,7 +77,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -92,7 +92,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskDetections property value. Risk detection in Azure AD Identity Protection and the associated information about the detection.
-            ## @param value Value to set for the risk_detections property.
+            ## @param value Value to set for the riskDetections property.
             ## @return a void
             ## 
             def risk_detections=(value)
@@ -107,7 +107,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskyServicePrincipals property value. Azure AD service principals that are at risk.
-            ## @param value Value to set for the risky_service_principals property.
+            ## @param value Value to set for the riskyServicePrincipals property.
             ## @return a void
             ## 
             def risky_service_principals=(value)
@@ -122,7 +122,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the riskyUsers property value. Users that are flagged as at-risk by Azure AD Identity Protection.
-            ## @param value Value to set for the risky_users property.
+            ## @param value Value to set for the riskyUsers property.
             ## @return a void
             ## 
             def risky_users=(value)
@@ -151,7 +151,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the servicePrincipalRiskDetections property value. Represents information about detected at-risk service principals in an Azure AD tenant.
-            ## @param value Value to set for the service_principal_risk_detections property.
+            ## @param value Value to set for the servicePrincipalRiskDetections property.
             ## @return a void
             ## 
             def service_principal_risk_detections=(value)

@@ -28,7 +28,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -43,7 +43,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the certificateUpdateResult property value. Status of the last certificate update. Read-only. For a list of statuses, see certificateUpdateResult status.
-            ## @param value Value to set for the certificate_update_result property.
+            ## @param value Value to set for the certificateUpdateResult property.
             ## @return a void
             ## 
             def certificate_update_result=(value)
@@ -85,7 +85,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lastRunDateTime property value. Date and time in ISO 8601 format and in UTC time when the certificate was last updated. Read-only.
-            ## @param value Value to set for the last_run_date_time property.
+            ## @param value Value to set for the lastRunDateTime property.
             ## @return a void
             ## 
             def last_run_date_time=(value)
@@ -100,7 +100,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

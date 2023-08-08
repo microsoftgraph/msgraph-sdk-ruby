@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # IPv6 Range definition.
         class IPv6Range < MicrosoftGraph::Models::IpRange
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -13,7 +15,7 @@ module MicrosoftGraph
             # Upper address.
             @upper_address
             ## 
-            ## Instantiates a new IPv6Range and sets the default values.
+            ## Instantiates a new iPv6Range and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -48,7 +50,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the lowerAddress property value. Lower address.
-            ## @param value Value to set for the lower_address property.
+            ## @param value Value to set for the lowerAddress property.
             ## @return a void
             ## 
             def lower_address=(value)
@@ -74,7 +76,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the upperAddress property value. Upper address.
-            ## @param value Value to set for the upper_address property.
+            ## @param value Value to set for the upperAddress property.
             ## @return a void
             ## 
             def upper_address=(value)

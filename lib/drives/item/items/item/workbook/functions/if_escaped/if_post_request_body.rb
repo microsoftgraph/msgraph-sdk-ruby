@@ -40,7 +40,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-                                    ## @param value Value to set for the AdditionalData property.
+                                    ## @param value Value to set for the additionalData property.
                                     ## @return a void
                                     ## 
                                     def additional_data=(value)
@@ -82,7 +82,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the logicalTest property value. The logicalTest property
-                                    ## @param value Value to set for the logical_test property.
+                                    ## @param value Value to set for the logicalTest property.
                                     ## @return a void
                                     ## 
                                     def logical_test=(value)
@@ -109,7 +109,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the valueIfFalse property value. The valueIfFalse property
-                                    ## @param value Value to set for the value_if_false property.
+                                    ## @param value Value to set for the valueIfFalse property.
                                     ## @return a void
                                     ## 
                                     def value_if_false=(value)
@@ -124,7 +124,7 @@ module MicrosoftGraph
                                     end
                                     ## 
                                     ## Sets the valueIfTrue property value. The valueIfTrue property
-                                    ## @param value Value to set for the value_if_true property.
+                                    ## @param value Value to set for the valueIfTrue property.
                                     ## @return a void
                                     ## 
                                     def value_if_true=(value)

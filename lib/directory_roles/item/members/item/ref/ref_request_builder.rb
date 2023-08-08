@@ -27,7 +27,7 @@ module MicrosoftGraph
                                 super(path_parameters, request_adapter, "{+baseurl}/directoryRoles/{directoryRole%2Did}/members/{directoryObject%2Did}/$ref{?%40id*}")
                             end
                             ## 
-                            ## Delete ref of navigation property members for directoryRoles
+                            ## Remove a member from a directoryRole. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a Fiber of void
                             ## 
@@ -41,7 +41,7 @@ module MicrosoftGraph
                                 return @request_adapter.send_async(request_info, nil, error_mapping)
                             end
                             ## 
-                            ## Delete ref of navigation property members for directoryRoles
+                            ## Remove a member from a directoryRole. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.
                             ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                             ## @return a request_information
                             ## 
@@ -59,7 +59,7 @@ module MicrosoftGraph
                             end
 
                             ## 
-                            # Delete ref of navigation property members for directoryRoles
+                            # Remove a member from a directoryRole. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.
                             class RefRequestBuilderDeleteQueryParameters
                                 
                                 ## 

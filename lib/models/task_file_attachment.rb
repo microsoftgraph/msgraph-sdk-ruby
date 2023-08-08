@@ -10,7 +10,7 @@ module MicrosoftGraph
             # The base64-encoded contents of the file.
             @content_bytes
             ## 
-            ## Instantiates a new TaskFileAttachment and sets the default values.
+            ## Instantiates a new taskFileAttachment and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -26,7 +26,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentBytes property value. The base64-encoded contents of the file.
-            ## @param value Value to set for the content_bytes property.
+            ## @param value Value to set for the contentBytes property.
             ## @return a void
             ## 
             def content_bytes=(value)

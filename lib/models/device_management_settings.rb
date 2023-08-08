@@ -30,7 +30,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -61,7 +61,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deviceComplianceCheckinThresholdDays property value. The number of days a device is allowed to go without checking in to remain compliant.
-            ## @param value Value to set for the device_compliance_checkin_threshold_days property.
+            ## @param value Value to set for the deviceComplianceCheckinThresholdDays property.
             ## @return a void
             ## 
             def device_compliance_checkin_threshold_days=(value)
@@ -88,7 +88,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the isScheduledActionEnabled property value. Is feature enabled or not for scheduled action for rule.
-            ## @param value Value to set for the is_scheduled_action_enabled property.
+            ## @param value Value to set for the isScheduledActionEnabled property.
             ## @return a void
             ## 
             def is_scheduled_action_enabled=(value)
@@ -103,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -118,7 +118,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the secureByDefault property value. Device should be noncompliant when there is no compliance policy targeted when this is true
-            ## @param value Value to set for the secure_by_default property.
+            ## @param value Value to set for the secureByDefault property.
             ## @return a void
             ## 
             def secure_by_default=(value)

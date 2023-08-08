@@ -31,7 +31,7 @@ module MicrosoftGraph
                 @activities = value
             end
             ## 
-            ## Instantiates a new ShiftItem and sets the default values.
+            ## Instantiates a new shiftItem and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -63,7 +63,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The shift label of the shiftItem.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)

@@ -5,7 +5,6 @@ require_relative '../../../models/print_task_definition'
 require_relative '../../print'
 require_relative '../task_definitions'
 require_relative './item'
-require_relative './tasks/item/print_task_item_request_builder'
 require_relative './tasks/tasks_request_builder'
 
 module MicrosoftGraph
@@ -31,7 +30,7 @@ module MicrosoftGraph
                         super(path_parameters, request_adapter, "{+baseurl}/print/taskDefinitions/{printTaskDefinition%2Did}{?%24select,%24expand}")
                     end
                     ## 
-                    ## Delete navigation property taskDefinitions for print
+                    ## Delete a taskDefinition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of void
                     ## 
@@ -45,7 +44,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, nil, error_mapping)
                     end
                     ## 
-                    ## List of abstract definition for a task that can be triggered when various events occur within Universal Print.
+                    ## Get details about a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of print_task_definition
                     ## 
@@ -59,7 +58,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintTaskDefinition.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Update the navigation property taskDefinitions in print
+                    ## Update a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a Fiber of print_task_definition
@@ -75,18 +74,7 @@ module MicrosoftGraph
                         return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::PrintTaskDefinition.create_from_discriminator_value(pn) }, error_mapping)
                     end
                     ## 
-                    ## Provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.
-                    ## @param id Unique identifier of the item
-                    ## @return a print_task_item_request_builder
-                    ## 
-                    def tasks_by_id(id)
-                        raise StandardError, 'id cannot be null' if id.nil?
-                        url_tpl_params = @path_parameters.clone
-                        url_tpl_params["printTask%2Did"] = id
-                        return MicrosoftGraph::Print::TaskDefinitions::Item::Tasks::Item::PrintTaskItemRequestBuilder.new(url_tpl_params, @request_adapter)
-                    end
-                    ## 
-                    ## Delete navigation property taskDefinitions for print
+                    ## Delete a taskDefinition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -102,7 +90,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## List of abstract definition for a task that can be triggered when various events occur within Universal Print.
+                    ## Get details about a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
                     ## 
@@ -120,7 +108,7 @@ module MicrosoftGraph
                         return request_info
                     end
                     ## 
-                    ## Update the navigation property taskDefinitions in print
+                    ## Update a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
                     ## @param body The request body
                     ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                     ## @return a request_information
@@ -141,7 +129,7 @@ module MicrosoftGraph
                     end
 
                     ## 
-                    # List of abstract definition for a task that can be triggered when various events occur within Universal Print.
+                    # Get details about a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
                     class PrintTaskDefinitionItemRequestBuilderGetQueryParameters
                         
                         ## 

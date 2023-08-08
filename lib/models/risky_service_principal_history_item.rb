@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the initiatedBy property value. The identifier of the actor of the operation.
-            ## @param value Value to set for the initiated_by property.
+            ## @param value Value to set for the initiatedBy property.
             ## @return a void
             ## 
             def initiated_by=(value)

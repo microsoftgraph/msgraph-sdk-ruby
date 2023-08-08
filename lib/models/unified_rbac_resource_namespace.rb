@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the resourceActions property value. The resourceActions property
-            ## @param value Value to set for the resource_actions property.
+            ## @param value Value to set for the resourceActions property.
             ## @return a void
             ## 
             def resource_actions=(value)

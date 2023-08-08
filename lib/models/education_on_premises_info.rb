@@ -24,7 +24,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -65,7 +65,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the immutableId property value. Unique identifier for the user object in Active Directory.
-            ## @param value Value to set for the immutable_id property.
+            ## @param value Value to set for the immutableId property.
             ## @return a void
             ## 
             def immutable_id=(value)
@@ -80,7 +80,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)

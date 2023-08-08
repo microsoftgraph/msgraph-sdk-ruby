@@ -111,7 +111,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the contentTypes property value. The collection of content types defined for this site.
-            ## @param value Value to set for the content_types property.
+            ## @param value Value to set for the contentTypes property.
             ## @return a void
             ## 
             def content_types=(value)
@@ -135,7 +135,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the displayName property value. The full title for the site. Read-only.
-            ## @param value Value to set for the display_name property.
+            ## @param value Value to set for the displayName property.
             ## @return a void
             ## 
             def display_name=(value)
@@ -195,7 +195,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the externalColumns property value. The externalColumns property
-            ## @param value Value to set for the external_columns property.
+            ## @param value Value to set for the externalColumns property.
             ## @return a void
             ## 
             def external_columns=(value)
@@ -355,7 +355,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the sharepointIds property value. Returns identifiers useful for SharePoint REST compatibility. Read-only.
-            ## @param value Value to set for the sharepoint_ids property.
+            ## @param value Value to set for the sharepointIds property.
             ## @return a void
             ## 
             def sharepoint_ids=(value)
@@ -370,7 +370,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the siteCollection property value. Provides details about the site's site collection. Available only on the root site. Read-only.
-            ## @param value Value to set for the site_collection property.
+            ## @param value Value to set for the siteCollection property.
             ## @return a void
             ## 
             def site_collection=(value)
@@ -400,7 +400,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the termStore property value. The default termStore under this site.
-            ## @param value Value to set for the term_store property.
+            ## @param value Value to set for the termStore property.
             ## @return a void
             ## 
             def term_store=(value)
@@ -415,7 +415,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the termStores property value. The collection of termStores under this site.
-            ## @param value Value to set for the term_stores property.
+            ## @param value Value to set for the termStores property.
             ## @return a void
             ## 
             def term_stores=(value)

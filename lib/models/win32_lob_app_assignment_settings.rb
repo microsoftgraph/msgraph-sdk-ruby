@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties used to assign an Win32 LOB mobile app to a group.
         class Win32LobAppAssignmentSettings < MicrosoftGraph::Models::MobileAppAssignmentSettings
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -19,7 +21,7 @@ module MicrosoftGraph
             # The reboot settings to apply for this app assignment.
             @restart_settings
             ## 
-            ## Instantiates a new Win32LobAppAssignmentSettings and sets the default values.
+            ## Instantiates a new win32LobAppAssignmentSettings and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -44,7 +46,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the deliveryOptimizationPriority property value. Contains value for delivery optimization priority.
-            ## @param value Value to set for the delivery_optimization_priority property.
+            ## @param value Value to set for the deliveryOptimizationPriority property.
             ## @return a void
             ## 
             def delivery_optimization_priority=(value)
@@ -71,7 +73,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the installTimeSettings property value. The install time settings to apply for this app assignment.
-            ## @param value Value to set for the install_time_settings property.
+            ## @param value Value to set for the installTimeSettings property.
             ## @return a void
             ## 
             def install_time_settings=(value)
@@ -101,7 +103,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the restartSettings property value. The reboot settings to apply for this app assignment.
-            ## @param value Value to set for the restart_settings property.
+            ## @param value Value to set for the restartSettings property.
             ## @return a void
             ## 
             def restart_settings=(value)

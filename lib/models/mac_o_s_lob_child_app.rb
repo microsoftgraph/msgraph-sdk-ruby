@@ -32,7 +32,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the additionalData property value. Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
-            ## @param value Value to set for the AdditionalData property.
+            ## @param value Value to set for the additionalData property.
             ## @return a void
             ## 
             def additional_data=(value)
@@ -47,7 +47,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the buildNumber property value. The build number of the app.
-            ## @param value Value to set for the build_number property.
+            ## @param value Value to set for the buildNumber property.
             ## @return a void
             ## 
             def build_number=(value)
@@ -62,7 +62,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bundleId property value. The bundleId of the app.
-            ## @param value Value to set for the bundle_id property.
+            ## @param value Value to set for the bundleId property.
             ## @return a void
             ## 
             def bundle_id=(value)
@@ -105,7 +105,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the @odata.type property value. The OdataType property
-            ## @param value Value to set for the odata_type property.
+            ## @param value Value to set for the @odata.type property.
             ## @return a void
             ## 
             def odata_type=(value)
@@ -133,7 +133,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the versionNumber property value. The version number of the app.
-            ## @param value Value to set for the version_number property.
+            ## @param value Value to set for the versionNumber property.
             ## @return a void
             ## 
             def version_number=(value)

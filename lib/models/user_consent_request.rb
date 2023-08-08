@@ -28,7 +28,7 @@ module MicrosoftGraph
                 @approval = value
             end
             ## 
-            ## Instantiates a new UserConsentRequest and sets the default values.
+            ## Instantiates a new userConsentRequest and sets the default values.
             ## @return a void
             ## 
             def initialize()

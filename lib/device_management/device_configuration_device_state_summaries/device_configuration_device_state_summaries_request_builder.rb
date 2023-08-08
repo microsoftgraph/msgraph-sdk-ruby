@@ -36,7 +36,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, nil, error_mapping)
                 end
                 ## 
-                ## The device configuration device state summary for this account.
+                ## Read properties and relationships of the deviceConfigurationDeviceStateSummary object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of device_configuration_device_state_summary
                 ## 
@@ -50,7 +50,7 @@ module MicrosoftGraph
                     return @request_adapter.send_async(request_info, lambda {|pn| MicrosoftGraph::Models::DeviceConfigurationDeviceStateSummary.create_from_discriminator_value(pn) }, error_mapping)
                 end
                 ## 
-                ## Update the navigation property deviceConfigurationDeviceStateSummaries in deviceManagement
+                ## Update the properties of a deviceConfigurationDeviceStateSummary object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a Fiber of device_configuration_device_state_summary
@@ -82,7 +82,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## The device configuration device state summary for this account.
+                ## Read properties and relationships of the deviceConfigurationDeviceStateSummary object.
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
                 ## 
@@ -100,7 +100,7 @@ module MicrosoftGraph
                     return request_info
                 end
                 ## 
-                ## Update the navigation property deviceConfigurationDeviceStateSummaries in deviceManagement
+                ## Update the properties of a deviceConfigurationDeviceStateSummary object.
                 ## @param body The request body
                 ## @param request_configuration Configuration for the request such as headers, query parameters, and middleware options.
                 ## @return a request_information
@@ -121,7 +121,7 @@ module MicrosoftGraph
                 end
 
                 ## 
-                # The device configuration device state summary for this account.
+                # Read properties and relationships of the deviceConfigurationDeviceStateSummary object.
                 class DeviceConfigurationDeviceStateSummariesRequestBuilderGetQueryParameters
                     
                     ## 

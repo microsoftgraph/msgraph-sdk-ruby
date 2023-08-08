@@ -12,6 +12,7 @@ require_relative '../../../item'
 require_relative '../../items'
 require_relative '../item'
 require_relative './count/count_request_builder'
+require_relative './item/list_item_version_item_request_builder'
 require_relative './versions'
 
 module MicrosoftGraph
@@ -32,6 +33,17 @@ module MicrosoftGraph
                                             # Provides operations to count the resources in the collection.
                                             def count()
                                                 return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item::Versions::Count::CountRequestBuilder.new(@path_parameters, @request_adapter)
+                                            end
+                                            ## 
+                                            ## Provides operations to manage the versions property of the microsoft.graph.listItem entity.
+                                            ## @param list_item_version_id Unique identifier of the item
+                                            ## @return a list_item_version_item_request_builder
+                                            ## 
+                                            def by_list_item_version_id(list_item_version_id)
+                                                raise StandardError, 'list_item_version_id cannot be null' if list_item_version_id.nil?
+                                                url_tpl_params = @path_parameters.clone
+                                                url_tpl_params["listItemVersion%2Did"] = list_item_version_id
+                                                return MicrosoftGraph::Groups::Item::Sites::Item::Lists::Item::Items::Item::Versions::Item::ListItemVersionItemRequestBuilder.new(url_tpl_params, @request_adapter)
                                             end
                                             ## 
                                             ## Instantiates a new VersionsRequestBuilder and sets the default values.

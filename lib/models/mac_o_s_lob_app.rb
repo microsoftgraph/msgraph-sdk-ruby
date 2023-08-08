@@ -4,6 +4,8 @@ require_relative './models'
 
 module MicrosoftGraph
     module Models
+        ## 
+        # Contains properties and inherited properties for the macOS LOB App.
         class MacOSLobApp < MicrosoftGraph::Models::MobileLobApp
             include MicrosoftKiotaAbstractions::Parsable
             ## 
@@ -42,7 +44,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the buildNumber property value. The build number of the package. This should match the package CFBundleShortVersionString of the .pkg file.
-            ## @param value Value to set for the build_number property.
+            ## @param value Value to set for the buildNumber property.
             ## @return a void
             ## 
             def build_number=(value)
@@ -57,7 +59,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the bundleId property value. The primary bundleId of the package.
-            ## @param value Value to set for the bundle_id property.
+            ## @param value Value to set for the bundleId property.
             ## @return a void
             ## 
             def bundle_id=(value)
@@ -72,14 +74,14 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the childApps property value. List of ComplexType macOSLobChildApp objects. Represents the apps expected to be installed by the package.
-            ## @param value Value to set for the child_apps property.
+            ## @param value Value to set for the childApps property.
             ## @return a void
             ## 
             def child_apps=(value)
                 @child_apps = value
             end
             ## 
-            ## Instantiates a new MacOSLobApp and sets the default values.
+            ## Instantiates a new macOSLobApp and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -121,7 +123,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the ignoreVersionDetection property value. When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature.
-            ## @param value Value to set for the ignore_version_detection property.
+            ## @param value Value to set for the ignoreVersionDetection property.
             ## @return a void
             ## 
             def ignore_version_detection=(value)
@@ -136,7 +138,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the installAsManaged property value. When TRUE, indicates that the app will be installed as managed (requires macOS 11.0 and other managed package restrictions). When FALSE, indicates that the app will be installed as unmanaged.
-            ## @param value Value to set for the install_as_managed property.
+            ## @param value Value to set for the installAsManaged property.
             ## @return a void
             ## 
             def install_as_managed=(value)
@@ -151,7 +153,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the md5Hash property value. The MD5 hash codes. This is empty if the package was uploaded directly. If the Intune App Wrapping Tool is used to create a .intunemac, this value can be found inside the Detection.xml file.
-            ## @param value Value to set for the md5_hash property.
+            ## @param value Value to set for the md5Hash property.
             ## @return a void
             ## 
             def md5_hash=(value)
@@ -166,7 +168,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the md5HashChunkSize property value. The chunk size for MD5 hash. This is '0' or empty if the package was uploaded directly. If the Intune App Wrapping Tool is used to create a .intunemac, this value can be found inside the Detection.xml file.
-            ## @param value Value to set for the md5_hash_chunk_size property.
+            ## @param value Value to set for the md5HashChunkSize property.
             ## @return a void
             ## 
             def md5_hash_chunk_size=(value)
@@ -181,7 +183,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the minimumSupportedOperatingSystem property value. ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.
-            ## @param value Value to set for the minimum_supported_operating_system property.
+            ## @param value Value to set for the minimumSupportedOperatingSystem property.
             ## @return a void
             ## 
             def minimum_supported_operating_system=(value)
@@ -214,7 +216,7 @@ module MicrosoftGraph
             end
             ## 
             ## Sets the versionNumber property value. The version number of the package. This should match the package CFBundleVersion in the packageinfo file.
-            ## @param value Value to set for the version_number property.
+            ## @param value Value to set for the versionNumber property.
             ## @return a void
             ## 
             def version_number=(value)
