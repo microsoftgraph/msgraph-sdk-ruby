@@ -1,7 +1,6 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './call_records/call_records'
 require_relative './models'
 
 module MicrosoftGraph
@@ -39,7 +38,7 @@ module MicrosoftGraph
             # Monotonically increasing version of the call record. Higher version call records with the same id includes additional data compared to the lower version.
             @version
             ## 
-            ## Instantiates a new callRecord and sets the default values.
+            ## Instantiates a new callRecordsCallRecord and sets the default values.
             ## @return a void
             ## 
             def initialize()

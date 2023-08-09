@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './call_records/call_records'
 require_relative './models'
 
 module MicrosoftGraph
@@ -35,7 +34,7 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new failureInfo and sets the default values.
+            ## Instantiates a new callRecordsFailureInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()

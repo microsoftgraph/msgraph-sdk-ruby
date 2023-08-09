@@ -2,7 +2,6 @@ require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -24,7 +23,7 @@ module MicrosoftGraph
             # The name of the cookie, for example, JSESSIONID or SEARCH_NAMESITE.
             @name
             ## 
-            ## Instantiates a new hostCookie and sets the default values.
+            ## Instantiates a new securityHostCookie and sets the default values.
             ## @return a void
             ## 
             def initialize()

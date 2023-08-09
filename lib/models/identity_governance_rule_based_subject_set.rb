@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './identity_governance/identity_governance'
 require_relative './models'
 
 module MicrosoftGraph
@@ -11,7 +10,7 @@ module MicrosoftGraph
             # The rule for the subject set. Lifecycle Workflows supports a rich set of user properties for configuring the rules using $filter query expressions. For more information, see supported user and query parameters.
             @rule
             ## 
-            ## Instantiates a new ruleBasedSubjectSet and sets the default values.
+            ## Instantiates a new identityGovernanceRuleBasedSubjectSet and sets the default values.
             ## @return a void
             ## 
             def initialize()

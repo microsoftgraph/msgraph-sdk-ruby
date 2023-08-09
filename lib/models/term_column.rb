@@ -1,8 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './term_store_set'
-require_relative './term_store_term'
 
 module MicrosoftGraph
     module Models

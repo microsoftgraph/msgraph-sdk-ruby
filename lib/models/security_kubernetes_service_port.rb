@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -62,7 +61,7 @@ module MicrosoftGraph
                 @app_protocol = value
             end
             ## 
-            ## Instantiates a new kubernetesServicePort and sets the default values.
+            ## Instantiates a new securityKubernetesServicePort and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -2,11 +2,10 @@ require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
-        class SecurityEdiscoveryCase < MicrosoftGraph::Models::SecurityCase_escaped
+        class SecurityEdiscoveryCase < MicrosoftGraph::Models::SecurityCase
             include MicrosoftKiotaAbstractions::Parsable
             ## 
             # The user who closed the case.
@@ -69,7 +68,7 @@ module MicrosoftGraph
                 @closed_date_time = value
             end
             ## 
-            ## Instantiates a new ediscoveryCase and sets the default values.
+            ## Instantiates a new securityEdiscoveryCase and sets the default values.
             ## @return a void
             ## 
             def initialize()

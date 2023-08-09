@@ -2,7 +2,6 @@ require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -18,7 +17,7 @@ module MicrosoftGraph
             # The displayName property
             @display_name
             ## 
-            ## Instantiates a new dataSet and sets the default values.
+            ## Instantiates a new securityDataSet and sets the default values.
             ## @return a void
             ## 
             def initialize()

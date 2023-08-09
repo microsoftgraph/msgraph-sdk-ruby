@@ -1053,7 +1053,7 @@ module MicrosoftGraph
                         when "#microsoft.graph.security.artifact"
                             return SecurityArtifact.new
                         when "#microsoft.graph.security.case"
-                            return SecurityCase_escaped.new
+                            return SecurityCase.new
                         when "#microsoft.graph.security.caseOperation"
                             return SecurityCaseOperation.new
                         when "#microsoft.graph.security.casesRoot"

@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -17,7 +16,7 @@ module MicrosoftGraph
             # The secret type can include both built-in types and custom ones. Examples of built-in types are: Opaque, kubernetes.io/service-account-token, kubernetes.io/dockercfg, kubernetes.io/dockerconfigjson, kubernetes.io/basic-auth, kubernetes.io/ssh-auth, kubernetes.io/tls, bootstrap.kubernetes.io/token.
             @secret_type
             ## 
-            ## Instantiates a new kubernetesSecretEvidence and sets the default values.
+            ## Instantiates a new securityKubernetesSecretEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

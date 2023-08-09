@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -35,7 +34,7 @@ module MicrosoftGraph
             # The pod service account.
             @service_account
             ## 
-            ## Instantiates a new kubernetesPodEvidence and sets the default values.
+            ## Instantiates a new securityKubernetesPodEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

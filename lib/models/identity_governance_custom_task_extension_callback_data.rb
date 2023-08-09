@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './identity_governance/identity_governance'
 require_relative './models'
 
 module MicrosoftGraph
@@ -11,7 +10,7 @@ module MicrosoftGraph
             # Operation status that's provided by the Azure Logic App indicating whenever the Azure Logic App has run successfully or not. Supported values: completed, failed, unknownFutureValue.
             @operation_status
             ## 
-            ## Instantiates a new customTaskExtensionCallbackData and sets the default values.
+            ## Instantiates a new identityGovernanceCustomTaskExtensionCallbackData and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './identity_governance_lifecycle_workflows_container'
 require_relative './models'
 
 module MicrosoftGraph

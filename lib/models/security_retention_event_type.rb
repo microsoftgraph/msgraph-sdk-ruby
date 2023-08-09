@@ -2,7 +2,6 @@ require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -27,7 +26,7 @@ module MicrosoftGraph
             # The latest date time when the retentionEventType was modified.
             @last_modified_date_time
             ## 
-            ## Instantiates a new retentionEventType and sets the default values.
+            ## Instantiates a new securityRetentionEventType and sets the default values.
             ## @return a void
             ## 
             def initialize()

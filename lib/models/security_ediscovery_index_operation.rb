@@ -1,14 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
         class SecurityEdiscoveryIndexOperation < MicrosoftGraph::Models::SecurityCaseOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new ediscoveryIndexOperation and sets the default values.
+            ## Instantiates a new securityEdiscoveryIndexOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

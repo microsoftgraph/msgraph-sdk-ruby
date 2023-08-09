@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './o_data_errors/o_data_errors'
 
 module MicrosoftGraph
     module Models
@@ -56,7 +55,7 @@ module MicrosoftGraph
                 @code = value
             end
             ## 
-            ## Instantiates a new MainError and sets the default values.
+            ## Instantiates a new ODataErrorsMainError and sets the default values.
             ## @return a void
             ## 
             def initialize()

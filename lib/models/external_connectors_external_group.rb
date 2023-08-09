@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './external_connectors/external_connectors'
 require_relative './models'
 
 module MicrosoftGraph
@@ -17,7 +16,7 @@ module MicrosoftGraph
             # A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or an externalGroup as members.
             @members
             ## 
-            ## Instantiates a new externalGroup and sets the default values.
+            ## Instantiates a new externalConnectorsExternalGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

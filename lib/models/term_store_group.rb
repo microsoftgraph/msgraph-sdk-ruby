@@ -2,7 +2,6 @@ require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './term_store/term_store'
 
 module MicrosoftGraph
     module Models
@@ -27,7 +26,7 @@ module MicrosoftGraph
             # All sets under the group in a term [store].
             @sets
             ## 
-            ## Instantiates a new group and sets the default values.
+            ## Instantiates a new termStoreGroup and sets the default values.
             ## @return a void
             ## 
             def initialize()

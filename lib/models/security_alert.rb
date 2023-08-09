@@ -2,7 +2,6 @@ require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -201,7 +200,7 @@ module MicrosoftGraph
                 @comments = value
             end
             ## 
-            ## Instantiates a new alert and sets the default values.
+            ## Instantiates a new securityAlert and sets the default values.
             ## @return a void
             ## 
             def initialize()

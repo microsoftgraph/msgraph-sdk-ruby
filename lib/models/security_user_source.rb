@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -17,7 +16,7 @@ module MicrosoftGraph
             # The URL of the user's OneDrive for Business site. Read-only.
             @site_web_url
             ## 
-            ## Instantiates a new userSource and sets the default values.
+            ## Instantiates a new securityUserSource and sets the default values.
             ## @return a void
             ## 
             def initialize()

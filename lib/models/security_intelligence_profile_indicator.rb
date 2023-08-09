@@ -2,7 +2,6 @@ require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -15,7 +14,7 @@ module MicrosoftGraph
             # Designate when an artifact was most recently used actively in an attack, when a particular sample was compiled, or if neither of those could be ascertained when the file was first seen in public repositories (for example, VirusTotal, ANY.RUN, Hybrid Analysis) or reported publicly.
             @last_seen_date_time
             ## 
-            ## Instantiates a new intelligenceProfileIndicator and sets the default values.
+            ## Instantiates a new securityIntelligenceProfileIndicator and sets the default values.
             ## @return a void
             ## 
             def initialize()

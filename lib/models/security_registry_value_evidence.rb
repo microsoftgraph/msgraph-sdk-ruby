@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -26,7 +25,7 @@ module MicrosoftGraph
             # Data type, such as binary or string, of the registry value that the recorded action was applied to.
             @registry_value_type
             ## 
-            ## Instantiates a new registryValueEvidence and sets the default values.
+            ## Instantiates a new securityRegistryValueEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -14,7 +13,7 @@ module MicrosoftGraph
             # Specifies which sources are included in this group. Possible values are: mailbox, site.
             @included_sources
             ## 
-            ## Instantiates a new unifiedGroupSource and sets the default values.
+            ## Instantiates a new securityUnifiedGroupSource and sets the default values.
             ## @return a void
             ## 
             def initialize()

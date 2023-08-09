@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -14,7 +13,7 @@ module MicrosoftGraph
             # The registrar for this hostname, from WHOIS data.
             @registrar
             ## 
-            ## Instantiates a new hostname and sets the default values.
+            ## Instantiates a new securityHostname and sets the default values.
             ## @return a void
             ## 
             def initialize()

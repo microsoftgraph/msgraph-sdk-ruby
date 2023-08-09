@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './call_records/call_records'
 require_relative './models'
 
 module MicrosoftGraph
@@ -11,7 +10,7 @@ module MicrosoftGraph
             # The role property
             @role
             ## 
-            ## Instantiates a new serviceUserAgent and sets the default values.
+            ## Instantiates a new callRecordsServiceUserAgent and sets the default values.
             ## @return a void
             ## 
             def initialize()

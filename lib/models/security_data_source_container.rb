@@ -2,7 +2,6 @@ require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -27,7 +26,7 @@ module MicrosoftGraph
             # Latest status of the dataSourceContainer. Possible values are: Active, Released.
             @status
             ## 
-            ## Instantiates a new dataSourceContainer and sets the default values.
+            ## Instantiates a new securityDataSourceContainer and sets the default values.
             ## @return a void
             ## 
             def initialize()

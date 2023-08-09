@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -11,7 +10,7 @@ module MicrosoftGraph
             # The user account details.
             @user_account
             ## 
-            ## Instantiates a new userEvidence and sets the default values.
+            ## Instantiates a new securityUserEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

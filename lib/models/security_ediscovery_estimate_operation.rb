@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -29,7 +28,7 @@ module MicrosoftGraph
             # The estimated size of unindexed items for the collection.
             @unindexed_items_size
             ## 
-            ## Instantiates a new ediscoveryEstimateOperation and sets the default values.
+            ## Instantiates a new securityEdiscoveryEstimateOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

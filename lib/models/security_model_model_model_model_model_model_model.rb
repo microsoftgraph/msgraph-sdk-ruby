@@ -1,12 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security_alert'
-require_relative './security_cases_root'
-require_relative './security_incident'
-require_relative './security_threat_intelligence'
-require_relative './security_triggers_root'
-require_relative './security_trigger_types_root'
 
 module MicrosoftGraph
     module Models

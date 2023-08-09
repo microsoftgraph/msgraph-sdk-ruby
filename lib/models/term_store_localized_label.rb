@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './term_store/term_store'
 
 module MicrosoftGraph
     module Models
@@ -38,7 +37,7 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new localizedLabel and sets the default values.
+            ## Instantiates a new termStoreLocalizedLabel and sets the default values.
             ## @return a void
             ## 
             def initialize()

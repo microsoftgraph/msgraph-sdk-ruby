@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -56,7 +55,7 @@ module MicrosoftGraph
                 @cloud_provider = value
             end
             ## 
-            ## Instantiates a new vmMetadata and sets the default values.
+            ## Instantiates a new securityVmMetadata and sets the default values.
             ## @return a void
             ## 
             def initialize()

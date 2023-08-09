@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './call_records_call_record'
 require_relative './models'
 
 module MicrosoftGraph

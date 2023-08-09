@@ -17,7 +17,7 @@ module MicrosoftGraph
             @email
             ## 
             # The object identifier of the subject. null if the subject is not yet a user in the tenant.
-            @object_id
+            @object_id_escaped
             ## 
             # A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
             @on_premises_security_identifier
@@ -97,7 +97,7 @@ module MicrosoftGraph
                     "connectedOrganization" => lambda {|n| @connected_organization = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::ConnectedOrganization.create_from_discriminator_value(pn) }) },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
                     "email" => lambda {|n| @email = n.get_string_value() },
-                    "objectId" => lambda {|n| @object_id = n.get_string_value() },
+                    "objectId" => lambda {|n| @object_id_escaped = n.get_string_value() },
                     "onPremisesSecurityIdentifier" => lambda {|n| @on_premises_security_identifier = n.get_string_value() },
                     "principalName" => lambda {|n| @principal_name = n.get_string_value() },
                     "subjectType" => lambda {|n| @subject_type = n.get_enum_value(MicrosoftGraph::Models::AccessPackageSubjectType) },
@@ -107,16 +107,16 @@ module MicrosoftGraph
             ## Gets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
             ## @return a string
             ## 
-            def object_id
-                return @object_id
+            def object_id_escaped
+                return @object_id_escaped
             end
             ## 
             ## Sets the objectId property value. The object identifier of the subject. null if the subject is not yet a user in the tenant.
             ## @param value Value to set for the objectId property.
             ## @return a void
             ## 
-            def object_id=(value)
-                @object_id = value
+            def object_id_escaped=(value)
+                @object_id_escaped = value
             end
             ## 
             ## Gets the onPremisesSecurityIdentifier property value. A string representation of the principal's security identifier, if known, or null if the subject does not have a security identifier.
@@ -159,7 +159,7 @@ module MicrosoftGraph
                 writer.write_object_value("connectedOrganization", @connected_organization)
                 writer.write_string_value("displayName", @display_name)
                 writer.write_string_value("email", @email)
-                writer.write_string_value("objectId", @object_id)
+                writer.write_string_value("objectId", @object_id_escaped)
                 writer.write_string_value("onPremisesSecurityIdentifier", @on_premises_security_identifier)
                 writer.write_string_value("principalName", @principal_name)
                 writer.write_enum_value("subjectType", @subject_type)

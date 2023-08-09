@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './call_records/call_records'
 require_relative './models'
 
 module MicrosoftGraph
@@ -26,7 +25,7 @@ module MicrosoftGraph
             # Name of the device used by the media endpoint.
             @name
             ## 
-            ## Instantiates a new participantEndpoint and sets the default values.
+            ## Instantiates a new callRecordsParticipantEndpoint and sets the default values.
             ## @return a void
             ## 
             def initialize()

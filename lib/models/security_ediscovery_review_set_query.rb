@@ -1,14 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
         class SecurityEdiscoveryReviewSetQuery < MicrosoftGraph::Models::SecuritySearch
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new ediscoveryReviewSetQuery and sets the default values.
+            ## Instantiates a new securityEdiscoveryReviewSetQuery and sets the default values.
             ## @return a void
             ## 
             def initialize()

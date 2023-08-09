@@ -2,7 +2,6 @@ require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -51,7 +50,7 @@ module MicrosoftGraph
                 @body = value
             end
             ## 
-            ## Instantiates a new article and sets the default values.
+            ## Instantiates a new securityArticle and sets the default values.
             ## @return a void
             ## 
             def initialize()

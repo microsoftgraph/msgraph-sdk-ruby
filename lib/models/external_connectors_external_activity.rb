@@ -1,7 +1,6 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './external_connectors/external_connectors'
 require_relative './models'
 
 module MicrosoftGraph
@@ -18,7 +17,7 @@ module MicrosoftGraph
             # The type property
             @type
             ## 
-            ## Instantiates a new externalActivity and sets the default values.
+            ## Instantiates a new externalConnectorsExternalActivity and sets the default values.
             ## @return a void
             ## 
             def initialize()

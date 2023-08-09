@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './external_connectors/external_connectors'
 require_relative './models'
 
 module MicrosoftGraph
@@ -50,7 +49,7 @@ module MicrosoftGraph
                 @activities = value
             end
             ## 
-            ## Instantiates a new externalItem and sets the default values.
+            ## Instantiates a new externalConnectorsExternalItem and sets the default values.
             ## @return a void
             ## 
             def initialize()

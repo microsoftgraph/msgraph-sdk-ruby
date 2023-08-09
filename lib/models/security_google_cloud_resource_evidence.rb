@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -26,7 +25,7 @@ module MicrosoftGraph
             # The type of the resource.
             @resource_type
             ## 
-            ## Instantiates a new googleCloudResourceEvidence and sets the default values.
+            ## Instantiates a new securityGoogleCloudResourceEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

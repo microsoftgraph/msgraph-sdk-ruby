@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './external_connectors/external_connectors'
 require_relative './models'
 
 module MicrosoftGraph
@@ -50,7 +49,7 @@ module MicrosoftGraph
                 @base_urls = value
             end
             ## 
-            ## Instantiates a new urlMatchInfo and sets the default values.
+            ## Instantiates a new externalConnectorsUrlMatchInfo and sets the default values.
             ## @return a void
             ## 
             def initialize()

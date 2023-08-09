@@ -1,7 +1,6 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './call_records/call_records'
 require_relative './models'
 
 module MicrosoftGraph
@@ -219,7 +218,7 @@ module MicrosoftGraph
                 @connection_charge = value
             end
             ## 
-            ## Instantiates a new pstnCallLogRow and sets the default values.
+            ## Instantiates a new callRecordsPstnCallLogRow and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -17,7 +16,7 @@ module MicrosoftGraph
             # A unique identifier assigned to a device by Microsoft Defender for Endpoint.
             @mde_device_id
             ## 
-            ## Instantiates a new fileEvidence and sets the default values.
+            ## Instantiates a new securityFileEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

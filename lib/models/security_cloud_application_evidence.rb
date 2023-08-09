@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -38,7 +37,7 @@ module MicrosoftGraph
                 @app_id = value
             end
             ## 
-            ## Instantiates a new cloudApplicationEvidence and sets the default values.
+            ## Instantiates a new securityCloudApplicationEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

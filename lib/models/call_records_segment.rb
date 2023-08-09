@@ -1,7 +1,6 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './call_records/call_records'
 require_relative './models'
 
 module MicrosoftGraph
@@ -57,7 +56,7 @@ module MicrosoftGraph
                 @caller = value
             end
             ## 
-            ## Instantiates a new segment and sets the default values.
+            ## Instantiates a new callRecordsSegment and sets the default values.
             ## @return a void
             ## 
             def initialize()

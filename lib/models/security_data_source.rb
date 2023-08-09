@@ -2,7 +2,6 @@ require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -21,7 +20,7 @@ module MicrosoftGraph
             # The hold status of the dataSource.The possible values are: notApplied, applied, applying, removing, partial
             @hold_status
             ## 
-            ## Instantiates a new dataSource and sets the default values.
+            ## Instantiates a new securityDataSource and sets the default values.
             ## @return a void
             ## 
             def initialize()

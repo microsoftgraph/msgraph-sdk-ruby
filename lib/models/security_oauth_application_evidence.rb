@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -15,7 +14,7 @@ module MicrosoftGraph
             @display_name
             ## 
             # The unique identifier of the application object in Azure AD.
-            @object_id
+            @object_id_escaped
             ## 
             # The name of the application publisher.
             @publisher
@@ -35,7 +34,7 @@ module MicrosoftGraph
                 @app_id = value
             end
             ## 
-            ## Instantiates a new oauthApplicationEvidence and sets the default values.
+            ## Instantiates a new securityOauthApplicationEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()
@@ -74,7 +73,7 @@ module MicrosoftGraph
                 return super.merge({
                     "appId" => lambda {|n| @app_id = n.get_string_value() },
                     "displayName" => lambda {|n| @display_name = n.get_string_value() },
-                    "objectId" => lambda {|n| @object_id = n.get_string_value() },
+                    "objectId" => lambda {|n| @object_id_escaped = n.get_string_value() },
                     "publisher" => lambda {|n| @publisher = n.get_string_value() },
                 })
             end
@@ -82,16 +81,16 @@ module MicrosoftGraph
             ## Gets the objectId property value. The unique identifier of the application object in Azure AD.
             ## @return a string
             ## 
-            def object_id
-                return @object_id
+            def object_id_escaped
+                return @object_id_escaped
             end
             ## 
             ## Sets the objectId property value. The unique identifier of the application object in Azure AD.
             ## @param value Value to set for the objectId property.
             ## @return a void
             ## 
-            def object_id=(value)
-                @object_id = value
+            def object_id_escaped=(value)
+                @object_id_escaped = value
             end
             ## 
             ## Gets the publisher property value. The name of the application publisher.
@@ -118,7 +117,7 @@ module MicrosoftGraph
                 super
                 writer.write_string_value("appId", @app_id)
                 writer.write_string_value("displayName", @display_name)
-                writer.write_string_value("objectId", @object_id)
+                writer.write_string_value("objectId", @object_id_escaped)
                 writer.write_string_value("publisher", @publisher)
             end
         end

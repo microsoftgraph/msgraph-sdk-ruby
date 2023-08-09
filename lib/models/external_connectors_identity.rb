@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './external_connectors/external_connectors'
 require_relative './models'
 
 module MicrosoftGraph
@@ -11,7 +10,7 @@ module MicrosoftGraph
             # The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
             @type
             ## 
-            ## Instantiates a new identity and sets the default values.
+            ## Instantiates a new externalConnectorsIdentity and sets the default values.
             ## @return a void
             ## 
             def initialize()

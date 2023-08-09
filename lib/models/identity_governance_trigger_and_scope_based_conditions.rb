@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './identity_governance/identity_governance'
 require_relative './models'
 
 module MicrosoftGraph
@@ -14,7 +13,7 @@ module MicrosoftGraph
             # What triggers a workflow to run.
             @trigger
             ## 
-            ## Instantiates a new triggerAndScopeBasedConditions and sets the default values.
+            ## Instantiates a new identityGovernanceTriggerAndScopeBasedConditions and sets the default values.
             ## @return a void
             ## 
             def initialize()

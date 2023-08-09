@@ -2,7 +2,6 @@ require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -39,7 +38,7 @@ module MicrosoftGraph
             # User details of the user that ran the process.
             @user_account
             ## 
-            ## Instantiates a new processEvidence and sets the default values.
+            ## Instantiates a new securityProcessEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

@@ -1,7 +1,6 @@
 require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './call_records/call_records'
 require_relative './models'
 
 module MicrosoftGraph
@@ -315,7 +314,7 @@ module MicrosoftGraph
                 @average_video_packet_loss_rate = value
             end
             ## 
-            ## Instantiates a new mediaStream and sets the default values.
+            ## Instantiates a new callRecordsMediaStream and sets the default values.
             ## @return a void
             ## 
             def initialize()

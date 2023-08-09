@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './identity_governance/identity_governance'
 require_relative './models'
 
 module MicrosoftGraph
@@ -11,7 +10,7 @@ module MicrosoftGraph
             # The value property
             @value
             ## 
-            ## Instantiates a new userProcessingResultCollectionResponse and sets the default values.
+            ## Instantiates a new identityGovernanceUserProcessingResultCollectionResponse and sets the default values.
             ## @return a void
             ## 
             def initialize()

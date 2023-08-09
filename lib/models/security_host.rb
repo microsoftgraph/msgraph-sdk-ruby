@@ -2,7 +2,6 @@ require 'date'
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -48,7 +47,7 @@ module MicrosoftGraph
                 @components = value
             end
             ## 
-            ## Instantiates a new host and sets the default values.
+            ## Instantiates a new securityHost and sets the default values.
             ## @return a void
             ## 
             def initialize()

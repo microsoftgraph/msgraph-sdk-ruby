@@ -1,14 +1,13 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
         class SecurityEdiscoveryTagOperation < MicrosoftGraph::Models::SecurityCaseOperation
             include MicrosoftKiotaAbstractions::Parsable
             ## 
-            ## Instantiates a new ediscoveryTagOperation and sets the default values.
+            ## Instantiates a new securityEdiscoveryTagOperation and sets the default values.
             ## @return a void
             ## 
             def initialize()

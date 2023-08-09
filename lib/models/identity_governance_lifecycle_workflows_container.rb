@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './identity_governance/identity_governance'
 require_relative './models'
 
 module MicrosoftGraph
@@ -26,7 +25,7 @@ module MicrosoftGraph
             # The workflows in the lifecycle workflows instance.
             @workflows
             ## 
-            ## Instantiates a new lifecycleWorkflowsContainer and sets the default values.
+            ## Instantiates a new identityGovernanceLifecycleWorkflowsContainer and sets the default values.
             ## @return a void
             ## 
             def initialize()

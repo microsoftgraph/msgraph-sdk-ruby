@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -17,7 +16,7 @@ module MicrosoftGraph
             # The container registry for this image.
             @registry
             ## 
-            ## Instantiates a new containerImageEvidence and sets the default values.
+            ## Instantiates a new securityContainerImageEvidence and sets the default values.
             ## @return a void
             ## 
             def initialize()

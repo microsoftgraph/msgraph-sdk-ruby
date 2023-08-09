@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './term_store/term_store'
 
 module MicrosoftGraph
     module Models
@@ -20,7 +19,7 @@ module MicrosoftGraph
             # The to [term] of the relation. The term to which the relationship is defined.
             @to_term
             ## 
-            ## Instantiates a new relation and sets the default values.
+            ## Instantiates a new termStoreRelation and sets the default values.
             ## @return a void
             ## 
             def initialize()

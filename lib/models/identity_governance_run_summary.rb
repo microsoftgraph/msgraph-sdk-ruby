@@ -1,6 +1,5 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
-require_relative './identity_governance/identity_governance'
 require_relative './models'
 
 module MicrosoftGraph
@@ -47,7 +46,7 @@ module MicrosoftGraph
                 @additional_data = value
             end
             ## 
-            ## Instantiates a new runSummary and sets the default values.
+            ## Instantiates a new identityGovernanceRunSummary and sets the default values.
             ## @return a void
             ## 
             def initialize()

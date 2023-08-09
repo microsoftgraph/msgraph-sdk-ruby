@@ -14,7 +14,7 @@ module MicrosoftGraph
             @links
             ## 
             # The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.
-            @object_id
+            @object_id_escaped
             ## 
             # The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronizing between Active Directory and Azure AD.User for synchronizing a user between Azure AD and a third-party application. Worker for synchronization a user between Workday and either Active Directory or Azure AD.Group for synchronizing a group between Azure AD and a third-party application.
             @object_type_name
@@ -59,7 +59,7 @@ module MicrosoftGraph
             def get_field_deserializers()
                 return {
                     "links" => lambda {|n| @links = n.get_object_value(lambda {|pn| MicrosoftGraph::Models::SynchronizationLinkedObjects.create_from_discriminator_value(pn) }) },
-                    "objectId" => lambda {|n| @object_id = n.get_string_value() },
+                    "objectId" => lambda {|n| @object_id_escaped = n.get_string_value() },
                     "objectTypeName" => lambda {|n| @object_type_name = n.get_string_value() },
                     "@odata.type" => lambda {|n| @odata_type = n.get_string_value() },
                 }
@@ -83,16 +83,16 @@ module MicrosoftGraph
             ## Gets the objectId property value. The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.
             ## @return a string
             ## 
-            def object_id
-                return @object_id
+            def object_id_escaped
+                return @object_id_escaped
             end
             ## 
             ## Sets the objectId property value. The identifier of an object to which a synchronizationJob is to be applied. Can be one of the following: An onPremisesDistinguishedName for synchronization from Active Directory to Azure AD.The user ID for synchronization from Azure AD to a third-party.The Worker ID of the Workday worker for synchronization from Workday to either Active Directory or Azure AD.
             ## @param value Value to set for the objectId property.
             ## @return a void
             ## 
-            def object_id=(value)
-                @object_id = value
+            def object_id_escaped=(value)
+                @object_id_escaped = value
             end
             ## 
             ## Gets the objectTypeName property value. The type of the object to which a synchronizationJob is to be applied. Can be one of the following: user for synchronizing between Active Directory and Azure AD.User for synchronizing a user between Azure AD and a third-party application. Worker for synchronization a user between Workday and either Active Directory or Azure AD.Group for synchronizing a group between Azure AD and a third-party application.
@@ -132,7 +132,7 @@ module MicrosoftGraph
             def serialize(writer)
                 raise StandardError, 'writer cannot be null' if writer.nil?
                 writer.write_object_value("links", @links)
-                writer.write_string_value("objectId", @object_id)
+                writer.write_string_value("objectId", @object_id_escaped)
                 writer.write_string_value("objectTypeName", @object_type_name)
                 writer.write_string_value("@odata.type", @odata_type)
                 writer.write_additional_data(@additional_data)

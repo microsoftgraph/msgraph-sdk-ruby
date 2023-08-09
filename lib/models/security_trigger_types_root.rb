@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -11,7 +10,7 @@ module MicrosoftGraph
             # The retentionEventTypes property
             @retention_event_types
             ## 
-            ## Instantiates a new triggerTypesRoot and sets the default values.
+            ## Instantiates a new securityTriggerTypesRoot and sets the default values.
             ## @return a void
             ## 
             def initialize()

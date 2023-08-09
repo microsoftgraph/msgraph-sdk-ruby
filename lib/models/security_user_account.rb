@@ -1,7 +1,6 @@
 require 'microsoft_kiota_abstractions'
 require_relative '../microsoft_graph'
 require_relative './models'
-require_relative './security/security'
 
 module MicrosoftGraph
     module Models
@@ -77,7 +76,7 @@ module MicrosoftGraph
                 @azure_ad_user_id = value
             end
             ## 
-            ## Instantiates a new userAccount and sets the default values.
+            ## Instantiates a new securityUserAccount and sets the default values.
             ## @return a void
             ## 
             def initialize()
